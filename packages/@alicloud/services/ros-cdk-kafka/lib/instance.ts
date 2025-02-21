@@ -116,6 +116,11 @@ export interface IInstance extends ros.IResource {
     readonly props: InstanceProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute DomainEndpoint: The default endpoints of the instance in domain name mode.
      */
     readonly attrDomainEndpoint: ros.IResolvable | string;
@@ -165,6 +170,11 @@ export class Instance extends ros.Resource implements IInstance {
     protected id: string;
     public readonly props: InstanceProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute DomainEndpoint: The default endpoints of the instance in domain name mode.
@@ -236,6 +246,7 @@ export class Instance extends ros.Resource implements IInstance {
             openConnector: props.openConnector === undefined || props.openConnector === null ? false : props.openConnector,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstance;
+        this.attrArn = rosInstance.attrArn;
         this.attrDomainEndpoint = rosInstance.attrDomainEndpoint;
         this.attrEndpoint = rosInstance.attrEndpoint;
         this.attrInstanceId = rosInstance.attrInstanceId;

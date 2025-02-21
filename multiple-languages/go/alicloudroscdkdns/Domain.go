@@ -14,6 +14,8 @@ import (
 type Domain interface {
 	alicloudroscdkcore.Resource
 	IDomain
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute DnsServers: The DNS list for the domain name under resolution.
 	AttrDnsServers() interface{}
 	// Attribute DomainId: Domain ID.
@@ -119,6 +121,16 @@ type Domain interface {
 type jsiiProxy_Domain struct {
 	internal.Type__alicloudroscdkcoreResource
 	jsiiProxy_IDomain
+}
+
+func (j *jsiiProxy_Domain) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Domain) AttrDnsServers() interface{} {

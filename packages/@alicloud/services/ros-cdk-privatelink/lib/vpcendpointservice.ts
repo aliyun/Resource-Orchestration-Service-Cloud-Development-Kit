@@ -80,6 +80,11 @@ export interface IVpcEndpointService extends ros.IResource {
     readonly props: VpcEndpointServiceProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute MaxBandwidth: The maximum bandwidth of the endpoint connection.
      */
     readonly attrMaxBandwidth: ros.IResolvable | string;
@@ -110,7 +115,7 @@ export interface IVpcEndpointService extends ros.IResource {
     readonly attrServiceName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::PrivateLink::VpcEndpointService`, which is used to create an endpoint service.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PrivateLink::VpcEndpointService`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpcEndpointService`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpointservice
  */
@@ -119,6 +124,11 @@ export class VpcEndpointService extends ros.Resource implements IVpcEndpointServ
     protected id: string;
     public readonly props: VpcEndpointServiceProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute MaxBandwidth: The maximum bandwidth of the endpoint connection.
@@ -176,6 +186,7 @@ export class VpcEndpointService extends ros.Resource implements IVpcEndpointServ
             autoAcceptEnabled: props.autoAcceptEnabled,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosVpcEndpointService;
+        this.attrArn = rosVpcEndpointService.attrArn;
         this.attrMaxBandwidth = rosVpcEndpointService.attrMaxBandwidth;
         this.attrMinBandwidth = rosVpcEndpointService.attrMinBandwidth;
         this.attrServiceDescription = rosVpcEndpointService.attrServiceDescription;

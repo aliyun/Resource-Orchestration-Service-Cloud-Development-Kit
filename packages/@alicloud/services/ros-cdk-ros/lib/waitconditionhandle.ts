@@ -63,7 +63,7 @@ export interface IWaitConditionHandle extends ros.IResource {
     readonly attrWindowsCurlCli: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ROS::WaitConditionHandle`, which is used to receive signals. You can use ALIYUN::ROS::WaitConditionHandle together with ALIYUN::ROS::WaitCondition to manage the execution process of a stack. When you create an Elastic Compute Service (ECS) instance, a signal is sent during the execution of the user data.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ROS::WaitConditionHandle`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosWaitConditionHandle`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-waitconditionhandle
  */

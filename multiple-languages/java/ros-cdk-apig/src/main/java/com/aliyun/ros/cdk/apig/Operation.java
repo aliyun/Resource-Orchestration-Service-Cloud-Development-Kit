@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.apig;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::APIG::Operation</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::APIG::Operation</code>, which is used to create an operation for an HTTP API.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:34.627Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:11.700Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.Operation")
 public class Operation extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.apig.IOperation {
 

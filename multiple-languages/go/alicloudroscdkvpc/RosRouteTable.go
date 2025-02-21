@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::RouteTable`, which is used to create a custom route table.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::RouteTable`.
 type RosRouteTable interface {
 	alicloudroscdkcore.RosResource
 	AttrRouteTableId() alicloudroscdkcore.IResolvable

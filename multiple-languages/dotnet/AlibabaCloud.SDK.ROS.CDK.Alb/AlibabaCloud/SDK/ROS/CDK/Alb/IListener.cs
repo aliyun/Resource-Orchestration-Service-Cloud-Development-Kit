@@ -15,6 +15,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             get;
         }
 
+        /// <summary>Attribute LoadBalancerId: The ID of the ALB instance.</summary>
+        [JsiiProperty(name: "attrLoadBalancerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrLoadBalancerId
+        {
+            get;
+        }
+
         [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-alb.ListenerProps\"}")]
         AlibabaCloud.SDK.ROS.CDK.Alb.IListenerProps Props
         {
@@ -32,6 +39,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// <summary>Attribute ListenerId: The ID of the listener.</summary>
             [JsiiProperty(name: "attrListenerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AttrListenerId
+            {
+                get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Attribute LoadBalancerId: The ID of the ALB instance.</summary>
+            [JsiiProperty(name: "attrLoadBalancerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrLoadBalancerId
             {
                 get => GetInstanceProperty<object>()!;
             }

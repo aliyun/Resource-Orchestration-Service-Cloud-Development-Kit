@@ -10,6 +10,8 @@ import (
 // Represents a `Instance`.
 type IInstance interface {
 	alicloudroscdkcore.IResource
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute DomainEndpoint: The default endpoints of the instance in domain name mode.
 	AttrDomainEndpoint() interface{}
 	// Attribute Endpoint: The SSL endpoints of the instance in IP address mode.
@@ -32,6 +34,16 @@ type IInstance interface {
 // The jsii proxy for IInstance
 type jsiiProxy_IInstance struct {
 	internal.Type__alicloudroscdkcoreIResource
+}
+
+func (j *jsiiProxy_IInstance) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_IInstance) AttrDomainEndpoint() interface{} {

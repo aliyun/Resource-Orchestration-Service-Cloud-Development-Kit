@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.eais.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::EAIS::ClientInstanceAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:37.507Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:14.583Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eais.$Module.class, fqn = "@alicloud/ros-cdk-eais.datasource.ClientInstanceAttachment")
 public class ClientInstanceAttachment extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.eais.datasource.IClientInstanceAttachment {
 

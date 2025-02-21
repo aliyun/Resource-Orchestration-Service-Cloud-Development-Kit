@@ -12,6 +12,7 @@ import (
 // This class is a base encapsulation around the ROS resource type `ALIYUN::ElasticSearch::Instance`.
 type RosInstance interface {
 	alicloudroscdkcore.RosResource
+	AttrArn() alicloudroscdkcore.IResolvable
 	AttrDomain() alicloudroscdkcore.IResolvable
 	AttrInstanceChargeType() alicloudroscdkcore.IResolvable
 	AttrInstanceId() alicloudroscdkcore.IResolvable
@@ -220,6 +221,16 @@ type RosInstance interface {
 // The jsii proxy struct for RosInstance
 type jsiiProxy_RosInstance struct {
 	internal.Type__alicloudroscdkcoreRosResource
+}
+
+func (j *jsiiProxy_RosInstance) AttrArn() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_RosInstance) AttrDomain() alicloudroscdkcore.IResolvable {

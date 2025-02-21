@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::RDS::Accounts`, which is used to query the information about database accounts of an ApsaraDB RDS instance.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::RDS::Accounts`.
 type Accounts interface {
 	alicloudroscdkcore.Resource
 	IAccounts

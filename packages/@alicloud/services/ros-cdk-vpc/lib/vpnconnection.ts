@@ -131,7 +131,7 @@ export interface IVpnConnection extends ros.IResource {
     readonly attrVpnConnectionId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpnConnection`, which is used to create an IPsec-VPN connection.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpnConnection`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpnConnection`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnconnection
  */

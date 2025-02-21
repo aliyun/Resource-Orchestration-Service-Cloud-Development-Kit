@@ -10,6 +10,8 @@ import (
 // Represents a `Listener`.
 type IListener interface {
 	alicloudroscdkcore.IResource
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute ListenerPortsAndProtocol: The collection of listener.
 	AttrListenerPortsAndProtocol() interface{}
 	// Attribute LoadBalancerId: The id of load balancer.
@@ -20,6 +22,16 @@ type IListener interface {
 // The jsii proxy for IListener
 type jsiiProxy_IListener struct {
 	internal.Type__alicloudroscdkcoreIResource
+}
+
+func (j *jsiiProxy_IListener) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_IListener) AttrListenerPortsAndProtocol() interface{} {

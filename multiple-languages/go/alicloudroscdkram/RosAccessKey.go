@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AccessKey`, which is used to obtain the AccessKey pair (AccessKey ID and AccessKey secret) of a specified user and its status.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AccessKey`.
 type RosAccessKey interface {
 	alicloudroscdkcore.RosResource
 	AttrAccessKeyId() alicloudroscdkcore.IResolvable

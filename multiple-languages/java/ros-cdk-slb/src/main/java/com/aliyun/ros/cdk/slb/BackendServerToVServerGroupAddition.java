@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.slb;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::SLB::BackendServerToVServerGroupAddition</code>, which is used to add backend servers to an existing server group.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::SLB::BackendServerToVServerGroupAddition</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:44.218Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:20.607Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.BackendServerToVServerGroupAddition")
 public class BackendServerToVServerGroupAddition extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.slb.IBackendServerToVServerGroupAddition {
 

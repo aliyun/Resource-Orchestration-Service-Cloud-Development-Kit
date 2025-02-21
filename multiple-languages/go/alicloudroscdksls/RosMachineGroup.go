@@ -9,9 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::MachineGroup`, which is used to create a machine group.
-//
-// Log Service manages all the ECS instances whose logs need to be collected using the Logtail client in the form of machine groups.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::MachineGroup`.
 type RosMachineGroup interface {
 	alicloudroscdkcore.RosResource
 	AttrGroupName() alicloudroscdkcore.IResolvable

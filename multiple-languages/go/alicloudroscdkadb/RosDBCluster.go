@@ -12,6 +12,7 @@ import (
 // This class is a base encapsulation around the ROS resource type `ALIYUN::ADB::DBCluster`, which is used to create an AnalyticDB for MySQL cluster.
 type RosDBCluster interface {
 	alicloudroscdkcore.RosResource
+	AttrArn() alicloudroscdkcore.IResolvable
 	AttrConnectionString() alicloudroscdkcore.IResolvable
 	AttrDbClusterId() alicloudroscdkcore.IResolvable
 	AttrOrderId() alicloudroscdkcore.IResolvable
@@ -205,6 +206,16 @@ type RosDBCluster interface {
 // The jsii proxy struct for RosDBCluster
 type jsiiProxy_RosDBCluster struct {
 	internal.Type__alicloudroscdkcoreRosResource
+}
+
+func (j *jsiiProxy_RosDBCluster) AttrArn() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_RosDBCluster) AttrConnectionString() alicloudroscdkcore.IResolvable {

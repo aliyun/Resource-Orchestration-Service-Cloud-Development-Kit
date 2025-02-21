@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.alb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-listener
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:33.981Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:11.317Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.ListenerProps")
 @software.amazon.jsii.Jsii.Proxy(ListenerProps.Jsii$Proxy.class)
 public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
@@ -73,7 +73,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
      * Default value: on.
      * Valid values: true and false.
      * Default value: true.
-     * Note Only HTTPS listeners support this parameter.
+     * Note: Only HTTPS listeners support this parameter.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getHttp2Enabled() {
         return null;
@@ -82,10 +82,9 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property idleTimeout: The timeout period of idle connections.
      * <p>
-     * Valid values: 1 to 180. Unit: seconds.
+     * Valid values: 1 to 3600. Unit: seconds.
      * Default value: 15.
-     * If no request is received within the specified timeout period, ALB closes the connection.
-     * ALB recreates the connection when a new connection request is received.
+     * If no requests are received within the specified timeout period, ALB closes the current connection. When a new request is received, ALB establishes a new connection.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getIdleTimeout() {
         return null;
@@ -108,6 +107,13 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property logConfig: The configuration information about the access log.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLogConfig() {
+        return null;
+    }
+
+    /**
      * Property quicConfig: Select a QUIC listener and associate it with the ALB instance.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getQuicConfig() {
@@ -117,7 +123,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property requestTimeout: The timeout period of the request.
      * <p>
-     * Valid values: 1 to 180. Unit: seconds.
+     * Valid values: 1 to 900. Unit: seconds.
      * Default value: 60.
      * If no response is received from the backend server during the request timeout period,
      * ALB sends an HTTP 504 error code to the client.
@@ -132,7 +138,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
      * System security policies and custom security policies
      * are supported.
      * Default value: tls_cipher_policy_1_0. This value indicates a system security policy.
-     * Note Only HTTPS listeners support this parameter.
+     * Note: Only HTTPS listeners support this parameter.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityPolicyId() {
         return null;
@@ -167,6 +173,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object idleTimeout;
         java.lang.Object listenerDescription;
         java.lang.Object listenerStatus;
+        java.lang.Object logConfig;
         java.lang.Object quicConfig;
         java.lang.Object requestTimeout;
         java.lang.Object securityPolicyId;
@@ -348,7 +355,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
          *                     Default value: on.
          *                     Valid values: true and false.
          *                     Default value: true.
-         *                     Note Only HTTPS listeners support this parameter.
+         *                     Note: Only HTTPS listeners support this parameter.
          * @return {@code this}
          */
         public Builder http2Enabled(java.lang.Boolean http2Enabled) {
@@ -362,7 +369,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
          *                     Default value: on.
          *                     Valid values: true and false.
          *                     Default value: true.
-         *                     Note Only HTTPS listeners support this parameter.
+         *                     Note: Only HTTPS listeners support this parameter.
          * @return {@code this}
          */
         public Builder http2Enabled(com.aliyun.ros.cdk.core.IResolvable http2Enabled) {
@@ -373,10 +380,9 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link ListenerProps#getIdleTimeout}
          * @param idleTimeout Property idleTimeout: The timeout period of idle connections.
-         *                    Valid values: 1 to 180. Unit: seconds.
+         *                    Valid values: 1 to 3600. Unit: seconds.
          *                    Default value: 15.
-         *                    If no request is received within the specified timeout period, ALB closes the connection.
-         *                    ALB recreates the connection when a new connection request is received.
+         *                    If no requests are received within the specified timeout period, ALB closes the current connection. When a new request is received, ALB establishes a new connection.
          * @return {@code this}
          */
         public Builder idleTimeout(java.lang.Number idleTimeout) {
@@ -387,10 +393,9 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link ListenerProps#getIdleTimeout}
          * @param idleTimeout Property idleTimeout: The timeout period of idle connections.
-         *                    Valid values: 1 to 180. Unit: seconds.
+         *                    Valid values: 1 to 3600. Unit: seconds.
          *                    Default value: 15.
-         *                    If no request is received within the specified timeout period, ALB closes the connection.
-         *                    ALB recreates the connection when a new connection request is received.
+         *                    If no requests are received within the specified timeout period, ALB closes the current connection. When a new request is received, ALB establishes a new connection.
          * @return {@code this}
          */
         public Builder idleTimeout(com.aliyun.ros.cdk.core.IResolvable idleTimeout) {
@@ -441,6 +446,26 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ListenerProps#getLogConfig}
+         * @param logConfig Property logConfig: The configuration information about the access log.
+         * @return {@code this}
+         */
+        public Builder logConfig(com.aliyun.ros.cdk.core.IResolvable logConfig) {
+            this.logConfig = logConfig;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ListenerProps#getLogConfig}
+         * @param logConfig Property logConfig: The configuration information about the access log.
+         * @return {@code this}
+         */
+        public Builder logConfig(com.aliyun.ros.cdk.alb.RosListener.LogConfigProperty logConfig) {
+            this.logConfig = logConfig;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ListenerProps#getQuicConfig}
          * @param quicConfig Property quicConfig: Select a QUIC listener and associate it with the ALB instance.
          * @return {@code this}
@@ -463,7 +488,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link ListenerProps#getRequestTimeout}
          * @param requestTimeout Property requestTimeout: The timeout period of the request.
-         *                       Valid values: 1 to 180. Unit: seconds.
+         *                       Valid values: 1 to 900. Unit: seconds.
          *                       Default value: 60.
          *                       If no response is received from the backend server during the request timeout period,
          *                       ALB sends an HTTP 504 error code to the client.
@@ -477,7 +502,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link ListenerProps#getRequestTimeout}
          * @param requestTimeout Property requestTimeout: The timeout period of the request.
-         *                       Valid values: 1 to 180. Unit: seconds.
+         *                       Valid values: 1 to 900. Unit: seconds.
          *                       Default value: 60.
          *                       If no response is received from the backend server during the request timeout period,
          *                       ALB sends an HTTP 504 error code to the client.
@@ -494,7 +519,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
          *                         System security policies and custom security policies
          *                         are supported.
          *                         Default value: tls_cipher_policy_1_0. This value indicates a system security policy.
-         *                         Note Only HTTPS listeners support this parameter.
+         *                         Note: Only HTTPS listeners support this parameter.
          * @return {@code this}
          */
         public Builder securityPolicyId(java.lang.String securityPolicyId) {
@@ -508,7 +533,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
          *                         System security policies and custom security policies
          *                         are supported.
          *                         Default value: tls_cipher_policy_1_0. This value indicates a system security policy.
-         *                         Note Only HTTPS listeners support this parameter.
+         *                         Note: Only HTTPS listeners support this parameter.
          * @return {@code this}
          */
         public Builder securityPolicyId(com.aliyun.ros.cdk.core.IResolvable securityPolicyId) {
@@ -564,6 +589,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object idleTimeout;
         private final java.lang.Object listenerDescription;
         private final java.lang.Object listenerStatus;
+        private final java.lang.Object logConfig;
         private final java.lang.Object quicConfig;
         private final java.lang.Object requestTimeout;
         private final java.lang.Object securityPolicyId;
@@ -587,6 +613,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             this.idleTimeout = software.amazon.jsii.Kernel.get(this, "idleTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.listenerDescription = software.amazon.jsii.Kernel.get(this, "listenerDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.listenerStatus = software.amazon.jsii.Kernel.get(this, "listenerStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.logConfig = software.amazon.jsii.Kernel.get(this, "logConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.quicConfig = software.amazon.jsii.Kernel.get(this, "quicConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.requestTimeout = software.amazon.jsii.Kernel.get(this, "requestTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityPolicyId = software.amazon.jsii.Kernel.get(this, "securityPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -610,6 +637,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             this.idleTimeout = builder.idleTimeout;
             this.listenerDescription = builder.listenerDescription;
             this.listenerStatus = builder.listenerStatus;
+            this.logConfig = builder.logConfig;
             this.quicConfig = builder.quicConfig;
             this.requestTimeout = builder.requestTimeout;
             this.securityPolicyId = builder.securityPolicyId;
@@ -677,6 +705,11 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getLogConfig() {
+            return this.logConfig;
+        }
+
+        @Override
         public final java.lang.Object getQuicConfig() {
             return this.quicConfig;
         }
@@ -730,6 +763,9 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getListenerStatus() != null) {
                 data.set("listenerStatus", om.valueToTree(this.getListenerStatus()));
             }
+            if (this.getLogConfig() != null) {
+                data.set("logConfig", om.valueToTree(this.getLogConfig()));
+            }
             if (this.getQuicConfig() != null) {
                 data.set("quicConfig", om.valueToTree(this.getQuicConfig()));
             }
@@ -772,6 +808,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             if (this.idleTimeout != null ? !this.idleTimeout.equals(that.idleTimeout) : that.idleTimeout != null) return false;
             if (this.listenerDescription != null ? !this.listenerDescription.equals(that.listenerDescription) : that.listenerDescription != null) return false;
             if (this.listenerStatus != null ? !this.listenerStatus.equals(that.listenerStatus) : that.listenerStatus != null) return false;
+            if (this.logConfig != null ? !this.logConfig.equals(that.logConfig) : that.logConfig != null) return false;
             if (this.quicConfig != null ? !this.quicConfig.equals(that.quicConfig) : that.quicConfig != null) return false;
             if (this.requestTimeout != null ? !this.requestTimeout.equals(that.requestTimeout) : that.requestTimeout != null) return false;
             if (this.securityPolicyId != null ? !this.securityPolicyId.equals(that.securityPolicyId) : that.securityPolicyId != null) return false;
@@ -792,6 +829,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.idleTimeout != null ? this.idleTimeout.hashCode() : 0);
             result = 31 * result + (this.listenerDescription != null ? this.listenerDescription.hashCode() : 0);
             result = 31 * result + (this.listenerStatus != null ? this.listenerStatus.hashCode() : 0);
+            result = 31 * result + (this.logConfig != null ? this.logConfig.hashCode() : 0);
             result = 31 * result + (this.quicConfig != null ? this.quicConfig.hashCode() : 0);
             result = 31 * result + (this.requestTimeout != null ? this.requestTimeout.hashCode() : 0);
             result = 31 * result + (this.securityPolicyId != null ? this.securityPolicyId.hashCode() : 0);

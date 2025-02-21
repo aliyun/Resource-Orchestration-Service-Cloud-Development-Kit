@@ -72,6 +72,11 @@ export interface ISnapshot extends ros.IResource {
     readonly props: SnapshotProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute SnapshotId: The snapshot ID.
      */
     readonly attrSnapshotId: ros.IResolvable | string;
@@ -86,6 +91,11 @@ export class Snapshot extends ros.Resource implements ISnapshot {
     protected id: string;
     public readonly props: SnapshotProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute SnapshotId: The snapshot ID.
@@ -116,6 +126,7 @@ export class Snapshot extends ros.Resource implements ISnapshot {
             diskId: props.diskId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosSnapshot;
+        this.attrArn = rosSnapshot.attrArn;
         this.attrSnapshotId = rosSnapshot.attrSnapshotId;
     }
 }

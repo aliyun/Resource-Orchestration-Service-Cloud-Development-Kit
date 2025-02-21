@@ -152,7 +152,7 @@ export interface IFunction extends ros.IResource {
     readonly attrFunctionName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::FC3::Function`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::FC3::Function`, which is used to create a Function Compute 3.0 function.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFunction`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-function
  */

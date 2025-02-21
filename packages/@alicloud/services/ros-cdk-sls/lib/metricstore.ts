@@ -57,7 +57,7 @@ export interface IMetricStore extends ros.IResource {
     readonly attrLogstoreName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::MetricStore`, which is used to create a Logstore.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::MetricStore`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMetricStore`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-metricstore
  */

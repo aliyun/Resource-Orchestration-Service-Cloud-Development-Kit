@@ -2,10 +2,13 @@
 @alicloud/ros-cdk-pai.CodeSourceProps=com.aliyun.ros.cdk.pai.CodeSourceProps
 @alicloud/ros-cdk-pai.Dataset=com.aliyun.ros.cdk.pai.Dataset
 @alicloud/ros-cdk-pai.DatasetProps=com.aliyun.ros.cdk.pai.DatasetProps
+@alicloud/ros-cdk-pai.DatasetVersion=com.aliyun.ros.cdk.pai.DatasetVersion
+@alicloud/ros-cdk-pai.DatasetVersionProps=com.aliyun.ros.cdk.pai.DatasetVersionProps
 @alicloud/ros-cdk-pai.Experiment=com.aliyun.ros.cdk.pai.Experiment
 @alicloud/ros-cdk-pai.ExperimentProps=com.aliyun.ros.cdk.pai.ExperimentProps
 @alicloud/ros-cdk-pai.ICodeSource=com.aliyun.ros.cdk.pai.ICodeSource
 @alicloud/ros-cdk-pai.IDataset=com.aliyun.ros.cdk.pai.IDataset
+@alicloud/ros-cdk-pai.IDatasetVersion=com.aliyun.ros.cdk.pai.IDatasetVersion
 @alicloud/ros-cdk-pai.IExperiment=com.aliyun.ros.cdk.pai.IExperiment
 @alicloud/ros-cdk-pai.IRun=com.aliyun.ros.cdk.pai.IRun
 @alicloud/ros-cdk-pai.IService=com.aliyun.ros.cdk.pai.IService
@@ -17,6 +20,9 @@
 @alicloud/ros-cdk-pai.RosCodeSourceProps=com.aliyun.ros.cdk.pai.RosCodeSourceProps
 @alicloud/ros-cdk-pai.RosDataset=com.aliyun.ros.cdk.pai.RosDataset
 @alicloud/ros-cdk-pai.RosDatasetProps=com.aliyun.ros.cdk.pai.RosDatasetProps
+@alicloud/ros-cdk-pai.RosDatasetVersion=com.aliyun.ros.cdk.pai.RosDatasetVersion
+@alicloud/ros-cdk-pai.RosDatasetVersion.LabelsProperty=com.aliyun.ros.cdk.pai.RosDatasetVersion$LabelsProperty
+@alicloud/ros-cdk-pai.RosDatasetVersionProps=com.aliyun.ros.cdk.pai.RosDatasetVersionProps
 @alicloud/ros-cdk-pai.RosExperiment=com.aliyun.ros.cdk.pai.RosExperiment
 @alicloud/ros-cdk-pai.RosExperimentProps=com.aliyun.ros.cdk.pai.RosExperimentProps
 @alicloud/ros-cdk-pai.RosRun=com.aliyun.ros.cdk.pai.RosRun

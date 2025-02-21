@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::TSDB::HiTSDBInstance`, which is used to create a Time Series Database (TSDB) instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::TSDB::HiTSDBInstance`.
 type HiTSDBInstance interface {
 	alicloudroscdkcore.Resource
 	IHiTSDBInstance

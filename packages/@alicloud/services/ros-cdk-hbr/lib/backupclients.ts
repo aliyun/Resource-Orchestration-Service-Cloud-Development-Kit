@@ -27,6 +27,11 @@ export interface IBackupClients extends ros.IResource {
     readonly props: BackupClientsProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute ClientIds: ID list of clients installed in instances
      */
     readonly attrClientIds: ros.IResolvable | string;
@@ -46,6 +51,11 @@ export class BackupClients extends ros.Resource implements IBackupClients {
     protected id: string;
     public readonly props: BackupClientsProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute ClientIds: ID list of clients installed in instances
@@ -74,6 +84,7 @@ export class BackupClients extends ros.Resource implements IBackupClients {
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosBackupClients;
+        this.attrArn = rosBackupClients.attrArn;
         this.attrClientIds = rosBackupClients.attrClientIds;
         this.attrInstanceIds = rosBackupClients.attrInstanceIds;
     }

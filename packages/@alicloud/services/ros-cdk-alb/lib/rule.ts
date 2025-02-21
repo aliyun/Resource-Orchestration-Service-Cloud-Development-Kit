@@ -52,6 +52,11 @@ export interface IRule extends ros.IResource {
     readonly props: RuleProps;
 
     /**
+     * Attribute ListenerId: The ID of the listener.
+     */
+    readonly attrListenerId: ros.IResolvable | string;
+
+    /**
      * Attribute RuleId: The ID of the forwarding rules.
      */
     readonly attrRuleId: ros.IResolvable | string;
@@ -66,6 +71,11 @@ export class Rule extends ros.Resource implements IRule {
     protected id: string;
     public readonly props: RuleProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute ListenerId: The ID of the listener.
+     */
+    public readonly attrListenerId: ros.IResolvable | string;
 
     /**
      * Attribute RuleId: The ID of the forwarding rules.
@@ -93,6 +103,7 @@ export class Rule extends ros.Resource implements IRule {
             listenerId: props.listenerId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosRule;
+        this.attrListenerId = rosRule.attrListenerId;
         this.attrRuleId = rosRule.attrRuleId;
     }
 }

@@ -668,6 +668,30 @@ func (j *jsiiProxy_RosListener) validateSetLoadBalancerIdParameters(val interfac
 	return nil
 }
 
+func (j *jsiiProxy_RosListener) validateSetLogConfigParameters(val interface{}) error {
+	switch val.(type) {
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	case *RosListener_LogConfigProperty:
+		val := val.(*RosListener_LogConfigProperty)
+		if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
+			return err
+		}
+	case RosListener_LogConfigProperty:
+		val_ := val.(RosListener_LogConfigProperty)
+		val := &val_
+		if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
+			return err
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosListener_LogConfigProperty; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosListener) validateSetQuicConfigParameters(val interface{}) error {
 	switch val.(type) {
 	case alicloudroscdkcore.IResolvable:

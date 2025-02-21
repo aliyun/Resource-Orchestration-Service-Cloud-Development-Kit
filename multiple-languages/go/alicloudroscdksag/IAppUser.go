@@ -12,7 +12,7 @@ type IAppUser interface {
 	alicloudroscdkcore.IResource
 	// Attribute SmartAGId: The ID of the SAG APP instance.
 	AttrSmartAgId() interface{}
-	// Attribute UserName: <heat.engine.properties.Schema object at 0x7f1d75314810>.
+	// Attribute UserName: <heat.engine.properties.Schema object at 0x7fa3e6637c50>.
 	AttrUserName() interface{}
 	Props() *AppUserProps
 }

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::ThreatDetection::Instances`, which is used to query the basic information about instances in Security Center.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::ThreatDetection::Instances`.
 type Instances interface {
 	alicloudroscdkcore.Resource
 	IInstances

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::RDS::Connection`, which is used to apply for a public endpoint.
+// This class encapsulates and extends the ROS resource type `ALIYUN::RDS::Connection`.
 type Connection interface {
 	alicloudroscdkcore.Resource
 	IConnection

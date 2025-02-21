@@ -12,6 +12,7 @@ import (
 // This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::Topic`, which is used to create a topic.
 type RosTopic interface {
 	alicloudroscdkcore.RosResource
+	AttrArn() alicloudroscdkcore.IResolvable
 	AttrInstanceId() alicloudroscdkcore.IResolvable
 	AttrTopic() alicloudroscdkcore.IResolvable
 	CompactTopic() interface{}
@@ -188,6 +189,16 @@ type RosTopic interface {
 // The jsii proxy struct for RosTopic
 type jsiiProxy_RosTopic struct {
 	internal.Type__alicloudroscdkcoreRosResource
+}
+
+func (j *jsiiProxy_RosTopic) AttrArn() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_RosTopic) AttrInstanceId() alicloudroscdkcore.IResolvable {

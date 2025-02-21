@@ -9,9 +9,10 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::Ipv6Gateway`, which is used to create an IPv6 gateway.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::Ipv6Gateway`.
 type RosIpv6Gateway interface {
 	alicloudroscdkcore.RosResource
+	AttrArn() alicloudroscdkcore.IResolvable
 	AttrIpv6GatewayId() alicloudroscdkcore.IResolvable
 	// Returns: the stack trace of the point where this Resource was created from, sourced
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
@@ -177,6 +178,16 @@ type RosIpv6Gateway interface {
 // The jsii proxy struct for RosIpv6Gateway
 type jsiiProxy_RosIpv6Gateway struct {
 	internal.Type__alicloudroscdkcoreRosResource
+}
+
+func (j *jsiiProxy_RosIpv6Gateway) AttrArn() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_RosIpv6Gateway) AttrIpv6GatewayId() alicloudroscdkcore.IResolvable {

@@ -10,6 +10,8 @@ import (
 // Represents a `Instance`.
 type IInstance interface {
 	alicloudroscdkcore.IResource
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute EgressIpv6Enable: Whether enable egress IPV6.
 	AttrEgressIpv6Enable() interface{}
 	// Attribute InstanceId: Instance ID.
@@ -32,6 +34,16 @@ type IInstance interface {
 // The jsii proxy for IInstance
 type jsiiProxy_IInstance struct {
 	internal.Type__alicloudroscdkcoreIResource
+}
+
+func (j *jsiiProxy_IInstance) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_IInstance) AttrEgressIpv6Enable() interface{} {

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SAS::Instance`, which is used to purchase Security Center.
+// This class encapsulates and extends the ROS resource type `ALIYUN::SAS::Instance`.
 type Instance interface {
 	alicloudroscdkcore.Resource
 	IInstance

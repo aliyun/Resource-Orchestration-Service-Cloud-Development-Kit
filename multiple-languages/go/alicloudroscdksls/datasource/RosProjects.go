@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::SLS::Projects`, which is used to query the information about Simple Log Service (SLS) projects.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::SLS::Projects`.
 type RosProjects interface {
 	alicloudroscdkcore.RosResource
 	AttrProjectNames() alicloudroscdkcore.IResolvable

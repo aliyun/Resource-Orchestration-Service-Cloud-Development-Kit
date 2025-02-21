@@ -48,6 +48,7 @@ type RosDBClusterProps struct {
 	SecurityIpList interface{} `field:"optional" json:"securityIpList" yaml:"securityIpList"`
 	ServerlessType interface{} `field:"optional" json:"serverlessType" yaml:"serverlessType"`
 	SourceResourceId interface{} `field:"optional" json:"sourceResourceId" yaml:"sourceResourceId"`
+	SslEnabled interface{} `field:"optional" json:"sslEnabled" yaml:"sslEnabled"`
 	StandbyAz interface{} `field:"optional" json:"standbyAz" yaml:"standbyAz"`
 	StorageAutoScale interface{} `field:"optional" json:"storageAutoScale" yaml:"storageAutoScale"`
 	StoragePayType interface{} `field:"optional" json:"storagePayType" yaml:"storagePayType"`

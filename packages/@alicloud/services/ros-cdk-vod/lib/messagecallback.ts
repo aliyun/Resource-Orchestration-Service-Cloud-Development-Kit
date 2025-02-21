@@ -109,7 +109,7 @@ export interface IMessageCallback extends ros.IResource {
     readonly attrMnsQueueName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VOD::MessageCallback`, which is used to configure the callback method, callback URL, and event types for an event notification.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VOD::MessageCallback`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMessageCallback`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vod-messagecallback
  */

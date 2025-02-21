@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * Represents a <code>Listener</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:33.971Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:11.286Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.IListener")
 @software.amazon.jsii.Jsii.Proxy(IListener.Jsii$Proxy.class)
 public interface IListener extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
@@ -12,6 +12,11 @@ public interface IListener extends software.amazon.jsii.JsiiSerializable, com.al
      * Attribute ListenerId: The ID of the listener.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrListenerId();
+
+    /**
+     * Attribute LoadBalancerId: The ID of the ALB instance.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrLoadBalancerId();
 
     @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.alb.ListenerProps getProps();
 
@@ -63,6 +68,14 @@ public interface IListener extends software.amazon.jsii.JsiiSerializable, com.al
             return software.amazon.jsii.Kernel.get(this, "attrListenerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
+        /**
+         * Attribute LoadBalancerId: The ID of the ALB instance.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrLoadBalancerId() {
+            return software.amazon.jsii.Kernel.get(this, "attrLoadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
         @Override
         public final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.alb.ListenerProps getProps() {
             return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.alb.ListenerProps.class));
@@ -112,6 +125,14 @@ public interface IListener extends software.amazon.jsii.JsiiSerializable, com.al
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrListenerId() {
             return software.amazon.jsii.Kernel.get(this, "attrListenerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute LoadBalancerId: The ID of the ALB instance.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrLoadBalancerId() {
+            return software.amazon.jsii.Kernel.get(this, "attrLoadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         @Override

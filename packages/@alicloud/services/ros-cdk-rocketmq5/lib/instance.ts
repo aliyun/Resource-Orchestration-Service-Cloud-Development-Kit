@@ -104,7 +104,7 @@ export interface IInstance extends ros.IResource {
     readonly attrVpcEndpoint: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ROCKETMQ5::Instance`, which is used to create an ApsaraMQ for RocketMQ 5.0 instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ROCKETMQ5::Instance`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-instance
  */

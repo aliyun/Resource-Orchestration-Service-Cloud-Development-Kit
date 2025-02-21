@@ -108,6 +108,11 @@ export interface IVpnGateway extends ros.IResource {
     readonly props: VpnGatewayProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute DisasterRecoveryInternetIp: The second IP address assigned by the system to create an IPsec-VPN connection.This attribute is returned only when the VPN gateway supports the dual-tunnel mode.
      */
     readonly attrDisasterRecoveryInternetIp: ros.IResolvable | string;
@@ -163,7 +168,7 @@ export interface IVpnGateway extends ros.IResource {
     readonly attrVpnType: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpnGateway`, which is used to create a VPN gateway.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpnGateway`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpnGateway`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpngateway
  */
@@ -172,6 +177,11 @@ export class VpnGateway extends ros.Resource implements IVpnGateway {
     protected id: string;
     public readonly props: VpnGatewayProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute DisasterRecoveryInternetIp: The second IP address assigned by the system to create an IPsec-VPN connection.This attribute is returned only when the VPN gateway supports the dual-tunnel mode.
@@ -258,6 +268,7 @@ export class VpnGateway extends ros.Resource implements IVpnGateway {
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosVpnGateway;
+        this.attrArn = rosVpnGateway.attrArn;
         this.attrDisasterRecoveryInternetIp = rosVpnGateway.attrDisasterRecoveryInternetIp;
         this.attrDisasterRecoveryVSwitchId = rosVpnGateway.attrDisasterRecoveryVSwitchId;
         this.attrInternetIp = rosVpnGateway.attrInternetIp;

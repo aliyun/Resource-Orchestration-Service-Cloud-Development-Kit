@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::LogtailConfig`, which is used to configure Logtail properties for data collection.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::LogtailConfig`.
 type RosLogtailConfig interface {
 	alicloudroscdkcore.RosResource
 	AttrAppliedMachineGroups() alicloudroscdkcore.IResolvable

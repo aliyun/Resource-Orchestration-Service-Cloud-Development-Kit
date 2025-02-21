@@ -172,7 +172,7 @@ export interface IDomain extends ros.IResource {
     readonly attrVersion: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::WAF::Domain`, which is used to add a domain to Web Application Firewall (WAF).
+ * This class encapsulates and extends the ROS resource type `ALIYUN::WAF::Domain`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomain`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-domain
  */

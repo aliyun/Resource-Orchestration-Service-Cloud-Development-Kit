@@ -1,11 +1,9 @@
 package com.aliyun.ros.cdk.sag;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::SAG::CloudConnectNetwork</code>, which is used to create a Cloud Connect Network (CCN) instance.
- * <p>
- * CNN is a device access matrix composed of Alibaba Cloud distributed Smart Access Gateways (SAGs). You can add multiple SAGs to a CCN instance and then attach the CCN instance to a Cloud Enterprise Network (CEN) instance. In this way, you can connect your local branches to Alibaba Cloud.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::SAG::CloudConnectNetwork</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:44.061Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:20.399Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.CloudConnectNetwork")
 public class CloudConnectNetwork extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.sag.ICloudConnectNetwork {
 
@@ -51,6 +49,14 @@ public class CloudConnectNetwork extends com.aliyun.ros.cdk.core.Resource implem
     public CloudConnectNetwork(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
         software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required") });
+    }
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrArn() {
+        return software.amazon.jsii.Kernel.get(this, "attrArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**

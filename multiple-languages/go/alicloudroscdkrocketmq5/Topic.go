@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ROCKETMQ5::Topic`, which is used to create a topic for a Message Queue for Apache RocketMQ V5.0 instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ROCKETMQ5::Topic`.
 type Topic interface {
 	alicloudroscdkcore.Resource
 	ITopic

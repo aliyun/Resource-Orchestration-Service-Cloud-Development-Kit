@@ -67,6 +67,7 @@ func init() {
 		"@alicloud/ros-cdk-pvtz.IZone",
 		reflect.TypeOf((*IZone)(nil)).Elem(),
 		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "attrArn", GoGetter: "AttrArn"},
 			_jsii_.MemberProperty{JsiiProperty: "attrZoneId", GoGetter: "AttrZoneId"},
 			_jsii_.MemberProperty{JsiiProperty: "attrZoneName", GoGetter: "AttrZoneName"},
 			_jsii_.MemberProperty{JsiiProperty: "attrZoneTag", GoGetter: "AttrZoneTag"},
@@ -313,6 +314,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "addPropertyOverride", GoMethod: "AddPropertyOverride"},
 			_jsii_.MemberMethod{JsiiMethod: "addRosDependency", GoMethod: "AddRosDependency"},
 			_jsii_.MemberMethod{JsiiMethod: "applyRemovalPolicy", GoMethod: "ApplyRemovalPolicy"},
+			_jsii_.MemberProperty{JsiiProperty: "attrArn", GoGetter: "AttrArn"},
 			_jsii_.MemberProperty{JsiiProperty: "attrZoneId", GoGetter: "AttrZoneId"},
 			_jsii_.MemberProperty{JsiiProperty: "attrZoneName", GoGetter: "AttrZoneName"},
 			_jsii_.MemberProperty{JsiiProperty: "attrZoneTag", GoGetter: "AttrZoneTag"},
@@ -632,6 +634,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "addDependency", GoMethod: "AddDependency"},
 			_jsii_.MemberMethod{JsiiMethod: "addResourceDesc", GoMethod: "AddResourceDesc"},
 			_jsii_.MemberMethod{JsiiMethod: "applyRemovalPolicy", GoMethod: "ApplyRemovalPolicy"},
+			_jsii_.MemberProperty{JsiiProperty: "attrArn", GoGetter: "AttrArn"},
 			_jsii_.MemberProperty{JsiiProperty: "attrZoneId", GoGetter: "AttrZoneId"},
 			_jsii_.MemberProperty{JsiiProperty: "attrZoneName", GoGetter: "AttrZoneName"},
 			_jsii_.MemberProperty{JsiiProperty: "attrZoneTag", GoGetter: "AttrZoneTag"},

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.bss;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bss-resourcepackage
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:35.204Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:12.330Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.bss.$Module.class, fqn = "@alicloud/ros-cdk-bss.ResourcePackageProps")
 @software.amazon.jsii.Jsii.Proxy(ResourcePackageProps.Jsii$Proxy.class)
 public interface ResourcePackageProps extends software.amazon.jsii.JsiiSerializable {
@@ -39,6 +39,39 @@ public interface ResourcePackageProps extends software.amazon.jsii.JsiiSerializa
     @org.jetbrains.annotations.NotNull java.lang.Object getSpecification();
 
     /**
+     * Property autoRenew: Whether to automatically renew the resource package.
+     * <p>
+     * The value is true or false. Default value: false.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenew() {
+        return null;
+    }
+
+    /**
+     * Property autoRenewPeriod: Duration of resource packs renewals.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>When AutoRenewPeriodUnit is Year: 1, 2, 3.</li>
+     * <li>When AutoRenewPeriodUnit is Month: 1, 2, 3, 6.
+     * Default is 1.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenewPeriod() {
+        return null;
+    }
+
+    /**
+     * Property autoRenewPeriodUnit: Unit of resource pack renewals.
+     * <p>
+     * Valid values: Month, Year. Default is Month.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenewPeriodUnit() {
+        return null;
+    }
+
+    /**
      * Property effectiveDate: The effective date of the specified resource package.
      * <p>
      * The resource package will take effect immediately if the effective date is unspecified. The date format follows the ISO8601 standard and uses UTC time. Format: yyyy-MM-ddTHH:mm:ssZ
@@ -70,6 +103,9 @@ public interface ResourcePackageProps extends software.amazon.jsii.JsiiSerializa
         java.lang.Object packageType;
         java.lang.Object productCode;
         java.lang.Object specification;
+        java.lang.Object autoRenew;
+        java.lang.Object autoRenewPeriod;
+        java.lang.Object autoRenewPeriodUnit;
         java.lang.Object effectiveDate;
         java.lang.Object pricingCycle;
 
@@ -162,6 +198,84 @@ public interface ResourcePackageProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link ResourcePackageProps#getAutoRenew}
+         * @param autoRenew Property autoRenew: Whether to automatically renew the resource package.
+         *                  The value is true or false. Default value: false.
+         * @return {@code this}
+         */
+        public Builder autoRenew(java.lang.Boolean autoRenew) {
+            this.autoRenew = autoRenew;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ResourcePackageProps#getAutoRenew}
+         * @param autoRenew Property autoRenew: Whether to automatically renew the resource package.
+         *                  The value is true or false. Default value: false.
+         * @return {@code this}
+         */
+        public Builder autoRenew(com.aliyun.ros.cdk.core.IResolvable autoRenew) {
+            this.autoRenew = autoRenew;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ResourcePackageProps#getAutoRenewPeriod}
+         * @param autoRenewPeriod Property autoRenewPeriod: Duration of resource packs renewals.
+         *                        Valid values:
+         *                        <p>
+         *                        <ul>
+         *                        <li>When AutoRenewPeriodUnit is Year: 1, 2, 3.</li>
+         *                        <li>When AutoRenewPeriodUnit is Month: 1, 2, 3, 6.
+         *                        Default is 1.</li>
+         *                        </ul>
+         * @return {@code this}
+         */
+        public Builder autoRenewPeriod(java.lang.Number autoRenewPeriod) {
+            this.autoRenewPeriod = autoRenewPeriod;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ResourcePackageProps#getAutoRenewPeriod}
+         * @param autoRenewPeriod Property autoRenewPeriod: Duration of resource packs renewals.
+         *                        Valid values:
+         *                        <p>
+         *                        <ul>
+         *                        <li>When AutoRenewPeriodUnit is Year: 1, 2, 3.</li>
+         *                        <li>When AutoRenewPeriodUnit is Month: 1, 2, 3, 6.
+         *                        Default is 1.</li>
+         *                        </ul>
+         * @return {@code this}
+         */
+        public Builder autoRenewPeriod(com.aliyun.ros.cdk.core.IResolvable autoRenewPeriod) {
+            this.autoRenewPeriod = autoRenewPeriod;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ResourcePackageProps#getAutoRenewPeriodUnit}
+         * @param autoRenewPeriodUnit Property autoRenewPeriodUnit: Unit of resource pack renewals.
+         *                            Valid values: Month, Year. Default is Month.
+         * @return {@code this}
+         */
+        public Builder autoRenewPeriodUnit(java.lang.String autoRenewPeriodUnit) {
+            this.autoRenewPeriodUnit = autoRenewPeriodUnit;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ResourcePackageProps#getAutoRenewPeriodUnit}
+         * @param autoRenewPeriodUnit Property autoRenewPeriodUnit: Unit of resource pack renewals.
+         *                            Valid values: Month, Year. Default is Month.
+         * @return {@code this}
+         */
+        public Builder autoRenewPeriodUnit(com.aliyun.ros.cdk.core.IResolvable autoRenewPeriodUnit) {
+            this.autoRenewPeriodUnit = autoRenewPeriodUnit;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ResourcePackageProps#getEffectiveDate}
          * @param effectiveDate Property effectiveDate: The effective date of the specified resource package.
          *                      The resource package will take effect immediately if the effective date is unspecified. The date format follows the ISO8601 standard and uses UTC time. Format: yyyy-MM-ddTHH:mm:ssZ
@@ -225,6 +339,9 @@ public interface ResourcePackageProps extends software.amazon.jsii.JsiiSerializa
         private final java.lang.Object packageType;
         private final java.lang.Object productCode;
         private final java.lang.Object specification;
+        private final java.lang.Object autoRenew;
+        private final java.lang.Object autoRenewPeriod;
+        private final java.lang.Object autoRenewPeriodUnit;
         private final java.lang.Object effectiveDate;
         private final java.lang.Object pricingCycle;
 
@@ -238,6 +355,9 @@ public interface ResourcePackageProps extends software.amazon.jsii.JsiiSerializa
             this.packageType = software.amazon.jsii.Kernel.get(this, "packageType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.productCode = software.amazon.jsii.Kernel.get(this, "productCode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.specification = software.amazon.jsii.Kernel.get(this, "specification", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoRenewPeriod = software.amazon.jsii.Kernel.get(this, "autoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoRenewPeriodUnit = software.amazon.jsii.Kernel.get(this, "autoRenewPeriodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.effectiveDate = software.amazon.jsii.Kernel.get(this, "effectiveDate", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -251,6 +371,9 @@ public interface ResourcePackageProps extends software.amazon.jsii.JsiiSerializa
             this.packageType = java.util.Objects.requireNonNull(builder.packageType, "packageType is required");
             this.productCode = java.util.Objects.requireNonNull(builder.productCode, "productCode is required");
             this.specification = java.util.Objects.requireNonNull(builder.specification, "specification is required");
+            this.autoRenew = builder.autoRenew;
+            this.autoRenewPeriod = builder.autoRenewPeriod;
+            this.autoRenewPeriodUnit = builder.autoRenewPeriodUnit;
             this.effectiveDate = builder.effectiveDate;
             this.pricingCycle = builder.pricingCycle;
         }
@@ -276,6 +399,21 @@ public interface ResourcePackageProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
+        public final java.lang.Object getAutoRenew() {
+            return this.autoRenew;
+        }
+
+        @Override
+        public final java.lang.Object getAutoRenewPeriod() {
+            return this.autoRenewPeriod;
+        }
+
+        @Override
+        public final java.lang.Object getAutoRenewPeriodUnit() {
+            return this.autoRenewPeriodUnit;
+        }
+
+        @Override
         public final java.lang.Object getEffectiveDate() {
             return this.effectiveDate;
         }
@@ -295,6 +433,15 @@ public interface ResourcePackageProps extends software.amazon.jsii.JsiiSerializa
             data.set("packageType", om.valueToTree(this.getPackageType()));
             data.set("productCode", om.valueToTree(this.getProductCode()));
             data.set("specification", om.valueToTree(this.getSpecification()));
+            if (this.getAutoRenew() != null) {
+                data.set("autoRenew", om.valueToTree(this.getAutoRenew()));
+            }
+            if (this.getAutoRenewPeriod() != null) {
+                data.set("autoRenewPeriod", om.valueToTree(this.getAutoRenewPeriod()));
+            }
+            if (this.getAutoRenewPeriodUnit() != null) {
+                data.set("autoRenewPeriodUnit", om.valueToTree(this.getAutoRenewPeriodUnit()));
+            }
             if (this.getEffectiveDate() != null) {
                 data.set("effectiveDate", om.valueToTree(this.getEffectiveDate()));
             }
@@ -323,6 +470,9 @@ public interface ResourcePackageProps extends software.amazon.jsii.JsiiSerializa
             if (!packageType.equals(that.packageType)) return false;
             if (!productCode.equals(that.productCode)) return false;
             if (!specification.equals(that.specification)) return false;
+            if (this.autoRenew != null ? !this.autoRenew.equals(that.autoRenew) : that.autoRenew != null) return false;
+            if (this.autoRenewPeriod != null ? !this.autoRenewPeriod.equals(that.autoRenewPeriod) : that.autoRenewPeriod != null) return false;
+            if (this.autoRenewPeriodUnit != null ? !this.autoRenewPeriodUnit.equals(that.autoRenewPeriodUnit) : that.autoRenewPeriodUnit != null) return false;
             if (this.effectiveDate != null ? !this.effectiveDate.equals(that.effectiveDate) : that.effectiveDate != null) return false;
             return this.pricingCycle != null ? this.pricingCycle.equals(that.pricingCycle) : that.pricingCycle == null;
         }
@@ -333,6 +483,9 @@ public interface ResourcePackageProps extends software.amazon.jsii.JsiiSerializa
             result = 31 * result + (this.packageType.hashCode());
             result = 31 * result + (this.productCode.hashCode());
             result = 31 * result + (this.specification.hashCode());
+            result = 31 * result + (this.autoRenew != null ? this.autoRenew.hashCode() : 0);
+            result = 31 * result + (this.autoRenewPeriod != null ? this.autoRenewPeriod.hashCode() : 0);
+            result = 31 * result + (this.autoRenewPeriodUnit != null ? this.autoRenewPeriodUnit.hashCode() : 0);
             result = 31 * result + (this.effectiveDate != null ? this.effectiveDate.hashCode() : 0);
             result = 31 * result + (this.pricingCycle != null ? this.pricingCycle.hashCode() : 0);
             return result;

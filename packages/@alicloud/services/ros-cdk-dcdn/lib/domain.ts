@@ -52,6 +52,11 @@ export interface IDomain extends ros.IResource {
     readonly props: DomainProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute Cname: The CNAME generated for the CDN domain.You must add a CNAME record with your DNS provider to map the CDN domain name to the CNAME.
      */
     readonly attrCname: ros.IResolvable | string;
@@ -71,6 +76,11 @@ export class Domain extends ros.Resource implements IDomain {
     protected id: string;
     public readonly props: DomainProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute Cname: The CNAME generated for the CDN domain.You must add a CNAME record with your DNS provider to map the CDN domain name to the CNAME.
@@ -104,6 +114,7 @@ export class Domain extends ros.Resource implements IDomain {
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDomain;
+        this.attrArn = rosDomain.attrArn;
         this.attrCname = rosDomain.attrCname;
         this.attrDomainName = rosDomain.attrDomainName;
     }

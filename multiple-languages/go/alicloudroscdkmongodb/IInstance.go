@@ -10,6 +10,8 @@ import (
 // Represents a `Instance`.
 type IInstance interface {
 	alicloudroscdkcore.IResource
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute ConnectionURI: Connection uri.
 	AttrConnectionUri() interface{}
 	// Attribute DBInstanceId: The instance id of created mongodb instance.
@@ -26,6 +28,16 @@ type IInstance interface {
 // The jsii proxy for IInstance
 type jsiiProxy_IInstance struct {
 	internal.Type__alicloudroscdkcoreIResource
+}
+
+func (j *jsiiProxy_IInstance) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_IInstance) AttrConnectionUri() interface{} {

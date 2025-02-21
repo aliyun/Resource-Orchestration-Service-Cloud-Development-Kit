@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * Represents a <code>SecurityPolicy</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:33.975Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:11.308Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.ISecurityPolicy")
 @software.amazon.jsii.Jsii.Proxy(ISecurityPolicy.Jsii$Proxy.class)
 public interface ISecurityPolicy extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

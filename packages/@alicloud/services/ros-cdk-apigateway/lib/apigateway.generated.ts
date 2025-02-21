@@ -294,6 +294,11 @@ export class RosApi extends ros.RosResource {
      */
     public readonly attrApiId: ros.IResolvable;
 
+    /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
+
     public enableResourcePropertyConstraint: boolean;
 
 
@@ -446,6 +451,7 @@ export class RosApi extends ros.RosResource {
     constructor(scope: ros.Construct, id: string, props: RosApiProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosApi.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrApiId = this.getAtt('ApiId');
+        this.attrArn = this.getAtt('Arn');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.apiName = props.apiName;
@@ -2764,6 +2770,11 @@ export class RosInstance extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ApiGateway::Instance";
 
     /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
+
+    /**
      * @Attribute EgressIpv6Enable: Whether enable egress IPV6.
      */
     public readonly attrEgressIpv6Enable: ros.IResolvable;
@@ -2867,6 +2878,7 @@ export class RosInstance extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosInstanceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrEgressIpv6Enable = this.getAtt('EgressIpv6Enable');
         this.attrInstanceId = this.getAtt('InstanceId');
         this.attrInstanceType = this.getAtt('InstanceType');

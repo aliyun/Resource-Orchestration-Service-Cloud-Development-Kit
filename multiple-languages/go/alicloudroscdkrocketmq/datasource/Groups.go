@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::ROCKETMQ::Groups`, which is used to query groups.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::ROCKETMQ::Groups`.
 type Groups interface {
 	alicloudroscdkcore.Resource
 	IGroups

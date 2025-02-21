@@ -1,5 +1,10 @@
 @alicloud/ros-cdk-imm.IProject=com.aliyun.ros.cdk.imm.IProject
+@alicloud/ros-cdk-imm.IProject2=com.aliyun.ros.cdk.imm.IProject2
 @alicloud/ros-cdk-imm.Project=com.aliyun.ros.cdk.imm.Project
+@alicloud/ros-cdk-imm.Project2=com.aliyun.ros.cdk.imm.Project2
+@alicloud/ros-cdk-imm.Project2Props=com.aliyun.ros.cdk.imm.Project2Props
 @alicloud/ros-cdk-imm.ProjectProps=com.aliyun.ros.cdk.imm.ProjectProps
 @alicloud/ros-cdk-imm.RosProject=com.aliyun.ros.cdk.imm.RosProject
+@alicloud/ros-cdk-imm.RosProject2=com.aliyun.ros.cdk.imm.RosProject2
+@alicloud/ros-cdk-imm.RosProject2Props=com.aliyun.ros.cdk.imm.RosProject2Props
 @alicloud/ros-cdk-imm.RosProjectProps=com.aliyun.ros.cdk.imm.RosProjectProps

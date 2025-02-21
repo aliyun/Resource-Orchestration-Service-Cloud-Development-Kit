@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Waf3
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::WAF3::Instance`, which is used to create a Web Application Firewall (WAF) 3.0 instance.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::WAF3::Instance`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf3-instance

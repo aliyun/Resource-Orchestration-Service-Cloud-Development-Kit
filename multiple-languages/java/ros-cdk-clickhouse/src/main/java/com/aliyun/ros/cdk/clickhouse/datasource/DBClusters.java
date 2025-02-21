@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.clickhouse.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::ClickHouse::DBClusters</code>, which is used to query the information about ApsaraDB for ClickHouse clusters.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:35.640Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:12.748Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.clickhouse.$Module.class, fqn = "@alicloud/ros-cdk-clickhouse.datasource.DBClusters")
 public class DBClusters extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.clickhouse.datasource.IDBClusters {
 

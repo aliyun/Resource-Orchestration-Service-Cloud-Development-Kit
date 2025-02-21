@@ -10,6 +10,8 @@ import (
 // Represents a `HaVip`.
 type IHaVip interface {
 	alicloudroscdkcore.IResource
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute HaVipId: Assigned HaVip ID.
 	AttrHaVipId() interface{}
 	// Attribute IpAddress: The IP address of the HAVIP.
@@ -20,6 +22,16 @@ type IHaVip interface {
 // The jsii proxy for IHaVip
 type jsiiProxy_IHaVip struct {
 	internal.Type__alicloudroscdkcoreIResource
+}
+
+func (j *jsiiProxy_IHaVip) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_IHaVip) AttrHaVipId() interface{} {

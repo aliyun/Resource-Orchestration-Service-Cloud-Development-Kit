@@ -49,7 +49,7 @@ export interface IIpv6InternetBandwidth extends ros.IResource {
     readonly attrInternetBandwidthId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::Ipv6InternetBandwidth`, which is used to purchase Internet bandwidth for an IPv6 address.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::Ipv6InternetBandwidth`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosIpv6InternetBandwidth`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipv6internetbandwidth
  */

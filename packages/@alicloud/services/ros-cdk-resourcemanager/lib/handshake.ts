@@ -67,7 +67,7 @@ export interface IHandshake extends ros.IResource {
     readonly attrTargetType: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::Handshake`, which is used to create an invitation.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::Handshake`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosHandshake`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-handshake
  */

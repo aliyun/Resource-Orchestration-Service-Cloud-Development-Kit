@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.devops;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DEVOPS::HostGroup</code>, which is used to create a host group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:36.933Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:13.984Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.devops.$Module.class, fqn = "@alicloud/ros-cdk-devops.RosHostGroup")
 public class RosHostGroup extends com.aliyun.ros.cdk.core.RosResource {
 

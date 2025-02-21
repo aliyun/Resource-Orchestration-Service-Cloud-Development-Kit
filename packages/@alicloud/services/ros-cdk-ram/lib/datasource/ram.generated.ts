@@ -56,7 +56,7 @@ function rosAccountAliasPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::RAM::AccountAlias`, which is used to query the alias of a cloud account.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::RAM::AccountAlias`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AccountAlias` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-accountalias
  */
@@ -339,7 +339,7 @@ function rosPoliciesPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::RAM::Policies`, which is used to query policies.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::RAM::Policies`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Policies` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-policies
  */
@@ -491,7 +491,7 @@ function rosRolePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::RAM::Role`, which is used to query the information about a role.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::RAM::Role`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Role` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-role
  */
@@ -645,7 +645,7 @@ function rosRolesPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::RAM::Roles`, which is used to query the information about Resource Access Management (RAM) roles.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::RAM::Roles`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Roles` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-roles
  */
@@ -776,7 +776,7 @@ function rosUserPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::RAM::User`, which is used to query the information about a Resource Access Management (RAM) user.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::RAM::User`.
  * @Note This class does not contain additional functions, so it is recommended to use the `User` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-user
  */
@@ -938,7 +938,7 @@ function rosUsersPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::RAM::Users`, which is used to query the information about Resource Access Management (RAM) users.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::RAM::Users`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Users` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-users
  */

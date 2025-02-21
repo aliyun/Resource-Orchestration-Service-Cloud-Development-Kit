@@ -62,7 +62,7 @@ export interface IApp extends ros.IResource {
     readonly attrSmartAgId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::App`, which is used to create a Smart Access Gateway (SAG) app instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::App`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApp`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-app
  */

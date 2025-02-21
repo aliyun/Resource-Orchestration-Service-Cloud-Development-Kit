@@ -422,6 +422,11 @@ export class RosDBCluster extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ADB::DBCluster";
 
     /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
+
+    /**
      * @Attribute ConnectionString: Vpc connection string.
      */
     public readonly attrConnectionString: ros.IResolvable;
@@ -559,6 +564,7 @@ export class RosDBCluster extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosDBClusterProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosDBCluster.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrConnectionString = this.getAtt('ConnectionString');
         this.attrDbClusterId = this.getAtt('DBClusterId');
         this.attrOrderId = this.getAtt('OrderId');

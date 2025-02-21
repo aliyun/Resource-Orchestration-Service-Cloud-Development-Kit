@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.slb;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::SLB::TLSPolicy</code>, which is used to create a Transport Layer Security (TLS) policy.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::SLB::TLSPolicy</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:44.339Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:20.797Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.TLSPolicy")
 public class TLSPolicy extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.slb.ITLSPolicy {
 

@@ -1481,7 +1481,7 @@ function rosDedicatedHostsPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::DedicatedHosts`, which is used to query dedicated hosts.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::DedicatedHosts`, which is used to query the information about dedicated hosts.
  * @Note This class does not contain additional functions, so it is recommended to use the `DedicatedHosts` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-dedicatedhosts
  */

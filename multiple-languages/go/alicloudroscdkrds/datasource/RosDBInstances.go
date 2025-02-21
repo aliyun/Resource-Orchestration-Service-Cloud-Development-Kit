@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::RDS::DBInstances`, which is used to query ApsaraDB RDS instances.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::RDS::DBInstances`.
 type RosDBInstances interface {
 	alicloudroscdkcore.RosResource
 	AttrDbInstanceIds() alicloudroscdkcore.IResolvable

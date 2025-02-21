@@ -107,6 +107,11 @@ export interface ILoadBalancer extends ros.IResource {
     readonly attrAddressType: ros.IResolvable | string;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute DNSName: The domain name of the ALB instance.
      */
     readonly attrDnsName: ros.IResolvable | string;
@@ -146,6 +151,11 @@ export class LoadBalancer extends ros.Resource implements ILoadBalancer {
      * Attribute AddressType: The type of IP address that the ALB instance uses to provide services.
      */
     public readonly attrAddressType: ros.IResolvable | string;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute DNSName: The domain name of the ALB instance.
@@ -203,6 +213,7 @@ export class LoadBalancer extends ros.Resource implements ILoadBalancer {
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosLoadBalancer;
         this.attrAddressType = rosLoadBalancer.attrAddressType;
+        this.attrArn = rosLoadBalancer.attrArn;
         this.attrDnsName = rosLoadBalancer.attrDnsName;
         this.attrLoadBalancerEdition = rosLoadBalancer.attrLoadBalancerEdition;
         this.attrLoadBalancerId = rosLoadBalancer.attrLoadBalancerId;

@@ -8,6 +8,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
     [JsiiInterface(nativeType: typeof(IVpcEndpoint), fullyQualifiedName: "@alicloud/ros-cdk-privatelink.IVpcEndpoint")]
     public interface IVpcEndpoint : AlibabaCloud.SDK.ROS.CDK.Core.IResource
     {
+        /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+        [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrArn
+        {
+            get;
+        }
+
         /// <summary>Attribute Bandwidth: The bandwidth of the endpoint.</summary>
         [JsiiProperty(name: "attrBandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AttrBandwidth
@@ -76,6 +83,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
         {
             private _Proxy(ByRefValue reference): base(reference)
             {
+            }
+
+            /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+            [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrArn
+            {
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Attribute Bandwidth: The bandwidth of the endpoint.</summary>

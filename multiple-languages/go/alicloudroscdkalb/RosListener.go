@@ -13,6 +13,7 @@ import (
 type RosListener interface {
 	alicloudroscdkcore.RosResource
 	AttrListenerId() alicloudroscdkcore.IResolvable
+	AttrLoadBalancerId() alicloudroscdkcore.IResolvable
 	CaCertificates() interface{}
 	SetCaCertificates(val interface{})
 	CaEnabled() interface{}
@@ -43,6 +44,8 @@ type RosListener interface {
 	SetListenerStatus(val interface{})
 	LoadBalancerId() interface{}
 	SetLoadBalancerId(val interface{})
+	LogConfig() interface{}
+	SetLogConfig(val interface{})
 	// The logical ID for this stack element.
 	//
 	// The logical ID of the element
@@ -211,6 +214,16 @@ func (j *jsiiProxy_RosListener) AttrListenerId() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
+func (j *jsiiProxy_RosListener) AttrLoadBalancerId() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrLoadBalancerId",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosListener) CaCertificates() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -346,6 +359,16 @@ func (j *jsiiProxy_RosListener) LoadBalancerId() interface{} {
 	_jsii_.Get(
 		j,
 		"loadBalancerId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosListener) LogConfig() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"logConfig",
 		&returns,
 	)
 	return returns
@@ -638,6 +661,17 @@ func (j *jsiiProxy_RosListener)SetLoadBalancerId(val interface{}) {
 	_jsii_.Set(
 		j,
 		"loadBalancerId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosListener)SetLogConfig(val interface{}) {
+	if err := j.validateSetLogConfigParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"logConfig",
 		val,
 	)
 }

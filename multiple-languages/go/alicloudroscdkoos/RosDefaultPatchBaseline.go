@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::DefaultPatchBaseline`, which is used to register a default patch baseline.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::DefaultPatchBaseline`.
 type RosDefaultPatchBaseline interface {
 	alicloudroscdkcore.RosResource
 	AttrApprovalRules() alicloudroscdkcore.IResolvable

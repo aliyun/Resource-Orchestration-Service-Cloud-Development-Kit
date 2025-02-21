@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::RouterInterface`, which is used to create a router interface.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::RouterInterface`.
 type RosRouterInterface interface {
 	alicloudroscdkcore.RosResource
 	AccessPointId() interface{}

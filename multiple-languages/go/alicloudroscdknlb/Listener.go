@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::NLB::Listener`, which is used to create a listener.
+// This class encapsulates and extends the ROS resource type `ALIYUN::NLB::Listener`.
 type Listener interface {
 	alicloudroscdkcore.Resource
 	IListener

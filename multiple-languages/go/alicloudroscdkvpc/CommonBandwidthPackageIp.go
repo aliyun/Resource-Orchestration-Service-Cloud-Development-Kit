@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::CommonBandwidthPackageIp`, which is used to add EIPs to the Internet shared bandwidth instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::CommonBandwidthPackageIp`.
 type CommonBandwidthPackageIp interface {
 	alicloudroscdkcore.Resource
 	ICommonBandwidthPackageIp

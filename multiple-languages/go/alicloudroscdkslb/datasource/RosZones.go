@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::Zones`, which is used to query the zones of Server Load Balancer (SLB) instances.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::Zones`.
 type RosZones interface {
 	alicloudroscdkcore.RosResource
 	AddressIpVersion() interface{}

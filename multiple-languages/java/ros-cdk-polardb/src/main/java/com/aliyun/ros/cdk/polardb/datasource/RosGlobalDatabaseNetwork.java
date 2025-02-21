@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.polardb.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::POLARDB::GlobalDatabaseNetwork</code>, which is used to query the details of a Global Database Network (GDN) within the current Alibaba Cloud account.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::POLARDB::GlobalDatabaseNetwork</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:42.588Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:19.133Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.datasource.RosGlobalDatabaseNetwork")
 public class RosGlobalDatabaseNetwork extends com.aliyun.ros.cdk.core.RosResource {
 

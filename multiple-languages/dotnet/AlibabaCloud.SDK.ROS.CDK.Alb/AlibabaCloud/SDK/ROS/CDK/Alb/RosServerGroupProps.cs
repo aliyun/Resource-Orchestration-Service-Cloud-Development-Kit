@@ -79,41 +79,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
         }
 
-        private object _vpcId;
-
-        /// <remarks>
-        /// <strong>Property</strong>: vpcId: The ID of the virtual private cloud (VPC). You can add only servers that are deployed
-        /// in the specified VPC to the server group.
-        /// Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
-        /// Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
-        /// </remarks>
-        [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        public object VpcId
-        {
-            get => _vpcId;
-            set
-            {
-                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                {
-                    switch (value)
-                    {
-                        case string cast_cd4240:
-                            break;
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                            break;
-                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                            // Not enough information to type-check...
-                            break;
-                        case null:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
-                        default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                    }
-                }
-                _vpcId = value;
-            }
-        }
-
         private object? _connectionDrainConfig;
 
         /// <remarks>
@@ -145,6 +110,78 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                     }
                 }
                 _connectionDrainConfig = value;
+            }
+        }
+
+        private object? _crossZoneEnabled;
+
+        /// <remarks>
+        /// <strong>Property</strong>: crossZoneEnabled: Specifies whether to enable cross-zone load balancing. Valid values:
+        /// true (default)
+        /// false
+        /// Note:
+        /// Basic ALB instances do not support server groups that have cross-zone load balancing disabled. Only Standard and WAF-enabled ALB instances support server groups that have cross-zone load balancing.
+        /// Cross-zone load balancing can be disabled for server groups of the server and IP type, but not for server groups of the Function Compute type.
+        /// When cross-zone load balancing is disabled, session persistence cannot be enabled.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "crossZoneEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? CrossZoneEnabled
+        {
+            get => _crossZoneEnabled;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _crossZoneEnabled = value;
+            }
+        }
+
+        private object? _ipv6Enabled;
+
+        /// <remarks>
+        /// <strong>Property</strong>: ipv6Enabled: Whether to enable IPv6.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "ipv6Enabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? Ipv6Enabled
+        {
+            get => _ipv6Enabled;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _ipv6Enabled = value;
             }
         }
 
@@ -466,6 +503,42 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                     }
                 }
                 _upstreamKeepaliveEnabled = value;
+            }
+        }
+
+        private object? _vpcId;
+
+        /// <remarks>
+        /// <strong>Property</strong>: vpcId: The ID of the virtual private cloud (VPC). You can add only servers that are deployed
+        /// in the specified VPC to the server group.
+        /// Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
+        /// Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? VpcId
+        {
+            get => _vpcId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _vpcId = value;
             }
         }
     }

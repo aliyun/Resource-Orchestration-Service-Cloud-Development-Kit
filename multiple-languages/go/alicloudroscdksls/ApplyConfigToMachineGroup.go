@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SLS::ApplyConfigToMachineGroup`, which is used to apply Log Service configurations to machine groups.
+// This class encapsulates and extends the ROS resource type `ALIYUN::SLS::ApplyConfigToMachineGroup`.
 type ApplyConfigToMachineGroup interface {
 	alicloudroscdkcore.Resource
 	IApplyConfigToMachineGroup

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::VSwitch`, which is used to query the information about a vSwitch.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::VSwitch`.
 type RosVSwitch interface {
 	alicloudroscdkcore.RosResource
 	AttrAvailableIpAddressCount() alicloudroscdkcore.IResolvable

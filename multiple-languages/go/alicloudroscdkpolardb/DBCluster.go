@@ -13,6 +13,8 @@ import (
 type DBCluster interface {
 	alicloudroscdkcore.Resource
 	IDBCluster
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute ClusterConnectionString: The cluster connection string of the db cluster.
 	AttrClusterConnectionString() interface{}
 	// Attribute ClusterEndpointId: The cluster endpoint ID of the db cluster.
@@ -132,6 +134,16 @@ type DBCluster interface {
 type jsiiProxy_DBCluster struct {
 	internal.Type__alicloudroscdkcoreResource
 	jsiiProxy_IDBCluster
+}
+
+func (j *jsiiProxy_DBCluster) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_DBCluster) AttrClusterConnectionString() interface{} {

@@ -257,6 +257,11 @@ export class RosInstance extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ElasticSearch::Instance";
 
     /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
+
+    /**
      * @Attribute Domain: Instance connection domain (only VPC network access supported).
      */
     public readonly attrDomain: ros.IResolvable;
@@ -430,6 +435,7 @@ export class RosInstance extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosInstanceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrDomain = this.getAtt('Domain');
         this.attrInstanceChargeType = this.getAtt('InstanceChargeType');
         this.attrInstanceId = this.getAtt('InstanceId');

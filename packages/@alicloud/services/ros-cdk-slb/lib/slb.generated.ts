@@ -96,7 +96,7 @@ function rosAccessControlPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::AccessControl`, which is used to create an access control list (ACL).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::AccessControl`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AccessControl` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-accesscontrol
  */
@@ -110,6 +110,11 @@ export class RosAccessControl extends ros.RosResource {
      * @Attribute AclId: The ID of the access control list.
      */
     public readonly attrAclId: ros.IResolvable;
+
+    /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -147,6 +152,7 @@ export class RosAccessControl extends ros.RosResource {
     constructor(scope: ros.Construct, id: string, props: RosAccessControlProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosAccessControl.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrAclId = this.getAtt('AclId');
+        this.attrArn = this.getAtt('Arn');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.aclName = props.aclName;
@@ -451,7 +457,7 @@ function rosBackendServerAttachmentPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::BackendServerAttachment`, which is used to attach backend servers to an SLB instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::BackendServerAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `BackendServerAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-backendserverattachment
  */
@@ -653,7 +659,7 @@ function rosBackendServerToVServerGroupAdditionPropsToRosTemplate(properties: an
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::BackendServerToVServerGroupAddition`, which is used to add backend servers to an existing server group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::BackendServerToVServerGroupAddition`.
  * @Note This class does not contain additional functions, so it is recommended to use the `BackendServerToVServerGroupAddition` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-backendservertovservergroupaddition
  */
@@ -904,7 +910,7 @@ function rosCertificatePropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::Certificate`, which is used to upload a certificate to a Server Load Balancer (SLB) instance. Server certificates and certificate authority (CA) certificates are supported.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::Certificate`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Certificate` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-certificate
  */
@@ -913,6 +919,11 @@ export class RosCertificate extends ros.RosResource {
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLB::Certificate";
+
+    /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
 
     /**
      * @Attribute CertificateId: The ID of the certificate.
@@ -974,6 +985,7 @@ export class RosCertificate extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosCertificateProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosCertificate.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrCertificateId = this.getAtt('CertificateId');
         this.attrFingerprint = this.getAtt('Fingerprint');
 
@@ -1132,7 +1144,7 @@ function rosDomainExtensionPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::DomainExtension`, which is used to create a domain extension for an SLB instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::DomainExtension`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DomainExtension` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-domainextension
  */
@@ -1587,7 +1599,7 @@ function rosListenerPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::Listener`, which is used to create a Server Load Balancer (SLB) listener.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::Listener`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Listener` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-listener
  */
@@ -1596,6 +1608,11 @@ export class RosListener extends ros.RosResource {
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLB::Listener";
+
+    /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
 
     /**
      * @Attribute ListenerPortsAndProtocol: The collection of listener.
@@ -1795,6 +1812,7 @@ export class RosListener extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosListenerProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosListener.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrListenerPortsAndProtocol = this.getAtt('ListenerPortsAndProtocol');
         this.attrLoadBalancerId = this.getAtt('LoadBalancerId');
 
@@ -2587,7 +2605,7 @@ function rosLoadBalancerPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::LoadBalancer`, which is used to create a Server Load Balancer (SLB) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::LoadBalancer`.
  * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancer` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-loadbalancer
  */
@@ -3027,7 +3045,7 @@ function rosLoadBalancerClonePropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::LoadBalancerClone`, which is used to clone a Server Load Balancer (SLB) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::LoadBalancerClone`.
  * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancerClone` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-loadbalancerclone
  */
@@ -3332,7 +3350,7 @@ function rosMasterSlaveServerGroupPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::MasterSlaveServerGroup`, which is used to create a primary/secondary server group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::MasterSlaveServerGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `MasterSlaveServerGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-masterslaveservergroup
  */
@@ -3574,7 +3592,7 @@ function rosRulePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::Rule`, which is used to add forwarding rules to an HTTP or HTTPS listener.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::Rule`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Rule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-rule
  */
@@ -3982,7 +4000,7 @@ function rosTLSPolicyPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::TLSPolicy`, which is used to create a Transport Layer Security (TLS) policy.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::TLSPolicy`.
  * @Note This class does not contain additional functions, so it is recommended to use the `TLSPolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-tlspolicy
  */
@@ -4175,7 +4193,7 @@ function rosVServerGroupPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::VServerGroup`, which is used to create a server group and attach backend servers to a Server Load Balancer (SLB) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::VServerGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `VServerGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-vservergroup
  */
@@ -4184,6 +4202,11 @@ export class RosVServerGroup extends ros.RosResource {
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLB::VServerGroup";
+
+    /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
 
     /**
      * @Attribute BackendServers: Backend server list in this VServerGroup.
@@ -4230,6 +4253,7 @@ export class RosVServerGroup extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosVServerGroupProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosVServerGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrBackendServers = this.getAtt('BackendServers');
         this.attrLoadBalancerId = this.getAtt('LoadBalancerId');
         this.attrVServerGroupId = this.getAtt('VServerGroupId');

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ram;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::RAM::AttachPolicyToUser</code>, which is used to grant permissions to a specified user.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::RAM::AttachPolicyToUser</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:42.952Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:19.367Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosAttachPolicyToUser")
 public class RosAttachPolicyToUser extends com.aliyun.ros.cdk.core.RosResource {
 

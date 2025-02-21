@@ -40,6 +40,11 @@ export interface IConsumerGroup extends ros.IResource {
     readonly props: ConsumerGroupProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute ConsumerId: Consumer group ID
      */
     readonly attrConsumerId: ros.IResolvable | string;
@@ -54,6 +59,11 @@ export class ConsumerGroup extends ros.Resource implements IConsumerGroup {
     protected id: string;
     public readonly props: ConsumerGroupProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute ConsumerId: Consumer group ID
@@ -79,6 +89,7 @@ export class ConsumerGroup extends ros.Resource implements IConsumerGroup {
             remark: props.remark,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosConsumerGroup;
+        this.attrArn = rosConsumerGroup.attrArn;
         this.attrConsumerId = rosConsumerGroup.attrConsumerId;
     }
 }

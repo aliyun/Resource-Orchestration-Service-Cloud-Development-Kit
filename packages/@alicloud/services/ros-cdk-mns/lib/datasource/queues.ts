@@ -40,7 +40,7 @@ export interface IQueues extends ros.IResource {
     readonly attrQueues: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::MNS::Queues`, which is used to query all queues within an Alibaba Cloud account.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::MNS::Queues`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosQueues`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-queues
  */

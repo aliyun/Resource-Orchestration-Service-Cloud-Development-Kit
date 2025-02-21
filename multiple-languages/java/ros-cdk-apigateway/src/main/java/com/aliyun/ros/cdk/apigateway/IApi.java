@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Represents a <code>Api</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:34.722Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:11.795Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.IApi")
 @software.amazon.jsii.Jsii.Proxy(IApi.Jsii$Proxy.class)
 public interface IApi extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
@@ -12,6 +12,11 @@ public interface IApi extends software.amazon.jsii.JsiiSerializable, com.aliyun.
      * Attribute ApiId: The id of the API.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrApiId();
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrArn();
 
     @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.apigateway.ApiProps getProps();
 
@@ -63,6 +68,14 @@ public interface IApi extends software.amazon.jsii.JsiiSerializable, com.aliyun.
             return software.amazon.jsii.Kernel.get(this, "attrApiId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
+        /**
+         * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrArn() {
+            return software.amazon.jsii.Kernel.get(this, "attrArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
         @Override
         public final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.apigateway.ApiProps getProps() {
             return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.apigateway.ApiProps.class));
@@ -112,6 +125,14 @@ public interface IApi extends software.amazon.jsii.JsiiSerializable, com.aliyun.
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrApiId() {
             return software.amazon.jsii.Kernel.get(this, "attrApiId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrArn() {
+            return software.amazon.jsii.Kernel.get(this, "attrArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         @Override

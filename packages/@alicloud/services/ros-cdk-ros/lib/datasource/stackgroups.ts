@@ -40,7 +40,7 @@ export interface IStackGroups extends ros.IResource {
     readonly attrStackGroups: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ROS::StackGroups`, which is used to query the details of stack groups.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ROS::StackGroups`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosStackGroups`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ros-stackgroups
  */

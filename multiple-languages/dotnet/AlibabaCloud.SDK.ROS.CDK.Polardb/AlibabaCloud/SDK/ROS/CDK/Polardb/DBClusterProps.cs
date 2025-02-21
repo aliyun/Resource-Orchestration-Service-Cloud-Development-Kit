@@ -1712,6 +1712,43 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
+        private object? _sslEnabled;
+
+        /// <summary>Property sslEnabled: Modifies the SSL status.</summary>
+        /// <remarks>
+        /// Valid values:
+        /// Disable: disables SSL encryption.
+        /// Enable: enables SSL encryption.
+        /// Update: updates the SSL certificate.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "sslEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? SslEnabled
+        {
+            get => _sslEnabled;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _sslEnabled = value;
+            }
+        }
+
         private object? _standbyAz;
 
         /// <summary>Property standbyAz: The zone where the hot standby storage cluster is stored.</summary>

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ROCKETMQ5::Instance`, which is used to create an ApsaraMQ for RocketMQ 5.0 instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ROCKETMQ5::Instance`.
 type Instance interface {
 	alicloudroscdkcore.Resource
 	IInstance

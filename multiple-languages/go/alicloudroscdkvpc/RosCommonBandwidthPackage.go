@@ -9,9 +9,10 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::CommonBandwidthPackage`, which is used to create an elastic IP address (EIP) bandwidth plan.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::CommonBandwidthPackage`.
 type RosCommonBandwidthPackage interface {
 	alicloudroscdkcore.RosResource
+	AttrArn() alicloudroscdkcore.IResolvable
 	AttrBandwidthPackageId() alicloudroscdkcore.IResolvable
 	Bandwidth() interface{}
 	SetBandwidth(val interface{})
@@ -187,6 +188,16 @@ type RosCommonBandwidthPackage interface {
 // The jsii proxy struct for RosCommonBandwidthPackage
 type jsiiProxy_RosCommonBandwidthPackage struct {
 	internal.Type__alicloudroscdkcoreRosResource
+}
+
+func (j *jsiiProxy_RosCommonBandwidthPackage) AttrArn() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_RosCommonBandwidthPackage) AttrBandwidthPackageId() alicloudroscdkcore.IResolvable {

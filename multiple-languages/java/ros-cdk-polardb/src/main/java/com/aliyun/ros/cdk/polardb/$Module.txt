@@ -20,6 +20,8 @@
 @alicloud/ros-cdk-polardb.DatabaseProps=com.aliyun.ros.cdk.polardb.DatabaseProps
 @alicloud/ros-cdk-polardb.GlobalDatabaseNetwork=com.aliyun.ros.cdk.polardb.GlobalDatabaseNetwork
 @alicloud/ros-cdk-polardb.GlobalDatabaseNetworkProps=com.aliyun.ros.cdk.polardb.GlobalDatabaseNetworkProps
+@alicloud/ros-cdk-polardb.GlobalSecurityIPGroup=com.aliyun.ros.cdk.polardb.GlobalSecurityIPGroup
+@alicloud/ros-cdk-polardb.GlobalSecurityIPGroupProps=com.aliyun.ros.cdk.polardb.GlobalSecurityIPGroupProps
 @alicloud/ros-cdk-polardb.IAITask=com.aliyun.ros.cdk.polardb.IAITask
 @alicloud/ros-cdk-polardb.IAccount=com.aliyun.ros.cdk.polardb.IAccount
 @alicloud/ros-cdk-polardb.IAccountPrivilege=com.aliyun.ros.cdk.polardb.IAccountPrivilege
@@ -31,6 +33,7 @@
 @alicloud/ros-cdk-polardb.IDBNodes=com.aliyun.ros.cdk.polardb.IDBNodes
 @alicloud/ros-cdk-polardb.IDatabase=com.aliyun.ros.cdk.polardb.IDatabase
 @alicloud/ros-cdk-polardb.IGlobalDatabaseNetwork=com.aliyun.ros.cdk.polardb.IGlobalDatabaseNetwork
+@alicloud/ros-cdk-polardb.IGlobalSecurityIPGroup=com.aliyun.ros.cdk.polardb.IGlobalSecurityIPGroup
 @alicloud/ros-cdk-polardb.IParameterGroup=com.aliyun.ros.cdk.polardb.IParameterGroup
 @alicloud/ros-cdk-polardb.ParameterGroup=com.aliyun.ros.cdk.polardb.ParameterGroup
 @alicloud/ros-cdk-polardb.ParameterGroupProps=com.aliyun.ros.cdk.polardb.ParameterGroupProps
@@ -60,6 +63,8 @@
 @alicloud/ros-cdk-polardb.RosDatabaseProps=com.aliyun.ros.cdk.polardb.RosDatabaseProps
 @alicloud/ros-cdk-polardb.RosGlobalDatabaseNetwork=com.aliyun.ros.cdk.polardb.RosGlobalDatabaseNetwork
 @alicloud/ros-cdk-polardb.RosGlobalDatabaseNetworkProps=com.aliyun.ros.cdk.polardb.RosGlobalDatabaseNetworkProps
+@alicloud/ros-cdk-polardb.RosGlobalSecurityIPGroup=com.aliyun.ros.cdk.polardb.RosGlobalSecurityIPGroup
+@alicloud/ros-cdk-polardb.RosGlobalSecurityIPGroupProps=com.aliyun.ros.cdk.polardb.RosGlobalSecurityIPGroupProps
 @alicloud/ros-cdk-polardb.RosParameterGroup=com.aliyun.ros.cdk.polardb.RosParameterGroup
 @alicloud/ros-cdk-polardb.RosParameterGroup.ParametersProperty=com.aliyun.ros.cdk.polardb.RosParameterGroup$ParametersProperty
 @alicloud/ros-cdk-polardb.RosParameterGroupProps=com.aliyun.ros.cdk.polardb.RosParameterGroupProps

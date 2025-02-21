@@ -75,7 +75,7 @@ function rosMediaWorkflowPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MPS::MediaWorkflow`, which is used to add a media workflow.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MPS::MediaWorkflow`.
  * @Note This class does not contain additional functions, so it is recommended to use the `MediaWorkflow` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mps-mediaworkflow
  */
@@ -270,7 +270,7 @@ function rosPipelinePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MPS::Pipeline`, which is used to create an ApsaraVideo Media Processing (MPS) queue.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MPS::Pipeline`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Pipeline` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mps-pipeline
  */

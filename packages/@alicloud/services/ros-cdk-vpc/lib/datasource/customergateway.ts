@@ -65,7 +65,7 @@ export interface ICustomerGateway extends ros.IResource {
     readonly attrIpAddress: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::CustomerGateway`, which is used to query the information about a customer gateway.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::CustomerGateway`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCustomerGateway`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-customergateway
  */

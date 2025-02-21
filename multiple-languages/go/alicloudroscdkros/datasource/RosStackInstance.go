@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::ROS::StackInstance`, which is used to query the information about a stack instance that is associated with a stack group.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::ROS::StackInstance`.
 type RosStackInstance interface {
 	alicloudroscdkcore.RosResource
 	AttrAccountId() alicloudroscdkcore.IResolvable

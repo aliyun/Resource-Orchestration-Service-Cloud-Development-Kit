@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SLS::ServiceLog`, which is used to enable the service log feature.
+// This class encapsulates and extends the ROS resource type `ALIYUN::SLS::ServiceLog`.
 type ServiceLog interface {
 	alicloudroscdkcore.Resource
 	IServiceLog

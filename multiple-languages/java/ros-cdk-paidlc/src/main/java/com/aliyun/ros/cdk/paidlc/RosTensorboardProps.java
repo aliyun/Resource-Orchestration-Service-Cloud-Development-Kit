@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.paidlc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidlc-tensorboard
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:42.211Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:18.875Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.paidlc.$Module.class, fqn = "@alicloud/ros-cdk-paidlc.RosTensorboardProps")
 @software.amazon.jsii.Jsii.Proxy(RosTensorboardProps.Jsii$Proxy.class)
 public interface RosTensorboardProps extends software.amazon.jsii.JsiiSerializable {

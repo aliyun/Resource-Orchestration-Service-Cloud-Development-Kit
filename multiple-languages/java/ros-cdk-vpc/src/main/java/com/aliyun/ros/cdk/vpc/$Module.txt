@@ -72,8 +72,10 @@
 @alicloud/ros-cdk-vpc.IPeeringRouterInterfaceBinding=com.aliyun.ros.cdk.vpc.IPeeringRouterInterfaceBinding
 @alicloud/ros-cdk-vpc.IPeeringRouterInterfaceConnection=com.aliyun.ros.cdk.vpc.IPeeringRouterInterfaceConnection
 @alicloud/ros-cdk-vpc.IPrefixList=com.aliyun.ros.cdk.vpc.IPrefixList
+@alicloud/ros-cdk-vpc.IPublicIpAddressPool=com.aliyun.ros.cdk.vpc.IPublicIpAddressPool
 @alicloud/ros-cdk-vpc.IRouteTable=com.aliyun.ros.cdk.vpc.IRouteTable
 @alicloud/ros-cdk-vpc.IRouteTableAssociation=com.aliyun.ros.cdk.vpc.IRouteTableAssociation
+@alicloud/ros-cdk-vpc.IRouteTableWithGatewayAssociation=com.aliyun.ros.cdk.vpc.IRouteTableWithGatewayAssociation
 @alicloud/ros-cdk-vpc.IRouterInterface=com.aliyun.ros.cdk.vpc.IRouterInterface
 @alicloud/ros-cdk-vpc.ISnatEntry=com.aliyun.ros.cdk.vpc.ISnatEntry
 @alicloud/ros-cdk-vpc.ISslVpnClientCert=com.aliyun.ros.cdk.vpc.ISslVpnClientCert
@@ -119,6 +121,8 @@
 @alicloud/ros-cdk-vpc.PeeringRouterInterfaceConnectionProps=com.aliyun.ros.cdk.vpc.PeeringRouterInterfaceConnectionProps
 @alicloud/ros-cdk-vpc.PrefixList=com.aliyun.ros.cdk.vpc.PrefixList
 @alicloud/ros-cdk-vpc.PrefixListProps=com.aliyun.ros.cdk.vpc.PrefixListProps
+@alicloud/ros-cdk-vpc.PublicIpAddressPool=com.aliyun.ros.cdk.vpc.PublicIpAddressPool
+@alicloud/ros-cdk-vpc.PublicIpAddressPoolProps=com.aliyun.ros.cdk.vpc.PublicIpAddressPoolProps
 @alicloud/ros-cdk-vpc.RosAnycastEIP=com.aliyun.ros.cdk.vpc.RosAnycastEIP
 @alicloud/ros-cdk-vpc.RosAnycastEIPAssociation=com.aliyun.ros.cdk.vpc.RosAnycastEIPAssociation
 @alicloud/ros-cdk-vpc.RosAnycastEIPAssociationProps=com.aliyun.ros.cdk.vpc.RosAnycastEIPAssociationProps
@@ -203,11 +207,16 @@
 @alicloud/ros-cdk-vpc.RosPrefixList.EntriesProperty=com.aliyun.ros.cdk.vpc.RosPrefixList$EntriesProperty
 @alicloud/ros-cdk-vpc.RosPrefixList.TagsProperty=com.aliyun.ros.cdk.vpc.RosPrefixList$TagsProperty
 @alicloud/ros-cdk-vpc.RosPrefixListProps=com.aliyun.ros.cdk.vpc.RosPrefixListProps
+@alicloud/ros-cdk-vpc.RosPublicIpAddressPool=com.aliyun.ros.cdk.vpc.RosPublicIpAddressPool
+@alicloud/ros-cdk-vpc.RosPublicIpAddressPool.TagsProperty=com.aliyun.ros.cdk.vpc.RosPublicIpAddressPool$TagsProperty
+@alicloud/ros-cdk-vpc.RosPublicIpAddressPoolProps=com.aliyun.ros.cdk.vpc.RosPublicIpAddressPoolProps
 @alicloud/ros-cdk-vpc.RosRouteTable=com.aliyun.ros.cdk.vpc.RosRouteTable
 @alicloud/ros-cdk-vpc.RosRouteTable.TagsProperty=com.aliyun.ros.cdk.vpc.RosRouteTable$TagsProperty
 @alicloud/ros-cdk-vpc.RosRouteTableAssociation=com.aliyun.ros.cdk.vpc.RosRouteTableAssociation
 @alicloud/ros-cdk-vpc.RosRouteTableAssociationProps=com.aliyun.ros.cdk.vpc.RosRouteTableAssociationProps
 @alicloud/ros-cdk-vpc.RosRouteTableProps=com.aliyun.ros.cdk.vpc.RosRouteTableProps
+@alicloud/ros-cdk-vpc.RosRouteTableWithGatewayAssociation=com.aliyun.ros.cdk.vpc.RosRouteTableWithGatewayAssociation
+@alicloud/ros-cdk-vpc.RosRouteTableWithGatewayAssociationProps=com.aliyun.ros.cdk.vpc.RosRouteTableWithGatewayAssociationProps
 @alicloud/ros-cdk-vpc.RosRouterInterface=com.aliyun.ros.cdk.vpc.RosRouterInterface
 @alicloud/ros-cdk-vpc.RosRouterInterfaceProps=com.aliyun.ros.cdk.vpc.RosRouterInterfaceProps
 @alicloud/ros-cdk-vpc.RosSnatEntry=com.aliyun.ros.cdk.vpc.RosSnatEntry
@@ -263,6 +272,8 @@
 @alicloud/ros-cdk-vpc.RouteTableAssociation=com.aliyun.ros.cdk.vpc.RouteTableAssociation
 @alicloud/ros-cdk-vpc.RouteTableAssociationProps=com.aliyun.ros.cdk.vpc.RouteTableAssociationProps
 @alicloud/ros-cdk-vpc.RouteTableProps=com.aliyun.ros.cdk.vpc.RouteTableProps
+@alicloud/ros-cdk-vpc.RouteTableWithGatewayAssociation=com.aliyun.ros.cdk.vpc.RouteTableWithGatewayAssociation
+@alicloud/ros-cdk-vpc.RouteTableWithGatewayAssociationProps=com.aliyun.ros.cdk.vpc.RouteTableWithGatewayAssociationProps
 @alicloud/ros-cdk-vpc.RouterInterface=com.aliyun.ros.cdk.vpc.RouterInterface
 @alicloud/ros-cdk-vpc.RouterInterfaceProps=com.aliyun.ros.cdk.vpc.RouterInterfaceProps
 @alicloud/ros-cdk-vpc.SnatEntry=com.aliyun.ros.cdk.vpc.SnatEntry

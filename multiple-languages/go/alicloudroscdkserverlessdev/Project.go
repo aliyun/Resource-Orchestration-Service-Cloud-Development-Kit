@@ -9,9 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ServerlessDev::Project`, which is used to create a project.
-//
-// If a template is specified for the project, the project is automatically deployed.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ServerlessDev::Project`.
 type Project interface {
 	alicloudroscdkcore.Resource
 	IProject

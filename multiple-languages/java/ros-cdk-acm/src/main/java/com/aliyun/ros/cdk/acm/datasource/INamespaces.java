@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.acm.datasource;
 /**
  * Represents a <code>Namespaces</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:33.804Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:10.997Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acm.$Module.class, fqn = "@alicloud/ros-cdk-acm.datasource.INamespaces")
 @software.amazon.jsii.Jsii.Proxy(INamespaces.Jsii$Proxy.class)
 public interface INamespaces extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

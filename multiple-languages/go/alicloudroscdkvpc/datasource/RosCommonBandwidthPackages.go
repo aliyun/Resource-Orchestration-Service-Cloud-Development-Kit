@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::CommonBandwidthPackages`, which is used to query the Internet Shared Bandwidth instances in a region.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::CommonBandwidthPackages`.
 type RosCommonBandwidthPackages interface {
 	alicloudroscdkcore.RosResource
 	AttrCommonBandwidthPackageIds() alicloudroscdkcore.IResolvable

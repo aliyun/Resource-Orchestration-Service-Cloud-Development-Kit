@@ -51,7 +51,7 @@ export interface IAssert extends ros.IResource {
     readonly attrResult: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ROS::Assert`, which is used to create an assertion. Assertions are used to evaluate conditions and support a variety of operation types. An assertion determines whether to terminate creation and return an error message when the assertion result is false.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ROS::Assert`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAssert`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-assert
  */

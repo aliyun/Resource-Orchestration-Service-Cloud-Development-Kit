@@ -10,6 +10,8 @@ import (
 // Represents a `Snapshot`.
 type ISnapshot interface {
 	alicloudroscdkcore.IResource
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute SnapshotId: The snapshot ID.
 	AttrSnapshotId() interface{}
 	Props() *SnapshotProps
@@ -18,6 +20,16 @@ type ISnapshot interface {
 // The jsii proxy for ISnapshot
 type jsiiProxy_ISnapshot struct {
 	internal.Type__alicloudroscdkcoreIResource
+}
+
+func (j *jsiiProxy_ISnapshot) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_ISnapshot) AttrSnapshotId() interface{} {

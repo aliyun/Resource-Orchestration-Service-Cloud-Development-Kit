@@ -195,7 +195,7 @@ export interface IAddress extends ros.IResource {
     readonly attrTags: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::EIP::Address`, which is used to query the information about a created elastic IP address (EIP).
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::EIP::Address`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAddress`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eip-address
  */

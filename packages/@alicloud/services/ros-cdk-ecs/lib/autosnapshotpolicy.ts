@@ -86,6 +86,11 @@ export interface IAutoSnapshotPolicy extends ros.IResource {
     readonly props: AutoSnapshotPolicyProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute AutoSnapshotPolicyId: The automatic snapshot policy ID.
      */
     readonly attrAutoSnapshotPolicyId: ros.IResolvable | string;
@@ -100,6 +105,11 @@ export class AutoSnapshotPolicy extends ros.Resource implements IAutoSnapshotPol
     protected id: string;
     public readonly props: AutoSnapshotPolicyProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute AutoSnapshotPolicyId: The automatic snapshot policy ID.
@@ -132,6 +142,7 @@ export class AutoSnapshotPolicy extends ros.Resource implements IAutoSnapshotPol
             copiedSnapshotsRetentionDays: props.copiedSnapshotsRetentionDays,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAutoSnapshotPolicy;
+        this.attrArn = rosAutoSnapshotPolicy.attrArn;
         this.attrAutoSnapshotPolicyId = rosAutoSnapshotPolicy.attrAutoSnapshotPolicyId;
     }
 }

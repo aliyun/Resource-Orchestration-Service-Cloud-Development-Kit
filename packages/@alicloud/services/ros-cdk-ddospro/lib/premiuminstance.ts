@@ -100,6 +100,11 @@ export interface IPremiumInstance extends ros.IResource {
     readonly props: PremiumInstanceProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute InstanceId: The ID of the instance.
      */
     readonly attrInstanceId: ros.IResolvable | string;
@@ -114,6 +119,11 @@ export class PremiumInstance extends ros.Resource implements IPremiumInstance {
     protected id: string;
     public readonly props: PremiumInstanceProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: The ID of the instance.
@@ -145,6 +155,7 @@ export class PremiumInstance extends ros.Resource implements IPremiumInstance {
             domainCount: props.domainCount,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosPremiumInstance;
+        this.attrArn = rosPremiumInstance.attrArn;
         this.attrInstanceId = rosPremiumInstance.attrInstanceId;
     }
 }

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::PAIPlugin::Campaign`, which is used to create an operational activity.
+// This class encapsulates and extends the ROS resource type `ALIYUN::PAIPlugin::Campaign`.
 type Campaign interface {
 	alicloudroscdkcore.Resource
 	ICampaign

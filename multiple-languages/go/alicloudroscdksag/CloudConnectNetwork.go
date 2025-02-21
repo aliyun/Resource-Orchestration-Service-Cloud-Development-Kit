@@ -9,12 +9,12 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SAG::CloudConnectNetwork`, which is used to create a Cloud Connect Network (CCN) instance.
-//
-// CNN is a device access matrix composed of Alibaba Cloud distributed Smart Access Gateways (SAGs). You can add multiple SAGs to a CCN instance and then attach the CCN instance to a Cloud Enterprise Network (CEN) instance. In this way, you can connect your local branches to Alibaba Cloud.
+// This class encapsulates and extends the ROS resource type `ALIYUN::SAG::CloudConnectNetwork`.
 type CloudConnectNetwork interface {
 	alicloudroscdkcore.Resource
 	ICloudConnectNetwork
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute CcnId: The ID of the CCN instance.
 	AttrCcnId() interface{}
 	EnableResourcePropertyConstraint() *bool
@@ -110,6 +110,16 @@ type CloudConnectNetwork interface {
 type jsiiProxy_CloudConnectNetwork struct {
 	internal.Type__alicloudroscdkcoreResource
 	jsiiProxy_ICloudConnectNetwork
+}
+
+func (j *jsiiProxy_CloudConnectNetwork) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CloudConnectNetwork) AttrCcnId() interface{} {

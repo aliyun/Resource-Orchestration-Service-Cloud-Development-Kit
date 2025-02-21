@@ -1,0 +1,511 @@
+package com.aliyun.ros.cdk.pai;
+
+/**
+ * Properties for defining a <code>RosDatasetVersion</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-datasetversion
+ */
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:18.711Z")
+@software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pai.$Module.class, fqn = "@alicloud/ros-cdk-pai.RosDatasetVersionProps")
+@software.amazon.jsii.Jsii.Proxy(RosDatasetVersionProps.Jsii$Proxy.class)
+public interface RosDatasetVersionProps extends software.amazon.jsii.JsiiSerializable {
+
+    /**
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getDatasetId();
+
+    /**
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getDataSourceType();
+
+    /**
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getProperty();
+
+    /**
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getUri();
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDataCount() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDataSize() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLabels() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getOptions() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSourceId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSourceType() {
+        return null;
+    }
+
+    /**
+     * @return a {@link Builder} of {@link RosDatasetVersionProps}
+     */
+    static Builder builder() {
+        return new Builder();
+    }
+    /**
+     * A builder for {@link RosDatasetVersionProps}
+     */
+    public static final class Builder implements software.amazon.jsii.Builder<RosDatasetVersionProps> {
+        java.lang.Object datasetId;
+        java.lang.Object dataSourceType;
+        java.lang.Object property;
+        java.lang.Object uri;
+        java.lang.Object dataCount;
+        java.lang.Object dataSize;
+        java.lang.Object description;
+        java.lang.Object labels;
+        java.lang.Object options;
+        java.lang.Object sourceId;
+        java.lang.Object sourceType;
+
+        /**
+         * Sets the value of {@link RosDatasetVersionProps#getDatasetId}
+         * @param datasetId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder datasetId(java.lang.String datasetId) {
+            this.datasetId = datasetId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDatasetVersionProps#getDatasetId}
+         * @param datasetId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder datasetId(com.aliyun.ros.cdk.core.IResolvable datasetId) {
+            this.datasetId = datasetId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDatasetVersionProps#getDataSourceType}
+         * @param dataSourceType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder dataSourceType(java.lang.String dataSourceType) {
+            this.dataSourceType = dataSourceType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDatasetVersionProps#getDataSourceType}
+         * @param dataSourceType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder dataSourceType(com.aliyun.ros.cdk.core.IResolvable dataSourceType) {
+            this.dataSourceType = dataSourceType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDatasetVersionProps#getProperty}
+         * @param property the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder property(java.lang.String property) {
+            this.property = property;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDatasetVersionProps#getProperty}
+         * @param property the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder property(com.aliyun.ros.cdk.core.IResolvable property) {
+            this.property = property;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDatasetVersionProps#getUri}
+         * @param uri the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder uri(java.lang.String uri) {
+            this.uri = uri;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDatasetVersionProps#getUri}
+         * @param uri the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder uri(com.aliyun.ros.cdk.core.IResolvable uri) {
+            this.uri = uri;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDatasetVersionProps#getDataCount}
+         * @param dataCount the value to be set.
+         * @return {@code this}
+         */
+        public Builder dataCount(java.lang.Number dataCount) {
+            this.dataCount = dataCount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDatasetVersionProps#getDataCount}
+         * @param dataCount the value to be set.
+         * @return {@code this}
+         */
+        public Builder dataCount(com.aliyun.ros.cdk.core.IResolvable dataCount) {
+            this.dataCount = dataCount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDatasetVersionProps#getDataSize}
+         * @param dataSize the value to be set.
+         * @return {@code this}
+         */
+        public Builder dataSize(java.lang.Number dataSize) {
+            this.dataSize = dataSize;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDatasetVersionProps#getDataSize}
+         * @param dataSize the value to be set.
+         * @return {@code this}
+         */
+        public Builder dataSize(com.aliyun.ros.cdk.core.IResolvable dataSize) {
+            this.dataSize = dataSize;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDatasetVersionProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(java.lang.String description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDatasetVersionProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDatasetVersionProps#getLabels}
+         * @param labels the value to be set.
+         * @return {@code this}
+         */
+        public Builder labels(com.aliyun.ros.cdk.core.IResolvable labels) {
+            this.labels = labels;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDatasetVersionProps#getLabels}
+         * @param labels the value to be set.
+         * @return {@code this}
+         */
+        public Builder labels(java.util.List<? extends java.lang.Object> labels) {
+            this.labels = labels;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDatasetVersionProps#getOptions}
+         * @param options the value to be set.
+         * @return {@code this}
+         */
+        public Builder options(java.lang.String options) {
+            this.options = options;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDatasetVersionProps#getOptions}
+         * @param options the value to be set.
+         * @return {@code this}
+         */
+        public Builder options(com.aliyun.ros.cdk.core.IResolvable options) {
+            this.options = options;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDatasetVersionProps#getSourceId}
+         * @param sourceId the value to be set.
+         * @return {@code this}
+         */
+        public Builder sourceId(java.lang.String sourceId) {
+            this.sourceId = sourceId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDatasetVersionProps#getSourceId}
+         * @param sourceId the value to be set.
+         * @return {@code this}
+         */
+        public Builder sourceId(com.aliyun.ros.cdk.core.IResolvable sourceId) {
+            this.sourceId = sourceId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDatasetVersionProps#getSourceType}
+         * @param sourceType the value to be set.
+         * @return {@code this}
+         */
+        public Builder sourceType(java.lang.String sourceType) {
+            this.sourceType = sourceType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDatasetVersionProps#getSourceType}
+         * @param sourceType the value to be set.
+         * @return {@code this}
+         */
+        public Builder sourceType(com.aliyun.ros.cdk.core.IResolvable sourceType) {
+            this.sourceType = sourceType;
+            return this;
+        }
+
+        /**
+         * Builds the configured instance.
+         * @return a new instance of {@link RosDatasetVersionProps}
+         * @throws NullPointerException if any required attribute was not provided
+         */
+        @Override
+        public RosDatasetVersionProps build() {
+            return new Jsii$Proxy(this);
+        }
+    }
+
+    /**
+     * An implementation for {@link RosDatasetVersionProps}
+     */
+    @software.amazon.jsii.Internal
+    final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosDatasetVersionProps {
+        private final java.lang.Object datasetId;
+        private final java.lang.Object dataSourceType;
+        private final java.lang.Object property;
+        private final java.lang.Object uri;
+        private final java.lang.Object dataCount;
+        private final java.lang.Object dataSize;
+        private final java.lang.Object description;
+        private final java.lang.Object labels;
+        private final java.lang.Object options;
+        private final java.lang.Object sourceId;
+        private final java.lang.Object sourceType;
+
+        /**
+         * Constructor that initializes the object based on values retrieved from the JsiiObject.
+         * @param objRef Reference to the JSII managed object.
+         */
+        protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+            super(objRef);
+            this.datasetId = software.amazon.jsii.Kernel.get(this, "datasetId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dataSourceType = software.amazon.jsii.Kernel.get(this, "dataSourceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.property = software.amazon.jsii.Kernel.get(this, "property", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.uri = software.amazon.jsii.Kernel.get(this, "uri", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dataCount = software.amazon.jsii.Kernel.get(this, "dataCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dataSize = software.amazon.jsii.Kernel.get(this, "dataSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.labels = software.amazon.jsii.Kernel.get(this, "labels", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.options = software.amazon.jsii.Kernel.get(this, "options", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.sourceId = software.amazon.jsii.Kernel.get(this, "sourceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.sourceType = software.amazon.jsii.Kernel.get(this, "sourceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+         */
+        protected Jsii$Proxy(final Builder builder) {
+            super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+            this.datasetId = java.util.Objects.requireNonNull(builder.datasetId, "datasetId is required");
+            this.dataSourceType = java.util.Objects.requireNonNull(builder.dataSourceType, "dataSourceType is required");
+            this.property = java.util.Objects.requireNonNull(builder.property, "property is required");
+            this.uri = java.util.Objects.requireNonNull(builder.uri, "uri is required");
+            this.dataCount = builder.dataCount;
+            this.dataSize = builder.dataSize;
+            this.description = builder.description;
+            this.labels = builder.labels;
+            this.options = builder.options;
+            this.sourceId = builder.sourceId;
+            this.sourceType = builder.sourceType;
+        }
+
+        @Override
+        public final java.lang.Object getDatasetId() {
+            return this.datasetId;
+        }
+
+        @Override
+        public final java.lang.Object getDataSourceType() {
+            return this.dataSourceType;
+        }
+
+        @Override
+        public final java.lang.Object getProperty() {
+            return this.property;
+        }
+
+        @Override
+        public final java.lang.Object getUri() {
+            return this.uri;
+        }
+
+        @Override
+        public final java.lang.Object getDataCount() {
+            return this.dataCount;
+        }
+
+        @Override
+        public final java.lang.Object getDataSize() {
+            return this.dataSize;
+        }
+
+        @Override
+        public final java.lang.Object getDescription() {
+            return this.description;
+        }
+
+        @Override
+        public final java.lang.Object getLabels() {
+            return this.labels;
+        }
+
+        @Override
+        public final java.lang.Object getOptions() {
+            return this.options;
+        }
+
+        @Override
+        public final java.lang.Object getSourceId() {
+            return this.sourceId;
+        }
+
+        @Override
+        public final java.lang.Object getSourceType() {
+            return this.sourceType;
+        }
+
+        @Override
+        @software.amazon.jsii.Internal
+        public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+            final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+            final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+            data.set("datasetId", om.valueToTree(this.getDatasetId()));
+            data.set("dataSourceType", om.valueToTree(this.getDataSourceType()));
+            data.set("property", om.valueToTree(this.getProperty()));
+            data.set("uri", om.valueToTree(this.getUri()));
+            if (this.getDataCount() != null) {
+                data.set("dataCount", om.valueToTree(this.getDataCount()));
+            }
+            if (this.getDataSize() != null) {
+                data.set("dataSize", om.valueToTree(this.getDataSize()));
+            }
+            if (this.getDescription() != null) {
+                data.set("description", om.valueToTree(this.getDescription()));
+            }
+            if (this.getLabels() != null) {
+                data.set("labels", om.valueToTree(this.getLabels()));
+            }
+            if (this.getOptions() != null) {
+                data.set("options", om.valueToTree(this.getOptions()));
+            }
+            if (this.getSourceId() != null) {
+                data.set("sourceId", om.valueToTree(this.getSourceId()));
+            }
+            if (this.getSourceType() != null) {
+                data.set("sourceType", om.valueToTree(this.getSourceType()));
+            }
+
+            final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+            struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-pai.RosDatasetVersionProps"));
+            struct.set("data", data);
+
+            final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+            obj.set("$jsii.struct", struct);
+
+            return obj;
+        }
+
+        @Override
+        public final boolean equals(final Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+
+            RosDatasetVersionProps.Jsii$Proxy that = (RosDatasetVersionProps.Jsii$Proxy) o;
+
+            if (!datasetId.equals(that.datasetId)) return false;
+            if (!dataSourceType.equals(that.dataSourceType)) return false;
+            if (!property.equals(that.property)) return false;
+            if (!uri.equals(that.uri)) return false;
+            if (this.dataCount != null ? !this.dataCount.equals(that.dataCount) : that.dataCount != null) return false;
+            if (this.dataSize != null ? !this.dataSize.equals(that.dataSize) : that.dataSize != null) return false;
+            if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+            if (this.labels != null ? !this.labels.equals(that.labels) : that.labels != null) return false;
+            if (this.options != null ? !this.options.equals(that.options) : that.options != null) return false;
+            if (this.sourceId != null ? !this.sourceId.equals(that.sourceId) : that.sourceId != null) return false;
+            return this.sourceType != null ? this.sourceType.equals(that.sourceType) : that.sourceType == null;
+        }
+
+        @Override
+        public final int hashCode() {
+            int result = this.datasetId.hashCode();
+            result = 31 * result + (this.dataSourceType.hashCode());
+            result = 31 * result + (this.property.hashCode());
+            result = 31 * result + (this.uri.hashCode());
+            result = 31 * result + (this.dataCount != null ? this.dataCount.hashCode() : 0);
+            result = 31 * result + (this.dataSize != null ? this.dataSize.hashCode() : 0);
+            result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+            result = 31 * result + (this.labels != null ? this.labels.hashCode() : 0);
+            result = 31 * result + (this.options != null ? this.options.hashCode() : 0);
+            result = 31 * result + (this.sourceId != null ? this.sourceId.hashCode() : 0);
+            result = 31 * result + (this.sourceType != null ? this.sourceType.hashCode() : 0);
+            return result;
+        }
+    }
+}

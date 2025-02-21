@@ -87,7 +87,7 @@ function rosAclRulePropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::WAF::AclRule`, which is used to add an HTTP access control list (ACL) rule for a specified domain name.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::WAF::AclRule`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AclRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-aclrule
  */
@@ -313,7 +313,7 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::WAF::Domain`, which is used to add a domain to Web Application Firewall (WAF).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::WAF::Domain`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Domain` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-domain
  */
@@ -778,7 +778,7 @@ function rosDomainConfigPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::WAF::DomainConfig`ALIYUN::CDN::DomainConfig is used to add domain name settings.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::WAF::DomainConfig`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DomainConfig` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-domainconfig
  */
@@ -1067,7 +1067,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::WAF::Instance`, which is used to create a Web Application Firewall (WAF) instance 2.0.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::WAF::Instance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-instance
  */
@@ -1283,7 +1283,7 @@ function rosLogServiceEnablePropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::WAF::LogServiceEnable`, which is used to enable the log collection feature for a specific domain name.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::WAF::LogServiceEnable`.
  * @Note This class does not contain additional functions, so it is recommended to use the `LogServiceEnable` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-logserviceenable
  */
@@ -1431,7 +1431,7 @@ function rosWafSwitchPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::WAF::WafSwitch`, which is used to enable or disable Web attack protection.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::WAF::WafSwitch`.
  * @Note This class does not contain additional functions, so it is recommended to use the `WafSwitch` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-wafswitch
  */

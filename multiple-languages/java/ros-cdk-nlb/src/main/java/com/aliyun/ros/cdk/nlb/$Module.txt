@@ -1,3 +1,6 @@
+@alicloud/ros-cdk-nlb.BackendServerAttachment=com.aliyun.ros.cdk.nlb.BackendServerAttachment
+@alicloud/ros-cdk-nlb.BackendServerAttachmentProps=com.aliyun.ros.cdk.nlb.BackendServerAttachmentProps
+@alicloud/ros-cdk-nlb.IBackendServerAttachment=com.aliyun.ros.cdk.nlb.IBackendServerAttachment
 @alicloud/ros-cdk-nlb.IListener=com.aliyun.ros.cdk.nlb.IListener
 @alicloud/ros-cdk-nlb.ILoadBalancer=com.aliyun.ros.cdk.nlb.ILoadBalancer
 @alicloud/ros-cdk-nlb.ISecurityGroupAttachment=com.aliyun.ros.cdk.nlb.ISecurityGroupAttachment
@@ -7,6 +10,9 @@
 @alicloud/ros-cdk-nlb.ListenerProps=com.aliyun.ros.cdk.nlb.ListenerProps
 @alicloud/ros-cdk-nlb.LoadBalancer=com.aliyun.ros.cdk.nlb.LoadBalancer
 @alicloud/ros-cdk-nlb.LoadBalancerProps=com.aliyun.ros.cdk.nlb.LoadBalancerProps
+@alicloud/ros-cdk-nlb.RosBackendServerAttachment=com.aliyun.ros.cdk.nlb.RosBackendServerAttachment
+@alicloud/ros-cdk-nlb.RosBackendServerAttachment.ServersProperty=com.aliyun.ros.cdk.nlb.RosBackendServerAttachment$ServersProperty
+@alicloud/ros-cdk-nlb.RosBackendServerAttachmentProps=com.aliyun.ros.cdk.nlb.RosBackendServerAttachmentProps
 @alicloud/ros-cdk-nlb.RosListener=com.aliyun.ros.cdk.nlb.RosListener
 @alicloud/ros-cdk-nlb.RosListener.ProxyProtocolV2ConfigProperty=com.aliyun.ros.cdk.nlb.RosListener$ProxyProtocolV2ConfigProperty
 @alicloud/ros-cdk-nlb.RosListener.TagsProperty=com.aliyun.ros.cdk.nlb.RosListener$TagsProperty

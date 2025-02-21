@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.paidswapi.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::PaiDswApi::Instance</code>, which is used to query the basic information about a Data Science Workshop (DSW) instance.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::PaiDswApi::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:42.269Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:18.917Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.paidswapi.$Module.class, fqn = "@alicloud/ros-cdk-paidswapi.datasource.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 

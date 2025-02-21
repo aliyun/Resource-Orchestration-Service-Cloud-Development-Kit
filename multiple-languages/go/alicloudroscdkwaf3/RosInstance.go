@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::WAF3::Instance`, which is used to create a Web Application Firewall (WAF) 3.0 instance.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::WAF3::Instance`.
 type RosInstance interface {
 	alicloudroscdkcore.RosResource
 	AdditionalProtectionNodes() interface{}

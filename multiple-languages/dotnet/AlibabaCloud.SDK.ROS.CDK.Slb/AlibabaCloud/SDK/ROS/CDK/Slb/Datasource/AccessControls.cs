@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Slb.Datasource
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::AccessControls`, which is used to query created access control lists (ACLs).</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::AccessControls`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccessControls`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-accesscontrols

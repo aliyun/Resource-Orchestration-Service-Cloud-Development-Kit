@@ -13,6 +13,8 @@ import (
 type PremiumInstance interface {
 	alicloudroscdkcore.Resource
 	IPremiumInstance
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute InstanceId: The ID of the instance.
 	AttrInstanceId() interface{}
 	EnableResourcePropertyConstraint() *bool
@@ -108,6 +110,16 @@ type PremiumInstance interface {
 type jsiiProxy_PremiumInstance struct {
 	internal.Type__alicloudroscdkcoreResource
 	jsiiProxy_IPremiumInstance
+}
+
+func (j *jsiiProxy_PremiumInstance) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_PremiumInstance) AttrInstanceId() interface{} {

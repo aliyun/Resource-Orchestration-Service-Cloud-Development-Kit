@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::EIP`, which is used to apply for an elastic IP address (EIP).
+// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::EIP`.
 type RosEIP interface {
 	alicloudroscdkcore.RosResource
 	AttrAllocationId() alicloudroscdkcore.IResolvable

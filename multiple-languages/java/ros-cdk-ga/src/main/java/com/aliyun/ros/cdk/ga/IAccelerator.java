@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * Represents a <code>Accelerator</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:40.428Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:17.091Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.IAccelerator")
 @software.amazon.jsii.Jsii.Proxy(IAccelerator.Jsii$Proxy.class)
 public interface IAccelerator extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
@@ -27,6 +27,11 @@ public interface IAccelerator extends software.amazon.jsii.JsiiSerializable, com
      * Attribute AutoUseCoupon: The AutoUseCoupon of the GA instance.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrAutoUseCoupon();
+
+    /**
+     * Attribute DnsName: The DNS name of the accelerator.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrDnsName();
 
     /**
      * Attribute Duration: The Duration of the GA instance.
@@ -125,6 +130,14 @@ public interface IAccelerator extends software.amazon.jsii.JsiiSerializable, com
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrAutoUseCoupon() {
             return software.amazon.jsii.Kernel.get(this, "attrAutoUseCoupon", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute DnsName: The DNS name of the accelerator.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrDnsName() {
+            return software.amazon.jsii.Kernel.get(this, "attrDnsName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -240,6 +253,14 @@ public interface IAccelerator extends software.amazon.jsii.JsiiSerializable, com
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrAutoUseCoupon() {
             return software.amazon.jsii.Kernel.get(this, "attrAutoUseCoupon", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute DnsName: The DNS name of the accelerator.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrDnsName() {
+            return software.amazon.jsii.Kernel.get(this, "attrDnsName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**

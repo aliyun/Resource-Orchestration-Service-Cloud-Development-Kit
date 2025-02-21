@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::BgpPeer`, which is used to add a Border Gateway Protocol (BGP) peer to a specific BGP group.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::BgpPeer`.
 type RosBgpPeer interface {
 	alicloudroscdkcore.RosResource
 	AttrBgpPeerId() alicloudroscdkcore.IResolvable

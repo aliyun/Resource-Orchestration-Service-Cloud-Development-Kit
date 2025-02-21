@@ -110,6 +110,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "addDependency", GoMethod: "AddDependency"},
 			_jsii_.MemberMethod{JsiiMethod: "addResourceDesc", GoMethod: "AddResourceDesc"},
 			_jsii_.MemberMethod{JsiiMethod: "applyRemovalPolicy", GoMethod: "ApplyRemovalPolicy"},
+			_jsii_.MemberProperty{JsiiProperty: "attrArn", GoGetter: "AttrArn"},
 			_jsii_.MemberProperty{JsiiProperty: "attrDrdsInstanceId", GoGetter: "AttrDrdsInstanceId"},
 			_jsii_.MemberProperty{JsiiProperty: "attrInternetEndpoint", GoGetter: "AttrInternetEndpoint"},
 			_jsii_.MemberProperty{JsiiProperty: "attrIntranetEndpoint", GoGetter: "AttrIntranetEndpoint"},
@@ -188,6 +189,7 @@ func init() {
 		"@alicloud/ros-cdk-drds.IDrdsInstance",
 		reflect.TypeOf((*IDrdsInstance)(nil)).Elem(),
 		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "attrArn", GoGetter: "AttrArn"},
 			_jsii_.MemberProperty{JsiiProperty: "attrDrdsInstanceId", GoGetter: "AttrDrdsInstanceId"},
 			_jsii_.MemberProperty{JsiiProperty: "attrInternetEndpoint", GoGetter: "AttrInternetEndpoint"},
 			_jsii_.MemberProperty{JsiiProperty: "attrIntranetEndpoint", GoGetter: "AttrIntranetEndpoint"},
@@ -346,6 +348,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "addPropertyOverride", GoMethod: "AddPropertyOverride"},
 			_jsii_.MemberMethod{JsiiMethod: "addRosDependency", GoMethod: "AddRosDependency"},
 			_jsii_.MemberMethod{JsiiMethod: "applyRemovalPolicy", GoMethod: "ApplyRemovalPolicy"},
+			_jsii_.MemberProperty{JsiiProperty: "attrArn", GoGetter: "AttrArn"},
 			_jsii_.MemberProperty{JsiiProperty: "attrDrdsInstanceId", GoGetter: "AttrDrdsInstanceId"},
 			_jsii_.MemberProperty{JsiiProperty: "attrInternetEndpoint", GoGetter: "AttrInternetEndpoint"},
 			_jsii_.MemberProperty{JsiiProperty: "attrIntranetEndpoint", GoGetter: "AttrIntranetEndpoint"},

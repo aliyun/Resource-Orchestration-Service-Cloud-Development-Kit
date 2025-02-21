@@ -8,6 +8,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
     [JsiiInterface(nativeType: typeof(ICenBandwidthPackage), fullyQualifiedName: "@alicloud/ros-cdk-cen.ICenBandwidthPackage")]
     public interface ICenBandwidthPackage : AlibabaCloud.SDK.ROS.CDK.Core.IResource
     {
+        /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+        [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrArn
+        {
+            get;
+        }
+
         /// <summary>Attribute CenBandwidthPackageId: The ID of the bandwidth package.</summary>
         [JsiiProperty(name: "attrCenBandwidthPackageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AttrCenBandwidthPackageId
@@ -27,6 +34,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         {
             private _Proxy(ByRefValue reference): base(reference)
             {
+            }
+
+            /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+            [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrArn
+            {
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Attribute CenBandwidthPackageId: The ID of the bandwidth package.</summary>

@@ -37,7 +37,7 @@ export interface IServiceLog extends ros.IResource {
     readonly attrProjectName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::ServiceLog`, which is used to enable the service log feature.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::ServiceLog`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosServiceLog`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-servicelog
  */

@@ -87,6 +87,11 @@ export class RosDomain extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DNS::Domain";
 
     /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
+
+    /**
      * @Attribute DnsServers: The DNS list for the domain name under resolution
      */
     public readonly attrDnsServers: ros.IResolvable;
@@ -146,6 +151,7 @@ export class RosDomain extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosDomainProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosDomain.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrDnsServers = this.getAtt('DnsServers');
         this.attrDomainId = this.getAtt('DomainId');
         this.attrDomainName = this.getAtt('DomainName');

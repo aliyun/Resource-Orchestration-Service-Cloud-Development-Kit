@@ -604,7 +604,7 @@ function RosAdditionalCertificateAssociationPropsValidator(properties: any): ros
         errors.collect(ros.propertyValidator('certificates', ros.validateLength)({
             data: properties.certificates.length,
             min: 1,
-            max: 25,
+            max: 300,
           }));
     }
     errors.collect(ros.propertyValidator('certificates', ros.listValidator(RosAdditionalCertificateAssociation_CertificatesPropertyValidator))(properties.certificates));
@@ -1345,16 +1345,15 @@ export interface RosListenerProps {
      * @Property http2Enabled: Specifies whether to enable HTTP\/2. Default value: on.
      * Valid values: true and false.
      * Default value: true.
-     * Note Only HTTPS listeners support this parameter.
+     * Note: Only HTTPS listeners support this parameter.
      */
     readonly http2Enabled?: boolean | ros.IResolvable;
 
     /**
      * @Property idleTimeout: The timeout period of idle connections.
-     * Valid values: 1 to 180. Unit: seconds.
+     * Valid values: 1 to 3600. Unit: seconds.
      * Default value: 15.
-     * If no request is received within the specified timeout period, ALB closes the connection.
-     * ALB recreates the connection when a new connection request is received.
+     * If no requests are received within the specified timeout period, ALB closes the current connection. When a new request is received, ALB establishes a new connection.
      */
     readonly idleTimeout?: number | ros.IResolvable;
 
@@ -1370,13 +1369,18 @@ export interface RosListenerProps {
     readonly listenerStatus?: string | ros.IResolvable;
 
     /**
+     * @Property logConfig: The configuration information about the access log.
+     */
+    readonly logConfig?: RosListener.LogConfigProperty | ros.IResolvable;
+
+    /**
      * @Property quicConfig: Select a QUIC listener and associate it with the ALB instance.
      */
     readonly quicConfig?: RosListener.QuicConfigProperty | ros.IResolvable;
 
     /**
      * @Property requestTimeout: The timeout period of the request.
-     * Valid values: 1 to 180. Unit: seconds.
+     * Valid values: 1 to 900. Unit: seconds.
      * Default value: 60.
      * If no response is received from the backend server during the request timeout period,
      * ALB sends an HTTP 504 error code to the client.
@@ -1387,7 +1391,7 @@ export interface RosListenerProps {
      * @Property securityPolicyId: The ID of the security policy. System security policies and custom security policies
      * are supported.
      * Default value: tls_cipher_policy_1_0. This value indicates a system security policy.
-     * Note Only HTTPS listeners support this parameter.
+     * Note: Only HTTPS listeners support this parameter.
      */
     readonly securityPolicyId?: string | ros.IResolvable;
 
@@ -1421,7 +1425,7 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
         errors.collect(ros.propertyValidator('requestTimeout', ros.validateRange)({
             data: properties.requestTimeout,
             min: 1,
-            max: 180,
+            max: 900,
           }));
     }
     errors.collect(ros.propertyValidator('requestTimeout', ros.validateNumber)(properties.requestTimeout));
@@ -1433,7 +1437,7 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
         errors.collect(ros.propertyValidator('idleTimeout', ros.validateRange)({
             data: properties.idleTimeout,
             min: 1,
-            max: 180,
+            max: 3600,
           }));
     }
     errors.collect(ros.propertyValidator('idleTimeout', ros.validateNumber)(properties.idleTimeout));
@@ -1467,6 +1471,7 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('listenerDescription', ros.validateString)(properties.listenerDescription));
     errors.collect(ros.propertyValidator('xForwardedForConfig', RosListener_XForwardedForConfigPropertyValidator)(properties.xForwardedForConfig));
     errors.collect(ros.propertyValidator('caCertificates', ros.listValidator(RosListener_CaCertificatesPropertyValidator))(properties.caCertificates));
+    errors.collect(ros.propertyValidator('logConfig', RosListener_LogConfigPropertyValidator)(properties.logConfig));
     return errors.wrap('supplied properties not correct for "RosListenerProps"');
 }
 
@@ -1496,6 +1501,7 @@ function rosListenerPropsToRosTemplate(properties: any, enableResourcePropertyCo
       'IdleTimeout': ros.numberToRosTemplate(properties.idleTimeout),
       'ListenerDescription': ros.stringToRosTemplate(properties.listenerDescription),
       'ListenerStatus': ros.stringToRosTemplate(properties.listenerStatus),
+      'LogConfig': rosListenerLogConfigPropertyToRosTemplate(properties.logConfig),
       'QuicConfig': rosListenerQuicConfigPropertyToRosTemplate(properties.quicConfig),
       'RequestTimeout': ros.numberToRosTemplate(properties.requestTimeout),
       'SecurityPolicyId': ros.stringToRosTemplate(properties.securityPolicyId),
@@ -1518,6 +1524,11 @@ export class RosListener extends ros.RosResource {
      * @Attribute ListenerId: The ID of the listener.
      */
     public readonly attrListenerId: ros.IResolvable;
+
+    /**
+     * @Attribute LoadBalancerId: The ID of the ALB instance.
+     */
+    public readonly attrLoadBalancerId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1570,16 +1581,15 @@ export class RosListener extends ros.RosResource {
      * @Property http2Enabled: Specifies whether to enable HTTP\/2. Default value: on.
      * Valid values: true and false.
      * Default value: true.
-     * Note Only HTTPS listeners support this parameter.
+     * Note: Only HTTPS listeners support this parameter.
      */
     public http2Enabled: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property idleTimeout: The timeout period of idle connections.
-     * Valid values: 1 to 180. Unit: seconds.
+     * Valid values: 1 to 3600. Unit: seconds.
      * Default value: 15.
-     * If no request is received within the specified timeout period, ALB closes the connection.
-     * ALB recreates the connection when a new connection request is received.
+     * If no requests are received within the specified timeout period, ALB closes the current connection. When a new request is received, ALB establishes a new connection.
      */
     public idleTimeout: number | ros.IResolvable | undefined;
 
@@ -1595,13 +1605,18 @@ export class RosListener extends ros.RosResource {
     public listenerStatus: string | ros.IResolvable | undefined;
 
     /**
+     * @Property logConfig: The configuration information about the access log.
+     */
+    public logConfig: RosListener.LogConfigProperty | ros.IResolvable | undefined;
+
+    /**
      * @Property quicConfig: Select a QUIC listener and associate it with the ALB instance.
      */
     public quicConfig: RosListener.QuicConfigProperty | ros.IResolvable | undefined;
 
     /**
      * @Property requestTimeout: The timeout period of the request.
-     * Valid values: 1 to 180. Unit: seconds.
+     * Valid values: 1 to 900. Unit: seconds.
      * Default value: 60.
      * If no response is received from the backend server during the request timeout period,
      * ALB sends an HTTP 504 error code to the client.
@@ -1612,7 +1627,7 @@ export class RosListener extends ros.RosResource {
      * @Property securityPolicyId: The ID of the security policy. System security policies and custom security policies
      * are supported.
      * Default value: tls_cipher_policy_1_0. This value indicates a system security policy.
-     * Note Only HTTPS listeners support this parameter.
+     * Note: Only HTTPS listeners support this parameter.
      */
     public securityPolicyId: string | ros.IResolvable | undefined;
 
@@ -1629,6 +1644,7 @@ export class RosListener extends ros.RosResource {
     constructor(scope: ros.Construct, id: string, props: RosListenerProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosListener.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrListenerId = this.getAtt('ListenerId');
+        this.attrLoadBalancerId = this.getAtt('LoadBalancerId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.defaultActions = props.defaultActions;
@@ -1643,6 +1659,7 @@ export class RosListener extends ros.RosResource {
         this.idleTimeout = props.idleTimeout;
         this.listenerDescription = props.listenerDescription;
         this.listenerStatus = props.listenerStatus;
+        this.logConfig = props.logConfig;
         this.quicConfig = props.quicConfig;
         this.requestTimeout = props.requestTimeout;
         this.securityPolicyId = props.securityPolicyId;
@@ -1664,6 +1681,7 @@ export class RosListener extends ros.RosResource {
             idleTimeout: this.idleTimeout,
             listenerDescription: this.listenerDescription,
             listenerStatus: this.listenerStatus,
+            logConfig: this.logConfig,
             quicConfig: this.quicConfig,
             requestTimeout: this.requestTimeout,
             securityPolicyId: this.securityPolicyId,
@@ -1673,6 +1691,74 @@ export class RosListener extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosListenerPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosListener {
+    /**
+     * @stability external
+     */
+    export interface AccessLogTracingConfigProperty {
+        /**
+         * @Property tracingType: The type of Xtrace. Set the value to Zipkin.
+         */
+        readonly tracingType?: string | ros.IResolvable;
+        /**
+         * @Property tracingSample: The sampling rate of the Xtrace feature. Valid values: 1 to 10000.
+         */
+        readonly tracingSample?: number | ros.IResolvable;
+        /**
+         * @Property tracingEnabled: Specifies whether to enable the Xtrace feature. Valid values:
+     * true
+     * false (default)
+         */
+        readonly tracingEnabled?: boolean | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AccessLogTracingConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `AccessLogTracingConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosListener_AccessLogTracingConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.tracingType && (typeof properties.tracingType) !== 'object') {
+        errors.collect(ros.propertyValidator('tracingType', ros.validateAllowedValues)({
+          data: properties.tracingType,
+          allowedValues: ["Zipkin"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('tracingType', ros.validateString)(properties.tracingType));
+    if(properties.tracingSample && (typeof properties.tracingSample) !== 'object') {
+        errors.collect(ros.propertyValidator('tracingSample', ros.validateRange)({
+            data: properties.tracingSample,
+            min: 1,
+            max: 10000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tracingSample', ros.validateNumber)(properties.tracingSample));
+    errors.collect(ros.propertyValidator('tracingEnabled', ros.validateBoolean)(properties.tracingEnabled));
+    return errors.wrap('supplied properties not correct for "AccessLogTracingConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ALB::Listener.AccessLogTracingConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `AccessLogTracingConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ALB::Listener.AccessLogTracingConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosListenerAccessLogTracingConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosListener_AccessLogTracingConfigPropertyValidator(properties).assertSuccess();
+    return {
+      'TracingType': ros.stringToRosTemplate(properties.tracingType),
+      'TracingSample': ros.numberToRosTemplate(properties.tracingSample),
+      'TracingEnabled': ros.booleanToRosTemplate(properties.tracingEnabled),
+    };
 }
 
 export namespace RosListener {
@@ -1853,6 +1939,56 @@ export namespace RosListener {
     /**
      * @stability external
      */
+    export interface LogConfigProperty {
+        /**
+         * @Property accessLogRecordCustomizedHeadersEnabled: Specifies whether to record custom headers in the access log.
+     * Valid values:
+     * true
+     * false (default)
+         */
+        readonly accessLogRecordCustomizedHeadersEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property accessLogTracingConfig: The configuration information about the Xtrace feature.
+         */
+        readonly accessLogTracingConfig?: RosListener.AccessLogTracingConfigProperty | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `LogConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `LogConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosListener_LogConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('accessLogRecordCustomizedHeadersEnabled', ros.validateBoolean)(properties.accessLogRecordCustomizedHeadersEnabled));
+    errors.collect(ros.propertyValidator('accessLogTracingConfig', RosListener_AccessLogTracingConfigPropertyValidator)(properties.accessLogTracingConfig));
+    return errors.wrap('supplied properties not correct for "LogConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ALB::Listener.LogConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `LogConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ALB::Listener.LogConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosListenerLogConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosListener_LogConfigPropertyValidator(properties).assertSuccess();
+    return {
+      'AccessLogRecordCustomizedHeadersEnabled': ros.booleanToRosTemplate(properties.accessLogRecordCustomizedHeadersEnabled),
+      'AccessLogTracingConfig': rosListenerAccessLogTracingConfigPropertyToRosTemplate(properties.accessLogTracingConfig),
+    };
+}
+
+export namespace RosListener {
+    /**
+     * @stability external
+     */
     export interface QuicConfigProperty {
         /**
          * @Property quicListenerId: The ID of the QUIC listener to be associated. Only HTTPS listeners support this parameter. If QuicUpgradeEnabled is set to true, this parameter is required.
@@ -1864,7 +2000,7 @@ export namespace RosListener {
          * @Property quicUpgradeEnabled: Specifies whether to enable the QUIC update feature.
      * Valid values: true and false.
      * Default value: false.
-     * Note Only HTTPS listeners support this parameter.
+     * Note: Only HTTPS listeners support this parameter.
          */
         readonly quicUpgradeEnabled?: boolean | ros.IResolvable;
     }
@@ -1956,16 +2092,23 @@ export namespace RosListener {
          * @Property xForwardedForClientCertFingerprintAlias: The name of the custom header. This parameter is valid only if XForwardedForClientCertFingerprintEnabled is set to true.
      * The name must be 1 to 40 characters in length, and can contain letters, hyphens (-),
      * underscores (_), and digits.
-     * Note Only HTTPS listeners support this parameter.
+     * Note: Only HTTPS listeners support this parameter.
          */
         readonly xForwardedForClientCertFingerprintAlias?: string | ros.IResolvable;
         /**
          * @Property xForwardedForClientCertFingerprintEnabled: Specifies whether to use the X-Forwarded-Clientcert-fingerprint header field to obtain the fingerprint of the ALB client certificate.
      * Valid values: true and false.
      * Default value: false.
-     * Note Only HTTPS listeners support this parameter.
+     * Note: Only HTTPS listeners support this parameter.
          */
         readonly xForwardedForClientCertFingerprintEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property xForwardedForHostEnabled: Whether to enable obtaining the domain name of the client accessing the load balancer instance through the X-Forwarded-Host header field. Values:
+     * true: Yes.
+     * false (default): No.
+     * Note: HTTP, HTTPS, and QUIC listeners support this parameter.
+         */
+        readonly xForwardedForHostEnabled?: boolean | ros.IResolvable;
         /**
          * @Property xForwardedForClientSourceIpsTrusted:
          */
@@ -1974,14 +2117,14 @@ export namespace RosListener {
          * @Property xForwardedForClientCertIssuerDnAlias: The name of the custom header. This parameter is valid only if XForwardedForClientCertIssuerDNEnabled is set to On.
      * The name must be 1 to 40 characters in length, and can contain letters, hyphens (-),
      * underscores (_), and digits.
-     * Note Only HTTPS listeners support this parameter.
+     * Note: Only HTTPS listeners support this parameter.
          */
         readonly xForwardedForClientCertIssuerDnAlias?: string | ros.IResolvable;
         /**
          * @Property xForwardedForClientCertClientVerifyAlias: The name of the custom header. This parameter is valid only if XForwardedForClientCertClientVerifyEnabled is set to true.
      * The name must be 1 to 40 characters in length, and can contain letters, hyphens (-),
      * underscores (_), and digits.
-     * Note Only HTTPS listeners support this parameter.
+     * Note: Only HTTPS listeners support this parameter.
          */
         readonly xForwardedForClientCertClientVerifyAlias?: string | ros.IResolvable;
         /**
@@ -1995,7 +2138,7 @@ export namespace RosListener {
          * @Property xForwardedForClientCertSubjectDnEnabled: Specifies whether to use the X-Forwarded-Clientcert-subjectdn header field to obtain information about the owner of the ALB client certificate.
      * Valid values: true and false.
      * Default value: false.
-     * Note Only HTTPS listeners support this parameter.
+     * Note: Only HTTPS listeners support this parameter.
          */
         readonly xForwardedForClientCertSubjectDnEnabled?: boolean | ros.IResolvable;
         /**
@@ -2003,14 +2146,14 @@ export namespace RosListener {
      * is set to true.
      * The name must be 1 to 40 characters in length, and can contain letters, hyphens (-),
      * underscores (_), and digits.
-     * Note Only HTTPS listeners support this parameter.
+     * Note: Only HTTPS listeners support this parameter.
          */
         readonly xForwardedForClientCertSubjectDnAlias?: string | ros.IResolvable;
         /**
          * @Property xForwardedForProtoEnabled: Specifies whether to use the X-Forwarded-Proto header field to obtain the listener protocol of the ALB instance.
      * Valid values: true and false.
      * Default value: false.
-     * Note HTTP, HTTPS, and QUIC listeners support this parameter.
+     * Note: HTTP, HTTPS, and QUIC listeners support this parameter.
          */
         readonly xForwardedForProtoEnabled?: boolean | ros.IResolvable;
         /**
@@ -2035,18 +2178,26 @@ export namespace RosListener {
          */
         readonly xForwardedForEnabled?: boolean | ros.IResolvable;
         /**
+         * @Property xForwardedForProcessingMode: The mode for handling the X-Forwarded-For header field. This value takes effect only when XForwardedForEnabled is true. Possible values:
+     * append (default): Append.
+     * remove: Remove.
+     * Note: When configured as append, the last hop IP is added to the X-Forwarded-For header field before the request is sent to the backend service.
+     * When configured as remove, the X-Forwarded-For header is deleted before the request is sent to the backend service, regardless of whether the request carries the X-Forwarded-For header field.This parameter is supported by both HTTP and HTTPS listeners.
+         */
+        readonly xForwardedForProcessingMode?: string | ros.IResolvable;
+        /**
          * @Property xForwardedForClientCertIssuerDnEnabled: Specifies whether to use the X-Forwarded-Clientcert-issuerdn header field to obtain information about the authority that issues the ALB client
      * certificate.
      * Valid values: true and false.
      * Default value: false.
-     * Note Only HTTPS listeners support this parameter.
+     * Note: Only HTTPS listeners support this parameter.
          */
         readonly xForwardedForClientCertIssuerDnEnabled?: boolean | ros.IResolvable;
         /**
          * @Property xForwardedForClientCertClientVerifyEnabled: Specifies whether to use the X-Forwarded-Clientcert-clientverify header field to obtain the verification result of the ALB client certificate.
      * Valid values: true and false.
      * Default value: false.
-     * Note Only HTTPS listeners support this parameter.
+     * Note: Only HTTPS listeners support this parameter.
          */
         readonly xForwardedForClientCertClientVerifyEnabled?: boolean | ros.IResolvable;
     }
@@ -2070,6 +2221,7 @@ function RosListener_XForwardedForConfigPropertyValidator(properties: any): ros.
     }
     errors.collect(ros.propertyValidator('xForwardedForClientCertFingerprintAlias', ros.validateString)(properties.xForwardedForClientCertFingerprintAlias));
     errors.collect(ros.propertyValidator('xForwardedForClientCertFingerprintEnabled', ros.validateBoolean)(properties.xForwardedForClientCertFingerprintEnabled));
+    errors.collect(ros.propertyValidator('xForwardedForHostEnabled', ros.validateBoolean)(properties.xForwardedForHostEnabled));
     errors.collect(ros.propertyValidator('xForwardedForClientSourceIpsTrusted', ros.validateString)(properties.xForwardedForClientSourceIpsTrusted));
     if(properties.xForwardedForClientCertIssuerDnAlias && (typeof properties.xForwardedForClientCertIssuerDnAlias) !== 'object') {
         errors.collect(ros.propertyValidator('xForwardedForClientCertIssuerDnAlias', ros.validateAllowedPattern)({
@@ -2098,6 +2250,13 @@ function RosListener_XForwardedForConfigPropertyValidator(properties: any): ros.
     errors.collect(ros.propertyValidator('xForwardedForClientSrcPortEnabled', ros.validateBoolean)(properties.xForwardedForClientSrcPortEnabled));
     errors.collect(ros.propertyValidator('xForwardedForSlbPortEnabled', ros.validateBoolean)(properties.xForwardedForSlbPortEnabled));
     errors.collect(ros.propertyValidator('xForwardedForEnabled', ros.validateBoolean)(properties.xForwardedForEnabled));
+    if(properties.xForwardedForProcessingMode && (typeof properties.xForwardedForProcessingMode) !== 'object') {
+        errors.collect(ros.propertyValidator('xForwardedForProcessingMode', ros.validateAllowedValues)({
+          data: properties.xForwardedForProcessingMode,
+          allowedValues: ["append","remove"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('xForwardedForProcessingMode', ros.validateString)(properties.xForwardedForProcessingMode));
     errors.collect(ros.propertyValidator('xForwardedForClientCertIssuerDnEnabled', ros.validateBoolean)(properties.xForwardedForClientCertIssuerDnEnabled));
     errors.collect(ros.propertyValidator('xForwardedForClientCertClientVerifyEnabled', ros.validateBoolean)(properties.xForwardedForClientCertClientVerifyEnabled));
     return errors.wrap('supplied properties not correct for "XForwardedForConfigProperty"');
@@ -2118,6 +2277,7 @@ function rosListenerXForwardedForConfigPropertyToRosTemplate(properties: any): a
       'XForwardedForClientSourceIpsEnabled': ros.booleanToRosTemplate(properties.xForwardedForClientSourceIpsEnabled),
       'XForwardedForClientCertFingerprintAlias': ros.stringToRosTemplate(properties.xForwardedForClientCertFingerprintAlias),
       'XForwardedForClientCertFingerprintEnabled': ros.booleanToRosTemplate(properties.xForwardedForClientCertFingerprintEnabled),
+      'XForwardedForHostEnabled': ros.booleanToRosTemplate(properties.xForwardedForHostEnabled),
       'XForwardedForClientSourceIpsTrusted': ros.stringToRosTemplate(properties.xForwardedForClientSourceIpsTrusted),
       'XForwardedForClientCertIssuerDNAlias': ros.stringToRosTemplate(properties.xForwardedForClientCertIssuerDnAlias),
       'XForwardedForClientCertClientVerifyAlias': ros.stringToRosTemplate(properties.xForwardedForClientCertClientVerifyAlias),
@@ -2128,6 +2288,7 @@ function rosListenerXForwardedForConfigPropertyToRosTemplate(properties: any): a
       'XForwardedForClientSrcPortEnabled': ros.booleanToRosTemplate(properties.xForwardedForClientSrcPortEnabled),
       'XForwardedForSLBPortEnabled': ros.booleanToRosTemplate(properties.xForwardedForSlbPortEnabled),
       'XForwardedForEnabled': ros.booleanToRosTemplate(properties.xForwardedForEnabled),
+      'XForwardedForProcessingMode': ros.stringToRosTemplate(properties.xForwardedForProcessingMode),
       'XForwardedForClientCertIssuerDNEnabled': ros.booleanToRosTemplate(properties.xForwardedForClientCertIssuerDnEnabled),
       'XForwardedForClientCertClientVerifyEnabled': ros.booleanToRosTemplate(properties.xForwardedForClientCertClientVerifyEnabled),
     };
@@ -2246,7 +2407,7 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
     if(properties.addressIpVersion && (typeof properties.addressIpVersion) !== 'object') {
         errors.collect(ros.propertyValidator('addressIpVersion', ros.validateAllowedValues)({
           data: properties.addressIpVersion,
-          allowedValues: ["IPv4","DualStack"],
+          allowedValues: ["IPv4","Ipv4","DualStack"],
         }));
     }
     errors.collect(ros.propertyValidator('addressIpVersion', ros.validateString)(properties.addressIpVersion));
@@ -2267,7 +2428,7 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
         errors.collect(ros.propertyValidator('securityGroupIds', ros.validateLength)({
             data: properties.securityGroupIds.length,
             min: 0,
-            max: 4,
+            max: 9,
           }));
     }
     errors.collect(ros.propertyValidator('securityGroupIds', ros.listValidator(ros.validateString))(properties.securityGroupIds));
@@ -2351,6 +2512,11 @@ export class RosLoadBalancer extends ros.RosResource {
      * @Attribute AddressType: The type of IP address that the ALB instance uses to provide services.
      */
     public readonly attrAddressType: ros.IResolvable;
+
+    /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
 
     /**
      * @Attribute DNSName: The domain name of the ALB instance.
@@ -2473,6 +2639,7 @@ export class RosLoadBalancer extends ros.RosResource {
     constructor(scope: ros.Construct, id: string, props: RosLoadBalancerProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosLoadBalancer.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrAddressType = this.getAtt('AddressType');
+        this.attrArn = this.getAtt('Arn');
         this.attrDnsName = this.getAtt('DNSName');
         this.attrLoadBalancerEdition = this.getAtt('LoadBalancerEdition');
         this.attrLoadBalancerId = this.getAtt('LoadBalancerId');
@@ -2986,6 +3153,11 @@ export class RosRule extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ALB::Rule";
 
     /**
+     * @Attribute ListenerId: The ID of the listener.
+     */
+    public readonly attrListenerId: ros.IResolvable;
+
+    /**
      * @Attribute RuleId: The ID of the forwarding rules.
      */
     public readonly attrRuleId: ros.IResolvable;
@@ -3035,6 +3207,7 @@ export class RosRule extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosRuleProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosRule.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrListenerId = this.getAtt('ListenerId');
         this.attrRuleId = this.getAtt('RuleId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
@@ -4927,18 +5100,26 @@ export interface RosServerGroupProps {
     readonly serverGroupName: string | ros.IResolvable;
 
     /**
-     * @Property vpcId: The ID of the virtual private cloud (VPC). You can add only servers that are deployed
-     * in the specified VPC to the server group.
-     * Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
-     * Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
-     */
-    readonly vpcId: string | ros.IResolvable;
-
-    /**
      * @Property connectionDrainConfig: Configuration related to graceful connection interruption.Enable graceful connection interruption. After the backend server is removed or the health check fails, the load balancing allows the existing connection to be transmitted normally within a certain period of time.Note: 
      * Basic Edition instances do not support enabling graceful connection interruption. Only Standard Edition and WAF Enhanced Edition instances support it.Server type and IP type server group support graceful connection interruption. Function Compute type does not support it.
      */
     readonly connectionDrainConfig?: RosServerGroup.ConnectionDrainConfigProperty | ros.IResolvable;
+
+    /**
+     * @Property crossZoneEnabled: Specifies whether to enable cross-zone load balancing. Valid values:
+     * true (default)
+     * false
+     * Note:
+     * Basic ALB instances do not support server groups that have cross-zone load balancing disabled. Only Standard and WAF-enabled ALB instances support server groups that have cross-zone load balancing.
+     * Cross-zone load balancing can be disabled for server groups of the server and IP type, but not for server groups of the Function Compute type.
+     * When cross-zone load balancing is disabled, session persistence cannot be enabled.
+     */
+    readonly crossZoneEnabled?: boolean | ros.IResolvable;
+
+    /**
+     * @Property ipv6Enabled: Whether to enable IPv6.
+     */
+    readonly ipv6Enabled?: boolean | ros.IResolvable;
 
     /**
      * @Property protocol: The backend protocol. Valid values:
@@ -5002,6 +5183,14 @@ export interface RosServerGroupProps {
      * @Property upstreamKeepaliveEnabled: Whether to enable upstream keepalive.
      */
     readonly upstreamKeepaliveEnabled?: boolean | ros.IResolvable;
+
+    /**
+     * @Property vpcId: The ID of the virtual private cloud (VPC). You can add only servers that are deployed
+     * in the specified VPC to the server group.
+     * Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
+     * Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
+     */
+    readonly vpcId?: string | ros.IResolvable;
 }
 
 /**
@@ -5021,7 +5210,7 @@ function RosServerGroupPropsValidator(properties: any): ros.ValidationResult {
     if(properties.scheduler && (typeof properties.scheduler) !== 'object') {
         errors.collect(ros.propertyValidator('scheduler', ros.validateAllowedValues)({
           data: properties.scheduler,
-          allowedValues: ["Sch","Wlc","Wrr"],
+          allowedValues: ["Sch","Wlc","Wrr","Uch"],
         }));
     }
     errors.collect(ros.propertyValidator('scheduler', ros.validateString)(properties.scheduler));
@@ -5033,8 +5222,9 @@ function RosServerGroupPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('serverGroupType', ros.validateString)(properties.serverGroupType));
+    errors.collect(ros.propertyValidator('crossZoneEnabled', ros.validateBoolean)(properties.crossZoneEnabled));
+    errors.collect(ros.propertyValidator('ipv6Enabled', ros.validateBoolean)(properties.ipv6Enabled));
     errors.collect(ros.propertyValidator('slowStartConfig', RosServerGroup_SlowStartConfigPropertyValidator)(properties.slowStartConfig));
-    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('serviceName', ros.validateString)(properties.serviceName));
     errors.collect(ros.propertyValidator('healthCheckConfig', ros.requiredValidator)(properties.healthCheckConfig));
@@ -5042,7 +5232,7 @@ function RosServerGroupPropsValidator(properties: any): ros.ValidationResult {
     if(properties.protocol && (typeof properties.protocol) !== 'object') {
         errors.collect(ros.propertyValidator('protocol', ros.validateAllowedValues)({
           data: properties.protocol,
-          allowedValues: ["HTTPS","HTTP","gRPC"],
+          allowedValues: ["HTTPS","HTTP","gRPC","GRPC"],
         }));
     }
     errors.collect(ros.propertyValidator('protocol', ros.validateString)(properties.protocol));
@@ -5075,8 +5265,9 @@ function rosServerGroupPropsToRosTemplate(properties: any, enableResourcePropert
     return {
       'HealthCheckConfig': rosServerGroupHealthCheckConfigPropertyToRosTemplate(properties.healthCheckConfig),
       'ServerGroupName': ros.stringToRosTemplate(properties.serverGroupName),
-      'VpcId': ros.stringToRosTemplate(properties.vpcId),
       'ConnectionDrainConfig': rosServerGroupConnectionDrainConfigPropertyToRosTemplate(properties.connectionDrainConfig),
+      'CrossZoneEnabled': ros.booleanToRosTemplate(properties.crossZoneEnabled),
+      'Ipv6Enabled': ros.booleanToRosTemplate(properties.ipv6Enabled),
       'Protocol': ros.stringToRosTemplate(properties.protocol),
       'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
       'Scheduler': ros.stringToRosTemplate(properties.scheduler),
@@ -5087,6 +5278,7 @@ function rosServerGroupPropsToRosTemplate(properties: any, enableResourcePropert
       'Tags': ros.listMapper(rosServerGroupTagsPropertyToRosTemplate)(properties.tags),
       'UchConfig': rosServerGroupUchConfigPropertyToRosTemplate(properties.uchConfig),
       'UpstreamKeepaliveEnabled': ros.booleanToRosTemplate(properties.upstreamKeepaliveEnabled),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
     };
 }
 
@@ -5100,6 +5292,11 @@ export class RosServerGroup extends ros.RosResource {
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ALB::ServerGroup";
+
+    /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
 
     /**
      * @Attribute ServerGroupId: The ID of the server group.
@@ -5122,18 +5319,26 @@ export class RosServerGroup extends ros.RosResource {
     public serverGroupName: string | ros.IResolvable;
 
     /**
-     * @Property vpcId: The ID of the virtual private cloud (VPC). You can add only servers that are deployed
-     * in the specified VPC to the server group.
-     * Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
-     * Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
-     */
-    public vpcId: string | ros.IResolvable;
-
-    /**
      * @Property connectionDrainConfig: Configuration related to graceful connection interruption.Enable graceful connection interruption. After the backend server is removed or the health check fails, the load balancing allows the existing connection to be transmitted normally within a certain period of time.Note: 
      * Basic Edition instances do not support enabling graceful connection interruption. Only Standard Edition and WAF Enhanced Edition instances support it.Server type and IP type server group support graceful connection interruption. Function Compute type does not support it.
      */
     public connectionDrainConfig: RosServerGroup.ConnectionDrainConfigProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property crossZoneEnabled: Specifies whether to enable cross-zone load balancing. Valid values:
+     * true (default)
+     * false
+     * Note:
+     * Basic ALB instances do not support server groups that have cross-zone load balancing disabled. Only Standard and WAF-enabled ALB instances support server groups that have cross-zone load balancing.
+     * Cross-zone load balancing can be disabled for server groups of the server and IP type, but not for server groups of the Function Compute type.
+     * When cross-zone load balancing is disabled, session persistence cannot be enabled.
+     */
+    public crossZoneEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipv6Enabled: Whether to enable IPv6.
+     */
+    public ipv6Enabled: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property protocol: The backend protocol. Valid values:
@@ -5199,19 +5404,29 @@ export class RosServerGroup extends ros.RosResource {
     public upstreamKeepaliveEnabled: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property vpcId: The ID of the virtual private cloud (VPC). You can add only servers that are deployed
+     * in the specified VPC to the server group.
+     * Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
+     * Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
+     */
+    public vpcId: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: RosServerGroupProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosServerGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrServerGroupId = this.getAtt('ServerGroupId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.healthCheckConfig = props.healthCheckConfig;
         this.serverGroupName = props.serverGroupName;
-        this.vpcId = props.vpcId;
         this.connectionDrainConfig = props.connectionDrainConfig;
+        this.crossZoneEnabled = props.crossZoneEnabled;
+        this.ipv6Enabled = props.ipv6Enabled;
         this.protocol = props.protocol;
         this.resourceGroupId = props.resourceGroupId;
         this.scheduler = props.scheduler;
@@ -5222,6 +5437,7 @@ export class RosServerGroup extends ros.RosResource {
         this.tags = props.tags;
         this.uchConfig = props.uchConfig;
         this.upstreamKeepaliveEnabled = props.upstreamKeepaliveEnabled;
+        this.vpcId = props.vpcId;
     }
 
 
@@ -5229,8 +5445,9 @@ export class RosServerGroup extends ros.RosResource {
         return {
             healthCheckConfig: this.healthCheckConfig,
             serverGroupName: this.serverGroupName,
-            vpcId: this.vpcId,
             connectionDrainConfig: this.connectionDrainConfig,
+            crossZoneEnabled: this.crossZoneEnabled,
+            ipv6Enabled: this.ipv6Enabled,
             protocol: this.protocol,
             resourceGroupId: this.resourceGroupId,
             scheduler: this.scheduler,
@@ -5241,6 +5458,7 @@ export class RosServerGroup extends ros.RosResource {
             tags: this.tags,
             uchConfig: this.uchConfig,
             upstreamKeepaliveEnabled: this.upstreamKeepaliveEnabled,
+            vpcId: this.vpcId,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -5376,7 +5594,7 @@ export namespace RosServerGroup {
          */
         readonly healthyThreshold?: number | ros.IResolvable;
         /**
-         * @Property healthCheckProtocol: The protocol that is used for health checks. Valid values: HTTP and HTTPS.
+         * @Property healthCheckProtocol: The protocol that is used for health checks.
          */
         readonly healthCheckProtocol?: string | ros.IResolvable;
         /**
@@ -5422,7 +5640,7 @@ function RosServerGroup_HealthCheckConfigPropertyValidator(properties: any): ros
     if(properties.healthCheckProtocol && (typeof properties.healthCheckProtocol) !== 'object') {
         errors.collect(ros.propertyValidator('healthCheckProtocol', ros.validateAllowedValues)({
           data: properties.healthCheckProtocol,
-          allowedValues: ["HTTP","HTTPS","gRPC"],
+          allowedValues: ["HTTPS","HTTP","gRPC","GRPC"],
         }));
     }
     errors.collect(ros.propertyValidator('healthCheckProtocol', ros.validateString)(properties.healthCheckProtocol));

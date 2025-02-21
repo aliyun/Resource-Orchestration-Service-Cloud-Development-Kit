@@ -162,7 +162,7 @@ export interface IPatchBaseline extends ros.IResource {
     readonly attrUpdatedDate: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::PatchBaseline`, which is used to create a patch baseline.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::PatchBaseline`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPatchBaseline`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-patchbaseline
  */

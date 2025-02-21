@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.polardb;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::POLARDB::DBClusterAccessWhiteList</code>, which is used to modify the list of IP addresses that are allowed to access an ApsaraDB for POLARDB cluster.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::POLARDB::DBClusterAccessWhiteList</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:42.373Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:18.986Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBClusterAccessWhiteList")
 public class DBClusterAccessWhiteList extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.polardb.IDBClusterAccessWhiteList {
 

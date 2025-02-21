@@ -14,6 +14,7 @@ type RosProInstance interface {
 	alicloudroscdkcore.RosResource
 	AddressType() interface{}
 	SetAddressType(val interface{})
+	AttrArn() alicloudroscdkcore.IResolvable
 	AttrInstanceId() alicloudroscdkcore.IResolvable
 	Bandwidth() interface{}
 	SetBandwidth(val interface{})
@@ -202,6 +203,16 @@ func (j *jsiiProxy_RosProInstance) AddressType() interface{} {
 	_jsii_.Get(
 		j,
 		"addressType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosProInstance) AttrArn() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrArn",
 		&returns,
 	)
 	return returns

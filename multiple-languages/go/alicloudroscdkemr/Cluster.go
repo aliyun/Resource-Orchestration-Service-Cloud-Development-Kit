@@ -13,6 +13,8 @@ import (
 type Cluster interface {
 	alicloudroscdkcore.Resource
 	ICluster
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute ClusterId: The ID of the cluster.
 	AttrClusterId() interface{}
 	// Attribute HostGroups: The host group list of the cluster.
@@ -114,6 +116,16 @@ type Cluster interface {
 type jsiiProxy_Cluster struct {
 	internal.Type__alicloudroscdkcoreResource
 	jsiiProxy_ICluster
+}
+
+func (j *jsiiProxy_Cluster) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Cluster) AttrClusterId() interface{} {

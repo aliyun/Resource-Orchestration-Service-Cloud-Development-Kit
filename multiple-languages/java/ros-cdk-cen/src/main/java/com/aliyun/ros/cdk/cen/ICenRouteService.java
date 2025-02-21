@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Represents a <code>CenRouteService</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:35.409Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:12.526Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.ICenRouteService")
 @software.amazon.jsii.Jsii.Proxy(ICenRouteService.Jsii$Proxy.class)
 public interface ICenRouteService extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

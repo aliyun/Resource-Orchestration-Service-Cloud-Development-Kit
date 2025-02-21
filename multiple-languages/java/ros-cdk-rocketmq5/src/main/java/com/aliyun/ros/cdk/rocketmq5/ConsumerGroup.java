@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.rocketmq5;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ROCKETMQ5::ConsumerGroup</code>, which is used to create a consumer group in ApsaraMQ for RocketMQ 5.0.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ROCKETMQ5::ConsumerGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:43.760Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:20.039Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq5.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq5.ConsumerGroup")
 public class ConsumerGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.rocketmq5.IConsumerGroup {
 

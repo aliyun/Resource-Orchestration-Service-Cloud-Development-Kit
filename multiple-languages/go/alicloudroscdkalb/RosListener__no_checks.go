@@ -136,6 +136,10 @@ func (j *jsiiProxy_RosListener) validateSetLoadBalancerIdParameters(val interfac
 	return nil
 }
 
+func (j *jsiiProxy_RosListener) validateSetLogConfigParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosListener) validateSetQuicConfigParameters(val interface{}) error {
 	return nil
 }

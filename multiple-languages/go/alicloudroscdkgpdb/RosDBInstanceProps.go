@@ -8,6 +8,7 @@ type RosDBInstanceProps struct {
 	EngineVersion interface{} `field:"required" json:"engineVersion" yaml:"engineVersion"`
 	VSwitchId interface{} `field:"required" json:"vSwitchId" yaml:"vSwitchId"`
 	ZoneId interface{} `field:"required" json:"zoneId" yaml:"zoneId"`
+	AiNodeSpecInfos interface{} `field:"optional" json:"aiNodeSpecInfos" yaml:"aiNodeSpecInfos"`
 	CreateSampleData interface{} `field:"optional" json:"createSampleData" yaml:"createSampleData"`
 	DbInstanceCategory interface{} `field:"optional" json:"dbInstanceCategory" yaml:"dbInstanceCategory"`
 	DbInstanceClass interface{} `field:"optional" json:"dbInstanceClass" yaml:"dbInstanceClass"`
@@ -19,6 +20,7 @@ type RosDBInstanceProps struct {
 	EncryptionType interface{} `field:"optional" json:"encryptionType" yaml:"encryptionType"`
 	IdleTime interface{} `field:"optional" json:"idleTime" yaml:"idleTime"`
 	InstanceSpec interface{} `field:"optional" json:"instanceSpec" yaml:"instanceSpec"`
+	MasterCu interface{} `field:"optional" json:"masterCu" yaml:"masterCu"`
 	MasterNodeNum interface{} `field:"optional" json:"masterNodeNum" yaml:"masterNodeNum"`
 	PayType interface{} `field:"optional" json:"payType" yaml:"payType"`
 	Period interface{} `field:"optional" json:"period" yaml:"period"`

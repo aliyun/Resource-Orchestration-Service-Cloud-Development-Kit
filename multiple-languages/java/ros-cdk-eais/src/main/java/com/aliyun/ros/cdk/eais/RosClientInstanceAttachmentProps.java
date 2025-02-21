@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.eais;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eais-clientinstanceattachment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:37.504Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:14.576Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eais.$Module.class, fqn = "@alicloud/ros-cdk-eais.RosClientInstanceAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(RosClientInstanceAttachmentProps.Jsii$Proxy.class)
 public interface RosClientInstanceAttachmentProps extends software.amazon.jsii.JsiiSerializable {

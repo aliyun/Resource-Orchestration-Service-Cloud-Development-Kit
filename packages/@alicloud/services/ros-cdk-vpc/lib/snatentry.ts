@@ -55,7 +55,7 @@ export interface ISnatEntry extends ros.IResource {
     readonly attrSnatEntryIds: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::SnatEntry`, which is used to add SNAT entries to an SNAT table.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::SnatEntry`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSnatEntry`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-snatentry
  */

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::APIG::HttpApi`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::APIG::HttpApi`, which is used to create an HTTP API.
 type HttpApi interface {
 	alicloudroscdkcore.Resource
 	IHttpApi

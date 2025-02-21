@@ -9,9 +9,10 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::HaVip`, which is used to create a high-availability virtual IP address (HAVIP).
+// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::HaVip`.
 type RosHaVip interface {
 	alicloudroscdkcore.RosResource
+	AttrArn() alicloudroscdkcore.IResolvable
 	AttrHaVipId() alicloudroscdkcore.IResolvable
 	AttrIpAddress() alicloudroscdkcore.IResolvable
 	// Returns: the stack trace of the point where this Resource was created from, sourced
@@ -180,6 +181,16 @@ type RosHaVip interface {
 // The jsii proxy struct for RosHaVip
 type jsiiProxy_RosHaVip struct {
 	internal.Type__alicloudroscdkcoreRosResource
+}
+
+func (j *jsiiProxy_RosHaVip) AttrArn() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_RosHaVip) AttrHaVipId() alicloudroscdkcore.IResolvable {

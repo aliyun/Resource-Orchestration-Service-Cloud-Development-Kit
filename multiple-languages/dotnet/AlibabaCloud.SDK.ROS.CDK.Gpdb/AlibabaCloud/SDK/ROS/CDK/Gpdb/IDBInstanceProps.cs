@@ -39,6 +39,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             get;
         }
 
+        /// <summary>Property aiNodeSpecInfos: AI node spec infos.</summary>
+        [JsiiProperty(name: "aiNodeSpecInfos", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-gpdb.RosDBInstance.AINodeSpecInfosProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AiNodeSpecInfos
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property createSampleData: Whether to load the sample data set after the instance is created.</summary>
         /// <remarks>
         /// The value can be:
@@ -190,6 +201,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         [JsiiProperty(name: "instanceSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? InstanceSpec
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property masterCu: Master resources.</summary>
+        /// <remarks>
+        /// Default is 8.
+        /// </remarks>
+        [JsiiProperty(name: "masterCu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? MasterCu
         {
             get
             {
@@ -496,6 +521,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
                 get => GetInstanceProperty<object>()!;
             }
 
+            /// <summary>Property aiNodeSpecInfos: AI node spec infos.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "aiNodeSpecInfos", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-gpdb.RosDBInstance.AINodeSpecInfosProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? AiNodeSpecInfos
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property createSampleData: Whether to load the sample data set after the instance is created.</summary>
             /// <remarks>
             /// The value can be:
@@ -617,6 +650,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             [JsiiOptional]
             [JsiiProperty(name: "instanceSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? InstanceSpec
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property masterCu: Master resources.</summary>
+            /// <remarks>
+            /// Default is 8.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "masterCu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MasterCu
             {
                 get => GetInstanceProperty<object?>();
             }

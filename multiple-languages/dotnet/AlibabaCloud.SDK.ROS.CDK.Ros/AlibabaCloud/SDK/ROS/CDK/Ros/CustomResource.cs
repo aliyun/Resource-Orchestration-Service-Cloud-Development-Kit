@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ros
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ROS::CustomResource`, which is used to create a custom resource.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ROS::CustomResource`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCustomResource`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-customresource

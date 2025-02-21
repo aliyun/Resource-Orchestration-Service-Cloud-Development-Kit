@@ -50,7 +50,7 @@ export interface IGrantInstanceToCen extends ros.IResource {
     readonly attrInstanceId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::GrantInstanceToCen`, which is used to authorize a CEN instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::GrantInstanceToCen`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGrantInstanceToCen`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-grantinstancetocen
  */

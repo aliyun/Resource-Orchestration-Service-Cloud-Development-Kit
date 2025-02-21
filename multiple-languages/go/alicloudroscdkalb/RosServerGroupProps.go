@@ -7,8 +7,9 @@ package alicloudroscdkalb
 type RosServerGroupProps struct {
 	HealthCheckConfig interface{} `field:"required" json:"healthCheckConfig" yaml:"healthCheckConfig"`
 	ServerGroupName interface{} `field:"required" json:"serverGroupName" yaml:"serverGroupName"`
-	VpcId interface{} `field:"required" json:"vpcId" yaml:"vpcId"`
 	ConnectionDrainConfig interface{} `field:"optional" json:"connectionDrainConfig" yaml:"connectionDrainConfig"`
+	CrossZoneEnabled interface{} `field:"optional" json:"crossZoneEnabled" yaml:"crossZoneEnabled"`
+	Ipv6Enabled interface{} `field:"optional" json:"ipv6Enabled" yaml:"ipv6Enabled"`
 	Protocol interface{} `field:"optional" json:"protocol" yaml:"protocol"`
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 	Scheduler interface{} `field:"optional" json:"scheduler" yaml:"scheduler"`
@@ -19,5 +20,6 @@ type RosServerGroupProps struct {
 	Tags *[]*RosServerGroup_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 	UchConfig interface{} `field:"optional" json:"uchConfig" yaml:"uchConfig"`
 	UpstreamKeepaliveEnabled interface{} `field:"optional" json:"upstreamKeepaliveEnabled" yaml:"upstreamKeepaliveEnabled"`
+	VpcId interface{} `field:"optional" json:"vpcId" yaml:"vpcId"`
 }
 

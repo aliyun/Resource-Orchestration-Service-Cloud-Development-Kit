@@ -3,6 +3,288 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosDedicatedBlockStorageCluster`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ebs-dedicatedblockstoragecluster
+ */
+export interface RosDedicatedBlockStorageClusterProps {
+
+    /**
+     * @Property azone: The ID of the zone in which to create the dedicated block storage cluster.
+     */
+    readonly azone: string | ros.IResolvable;
+
+    /**
+     * @Property capacity: The capacity of the dedicated block storage cluster. Valid values: 61440 to 2334720. Unit: GiB. 2,334,720 GiB is equal to 2,280 TiB. The capacity increases in a minimum increment of 12,288 GiB.
+     */
+    readonly capacity: number | ros.IResolvable;
+
+    /**
+     * @Property dbscName: The name of the dedicated block storage cluster.
+     */
+    readonly dbscName: string | ros.IResolvable;
+
+    /**
+     * @Property period: The subscription duration of the dedicated block storage cluster. Valid values: 6, 7, 8, 9, 10, 11, 12, 24, and 36.
+     */
+    readonly period: number | ros.IResolvable;
+
+    /**
+     * @Property periodUnit: The unit of the subscription duration specified by Period. Set the value to Month.
+     */
+    readonly periodUnit: string | ros.IResolvable;
+
+    /**
+     * @Property type: The type of the dedicated block storage cluster. Valid values: 
+     * Standard: basic dedicated block storage cluster. Enterprise SSDs (ESSDs) at performance level 0 (PL0 ESSDs) can be created in basic dedicated block storage clusters.
+     * Premium: performance dedicated block storage cluster. ESSDs at performance level 1 (PL1 ESSDs) can be created in performance dedicated block storage clusters.
+     * Default value: Premium.
+     */
+    readonly type: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which to assign the dedicated block storage cluster.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property tag: Tags of dedicated block storage cluster.
+     */
+    readonly tag?: Array<ros.RosTag | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosDedicatedBlockStorageClusterProps`
+ *
+ * @param properties - the TypeScript properties of a `RosDedicatedBlockStorageClusterProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosDedicatedBlockStorageClusterPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('azone', ros.requiredValidator)(properties.azone));
+    errors.collect(ros.propertyValidator('azone', ros.validateString)(properties.azone));
+    errors.collect(ros.propertyValidator('type', ros.requiredValidator)(properties.type));
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["Standard","Premium"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('capacity', ros.requiredValidator)(properties.capacity));
+    if(properties.capacity && (typeof properties.capacity) !== 'object') {
+        errors.collect(ros.propertyValidator('capacity', ros.validateRange)({
+            data: properties.capacity,
+            min: 61440,
+            max: 2334720,
+          }));
+    }
+    errors.collect(ros.propertyValidator('capacity', ros.validateNumber)(properties.capacity));
+    errors.collect(ros.propertyValidator('period', ros.requiredValidator)(properties.period));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
+          allowedValues: [6,7,8,9,10,11,12,24,36],
+        }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    if(properties.tag && (Array.isArray(properties.tag) || (typeof properties.tag) === 'string')) {
+        errors.collect(ros.propertyValidator('tag', ros.validateLength)({
+            data: properties.tag.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tag', ros.listValidator(ros.validateRosTag))(properties.tag));
+    errors.collect(ros.propertyValidator('dbscName', ros.requiredValidator)(properties.dbscName));
+    errors.collect(ros.propertyValidator('dbscName', ros.validateString)(properties.dbscName));
+    errors.collect(ros.propertyValidator('periodUnit', ros.requiredValidator)(properties.periodUnit));
+    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
+        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
+          data: properties.periodUnit,
+          allowedValues: ["Month"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
+    return errors.wrap('supplied properties not correct for "RosDedicatedBlockStorageClusterProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EBS::DedicatedBlockStorageCluster` resource
+ *
+ * @param properties - the TypeScript properties of a `RosDedicatedBlockStorageClusterProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EBS::DedicatedBlockStorageCluster` resource.
+ */
+// @ts-ignore TS6133
+function rosDedicatedBlockStorageClusterPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosDedicatedBlockStorageClusterPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'Azone': ros.stringToRosTemplate(properties.azone),
+      'Capacity': ros.numberToRosTemplate(properties.capacity),
+      'DbscName': ros.stringToRosTemplate(properties.dbscName),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tag': ros.listMapper(ros.rosTagToRosTemplate)(properties.tag),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EBS::DedicatedBlockStorageCluster`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DedicatedBlockStorageCluster` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ebs-dedicatedblockstoragecluster
+ */
+export class RosDedicatedBlockStorageCluster extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EBS::DedicatedBlockStorageCluster";
+
+    /**
+     * @Attribute DedicatedBlockStorageClusterId: The ID of the dedicated block storage cluster.
+     */
+    public readonly attrDedicatedBlockStorageClusterId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property azone: The ID of the zone in which to create the dedicated block storage cluster.
+     */
+    public azone: string | ros.IResolvable;
+
+    /**
+     * @Property capacity: The capacity of the dedicated block storage cluster. Valid values: 61440 to 2334720. Unit: GiB. 2,334,720 GiB is equal to 2,280 TiB. The capacity increases in a minimum increment of 12,288 GiB.
+     */
+    public capacity: number | ros.IResolvable;
+
+    /**
+     * @Property dbscName: The name of the dedicated block storage cluster.
+     */
+    public dbscName: string | ros.IResolvable;
+
+    /**
+     * @Property period: The subscription duration of the dedicated block storage cluster. Valid values: 6, 7, 8, 9, 10, 11, 12, 24, and 36.
+     */
+    public period: number | ros.IResolvable;
+
+    /**
+     * @Property periodUnit: The unit of the subscription duration specified by Period. Set the value to Month.
+     */
+    public periodUnit: string | ros.IResolvable;
+
+    /**
+     * @Property type: The type of the dedicated block storage cluster. Valid values: 
+     * Standard: basic dedicated block storage cluster. Enterprise SSDs (ESSDs) at performance level 0 (PL0 ESSDs) can be created in basic dedicated block storage clusters.
+     * Premium: performance dedicated block storage cluster. ESSDs at performance level 1 (PL1 ESSDs) can be created in performance dedicated block storage clusters.
+     * Default value: Premium.
+     */
+    public type: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which to assign the dedicated block storage cluster.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tag: Tags of dedicated block storage cluster.
+     */
+    public tag: Array<ros.RosTag | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosDedicatedBlockStorageClusterProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosDedicatedBlockStorageCluster.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDedicatedBlockStorageClusterId = this.getAtt('DedicatedBlockStorageClusterId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.azone = props.azone;
+        this.capacity = props.capacity;
+        this.dbscName = props.dbscName;
+        this.period = props.period;
+        this.periodUnit = props.periodUnit;
+        this.type = props.type;
+        this.resourceGroupId = props.resourceGroupId;
+        this.tag = props.tag;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            azone: this.azone,
+            capacity: this.capacity,
+            dbscName: this.dbscName,
+            period: this.period,
+            periodUnit: this.periodUnit,
+            type: this.type,
+            resourceGroupId: this.resourceGroupId,
+            tag: this.tag,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosDedicatedBlockStorageClusterPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosDedicatedBlockStorageCluster {
+    /**
+     * @stability external
+     */
+    export interface TagProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosDedicatedBlockStorageCluster_TagPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EBS::DedicatedBlockStorageCluster.Tag` resource
+ *
+ * @param properties - the TypeScript properties of a `TagProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EBS::DedicatedBlockStorageCluster.Tag` resource.
+ */
+// @ts-ignore TS6133
+function rosDedicatedBlockStorageClusterTagPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosDedicatedBlockStorageCluster_TagPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
  * Properties for defining a `RosDiskReplicaGroup`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ebs-diskreplicagroup
  */

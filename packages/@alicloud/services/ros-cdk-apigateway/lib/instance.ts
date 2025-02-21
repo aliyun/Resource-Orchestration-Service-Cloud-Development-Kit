@@ -71,6 +71,11 @@ export interface IInstance extends ros.IResource {
     readonly props: InstanceProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute EgressIpv6Enable: Whether enable egress IPV6.
      */
     readonly attrEgressIpv6Enable: ros.IResolvable | string;
@@ -120,6 +125,11 @@ export class Instance extends ros.Resource implements IInstance {
     protected id: string;
     public readonly props: InstanceProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute EgressIpv6Enable: Whether enable egress IPV6.
@@ -186,6 +196,7 @@ export class Instance extends ros.Resource implements IInstance {
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstance;
+        this.attrArn = rosInstance.attrArn;
         this.attrEgressIpv6Enable = rosInstance.attrEgressIpv6Enable;
         this.attrInstanceId = rosInstance.attrInstanceId;
         this.attrInstanceType = rosInstance.attrInstanceType;

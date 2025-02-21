@@ -9,9 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::Stack`, which is used to create a nested stack.
-//
-// You can nest stacks up to five levels of depth.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::Stack`.
 type RosStack interface {
 	alicloudroscdkcore.RosResource
 	// Returns: the stack trace of the point where this Resource was created from, sourced

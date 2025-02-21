@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * An enum representing the various ARN formats that different services use.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:33.588Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:10.753Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.ArnFormat")
 public enum ArnFormat {
     /**

@@ -60,7 +60,7 @@ export interface IPostgresExtensions extends ros.IResource {
     readonly attrInstalledExtensionNames: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::PostgresExtensions`, which is used to install extensions on a database.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::PostgresExtensions`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPostgresExtensions`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-postgresextensions
  */

@@ -49,7 +49,7 @@ export interface INatIpCidr extends ros.IResource {
     readonly attrNatIpCidrId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::NatIpCidr`, which is used to create a NAT CIDR block.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::NatIpCidr`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNatIpCidr`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-natipcidr
  */

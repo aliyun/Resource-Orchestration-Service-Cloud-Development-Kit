@@ -42,7 +42,7 @@ export interface IPeeringRouterInterfaceBinding extends ros.IResource {
     readonly attrRouterInterfaceId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::PeeringRouterInterfaceBinding`, which is used to bind a router interface with another router interface.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::PeeringRouterInterfaceBinding`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPeeringRouterInterfaceBinding`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-peeringrouterinterfacebinding
  */

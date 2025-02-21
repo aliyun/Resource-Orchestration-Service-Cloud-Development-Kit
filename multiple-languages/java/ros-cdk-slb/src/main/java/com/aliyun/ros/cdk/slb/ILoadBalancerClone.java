@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Represents a <code>LoadBalancerClone</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:44.234Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:20.634Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.ILoadBalancerClone")
 @software.amazon.jsii.Jsii.Proxy(ILoadBalancerClone.Jsii$Proxy.class)
 public interface ILoadBalancerClone extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

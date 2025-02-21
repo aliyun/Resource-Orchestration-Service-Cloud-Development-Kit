@@ -4,10 +4,8 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ros
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::WaitConditionHandle`, which is used to receive signals.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::WaitConditionHandle`.</summary>
     /// <remarks>
-    /// You can use ALIYUN::ROS::WaitConditionHandle together with ALIYUN::ROS::WaitCondition to manage the execution process of a stack. When you create an Elastic Compute Service (ECS) instance, a signal is sent during the execution of the user data.
-    ///
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `WaitConditionHandle` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-waitconditionhandle
     /// </remarks>

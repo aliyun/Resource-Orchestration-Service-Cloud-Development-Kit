@@ -37,6 +37,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         {
         }
 
+        /// <summary>Attribute ListenerId: The ID of the listener.</summary>
+        [JsiiProperty(name: "attrListenerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrListenerId
+        {
+            get => GetInstanceProperty<object>()!;
+        }
+
         /// <summary>Attribute RuleId: The ID of the forwarding rules.</summary>
         [JsiiProperty(name: "attrRuleId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrRuleId

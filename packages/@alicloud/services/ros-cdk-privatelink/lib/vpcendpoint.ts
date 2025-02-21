@@ -77,6 +77,11 @@ export interface IVpcEndpoint extends ros.IResource {
     readonly props: VpcEndpointProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute Bandwidth: The bandwidth of the endpoint.
      */
     readonly attrBandwidth: ros.IResolvable | string;
@@ -117,7 +122,7 @@ export interface IVpcEndpoint extends ros.IResource {
     readonly attrZoneDomains: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::PrivateLink::VpcEndpoint`, which is used to create an endpoint.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PrivateLink::VpcEndpoint`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpcEndpoint`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpoint
  */
@@ -126,6 +131,11 @@ export class VpcEndpoint extends ros.Resource implements IVpcEndpoint {
     protected id: string;
     public readonly props: VpcEndpointProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute Bandwidth: The bandwidth of the endpoint.
@@ -193,6 +203,7 @@ export class VpcEndpoint extends ros.Resource implements IVpcEndpoint {
             serviceId: props.serviceId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosVpcEndpoint;
+        this.attrArn = rosVpcEndpoint.attrArn;
         this.attrBandwidth = rosVpcEndpoint.attrBandwidth;
         this.attrEndpointDomain = rosVpcEndpoint.attrEndpointDomain;
         this.attrEndpointId = rosVpcEndpoint.attrEndpointId;

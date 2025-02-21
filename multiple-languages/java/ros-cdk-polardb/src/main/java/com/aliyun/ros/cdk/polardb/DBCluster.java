@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::POLARDB::DBCluster</code>, which is used to create a PolarDB cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:42.359Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:18.977Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBCluster")
 public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.polardb.IDBCluster {
 
@@ -38,6 +38,14 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
     public DBCluster(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.polardb.DBClusterProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
         software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), java.util.Objects.requireNonNull(props, "props is required") });
+    }
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrArn() {
+        return software.amazon.jsii.Kernel.get(this, "attrArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -1355,6 +1363,37 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
          */
         public Builder sourceResourceId(final com.aliyun.ros.cdk.core.IResolvable sourceResourceId) {
             this.props.sourceResourceId(sourceResourceId);
+            return this;
+        }
+
+        /**
+         * Property sslEnabled: Modifies the SSL status.
+         * <p>
+         * Valid values:
+         * Disable: disables SSL encryption.
+         * Enable: enables SSL encryption.
+         * Update: updates the SSL certificate.
+         * <p>
+         * @return {@code this}
+         * @param sslEnabled Property sslEnabled: Modifies the SSL status. This parameter is required.
+         */
+        public Builder sslEnabled(final java.lang.String sslEnabled) {
+            this.props.sslEnabled(sslEnabled);
+            return this;
+        }
+        /**
+         * Property sslEnabled: Modifies the SSL status.
+         * <p>
+         * Valid values:
+         * Disable: disables SSL encryption.
+         * Enable: enables SSL encryption.
+         * Update: updates the SSL certificate.
+         * <p>
+         * @return {@code this}
+         * @param sslEnabled Property sslEnabled: Modifies the SSL status. This parameter is required.
+         */
+        public Builder sslEnabled(final com.aliyun.ros.cdk.core.IResolvable sslEnabled) {
+            this.props.sslEnabled(sslEnabled);
             return this;
         }
 

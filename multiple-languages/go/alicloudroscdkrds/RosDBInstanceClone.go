@@ -9,9 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBInstanceClone`, which is used to restore historical data of an instance to a new instance.
-//
-// The new instance is the clone of the instance.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBInstanceClone`.
 type RosDBInstanceClone interface {
 	alicloudroscdkcore.RosResource
 	AllocatePublicConnection() interface{}

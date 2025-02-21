@@ -12,6 +12,7 @@ import (
 // This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::PremiumInstance`, which is used to create an Anti-DDoS Proxy (Outside Chinese Mainland) instance.
 type RosPremiumInstance interface {
 	alicloudroscdkcore.RosResource
+	AttrArn() alicloudroscdkcore.IResolvable
 	AttrInstanceId() alicloudroscdkcore.IResolvable
 	BurstBandwidthMode() interface{}
 	SetBurstBandwidthMode(val interface{})
@@ -187,6 +188,16 @@ type RosPremiumInstance interface {
 // The jsii proxy struct for RosPremiumInstance
 type jsiiProxy_RosPremiumInstance struct {
 	internal.Type__alicloudroscdkcoreRosResource
+}
+
+func (j *jsiiProxy_RosPremiumInstance) AttrArn() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_RosPremiumInstance) AttrInstanceId() alicloudroscdkcore.IResolvable {

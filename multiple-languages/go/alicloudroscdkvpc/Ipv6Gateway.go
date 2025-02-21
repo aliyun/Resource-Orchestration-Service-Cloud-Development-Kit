@@ -9,10 +9,12 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::Ipv6Gateway`, which is used to create an IPv6 gateway.
+// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::Ipv6Gateway`.
 type Ipv6Gateway interface {
 	alicloudroscdkcore.Resource
 	IIpv6Gateway
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute Ipv6GatewayId: ID IPv6 gateway.
 	AttrIpv6GatewayId() interface{}
 	EnableResourcePropertyConstraint() *bool
@@ -108,6 +110,16 @@ type Ipv6Gateway interface {
 type jsiiProxy_Ipv6Gateway struct {
 	internal.Type__alicloudroscdkcoreResource
 	jsiiProxy_IIpv6Gateway
+}
+
+func (j *jsiiProxy_Ipv6Gateway) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Ipv6Gateway) AttrIpv6GatewayId() interface{} {

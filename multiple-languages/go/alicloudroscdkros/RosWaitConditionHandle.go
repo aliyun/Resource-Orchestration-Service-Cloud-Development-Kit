@@ -9,9 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::WaitConditionHandle`, which is used to receive signals.
-//
-// You can use ALIYUN::ROS::WaitConditionHandle together with ALIYUN::ROS::WaitCondition to manage the execution process of a stack. When you create an Elastic Compute Service (ECS) instance, a signal is sent during the execution of the user data.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::WaitConditionHandle`.
 type RosWaitConditionHandle interface {
 	alicloudroscdkcore.RosResource
 	AttrCurlCli() alicloudroscdkcore.IResolvable

@@ -22,18 +22,26 @@ export interface ServerGroupProps {
     readonly serverGroupName: string | ros.IResolvable;
 
     /**
-     * Property vpcId: The ID of the virtual private cloud (VPC). You can add only servers that are deployed
-     * in the specified VPC to the server group.
-     * Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
-     * Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
-     */
-    readonly vpcId: string | ros.IResolvable;
-
-    /**
      * Property connectionDrainConfig: Configuration related to graceful connection interruption.Enable graceful connection interruption. After the backend server is removed or the health check fails, the load balancing allows the existing connection to be transmitted normally within a certain period of time.Note: 
      * Basic Edition instances do not support enabling graceful connection interruption. Only Standard Edition and WAF Enhanced Edition instances support it.Server type and IP type server group support graceful connection interruption. Function Compute type does not support it.
      */
     readonly connectionDrainConfig?: RosServerGroup.ConnectionDrainConfigProperty | ros.IResolvable;
+
+    /**
+     * Property crossZoneEnabled: Specifies whether to enable cross-zone load balancing. Valid values:
+     * true (default)
+     * false
+     * Note:
+     * Basic ALB instances do not support server groups that have cross-zone load balancing disabled. Only Standard and WAF-enabled ALB instances support server groups that have cross-zone load balancing.
+     * Cross-zone load balancing can be disabled for server groups of the server and IP type, but not for server groups of the Function Compute type.
+     * When cross-zone load balancing is disabled, session persistence cannot be enabled.
+     */
+    readonly crossZoneEnabled?: boolean | ros.IResolvable;
+
+    /**
+     * Property ipv6Enabled: Whether to enable IPv6.
+     */
+    readonly ipv6Enabled?: boolean | ros.IResolvable;
 
     /**
      * Property protocol: The backend protocol. Valid values:
@@ -97,6 +105,14 @@ export interface ServerGroupProps {
      * Property upstreamKeepaliveEnabled: Whether to enable upstream keepalive.
      */
     readonly upstreamKeepaliveEnabled?: boolean | ros.IResolvable;
+
+    /**
+     * Property vpcId: The ID of the virtual private cloud (VPC). You can add only servers that are deployed
+     * in the specified VPC to the server group.
+     * Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
+     * Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
+     */
+    readonly vpcId?: string | ros.IResolvable;
 }
 
 /**
@@ -104,6 +120,11 @@ export interface ServerGroupProps {
  */
 export interface IServerGroup extends ros.IResource {
     readonly props: ServerGroupProps;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute ServerGroupId: The ID of the server group.
@@ -120,6 +141,11 @@ export class ServerGroup extends ros.Resource implements IServerGroup {
     protected id: string;
     public readonly props: ServerGroupProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute ServerGroupId: The ID of the server group.
@@ -146,6 +172,8 @@ export class ServerGroup extends ros.Resource implements IServerGroup {
             scheduler: props.scheduler,
             stickySessionConfig: props.stickySessionConfig,
             serverGroupType: props.serverGroupType,
+            crossZoneEnabled: props.crossZoneEnabled,
+            ipv6Enabled: props.ipv6Enabled,
             slowStartConfig: props.slowStartConfig,
             vpcId: props.vpcId,
             serviceName: props.serviceName,
@@ -155,6 +183,7 @@ export class ServerGroup extends ros.Resource implements IServerGroup {
             serverGroupName: props.serverGroupName,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosServerGroup;
+        this.attrArn = rosServerGroup.attrArn;
         this.attrServerGroupId = rosServerGroup.attrServerGroupId;
     }
 }

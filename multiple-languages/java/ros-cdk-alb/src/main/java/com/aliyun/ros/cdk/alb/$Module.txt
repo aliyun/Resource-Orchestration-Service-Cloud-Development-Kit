@@ -43,10 +43,12 @@
 @alicloud/ros-cdk-alb.RosHealthCheckTemplate=com.aliyun.ros.cdk.alb.RosHealthCheckTemplate
 @alicloud/ros-cdk-alb.RosHealthCheckTemplateProps=com.aliyun.ros.cdk.alb.RosHealthCheckTemplateProps
 @alicloud/ros-cdk-alb.RosListener=com.aliyun.ros.cdk.alb.RosListener
+@alicloud/ros-cdk-alb.RosListener.AccessLogTracingConfigProperty=com.aliyun.ros.cdk.alb.RosListener$AccessLogTracingConfigProperty
 @alicloud/ros-cdk-alb.RosListener.CaCertificatesProperty=com.aliyun.ros.cdk.alb.RosListener$CaCertificatesProperty
 @alicloud/ros-cdk-alb.RosListener.CertificatesProperty=com.aliyun.ros.cdk.alb.RosListener$CertificatesProperty
 @alicloud/ros-cdk-alb.RosListener.DefaultActionsProperty=com.aliyun.ros.cdk.alb.RosListener$DefaultActionsProperty
 @alicloud/ros-cdk-alb.RosListener.ForwardGroupConfigProperty=com.aliyun.ros.cdk.alb.RosListener$ForwardGroupConfigProperty
+@alicloud/ros-cdk-alb.RosListener.LogConfigProperty=com.aliyun.ros.cdk.alb.RosListener$LogConfigProperty
 @alicloud/ros-cdk-alb.RosListener.QuicConfigProperty=com.aliyun.ros.cdk.alb.RosListener$QuicConfigProperty
 @alicloud/ros-cdk-alb.RosListener.ServerGroupTuplesProperty=com.aliyun.ros.cdk.alb.RosListener$ServerGroupTuplesProperty
 @alicloud/ros-cdk-alb.RosListener.XForwardedForConfigProperty=com.aliyun.ros.cdk.alb.RosListener$XForwardedForConfigProperty

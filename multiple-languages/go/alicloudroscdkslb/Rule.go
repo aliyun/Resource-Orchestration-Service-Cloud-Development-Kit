@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SLB::Rule`, which is used to add forwarding rules to an HTTP or HTTPS listener.
+// This class encapsulates and extends the ROS resource type `ALIYUN::SLB::Rule`.
 type Rule interface {
 	alicloudroscdkcore.Resource
 	IRule

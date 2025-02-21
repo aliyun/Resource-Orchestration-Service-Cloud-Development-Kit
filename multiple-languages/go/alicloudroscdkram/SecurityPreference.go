@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::RAM::SecurityPreference`, which is used to configure security preferences for Resource Access Management (RAM) users.
+// This class encapsulates and extends the ROS resource type `ALIYUN::RAM::SecurityPreference`.
 type SecurityPreference interface {
 	alicloudroscdkcore.Resource
 	ISecurityPreference

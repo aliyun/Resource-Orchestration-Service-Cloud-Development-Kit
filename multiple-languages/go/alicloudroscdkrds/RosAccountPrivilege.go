@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::AccountPrivilege`, which is used to authorize an account to access a database.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::AccountPrivilege`.
 type RosAccountPrivilege interface {
 	alicloudroscdkcore.RosResource
 	AccountName() interface{}

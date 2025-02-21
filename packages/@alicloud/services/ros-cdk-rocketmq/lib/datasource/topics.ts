@@ -45,7 +45,7 @@ export interface ITopics extends ros.IResource {
     readonly attrTopics: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ROCKETMQ::Topics`, which is used to query topics on an ApsaraMQ for RocketMQ instance.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ROCKETMQ::Topics`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTopics`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rocketmq-topics
  */

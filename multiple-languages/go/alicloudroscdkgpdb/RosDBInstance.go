@@ -12,6 +12,9 @@ import (
 // This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::DBInstance`, which is used to create an AnalyticDB for PostgreSQL instance in reserved storage mode.
 type RosDBInstance interface {
 	alicloudroscdkcore.RosResource
+	AiNodeSpecInfos() interface{}
+	SetAiNodeSpecInfos(val interface{})
+	AttrArn() alicloudroscdkcore.IResolvable
 	AttrConnectionString() alicloudroscdkcore.IResolvable
 	AttrDbInstanceId() alicloudroscdkcore.IResolvable
 	AttrOrderId() alicloudroscdkcore.IResolvable
@@ -56,6 +59,8 @@ type RosDBInstance interface {
 	// Returns: the logical ID as a stringified token. This value will only get
 	// resolved during synthesis.
 	LogicalId() *string
+	MasterCu() interface{}
+	SetMasterCu(val interface{})
 	MasterNodeNum() interface{}
 	SetMasterNodeNum(val interface{})
 	// The construct tree node associated with this construct.
@@ -234,6 +239,26 @@ type RosDBInstance interface {
 // The jsii proxy struct for RosDBInstance
 type jsiiProxy_RosDBInstance struct {
 	internal.Type__alicloudroscdkcoreRosResource
+}
+
+func (j *jsiiProxy_RosDBInstance) AiNodeSpecInfos() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"aiNodeSpecInfos",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDBInstance) AttrArn() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_RosDBInstance) AttrConnectionString() alicloudroscdkcore.IResolvable {
@@ -421,6 +446,16 @@ func (j *jsiiProxy_RosDBInstance) LogicalId() *string {
 	_jsii_.Get(
 		j,
 		"logicalId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDBInstance) MasterCu() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"masterCu",
 		&returns,
 	)
 	return returns
@@ -724,6 +759,17 @@ func NewRosDBInstance_Override(r RosDBInstance, scope alicloudroscdkcore.Constru
 	)
 }
 
+func (j *jsiiProxy_RosDBInstance)SetAiNodeSpecInfos(val interface{}) {
+	if err := j.validateSetAiNodeSpecInfosParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"aiNodeSpecInfos",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosDBInstance)SetCreateSampleData(val interface{}) {
 	if err := j.validateSetCreateSampleDataParameters(val); err != nil {
 		panic(err)
@@ -863,6 +909,17 @@ func (j *jsiiProxy_RosDBInstance)SetInstanceSpec(val interface{}) {
 	_jsii_.Set(
 		j,
 		"instanceSpec",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDBInstance)SetMasterCu(val interface{}) {
+	if err := j.validateSetMasterCuParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"masterCu",
 		val,
 	)
 }

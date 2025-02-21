@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.pvtz;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::PVTZ::ZoneVpcBinder</code>, which is used to bind a private zone to or unbind a private zone from a virtual private cloud (VPC).
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::PVTZ::ZoneVpcBinder</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:42.799Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:19.268Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.ZoneVpcBinder")
 public class ZoneVpcBinder extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.pvtz.IZoneVpcBinder {
 

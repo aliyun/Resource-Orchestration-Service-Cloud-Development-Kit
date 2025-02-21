@@ -112,7 +112,7 @@ export interface ISecurityPreference extends ros.IResource {
     readonly attrLoginSessionDuration: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::SecurityPreference`, which is used to configure security preferences for Resource Access Management (RAM) users.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::SecurityPreference`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecurityPreference`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-securitypreference
  */

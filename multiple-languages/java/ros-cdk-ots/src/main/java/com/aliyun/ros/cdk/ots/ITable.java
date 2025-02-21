@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ots;
 /**
  * Represents a <code>Table</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:41.915Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:18.600Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.ITable")
 @software.amazon.jsii.Jsii.Proxy(ITable.Jsii$Proxy.class)
 public interface ITable extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

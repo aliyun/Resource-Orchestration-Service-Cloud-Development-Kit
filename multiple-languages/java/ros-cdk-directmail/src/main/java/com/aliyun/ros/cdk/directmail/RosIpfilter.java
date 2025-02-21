@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.directmail;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DirectMail::Ipfilter</code>, which is used to add an IP filter.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:36.996Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:14.045Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.directmail.$Module.class, fqn = "@alicloud/ros-cdk-directmail.RosIpfilter")
 public class RosIpfilter extends com.aliyun.ros.cdk.core.RosResource {
 

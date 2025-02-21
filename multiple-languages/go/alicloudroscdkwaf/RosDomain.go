@@ -10,7 +10,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::WAF::Domain`, which is used to add a domain to Web Application Firewall (WAF).
+// This class is a base encapsulation around the ROS resource type `ALIYUN::WAF::Domain`.
 type RosDomain interface {
 	alicloudroscdkcore.RosResource
 	AttrClusterType() alicloudroscdkcore.IResolvable

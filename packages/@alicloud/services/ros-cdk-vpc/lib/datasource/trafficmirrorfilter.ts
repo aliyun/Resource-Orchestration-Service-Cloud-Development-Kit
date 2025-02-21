@@ -55,7 +55,7 @@ export interface ITrafficMirrorFilter extends ros.IResource {
     readonly attrTrafficMirrorFilterName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::TrafficMirrorFilter`, which is used to query a filter for traffic mirroring.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::TrafficMirrorFilter`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTrafficMirrorFilter`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-trafficmirrorfilter
  */

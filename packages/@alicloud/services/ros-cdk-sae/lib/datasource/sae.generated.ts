@@ -88,7 +88,7 @@ function rosApplicationsPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::SAE::Applications`, which is used to query applications.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::SAE::Applications`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Applications` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sae-applications
  */
@@ -230,7 +230,7 @@ function rosNamespacesPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::SAE::Namespaces`, which is used to query namespaces.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::SAE::Namespaces`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Namespaces` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sae-namespaces
  */

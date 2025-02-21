@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.core;
  * <p>
  * Just a type alias with a very concrete contract.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:33.671Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:10.832Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.IBoundStackSynthesizer")
 @software.amazon.jsii.Jsii.Proxy(IBoundStackSynthesizer.Jsii$Proxy.class)
 public interface IBoundStackSynthesizer extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IStackSynthesizer {

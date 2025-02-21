@@ -10,6 +10,8 @@ import (
 // Represents a `ConsumerGroup`.
 type IConsumerGroup interface {
 	alicloudroscdkcore.IResource
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute ConsumerId: Consumer group ID.
 	AttrConsumerId() interface{}
 	Props() *ConsumerGroupProps
@@ -18,6 +20,16 @@ type IConsumerGroup interface {
 // The jsii proxy for IConsumerGroup
 type jsiiProxy_IConsumerGroup struct {
 	internal.Type__alicloudroscdkcoreIResource
+}
+
+func (j *jsiiProxy_IConsumerGroup) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_IConsumerGroup) AttrConsumerId() interface{} {

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::ROCKETMQ::Instances`, which is used to query the information about all ApsaraMQ for RocketMQ instances.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::ROCKETMQ::Instances`.
 type Instances interface {
 	alicloudroscdkcore.Resource
 	IInstances

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * Represents a <code>AITask</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:42.421Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:19.023Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.IAITask")
 @software.amazon.jsii.Jsii.Proxy(IAITask.Jsii$Proxy.class)
 public interface IAITask extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

@@ -14,6 +14,7 @@ type RosActivation interface {
 	alicloudroscdkcore.RosResource
 	AttrActivationCode() alicloudroscdkcore.IResolvable
 	AttrActivationId() alicloudroscdkcore.IResolvable
+	AttrArn() alicloudroscdkcore.IResolvable
 	AttrDeregisteredCount() alicloudroscdkcore.IResolvable
 	AttrRegisteredCount() alicloudroscdkcore.IResolvable
 	// Returns: the stack trace of the point where this Resource was created from, sourced
@@ -201,6 +202,16 @@ func (j *jsiiProxy_RosActivation) AttrActivationId() alicloudroscdkcore.IResolva
 	_jsii_.Get(
 		j,
 		"attrActivationId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosActivation) AttrArn() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrArn",
 		&returns,
 	)
 	return returns

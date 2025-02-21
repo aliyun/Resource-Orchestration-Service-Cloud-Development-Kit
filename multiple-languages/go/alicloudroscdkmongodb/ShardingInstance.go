@@ -13,6 +13,8 @@ import (
 type ShardingInstance interface {
 	alicloudroscdkcore.Resource
 	IShardingInstance
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute DBInstanceId: The instance id of created mongodb instance.
 	AttrDbInstanceId() interface{}
 	// Attribute DBInstanceStatus: Status of mongodb instance.
@@ -112,6 +114,16 @@ type ShardingInstance interface {
 type jsiiProxy_ShardingInstance struct {
 	internal.Type__alicloudroscdkcoreResource
 	jsiiProxy_IShardingInstance
+}
+
+func (j *jsiiProxy_ShardingInstance) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_ShardingInstance) AttrDbInstanceId() interface{} {

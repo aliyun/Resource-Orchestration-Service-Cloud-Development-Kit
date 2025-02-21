@@ -18,6 +18,7 @@ type RosLoadBalancer interface {
 	SetAddressType(val interface{})
 	AttrAddressIpVersion() alicloudroscdkcore.IResolvable
 	AttrAddressType() alicloudroscdkcore.IResolvable
+	AttrArn() alicloudroscdkcore.IResolvable
 	AttrDnsName() alicloudroscdkcore.IResolvable
 	AttrLoadBalancerId() alicloudroscdkcore.IResolvable
 	AttrLoadBalancerType() alicloudroscdkcore.IResolvable
@@ -238,6 +239,16 @@ func (j *jsiiProxy_RosLoadBalancer) AttrAddressType() alicloudroscdkcore.IResolv
 	_jsii_.Get(
 		j,
 		"attrAddressType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosLoadBalancer) AttrArn() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrArn",
 		&returns,
 	)
 	return returns

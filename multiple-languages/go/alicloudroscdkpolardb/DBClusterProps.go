@@ -215,6 +215,13 @@ type DBClusterProps struct {
 	// This parameter takes effect only when the DBType parameter is set to MySQL and the DBVersion parameter is set to 5.6.
 	// This parameter is required if the CreationOption parameter is not set to Normal.
 	SourceResourceId interface{} `field:"optional" json:"sourceResourceId" yaml:"sourceResourceId"`
+	// Property sslEnabled: Modifies the SSL status.
+	//
+	// Valid values:
+	// Disable: disables SSL encryption.
+	// Enable: enables SSL encryption.
+	// Update: updates the SSL certificate.
+	SslEnabled interface{} `field:"optional" json:"sslEnabled" yaml:"sslEnabled"`
 	// Property standbyAz: The zone where the hot standby storage cluster is stored.
 	//
 	// This is valid for Standard Edition clusters of Multi-zone Edition.

@@ -1700,7 +1700,7 @@ function rosNetworkPackageAssociationPropsToRosTemplate(properties: any, enableR
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::NetworkPackageAssociation`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::NetworkPackageAssociation`, which is used to associate a premium bandwidth plan with an office network.
  * @Note This class does not contain additional functions, so it is recommended to use the `NetworkPackageAssociation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-networkpackageassociation
  */
@@ -2067,5 +2067,126 @@ export class RosSimpleOfficeSite extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosSimpleOfficeSitePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosUserDesktopGroupAddition`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-userdesktopgroupaddition
+ */
+export interface RosUserDesktopGroupAdditionProps {
+
+    /**
+     * @Property desktopGroupId: The ID of the desktop group that you want to assign to more regular users.
+     */
+    readonly desktopGroupId: string | ros.IResolvable;
+
+    /**
+     * @Property endUserIds: The regular users to whom you want to assign the desktop group.
+     */
+    readonly endUserIds: Array<string | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosUserDesktopGroupAdditionProps`
+ *
+ * @param properties - the TypeScript properties of a `RosUserDesktopGroupAdditionProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosUserDesktopGroupAdditionPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('desktopGroupId', ros.requiredValidator)(properties.desktopGroupId));
+    errors.collect(ros.propertyValidator('desktopGroupId', ros.validateString)(properties.desktopGroupId));
+    errors.collect(ros.propertyValidator('endUserIds', ros.requiredValidator)(properties.endUserIds));
+    if(properties.endUserIds && (Array.isArray(properties.endUserIds) || (typeof properties.endUserIds) === 'string')) {
+        errors.collect(ros.propertyValidator('endUserIds', ros.validateLength)({
+            data: properties.endUserIds.length,
+            min: 1,
+            max: 10000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('endUserIds', ros.listValidator(ros.validateString))(properties.endUserIds));
+    return errors.wrap('supplied properties not correct for "RosUserDesktopGroupAdditionProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECD::UserDesktopGroupAddition` resource
+ *
+ * @param properties - the TypeScript properties of a `RosUserDesktopGroupAdditionProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECD::UserDesktopGroupAddition` resource.
+ */
+// @ts-ignore TS6133
+function rosUserDesktopGroupAdditionPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosUserDesktopGroupAdditionPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'DesktopGroupId': ros.stringToRosTemplate(properties.desktopGroupId),
+      'EndUserIds': ros.listMapper(ros.stringToRosTemplate)(properties.endUserIds),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::UserDesktopGroupAddition`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `UserDesktopGroupAddition` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-userdesktopgroupaddition
+ */
+export class RosUserDesktopGroupAddition extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECD::UserDesktopGroupAddition";
+
+    /**
+     * @Attribute DesktopGroupId: The ID of the desktop group that you want to assign to more regular users.
+     */
+    public readonly attrDesktopGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute EndUserIds: The regular users to whom you want to assign the desktop group.
+     */
+    public readonly attrEndUserIds: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property desktopGroupId: The ID of the desktop group that you want to assign to more regular users.
+     */
+    public desktopGroupId: string | ros.IResolvable;
+
+    /**
+     * @Property endUserIds: The regular users to whom you want to assign the desktop group.
+     */
+    public endUserIds: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosUserDesktopGroupAdditionProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosUserDesktopGroupAddition.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDesktopGroupId = this.getAtt('DesktopGroupId');
+        this.attrEndUserIds = this.getAtt('EndUserIds');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.desktopGroupId = props.desktopGroupId;
+        this.endUserIds = props.endUserIds;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            desktopGroupId: this.desktopGroupId,
+            endUserIds: this.endUserIds,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosUserDesktopGroupAdditionPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }

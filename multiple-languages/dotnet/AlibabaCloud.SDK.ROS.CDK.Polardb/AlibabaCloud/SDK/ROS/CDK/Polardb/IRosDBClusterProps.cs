@@ -646,6 +646,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: sslEnabled: Modifies the SSL status. Valid values:
+        /// Disable: disables SSL encryption.
+        /// Enable: enables SSL encryption.
+        /// Update: updates the SSL certificate.
+        /// </remarks>
+        [JsiiProperty(name: "sslEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SslEnabled
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: standbyAz: The zone where the hot standby storage cluster is stored. This is valid for Standard Edition clusters of Multi-zone Edition.
         /// This parameter takes effect only when the multi-zone data consistency feature is enabled.
         /// </remarks>
@@ -1344,6 +1360,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             [JsiiOptional]
             [JsiiProperty(name: "sourceResourceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SourceResourceId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: sslEnabled: Modifies the SSL status. Valid values:
+            /// Disable: disables SSL encryption.
+            /// Enable: enables SSL encryption.
+            /// Update: updates the SSL certificate.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "sslEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SslEnabled
             {
                 get => GetInstanceProperty<object?>();
             }

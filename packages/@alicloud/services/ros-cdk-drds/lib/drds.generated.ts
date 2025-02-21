@@ -732,6 +732,11 @@ export class RosDrdsInstance extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DRDS::DrdsInstance";
 
     /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
+
+    /**
      * @Attribute DrdsInstanceId: instance id
      */
     public readonly attrDrdsInstanceId: ros.IResolvable;
@@ -831,6 +836,7 @@ export class RosDrdsInstance extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosDrdsInstanceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosDrdsInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrDrdsInstanceId = this.getAtt('DrdsInstanceId');
         this.attrInternetEndpoint = this.getAtt('InternetEndpoint');
         this.attrIntranetEndpoint = this.getAtt('IntranetEndpoint');

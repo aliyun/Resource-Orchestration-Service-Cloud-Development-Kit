@@ -10,6 +10,8 @@ import (
 // Represents a `VpcEndpointService`.
 type IVpcEndpointService interface {
 	alicloudroscdkcore.IResource
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute MaxBandwidth: The maximum bandwidth of the endpoint connection.
 	AttrMaxBandwidth() interface{}
 	// Attribute MinBandwidth: The minimum bandwidth of the endpoint connection.
@@ -28,6 +30,16 @@ type IVpcEndpointService interface {
 // The jsii proxy for IVpcEndpointService
 type jsiiProxy_IVpcEndpointService struct {
 	internal.Type__alicloudroscdkcoreIResource
+}
+
+func (j *jsiiProxy_IVpcEndpointService) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_IVpcEndpointService) AttrMaxBandwidth() interface{} {

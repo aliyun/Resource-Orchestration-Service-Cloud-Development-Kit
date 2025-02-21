@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::PrefixList`, which is used to query the information about a prefix list.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::PrefixList`.
 type PrefixList interface {
 	alicloudroscdkcore.Resource
 	IPrefixList

@@ -1,5 +1,9 @@
 # Aliyun ROS Cloud Development Toolkit Changelog
 
+## [ros-cdk-cli 1.7.0] (2025-02-21)
+### Features
+- Update ROS resource sdk packages (Added the ALIYUN::ADBLake::ResourceGroup, ALIYUN::ADBLake::Account, ALIYUN::ADBLake::ResourceGroupAccountAssociation, ALIYUN::VPC::PublicIpAddressPool, ALIYUN::VPC::RouteTableWithGatewayAssociation, ALIYUN::NLB::BackendServerAttachment, ALIYUN::POLARDB::GlobalSecurityGroup, ALIYUN::ECD::UserDesktopGroupAddition, ALIYUN::ECD::Devices, ALIYUN::PAI::DatasetVersion, ALIYUN::EBS::DedicatedBlockStorageCluster, ALIYUN::IMM::Project2).
+
 ## [ros-cdk-cli 1.6.0] (2025-01-23)
 ### Features
 - Update ROS resource sdk packages (Added the ALIYUN::FC3::ProvisionConfig, ALIYUN::FC3::ConcurrencyConfig, ALIYUN::FC3::CustomDomain, ALIYUN::RAM::OIDCProvider, ALIYUN::RAM::AttachPolicyToGroup, DATASOURCE::DirectMail::Domain, DATASOURCE::EAIS::ClientInstanceAttachment, DATASOURCE::EBS::DedicatedBlockStorageCluster, DATASOURCE::EBS::DedicatedBlockStoragers, DATASOURCE::EBS::DiskReplicaPair, DATASOURCE::EBS::DiskReplicaGroup, ).

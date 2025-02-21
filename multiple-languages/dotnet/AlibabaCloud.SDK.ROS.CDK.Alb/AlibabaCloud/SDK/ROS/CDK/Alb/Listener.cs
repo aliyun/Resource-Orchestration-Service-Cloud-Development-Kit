@@ -44,6 +44,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             get => GetInstanceProperty<object>()!;
         }
 
+        /// <summary>Attribute LoadBalancerId: The ID of the ALB instance.</summary>
+        [JsiiProperty(name: "attrLoadBalancerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrLoadBalancerId
+        {
+            get => GetInstanceProperty<object>()!;
+        }
+
         [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-alb.ListenerProps\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Alb.IListenerProps Props
         {

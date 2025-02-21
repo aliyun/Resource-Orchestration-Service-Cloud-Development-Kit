@@ -130,6 +130,11 @@ export interface IElasticDBInstance extends ros.IResource {
     readonly props: ElasticDBInstanceProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute ConnectionString: The endpoint of the instance.
      */
     readonly attrConnectionString: ros.IResolvable | string;
@@ -159,6 +164,11 @@ export class ElasticDBInstance extends ros.Resource implements IElasticDBInstanc
     protected id: string;
     public readonly props: ElasticDBInstanceProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute ConnectionString: The endpoint of the instance.
@@ -215,6 +225,7 @@ export class ElasticDBInstance extends ros.Resource implements IElasticDBInstanc
             periodUnit: props.periodUnit === undefined || props.periodUnit === null ? 'Month' : props.periodUnit,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosElasticDBInstance;
+        this.attrArn = rosElasticDBInstance.attrArn;
         this.attrConnectionString = rosElasticDBInstance.attrConnectionString;
         this.attrDbInstanceId = rosElasticDBInstance.attrDbInstanceId;
         this.attrOrderId = rosElasticDBInstance.attrOrderId;

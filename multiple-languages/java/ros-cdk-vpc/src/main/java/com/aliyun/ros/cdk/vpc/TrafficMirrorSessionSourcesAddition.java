@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::TrafficMirrorSessionSourcesAddition</code>, which is used to add traffic mirror sources to traffic mirror sessions.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::TrafficMirrorSessionSourcesAddition</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:45.267Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:22.186Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.TrafficMirrorSessionSourcesAddition")
 public class TrafficMirrorSessionSourcesAddition extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.ITrafficMirrorSessionSourcesAddition {
 

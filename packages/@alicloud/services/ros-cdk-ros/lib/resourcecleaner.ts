@@ -193,7 +193,7 @@ The value is a list of dict. The dict contains the fields below:
     readonly attrScanErrors: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ROS::ResourceCleaner`, which is used to create a resource cleaner.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ROS::ResourceCleaner`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosResourceCleaner`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-resourcecleaner
  */

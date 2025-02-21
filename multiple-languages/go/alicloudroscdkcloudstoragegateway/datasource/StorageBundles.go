@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::CloudStorageGateway::StorageBundles`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::CloudStorageGateway::StorageBundles`, which is used to query the information about gateway clusters in a region.
 type StorageBundles interface {
 	alicloudroscdkcore.Resource
 	IStorageBundles

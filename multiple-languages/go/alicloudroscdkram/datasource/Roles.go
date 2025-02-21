@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::RAM::Roles`, which is used to query the information about Resource Access Management (RAM) roles.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::RAM::Roles`.
 type Roles interface {
 	alicloudroscdkcore.Resource
 	IRoles

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::WAF::WafSwitch`, which is used to enable or disable Web attack protection.
+// This class encapsulates and extends the ROS resource type `ALIYUN::WAF::WafSwitch`.
 type WafSwitch interface {
 	alicloudroscdkcore.Resource
 	IWafSwitch

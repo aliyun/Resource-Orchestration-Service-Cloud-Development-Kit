@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.pvtz.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::PVTZ::Zones</code>, which is used to query built-in authoritative zones.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::PVTZ::Zones</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:42.832Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:19.301Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.datasource.Zones")
 public class Zones extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.pvtz.datasource.IZones {
 

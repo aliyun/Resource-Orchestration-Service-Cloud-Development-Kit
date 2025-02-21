@@ -138,6 +138,11 @@ export class RosActivation extends ros.RosResource {
     public readonly attrActivationId: ros.IResolvable;
 
     /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
+
+    /**
      * @Attribute DeregisteredCount: The number of instances that have been logged out.
      */
     public readonly attrDeregisteredCount: ros.IResolvable;
@@ -194,6 +199,7 @@ export class RosActivation extends ros.RosResource {
         super(scope, id, { type: RosActivation.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrActivationCode = this.getAtt('ActivationCode');
         this.attrActivationId = this.getAtt('ActivationId');
+        this.attrArn = this.getAtt('Arn');
         this.attrDeregisteredCount = this.getAtt('DeregisteredCount');
         this.attrRegisteredCount = this.getAtt('RegisteredCount');
 
@@ -2231,6 +2237,11 @@ export class RosAutoSnapshotPolicy extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::AutoSnapshotPolicy";
 
     /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
+
+    /**
      * @Attribute AutoSnapshotPolicyId: The automatic snapshot policy ID.
      */
     public readonly attrAutoSnapshotPolicyId: ros.IResolvable;
@@ -2314,6 +2325,7 @@ export class RosAutoSnapshotPolicy extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosAutoSnapshotPolicyProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosAutoSnapshotPolicy.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrAutoSnapshotPolicyId = this.getAtt('AutoSnapshotPolicyId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
@@ -4018,6 +4030,11 @@ export class RosDedicatedHost extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::DedicatedHost";
 
     /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
+
+    /**
      * @Attribute DedicatedHostIds: The host id list of created hosts
      */
     public readonly attrDedicatedHostIds: ros.IResolvable;
@@ -4122,6 +4139,7 @@ export class RosDedicatedHost extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosDedicatedHostProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosDedicatedHost.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrDedicatedHostIds = this.getAtt('DedicatedHostIds');
         this.attrOrderId = this.getAtt('OrderId');
 
@@ -9180,6 +9198,11 @@ export class RosInstanceGroup extends ros.RosResource {
     public readonly attrPublicIps: ros.IResolvable;
 
     /**
+     * @Attribute RelatedOrderIds: The related order id list of created ecs instances
+     */
+    public readonly attrRelatedOrderIds: ros.IResolvable;
+
+    /**
      * @Attribute ZoneIds: Zone id of created instances.
      */
     public readonly attrZoneIds: ros.IResolvable;
@@ -9669,6 +9692,7 @@ export class RosInstanceGroup extends ros.RosResource {
         this.attrOrderId = this.getAtt('OrderId');
         this.attrPrivateIps = this.getAtt('PrivateIps');
         this.attrPublicIps = this.getAtt('PublicIps');
+        this.attrRelatedOrderIds = this.getAtt('RelatedOrderIds');
         this.attrZoneIds = this.getAtt('ZoneIds');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
@@ -11102,6 +11126,11 @@ export class RosInstanceGroupClone extends ros.RosResource {
     public readonly attrPublicIps: ros.IResolvable;
 
     /**
+     * @Attribute RelatedOrderIds: The related order id list of created ecs instances
+     */
+    public readonly attrRelatedOrderIds: ros.IResolvable;
+
+    /**
      * @Attribute ZoneIds: Zone id of created instances.
      */
     public readonly attrZoneIds: ros.IResolvable;
@@ -11427,6 +11456,7 @@ export class RosInstanceGroupClone extends ros.RosResource {
         this.attrOrderId = this.getAtt('OrderId');
         this.attrPrivateIps = this.getAtt('PrivateIps');
         this.attrPublicIps = this.getAtt('PublicIps');
+        this.attrRelatedOrderIds = this.getAtt('RelatedOrderIds');
         this.attrZoneIds = this.getAtt('ZoneIds');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
@@ -13995,6 +14025,11 @@ export class RosNetworkInterface extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::NetworkInterface";
 
     /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
+
+    /**
      * @Attribute MacAddress: The MAC address of your Network Interface.
      */
     public readonly attrMacAddress: ros.IResolvable;
@@ -14139,6 +14174,7 @@ export class RosNetworkInterface extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosNetworkInterfaceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosNetworkInterface.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrMacAddress = this.getAtt('MacAddress');
         this.attrNetworkInterfaceId = this.getAtt('NetworkInterfaceId');
         this.attrPrivateIpAddress = this.getAtt('PrivateIpAddress');
@@ -15894,6 +15930,11 @@ export class RosSSHKeyPair extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::SSHKeyPair";
 
     /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
+
+    /**
      * @Attribute KeyPairFingerPrint: The fingerprint of the key pair. The public key fingerprint format defined in RFC4716: MD5 message digest algorithm. Refer to http://tools.ietf.org/html/rfc4716.
      */
     public readonly attrKeyPairFingerPrint: ros.IResolvable;
@@ -15938,6 +15979,7 @@ export class RosSSHKeyPair extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosSSHKeyPairProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosSSHKeyPair.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrKeyPairFingerPrint = this.getAtt('KeyPairFingerPrint');
         this.attrKeyPairName = this.getAtt('KeyPairName');
         this.attrPrivateKeyBody = this.getAtt('PrivateKeyBody');
@@ -18215,6 +18257,11 @@ export class RosSnapshot extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::Snapshot";
 
     /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
+
+    /**
      * @Attribute SnapshotId: The snapshot ID.
      */
     public readonly attrSnapshotId: ros.IResolvable;
@@ -18284,6 +18331,7 @@ export class RosSnapshot extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosSnapshotProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosSnapshot.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrSnapshotId = this.getAtt('SnapshotId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;

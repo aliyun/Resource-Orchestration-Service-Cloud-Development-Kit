@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::Ipv4Gateway`, which is used to create an IPv4 gateway.
+// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::Ipv4Gateway`.
 type Ipv4Gateway interface {
 	alicloudroscdkcore.Resource
 	IIpv4Gateway

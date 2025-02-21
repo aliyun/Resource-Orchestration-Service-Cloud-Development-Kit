@@ -3,10 +3,15 @@ package com.aliyun.ros.cdk.sag;
 /**
  * Represents a <code>CloudConnectNetwork</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:44.085Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:20.412Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.ICloudConnectNetwork")
 @software.amazon.jsii.Jsii.Proxy(ICloudConnectNetwork.Jsii$Proxy.class)
 public interface ICloudConnectNetwork extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrArn();
 
     /**
      * Attribute CcnId: The ID of the CCN instance.
@@ -53,6 +58,14 @@ public interface ICloudConnectNetwork extends software.amazon.jsii.JsiiSerializa
         @Override
         public final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Stack getStack() {
             return software.amazon.jsii.Kernel.get(this, "stack", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.Stack.class));
+        }
+
+        /**
+         * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrArn() {
+            return software.amazon.jsii.Kernel.get(this, "attrArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -104,6 +117,14 @@ public interface ICloudConnectNetwork extends software.amazon.jsii.JsiiSerializa
         @Override
         default @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Stack getStack() {
             return software.amazon.jsii.Kernel.get(this, "stack", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.Stack.class));
+        }
+
+        /**
+         * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrArn() {
+            return software.amazon.jsii.Kernel.get(this, "attrArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**

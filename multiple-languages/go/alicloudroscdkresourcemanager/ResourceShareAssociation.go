@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::ResourceShareAssociation`, which is used to associate a shared resource or a resource user.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::ResourceShareAssociation`.
 type ResourceShareAssociation interface {
 	alicloudroscdkcore.Resource
 	IResourceShareAssociation

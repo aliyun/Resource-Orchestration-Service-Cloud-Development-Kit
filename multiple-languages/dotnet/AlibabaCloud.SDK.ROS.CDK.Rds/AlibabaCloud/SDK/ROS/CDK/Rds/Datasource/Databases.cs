@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Rds.Datasource
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::RDS::Databases`, which is used to query the information about databases on an ApsaraDB RDS instance.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::RDS::Databases`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDatabases`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-databases

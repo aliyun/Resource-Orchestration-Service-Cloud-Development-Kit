@@ -46,6 +46,11 @@ export interface ICenInstance extends ros.IResource {
     readonly props: CenInstanceProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute CenId: The ID of the request.
      */
     readonly attrCenId: ros.IResolvable | string;
@@ -60,6 +65,11 @@ export class CenInstance extends ros.Resource implements ICenInstance {
     protected id: string;
     public readonly props: CenInstanceProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute CenId: The ID of the request.
@@ -86,6 +96,7 @@ export class CenInstance extends ros.Resource implements ICenInstance {
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosCenInstance;
+        this.attrArn = rosCenInstance.attrArn;
         this.attrCenId = rosCenInstance.attrCenId;
     }
 }

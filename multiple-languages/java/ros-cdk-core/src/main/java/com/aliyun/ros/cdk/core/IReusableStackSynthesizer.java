@@ -10,7 +10,7 @@ package com.aliyun.ros.cdk.core;
  * <code>IStackSynthesizer</code>, but if an object implements <code>IReusableStackSynthesizer</code>,
  * no other methods than <code>reusableBind()</code> will be called.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:33.681Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:10.854Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.IReusableStackSynthesizer")
 @software.amazon.jsii.Jsii.Proxy(IReusableStackSynthesizer.Jsii$Proxy.class)
 public interface IReusableStackSynthesizer extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IStackSynthesizer {

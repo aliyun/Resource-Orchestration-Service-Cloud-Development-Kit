@@ -1,3 +1,4 @@
+export * from './backendserverattachment';
 export * from './listener';
 export * from './loadbalancer';
 export * from './securitygroupattachment';

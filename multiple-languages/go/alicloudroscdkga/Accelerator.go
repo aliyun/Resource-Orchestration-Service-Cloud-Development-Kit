@@ -21,6 +21,8 @@ type Accelerator interface {
 	AttrAutoPay() interface{}
 	// Attribute AutoUseCoupon: The AutoUseCoupon of the GA instance.
 	AttrAutoUseCoupon() interface{}
+	// Attribute DnsName: The DNS name of the accelerator.
+	AttrDnsName() interface{}
 	// Attribute Duration: The Duration of the GA instance.
 	AttrDuration() interface{}
 	// Attribute OrderId: The OrderId of the GA instance.
@@ -161,6 +163,16 @@ func (j *jsiiProxy_Accelerator) AttrAutoUseCoupon() interface{} {
 	_jsii_.Get(
 		j,
 		"attrAutoUseCoupon",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Accelerator) AttrDnsName() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrDnsName",
 		&returns,
 	)
 	return returns

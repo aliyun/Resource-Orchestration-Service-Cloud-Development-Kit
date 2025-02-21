@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::SslVpnServer`, which is used to create an SSL-VPN server.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::SslVpnServer`.
 type RosSslVpnServer interface {
 	alicloudroscdkcore.RosResource
 	AttrSslVpnServerId() alicloudroscdkcore.IResolvable

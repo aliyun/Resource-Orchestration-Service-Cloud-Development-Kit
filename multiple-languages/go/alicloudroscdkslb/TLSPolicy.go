@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SLB::TLSPolicy`, which is used to create a Transport Layer Security (TLS) policy.
+// This class encapsulates and extends the ROS resource type `ALIYUN::SLB::TLSPolicy`.
 type TLSPolicy interface {
 	alicloudroscdkcore.Resource
 	ITLSPolicy

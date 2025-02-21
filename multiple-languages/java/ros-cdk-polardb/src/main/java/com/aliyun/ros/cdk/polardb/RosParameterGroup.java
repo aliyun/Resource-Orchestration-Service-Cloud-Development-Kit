@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.polardb;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::POLARDB::ParameterGroup</code>, which is used to create a parameter template of PolarDB.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::POLARDB::ParameterGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:42.520Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:19.085Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosParameterGroup")
 public class RosParameterGroup extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -88,6 +88,11 @@ export interface ICenBandwidthPackage extends ros.IResource {
     readonly props: CenBandwidthPackageProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute CenBandwidthPackageId: The ID of the bandwidth package.
      */
     readonly attrCenBandwidthPackageId: ros.IResolvable | string;
@@ -102,6 +107,11 @@ export class CenBandwidthPackage extends ros.Resource implements ICenBandwidthPa
     protected id: string;
     public readonly props: CenBandwidthPackageProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute CenBandwidthPackageId: The ID of the bandwidth package.
@@ -136,6 +146,7 @@ export class CenBandwidthPackage extends ros.Resource implements ICenBandwidthPa
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosCenBandwidthPackage;
+        this.attrArn = rosCenBandwidthPackage.attrArn;
         this.attrCenBandwidthPackageId = rosCenBandwidthPackage.attrCenBandwidthPackageId;
     }
 }

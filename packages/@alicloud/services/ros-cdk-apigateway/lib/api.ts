@@ -161,6 +161,11 @@ export interface IApi extends ros.IResource {
      * Attribute ApiId: The id of the API.
      */
     readonly attrApiId: ros.IResolvable | string;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
 }
 /**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Api`, which is used to create an API.
@@ -177,6 +182,11 @@ export class Api extends ros.Resource implements IApi {
      * Attribute ApiId: The id of the API.
      */
     public readonly attrApiId: ros.IResolvable | string;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -219,5 +229,6 @@ export class Api extends ros.Resource implements IApi {
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosApi;
         this.attrApiId = rosApi.attrApiId;
+        this.attrArn = rosApi.attrArn;
     }
 }

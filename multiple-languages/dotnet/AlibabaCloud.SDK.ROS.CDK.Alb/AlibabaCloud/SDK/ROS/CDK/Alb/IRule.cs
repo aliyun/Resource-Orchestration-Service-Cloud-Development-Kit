@@ -8,6 +8,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
     [JsiiInterface(nativeType: typeof(IRule), fullyQualifiedName: "@alicloud/ros-cdk-alb.IRule")]
     public interface IRule : AlibabaCloud.SDK.ROS.CDK.Core.IResource
     {
+        /// <summary>Attribute ListenerId: The ID of the listener.</summary>
+        [JsiiProperty(name: "attrListenerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrListenerId
+        {
+            get;
+        }
+
         /// <summary>Attribute RuleId: The ID of the forwarding rules.</summary>
         [JsiiProperty(name: "attrRuleId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AttrRuleId
@@ -27,6 +34,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         {
             private _Proxy(ByRefValue reference): base(reference)
             {
+            }
+
+            /// <summary>Attribute ListenerId: The ID of the listener.</summary>
+            [JsiiProperty(name: "attrListenerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrListenerId
+            {
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Attribute RuleId: The ID of the forwarding rules.</summary>

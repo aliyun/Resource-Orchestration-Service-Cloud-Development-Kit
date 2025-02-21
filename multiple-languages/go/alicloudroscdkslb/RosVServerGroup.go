@@ -9,9 +9,10 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::VServerGroup`, which is used to create a server group and attach backend servers to a Server Load Balancer (SLB) instance.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::VServerGroup`.
 type RosVServerGroup interface {
 	alicloudroscdkcore.RosResource
+	AttrArn() alicloudroscdkcore.IResolvable
 	AttrBackendServers() alicloudroscdkcore.IResolvable
 	AttrLoadBalancerId() alicloudroscdkcore.IResolvable
 	AttrVServerGroupId() alicloudroscdkcore.IResolvable
@@ -177,6 +178,16 @@ type RosVServerGroup interface {
 // The jsii proxy struct for RosVServerGroup
 type jsiiProxy_RosVServerGroup struct {
 	internal.Type__alicloudroscdkcoreRosResource
+}
+
+func (j *jsiiProxy_RosVServerGroup) AttrArn() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_RosVServerGroup) AttrBackendServers() alicloudroscdkcore.IResolvable {

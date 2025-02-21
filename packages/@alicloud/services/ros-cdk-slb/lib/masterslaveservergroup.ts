@@ -38,7 +38,7 @@ export interface IMasterSlaveServerGroup extends ros.IResource {
     readonly attrMasterSlaveServerGroupId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::MasterSlaveServerGroup`, which is used to create a primary/secondary server group.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::MasterSlaveServerGroup`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMasterSlaveServerGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-masterslaveservergroup
  */

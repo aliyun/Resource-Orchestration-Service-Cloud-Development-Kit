@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::MNS::Topics`, which is used to query the information about topics.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::MNS::Topics`.
 type Topics interface {
 	alicloudroscdkcore.Resource
 	ITopics

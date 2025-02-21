@@ -13,6 +13,8 @@ import (
 type Topic interface {
 	alicloudroscdkcore.Resource
 	ITopic
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute InstanceId: The ID of the Message Queue for Apache Kafka instance where the topic is located.
 	//
 	// You can call the GetInstanceList operation to query instances.
@@ -112,6 +114,16 @@ type Topic interface {
 type jsiiProxy_Topic struct {
 	internal.Type__alicloudroscdkcoreResource
 	jsiiProxy_ITopic
+}
+
+func (j *jsiiProxy_Topic) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Topic) AttrInstanceId() interface{} {

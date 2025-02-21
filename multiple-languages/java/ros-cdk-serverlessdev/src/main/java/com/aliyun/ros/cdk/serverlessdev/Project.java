@@ -1,11 +1,9 @@
 package com.aliyun.ros.cdk.serverlessdev;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ServerlessDev::Project</code>, which is used to create a project.
- * <p>
- * If a template is specified for the project, the project is automatically deployed.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ServerlessDev::Project</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:44.206Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:20.588Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.serverlessdev.$Module.class, fqn = "@alicloud/ros-cdk-serverlessdev.Project")
 public class Project extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.serverlessdev.IProject {
 

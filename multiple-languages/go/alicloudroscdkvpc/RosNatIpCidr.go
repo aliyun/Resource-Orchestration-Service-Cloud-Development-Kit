@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::NatIpCidr`, which is used to create a NAT CIDR block.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::NatIpCidr`.
 type RosNatIpCidr interface {
 	alicloudroscdkcore.RosResource
 	AttrNatIpCidrId() alicloudroscdkcore.IResolvable

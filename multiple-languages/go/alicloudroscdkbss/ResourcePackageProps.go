@@ -21,6 +21,21 @@ type ResourcePackageProps struct {
 	//
 	// The value is the same as the Value of Specification returned by DescribeResourcePackageProduct.
 	Specification interface{} `field:"required" json:"specification" yaml:"specification"`
+	// Property autoRenew: Whether to automatically renew the resource package.
+	//
+	// The value is true or false. Default value: false.
+	AutoRenew interface{} `field:"optional" json:"autoRenew" yaml:"autoRenew"`
+	// Property autoRenewPeriod: Duration of resource packs renewals.
+	//
+	// Valid values:
+	// - When AutoRenewPeriodUnit is Year: 1, 2, 3.
+	// - When AutoRenewPeriodUnit is Month: 1, 2, 3, 6.
+	// Default is 1.
+	AutoRenewPeriod interface{} `field:"optional" json:"autoRenewPeriod" yaml:"autoRenewPeriod"`
+	// Property autoRenewPeriodUnit: Unit of resource pack renewals.
+	//
+	// Valid values: Month, Year. Default is Month.
+	AutoRenewPeriodUnit interface{} `field:"optional" json:"autoRenewPeriodUnit" yaml:"autoRenewPeriodUnit"`
 	// Property effectiveDate: The effective date of the specified resource package.
 	//
 	// The resource package will take effect immediately if the effective date is unspecified. The date format follows the ISO8601 standard and uses UTC time. Format: yyyy-MM-ddTHH:mm:ssZ

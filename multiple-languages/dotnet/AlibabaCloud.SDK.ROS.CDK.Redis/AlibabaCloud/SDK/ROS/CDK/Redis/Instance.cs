@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Redis
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::Instance`, which is used to create a Tair (Redis OSS-compatible) instance.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::Instance`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-instance

@@ -37,6 +37,11 @@ export interface IDomain extends ros.IResource {
     readonly props: DomainProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute DnsServers: The DNS list for the domain name under resolution
      */
     readonly attrDnsServers: ros.IResolvable | string;
@@ -76,6 +81,11 @@ export class Domain extends ros.Resource implements IDomain {
     protected id: string;
     public readonly props: DomainProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute DnsServers: The DNS list for the domain name under resolution
@@ -126,6 +136,7 @@ export class Domain extends ros.Resource implements IDomain {
             groupId: props.groupId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDomain;
+        this.attrArn = rosDomain.attrArn;
         this.attrDnsServers = rosDomain.attrDnsServers;
         this.attrDomainId = rosDomain.attrDomainId;
         this.attrDomainName = rosDomain.attrDomainName;

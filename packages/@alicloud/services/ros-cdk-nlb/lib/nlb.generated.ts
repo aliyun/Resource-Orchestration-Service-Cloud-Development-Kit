@@ -3,6 +3,227 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosBackendServerAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-backendserverattachment
+ */
+export interface RosBackendServerAttachmentProps {
+
+    /**
+     * @Property serverGroupId: The ID of the server group.
+     */
+    readonly serverGroupId: string | ros.IResolvable;
+
+    /**
+     * @Property servers: The backend servers that you want to add to the server group. You can specify up to
+     * 200 servers in each call.
+     */
+    readonly servers: Array<RosBackendServerAttachment.ServersProperty | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosBackendServerAttachmentProps`
+ *
+ * @param properties - the TypeScript properties of a `RosBackendServerAttachmentProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosBackendServerAttachmentPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('serverGroupId', ros.requiredValidator)(properties.serverGroupId));
+    errors.collect(ros.propertyValidator('serverGroupId', ros.validateString)(properties.serverGroupId));
+    errors.collect(ros.propertyValidator('servers', ros.requiredValidator)(properties.servers));
+    if(properties.servers && (Array.isArray(properties.servers) || (typeof properties.servers) === 'string')) {
+        errors.collect(ros.propertyValidator('servers', ros.validateLength)({
+            data: properties.servers.length,
+            min: 1,
+            max: 200,
+          }));
+    }
+    errors.collect(ros.propertyValidator('servers', ros.listValidator(RosBackendServerAttachment_ServersPropertyValidator))(properties.servers));
+    return errors.wrap('supplied properties not correct for "RosBackendServerAttachmentProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::NLB::BackendServerAttachment` resource
+ *
+ * @param properties - the TypeScript properties of a `RosBackendServerAttachmentProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::NLB::BackendServerAttachment` resource.
+ */
+// @ts-ignore TS6133
+function rosBackendServerAttachmentPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosBackendServerAttachmentPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ServerGroupId': ros.stringToRosTemplate(properties.serverGroupId),
+      'Servers': ros.listMapper(rosBackendServerAttachmentServersPropertyToRosTemplate)(properties.servers),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::BackendServerAttachment`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `BackendServerAttachment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-backendserverattachment
+ */
+export class RosBackendServerAttachment extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::NLB::BackendServerAttachment";
+
+    /**
+     * @Attribute ServerGroupId: The ID of the server group.
+     */
+    public readonly attrServerGroupId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property serverGroupId: The ID of the server group.
+     */
+    public serverGroupId: string | ros.IResolvable;
+
+    /**
+     * @Property servers: The backend servers that you want to add to the server group. You can specify up to
+     * 200 servers in each call.
+     */
+    public servers: Array<RosBackendServerAttachment.ServersProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosBackendServerAttachmentProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosBackendServerAttachment.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrServerGroupId = this.getAtt('ServerGroupId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.serverGroupId = props.serverGroupId;
+        this.servers = props.servers;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            serverGroupId: this.serverGroupId,
+            servers: this.servers,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosBackendServerAttachmentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosBackendServerAttachment {
+    /**
+     * @stability external
+     */
+    export interface ServersProperty {
+        /**
+         * @Property serverType: The type of the backend server. Valid values:
+     * Ecs: an ECS instance
+     * Eni: an ENI
+     * Eci: an elastic container instance
+     * Ip: an IP address
+         */
+        readonly serverType: string | ros.IResolvable;
+        /**
+         * @Property description:  The description of the servers. The description must be 2 to 256 characters in length, and can contain letters, digits, commas (,), periods (.), semicolons (;), forward slashes (\/), at signs (@), underscores (_), and hyphens (-).
+         */
+        readonly description?: string | ros.IResolvable;
+        /**
+         * @Property serverId: The ID of the server.
+         */
+        readonly serverId: string | ros.IResolvable;
+        /**
+         * @Property serverIp: The IP address of the server. If the server group type is Ip, set the ServerId parameter to an IP address.
+         */
+        readonly serverIp?: string | ros.IResolvable;
+        /**
+         * @Property port: The port used by the backend server. Valid values: 0 to 65535.
+         */
+        readonly port?: number | ros.IResolvable;
+        /**
+         * @Property weight: The weight of the backend server. Valid values: 0 to 100. Default value: 100. If the weight of a backend server is set to 0, no requests are forwarded to the backend server.
+         */
+        readonly weight?: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ServersProperty`
+ *
+ * @param properties - the TypeScript properties of a `ServersProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosBackendServerAttachment_ServersPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('serverType', ros.requiredValidator)(properties.serverType));
+    if(properties.serverType && (typeof properties.serverType) !== 'object') {
+        errors.collect(ros.propertyValidator('serverType', ros.validateAllowedValues)({
+          data: properties.serverType,
+          allowedValues: ["Eci","Ecs","Eni","Ip"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('serverType', ros.validateString)(properties.serverType));
+    if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
+        errors.collect(ros.propertyValidator('description', ros.validateLength)({
+            data: properties.description.length,
+            min: 2,
+            max: 256,
+          }));
+    }
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('serverId', ros.requiredValidator)(properties.serverId));
+    errors.collect(ros.propertyValidator('serverId', ros.validateString)(properties.serverId));
+    errors.collect(ros.propertyValidator('serverIp', ros.validateString)(properties.serverIp));
+    if(properties.port && (typeof properties.port) !== 'object') {
+        errors.collect(ros.propertyValidator('port', ros.validateRange)({
+            data: properties.port,
+            min: 0,
+            max: 65535,
+          }));
+    }
+    errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
+    if(properties.weight && (typeof properties.weight) !== 'object') {
+        errors.collect(ros.propertyValidator('weight', ros.validateRange)({
+            data: properties.weight,
+            min: 0,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('weight', ros.validateNumber)(properties.weight));
+    return errors.wrap('supplied properties not correct for "ServersProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::NLB::BackendServerAttachment.Servers` resource
+ *
+ * @param properties - the TypeScript properties of a `ServersProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::NLB::BackendServerAttachment.Servers` resource.
+ */
+// @ts-ignore TS6133
+function rosBackendServerAttachmentServersPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosBackendServerAttachment_ServersPropertyValidator(properties).assertSuccess();
+    return {
+      'ServerType': ros.stringToRosTemplate(properties.serverType),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'ServerId': ros.stringToRosTemplate(properties.serverId),
+      'ServerIp': ros.stringToRosTemplate(properties.serverIp),
+      'Port': ros.numberToRosTemplate(properties.port),
+      'Weight': ros.numberToRosTemplate(properties.weight),
+    };
+}
+
+/**
  * Properties for defining a `RosListener`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-listener
  */
@@ -266,7 +487,7 @@ function rosListenerPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::Listener`, which is used to create a listener.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::Listener`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Listener` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-listener
  */
@@ -664,7 +885,7 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
         errors.collect(ros.propertyValidator('zoneMappings', ros.validateLength)({
             data: properties.zoneMappings.length,
             min: 1,
-            max: 3,
+            max: 10,
           }));
     }
     errors.collect(ros.propertyValidator('zoneMappings', ros.listValidator(RosLoadBalancer_ZoneMappingsPropertyValidator))(properties.zoneMappings));
@@ -747,6 +968,11 @@ export class RosLoadBalancer extends ros.RosResource {
      * @Attribute AddressType: The type of IP address that the NLB instance uses to provide services.
      */
     public readonly attrAddressType: ros.IResolvable;
+
+    /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
 
     /**
      * @Attribute DNSName: The domain name of the NLB instance.
@@ -858,6 +1084,7 @@ export class RosLoadBalancer extends ros.RosResource {
         super(scope, id, { type: RosLoadBalancer.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrAddressIpVersion = this.getAtt('AddressIpVersion');
         this.attrAddressType = this.getAtt('AddressType');
+        this.attrArn = this.getAtt('Arn');
         this.attrDnsName = this.getAtt('DNSName');
         this.attrLoadBalancerId = this.getAtt('LoadBalancerId');
         this.attrLoadBalancerType = this.getAtt('LoadBalancerType');
@@ -1443,7 +1670,7 @@ function rosSecurityPolicyPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::SecurityPolicy`, which is used to create a custom security policy for a TCP/SSL listener.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::SecurityPolicy`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecurityPolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-securitypolicy
  */
@@ -1452,6 +1679,11 @@ export class RosSecurityPolicy extends ros.RosResource {
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::NLB::SecurityPolicy";
+
+    /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
 
     /**
      * @Attribute SecurityPolicyId: The ID of the security policy.
@@ -1494,6 +1726,7 @@ export class RosSecurityPolicy extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosSecurityPolicyProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosSecurityPolicy.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrSecurityPolicyId = this.getAtt('SecurityPolicyId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
@@ -1767,7 +2000,7 @@ function rosServerGroupPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::ServerGroup`, which is used to create a server group for a Network Load Balancer (NLB) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::ServerGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ServerGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-servergroup
  */

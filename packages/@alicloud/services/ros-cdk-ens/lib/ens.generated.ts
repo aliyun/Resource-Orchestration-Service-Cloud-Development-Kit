@@ -415,7 +415,7 @@ function rosImagePropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Image`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Image`, which is used to create an image from an instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Image` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-image
  */

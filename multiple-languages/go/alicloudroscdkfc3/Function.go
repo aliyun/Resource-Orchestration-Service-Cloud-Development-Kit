@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::FC3::Function`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::FC3::Function`, which is used to create a Function Compute 3.0 function.
 type Function interface {
 	alicloudroscdkcore.Resource
 	IFunction

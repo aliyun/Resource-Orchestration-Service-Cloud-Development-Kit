@@ -9,9 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::PolicyAttachment`, which is used to attach a policy to an object.
-//
-// After you attach a policy to an object, the object has the permissions to manage the resources in the current resource group or within the current Alibaba Cloud account.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::PolicyAttachment`.
 type PolicyAttachment interface {
 	alicloudroscdkcore.Resource
 	IPolicyAttachment

@@ -4,10 +4,8 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sls
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::MachineGroup`, which is used to create a machine group.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::MachineGroup`.</summary>
     /// <remarks>
-    /// Log Service manages all the ECS instances whose logs need to be collected using the Logtail client in the form of machine groups.
-    ///
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `MachineGroup` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-machinegroup
     /// </remarks>

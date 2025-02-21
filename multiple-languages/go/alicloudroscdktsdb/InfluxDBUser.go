@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::TSDB::InfluxDBUser`, which is used to create a Time Series Database (TSDB) database account.
+// This class encapsulates and extends the ROS resource type `ALIYUN::TSDB::InfluxDBUser`.
 type InfluxDBUser interface {
 	alicloudroscdkcore.Resource
 	IInfluxDBUser

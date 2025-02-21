@@ -63,7 +63,7 @@ export interface IAccount extends ros.IResource {
     readonly attrAccountName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::Account`, which is used to create a database account for an ApsaraDB for RDS instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::Account`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccount`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-account
  */

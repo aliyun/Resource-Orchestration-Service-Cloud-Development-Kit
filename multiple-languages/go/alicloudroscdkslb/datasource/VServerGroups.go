@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::VServerGroups`, which is used to query the server groups of a Classic Load Balancer (CLB) instance.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::VServerGroups`.
 type VServerGroups interface {
 	alicloudroscdkcore.Resource
 	IVServerGroups

@@ -76,7 +76,7 @@ export interface IDBClusters extends ros.IResource {
     readonly attrDbClusterIds: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::POLARDB::DBClusters`, which is used to query the information about PolarDB clusters.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::POLARDB::DBClusters`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBClusters`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-dbclusters
  */

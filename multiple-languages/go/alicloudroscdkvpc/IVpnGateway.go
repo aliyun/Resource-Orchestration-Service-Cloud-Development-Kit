@@ -10,6 +10,8 @@ import (
 // Represents a `VpnGateway`.
 type IVpnGateway interface {
 	alicloudroscdkcore.IResource
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute DisasterRecoveryInternetIp: The second IP address assigned by the system to create an IPsec-VPN connection.This attribute is returned only when the VPN gateway supports the dual-tunnel mode.
 	AttrDisasterRecoveryInternetIp() interface{}
 	// Attribute DisasterRecoveryVSwitchId: The ID of the second vSwitch associated with the VPN gateway.This attribute is returned only when the VPN gateway supports the dual-tunnel mode.
@@ -38,6 +40,16 @@ type IVpnGateway interface {
 // The jsii proxy for IVpnGateway
 type jsiiProxy_IVpnGateway struct {
 	internal.Type__alicloudroscdkcoreIResource
+}
+
+func (j *jsiiProxy_IVpnGateway) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_IVpnGateway) AttrDisasterRecoveryInternetIp() interface{} {

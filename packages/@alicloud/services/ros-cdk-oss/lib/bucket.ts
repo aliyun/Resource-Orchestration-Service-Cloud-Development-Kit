@@ -153,6 +153,11 @@ export interface IBucket extends ros.IResource {
     readonly props: BucketProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute DomainName: The public DNS name of the specified bucket.
      */
     readonly attrDomainName: ros.IResolvable | string;
@@ -177,6 +182,11 @@ export class Bucket extends ros.Resource implements IBucket {
     protected id: string;
     public readonly props: BucketProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute DomainName: The public DNS name of the specified bucket.
@@ -224,6 +234,7 @@ export class Bucket extends ros.Resource implements IBucket {
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosBucket;
+        this.attrArn = rosBucket.attrArn;
         this.attrDomainName = rosBucket.attrDomainName;
         this.attrInternalDomainName = rosBucket.attrInternalDomainName;
         this.attrName = rosBucket.attrName;

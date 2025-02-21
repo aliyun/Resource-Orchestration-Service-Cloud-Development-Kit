@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Route`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Route`, which is used to create a route for an HTTP API.
 type RosRoute interface {
 	alicloudroscdkcore.RosResource
 	AttrBackend() alicloudroscdkcore.IResolvable

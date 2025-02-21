@@ -10,6 +10,8 @@ import (
 // Represents a `ShardingInstance`.
 type IShardingInstance interface {
 	alicloudroscdkcore.IResource
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute DBInstanceId: The instance id of created mongodb instance.
 	AttrDbInstanceId() interface{}
 	// Attribute DBInstanceStatus: Status of mongodb instance.
@@ -22,6 +24,16 @@ type IShardingInstance interface {
 // The jsii proxy for IShardingInstance
 type jsiiProxy_IShardingInstance struct {
 	internal.Type__alicloudroscdkcoreIResource
+}
+
+func (j *jsiiProxy_IShardingInstance) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_IShardingInstance) AttrDbInstanceId() interface{} {

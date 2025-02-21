@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::FlowLog`, which is used to query a flow log by log ID.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::FlowLog`.
 type FlowLog interface {
 	alicloudroscdkcore.Resource
 	IFlowLog

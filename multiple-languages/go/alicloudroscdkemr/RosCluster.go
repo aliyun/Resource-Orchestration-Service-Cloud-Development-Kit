@@ -12,6 +12,7 @@ import (
 // This class is a base encapsulation around the ROS resource type `ALIYUN::EMR::Cluster`, which is used to create an E-MapReduce (EMR) cluster.
 type RosCluster interface {
 	alicloudroscdkcore.RosResource
+	AttrArn() alicloudroscdkcore.IResolvable
 	AttrClusterId() alicloudroscdkcore.IResolvable
 	AttrHostGroups() alicloudroscdkcore.IResolvable
 	AttrMasterNodeInnerIps() alicloudroscdkcore.IResolvable
@@ -252,6 +253,16 @@ type RosCluster interface {
 // The jsii proxy struct for RosCluster
 type jsiiProxy_RosCluster struct {
 	internal.Type__alicloudroscdkcoreRosResource
+}
+
+func (j *jsiiProxy_RosCluster) AttrArn() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_RosCluster) AttrClusterId() alicloudroscdkcore.IResolvable {

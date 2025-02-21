@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * Represents a <code>AttachPolicyToRole</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:42.892Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:19.323Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.IAttachPolicyToRole")
 @software.amazon.jsii.Jsii.Proxy(IAttachPolicyToRole.Jsii$Proxy.class)
 public interface IAttachPolicyToRole extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

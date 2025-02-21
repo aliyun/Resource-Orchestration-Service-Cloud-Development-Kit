@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.actiontrail;
 /**
  * Represents a <code>TrailLogging</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:33.846Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:11.043Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.actiontrail.$Module.class, fqn = "@alicloud/ros-cdk-actiontrail.ITrailLogging")
 @software.amazon.jsii.Jsii.Proxy(ITrailLogging.Jsii$Proxy.class)
 public interface ITrailLogging extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

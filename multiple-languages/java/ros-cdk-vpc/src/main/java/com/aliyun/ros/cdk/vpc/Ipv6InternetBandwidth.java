@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::Ipv6InternetBandwidth</code>, which is used to purchase Internet bandwidth for an IPv6 address.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::Ipv6InternetBandwidth</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:45.021Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:21.920Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.Ipv6InternetBandwidth")
 public class Ipv6InternetBandwidth extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.IIpv6InternetBandwidth {
 

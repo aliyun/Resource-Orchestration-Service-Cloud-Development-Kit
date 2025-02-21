@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::NetworkAcl`, which is used to create a network access control list (ACL).
+// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::NetworkAcl`.
 type NetworkAcl interface {
 	alicloudroscdkcore.Resource
 	INetworkAcl

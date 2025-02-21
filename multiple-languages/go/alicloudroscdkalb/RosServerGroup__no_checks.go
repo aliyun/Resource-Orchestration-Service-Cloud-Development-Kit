@@ -88,11 +88,19 @@ func (j *jsiiProxy_RosServerGroup) validateSetConnectionDrainConfigParameters(va
 	return nil
 }
 
+func (j *jsiiProxy_RosServerGroup) validateSetCrossZoneEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosServerGroup) validateSetEnableResourcePropertyConstraintParameters(val *bool) error {
 	return nil
 }
 
 func (j *jsiiProxy_RosServerGroup) validateSetHealthCheckConfigParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServerGroup) validateSetIpv6EnabledParameters(val interface{}) error {
 	return nil
 }
 

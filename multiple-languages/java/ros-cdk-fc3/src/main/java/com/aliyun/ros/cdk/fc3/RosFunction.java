@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.fc3;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::FC3::Function</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::FC3::Function</code>, which is used to create a Function Compute 3.0 function.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:40.173Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:16.904Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc3.$Module.class, fqn = "@alicloud/ros-cdk-fc3.RosFunction")
 public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 

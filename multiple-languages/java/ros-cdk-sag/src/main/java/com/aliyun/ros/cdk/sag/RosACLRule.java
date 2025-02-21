@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.sag;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SAG::ACLRule</code>, which is used to add an access control list (ACL) rule.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SAG::ACLRule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:44.107Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:20.448Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.RosACLRule")
 public class RosACLRule extends com.aliyun.ros.cdk.core.RosResource {
 

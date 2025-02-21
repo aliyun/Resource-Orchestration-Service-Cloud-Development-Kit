@@ -312,6 +312,11 @@ export class RosInstance extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::MONGODB::Instance";
 
     /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
+
+    /**
      * @Attribute ConnectionURI: Connection uri.
      */
     public readonly attrConnectionUri: ros.IResolvable;
@@ -508,6 +513,7 @@ export class RosInstance extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosInstanceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrConnectionUri = this.getAtt('ConnectionURI');
         this.attrDbInstanceId = this.getAtt('DBInstanceId');
         this.attrDbInstanceStatus = this.getAtt('DBInstanceStatus');
@@ -1021,6 +1027,11 @@ export class RosShardingInstance extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::MONGODB::ShardingInstance";
 
     /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
+
+    /**
      * @Attribute DBInstanceId: The instance id of created mongodb instance.
      */
     public readonly attrDbInstanceId: ros.IResolvable;
@@ -1168,6 +1179,7 @@ export class RosShardingInstance extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosShardingInstanceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosShardingInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrDbInstanceId = this.getAtt('DBInstanceId');
         this.attrDbInstanceStatus = this.getAtt('DBInstanceStatus');
         this.attrOrderId = this.getAtt('OrderId');

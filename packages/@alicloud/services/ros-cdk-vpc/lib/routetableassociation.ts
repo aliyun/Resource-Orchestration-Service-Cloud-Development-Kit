@@ -37,7 +37,7 @@ export interface IRouteTableAssociation extends ros.IResource {
     readonly attrVSwitchId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::RouteTableAssociation`, which is used to associate a custom routing table with a vSwitch in the same VPC.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::RouteTableAssociation`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRouteTableAssociation`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-routetableassociation
  */

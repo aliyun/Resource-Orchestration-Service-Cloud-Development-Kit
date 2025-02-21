@@ -140,6 +140,11 @@ export interface IShardingInstance extends ros.IResource {
     readonly props: ShardingInstanceProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute DBInstanceId: The instance id of created mongodb instance.
      */
     readonly attrDbInstanceId: ros.IResolvable | string;
@@ -164,6 +169,11 @@ export class ShardingInstance extends ros.Resource implements IShardingInstance 
     protected id: string;
     public readonly props: ShardingInstanceProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute DBInstanceId: The instance id of created mongodb instance.
@@ -218,6 +228,7 @@ export class ShardingInstance extends ros.Resource implements IShardingInstance 
             dbInstanceDescription: props.dbInstanceDescription,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosShardingInstance;
+        this.attrArn = rosShardingInstance.attrArn;
         this.attrDbInstanceId = rosShardingInstance.attrDbInstanceId;
         this.attrDbInstanceStatus = rosShardingInstance.attrDbInstanceStatus;
         this.attrOrderId = rosShardingInstance.attrOrderId;

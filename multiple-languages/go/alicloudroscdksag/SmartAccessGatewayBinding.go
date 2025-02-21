@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SAG::SmartAccessGatewayBinding`, which is used to bind a Smart Access Gateway (SAG) instance to a specified Cloud Connect Network (CCN) instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::SAG::SmartAccessGatewayBinding`.
 type SmartAccessGatewayBinding interface {
 	alicloudroscdkcore.Resource
 	ISmartAccessGatewayBinding

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::SslVpnClientCert`, which is used to call the CreateSslVpnClientCert operation to create an SSL-VPN client certificate.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::SslVpnClientCert`.
 type RosSslVpnClientCert interface {
 	alicloudroscdkcore.RosResource
 	AttrSslVpnClientCertId() alicloudroscdkcore.IResolvable

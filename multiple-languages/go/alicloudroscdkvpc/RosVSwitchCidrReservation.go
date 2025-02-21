@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VSwitchCidrReservation`, which is used to create a reserved CIDR block for a vSwitch.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VSwitchCidrReservation`.
 type RosVSwitchCidrReservation interface {
 	alicloudroscdkcore.RosResource
 	AttrVSwitchCidrReservationId() alicloudroscdkcore.IResolvable

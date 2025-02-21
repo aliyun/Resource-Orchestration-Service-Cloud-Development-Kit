@@ -10,6 +10,7 @@
 @alicloud/ros-cdk-ecd.INetworkPackage=com.aliyun.ros.cdk.ecd.INetworkPackage
 @alicloud/ros-cdk-ecd.INetworkPackageAssociation=com.aliyun.ros.cdk.ecd.INetworkPackageAssociation
 @alicloud/ros-cdk-ecd.ISimpleOfficeSite=com.aliyun.ros.cdk.ecd.ISimpleOfficeSite
+@alicloud/ros-cdk-ecd.IUserDesktopGroupAddition=com.aliyun.ros.cdk.ecd.IUserDesktopGroupAddition
 @alicloud/ros-cdk-ecd.NetworkPackage=com.aliyun.ros.cdk.ecd.NetworkPackage
 @alicloud/ros-cdk-ecd.NetworkPackageAssociation=com.aliyun.ros.cdk.ecd.NetworkPackageAssociation
 @alicloud/ros-cdk-ecd.NetworkPackageAssociationProps=com.aliyun.ros.cdk.ecd.NetworkPackageAssociationProps
@@ -27,5 +28,9 @@
 @alicloud/ros-cdk-ecd.RosNetworkPackageProps=com.aliyun.ros.cdk.ecd.RosNetworkPackageProps
 @alicloud/ros-cdk-ecd.RosSimpleOfficeSite=com.aliyun.ros.cdk.ecd.RosSimpleOfficeSite
 @alicloud/ros-cdk-ecd.RosSimpleOfficeSiteProps=com.aliyun.ros.cdk.ecd.RosSimpleOfficeSiteProps
+@alicloud/ros-cdk-ecd.RosUserDesktopGroupAddition=com.aliyun.ros.cdk.ecd.RosUserDesktopGroupAddition
+@alicloud/ros-cdk-ecd.RosUserDesktopGroupAdditionProps=com.aliyun.ros.cdk.ecd.RosUserDesktopGroupAdditionProps
 @alicloud/ros-cdk-ecd.SimpleOfficeSite=com.aliyun.ros.cdk.ecd.SimpleOfficeSite
 @alicloud/ros-cdk-ecd.SimpleOfficeSiteProps=com.aliyun.ros.cdk.ecd.SimpleOfficeSiteProps
+@alicloud/ros-cdk-ecd.UserDesktopGroupAddition=com.aliyun.ros.cdk.ecd.UserDesktopGroupAddition
+@alicloud/ros-cdk-ecd.UserDesktopGroupAdditionProps=com.aliyun.ros.cdk.ecd.UserDesktopGroupAdditionProps

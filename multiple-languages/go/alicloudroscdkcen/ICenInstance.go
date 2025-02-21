@@ -10,6 +10,8 @@ import (
 // Represents a `CenInstance`.
 type ICenInstance interface {
 	alicloudroscdkcore.IResource
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute CenId: The ID of the request.
 	AttrCenId() interface{}
 	Props() *CenInstanceProps
@@ -18,6 +20,16 @@ type ICenInstance interface {
 // The jsii proxy for ICenInstance
 type jsiiProxy_ICenInstance struct {
 	internal.Type__alicloudroscdkcoreIResource
+}
+
+func (j *jsiiProxy_ICenInstance) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_ICenInstance) AttrCenId() interface{} {

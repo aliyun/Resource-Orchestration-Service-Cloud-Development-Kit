@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::DhcpOptionsSet`, which is used to create Dynamic Host Configuration Protocol (DHCP) options sets.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::DhcpOptionsSet`.
 type RosDhcpOptionsSet interface {
 	alicloudroscdkcore.RosResource
 	AttrDhcpOptionsSetId() alicloudroscdkcore.IResolvable

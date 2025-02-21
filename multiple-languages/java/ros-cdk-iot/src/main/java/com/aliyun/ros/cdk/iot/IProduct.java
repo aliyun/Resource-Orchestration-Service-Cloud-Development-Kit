@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.iot;
 /**
  * Represents a <code>Product</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:40.901Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:17.587Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.iot.$Module.class, fqn = "@alicloud/ros-cdk-iot.IProduct")
 @software.amazon.jsii.Jsii.Proxy(IProduct.Jsii$Proxy.class)
 public interface IProduct extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

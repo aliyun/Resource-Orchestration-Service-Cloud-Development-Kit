@@ -37,6 +37,11 @@ export interface ISSHKeyPair extends ros.IResource {
     readonly props: SSHKeyPairProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute KeyPairFingerPrint: The fingerprint of the key pair. The public key fingerprint format defined in RFC4716: MD5 message digest algorithm. Refer to http://tools.ietf.org/html/rfc4716.
      */
     readonly attrKeyPairFingerPrint: ros.IResolvable | string;
@@ -61,6 +66,11 @@ export class SSHKeyPair extends ros.Resource implements ISSHKeyPair {
     protected id: string;
     public readonly props: SSHKeyPairProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute KeyPairFingerPrint: The fingerprint of the key pair. The public key fingerprint format defined in RFC4716: MD5 message digest algorithm. Refer to http://tools.ietf.org/html/rfc4716.
@@ -96,6 +106,7 @@ export class SSHKeyPair extends ros.Resource implements ISSHKeyPair {
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosSSHKeyPair;
+        this.attrArn = rosSSHKeyPair.attrArn;
         this.attrKeyPairFingerPrint = rosSSHKeyPair.attrKeyPairFingerPrint;
         this.attrKeyPairName = rosSSHKeyPair.attrKeyPairName;
         this.attrPrivateKeyBody = rosSSHKeyPair.attrPrivateKeyBody;

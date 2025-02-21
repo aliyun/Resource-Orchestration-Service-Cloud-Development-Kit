@@ -80,6 +80,11 @@ export class RosBackupClients extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::HBR::BackupClients";
 
     /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
+
+    /**
      * @Attribute ClientIds: ID list of clients installed in instances
      */
     public readonly attrClientIds: ros.IResolvable;
@@ -109,6 +114,7 @@ export class RosBackupClients extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosBackupClientsProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosBackupClients.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrClientIds = this.getAtt('ClientIds');
         this.attrInstanceIds = this.getAtt('InstanceIds');
 

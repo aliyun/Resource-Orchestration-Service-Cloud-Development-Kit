@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::Ipv4Gateway`, which is used to query the information about an IPv4 gateway.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::Ipv4Gateway`.
 type Ipv4Gateway interface {
 	alicloudroscdkcore.Resource
 	IIpv4Gateway

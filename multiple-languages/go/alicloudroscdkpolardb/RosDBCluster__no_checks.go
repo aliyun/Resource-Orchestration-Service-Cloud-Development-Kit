@@ -260,6 +260,10 @@ func (j *jsiiProxy_RosDBCluster) validateSetSourceResourceIdParameters(val inter
 	return nil
 }
 
+func (j *jsiiProxy_RosDBCluster) validateSetSslEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosDBCluster) validateSetStandbyAzParameters(val interface{}) error {
 	return nil
 }

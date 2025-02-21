@@ -12,6 +12,8 @@ type IAccessControl interface {
 	alicloudroscdkcore.IResource
 	// Attribute AclId: The ID of the access control list.
 	AttrAclId() interface{}
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	Props() *AccessControlProps
 }
 
@@ -25,6 +27,16 @@ func (j *jsiiProxy_IAccessControl) AttrAclId() interface{} {
 	_jsii_.Get(
 		j,
 		"attrAclId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IAccessControl) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
 		&returns,
 	)
 	return returns

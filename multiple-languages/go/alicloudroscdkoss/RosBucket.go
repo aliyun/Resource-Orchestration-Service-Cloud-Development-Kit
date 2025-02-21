@@ -14,6 +14,7 @@ type RosBucket interface {
 	alicloudroscdkcore.RosResource
 	AccessControl() interface{}
 	SetAccessControl(val interface{})
+	AttrArn() alicloudroscdkcore.IResolvable
 	AttrDomainName() alicloudroscdkcore.IResolvable
 	AttrInternalDomainName() alicloudroscdkcore.IResolvable
 	AttrName() alicloudroscdkcore.IResolvable
@@ -208,6 +209,16 @@ func (j *jsiiProxy_RosBucket) AccessControl() interface{} {
 	_jsii_.Get(
 		j,
 		"accessControl",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosBucket) AttrArn() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrArn",
 		&returns,
 	)
 	return returns

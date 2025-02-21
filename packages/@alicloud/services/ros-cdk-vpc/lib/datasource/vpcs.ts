@@ -68,7 +68,7 @@ export interface IVpcs extends ros.IResource {
     readonly attrVpcs: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::Vpcs`, which is used to query created virtual private clouds (VPCs).
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::Vpcs`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpcs`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-vpcs
  */

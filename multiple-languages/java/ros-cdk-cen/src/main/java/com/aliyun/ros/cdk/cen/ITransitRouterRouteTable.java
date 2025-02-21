@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Represents a <code>TransitRouterRouteTable</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:35.424Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:12.547Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.ITransitRouterRouteTable")
 @software.amazon.jsii.Jsii.Proxy(ITransitRouterRouteTable.Jsii$Proxy.class)
 public interface ITransitRouterRouteTable extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

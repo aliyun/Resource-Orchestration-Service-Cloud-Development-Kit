@@ -387,6 +387,11 @@ export class RosPremiumInstance extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DDoSPro::PremiumInstance";
 
     /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
+
+    /**
      * @Attribute InstanceId: The ID of the instance.
      */
     public readonly attrInstanceId: ros.IResolvable;
@@ -484,6 +489,7 @@ export class RosPremiumInstance extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosPremiumInstanceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosPremiumInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrInstanceId = this.getAtt('InstanceId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
@@ -800,6 +806,11 @@ export class RosProInstance extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DDoSPro::ProInstance";
 
     /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
+
+    /**
      * @Attribute InstanceId: The ID of the instance.
      */
     public readonly attrInstanceId: ros.IResolvable;
@@ -899,6 +910,7 @@ export class RosProInstance extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosProInstanceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosProInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrInstanceId = this.getAtt('InstanceId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;

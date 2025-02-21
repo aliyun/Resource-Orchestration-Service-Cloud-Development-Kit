@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::WAF::Instance`, which is used to create a Web Application Firewall (WAF) instance 2.0.
+// This class encapsulates and extends the ROS resource type `ALIYUN::WAF::Instance`.
 type Instance interface {
 	alicloudroscdkcore.Resource
 	IInstance

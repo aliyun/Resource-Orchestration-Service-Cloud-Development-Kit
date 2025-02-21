@@ -13,6 +13,7 @@
 @alicloud/ros-cdk-gpdb.RosAccount=com.aliyun.ros.cdk.gpdb.RosAccount
 @alicloud/ros-cdk-gpdb.RosAccountProps=com.aliyun.ros.cdk.gpdb.RosAccountProps
 @alicloud/ros-cdk-gpdb.RosDBInstance=com.aliyun.ros.cdk.gpdb.RosDBInstance
+@alicloud/ros-cdk-gpdb.RosDBInstance.AINodeSpecInfosProperty=com.aliyun.ros.cdk.gpdb.RosDBInstance$AINodeSpecInfosProperty
 @alicloud/ros-cdk-gpdb.RosDBInstance.TagsProperty=com.aliyun.ros.cdk.gpdb.RosDBInstance$TagsProperty
 @alicloud/ros-cdk-gpdb.RosDBInstanceProps=com.aliyun.ros.cdk.gpdb.RosDBInstanceProps
 @alicloud/ros-cdk-gpdb.RosElasticDBInstance=com.aliyun.ros.cdk.gpdb.RosElasticDBInstance

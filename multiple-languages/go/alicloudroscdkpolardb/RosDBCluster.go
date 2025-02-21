@@ -16,6 +16,7 @@ type RosDBCluster interface {
 	SetAllowShutDown(val interface{})
 	Architecture() interface{}
 	SetArchitecture(val interface{})
+	AttrArn() alicloudroscdkcore.IResolvable
 	AttrClusterConnectionString() alicloudroscdkcore.IResolvable
 	AttrClusterEndpointId() alicloudroscdkcore.IResolvable
 	AttrColdStorageInstanceId() alicloudroscdkcore.IResolvable
@@ -139,6 +140,8 @@ type RosDBCluster interface {
 	SetServerlessType(val interface{})
 	SourceResourceId() interface{}
 	SetSourceResourceId(val interface{})
+	SslEnabled() interface{}
+	SetSslEnabled(val interface{})
 	// The stack in which this element is defined.
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
@@ -306,6 +309,16 @@ func (j *jsiiProxy_RosDBCluster) Architecture() interface{} {
 	_jsii_.Get(
 		j,
 		"architecture",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDBCluster) AttrArn() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrArn",
 		&returns,
 	)
 	return returns
@@ -926,6 +939,16 @@ func (j *jsiiProxy_RosDBCluster) SourceResourceId() interface{} {
 	_jsii_.Get(
 		j,
 		"sourceResourceId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDBCluster) SslEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"sslEnabled",
 		&returns,
 	)
 	return returns
@@ -1579,6 +1602,17 @@ func (j *jsiiProxy_RosDBCluster)SetSourceResourceId(val interface{}) {
 	_jsii_.Set(
 		j,
 		"sourceResourceId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDBCluster)SetSslEnabled(val interface{}) {
+	if err := j.validateSetSslEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"sslEnabled",
 		val,
 	)
 }

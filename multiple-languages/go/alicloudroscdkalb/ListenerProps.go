@@ -35,14 +35,13 @@ type ListenerProps struct {
 	// Default value: on.
 	// Valid values: true and false.
 	// Default value: true.
-	// Note Only HTTPS listeners support this parameter.
+	// Note: Only HTTPS listeners support this parameter.
 	Http2Enabled interface{} `field:"optional" json:"http2Enabled" yaml:"http2Enabled"`
 	// Property idleTimeout: The timeout period of idle connections.
 	//
-	// Valid values: 1 to 180. Unit: seconds.
+	// Valid values: 1 to 3600. Unit: seconds.
 	// Default value: 15.
-	// If no request is received within the specified timeout period, ALB closes the connection.
-	// ALB recreates the connection when a new connection request is received.
+	// If no requests are received within the specified timeout period, ALB closes the current connection. When a new request is received, ALB establishes a new connection.
 	IdleTimeout interface{} `field:"optional" json:"idleTimeout" yaml:"idleTimeout"`
 	// Property listenerDescription: The description of the listener.
 	//
@@ -50,11 +49,13 @@ type ListenerProps struct {
 	ListenerDescription interface{} `field:"optional" json:"listenerDescription" yaml:"listenerDescription"`
 	// Property listenerStatus: The status of the listener.
 	ListenerStatus interface{} `field:"optional" json:"listenerStatus" yaml:"listenerStatus"`
+	// Property logConfig: The configuration information about the access log.
+	LogConfig interface{} `field:"optional" json:"logConfig" yaml:"logConfig"`
 	// Property quicConfig: Select a QUIC listener and associate it with the ALB instance.
 	QuicConfig interface{} `field:"optional" json:"quicConfig" yaml:"quicConfig"`
 	// Property requestTimeout: The timeout period of the request.
 	//
-	// Valid values: 1 to 180. Unit: seconds.
+	// Valid values: 1 to 900. Unit: seconds.
 	// Default value: 60.
 	// If no response is received from the backend server during the request timeout period,
 	// ALB sends an HTTP 504 error code to the client.
@@ -64,7 +65,7 @@ type ListenerProps struct {
 	// System security policies and custom security policies
 	// are supported.
 	// Default value: tls_cipher_policy_1_0. This value indicates a system security policy.
-	// Note Only HTTPS listeners support this parameter.
+	// Note: Only HTTPS listeners support this parameter.
 	SecurityPolicyId interface{} `field:"optional" json:"securityPolicyId" yaml:"securityPolicyId"`
 	// Property xForwardedForConfig: The configuration of the XForward field.
 	XForwardedForConfig interface{} `field:"optional" json:"xForwardedForConfig" yaml:"xForwardedForConfig"`

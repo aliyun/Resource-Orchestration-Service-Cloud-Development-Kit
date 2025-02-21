@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq5
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ5::ConsumerGroup`, which is used to create a consumer group in ApsaraMQ for RocketMQ 5.0.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ5::ConsumerGroup`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `ConsumerGroup` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-consumergroup
@@ -259,6 +259,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq5
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: deadLetterTargetTopic: The dead letter topic of the consumer group.
+            /// </remarks>
+            [JsiiProperty(name: "deadLetterTargetTopic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? DeadLetterTargetTopic
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: maxRetryTimes: Maximum number of retries.
             /// </remarks>
             [JsiiProperty(name: "maxRetryTimes", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -285,6 +298,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq5
                 public object RetryPolicy
                 {
                     get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: deadLetterTargetTopic: The dead letter topic of the consumer group.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "deadLetterTargetTopic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DeadLetterTargetTopic
+                {
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
@@ -332,6 +355,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq5
                         }
                     }
                     _retryPolicy = value;
+                }
+            }
+
+            private object? _deadLetterTargetTopic;
+
+            /// <remarks>
+            /// <strong>Property</strong>: deadLetterTargetTopic: The dead letter topic of the consumer group.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "deadLetterTargetTopic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DeadLetterTargetTopic
+            {
+                get => _deadLetterTargetTopic;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _deadLetterTargetTopic = value;
                 }
             }
 

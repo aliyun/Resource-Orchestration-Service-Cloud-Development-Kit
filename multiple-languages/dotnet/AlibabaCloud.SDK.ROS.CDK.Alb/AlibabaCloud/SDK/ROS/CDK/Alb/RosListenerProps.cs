@@ -354,7 +354,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         /// <strong>Property</strong>: http2Enabled: Specifies whether to enable HTTP\/2. Default value: on.
         /// Valid values: true and false.
         /// Default value: true.
-        /// Note Only HTTPS listeners support this parameter.
+        /// Note: Only HTTPS listeners support this parameter.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "http2Enabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -388,10 +388,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
         /// <remarks>
         /// <strong>Property</strong>: idleTimeout: The timeout period of idle connections.
-        /// Valid values: 1 to 180. Unit: seconds.
+        /// Valid values: 1 to 3600. Unit: seconds.
         /// Default value: 15.
-        /// If no request is received within the specified timeout period, ALB closes the connection.
-        /// ALB recreates the connection when a new connection request is received.
+        /// If no requests are received within the specified timeout period, ALB closes the current connection. When a new request is received, ALB establishes a new connection.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "idleTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -508,6 +507,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
         }
 
+        private object? _logConfig;
+
+        /// <remarks>
+        /// <strong>Property</strong>: logConfig: The configuration information about the access log.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "logConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosListener.LogConfigProperty\"}]}}", isOptional: true)]
+        public object? LogConfig
+        {
+            get => _logConfig;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Alb.RosListener.ILogConfigProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosListener.ILogConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _logConfig = value;
+            }
+        }
+
         private object? _quicConfig;
 
         /// <remarks>
@@ -545,7 +577,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
         /// <remarks>
         /// <strong>Property</strong>: requestTimeout: The timeout period of the request.
-        /// Valid values: 1 to 180. Unit: seconds.
+        /// Valid values: 1 to 900. Unit: seconds.
         /// Default value: 60.
         /// If no response is received from the backend server during the request timeout period,
         /// ALB sends an HTTP 504 error code to the client.
@@ -604,7 +636,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         /// <strong>Property</strong>: securityPolicyId: The ID of the security policy. System security policies and custom security policies
         /// are supported.
         /// Default value: tls_cipher_policy_1_0. This value indicates a system security policy.
-        /// Note Only HTTPS listeners support this parameter.
+        /// Note: Only HTTPS listeners support this parameter.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "securityPolicyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

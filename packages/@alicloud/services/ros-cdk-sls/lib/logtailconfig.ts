@@ -133,7 +133,7 @@ export interface ILogtailConfig extends ros.IResource {
     readonly attrLogtailConfigName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::LogtailConfig`, which is used to configure Logtail properties for data collection.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::LogtailConfig`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLogtailConfig`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logtailconfig
  */

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::VOD::EditingProjects`, which is used to query the basic information about online editing projects.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::VOD::EditingProjects`.
 type EditingProjects interface {
 	alicloudroscdkcore.Resource
 	IEditingProjects

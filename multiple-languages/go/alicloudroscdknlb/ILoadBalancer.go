@@ -14,6 +14,8 @@ type ILoadBalancer interface {
 	AttrAddressIpVersion() interface{}
 	// Attribute AddressType: The type of IP address that the NLB instance uses to provide services.
 	AttrAddressType() interface{}
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute DNSName: The domain name of the NLB instance.
 	AttrDnsName() interface{}
 	// Attribute LoadBalancerId: The ID of the NLB instance.
@@ -47,6 +49,16 @@ func (j *jsiiProxy_ILoadBalancer) AttrAddressType() interface{} {
 	_jsii_.Get(
 		j,
 		"attrAddressType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ILoadBalancer) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
 		&returns,
 	)
 	return returns

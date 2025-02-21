@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::AccessControl`, which is used to create an access control list (ACL).
+// This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::AccessControl`.
 type RosAccessControl interface {
 	alicloudroscdkcore.RosResource
 	AclEntries() interface{}
@@ -19,6 +19,7 @@ type RosAccessControl interface {
 	AddressIpVersion() interface{}
 	SetAddressIpVersion(val interface{})
 	AttrAclId() alicloudroscdkcore.IResolvable
+	AttrArn() alicloudroscdkcore.IResolvable
 	// Returns: the stack trace of the point where this Resource was created from, sourced
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
@@ -214,6 +215,16 @@ func (j *jsiiProxy_RosAccessControl) AttrAclId() alicloudroscdkcore.IResolvable 
 	_jsii_.Get(
 		j,
 		"attrAclId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosAccessControl) AttrArn() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrArn",
 		&returns,
 	)
 	return returns

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::BgpNetwork`, which is used to advertise a Border Gateway Protocol (BGP) network.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::BgpNetwork`.
 type RosBgpNetwork interface {
 	alicloudroscdkcore.RosResource
 	AttrDstCidrBlock() alicloudroscdkcore.IResolvable

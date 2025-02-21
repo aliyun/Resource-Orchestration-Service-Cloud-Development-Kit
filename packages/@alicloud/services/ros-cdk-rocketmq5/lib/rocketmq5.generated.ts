@@ -102,7 +102,7 @@ function rosConsumerGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ5::ConsumerGroup`, which is used to create a consumer group in ApsaraMQ for RocketMQ 5.0.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ5::ConsumerGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ConsumerGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-consumergroup
  */
@@ -198,6 +198,10 @@ export namespace RosConsumerGroup {
      */
     export interface ConsumeRetryPolicyProperty {
         /**
+         * @Property deadLetterTargetTopic: The dead letter topic of the consumer group.
+         */
+        readonly deadLetterTargetTopic?: string | ros.IResolvable;
+        /**
          * @Property retryPolicy: Retry policy type.
          */
         readonly retryPolicy: string | ros.IResolvable;
@@ -217,6 +221,14 @@ export namespace RosConsumerGroup {
 function RosConsumerGroup_ConsumeRetryPolicyPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    if(properties.deadLetterTargetTopic && (Array.isArray(properties.deadLetterTargetTopic) || (typeof properties.deadLetterTargetTopic) === 'string')) {
+        errors.collect(ros.propertyValidator('deadLetterTargetTopic', ros.validateLength)({
+            data: properties.deadLetterTargetTopic.length,
+            min: 1,
+            max: 60,
+          }));
+    }
+    errors.collect(ros.propertyValidator('deadLetterTargetTopic', ros.validateString)(properties.deadLetterTargetTopic));
     errors.collect(ros.propertyValidator('retryPolicy', ros.requiredValidator)(properties.retryPolicy));
     if(properties.retryPolicy && (typeof properties.retryPolicy) !== 'object') {
         errors.collect(ros.propertyValidator('retryPolicy', ros.validateAllowedValues)({
@@ -248,6 +260,7 @@ function rosConsumerGroupConsumeRetryPolicyPropertyToRosTemplate(properties: any
     if (!ros.canInspect(properties)) { return properties; }
     RosConsumerGroup_ConsumeRetryPolicyPropertyValidator(properties).assertSuccess();
     return {
+      'DeadLetterTargetTopic': ros.stringToRosTemplate(properties.deadLetterTargetTopic),
       'RetryPolicy': ros.stringToRosTemplate(properties.retryPolicy),
       'MaxRetryTimes': ros.numberToRosTemplate(properties.maxRetryTimes),
     };
@@ -432,7 +445,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ5::Instance`, which is used to create an ApsaraMQ for RocketMQ 5.0 instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ5::Instance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-instance
  */
@@ -889,7 +902,7 @@ function rosTopicPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ5::Topic`, which is used to create a topic for a Message Queue for Apache RocketMQ V5.0 instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ5::Topic`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Topic` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-topic
  */

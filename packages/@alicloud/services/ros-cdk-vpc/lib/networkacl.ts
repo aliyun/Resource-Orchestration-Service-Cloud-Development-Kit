@@ -57,7 +57,7 @@ export interface INetworkAcl extends ros.IResource {
     readonly attrNetworkAclId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::NetworkAcl`, which is used to create a network access control list (ACL).
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::NetworkAcl`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNetworkAcl`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-networkacl
  */

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::MPS::MediaWorkflow`, which is used to add a media workflow.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::MPS::MediaWorkflow`.
 type RosMediaWorkflow interface {
 	alicloudroscdkcore.RosResource
 	AttrCreationTime() alicloudroscdkcore.IResolvable

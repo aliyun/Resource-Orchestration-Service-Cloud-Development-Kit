@@ -84,6 +84,10 @@ func validateRosDBInstance_IsRosResourceParameters(construct alicloudroscdkcore.
 	return nil
 }
 
+func (j *jsiiProxy_RosDBInstance) validateSetAiNodeSpecInfosParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosDBInstance) validateSetCreateSampleDataParameters(val interface{}) error {
 	return nil
 }
@@ -133,6 +137,10 @@ func (j *jsiiProxy_RosDBInstance) validateSetIdleTimeParameters(val interface{})
 }
 
 func (j *jsiiProxy_RosDBInstance) validateSetInstanceSpecParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosDBInstance) validateSetMasterCuParameters(val interface{}) error {
 	return nil
 }
 

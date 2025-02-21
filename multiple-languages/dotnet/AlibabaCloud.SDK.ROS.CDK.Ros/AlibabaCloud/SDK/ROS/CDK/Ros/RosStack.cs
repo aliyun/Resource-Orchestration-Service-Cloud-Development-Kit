@@ -4,10 +4,8 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ros
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::Stack`, which is used to create a nested stack.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::Stack`.</summary>
     /// <remarks>
-    /// You can nest stacks up to five levels of depth.
-    ///
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Stack` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-stack
     /// </remarks>

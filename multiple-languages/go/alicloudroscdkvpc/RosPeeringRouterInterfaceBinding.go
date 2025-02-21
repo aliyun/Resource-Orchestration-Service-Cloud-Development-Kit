@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::PeeringRouterInterfaceBinding`, which is used to bind a router interface with another router interface.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::PeeringRouterInterfaceBinding`.
 type RosPeeringRouterInterfaceBinding interface {
 	alicloudroscdkcore.RosResource
 	AttrRouterInterfaceId() alicloudroscdkcore.IResolvable

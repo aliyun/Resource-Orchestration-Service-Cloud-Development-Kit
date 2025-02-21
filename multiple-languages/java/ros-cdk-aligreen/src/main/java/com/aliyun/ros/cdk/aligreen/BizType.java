@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.aligreen;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::Aligreen::BizType</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:34.296Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:11.472Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.aligreen.$Module.class, fqn = "@alicloud/ros-cdk-aligreen.BizType")
 public class BizType extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.aligreen.IBizType {
 

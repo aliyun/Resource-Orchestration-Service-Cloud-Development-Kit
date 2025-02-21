@@ -32,7 +32,7 @@ export interface IDBInstanceParameterGroup extends ros.IResource {
     readonly props: DBInstanceParameterGroupProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::DBInstanceParameterGroup`, which is used to modify the parameters of an ApsaraDB RDS instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::DBInstanceParameterGroup`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBInstanceParameterGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstanceparametergroup
  */

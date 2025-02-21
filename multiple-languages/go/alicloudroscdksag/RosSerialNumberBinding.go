@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::SerialNumberBinding`, which is used to associate a Smart Access Gateway (SAG) device with an SAG instance.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::SerialNumberBinding`.
 type RosSerialNumberBinding interface {
 	alicloudroscdkcore.RosResource
 	AttrSmartAgId() alicloudroscdkcore.IResolvable

@@ -54,6 +54,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
         = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Hbr.RosBackupClients))!;
 
         /// <remarks>
+        /// <strong>Attribute</strong>: Arn: The Alibaba Cloud Resource Name (ARN).
+        /// </remarks>
+        [JsiiProperty(name: "attrArn", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrArn
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
         /// <strong>Attribute</strong>: ClientIds: ID list of clients installed in instances
         /// </remarks>
         [JsiiProperty(name: "attrClientIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]

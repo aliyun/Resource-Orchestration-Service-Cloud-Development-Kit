@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * Represents a <code>LoadBalancer</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:33.972Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:11.300Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.ILoadBalancer")
 @software.amazon.jsii.Jsii.Proxy(ILoadBalancer.Jsii$Proxy.class)
 public interface ILoadBalancer extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
@@ -12,6 +12,11 @@ public interface ILoadBalancer extends software.amazon.jsii.JsiiSerializable, co
      * Attribute AddressType: The type of IP address that the ALB instance uses to provide services.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrAddressType();
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrArn();
 
     /**
      * Attribute DNSName: The domain name of the ALB instance.
@@ -86,6 +91,14 @@ public interface ILoadBalancer extends software.amazon.jsii.JsiiSerializable, co
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrAddressType() {
             return software.amazon.jsii.Kernel.get(this, "attrAddressType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrArn() {
+            return software.amazon.jsii.Kernel.get(this, "attrArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -177,6 +190,14 @@ public interface ILoadBalancer extends software.amazon.jsii.JsiiSerializable, co
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrAddressType() {
             return software.amazon.jsii.Kernel.get(this, "attrAddressType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrArn() {
+            return software.amazon.jsii.Kernel.get(this, "attrArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**

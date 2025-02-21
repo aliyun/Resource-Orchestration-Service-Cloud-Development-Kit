@@ -10,6 +10,8 @@ import (
 // Represents a `ServerGroup`.
 type IServerGroup interface {
 	alicloudroscdkcore.IResource
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute ServerGroupId: The ID of the server group.
 	AttrServerGroupId() interface{}
 	Props() *ServerGroupProps
@@ -18,6 +20,16 @@ type IServerGroup interface {
 // The jsii proxy for IServerGroup
 type jsiiProxy_IServerGroup struct {
 	internal.Type__alicloudroscdkcoreIResource
+}
+
+func (j *jsiiProxy_IServerGroup) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_IServerGroup) AttrServerGroupId() interface{} {

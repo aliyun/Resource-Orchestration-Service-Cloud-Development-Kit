@@ -13,6 +13,7 @@ import (
 // This class is a base encapsulation around the ROS resource type `ALIYUN::DCDN::Domain`, which is used to add a Dynamic Route for CDN (DCDN) domain name.
 type RosDomain interface {
 	alicloudroscdkcore.RosResource
+	AttrArn() alicloudroscdkcore.IResolvable
 	AttrCname() alicloudroscdkcore.IResolvable
 	AttrDomainName() alicloudroscdkcore.IResolvable
 	CheckUrl() interface{}
@@ -183,6 +184,16 @@ type RosDomain interface {
 // The jsii proxy struct for RosDomain
 type jsiiProxy_RosDomain struct {
 	internal.Type__alicloudroscdkcoreRosResource
+}
+
+func (j *jsiiProxy_RosDomain) AttrArn() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_RosDomain) AttrCname() alicloudroscdkcore.IResolvable {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs.datasource;
 /**
  * Represents a <code>ClusterUserKubeconfig</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:36.681Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:13.730Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.datasource.IClusterUserKubeconfig")
 @software.amazon.jsii.Jsii.Proxy(IClusterUserKubeconfig.Jsii$Proxy.class)
 public interface IClusterUserKubeconfig extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
