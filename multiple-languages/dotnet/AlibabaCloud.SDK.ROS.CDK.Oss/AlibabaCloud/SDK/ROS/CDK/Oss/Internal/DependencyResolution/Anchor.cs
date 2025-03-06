@@ -7,6 +7,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss.Internal.DependencyResolution
         public Anchor()
         {
             new AlibabaCloud.SDK.ROS.CDK.Core.Internal.DependencyResolution.Anchor();
+            new AlibabaCloud.SDK.ROS.CDK.Ram.Internal.DependencyResolution.Anchor();
             new Constructs.Internal.DependencyResolution.Anchor();
         }
     }

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::RAM::Groups`, which is used to query Resource Access Management (RAM) user groups.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::RAM::Groups`.
 type RosGroups interface {
 	alicloudroscdkcore.RosResource
 	AttrGroupNames() alicloudroscdkcore.IResolvable

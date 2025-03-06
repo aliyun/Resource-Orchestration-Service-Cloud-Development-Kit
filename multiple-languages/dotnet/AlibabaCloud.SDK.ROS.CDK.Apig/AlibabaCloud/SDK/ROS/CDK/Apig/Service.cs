@@ -44,9 +44,44 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apig
             get => GetInstanceProperty<object>()!;
         }
 
+        /// <summary>Attribute AiServiceConfig: AI service configuration when SourceType equals AI.</summary>
+        [JsiiProperty(name: "attrAiServiceConfig", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrAiServiceConfig
+        {
+            get => GetInstanceProperty<object>()!;
+        }
+
         /// <summary>Attribute GatewayId: The ID of the Cloud Native API Gateway.</summary>
         [JsiiProperty(name: "attrGatewayId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrGatewayId
+        {
+            get => GetInstanceProperty<object>()!;
+        }
+
+        /// <summary>Attribute GroupName: The service group name.</summary>
+        [JsiiProperty(name: "attrGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrGroupName
+        {
+            get => GetInstanceProperty<object>()!;
+        }
+
+        /// <summary>Attribute Namespace: The namespace of the service:.</summary>
+        [JsiiProperty(name: "attrNamespace", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrNamespace
+        {
+            get => GetInstanceProperty<object>()!;
+        }
+
+        /// <summary>Attribute Qualifier: The function version or alias.</summary>
+        [JsiiProperty(name: "attrQualifier", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrQualifier
+        {
+            get => GetInstanceProperty<object>()!;
+        }
+
+        /// <summary>Attribute ResourceGroupId: The ID of the resource group.</summary>
+        [JsiiProperty(name: "attrResourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrResourceGroupId
         {
             get => GetInstanceProperty<object>()!;
         }
@@ -58,16 +93,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apig
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute ServiceName: The Name of the service .</summary>
+        /// <summary>Attribute ServiceName: Service Name, need to fill in manually when SourceType is VIP/DNS/AI.</summary>
         [JsiiProperty(name: "attrServiceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrServiceName
-        {
-            get => GetInstanceProperty<object>()!;
-        }
-
-        /// <summary>Attribute SourceType: Service source type.</summary>
-        [JsiiProperty(name: "attrSourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        public virtual object AttrSourceType
         {
             get => GetInstanceProperty<object>()!;
         }

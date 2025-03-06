@@ -520,6 +520,7 @@ export class ExtensionCodeGenerator {
       } else {
         continue;
       }
+      const serviceName = packageName.split('-')[2];
       const fileName = extensionFilePath.split('/')[extensionFilePath.split('/').length-1];
       const pathSuffixIndex = extensionFilePath.indexOf("@alicloud/extension/") + "@alicloud/extension/".length;
       const pathSuffix = extensionFilePath.substring(pathSuffixIndex);
@@ -536,6 +537,16 @@ export class ExtensionCodeGenerator {
           const mergedPackageData = util.mergeObjects(JSON.parse(resourceData), JSON.parse(data));
           const mergedPackageJson = JSON.stringify(mergedPackageData, null, 2);
           fs.writeFileSync(resourceFilePath, mergedPackageJson, 'utf8');
+          continue;
+        } else if (fileName === 'index.ts') {
+          console.log('merge extension index: ', extensionFilePath);
+          const extensionCodes = data.split('\n');
+          resourceCodes = resourceCodes.concat(extensionCodes);
+          fs.writeFile(resourceFilePath, resourceCodes.join('\n'), 'utf8', (err) => {
+            if (err) {
+              console.error(`Error writing to ${resourceFilePath}: ${err}`);
+            }
+          });
           continue;
         }
 
@@ -559,12 +570,15 @@ export class ExtensionCodeGenerator {
         ];
 
         const extensionCodes = data.split('\n');
-        // console.log(data);
-        // console.log('-----------------------------------------------------------------');
 
-        let resourceCodeIndex = resourceCodes.findIndex((str) => str.includes(`export { Ros${resourceName} as ${resourceName}Property };`));
+        let resourceCodeIndex = resourceCodes.findIndex((str) => str.includes(`export { Ros${resourceName} as ${resourceName}Property };`)) + 1;
+        let generateImportIndex = resourceCodes.findIndex((str) => str.includes(`import { Ros${resourceName} } from './${serviceName}.generated';`))
 
         let extensionLeftBracketCounts = 0;
+        let constructorBeginIndex = 0;
+        let constructorEndIndex = 0;
+        let meetExtensionConstructor = false;
+        let meetSuperConstructor = false;
         for (let codeLine of extensionCodes) {
           if (codeLine === 'import * as ros from "@alicloud/ros-cdk-core";') {
             continue;
@@ -573,47 +587,99 @@ export class ExtensionCodeGenerator {
             const matches = codeLine.match(/{(.*?)}/);
             if (matches && matches[1]) {
               const importResourceNames = matches[1].split(',').map((element) => element.trim());
+              let generateImports: string[] = [];
               for (const importResourceName of importResourceNames) {
                 if (matchingImports.includes(importResourceName)) {
+                  continue;
+                }
+                if (importResourceName.startsWith('Ros')) {
+                  generateImports.push(importResourceName);
                   continue;
                 }
                 resourceCodes.splice(resourceCodeIndex, 0,
                     `import { ${importResourceName} } from './${importResourceName.toLowerCase()}';`);
                 resourceCodeIndex++;
               }
+              if (generateImports.length > 0) {
+                resourceCodes.splice(generateImportIndex, 1,
+                    `import { Ros${resourceName}, ${generateImports.join(', ')} } from './${serviceName}.generated';`);
+              }
             }
           } else if (codeLine && codeLine.includes(`import`)) {
             resourceCodes.splice(resourceCodeIndex, 0, codeLine);
             resourceCodeIndex++;
-          } else if (codeLine && codeLine.includes(`class ${resourceName} extends ${resourceName} {`)) {
-            const resourceClassIndex = resourceCodes.findIndex((str) => str.includes(`export class ${resourceName} extends`));
+          } else if (codeLine && codeLine.includes(`class ${resourceName}`)) {
+            // 合并拓展继承和实现
+            const extensionExtracted = extractExtendsImplements(codeLine);
+            extensionExtracted.extends = extensionExtracted.extends.filter((element) => element !== resourceName);
+            const resourceClassIndex = resourceCodes.findIndex((str) => str.includes(`export class ${resourceName}`));
+            const resourceExtracted = extractExtendsImplements(resourceCodes[resourceClassIndex]);
+            resourceExtracted.extends = resourceExtracted.extends.concat(extensionExtracted.extends);
+            resourceExtracted.implements = resourceExtracted.implements.concat(extensionExtracted.implements);
+            const newResourceClass = `export class ${resourceName} ${resourceExtracted.extends.length > 0 ? `extends ${resourceExtracted.extends.join(', ')}` : ''}${resourceExtracted.implements.length > 0 ? ` implements ${resourceExtracted.implements.join(', ')}` : ''} \{`;
+            resourceCodes.splice(resourceClassIndex, 1, newResourceClass);
+
             const subArray = resourceCodes.slice(resourceClassIndex + 1);
-            const constructorIndex = subArray.findIndex((str) => str.includes("constructor(scope: ros.Construct,"));
-            if (constructorIndex !== -1) {
-              const actualConstructorIndex = resourceClassIndex + 1 + constructorIndex;
+            const relativeConstructorIndex = subArray.findIndex((str) => str.includes("constructor(scope: ros.Construct,"));
+            if (relativeConstructorIndex !== -1) {
+              constructorBeginIndex = resourceClassIndex + 1 + relativeConstructorIndex;
+              for (let i = constructorBeginIndex; i > 0; i--) {
+                if (resourceCodes[i] && resourceCodes[i].includes('/**')) {
+                  resourceCodes.splice(i, 0, '');
+                  constructorBeginIndex++;
+                  resourceCodeIndex = i;
+                  break;
+                }
+              }
               let leftBracketCounts = 0;
-              for (resourceCodeIndex = actualConstructorIndex; resourceCodeIndex < resourceCodes.length; resourceCodeIndex++) {
-                leftBracketCounts += (resourceCodes[resourceCodeIndex].split('{').length - 1);
-                leftBracketCounts -= (resourceCodes[resourceCodeIndex].split('}').length - 1);
+              for (let i = constructorBeginIndex; i < resourceCodes.length; i++) {
+                leftBracketCounts += (resourceCodes[i].split('{').length - 1);
+                leftBracketCounts -= (resourceCodes[i].split('}').length - 1);
                 if (leftBracketCounts === 0) {
-                  resourceCodeIndex++;
-                  resourceCodes.splice(resourceCodeIndex, 0, '');
-                  resourceCodeIndex++;
+                  constructorEndIndex = i;
                   break;
                 }
               }
             } else {
               throw new Error(`Class ${resourceName} has no constuctor`);
             }
-          } else {
+          } else if (codeLine && codeLine.includes(`constructor(scope: ros.Construct, id: string, props: `)
+              && constructorBeginIndex != 0) {
             extensionLeftBracketCounts += (codeLine.split('{').length - 1);
             extensionLeftBracketCounts -= (codeLine.split('}').length - 1);
+            meetExtensionConstructor = true;
+          } else {
+            if (codeLine && codeLine.includes(`super(scope, id, props, enableResourcePropertyConstraint);`)) {
+              meetSuperConstructor = true;
+              continue;
+            }
+            extensionLeftBracketCounts += (codeLine.split('{').length - 1);
+            extensionLeftBracketCounts -= (codeLine.split('}').length - 1);
+            if (meetExtensionConstructor) {
+              if (extensionLeftBracketCounts === 0) {
+                meetExtensionConstructor = false;
+              } else {
+                if (meetSuperConstructor) {
+                  resourceCodes.splice(constructorEndIndex, 0, codeLine);
+                  constructorEndIndex++;
+                } else {
+                  resourceCodes.splice(constructorBeginIndex + 1, 0, codeLine);
+                }
+                constructorBeginIndex++;
+              }
+              continue;
+            }
             if (extensionLeftBracketCounts === -1) {
               resourceCodeIndex = resourceCodes.length - 1;
               continue;
             }
+            if (!codeLine && resourceCodeIndex > 0 && !resourceCodes[resourceCodeIndex-1]) {
+              continue;
+            }
             resourceCodes.splice(resourceCodeIndex, 0, codeLine);
             resourceCodeIndex++;
+            constructorBeginIndex++;
+            constructorEndIndex++;
           }
         }
       } else {
@@ -639,10 +705,19 @@ export class ExtensionCodeGenerator {
             const matches = codeLine.match(/{(.*?)}/);
             if (matches && matches[1]) {
               const importResourceNames = matches[1].split(',').map((element) => element.trim());
+              let generateImports: string[] = [];
               for (const importResourceName of importResourceNames) {
+                if (importResourceName.startsWith('Ros')) {
+                  generateImports.push(importResourceName);
+                  continue;
+                }
                 resourceCodes.push(
                     `import { ${importResourceName} } from './${importResourceName.toLowerCase()}';`,
                 );
+              }
+              if (generateImports.length > 0) {
+                resourceCodes.push(
+                    `import { ${generateImports.join(', ')} } from './${serviceName}.generated';`);
               }
             }
           } else {
@@ -691,6 +766,33 @@ function tokenizableType(alternatives: string[]): boolean {
   // }
 
   return false;
+}
+
+function extractExtendsImplements(classDeclaration: string): { extends: string[], implements: string[] } {
+  const result: { extends: string[], implements: string[] } = { extends: [], implements: [] };
+
+  // 匹配 extends 和 implements 的位置
+  const extendsIndex = classDeclaration.indexOf('extends');
+  const implementsIndex = classDeclaration.indexOf('implements');
+
+  if (extendsIndex !== -1) {
+    // 提取 extends 后的内容
+    let extendsEndIndex = implementsIndex !== -1 ? implementsIndex : classDeclaration.length;
+    const extendsMatch = classDeclaration.substring(extendsIndex + 'extends'.length, extendsEndIndex).match(/([\w\d\s,.<>]+)/);
+    if (extendsMatch) {
+      result.extends = extendsMatch[1].split(',').map(s => s.trim()).filter(s => s.length > 0);
+    }
+  }
+
+  if (implementsIndex !== -1) {
+    // 提取 implements 后的内容
+    const implementsMatch = classDeclaration.substring(implementsIndex + 'implements'.length).match(/([\w\d\s,.<>]+)/);
+    if (implementsMatch) {
+      result.implements = implementsMatch[1].split(',').map(s => s.trim()).filter(s => s.length > 0);
+    }
+  }
+
+  return result;
 }
 
 enum Container {

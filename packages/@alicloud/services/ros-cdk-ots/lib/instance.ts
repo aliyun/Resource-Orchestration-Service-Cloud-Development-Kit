@@ -65,7 +65,7 @@ export interface IInstance extends ros.IResource {
     readonly attrVpcEndpoint: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::OTS::Instance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::OTS::Instance`, which is used to create a Tablestore instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-instance
  */

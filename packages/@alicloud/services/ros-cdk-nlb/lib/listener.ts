@@ -132,7 +132,7 @@ export interface IListener extends ros.IResource {
     readonly attrListenerPort: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::NLB::Listener`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::NLB::Listener`, which is used to create a listener.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosListener`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-listener
  */

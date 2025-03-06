@@ -76,13 +76,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             get;
         }
 
-        /// <summary>Attribute RelatedOrderIds: The related order id list of created ecs instances.</summary>
-        [JsiiProperty(name: "attrRelatedOrderIds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object AttrRelatedOrderIds
-        {
-            get;
-        }
-
         /// <summary>Attribute ZoneIds: Zone id of created instances.</summary>
         [JsiiProperty(name: "attrZoneIds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AttrZoneIds
@@ -172,13 +165,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Attribute RelatedOrderIds: The related order id list of created ecs instances.</summary>
-            [JsiiProperty(name: "attrRelatedOrderIds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object AttrRelatedOrderIds
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
             /// <summary>Attribute ZoneIds: Zone id of created instances.</summary>
             [JsiiProperty(name: "attrZoneIds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AttrZoneIds
@@ -201,7 +187,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
             /// that might be different than the stack they were imported into.
             /// </remarks>
-            [JsiiProperty(name: "env", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.ResourceEnvironment\"}")]
+            [JsiiProperty(name: "env", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResourceEnvironment\"}")]
             public AlibabaCloud.SDK.ROS.CDK.Core.IResourceEnvironment Env
             {
                 get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResourceEnvironment>()!;

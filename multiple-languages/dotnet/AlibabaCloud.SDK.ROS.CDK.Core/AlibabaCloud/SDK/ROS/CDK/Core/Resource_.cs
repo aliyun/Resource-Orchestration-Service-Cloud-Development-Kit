@@ -144,7 +144,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
         /// that might be different than the stack they were imported into.
         /// </remarks>
-        [JsiiProperty(name: "env", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.ResourceEnvironment\"}")]
+        [JsiiProperty(name: "env", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResourceEnvironment\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResourceEnvironment Env
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResourceEnvironment>()!;

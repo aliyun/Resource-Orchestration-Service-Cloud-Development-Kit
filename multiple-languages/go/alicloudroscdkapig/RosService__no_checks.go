@@ -88,11 +88,31 @@ func (j *jsiiProxy_RosService) validateSetAddressesParameters(val interface{}) e
 	return nil
 }
 
+func (j *jsiiProxy_RosService) validateSetAiServiceConfigParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosService) validateSetEnableResourcePropertyConstraintParameters(val *bool) error {
 	return nil
 }
 
 func (j *jsiiProxy_RosService) validateSetGatewayIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosService) validateSetGroupNameParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosService) validateSetNamespaceParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosService) validateSetQualifierParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosService) validateSetResourceGroupIdParameters(val interface{}) error {
 	return nil
 }
 

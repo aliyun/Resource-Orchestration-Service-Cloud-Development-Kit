@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apig;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::APIG::Domain</code>, which is used to create a domain name.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:11.648Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:01.587Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.Domain")
 public class Domain extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.apig.IDomain {
 
@@ -41,6 +41,14 @@ public class Domain extends com.aliyun.ros.cdk.core.Resource implements com.aliy
     }
 
     /**
+     * Attribute CertIdentifier: The tls Certificate identification.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrCertIdentifier() {
+        return software.amazon.jsii.Kernel.get(this, "attrCertIdentifier", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
      * Attribute DomainId: The ID of the Domain.
      */
     @Override
@@ -57,11 +65,63 @@ public class Domain extends com.aliyun.ros.cdk.core.Resource implements com.aliy
     }
 
     /**
+     * Attribute ForceHttps: Set the HTTPS protocol type and whether to enable forced HTTPS redirection.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrForceHttps() {
+        return software.amazon.jsii.Kernel.get(this, "attrForceHttps", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     * Attribute Http2Option: Whether to enable http2 settings.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrHttp2Option() {
+        return software.amazon.jsii.Kernel.get(this, "attrHttp2Option", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
      * Attribute Protocol: The types of protocols.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrProtocol() {
         return software.amazon.jsii.Kernel.get(this, "attrProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     * Attribute ResourceGroupId: The ID of the resource group.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "attrResourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     * Attribute TlsCipherSuitesConfig: The configuration of the TLS encryption suite.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTlsCipherSuitesConfig() {
+        return software.amazon.jsii.Kernel.get(this, "attrTlsCipherSuitesConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     * Attribute TlsMax: The maximum version of the TLS protocol.
+     * <p>
+     * The maximum version of the TLS protocol is 1.3.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTlsMax() {
+        return software.amazon.jsii.Kernel.get(this, "attrTlsMax", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     * Attribute TlsMin: The minimum version of the TLS protocol.
+     * <p>
+     * The minimum version of the TLS protocol is 1.0.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTlsMin() {
+        return software.amazon.jsii.Kernel.get(this, "attrTlsMin", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     @Override
@@ -174,6 +234,161 @@ public class Domain extends com.aliyun.ros.cdk.core.Resource implements com.aliy
          */
         public Builder protocol(final com.aliyun.ros.cdk.core.IResolvable protocol) {
             this.props.protocol(protocol);
+            return this;
+        }
+
+        /**
+         * Property certIdentifier: The tls Certificate identification.
+         * <p>
+         * @return {@code this}
+         * @param certIdentifier Property certIdentifier: The tls Certificate identification. This parameter is required.
+         */
+        public Builder certIdentifier(final java.lang.String certIdentifier) {
+            this.props.certIdentifier(certIdentifier);
+            return this;
+        }
+        /**
+         * Property certIdentifier: The tls Certificate identification.
+         * <p>
+         * @return {@code this}
+         * @param certIdentifier Property certIdentifier: The tls Certificate identification. This parameter is required.
+         */
+        public Builder certIdentifier(final com.aliyun.ros.cdk.core.IResolvable certIdentifier) {
+            this.props.certIdentifier(certIdentifier);
+            return this;
+        }
+
+        /**
+         * Property forceHttps: Set the HTTPS protocol type and whether to enable forced HTTPS redirection.
+         * <p>
+         * @return {@code this}
+         * @param forceHttps Property forceHttps: Set the HTTPS protocol type and whether to enable forced HTTPS redirection. This parameter is required.
+         */
+        public Builder forceHttps(final java.lang.Boolean forceHttps) {
+            this.props.forceHttps(forceHttps);
+            return this;
+        }
+        /**
+         * Property forceHttps: Set the HTTPS protocol type and whether to enable forced HTTPS redirection.
+         * <p>
+         * @return {@code this}
+         * @param forceHttps Property forceHttps: Set the HTTPS protocol type and whether to enable forced HTTPS redirection. This parameter is required.
+         */
+        public Builder forceHttps(final com.aliyun.ros.cdk.core.IResolvable forceHttps) {
+            this.props.forceHttps(forceHttps);
+            return this;
+        }
+
+        /**
+         * Property http2Option: Whether to enable http2 settings.
+         * <p>
+         * @return {@code this}
+         * @param http2Option Property http2Option: Whether to enable http2 settings. This parameter is required.
+         */
+        public Builder http2Option(final java.lang.String http2Option) {
+            this.props.http2Option(http2Option);
+            return this;
+        }
+        /**
+         * Property http2Option: Whether to enable http2 settings.
+         * <p>
+         * @return {@code this}
+         * @param http2Option Property http2Option: Whether to enable http2 settings. This parameter is required.
+         */
+        public Builder http2Option(final com.aliyun.ros.cdk.core.IResolvable http2Option) {
+            this.props.http2Option(http2Option);
+            return this;
+        }
+
+        /**
+         * Property resourceGroupId: The ID of the resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: The ID of the resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * Property tlsCipherSuitesConfig: The configuration of the TLS encryption suite.
+         * <p>
+         * @return {@code this}
+         * @param tlsCipherSuitesConfig Property tlsCipherSuitesConfig: The configuration of the TLS encryption suite. This parameter is required.
+         */
+        public Builder tlsCipherSuitesConfig(final com.aliyun.ros.cdk.core.IResolvable tlsCipherSuitesConfig) {
+            this.props.tlsCipherSuitesConfig(tlsCipherSuitesConfig);
+            return this;
+        }
+        /**
+         * Property tlsCipherSuitesConfig: The configuration of the TLS encryption suite.
+         * <p>
+         * @return {@code this}
+         * @param tlsCipherSuitesConfig Property tlsCipherSuitesConfig: The configuration of the TLS encryption suite. This parameter is required.
+         */
+        public Builder tlsCipherSuitesConfig(final com.aliyun.ros.cdk.apig.RosDomain.TlsCipherSuitesConfigProperty tlsCipherSuitesConfig) {
+            this.props.tlsCipherSuitesConfig(tlsCipherSuitesConfig);
+            return this;
+        }
+
+        /**
+         * Property tlsMax: The maximum version of the TLS protocol.
+         * <p>
+         * The maximum version of the TLS protocol is 1.3.
+         * <p>
+         * @return {@code this}
+         * @param tlsMax Property tlsMax: The maximum version of the TLS protocol. This parameter is required.
+         */
+        public Builder tlsMax(final java.lang.String tlsMax) {
+            this.props.tlsMax(tlsMax);
+            return this;
+        }
+        /**
+         * Property tlsMax: The maximum version of the TLS protocol.
+         * <p>
+         * The maximum version of the TLS protocol is 1.3.
+         * <p>
+         * @return {@code this}
+         * @param tlsMax Property tlsMax: The maximum version of the TLS protocol. This parameter is required.
+         */
+        public Builder tlsMax(final com.aliyun.ros.cdk.core.IResolvable tlsMax) {
+            this.props.tlsMax(tlsMax);
+            return this;
+        }
+
+        /**
+         * Property tlsMin: The minimum version of the TLS protocol.
+         * <p>
+         * The minimum version of the TLS protocol is 1.0.
+         * <p>
+         * @return {@code this}
+         * @param tlsMin Property tlsMin: The minimum version of the TLS protocol. This parameter is required.
+         */
+        public Builder tlsMin(final java.lang.String tlsMin) {
+            this.props.tlsMin(tlsMin);
+            return this;
+        }
+        /**
+         * Property tlsMin: The minimum version of the TLS protocol.
+         * <p>
+         * The minimum version of the TLS protocol is 1.0.
+         * <p>
+         * @return {@code this}
+         * @param tlsMin Property tlsMin: The minimum version of the TLS protocol. This parameter is required.
+         */
+        public Builder tlsMin(final com.aliyun.ros.cdk.core.IResolvable tlsMin) {
+            this.props.tlsMin(tlsMin);
             return this;
         }
 

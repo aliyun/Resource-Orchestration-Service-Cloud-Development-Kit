@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::Listener`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::Listener`, which is used to create a listener.
 type RosListener interface {
 	alicloudroscdkcore.RosResource
 	AlpnEnabled() interface{}

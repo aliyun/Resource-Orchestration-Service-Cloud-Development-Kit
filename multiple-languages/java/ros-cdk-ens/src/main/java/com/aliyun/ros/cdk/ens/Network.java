@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ens;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ENS::Network</code>, which is used to create a virtual private cloud (VPC).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:16.512Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:06.502Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ens.$Module.class, fqn = "@alicloud/ros-cdk-ens.Network")
 public class Network extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ens.INetwork {
 

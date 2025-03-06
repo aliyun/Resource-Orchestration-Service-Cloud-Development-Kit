@@ -95,6 +95,17 @@ func (g *jsiiProxy_Group) validateAddResourceDescParameters(desc *string) error 
 	return nil
 }
 
+func (g *jsiiProxy_Group) validateAddToPolicyParameters(policyDocument *RosManagedPolicy_PolicyDocumentProperty) error {
+	if policyDocument == nil {
+		return fmt.Errorf("parameter policyDocument is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(policyDocument, func() string { return "parameter policyDocument" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (g *jsiiProxy_Group) validateApplyRemovalPolicyParameters(policy alicloudroscdkcore.RemovalPolicy) error {
 	if policy == "" {
 		return fmt.Errorf("parameter policy is required, but nil was provided")

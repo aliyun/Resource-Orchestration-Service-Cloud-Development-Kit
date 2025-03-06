@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.appflow;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-appflow-userauthconfig
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:12.006Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:01.910Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.appflow.$Module.class, fqn = "@alicloud/ros-cdk-appflow.RosUserAuthConfigProps")
 @software.amazon.jsii.Jsii.Proxy(RosUserAuthConfigProps.Jsii$Proxy.class)
 public interface RosUserAuthConfigProps extends software.amazon.jsii.JsiiSerializable {

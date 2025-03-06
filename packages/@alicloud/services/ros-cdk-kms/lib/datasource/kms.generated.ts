@@ -464,7 +464,7 @@ function rosNetworkRulesPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::KMS::NetworkRules`, which is used to query the information about network access rules.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::KMS::NetworkRules`.
  * @Note This class does not contain additional functions, so it is recommended to use the `NetworkRules` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kms-networkrules
  */

@@ -14,12 +14,30 @@ import (
 type Domain interface {
 	alicloudroscdkcore.Resource
 	IDomain
+	// Attribute CertIdentifier: The tls Certificate identification.
+	AttrCertIdentifier() interface{}
 	// Attribute DomainId: The ID of the Domain.
 	AttrDomainId() interface{}
 	// Attribute DomainName: The name of the Domain.
 	AttrDomainName() interface{}
+	// Attribute ForceHttps: Set the HTTPS protocol type and whether to enable forced HTTPS redirection.
+	AttrForceHttps() interface{}
+	// Attribute Http2Option: Whether to enable http2 settings.
+	AttrHttp2Option() interface{}
 	// Attribute Protocol: The types of protocols.
 	AttrProtocol() interface{}
+	// Attribute ResourceGroupId: The ID of the resource group.
+	AttrResourceGroupId() interface{}
+	// Attribute TlsCipherSuitesConfig: The configuration of the TLS encryption suite.
+	AttrTlsCipherSuitesConfig() interface{}
+	// Attribute TlsMax: The maximum version of the TLS protocol.
+	//
+	// The maximum version of the TLS protocol is 1.3.
+	AttrTlsMax() interface{}
+	// Attribute TlsMin: The minimum version of the TLS protocol.
+	//
+	// The minimum version of the TLS protocol is 1.0.
+	AttrTlsMin() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
 	// The environment this resource belongs to.
@@ -30,7 +48,7 @@ type Domain interface {
 	// however, for imported resources
 	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
 	// that might be different than the stack they were imported into.
-	Env() *alicloudroscdkcore.ResourceEnvironment
+	Env() alicloudroscdkcore.IResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -115,6 +133,16 @@ type jsiiProxy_Domain struct {
 	jsiiProxy_IDomain
 }
 
+func (j *jsiiProxy_Domain) AttrCertIdentifier() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrCertIdentifier",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_Domain) AttrDomainId() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -135,11 +163,71 @@ func (j *jsiiProxy_Domain) AttrDomainName() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_Domain) AttrForceHttps() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrForceHttps",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Domain) AttrHttp2Option() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrHttp2Option",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_Domain) AttrProtocol() interface{} {
 	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrProtocol",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Domain) AttrResourceGroupId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrResourceGroupId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Domain) AttrTlsCipherSuitesConfig() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrTlsCipherSuitesConfig",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Domain) AttrTlsMax() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrTlsMax",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Domain) AttrTlsMin() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrTlsMin",
 		&returns,
 	)
 	return returns
@@ -155,8 +243,8 @@ func (j *jsiiProxy_Domain) EnableResourcePropertyConstraint() *bool {
 	return returns
 }
 
-func (j *jsiiProxy_Domain) Env() *alicloudroscdkcore.ResourceEnvironment {
-	var returns *alicloudroscdkcore.ResourceEnvironment
+func (j *jsiiProxy_Domain) Env() alicloudroscdkcore.IResourceEnvironment {
+	var returns alicloudroscdkcore.IResourceEnvironment
 	_jsii_.Get(
 		j,
 		"env",

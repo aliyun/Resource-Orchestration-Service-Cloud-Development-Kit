@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.fc3;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-trigger
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:16.945Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:06.954Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc3.$Module.class, fqn = "@alicloud/ros-cdk-fc3.RosTriggerProps")
 @software.amazon.jsii.Jsii.Proxy(RosTriggerProps.Jsii$Proxy.class)
 public interface RosTriggerProps extends software.amazon.jsii.JsiiSerializable {

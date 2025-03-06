@@ -15,14 +15,22 @@ type Service interface {
 	IService
 	// Attribute Addresses: Service Address List.
 	AttrAddresses() interface{}
+	// Attribute AiServiceConfig: AI service configuration when SourceType equals AI.
+	AttrAiServiceConfig() interface{}
 	// Attribute GatewayId: The ID of the Cloud Native API Gateway.
 	AttrGatewayId() interface{}
+	// Attribute GroupName: The service group name.
+	AttrGroupName() interface{}
+	// Attribute Namespace: The namespace of the service:.
+	AttrNamespace() interface{}
+	// Attribute Qualifier: The function version or alias.
+	AttrQualifier() interface{}
+	// Attribute ResourceGroupId: The ID of the resource group.
+	AttrResourceGroupId() interface{}
 	// Attribute ServiceId: The ID of the service.
 	AttrServiceId() interface{}
-	// Attribute ServiceName: The Name of the service .
+	// Attribute ServiceName: Service Name, need to fill in manually when SourceType is VIP/DNS/AI.
 	AttrServiceName() interface{}
-	// Attribute SourceType: Service source type.
-	AttrSourceType() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
 	// The environment this resource belongs to.
@@ -33,7 +41,7 @@ type Service interface {
 	// however, for imported resources
 	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
 	// that might be different than the stack they were imported into.
-	Env() *alicloudroscdkcore.ResourceEnvironment
+	Env() alicloudroscdkcore.IResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -128,11 +136,61 @@ func (j *jsiiProxy_Service) AttrAddresses() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_Service) AttrAiServiceConfig() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrAiServiceConfig",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_Service) AttrGatewayId() interface{} {
 	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrGatewayId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Service) AttrGroupName() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrGroupName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Service) AttrNamespace() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrNamespace",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Service) AttrQualifier() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrQualifier",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Service) AttrResourceGroupId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrResourceGroupId",
 		&returns,
 	)
 	return returns
@@ -158,16 +216,6 @@ func (j *jsiiProxy_Service) AttrServiceName() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Service) AttrSourceType() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"attrSourceType",
-		&returns,
-	)
-	return returns
-}
-
 func (j *jsiiProxy_Service) EnableResourcePropertyConstraint() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -178,8 +226,8 @@ func (j *jsiiProxy_Service) EnableResourcePropertyConstraint() *bool {
 	return returns
 }
 
-func (j *jsiiProxy_Service) Env() *alicloudroscdkcore.ResourceEnvironment {
-	var returns *alicloudroscdkcore.ResourceEnvironment
+func (j *jsiiProxy_Service) Env() alicloudroscdkcore.IResourceEnvironment {
+	var returns alicloudroscdkcore.IResourceEnvironment
 	_jsii_.Get(
 		j,
 		"env",

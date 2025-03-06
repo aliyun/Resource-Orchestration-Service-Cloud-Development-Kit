@@ -52,7 +52,7 @@ export interface IWhitelist extends ros.IResource {
     readonly attrSecurityIps: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::Memcache::Whitelist`, which is used to create a Whitelist.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::Memcache::Whitelist`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosWhitelist`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-memcache-whitelist
  */

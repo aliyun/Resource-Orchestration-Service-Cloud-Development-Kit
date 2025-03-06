@@ -1,6 +1,7 @@
 import * as ros from '@alicloud/ros-cdk-core';
 import { RosQueue } from './mns.generated';
 // Generated from the AliCloud ROS Resource Specification
+export { RosQueue as QueueProperty };
 
 /**
  * Represents a `Queue`.
@@ -23,7 +24,6 @@ export interface QueueAttributes {
     readonly attrQueueUrl?: ros.IResolvable | string;
 }
 
-export { RosQueue as QueueProperty };
 
 /**
  * Properties for defining a `Queue`.
@@ -120,33 +120,6 @@ export class Queue extends ros.Resource implements IQueue {
      */
     public readonly attrQueueUrl: ros.IResolvable | string;
 
-    /**
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
-     */
-    constructor(scope: ros.Construct, id: string, props: QueueProps, enableResourcePropertyConstraint:boolean = true) {
-        super(scope, id);
-        this.scope = scope;
-        this.id = id;
-        this.props = props;
-        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-
-        const rosQueue = new RosQueue(this, id,  {
-            delaySeconds: props.delaySeconds === undefined || props.delaySeconds === null ? 0 : props.delaySeconds,
-            pollingWaitSeconds: props.pollingWaitSeconds === undefined || props.pollingWaitSeconds === null ? 0 : props.pollingWaitSeconds,
-            messageRetentionPeriod: props.messageRetentionPeriod === undefined || props.messageRetentionPeriod === null ? 345600 : props.messageRetentionPeriod,
-            maximumMessageSize: props.maximumMessageSize === undefined || props.maximumMessageSize === null ? 65536 : props.maximumMessageSize,
-            visibilityTimeout: props.visibilityTimeout === undefined || props.visibilityTimeout === null ? 30 : props.visibilityTimeout,
-            queueName: props.queueName,
-            loggingEnabled: props.loggingEnabled === undefined || props.loggingEnabled === null ? false : props.loggingEnabled,
-        }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
-        this.resource = rosQueue;
-        this.attrArnWithSlash = rosQueue.attrArnWithSlash;
-        this.attrQueueName = rosQueue.attrQueueName;
-        this.attrQueueUrl = rosQueue.attrQueueUrl;
-    }
-
     public static fromQueueArn(scope: ros.Construct, id: string, attrArnWithSlash: string): IQueue {
         return Queue.fromQueueAttributes(scope, id, { attrArnWithSlash });    }
 
@@ -175,5 +148,32 @@ export class Queue extends ros.Resource implements IQueue {
         return new Import(scope, id, {
             environmentFromArn: attrs.attrArnWithSlash,
         });
+    }
+
+    /**
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: QueueProps, enableResourcePropertyConstraint:boolean = true) {
+        super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+
+        const rosQueue = new RosQueue(this, id,  {
+            delaySeconds: props.delaySeconds === undefined || props.delaySeconds === null ? 0 : props.delaySeconds,
+            pollingWaitSeconds: props.pollingWaitSeconds === undefined || props.pollingWaitSeconds === null ? 0 : props.pollingWaitSeconds,
+            messageRetentionPeriod: props.messageRetentionPeriod === undefined || props.messageRetentionPeriod === null ? 345600 : props.messageRetentionPeriod,
+            maximumMessageSize: props.maximumMessageSize === undefined || props.maximumMessageSize === null ? 65536 : props.maximumMessageSize,
+            visibilityTimeout: props.visibilityTimeout === undefined || props.visibilityTimeout === null ? 30 : props.visibilityTimeout,
+            queueName: props.queueName,
+            loggingEnabled: props.loggingEnabled === undefined || props.loggingEnabled === null ? false : props.loggingEnabled,
+        }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
+        this.resource = rosQueue;
+        this.attrArnWithSlash = rosQueue.attrArnWithSlash;
+        this.attrQueueName = rosQueue.attrQueueName;
+        this.attrQueueUrl = rosQueue.attrQueueUrl;
     }
 }

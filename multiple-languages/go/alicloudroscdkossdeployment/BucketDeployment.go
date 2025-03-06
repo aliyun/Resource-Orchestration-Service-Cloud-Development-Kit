@@ -24,7 +24,7 @@ type BucketDeployment interface {
 	// however, for imported resources
 	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
 	// that might be different than the stack they were imported into.
-	Env() *alicloudroscdkcore.ResourceEnvironment
+	Env() alicloudroscdkcore.IResourceEnvironment
 	// Attribute fcFunction: FC function to use to forward content to the destination bucket.
 	FcFunction() alicloudroscdkfc.Function
 	// Attribute fcService: FC service to use to forward content to the destination bucket.
@@ -118,8 +118,8 @@ func (j *jsiiProxy_BucketDeployment) Cr() alicloudroscdkros.RosCustomResource {
 	return returns
 }
 
-func (j *jsiiProxy_BucketDeployment) Env() *alicloudroscdkcore.ResourceEnvironment {
-	var returns *alicloudroscdkcore.ResourceEnvironment
+func (j *jsiiProxy_BucketDeployment) Env() alicloudroscdkcore.IResourceEnvironment {
+	var returns alicloudroscdkcore.IResourceEnvironment
 	_jsii_.Get(
 		j,
 		"env",

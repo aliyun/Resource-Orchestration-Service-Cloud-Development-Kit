@@ -45,7 +45,7 @@ export interface IGroups extends ros.IResource {
     readonly attrGroups: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::RAM::Groups`, which is used to query Resource Access Management (RAM) user groups.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::RAM::Groups`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGroups`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-groups
  */

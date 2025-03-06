@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SAG::SerialNumberBinding</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:20.494Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:10.461Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.RosSerialNumberBinding")
 public class RosSerialNumberBinding extends com.aliyun.ros.cdk.core.RosResource {
 

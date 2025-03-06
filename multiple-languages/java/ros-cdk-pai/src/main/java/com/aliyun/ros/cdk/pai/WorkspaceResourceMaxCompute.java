@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.pai;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::PAI::WorkspaceResourceMaxCompute</code>, which is used to associate MaxCompute resources with a workspace.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::PAI::WorkspaceResourceMaxCompute</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:18.741Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.674Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pai.$Module.class, fqn = "@alicloud/ros-cdk-pai.WorkspaceResourceMaxCompute")
 public class WorkspaceResourceMaxCompute extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.pai.IWorkspaceResourceMaxCompute {
 

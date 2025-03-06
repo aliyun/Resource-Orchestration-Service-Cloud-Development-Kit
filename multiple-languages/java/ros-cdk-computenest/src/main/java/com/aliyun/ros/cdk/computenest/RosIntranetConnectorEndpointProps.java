@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.computenest;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-computenest-intranetconnectorendpoint
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:13.358Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:03.179Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.computenest.$Module.class, fqn = "@alicloud/ros-cdk-computenest.RosIntranetConnectorEndpointProps")
 @software.amazon.jsii.Jsii.Proxy(RosIntranetConnectorEndpointProps.Jsii$Proxy.class)
 public interface RosIntranetConnectorEndpointProps extends software.amazon.jsii.JsiiSerializable {

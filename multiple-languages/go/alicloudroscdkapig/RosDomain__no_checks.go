@@ -84,6 +84,10 @@ func validateRosDomain_IsRosResourceParameters(construct alicloudroscdkcore.ICon
 	return nil
 }
 
+func (j *jsiiProxy_RosDomain) validateSetCertIdentifierParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosDomain) validateSetDomainNameParameters(val interface{}) error {
 	return nil
 }
@@ -92,7 +96,31 @@ func (j *jsiiProxy_RosDomain) validateSetEnableResourcePropertyConstraintParamet
 	return nil
 }
 
+func (j *jsiiProxy_RosDomain) validateSetForceHttpsParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosDomain) validateSetHttp2OptionParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosDomain) validateSetProtocolParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosDomain) validateSetResourceGroupIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosDomain) validateSetTlsCipherSuitesConfigParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosDomain) validateSetTlsMaxParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosDomain) validateSetTlsMinParameters(val interface{}) error {
 	return nil
 }
 

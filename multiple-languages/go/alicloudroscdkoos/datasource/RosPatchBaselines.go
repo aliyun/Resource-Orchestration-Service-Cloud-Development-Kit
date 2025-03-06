@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::PatchBaselines`, which is used to query patch baselines.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::PatchBaselines`.
 type RosPatchBaselines interface {
 	alicloudroscdkcore.RosResource
 	AttrPatchBaselineNames() alicloudroscdkcore.IResolvable

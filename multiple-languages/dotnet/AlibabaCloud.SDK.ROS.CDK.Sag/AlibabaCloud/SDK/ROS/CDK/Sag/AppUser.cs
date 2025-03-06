@@ -44,7 +44,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute UserName: &lt;heat.engine.properties.Schema object at 0x7fa3e6637c50&gt;.</summary>
+        /// <summary>Attribute UserName: &lt;heat.engine.properties.Schema object at 0x7f2959675f90&gt;.</summary>
         [JsiiProperty(name: "attrUserName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrUserName
         {

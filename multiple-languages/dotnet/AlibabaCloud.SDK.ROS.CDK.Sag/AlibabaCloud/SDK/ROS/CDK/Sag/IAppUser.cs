@@ -15,7 +15,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
             get;
         }
 
-        /// <summary>Attribute UserName: &lt;heat.engine.properties.Schema object at 0x7fa3e6637c50&gt;.</summary>
+        /// <summary>Attribute UserName: &lt;heat.engine.properties.Schema object at 0x7f2959675f90&gt;.</summary>
         [JsiiProperty(name: "attrUserName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AttrUserName
         {
@@ -43,7 +43,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Attribute UserName: &lt;heat.engine.properties.Schema object at 0x7fa3e6637c50&gt;.</summary>
+            /// <summary>Attribute UserName: &lt;heat.engine.properties.Schema object at 0x7f2959675f90&gt;.</summary>
             [JsiiProperty(name: "attrUserName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AttrUserName
             {
@@ -65,7 +65,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
             /// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
             /// that might be different than the stack they were imported into.
             /// </remarks>
-            [JsiiProperty(name: "env", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.ResourceEnvironment\"}")]
+            [JsiiProperty(name: "env", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResourceEnvironment\"}")]
             public AlibabaCloud.SDK.ROS.CDK.Core.IResourceEnvironment Env
             {
                 get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResourceEnvironment>()!;

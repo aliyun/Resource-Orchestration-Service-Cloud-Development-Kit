@@ -12,7 +12,7 @@ import { Stack } from "./stack";
 import { IResolvable } from "./resolvable";
 import { Arn, ArnFormat } from "./arn";
 
-export interface ResourceEnvironment {
+export interface IResourceEnvironment {
   /**
    * The Alibaba Cloud account ID that this resource belongs to.
    * Since this can be a Token
@@ -50,7 +50,7 @@ export interface IResource extends IConstruct {
    * (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
    * that might be different than the stack they were imported into.
    */
-  readonly env: ResourceEnvironment;
+  readonly env: IResourceEnvironment;
 }
 
 /**
@@ -101,7 +101,7 @@ export interface ResourceProps {
  */
 export abstract class Resource extends Construct implements IResource {
   public readonly stack: Stack;
-  public readonly env: ResourceEnvironment;
+  public readonly env: IResourceEnvironment;
 
   public resource: RosResource | undefined;
   /**

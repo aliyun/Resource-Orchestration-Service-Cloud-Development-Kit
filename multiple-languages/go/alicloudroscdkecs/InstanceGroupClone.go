@@ -37,8 +37,6 @@ type InstanceGroupClone interface {
 	AttrPrivateIps() interface{}
 	// Attribute PublicIps: Public IP address list of created ecs instances.
 	AttrPublicIps() interface{}
-	// Attribute RelatedOrderIds: The related order id list of created ecs instances.
-	AttrRelatedOrderIds() interface{}
 	// Attribute ZoneIds: Zone id of created instances.
 	AttrZoneIds() interface{}
 	EnableResourcePropertyConstraint() *bool
@@ -51,7 +49,7 @@ type InstanceGroupClone interface {
 	// however, for imported resources
 	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
 	// that might be different than the stack they were imported into.
-	Env() *alicloudroscdkcore.ResourceEnvironment
+	Env() alicloudroscdkcore.IResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -216,16 +214,6 @@ func (j *jsiiProxy_InstanceGroupClone) AttrPublicIps() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_InstanceGroupClone) AttrRelatedOrderIds() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"attrRelatedOrderIds",
-		&returns,
-	)
-	return returns
-}
-
 func (j *jsiiProxy_InstanceGroupClone) AttrZoneIds() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -246,8 +234,8 @@ func (j *jsiiProxy_InstanceGroupClone) EnableResourcePropertyConstraint() *bool 
 	return returns
 }
 
-func (j *jsiiProxy_InstanceGroupClone) Env() *alicloudroscdkcore.ResourceEnvironment {
-	var returns *alicloudroscdkcore.ResourceEnvironment
+func (j *jsiiProxy_InstanceGroupClone) Env() alicloudroscdkcore.IResourceEnvironment {
+	var returns alicloudroscdkcore.IResourceEnvironment
 	_jsii_.Get(
 		j,
 		"env",

@@ -24,7 +24,27 @@ func (b *jsiiProxy_Bucket) validateApplyRemovalPolicyParameters(policy alicloudr
 	return nil
 }
 
+func (b *jsiiProxy_Bucket) validateArnForObjectsParameters(keyPattern *string) error {
+	return nil
+}
+
 func (b *jsiiProxy_Bucket) validateGetAttParameters(name *string) error {
+	return nil
+}
+
+func (b *jsiiProxy_Bucket) validateGrantFullAccessParameters(identity alicloudroscdkram.IPrincipal) error {
+	return nil
+}
+
+func (b *jsiiProxy_Bucket) validateGrantListParameters(identity alicloudroscdkram.IPrincipal) error {
+	return nil
+}
+
+func (b *jsiiProxy_Bucket) validateGrantReadParameters(identity alicloudroscdkram.IPrincipal) error {
+	return nil
+}
+
+func (b *jsiiProxy_Bucket) validateGrantReadWriteParameters(identity alicloudroscdkram.IPrincipal) error {
 	return nil
 }
 

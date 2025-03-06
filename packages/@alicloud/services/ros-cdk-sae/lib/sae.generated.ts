@@ -99,7 +99,7 @@ export interface RosApplicationProps {
     readonly customHostAlias?: string | ros.IResolvable;
 
     /**
-     * @Property deploy: Whether deployed immediately take effect, the default is false.
+     * @Property deploy: Whether deployed immediately take effect, the default is true.
      */
     readonly deploy?: boolean | ros.IResolvable;
 
@@ -686,7 +686,7 @@ export class RosApplication extends ros.RosResource {
     public customHostAlias: string | ros.IResolvable | undefined;
 
     /**
-     * @Property deploy: Whether deployed immediately take effect, the default is false.
+     * @Property deploy: Whether deployed immediately take effect, the default is true.
      */
     public deploy: boolean | ros.IResolvable | undefined;
 

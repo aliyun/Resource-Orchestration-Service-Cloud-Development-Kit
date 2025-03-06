@@ -20,6 +20,10 @@ func (g *jsiiProxy_Group) validateAddResourceDescParameters(desc *string) error 
 	return nil
 }
 
+func (g *jsiiProxy_Group) validateAddToPolicyParameters(policyDocument *RosManagedPolicy_PolicyDocumentProperty) error {
+	return nil
+}
+
 func (g *jsiiProxy_Group) validateApplyRemovalPolicyParameters(policy alicloudroscdkcore.RemovalPolicy) error {
 	return nil
 }

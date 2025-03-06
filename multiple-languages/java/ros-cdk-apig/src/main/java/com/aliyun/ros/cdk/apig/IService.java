@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apig;
 /**
  * Represents a <code>Service</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:11.698Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:01.630Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.IService")
 @software.amazon.jsii.Jsii.Proxy(IService.Jsii$Proxy.class)
 public interface IService extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
@@ -14,9 +14,34 @@ public interface IService extends software.amazon.jsii.JsiiSerializable, com.ali
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrAddresses();
 
     /**
+     * Attribute AiServiceConfig: AI service configuration when SourceType equals AI.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrAiServiceConfig();
+
+    /**
      * Attribute GatewayId: The ID of the Cloud Native API Gateway.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrGatewayId();
+
+    /**
+     * Attribute GroupName: The service group name.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrGroupName();
+
+    /**
+     * Attribute Namespace: The namespace of the service:.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrNamespace();
+
+    /**
+     * Attribute Qualifier: The function version or alias.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrQualifier();
+
+    /**
+     * Attribute ResourceGroupId: The ID of the resource group.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceGroupId();
 
     /**
      * Attribute ServiceId: The ID of the service.
@@ -24,14 +49,9 @@ public interface IService extends software.amazon.jsii.JsiiSerializable, com.ali
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrServiceId();
 
     /**
-     * Attribute ServiceName: The Name of the service .
+     * Attribute ServiceName: Service Name, need to fill in manually when SourceType is VIP/DNS/AI.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrServiceName();
-
-    /**
-     * Attribute SourceType: Service source type.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getAttrSourceType();
 
     @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.apig.ServiceProps getProps();
 
@@ -63,8 +83,8 @@ public interface IService extends software.amazon.jsii.JsiiSerializable, com.ali
          * that might be different than the stack they were imported into.
          */
         @Override
-        public final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.ResourceEnvironment getEnv() {
-            return software.amazon.jsii.Kernel.get(this, "env", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.ResourceEnvironment.class));
+        public final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResourceEnvironment getEnv() {
+            return software.amazon.jsii.Kernel.get(this, "env", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResourceEnvironment.class));
         }
 
         /**
@@ -84,11 +104,51 @@ public interface IService extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
+         * Attribute AiServiceConfig: AI service configuration when SourceType equals AI.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrAiServiceConfig() {
+            return software.amazon.jsii.Kernel.get(this, "attrAiServiceConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
          * Attribute GatewayId: The ID of the Cloud Native API Gateway.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrGatewayId() {
             return software.amazon.jsii.Kernel.get(this, "attrGatewayId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute GroupName: The service group name.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrGroupName() {
+            return software.amazon.jsii.Kernel.get(this, "attrGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute Namespace: The namespace of the service:.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrNamespace() {
+            return software.amazon.jsii.Kernel.get(this, "attrNamespace", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute Qualifier: The function version or alias.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrQualifier() {
+            return software.amazon.jsii.Kernel.get(this, "attrQualifier", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute ResourceGroupId: The ID of the resource group.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceGroupId() {
+            return software.amazon.jsii.Kernel.get(this, "attrResourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -100,19 +160,11 @@ public interface IService extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute ServiceName: The Name of the service .
+         * Attribute ServiceName: Service Name, need to fill in manually when SourceType is VIP/DNS/AI.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrServiceName() {
             return software.amazon.jsii.Kernel.get(this, "attrServiceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute SourceType: Service source type.
-         */
-        @Override
-        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrSourceType() {
-            return software.amazon.jsii.Kernel.get(this, "attrSourceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         @Override
@@ -146,8 +198,8 @@ public interface IService extends software.amazon.jsii.JsiiSerializable, com.ali
          * that might be different than the stack they were imported into.
          */
         @Override
-        default @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.ResourceEnvironment getEnv() {
-            return software.amazon.jsii.Kernel.get(this, "env", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.ResourceEnvironment.class));
+        default @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResourceEnvironment getEnv() {
+            return software.amazon.jsii.Kernel.get(this, "env", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResourceEnvironment.class));
         }
 
         /**
@@ -167,11 +219,51 @@ public interface IService extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
+         * Attribute AiServiceConfig: AI service configuration when SourceType equals AI.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrAiServiceConfig() {
+            return software.amazon.jsii.Kernel.get(this, "attrAiServiceConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
          * Attribute GatewayId: The ID of the Cloud Native API Gateway.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrGatewayId() {
             return software.amazon.jsii.Kernel.get(this, "attrGatewayId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute GroupName: The service group name.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrGroupName() {
+            return software.amazon.jsii.Kernel.get(this, "attrGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute Namespace: The namespace of the service:.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrNamespace() {
+            return software.amazon.jsii.Kernel.get(this, "attrNamespace", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute Qualifier: The function version or alias.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrQualifier() {
+            return software.amazon.jsii.Kernel.get(this, "attrQualifier", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute ResourceGroupId: The ID of the resource group.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceGroupId() {
+            return software.amazon.jsii.Kernel.get(this, "attrResourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -183,19 +275,11 @@ public interface IService extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute ServiceName: The Name of the service .
+         * Attribute ServiceName: Service Name, need to fill in manually when SourceType is VIP/DNS/AI.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrServiceName() {
             return software.amazon.jsii.Kernel.get(this, "attrServiceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute SourceType: Service source type.
-         */
-        @Override
-        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrSourceType() {
-            return software.amazon.jsii.Kernel.get(this, "attrSourceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         @Override

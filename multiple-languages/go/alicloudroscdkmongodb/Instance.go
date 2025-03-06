@@ -6,6 +6,7 @@ import (
 
 	"github.com/alibabacloud-go/ros-cdk/alicloudroscdkcore"
 	"github.com/alibabacloud-go/ros-cdk/alicloudroscdkmongodb/internal"
+	"github.com/alibabacloud-go/ros-cdk/alicloudroscdkram"
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
@@ -35,7 +36,7 @@ type Instance interface {
 	// however, for imported resources
 	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
 	// that might be different than the stack they were imported into.
-	Env() *alicloudroscdkcore.ResourceEnvironment
+	Env() alicloudroscdkcore.IResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -67,6 +68,14 @@ type Instance interface {
 	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
+	// Grant an RAM principal (Role/Group/User) full control over this MongoDB instance.
+	GrantFullAccess(identity alicloudroscdkram.IPrincipal) alicloudroscdkram.ManagedPolicy
+	// Grant an RAM principal (Role/Group/User) permission to list resources for this MongoDB instance.
+	GrantList(identity alicloudroscdkram.IPrincipal) alicloudroscdkram.ManagedPolicy
+	// Grant an RAM principal (Role/Group/User) permission to list and get resources for this MongoDB instance.
+	GrantRead(identity alicloudroscdkram.IPrincipal) alicloudroscdkram.ManagedPolicy
+	// Grant an RAM principal (Role/Group/User) permission to create, update and delete resources for this MongoDB instance.
+	GrantReadWrite(identity alicloudroscdkram.IPrincipal) alicloudroscdkram.ManagedPolicy
 	// Perform final modifications before synthesis.
 	//
 	// This method can be implemented by derived constructs in order to perform
@@ -190,8 +199,8 @@ func (j *jsiiProxy_Instance) EnableResourcePropertyConstraint() *bool {
 	return returns
 }
 
-func (j *jsiiProxy_Instance) Env() *alicloudroscdkcore.ResourceEnvironment {
-	var returns *alicloudroscdkcore.ResourceEnvironment
+func (j *jsiiProxy_Instance) Env() alicloudroscdkcore.IResourceEnvironment {
+	var returns alicloudroscdkcore.IResourceEnvironment
 	_jsii_.Get(
 		j,
 		"env",
@@ -487,6 +496,70 @@ func (i *jsiiProxy_Instance) GetAtt(name *string) alicloudroscdkcore.IResolvable
 		i,
 		"getAtt",
 		[]interface{}{name},
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_Instance) GrantFullAccess(identity alicloudroscdkram.IPrincipal) alicloudroscdkram.ManagedPolicy {
+	if err := i.validateGrantFullAccessParameters(identity); err != nil {
+		panic(err)
+	}
+	var returns alicloudroscdkram.ManagedPolicy
+
+	_jsii_.Invoke(
+		i,
+		"grantFullAccess",
+		[]interface{}{identity},
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_Instance) GrantList(identity alicloudroscdkram.IPrincipal) alicloudroscdkram.ManagedPolicy {
+	if err := i.validateGrantListParameters(identity); err != nil {
+		panic(err)
+	}
+	var returns alicloudroscdkram.ManagedPolicy
+
+	_jsii_.Invoke(
+		i,
+		"grantList",
+		[]interface{}{identity},
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_Instance) GrantRead(identity alicloudroscdkram.IPrincipal) alicloudroscdkram.ManagedPolicy {
+	if err := i.validateGrantReadParameters(identity); err != nil {
+		panic(err)
+	}
+	var returns alicloudroscdkram.ManagedPolicy
+
+	_jsii_.Invoke(
+		i,
+		"grantRead",
+		[]interface{}{identity},
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_Instance) GrantReadWrite(identity alicloudroscdkram.IPrincipal) alicloudroscdkram.ManagedPolicy {
+	if err := i.validateGrantReadWriteParameters(identity); err != nil {
+		panic(err)
+	}
+	var returns alicloudroscdkram.ManagedPolicy
+
+	_jsii_.Invoke(
+		i,
+		"grantReadWrite",
+		[]interface{}{identity},
 		&returns,
 	)
 

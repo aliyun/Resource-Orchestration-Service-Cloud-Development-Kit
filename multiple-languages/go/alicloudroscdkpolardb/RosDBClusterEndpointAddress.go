@@ -9,9 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBClusterEndpointAddress`, which is used to create a public endpoint for an Apsara PolarDB cluster.
-//
-// The public endpoint can be a primary endpoint, the default cluster endpoint, or a custom cluster endpoint.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBClusterEndpointAddress`.
 type RosDBClusterEndpointAddress interface {
 	alicloudroscdkcore.RosResource
 	AttrAddress() alicloudroscdkcore.IResolvable

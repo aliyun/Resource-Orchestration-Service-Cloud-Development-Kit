@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mongodb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::MONGODB::Instance</code>, which is used to create or clone an ApsaraDB for MongoDB replica set instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:18.023Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:12.007Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.mongodb.IInstance {
 
@@ -38,6 +38,42 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
     public Instance(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.mongodb.InstanceProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
         software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), java.util.Objects.requireNonNull(props, "props is required") });
+    }
+
+    /**
+     * Grant an RAM principal (Role/Group/User) full control over this MongoDB instance.
+     * <p>
+     * @param identity The principal. This parameter is required.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.ManagedPolicy grantFullAccess(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.IPrincipal identity) {
+        return software.amazon.jsii.Kernel.call(this, "grantFullAccess", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ram.ManagedPolicy.class), new Object[] { java.util.Objects.requireNonNull(identity, "identity is required") });
+    }
+
+    /**
+     * Grant an RAM principal (Role/Group/User) permission to list resources for this MongoDB instance.
+     * <p>
+     * @param identity The principal. This parameter is required.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.ManagedPolicy grantList(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.IPrincipal identity) {
+        return software.amazon.jsii.Kernel.call(this, "grantList", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ram.ManagedPolicy.class), new Object[] { java.util.Objects.requireNonNull(identity, "identity is required") });
+    }
+
+    /**
+     * Grant an RAM principal (Role/Group/User) permission to list and get resources for this MongoDB instance.
+     * <p>
+     * @param identity The principal. This parameter is required.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.ManagedPolicy grantRead(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.IPrincipal identity) {
+        return software.amazon.jsii.Kernel.call(this, "grantRead", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ram.ManagedPolicy.class), new Object[] { java.util.Objects.requireNonNull(identity, "identity is required") });
+    }
+
+    /**
+     * Grant an RAM principal (Role/Group/User) permission to create, update and delete resources for this MongoDB instance.
+     * <p>
+     * @param identity The principal. This parameter is required.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.ManagedPolicy grantReadWrite(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.IPrincipal identity) {
+        return software.amazon.jsii.Kernel.call(this, "grantReadWrite", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ram.ManagedPolicy.class), new Object[] { java.util.Objects.requireNonNull(identity, "identity is required") });
     }
 
     /**

@@ -1,10 +1,10 @@
 import * as ros from '@alicloud/ros-cdk-core';
 import { RosFunction } from './fc.generated';
 // Generated from the AliCloud ROS Resource Specification
+export { RosFunction as FunctionProperty };
 import { Bucket } from "@alicloud/ros-cdk-oss";
 import { Asset } from "@alicloud/ros-cdk-ossassets";
 
-export { RosFunction as FunctionProperty };
 
 /**
  * Properties for defining a `Function`.
@@ -201,52 +201,6 @@ export class Function extends ros.Resource implements IFunction {
     public readonly attrServiceName: ros.IResolvable | string;
 
     /**
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
-     */
-    constructor(scope: ros.Construct, id: string, props: FunctionProps, enableResourcePropertyConstraint:boolean = true) {
-        super(scope, id);
-        this.scope = scope;
-        this.id = id;
-        this.props = props;
-        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-
-        const rosFunction = new RosFunction(this, id,  {
-            memorySize: props.memorySize === undefined || props.memorySize === null ? 128 : props.memorySize,
-            description: props.description,
-            timeout: props.timeout === undefined || props.timeout === null ? 3 : props.timeout,
-            instanceLifecycleConfig: props.instanceLifecycleConfig,
-            handler: props.handler,
-            cpu: props.cpu,
-            customHealthCheckConfig: props.customHealthCheckConfig,
-            customContainerConfig: props.customContainerConfig,
-            code: props.code,
-            asyncConfiguration: props.asyncConfiguration,
-            caPort: props.caPort === undefined || props.caPort === null ? 9000 : props.caPort,
-            functionName: props.functionName,
-            runtime: props.runtime,
-            environmentVariables: props.environmentVariables,
-            customRuntimeConfig: props.customRuntimeConfig,
-            initializationTimeout: props.initializationTimeout,
-            serviceName: props.serviceName,
-            initializer: props.initializer,
-            gpuMemorySize: props.gpuMemorySize,
-            diskSize: props.diskSize,
-            customDns: props.customDns,
-            instanceConcurrency: props.instanceConcurrency,
-            instanceType: props.instanceType,
-            instanceSoftConcurrency: props.instanceSoftConcurrency,
-        }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
-        this.resource = rosFunction;
-        this.attrArn = rosFunction.attrArn;
-        this.attrFunctionId = rosFunction.attrFunctionId;
-        this.attrFunctionName = rosFunction.attrFunctionName;
-        this.attrServiceId = rosFunction.attrServiceId;
-        this.attrServiceName = rosFunction.attrServiceName;
-    }
-
-    /**
      * Function handler code as an OSS object.
      * @param bucket The OSS bucket
      * @param key The object key
@@ -298,5 +252,51 @@ export class Function extends ros.Resource implements IFunction {
             ossBucketName: asset.bucketName,
             ossObjectName: asset.objectKey
         };
+    }
+
+    /**
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: FunctionProps, enableResourcePropertyConstraint:boolean = true) {
+        super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+
+        const rosFunction = new RosFunction(this, id,  {
+            memorySize: props.memorySize === undefined || props.memorySize === null ? 128 : props.memorySize,
+            description: props.description,
+            timeout: props.timeout === undefined || props.timeout === null ? 3 : props.timeout,
+            instanceLifecycleConfig: props.instanceLifecycleConfig,
+            handler: props.handler,
+            cpu: props.cpu,
+            customHealthCheckConfig: props.customHealthCheckConfig,
+            customContainerConfig: props.customContainerConfig,
+            code: props.code,
+            asyncConfiguration: props.asyncConfiguration,
+            caPort: props.caPort === undefined || props.caPort === null ? 9000 : props.caPort,
+            functionName: props.functionName,
+            runtime: props.runtime,
+            environmentVariables: props.environmentVariables,
+            customRuntimeConfig: props.customRuntimeConfig,
+            initializationTimeout: props.initializationTimeout,
+            serviceName: props.serviceName,
+            initializer: props.initializer,
+            gpuMemorySize: props.gpuMemorySize,
+            diskSize: props.diskSize,
+            customDns: props.customDns,
+            instanceConcurrency: props.instanceConcurrency,
+            instanceType: props.instanceType,
+            instanceSoftConcurrency: props.instanceSoftConcurrency,
+        }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
+        this.resource = rosFunction;
+        this.attrArn = rosFunction.attrArn;
+        this.attrFunctionId = rosFunction.attrFunctionId;
+        this.attrFunctionName = rosFunction.attrFunctionName;
+        this.attrServiceId = rosFunction.attrServiceId;
+        this.attrServiceName = rosFunction.attrServiceName;
     }
 }

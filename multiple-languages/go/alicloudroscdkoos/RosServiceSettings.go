@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::ServiceSettings`, which is used to configure service settings.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::ServiceSettings`.
 type RosServiceSettings interface {
 	alicloudroscdkcore.RosResource
 	// Returns: the stack trace of the point where this Resource was created from, sourced

@@ -37,6 +37,38 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
         {
         }
 
+        /// <summary>Grant an RAM principal (Role/Group/User) full control over this MongoDB instance.</summary>
+        /// <param name="identity">The principal.</param>
+        [JsiiMethod(name: "grantFullAccess", returnsJson: "{\"type\":{\"fqn\":\"@alicloud/ros-cdk-ram.ManagedPolicy\"}}", parametersJson: "[{\"docs\":{\"summary\":\"The principal.\"},\"name\":\"identity\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-ram.IPrincipal\"}}]")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Ram.ManagedPolicy GrantFullAccess(AlibabaCloud.SDK.ROS.CDK.Ram.IPrincipal identity)
+        {
+            return InvokeInstanceMethod<AlibabaCloud.SDK.ROS.CDK.Ram.ManagedPolicy>(new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Ram.IPrincipal)}, new object[]{identity})!;
+        }
+
+        /// <summary>Grant an RAM principal (Role/Group/User) permission to list resources for this MongoDB instance.</summary>
+        /// <param name="identity">The principal.</param>
+        [JsiiMethod(name: "grantList", returnsJson: "{\"type\":{\"fqn\":\"@alicloud/ros-cdk-ram.ManagedPolicy\"}}", parametersJson: "[{\"docs\":{\"summary\":\"The principal.\"},\"name\":\"identity\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-ram.IPrincipal\"}}]")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Ram.ManagedPolicy GrantList(AlibabaCloud.SDK.ROS.CDK.Ram.IPrincipal identity)
+        {
+            return InvokeInstanceMethod<AlibabaCloud.SDK.ROS.CDK.Ram.ManagedPolicy>(new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Ram.IPrincipal)}, new object[]{identity})!;
+        }
+
+        /// <summary>Grant an RAM principal (Role/Group/User) permission to list and get resources for this MongoDB instance.</summary>
+        /// <param name="identity">The principal.</param>
+        [JsiiMethod(name: "grantRead", returnsJson: "{\"type\":{\"fqn\":\"@alicloud/ros-cdk-ram.ManagedPolicy\"}}", parametersJson: "[{\"docs\":{\"summary\":\"The principal.\"},\"name\":\"identity\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-ram.IPrincipal\"}}]")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Ram.ManagedPolicy GrantRead(AlibabaCloud.SDK.ROS.CDK.Ram.IPrincipal identity)
+        {
+            return InvokeInstanceMethod<AlibabaCloud.SDK.ROS.CDK.Ram.ManagedPolicy>(new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Ram.IPrincipal)}, new object[]{identity})!;
+        }
+
+        /// <summary>Grant an RAM principal (Role/Group/User) permission to create, update and delete resources for this MongoDB instance.</summary>
+        /// <param name="identity">The principal.</param>
+        [JsiiMethod(name: "grantReadWrite", returnsJson: "{\"type\":{\"fqn\":\"@alicloud/ros-cdk-ram.ManagedPolicy\"}}", parametersJson: "[{\"docs\":{\"summary\":\"The principal.\"},\"name\":\"identity\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-ram.IPrincipal\"}}]")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Ram.ManagedPolicy GrantReadWrite(AlibabaCloud.SDK.ROS.CDK.Ram.IPrincipal identity)
+        {
+            return InvokeInstanceMethod<AlibabaCloud.SDK.ROS.CDK.Ram.ManagedPolicy>(new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Ram.IPrincipal)}, new object[]{identity})!;
+        }
+
         /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
         [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrArn

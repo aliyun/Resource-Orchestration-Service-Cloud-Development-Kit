@@ -3,9 +3,9 @@ package com.aliyun.ros.cdk.ram;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::RAM::User</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:19.420Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:09.477Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.User")
-public class User extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ram.IUser {
+public class User extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ram.IUser, com.aliyun.ros.cdk.ram.IPrincipal {
 
     protected User(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -41,6 +41,16 @@ public class User extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
     }
 
     /**
+     * Add to the policy of this principal.
+     * <p>
+     * @param policyDocument This parameter is required.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.ManagedPolicy addToPolicy(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.RosManagedPolicy.PolicyDocumentProperty policyDocument) {
+        return software.amazon.jsii.Kernel.call(this, "addToPolicy", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ram.ManagedPolicy.class), new Object[] { java.util.Objects.requireNonNull(policyDocument, "policyDocument is required") });
+    }
+
+    /**
      * Attribute CreateDate: Create date of ram user.
      */
     @Override
@@ -70,6 +80,30 @@ public class User extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrUserName() {
         return software.amazon.jsii.Kernel.get(this, "attrUserName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     * The principal to grant permissions to.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.IPrincipal getGrantPrincipal() {
+        return software.amazon.jsii.Kernel.get(this, "grantPrincipal", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ram.IPrincipal.class));
+    }
+
+    /**
+     * The principal to grant permissions to.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getPrincipalName() {
+        return software.amazon.jsii.Kernel.get(this, "principalName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     * The principal type, such as 'Group', 'Role', 'User'.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.String getPrincipalType() {
+        return software.amazon.jsii.Kernel.get(this, "principalType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
     }
 
     @Override

@@ -671,7 +671,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: deploy: Whether deployed immediately take effect, the default is false.
+        /// <strong>Property</strong>: deploy: Whether deployed immediately take effect, the default is true.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "deploy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

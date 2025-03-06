@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.aligreen;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::Aligreen::Callback</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:11.549Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:01.517Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.aligreen.$Module.class, fqn = "@alicloud/ros-cdk-aligreen.RosCallback")
 public class RosCallback extends com.aliyun.ros.cdk.core.RosResource {
 

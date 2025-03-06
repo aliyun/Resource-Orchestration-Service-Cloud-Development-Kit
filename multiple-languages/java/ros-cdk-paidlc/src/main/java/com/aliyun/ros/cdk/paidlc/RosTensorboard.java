@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.paidlc;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::PAIDLC::Tensorboard</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:18.873Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.809Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.paidlc.$Module.class, fqn = "@alicloud/ros-cdk-paidlc.RosTensorboard")
 public class RosTensorboard extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -48,10 +48,13 @@
 @alicloud/ros-cdk-ga.IForwardingRules=com.aliyun.ros.cdk.ga.IForwardingRules
 @alicloud/ros-cdk-ga.IIpSets=com.aliyun.ros.cdk.ga.IIpSets
 @alicloud/ros-cdk-ga.IListener=com.aliyun.ros.cdk.ga.IListener
+@alicloud/ros-cdk-ga.ILogStoreToEndpointGroupAttachment=com.aliyun.ros.cdk.ga.ILogStoreToEndpointGroupAttachment
 @alicloud/ros-cdk-ga.IpSets=com.aliyun.ros.cdk.ga.IpSets
 @alicloud/ros-cdk-ga.IpSetsProps=com.aliyun.ros.cdk.ga.IpSetsProps
 @alicloud/ros-cdk-ga.Listener=com.aliyun.ros.cdk.ga.Listener
 @alicloud/ros-cdk-ga.ListenerProps=com.aliyun.ros.cdk.ga.ListenerProps
+@alicloud/ros-cdk-ga.LogStoreToEndpointGroupAttachment=com.aliyun.ros.cdk.ga.LogStoreToEndpointGroupAttachment
+@alicloud/ros-cdk-ga.LogStoreToEndpointGroupAttachmentProps=com.aliyun.ros.cdk.ga.LogStoreToEndpointGroupAttachmentProps
 @alicloud/ros-cdk-ga.RosAccelerator=com.aliyun.ros.cdk.ga.RosAccelerator
 @alicloud/ros-cdk-ga.RosAccelerator.IpSetConfigProperty=com.aliyun.ros.cdk.ga.RosAccelerator$IpSetConfigProperty
 @alicloud/ros-cdk-ga.RosAcceleratorProps=com.aliyun.ros.cdk.ga.RosAcceleratorProps
@@ -104,6 +107,8 @@
 @alicloud/ros-cdk-ga.RosListener.PortRangesProperty=com.aliyun.ros.cdk.ga.RosListener$PortRangesProperty
 @alicloud/ros-cdk-ga.RosListener.XForwardedForConfigProperty=com.aliyun.ros.cdk.ga.RosListener$XForwardedForConfigProperty
 @alicloud/ros-cdk-ga.RosListenerProps=com.aliyun.ros.cdk.ga.RosListenerProps
+@alicloud/ros-cdk-ga.RosLogStoreToEndpointGroupAttachment=com.aliyun.ros.cdk.ga.RosLogStoreToEndpointGroupAttachment
+@alicloud/ros-cdk-ga.RosLogStoreToEndpointGroupAttachmentProps=com.aliyun.ros.cdk.ga.RosLogStoreToEndpointGroupAttachmentProps
 @alicloud/ros-cdk-ga.datasource.Acl=com.aliyun.ros.cdk.ga.datasource.Acl
 @alicloud/ros-cdk-ga.datasource.AclProps=com.aliyun.ros.cdk.ga.datasource.AclProps
 @alicloud/ros-cdk-ga.datasource.Acls=com.aliyun.ros.cdk.ga.datasource.Acls

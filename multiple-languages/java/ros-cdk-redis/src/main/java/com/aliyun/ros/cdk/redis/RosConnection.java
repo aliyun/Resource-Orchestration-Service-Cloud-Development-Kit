@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::REDIS::Connection</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:19.810Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:09.877Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.RosConnection")
 public class RosConnection extends com.aliyun.ros.cdk.core.RosResource {
 

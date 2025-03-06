@@ -187,7 +187,7 @@ export interface IDbPlan extends ros.IResource {
     readonly attrVaultId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::HBR::DbPlan`, which is used to create a backup plan.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::HBR::DbPlan`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDbPlan`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbplan
  */

@@ -70,7 +70,7 @@ type ApplicationProps struct {
 	//
 	// For example: [{ "hostName": "samplehost", "ip": "127.0.0.1"}]
 	CustomHostAlias interface{} `field:"optional" json:"customHostAlias" yaml:"customHostAlias"`
-	// Property deploy: Whether deployed immediately take effect, the default is false.
+	// Property deploy: Whether deployed immediately take effect, the default is true.
 	Deploy interface{} `field:"optional" json:"deploy" yaml:"deploy"`
 	// Property edasContainerVersion: EDAS pandora runtime environment used by the application.
 	EdasContainerVersion interface{} `field:"optional" json:"edasContainerVersion" yaml:"edasContainerVersion"`

@@ -1,5 +1,11 @@
 # Aliyun ROS Cloud Development Toolkit Changelog
 
+## [ros-cdk-cli 1.8.0] (2025-03-06)
+### Features
+- Update ROS resource sdk packages (Added the ALIYUN::OOS::OpsItemConfiguration、ALIYUN::GA::LogStoreToEndpointGroupAttachment).
+- ros-cdk-mongodb instance added L2 functions grantRead, grantReadWrite, grantList, grantFullAccess
+- ros-cdk-oss bucket added L2 functions grantRead, grantReadWrite, grantList, grantFullAccess
+
 ## [ros-cdk-cli 1.7.0] (2025-02-21)
 ### Features
 - Update ROS resource sdk packages (Added the ALIYUN::ADBLake::ResourceGroup, ALIYUN::ADBLake::Account, ALIYUN::ADBLake::ResourceGroupAccountAssociation, ALIYUN::VPC::PublicIpAddressPool, ALIYUN::VPC::RouteTableWithGatewayAssociation, ALIYUN::NLB::BackendServerAttachment, ALIYUN::POLARDB::GlobalSecurityGroup, ALIYUN::ECD::UserDesktopGroupAddition, ALIYUN::ECD::Devices, ALIYUN::PAI::DatasetVersion, ALIYUN::EBS::DedicatedBlockStorageCluster, ALIYUN::IMM::Project2).

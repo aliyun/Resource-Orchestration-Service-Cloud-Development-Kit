@@ -18,3 +18,5 @@ export * from './usertogroupaddition';
 // ALIYUN::RAM Resources:
 export * from './ram.generated';
 export * as datasource from './datasource';
+
+export * from './principals.cdk';

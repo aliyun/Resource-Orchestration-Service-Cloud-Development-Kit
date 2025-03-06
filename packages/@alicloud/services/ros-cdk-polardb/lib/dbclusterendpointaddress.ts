@@ -52,7 +52,7 @@ export interface IDBClusterEndpointAddress extends ros.IResource {
     readonly attrConnectionString: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::DBClusterEndpointAddress`, which is used to create a public endpoint for an Apsara PolarDB cluster. The public endpoint can be a primary endpoint, the default cluster endpoint, or a custom cluster endpoint.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::DBClusterEndpointAddress`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBClusterEndpointAddress`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusterendpointaddress
  */
