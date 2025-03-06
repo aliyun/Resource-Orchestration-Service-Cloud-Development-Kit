@@ -100,7 +100,7 @@ function rosGitCodeRepoPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::GitCodeRepo`, which is used to generate the URL of a user-specified GitHub or Gitee code repository.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::GitCodeRepo`.
  * @Note This class does not contain additional functions, so it is recommended to use the `GitCodeRepo` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-gitcoderepo
  */
@@ -487,7 +487,7 @@ function rosPatchBaselinesPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::PatchBaselines`, which is used to query patch baselines.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::PatchBaselines`.
  * @Note This class does not contain additional functions, so it is recommended to use the `PatchBaselines` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-patchbaselines
  */

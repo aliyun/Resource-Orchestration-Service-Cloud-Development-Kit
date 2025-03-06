@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::POLARDB::GlobalDatabaseNetworks`, which is used to query all global database networks (GDNs) within the current Alibaba Cloud account.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::POLARDB::GlobalDatabaseNetworks`.
 type GlobalDatabaseNetworks interface {
 	alicloudroscdkcore.Resource
 	IGlobalDatabaseNetworks
@@ -27,7 +27,7 @@ type GlobalDatabaseNetworks interface {
 	// however, for imported resources
 	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
 	// that might be different than the stack they were imported into.
-	Env() *alicloudroscdkcore.ResourceEnvironment
+	Env() alicloudroscdkcore.IResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -142,8 +142,8 @@ func (j *jsiiProxy_GlobalDatabaseNetworks) EnableResourcePropertyConstraint() *b
 	return returns
 }
 
-func (j *jsiiProxy_GlobalDatabaseNetworks) Env() *alicloudroscdkcore.ResourceEnvironment {
-	var returns *alicloudroscdkcore.ResourceEnvironment
+func (j *jsiiProxy_GlobalDatabaseNetworks) Env() alicloudroscdkcore.IResourceEnvironment {
+	var returns alicloudroscdkcore.IResourceEnvironment
 	_jsii_.Get(
 		j,
 		"env",

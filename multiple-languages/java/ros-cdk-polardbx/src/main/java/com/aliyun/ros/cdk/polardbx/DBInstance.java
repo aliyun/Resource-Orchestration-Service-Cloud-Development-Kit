@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardbx;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::PolarDBX::DBInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:19.141Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:09.079Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardbx.$Module.class, fqn = "@alicloud/ros-cdk-polardbx.DBInstance")
 public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.polardbx.IDBInstance {
 

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.mongodb.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::MONGODB::InstanceClasses</code>.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::MONGODB::InstanceClasses</code>, which is used to query the ApsaraDB for MongoDB instance types that you can create in a zone.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:18.105Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:12.103Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.datasource.RosInstanceClasses")
 public class RosInstanceClasses extends com.aliyun.ros.cdk.core.RosResource {
 

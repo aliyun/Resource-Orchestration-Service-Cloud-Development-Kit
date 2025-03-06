@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.sae;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-application
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:20.245Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:10.302Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.ApplicationProps")
 @software.amazon.jsii.Jsii.Proxy(ApplicationProps.Jsii$Proxy.class)
 public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable {
@@ -155,7 +155,7 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
-     * Property deploy: Whether deployed immediately take effect, the default is false.
+     * Property deploy: Whether deployed immediately take effect, the default is true.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDeploy() {
         return null;
@@ -1045,7 +1045,7 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ApplicationProps#getDeploy}
-         * @param deploy Property deploy: Whether deployed immediately take effect, the default is false.
+         * @param deploy Property deploy: Whether deployed immediately take effect, the default is true.
          * @return {@code this}
          */
         public Builder deploy(java.lang.Boolean deploy) {
@@ -1055,7 +1055,7 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ApplicationProps#getDeploy}
-         * @param deploy Property deploy: Whether deployed immediately take effect, the default is false.
+         * @param deploy Property deploy: Whether deployed immediately take effect, the default is true.
          * @return {@code this}
          */
         public Builder deploy(com.aliyun.ros.cdk.core.IResolvable deploy) {

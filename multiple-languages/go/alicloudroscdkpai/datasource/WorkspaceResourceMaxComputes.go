@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::WorkspaceResourceMaxComputes`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::WorkspaceResourceMaxComputes`, which is used to query the MaxCompute resources that are associated with a workspace.
 type WorkspaceResourceMaxComputes interface {
 	alicloudroscdkcore.Resource
 	IWorkspaceResourceMaxComputes
@@ -27,7 +27,7 @@ type WorkspaceResourceMaxComputes interface {
 	// however, for imported resources
 	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
 	// that might be different than the stack they were imported into.
-	Env() *alicloudroscdkcore.ResourceEnvironment
+	Env() alicloudroscdkcore.IResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -142,8 +142,8 @@ func (j *jsiiProxy_WorkspaceResourceMaxComputes) EnableResourcePropertyConstrain
 	return returns
 }
 
-func (j *jsiiProxy_WorkspaceResourceMaxComputes) Env() *alicloudroscdkcore.ResourceEnvironment {
-	var returns *alicloudroscdkcore.ResourceEnvironment
+func (j *jsiiProxy_WorkspaceResourceMaxComputes) Env() alicloudroscdkcore.IResourceEnvironment {
+	var returns alicloudroscdkcore.IResourceEnvironment
 	_jsii_.Get(
 		j,
 		"env",

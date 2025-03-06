@@ -8,6 +8,7 @@ import (
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
 
 	"github.com/alibabacloud-go/ros-cdk/alicloudroscdkcore"
+	"github.com/alibabacloud-go/ros-cdk/alicloudroscdkram"
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
@@ -106,6 +107,38 @@ func (i *jsiiProxy_Instance) validateApplyRemovalPolicyParameters(policy aliclou
 func (i *jsiiProxy_Instance) validateGetAttParameters(name *string) error {
 	if name == nil {
 		return fmt.Errorf("parameter name is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (i *jsiiProxy_Instance) validateGrantFullAccessParameters(identity alicloudroscdkram.IPrincipal) error {
+	if identity == nil {
+		return fmt.Errorf("parameter identity is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (i *jsiiProxy_Instance) validateGrantListParameters(identity alicloudroscdkram.IPrincipal) error {
+	if identity == nil {
+		return fmt.Errorf("parameter identity is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (i *jsiiProxy_Instance) validateGrantReadParameters(identity alicloudroscdkram.IPrincipal) error {
+	if identity == nil {
+		return fmt.Errorf("parameter identity is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (i *jsiiProxy_Instance) validateGrantReadWriteParameters(identity alicloudroscdkram.IPrincipal) error {
+	if identity == nil {
+		return fmt.Errorf("parameter identity is required, but nil was provided")
 	}
 
 	return nil

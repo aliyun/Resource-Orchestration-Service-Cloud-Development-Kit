@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.mns.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-topics
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:17.998Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.061Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.datasource.RosTopicsProps")
 @software.amazon.jsii.Jsii.Proxy(RosTopicsProps.Jsii$Proxy.class)
 public interface RosTopicsProps extends software.amazon.jsii.JsiiSerializable {

@@ -97,6 +97,7 @@
 @alicloud/ros-cdk-core.IResolvable=com.aliyun.ros.cdk.core.IResolvable
 @alicloud/ros-cdk-core.IResolveContext=com.aliyun.ros.cdk.core.IResolveContext
 @alicloud/ros-cdk-core.IResource=com.aliyun.ros.cdk.core.IResource
+@alicloud/ros-cdk-core.IResourceEnvironment=com.aliyun.ros.cdk.core.IResourceEnvironment
 @alicloud/ros-cdk-core.IReusableStackSynthesizer=com.aliyun.ros.cdk.core.IReusableStackSynthesizer
 @alicloud/ros-cdk-core.IRosConditionExpression=com.aliyun.ros.cdk.core.IRosConditionExpression
 @alicloud/ros-cdk-core.IRosResourceOptions=com.aliyun.ros.cdk.core.IRosResourceOptions
@@ -122,7 +123,6 @@
 @alicloud/ros-cdk-core.RemovalPolicyOptions=com.aliyun.ros.cdk.core.RemovalPolicyOptions
 @alicloud/ros-cdk-core.ResolveOptions=com.aliyun.ros.cdk.core.ResolveOptions
 @alicloud/ros-cdk-core.Resource=com.aliyun.ros.cdk.core.Resource
-@alicloud/ros-cdk-core.ResourceEnvironment=com.aliyun.ros.cdk.core.ResourceEnvironment
 @alicloud/ros-cdk-core.ResourceProps=com.aliyun.ros.cdk.core.ResourceProps
 @alicloud/ros-cdk-core.RosCondition=com.aliyun.ros.cdk.core.RosCondition
 @alicloud/ros-cdk-core.RosConditionProps=com.aliyun.ros.cdk.core.RosConditionProps

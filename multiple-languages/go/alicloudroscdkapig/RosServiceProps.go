@@ -5,9 +5,14 @@ package alicloudroscdkapig
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-service
 type RosServiceProps struct {
-	Addresses interface{} `field:"required" json:"addresses" yaml:"addresses"`
 	GatewayId interface{} `field:"required" json:"gatewayId" yaml:"gatewayId"`
-	ServiceName interface{} `field:"required" json:"serviceName" yaml:"serviceName"`
-	SourceType interface{} `field:"required" json:"sourceType" yaml:"sourceType"`
+	Addresses interface{} `field:"optional" json:"addresses" yaml:"addresses"`
+	AiServiceConfig interface{} `field:"optional" json:"aiServiceConfig" yaml:"aiServiceConfig"`
+	GroupName interface{} `field:"optional" json:"groupName" yaml:"groupName"`
+	Namespace interface{} `field:"optional" json:"namespace" yaml:"namespace"`
+	Qualifier interface{} `field:"optional" json:"qualifier" yaml:"qualifier"`
+	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
+	ServiceName interface{} `field:"optional" json:"serviceName" yaml:"serviceName"`
+	SourceType interface{} `field:"optional" json:"sourceType" yaml:"sourceType"`
 }
 

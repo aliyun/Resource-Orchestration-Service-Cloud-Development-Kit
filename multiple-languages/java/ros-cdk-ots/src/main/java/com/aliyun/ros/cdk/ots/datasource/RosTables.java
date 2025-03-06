@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ots.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::OTS::Tables</code>, which is used to query the names of all tables that are created in an instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:18.633Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.531Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.datasource.RosTables")
 public class RosTables extends com.aliyun.ros.cdk.core.RosResource {
 

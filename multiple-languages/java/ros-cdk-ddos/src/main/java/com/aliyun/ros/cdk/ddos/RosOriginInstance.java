@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ddos;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DDoS::OriginInstance</code>, which is used to create an Anti-DDoS Origin instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:13.881Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:03.715Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ddos.$Module.class, fqn = "@alicloud/ros-cdk-ddos.RosOriginInstance")
 public class RosOriginInstance extends com.aliyun.ros.cdk.core.RosResource {
 

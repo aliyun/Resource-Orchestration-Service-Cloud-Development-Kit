@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mns.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::MNS::Subscriptions</code>, which is used to query the information about the subscriptions.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:18.000Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.064Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.datasource.Subscriptions")
 public class Subscriptions extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.mns.datasource.ISubscriptions {
 

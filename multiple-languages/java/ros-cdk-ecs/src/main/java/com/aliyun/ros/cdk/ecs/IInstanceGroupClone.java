@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Represents a <code>InstanceGroupClone</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:15.170Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:04.651Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.IInstanceGroupClone")
 @software.amazon.jsii.Jsii.Proxy(IInstanceGroupClone.Jsii$Proxy.class)
 public interface IInstanceGroupClone extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
@@ -57,11 +57,6 @@ public interface IInstanceGroupClone extends software.amazon.jsii.JsiiSerializab
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrPublicIps();
 
     /**
-     * Attribute RelatedOrderIds: The related order id list of created ecs instances.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getAttrRelatedOrderIds();
-
-    /**
      * Attribute ZoneIds: Zone id of created instances.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrZoneIds();
@@ -96,8 +91,8 @@ public interface IInstanceGroupClone extends software.amazon.jsii.JsiiSerializab
          * that might be different than the stack they were imported into.
          */
         @Override
-        public final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.ResourceEnvironment getEnv() {
-            return software.amazon.jsii.Kernel.get(this, "env", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.ResourceEnvironment.class));
+        public final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResourceEnvironment getEnv() {
+            return software.amazon.jsii.Kernel.get(this, "env", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResourceEnvironment.class));
         }
 
         /**
@@ -181,14 +176,6 @@ public interface IInstanceGroupClone extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
-         * Attribute RelatedOrderIds: The related order id list of created ecs instances.
-         */
-        @Override
-        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrRelatedOrderIds() {
-            return software.amazon.jsii.Kernel.get(this, "attrRelatedOrderIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
          * Attribute ZoneIds: Zone id of created instances.
          */
         @Override
@@ -227,8 +214,8 @@ public interface IInstanceGroupClone extends software.amazon.jsii.JsiiSerializab
          * that might be different than the stack they were imported into.
          */
         @Override
-        default @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.ResourceEnvironment getEnv() {
-            return software.amazon.jsii.Kernel.get(this, "env", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.ResourceEnvironment.class));
+        default @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResourceEnvironment getEnv() {
+            return software.amazon.jsii.Kernel.get(this, "env", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResourceEnvironment.class));
         }
 
         /**
@@ -309,14 +296,6 @@ public interface IInstanceGroupClone extends software.amazon.jsii.JsiiSerializab
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrPublicIps() {
             return software.amazon.jsii.Kernel.get(this, "attrPublicIps", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute RelatedOrderIds: The related order id list of created ecs instances.
-         */
-        @Override
-        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrRelatedOrderIds() {
-            return software.amazon.jsii.Kernel.get(this, "attrRelatedOrderIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**

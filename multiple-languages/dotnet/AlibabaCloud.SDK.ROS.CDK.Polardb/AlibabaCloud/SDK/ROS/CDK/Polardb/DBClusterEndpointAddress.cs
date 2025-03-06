@@ -4,10 +4,8 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::DBClusterEndpointAddress`, which is used to create a public endpoint for an Apsara PolarDB cluster.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::DBClusterEndpointAddress`.</summary>
     /// <remarks>
-    /// The public endpoint can be a primary endpoint, the default cluster endpoint, or a custom cluster endpoint.
-    ///
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBClusterEndpointAddress`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusterendpointaddress
     /// </remarks>

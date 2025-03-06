@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.oss;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::OSS::Bucket</code>, which is used to create a bucket in Object Storage Service (OSS).
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::OSS::Bucket</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:18.514Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:12.111Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.Bucket")
 public class Bucket extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.oss.IBucket {
 
@@ -47,6 +47,97 @@ public class Bucket extends com.aliyun.ros.cdk.core.Resource implements com.aliy
      */
     public static void validateBucketName(final @org.jetbrains.annotations.NotNull java.lang.String physicalName) {
         software.amazon.jsii.JsiiObject.jsiiStaticCall(com.aliyun.ros.cdk.oss.Bucket.class, "validateBucketName", software.amazon.jsii.NativeType.VOID, new Object[] { java.util.Objects.requireNonNull(physicalName, "physicalName is required") });
+    }
+
+    /**
+     * Returns an ARN that represents all objects within the bucket that match the key pattern specified.
+     * <p>
+     * To represent all keys, specify <code>"*"</code>.
+     * <p>
+     * If you need to specify a keyPattern with multiple components, concatenate them into a single string, e.g.:
+     * <p>
+     * arnForObjects(<code>home/${team}/${user}/*</code>)
+     * <p>
+     * @param keyPattern This parameter is required.
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.String arnForObjects(final @org.jetbrains.annotations.NotNull java.lang.String keyPattern) {
+        return software.amazon.jsii.Kernel.call(this, "arnForObjects", software.amazon.jsii.NativeType.forClass(java.lang.String.class), new Object[] { java.util.Objects.requireNonNull(keyPattern, "keyPattern is required") });
+    }
+
+    /**
+     * Grant an RAM principal (Role/Group/User) full control over this bucket.
+     * <p>
+     * @param identity The principal. This parameter is required.
+     * @param objectsKeyPattern Restrict the permission to a certain key pattern (default '*').
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.ManagedPolicy grantFullAccess(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.IPrincipal identity, final @org.jetbrains.annotations.Nullable java.lang.String objectsKeyPattern) {
+        return software.amazon.jsii.Kernel.call(this, "grantFullAccess", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ram.ManagedPolicy.class), new Object[] { java.util.Objects.requireNonNull(identity, "identity is required"), objectsKeyPattern });
+    }
+
+    /**
+     * Grant an RAM principal (Role/Group/User) full control over this bucket.
+     * <p>
+     * @param identity The principal. This parameter is required.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.ManagedPolicy grantFullAccess(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.IPrincipal identity) {
+        return software.amazon.jsii.Kernel.call(this, "grantFullAccess", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ram.ManagedPolicy.class), new Object[] { java.util.Objects.requireNonNull(identity, "identity is required") });
+    }
+
+    /**
+     * Grant an RAM principal (Role/Group/User) permission to list resources for this bucket.
+     * <p>
+     * @param identity The principal. This parameter is required.
+     * @param objectsKeyPattern Restrict the permission to a certain key pattern (default '*').
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.ManagedPolicy grantList(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.IPrincipal identity, final @org.jetbrains.annotations.Nullable java.lang.String objectsKeyPattern) {
+        return software.amazon.jsii.Kernel.call(this, "grantList", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ram.ManagedPolicy.class), new Object[] { java.util.Objects.requireNonNull(identity, "identity is required"), objectsKeyPattern });
+    }
+
+    /**
+     * Grant an RAM principal (Role/Group/User) permission to list resources for this bucket.
+     * <p>
+     * @param identity The principal. This parameter is required.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.ManagedPolicy grantList(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.IPrincipal identity) {
+        return software.amazon.jsii.Kernel.call(this, "grantList", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ram.ManagedPolicy.class), new Object[] { java.util.Objects.requireNonNull(identity, "identity is required") });
+    }
+
+    /**
+     * Grant an RAM principal (Role/Group/User) permission to list and read all resources for this bucket.
+     * <p>
+     * @param identity The principal. This parameter is required.
+     * @param objectsKeyPattern Restrict the permission to a certain key pattern (default '*').
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.ManagedPolicy grantRead(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.IPrincipal identity, final @org.jetbrains.annotations.Nullable java.lang.String objectsKeyPattern) {
+        return software.amazon.jsii.Kernel.call(this, "grantRead", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ram.ManagedPolicy.class), new Object[] { java.util.Objects.requireNonNull(identity, "identity is required"), objectsKeyPattern });
+    }
+
+    /**
+     * Grant an RAM principal (Role/Group/User) permission to list and read all resources for this bucket.
+     * <p>
+     * @param identity The principal. This parameter is required.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.ManagedPolicy grantRead(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.IPrincipal identity) {
+        return software.amazon.jsii.Kernel.call(this, "grantRead", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ram.ManagedPolicy.class), new Object[] { java.util.Objects.requireNonNull(identity, "identity is required") });
+    }
+
+    /**
+     * Grant an RAM principal (Role/Group/User) permission to read and write resources for this bucket.
+     * <p>
+     * @param identity The principal. This parameter is required.
+     * @param objectsKeyPattern Restrict the permission to a certain key pattern (default '*').
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.ManagedPolicy grantReadWrite(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.IPrincipal identity, final @org.jetbrains.annotations.Nullable java.lang.String objectsKeyPattern) {
+        return software.amazon.jsii.Kernel.call(this, "grantReadWrite", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ram.ManagedPolicy.class), new Object[] { java.util.Objects.requireNonNull(identity, "identity is required"), objectsKeyPattern });
+    }
+
+    /**
+     * Grant an RAM principal (Role/Group/User) permission to read and write resources for this bucket.
+     * <p>
+     * @param identity The principal. This parameter is required.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.ManagedPolicy grantReadWrite(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.IPrincipal identity) {
+        return software.amazon.jsii.Kernel.call(this, "grantReadWrite", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ram.ManagedPolicy.class), new Object[] { java.util.Objects.requireNonNull(identity, "identity is required") });
     }
 
     /**

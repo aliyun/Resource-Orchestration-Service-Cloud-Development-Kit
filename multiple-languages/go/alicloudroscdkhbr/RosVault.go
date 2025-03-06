@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::Vault`, which is used to create a backup vault.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::Vault`.
 type RosVault interface {
 	alicloudroscdkcore.RosResource
 	AttrBackupPlanStatistics() alicloudroscdkcore.IResolvable

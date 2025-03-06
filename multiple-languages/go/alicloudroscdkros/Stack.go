@@ -23,7 +23,7 @@ type Stack interface {
 	// however, for imported resources
 	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
 	// that might be different than the stack they were imported into.
-	Env() *alicloudroscdkcore.ResourceEnvironment
+	Env() alicloudroscdkcore.IResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -118,8 +118,8 @@ func (j *jsiiProxy_Stack) EnableResourcePropertyConstraint() *bool {
 	return returns
 }
 
-func (j *jsiiProxy_Stack) Env() *alicloudroscdkcore.ResourceEnvironment {
-	var returns *alicloudroscdkcore.ResourceEnvironment
+func (j *jsiiProxy_Stack) Env() alicloudroscdkcore.IResourceEnvironment {
+	var returns alicloudroscdkcore.IResourceEnvironment
 	_jsii_.Get(
 		j,
 		"env",

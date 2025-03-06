@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::PAI::Service`, which is used to create an Elastic Algorithm Service (EAS) service in Machine Learning Platform for AI (PAI).
+// This class encapsulates and extends the ROS resource type `ALIYUN::PAI::Service`.
 type Service interface {
 	alicloudroscdkcore.Resource
 	IService
@@ -85,7 +85,7 @@ type Service interface {
 	// however, for imported resources
 	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
 	// that might be different than the stack they were imported into.
-	Env() *alicloudroscdkcore.ResourceEnvironment
+	Env() alicloudroscdkcore.IResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -490,8 +490,8 @@ func (j *jsiiProxy_Service) EnableResourcePropertyConstraint() *bool {
 	return returns
 }
 
-func (j *jsiiProxy_Service) Env() *alicloudroscdkcore.ResourceEnvironment {
-	var returns *alicloudroscdkcore.ResourceEnvironment
+func (j *jsiiProxy_Service) Env() alicloudroscdkcore.IResourceEnvironment {
+	var returns alicloudroscdkcore.IResourceEnvironment
 	_jsii_.Get(
 		j,
 		"env",

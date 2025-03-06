@@ -36,6 +36,8 @@
 @alicloud/ros-cdk-apig.RosApiAttachment.ServiceConfigsProperty=com.aliyun.ros.cdk.apig.RosApiAttachment$ServiceConfigsProperty
 @alicloud/ros-cdk-apig.RosApiAttachmentProps=com.aliyun.ros.cdk.apig.RosApiAttachmentProps
 @alicloud/ros-cdk-apig.RosDomain=com.aliyun.ros.cdk.apig.RosDomain
+@alicloud/ros-cdk-apig.RosDomain.TlsCipherSuiteProperty=com.aliyun.ros.cdk.apig.RosDomain$TlsCipherSuiteProperty
+@alicloud/ros-cdk-apig.RosDomain.TlsCipherSuitesConfigProperty=com.aliyun.ros.cdk.apig.RosDomain$TlsCipherSuitesConfigProperty
 @alicloud/ros-cdk-apig.RosDomainProps=com.aliyun.ros.cdk.apig.RosDomainProps
 @alicloud/ros-cdk-apig.RosEnvironment=com.aliyun.ros.cdk.apig.RosEnvironment
 @alicloud/ros-cdk-apig.RosEnvironmentProps=com.aliyun.ros.cdk.apig.RosEnvironmentProps
@@ -74,6 +76,7 @@
 @alicloud/ros-cdk-apig.RosRoute.SubDomainsProperty=com.aliyun.ros.cdk.apig.RosRoute$SubDomainsProperty
 @alicloud/ros-cdk-apig.RosRouteProps=com.aliyun.ros.cdk.apig.RosRouteProps
 @alicloud/ros-cdk-apig.RosService=com.aliyun.ros.cdk.apig.RosService
+@alicloud/ros-cdk-apig.RosService.AiServiceConfigProperty=com.aliyun.ros.cdk.apig.RosService$AiServiceConfigProperty
 @alicloud/ros-cdk-apig.RosServiceProps=com.aliyun.ros.cdk.apig.RosServiceProps
 @alicloud/ros-cdk-apig.Route=com.aliyun.ros.cdk.apig.Route
 @alicloud/ros-cdk-apig.RouteProps=com.aliyun.ros.cdk.apig.RouteProps

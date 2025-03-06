@@ -10,24 +10,53 @@ export { RosService as ServiceProperty };
 export interface ServiceProps {
 
     /**
-     * Property addresses: Service Address List.
-     */
-    readonly addresses: Array<string | ros.IResolvable> | ros.IResolvable;
-
-    /**
      * Property gatewayId: The ID of the Cloud Native API Gateway.
      */
     readonly gatewayId: string | ros.IResolvable;
 
     /**
-     * Property serviceName: The name of the service.
+     * Property addresses: Service Address List.
      */
-    readonly serviceName: string | ros.IResolvable;
+    readonly addresses?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property sourceType: The type of the service source.
+     * Property aiServiceConfig: AI service configuration when SourceType equals AI.
      */
-    readonly sourceType: string | ros.IResolvable;
+    readonly aiServiceConfig?: RosService.AiServiceConfigProperty | ros.IResolvable;
+
+    /**
+     * Property groupName: The service group name.
+     * Required when SourceType is MSE_NACOS.
+     */
+    readonly groupName?: string | ros.IResolvable;
+
+    /**
+     * Property namespace: The namespace of the service:
+     * - SourceType is K8S, indicating the namespace of the K8S service.
+     * When-SourceType is set to MSE_NACOS, it indicates the namespace in Nacos.
+     * When the SourceType is K8S and MSE_NACOS, it needs to be specified.
+     */
+    readonly namespace?: string | ros.IResolvable;
+
+    /**
+     * Property qualifier: The function version or alias.
+     */
+    readonly qualifier?: string | ros.IResolvable;
+
+    /**
+     * Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * Property serviceName: The name of the service, need to fill in manually when SourceType is VIP\/DNS\/AI.
+     */
+    readonly serviceName?: string | ros.IResolvable;
+
+    /**
+     * Property sourceType: The type of the service source, optional value is K8S\/MSE_NACOS\/FC3\/SAE_K8S_SERVICE\/VIP\/DNS\/AI.
+     */
+    readonly sourceType?: string | ros.IResolvable;
 }
 
 /**
@@ -42,9 +71,34 @@ export interface IService extends ros.IResource {
     readonly attrAddresses: ros.IResolvable | string;
 
     /**
+     * Attribute AiServiceConfig: AI service configuration when SourceType equals AI.
+     */
+    readonly attrAiServiceConfig: ros.IResolvable | string;
+
+    /**
      * Attribute GatewayId: The ID of the Cloud Native API Gateway.
      */
     readonly attrGatewayId: ros.IResolvable | string;
+
+    /**
+     * Attribute GroupName: The service group name.
+     */
+    readonly attrGroupName: ros.IResolvable | string;
+
+    /**
+     * Attribute Namespace: The namespace of the service:.
+     */
+    readonly attrNamespace: ros.IResolvable | string;
+
+    /**
+     * Attribute Qualifier: The function version or alias.
+     */
+    readonly attrQualifier: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceGroupId: The ID of the resource group.
+     */
+    readonly attrResourceGroupId: ros.IResolvable | string;
 
     /**
      * Attribute ServiceId: The ID of the service.
@@ -52,14 +106,9 @@ export interface IService extends ros.IResource {
     readonly attrServiceId: ros.IResolvable | string;
 
     /**
-     * Attribute ServiceName: The Name of the service .
+     * Attribute ServiceName: Service Name, need to fill in manually when SourceType is VIP/DNS/AI.
      */
     readonly attrServiceName: ros.IResolvable | string;
-
-    /**
-     * Attribute SourceType: Service source type.
-     */
-    readonly attrSourceType: ros.IResolvable | string;
 }
 /**
  * This class encapsulates and extends the ROS resource type `ALIYUN::APIG::Service`, which is used to create a service.
@@ -78,9 +127,34 @@ export class Service extends ros.Resource implements IService {
     public readonly attrAddresses: ros.IResolvable | string;
 
     /**
+     * Attribute AiServiceConfig: AI service configuration when SourceType equals AI.
+     */
+    public readonly attrAiServiceConfig: ros.IResolvable | string;
+
+    /**
      * Attribute GatewayId: The ID of the Cloud Native API Gateway.
      */
     public readonly attrGatewayId: ros.IResolvable | string;
+
+    /**
+     * Attribute GroupName: The service group name.
+     */
+    public readonly attrGroupName: ros.IResolvable | string;
+
+    /**
+     * Attribute Namespace: The namespace of the service:.
+     */
+    public readonly attrNamespace: ros.IResolvable | string;
+
+    /**
+     * Attribute Qualifier: The function version or alias.
+     */
+    public readonly attrQualifier: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceGroupId: The ID of the resource group.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable | string;
 
     /**
      * Attribute ServiceId: The ID of the service.
@@ -88,14 +162,9 @@ export class Service extends ros.Resource implements IService {
     public readonly attrServiceId: ros.IResolvable | string;
 
     /**
-     * Attribute ServiceName: The Name of the service .
+     * Attribute ServiceName: Service Name, need to fill in manually when SourceType is VIP/DNS/AI.
      */
     public readonly attrServiceName: ros.IResolvable | string;
-
-    /**
-     * Attribute SourceType: Service source type.
-     */
-    public readonly attrSourceType: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -110,16 +179,25 @@ export class Service extends ros.Resource implements IService {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosService = new RosService(this, id,  {
+            groupName: props.groupName,
             addresses: props.addresses,
+            resourceGroupId: props.resourceGroupId,
             serviceName: props.serviceName,
             sourceType: props.sourceType,
+            qualifier: props.qualifier,
             gatewayId: props.gatewayId,
+            namespace: props.namespace,
+            aiServiceConfig: props.aiServiceConfig,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosService;
         this.attrAddresses = rosService.attrAddresses;
+        this.attrAiServiceConfig = rosService.attrAiServiceConfig;
         this.attrGatewayId = rosService.attrGatewayId;
+        this.attrGroupName = rosService.attrGroupName;
+        this.attrNamespace = rosService.attrNamespace;
+        this.attrQualifier = rosService.attrQualifier;
+        this.attrResourceGroupId = rosService.attrResourceGroupId;
         this.attrServiceId = rosService.attrServiceId;
         this.attrServiceName = rosService.attrServiceName;
-        this.attrSourceType = rosService.attrSourceType;
     }
 }

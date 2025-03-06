@@ -224,7 +224,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
             }
         }
 
-        /// <summary>Property deploy: Whether deployed immediately take effect, the default is false.</summary>
+        /// <summary>Property deploy: Whether deployed immediately take effect, the default is true.</summary>
         [JsiiProperty(name: "deploy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Deploy
@@ -1051,7 +1051,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property deploy: Whether deployed immediately take effect, the default is false.</summary>
+            /// <summary>Property deploy: Whether deployed immediately take effect, the default is true.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "deploy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Deploy

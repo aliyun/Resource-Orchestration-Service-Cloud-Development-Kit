@@ -661,7 +661,7 @@ function rosSignaturePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIPlugin::Signature`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIPlugin::Signature`, which is used to register a signature.
  * @Note This class does not contain additional functions, so it is recommended to use the `Signature` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paiplugin-signature
  */
@@ -832,7 +832,7 @@ function rosTemplatePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIPlugin::Template`, which is used to create a template.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIPlugin::Template`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Template` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paiplugin-template
  */
@@ -1033,7 +1033,7 @@ function rosTrainingJobPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIPlugin::TrainingJob`, which is used to create a training job.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIPlugin::TrainingJob`.
  * @Note This class does not contain additional functions, so it is recommended to use the `TrainingJob` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paiplugin-trainingjob
  */

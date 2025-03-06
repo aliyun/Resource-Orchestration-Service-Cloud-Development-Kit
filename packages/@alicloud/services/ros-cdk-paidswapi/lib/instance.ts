@@ -146,7 +146,7 @@ export interface IInstance extends ros.IResource {
     readonly attrWorkspaceId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::PaiDswApi::Instance`, which is used to create a Data Science Workshop (DSW) instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PaiDswApi::Instance`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidswapi-instance
  */

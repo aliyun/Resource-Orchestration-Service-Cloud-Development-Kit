@@ -18,10 +18,12 @@
 @alicloud/ros-cdk-ram.IAttachPolicyToGroup=com.aliyun.ros.cdk.ram.IAttachPolicyToGroup
 @alicloud/ros-cdk-ram.IAttachPolicyToRole=com.aliyun.ros.cdk.ram.IAttachPolicyToRole
 @alicloud/ros-cdk-ram.IAttachPolicyToUser=com.aliyun.ros.cdk.ram.IAttachPolicyToUser
+@alicloud/ros-cdk-ram.IGrantable=com.aliyun.ros.cdk.ram.IGrantable
 @alicloud/ros-cdk-ram.IGroup=com.aliyun.ros.cdk.ram.IGroup
 @alicloud/ros-cdk-ram.ILoginProfile=com.aliyun.ros.cdk.ram.ILoginProfile
 @alicloud/ros-cdk-ram.IManagedPolicy=com.aliyun.ros.cdk.ram.IManagedPolicy
 @alicloud/ros-cdk-ram.IOIDCProvider=com.aliyun.ros.cdk.ram.IOIDCProvider
+@alicloud/ros-cdk-ram.IPrincipal=com.aliyun.ros.cdk.ram.IPrincipal
 @alicloud/ros-cdk-ram.IRamAccountAlias=com.aliyun.ros.cdk.ram.IRamAccountAlias
 @alicloud/ros-cdk-ram.IRole=com.aliyun.ros.cdk.ram.IRole
 @alicloud/ros-cdk-ram.ISAMLProvider=com.aliyun.ros.cdk.ram.ISAMLProvider

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apig;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::APIG::Service</code>, which is used to create a service.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:11.768Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:01.699Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.Service")
 public class Service extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.apig.IService {
 
@@ -49,11 +49,51 @@ public class Service extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
+     * Attribute AiServiceConfig: AI service configuration when SourceType equals AI.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAiServiceConfig() {
+        return software.amazon.jsii.Kernel.get(this, "attrAiServiceConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
      * Attribute GatewayId: The ID of the Cloud Native API Gateway.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrGatewayId() {
         return software.amazon.jsii.Kernel.get(this, "attrGatewayId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     * Attribute GroupName: The service group name.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrGroupName() {
+        return software.amazon.jsii.Kernel.get(this, "attrGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     * Attribute Namespace: The namespace of the service:.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrNamespace() {
+        return software.amazon.jsii.Kernel.get(this, "attrNamespace", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     * Attribute Qualifier: The function version or alias.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrQualifier() {
+        return software.amazon.jsii.Kernel.get(this, "attrQualifier", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     * Attribute ResourceGroupId: The ID of the resource group.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "attrResourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -65,19 +105,11 @@ public class Service extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute ServiceName: The Name of the service .
+     * Attribute ServiceName: Service Name, need to fill in manually when SourceType is VIP/DNS/AI.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrServiceName() {
         return software.amazon.jsii.Kernel.get(this, "attrServiceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     * Attribute SourceType: Service source type.
-     */
-    @Override
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSourceType() {
-        return software.amazon.jsii.Kernel.get(this, "attrSourceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     @Override
@@ -144,27 +176,6 @@ public class Service extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property addresses: Service Address List.
-         * <p>
-         * @return {@code this}
-         * @param addresses Property addresses: Service Address List. This parameter is required.
-         */
-        public Builder addresses(final com.aliyun.ros.cdk.core.IResolvable addresses) {
-            this.props.addresses(addresses);
-            return this;
-        }
-        /**
-         * Property addresses: Service Address List.
-         * <p>
-         * @return {@code this}
-         * @param addresses Property addresses: Service Address List. This parameter is required.
-         */
-        public Builder addresses(final java.util.List<? extends java.lang.Object> addresses) {
-            this.props.addresses(addresses);
-            return this;
-        }
-
-        /**
          * Property gatewayId: The ID of the Cloud Native API Gateway.
          * <p>
          * @return {@code this}
@@ -186,20 +197,156 @@ public class Service extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property serviceName: The name of the service.
+         * Property addresses: Service Address List.
          * <p>
          * @return {@code this}
-         * @param serviceName Property serviceName: The name of the service. This parameter is required.
+         * @param addresses Property addresses: Service Address List. This parameter is required.
+         */
+        public Builder addresses(final com.aliyun.ros.cdk.core.IResolvable addresses) {
+            this.props.addresses(addresses);
+            return this;
+        }
+        /**
+         * Property addresses: Service Address List.
+         * <p>
+         * @return {@code this}
+         * @param addresses Property addresses: Service Address List. This parameter is required.
+         */
+        public Builder addresses(final java.util.List<? extends java.lang.Object> addresses) {
+            this.props.addresses(addresses);
+            return this;
+        }
+
+        /**
+         * Property aiServiceConfig: AI service configuration when SourceType equals AI.
+         * <p>
+         * @return {@code this}
+         * @param aiServiceConfig Property aiServiceConfig: AI service configuration when SourceType equals AI. This parameter is required.
+         */
+        public Builder aiServiceConfig(final com.aliyun.ros.cdk.core.IResolvable aiServiceConfig) {
+            this.props.aiServiceConfig(aiServiceConfig);
+            return this;
+        }
+        /**
+         * Property aiServiceConfig: AI service configuration when SourceType equals AI.
+         * <p>
+         * @return {@code this}
+         * @param aiServiceConfig Property aiServiceConfig: AI service configuration when SourceType equals AI. This parameter is required.
+         */
+        public Builder aiServiceConfig(final com.aliyun.ros.cdk.apig.RosService.AiServiceConfigProperty aiServiceConfig) {
+            this.props.aiServiceConfig(aiServiceConfig);
+            return this;
+        }
+
+        /**
+         * Property groupName: The service group name.
+         * <p>
+         * Required when SourceType is MSE_NACOS.
+         * <p>
+         * @return {@code this}
+         * @param groupName Property groupName: The service group name. This parameter is required.
+         */
+        public Builder groupName(final java.lang.String groupName) {
+            this.props.groupName(groupName);
+            return this;
+        }
+        /**
+         * Property groupName: The service group name.
+         * <p>
+         * Required when SourceType is MSE_NACOS.
+         * <p>
+         * @return {@code this}
+         * @param groupName Property groupName: The service group name. This parameter is required.
+         */
+        public Builder groupName(final com.aliyun.ros.cdk.core.IResolvable groupName) {
+            this.props.groupName(groupName);
+            return this;
+        }
+
+        /**
+         * Property namespace: The namespace of the service: - SourceType is K8S, indicating the namespace of the K8S service.
+         * <p>
+         * When-SourceType is set to MSE_NACOS, it indicates the namespace in Nacos.
+         * When the SourceType is K8S and MSE_NACOS, it needs to be specified.
+         * <p>
+         * @return {@code this}
+         * @param namespace Property namespace: The namespace of the service: - SourceType is K8S, indicating the namespace of the K8S service. This parameter is required.
+         */
+        public Builder namespace(final java.lang.String namespace) {
+            this.props.namespace(namespace);
+            return this;
+        }
+        /**
+         * Property namespace: The namespace of the service: - SourceType is K8S, indicating the namespace of the K8S service.
+         * <p>
+         * When-SourceType is set to MSE_NACOS, it indicates the namespace in Nacos.
+         * When the SourceType is K8S and MSE_NACOS, it needs to be specified.
+         * <p>
+         * @return {@code this}
+         * @param namespace Property namespace: The namespace of the service: - SourceType is K8S, indicating the namespace of the K8S service. This parameter is required.
+         */
+        public Builder namespace(final com.aliyun.ros.cdk.core.IResolvable namespace) {
+            this.props.namespace(namespace);
+            return this;
+        }
+
+        /**
+         * Property qualifier: The function version or alias.
+         * <p>
+         * @return {@code this}
+         * @param qualifier Property qualifier: The function version or alias. This parameter is required.
+         */
+        public Builder qualifier(final java.lang.String qualifier) {
+            this.props.qualifier(qualifier);
+            return this;
+        }
+        /**
+         * Property qualifier: The function version or alias.
+         * <p>
+         * @return {@code this}
+         * @param qualifier Property qualifier: The function version or alias. This parameter is required.
+         */
+        public Builder qualifier(final com.aliyun.ros.cdk.core.IResolvable qualifier) {
+            this.props.qualifier(qualifier);
+            return this;
+        }
+
+        /**
+         * Property resourceGroupId: The ID of the resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: The ID of the resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * Property serviceName: The name of the service, need to fill in manually when SourceType is VIP/DNS/AI.
+         * <p>
+         * @return {@code this}
+         * @param serviceName Property serviceName: The name of the service, need to fill in manually when SourceType is VIP/DNS/AI. This parameter is required.
          */
         public Builder serviceName(final java.lang.String serviceName) {
             this.props.serviceName(serviceName);
             return this;
         }
         /**
-         * Property serviceName: The name of the service.
+         * Property serviceName: The name of the service, need to fill in manually when SourceType is VIP/DNS/AI.
          * <p>
          * @return {@code this}
-         * @param serviceName Property serviceName: The name of the service. This parameter is required.
+         * @param serviceName Property serviceName: The name of the service, need to fill in manually when SourceType is VIP/DNS/AI. This parameter is required.
          */
         public Builder serviceName(final com.aliyun.ros.cdk.core.IResolvable serviceName) {
             this.props.serviceName(serviceName);
@@ -207,20 +354,20 @@ public class Service extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property sourceType: The type of the service source.
+         * Property sourceType: The type of the service source, optional value is K8S/MSE_NACOS/FC3/SAE_K8S_SERVICE/VIP/DNS/AI.
          * <p>
          * @return {@code this}
-         * @param sourceType Property sourceType: The type of the service source. This parameter is required.
+         * @param sourceType Property sourceType: The type of the service source, optional value is K8S/MSE_NACOS/FC3/SAE_K8S_SERVICE/VIP/DNS/AI. This parameter is required.
          */
         public Builder sourceType(final java.lang.String sourceType) {
             this.props.sourceType(sourceType);
             return this;
         }
         /**
-         * Property sourceType: The type of the service source.
+         * Property sourceType: The type of the service source, optional value is K8S/MSE_NACOS/FC3/SAE_K8S_SERVICE/VIP/DNS/AI.
          * <p>
          * @return {@code this}
-         * @param sourceType Property sourceType: The type of the service source. This parameter is required.
+         * @param sourceType Property sourceType: The type of the service source, optional value is K8S/MSE_NACOS/FC3/SAE_K8S_SERVICE/VIP/DNS/AI. This parameter is required.
          */
         public Builder sourceType(final com.aliyun.ros.cdk.core.IResolvable sourceType) {
             this.props.sourceType(sourceType);

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::OOS::Parameter`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::OOS::Parameter`, which is used to create a common parameter.
 type Parameter interface {
 	alicloudroscdkcore.Resource
 	IParameter
@@ -27,7 +27,7 @@ type Parameter interface {
 	// however, for imported resources
 	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
 	// that might be different than the stack they were imported into.
-	Env() *alicloudroscdkcore.ResourceEnvironment
+	Env() alicloudroscdkcore.IResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -142,8 +142,8 @@ func (j *jsiiProxy_Parameter) EnableResourcePropertyConstraint() *bool {
 	return returns
 }
 
-func (j *jsiiProxy_Parameter) Env() *alicloudroscdkcore.ResourceEnvironment {
-	var returns *alicloudroscdkcore.ResourceEnvironment
+func (j *jsiiProxy_Parameter) Env() alicloudroscdkcore.IResourceEnvironment {
+	var returns alicloudroscdkcore.IResourceEnvironment
 	_jsii_.Get(
 		j,
 		"env",

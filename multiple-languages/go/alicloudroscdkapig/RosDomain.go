@@ -13,9 +13,18 @@ import (
 // This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Domain`, which is used to create a domain name.
 type RosDomain interface {
 	alicloudroscdkcore.RosResource
+	AttrCertIdentifier() alicloudroscdkcore.IResolvable
 	AttrDomainId() alicloudroscdkcore.IResolvable
 	AttrDomainName() alicloudroscdkcore.IResolvable
+	AttrForceHttps() alicloudroscdkcore.IResolvable
+	AttrHttp2Option() alicloudroscdkcore.IResolvable
 	AttrProtocol() alicloudroscdkcore.IResolvable
+	AttrResourceGroupId() alicloudroscdkcore.IResolvable
+	AttrTlsCipherSuitesConfig() alicloudroscdkcore.IResolvable
+	AttrTlsMax() alicloudroscdkcore.IResolvable
+	AttrTlsMin() alicloudroscdkcore.IResolvable
+	CertIdentifier() interface{}
+	SetCertIdentifier(val interface{})
 	// Returns: the stack trace of the point where this Resource was created from, sourced
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
@@ -24,6 +33,10 @@ type RosDomain interface {
 	SetDomainName(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	ForceHttps() interface{}
+	SetForceHttps(val interface{})
+	Http2Option() interface{}
+	SetHttp2Option(val interface{})
 	// The logical ID for this stack element.
 	//
 	// The logical ID of the element
@@ -43,6 +56,8 @@ type RosDomain interface {
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
 	// coerce it to an IResolvable through `Lazy.any({ produce: resource.ref })`.
 	Ref() *string
+	ResourceGroupId() interface{}
+	SetResourceGroupId(val interface{})
 	// Options for this resource, such as condition, update policy etc.
 	RosOptions() alicloudroscdkcore.IRosResourceOptions
 	RosProperties() *map[string]interface{}
@@ -52,6 +67,12 @@ type RosDomain interface {
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
 	Stack() alicloudroscdkcore.Stack
+	TlsCipherSuitesConfig() interface{}
+	SetTlsCipherSuitesConfig(val interface{})
+	TlsMax() interface{}
+	SetTlsMax(val interface{})
+	TlsMin() interface{}
+	SetTlsMin(val interface{})
 	// Return properties modified after initiation.
 	//
 	// Resources that expose mutable properties should override this function to
@@ -176,6 +197,16 @@ type jsiiProxy_RosDomain struct {
 	internal.Type__alicloudroscdkcoreRosResource
 }
 
+func (j *jsiiProxy_RosDomain) AttrCertIdentifier() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrCertIdentifier",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosDomain) AttrDomainId() alicloudroscdkcore.IResolvable {
 	var returns alicloudroscdkcore.IResolvable
 	_jsii_.Get(
@@ -196,11 +227,81 @@ func (j *jsiiProxy_RosDomain) AttrDomainName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
+func (j *jsiiProxy_RosDomain) AttrForceHttps() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrForceHttps",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDomain) AttrHttp2Option() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrHttp2Option",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosDomain) AttrProtocol() alicloudroscdkcore.IResolvable {
 	var returns alicloudroscdkcore.IResolvable
 	_jsii_.Get(
 		j,
 		"attrProtocol",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDomain) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrResourceGroupId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDomain) AttrTlsCipherSuitesConfig() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrTlsCipherSuitesConfig",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDomain) AttrTlsMax() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrTlsMax",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDomain) AttrTlsMin() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrTlsMin",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDomain) CertIdentifier() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"certIdentifier",
 		&returns,
 	)
 	return returns
@@ -231,6 +332,26 @@ func (j *jsiiProxy_RosDomain) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDomain) ForceHttps() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"forceHttps",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDomain) Http2Option() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"http2Option",
 		&returns,
 	)
 	return returns
@@ -276,6 +397,16 @@ func (j *jsiiProxy_RosDomain) Ref() *string {
 	return returns
 }
 
+func (j *jsiiProxy_RosDomain) ResourceGroupId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"resourceGroupId",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosDomain) RosOptions() alicloudroscdkcore.IRosResourceOptions {
 	var returns alicloudroscdkcore.IRosResourceOptions
 	_jsii_.Get(
@@ -311,6 +442,36 @@ func (j *jsiiProxy_RosDomain) Stack() alicloudroscdkcore.Stack {
 	_jsii_.Get(
 		j,
 		"stack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDomain) TlsCipherSuitesConfig() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tlsCipherSuitesConfig",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDomain) TlsMax() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tlsMax",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDomain) TlsMin() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tlsMin",
 		&returns,
 	)
 	return returns
@@ -354,6 +515,17 @@ func NewRosDomain_Override(r RosDomain, scope alicloudroscdkcore.Construct, id *
 	)
 }
 
+func (j *jsiiProxy_RosDomain)SetCertIdentifier(val interface{}) {
+	if err := j.validateSetCertIdentifierParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"certIdentifier",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosDomain)SetDomainName(val interface{}) {
 	if err := j.validateSetDomainNameParameters(val); err != nil {
 		panic(err)
@@ -376,6 +548,28 @@ func (j *jsiiProxy_RosDomain)SetEnableResourcePropertyConstraint(val *bool) {
 	)
 }
 
+func (j *jsiiProxy_RosDomain)SetForceHttps(val interface{}) {
+	if err := j.validateSetForceHttpsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"forceHttps",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDomain)SetHttp2Option(val interface{}) {
+	if err := j.validateSetHttp2OptionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"http2Option",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosDomain)SetProtocol(val interface{}) {
 	if err := j.validateSetProtocolParameters(val); err != nil {
 		panic(err)
@@ -383,6 +577,50 @@ func (j *jsiiProxy_RosDomain)SetProtocol(val interface{}) {
 	_jsii_.Set(
 		j,
 		"protocol",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDomain)SetResourceGroupId(val interface{}) {
+	if err := j.validateSetResourceGroupIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"resourceGroupId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDomain)SetTlsCipherSuitesConfig(val interface{}) {
+	if err := j.validateSetTlsCipherSuitesConfigParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"tlsCipherSuitesConfig",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDomain)SetTlsMax(val interface{}) {
+	if err := j.validateSetTlsMaxParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"tlsMax",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDomain)SetTlsMin(val interface{}) {
+	if err := j.validateSetTlsMinParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"tlsMin",
 		val,
 	)
 }

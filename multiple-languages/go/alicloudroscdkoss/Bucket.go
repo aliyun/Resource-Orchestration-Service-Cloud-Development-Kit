@@ -6,10 +6,11 @@ import (
 
 	"github.com/alibabacloud-go/ros-cdk/alicloudroscdkcore"
 	"github.com/alibabacloud-go/ros-cdk/alicloudroscdkoss/internal"
+	"github.com/alibabacloud-go/ros-cdk/alicloudroscdkram"
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::OSS::Bucket`, which is used to create a bucket in Object Storage Service (OSS).
+// This class encapsulates and extends the ROS resource type `ALIYUN::OSS::Bucket`.
 type Bucket interface {
 	alicloudroscdkcore.Resource
 	IBucket
@@ -31,7 +32,7 @@ type Bucket interface {
 	// however, for imported resources
 	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
 	// that might be different than the stack they were imported into.
-	Env() *alicloudroscdkcore.ResourceEnvironment
+	Env() alicloudroscdkcore.IResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -58,11 +59,27 @@ type Bucket interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	// Returns an ARN that represents all objects within the bucket that match the key pattern specified.
+	//
+	// To represent all keys, specify ``"*"``.
+	//
+	// If you need to specify a keyPattern with multiple components, concatenate them into a single string, e.g.:
+	//
+	// arnForObjects(`home/${team}/${user}/*`).
+	ArnForObjects(keyPattern *string) *string
 	FetchCondition() alicloudroscdkcore.RosCondition
 	FetchDependency() *[]*string
 	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
+	// Grant an RAM principal (Role/Group/User) full control over this bucket.
+	GrantFullAccess(identity alicloudroscdkram.IPrincipal, objectsKeyPattern *string) alicloudroscdkram.ManagedPolicy
+	// Grant an RAM principal (Role/Group/User) permission to list resources for this bucket.
+	GrantList(identity alicloudroscdkram.IPrincipal, objectsKeyPattern *string) alicloudroscdkram.ManagedPolicy
+	// Grant an RAM principal (Role/Group/User) permission to list and read all resources for this bucket.
+	GrantRead(identity alicloudroscdkram.IPrincipal, objectsKeyPattern *string) alicloudroscdkram.ManagedPolicy
+	// Grant an RAM principal (Role/Group/User) permission to read and write resources for this bucket.
+	GrantReadWrite(identity alicloudroscdkram.IPrincipal, objectsKeyPattern *string) alicloudroscdkram.ManagedPolicy
 	// Perform final modifications before synthesis.
 	//
 	// This method can be implemented by derived constructs in order to perform
@@ -166,8 +183,8 @@ func (j *jsiiProxy_Bucket) EnableResourcePropertyConstraint() *bool {
 	return returns
 }
 
-func (j *jsiiProxy_Bucket) Env() *alicloudroscdkcore.ResourceEnvironment {
-	var returns *alicloudroscdkcore.ResourceEnvironment
+func (j *jsiiProxy_Bucket) Env() alicloudroscdkcore.IResourceEnvironment {
+	var returns alicloudroscdkcore.IResourceEnvironment
 	_jsii_.Get(
 		j,
 		"env",
@@ -415,6 +432,22 @@ func (b *jsiiProxy_Bucket) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalP
 	)
 }
 
+func (b *jsiiProxy_Bucket) ArnForObjects(keyPattern *string) *string {
+	if err := b.validateArnForObjectsParameters(keyPattern); err != nil {
+		panic(err)
+	}
+	var returns *string
+
+	_jsii_.Invoke(
+		b,
+		"arnForObjects",
+		[]interface{}{keyPattern},
+		&returns,
+	)
+
+	return returns
+}
+
 func (b *jsiiProxy_Bucket) FetchCondition() alicloudroscdkcore.RosCondition {
 	var returns alicloudroscdkcore.RosCondition
 
@@ -477,6 +510,70 @@ func (b *jsiiProxy_Bucket) GetAtt(name *string) alicloudroscdkcore.IResolvable {
 		b,
 		"getAtt",
 		[]interface{}{name},
+		&returns,
+	)
+
+	return returns
+}
+
+func (b *jsiiProxy_Bucket) GrantFullAccess(identity alicloudroscdkram.IPrincipal, objectsKeyPattern *string) alicloudroscdkram.ManagedPolicy {
+	if err := b.validateGrantFullAccessParameters(identity); err != nil {
+		panic(err)
+	}
+	var returns alicloudroscdkram.ManagedPolicy
+
+	_jsii_.Invoke(
+		b,
+		"grantFullAccess",
+		[]interface{}{identity, objectsKeyPattern},
+		&returns,
+	)
+
+	return returns
+}
+
+func (b *jsiiProxy_Bucket) GrantList(identity alicloudroscdkram.IPrincipal, objectsKeyPattern *string) alicloudroscdkram.ManagedPolicy {
+	if err := b.validateGrantListParameters(identity); err != nil {
+		panic(err)
+	}
+	var returns alicloudroscdkram.ManagedPolicy
+
+	_jsii_.Invoke(
+		b,
+		"grantList",
+		[]interface{}{identity, objectsKeyPattern},
+		&returns,
+	)
+
+	return returns
+}
+
+func (b *jsiiProxy_Bucket) GrantRead(identity alicloudroscdkram.IPrincipal, objectsKeyPattern *string) alicloudroscdkram.ManagedPolicy {
+	if err := b.validateGrantReadParameters(identity); err != nil {
+		panic(err)
+	}
+	var returns alicloudroscdkram.ManagedPolicy
+
+	_jsii_.Invoke(
+		b,
+		"grantRead",
+		[]interface{}{identity, objectsKeyPattern},
+		&returns,
+	)
+
+	return returns
+}
+
+func (b *jsiiProxy_Bucket) GrantReadWrite(identity alicloudroscdkram.IPrincipal, objectsKeyPattern *string) alicloudroscdkram.ManagedPolicy {
+	if err := b.validateGrantReadWriteParameters(identity); err != nil {
+		panic(err)
+	}
+	var returns alicloudroscdkram.ManagedPolicy
+
+	_jsii_.Invoke(
+		b,
+		"grantReadWrite",
+		[]interface{}{identity, objectsKeyPattern},
 		&returns,
 	)
 

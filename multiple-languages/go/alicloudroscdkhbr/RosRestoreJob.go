@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::RestoreJob`, which is used to create a restore job.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::RestoreJob`.
 type RosRestoreJob interface {
 	alicloudroscdkcore.RosResource
 	AttrErrorMessage() alicloudroscdkcore.IResolvable

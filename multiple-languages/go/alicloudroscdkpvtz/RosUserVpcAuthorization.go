@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::UserVpcAuthorization`, which is used to associate virtual private clouds (VPCs) across accounts.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::UserVpcAuthorization`.
 type RosUserVpcAuthorization interface {
 	alicloudroscdkcore.RosResource
 	AttrAuthorizedUserId() alicloudroscdkcore.IResolvable

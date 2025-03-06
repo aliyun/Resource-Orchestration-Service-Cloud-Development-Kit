@@ -16,6 +16,7 @@ export * from './endpointgroups';
 export * from './forwardingrules';
 export * from './ipsets';
 export * from './listener';
+export * from './logstoretoendpointgroupattachment';
 
 // ALIYUN::GA Resources:
 export * from './ga.generated';

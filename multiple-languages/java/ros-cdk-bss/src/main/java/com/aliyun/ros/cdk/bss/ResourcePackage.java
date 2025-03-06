@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.bss;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::BSS::ResourcePackage</code>, which is used to create a resource plan.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:12.327Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:02.179Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.bss.$Module.class, fqn = "@alicloud/ros-cdk-bss.ResourcePackage")
 public class ResourcePackage extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.bss.IResourcePackage {
 

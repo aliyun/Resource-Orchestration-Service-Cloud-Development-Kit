@@ -14,11 +14,17 @@ type RosService interface {
 	alicloudroscdkcore.RosResource
 	Addresses() interface{}
 	SetAddresses(val interface{})
+	AiServiceConfig() interface{}
+	SetAiServiceConfig(val interface{})
 	AttrAddresses() alicloudroscdkcore.IResolvable
+	AttrAiServiceConfig() alicloudroscdkcore.IResolvable
 	AttrGatewayId() alicloudroscdkcore.IResolvable
+	AttrGroupName() alicloudroscdkcore.IResolvable
+	AttrNamespace() alicloudroscdkcore.IResolvable
+	AttrQualifier() alicloudroscdkcore.IResolvable
+	AttrResourceGroupId() alicloudroscdkcore.IResolvable
 	AttrServiceId() alicloudroscdkcore.IResolvable
 	AttrServiceName() alicloudroscdkcore.IResolvable
-	AttrSourceType() alicloudroscdkcore.IResolvable
 	// Returns: the stack trace of the point where this Resource was created from, sourced
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
@@ -27,6 +33,8 @@ type RosService interface {
 	SetEnableResourcePropertyConstraint(val *bool)
 	GatewayId() interface{}
 	SetGatewayId(val interface{})
+	GroupName() interface{}
+	SetGroupName(val interface{})
 	// The logical ID for this stack element.
 	//
 	// The logical ID of the element
@@ -37,13 +45,19 @@ type RosService interface {
 	// Returns: the logical ID as a stringified token. This value will only get
 	// resolved during synthesis.
 	LogicalId() *string
+	Namespace() interface{}
+	SetNamespace(val interface{})
 	// The construct tree node associated with this construct.
 	Node() alicloudroscdkcore.ConstructNode
+	Qualifier() interface{}
+	SetQualifier(val interface{})
 	// Return a string that will be resolved to a RosTemplate `{ Ref }` for this element.
 	//
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
 	// coerce it to an IResolvable through `Lazy.any({ produce: resource.ref })`.
 	Ref() *string
+	ResourceGroupId() interface{}
+	SetResourceGroupId(val interface{})
 	// Options for this resource, such as condition, update policy etc.
 	RosOptions() alicloudroscdkcore.IRosResourceOptions
 	RosProperties() *map[string]interface{}
@@ -191,6 +205,16 @@ func (j *jsiiProxy_RosService) Addresses() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosService) AiServiceConfig() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"aiServiceConfig",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosService) AttrAddresses() alicloudroscdkcore.IResolvable {
 	var returns alicloudroscdkcore.IResolvable
 	_jsii_.Get(
@@ -201,11 +225,61 @@ func (j *jsiiProxy_RosService) AttrAddresses() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
+func (j *jsiiProxy_RosService) AttrAiServiceConfig() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrAiServiceConfig",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosService) AttrGatewayId() alicloudroscdkcore.IResolvable {
 	var returns alicloudroscdkcore.IResolvable
 	_jsii_.Get(
 		j,
 		"attrGatewayId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosService) AttrGroupName() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrGroupName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosService) AttrNamespace() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrNamespace",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosService) AttrQualifier() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrQualifier",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosService) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrResourceGroupId",
 		&returns,
 	)
 	return returns
@@ -226,16 +300,6 @@ func (j *jsiiProxy_RosService) AttrServiceName() alicloudroscdkcore.IResolvable 
 	_jsii_.Get(
 		j,
 		"attrServiceName",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosService) AttrSourceType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
-	_jsii_.Get(
-		j,
-		"attrSourceType",
 		&returns,
 	)
 	return returns
@@ -271,11 +335,31 @@ func (j *jsiiProxy_RosService) GatewayId() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosService) GroupName() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"groupName",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosService) LogicalId() *string {
 	var returns *string
 	_jsii_.Get(
 		j,
 		"logicalId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosService) Namespace() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"namespace",
 		&returns,
 	)
 	return returns
@@ -291,11 +375,31 @@ func (j *jsiiProxy_RosService) Node() alicloudroscdkcore.ConstructNode {
 	return returns
 }
 
+func (j *jsiiProxy_RosService) Qualifier() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"qualifier",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosService) Ref() *string {
 	var returns *string
 	_jsii_.Get(
 		j,
 		"ref",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosService) ResourceGroupId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"resourceGroupId",
 		&returns,
 	)
 	return returns
@@ -410,6 +514,17 @@ func (j *jsiiProxy_RosService)SetAddresses(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosService)SetAiServiceConfig(val interface{}) {
+	if err := j.validateSetAiServiceConfigParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"aiServiceConfig",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosService)SetEnableResourcePropertyConstraint(val *bool) {
 	if err := j.validateSetEnableResourcePropertyConstraintParameters(val); err != nil {
 		panic(err)
@@ -428,6 +543,50 @@ func (j *jsiiProxy_RosService)SetGatewayId(val interface{}) {
 	_jsii_.Set(
 		j,
 		"gatewayId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosService)SetGroupName(val interface{}) {
+	if err := j.validateSetGroupNameParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"groupName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosService)SetNamespace(val interface{}) {
+	if err := j.validateSetNamespaceParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"namespace",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosService)SetQualifier(val interface{}) {
+	if err := j.validateSetQualifierParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"qualifier",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosService)SetResourceGroupId(val interface{}) {
+	if err := j.validateSetResourceGroupIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"resourceGroupId",
 		val,
 	)
 }

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.pai.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::PAI::WorkspaceResourceDlcs</code>.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::PAI::WorkspaceResourceDlcs</code>, which is used to query a list of Deep Learning Containers (DLC) resources that are associated with a Platform for AI (PAI) workspace.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:18.797Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.725Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pai.$Module.class, fqn = "@alicloud/ros-cdk-pai.datasource.RosWorkspaceResourceDlcs")
 public class RosWorkspaceResourceDlcs extends com.aliyun.ros.cdk.core.RosResource {
 

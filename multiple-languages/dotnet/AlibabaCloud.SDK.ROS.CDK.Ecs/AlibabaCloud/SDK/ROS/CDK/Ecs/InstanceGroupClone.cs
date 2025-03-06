@@ -105,13 +105,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute RelatedOrderIds: The related order id list of created ecs instances.</summary>
-        [JsiiProperty(name: "attrRelatedOrderIds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        public virtual object AttrRelatedOrderIds
-        {
-            get => GetInstanceProperty<object>()!;
-        }
-
         /// <summary>Attribute ZoneIds: Zone id of created instances.</summary>
         [JsiiProperty(name: "attrZoneIds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrZoneIds

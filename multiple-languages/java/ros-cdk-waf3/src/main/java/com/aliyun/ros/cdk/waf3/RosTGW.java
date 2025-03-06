@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.waf3;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::WAF3::TGW</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:22.589Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:11.992Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.waf3.$Module.class, fqn = "@alicloud/ros-cdk-waf3.RosTGW")
 public class RosTGW extends com.aliyun.ros.cdk.core.RosResource {
 

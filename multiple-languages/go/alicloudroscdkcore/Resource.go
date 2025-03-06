@@ -19,7 +19,7 @@ type Resource interface {
 	// however, for imported resources
 	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
 	// that might be different than the stack they were imported into.
-	Env() *ResourceEnvironment
+	Env() IResourceEnvironment
 	// The construct tree node associated with this construct.
 	Node() ConstructNode
 	// Returns a string-encoded token that resolves to the physical name that should be passed to the ROS resource.
@@ -99,8 +99,8 @@ type jsiiProxy_Resource struct {
 	jsiiProxy_IResource
 }
 
-func (j *jsiiProxy_Resource) Env() *ResourceEnvironment {
-	var returns *ResourceEnvironment
+func (j *jsiiProxy_Resource) Env() IResourceEnvironment {
+	var returns IResourceEnvironment
 	_jsii_.Get(
 		j,
 		"env",

@@ -4731,3 +4731,172 @@ function rosListenerXForwardedForConfigPropertyToRosTemplate(properties: any): a
       'XForwardedForGaIdEnabled': ros.booleanToRosTemplate(properties.xForwardedForGaIdEnabled),
     };
 }
+
+/**
+ * Properties for defining a `RosLogStoreToEndpointGroupAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-logstoretoendpointgroupattachment
+ */
+export interface RosLogStoreToEndpointGroupAttachmentProps {
+
+    /**
+     * @Property acceleratorId: Global Acceleration Instance ID.
+     */
+    readonly acceleratorId: string | ros.IResolvable;
+
+    /**
+     * @Property endpointGroupIds: Endpoint Group ID List.
+     */
+    readonly endpointGroupIds: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property listenerId: Listener ID.
+     */
+    readonly listenerId: string | ros.IResolvable;
+
+    /**
+     * @Property slsLogStoreName: SLS log library name.
+     */
+    readonly slsLogStoreName: string | ros.IResolvable;
+
+    /**
+     * @Property slsProjectName: SLS project name.
+     */
+    readonly slsProjectName: string | ros.IResolvable;
+
+    /**
+     * @Property slsRegionId: SLS Region ID.
+     */
+    readonly slsRegionId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosLogStoreToEndpointGroupAttachmentProps`
+ *
+ * @param properties - the TypeScript properties of a `RosLogStoreToEndpointGroupAttachmentProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosLogStoreToEndpointGroupAttachmentPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('slsProjectName', ros.requiredValidator)(properties.slsProjectName));
+    errors.collect(ros.propertyValidator('slsProjectName', ros.validateString)(properties.slsProjectName));
+    errors.collect(ros.propertyValidator('endpointGroupIds', ros.requiredValidator)(properties.endpointGroupIds));
+    if(properties.endpointGroupIds && (Array.isArray(properties.endpointGroupIds) || (typeof properties.endpointGroupIds) === 'string')) {
+        errors.collect(ros.propertyValidator('endpointGroupIds', ros.validateLength)({
+            data: properties.endpointGroupIds.length,
+            min: 1,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('endpointGroupIds', ros.listValidator(ros.validateString))(properties.endpointGroupIds));
+    errors.collect(ros.propertyValidator('slsRegionId', ros.requiredValidator)(properties.slsRegionId));
+    errors.collect(ros.propertyValidator('slsRegionId', ros.validateString)(properties.slsRegionId));
+    errors.collect(ros.propertyValidator('acceleratorId', ros.requiredValidator)(properties.acceleratorId));
+    errors.collect(ros.propertyValidator('acceleratorId', ros.validateString)(properties.acceleratorId));
+    errors.collect(ros.propertyValidator('slsLogStoreName', ros.requiredValidator)(properties.slsLogStoreName));
+    errors.collect(ros.propertyValidator('slsLogStoreName', ros.validateString)(properties.slsLogStoreName));
+    errors.collect(ros.propertyValidator('listenerId', ros.requiredValidator)(properties.listenerId));
+    errors.collect(ros.propertyValidator('listenerId', ros.validateString)(properties.listenerId));
+    return errors.wrap('supplied properties not correct for "RosLogStoreToEndpointGroupAttachmentProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::GA::LogStoreToEndpointGroupAttachment` resource
+ *
+ * @param properties - the TypeScript properties of a `RosLogStoreToEndpointGroupAttachmentProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::GA::LogStoreToEndpointGroupAttachment` resource.
+ */
+// @ts-ignore TS6133
+function rosLogStoreToEndpointGroupAttachmentPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosLogStoreToEndpointGroupAttachmentPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'AcceleratorId': ros.stringToRosTemplate(properties.acceleratorId),
+      'EndpointGroupIds': ros.listMapper(ros.stringToRosTemplate)(properties.endpointGroupIds),
+      'ListenerId': ros.stringToRosTemplate(properties.listenerId),
+      'SlsLogStoreName': ros.stringToRosTemplate(properties.slsLogStoreName),
+      'SlsProjectName': ros.stringToRosTemplate(properties.slsProjectName),
+      'SlsRegionId': ros.stringToRosTemplate(properties.slsRegionId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::LogStoreToEndpointGroupAttachment`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `LogStoreToEndpointGroupAttachment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-logstoretoendpointgroupattachment
+ */
+export class RosLogStoreToEndpointGroupAttachment extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::GA::LogStoreToEndpointGroupAttachment";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property acceleratorId: Global Acceleration Instance ID.
+     */
+    public acceleratorId: string | ros.IResolvable;
+
+    /**
+     * @Property endpointGroupIds: Endpoint Group ID List.
+     */
+    public endpointGroupIds: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property listenerId: Listener ID.
+     */
+    public listenerId: string | ros.IResolvable;
+
+    /**
+     * @Property slsLogStoreName: SLS log library name.
+     */
+    public slsLogStoreName: string | ros.IResolvable;
+
+    /**
+     * @Property slsProjectName: SLS project name.
+     */
+    public slsProjectName: string | ros.IResolvable;
+
+    /**
+     * @Property slsRegionId: SLS Region ID.
+     */
+    public slsRegionId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosLogStoreToEndpointGroupAttachmentProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosLogStoreToEndpointGroupAttachment.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.acceleratorId = props.acceleratorId;
+        this.endpointGroupIds = props.endpointGroupIds;
+        this.listenerId = props.listenerId;
+        this.slsLogStoreName = props.slsLogStoreName;
+        this.slsProjectName = props.slsProjectName;
+        this.slsRegionId = props.slsRegionId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            acceleratorId: this.acceleratorId,
+            endpointGroupIds: this.endpointGroupIds,
+            listenerId: this.listenerId,
+            slsLogStoreName: this.slsLogStoreName,
+            slsProjectName: this.slsProjectName,
+            slsRegionId: this.slsRegionId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosLogStoreToEndpointGroupAttachmentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}

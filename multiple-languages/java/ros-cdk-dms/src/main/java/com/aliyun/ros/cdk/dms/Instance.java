@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dms;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::DMS::Instance</code>, which is used to register a database instance for your enterprise.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:14.088Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:03.903Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dms.$Module.class, fqn = "@alicloud/ros-cdk-dms.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.dms.IInstance {
 

@@ -17,6 +17,7 @@
     "@alicloud/ros-cdk-ram": "file:../packages/@alicloud/services/ros-cdk-ram",
     "@alicloud/ros-cdk-sls": "file:../packages/@alicloud/services/ros-cdk-sls",
     "@alicloud/ros-cdk-mse": "file:../packages/@alicloud/services/ros-cdk-mse",
+    "@alicloud/ros-cdk-mongodb": "file:../packages/@alicloud/services/ros-cdk-mongodb",
     "@alicloud/ros-cdk-ossassets": "file:../packages/@alicloud/services/ros-cdk-ossassets",
     "@alicloud/ros-cdk-ossdeployment": "file:../packages/@alicloud/services/ros-cdk-ossdeployment",
     "@alicloud/ros-cdk-oss": "file:../packages/@alicloud/services/ros-cdk-oss",

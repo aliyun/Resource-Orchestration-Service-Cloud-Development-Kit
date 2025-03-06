@@ -1,12 +1,11 @@
 import * as ros from '@alicloud/ros-cdk-core';
 import { RosInstance } from './ecs.generated';
 // Generated from the AliCloud ROS Resource Specification
+export { RosInstance as InstanceProperty };
 import { Vpc } from './vpc';
 import { VSwitch } from './vswitch';
 import { SecurityGroup } from './securitygroup';
 
-
-export { RosInstance as InstanceProperty };
 
 /**
  * Properties for defining a `Instance`.
@@ -405,85 +404,6 @@ export class Instance extends ros.Resource implements IInstance {
     public readonly attrZoneId: ros.IResolvable | string;
 
     /**
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
-     */
-    constructor(scope: ros.Construct, id: string, props: InstanceProps, enableResourcePropertyConstraint:boolean = true) {
-        super(scope, id);
-        this.scope = scope;
-        this.id = id;
-        this.props = props;
-        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-
-        const rosInstance = new RosInstance(this, id,  {
-            dedicatedHostId: props.dedicatedHostId,
-            resourceGroupId: props.resourceGroupId,
-            systemDiskDescription: props.systemDiskDescription,
-            instanceChargeType: props.instanceChargeType === undefined || props.instanceChargeType === null ? 'PostPaid' : props.instanceChargeType,
-            ramRoleName: props.ramRoleName,
-            privatePoolOptions: props.privatePoolOptions,
-            systemDiskPerformanceLevel: props.systemDiskPerformanceLevel,
-            imageId: props.imageId,
-            systemDiskDiskName: props.systemDiskDiskName,
-            storageSetId: props.storageSetId,
-            useAdditionalService: props.useAdditionalService,
-            hostName: props.hostName,
-            tags: props.tags,
-            vSwitchId: props.vSwitchId,
-            period: props.period === undefined || props.period === null ? 1 : props.period,
-            imageFamily: props.imageFamily,
-            deletionProtection: props.deletionProtection,
-            httpEndpoint: props.httpEndpoint,
-            securityGroupIds: props.securityGroupIds,
-            internetChargeType: props.internetChargeType === undefined || props.internetChargeType === null ? 'PayByTraffic' : props.internetChargeType,
-            spotInterruptionBehavior: props.spotInterruptionBehavior === undefined || props.spotInterruptionBehavior === null ? 'Terminate' : props.spotInterruptionBehavior,
-            instanceName: props.instanceName,
-            deploymentSetId: props.deploymentSetId,
-            internetMaxBandwidthOut: props.internetMaxBandwidthOut === undefined || props.internetMaxBandwidthOut === null ? 1 : props.internetMaxBandwidthOut,
-            vpcId: props.vpcId,
-            affinity: props.affinity,
-            securityEnhancementStrategy: props.securityEnhancementStrategy,
-            periodUnit: props.periodUnit === undefined || props.periodUnit === null ? 'Month' : props.periodUnit,
-            tenancy: props.tenancy,
-            privateIpAddress: props.privateIpAddress,
-            description: props.description,
-            diskMappings: props.diskMappings,
-            systemDiskSize: props.systemDiskSize,
-            userData: props.userData,
-            autoRenew: props.autoRenew === undefined || props.autoRenew === null ? 'False' : props.autoRenew,
-            spotDuration: props.spotDuration,
-            storageSetPartitionNumber: props.storageSetPartitionNumber,
-            spotPriceLimit: props.spotPriceLimit,
-            zoneIds: props.zoneIds,
-            instanceType: props.instanceType,
-            allocatePublicIp: props.allocatePublicIp === undefined || props.allocatePublicIp === null ? true : props.allocatePublicIp,
-            spotStrategy: props.spotStrategy,
-            passwordInherit: props.passwordInherit,
-            password: props.password,
-            autoRenewPeriod: props.autoRenewPeriod === undefined || props.autoRenewPeriod === null ? 1 : props.autoRenewPeriod,
-            keyPairName: props.keyPairName,
-            ioOptimized: props.ioOptimized === undefined || props.ioOptimized === null ? 'optimized' : props.ioOptimized,
-            zoneId: props.zoneId,
-            hpcClusterId: props.hpcClusterId,
-            securityGroupId: props.securityGroupId,
-            deploymentSetGroupNo: props.deploymentSetGroupNo,
-            systemDiskCategory: props.systemDiskCategory === undefined || props.systemDiskCategory === null ? 'cloud_efficiency' : props.systemDiskCategory,
-            httpTokens: props.httpTokens,
-            creditSpecification: props.creditSpecification,
-        }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
-        this.resource = rosInstance;
-        this.attrHostName = rosInstance.attrHostName;
-        this.attrInnerIp = rosInstance.attrInnerIp;
-        this.attrInstanceId = rosInstance.attrInstanceId;
-        this.attrPrimaryNetworkInterfaceId = rosInstance.attrPrimaryNetworkInterfaceId;
-        this.attrPrivateIp = rosInstance.attrPrivateIp;
-        this.attrPublicIp = rosInstance.attrPublicIp;
-        this.attrSecurityGroupIds = rosInstance.attrSecurityGroupIds;
-        this.attrZoneId = rosInstance.attrZoneId;
-    }
-
-    /**
      * Create prerequisite resource(s) required to an ECS instance: VPC, VSwitch, and(or) security group.
      * @param zoneId Required when creating a VSwitch.
      * @param vpcCidrBlock Optional when creating a VPC. Default value is 192.168.0.0/16.
@@ -597,5 +517,84 @@ export class Instance extends ros.Resource implements IInstance {
             commandsAsString.push(command);
         }
         instance.userData = ros.Fn.join('\n', commandsAsString);
+    }
+
+    /**
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: InstanceProps, enableResourcePropertyConstraint:boolean = true) {
+        super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+
+        const rosInstance = new RosInstance(this, id,  {
+            dedicatedHostId: props.dedicatedHostId,
+            resourceGroupId: props.resourceGroupId,
+            systemDiskDescription: props.systemDiskDescription,
+            instanceChargeType: props.instanceChargeType === undefined || props.instanceChargeType === null ? 'PostPaid' : props.instanceChargeType,
+            ramRoleName: props.ramRoleName,
+            privatePoolOptions: props.privatePoolOptions,
+            systemDiskPerformanceLevel: props.systemDiskPerformanceLevel,
+            imageId: props.imageId,
+            systemDiskDiskName: props.systemDiskDiskName,
+            storageSetId: props.storageSetId,
+            useAdditionalService: props.useAdditionalService,
+            hostName: props.hostName,
+            tags: props.tags,
+            vSwitchId: props.vSwitchId,
+            period: props.period === undefined || props.period === null ? 1 : props.period,
+            imageFamily: props.imageFamily,
+            deletionProtection: props.deletionProtection,
+            httpEndpoint: props.httpEndpoint,
+            securityGroupIds: props.securityGroupIds,
+            internetChargeType: props.internetChargeType === undefined || props.internetChargeType === null ? 'PayByTraffic' : props.internetChargeType,
+            spotInterruptionBehavior: props.spotInterruptionBehavior === undefined || props.spotInterruptionBehavior === null ? 'Terminate' : props.spotInterruptionBehavior,
+            instanceName: props.instanceName,
+            deploymentSetId: props.deploymentSetId,
+            internetMaxBandwidthOut: props.internetMaxBandwidthOut === undefined || props.internetMaxBandwidthOut === null ? 1 : props.internetMaxBandwidthOut,
+            vpcId: props.vpcId,
+            affinity: props.affinity,
+            securityEnhancementStrategy: props.securityEnhancementStrategy,
+            periodUnit: props.periodUnit === undefined || props.periodUnit === null ? 'Month' : props.periodUnit,
+            tenancy: props.tenancy,
+            privateIpAddress: props.privateIpAddress,
+            description: props.description,
+            diskMappings: props.diskMappings,
+            systemDiskSize: props.systemDiskSize,
+            userData: props.userData,
+            autoRenew: props.autoRenew === undefined || props.autoRenew === null ? 'False' : props.autoRenew,
+            spotDuration: props.spotDuration,
+            storageSetPartitionNumber: props.storageSetPartitionNumber,
+            spotPriceLimit: props.spotPriceLimit,
+            zoneIds: props.zoneIds,
+            instanceType: props.instanceType,
+            allocatePublicIp: props.allocatePublicIp === undefined || props.allocatePublicIp === null ? true : props.allocatePublicIp,
+            spotStrategy: props.spotStrategy,
+            passwordInherit: props.passwordInherit,
+            password: props.password,
+            autoRenewPeriod: props.autoRenewPeriod === undefined || props.autoRenewPeriod === null ? 1 : props.autoRenewPeriod,
+            keyPairName: props.keyPairName,
+            ioOptimized: props.ioOptimized === undefined || props.ioOptimized === null ? 'optimized' : props.ioOptimized,
+            zoneId: props.zoneId,
+            hpcClusterId: props.hpcClusterId,
+            securityGroupId: props.securityGroupId,
+            deploymentSetGroupNo: props.deploymentSetGroupNo,
+            systemDiskCategory: props.systemDiskCategory === undefined || props.systemDiskCategory === null ? 'cloud_efficiency' : props.systemDiskCategory,
+            httpTokens: props.httpTokens,
+            creditSpecification: props.creditSpecification,
+        }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
+        this.resource = rosInstance;
+        this.attrHostName = rosInstance.attrHostName;
+        this.attrInnerIp = rosInstance.attrInnerIp;
+        this.attrInstanceId = rosInstance.attrInstanceId;
+        this.attrPrimaryNetworkInterfaceId = rosInstance.attrPrimaryNetworkInterfaceId;
+        this.attrPrivateIp = rosInstance.attrPrivateIp;
+        this.attrPublicIp = rosInstance.attrPublicIp;
+        this.attrSecurityGroupIds = rosInstance.attrSecurityGroupIds;
+        this.attrZoneId = rosInstance.attrZoneId;
     }
 }

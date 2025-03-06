@@ -1189,6 +1189,17 @@ func init() {
 		},
 	)
 	_jsii_.RegisterInterface(
+		"@alicloud/ros-cdk-core.IResourceEnvironment",
+		reflect.TypeOf((*IResourceEnvironment)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "account", GoGetter: "Account"},
+			_jsii_.MemberProperty{JsiiProperty: "region", GoGetter: "Region"},
+		},
+		func() interface{} {
+			return &jsiiProxy_IResourceEnvironment{}
+		},
+	)
+	_jsii_.RegisterInterface(
 		"@alicloud/ros-cdk-core.IReusableStackSynthesizer",
 		reflect.TypeOf((*IReusableStackSynthesizer)(nil)).Elem(),
 		[]_jsii_.Member{
@@ -1487,10 +1498,6 @@ func init() {
 			_jsii_.InitJsiiProxy(&j.jsiiProxy_IResource)
 			return &j
 		},
-	)
-	_jsii_.RegisterStruct(
-		"@alicloud/ros-cdk-core.ResourceEnvironment",
-		reflect.TypeOf((*ResourceEnvironment)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-core.ResourceProps",

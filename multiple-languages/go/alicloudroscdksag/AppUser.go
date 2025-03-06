@@ -15,7 +15,7 @@ type AppUser interface {
 	IAppUser
 	// Attribute SmartAGId: The ID of the SAG APP instance.
 	AttrSmartAgId() interface{}
-	// Attribute UserName: <heat.engine.properties.Schema object at 0x7fa3e6637c50>.
+	// Attribute UserName: <heat.engine.properties.Schema object at 0x7f2959675f90>.
 	AttrUserName() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
@@ -27,7 +27,7 @@ type AppUser interface {
 	// however, for imported resources
 	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
 	// that might be different than the stack they were imported into.
-	Env() *alicloudroscdkcore.ResourceEnvironment
+	Env() alicloudroscdkcore.IResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -142,8 +142,8 @@ func (j *jsiiProxy_AppUser) EnableResourcePropertyConstraint() *bool {
 	return returns
 }
 
-func (j *jsiiProxy_AppUser) Env() *alicloudroscdkcore.ResourceEnvironment {
-	var returns *alicloudroscdkcore.ResourceEnvironment
+func (j *jsiiProxy_AppUser) Env() alicloudroscdkcore.IResourceEnvironment {
+	var returns alicloudroscdkcore.IResourceEnvironment
 	_jsii_.Get(
 		j,
 		"env",

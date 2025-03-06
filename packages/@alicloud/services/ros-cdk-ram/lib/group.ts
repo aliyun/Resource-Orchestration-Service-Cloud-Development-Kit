@@ -1,7 +1,10 @@
 import * as ros from '@alicloud/ros-cdk-core';
-import { RosGroup } from './ram.generated';
+import { RosGroup, RosManagedPolicy } from './ram.generated';
 // Generated from the AliCloud ROS Resource Specification
 export { RosGroup as GroupProperty };
+import { ManagedPolicy } from './managedpolicy';
+import { IPrincipal } from './principals.cdk'
+
 
 /**
  * Properties for defining a `Group`.
@@ -59,7 +62,7 @@ export interface IGroup extends ros.IResource {
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-group
  */
-export class Group extends ros.Resource implements IGroup {
+export class Group extends ros.Resource implements IGroup, IPrincipal {
     protected scope: ros.Construct;
     protected id: string;
     public readonly props: GroupProps;
@@ -69,6 +72,19 @@ export class Group extends ros.Resource implements IGroup {
      * Attribute GroupName: Id of ram group.
      */
     public readonly attrGroupName: ros.IResolvable | string;
+
+    public readonly grantPrincipal: IPrincipal = this;
+    public readonly principalName: string | ros.IResolvable = this.attrGroupName;
+    public readonly principalType: string = 'group';
+
+    public addToPolicy(policyDocument: RosManagedPolicy.PolicyDocumentProperty): ManagedPolicy {
+        const suffix = ros.generateRandomString(5);
+        return new ManagedPolicy(this, `Policy${suffix}`, {
+            policyName: `Policy${suffix}`,
+            policyDocument: policyDocument,
+            groups: [this.ref],
+        });
+    }
 
     /**
      * Param scope - scope in which this resource is defined

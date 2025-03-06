@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ice;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ice-insertmediatosearchlib
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:17.548Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:07.574Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ice.$Module.class, fqn = "@alicloud/ros-cdk-ice.RosInsertMediaToSearchLibProps")
 @software.amazon.jsii.Jsii.Proxy(RosInsertMediaToSearchLibProps.Jsii$Proxy.class)
 public interface RosInsertMediaToSearchLibProps extends software.amazon.jsii.JsiiSerializable {

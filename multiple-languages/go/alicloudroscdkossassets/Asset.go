@@ -29,7 +29,7 @@ type Asset interface {
 	// however, for imported resources
 	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
 	// that might be different than the stack they were imported into.
-	Env() *alicloudroscdkcore.ResourceEnvironment
+	Env() alicloudroscdkcore.IResourceEnvironment
 	// Attribute which represents the OSS HTTP URL of this asset.
 	//
 	// For example, `https://${bucketName}.oss-${region}.aliyuncs.com/${objectKey}`
@@ -160,8 +160,8 @@ func (j *jsiiProxy_Asset) BucketName() *string {
 	return returns
 }
 
-func (j *jsiiProxy_Asset) Env() *alicloudroscdkcore.ResourceEnvironment {
-	var returns *alicloudroscdkcore.ResourceEnvironment
+func (j *jsiiProxy_Asset) Env() alicloudroscdkcore.IResourceEnvironment {
+	var returns alicloudroscdkcore.IResourceEnvironment
 	_jsii_.Get(
 		j,
 		"env",

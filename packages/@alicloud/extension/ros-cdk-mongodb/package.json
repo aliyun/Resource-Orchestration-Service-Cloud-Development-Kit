@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@alicloud/ros-cdk-ram": "^1.8.0"
+  },
+  "peerDependencies": {
+    "@alicloud/ros-cdk-ram": "^1.8.0"
+  }
+}

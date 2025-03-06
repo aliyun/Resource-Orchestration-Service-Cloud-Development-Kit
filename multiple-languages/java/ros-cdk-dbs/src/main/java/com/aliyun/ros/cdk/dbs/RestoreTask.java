@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dbs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::DBS::RestoreTask</code>, which is used to create a restore task.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:13.813Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:03.639Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dbs.$Module.class, fqn = "@alicloud/ros-cdk-dbs.RestoreTask")
 public class RestoreTask extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.dbs.IRestoreTask {
 

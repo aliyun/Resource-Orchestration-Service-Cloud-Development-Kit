@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mse.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::MSE::Clusters</code>, which is used to query Microservices Registry clusters.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:18.178Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.185Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.datasource.Clusters")
 public class Clusters extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.mse.datasource.IClusters {
 

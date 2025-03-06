@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.apig;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-domain
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:11.654Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:01.590Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.DomainProps")
 @software.amazon.jsii.Jsii.Proxy(DomainProps.Jsii$Proxy.class)
 public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
@@ -25,6 +25,59 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getProtocol();
 
     /**
+     * Property certIdentifier: The tls Certificate identification.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCertIdentifier() {
+        return null;
+    }
+
+    /**
+     * Property forceHttps: Set the HTTPS protocol type and whether to enable forced HTTPS redirection.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getForceHttps() {
+        return null;
+    }
+
+    /**
+     * Property http2Option: Whether to enable http2 settings.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHttp2Option() {
+        return null;
+    }
+
+    /**
+     * Property resourceGroupId: The ID of the resource group.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
+     * Property tlsCipherSuitesConfig: The configuration of the TLS encryption suite.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTlsCipherSuitesConfig() {
+        return null;
+    }
+
+    /**
+     * Property tlsMax: The maximum version of the TLS protocol.
+     * <p>
+     * The maximum version of the TLS protocol is 1.3.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTlsMax() {
+        return null;
+    }
+
+    /**
+     * Property tlsMin: The minimum version of the TLS protocol.
+     * <p>
+     * The minimum version of the TLS protocol is 1.0.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTlsMin() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link DomainProps}
      */
     static Builder builder() {
@@ -36,6 +89,13 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
     public static final class Builder implements software.amazon.jsii.Builder<DomainProps> {
         java.lang.Object domainName;
         java.lang.Object protocol;
+        java.lang.Object certIdentifier;
+        java.lang.Object forceHttps;
+        java.lang.Object http2Option;
+        java.lang.Object resourceGroupId;
+        java.lang.Object tlsCipherSuitesConfig;
+        java.lang.Object tlsMax;
+        java.lang.Object tlsMin;
 
         /**
          * Sets the value of {@link DomainProps#getDomainName}
@@ -84,6 +144,150 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link DomainProps#getCertIdentifier}
+         * @param certIdentifier Property certIdentifier: The tls Certificate identification.
+         * @return {@code this}
+         */
+        public Builder certIdentifier(java.lang.String certIdentifier) {
+            this.certIdentifier = certIdentifier;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DomainProps#getCertIdentifier}
+         * @param certIdentifier Property certIdentifier: The tls Certificate identification.
+         * @return {@code this}
+         */
+        public Builder certIdentifier(com.aliyun.ros.cdk.core.IResolvable certIdentifier) {
+            this.certIdentifier = certIdentifier;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DomainProps#getForceHttps}
+         * @param forceHttps Property forceHttps: Set the HTTPS protocol type and whether to enable forced HTTPS redirection.
+         * @return {@code this}
+         */
+        public Builder forceHttps(java.lang.Boolean forceHttps) {
+            this.forceHttps = forceHttps;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DomainProps#getForceHttps}
+         * @param forceHttps Property forceHttps: Set the HTTPS protocol type and whether to enable forced HTTPS redirection.
+         * @return {@code this}
+         */
+        public Builder forceHttps(com.aliyun.ros.cdk.core.IResolvable forceHttps) {
+            this.forceHttps = forceHttps;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DomainProps#getHttp2Option}
+         * @param http2Option Property http2Option: Whether to enable http2 settings.
+         * @return {@code this}
+         */
+        public Builder http2Option(java.lang.String http2Option) {
+            this.http2Option = http2Option;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DomainProps#getHttp2Option}
+         * @param http2Option Property http2Option: Whether to enable http2 settings.
+         * @return {@code this}
+         */
+        public Builder http2Option(com.aliyun.ros.cdk.core.IResolvable http2Option) {
+            this.http2Option = http2Option;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DomainProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DomainProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DomainProps#getTlsCipherSuitesConfig}
+         * @param tlsCipherSuitesConfig Property tlsCipherSuitesConfig: The configuration of the TLS encryption suite.
+         * @return {@code this}
+         */
+        public Builder tlsCipherSuitesConfig(com.aliyun.ros.cdk.core.IResolvable tlsCipherSuitesConfig) {
+            this.tlsCipherSuitesConfig = tlsCipherSuitesConfig;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DomainProps#getTlsCipherSuitesConfig}
+         * @param tlsCipherSuitesConfig Property tlsCipherSuitesConfig: The configuration of the TLS encryption suite.
+         * @return {@code this}
+         */
+        public Builder tlsCipherSuitesConfig(com.aliyun.ros.cdk.apig.RosDomain.TlsCipherSuitesConfigProperty tlsCipherSuitesConfig) {
+            this.tlsCipherSuitesConfig = tlsCipherSuitesConfig;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DomainProps#getTlsMax}
+         * @param tlsMax Property tlsMax: The maximum version of the TLS protocol.
+         *               The maximum version of the TLS protocol is 1.3.
+         * @return {@code this}
+         */
+        public Builder tlsMax(java.lang.String tlsMax) {
+            this.tlsMax = tlsMax;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DomainProps#getTlsMax}
+         * @param tlsMax Property tlsMax: The maximum version of the TLS protocol.
+         *               The maximum version of the TLS protocol is 1.3.
+         * @return {@code this}
+         */
+        public Builder tlsMax(com.aliyun.ros.cdk.core.IResolvable tlsMax) {
+            this.tlsMax = tlsMax;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DomainProps#getTlsMin}
+         * @param tlsMin Property tlsMin: The minimum version of the TLS protocol.
+         *               The minimum version of the TLS protocol is 1.0.
+         * @return {@code this}
+         */
+        public Builder tlsMin(java.lang.String tlsMin) {
+            this.tlsMin = tlsMin;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DomainProps#getTlsMin}
+         * @param tlsMin Property tlsMin: The minimum version of the TLS protocol.
+         *               The minimum version of the TLS protocol is 1.0.
+         * @return {@code this}
+         */
+        public Builder tlsMin(com.aliyun.ros.cdk.core.IResolvable tlsMin) {
+            this.tlsMin = tlsMin;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link DomainProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -101,6 +305,13 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DomainProps {
         private final java.lang.Object domainName;
         private final java.lang.Object protocol;
+        private final java.lang.Object certIdentifier;
+        private final java.lang.Object forceHttps;
+        private final java.lang.Object http2Option;
+        private final java.lang.Object resourceGroupId;
+        private final java.lang.Object tlsCipherSuitesConfig;
+        private final java.lang.Object tlsMax;
+        private final java.lang.Object tlsMin;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -110,6 +321,13 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
             super(objRef);
             this.domainName = software.amazon.jsii.Kernel.get(this, "domainName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.protocol = software.amazon.jsii.Kernel.get(this, "protocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.certIdentifier = software.amazon.jsii.Kernel.get(this, "certIdentifier", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.forceHttps = software.amazon.jsii.Kernel.get(this, "forceHttps", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.http2Option = software.amazon.jsii.Kernel.get(this, "http2Option", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tlsCipherSuitesConfig = software.amazon.jsii.Kernel.get(this, "tlsCipherSuitesConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tlsMax = software.amazon.jsii.Kernel.get(this, "tlsMax", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tlsMin = software.amazon.jsii.Kernel.get(this, "tlsMin", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -119,6 +337,13 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.domainName = java.util.Objects.requireNonNull(builder.domainName, "domainName is required");
             this.protocol = java.util.Objects.requireNonNull(builder.protocol, "protocol is required");
+            this.certIdentifier = builder.certIdentifier;
+            this.forceHttps = builder.forceHttps;
+            this.http2Option = builder.http2Option;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.tlsCipherSuitesConfig = builder.tlsCipherSuitesConfig;
+            this.tlsMax = builder.tlsMax;
+            this.tlsMin = builder.tlsMin;
         }
 
         @Override
@@ -132,6 +357,41 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getCertIdentifier() {
+            return this.certIdentifier;
+        }
+
+        @Override
+        public final java.lang.Object getForceHttps() {
+            return this.forceHttps;
+        }
+
+        @Override
+        public final java.lang.Object getHttp2Option() {
+            return this.http2Option;
+        }
+
+        @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
+        }
+
+        @Override
+        public final java.lang.Object getTlsCipherSuitesConfig() {
+            return this.tlsCipherSuitesConfig;
+        }
+
+        @Override
+        public final java.lang.Object getTlsMax() {
+            return this.tlsMax;
+        }
+
+        @Override
+        public final java.lang.Object getTlsMin() {
+            return this.tlsMin;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -139,6 +399,27 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
 
             data.set("domainName", om.valueToTree(this.getDomainName()));
             data.set("protocol", om.valueToTree(this.getProtocol()));
+            if (this.getCertIdentifier() != null) {
+                data.set("certIdentifier", om.valueToTree(this.getCertIdentifier()));
+            }
+            if (this.getForceHttps() != null) {
+                data.set("forceHttps", om.valueToTree(this.getForceHttps()));
+            }
+            if (this.getHttp2Option() != null) {
+                data.set("http2Option", om.valueToTree(this.getHttp2Option()));
+            }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
+            if (this.getTlsCipherSuitesConfig() != null) {
+                data.set("tlsCipherSuitesConfig", om.valueToTree(this.getTlsCipherSuitesConfig()));
+            }
+            if (this.getTlsMax() != null) {
+                data.set("tlsMax", om.valueToTree(this.getTlsMax()));
+            }
+            if (this.getTlsMin() != null) {
+                data.set("tlsMin", om.valueToTree(this.getTlsMin()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-apig.DomainProps"));
@@ -158,13 +439,27 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
             DomainProps.Jsii$Proxy that = (DomainProps.Jsii$Proxy) o;
 
             if (!domainName.equals(that.domainName)) return false;
-            return this.protocol.equals(that.protocol);
+            if (!protocol.equals(that.protocol)) return false;
+            if (this.certIdentifier != null ? !this.certIdentifier.equals(that.certIdentifier) : that.certIdentifier != null) return false;
+            if (this.forceHttps != null ? !this.forceHttps.equals(that.forceHttps) : that.forceHttps != null) return false;
+            if (this.http2Option != null ? !this.http2Option.equals(that.http2Option) : that.http2Option != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
+            if (this.tlsCipherSuitesConfig != null ? !this.tlsCipherSuitesConfig.equals(that.tlsCipherSuitesConfig) : that.tlsCipherSuitesConfig != null) return false;
+            if (this.tlsMax != null ? !this.tlsMax.equals(that.tlsMax) : that.tlsMax != null) return false;
+            return this.tlsMin != null ? this.tlsMin.equals(that.tlsMin) : that.tlsMin == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.domainName.hashCode();
             result = 31 * result + (this.protocol.hashCode());
+            result = 31 * result + (this.certIdentifier != null ? this.certIdentifier.hashCode() : 0);
+            result = 31 * result + (this.forceHttps != null ? this.forceHttps.hashCode() : 0);
+            result = 31 * result + (this.http2Option != null ? this.http2Option.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
+            result = 31 * result + (this.tlsCipherSuitesConfig != null ? this.tlsCipherSuitesConfig.hashCode() : 0);
+            result = 31 * result + (this.tlsMax != null ? this.tlsMax.hashCode() : 0);
+            result = 31 * result + (this.tlsMin != null ? this.tlsMin.hashCode() : 0);
             return result;
         }
     }

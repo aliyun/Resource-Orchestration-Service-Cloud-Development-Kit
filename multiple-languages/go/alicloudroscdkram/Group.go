@@ -13,6 +13,7 @@ import (
 type Group interface {
 	alicloudroscdkcore.Resource
 	IGroup
+	IPrincipal
 	// Attribute GroupName: Id of ram group.
 	AttrGroupName() interface{}
 	EnableResourcePropertyConstraint() *bool
@@ -25,7 +26,9 @@ type Group interface {
 	// however, for imported resources
 	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
 	// that might be different than the stack they were imported into.
-	Env() *alicloudroscdkcore.ResourceEnvironment
+	Env() alicloudroscdkcore.IResourceEnvironment
+	// The principal to grant permissions to.
+	GrantPrincipal() IPrincipal
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -39,6 +42,10 @@ type Group interface {
 	//    cross-environment scenarios.
 	// Experimental.
 	PhysicalName() *string
+	// The principal to grant permissions to.
+	PrincipalName() interface{}
+	// The principal type, such as 'Group', 'Role', 'User'.
+	PrincipalType() *string
 	Props() *GroupProps
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
@@ -51,6 +58,8 @@ type Group interface {
 	AddCount(count interface{})
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
+	// Add to the policy of this principal.
+	AddToPolicy(policyDocument *RosManagedPolicy_PolicyDocumentProperty) ManagedPolicy
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
 	FetchCondition() alicloudroscdkcore.RosCondition
 	FetchDependency() *[]*string
@@ -108,6 +117,7 @@ type Group interface {
 type jsiiProxy_Group struct {
 	internal.Type__alicloudroscdkcoreResource
 	jsiiProxy_IGroup
+	jsiiProxy_IPrincipal
 }
 
 func (j *jsiiProxy_Group) AttrGroupName() interface{} {
@@ -130,11 +140,21 @@ func (j *jsiiProxy_Group) EnableResourcePropertyConstraint() *bool {
 	return returns
 }
 
-func (j *jsiiProxy_Group) Env() *alicloudroscdkcore.ResourceEnvironment {
-	var returns *alicloudroscdkcore.ResourceEnvironment
+func (j *jsiiProxy_Group) Env() alicloudroscdkcore.IResourceEnvironment {
+	var returns alicloudroscdkcore.IResourceEnvironment
 	_jsii_.Get(
 		j,
 		"env",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Group) GrantPrincipal() IPrincipal {
+	var returns IPrincipal
+	_jsii_.Get(
+		j,
+		"grantPrincipal",
 		&returns,
 	)
 	return returns
@@ -165,6 +185,26 @@ func (j *jsiiProxy_Group) PhysicalName() *string {
 	_jsii_.Get(
 		j,
 		"physicalName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Group) PrincipalName() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"principalName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Group) PrincipalType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"principalType",
 		&returns,
 	)
 	return returns
@@ -352,6 +392,22 @@ func (g *jsiiProxy_Group) AddResourceDesc(desc *string) {
 		"addResourceDesc",
 		[]interface{}{desc},
 	)
+}
+
+func (g *jsiiProxy_Group) AddToPolicy(policyDocument *RosManagedPolicy_PolicyDocumentProperty) ManagedPolicy {
+	if err := g.validateAddToPolicyParameters(policyDocument); err != nil {
+		panic(err)
+	}
+	var returns ManagedPolicy
+
+	_jsii_.Invoke(
+		g,
+		"addToPolicy",
+		[]interface{}{policyDocument},
+		&returns,
+	)
+
+	return returns
 }
 
 func (g *jsiiProxy_Group) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy) {

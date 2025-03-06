@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Oss
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::OSS::Bucket`, which is used to create a bucket in Object Storage Service (OSS).</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::OSS::Bucket`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBucket`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucket
@@ -43,6 +43,56 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
         public static void ValidateBucketName(string physicalName)
         {
             InvokeStaticVoidMethod(typeof(AlibabaCloud.SDK.ROS.CDK.Oss.Bucket), new System.Type[]{typeof(string)}, new object[]{physicalName});
+        }
+
+        /// <summary>Returns an ARN that represents all objects within the bucket that match the key pattern specified.</summary>
+        /// <remarks>
+        /// To represent all keys, specify <c>"*"</c>.
+        ///
+        /// If you need to specify a keyPattern with multiple components, concatenate them into a single string, e.g.:
+        ///
+        /// arnForObjects(<c>home/${team}/${user}/*</c>)
+        /// </remarks>
+        [JsiiMethod(name: "arnForObjects", returnsJson: "{\"type\":{\"primitive\":\"string\"}}", parametersJson: "[{\"name\":\"keyPattern\",\"type\":{\"primitive\":\"string\"}}]")]
+        public virtual string ArnForObjects(string keyPattern)
+        {
+            return InvokeInstanceMethod<string>(new System.Type[]{typeof(string)}, new object[]{keyPattern})!;
+        }
+
+        /// <summary>Grant an RAM principal (Role/Group/User) full control over this bucket.</summary>
+        /// <param name="identity">The principal.</param>
+        /// <param name="objectsKeyPattern">Restrict the permission to a certain key pattern (default '*').</param>
+        [JsiiMethod(name: "grantFullAccess", returnsJson: "{\"type\":{\"fqn\":\"@alicloud/ros-cdk-ram.ManagedPolicy\"}}", parametersJson: "[{\"docs\":{\"summary\":\"The principal.\"},\"name\":\"identity\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-ram.IPrincipal\"}},{\"docs\":{\"summary\":\"Restrict the permission to a certain key pattern (default '*').\"},\"name\":\"objectsKeyPattern\",\"optional\":true,\"type\":{\"primitive\":\"string\"}}]")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Ram.ManagedPolicy GrantFullAccess(AlibabaCloud.SDK.ROS.CDK.Ram.IPrincipal identity, string? objectsKeyPattern = null)
+        {
+            return InvokeInstanceMethod<AlibabaCloud.SDK.ROS.CDK.Ram.ManagedPolicy>(new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Ram.IPrincipal), typeof(string)}, new object?[]{identity, objectsKeyPattern})!;
+        }
+
+        /// <summary>Grant an RAM principal (Role/Group/User) permission to list resources for this bucket.</summary>
+        /// <param name="identity">The principal.</param>
+        /// <param name="objectsKeyPattern">Restrict the permission to a certain key pattern (default '*').</param>
+        [JsiiMethod(name: "grantList", returnsJson: "{\"type\":{\"fqn\":\"@alicloud/ros-cdk-ram.ManagedPolicy\"}}", parametersJson: "[{\"docs\":{\"summary\":\"The principal.\"},\"name\":\"identity\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-ram.IPrincipal\"}},{\"docs\":{\"summary\":\"Restrict the permission to a certain key pattern (default '*').\"},\"name\":\"objectsKeyPattern\",\"optional\":true,\"type\":{\"primitive\":\"string\"}}]")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Ram.ManagedPolicy GrantList(AlibabaCloud.SDK.ROS.CDK.Ram.IPrincipal identity, string? objectsKeyPattern = null)
+        {
+            return InvokeInstanceMethod<AlibabaCloud.SDK.ROS.CDK.Ram.ManagedPolicy>(new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Ram.IPrincipal), typeof(string)}, new object?[]{identity, objectsKeyPattern})!;
+        }
+
+        /// <summary>Grant an RAM principal (Role/Group/User) permission to list and read all resources for this bucket.</summary>
+        /// <param name="identity">The principal.</param>
+        /// <param name="objectsKeyPattern">Restrict the permission to a certain key pattern (default '*').</param>
+        [JsiiMethod(name: "grantRead", returnsJson: "{\"type\":{\"fqn\":\"@alicloud/ros-cdk-ram.ManagedPolicy\"}}", parametersJson: "[{\"docs\":{\"summary\":\"The principal.\"},\"name\":\"identity\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-ram.IPrincipal\"}},{\"docs\":{\"summary\":\"Restrict the permission to a certain key pattern (default '*').\"},\"name\":\"objectsKeyPattern\",\"optional\":true,\"type\":{\"primitive\":\"string\"}}]")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Ram.ManagedPolicy GrantRead(AlibabaCloud.SDK.ROS.CDK.Ram.IPrincipal identity, string? objectsKeyPattern = null)
+        {
+            return InvokeInstanceMethod<AlibabaCloud.SDK.ROS.CDK.Ram.ManagedPolicy>(new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Ram.IPrincipal), typeof(string)}, new object?[]{identity, objectsKeyPattern})!;
+        }
+
+        /// <summary>Grant an RAM principal (Role/Group/User) permission to read and write resources for this bucket.</summary>
+        /// <param name="identity">The principal.</param>
+        /// <param name="objectsKeyPattern">Restrict the permission to a certain key pattern (default '*').</param>
+        [JsiiMethod(name: "grantReadWrite", returnsJson: "{\"type\":{\"fqn\":\"@alicloud/ros-cdk-ram.ManagedPolicy\"}}", parametersJson: "[{\"docs\":{\"summary\":\"The principal.\"},\"name\":\"identity\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-ram.IPrincipal\"}},{\"docs\":{\"summary\":\"Restrict the permission to a certain key pattern (default '*').\"},\"name\":\"objectsKeyPattern\",\"optional\":true,\"type\":{\"primitive\":\"string\"}}]")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Ram.ManagedPolicy GrantReadWrite(AlibabaCloud.SDK.ROS.CDK.Ram.IPrincipal identity, string? objectsKeyPattern = null)
+        {
+            return InvokeInstanceMethod<AlibabaCloud.SDK.ROS.CDK.Ram.ManagedPolicy>(new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Ram.IPrincipal), typeof(string)}, new object?[]{identity, objectsKeyPattern})!;
         }
 
         /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>

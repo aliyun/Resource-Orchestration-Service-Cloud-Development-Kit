@@ -70,7 +70,7 @@ function rosInstancesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::OTS::Instances`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::OTS::Instances`, which is used to query Tablestore instances.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instances` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ots-instances
  */

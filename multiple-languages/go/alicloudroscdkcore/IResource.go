@@ -15,7 +15,7 @@ type IResource interface {
 	// however, for imported resources
 	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
 	// that might be different than the stack they were imported into.
-	Env() *ResourceEnvironment
+	Env() IResourceEnvironment
 	// The stack in which this resource is defined.
 	Stack() Stack
 }
@@ -25,8 +25,8 @@ type jsiiProxy_IResource struct {
 	jsiiProxy_IConstruct
 }
 
-func (j *jsiiProxy_IResource) Env() *ResourceEnvironment {
-	var returns *ResourceEnvironment
+func (j *jsiiProxy_IResource) Env() IResourceEnvironment {
+	var returns IResourceEnvironment
 	_jsii_.Get(
 		j,
 		"env",

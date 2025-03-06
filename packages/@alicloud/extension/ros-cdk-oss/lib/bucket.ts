@@ -1,9 +1,9 @@
 import { Bucket } from '@alicloud/ros-cdk-oss';
 import * as ros from "@alicloud/ros-cdk-core";
+import * as ram from "@alicloud/ros-cdk-ram";
 import {EOL} from "os";
-
-// const ossClient = require('ali-oss')
-
+import * as perms from "./perms.cdk"
+import {IResolvable} from "@alicloud/ros-cdk-core";
 
 /**
  * A reference to a bucket outside this stack
@@ -55,44 +55,6 @@ export interface BucketAttributes {
 
 class ExtensionBucket extends Bucket {
     /**
-     * Check whether the bucket exists.
-     *
-     * @param physicalName name of the bucket.
-     */
-    // public static async checkBucketExists(physicalName: string): Promise<boolean> {
-    //     const config = await CdkToolkit.getConfig();
-    //     let client_params;
-    //     if (!config.accessKeyId || !config.accessKeySecret) {
-    //         error("Please use 'ros-cdk config (-g)' or set environment to set your account configuration firstly!");
-    //         exit(1);
-    //     } else if (!config.securityToken) {
-    //         client_params = {
-    //             region: config.regionId,
-    //             accessKeyId: config.accessKeyId,
-    //             accessKeySecret: config.accessKeySecret
-    //         };
-    //     } else {
-    //         client_params = {
-    //             region: config.regionId,
-    //             accessKeyId: config.accessKeyId,
-    //             accessKeySecret: config.accessKeySecret,
-    //             securityToken: config.securityToken
-    //         };
-    //     }
-    //     const client = new ossClient(client_params);
-    //     try {
-    //         await client.getBucketInfo(physicalName);
-    //     } catch (error) {
-    //         if (error.name === 'NoSuchBucketError' || error.name === 'AccessDenied') {
-    //             return true;
-    //         } else {
-    //             throw error;
-    //         }
-    //     }
-    //     return false;
-    // }
-
-    /**
      * Thrown an exception if the given bucket name is not valid.
      *
      * @param physicalName name of the bucket.
@@ -125,15 +87,86 @@ class ExtensionBucket extends Bucket {
                 + `(offset: ${bucketName.length - 1})`);
         }
 
-        // if (checkBucketExists) {
-        //     const exists = await ExtensionBucket.checkBucketExists(physicalName);
-        //     if (exists) {
-        //         errors.push(`Bucket name ${bucketName} is already taken`);
-        //     }
-        // }
-
         if (errors.length > 0) {
             throw new Error(`Invalid OSS bucket name (value: ${bucketName})${EOL}${errors.join(EOL)}`);
         }
+    }
+
+    /**
+     * Returns an ARN that represents all objects within the bucket that match
+     * the key pattern specified. To represent all keys, specify ``"*"``.
+     *
+     * If you need to specify a keyPattern with multiple components, concatenate them into a single string, e.g.:
+     *
+     *   arnForObjects(`home/${team}/${user}/*`)
+     *
+     */
+    public arnForObjects(keyPattern: string): string {
+        return `${this.attrArn}/${keyPattern}`;
+    }
+
+    private grant(
+        principle: ram.IPrincipal,
+        bucketActions: string[],
+        resourceArn: string | IResolvable, ...otherResourceArns: (string | IResolvable)[]): ram.ManagedPolicy {
+        const policyDocument: ram.RosManagedPolicy.PolicyDocumentProperty = {
+            statement: [
+                {
+                    action: bucketActions,
+                    effect: 'Allow',
+                    resource: [resourceArn, ...otherResourceArns],
+                },
+            ],
+            version: '1',
+        };
+        return principle.addToPolicy(policyDocument);
+    }
+
+    /**
+     * Grant an RAM principal (Role/Group/User) permission to list and read all resources for this bucket.
+     *
+     * @param identity The principal
+     * @param objectsKeyPattern Restrict the permission to a certain key pattern (default '*').
+     */
+    public grantRead(identity: ram.IPrincipal, objectsKeyPattern: string = '*') {
+        return this.grant(identity, perms.BUCKET_READ_ACTIONS.concat(perms.BUCKET_LIST_ACTIONS),
+            this.attrArn,
+            this.arnForObjects(objectsKeyPattern));
+    }
+
+    /**
+     * Grant an RAM principal (Role/Group/User) permission to read and write resources for this bucket.
+     *
+     * @param identity The principal
+     * @param objectsKeyPattern Restrict the permission to a certain key pattern (default '*').
+     */
+    public grantReadWrite(identity: ram.IPrincipal, objectsKeyPattern: string = '*') {
+        return this.grant(identity, perms.BUCKET_READ_WRITE_ACTIONS,
+            this.attrArn,
+            this.arnForObjects(objectsKeyPattern));
+    }
+
+    /**
+     * Grant an RAM principal (Role/Group/User) permission to list resources for this bucket.
+     *
+     * @param identity The principal
+     * @param objectsKeyPattern Restrict the permission to a certain key pattern (default '*').
+     */
+    public grantList(identity: ram.IPrincipal, objectsKeyPattern: string = '*') {
+        return this.grant(identity, perms.BUCKET_LIST_ACTIONS,
+            this.attrArn,
+            this.arnForObjects(objectsKeyPattern));
+    }
+
+    /**
+     * Grant an RAM principal (Role/Group/User) full control over this bucket.
+     *
+     * @param identity The principal
+     * @param objectsKeyPattern Restrict the permission to a certain key pattern (default '*').
+     */
+    public grantFullAccess(identity: ram.IPrincipal, objectsKeyPattern: string = '*') {
+        return this.grant(identity, ['oss:*'],
+            this.attrArn,
+            this.arnForObjects(objectsKeyPattern));
     }
 }

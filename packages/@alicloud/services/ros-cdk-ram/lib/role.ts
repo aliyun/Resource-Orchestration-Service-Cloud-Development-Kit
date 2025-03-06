@@ -1,7 +1,10 @@
 import * as ros from '@alicloud/ros-cdk-core';
-import { RosRole } from './ram.generated';
+import { RosRole, RosManagedPolicy } from './ram.generated';
 // Generated from the AliCloud ROS Resource Specification
 export { RosRole as RoleProperty };
+import { ManagedPolicy } from './managedpolicy';
+import { IPrincipal } from './principals.cdk'
+
 
 /**
  * Properties for defining a `Role`.
@@ -81,7 +84,7 @@ export interface IRole extends ros.IResource {
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRole`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-role
  */
-export class Role extends ros.Resource implements IRole {
+export class Role extends ros.Resource implements IRole, IPrincipal {
     protected scope: ros.Construct;
     protected id: string;
     public readonly props: RoleProps;
@@ -101,6 +104,19 @@ export class Role extends ros.Resource implements IRole {
      * Attribute RoleName: Name of ram role.
      */
     public readonly attrRoleName: ros.IResolvable | string;
+
+    public readonly grantPrincipal: IPrincipal = this;
+    public readonly principalName: string | ros.IResolvable = this.attrRoleName;
+    public readonly principalType: string = 'role';
+
+    public addToPolicy(policyDocument: RosManagedPolicy.PolicyDocumentProperty): ManagedPolicy {
+        const suffix = ros.generateRandomString(5);
+        return new ManagedPolicy(this, `Policy${suffix}`, {
+            policyName: `Policy${suffix}`,
+            policyDocument: policyDocument,
+            roles: [this.ref],
+        });
+    }
 
     /**
      * Param scope - scope in which this resource is defined

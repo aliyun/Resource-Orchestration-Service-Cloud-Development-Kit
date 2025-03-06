@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cloudphone.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudphone-keypair
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:13.043Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:02.869Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudphone.$Module.class, fqn = "@alicloud/ros-cdk-cloudphone.datasource.RosKeyPairProps")
 @software.amazon.jsii.Jsii.Proxy(RosKeyPairProps.Jsii$Proxy.class)
 public interface RosKeyPairProps extends software.amazon.jsii.JsiiSerializable {

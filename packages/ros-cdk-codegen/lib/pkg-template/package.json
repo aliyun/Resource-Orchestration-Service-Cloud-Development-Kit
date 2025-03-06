@@ -1,6 +1,6 @@
 {
   "name": "replace-content",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "description": "Aliyun SDK Copyright (C) Alibaba Cloud Computing All rights reserved. http://www.aliyun.com",
   "author": "ROS Development Team",
   "license": "Apache-2.0",
@@ -48,11 +48,11 @@
     "pack": "npm pack"
   },
   "dependencies": {
-    "@alicloud/ros-cdk-core": "^1.0.27",
+    "@alicloud/ros-cdk-core": "^1.7.0",
     "constructs": "^3.0.4"
   },
   "peerDependencies": {
-    "@alicloud/ros-cdk-core": "^1.0.27",
+    "@alicloud/ros-cdk-core": "^1.7.0",
     "constructs": "^3.0.4"
   }
 }

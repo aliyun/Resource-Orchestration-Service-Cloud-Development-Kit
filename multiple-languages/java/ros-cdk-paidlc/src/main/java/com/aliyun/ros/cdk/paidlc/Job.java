@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.paidlc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::PAIDLC::Job</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:18.859Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.781Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.paidlc.$Module.class, fqn = "@alicloud/ros-cdk-paidlc.Job")
 public class Job extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.paidlc.IJob {
 

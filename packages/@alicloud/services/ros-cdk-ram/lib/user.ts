@@ -1,7 +1,10 @@
 import * as ros from '@alicloud/ros-cdk-core';
-import { RosUser } from './ram.generated';
+import { RosUser, RosManagedPolicy } from './ram.generated';
 // Generated from the AliCloud ROS Resource Specification
 export { RosUser as UserProperty };
+import { ManagedPolicy } from './managedpolicy';
+import { IPrincipal } from './principals.cdk'
+
 
 /**
  * Properties for defining a `User`.
@@ -91,7 +94,7 @@ export interface IUser extends ros.IResource {
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUser`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-user
  */
-export class User extends ros.Resource implements IUser {
+export class User extends ros.Resource implements IUser, IPrincipal {
     protected scope: ros.Construct;
     protected id: string;
     public readonly props: UserProps;
@@ -116,6 +119,19 @@ export class User extends ros.Resource implements IUser {
      * Attribute UserName: Name of ram user.
      */
     public readonly attrUserName: ros.IResolvable | string;
+
+    public readonly grantPrincipal: IPrincipal = this;
+    public readonly principalName: string | ros.IResolvable = this.attrUserName;
+    public readonly principalType: string = 'user';
+
+    public addToPolicy(policyDocument: RosManagedPolicy.PolicyDocumentProperty): ManagedPolicy {
+        const suffix = ros.generateRandomString(5);
+        return new ManagedPolicy(this, `Policy${suffix}`, {
+            policyName: `Policy${suffix}`,
+            policyDocument: policyDocument,
+            users: [this.ref],
+        });
+    }
 
     /**
      * Param scope - scope in which this resource is defined

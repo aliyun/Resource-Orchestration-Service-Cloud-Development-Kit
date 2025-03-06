@@ -40,7 +40,7 @@ export interface IAccessGroups extends ros.IResource {
     readonly attrAccessGroups: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::NAS::AccessGroups`, which is used to query the information about permission groups.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::NAS::AccessGroups`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccessGroups`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-accessgroups
  */

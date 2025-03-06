@@ -28,6 +28,22 @@ func (i *jsiiProxy_Instance) validateGetAttParameters(name *string) error {
 	return nil
 }
 
+func (i *jsiiProxy_Instance) validateGrantFullAccessParameters(identity alicloudroscdkram.IPrincipal) error {
+	return nil
+}
+
+func (i *jsiiProxy_Instance) validateGrantListParameters(identity alicloudroscdkram.IPrincipal) error {
+	return nil
+}
+
+func (i *jsiiProxy_Instance) validateGrantReadParameters(identity alicloudroscdkram.IPrincipal) error {
+	return nil
+}
+
+func (i *jsiiProxy_Instance) validateGrantReadWriteParameters(identity alicloudroscdkram.IPrincipal) error {
+	return nil
+}
+
 func (i *jsiiProxy_Instance) validateOnSynthesizeParameters(session constructs.ISynthesisSession) error {
 	return nil
 }

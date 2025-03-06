@@ -429,6 +429,41 @@ export interface RosDomainProps {
      * * HTTPS: Supports only the HTTPS protocol.
      */
     readonly protocol: string | ros.IResolvable;
+
+    /**
+     * @Property certIdentifier: The tls Certificate identification.
+     */
+    readonly certIdentifier?: string | ros.IResolvable;
+
+    /**
+     * @Property forceHttps: Set the HTTPS protocol type and whether to enable forced HTTPS redirection.
+     */
+    readonly forceHttps?: boolean | ros.IResolvable;
+
+    /**
+     * @Property http2Option: Whether to enable http2 settings.
+     */
+    readonly http2Option?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property tlsCipherSuitesConfig: The configuration of the TLS encryption suite
+     */
+    readonly tlsCipherSuitesConfig?: RosDomain.TlsCipherSuitesConfigProperty | ros.IResolvable;
+
+    /**
+     * @Property tlsMax: The maximum version of the TLS protocol. The maximum version of the TLS protocol is 1.3.
+     */
+    readonly tlsMax?: string | ros.IResolvable;
+
+    /**
+     * @Property tlsMin: The minimum version of the TLS protocol. The minimum version of the TLS protocol is 1.0.
+     */
+    readonly tlsMin?: string | ros.IResolvable;
 }
 
 /**
@@ -441,6 +476,8 @@ export interface RosDomainProps {
 function RosDomainPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('tlsCipherSuitesConfig', RosDomain_TlsCipherSuitesConfigPropertyValidator)(properties.tlsCipherSuitesConfig));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('domainName', ros.requiredValidator)(properties.domainName));
     if(properties.domainName && (Array.isArray(properties.domainName) || (typeof properties.domainName) === 'string')) {
         errors.collect(ros.propertyValidator('domainName', ros.validateLength)({
@@ -450,6 +487,29 @@ function RosDomainPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('domainName', ros.validateString)(properties.domainName));
+    errors.collect(ros.propertyValidator('forceHttps', ros.validateBoolean)(properties.forceHttps));
+    if(properties.tlsMax && (typeof properties.tlsMax) !== 'object') {
+        errors.collect(ros.propertyValidator('tlsMax', ros.validateAllowedValues)({
+          data: properties.tlsMax,
+          allowedValues: ["TLS 1.0","TLS 1.1","TLS 1.2","TLS 1.3"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('tlsMax', ros.validateString)(properties.tlsMax));
+    errors.collect(ros.propertyValidator('certIdentifier', ros.validateString)(properties.certIdentifier));
+    if(properties.tlsMin && (typeof properties.tlsMin) !== 'object') {
+        errors.collect(ros.propertyValidator('tlsMin', ros.validateAllowedValues)({
+          data: properties.tlsMin,
+          allowedValues: ["TLS 1.0","TLS 1.1","TLS 1.2","TLS 1.3"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('tlsMin', ros.validateString)(properties.tlsMin));
+    if(properties.http2Option && (typeof properties.http2Option) !== 'object') {
+        errors.collect(ros.propertyValidator('http2Option', ros.validateAllowedValues)({
+          data: properties.http2Option,
+          allowedValues: ["Open","Close"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('http2Option', ros.validateString)(properties.http2Option));
     errors.collect(ros.propertyValidator('protocol', ros.requiredValidator)(properties.protocol));
     if(properties.protocol && (typeof properties.protocol) !== 'object') {
         errors.collect(ros.propertyValidator('protocol', ros.validateAllowedValues)({
@@ -477,6 +537,13 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
     return {
       'DomainName': ros.stringToRosTemplate(properties.domainName),
       'Protocol': ros.stringToRosTemplate(properties.protocol),
+      'CertIdentifier': ros.stringToRosTemplate(properties.certIdentifier),
+      'ForceHttps': ros.booleanToRosTemplate(properties.forceHttps),
+      'Http2Option': ros.stringToRosTemplate(properties.http2Option),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'TlsCipherSuitesConfig': rosDomainTlsCipherSuitesConfigPropertyToRosTemplate(properties.tlsCipherSuitesConfig),
+      'TlsMax': ros.stringToRosTemplate(properties.tlsMax),
+      'TlsMin': ros.stringToRosTemplate(properties.tlsMin),
     };
 }
 
@@ -492,6 +559,11 @@ export class RosDomain extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::APIG::Domain";
 
     /**
+     * @Attribute CertIdentifier: The tls Certificate identification.
+     */
+    public readonly attrCertIdentifier: ros.IResolvable;
+
+    /**
      * @Attribute DomainId: The ID of the Domain.
      */
     public readonly attrDomainId: ros.IResolvable;
@@ -502,9 +574,39 @@ export class RosDomain extends ros.RosResource {
     public readonly attrDomainName: ros.IResolvable;
 
     /**
+     * @Attribute ForceHttps: Set the HTTPS protocol type and whether to enable forced HTTPS redirection.
+     */
+    public readonly attrForceHttps: ros.IResolvable;
+
+    /**
+     * @Attribute Http2Option: Whether to enable http2 settings.
+     */
+    public readonly attrHttp2Option: ros.IResolvable;
+
+    /**
      * @Attribute Protocol: The types of protocols.
      */
     public readonly attrProtocol: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of the resource group.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute TlsCipherSuitesConfig: The configuration of the TLS encryption suite.
+     */
+    public readonly attrTlsCipherSuitesConfig: ros.IResolvable;
+
+    /**
+     * @Attribute TlsMax: The maximum version of the TLS protocol. The maximum version of the TLS protocol is 1.3.
+     */
+    public readonly attrTlsMax: ros.IResolvable;
+
+    /**
+     * @Attribute TlsMin: The minimum version of the TLS protocol. The minimum version of the TLS protocol is 1.0.
+     */
+    public readonly attrTlsMin: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -522,19 +624,68 @@ export class RosDomain extends ros.RosResource {
     public protocol: string | ros.IResolvable;
 
     /**
+     * @Property certIdentifier: The tls Certificate identification.
+     */
+    public certIdentifier: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property forceHttps: Set the HTTPS protocol type and whether to enable forced HTTPS redirection.
+     */
+    public forceHttps: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property http2Option: Whether to enable http2 settings.
+     */
+    public http2Option: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tlsCipherSuitesConfig: The configuration of the TLS encryption suite
+     */
+    public tlsCipherSuitesConfig: RosDomain.TlsCipherSuitesConfigProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property tlsMax: The maximum version of the TLS protocol. The maximum version of the TLS protocol is 1.3.
+     */
+    public tlsMax: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tlsMin: The minimum version of the TLS protocol. The minimum version of the TLS protocol is 1.0.
+     */
+    public tlsMin: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: RosDomainProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosDomain.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCertIdentifier = this.getAtt('CertIdentifier');
         this.attrDomainId = this.getAtt('DomainId');
         this.attrDomainName = this.getAtt('DomainName');
+        this.attrForceHttps = this.getAtt('ForceHttps');
+        this.attrHttp2Option = this.getAtt('Http2Option');
         this.attrProtocol = this.getAtt('Protocol');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrTlsCipherSuitesConfig = this.getAtt('TlsCipherSuitesConfig');
+        this.attrTlsMax = this.getAtt('TlsMax');
+        this.attrTlsMin = this.getAtt('TlsMin');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.domainName = props.domainName;
         this.protocol = props.protocol;
+        this.certIdentifier = props.certIdentifier;
+        this.forceHttps = props.forceHttps;
+        this.http2Option = props.http2Option;
+        this.resourceGroupId = props.resourceGroupId;
+        this.tlsCipherSuitesConfig = props.tlsCipherSuitesConfig;
+        this.tlsMax = props.tlsMax;
+        this.tlsMin = props.tlsMin;
     }
 
 
@@ -542,11 +693,119 @@ export class RosDomain extends ros.RosResource {
         return {
             domainName: this.domainName,
             protocol: this.protocol,
+            certIdentifier: this.certIdentifier,
+            forceHttps: this.forceHttps,
+            http2Option: this.http2Option,
+            resourceGroupId: this.resourceGroupId,
+            tlsCipherSuitesConfig: this.tlsCipherSuitesConfig,
+            tlsMax: this.tlsMax,
+            tlsMin: this.tlsMin,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosDomainPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosDomain {
+    /**
+     * @stability external
+     */
+    export interface TlsCipherSuiteProperty {
+        /**
+         * @Property name: The name of the cipher suite.
+         */
+        readonly name?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TlsCipherSuiteProperty`
+ *
+ * @param properties - the TypeScript properties of a `TlsCipherSuiteProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosDomain_TlsCipherSuitePropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "TlsCipherSuiteProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::APIG::Domain.TlsCipherSuite` resource
+ *
+ * @param properties - the TypeScript properties of a `TlsCipherSuiteProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::APIG::Domain.TlsCipherSuite` resource.
+ */
+// @ts-ignore TS6133
+function rosDomainTlsCipherSuitePropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosDomain_TlsCipherSuitePropertyValidator(properties).assertSuccess();
+    return {
+      'Name': ros.stringToRosTemplate(properties.name),
+    };
+}
+
+export namespace RosDomain {
+    /**
+     * @stability external
+     */
+    export interface TlsCipherSuitesConfigProperty {
+        /**
+         * @Property tlsCipherSuite: Tls Cipher Suite.
+         */
+        readonly tlsCipherSuite?: Array<RosDomain.TlsCipherSuiteProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property configType: Config type, Default or Custom.
+         */
+        readonly configType?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TlsCipherSuitesConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `TlsCipherSuitesConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosDomain_TlsCipherSuitesConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.tlsCipherSuite && (Array.isArray(properties.tlsCipherSuite) || (typeof properties.tlsCipherSuite) === 'string')) {
+        errors.collect(ros.propertyValidator('tlsCipherSuite', ros.validateLength)({
+            data: properties.tlsCipherSuite.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tlsCipherSuite', ros.listValidator(RosDomain_TlsCipherSuitePropertyValidator))(properties.tlsCipherSuite));
+    if(properties.configType && (typeof properties.configType) !== 'object') {
+        errors.collect(ros.propertyValidator('configType', ros.validateAllowedValues)({
+          data: properties.configType,
+          allowedValues: ["Default","Custom"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('configType', ros.validateString)(properties.configType));
+    return errors.wrap('supplied properties not correct for "TlsCipherSuitesConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::APIG::Domain.TlsCipherSuitesConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `TlsCipherSuitesConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::APIG::Domain.TlsCipherSuitesConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosDomainTlsCipherSuitesConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosDomain_TlsCipherSuitesConfigPropertyValidator(properties).assertSuccess();
+    return {
+      'TlsCipherSuite': ros.listMapper(rosDomainTlsCipherSuitePropertyToRosTemplate)(properties.tlsCipherSuite),
+      'ConfigType': ros.stringToRosTemplate(properties.configType),
+    };
 }
 
 /**
@@ -3532,24 +3791,53 @@ function rosRouteSubDomainsPropertyToRosTemplate(properties: any): any {
 export interface RosServiceProps {
 
     /**
-     * @Property addresses: Service Address List.
-     */
-    readonly addresses: Array<string | ros.IResolvable> | ros.IResolvable;
-
-    /**
      * @Property gatewayId: The ID of the Cloud Native API Gateway.
      */
     readonly gatewayId: string | ros.IResolvable;
 
     /**
-     * @Property serviceName: The name of the service.
+     * @Property addresses: Service Address List.
      */
-    readonly serviceName: string | ros.IResolvable;
+    readonly addresses?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property sourceType: The type of the service source.
+     * @Property aiServiceConfig: AI service configuration when SourceType equals AI.
      */
-    readonly sourceType: string | ros.IResolvable;
+    readonly aiServiceConfig?: RosService.AiServiceConfigProperty | ros.IResolvable;
+
+    /**
+     * @Property groupName: The service group name.
+     * Required when SourceType is MSE_NACOS.
+     */
+    readonly groupName?: string | ros.IResolvable;
+
+    /**
+     * @Property namespace: The namespace of the service:
+     * - SourceType is K8S, indicating the namespace of the K8S service.
+     * When-SourceType is set to MSE_NACOS, it indicates the namespace in Nacos.
+     * When the SourceType is K8S and MSE_NACOS, it needs to be specified.
+     */
+    readonly namespace?: string | ros.IResolvable;
+
+    /**
+     * @Property qualifier: The function version or alias.
+     */
+    readonly qualifier?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property serviceName: The name of the service, need to fill in manually when SourceType is VIP\/DNS\/AI.
+     */
+    readonly serviceName?: string | ros.IResolvable;
+
+    /**
+     * @Property sourceType: The type of the service source, optional value is K8S\/MSE_NACOS\/FC3\/SAE_K8S_SERVICE\/VIP\/DNS\/AI.
+     */
+    readonly sourceType?: string | ros.IResolvable;
 }
 
 /**
@@ -3562,7 +3850,7 @@ export interface RosServiceProps {
 function RosServicePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('addresses', ros.requiredValidator)(properties.addresses));
+    errors.collect(ros.propertyValidator('groupName', ros.validateString)(properties.groupName));
     if(properties.addresses && (Array.isArray(properties.addresses) || (typeof properties.addresses) === 'string')) {
         errors.collect(ros.propertyValidator('addresses', ros.validateLength)({
             data: properties.addresses.length,
@@ -3571,18 +3859,20 @@ function RosServicePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('addresses', ros.listValidator(ros.validateString))(properties.addresses));
-    errors.collect(ros.propertyValidator('serviceName', ros.requiredValidator)(properties.serviceName));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('serviceName', ros.validateString)(properties.serviceName));
-    errors.collect(ros.propertyValidator('sourceType', ros.requiredValidator)(properties.sourceType));
     if(properties.sourceType && (typeof properties.sourceType) !== 'object') {
         errors.collect(ros.propertyValidator('sourceType', ros.validateAllowedValues)({
           data: properties.sourceType,
-          allowedValues: ["DNS"],
+          allowedValues: ["DNS","K8S","MSE_NACOS","FC3","SAE_K8S_SERVICE","VIP","AI"],
         }));
     }
     errors.collect(ros.propertyValidator('sourceType', ros.validateString)(properties.sourceType));
+    errors.collect(ros.propertyValidator('qualifier', ros.validateString)(properties.qualifier));
     errors.collect(ros.propertyValidator('gatewayId', ros.requiredValidator)(properties.gatewayId));
     errors.collect(ros.propertyValidator('gatewayId', ros.validateString)(properties.gatewayId));
+    errors.collect(ros.propertyValidator('namespace', ros.validateString)(properties.namespace));
+    errors.collect(ros.propertyValidator('aiServiceConfig', RosService_AiServiceConfigPropertyValidator)(properties.aiServiceConfig));
     return errors.wrap('supplied properties not correct for "RosServiceProps"');
 }
 
@@ -3600,8 +3890,13 @@ function rosServicePropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosServicePropsValidator(properties).assertSuccess();
     }
     return {
-      'Addresses': ros.listMapper(ros.stringToRosTemplate)(properties.addresses),
       'GatewayId': ros.stringToRosTemplate(properties.gatewayId),
+      'Addresses': ros.listMapper(ros.stringToRosTemplate)(properties.addresses),
+      'AiServiceConfig': rosServiceAiServiceConfigPropertyToRosTemplate(properties.aiServiceConfig),
+      'GroupName': ros.stringToRosTemplate(properties.groupName),
+      'Namespace': ros.stringToRosTemplate(properties.namespace),
+      'Qualifier': ros.stringToRosTemplate(properties.qualifier),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
       'ServiceName': ros.stringToRosTemplate(properties.serviceName),
       'SourceType': ros.stringToRosTemplate(properties.sourceType),
     };
@@ -3624,9 +3919,34 @@ export class RosService extends ros.RosResource {
     public readonly attrAddresses: ros.IResolvable;
 
     /**
+     * @Attribute AiServiceConfig: AI service configuration when SourceType equals AI.
+     */
+    public readonly attrAiServiceConfig: ros.IResolvable;
+
+    /**
      * @Attribute GatewayId: The ID of the Cloud Native API Gateway.
      */
     public readonly attrGatewayId: ros.IResolvable;
+
+    /**
+     * @Attribute GroupName: The service group name.
+     */
+    public readonly attrGroupName: ros.IResolvable;
+
+    /**
+     * @Attribute Namespace: The namespace of the service:.
+     */
+    public readonly attrNamespace: ros.IResolvable;
+
+    /**
+     * @Attribute Qualifier: The function version or alias.
+     */
+    public readonly attrQualifier: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of the resource group.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
 
     /**
      * @Attribute ServiceId: The ID of the service.
@@ -3634,22 +3954,12 @@ export class RosService extends ros.RosResource {
     public readonly attrServiceId: ros.IResolvable;
 
     /**
-     * @Attribute ServiceName: The Name of the service .
+     * @Attribute ServiceName: Service Name, need to fill in manually when SourceType is VIP/DNS/AI.
      */
     public readonly attrServiceName: ros.IResolvable;
 
-    /**
-     * @Attribute SourceType: Service source type.
-     */
-    public readonly attrSourceType: ros.IResolvable;
-
     public enableResourcePropertyConstraint: boolean;
 
-
-    /**
-     * @Property addresses: Service Address List.
-     */
-    public addresses: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property gatewayId: The ID of the Cloud Native API Gateway.
@@ -3657,14 +3967,48 @@ export class RosService extends ros.RosResource {
     public gatewayId: string | ros.IResolvable;
 
     /**
-     * @Property serviceName: The name of the service.
+     * @Property addresses: Service Address List.
      */
-    public serviceName: string | ros.IResolvable;
+    public addresses: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property sourceType: The type of the service source.
+     * @Property aiServiceConfig: AI service configuration when SourceType equals AI.
      */
-    public sourceType: string | ros.IResolvable;
+    public aiServiceConfig: RosService.AiServiceConfigProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property groupName: The service group name.
+     * Required when SourceType is MSE_NACOS.
+     */
+    public groupName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property namespace: The namespace of the service:
+     * - SourceType is K8S, indicating the namespace of the K8S service.
+     * When-SourceType is set to MSE_NACOS, it indicates the namespace in Nacos.
+     * When the SourceType is K8S and MSE_NACOS, it needs to be specified.
+     */
+    public namespace: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property qualifier: The function version or alias.
+     */
+    public qualifier: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property serviceName: The name of the service, need to fill in manually when SourceType is VIP\/DNS\/AI.
+     */
+    public serviceName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property sourceType: The type of the service source, optional value is K8S\/MSE_NACOS\/FC3\/SAE_K8S_SERVICE\/VIP\/DNS\/AI.
+     */
+    public sourceType: string | ros.IResolvable | undefined;
 
     /**
      * @param scope - scope in which this resource is defined
@@ -3674,14 +4018,23 @@ export class RosService extends ros.RosResource {
     constructor(scope: ros.Construct, id: string, props: RosServiceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosService.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrAddresses = this.getAtt('Addresses');
+        this.attrAiServiceConfig = this.getAtt('AiServiceConfig');
         this.attrGatewayId = this.getAtt('GatewayId');
+        this.attrGroupName = this.getAtt('GroupName');
+        this.attrNamespace = this.getAtt('Namespace');
+        this.attrQualifier = this.getAtt('Qualifier');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
         this.attrServiceId = this.getAtt('ServiceId');
         this.attrServiceName = this.getAtt('ServiceName');
-        this.attrSourceType = this.getAtt('SourceType');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-        this.addresses = props.addresses;
         this.gatewayId = props.gatewayId;
+        this.addresses = props.addresses;
+        this.aiServiceConfig = props.aiServiceConfig;
+        this.groupName = props.groupName;
+        this.namespace = props.namespace;
+        this.qualifier = props.qualifier;
+        this.resourceGroupId = props.resourceGroupId;
         this.serviceName = props.serviceName;
         this.sourceType = props.sourceType;
     }
@@ -3689,8 +4042,13 @@ export class RosService extends ros.RosResource {
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
-            addresses: this.addresses,
             gatewayId: this.gatewayId,
+            addresses: this.addresses,
+            aiServiceConfig: this.aiServiceConfig,
+            groupName: this.groupName,
+            namespace: this.namespace,
+            qualifier: this.qualifier,
+            resourceGroupId: this.resourceGroupId,
             serviceName: this.serviceName,
             sourceType: this.sourceType,
         };
@@ -3698,4 +4056,89 @@ export class RosService extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosServicePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosService {
+    /**
+     * @stability external
+     */
+    export interface AiServiceConfigProperty {
+        /**
+         * @Property apiKeys: Api key list.
+         */
+        readonly apiKeys?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property protocols: Model protocol list.
+         */
+        readonly protocols?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property address: AI provider address.
+         */
+        readonly address?: string | ros.IResolvable;
+        /**
+         * @Property enableHealthCheck: whether enable health check.
+         */
+        readonly enableHealthCheck?: boolean | ros.IResolvable;
+        /**
+         * @Property provider: AI model provider.
+         */
+        readonly provider?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AiServiceConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `AiServiceConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosService_AiServiceConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.apiKeys && (Array.isArray(properties.apiKeys) || (typeof properties.apiKeys) === 'string')) {
+        errors.collect(ros.propertyValidator('apiKeys', ros.validateLength)({
+            data: properties.apiKeys.length,
+            min: 0,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('apiKeys', ros.listValidator(ros.validateString))(properties.apiKeys));
+    if(properties.protocols && (Array.isArray(properties.protocols) || (typeof properties.protocols) === 'string')) {
+        errors.collect(ros.propertyValidator('protocols', ros.validateLength)({
+            data: properties.protocols.length,
+            min: 0,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('protocols', ros.listValidator(ros.validateString))(properties.protocols));
+    errors.collect(ros.propertyValidator('address', ros.validateString)(properties.address));
+    errors.collect(ros.propertyValidator('enableHealthCheck', ros.validateBoolean)(properties.enableHealthCheck));
+    if(properties.provider && (typeof properties.provider) !== 'object') {
+        errors.collect(ros.propertyValidator('provider', ros.validateAllowedValues)({
+          data: properties.provider,
+          allowedValues: ["openai","qwen","azure","claude","moonshot","baichuan","yi","zhipuai","hunyuan","stepfun","spark","doubao","minimax","gemini","deepseek","custom"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('provider', ros.validateString)(properties.provider));
+    return errors.wrap('supplied properties not correct for "AiServiceConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::APIG::Service.AiServiceConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `AiServiceConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::APIG::Service.AiServiceConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosServiceAiServiceConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosService_AiServiceConfigPropertyValidator(properties).assertSuccess();
+    return {
+      'ApiKeys': ros.listMapper(ros.stringToRosTemplate)(properties.apiKeys),
+      'Protocols': ros.listMapper(ros.stringToRosTemplate)(properties.protocols),
+      'Address': ros.stringToRosTemplate(properties.address),
+      'EnableHealthCheck': ros.booleanToRosTemplate(properties.enableHealthCheck),
+      'Provider': ros.stringToRosTemplate(properties.provider),
+    };
 }

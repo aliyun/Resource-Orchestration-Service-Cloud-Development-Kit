@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Core
 {
-    [JsiiInterface(nativeType: typeof(IResourceEnvironment), fullyQualifiedName: "@alicloud/ros-cdk-core.ResourceEnvironment")]
+    [JsiiInterface(nativeType: typeof(IResourceEnvironment), fullyQualifiedName: "@alicloud/ros-cdk-core.IResourceEnvironment")]
     public interface IResourceEnvironment
     {
         /// <summary>The Alibaba Cloud account ID that this resource belongs to.</summary>
@@ -33,7 +33,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             get;
         }
 
-        [JsiiTypeProxy(nativeType: typeof(IResourceEnvironment), fullyQualifiedName: "@alicloud/ros-cdk-core.ResourceEnvironment")]
+        [JsiiTypeProxy(nativeType: typeof(IResourceEnvironment), fullyQualifiedName: "@alicloud/ros-cdk-core.IResourceEnvironment")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Core.IResourceEnvironment
         {
             private _Proxy(ByRefValue reference): base(reference)

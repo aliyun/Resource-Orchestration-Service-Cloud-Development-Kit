@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * Represents a <code>AppUser</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:20.411Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:10.410Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.IAppUser")
 @software.amazon.jsii.Jsii.Proxy(IAppUser.Jsii$Proxy.class)
 public interface IAppUser extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
@@ -14,7 +14,7 @@ public interface IAppUser extends software.amazon.jsii.JsiiSerializable, com.ali
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrSmartAgId();
 
     /**
-     * Attribute UserName: &lt;heat.engine.properties.Schema object at 0x7fa3e6637c50&gt;.
+     * Attribute UserName: &lt;heat.engine.properties.Schema object at 0x7f2959675f90&gt;.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrUserName();
 
@@ -48,8 +48,8 @@ public interface IAppUser extends software.amazon.jsii.JsiiSerializable, com.ali
          * that might be different than the stack they were imported into.
          */
         @Override
-        public final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.ResourceEnvironment getEnv() {
-            return software.amazon.jsii.Kernel.get(this, "env", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.ResourceEnvironment.class));
+        public final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResourceEnvironment getEnv() {
+            return software.amazon.jsii.Kernel.get(this, "env", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResourceEnvironment.class));
         }
 
         /**
@@ -69,7 +69,7 @@ public interface IAppUser extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute UserName: &lt;heat.engine.properties.Schema object at 0x7fa3e6637c50&gt;.
+         * Attribute UserName: &lt;heat.engine.properties.Schema object at 0x7f2959675f90&gt;.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrUserName() {
@@ -107,8 +107,8 @@ public interface IAppUser extends software.amazon.jsii.JsiiSerializable, com.ali
          * that might be different than the stack they were imported into.
          */
         @Override
-        default @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.ResourceEnvironment getEnv() {
-            return software.amazon.jsii.Kernel.get(this, "env", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.ResourceEnvironment.class));
+        default @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResourceEnvironment getEnv() {
+            return software.amazon.jsii.Kernel.get(this, "env", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResourceEnvironment.class));
         }
 
         /**
@@ -128,7 +128,7 @@ public interface IAppUser extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute UserName: &lt;heat.engine.properties.Schema object at 0x7fa3e6637c50&gt;.
+         * Attribute UserName: &lt;heat.engine.properties.Schema object at 0x7f2959675f90&gt;.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrUserName() {
