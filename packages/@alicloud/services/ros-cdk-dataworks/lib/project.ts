@@ -44,7 +44,7 @@ export interface ProjectProps {
     readonly projectMode?: number | ros.IResolvable;
 
     /**
-     * Property projectName: The display name of the workspace. If not provided, it is the same as ProjectIdentifier.
+     * Property projectName: The display name of the workspace. If not provided, it is the same as ProjectIdentifier.The value contains 3 to 28 characters.
      */
     readonly projectName?: string | ros.IResolvable;
 
@@ -73,16 +73,16 @@ The value DEV indicates the development environment. Workspaces in standard mode
     readonly attrEnvTypes: ros.IResolvable | string;
 
     /**
+     * Attribute Id: The ID number of the workspace.
+     */
+    readonly attrId: ros.IResolvable | string;
+
+    /**
      * Attribute IsDefault: Indicates whether the workspace is the default workspace. Valid values:
 1: The workspace is the default workspace.
 0: The workspace is not the default workspace.
      */
     readonly attrIsDefault: ros.IResolvable | string;
-
-    /**
-     * Attribute ProjectId: The ID of the workspace.
-     */
-    readonly attrProjectId: ros.IResolvable | string;
 
     /**
      * Attribute ProjectIdentifier: The name of the workspace. The name can contain letters, digits, and underscores (_) and must start with a letter or digit.
@@ -137,16 +137,16 @@ The value DEV indicates the development environment. Workspaces in standard mode
     public readonly attrEnvTypes: ros.IResolvable | string;
 
     /**
+     * Attribute Id: The ID number of the workspace.
+     */
+    public readonly attrId: ros.IResolvable | string;
+
+    /**
      * Attribute IsDefault: Indicates whether the workspace is the default workspace. Valid values:
 1: The workspace is the default workspace.
 0: The workspace is not the default workspace.
      */
     public readonly attrIsDefault: ros.IResolvable | string;
-
-    /**
-     * Attribute ProjectId: The ID of the workspace.
-     */
-    public readonly attrProjectId: ros.IResolvable | string;
 
     /**
      * Attribute ProjectIdentifier: The name of the workspace. The name can contain letters, digits, and underscores (_) and must start with a letter or digit.
@@ -206,8 +206,8 @@ The value DEV indicates the development environment. Workspaces in standard mode
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosProject;
         this.attrEnvTypes = rosProject.attrEnvTypes;
+        this.attrId = rosProject.attrId;
         this.attrIsDefault = rosProject.attrIsDefault;
-        this.attrProjectId = rosProject.attrProjectId;
         this.attrProjectIdentifier = rosProject.attrProjectIdentifier;
         this.attrProtectedMode = rosProject.attrProtectedMode;
         this.attrResidentArea = rosProject.attrResidentArea;

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::OOS::SecretParameter`, which is used to create an encryption parameter.
+// This class encapsulates and extends the ROS resource type `ALIYUN::OOS::SecretParameter`.
 type SecretParameter interface {
 	alicloudroscdkcore.Resource
 	ISecretParameter

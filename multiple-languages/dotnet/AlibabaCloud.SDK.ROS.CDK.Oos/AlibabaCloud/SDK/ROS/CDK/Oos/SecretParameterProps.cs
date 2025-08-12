@@ -17,7 +17,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
 
         /// <summary>Property secretParameterName: The name of the encryption parameter.</summary>
         /// <remarks>
-        /// The name must be 1 to 180 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
+        /// The name must be 1 to 180 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ALIBABA, ALICLOUD, ACS or OOS.
         /// </remarks>
         [JsiiProperty(name: "secretParameterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object SecretParameterName

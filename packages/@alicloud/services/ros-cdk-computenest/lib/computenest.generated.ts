@@ -226,7 +226,7 @@ export interface RosServiceInstanceProps {
     readonly service: RosServiceInstance.ServiceProperty | ros.IResolvable;
 
     /**
-     * @Property commodity: Cloud market commodity purchase parameters.
+     * @Property commodity: The purchase order information of the cloud market does not need to be transmitted if the service is not on the cloud market or charged by volume.
      */
     readonly commodity?: RosServiceInstance.CommodityProperty | ros.IResolvable;
 
@@ -234,6 +234,13 @@ export interface RosServiceInstanceProps {
      * @Property contactGroup: Alarm Contact Group.
      */
     readonly contactGroup?: string | ros.IResolvable;
+
+    /**
+     * @Property dryRun: Whether to perform PreCheck on the creation request, including permissions and instance status verification. Possible values:
+     * - **true**: The request is sent without creating a service instance.
+     * - **false**: Sends the request and creates a service instance after the check is passed.
+     */
+    readonly dryRun?: boolean | ros.IResolvable;
 
     /**
      * @Property enableInstanceOps: Whether the service instance has the O & M function. Possible values:
@@ -250,16 +257,6 @@ export interface RosServiceInstanceProps {
     readonly enableUserPrometheus?: boolean | ros.IResolvable;
 
     /**
-     * @Property marketInstanceId: The ID of the cloud marketplace instance.
-     */
-    readonly marketInstanceId?: string | ros.IResolvable;
-
-    /**
-     * @Property name: The name of the service instance.
-     */
-    readonly name?: string | ros.IResolvable;
-
-    /**
      * @Property operationName: Change operation name.
      */
     readonly operationName?: string | ros.IResolvable;
@@ -267,7 +264,7 @@ export interface RosServiceInstanceProps {
     /**
      * @Property parameters: The parameters entered by the deployment service instance.
      */
-    readonly parameters?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+    readonly parameters?: string | ros.IResolvable;
 
     /**
      * @Property predefinedParameterName: Package name.
@@ -275,9 +272,21 @@ export interface RosServiceInstanceProps {
     readonly predefinedParameterName?: string | ros.IResolvable;
 
     /**
+     * @Property resourceAutoPay: Whether the resource is automatically deducted from the balance. Value:
+     * - **true**: automatic payment.
+     * - **false**: Do not pay automatically.
+     */
+    readonly resourceAutoPay?: boolean | ros.IResolvable;
+
+    /**
      * @Property resourceGroupId: The ID of the resource group.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property serviceInstanceName: The name of the service instance.
+     */
+    readonly serviceInstanceName?: string | ros.IResolvable;
 
     /**
      * @Property specificationCode: Commodity specification Code.
@@ -306,18 +315,19 @@ function RosServiceInstancePropsValidator(properties: any): ros.ValidationResult
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('specificationCode', ros.validateString)(properties.specificationCode));
-    errors.collect(ros.propertyValidator('parameters', ros.hashValidator(ros.validateAny))(properties.parameters));
+    errors.collect(ros.propertyValidator('parameters', ros.validateString)(properties.parameters));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('operationName', ros.validateString)(properties.operationName));
+    errors.collect(ros.propertyValidator('serviceInstanceName', ros.validateString)(properties.serviceInstanceName));
     errors.collect(ros.propertyValidator('enableInstanceOps', ros.validateBoolean)(properties.enableInstanceOps));
+    errors.collect(ros.propertyValidator('dryRun', ros.validateBoolean)(properties.dryRun));
     errors.collect(ros.propertyValidator('service', ros.requiredValidator)(properties.service));
     errors.collect(ros.propertyValidator('service', RosServiceInstance_ServicePropertyValidator)(properties.service));
     errors.collect(ros.propertyValidator('predefinedParameterName', ros.validateString)(properties.predefinedParameterName));
-    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    errors.collect(ros.propertyValidator('resourceAutoPay', ros.validateBoolean)(properties.resourceAutoPay));
     errors.collect(ros.propertyValidator('commodity', RosServiceInstance_CommodityPropertyValidator)(properties.commodity));
     errors.collect(ros.propertyValidator('enableUserPrometheus', ros.validateBoolean)(properties.enableUserPrometheus));
     errors.collect(ros.propertyValidator('templateName', ros.validateString)(properties.templateName));
-    errors.collect(ros.propertyValidator('marketInstanceId', ros.validateString)(properties.marketInstanceId));
     errors.collect(ros.propertyValidator('contactGroup', ros.validateString)(properties.contactGroup));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
@@ -347,14 +357,15 @@ function rosServiceInstancePropsToRosTemplate(properties: any, enableResourcePro
       'Service': rosServiceInstanceServicePropertyToRosTemplate(properties.service),
       'Commodity': rosServiceInstanceCommodityPropertyToRosTemplate(properties.commodity),
       'ContactGroup': ros.stringToRosTemplate(properties.contactGroup),
+      'DryRun': ros.booleanToRosTemplate(properties.dryRun),
       'EnableInstanceOps': ros.booleanToRosTemplate(properties.enableInstanceOps),
       'EnableUserPrometheus': ros.booleanToRosTemplate(properties.enableUserPrometheus),
-      'MarketInstanceId': ros.stringToRosTemplate(properties.marketInstanceId),
-      'Name': ros.stringToRosTemplate(properties.name),
       'OperationName': ros.stringToRosTemplate(properties.operationName),
-      'Parameters': ros.hashMapper(ros.objectToRosTemplate)(properties.parameters),
+      'Parameters': ros.stringToRosTemplate(properties.parameters),
       'PredefinedParameterName': ros.stringToRosTemplate(properties.predefinedParameterName),
+      'ResourceAutoPay': ros.booleanToRosTemplate(properties.resourceAutoPay),
       'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'ServiceInstanceName': ros.stringToRosTemplate(properties.serviceInstanceName),
       'SpecificationCode': ros.stringToRosTemplate(properties.specificationCode),
       'Tags': ros.listMapper(rosServiceInstanceTagsPropertyToRosTemplate)(properties.tags),
       'TemplateName': ros.stringToRosTemplate(properties.templateName),
@@ -403,14 +414,19 @@ export class RosServiceInstance extends ros.RosResource {
     public readonly attrLicenseEndTime: ros.IResolvable;
 
     /**
-     * @Attribute Name: The name of the service instance.
+     * @Attribute MarketInstanceId: The ID of the cloud marketplace instance.
      */
-    public readonly attrName: ros.IResolvable;
+    public readonly attrMarketInstanceId: ros.IResolvable;
 
     /**
      * @Attribute NetworkConfig: Network configuration information.
      */
     public readonly attrNetworkConfig: ros.IResolvable;
+
+    /**
+     * @Attribute Output: Create the output Field returned by the service instance.
+     */
+    public readonly attrOutput: ros.IResolvable;
 
     /**
      * @Attribute Outputs: Create the output Field returned by the service instance.
@@ -446,6 +462,11 @@ export class RosServiceInstance extends ros.RosResource {
      * @Attribute ServiceInstanceId: The ID of the service instance.
      */
     public readonly attrServiceInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute ServiceInstanceName: The name of the resource.
+     */
+    public readonly attrServiceInstanceName: ros.IResolvable;
 
     /**
      * @Attribute ServiceType: Service type.
@@ -496,7 +517,7 @@ export class RosServiceInstance extends ros.RosResource {
     public service: RosServiceInstance.ServiceProperty | ros.IResolvable;
 
     /**
-     * @Property commodity: Cloud market commodity purchase parameters.
+     * @Property commodity: The purchase order information of the cloud market does not need to be transmitted if the service is not on the cloud market or charged by volume.
      */
     public commodity: RosServiceInstance.CommodityProperty | ros.IResolvable | undefined;
 
@@ -504,6 +525,13 @@ export class RosServiceInstance extends ros.RosResource {
      * @Property contactGroup: Alarm Contact Group.
      */
     public contactGroup: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property dryRun: Whether to perform PreCheck on the creation request, including permissions and instance status verification. Possible values:
+     * - **true**: The request is sent without creating a service instance.
+     * - **false**: Sends the request and creates a service instance after the check is passed.
+     */
+    public dryRun: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property enableInstanceOps: Whether the service instance has the O & M function. Possible values:
@@ -520,16 +548,6 @@ export class RosServiceInstance extends ros.RosResource {
     public enableUserPrometheus: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property marketInstanceId: The ID of the cloud marketplace instance.
-     */
-    public marketInstanceId: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property name: The name of the service instance.
-     */
-    public name: string | ros.IResolvable | undefined;
-
-    /**
      * @Property operationName: Change operation name.
      */
     public operationName: string | ros.IResolvable | undefined;
@@ -537,7 +555,7 @@ export class RosServiceInstance extends ros.RosResource {
     /**
      * @Property parameters: The parameters entered by the deployment service instance.
      */
-    public parameters: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+    public parameters: string | ros.IResolvable | undefined;
 
     /**
      * @Property predefinedParameterName: Package name.
@@ -545,9 +563,21 @@ export class RosServiceInstance extends ros.RosResource {
     public predefinedParameterName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property resourceAutoPay: Whether the resource is automatically deducted from the balance. Value:
+     * - **true**: automatic payment.
+     * - **false**: Do not pay automatically.
+     */
+    public resourceAutoPay: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceGroupId: The ID of the resource group.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property serviceInstanceName: The name of the service instance.
+     */
+    public serviceInstanceName: string | ros.IResolvable | undefined;
 
     /**
      * @Property specificationCode: Commodity specification Code.
@@ -577,8 +607,9 @@ export class RosServiceInstance extends ros.RosResource {
         this.attrEnableUserPrometheus = this.getAtt('EnableUserPrometheus');
         this.attrIsOperated = this.getAtt('IsOperated');
         this.attrLicenseEndTime = this.getAtt('LicenseEndTime');
-        this.attrName = this.getAtt('Name');
+        this.attrMarketInstanceId = this.getAtt('MarketInstanceId');
         this.attrNetworkConfig = this.getAtt('NetworkConfig');
+        this.attrOutput = this.getAtt('Output');
         this.attrOutputs = this.getAtt('Outputs');
         this.attrParameters = this.getAtt('Parameters');
         this.attrPredefinedParameterName = this.getAtt('PredefinedParameterName');
@@ -586,6 +617,7 @@ export class RosServiceInstance extends ros.RosResource {
         this.attrResourceGroupId = this.getAtt('ResourceGroupId');
         this.attrService = this.getAtt('Service');
         this.attrServiceInstanceId = this.getAtt('ServiceInstanceId');
+        this.attrServiceInstanceName = this.getAtt('ServiceInstanceName');
         this.attrServiceType = this.getAtt('ServiceType');
         this.attrSource = this.getAtt('Source');
         this.attrStatusDetail = this.getAtt('StatusDetail');
@@ -599,14 +631,15 @@ export class RosServiceInstance extends ros.RosResource {
         this.service = props.service;
         this.commodity = props.commodity;
         this.contactGroup = props.contactGroup;
+        this.dryRun = props.dryRun;
         this.enableInstanceOps = props.enableInstanceOps;
         this.enableUserPrometheus = props.enableUserPrometheus;
-        this.marketInstanceId = props.marketInstanceId;
-        this.name = props.name;
         this.operationName = props.operationName;
         this.parameters = props.parameters;
         this.predefinedParameterName = props.predefinedParameterName;
+        this.resourceAutoPay = props.resourceAutoPay;
         this.resourceGroupId = props.resourceGroupId;
+        this.serviceInstanceName = props.serviceInstanceName;
         this.specificationCode = props.specificationCode;
         this.tags = props.tags;
         this.templateName = props.templateName;
@@ -618,14 +651,15 @@ export class RosServiceInstance extends ros.RosResource {
             service: this.service,
             commodity: this.commodity,
             contactGroup: this.contactGroup,
+            dryRun: this.dryRun,
             enableInstanceOps: this.enableInstanceOps,
             enableUserPrometheus: this.enableUserPrometheus,
-            marketInstanceId: this.marketInstanceId,
-            name: this.name,
             operationName: this.operationName,
             parameters: this.parameters,
             predefinedParameterName: this.predefinedParameterName,
+            resourceAutoPay: this.resourceAutoPay,
             resourceGroupId: this.resourceGroupId,
+            serviceInstanceName: this.serviceInstanceName,
             specificationCode: this.specificationCode,
             tags: this.tags,
             templateName: this.templateName,
@@ -642,15 +676,32 @@ export namespace RosServiceInstance {
      */
     export interface CommodityProperty {
         /**
-         * @Property payPeriod: Cloud Market Goods Purchase Duration.
+         * @Property payPeriod: Length of purchase time.
          */
         readonly payPeriod?: number | ros.IResolvable;
         /**
-         * @Property payPeriodUnit: Cloud market goods purchase time unit, possible value:
-     * - Month: monthly purchase
-     * - Year: buy on an annual basis.
+         * @Property couponId: Coupon ID.
+         */
+        readonly couponId?: string | ros.IResolvable;
+        /**
+         * @Property autoRenew: Whether to enable automatic renewal. Valid values:
+     * **true**: enabled.
+     * * **false**: Not enabled.
+         */
+        readonly autoRenew?: boolean | ros.IResolvable;
+        /**
+         * @Property payPeriodUnit: Purchase time unit, value:
+     * - **Year**: Year.
+     * - **Month**: Month.
+     * - **Day**: Day.
          */
         readonly payPeriodUnit?: string | ros.IResolvable;
+        /**
+         * @Property autoPay: Whether the order is automatically paid. Value:
+     * - **true**: automatic payment.
+     * - **false**: Do not pay automatically.
+         */
+        readonly autoPay?: boolean | ros.IResolvable;
     }
 }
 /**
@@ -664,7 +715,10 @@ function RosServiceInstance_CommodityPropertyValidator(properties: any): ros.Val
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('payPeriod', ros.validateNumber)(properties.payPeriod));
+    errors.collect(ros.propertyValidator('couponId', ros.validateString)(properties.couponId));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     errors.collect(ros.propertyValidator('payPeriodUnit', ros.validateString)(properties.payPeriodUnit));
+    errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
     return errors.wrap('supplied properties not correct for "CommodityProperty"');
 }
 
@@ -681,7 +735,10 @@ function rosServiceInstanceCommodityPropertyToRosTemplate(properties: any): any 
     RosServiceInstance_CommodityPropertyValidator(properties).assertSuccess();
     return {
       'PayPeriod': ros.numberToRosTemplate(properties.payPeriod),
+      'CouponId': ros.stringToRosTemplate(properties.couponId),
+      'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
       'PayPeriodUnit': ros.stringToRosTemplate(properties.payPeriodUnit),
+      'AutoPay': ros.booleanToRosTemplate(properties.autoPay),
     };
 }
 
@@ -691,13 +748,80 @@ export namespace RosServiceInstance {
      */
     export interface ServiceProperty {
         /**
-         * @Property version: Service version.
+         * @Property status: Service status. Possible values:
+     * - Draft: pending registration.
+     * - Submitted: registration submitted.
+     * - Approved: has passed the registration review.
+     * - Online: Online.
+     * - Offline: Offline.
+     * - Deleted: Deleted.
+     * - Launching: The service is on line.
          */
-        readonly version?: string | ros.IResolvable;
+        readonly status?: string | ros.IResolvable;
+        /**
+         * @Property deployType: Deployment type. Possible values:
+     * - ros: Deploy through ROS.
+     * - terraform: Deployed through Terraform.
+     * - ack: Deploy through ACK.
+     * - spi: call SPI deployment.
+     * - operation: Deployment of operations and maintenance services.
+         */
+        readonly deployType?: string | ros.IResolvable;
+        /**
+         * @Property upgradableServiceVersions: List of service versions that can be upgraded.
+         */
+        readonly upgradableServiceVersions?: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property serviceId: The service ID.
          */
         readonly serviceId: string | ros.IResolvable;
+        /**
+         * @Property deployMetadata: Information about the deployment configuration of the storage service. The stored information is related to the deployment type. Different deployment types have different data formats. Therefore, JSON String format is used for data storage.
+         */
+        readonly deployMetadata?: string | ros.IResolvable;
+        /**
+         * @Property version: Service version.
+         */
+        readonly version?: string | ros.IResolvable;
+        /**
+         * @Property supplierName: Name of service provider.
+         */
+        readonly supplierName?: string | ros.IResolvable;
+        /**
+         * @Property serviceType: Service type. Possible values:
+     * - private: deployed under the user account.
+     * - managed: managed under the service provider account.
+     * - operation: Agency operation and maintenance service.
+         */
+        readonly serviceType?: string | ros.IResolvable;
+        /**
+         * @Property serviceInfos: Service information.
+         */
+        readonly serviceInfos?: Array<RosServiceInstance.ServiceInfosProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property publishTime: Release time.
+         */
+        readonly publishTime?: string | ros.IResolvable;
+        /**
+         * @Property versionName: Service provider custom version name.
+         */
+        readonly versionName?: string | ros.IResolvable;
+        /**
+         * @Property serviceProductUrl: Product page URL.
+         */
+        readonly serviceProductUrl?: string | ros.IResolvable;
+        /**
+         * @Property upgradeMetadata: Upgrade metadata.
+         */
+        readonly upgradeMetadata?: string | ros.IResolvable;
+        /**
+         * @Property serviceDocUrl: The URL of the product document.
+         */
+        readonly serviceDocUrl?: string | ros.IResolvable;
+        /**
+         * @Property supplierUrl: Service provider address.
+         */
+        readonly supplierUrl?: string | ros.IResolvable;
     }
 }
 /**
@@ -710,9 +834,22 @@ export namespace RosServiceInstance {
 function RosServiceInstance_ServicePropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('version', ros.validateString)(properties.version));
+    errors.collect(ros.propertyValidator('status', ros.validateString)(properties.status));
+    errors.collect(ros.propertyValidator('deployType', ros.validateString)(properties.deployType));
+    errors.collect(ros.propertyValidator('upgradableServiceVersions', ros.listValidator(ros.validateString))(properties.upgradableServiceVersions));
     errors.collect(ros.propertyValidator('serviceId', ros.requiredValidator)(properties.serviceId));
     errors.collect(ros.propertyValidator('serviceId', ros.validateString)(properties.serviceId));
+    errors.collect(ros.propertyValidator('deployMetadata', ros.validateString)(properties.deployMetadata));
+    errors.collect(ros.propertyValidator('version', ros.validateString)(properties.version));
+    errors.collect(ros.propertyValidator('supplierName', ros.validateString)(properties.supplierName));
+    errors.collect(ros.propertyValidator('serviceType', ros.validateString)(properties.serviceType));
+    errors.collect(ros.propertyValidator('serviceInfos', ros.listValidator(RosServiceInstance_ServiceInfosPropertyValidator))(properties.serviceInfos));
+    errors.collect(ros.propertyValidator('publishTime', ros.validateString)(properties.publishTime));
+    errors.collect(ros.propertyValidator('versionName', ros.validateString)(properties.versionName));
+    errors.collect(ros.propertyValidator('serviceProductUrl', ros.validateString)(properties.serviceProductUrl));
+    errors.collect(ros.propertyValidator('upgradeMetadata', ros.validateString)(properties.upgradeMetadata));
+    errors.collect(ros.propertyValidator('serviceDocUrl', ros.validateString)(properties.serviceDocUrl));
+    errors.collect(ros.propertyValidator('supplierUrl', ros.validateString)(properties.supplierUrl));
     return errors.wrap('supplied properties not correct for "ServiceProperty"');
 }
 
@@ -728,8 +865,80 @@ function rosServiceInstanceServicePropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosServiceInstance_ServicePropertyValidator(properties).assertSuccess();
     return {
-      'Version': ros.stringToRosTemplate(properties.version),
+      'Status': ros.stringToRosTemplate(properties.status),
+      'DeployType': ros.stringToRosTemplate(properties.deployType),
+      'UpgradableServiceVersions': ros.listMapper(ros.stringToRosTemplate)(properties.upgradableServiceVersions),
       'ServiceId': ros.stringToRosTemplate(properties.serviceId),
+      'DeployMetadata': ros.stringToRosTemplate(properties.deployMetadata),
+      'Version': ros.stringToRosTemplate(properties.version),
+      'SupplierName': ros.stringToRosTemplate(properties.supplierName),
+      'ServiceType': ros.stringToRosTemplate(properties.serviceType),
+      'ServiceInfos': ros.listMapper(rosServiceInstanceServiceInfosPropertyToRosTemplate)(properties.serviceInfos),
+      'PublishTime': ros.stringToRosTemplate(properties.publishTime),
+      'VersionName': ros.stringToRosTemplate(properties.versionName),
+      'ServiceProductUrl': ros.stringToRosTemplate(properties.serviceProductUrl),
+      'UpgradeMetadata': ros.stringToRosTemplate(properties.upgradeMetadata),
+      'ServiceDocUrl': ros.stringToRosTemplate(properties.serviceDocUrl),
+      'SupplierUrl': ros.stringToRosTemplate(properties.supplierUrl),
+    };
+}
+
+export namespace RosServiceInstance {
+    /**
+     * @stability external
+     */
+    export interface ServiceInfosProperty {
+        /**
+         * @Property locale: The language of the service instance.
+         */
+        readonly locale?: string | ros.IResolvable;
+        /**
+         * @Property image: The address of the service icon.
+         */
+        readonly image?: string | ros.IResolvable;
+        /**
+         * @Property shortDescription: Service overview.
+         */
+        readonly shortDescription?: string | ros.IResolvable;
+        /**
+         * @Property name: The name of the service.
+         */
+        readonly name?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ServiceInfosProperty`
+ *
+ * @param properties - the TypeScript properties of a `ServiceInfosProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosServiceInstance_ServiceInfosPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('locale', ros.validateString)(properties.locale));
+    errors.collect(ros.propertyValidator('image', ros.validateString)(properties.image));
+    errors.collect(ros.propertyValidator('shortDescription', ros.validateString)(properties.shortDescription));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "ServiceInfosProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ComputeNest::ServiceInstance.ServiceInfos` resource
+ *
+ * @param properties - the TypeScript properties of a `ServiceInfosProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ComputeNest::ServiceInstance.ServiceInfos` resource.
+ */
+// @ts-ignore TS6133
+function rosServiceInstanceServiceInfosPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosServiceInstance_ServiceInfosPropertyValidator(properties).assertSuccess();
+    return {
+      'Locale': ros.stringToRosTemplate(properties.locale),
+      'Image': ros.stringToRosTemplate(properties.image),
+      'ShortDescription': ros.stringToRosTemplate(properties.shortDescription),
+      'Name': ros.stringToRosTemplate(properties.name),
     };
 }
 

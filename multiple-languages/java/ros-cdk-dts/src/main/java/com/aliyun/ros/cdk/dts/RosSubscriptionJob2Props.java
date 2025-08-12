@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dts;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-subscriptionjob2
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:04.135Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.783Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.RosSubscriptionJob2Props")
 @software.amazon.jsii.Jsii.Proxy(RosSubscriptionJob2Props.Jsii$Proxy.class)
 public interface RosSubscriptionJob2Props extends software.amazon.jsii.JsiiSerializable {
@@ -58,6 +58,18 @@ public interface RosSubscriptionJob2Props extends software.amazon.jsii.JsiiSeria
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDestPrimaryVswId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDestSecondaryVswId() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDtsBisLabel() {
         return null;
     }
@@ -88,7 +100,37 @@ public interface RosSubscriptionJob2Props extends software.amazon.jsii.JsiiSeria
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMaxDu() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMinDu() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getReserve() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSrcPrimaryVswId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSrcSecondaryVswId() {
         return null;
     }
 
@@ -123,12 +165,19 @@ public interface RosSubscriptionJob2Props extends software.amazon.jsii.JsiiSeria
         java.lang.Object delayNotice;
         java.lang.Object delayPhone;
         java.lang.Object delayRuleTime;
+        java.lang.Object destPrimaryVswId;
+        java.lang.Object destSecondaryVswId;
         java.lang.Object dtsBisLabel;
         java.lang.Object dtsInstanceId;
         java.lang.Object dtsJobId;
         java.lang.Object errorNotice;
         java.lang.Object errorPhone;
+        java.lang.Object maxDu;
+        java.lang.Object minDu;
         java.lang.Object reserve;
+        java.lang.Object resourceGroupId;
+        java.lang.Object srcPrimaryVswId;
+        java.lang.Object srcSecondaryVswId;
         java.lang.Object status;
         java.lang.Object subscriptionDataType;
 
@@ -313,6 +362,46 @@ public interface RosSubscriptionJob2Props extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosSubscriptionJob2Props#getDestPrimaryVswId}
+         * @param destPrimaryVswId the value to be set.
+         * @return {@code this}
+         */
+        public Builder destPrimaryVswId(java.lang.String destPrimaryVswId) {
+            this.destPrimaryVswId = destPrimaryVswId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSubscriptionJob2Props#getDestPrimaryVswId}
+         * @param destPrimaryVswId the value to be set.
+         * @return {@code this}
+         */
+        public Builder destPrimaryVswId(com.aliyun.ros.cdk.core.IResolvable destPrimaryVswId) {
+            this.destPrimaryVswId = destPrimaryVswId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSubscriptionJob2Props#getDestSecondaryVswId}
+         * @param destSecondaryVswId the value to be set.
+         * @return {@code this}
+         */
+        public Builder destSecondaryVswId(java.lang.String destSecondaryVswId) {
+            this.destSecondaryVswId = destSecondaryVswId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSubscriptionJob2Props#getDestSecondaryVswId}
+         * @param destSecondaryVswId the value to be set.
+         * @return {@code this}
+         */
+        public Builder destSecondaryVswId(com.aliyun.ros.cdk.core.IResolvable destSecondaryVswId) {
+            this.destSecondaryVswId = destSecondaryVswId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSubscriptionJob2Props#getDtsBisLabel}
          * @param dtsBisLabel the value to be set.
          * @return {@code this}
@@ -413,6 +502,46 @@ public interface RosSubscriptionJob2Props extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosSubscriptionJob2Props#getMaxDu}
+         * @param maxDu the value to be set.
+         * @return {@code this}
+         */
+        public Builder maxDu(java.lang.Number maxDu) {
+            this.maxDu = maxDu;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSubscriptionJob2Props#getMaxDu}
+         * @param maxDu the value to be set.
+         * @return {@code this}
+         */
+        public Builder maxDu(com.aliyun.ros.cdk.core.IResolvable maxDu) {
+            this.maxDu = maxDu;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSubscriptionJob2Props#getMinDu}
+         * @param minDu the value to be set.
+         * @return {@code this}
+         */
+        public Builder minDu(java.lang.Number minDu) {
+            this.minDu = minDu;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSubscriptionJob2Props#getMinDu}
+         * @param minDu the value to be set.
+         * @return {@code this}
+         */
+        public Builder minDu(com.aliyun.ros.cdk.core.IResolvable minDu) {
+            this.minDu = minDu;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSubscriptionJob2Props#getReserve}
          * @param reserve the value to be set.
          * @return {@code this}
@@ -429,6 +558,66 @@ public interface RosSubscriptionJob2Props extends software.amazon.jsii.JsiiSeria
          */
         public Builder reserve(java.util.Map<java.lang.String, ? extends java.lang.Object> reserve) {
             this.reserve = reserve;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSubscriptionJob2Props#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSubscriptionJob2Props#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSubscriptionJob2Props#getSrcPrimaryVswId}
+         * @param srcPrimaryVswId the value to be set.
+         * @return {@code this}
+         */
+        public Builder srcPrimaryVswId(java.lang.String srcPrimaryVswId) {
+            this.srcPrimaryVswId = srcPrimaryVswId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSubscriptionJob2Props#getSrcPrimaryVswId}
+         * @param srcPrimaryVswId the value to be set.
+         * @return {@code this}
+         */
+        public Builder srcPrimaryVswId(com.aliyun.ros.cdk.core.IResolvable srcPrimaryVswId) {
+            this.srcPrimaryVswId = srcPrimaryVswId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSubscriptionJob2Props#getSrcSecondaryVswId}
+         * @param srcSecondaryVswId the value to be set.
+         * @return {@code this}
+         */
+        public Builder srcSecondaryVswId(java.lang.String srcSecondaryVswId) {
+            this.srcSecondaryVswId = srcSecondaryVswId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSubscriptionJob2Props#getSrcSecondaryVswId}
+         * @param srcSecondaryVswId the value to be set.
+         * @return {@code this}
+         */
+        public Builder srcSecondaryVswId(com.aliyun.ros.cdk.core.IResolvable srcSecondaryVswId) {
+            this.srcSecondaryVswId = srcSecondaryVswId;
             return this;
         }
 
@@ -497,12 +686,19 @@ public interface RosSubscriptionJob2Props extends software.amazon.jsii.JsiiSeria
         private final java.lang.Object delayNotice;
         private final java.lang.Object delayPhone;
         private final java.lang.Object delayRuleTime;
+        private final java.lang.Object destPrimaryVswId;
+        private final java.lang.Object destSecondaryVswId;
         private final java.lang.Object dtsBisLabel;
         private final java.lang.Object dtsInstanceId;
         private final java.lang.Object dtsJobId;
         private final java.lang.Object errorNotice;
         private final java.lang.Object errorPhone;
+        private final java.lang.Object maxDu;
+        private final java.lang.Object minDu;
         private final java.lang.Object reserve;
+        private final java.lang.Object resourceGroupId;
+        private final java.lang.Object srcPrimaryVswId;
+        private final java.lang.Object srcSecondaryVswId;
         private final java.lang.Object status;
         private final java.lang.Object subscriptionDataType;
 
@@ -521,12 +717,19 @@ public interface RosSubscriptionJob2Props extends software.amazon.jsii.JsiiSeria
             this.delayNotice = software.amazon.jsii.Kernel.get(this, "delayNotice", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.delayPhone = software.amazon.jsii.Kernel.get(this, "delayPhone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.delayRuleTime = software.amazon.jsii.Kernel.get(this, "delayRuleTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.destPrimaryVswId = software.amazon.jsii.Kernel.get(this, "destPrimaryVswId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.destSecondaryVswId = software.amazon.jsii.Kernel.get(this, "destSecondaryVswId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dtsBisLabel = software.amazon.jsii.Kernel.get(this, "dtsBisLabel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dtsInstanceId = software.amazon.jsii.Kernel.get(this, "dtsInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dtsJobId = software.amazon.jsii.Kernel.get(this, "dtsJobId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.errorNotice = software.amazon.jsii.Kernel.get(this, "errorNotice", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.errorPhone = software.amazon.jsii.Kernel.get(this, "errorPhone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.maxDu = software.amazon.jsii.Kernel.get(this, "maxDu", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.minDu = software.amazon.jsii.Kernel.get(this, "minDu", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.reserve = software.amazon.jsii.Kernel.get(this, "reserve", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.srcPrimaryVswId = software.amazon.jsii.Kernel.get(this, "srcPrimaryVswId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.srcSecondaryVswId = software.amazon.jsii.Kernel.get(this, "srcSecondaryVswId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.status = software.amazon.jsii.Kernel.get(this, "status", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.subscriptionDataType = software.amazon.jsii.Kernel.get(this, "subscriptionDataType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -545,12 +748,19 @@ public interface RosSubscriptionJob2Props extends software.amazon.jsii.JsiiSeria
             this.delayNotice = builder.delayNotice;
             this.delayPhone = builder.delayPhone;
             this.delayRuleTime = builder.delayRuleTime;
+            this.destPrimaryVswId = builder.destPrimaryVswId;
+            this.destSecondaryVswId = builder.destSecondaryVswId;
             this.dtsBisLabel = builder.dtsBisLabel;
             this.dtsInstanceId = builder.dtsInstanceId;
             this.dtsJobId = builder.dtsJobId;
             this.errorNotice = builder.errorNotice;
             this.errorPhone = builder.errorPhone;
+            this.maxDu = builder.maxDu;
+            this.minDu = builder.minDu;
             this.reserve = builder.reserve;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.srcPrimaryVswId = builder.srcPrimaryVswId;
+            this.srcSecondaryVswId = builder.srcSecondaryVswId;
             this.status = builder.status;
             this.subscriptionDataType = builder.subscriptionDataType;
         }
@@ -601,6 +811,16 @@ public interface RosSubscriptionJob2Props extends software.amazon.jsii.JsiiSeria
         }
 
         @Override
+        public final java.lang.Object getDestPrimaryVswId() {
+            return this.destPrimaryVswId;
+        }
+
+        @Override
+        public final java.lang.Object getDestSecondaryVswId() {
+            return this.destSecondaryVswId;
+        }
+
+        @Override
         public final java.lang.Object getDtsBisLabel() {
             return this.dtsBisLabel;
         }
@@ -626,8 +846,33 @@ public interface RosSubscriptionJob2Props extends software.amazon.jsii.JsiiSeria
         }
 
         @Override
+        public final java.lang.Object getMaxDu() {
+            return this.maxDu;
+        }
+
+        @Override
+        public final java.lang.Object getMinDu() {
+            return this.minDu;
+        }
+
+        @Override
         public final java.lang.Object getReserve() {
             return this.reserve;
+        }
+
+        @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
+        }
+
+        @Override
+        public final java.lang.Object getSrcPrimaryVswId() {
+            return this.srcPrimaryVswId;
+        }
+
+        @Override
+        public final java.lang.Object getSrcSecondaryVswId() {
+            return this.srcSecondaryVswId;
         }
 
         @Override
@@ -665,6 +910,12 @@ public interface RosSubscriptionJob2Props extends software.amazon.jsii.JsiiSeria
             if (this.getDelayRuleTime() != null) {
                 data.set("delayRuleTime", om.valueToTree(this.getDelayRuleTime()));
             }
+            if (this.getDestPrimaryVswId() != null) {
+                data.set("destPrimaryVswId", om.valueToTree(this.getDestPrimaryVswId()));
+            }
+            if (this.getDestSecondaryVswId() != null) {
+                data.set("destSecondaryVswId", om.valueToTree(this.getDestSecondaryVswId()));
+            }
             if (this.getDtsBisLabel() != null) {
                 data.set("dtsBisLabel", om.valueToTree(this.getDtsBisLabel()));
             }
@@ -680,8 +931,23 @@ public interface RosSubscriptionJob2Props extends software.amazon.jsii.JsiiSeria
             if (this.getErrorPhone() != null) {
                 data.set("errorPhone", om.valueToTree(this.getErrorPhone()));
             }
+            if (this.getMaxDu() != null) {
+                data.set("maxDu", om.valueToTree(this.getMaxDu()));
+            }
+            if (this.getMinDu() != null) {
+                data.set("minDu", om.valueToTree(this.getMinDu()));
+            }
             if (this.getReserve() != null) {
                 data.set("reserve", om.valueToTree(this.getReserve()));
+            }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
+            if (this.getSrcPrimaryVswId() != null) {
+                data.set("srcPrimaryVswId", om.valueToTree(this.getSrcPrimaryVswId()));
+            }
+            if (this.getSrcSecondaryVswId() != null) {
+                data.set("srcSecondaryVswId", om.valueToTree(this.getSrcSecondaryVswId()));
             }
             if (this.getStatus() != null) {
                 data.set("status", om.valueToTree(this.getStatus()));
@@ -716,12 +982,19 @@ public interface RosSubscriptionJob2Props extends software.amazon.jsii.JsiiSeria
             if (this.delayNotice != null ? !this.delayNotice.equals(that.delayNotice) : that.delayNotice != null) return false;
             if (this.delayPhone != null ? !this.delayPhone.equals(that.delayPhone) : that.delayPhone != null) return false;
             if (this.delayRuleTime != null ? !this.delayRuleTime.equals(that.delayRuleTime) : that.delayRuleTime != null) return false;
+            if (this.destPrimaryVswId != null ? !this.destPrimaryVswId.equals(that.destPrimaryVswId) : that.destPrimaryVswId != null) return false;
+            if (this.destSecondaryVswId != null ? !this.destSecondaryVswId.equals(that.destSecondaryVswId) : that.destSecondaryVswId != null) return false;
             if (this.dtsBisLabel != null ? !this.dtsBisLabel.equals(that.dtsBisLabel) : that.dtsBisLabel != null) return false;
             if (this.dtsInstanceId != null ? !this.dtsInstanceId.equals(that.dtsInstanceId) : that.dtsInstanceId != null) return false;
             if (this.dtsJobId != null ? !this.dtsJobId.equals(that.dtsJobId) : that.dtsJobId != null) return false;
             if (this.errorNotice != null ? !this.errorNotice.equals(that.errorNotice) : that.errorNotice != null) return false;
             if (this.errorPhone != null ? !this.errorPhone.equals(that.errorPhone) : that.errorPhone != null) return false;
+            if (this.maxDu != null ? !this.maxDu.equals(that.maxDu) : that.maxDu != null) return false;
+            if (this.minDu != null ? !this.minDu.equals(that.minDu) : that.minDu != null) return false;
             if (this.reserve != null ? !this.reserve.equals(that.reserve) : that.reserve != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
+            if (this.srcPrimaryVswId != null ? !this.srcPrimaryVswId.equals(that.srcPrimaryVswId) : that.srcPrimaryVswId != null) return false;
+            if (this.srcSecondaryVswId != null ? !this.srcSecondaryVswId.equals(that.srcSecondaryVswId) : that.srcSecondaryVswId != null) return false;
             if (this.status != null ? !this.status.equals(that.status) : that.status != null) return false;
             return this.subscriptionDataType != null ? this.subscriptionDataType.equals(that.subscriptionDataType) : that.subscriptionDataType == null;
         }
@@ -737,12 +1010,19 @@ public interface RosSubscriptionJob2Props extends software.amazon.jsii.JsiiSeria
             result = 31 * result + (this.delayNotice != null ? this.delayNotice.hashCode() : 0);
             result = 31 * result + (this.delayPhone != null ? this.delayPhone.hashCode() : 0);
             result = 31 * result + (this.delayRuleTime != null ? this.delayRuleTime.hashCode() : 0);
+            result = 31 * result + (this.destPrimaryVswId != null ? this.destPrimaryVswId.hashCode() : 0);
+            result = 31 * result + (this.destSecondaryVswId != null ? this.destSecondaryVswId.hashCode() : 0);
             result = 31 * result + (this.dtsBisLabel != null ? this.dtsBisLabel.hashCode() : 0);
             result = 31 * result + (this.dtsInstanceId != null ? this.dtsInstanceId.hashCode() : 0);
             result = 31 * result + (this.dtsJobId != null ? this.dtsJobId.hashCode() : 0);
             result = 31 * result + (this.errorNotice != null ? this.errorNotice.hashCode() : 0);
             result = 31 * result + (this.errorPhone != null ? this.errorPhone.hashCode() : 0);
+            result = 31 * result + (this.maxDu != null ? this.maxDu.hashCode() : 0);
+            result = 31 * result + (this.minDu != null ? this.minDu.hashCode() : 0);
             result = 31 * result + (this.reserve != null ? this.reserve.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
+            result = 31 * result + (this.srcPrimaryVswId != null ? this.srcPrimaryVswId.hashCode() : 0);
+            result = 31 * result + (this.srcSecondaryVswId != null ? this.srcSecondaryVswId.hashCode() : 0);
             result = 31 * result + (this.status != null ? this.status.hashCode() : 0);
             result = 31 * result + (this.subscriptionDataType != null ? this.subscriptionDataType.hashCode() : 0);
             return result;

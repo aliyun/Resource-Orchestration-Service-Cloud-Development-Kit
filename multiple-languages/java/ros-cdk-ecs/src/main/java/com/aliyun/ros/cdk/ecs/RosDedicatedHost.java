@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ECS::DedicatedHost</code>, which is used to create a dedicated host.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ECS::DedicatedHost</code>, which is used to create dedicated hosts.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:04.888Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.404Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosDedicatedHost")
 public class RosDedicatedHost extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -199,6 +199,42 @@ public class RosDedicatedHost extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCpuOverCommitRatio() {
+        return software.amazon.jsii.Kernel.get(this, "cpuOverCommitRatio", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setCpuOverCommitRatio(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "cpuOverCommitRatio", value);
+    }
+
+    /**
+     */
+    public void setCpuOverCommitRatio(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "cpuOverCommitRatio", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDedicatedHostClusterId() {
+        return software.amazon.jsii.Kernel.get(this, "dedicatedHostClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDedicatedHostClusterId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "dedicatedHostClusterId", value);
+    }
+
+    /**
+     */
+    public void setDedicatedHostClusterId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "dedicatedHostClusterId", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getDedicatedHostName() {
         return software.amazon.jsii.Kernel.get(this, "dedicatedHostName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -231,6 +267,24 @@ public class RosDedicatedHost extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMinQuantity() {
+        return software.amazon.jsii.Kernel.get(this, "minQuantity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setMinQuantity(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "minQuantity", value);
+    }
+
+    /**
+     */
+    public void setMinQuantity(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "minQuantity", value);
     }
 
     /**
@@ -686,6 +740,40 @@ public class RosDedicatedHost extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param cpuOverCommitRatio This parameter is required.
+         */
+        public Builder cpuOverCommitRatio(final java.lang.Number cpuOverCommitRatio) {
+            this.props.cpuOverCommitRatio(cpuOverCommitRatio);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param cpuOverCommitRatio This parameter is required.
+         */
+        public Builder cpuOverCommitRatio(final com.aliyun.ros.cdk.core.IResolvable cpuOverCommitRatio) {
+            this.props.cpuOverCommitRatio(cpuOverCommitRatio);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param dedicatedHostClusterId This parameter is required.
+         */
+        public Builder dedicatedHostClusterId(final java.lang.String dedicatedHostClusterId) {
+            this.props.dedicatedHostClusterId(dedicatedHostClusterId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param dedicatedHostClusterId This parameter is required.
+         */
+        public Builder dedicatedHostClusterId(final com.aliyun.ros.cdk.core.IResolvable dedicatedHostClusterId) {
+            this.props.dedicatedHostClusterId(dedicatedHostClusterId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param dedicatedHostName This parameter is required.
          */
         public Builder dedicatedHostName(final java.lang.String dedicatedHostName) {
@@ -715,6 +803,23 @@ public class RosDedicatedHost extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param minQuantity This parameter is required.
+         */
+        public Builder minQuantity(final java.lang.Number minQuantity) {
+            this.props.minQuantity(minQuantity);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param minQuantity This parameter is required.
+         */
+        public Builder minQuantity(final com.aliyun.ros.cdk.core.IResolvable minQuantity) {
+            this.props.minQuantity(minQuantity);
             return this;
         }
 

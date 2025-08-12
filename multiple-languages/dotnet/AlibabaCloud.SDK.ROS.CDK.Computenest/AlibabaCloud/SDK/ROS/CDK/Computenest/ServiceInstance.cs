@@ -79,9 +79,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Computenest
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute Name: The name of the service instance.</summary>
-        [JsiiProperty(name: "attrName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        public virtual object AttrName
+        /// <summary>Attribute MarketInstanceId: The ID of the cloud marketplace instance.</summary>
+        [JsiiProperty(name: "attrMarketInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrMarketInstanceId
         {
             get => GetInstanceProperty<object>()!;
         }
@@ -89,6 +89,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Computenest
         /// <summary>Attribute NetworkConfig: Network configuration information.</summary>
         [JsiiProperty(name: "attrNetworkConfig", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrNetworkConfig
+        {
+            get => GetInstanceProperty<object>()!;
+        }
+
+        /// <summary>Attribute Output: Create the output Field returned by the service instance.</summary>
+        [JsiiProperty(name: "attrOutput", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrOutput
         {
             get => GetInstanceProperty<object>()!;
         }
@@ -141,6 +148,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Computenest
         /// <summary>Attribute ServiceInstanceId: The ID of the service instance.</summary>
         [JsiiProperty(name: "attrServiceInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrServiceInstanceId
+        {
+            get => GetInstanceProperty<object>()!;
+        }
+
+        /// <summary>Attribute ServiceInstanceName: The name of the resource.</summary>
+        [JsiiProperty(name: "attrServiceInstanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrServiceInstanceName
         {
             get => GetInstanceProperty<object>()!;
         }

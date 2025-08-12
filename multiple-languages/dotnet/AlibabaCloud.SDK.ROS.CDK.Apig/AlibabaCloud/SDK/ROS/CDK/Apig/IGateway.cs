@@ -49,6 +49,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apig
             get;
         }
 
+        /// <summary>Attribute GatewayType: The type of the gateway.</summary>
+        [JsiiProperty(name: "attrGatewayType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrGatewayType
+        {
+            get;
+        }
+
         /// <summary>Attribute LoadBalancers: The list of Gateway ingress addresses.</summary>
         [JsiiProperty(name: "attrLoadBalancers", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AttrLoadBalancers
@@ -63,6 +70,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apig
             get;
         }
 
+        /// <summary>Attribute ResourceGroupId: The ID of the resource group.</summary>
+        [JsiiProperty(name: "attrResourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrResourceGroupId
+        {
+            get;
+        }
+
         /// <summary>Attribute SecurityGroup: The Security Group of the Gateway.</summary>
         [JsiiProperty(name: "attrSecurityGroup", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AttrSecurityGroup
@@ -73,6 +87,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apig
         /// <summary>Attribute Spec: Gateway instance specifications.</summary>
         [JsiiProperty(name: "attrSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AttrSpec
+        {
+            get;
+        }
+
+        /// <summary>Attribute Tags: The tags of the Gateway.</summary>
+        [JsiiProperty(name: "attrTags", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrTags
         {
             get;
         }
@@ -170,6 +191,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apig
                 get => GetInstanceProperty<object>()!;
             }
 
+            /// <summary>Attribute GatewayType: The type of the gateway.</summary>
+            [JsiiProperty(name: "attrGatewayType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrGatewayType
+            {
+                get => GetInstanceProperty<object>()!;
+            }
+
             /// <summary>Attribute LoadBalancers: The list of Gateway ingress addresses.</summary>
             [JsiiProperty(name: "attrLoadBalancers", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AttrLoadBalancers
@@ -184,6 +212,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apig
                 get => GetInstanceProperty<object>()!;
             }
 
+            /// <summary>Attribute ResourceGroupId: The ID of the resource group.</summary>
+            [JsiiProperty(name: "attrResourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrResourceGroupId
+            {
+                get => GetInstanceProperty<object>()!;
+            }
+
             /// <summary>Attribute SecurityGroup: The Security Group of the Gateway.</summary>
             [JsiiProperty(name: "attrSecurityGroup", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AttrSecurityGroup
@@ -194,6 +229,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apig
             /// <summary>Attribute Spec: Gateway instance specifications.</summary>
             [JsiiProperty(name: "attrSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AttrSpec
+            {
+                get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Attribute Tags: The tags of the Gateway.</summary>
+            [JsiiProperty(name: "attrTags", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrTags
             {
                 get => GetInstanceProperty<object>()!;
             }

@@ -39,6 +39,7 @@
 @alicloud/ros-cdk-fc.RosFunction.PreFreezeProperty=com.aliyun.ros.cdk.fc.RosFunction$PreFreezeProperty
 @alicloud/ros-cdk-fc.RosFunction.PreStopProperty=com.aliyun.ros.cdk.fc.RosFunction$PreStopProperty
 @alicloud/ros-cdk-fc.RosFunctionInvoker=com.aliyun.ros.cdk.fc.RosFunctionInvoker
+@alicloud/ros-cdk-fc.RosFunctionInvoker.CheckAsyncInvocationProperty=com.aliyun.ros.cdk.fc.RosFunctionInvoker$CheckAsyncInvocationProperty
 @alicloud/ros-cdk-fc.RosFunctionInvokerProps=com.aliyun.ros.cdk.fc.RosFunctionInvokerProps
 @alicloud/ros-cdk-fc.RosFunctionProps=com.aliyun.ros.cdk.fc.RosFunctionProps
 @alicloud/ros-cdk-fc.RosLayer=com.aliyun.ros.cdk.fc.RosLayer

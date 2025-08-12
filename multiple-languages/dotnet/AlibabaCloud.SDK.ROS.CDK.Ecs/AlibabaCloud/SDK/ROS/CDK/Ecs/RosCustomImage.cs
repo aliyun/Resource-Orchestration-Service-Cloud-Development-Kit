@@ -265,6 +265,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: features: Mirror feature-related properties.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "features", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ecs.RosCustomImage.FeaturesProperty\"}]}}", isOptional: true)]
+        public virtual object? Features
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Ecs.RosCustomImage.IFeaturesProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Ecs.RosCustomImage.IFeaturesProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: imageFamily: The name of the image family of the image. The name must be 2 to 128 characters in length and can contain letters, digits, colons (:), underscores (_), and hyphens (-). It cannot contain http:\/\/ or https:\/\/. It must start with a letter and cannot start with acs: or aliyun.This parameter is empty by default.
         /// </remarks>
         [JsiiOptional]
@@ -841,6 +872,85 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                         }
                     }
                     _snapshotId = value;
+                }
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IFeaturesProperty), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosCustomImage.FeaturesProperty")]
+        public interface IFeaturesProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: imdsSupport: Mirrored metadata access pattern, possible values:
+            /// - v1: Setting the metadata access mode to "hardened only mode" is not supported when creating an ECS instance through this image.
+            /// - v2: Supports setting the metadata access mode to hardened mode only when creating an ECS instance through this image.
+            /// Default: v1 is the default when using snapshots to create images. When an instance is used to create an image, the default is the value of the ImdsSupport property of the image at the time of instance creation.
+            /// </remarks>
+            [JsiiProperty(name: "imdsSupport", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ImdsSupport
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IFeaturesProperty), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosCustomImage.FeaturesProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.RosCustomImage.IFeaturesProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: imdsSupport: Mirrored metadata access pattern, possible values:
+                /// - v1: Setting the metadata access mode to "hardened only mode" is not supported when creating an ECS instance through this image.
+                /// - v2: Supports setting the metadata access mode to hardened mode only when creating an ECS instance through this image.
+                /// Default: v1 is the default when using snapshots to create images. When an instance is used to create an image, the default is the value of the ImdsSupport property of the image at the time of instance creation.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "imdsSupport", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ImdsSupport
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.RosCustomImage.FeaturesProperty")]
+        public class FeaturesProperty : AlibabaCloud.SDK.ROS.CDK.Ecs.RosCustomImage.IFeaturesProperty
+        {
+            private object? _imdsSupport;
+
+            /// <remarks>
+            /// <strong>Property</strong>: imdsSupport: Mirrored metadata access pattern, possible values:
+            /// - v1: Setting the metadata access mode to "hardened only mode" is not supported when creating an ECS instance through this image.
+            /// - v2: Supports setting the metadata access mode to hardened mode only when creating an ECS instance through this image.
+            /// Default: v1 is the default when using snapshots to create images. When an instance is used to create an image, the default is the value of the ImdsSupport property of the image at the time of instance creation.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "imdsSupport", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ImdsSupport
+            {
+                get => _imdsSupport;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _imdsSupport = value;
                 }
             }
         }

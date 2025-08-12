@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-anycasteipassociation
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:11.361Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:51.284Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosAnycastEIPAssociationProps")
 @software.amazon.jsii.Jsii.Proxy(RosAnycastEIPAssociationProps.Jsii$Proxy.class)
 public interface RosAnycastEIPAssociationProps extends software.amazon.jsii.JsiiSerializable {
@@ -27,6 +27,24 @@ public interface RosAnycastEIPAssociationProps extends software.amazon.jsii.Jsii
     @org.jetbrains.annotations.NotNull java.lang.Object getBindInstanceType();
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAssociationMode() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPopLocations() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPrivateIpAddress() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosAnycastEIPAssociationProps}
      */
     static Builder builder() {
@@ -40,6 +58,9 @@ public interface RosAnycastEIPAssociationProps extends software.amazon.jsii.Jsii
         java.lang.Object bindInstanceId;
         java.lang.Object bindInstanceRegionId;
         java.lang.Object bindInstanceType;
+        java.lang.Object associationMode;
+        java.lang.Object popLocations;
+        java.lang.Object privateIpAddress;
 
         /**
          * Sets the value of {@link RosAnycastEIPAssociationProps#getAnycastId}
@@ -122,6 +143,66 @@ public interface RosAnycastEIPAssociationProps extends software.amazon.jsii.Jsii
         }
 
         /**
+         * Sets the value of {@link RosAnycastEIPAssociationProps#getAssociationMode}
+         * @param associationMode the value to be set.
+         * @return {@code this}
+         */
+        public Builder associationMode(java.lang.String associationMode) {
+            this.associationMode = associationMode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAnycastEIPAssociationProps#getAssociationMode}
+         * @param associationMode the value to be set.
+         * @return {@code this}
+         */
+        public Builder associationMode(com.aliyun.ros.cdk.core.IResolvable associationMode) {
+            this.associationMode = associationMode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAnycastEIPAssociationProps#getPopLocations}
+         * @param popLocations the value to be set.
+         * @return {@code this}
+         */
+        public Builder popLocations(com.aliyun.ros.cdk.core.IResolvable popLocations) {
+            this.popLocations = popLocations;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAnycastEIPAssociationProps#getPopLocations}
+         * @param popLocations the value to be set.
+         * @return {@code this}
+         */
+        public Builder popLocations(java.util.List<? extends java.lang.Object> popLocations) {
+            this.popLocations = popLocations;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAnycastEIPAssociationProps#getPrivateIpAddress}
+         * @param privateIpAddress the value to be set.
+         * @return {@code this}
+         */
+        public Builder privateIpAddress(java.lang.String privateIpAddress) {
+            this.privateIpAddress = privateIpAddress;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAnycastEIPAssociationProps#getPrivateIpAddress}
+         * @param privateIpAddress the value to be set.
+         * @return {@code this}
+         */
+        public Builder privateIpAddress(com.aliyun.ros.cdk.core.IResolvable privateIpAddress) {
+            this.privateIpAddress = privateIpAddress;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosAnycastEIPAssociationProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -141,6 +222,9 @@ public interface RosAnycastEIPAssociationProps extends software.amazon.jsii.Jsii
         private final java.lang.Object bindInstanceId;
         private final java.lang.Object bindInstanceRegionId;
         private final java.lang.Object bindInstanceType;
+        private final java.lang.Object associationMode;
+        private final java.lang.Object popLocations;
+        private final java.lang.Object privateIpAddress;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -152,6 +236,9 @@ public interface RosAnycastEIPAssociationProps extends software.amazon.jsii.Jsii
             this.bindInstanceId = software.amazon.jsii.Kernel.get(this, "bindInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.bindInstanceRegionId = software.amazon.jsii.Kernel.get(this, "bindInstanceRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.bindInstanceType = software.amazon.jsii.Kernel.get(this, "bindInstanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.associationMode = software.amazon.jsii.Kernel.get(this, "associationMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.popLocations = software.amazon.jsii.Kernel.get(this, "popLocations", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.privateIpAddress = software.amazon.jsii.Kernel.get(this, "privateIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -163,6 +250,9 @@ public interface RosAnycastEIPAssociationProps extends software.amazon.jsii.Jsii
             this.bindInstanceId = java.util.Objects.requireNonNull(builder.bindInstanceId, "bindInstanceId is required");
             this.bindInstanceRegionId = java.util.Objects.requireNonNull(builder.bindInstanceRegionId, "bindInstanceRegionId is required");
             this.bindInstanceType = java.util.Objects.requireNonNull(builder.bindInstanceType, "bindInstanceType is required");
+            this.associationMode = builder.associationMode;
+            this.popLocations = builder.popLocations;
+            this.privateIpAddress = builder.privateIpAddress;
         }
 
         @Override
@@ -186,6 +276,21 @@ public interface RosAnycastEIPAssociationProps extends software.amazon.jsii.Jsii
         }
 
         @Override
+        public final java.lang.Object getAssociationMode() {
+            return this.associationMode;
+        }
+
+        @Override
+        public final java.lang.Object getPopLocations() {
+            return this.popLocations;
+        }
+
+        @Override
+        public final java.lang.Object getPrivateIpAddress() {
+            return this.privateIpAddress;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -195,6 +300,15 @@ public interface RosAnycastEIPAssociationProps extends software.amazon.jsii.Jsii
             data.set("bindInstanceId", om.valueToTree(this.getBindInstanceId()));
             data.set("bindInstanceRegionId", om.valueToTree(this.getBindInstanceRegionId()));
             data.set("bindInstanceType", om.valueToTree(this.getBindInstanceType()));
+            if (this.getAssociationMode() != null) {
+                data.set("associationMode", om.valueToTree(this.getAssociationMode()));
+            }
+            if (this.getPopLocations() != null) {
+                data.set("popLocations", om.valueToTree(this.getPopLocations()));
+            }
+            if (this.getPrivateIpAddress() != null) {
+                data.set("privateIpAddress", om.valueToTree(this.getPrivateIpAddress()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-vpc.RosAnycastEIPAssociationProps"));
@@ -216,7 +330,10 @@ public interface RosAnycastEIPAssociationProps extends software.amazon.jsii.Jsii
             if (!anycastId.equals(that.anycastId)) return false;
             if (!bindInstanceId.equals(that.bindInstanceId)) return false;
             if (!bindInstanceRegionId.equals(that.bindInstanceRegionId)) return false;
-            return this.bindInstanceType.equals(that.bindInstanceType);
+            if (!bindInstanceType.equals(that.bindInstanceType)) return false;
+            if (this.associationMode != null ? !this.associationMode.equals(that.associationMode) : that.associationMode != null) return false;
+            if (this.popLocations != null ? !this.popLocations.equals(that.popLocations) : that.popLocations != null) return false;
+            return this.privateIpAddress != null ? this.privateIpAddress.equals(that.privateIpAddress) : that.privateIpAddress == null;
         }
 
         @Override
@@ -225,6 +342,9 @@ public interface RosAnycastEIPAssociationProps extends software.amazon.jsii.Jsii
             result = 31 * result + (this.bindInstanceId.hashCode());
             result = 31 * result + (this.bindInstanceRegionId.hashCode());
             result = 31 * result + (this.bindInstanceType.hashCode());
+            result = 31 * result + (this.associationMode != null ? this.associationMode.hashCode() : 0);
+            result = 31 * result + (this.popLocations != null ? this.popLocations.hashCode() : 0);
+            result = 31 * result + (this.privateIpAddress != null ? this.privateIpAddress.hashCode() : 0);
             return result;
         }
     }

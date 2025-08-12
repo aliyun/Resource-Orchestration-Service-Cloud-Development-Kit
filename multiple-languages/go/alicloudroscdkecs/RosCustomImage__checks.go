@@ -371,6 +371,30 @@ func (j *jsiiProxy_RosCustomImage) validateSetEnableResourcePropertyConstraintPa
 	return nil
 }
 
+func (j *jsiiProxy_RosCustomImage) validateSetFeaturesParameters(val interface{}) error {
+	switch val.(type) {
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	case *RosCustomImage_FeaturesProperty:
+		val := val.(*RosCustomImage_FeaturesProperty)
+		if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
+			return err
+		}
+	case RosCustomImage_FeaturesProperty:
+		val_ := val.(RosCustomImage_FeaturesProperty)
+		val := &val_
+		if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
+			return err
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosCustomImage_FeaturesProperty; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosCustomImage) validateSetImageFamilyParameters(val interface{}) error {
 	switch val.(type) {
 	case *string:

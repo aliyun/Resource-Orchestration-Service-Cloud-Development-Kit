@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ens;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ENS::SecurityGroup</code>, which is used to create a security group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:06.541Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.304Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ens.$Module.class, fqn = "@alicloud/ros-cdk-ens.RosSecurityGroup")
 public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -79,70 +79,36 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupEgress() {
-        return software.amazon.jsii.Kernel.get(this, "securityGroupEgress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPermissions() {
+        return software.amazon.jsii.Kernel.get(this, "permissions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
-    public void setSecurityGroupEgress(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "securityGroupEgress", value);
+    public void setPermissions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "permissions", value);
     }
 
     /**
      */
-    public void setSecurityGroupEgress(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+    public void setPermissions(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
         if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
             for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
                 final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
                 if (
                      !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
-                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.ens.RosSecurityGroup.SecurityGroupEgressProperty)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.ens.RosSecurityGroup.PermissionsProperty)
                     && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
                 ) {
                     throw new IllegalArgumentException(
                         new java.lang.StringBuilder("Expected ")
                             .append("value").append(".get(").append(__idx_ac66f0).append(")")
-                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.ens.RosSecurityGroup.SecurityGroupEgressProperty; received ")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.ens.RosSecurityGroup.PermissionsProperty; received ")
                             .append(__val_ac66f0.getClass()).toString());
                 }
             }
         }
-        software.amazon.jsii.Kernel.set(this, "securityGroupEgress", value);
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupIngress() {
-        return software.amazon.jsii.Kernel.get(this, "securityGroupIngress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setSecurityGroupIngress(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "securityGroupIngress", value);
-    }
-
-    /**
-     */
-    public void setSecurityGroupIngress(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
-        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
-            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
-                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
-                if (
-                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
-                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.ens.RosSecurityGroup.SecurityGroupIngressProperty)
-                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
-                ) {
-                    throw new IllegalArgumentException(
-                        new java.lang.StringBuilder("Expected ")
-                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
-                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.ens.RosSecurityGroup.SecurityGroupIngressProperty; received ")
-                            .append(__val_ac66f0.getClass()).toString());
-                }
-            }
-        }
-        software.amazon.jsii.Kernel.set(this, "securityGroupIngress", value);
+        software.amazon.jsii.Kernel.set(this, "permissions", value);
     }
 
     /**
@@ -164,10 +130,15 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
     }
     /**
      */
-    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ens.$Module.class, fqn = "@alicloud/ros-cdk-ens.RosSecurityGroup.SecurityGroupEgressProperty")
-    @software.amazon.jsii.Jsii.Proxy(SecurityGroupEgressProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ens.$Module.class, fqn = "@alicloud/ros-cdk-ens.RosSecurityGroup.PermissionsProperty")
+    @software.amazon.jsii.Jsii.Proxy(PermissionsProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-    public static interface SecurityGroupEgressProperty extends software.amazon.jsii.JsiiSerializable {
+    public static interface PermissionsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getDirection();
 
         /**
          */
@@ -177,355 +148,29 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getPolicy();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @org.jetbrains.annotations.NotNull java.lang.Object getPortRange();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getPriority();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+            return null;
+        }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getDestCidrIp() {
-            return null;
-        }
-
-        /**
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Object getPolicy() {
-            return null;
-        }
-
-        /**
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Object getPriority() {
-            return null;
-        }
-
-        /**
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Object getSourcePortRange() {
-            return null;
-        }
-
-        /**
-         * @return a {@link Builder} of {@link SecurityGroupEgressProperty}
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        static Builder builder() {
-            return new Builder();
-        }
-        /**
-         * A builder for {@link SecurityGroupEgressProperty}
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        public static final class Builder implements software.amazon.jsii.Builder<SecurityGroupEgressProperty> {
-            java.lang.Object ipProtocol;
-            java.lang.Object portRange;
-            java.lang.Object destCidrIp;
-            java.lang.Object policy;
-            java.lang.Object priority;
-            java.lang.Object sourcePortRange;
-
-            /**
-             * Sets the value of {@link SecurityGroupEgressProperty#getIpProtocol}
-             * @param ipProtocol the value to be set. This parameter is required.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder ipProtocol(java.lang.String ipProtocol) {
-                this.ipProtocol = ipProtocol;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link SecurityGroupEgressProperty#getIpProtocol}
-             * @param ipProtocol the value to be set. This parameter is required.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder ipProtocol(com.aliyun.ros.cdk.core.IResolvable ipProtocol) {
-                this.ipProtocol = ipProtocol;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link SecurityGroupEgressProperty#getPortRange}
-             * @param portRange the value to be set. This parameter is required.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder portRange(java.lang.String portRange) {
-                this.portRange = portRange;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link SecurityGroupEgressProperty#getPortRange}
-             * @param portRange the value to be set. This parameter is required.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder portRange(com.aliyun.ros.cdk.core.IResolvable portRange) {
-                this.portRange = portRange;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link SecurityGroupEgressProperty#getDestCidrIp}
-             * @param destCidrIp the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder destCidrIp(java.lang.String destCidrIp) {
-                this.destCidrIp = destCidrIp;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link SecurityGroupEgressProperty#getDestCidrIp}
-             * @param destCidrIp the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder destCidrIp(com.aliyun.ros.cdk.core.IResolvable destCidrIp) {
-                this.destCidrIp = destCidrIp;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link SecurityGroupEgressProperty#getPolicy}
-             * @param policy the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder policy(java.lang.String policy) {
-                this.policy = policy;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link SecurityGroupEgressProperty#getPolicy}
-             * @param policy the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder policy(com.aliyun.ros.cdk.core.IResolvable policy) {
-                this.policy = policy;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link SecurityGroupEgressProperty#getPriority}
-             * @param priority the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder priority(java.lang.Number priority) {
-                this.priority = priority;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link SecurityGroupEgressProperty#getPriority}
-             * @param priority the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder priority(com.aliyun.ros.cdk.core.IResolvable priority) {
-                this.priority = priority;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link SecurityGroupEgressProperty#getSourcePortRange}
-             * @param sourcePortRange the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder sourcePortRange(java.lang.String sourcePortRange) {
-                this.sourcePortRange = sourcePortRange;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link SecurityGroupEgressProperty#getSourcePortRange}
-             * @param sourcePortRange the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder sourcePortRange(com.aliyun.ros.cdk.core.IResolvable sourcePortRange) {
-                this.sourcePortRange = sourcePortRange;
-                return this;
-            }
-
-            /**
-             * Builds the configured instance.
-             * @return a new instance of {@link SecurityGroupEgressProperty}
-             * @throws NullPointerException if any required attribute was not provided
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            @Override
-            public SecurityGroupEgressProperty build() {
-                return new Jsii$Proxy(this);
-            }
-        }
-
-        /**
-         * An implementation for {@link SecurityGroupEgressProperty}
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @software.amazon.jsii.Internal
-        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements SecurityGroupEgressProperty {
-            private final java.lang.Object ipProtocol;
-            private final java.lang.Object portRange;
-            private final java.lang.Object destCidrIp;
-            private final java.lang.Object policy;
-            private final java.lang.Object priority;
-            private final java.lang.Object sourcePortRange;
-
-            /**
-             * Constructor that initializes the object based on values retrieved from the JsiiObject.
-             * @param objRef Reference to the JSII managed object.
-             */
-            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
-                super(objRef);
-                this.ipProtocol = software.amazon.jsii.Kernel.get(this, "ipProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.portRange = software.amazon.jsii.Kernel.get(this, "portRange", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.destCidrIp = software.amazon.jsii.Kernel.get(this, "destCidrIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.policy = software.amazon.jsii.Kernel.get(this, "policy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.priority = software.amazon.jsii.Kernel.get(this, "priority", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.sourcePortRange = software.amazon.jsii.Kernel.get(this, "sourcePortRange", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            }
-
-            /**
-             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
-             */
-            protected Jsii$Proxy(final Builder builder) {
-                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.ipProtocol = java.util.Objects.requireNonNull(builder.ipProtocol, "ipProtocol is required");
-                this.portRange = java.util.Objects.requireNonNull(builder.portRange, "portRange is required");
-                this.destCidrIp = builder.destCidrIp;
-                this.policy = builder.policy;
-                this.priority = builder.priority;
-                this.sourcePortRange = builder.sourcePortRange;
-            }
-
-            @Override
-            public final java.lang.Object getIpProtocol() {
-                return this.ipProtocol;
-            }
-
-            @Override
-            public final java.lang.Object getPortRange() {
-                return this.portRange;
-            }
-
-            @Override
-            public final java.lang.Object getDestCidrIp() {
-                return this.destCidrIp;
-            }
-
-            @Override
-            public final java.lang.Object getPolicy() {
-                return this.policy;
-            }
-
-            @Override
-            public final java.lang.Object getPriority() {
-                return this.priority;
-            }
-
-            @Override
-            public final java.lang.Object getSourcePortRange() {
-                return this.sourcePortRange;
-            }
-
-            @Override
-            @software.amazon.jsii.Internal
-            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
-                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
-                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
-
-                data.set("ipProtocol", om.valueToTree(this.getIpProtocol()));
-                data.set("portRange", om.valueToTree(this.getPortRange()));
-                if (this.getDestCidrIp() != null) {
-                    data.set("destCidrIp", om.valueToTree(this.getDestCidrIp()));
-                }
-                if (this.getPolicy() != null) {
-                    data.set("policy", om.valueToTree(this.getPolicy()));
-                }
-                if (this.getPriority() != null) {
-                    data.set("priority", om.valueToTree(this.getPriority()));
-                }
-                if (this.getSourcePortRange() != null) {
-                    data.set("sourcePortRange", om.valueToTree(this.getSourcePortRange()));
-                }
-
-                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
-                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ens.RosSecurityGroup.SecurityGroupEgressProperty"));
-                struct.set("data", data);
-
-                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
-                obj.set("$jsii.struct", struct);
-
-                return obj;
-            }
-
-            @Override
-            public final boolean equals(final Object o) {
-                if (this == o) return true;
-                if (o == null || getClass() != o.getClass()) return false;
-
-                SecurityGroupEgressProperty.Jsii$Proxy that = (SecurityGroupEgressProperty.Jsii$Proxy) o;
-
-                if (!ipProtocol.equals(that.ipProtocol)) return false;
-                if (!portRange.equals(that.portRange)) return false;
-                if (this.destCidrIp != null ? !this.destCidrIp.equals(that.destCidrIp) : that.destCidrIp != null) return false;
-                if (this.policy != null ? !this.policy.equals(that.policy) : that.policy != null) return false;
-                if (this.priority != null ? !this.priority.equals(that.priority) : that.priority != null) return false;
-                return this.sourcePortRange != null ? this.sourcePortRange.equals(that.sourcePortRange) : that.sourcePortRange == null;
-            }
-
-            @Override
-            public final int hashCode() {
-                int result = this.ipProtocol.hashCode();
-                result = 31 * result + (this.portRange.hashCode());
-                result = 31 * result + (this.destCidrIp != null ? this.destCidrIp.hashCode() : 0);
-                result = 31 * result + (this.policy != null ? this.policy.hashCode() : 0);
-                result = 31 * result + (this.priority != null ? this.priority.hashCode() : 0);
-                result = 31 * result + (this.sourcePortRange != null ? this.sourcePortRange.hashCode() : 0);
-                return result;
-            }
-        }
-    }
-    /**
-     */
-    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ens.$Module.class, fqn = "@alicloud/ros-cdk-ens.RosSecurityGroup.SecurityGroupIngressProperty")
-    @software.amazon.jsii.Jsii.Proxy(SecurityGroupIngressProperty.Jsii$Proxy.class)
-    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-    public static interface SecurityGroupIngressProperty extends software.amazon.jsii.JsiiSerializable {
-
-        /**
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getIpProtocol();
-
-        /**
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getPortRange();
-
-        /**
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Object getPolicy() {
-            return null;
-        }
-
-        /**
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Object getPriority() {
             return null;
         }
 
@@ -544,26 +189,51 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
         }
 
         /**
-         * @return a {@link Builder} of {@link SecurityGroupIngressProperty}
+         * @return a {@link Builder} of {@link PermissionsProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         static Builder builder() {
             return new Builder();
         }
         /**
-         * A builder for {@link SecurityGroupIngressProperty}
+         * A builder for {@link PermissionsProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        public static final class Builder implements software.amazon.jsii.Builder<SecurityGroupIngressProperty> {
+        public static final class Builder implements software.amazon.jsii.Builder<PermissionsProperty> {
+            java.lang.Object direction;
             java.lang.Object ipProtocol;
-            java.lang.Object portRange;
             java.lang.Object policy;
+            java.lang.Object portRange;
             java.lang.Object priority;
+            java.lang.Object description;
+            java.lang.Object destCidrIp;
             java.lang.Object sourceCidrIp;
             java.lang.Object sourcePortRange;
 
             /**
-             * Sets the value of {@link SecurityGroupIngressProperty#getIpProtocol}
+             * Sets the value of {@link PermissionsProperty#getDirection}
+             * @param direction the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder direction(java.lang.String direction) {
+                this.direction = direction;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PermissionsProperty#getDirection}
+             * @param direction the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder direction(com.aliyun.ros.cdk.core.IResolvable direction) {
+                this.direction = direction;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PermissionsProperty#getIpProtocol}
              * @param ipProtocol the value to be set. This parameter is required.
              * @return {@code this}
              */
@@ -574,7 +244,7 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
-             * Sets the value of {@link SecurityGroupIngressProperty#getIpProtocol}
+             * Sets the value of {@link PermissionsProperty#getIpProtocol}
              * @param ipProtocol the value to be set. This parameter is required.
              * @return {@code this}
              */
@@ -585,7 +255,29 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
-             * Sets the value of {@link SecurityGroupIngressProperty#getPortRange}
+             * Sets the value of {@link PermissionsProperty#getPolicy}
+             * @param policy the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder policy(java.lang.String policy) {
+                this.policy = policy;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PermissionsProperty#getPolicy}
+             * @param policy the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder policy(com.aliyun.ros.cdk.core.IResolvable policy) {
+                this.policy = policy;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PermissionsProperty#getPortRange}
              * @param portRange the value to be set. This parameter is required.
              * @return {@code this}
              */
@@ -596,7 +288,7 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
-             * Sets the value of {@link SecurityGroupIngressProperty#getPortRange}
+             * Sets the value of {@link PermissionsProperty#getPortRange}
              * @param portRange the value to be set. This parameter is required.
              * @return {@code this}
              */
@@ -607,30 +299,8 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
-             * Sets the value of {@link SecurityGroupIngressProperty#getPolicy}
-             * @param policy the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder policy(java.lang.String policy) {
-                this.policy = policy;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link SecurityGroupIngressProperty#getPolicy}
-             * @param policy the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder policy(com.aliyun.ros.cdk.core.IResolvable policy) {
-                this.policy = policy;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link SecurityGroupIngressProperty#getPriority}
-             * @param priority the value to be set.
+             * Sets the value of {@link PermissionsProperty#getPriority}
+             * @param priority the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -640,8 +310,8 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
-             * Sets the value of {@link SecurityGroupIngressProperty#getPriority}
-             * @param priority the value to be set.
+             * Sets the value of {@link PermissionsProperty#getPriority}
+             * @param priority the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -651,7 +321,51 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
-             * Sets the value of {@link SecurityGroupIngressProperty#getSourceCidrIp}
+             * Sets the value of {@link PermissionsProperty#getDescription}
+             * @param description the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder description(java.lang.String description) {
+                this.description = description;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PermissionsProperty#getDescription}
+             * @param description the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+                this.description = description;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PermissionsProperty#getDestCidrIp}
+             * @param destCidrIp the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder destCidrIp(java.lang.String destCidrIp) {
+                this.destCidrIp = destCidrIp;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PermissionsProperty#getDestCidrIp}
+             * @param destCidrIp the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder destCidrIp(com.aliyun.ros.cdk.core.IResolvable destCidrIp) {
+                this.destCidrIp = destCidrIp;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PermissionsProperty#getSourceCidrIp}
              * @param sourceCidrIp the value to be set.
              * @return {@code this}
              */
@@ -662,7 +376,7 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
-             * Sets the value of {@link SecurityGroupIngressProperty#getSourceCidrIp}
+             * Sets the value of {@link PermissionsProperty#getSourceCidrIp}
              * @param sourceCidrIp the value to be set.
              * @return {@code this}
              */
@@ -673,7 +387,7 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
-             * Sets the value of {@link SecurityGroupIngressProperty#getSourcePortRange}
+             * Sets the value of {@link PermissionsProperty#getSourcePortRange}
              * @param sourcePortRange the value to be set.
              * @return {@code this}
              */
@@ -684,7 +398,7 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
-             * Sets the value of {@link SecurityGroupIngressProperty#getSourcePortRange}
+             * Sets the value of {@link PermissionsProperty#getSourcePortRange}
              * @param sourcePortRange the value to be set.
              * @return {@code this}
              */
@@ -696,26 +410,29 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
 
             /**
              * Builds the configured instance.
-             * @return a new instance of {@link SecurityGroupIngressProperty}
+             * @return a new instance of {@link PermissionsProperty}
              * @throws NullPointerException if any required attribute was not provided
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
-            public SecurityGroupIngressProperty build() {
+            public PermissionsProperty build() {
                 return new Jsii$Proxy(this);
             }
         }
 
         /**
-         * An implementation for {@link SecurityGroupIngressProperty}
+         * An implementation for {@link PermissionsProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
-        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements SecurityGroupIngressProperty {
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements PermissionsProperty {
+            private final java.lang.Object direction;
             private final java.lang.Object ipProtocol;
-            private final java.lang.Object portRange;
             private final java.lang.Object policy;
+            private final java.lang.Object portRange;
             private final java.lang.Object priority;
+            private final java.lang.Object description;
+            private final java.lang.Object destCidrIp;
             private final java.lang.Object sourceCidrIp;
             private final java.lang.Object sourcePortRange;
 
@@ -725,10 +442,13 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
+                this.direction = software.amazon.jsii.Kernel.get(this, "direction", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.ipProtocol = software.amazon.jsii.Kernel.get(this, "ipProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.portRange = software.amazon.jsii.Kernel.get(this, "portRange", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.policy = software.amazon.jsii.Kernel.get(this, "policy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.portRange = software.amazon.jsii.Kernel.get(this, "portRange", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.priority = software.amazon.jsii.Kernel.get(this, "priority", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.destCidrIp = software.amazon.jsii.Kernel.get(this, "destCidrIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.sourceCidrIp = software.amazon.jsii.Kernel.get(this, "sourceCidrIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.sourcePortRange = software.amazon.jsii.Kernel.get(this, "sourcePortRange", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
@@ -738,12 +458,20 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.direction = java.util.Objects.requireNonNull(builder.direction, "direction is required");
                 this.ipProtocol = java.util.Objects.requireNonNull(builder.ipProtocol, "ipProtocol is required");
+                this.policy = java.util.Objects.requireNonNull(builder.policy, "policy is required");
                 this.portRange = java.util.Objects.requireNonNull(builder.portRange, "portRange is required");
-                this.policy = builder.policy;
-                this.priority = builder.priority;
+                this.priority = java.util.Objects.requireNonNull(builder.priority, "priority is required");
+                this.description = builder.description;
+                this.destCidrIp = builder.destCidrIp;
                 this.sourceCidrIp = builder.sourceCidrIp;
                 this.sourcePortRange = builder.sourcePortRange;
+            }
+
+            @Override
+            public final java.lang.Object getDirection() {
+                return this.direction;
             }
 
             @Override
@@ -752,18 +480,28 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.Object getPortRange() {
-                return this.portRange;
-            }
-
-            @Override
             public final java.lang.Object getPolicy() {
                 return this.policy;
             }
 
             @Override
+            public final java.lang.Object getPortRange() {
+                return this.portRange;
+            }
+
+            @Override
             public final java.lang.Object getPriority() {
                 return this.priority;
+            }
+
+            @Override
+            public final java.lang.Object getDescription() {
+                return this.description;
+            }
+
+            @Override
+            public final java.lang.Object getDestCidrIp() {
+                return this.destCidrIp;
             }
 
             @Override
@@ -782,13 +520,16 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
+                data.set("direction", om.valueToTree(this.getDirection()));
                 data.set("ipProtocol", om.valueToTree(this.getIpProtocol()));
+                data.set("policy", om.valueToTree(this.getPolicy()));
                 data.set("portRange", om.valueToTree(this.getPortRange()));
-                if (this.getPolicy() != null) {
-                    data.set("policy", om.valueToTree(this.getPolicy()));
+                data.set("priority", om.valueToTree(this.getPriority()));
+                if (this.getDescription() != null) {
+                    data.set("description", om.valueToTree(this.getDescription()));
                 }
-                if (this.getPriority() != null) {
-                    data.set("priority", om.valueToTree(this.getPriority()));
+                if (this.getDestCidrIp() != null) {
+                    data.set("destCidrIp", om.valueToTree(this.getDestCidrIp()));
                 }
                 if (this.getSourceCidrIp() != null) {
                     data.set("sourceCidrIp", om.valueToTree(this.getSourceCidrIp()));
@@ -798,7 +539,7 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
                 }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
-                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ens.RosSecurityGroup.SecurityGroupIngressProperty"));
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ens.RosSecurityGroup.PermissionsProperty"));
                 struct.set("data", data);
 
                 final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -812,22 +553,28 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
                 if (this == o) return true;
                 if (o == null || getClass() != o.getClass()) return false;
 
-                SecurityGroupIngressProperty.Jsii$Proxy that = (SecurityGroupIngressProperty.Jsii$Proxy) o;
+                PermissionsProperty.Jsii$Proxy that = (PermissionsProperty.Jsii$Proxy) o;
 
+                if (!direction.equals(that.direction)) return false;
                 if (!ipProtocol.equals(that.ipProtocol)) return false;
+                if (!policy.equals(that.policy)) return false;
                 if (!portRange.equals(that.portRange)) return false;
-                if (this.policy != null ? !this.policy.equals(that.policy) : that.policy != null) return false;
-                if (this.priority != null ? !this.priority.equals(that.priority) : that.priority != null) return false;
+                if (!priority.equals(that.priority)) return false;
+                if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+                if (this.destCidrIp != null ? !this.destCidrIp.equals(that.destCidrIp) : that.destCidrIp != null) return false;
                 if (this.sourceCidrIp != null ? !this.sourceCidrIp.equals(that.sourceCidrIp) : that.sourceCidrIp != null) return false;
                 return this.sourcePortRange != null ? this.sourcePortRange.equals(that.sourcePortRange) : that.sourcePortRange == null;
             }
 
             @Override
             public final int hashCode() {
-                int result = this.ipProtocol.hashCode();
+                int result = this.direction.hashCode();
+                result = 31 * result + (this.ipProtocol.hashCode());
+                result = 31 * result + (this.policy.hashCode());
                 result = 31 * result + (this.portRange.hashCode());
-                result = 31 * result + (this.policy != null ? this.policy.hashCode() : 0);
-                result = 31 * result + (this.priority != null ? this.priority.hashCode() : 0);
+                result = 31 * result + (this.priority.hashCode());
+                result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+                result = 31 * result + (this.destCidrIp != null ? this.destCidrIp.hashCode() : 0);
                 result = 31 * result + (this.sourceCidrIp != null ? this.sourceCidrIp.hashCode() : 0);
                 result = 31 * result + (this.sourcePortRange != null ? this.sourcePortRange.hashCode() : 0);
                 return result;
@@ -880,35 +627,18 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param securityGroupEgress This parameter is required.
+         * @param permissions This parameter is required.
          */
-        public Builder securityGroupEgress(final com.aliyun.ros.cdk.core.IResolvable securityGroupEgress) {
-            this.props.securityGroupEgress(securityGroupEgress);
+        public Builder permissions(final com.aliyun.ros.cdk.core.IResolvable permissions) {
+            this.props.permissions(permissions);
             return this;
         }
         /**
          * @return {@code this}
-         * @param securityGroupEgress This parameter is required.
+         * @param permissions This parameter is required.
          */
-        public Builder securityGroupEgress(final java.util.List<? extends java.lang.Object> securityGroupEgress) {
-            this.props.securityGroupEgress(securityGroupEgress);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param securityGroupIngress This parameter is required.
-         */
-        public Builder securityGroupIngress(final com.aliyun.ros.cdk.core.IResolvable securityGroupIngress) {
-            this.props.securityGroupIngress(securityGroupIngress);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param securityGroupIngress This parameter is required.
-         */
-        public Builder securityGroupIngress(final java.util.List<? extends java.lang.Object> securityGroupIngress) {
-            this.props.securityGroupIngress(securityGroupIngress);
+        public Builder permissions(final java.util.List<? extends java.lang.Object> permissions) {
+            this.props.permissions(permissions);
             return this;
         }
 

@@ -76,6 +76,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             get;
         }
 
+        /// <summary>Attribute RelatedOrderIds: The related order id list of created ecs instances.</summary>
+        [JsiiProperty(name: "attrRelatedOrderIds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrRelatedOrderIds
+        {
+            get;
+        }
+
         /// <summary>Attribute ZoneIds: Zone id of created instances.</summary>
         [JsiiProperty(name: "attrZoneIds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AttrZoneIds
@@ -161,6 +168,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// <summary>Attribute PublicIps: Public IP address list of created ecs instances.</summary>
             [JsiiProperty(name: "attrPublicIps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AttrPublicIps
+            {
+                get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Attribute RelatedOrderIds: The related order id list of created ecs instances.</summary>
+            [JsiiProperty(name: "attrRelatedOrderIds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrRelatedOrderIds
             {
                 get => GetInstanceProperty<object>()!;
             }

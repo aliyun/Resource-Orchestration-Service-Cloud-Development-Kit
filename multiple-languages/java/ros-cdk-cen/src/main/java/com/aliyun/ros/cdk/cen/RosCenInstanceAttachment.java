@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CEN::CenInstanceAttachment</code>, which is used to attach a network instance to a Cloud Enterprise Network (CEN) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:02.441Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:44.336Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosCenInstanceAttachment")
 public class RosCenInstanceAttachment extends com.aliyun.ros.cdk.core.RosResource {
 

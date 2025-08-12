@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ECS::CustomImage</code>, which is used to create a custom image.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:04.884Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.400Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosCustomImage")
 public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -169,6 +169,24 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
             }
         }
         software.amazon.jsii.Kernel.set(this, "diskDeviceMapping", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getFeatures() {
+        return software.amazon.jsii.Kernel.get(this, "features", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setFeatures(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "features", value);
+    }
+
+    /**
+     */
+    public void setFeatures(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.ecs.RosCustomImage.FeaturesProperty value) {
+        software.amazon.jsii.Kernel.set(this, "features", value);
     }
 
     /**
@@ -608,6 +626,135 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
     }
     /**
      */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosCustomImage.FeaturesProperty")
+    @software.amazon.jsii.Jsii.Proxy(FeaturesProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface FeaturesProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getImdsSupport() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link FeaturesProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link FeaturesProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<FeaturesProperty> {
+            java.lang.Object imdsSupport;
+
+            /**
+             * Sets the value of {@link FeaturesProperty#getImdsSupport}
+             * @param imdsSupport the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder imdsSupport(java.lang.String imdsSupport) {
+                this.imdsSupport = imdsSupport;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link FeaturesProperty#getImdsSupport}
+             * @param imdsSupport the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder imdsSupport(com.aliyun.ros.cdk.core.IResolvable imdsSupport) {
+                this.imdsSupport = imdsSupport;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link FeaturesProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public FeaturesProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link FeaturesProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements FeaturesProperty {
+            private final java.lang.Object imdsSupport;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.imdsSupport = software.amazon.jsii.Kernel.get(this, "imdsSupport", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.imdsSupport = builder.imdsSupport;
+            }
+
+            @Override
+            public final java.lang.Object getImdsSupport() {
+                return this.imdsSupport;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getImdsSupport() != null) {
+                    data.set("imdsSupport", om.valueToTree(this.getImdsSupport()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ecs.RosCustomImage.FeaturesProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                FeaturesProperty.Jsii$Proxy that = (FeaturesProperty.Jsii$Proxy) o;
+
+                return this.imdsSupport != null ? this.imdsSupport.equals(that.imdsSupport) : that.imdsSupport == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.imdsSupport != null ? this.imdsSupport.hashCode() : 0;
+                return result;
+            }
+        }
+    }
+    /**
+     */
     @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosCustomImage.TagProperty")
     @software.amazon.jsii.Jsii.Proxy(TagProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -887,6 +1034,23 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder diskDeviceMapping(final java.util.List<? extends java.lang.Object> diskDeviceMapping) {
             this.props.diskDeviceMapping(diskDeviceMapping);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param features This parameter is required.
+         */
+        public Builder features(final com.aliyun.ros.cdk.core.IResolvable features) {
+            this.props.features(features);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param features This parameter is required.
+         */
+        public Builder features(final com.aliyun.ros.cdk.ecs.RosCustomImage.FeaturesProperty features) {
+            this.props.features(features);
             return this;
         }
 

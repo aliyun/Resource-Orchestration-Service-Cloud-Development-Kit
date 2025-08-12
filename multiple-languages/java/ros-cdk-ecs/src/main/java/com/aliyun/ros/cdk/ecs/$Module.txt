@@ -63,6 +63,7 @@
 @alicloud/ros-cdk-ecs.IRamRoleAttachment=com.aliyun.ros.cdk.ecs.IRamRoleAttachment
 @alicloud/ros-cdk-ecs.IRoute=com.aliyun.ros.cdk.ecs.IRoute
 @alicloud/ros-cdk-ecs.IRunCommand=com.aliyun.ros.cdk.ecs.IRunCommand
+@alicloud/ros-cdk-ecs.IRunCommandOfLifespan=com.aliyun.ros.cdk.ecs.IRunCommandOfLifespan
 @alicloud/ros-cdk-ecs.ISNatEntry=com.aliyun.ros.cdk.ecs.ISNatEntry
 @alicloud/ros-cdk-ecs.ISSHKeyPair=com.aliyun.ros.cdk.ecs.ISSHKeyPair
 @alicloud/ros-cdk-ecs.ISSHKeyPairAttachment=com.aliyun.ros.cdk.ecs.ISSHKeyPairAttachment
@@ -138,6 +139,7 @@
 @alicloud/ros-cdk-ecs.RosCopyImageProps=com.aliyun.ros.cdk.ecs.RosCopyImageProps
 @alicloud/ros-cdk-ecs.RosCustomImage=com.aliyun.ros.cdk.ecs.RosCustomImage
 @alicloud/ros-cdk-ecs.RosCustomImage.DiskDeviceMappingProperty=com.aliyun.ros.cdk.ecs.RosCustomImage$DiskDeviceMappingProperty
+@alicloud/ros-cdk-ecs.RosCustomImage.FeaturesProperty=com.aliyun.ros.cdk.ecs.RosCustomImage$FeaturesProperty
 @alicloud/ros-cdk-ecs.RosCustomImage.TagProperty=com.aliyun.ros.cdk.ecs.RosCustomImage$TagProperty
 @alicloud/ros-cdk-ecs.RosCustomImageProps=com.aliyun.ros.cdk.ecs.RosCustomImageProps
 @alicloud/ros-cdk-ecs.RosDedicatedHost=com.aliyun.ros.cdk.ecs.RosDedicatedHost
@@ -152,6 +154,7 @@
 @alicloud/ros-cdk-ecs.RosDiskProps=com.aliyun.ros.cdk.ecs.RosDiskProps
 @alicloud/ros-cdk-ecs.RosElasticityAssurance=com.aliyun.ros.cdk.ecs.RosElasticityAssurance
 @alicloud/ros-cdk-ecs.RosElasticityAssurance.PrivatePoolOptionsProperty=com.aliyun.ros.cdk.ecs.RosElasticityAssurance$PrivatePoolOptionsProperty
+@alicloud/ros-cdk-ecs.RosElasticityAssurance.RecurrenceRulesProperty=com.aliyun.ros.cdk.ecs.RosElasticityAssurance$RecurrenceRulesProperty
 @alicloud/ros-cdk-ecs.RosElasticityAssurance.TagsProperty=com.aliyun.ros.cdk.ecs.RosElasticityAssurance$TagsProperty
 @alicloud/ros-cdk-ecs.RosElasticityAssuranceProps=com.aliyun.ros.cdk.ecs.RosElasticityAssuranceProps
 @alicloud/ros-cdk-ecs.RosForwardEntry=com.aliyun.ros.cdk.ecs.RosForwardEntry
@@ -223,6 +226,9 @@
 @alicloud/ros-cdk-ecs.RosRouteProps=com.aliyun.ros.cdk.ecs.RosRouteProps
 @alicloud/ros-cdk-ecs.RosRunCommand=com.aliyun.ros.cdk.ecs.RosRunCommand
 @alicloud/ros-cdk-ecs.RosRunCommand.TagsProperty=com.aliyun.ros.cdk.ecs.RosRunCommand$TagsProperty
+@alicloud/ros-cdk-ecs.RosRunCommandOfLifespan=com.aliyun.ros.cdk.ecs.RosRunCommandOfLifespan
+@alicloud/ros-cdk-ecs.RosRunCommandOfLifespan.TagsProperty=com.aliyun.ros.cdk.ecs.RosRunCommandOfLifespan$TagsProperty
+@alicloud/ros-cdk-ecs.RosRunCommandOfLifespanProps=com.aliyun.ros.cdk.ecs.RosRunCommandOfLifespanProps
 @alicloud/ros-cdk-ecs.RosRunCommandProps=com.aliyun.ros.cdk.ecs.RosRunCommandProps
 @alicloud/ros-cdk-ecs.RosSNatEntry=com.aliyun.ros.cdk.ecs.RosSNatEntry
 @alicloud/ros-cdk-ecs.RosSNatEntryProps=com.aliyun.ros.cdk.ecs.RosSNatEntryProps
@@ -263,6 +269,8 @@
 @alicloud/ros-cdk-ecs.Route=com.aliyun.ros.cdk.ecs.Route
 @alicloud/ros-cdk-ecs.RouteProps=com.aliyun.ros.cdk.ecs.RouteProps
 @alicloud/ros-cdk-ecs.RunCommand=com.aliyun.ros.cdk.ecs.RunCommand
+@alicloud/ros-cdk-ecs.RunCommandOfLifespan=com.aliyun.ros.cdk.ecs.RunCommandOfLifespan
+@alicloud/ros-cdk-ecs.RunCommandOfLifespanProps=com.aliyun.ros.cdk.ecs.RunCommandOfLifespanProps
 @alicloud/ros-cdk-ecs.RunCommandProps=com.aliyun.ros.cdk.ecs.RunCommandProps
 @alicloud/ros-cdk-ecs.SNatEntry=com.aliyun.ros.cdk.ecs.SNatEntry
 @alicloud/ros-cdk-ecs.SNatEntryProps=com.aliyun.ros.cdk.ecs.SNatEntryProps

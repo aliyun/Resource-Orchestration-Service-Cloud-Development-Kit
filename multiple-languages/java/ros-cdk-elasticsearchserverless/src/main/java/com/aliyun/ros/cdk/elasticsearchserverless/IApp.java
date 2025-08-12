@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.elasticsearchserverless;
 /**
  * Represents a <code>App</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:06.299Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.160Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.elasticsearchserverless.$Module.class, fqn = "@alicloud/ros-cdk-elasticsearchserverless.IApp")
 @software.amazon.jsii.Jsii.Proxy(IApp.Jsii$Proxy.class)
 public interface IApp extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
@@ -32,6 +32,11 @@ public interface IApp extends software.amazon.jsii.JsiiSerializable, com.aliyun.
      * Attribute PublicKibanaDomain: The public network kibana domain of the app.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrPublicKibanaDomain();
+
+    /**
+     * Attribute Username: The username of the app.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrUsername();
 
     @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.elasticsearchserverless.AppProps getProps();
 
@@ -115,6 +120,14 @@ public interface IApp extends software.amazon.jsii.JsiiSerializable, com.aliyun.
             return software.amazon.jsii.Kernel.get(this, "attrPublicKibanaDomain", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
+        /**
+         * Attribute Username: The username of the app.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrUsername() {
+            return software.amazon.jsii.Kernel.get(this, "attrUsername", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
         @Override
         public final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.elasticsearchserverless.AppProps getProps() {
             return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.elasticsearchserverless.AppProps.class));
@@ -196,6 +209,14 @@ public interface IApp extends software.amazon.jsii.JsiiSerializable, com.aliyun.
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrPublicKibanaDomain() {
             return software.amazon.jsii.Kernel.get(this, "attrPublicKibanaDomain", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute Username: The username of the app.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrUsername() {
+            return software.amazon.jsii.Kernel.get(this, "attrUsername", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         @Override

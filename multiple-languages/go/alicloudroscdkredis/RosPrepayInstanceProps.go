@@ -21,11 +21,13 @@ type RosPrepayInstanceProps struct {
 	Period interface{} `field:"optional" json:"period" yaml:"period"`
 	PeriodUnit interface{} `field:"optional" json:"periodUnit" yaml:"periodUnit"`
 	ProductType interface{} `field:"optional" json:"productType" yaml:"productType"`
+	ReadOnlyCount interface{} `field:"optional" json:"readOnlyCount" yaml:"readOnlyCount"`
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 	SecondaryZoneId interface{} `field:"optional" json:"secondaryZoneId" yaml:"secondaryZoneId"`
 	SecurityGroupId interface{} `field:"optional" json:"securityGroupId" yaml:"securityGroupId"`
 	ShardCount interface{} `field:"optional" json:"shardCount" yaml:"shardCount"`
 	SslEnabled interface{} `field:"optional" json:"sslEnabled" yaml:"sslEnabled"`
+	SubscriptionDeletionForce interface{} `field:"optional" json:"subscriptionDeletionForce" yaml:"subscriptionDeletionForce"`
 	Tags *[]*RosPrepayInstance_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 	TairConfig interface{} `field:"optional" json:"tairConfig" yaml:"tairConfig"`
 	VpcId interface{} `field:"optional" json:"vpcId" yaml:"vpcId"`

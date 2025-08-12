@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.computenest;
 /**
  * Represents a <code>IntranetConnectorEndpoint</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:03.170Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:44.970Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.computenest.$Module.class, fqn = "@alicloud/ros-cdk-computenest.IIntranetConnectorEndpoint")
 @software.amazon.jsii.Jsii.Proxy(IIntranetConnectorEndpoint.Jsii$Proxy.class)
 public interface IIntranetConnectorEndpoint extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

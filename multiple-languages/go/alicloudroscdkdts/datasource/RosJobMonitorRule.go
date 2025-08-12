@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::DTS::JobMonitorRule`.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::DTS::JobMonitorRule`, which type is used to query an alert rule of a Data Transmission Service (DTS) task.
 type RosJobMonitorRule interface {
 	alicloudroscdkcore.RosResource
 	AttrDelayRuleTime() alicloudroscdkcore.IResolvable

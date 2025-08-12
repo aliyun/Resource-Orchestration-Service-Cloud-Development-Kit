@@ -31,6 +31,7 @@ export * from './prefixlist';
 export * from './ramroleattachment';
 export * from './route';
 export * from './runcommand';
+export * from './runcommandoflifespan';
 export * from './snatentry';
 export * from './sshkeypair';
 export * from './sshkeypairattachment';

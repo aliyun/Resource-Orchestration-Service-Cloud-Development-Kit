@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.arms.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::ARMS::Prometheus</code>, which is used to query the information about a Prometheus instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:02.057Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:44.043Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.datasource.Prometheus")
 public class Prometheus extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.arms.datasource.IPrometheus {
 

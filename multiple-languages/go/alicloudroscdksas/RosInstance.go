@@ -51,10 +51,14 @@ type RosInstance interface {
 	SetMaliciousFileDetectionSdk(val interface{})
 	// The construct tree node associated with this construct.
 	Node() alicloudroscdkcore.ConstructNode
+	PayType() interface{}
+	SetPayType(val interface{})
 	Period() interface{}
 	SetPeriod(val interface{})
 	PeriodUnit() interface{}
 	SetPeriodUnit(val interface{})
+	PostPayInstanceModule() interface{}
+	SetPostPayInstanceModule(val interface{})
 	ProtectedServers() interface{}
 	SetProtectedServers(val interface{})
 	QuotaForApplicationProtection() interface{}
@@ -367,6 +371,16 @@ func (j *jsiiProxy_RosInstance) Node() alicloudroscdkcore.ConstructNode {
 	return returns
 }
 
+func (j *jsiiProxy_RosInstance) PayType() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"payType",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosInstance) Period() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -382,6 +396,16 @@ func (j *jsiiProxy_RosInstance) PeriodUnit() interface{} {
 	_jsii_.Get(
 		j,
 		"periodUnit",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosInstance) PostPayInstanceModule() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"postPayInstanceModule",
 		&returns,
 	)
 	return returns
@@ -716,6 +740,17 @@ func (j *jsiiProxy_RosInstance)SetMaliciousFileDetectionSdk(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosInstance)SetPayType(val interface{}) {
+	if err := j.validateSetPayTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"payType",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosInstance)SetPeriod(val interface{}) {
 	if err := j.validateSetPeriodParameters(val); err != nil {
 		panic(err)
@@ -734,6 +769,17 @@ func (j *jsiiProxy_RosInstance)SetPeriodUnit(val interface{}) {
 	_jsii_.Set(
 		j,
 		"periodUnit",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosInstance)SetPostPayInstanceModule(val interface{}) {
+	if err := j.validateSetPostPayInstanceModuleParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"postPayInstanceModule",
 		val,
 	)
 }

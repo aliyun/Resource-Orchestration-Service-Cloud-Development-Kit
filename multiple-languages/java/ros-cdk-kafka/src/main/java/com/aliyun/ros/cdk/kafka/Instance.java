@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.kafka;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::KAFKA::Instance</code>, which is used to create an ApsaraMQ for Kafka instance.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::KAFKA::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:07.677Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.288Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.kafka.IInstance {
 
@@ -476,6 +476,7 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
          * normal: Normal version
          * professional: Professional Edition (high writing edition)
          * professionalForHighRead: Professional Edition (high reading edition)
+         * basic: Basic Edition (only for serverless)
          * <p>
          * @return {@code this}
          * @param specType Property specType: The edition of the Message Queue for Apache Kafka instance. This parameter is required.
@@ -491,6 +492,7 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
          * normal: Normal version
          * professional: Professional Edition (high writing edition)
          * professionalForHighRead: Professional Edition (high reading edition)
+         * basic: Basic Edition (only for serverless)
          * <p>
          * @return {@code this}
          * @param specType Property specType: The edition of the Message Queue for Apache Kafka instance. This parameter is required.

@@ -7,6 +7,10 @@ package alicloudroscdkkms
 type NetworkRuleProps struct {
 	// Property networkRuleName: The name of the access control rule.
 	NetworkRuleName interface{} `field:"required" json:"networkRuleName" yaml:"networkRuleName"`
+	// Property type: Network type.
+	//
+	// The value can be Private only, that is, only private IP addresses are supported.
+	Type interface{} `field:"required" json:"type" yaml:"type"`
 	// Property description: The description of the network rule.
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
 	// Property sourcePrivateIp: VPC network whitelist, The private IP address or private CIDR block, Supports binding up to 800 CIDR blocks or IP addresses.

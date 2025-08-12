@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mns;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::MNS::Topic</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.018Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.575Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.Topic")
 public class Topic extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.mns.ITopic {
 
@@ -197,6 +197,19 @@ public class Topic extends com.aliyun.ros.cdk.core.Resource implements com.aliyu
          */
         public Builder maximumMessageSize(final com.aliyun.ros.cdk.core.IResolvable maximumMessageSize) {
             this.props.maximumMessageSize(maximumMessageSize);
+            return this;
+        }
+
+        /**
+         * Property tags: Tags to attach to Topic.
+         * <p>
+         * Max support 20 tags to add during create Topic. Each tag with two properties Key and Value, and Key is required.
+         * <p>
+         * @return {@code this}
+         * @param tags Property tags: Tags to attach to Topic. This parameter is required.
+         */
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.mns.RosTopic.TagsProperty> tags) {
+            this.props.tags(tags);
             return this;
         }
 

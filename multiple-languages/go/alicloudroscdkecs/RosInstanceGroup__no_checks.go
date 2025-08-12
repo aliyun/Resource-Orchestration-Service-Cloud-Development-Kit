@@ -320,6 +320,10 @@ func (j *jsiiProxy_RosInstanceGroup) validateSetStorageSetPartitionNumberParamet
 	return nil
 }
 
+func (j *jsiiProxy_RosInstanceGroup) validateSetSubscriptionDeletionForceParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosInstanceGroup) validateSetSystemDiskAutoSnapshotPolicyIdParameters(val interface{}) error {
 	return nil
 }

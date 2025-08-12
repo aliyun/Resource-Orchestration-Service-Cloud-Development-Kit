@@ -67,7 +67,7 @@ export interface IDbVault extends ros.IResource {
     readonly attrVaultRegionId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::HBR::DbVault`, which is used to create a mirror vault.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::HBR::DbVault`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDbVault`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbvault
  */

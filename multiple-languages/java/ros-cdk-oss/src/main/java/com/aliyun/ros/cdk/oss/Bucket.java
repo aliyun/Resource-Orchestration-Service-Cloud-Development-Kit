@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oss;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::OSS::Bucket</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:12.111Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:51.873Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.Bucket")
 public class Bucket extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.oss.IBucket {
 
@@ -274,6 +274,27 @@ public class Bucket extends com.aliyun.ros.cdk.core.Resource implements com.aliy
          */
         public Builder accessControl(final com.aliyun.ros.cdk.core.IResolvable accessControl) {
             this.props.accessControl(accessControl);
+            return this;
+        }
+
+        /**
+         * Property blockPublicAccess: Whether to block public access.
+         * <p>
+         * @return {@code this}
+         * @param blockPublicAccess Property blockPublicAccess: Whether to block public access. This parameter is required.
+         */
+        public Builder blockPublicAccess(final java.lang.Boolean blockPublicAccess) {
+            this.props.blockPublicAccess(blockPublicAccess);
+            return this;
+        }
+        /**
+         * Property blockPublicAccess: Whether to block public access.
+         * <p>
+         * @return {@code this}
+         * @param blockPublicAccess Property blockPublicAccess: Whether to block public access. This parameter is required.
+         */
+        public Builder blockPublicAccess(final com.aliyun.ros.cdk.core.IResolvable blockPublicAccess) {
+            this.props.blockPublicAccess(blockPublicAccess);
             return this;
         }
 

@@ -104,6 +104,10 @@ func (j *jsiiProxy_RosDBInstance) validateSetAutoRenewParameters(val interface{}
 	return nil
 }
 
+func (j *jsiiProxy_RosDBInstance) validateSetAutoUpgradeMinorVersionParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosDBInstance) validateSetBackUpCategoryParameters(val interface{}) error {
 	return nil
 }
@@ -333,6 +337,10 @@ func (j *jsiiProxy_RosDBInstance) validateSetStorageThresholdParameters(val inte
 }
 
 func (j *jsiiProxy_RosDBInstance) validateSetStorageUpperBoundParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosDBInstance) validateSetSubscriptionDeletionForceParameters(val interface{}) error {
 	return nil
 }
 

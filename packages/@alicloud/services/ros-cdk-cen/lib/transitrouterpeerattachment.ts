@@ -10,47 +10,73 @@ export { RosTransitRouterPeerAttachment as TransitRouterPeerAttachmentProperty }
 export interface TransitRouterPeerAttachmentProps {
 
     /**
-     * Property peerTransitRouterId: PeerTransitRouterId
+     * Property peerTransitRouterId: Peer forwarding router instance ID.
      */
     readonly peerTransitRouterId: string | ros.IResolvable;
 
     /**
-     * Property autoPublishRouteEnabled: AutoPublishRouteEnabled
+     * Property autoPublishRouteEnabled: Whether to make the enterprise version forwarding router automatically publish routes across regions to the peer region.
+     * false (default): No.
+     * true: Yes.
      */
     readonly autoPublishRouteEnabled?: boolean | ros.IResolvable;
 
     /**
-     * Property bandwidth: Bandwidth
+     * Property bandwidth: The bandwidth value for cross-region connections.Unit: Mbps.
+     * When the BandwidthType value is BandwidthPackage, this parameter represents the bandwidth value that can be used by cross-region connections.
+     * When the BandwidthType value is DataTransfer, this parameter represents the speed limit bandwidth value for cross-region connections.
      */
     readonly bandwidth?: number | ros.IResolvable;
 
     /**
-     * Property cenBandwidthPackageId: BandwidthPackageId
+     * Property bandwidthType: The bandwidth allocation method for cross-regional connections.Value:
+     * BandwidthPackage: Allocate bandwidth from bandwidth packets.
+     * DataTransfer: Do not allocate bandwidth for cross-region connections, and is billed based on usage traffic.
+     */
+    readonly bandwidthType?: string | ros.IResolvable;
+
+    /**
+     * Property cenBandwidthPackageId: The bandwidth packet ID to bind to across regions.
+     * Note When the value of BandwidthType is DataTransfer, this item is not required.
      */
     readonly cenBandwidthPackageId?: string | ros.IResolvable;
 
     /**
-     * Property cenId: CenId
+     * Property cenId: Cloud Enterprise Network Instance ID.
      */
     readonly cenId?: string | ros.IResolvable;
 
     /**
-     * Property peerTransitRouterRegionId: PeerTransitRouterRegionId
+     * Property defaultLinkType: Default link type.
+     * Optional values are Platinum, Gold, and default to Gold.
+     * And it can only be configured as Platinum (Platinum) when the bandwidth allocation method is billed by traffic.
+     */
+    readonly defaultLinkType?: string | ros.IResolvable;
+
+    /**
+     * Property peerTransitRouterRegionId: The region ID to which the peer forwarding router instance belongs.
      */
     readonly peerTransitRouterRegionId?: string | ros.IResolvable;
 
     /**
-     * Property transitRouterAttachmentDescription: TransitRouterAttachmentDescription
+     * Property tags: The list of tags in the form of key\/value pairs. You can define a maximum of 20 tags.
+     */
+    readonly tags?: RosTransitRouterPeerAttachment.TagsProperty[];
+
+    /**
+     * Property transitRouterAttachmentDescription: Description information for cross-region connections.
+     * The description can be empty or has a length of 1 to 256 characters and cannot start with http:\/\/ or https:\/\/.
      */
     readonly transitRouterAttachmentDescription?: string | ros.IResolvable;
 
     /**
-     * Property transitRouterAttachmentName: TransitRouterAttachmentName
+     * Property transitRouterAttachmentName: The name of the cross-region connection.
+     * The name can be empty or has a length of 1 to 128 characters, and cannot start with http:\/\/ or https:\/\/.
      */
     readonly transitRouterAttachmentName?: string | ros.IResolvable;
 
     /**
-     * Property transitRouterId: TransitRouterId
+     * Property transitRouterId: Local Enterprise Edition forwarding router instance ID.
      */
     readonly transitRouterId?: string | ros.IResolvable;
 }
@@ -62,74 +88,9 @@ export interface ITransitRouterPeerAttachment extends ros.IResource {
     readonly props: TransitRouterPeerAttachmentProps;
 
     /**
-     * Attribute AutoPublishRouteEnabled: AutoPublishRouteEnabled
-     */
-    readonly attrAutoPublishRouteEnabled: ros.IResolvable | string;
-
-    /**
-     * Attribute Bandwidth: Bandwidth
-     */
-    readonly attrBandwidth: ros.IResolvable | string;
-
-    /**
-     * Attribute CenBandwidthPackageId: BandwidthPackageId
-     */
-    readonly attrCenBandwidthPackageId: ros.IResolvable | string;
-
-    /**
-     * Attribute CenId: CenId
-     */
-    readonly attrCenId: ros.IResolvable | string;
-
-    /**
-     * Attribute ClientToken: ClientToken
-     */
-    readonly attrClientToken: ros.IResolvable | string;
-
-    /**
-     * Attribute GeographicSpanId: GeographicSpanId
-     */
-    readonly attrGeographicSpanId: ros.IResolvable | string;
-
-    /**
-     * Attribute PeerTransitRouterId: PeerTransitRouterId
-     */
-    readonly attrPeerTransitRouterId: ros.IResolvable | string;
-
-    /**
-     * Attribute PeerTransitRouterOwnerId: PeerTransitRouterOwnerId
-     */
-    readonly attrPeerTransitRouterOwnerId: ros.IResolvable | string;
-
-    /**
-     * Attribute PeerTransitRouterRegionId: PeerTransitRouterRegionId
-     */
-    readonly attrPeerTransitRouterRegionId: ros.IResolvable | string;
-
-    /**
-     * Attribute ResourceType: ResourceType
-     */
-    readonly attrResourceType: ros.IResolvable | string;
-
-    /**
-     * Attribute TransitRouterAttachmentDescription: TransitRouterAttachmentDescription
-     */
-    readonly attrTransitRouterAttachmentDescription: ros.IResolvable | string;
-
-    /**
-     * Attribute TransitRouterAttachmentId: The first ID of the resource
+     * Attribute TransitRouterAttachmentId: Cross-region connection ID.
      */
     readonly attrTransitRouterAttachmentId: ros.IResolvable | string;
-
-    /**
-     * Attribute TransitRouterAttachmentName: TransitRouterAttachmentName
-     */
-    readonly attrTransitRouterAttachmentName: ros.IResolvable | string;
-
-    /**
-     * Attribute TransitRouterId: TransitRouterId
-     */
-    readonly attrTransitRouterId: ros.IResolvable | string;
 }
 /**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterPeerAttachment`, which is used to create a cross-region connection for an Enterprise Edition transit router.
@@ -143,74 +104,9 @@ export class TransitRouterPeerAttachment extends ros.Resource implements ITransi
     protected enableResourcePropertyConstraint: boolean;
 
     /**
-     * Attribute AutoPublishRouteEnabled: AutoPublishRouteEnabled
-     */
-    public readonly attrAutoPublishRouteEnabled: ros.IResolvable | string;
-
-    /**
-     * Attribute Bandwidth: Bandwidth
-     */
-    public readonly attrBandwidth: ros.IResolvable | string;
-
-    /**
-     * Attribute CenBandwidthPackageId: BandwidthPackageId
-     */
-    public readonly attrCenBandwidthPackageId: ros.IResolvable | string;
-
-    /**
-     * Attribute CenId: CenId
-     */
-    public readonly attrCenId: ros.IResolvable | string;
-
-    /**
-     * Attribute ClientToken: ClientToken
-     */
-    public readonly attrClientToken: ros.IResolvable | string;
-
-    /**
-     * Attribute GeographicSpanId: GeographicSpanId
-     */
-    public readonly attrGeographicSpanId: ros.IResolvable | string;
-
-    /**
-     * Attribute PeerTransitRouterId: PeerTransitRouterId
-     */
-    public readonly attrPeerTransitRouterId: ros.IResolvable | string;
-
-    /**
-     * Attribute PeerTransitRouterOwnerId: PeerTransitRouterOwnerId
-     */
-    public readonly attrPeerTransitRouterOwnerId: ros.IResolvable | string;
-
-    /**
-     * Attribute PeerTransitRouterRegionId: PeerTransitRouterRegionId
-     */
-    public readonly attrPeerTransitRouterRegionId: ros.IResolvable | string;
-
-    /**
-     * Attribute ResourceType: ResourceType
-     */
-    public readonly attrResourceType: ros.IResolvable | string;
-
-    /**
-     * Attribute TransitRouterAttachmentDescription: TransitRouterAttachmentDescription
-     */
-    public readonly attrTransitRouterAttachmentDescription: ros.IResolvable | string;
-
-    /**
-     * Attribute TransitRouterAttachmentId: The first ID of the resource
+     * Attribute TransitRouterAttachmentId: Cross-region connection ID.
      */
     public readonly attrTransitRouterAttachmentId: ros.IResolvable | string;
-
-    /**
-     * Attribute TransitRouterAttachmentName: TransitRouterAttachmentName
-     */
-    public readonly attrTransitRouterAttachmentName: ros.IResolvable | string;
-
-    /**
-     * Attribute TransitRouterId: TransitRouterId
-     */
-    public readonly attrTransitRouterId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -226,29 +122,19 @@ export class TransitRouterPeerAttachment extends ros.Resource implements ITransi
 
         const rosTransitRouterPeerAttachment = new RosTransitRouterPeerAttachment(this, id,  {
             autoPublishRouteEnabled: props.autoPublishRouteEnabled,
+            bandwidthType: props.bandwidthType,
             bandwidth: props.bandwidth,
             cenId: props.cenId,
             transitRouterAttachmentName: props.transitRouterAttachmentName,
             peerTransitRouterId: props.peerTransitRouterId,
+            defaultLinkType: props.defaultLinkType,
             cenBandwidthPackageId: props.cenBandwidthPackageId,
+            tags: props.tags,
             transitRouterAttachmentDescription: props.transitRouterAttachmentDescription,
             transitRouterId: props.transitRouterId,
             peerTransitRouterRegionId: props.peerTransitRouterRegionId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosTransitRouterPeerAttachment;
-        this.attrAutoPublishRouteEnabled = rosTransitRouterPeerAttachment.attrAutoPublishRouteEnabled;
-        this.attrBandwidth = rosTransitRouterPeerAttachment.attrBandwidth;
-        this.attrCenBandwidthPackageId = rosTransitRouterPeerAttachment.attrCenBandwidthPackageId;
-        this.attrCenId = rosTransitRouterPeerAttachment.attrCenId;
-        this.attrClientToken = rosTransitRouterPeerAttachment.attrClientToken;
-        this.attrGeographicSpanId = rosTransitRouterPeerAttachment.attrGeographicSpanId;
-        this.attrPeerTransitRouterId = rosTransitRouterPeerAttachment.attrPeerTransitRouterId;
-        this.attrPeerTransitRouterOwnerId = rosTransitRouterPeerAttachment.attrPeerTransitRouterOwnerId;
-        this.attrPeerTransitRouterRegionId = rosTransitRouterPeerAttachment.attrPeerTransitRouterRegionId;
-        this.attrResourceType = rosTransitRouterPeerAttachment.attrResourceType;
-        this.attrTransitRouterAttachmentDescription = rosTransitRouterPeerAttachment.attrTransitRouterAttachmentDescription;
         this.attrTransitRouterAttachmentId = rosTransitRouterPeerAttachment.attrTransitRouterAttachmentId;
-        this.attrTransitRouterAttachmentName = rosTransitRouterPeerAttachment.attrTransitRouterAttachmentName;
-        this.attrTransitRouterId = rosTransitRouterPeerAttachment.attrTransitRouterId;
     }
 }

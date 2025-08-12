@@ -40,11 +40,6 @@ export interface ClusterProps {
     readonly name: string | ros.IResolvable;
 
     /**
-     * Property osTag: Operating system image tag. You can call ListImages API to query.
-     */
-    readonly osTag: string | ros.IResolvable;
-
-    /**
      * Property vSwitchId: VPC in switch ID. Products currently only supports VPC network.
      */
     readonly vSwitchId: string | ros.IResolvable;
@@ -178,6 +173,11 @@ export interface ClusterProps {
      * - **HighPerformance**: Enables the Elastic RDMA Interface (ERI) and uses the RDMA communication mode.
      */
     readonly networkInterfaceTrafficMode?: string | ros.IResolvable;
+
+    /**
+     * Property osTag: Operating system image tag. You can call ListImages API to query.
+     */
+    readonly osTag?: string | ros.IResolvable;
 
     /**
      * Property password: Root password of jump server (login node). 8 to 30 characters, must contain three (upper and lower case letters, numbers and special symbols). ! Supports the following special characters :() `~ @ # $% ^ & * - + = | {} []:; '<>, \/ Be sure to use the HTTPS protocol API call to avoid password leaks that may occur.?.

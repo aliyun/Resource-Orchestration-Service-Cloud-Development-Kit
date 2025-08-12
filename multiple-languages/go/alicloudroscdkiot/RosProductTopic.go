@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::ProductTopic`, which is used to create a topic category for a specified product.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::ProductTopic`.
 type RosProductTopic interface {
 	alicloudroscdkcore.RosResource
 	AttrTopicId() alicloudroscdkcore.IResolvable

@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Dts.Datasource
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `DATASOURCE::DTS::SynchronizationJob`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `DATASOURCE::DTS::SynchronizationJob`, which is used to query the execution information about a data synchronization task in Data Transmission Service (DTS).</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `SynchronizationJob` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dts-synchronizationjob

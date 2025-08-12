@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.acs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acs-cluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:00.840Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:43.084Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acs.$Module.class, fqn = "@alicloud/ros-cdk-acs.ClusterProps")
 @software.amazon.jsii.Jsii.Proxy(ClusterProps.Jsii$Proxy.class)
 public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -33,6 +33,22 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
      * Default value: ack.pro.small.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getClusterSpec() {
+        return null;
+    }
+
+    /**
+     * Property computeClass: The compute class of the cluster.
+     * <p>
+     * This parameter is only used as a parameter query for ZoneIds and is not used in the actual creation.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getComputeClass() {
+        return null;
+    }
+
+    /**
+     * Property deleteOptions: Delete options, only work for deleting resource.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeleteOptions() {
         return null;
     }
 
@@ -93,6 +109,13 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
      * Property maintenanceWindow: The maintenance window of the cluster.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMaintenanceWindow() {
+        return null;
+    }
+
+    /**
+     * Property podPostpaidSpec: Postpaid pod spec for inquiry.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPodPostpaidSpec() {
         return null;
     }
 
@@ -214,6 +237,8 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object name;
         java.lang.Object addons;
         java.lang.Object clusterSpec;
+        java.lang.Object computeClass;
+        java.lang.Object deleteOptions;
         java.lang.Object deletionProtection;
         java.lang.Object endpointPublicAccess;
         java.lang.Object ipStack;
@@ -221,6 +246,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object loadBalancerSpec;
         java.lang.Object loggingType;
         java.lang.Object maintenanceWindow;
+        java.lang.Object podPostpaidSpec;
         java.lang.Object podVSwitchIds;
         java.lang.Object resourceGroupId;
         java.lang.Object serviceCidr;
@@ -300,6 +326,48 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder clusterSpec(com.aliyun.ros.cdk.core.IResolvable clusterSpec) {
             this.clusterSpec = clusterSpec;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ClusterProps#getComputeClass}
+         * @param computeClass Property computeClass: The compute class of the cluster.
+         *                     This parameter is only used as a parameter query for ZoneIds and is not used in the actual creation.
+         * @return {@code this}
+         */
+        public Builder computeClass(java.lang.String computeClass) {
+            this.computeClass = computeClass;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ClusterProps#getComputeClass}
+         * @param computeClass Property computeClass: The compute class of the cluster.
+         *                     This parameter is only used as a parameter query for ZoneIds and is not used in the actual creation.
+         * @return {@code this}
+         */
+        public Builder computeClass(com.aliyun.ros.cdk.core.IResolvable computeClass) {
+            this.computeClass = computeClass;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ClusterProps#getDeleteOptions}
+         * @param deleteOptions Property deleteOptions: Delete options, only work for deleting resource.
+         * @return {@code this}
+         */
+        public Builder deleteOptions(com.aliyun.ros.cdk.core.IResolvable deleteOptions) {
+            this.deleteOptions = deleteOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ClusterProps#getDeleteOptions}
+         * @param deleteOptions Property deleteOptions: Delete options, only work for deleting resource.
+         * @return {@code this}
+         */
+        public Builder deleteOptions(java.util.List<? extends java.lang.Object> deleteOptions) {
+            this.deleteOptions = deleteOptions;
             return this;
         }
 
@@ -454,6 +522,26 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder maintenanceWindow(com.aliyun.ros.cdk.acs.RosCluster.MaintenanceWindowProperty maintenanceWindow) {
             this.maintenanceWindow = maintenanceWindow;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ClusterProps#getPodPostpaidSpec}
+         * @param podPostpaidSpec Property podPostpaidSpec: Postpaid pod spec for inquiry.
+         * @return {@code this}
+         */
+        public Builder podPostpaidSpec(com.aliyun.ros.cdk.core.IResolvable podPostpaidSpec) {
+            this.podPostpaidSpec = podPostpaidSpec;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ClusterProps#getPodPostpaidSpec}
+         * @param podPostpaidSpec Property podPostpaidSpec: Postpaid pod spec for inquiry.
+         * @return {@code this}
+         */
+        public Builder podPostpaidSpec(com.aliyun.ros.cdk.acs.RosCluster.PodPostpaidSpecProperty podPostpaidSpec) {
+            this.podPostpaidSpec = podPostpaidSpec;
             return this;
         }
 
@@ -731,6 +819,8 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object name;
         private final java.lang.Object addons;
         private final java.lang.Object clusterSpec;
+        private final java.lang.Object computeClass;
+        private final java.lang.Object deleteOptions;
         private final java.lang.Object deletionProtection;
         private final java.lang.Object endpointPublicAccess;
         private final java.lang.Object ipStack;
@@ -738,6 +828,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object loadBalancerSpec;
         private final java.lang.Object loggingType;
         private final java.lang.Object maintenanceWindow;
+        private final java.lang.Object podPostpaidSpec;
         private final java.lang.Object podVSwitchIds;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object serviceCidr;
@@ -759,6 +850,8 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.addons = software.amazon.jsii.Kernel.get(this, "addons", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.clusterSpec = software.amazon.jsii.Kernel.get(this, "clusterSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.computeClass = software.amazon.jsii.Kernel.get(this, "computeClass", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.deleteOptions = software.amazon.jsii.Kernel.get(this, "deleteOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.endpointPublicAccess = software.amazon.jsii.Kernel.get(this, "endpointPublicAccess", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ipStack = software.amazon.jsii.Kernel.get(this, "ipStack", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -766,6 +859,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.loadBalancerSpec = software.amazon.jsii.Kernel.get(this, "loadBalancerSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loggingType = software.amazon.jsii.Kernel.get(this, "loggingType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.maintenanceWindow = software.amazon.jsii.Kernel.get(this, "maintenanceWindow", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.podPostpaidSpec = software.amazon.jsii.Kernel.get(this, "podPostpaidSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.podVSwitchIds = software.amazon.jsii.Kernel.get(this, "podVSwitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serviceCidr = software.amazon.jsii.Kernel.get(this, "serviceCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -788,6 +882,8 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
             this.addons = builder.addons;
             this.clusterSpec = builder.clusterSpec;
+            this.computeClass = builder.computeClass;
+            this.deleteOptions = builder.deleteOptions;
             this.deletionProtection = builder.deletionProtection;
             this.endpointPublicAccess = builder.endpointPublicAccess;
             this.ipStack = builder.ipStack;
@@ -795,6 +891,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.loadBalancerSpec = builder.loadBalancerSpec;
             this.loggingType = builder.loggingType;
             this.maintenanceWindow = builder.maintenanceWindow;
+            this.podPostpaidSpec = builder.podPostpaidSpec;
             this.podVSwitchIds = builder.podVSwitchIds;
             this.resourceGroupId = builder.resourceGroupId;
             this.serviceCidr = builder.serviceCidr;
@@ -821,6 +918,16 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getClusterSpec() {
             return this.clusterSpec;
+        }
+
+        @Override
+        public final java.lang.Object getComputeClass() {
+            return this.computeClass;
+        }
+
+        @Override
+        public final java.lang.Object getDeleteOptions() {
+            return this.deleteOptions;
         }
 
         @Override
@@ -856,6 +963,11 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getMaintenanceWindow() {
             return this.maintenanceWindow;
+        }
+
+        @Override
+        public final java.lang.Object getPodPostpaidSpec() {
+            return this.podPostpaidSpec;
         }
 
         @Override
@@ -926,6 +1038,12 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getClusterSpec() != null) {
                 data.set("clusterSpec", om.valueToTree(this.getClusterSpec()));
             }
+            if (this.getComputeClass() != null) {
+                data.set("computeClass", om.valueToTree(this.getComputeClass()));
+            }
+            if (this.getDeleteOptions() != null) {
+                data.set("deleteOptions", om.valueToTree(this.getDeleteOptions()));
+            }
             if (this.getDeletionProtection() != null) {
                 data.set("deletionProtection", om.valueToTree(this.getDeletionProtection()));
             }
@@ -946,6 +1064,9 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getMaintenanceWindow() != null) {
                 data.set("maintenanceWindow", om.valueToTree(this.getMaintenanceWindow()));
+            }
+            if (this.getPodPostpaidSpec() != null) {
+                data.set("podPostpaidSpec", om.valueToTree(this.getPodPostpaidSpec()));
             }
             if (this.getPodVSwitchIds() != null) {
                 data.set("podVSwitchIds", om.valueToTree(this.getPodVSwitchIds()));
@@ -1001,6 +1122,8 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (!name.equals(that.name)) return false;
             if (this.addons != null ? !this.addons.equals(that.addons) : that.addons != null) return false;
             if (this.clusterSpec != null ? !this.clusterSpec.equals(that.clusterSpec) : that.clusterSpec != null) return false;
+            if (this.computeClass != null ? !this.computeClass.equals(that.computeClass) : that.computeClass != null) return false;
+            if (this.deleteOptions != null ? !this.deleteOptions.equals(that.deleteOptions) : that.deleteOptions != null) return false;
             if (this.deletionProtection != null ? !this.deletionProtection.equals(that.deletionProtection) : that.deletionProtection != null) return false;
             if (this.endpointPublicAccess != null ? !this.endpointPublicAccess.equals(that.endpointPublicAccess) : that.endpointPublicAccess != null) return false;
             if (this.ipStack != null ? !this.ipStack.equals(that.ipStack) : that.ipStack != null) return false;
@@ -1008,6 +1131,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.loadBalancerSpec != null ? !this.loadBalancerSpec.equals(that.loadBalancerSpec) : that.loadBalancerSpec != null) return false;
             if (this.loggingType != null ? !this.loggingType.equals(that.loggingType) : that.loggingType != null) return false;
             if (this.maintenanceWindow != null ? !this.maintenanceWindow.equals(that.maintenanceWindow) : that.maintenanceWindow != null) return false;
+            if (this.podPostpaidSpec != null ? !this.podPostpaidSpec.equals(that.podPostpaidSpec) : that.podPostpaidSpec != null) return false;
             if (this.podVSwitchIds != null ? !this.podVSwitchIds.equals(that.podVSwitchIds) : that.podVSwitchIds != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.serviceCidr != null ? !this.serviceCidr.equals(that.serviceCidr) : that.serviceCidr != null) return false;
@@ -1026,6 +1150,8 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             int result = this.name.hashCode();
             result = 31 * result + (this.addons != null ? this.addons.hashCode() : 0);
             result = 31 * result + (this.clusterSpec != null ? this.clusterSpec.hashCode() : 0);
+            result = 31 * result + (this.computeClass != null ? this.computeClass.hashCode() : 0);
+            result = 31 * result + (this.deleteOptions != null ? this.deleteOptions.hashCode() : 0);
             result = 31 * result + (this.deletionProtection != null ? this.deletionProtection.hashCode() : 0);
             result = 31 * result + (this.endpointPublicAccess != null ? this.endpointPublicAccess.hashCode() : 0);
             result = 31 * result + (this.ipStack != null ? this.ipStack.hashCode() : 0);
@@ -1033,6 +1159,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.loadBalancerSpec != null ? this.loadBalancerSpec.hashCode() : 0);
             result = 31 * result + (this.loggingType != null ? this.loggingType.hashCode() : 0);
             result = 31 * result + (this.maintenanceWindow != null ? this.maintenanceWindow.hashCode() : 0);
+            result = 31 * result + (this.podPostpaidSpec != null ? this.podPostpaidSpec.hashCode() : 0);
             result = 31 * result + (this.podVSwitchIds != null ? this.podVSwitchIds.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.serviceCidr != null ? this.serviceCidr.hashCode() : 0);

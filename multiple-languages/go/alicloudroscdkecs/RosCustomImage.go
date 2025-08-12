@@ -30,6 +30,8 @@ type RosCustomImage interface {
 	SetDiskDeviceMapping(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	Features() interface{}
+	SetFeatures(val interface{})
 	ImageFamily() interface{}
 	SetImageFamily(val interface{})
 	ImageName() interface{}
@@ -283,6 +285,16 @@ func (j *jsiiProxy_RosCustomImage) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosCustomImage) Features() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"features",
 		&returns,
 	)
 	return returns
@@ -548,6 +560,17 @@ func (j *jsiiProxy_RosCustomImage)SetEnableResourcePropertyConstraint(val *bool)
 	_jsii_.Set(
 		j,
 		"enableResourcePropertyConstraint",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosCustomImage)SetFeatures(val interface{}) {
+	if err := j.validateSetFeaturesParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"features",
 		val,
 	)
 }

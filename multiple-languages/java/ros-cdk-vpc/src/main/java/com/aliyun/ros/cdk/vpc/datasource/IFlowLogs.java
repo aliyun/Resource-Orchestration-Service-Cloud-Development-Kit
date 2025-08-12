@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc.datasource;
 /**
  * Represents a <code>FlowLogs</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:11.714Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:51.561Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.IFlowLogs")
 @software.amazon.jsii.Jsii.Proxy(IFlowLogs.Jsii$Proxy.class)
 public interface IFlowLogs extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

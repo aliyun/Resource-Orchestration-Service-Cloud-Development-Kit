@@ -148,6 +148,10 @@ func (j *jsiiProxy_RosApplication) validateSetEnableEbpfParameters(val interface
 	return nil
 }
 
+func (j *jsiiProxy_RosApplication) validateSetEnableNewArmsParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosApplication) validateSetEnableResourcePropertyConstraintParameters(val *bool) error {
 	return nil
 }
@@ -213,6 +217,10 @@ func (j *jsiiProxy_RosApplication) validateSetNasConfigsParameters(val interface
 }
 
 func (j *jsiiProxy_RosApplication) validateSetNasIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosApplication) validateSetNewSaeVersionParameters(val interface{}) error {
 	return nil
 }
 

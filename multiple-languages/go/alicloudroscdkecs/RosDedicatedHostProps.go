@@ -12,8 +12,11 @@ type RosDedicatedHostProps struct {
 	AutoRenew interface{} `field:"optional" json:"autoRenew" yaml:"autoRenew"`
 	AutoRenewPeriod interface{} `field:"optional" json:"autoRenewPeriod" yaml:"autoRenewPeriod"`
 	ChargeType interface{} `field:"optional" json:"chargeType" yaml:"chargeType"`
+	CpuOverCommitRatio interface{} `field:"optional" json:"cpuOverCommitRatio" yaml:"cpuOverCommitRatio"`
+	DedicatedHostClusterId interface{} `field:"optional" json:"dedicatedHostClusterId" yaml:"dedicatedHostClusterId"`
 	DedicatedHostName interface{} `field:"optional" json:"dedicatedHostName" yaml:"dedicatedHostName"`
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
+	MinQuantity interface{} `field:"optional" json:"minQuantity" yaml:"minQuantity"`
 	NetworkAttributesSlbUdpTimeout interface{} `field:"optional" json:"networkAttributesSlbUdpTimeout" yaml:"networkAttributesSlbUdpTimeout"`
 	NetworkAttributesUdpTimeout interface{} `field:"optional" json:"networkAttributesUdpTimeout" yaml:"networkAttributesUdpTimeout"`
 	Period interface{} `field:"optional" json:"period" yaml:"period"`

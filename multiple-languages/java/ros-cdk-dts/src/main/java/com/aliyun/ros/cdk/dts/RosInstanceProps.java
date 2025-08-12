@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dts;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-instance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:04.116Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.769Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.RosInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceProps.Jsii$Proxy.class)
 public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -78,6 +78,18 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMaxDu() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMinDu() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
     }
@@ -134,6 +146,8 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object du;
         java.lang.Object feeType;
         java.lang.Object jobId;
+        java.lang.Object maxDu;
+        java.lang.Object minDu;
         java.lang.Object period;
         java.lang.Object resourceGroupId;
         java.lang.Object sourceEndpointEngineName;
@@ -382,6 +396,46 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getMaxDu}
+         * @param maxDu the value to be set.
+         * @return {@code this}
+         */
+        public Builder maxDu(java.lang.Number maxDu) {
+            this.maxDu = maxDu;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getMaxDu}
+         * @param maxDu the value to be set.
+         * @return {@code this}
+         */
+        public Builder maxDu(com.aliyun.ros.cdk.core.IResolvable maxDu) {
+            this.maxDu = maxDu;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getMinDu}
+         * @param minDu the value to be set.
+         * @return {@code this}
+         */
+        public Builder minDu(java.lang.Number minDu) {
+            this.minDu = minDu;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getMinDu}
+         * @param minDu the value to be set.
+         * @return {@code this}
+         */
+        public Builder minDu(com.aliyun.ros.cdk.core.IResolvable minDu) {
+            this.minDu = minDu;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getPeriod}
          * @param period the value to be set.
          * @return {@code this}
@@ -529,6 +583,8 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object du;
         private final java.lang.Object feeType;
         private final java.lang.Object jobId;
+        private final java.lang.Object maxDu;
+        private final java.lang.Object minDu;
         private final java.lang.Object period;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object sourceEndpointEngineName;
@@ -554,6 +610,8 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             this.du = software.amazon.jsii.Kernel.get(this, "du", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.feeType = software.amazon.jsii.Kernel.get(this, "feeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.jobId = software.amazon.jsii.Kernel.get(this, "jobId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.maxDu = software.amazon.jsii.Kernel.get(this, "maxDu", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.minDu = software.amazon.jsii.Kernel.get(this, "minDu", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sourceEndpointEngineName = software.amazon.jsii.Kernel.get(this, "sourceEndpointEngineName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -579,6 +637,8 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             this.du = builder.du;
             this.feeType = builder.feeType;
             this.jobId = builder.jobId;
+            this.maxDu = builder.maxDu;
+            this.minDu = builder.minDu;
             this.period = builder.period;
             this.resourceGroupId = builder.resourceGroupId;
             this.sourceEndpointEngineName = builder.sourceEndpointEngineName;
@@ -648,6 +708,16 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.lang.Object getMaxDu() {
+            return this.maxDu;
+        }
+
+        @Override
+        public final java.lang.Object getMinDu() {
+            return this.minDu;
+        }
+
+        @Override
         public final java.lang.Object getPeriod() {
             return this.period;
         }
@@ -713,6 +783,12 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getJobId() != null) {
                 data.set("jobId", om.valueToTree(this.getJobId()));
             }
+            if (this.getMaxDu() != null) {
+                data.set("maxDu", om.valueToTree(this.getMaxDu()));
+            }
+            if (this.getMinDu() != null) {
+                data.set("minDu", om.valueToTree(this.getMinDu()));
+            }
             if (this.getPeriod() != null) {
                 data.set("period", om.valueToTree(this.getPeriod()));
             }
@@ -761,6 +837,8 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             if (this.du != null ? !this.du.equals(that.du) : that.du != null) return false;
             if (this.feeType != null ? !this.feeType.equals(that.feeType) : that.feeType != null) return false;
             if (this.jobId != null ? !this.jobId.equals(that.jobId) : that.jobId != null) return false;
+            if (this.maxDu != null ? !this.maxDu.equals(that.maxDu) : that.maxDu != null) return false;
+            if (this.minDu != null ? !this.minDu.equals(that.minDu) : that.minDu != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.sourceEndpointEngineName != null ? !this.sourceEndpointEngineName.equals(that.sourceEndpointEngineName) : that.sourceEndpointEngineName != null) return false;
@@ -783,6 +861,8 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.du != null ? this.du.hashCode() : 0);
             result = 31 * result + (this.feeType != null ? this.feeType.hashCode() : 0);
             result = 31 * result + (this.jobId != null ? this.jobId.hashCode() : 0);
+            result = 31 * result + (this.maxDu != null ? this.maxDu.hashCode() : 0);
+            result = 31 * result + (this.minDu != null ? this.minDu.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.sourceEndpointEngineName != null ? this.sourceEndpointEngineName.hashCode() : 0);

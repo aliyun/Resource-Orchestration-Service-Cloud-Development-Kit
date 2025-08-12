@@ -215,7 +215,7 @@ export interface IMultiZoneCluster extends ros.IResource {
     readonly attrZkConnAddrs: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::HBase::MultiZoneCluster`, which is used to create an ApsaraDB for HBase cluster that resides in multiple zones.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::HBase::MultiZoneCluster`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMultiZoneCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbase-multizonecluster
  */

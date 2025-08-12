@@ -40,7 +40,7 @@ export interface ISynchronizationJobs extends ros.IResource {
     readonly attrSynchronizationInstances: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::DTS::SynchronizationJobs`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::DTS::SynchronizationJobs`, which is used to query the information about data synchronization tasks in Data Transmission Service (DTS).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSynchronizationJobs`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dts-synchronizationjobs
  */

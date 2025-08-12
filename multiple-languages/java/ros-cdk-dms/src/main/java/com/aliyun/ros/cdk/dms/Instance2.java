@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.dms;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::DMS::Instance2</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::DMS::Instance2</code>, which is used to register a database instance in new Data Management (DMS).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:03.907Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.574Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dms.$Module.class, fqn = "@alicloud/ros-cdk-dms.Instance2")
 public class Instance2 extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.dms.IInstance2 {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sae;
 /**
  * Represents a <code>SlbBinding</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:10.326Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:50.422Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.ISlbBinding")
 @software.amazon.jsii.Jsii.Proxy(ISlbBinding.Jsii$Proxy.class)
 public interface ISlbBinding extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

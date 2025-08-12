@@ -115,6 +115,11 @@ export interface FunctionProps {
     readonly role?: string | ros.IResolvable;
 
     /**
+     * Property tags: Tags to attach to function. Max support 20 tags to add during create function. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosFunction.TagsProperty[];
+
+    /**
      * Property timeout: The timeout of the function.
      */
     readonly timeout?: number | ros.IResolvable;
@@ -190,29 +195,30 @@ export class Function extends ros.Resource implements IFunction {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosFunction = new RosFunction(this, id,  {
-            memorySize: props.memorySize,
             description: props.description,
             tracingConfig: props.tracingConfig,
             vpcConfig: props.vpcConfig,
-            timeout: props.timeout,
             instanceLifecycleConfig: props.instanceLifecycleConfig,
-            handler: props.handler,
             cpu: props.cpu,
-            customContainerConfig: props.customContainerConfig,
-            code: props.code,
-            role: props.role,
             functionName: props.functionName,
-            internetAccess: props.internetAccess,
             runtime: props.runtime,
             environmentVariables: props.environmentVariables,
-            customRuntimeConfig: props.customRuntimeConfig,
-            gpuConfig: props.gpuConfig,
-            ossMountConfig: props.ossMountConfig,
             diskSize: props.diskSize,
             customDns: props.customDns,
             instanceConcurrency: props.instanceConcurrency,
             layers: props.layers,
+            tags: props.tags,
             nasConfig: props.nasConfig,
+            memorySize: props.memorySize,
+            timeout: props.timeout,
+            handler: props.handler,
+            customContainerConfig: props.customContainerConfig,
+            code: props.code,
+            role: props.role,
+            internetAccess: props.internetAccess,
+            customRuntimeConfig: props.customRuntimeConfig,
+            gpuConfig: props.gpuConfig,
+            ossMountConfig: props.ossMountConfig,
             logConfig: props.logConfig,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosFunction;

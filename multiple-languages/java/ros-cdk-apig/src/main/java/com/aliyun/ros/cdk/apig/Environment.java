@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apig;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::APIG::Environment</code>, which is used to create an environment.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:01.591Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:43.497Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.Environment")
 public class Environment extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.apig.IEnvironment {
 

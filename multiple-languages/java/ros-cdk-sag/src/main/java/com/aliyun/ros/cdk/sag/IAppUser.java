@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * Represents a <code>AppUser</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:10.410Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:50.496Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.IAppUser")
 @software.amazon.jsii.Jsii.Proxy(IAppUser.Jsii$Proxy.class)
 public interface IAppUser extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
@@ -14,7 +14,7 @@ public interface IAppUser extends software.amazon.jsii.JsiiSerializable, com.ali
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrSmartAgId();
 
     /**
-     * Attribute UserName: &lt;heat.engine.properties.Schema object at 0x7f2959675f90&gt;.
+     * Attribute UserName: The name of the user.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrUserName();
 
@@ -69,7 +69,7 @@ public interface IAppUser extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute UserName: &lt;heat.engine.properties.Schema object at 0x7f2959675f90&gt;.
+         * Attribute UserName: The name of the user.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrUserName() {
@@ -128,7 +128,7 @@ public interface IAppUser extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute UserName: &lt;heat.engine.properties.Schema object at 0x7f2959675f90&gt;.
+         * Attribute UserName: The name of the user.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrUserName() {

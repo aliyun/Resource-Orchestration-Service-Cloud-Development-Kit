@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.mongodb;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::MONGODB::ShardingInstance</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::MONGODB::ShardingInstance</code>, which is used to create or clone an ApsaraDB for MongoDB sharded cluster instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:12.046Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:51.824Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.ShardingInstance")
 public class ShardingInstance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.mongodb.IShardingInstance {
 
@@ -454,6 +454,8 @@ public class ShardingInstance extends com.aliyun.ros.cdk.core.Resource implement
         /**
          * Property securityIpArray: Security ips to add or remove.
          * <p>
+         * Update to this property will cover the current security ips.
+         * <p>
          * @return {@code this}
          * @param securityIpArray Property securityIpArray: Security ips to add or remove. This parameter is required.
          */
@@ -463,6 +465,8 @@ public class ShardingInstance extends com.aliyun.ros.cdk.core.Resource implement
         }
         /**
          * Property securityIpArray: Security ips to add or remove.
+         * <p>
+         * Update to this property will cover the current security ips.
          * <p>
          * @return {@code this}
          * @param securityIpArray Property securityIpArray: Security ips to add or remove. This parameter is required.

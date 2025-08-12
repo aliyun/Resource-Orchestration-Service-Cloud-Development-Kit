@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apig;
 /**
  * Represents a <code>Gateway</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:01.615Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:43.518Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.IGateway")
 @software.amazon.jsii.Jsii.Proxy(IGateway.Jsii$Proxy.class)
 public interface IGateway extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
@@ -38,6 +38,11 @@ public interface IGateway extends software.amazon.jsii.JsiiSerializable, com.ali
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrGatewayName();
 
     /**
+     * Attribute GatewayType: The type of the gateway.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrGatewayType();
+
+    /**
      * Attribute LoadBalancers: The list of Gateway ingress addresses.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrLoadBalancers();
@@ -48,6 +53,11 @@ public interface IGateway extends software.amazon.jsii.JsiiSerializable, com.ali
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrPaymentType();
 
     /**
+     * Attribute ResourceGroupId: The ID of the resource group.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceGroupId();
+
+    /**
      * Attribute SecurityGroup: The Security Group of the Gateway.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrSecurityGroup();
@@ -56,6 +66,11 @@ public interface IGateway extends software.amazon.jsii.JsiiSerializable, com.ali
      * Attribute Spec: Gateway instance specifications.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrSpec();
+
+    /**
+     * Attribute Tags: The tags of the Gateway.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrTags();
 
     /**
      * Attribute UpdateTime: Update the timestamp.
@@ -171,6 +186,14 @@ public interface IGateway extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
+         * Attribute GatewayType: The type of the gateway.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrGatewayType() {
+            return software.amazon.jsii.Kernel.get(this, "attrGatewayType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
          * Attribute LoadBalancers: The list of Gateway ingress addresses.
          */
         @Override
@@ -187,6 +210,14 @@ public interface IGateway extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
+         * Attribute ResourceGroupId: The ID of the resource group.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceGroupId() {
+            return software.amazon.jsii.Kernel.get(this, "attrResourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
          * Attribute SecurityGroup: The Security Group of the Gateway.
          */
         @Override
@@ -200,6 +231,14 @@ public interface IGateway extends software.amazon.jsii.JsiiSerializable, com.ali
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrSpec() {
             return software.amazon.jsii.Kernel.get(this, "attrSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute Tags: The tags of the Gateway.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrTags() {
+            return software.amazon.jsii.Kernel.get(this, "attrTags", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -332,6 +371,14 @@ public interface IGateway extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
+         * Attribute GatewayType: The type of the gateway.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrGatewayType() {
+            return software.amazon.jsii.Kernel.get(this, "attrGatewayType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
          * Attribute LoadBalancers: The list of Gateway ingress addresses.
          */
         @Override
@@ -348,6 +395,14 @@ public interface IGateway extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
+         * Attribute ResourceGroupId: The ID of the resource group.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceGroupId() {
+            return software.amazon.jsii.Kernel.get(this, "attrResourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
          * Attribute SecurityGroup: The Security Group of the Gateway.
          */
         @Override
@@ -361,6 +416,14 @@ public interface IGateway extends software.amazon.jsii.JsiiSerializable, com.ali
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrSpec() {
             return software.amazon.jsii.Kernel.get(this, "attrSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute Tags: The tags of the Gateway.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrTags() {
+            return software.amazon.jsii.Kernel.get(this, "attrTags", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**

@@ -49,6 +49,11 @@ export interface InvocationProps {
     readonly frequency?: string | ros.IResolvable;
 
     /**
+     * Property launcher: A bootloader for script execution. The length cannot exceed 1 KB.
+     */
+    readonly launcher?: string | ros.IResolvable;
+
+    /**
      * Property parameters: The key-value pairs of custom parameters passed in when the script contains custom parameters.
      * Number of custom parameters: 0 to 10.
      * The key cannot be an empty string. It can be up to 64 characters in length.
@@ -178,6 +183,7 @@ export class Invocation extends ros.Resource implements IInvocation {
             username: props.username,
             containerName: props.containerName,
             containerId: props.containerId,
+            launcher: props.launcher,
             frequency: props.frequency,
             commandName: props.commandName,
             commandId: props.commandId,

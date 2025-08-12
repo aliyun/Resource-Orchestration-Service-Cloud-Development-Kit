@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.flink;
 /**
  * Represents a <code>Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:06.959Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.703Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.flink.$Module.class, fqn = "@alicloud/ros-cdk-flink.IInstance")
 @software.amazon.jsii.Jsii.Proxy(IInstance.Jsii$Proxy.class)
 public interface IInstance extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
@@ -17,6 +17,11 @@ public interface IInstance extends software.amazon.jsii.JsiiSerializable, com.al
      * Attribute OrderId: Order information.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrOrderId();
+
+    /**
+     * Attribute WorkspaceId: Workspace ID.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrWorkspaceId();
 
     @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.flink.InstanceProps getProps();
 
@@ -76,6 +81,14 @@ public interface IInstance extends software.amazon.jsii.JsiiSerializable, com.al
             return software.amazon.jsii.Kernel.get(this, "attrOrderId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
+        /**
+         * Attribute WorkspaceId: Workspace ID.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrWorkspaceId() {
+            return software.amazon.jsii.Kernel.get(this, "attrWorkspaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
         @Override
         public final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.flink.InstanceProps getProps() {
             return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.flink.InstanceProps.class));
@@ -133,6 +146,14 @@ public interface IInstance extends software.amazon.jsii.JsiiSerializable, com.al
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrOrderId() {
             return software.amazon.jsii.Kernel.get(this, "attrOrderId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute WorkspaceId: Workspace ID.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrWorkspaceId() {
+            return software.amazon.jsii.Kernel.get(this, "attrWorkspaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         @Override

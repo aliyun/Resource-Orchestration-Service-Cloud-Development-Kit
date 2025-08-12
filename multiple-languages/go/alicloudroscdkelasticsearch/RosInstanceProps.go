@@ -9,6 +9,7 @@ type RosInstanceProps struct {
 	Password interface{} `field:"required" json:"password" yaml:"password"`
 	Version interface{} `field:"required" json:"version" yaml:"version"`
 	VSwitchId interface{} `field:"required" json:"vSwitchId" yaml:"vSwitchId"`
+	DeleteType interface{} `field:"optional" json:"deleteType" yaml:"deleteType"`
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
 	EnableKibanaPrivate interface{} `field:"optional" json:"enableKibanaPrivate" yaml:"enableKibanaPrivate"`
 	EnableKibanaPublic interface{} `field:"optional" json:"enableKibanaPublic" yaml:"enableKibanaPublic"`

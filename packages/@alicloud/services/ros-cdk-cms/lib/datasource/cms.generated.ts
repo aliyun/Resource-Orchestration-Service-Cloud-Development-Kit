@@ -80,7 +80,7 @@ export class RosAlarmContact extends ros.RosResource {
     public readonly attrAlarmContactName: ros.IResolvable;
 
     /**
-     * @Attribute ChannelsAliIm: ChannelsAliIM.
+     * @Attribute ChannelsAliIm: ChannelsAliIm.
      */
     public readonly attrChannelsAliIm: ros.IResolvable;
 
@@ -100,7 +100,7 @@ export class RosAlarmContact extends ros.RosResource {
     public readonly attrChannelsSms: ros.IResolvable;
 
     /**
-     * @Attribute ChannelsStateAliIm: ChannelsStateAliIM.
+     * @Attribute ChannelsStateAliIm: ChannelsStateAliIm.
      */
     public readonly attrChannelsStateAliIm: ros.IResolvable;
 

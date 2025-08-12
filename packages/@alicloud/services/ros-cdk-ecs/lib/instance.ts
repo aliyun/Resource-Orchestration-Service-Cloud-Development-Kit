@@ -236,6 +236,11 @@ export interface InstanceProps {
     readonly storageSetPartitionNumber?: number | ros.IResolvable;
 
     /**
+     * Property subscriptionDeletionForce: This option is only applicable to subscription instances. For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+     */
+    readonly subscriptionDeletionForce?: boolean | ros.IResolvable;
+
+    /**
      * Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto|cloud_essd_entry
      */
     readonly systemDiskCategory?: string | ros.IResolvable;
@@ -580,6 +585,7 @@ export class Instance extends ros.Resource implements IInstance {
             keyPairName: props.keyPairName,
             ioOptimized: props.ioOptimized === undefined || props.ioOptimized === null ? 'optimized' : props.ioOptimized,
             zoneId: props.zoneId,
+            subscriptionDeletionForce: props.subscriptionDeletionForce === undefined || props.subscriptionDeletionForce === null ? false : props.subscriptionDeletionForce,
             hpcClusterId: props.hpcClusterId,
             securityGroupId: props.securityGroupId,
             deploymentSetGroupNo: props.deploymentSetGroupNo,

@@ -88,6 +88,10 @@ func (j *jsiiProxy_RosQueue) validateSetDelaySecondsParameters(val interface{}) 
 	return nil
 }
 
+func (j *jsiiProxy_RosQueue) validateSetDlqPolicyParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosQueue) validateSetEnableResourcePropertyConstraintParameters(val *bool) error {
 	return nil
 }
@@ -109,6 +113,10 @@ func (j *jsiiProxy_RosQueue) validateSetPollingWaitSecondsParameters(val interfa
 }
 
 func (j *jsiiProxy_RosQueue) validateSetQueueNameParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosQueue) validateSetTagsParameters(val *[]*RosQueue_TagsProperty) error {
 	return nil
 }
 

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::PAIPlugin::Signature`, which is used to register a signature.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::PAIPlugin::Signature`.
 type RosSignature interface {
 	alicloudroscdkcore.RosResource
 	AttrCreatedTime() alicloudroscdkcore.IResolvable

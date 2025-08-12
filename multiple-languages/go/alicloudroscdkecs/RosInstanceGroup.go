@@ -24,6 +24,7 @@ type RosInstanceGroup interface {
 	AttrOrderId() alicloudroscdkcore.IResolvable
 	AttrPrivateIps() alicloudroscdkcore.IResolvable
 	AttrPublicIps() alicloudroscdkcore.IResolvable
+	AttrRelatedOrderIds() alicloudroscdkcore.IResolvable
 	AttrZoneIds() alicloudroscdkcore.IResolvable
 	AutoReleaseTime() interface{}
 	SetAutoReleaseTime(val interface{})
@@ -169,6 +170,8 @@ type RosInstanceGroup interface {
 	SetStorageSetId(val interface{})
 	StorageSetPartitionNumber() interface{}
 	SetStorageSetPartitionNumber(val interface{})
+	SubscriptionDeletionForce() interface{}
+	SetSubscriptionDeletionForce(val interface{})
 	SystemDiskAutoSnapshotPolicyId() interface{}
 	SetSystemDiskAutoSnapshotPolicyId(val interface{})
 	SystemDiskBurstingEnabled() interface{}
@@ -432,6 +435,16 @@ func (j *jsiiProxy_RosInstanceGroup) AttrPublicIps() alicloudroscdkcore.IResolva
 	_jsii_.Get(
 		j,
 		"attrPublicIps",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosInstanceGroup) AttrRelatedOrderIds() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrRelatedOrderIds",
 		&returns,
 	)
 	return returns
@@ -1092,6 +1105,16 @@ func (j *jsiiProxy_RosInstanceGroup) StorageSetPartitionNumber() interface{} {
 	_jsii_.Get(
 		j,
 		"storageSetPartitionNumber",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosInstanceGroup) SubscriptionDeletionForce() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"subscriptionDeletionForce",
 		&returns,
 	)
 	return returns
@@ -2000,6 +2023,17 @@ func (j *jsiiProxy_RosInstanceGroup)SetStorageSetPartitionNumber(val interface{}
 	_jsii_.Set(
 		j,
 		"storageSetPartitionNumber",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosInstanceGroup)SetSubscriptionDeletionForce(val interface{}) {
+	if err := j.validateSetSubscriptionDeletionForceParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"subscriptionDeletionForce",
 		val,
 	)
 }

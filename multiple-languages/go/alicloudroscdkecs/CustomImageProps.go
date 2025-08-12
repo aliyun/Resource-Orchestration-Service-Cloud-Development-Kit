@@ -30,6 +30,8 @@ type CustomImageProps struct {
 	DetectionStrategy interface{} `field:"optional" json:"detectionStrategy" yaml:"detectionStrategy"`
 	// Property diskDeviceMapping:.
 	DiskDeviceMapping interface{} `field:"optional" json:"diskDeviceMapping" yaml:"diskDeviceMapping"`
+	// Property features: Mirror feature-related properties.
+	Features interface{} `field:"optional" json:"features" yaml:"features"`
 	// Property imageFamily: The name of the image family of the image.
 	//
 	// The name must be 2 to 128 characters in length and can contain letters, digits, colons (:), underscores (_), and hyphens (-). It cannot contain http:\/\/ or https:\/\/. It must start with a letter and cannot start with acs: or aliyun.This parameter is empty by default.

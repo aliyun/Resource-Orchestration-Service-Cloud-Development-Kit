@@ -8,6 +8,7 @@ type RosClusterApplicationProps struct {
 	ClusterId interface{} `field:"required" json:"clusterId" yaml:"clusterId"`
 	YamlContent interface{} `field:"required" json:"yamlContent" yaml:"yamlContent"`
 	DefaultNamespace interface{} `field:"optional" json:"defaultNamespace" yaml:"defaultNamespace"`
+	DefaultNamespaceDeletion interface{} `field:"optional" json:"defaultNamespaceDeletion" yaml:"defaultNamespaceDeletion"`
 	RolePolicy interface{} `field:"optional" json:"rolePolicy" yaml:"rolePolicy"`
 	Stage interface{} `field:"optional" json:"stage" yaml:"stage"`
 	ValidationMode interface{} `field:"optional" json:"validationMode" yaml:"validationMode"`

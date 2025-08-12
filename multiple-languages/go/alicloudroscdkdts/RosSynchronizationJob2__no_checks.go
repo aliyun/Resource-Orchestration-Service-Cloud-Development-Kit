@@ -124,6 +124,14 @@ func (j *jsiiProxy_RosSynchronizationJob2) validateSetDestinationEndpointParamet
 	return nil
 }
 
+func (j *jsiiProxy_RosSynchronizationJob2) validateSetDestPrimaryVswIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosSynchronizationJob2) validateSetDestSecondaryVswIdParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosSynchronizationJob2) validateSetDisasterRecoveryJobParameters(val interface{}) error {
 	return nil
 }
@@ -160,11 +168,31 @@ func (j *jsiiProxy_RosSynchronizationJob2) validateSetFileOssUrlParameters(val i
 	return nil
 }
 
+func (j *jsiiProxy_RosSynchronizationJob2) validateSetMaxDuParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosSynchronizationJob2) validateSetMinDuParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosSynchronizationJob2) validateSetReserveParameters(val interface{}) error {
 	return nil
 }
 
+func (j *jsiiProxy_RosSynchronizationJob2) validateSetResourceGroupIdParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosSynchronizationJob2) validateSetSourceEndpointParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosSynchronizationJob2) validateSetSrcPrimaryVswIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosSynchronizationJob2) validateSetSrcSecondaryVswIdParameters(val interface{}) error {
 	return nil
 }
 

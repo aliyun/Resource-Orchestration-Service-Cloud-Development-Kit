@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * Represents a <code>BasicIpSet</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:07.131Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.835Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.IBasicIpSet")
 @software.amazon.jsii.Jsii.Proxy(IBasicIpSet.Jsii$Proxy.class)
 public interface IBasicIpSet extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

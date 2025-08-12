@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apig;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::APIG::Gateway</code>, which is used to create a Cloud-native API Gateway instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:01.593Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:43.499Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.Gateway")
 public class Gateway extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.apig.IGateway {
 
@@ -85,6 +85,14 @@ public class Gateway extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
+     * Attribute GatewayType: The type of the gateway.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrGatewayType() {
+        return software.amazon.jsii.Kernel.get(this, "attrGatewayType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
      * Attribute LoadBalancers: The list of Gateway ingress addresses.
      */
     @Override
@@ -101,6 +109,14 @@ public class Gateway extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
+     * Attribute ResourceGroupId: The ID of the resource group.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "attrResourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
      * Attribute SecurityGroup: The Security Group of the Gateway.
      */
     @Override
@@ -114,6 +130,14 @@ public class Gateway extends com.aliyun.ros.cdk.core.Resource implements com.ali
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSpec() {
         return software.amazon.jsii.Kernel.get(this, "attrSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     * Attribute Tags: The tags of the Gateway.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTags() {
+        return software.amazon.jsii.Kernel.get(this, "attrTags", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -222,6 +246,48 @@ public class Gateway extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
+         * Property gatewayName: The name of the Gateway.
+         * <p>
+         * @return {@code this}
+         * @param gatewayName Property gatewayName: The name of the Gateway. This parameter is required.
+         */
+        public Builder gatewayName(final java.lang.String gatewayName) {
+            this.props.gatewayName(gatewayName);
+            return this;
+        }
+        /**
+         * Property gatewayName: The name of the Gateway.
+         * <p>
+         * @return {@code this}
+         * @param gatewayName Property gatewayName: The name of the Gateway. This parameter is required.
+         */
+        public Builder gatewayName(final com.aliyun.ros.cdk.core.IResolvable gatewayName) {
+            this.props.gatewayName(gatewayName);
+            return this;
+        }
+
+        /**
+         * Property networkAccessConfig: Network Access Configuration.
+         * <p>
+         * @return {@code this}
+         * @param networkAccessConfig Property networkAccessConfig: Network Access Configuration. This parameter is required.
+         */
+        public Builder networkAccessConfig(final com.aliyun.ros.cdk.core.IResolvable networkAccessConfig) {
+            this.props.networkAccessConfig(networkAccessConfig);
+            return this;
+        }
+        /**
+         * Property networkAccessConfig: Network Access Configuration.
+         * <p>
+         * @return {@code this}
+         * @param networkAccessConfig Property networkAccessConfig: Network Access Configuration. This parameter is required.
+         */
+        public Builder networkAccessConfig(final com.aliyun.ros.cdk.apig.RosGateway.NetworkAccessConfigProperty networkAccessConfig) {
+            this.props.networkAccessConfig(networkAccessConfig);
+            return this;
+        }
+
+        /**
          * Property paymentType: The payment type of the gateway.
          * <p>
          * Valid values:
@@ -299,23 +365,27 @@ public class Gateway extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property gatewayName: The name of the Gateway.
+         * Property gatewayType: Describes the gateway type, which is categorized into the following two types: * API: indicates an API gateway * AI: Indicates an AI gateway.
+         * <p>
+         * Default value: API.
          * <p>
          * @return {@code this}
-         * @param gatewayName Property gatewayName: The name of the Gateway. This parameter is required.
+         * @param gatewayType Property gatewayType: Describes the gateway type, which is categorized into the following two types: * API: indicates an API gateway * AI: Indicates an AI gateway. This parameter is required.
          */
-        public Builder gatewayName(final java.lang.String gatewayName) {
-            this.props.gatewayName(gatewayName);
+        public Builder gatewayType(final java.lang.String gatewayType) {
+            this.props.gatewayType(gatewayType);
             return this;
         }
         /**
-         * Property gatewayName: The name of the Gateway.
+         * Property gatewayType: Describes the gateway type, which is categorized into the following two types: * API: indicates an API gateway * AI: Indicates an AI gateway.
+         * <p>
+         * Default value: API.
          * <p>
          * @return {@code this}
-         * @param gatewayName Property gatewayName: The name of the Gateway. This parameter is required.
+         * @param gatewayType Property gatewayType: Describes the gateway type, which is categorized into the following two types: * API: indicates an API gateway * AI: Indicates an AI gateway. This parameter is required.
          */
-        public Builder gatewayName(final com.aliyun.ros.cdk.core.IResolvable gatewayName) {
-            this.props.gatewayName(gatewayName);
+        public Builder gatewayType(final com.aliyun.ros.cdk.core.IResolvable gatewayType) {
+            this.props.gatewayType(gatewayType);
             return this;
         }
 
@@ -341,23 +411,84 @@ public class Gateway extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property networkAccessConfig: Network Access Configuration.
+         * Property period: The purchase time of the gateway.
+         * <p>
+         * This parameter is only valid when updating PaymentType from PayAsYouGo to Subscription.
          * <p>
          * @return {@code this}
-         * @param networkAccessConfig Property networkAccessConfig: Network Access Configuration. This parameter is required.
+         * @param period Property period: The purchase time of the gateway. This parameter is required.
          */
-        public Builder networkAccessConfig(final com.aliyun.ros.cdk.core.IResolvable networkAccessConfig) {
-            this.props.networkAccessConfig(networkAccessConfig);
+        public Builder period(final java.lang.Number period) {
+            this.props.period(period);
             return this;
         }
         /**
-         * Property networkAccessConfig: Network Access Configuration.
+         * Property period: The purchase time of the gateway.
+         * <p>
+         * This parameter is only valid when updating PaymentType from PayAsYouGo to Subscription.
          * <p>
          * @return {@code this}
-         * @param networkAccessConfig Property networkAccessConfig: Network Access Configuration. This parameter is required.
+         * @param period Property period: The purchase time of the gateway. This parameter is required.
          */
-        public Builder networkAccessConfig(final com.aliyun.ros.cdk.apig.RosGateway.NetworkAccessConfigProperty networkAccessConfig) {
-            this.props.networkAccessConfig(networkAccessConfig);
+        public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
+            this.props.period(period);
+            return this;
+        }
+
+        /**
+         * Property periodUnit: The unit of the purchase time of the gateway.
+         * <p>
+         * This parameter is only valid when updating PaymentType from PayAsYouGo to Subscription.
+         * <p>
+         * @return {@code this}
+         * @param periodUnit Property periodUnit: The unit of the purchase time of the gateway. This parameter is required.
+         */
+        public Builder periodUnit(final java.lang.String periodUnit) {
+            this.props.periodUnit(periodUnit);
+            return this;
+        }
+        /**
+         * Property periodUnit: The unit of the purchase time of the gateway.
+         * <p>
+         * This parameter is only valid when updating PaymentType from PayAsYouGo to Subscription.
+         * <p>
+         * @return {@code this}
+         * @param periodUnit Property periodUnit: The unit of the purchase time of the gateway. This parameter is required.
+         */
+        public Builder periodUnit(final com.aliyun.ros.cdk.core.IResolvable periodUnit) {
+            this.props.periodUnit(periodUnit);
+            return this;
+        }
+
+        /**
+         * Property resourceGroupId: The ID of the resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: The ID of the resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * Property tags: Tags of The tags of the Gateway..
+         * <p>
+         * @return {@code this}
+         * @param tags Property tags: Tags of The tags of the Gateway.. This parameter is required.
+         */
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.apig.RosGateway.TagsProperty> tags) {
+            this.props.tags(tags);
             return this;
         }
 

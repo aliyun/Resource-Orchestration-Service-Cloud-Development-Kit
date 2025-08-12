@@ -168,6 +168,10 @@ func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetVpcIdParameters(v
 	return nil
 }
 
+func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetVSwitchIdsParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetZoneIdsParameters(val interface{}) error {
 	return nil
 }

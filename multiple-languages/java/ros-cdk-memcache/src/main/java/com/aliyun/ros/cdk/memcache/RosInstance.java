@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.memcache;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::Memcache::Instance</code>ALIYUN::MEMCACHE::Instance is used to create an ApsaraDB for Memcache (OCS) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:07.985Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.542Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.memcache.$Module.class, fqn = "@alicloud/ros-cdk-memcache.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 

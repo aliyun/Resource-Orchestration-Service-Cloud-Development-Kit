@@ -50,9 +50,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Computenest
             get;
         }
 
-        /// <summary>Attribute Name: The name of the service instance.</summary>
-        [JsiiProperty(name: "attrName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object AttrName
+        /// <summary>Attribute MarketInstanceId: The ID of the cloud marketplace instance.</summary>
+        [JsiiProperty(name: "attrMarketInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrMarketInstanceId
         {
             get;
         }
@@ -60,6 +60,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Computenest
         /// <summary>Attribute NetworkConfig: Network configuration information.</summary>
         [JsiiProperty(name: "attrNetworkConfig", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AttrNetworkConfig
+        {
+            get;
+        }
+
+        /// <summary>Attribute Output: Create the output Field returned by the service instance.</summary>
+        [JsiiProperty(name: "attrOutput", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrOutput
         {
             get;
         }
@@ -112,6 +119,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Computenest
         /// <summary>Attribute ServiceInstanceId: The ID of the service instance.</summary>
         [JsiiProperty(name: "attrServiceInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AttrServiceInstanceId
+        {
+            get;
+        }
+
+        /// <summary>Attribute ServiceInstanceName: The name of the resource.</summary>
+        [JsiiProperty(name: "attrServiceInstanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrServiceInstanceName
         {
             get;
         }
@@ -228,9 +242,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Computenest
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Attribute Name: The name of the service instance.</summary>
-            [JsiiProperty(name: "attrName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object AttrName
+            /// <summary>Attribute MarketInstanceId: The ID of the cloud marketplace instance.</summary>
+            [JsiiProperty(name: "attrMarketInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrMarketInstanceId
             {
                 get => GetInstanceProperty<object>()!;
             }
@@ -238,6 +252,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Computenest
             /// <summary>Attribute NetworkConfig: Network configuration information.</summary>
             [JsiiProperty(name: "attrNetworkConfig", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AttrNetworkConfig
+            {
+                get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Attribute Output: Create the output Field returned by the service instance.</summary>
+            [JsiiProperty(name: "attrOutput", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrOutput
             {
                 get => GetInstanceProperty<object>()!;
             }
@@ -290,6 +311,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Computenest
             /// <summary>Attribute ServiceInstanceId: The ID of the service instance.</summary>
             [JsiiProperty(name: "attrServiceInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AttrServiceInstanceId
+            {
+                get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Attribute ServiceInstanceName: The name of the resource.</summary>
+            [JsiiProperty(name: "attrServiceInstanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrServiceInstanceName
             {
                 get => GetInstanceProperty<object>()!;
             }

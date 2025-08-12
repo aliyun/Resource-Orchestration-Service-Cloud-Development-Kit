@@ -95,6 +95,11 @@ export interface IInstance extends ros.IResource {
      * Attribute OrderId: Order information.
      */
     readonly attrOrderId: ros.IResolvable | string;
+
+    /**
+     * Attribute WorkspaceId: Workspace ID.
+     */
+    readonly attrWorkspaceId: ros.IResolvable | string;
 }
 /**
  * This class encapsulates and extends the ROS resource type `ALIYUN::Flink::Instance`, which is used to create a subscription or pay-as-you-go Realtime Compute for Apache Flink instance.
@@ -116,6 +121,11 @@ export class Instance extends ros.Resource implements IInstance {
      * Attribute OrderId: Order information.
      */
     public readonly attrOrderId: ros.IResolvable | string;
+
+    /**
+     * Attribute WorkspaceId: Workspace ID.
+     */
+    public readonly attrWorkspaceId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -146,5 +156,6 @@ export class Instance extends ros.Resource implements IInstance {
         this.resource = rosInstance;
         this.attrInstanceId = rosInstance.attrInstanceId;
         this.attrOrderId = rosInstance.attrOrderId;
+        this.attrWorkspaceId = rosInstance.attrWorkspaceId;
     }
 }

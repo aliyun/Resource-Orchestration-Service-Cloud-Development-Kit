@@ -91,6 +91,8 @@ type ManagedEdgeKubernetesClusterProps struct {
 	// If not set, the system will automatically create a VPC, and the VPC network segment created by the system is 192.168.0.0\/16.
 	// VpcId and VSwitchId can only be empty at the same time or set the corresponding values at the same time.
 	VpcId interface{} `field:"optional" json:"vpcId" yaml:"vpcId"`
+	// Property vSwitchIds: The virtual switch ID of the worker node.
+	VSwitchIds interface{} `field:"optional" json:"vSwitchIds" yaml:"vSwitchIds"`
 	// Property zoneIds: Zone ids of worker node virtual switches belongs to.
 	ZoneIds interface{} `field:"optional" json:"zoneIds" yaml:"zoneIds"`
 }

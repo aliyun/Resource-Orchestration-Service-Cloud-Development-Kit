@@ -33,6 +33,8 @@ type RosInvocation interface {
 	SetFrequency(val interface{})
 	InstanceIds() interface{}
 	SetInstanceIds(val interface{})
+	Launcher() interface{}
+	SetLauncher(val interface{})
 	// The logical ID for this stack element.
 	//
 	// The logical ID of the element
@@ -309,6 +311,16 @@ func (j *jsiiProxy_RosInvocation) InstanceIds() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosInvocation) Launcher() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"launcher",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosInvocation) LogicalId() *string {
 	var returns *string
 	_jsii_.Get(
@@ -570,6 +582,17 @@ func (j *jsiiProxy_RosInvocation)SetInstanceIds(val interface{}) {
 	_jsii_.Set(
 		j,
 		"instanceIds",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosInvocation)SetLauncher(val interface{}) {
+	if err := j.validateSetLauncherParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"launcher",
 		val,
 	)
 }

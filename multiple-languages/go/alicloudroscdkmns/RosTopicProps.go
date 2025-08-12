@@ -8,5 +8,6 @@ type RosTopicProps struct {
 	TopicName interface{} `field:"required" json:"topicName" yaml:"topicName"`
 	LoggingEnabled interface{} `field:"optional" json:"loggingEnabled" yaml:"loggingEnabled"`
 	MaximumMessageSize interface{} `field:"optional" json:"maximumMessageSize" yaml:"maximumMessageSize"`
+	Tags *[]*RosTopic_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 }
 

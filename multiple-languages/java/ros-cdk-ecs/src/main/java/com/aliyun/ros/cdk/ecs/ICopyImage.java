@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Represents a <code>CopyImage</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:04.620Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.172Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.ICopyImage")
 @software.amazon.jsii.Jsii.Proxy(ICopyImage.Jsii$Proxy.class)
 public interface ICopyImage extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

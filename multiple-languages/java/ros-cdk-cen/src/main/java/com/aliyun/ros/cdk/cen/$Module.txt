@@ -59,6 +59,7 @@
 @alicloud/ros-cdk-cen.RosRouteEntryProps=com.aliyun.ros.cdk.cen.RosRouteEntryProps
 @alicloud/ros-cdk-cen.RosTransitRouter=com.aliyun.ros.cdk.cen.RosTransitRouter
 @alicloud/ros-cdk-cen.RosTransitRouterPeerAttachment=com.aliyun.ros.cdk.cen.RosTransitRouterPeerAttachment
+@alicloud/ros-cdk-cen.RosTransitRouterPeerAttachment.TagsProperty=com.aliyun.ros.cdk.cen.RosTransitRouterPeerAttachment$TagsProperty
 @alicloud/ros-cdk-cen.RosTransitRouterPeerAttachmentProps=com.aliyun.ros.cdk.cen.RosTransitRouterPeerAttachmentProps
 @alicloud/ros-cdk-cen.RosTransitRouterProps=com.aliyun.ros.cdk.cen.RosTransitRouterProps
 @alicloud/ros-cdk-cen.RosTransitRouterRouteEntry=com.aliyun.ros.cdk.cen.RosTransitRouterRouteEntry

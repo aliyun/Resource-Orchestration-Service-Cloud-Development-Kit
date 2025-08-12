@@ -574,6 +574,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
+        /// <summary>Property subscriptionDeletionForce: This option is only applicable to subscription instances.</summary>
+        /// <remarks>
+        /// For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+        /// </remarks>
+        [JsiiProperty(name: "subscriptionDeletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SubscriptionDeletionForce
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property systemDiskCategory: Category of system disk.</summary>
         /// <remarks>
         /// Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto|cloud_essd_entry
@@ -1196,6 +1210,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             [JsiiOptional]
             [JsiiProperty(name: "storageSetPartitionNumber", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? StorageSetPartitionNumber
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property subscriptionDeletionForce: This option is only applicable to subscription instances.</summary>
+            /// <remarks>
+            /// For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "subscriptionDeletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SubscriptionDeletionForce
             {
                 get => GetInstanceProperty<object?>();
             }

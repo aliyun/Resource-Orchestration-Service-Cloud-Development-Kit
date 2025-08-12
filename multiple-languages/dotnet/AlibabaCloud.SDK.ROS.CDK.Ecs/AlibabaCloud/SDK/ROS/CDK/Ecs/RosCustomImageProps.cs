@@ -201,6 +201,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
+        private object? _features;
+
+        /// <remarks>
+        /// <strong>Property</strong>: features: Mirror feature-related properties.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "features", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ecs.RosCustomImage.FeaturesProperty\"}]}}", isOptional: true)]
+        public object? Features
+        {
+            get => _features;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Ecs.RosCustomImage.IFeaturesProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Ecs.RosCustomImage.IFeaturesProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _features = value;
+            }
+        }
+
         private object? _imageFamily;
 
         /// <remarks>

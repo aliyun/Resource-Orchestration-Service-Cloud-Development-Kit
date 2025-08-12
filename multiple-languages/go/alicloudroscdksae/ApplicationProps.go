@@ -9,13 +9,13 @@ type ApplicationProps struct {
 	//
 	// Allowed numbers, letters and underlined combinations thereof. We must begin with the letters, the maximum length of 36 characters.
 	AppName interface{} `field:"required" json:"appName" yaml:"appName"`
-	// Property cpu: Each instance of the CPU required, in units of milli core, can not be zero.
+	// Property cpu: The CPU required for each instance.
 	//
-	// Currently only supports fixed specifications instance type.
+	// Valid values: 500, 1000, 2000, 4000, 8000, 16000, 32000.
 	Cpu interface{} `field:"required" json:"cpu" yaml:"cpu"`
-	// Property memory: Each instance of the required memory, in units of MB, can not be zero.
+	// Property memory: The memory required for each instance, in MB, cannot be 0.
 	//
-	// Currently only supports fixed specifications instance type.
+	// One-to-one correspondence with CPU. Valid values: 1024, 2048, 4096, 8192, 12288, 16384, 24576, 32768, 65536, 131072.
 	Memory interface{} `field:"required" json:"memory" yaml:"memory"`
 	// Property namespaceId: EDAS namespace corresponding to ID.
 	//
@@ -80,6 +80,8 @@ type ApplicationProps struct {
 	// - true: Enable.
 	// - false: Disable.
 	EnableEbpf interface{} `field:"optional" json:"enableEbpf" yaml:"enableEbpf"`
+	// Property enableNewArms: Whether to enable the new ARMS feature.
+	EnableNewArms interface{} `field:"optional" json:"enableNewArms" yaml:"enableNewArms"`
 	// Property envs: Container environment variable parameters.
 	//
 	// For example: [{ "name": "envtmp", "value": "0"}].
@@ -139,6 +141,10 @@ type ApplicationProps struct {
 	//
 	// It must be available to create a mount point limit, or switch on its mount point already in the VPC. If you do not fill, and there mountDescs field, the default will automatically purchase a NAS and mount it onto the switch within the VPC.
 	NasId interface{} `field:"optional" json:"nasId" yaml:"nasId"`
+	// Property newSaeVersion: The new SAE version.
+	//
+	// Supported versions: lite, std, pro.
+	NewSaeVersion interface{} `field:"optional" json:"newSaeVersion" yaml:"newSaeVersion"`
 	// Property ossAkId: AccessKey ID of the OSS.
 	OssAkId interface{} `field:"optional" json:"ossAkId" yaml:"ossAkId"`
 	// Property ossAkSecret: AccessKey Secret of the OSS.
@@ -180,7 +186,10 @@ type ApplicationProps struct {
 	// The values are explained as follows:
 	// - java: The Java language
 	// - php: PHP language.
-	// - other: Multiple languages such as Python, C++, Go,.NET, Node.js, etc.
+	// - python: Python language.
+	// - dotnet: .NET Core language.
+	// - golang: GoLang language.
+	// - other: Multiple languages such as C++, Node.js, etc.
 	ProgrammingLanguage interface{} `field:"optional" json:"programmingLanguage" yaml:"programmingLanguage"`
 	// Property pvtzDiscoverySvc: Enable K8s Service registration discovery.
 	//

@@ -88,6 +88,10 @@ func (j *jsiiProxy_RosBucket) validateSetAccessControlParameters(val interface{}
 	return nil
 }
 
+func (j *jsiiProxy_RosBucket) validateSetBlockPublicAccessParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosBucket) validateSetBucketNameParameters(val interface{}) error {
 	return nil
 }

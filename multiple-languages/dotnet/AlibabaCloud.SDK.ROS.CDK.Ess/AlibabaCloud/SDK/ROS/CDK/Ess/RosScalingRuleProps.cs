@@ -338,16 +338,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <remarks>
         /// <strong>Property</strong>: metricName: The predefined metric to monitor. This parameter is required and applicable only to target tracking scaling rules and predictive scaling rules.
         /// Valid values of a target tracking scaling rule:
-        /// - CpuUtilization: the average CPU utilization- ClassicInternetRx: the average public network inbound traffic over the classic network
-        /// - ClassicInternetTx: the average public network outbound traffic over the classic network
-        /// - VpcInternetRx: the average public network inbound traffic over the VPC
-        /// - VpcInternetTx: the average public network outbound traffic over the VPC
-        /// - IntranetRx: the average internal network inbound traffic
-        /// - IntranetTx: the average internal network outbound traffic
+        /// - CpuUtilizationAgent:  (recommended) the CPU utilization.
+        /// - MemoryUtilization: (recommended) the memory usage.- CpuUtilization: the average CPU utilization.
+        /// - IntranetTx: the outbound traffic over an internal network.
+        /// - IntranetRx: the average inbound traffic over an internal network.
+        /// - VpcInternetTx: the outbound traffic from a virtual private cloud (VPC) to the Internet.
+        /// - VpcInternetRx: the inbound traffic from the Internet to a VPC.
+        /// - LoadBalancerRealServerAverageQps: the queries per second (QPS) per Application Load Balancer (ALB) server group.
         /// Valid values of a predictive scaling rule:
-        /// - CpuUtilization: the average CPU utilization
-        /// - IntranetRx: the average internal network inbound traffic
-        /// - IntranetTx: the average internal network outbound traffic
+        /// - CpuUtilization: the average CPU utilization.
+        /// - IntranetRx: the average inbound traffic over an internal network.
+        /// - IntranetTx: the average outbound traffic over an internal network.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "metricName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

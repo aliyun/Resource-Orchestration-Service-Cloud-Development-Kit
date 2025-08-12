@@ -98,6 +98,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
             }
         }
 
+        private object? _dlqPolicy;
+
+        /// <summary>Property dlqPolicy: Dead-letter queue policy.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "dlqPolicy", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-mns.RosQueue.DlqPolicyProperty\"}]}}", isOptional: true)]
+        public object? DlqPolicy
+        {
+            get => _dlqPolicy;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Mns.RosQueue.IDlqPolicyProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Mns.RosQueue.IDlqPolicyProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _dlqPolicy = value;
+            }
+        }
+
         private object? _loggingEnabled;
 
         /// <summary>Property loggingEnabled: Whether to enable log management.</summary>
@@ -295,6 +326,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
                 }
                 _pollingWaitSeconds = value;
             }
+        }
+
+        /// <summary>Property tags: Tags to attach to Queue.</summary>
+        /// <remarks>
+        /// Max support 20 tags to add during create Queue. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-mns.RosQueue.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        public AlibabaCloud.SDK.ROS.CDK.Mns.RosQueue.ITagsProperty[]? Tags
+        {
+            get;
+            set;
         }
 
         private object? _visibilityTimeout;

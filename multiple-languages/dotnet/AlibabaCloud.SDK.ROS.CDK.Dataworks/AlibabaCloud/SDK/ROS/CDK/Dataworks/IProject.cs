@@ -20,6 +20,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dataworks
             get;
         }
 
+        /// <summary>Attribute Id: The ID number of the workspace.</summary>
+        [JsiiProperty(name: "attrId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrId
+        {
+            get;
+        }
+
         /// <summary>Attribute IsDefault: Indicates whether the workspace is the default workspace.</summary>
         /// <remarks>
         /// Valid values:
@@ -28,13 +35,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dataworks
         /// </remarks>
         [JsiiProperty(name: "attrIsDefault", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AttrIsDefault
-        {
-            get;
-        }
-
-        /// <summary>Attribute ProjectId: The ID of the workspace.</summary>
-        [JsiiProperty(name: "attrProjectId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object AttrProjectId
         {
             get;
         }
@@ -126,6 +126,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dataworks
                 get => GetInstanceProperty<object>()!;
             }
 
+            /// <summary>Attribute Id: The ID number of the workspace.</summary>
+            [JsiiProperty(name: "attrId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrId
+            {
+                get => GetInstanceProperty<object>()!;
+            }
+
             /// <summary>Attribute IsDefault: Indicates whether the workspace is the default workspace.</summary>
             /// <remarks>
             /// Valid values:
@@ -134,13 +141,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dataworks
             /// </remarks>
             [JsiiProperty(name: "attrIsDefault", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AttrIsDefault
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
-            /// <summary>Attribute ProjectId: The ID of the workspace.</summary>
-            [JsiiProperty(name: "attrProjectId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object AttrProjectId
             {
                 get => GetInstanceProperty<object>()!;
             }

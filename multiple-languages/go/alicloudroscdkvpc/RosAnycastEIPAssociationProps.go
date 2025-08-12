@@ -9,5 +9,8 @@ type RosAnycastEIPAssociationProps struct {
 	BindInstanceId interface{} `field:"required" json:"bindInstanceId" yaml:"bindInstanceId"`
 	BindInstanceRegionId interface{} `field:"required" json:"bindInstanceRegionId" yaml:"bindInstanceRegionId"`
 	BindInstanceType interface{} `field:"required" json:"bindInstanceType" yaml:"bindInstanceType"`
+	AssociationMode interface{} `field:"optional" json:"associationMode" yaml:"associationMode"`
+	PopLocations interface{} `field:"optional" json:"popLocations" yaml:"popLocations"`
+	PrivateIpAddress interface{} `field:"optional" json:"privateIpAddress" yaml:"privateIpAddress"`
 }
 

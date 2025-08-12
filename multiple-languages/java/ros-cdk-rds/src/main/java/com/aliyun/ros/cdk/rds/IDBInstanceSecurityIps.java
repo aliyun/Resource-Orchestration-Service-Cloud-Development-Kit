@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Represents a <code>DBInstanceSecurityIps</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:09.609Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.828Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.IDBInstanceSecurityIps")
 @software.amazon.jsii.Jsii.Proxy(IDBInstanceSecurityIps.Jsii$Proxy.class)
 public interface IDBInstanceSecurityIps extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

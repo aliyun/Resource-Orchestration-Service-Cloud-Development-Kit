@@ -134,6 +134,11 @@ export interface DBInstanceProps {
     readonly prodType?: string | ros.IResolvable;
 
     /**
+     * Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * Property securityIpList: The whitelist of IP addresses that are allowed to access the instance. Default value:
      * 127.0.0.1.
      */
@@ -291,6 +296,7 @@ export class DBInstance extends ros.Resource implements IDBInstance {
             standbyZoneId: props.standbyZoneId,
             instanceSpec: props.instanceSpec,
             privateIpAddress: props.privateIpAddress,
+            resourceGroupId: props.resourceGroupId,
             idleTime: props.idleTime,
             aiNodeSpecInfos: props.aiNodeSpecInfos,
             segNodeNum: props.segNodeNum,

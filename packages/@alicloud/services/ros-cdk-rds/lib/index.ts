@@ -6,6 +6,7 @@ export * from './dbinstance';
 export * from './dbinstanceclone';
 export * from './dbinstanceparametergroup';
 export * from './dbinstancesecurityips';
+export * from './dbproxy';
 export * from './database';
 export * from './migratetask';
 export * from './postgresextensions';

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::AnycastEIPAssociation</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:11.177Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:51.124Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.AnycastEIPAssociation")
 public class AnycastEIPAssociation extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.IAnycastEIPAssociation {
 
@@ -220,6 +220,69 @@ public class AnycastEIPAssociation extends com.aliyun.ros.cdk.core.Resource impl
          */
         public Builder bindInstanceType(final com.aliyun.ros.cdk.core.IResolvable bindInstanceType) {
             this.props.bindInstanceType(bindInstanceType);
+            return this;
+        }
+
+        /**
+         * Property associationMode: The association mode.
+         * <p>
+         * @return {@code this}
+         * @param associationMode Property associationMode: The association mode. This parameter is required.
+         */
+        public Builder associationMode(final java.lang.String associationMode) {
+            this.props.associationMode(associationMode);
+            return this;
+        }
+        /**
+         * Property associationMode: The association mode.
+         * <p>
+         * @return {@code this}
+         * @param associationMode Property associationMode: The association mode. This parameter is required.
+         */
+        public Builder associationMode(final com.aliyun.ros.cdk.core.IResolvable associationMode) {
+            this.props.associationMode(associationMode);
+            return this;
+        }
+
+        /**
+         * Property popLocations: The pop locations.
+         * <p>
+         * @return {@code this}
+         * @param popLocations Property popLocations: The pop locations. This parameter is required.
+         */
+        public Builder popLocations(final com.aliyun.ros.cdk.core.IResolvable popLocations) {
+            this.props.popLocations(popLocations);
+            return this;
+        }
+        /**
+         * Property popLocations: The pop locations.
+         * <p>
+         * @return {@code this}
+         * @param popLocations Property popLocations: The pop locations. This parameter is required.
+         */
+        public Builder popLocations(final java.util.List<? extends java.lang.Object> popLocations) {
+            this.props.popLocations(popLocations);
+            return this;
+        }
+
+        /**
+         * Property privateIpAddress: The private IP address.
+         * <p>
+         * @return {@code this}
+         * @param privateIpAddress Property privateIpAddress: The private IP address. This parameter is required.
+         */
+        public Builder privateIpAddress(final java.lang.String privateIpAddress) {
+            this.props.privateIpAddress(privateIpAddress);
+            return this;
+        }
+        /**
+         * Property privateIpAddress: The private IP address.
+         * <p>
+         * @return {@code this}
+         * @param privateIpAddress Property privateIpAddress: The private IP address. This parameter is required.
+         */
+        public Builder privateIpAddress(final com.aliyun.ros.cdk.core.IResolvable privateIpAddress) {
+            this.props.privateIpAddress(privateIpAddress);
             return this;
         }
 

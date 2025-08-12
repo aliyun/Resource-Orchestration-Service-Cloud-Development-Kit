@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CS::ClusterHelmApplication</code>, which is used to deploy an application by using Helm.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:03.492Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.217Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosClusterHelmApplication")
 public class RosClusterHelmApplication extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -183,6 +183,24 @@ public class RosClusterHelmApplication extends com.aliyun.ros.cdk.core.RosResour
      */
     public void setNamespace(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "namespace", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getNamespaceDeletion() {
+        return software.amazon.jsii.Kernel.get(this, "namespaceDeletion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setNamespaceDeletion(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "namespaceDeletion", value);
+    }
+
+    /**
+     */
+    public void setNamespaceDeletion(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "namespaceDeletion", value);
     }
 
     /**
@@ -1091,6 +1109,23 @@ public class RosClusterHelmApplication extends com.aliyun.ros.cdk.core.RosResour
          */
         public Builder namespace(final com.aliyun.ros.cdk.core.IResolvable namespace) {
             this.props.namespace(namespace);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param namespaceDeletion This parameter is required.
+         */
+        public Builder namespaceDeletion(final java.lang.Boolean namespaceDeletion) {
+            this.props.namespaceDeletion(namespaceDeletion);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param namespaceDeletion This parameter is required.
+         */
+        public Builder namespaceDeletion(final com.aliyun.ros.cdk.core.IResolvable namespaceDeletion) {
+            this.props.namespaceDeletion(namespaceDeletion);
             return this;
         }
 

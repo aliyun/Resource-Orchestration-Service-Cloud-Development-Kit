@@ -82,6 +82,14 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-eventbridge.RosRule.ConcurrentConfigProperty",
+		reflect.TypeOf((*RosRule_ConcurrentConfigProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-eventbridge.RosRule.DeadLetterQueueProperty",
+		reflect.TypeOf((*RosRule_DeadLetterQueueProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-eventbridge.RosRule.ParamListProperty",
 		reflect.TypeOf((*RosRule_ParamListProperty)(nil)).Elem(),
 	)

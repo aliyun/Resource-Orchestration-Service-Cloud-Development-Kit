@@ -9,9 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::MNS::Subscription`, which is used to subscribe an endpoint to an Alibaba Cloud Message Service (MNS) topic.
-//
-// For a subscription to be created, the owner of the endpoint must confirm the subscription.
+// This class encapsulates and extends the ROS resource type `ALIYUN::MNS::Subscription`.
 type Subscription interface {
 	alicloudroscdkcore.Resource
 	ISubscription

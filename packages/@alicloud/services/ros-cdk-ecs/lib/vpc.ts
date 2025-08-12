@@ -64,7 +64,7 @@ export interface VPCProps {
     readonly userCidr?: string | ros.IResolvable;
 
     /**
-     * Property vpcName: Display name of the vpc instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
+     * Property vpcName: The value contains 1 to 128 characters and cannot start with http:\/\/ or https:\/\/
      */
     readonly vpcName?: string | ros.IResolvable;
 }

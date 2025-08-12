@@ -32,6 +32,8 @@ type RosPrepayDBInstance interface {
 	SetAutoPay(val interface{})
 	AutoRenew() interface{}
 	SetAutoRenew(val interface{})
+	AutoUpgradeMinorVersion() interface{}
+	SetAutoUpgradeMinorVersion(val interface{})
 	BackUpCategory() interface{}
 	SetBackUpCategory(val interface{})
 	BackupPolicyMode() interface{}
@@ -180,6 +182,8 @@ type RosPrepayDBInstance interface {
 	SetStorageThreshold(val interface{})
 	StorageUpperBound() interface{}
 	SetStorageUpperBound(val interface{})
+	SubscriptionDeletionForce() interface{}
+	SetSubscriptionDeletionForce(val interface{})
 	Tags() *map[string]interface{}
 	SetTags(val *map[string]interface{})
 	TargetDedicatedHostIdForLog() interface{}
@@ -453,6 +457,16 @@ func (j *jsiiProxy_RosPrepayDBInstance) AutoRenew() interface{} {
 	_jsii_.Get(
 		j,
 		"autoRenew",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosPrepayDBInstance) AutoUpgradeMinorVersion() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"autoUpgradeMinorVersion",
 		&returns,
 	)
 	return returns
@@ -1128,6 +1142,16 @@ func (j *jsiiProxy_RosPrepayDBInstance) StorageUpperBound() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosPrepayDBInstance) SubscriptionDeletionForce() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"subscriptionDeletionForce",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosPrepayDBInstance) Tags() *map[string]interface{} {
 	var returns *map[string]interface{}
 	_jsii_.Get(
@@ -1298,6 +1322,17 @@ func (j *jsiiProxy_RosPrepayDBInstance)SetAutoRenew(val interface{}) {
 	_jsii_.Set(
 		j,
 		"autoRenew",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosPrepayDBInstance)SetAutoUpgradeMinorVersion(val interface{}) {
+	if err := j.validateSetAutoUpgradeMinorVersionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"autoUpgradeMinorVersion",
 		val,
 	)
 }
@@ -1947,6 +1982,17 @@ func (j *jsiiProxy_RosPrepayDBInstance)SetStorageUpperBound(val interface{}) {
 	_jsii_.Set(
 		j,
 		"storageUpperBound",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosPrepayDBInstance)SetSubscriptionDeletionForce(val interface{}) {
+	if err := j.validateSetSubscriptionDeletionForceParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"subscriptionDeletionForce",
 		val,
 	)
 }

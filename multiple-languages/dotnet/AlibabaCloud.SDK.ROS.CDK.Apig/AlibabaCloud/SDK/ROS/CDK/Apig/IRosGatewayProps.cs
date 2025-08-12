@@ -12,6 +12,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apig
     public interface IRosGatewayProps
     {
         /// <remarks>
+        /// <strong>Property</strong>: gatewayName: The name of the Gateway.
+        /// </remarks>
+        [JsiiProperty(name: "gatewayName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object GatewayName
+        {
+            get;
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: networkAccessConfig: Network Access Configuration.
+        /// </remarks>
+        [JsiiProperty(name: "networkAccessConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-apig.RosGateway.NetworkAccessConfigProperty\"}]}}")]
+        object NetworkAccessConfig
+        {
+            get;
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: paymentType: The payment type of the gateway. Valid values:
         /// * PayAsYouGo
         /// * Subscription
@@ -41,11 +59,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apig
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: gatewayName: The name of the Gateway.
+        /// <strong>Property</strong>: gatewayType: Describes the gateway type, which is categorized into the following two types:
+        /// * API: indicates an API gateway
+        /// * AI: Indicates an AI gateway.
+        /// Default value: API.
         /// </remarks>
-        [JsiiProperty(name: "gatewayName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [JsiiProperty(name: "gatewayType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? GatewayName
+        object? GatewayType
         {
             get
             {
@@ -67,11 +88,50 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apig
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: networkAccessConfig: Network Access Configuration.
+        /// <strong>Property</strong>: period: The purchase time of the gateway. This parameter is only valid when updating PaymentType from PayAsYouGo to Subscription.
         /// </remarks>
-        [JsiiProperty(name: "networkAccessConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-apig.RosGateway.NetworkAccessConfigProperty\"}]}}", isOptional: true)]
+        [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? NetworkAccessConfig
+        object? Period
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: periodUnit: The unit of the purchase time of the gateway. This parameter is only valid when updating PaymentType from PayAsYouGo to Subscription.
+        /// </remarks>
+        [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? PeriodUnit
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: resourceGroupId: The ID of the resource group.
+        /// </remarks>
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ResourceGroupId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: tags: Tags of The tags of the Gateway..
+        /// </remarks>
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-apig.RosGateway.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        AlibabaCloud.SDK.ROS.CDK.Apig.RosGateway.ITagsProperty[]? Tags
         {
             get
             {
@@ -117,6 +177,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apig
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: gatewayName: The name of the Gateway.
+            /// </remarks>
+            [JsiiProperty(name: "gatewayName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object GatewayName
+            {
+                get => GetInstanceProperty<object>()!;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: networkAccessConfig: Network Access Configuration.
+            /// </remarks>
+            [JsiiProperty(name: "networkAccessConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-apig.RosGateway.NetworkAccessConfigProperty\"}]}}")]
+            public object NetworkAccessConfig
+            {
+                get => GetInstanceProperty<object>()!;
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: paymentType: The payment type of the gateway. Valid values:
             /// * PayAsYouGo
             /// * Subscription
@@ -146,11 +224,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apig
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: gatewayName: The name of the Gateway.
+            /// <strong>Property</strong>: gatewayType: Describes the gateway type, which is categorized into the following two types:
+            /// * API: indicates an API gateway
+            /// * AI: Indicates an AI gateway.
+            /// Default value: API.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "gatewayName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? GatewayName
+            [JsiiProperty(name: "gatewayType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? GatewayType
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -166,13 +247,43 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apig
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: networkAccessConfig: Network Access Configuration.
+            /// <strong>Property</strong>: period: The purchase time of the gateway. This parameter is only valid when updating PaymentType from PayAsYouGo to Subscription.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "networkAccessConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-apig.RosGateway.NetworkAccessConfigProperty\"}]}}", isOptional: true)]
-            public object? NetworkAccessConfig
+            [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Period
             {
                 get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: periodUnit: The unit of the purchase time of the gateway. This parameter is only valid when updating PaymentType from PayAsYouGo to Subscription.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PeriodUnit
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: resourceGroupId: The ID of the resource group.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ResourceGroupId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: tags: Tags of The tags of the Gateway..
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-apig.RosGateway.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+            public AlibabaCloud.SDK.ROS.CDK.Apig.RosGateway.ITagsProperty[]? Tags
+            {
+                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Apig.RosGateway.ITagsProperty[]?>();
             }
 
             /// <remarks>

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.fc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-functioninvoker
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:12.186Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:51.947Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.FunctionInvokerProps")
 @software.amazon.jsii.Jsii.Proxy(FunctionInvokerProps.Jsii$Proxy.class)
 public interface FunctionInvokerProps extends software.amazon.jsii.JsiiSerializable {
@@ -26,6 +26,13 @@ public interface FunctionInvokerProps extends software.amazon.jsii.JsiiSerializa
      * Defaults to Sync.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAsync() {
+        return null;
+    }
+
+    /**
+     * Property checkAsyncInvocation: Check async invocation setting.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCheckAsyncInvocation() {
         return null;
     }
 
@@ -82,6 +89,7 @@ public interface FunctionInvokerProps extends software.amazon.jsii.JsiiSerializa
         java.lang.Object functionName;
         java.lang.Object serviceName;
         java.lang.Object async;
+        java.lang.Object checkAsyncInvocation;
         java.lang.Object checkError;
         java.lang.Object event;
         java.lang.Object executeVersion;
@@ -147,6 +155,26 @@ public interface FunctionInvokerProps extends software.amazon.jsii.JsiiSerializa
          */
         public Builder async(com.aliyun.ros.cdk.core.IResolvable async) {
             this.async = async;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link FunctionInvokerProps#getCheckAsyncInvocation}
+         * @param checkAsyncInvocation Property checkAsyncInvocation: Check async invocation setting.
+         * @return {@code this}
+         */
+        public Builder checkAsyncInvocation(com.aliyun.ros.cdk.core.IResolvable checkAsyncInvocation) {
+            this.checkAsyncInvocation = checkAsyncInvocation;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link FunctionInvokerProps#getCheckAsyncInvocation}
+         * @param checkAsyncInvocation Property checkAsyncInvocation: Check async invocation setting.
+         * @return {@code this}
+         */
+        public Builder checkAsyncInvocation(com.aliyun.ros.cdk.fc.RosFunctionInvoker.CheckAsyncInvocationProperty checkAsyncInvocation) {
+            this.checkAsyncInvocation = checkAsyncInvocation;
             return this;
         }
 
@@ -275,6 +303,7 @@ public interface FunctionInvokerProps extends software.amazon.jsii.JsiiSerializa
         private final java.lang.Object functionName;
         private final java.lang.Object serviceName;
         private final java.lang.Object async;
+        private final java.lang.Object checkAsyncInvocation;
         private final java.lang.Object checkError;
         private final java.lang.Object event;
         private final java.lang.Object executeVersion;
@@ -290,6 +319,7 @@ public interface FunctionInvokerProps extends software.amazon.jsii.JsiiSerializa
             this.functionName = software.amazon.jsii.Kernel.get(this, "functionName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serviceName = software.amazon.jsii.Kernel.get(this, "serviceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.async = software.amazon.jsii.Kernel.get(this, "async", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.checkAsyncInvocation = software.amazon.jsii.Kernel.get(this, "checkAsyncInvocation", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.checkError = software.amazon.jsii.Kernel.get(this, "checkError", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.event = software.amazon.jsii.Kernel.get(this, "event", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.executeVersion = software.amazon.jsii.Kernel.get(this, "executeVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -305,6 +335,7 @@ public interface FunctionInvokerProps extends software.amazon.jsii.JsiiSerializa
             this.functionName = java.util.Objects.requireNonNull(builder.functionName, "functionName is required");
             this.serviceName = java.util.Objects.requireNonNull(builder.serviceName, "serviceName is required");
             this.async = builder.async;
+            this.checkAsyncInvocation = builder.checkAsyncInvocation;
             this.checkError = builder.checkError;
             this.event = builder.event;
             this.executeVersion = builder.executeVersion;
@@ -325,6 +356,11 @@ public interface FunctionInvokerProps extends software.amazon.jsii.JsiiSerializa
         @Override
         public final java.lang.Object getAsync() {
             return this.async;
+        }
+
+        @Override
+        public final java.lang.Object getCheckAsyncInvocation() {
+            return this.checkAsyncInvocation;
         }
 
         @Override
@@ -363,6 +399,9 @@ public interface FunctionInvokerProps extends software.amazon.jsii.JsiiSerializa
             if (this.getAsync() != null) {
                 data.set("async", om.valueToTree(this.getAsync()));
             }
+            if (this.getCheckAsyncInvocation() != null) {
+                data.set("checkAsyncInvocation", om.valueToTree(this.getCheckAsyncInvocation()));
+            }
             if (this.getCheckError() != null) {
                 data.set("checkError", om.valueToTree(this.getCheckError()));
             }
@@ -399,6 +438,7 @@ public interface FunctionInvokerProps extends software.amazon.jsii.JsiiSerializa
             if (!functionName.equals(that.functionName)) return false;
             if (!serviceName.equals(that.serviceName)) return false;
             if (this.async != null ? !this.async.equals(that.async) : that.async != null) return false;
+            if (this.checkAsyncInvocation != null ? !this.checkAsyncInvocation.equals(that.checkAsyncInvocation) : that.checkAsyncInvocation != null) return false;
             if (this.checkError != null ? !this.checkError.equals(that.checkError) : that.checkError != null) return false;
             if (this.event != null ? !this.event.equals(that.event) : that.event != null) return false;
             if (this.executeVersion != null ? !this.executeVersion.equals(that.executeVersion) : that.executeVersion != null) return false;
@@ -411,6 +451,7 @@ public interface FunctionInvokerProps extends software.amazon.jsii.JsiiSerializa
             int result = this.functionName.hashCode();
             result = 31 * result + (this.serviceName.hashCode());
             result = 31 * result + (this.async != null ? this.async.hashCode() : 0);
+            result = 31 * result + (this.checkAsyncInvocation != null ? this.checkAsyncInvocation.hashCode() : 0);
             result = 31 * result + (this.checkError != null ? this.checkError.hashCode() : 0);
             result = 31 * result + (this.event != null ? this.event.hashCode() : 0);
             result = 31 * result + (this.executeVersion != null ? this.executeVersion.hashCode() : 0);

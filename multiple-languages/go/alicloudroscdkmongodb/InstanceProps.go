@@ -66,6 +66,8 @@ type InstanceProps struct {
 	// You can call the ECS DescribeSecurityGroup to describe the ID of the security group in the target region.
 	SecurityGroupId interface{} `field:"optional" json:"securityGroupId" yaml:"securityGroupId"`
 	// Property securityIpArray: Security ips to add or remove.
+	//
+	// Update to this property will cover the current security ips.
 	SecurityIpArray interface{} `field:"optional" json:"securityIpArray" yaml:"securityIpArray"`
 	// Property srcDbInstanceId: Create an instance of the backup set based on an instance.
 	SrcDbInstanceId interface{} `field:"optional" json:"srcDbInstanceId" yaml:"srcDbInstanceId"`

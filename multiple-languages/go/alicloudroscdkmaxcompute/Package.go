@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::MaxCompute::Package`, which is used to create a package.
+// This class encapsulates and extends the ROS resource type `ALIYUN::MaxCompute::Package`.
 type Package interface {
 	alicloudroscdkcore.Resource
 	IPackage

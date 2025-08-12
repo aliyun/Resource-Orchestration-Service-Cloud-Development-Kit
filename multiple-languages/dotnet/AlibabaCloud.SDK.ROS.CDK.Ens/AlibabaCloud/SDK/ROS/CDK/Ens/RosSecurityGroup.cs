@@ -107,11 +107,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: securityGroupEgress: egress rules for the security group.
+        /// <strong>Property</strong>: permissions: undefined
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "securityGroupEgress", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ens.RosSecurityGroup.SecurityGroupEgressProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
-        public virtual object? SecurityGroupEgress
+        [JsiiProperty(name: "permissions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ens.RosSecurityGroup.PermissionsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public virtual object? Permissions
         {
             get => GetInstanceProperty<object?>();
             set
@@ -129,63 +129,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
                                 {
                                     case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
                                         break;
-                                    case AlibabaCloud.SDK.ROS.CDK.Ens.RosSecurityGroup.ISecurityGroupEgressProperty cast_201718:
+                                    case AlibabaCloud.SDK.ROS.CDK.Ens.RosSecurityGroup.IPermissionsProperty cast_201718:
                                         break;
                                     case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
                                         // Not enough information to type-check...
                                         break;
                                     case null:
-                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Ens.RosSecurityGroup.ISecurityGroupEgressProperty).FullName}; received null", nameof(value));
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Ens.RosSecurityGroup.IPermissionsProperty).FullName}; received null", nameof(value));
                                     default:
-                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Ens.RosSecurityGroup.ISecurityGroupEgressProperty).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
-                                }
-                            }
-                            break;
-                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                            // Not enough information to type-check...
-                            break;
-                        case null:
-                            break;
-                        default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
-                    }
-                }
-                SetInstanceProperty(value);
-            }
-        }
-
-        /// <remarks>
-        /// <strong>Property</strong>: securityGroupIngress: Ingress rules for the security group.
-        /// </remarks>
-        [JsiiOptional]
-        [JsiiProperty(name: "securityGroupIngress", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ens.RosSecurityGroup.SecurityGroupIngressProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
-        public virtual object? SecurityGroupIngress
-        {
-            get => GetInstanceProperty<object?>();
-            set
-            {
-                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                {
-                    switch (value)
-                    {
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                            break;
-                        case object[] cast_cd4240:
-                            for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
-                            {
-                                switch (cast_cd4240[__idx_f64a5c])
-                                {
-                                    case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
-                                        break;
-                                    case AlibabaCloud.SDK.ROS.CDK.Ens.RosSecurityGroup.ISecurityGroupIngressProperty cast_201718:
-                                        break;
-                                    case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
-                                        // Not enough information to type-check...
-                                        break;
-                                    case null:
-                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Ens.RosSecurityGroup.ISecurityGroupIngressProperty).FullName}; received null", nameof(value));
-                                    default:
-                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Ens.RosSecurityGroup.ISecurityGroupIngressProperty).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Ens.RosSecurityGroup.IPermissionsProperty).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
                                 }
                             }
                             break;
@@ -232,11 +184,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
                 SetInstanceProperty(value);
             }
         }
-        [JsiiInterface(nativeType: typeof(ISecurityGroupEgressProperty), fullyQualifiedName: "@alicloud/ros-cdk-ens.RosSecurityGroup.SecurityGroupEgressProperty")]
-        public interface ISecurityGroupEgressProperty
+        [JsiiInterface(nativeType: typeof(IPermissionsProperty), fullyQualifiedName: "@alicloud/ros-cdk-ens.RosSecurityGroup.PermissionsProperty")]
+        public interface IPermissionsProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: ipProtocol: Ip protocol for in rule.
+            /// <strong>Property</strong>: direction: Authorization direction.
+            /// - egress: You're going out of your way.
+            /// - ingress: The direction of entry.
+            /// </remarks>
+            [JsiiProperty(name: "direction", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Direction
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ipProtocol: Protocol type Range:
+            /// - TCP: TCP protocol.
+            /// - UDP: The UDP protocol.
+            /// - ICMP: The ICMP protocol.
+            /// - ALL: All protocols are supported.
             /// </remarks>
             [JsiiProperty(name: "ipProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             object IpProtocol
@@ -245,7 +212,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1\/200'For icmp|gre|all protocel, the port range should be '-1\/-1'
+            /// <strong>Property</strong>: policy: Access permissions. Range:
+            /// - Accept: Accept the visit.
+            /// - Drop: To deny access.
+            /// </remarks>
+            [JsiiProperty(name: "policy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Policy
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: portRange: The range of destination ports that the security group opens for each protocol. Range:
+            /// - TCP\/UDP protocol: range from 1 to 65535. Use a forward slash (\/) to separate the start and end ports. For example: 1\/200
+            /// - ICMP protocol: -1\/-1.
+            /// - ALL: -1\/-1.
             /// </remarks>
             [JsiiProperty(name: "portRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             object PortRange
@@ -254,7 +235,29 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: destCidrIp: Dest CIDR Ip Address range.
+            /// <strong>Property</strong>: priority: The priority of the security group rule. Valid values: 1 to 100. A smaller value indicates a higher priority.
+            /// </remarks>
+            [JsiiProperty(name: "priority", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Priority
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: description: The description of the security group. The description must be 2 to 256 characters in length. It must start with a letter but cannot start with http:\/\/ or https:\/\/.
+            /// </remarks>
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Description
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: destCidrIp: Destination IPv4 CIDR address segment. CIDR format and IPv4 format IP address range are supported.
             /// </remarks>
             [JsiiProperty(name: "destCidrIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -267,11 +270,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: policy: Authorization policies, parameter values can be: accept (accepted access), drop (denied access). Default value is accept.
+            /// <strong>Property</strong>: sourceCidrIp: Source CIDR Ip Address range.
             /// </remarks>
-            [JsiiProperty(name: "policy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [JsiiProperty(name: "sourceCidrIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            object? Policy
+            object? SourceCidrIp
             {
                 get
                 {
@@ -280,20 +283,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: priority: Authorization policies priority range[1, 100]
-            /// </remarks>
-            [JsiiProperty(name: "priority", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            object? Priority
-            {
-                get
-                {
-                    return null;
-                }
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: sourcePortRange: The range of the ports enabled by the source security group for the transport layer protocol. Valid values: TCP\/UDP: Value range: 1 to 65535. The start port and the end port are separated by a slash (\/). Correct example: 1\/200. Incorrect example: 200\/1.ICMP: -1\/-1.GRE: -1\/-1.ALL: -1\/-1.
+            /// <strong>Property</strong>: sourcePortRange: The range of destination ports that the security group opens for each protocol. Range:
+            /// - TCP\/UDP protocol: range from 1 to 65535. Use a forward slash (\/) to separate the start and end ports. For example: 1\/200
+            /// - ICMP protocol: -1\/-1.
+            /// - ALL: -1\/-1.
             /// </remarks>
             [JsiiProperty(name: "sourcePortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -305,15 +298,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
                 }
             }
 
-            [JsiiTypeProxy(nativeType: typeof(ISecurityGroupEgressProperty), fullyQualifiedName: "@alicloud/ros-cdk-ens.RosSecurityGroup.SecurityGroupEgressProperty")]
-            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ens.RosSecurityGroup.ISecurityGroupEgressProperty
+            [JsiiTypeProxy(nativeType: typeof(IPermissionsProperty), fullyQualifiedName: "@alicloud/ros-cdk-ens.RosSecurityGroup.PermissionsProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ens.RosSecurityGroup.IPermissionsProperty
             {
                 private _Proxy(ByRefValue reference): base(reference)
                 {
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: ipProtocol: Ip protocol for in rule.
+                /// <strong>Property</strong>: direction: Authorization direction.
+                /// - egress: You're going out of your way.
+                /// - ingress: The direction of entry.
+                /// </remarks>
+                [JsiiProperty(name: "direction", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Direction
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: ipProtocol: Protocol type Range:
+                /// - TCP: TCP protocol.
+                /// - UDP: The UDP protocol.
+                /// - ICMP: The ICMP protocol.
+                /// - ALL: All protocols are supported.
                 /// </remarks>
                 [JsiiProperty(name: "ipProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
                 public object IpProtocol
@@ -322,7 +330,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1\/200'For icmp|gre|all protocel, the port range should be '-1\/-1'
+                /// <strong>Property</strong>: policy: Access permissions. Range:
+                /// - Accept: Accept the visit.
+                /// - Drop: To deny access.
+                /// </remarks>
+                [JsiiProperty(name: "policy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Policy
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: portRange: The range of destination ports that the security group opens for each protocol. Range:
+                /// - TCP\/UDP protocol: range from 1 to 65535. Use a forward slash (\/) to separate the start and end ports. For example: 1\/200
+                /// - ICMP protocol: -1\/-1.
+                /// - ALL: -1\/-1.
                 /// </remarks>
                 [JsiiProperty(name: "portRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
                 public object PortRange
@@ -331,7 +353,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: destCidrIp: Dest CIDR Ip Address range.
+                /// <strong>Property</strong>: priority: The priority of the security group rule. Valid values: 1 to 100. A smaller value indicates a higher priority.
+                /// </remarks>
+                [JsiiProperty(name: "priority", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Priority
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: description: The description of the security group. The description must be 2 to 256 characters in length. It must start with a letter but cannot start with http:\/\/ or https:\/\/.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Description
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: destCidrIp: Destination IPv4 CIDR address segment. CIDR format and IPv4 format IP address range are supported.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "destCidrIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -341,27 +382,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: policy: Authorization policies, parameter values can be: accept (accepted access), drop (denied access). Default value is accept.
+                /// <strong>Property</strong>: sourceCidrIp: Source CIDR Ip Address range.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "policy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-                public object? Policy
+                [JsiiProperty(name: "sourceCidrIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? SourceCidrIp
                 {
                     get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: priority: Authorization policies priority range[1, 100]
-                /// </remarks>
-                [JsiiOptional]
-                [JsiiProperty(name: "priority", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-                public object? Priority
-                {
-                    get => GetInstanceProperty<object?>();
-                }
-
-                /// <remarks>
-                /// <strong>Property</strong>: sourcePortRange: The range of the ports enabled by the source security group for the transport layer protocol. Valid values: TCP\/UDP: Value range: 1 to 65535. The start port and the end port are separated by a slash (\/). Correct example: 1\/200. Incorrect example: 200\/1.ICMP: -1\/-1.GRE: -1\/-1.ALL: -1\/-1.
+                /// <strong>Property</strong>: sourcePortRange: The range of destination ports that the security group opens for each protocol. Range:
+                /// - TCP\/UDP protocol: range from 1 to 65535. Use a forward slash (\/) to separate the start and end ports. For example: 1\/200
+                /// - ICMP protocol: -1\/-1.
+                /// - ALL: -1\/-1.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "sourcePortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -373,13 +407,51 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
         }
         #pragma warning disable CS8618
 
-        [JsiiByValue(fqn: "@alicloud/ros-cdk-ens.RosSecurityGroup.SecurityGroupEgressProperty")]
-        public class SecurityGroupEgressProperty : AlibabaCloud.SDK.ROS.CDK.Ens.RosSecurityGroup.ISecurityGroupEgressProperty
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-ens.RosSecurityGroup.PermissionsProperty")]
+        public class PermissionsProperty : AlibabaCloud.SDK.ROS.CDK.Ens.RosSecurityGroup.IPermissionsProperty
         {
+            private object _direction;
+
+            /// <remarks>
+            /// <strong>Property</strong>: direction: Authorization direction.
+            /// - egress: You're going out of your way.
+            /// - ingress: The direction of entry.
+            /// </remarks>
+            [JsiiProperty(name: "direction", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Direction
+            {
+                get => _direction;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _direction = value;
+                }
+            }
+
             private object _ipProtocol;
 
             /// <remarks>
-            /// <strong>Property</strong>: ipProtocol: Ip protocol for in rule.
+            /// <strong>Property</strong>: ipProtocol: Protocol type Range:
+            /// - TCP: TCP protocol.
+            /// - UDP: The UDP protocol.
+            /// - ICMP: The ICMP protocol.
+            /// - ALL: All protocols are supported.
             /// </remarks>
             [JsiiProperty(name: "ipProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object IpProtocol
@@ -408,10 +480,47 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
                 }
             }
 
+            private object _policy;
+
+            /// <remarks>
+            /// <strong>Property</strong>: policy: Access permissions. Range:
+            /// - Accept: Accept the visit.
+            /// - Drop: To deny access.
+            /// </remarks>
+            [JsiiProperty(name: "policy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Policy
+            {
+                get => _policy;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _policy = value;
+                }
+            }
+
             private object _portRange;
 
             /// <remarks>
-            /// <strong>Property</strong>: portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1\/200'For icmp|gre|all protocel, the port range should be '-1\/-1'
+            /// <strong>Property</strong>: portRange: The range of destination ports that the security group opens for each protocol. Range:
+            /// - TCP\/UDP protocol: range from 1 to 65535. Use a forward slash (\/) to separate the start and end ports. For example: 1\/200
+            /// - ICMP protocol: -1\/-1.
+            /// - ALL: -1\/-1.
             /// </remarks>
             [JsiiProperty(name: "portRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object PortRange
@@ -440,10 +549,95 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
                 }
             }
 
+            private object _priority;
+
+            /// <remarks>
+            /// <strong>Property</strong>: priority: The priority of the security group rule. Valid values: 1 to 100. A smaller value indicates a higher priority.
+            /// </remarks>
+            [JsiiProperty(name: "priority", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Priority
+            {
+                get => _priority;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _priority = value;
+                }
+            }
+
+            private object? _description;
+
+            /// <remarks>
+            /// <strong>Property</strong>: description: The description of the security group. The description must be 2 to 256 characters in length. It must start with a letter but cannot start with http:\/\/ or https:\/\/.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Description
+            {
+                get => _description;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _description = value;
+                }
+            }
+
             private object? _destCidrIp;
 
             /// <remarks>
-            /// <strong>Property</strong>: destCidrIp: Dest CIDR Ip Address range.
+            /// <strong>Property</strong>: destCidrIp: Destination IPv4 CIDR address segment. CIDR format and IPv4 format IP address range are supported.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "destCidrIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -470,419 +664,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
                         }
                     }
                     _destCidrIp = value;
-                }
-            }
-
-            private object? _policy;
-
-            /// <remarks>
-            /// <strong>Property</strong>: policy: Authorization policies, parameter values can be: accept (accepted access), drop (denied access). Default value is accept.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "policy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? Policy
-            {
-                get => _policy;
-                set
-                {
-                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                    {
-                        switch (value)
-                        {
-                            case string cast_cd4240:
-                                break;
-                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                                break;
-                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                                // Not enough information to type-check...
-                                break;
-                            case null:
-                                break;
-                            default:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                        }
-                    }
-                    _policy = value;
-                }
-            }
-
-            private object? _priority;
-
-            /// <remarks>
-            /// <strong>Property</strong>: priority: Authorization policies priority range[1, 100]
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "priority", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? Priority
-            {
-                get => _priority;
-                set
-                {
-                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                    {
-                        switch (value)
-                        {
-                            case double cast_cd4240:
-                                break;
-                            case byte cast_cd4240:
-                                break;
-                            case decimal cast_cd4240:
-                                break;
-                            case float cast_cd4240:
-                                break;
-                            case int cast_cd4240:
-                                break;
-                            case long cast_cd4240:
-                                break;
-                            case sbyte cast_cd4240:
-                                break;
-                            case short cast_cd4240:
-                                break;
-                            case uint cast_cd4240:
-                                break;
-                            case ulong cast_cd4240:
-                                break;
-                            case ushort cast_cd4240:
-                                break;
-                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                                break;
-                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                                // Not enough information to type-check...
-                                break;
-                            case null:
-                                break;
-                            default:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                        }
-                    }
-                    _priority = value;
-                }
-            }
-
-            private object? _sourcePortRange;
-
-            /// <remarks>
-            /// <strong>Property</strong>: sourcePortRange: The range of the ports enabled by the source security group for the transport layer protocol. Valid values: TCP\/UDP: Value range: 1 to 65535. The start port and the end port are separated by a slash (\/). Correct example: 1\/200. Incorrect example: 200\/1.ICMP: -1\/-1.GRE: -1\/-1.ALL: -1\/-1.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "sourcePortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? SourcePortRange
-            {
-                get => _sourcePortRange;
-                set
-                {
-                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                    {
-                        switch (value)
-                        {
-                            case string cast_cd4240:
-                                break;
-                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                                break;
-                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                                // Not enough information to type-check...
-                                break;
-                            case null:
-                                break;
-                            default:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                        }
-                    }
-                    _sourcePortRange = value;
-                }
-            }
-        }
-        [JsiiInterface(nativeType: typeof(ISecurityGroupIngressProperty), fullyQualifiedName: "@alicloud/ros-cdk-ens.RosSecurityGroup.SecurityGroupIngressProperty")]
-        public interface ISecurityGroupIngressProperty
-        {
-            /// <remarks>
-            /// <strong>Property</strong>: ipProtocol: Ip protocol for in rule.
-            /// </remarks>
-            [JsiiProperty(name: "ipProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            object IpProtocol
-            {
-                get;
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1\/200'For icmp|gre|all protocel, the port range should be '-1\/-1'
-            /// </remarks>
-            [JsiiProperty(name: "portRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            object PortRange
-            {
-                get;
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: policy: Authorization policies, parameter values can be: accept (accepted access), drop (denied access). Default value is accept.
-            /// </remarks>
-            [JsiiProperty(name: "policy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            object? Policy
-            {
-                get
-                {
-                    return null;
-                }
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: priority: Authorization policies priority range[1, 100]
-            /// </remarks>
-            [JsiiProperty(name: "priority", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            object? Priority
-            {
-                get
-                {
-                    return null;
-                }
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: sourceCidrIp: Source CIDR Ip Address range.
-            /// </remarks>
-            [JsiiProperty(name: "sourceCidrIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            object? SourceCidrIp
-            {
-                get
-                {
-                    return null;
-                }
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: sourcePortRange: The range of the ports enabled by the source security group for the transport layer protocol. Valid values: TCP\/UDP: Value range: 1 to 65535. The start port and the end port are separated by a slash (\/). Correct example: 1\/200. Incorrect example: 200\/1.ICMP: -1\/-1.GRE: -1\/-1.ALL: -1\/-1.
-            /// </remarks>
-            [JsiiProperty(name: "sourcePortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            object? SourcePortRange
-            {
-                get
-                {
-                    return null;
-                }
-            }
-
-            [JsiiTypeProxy(nativeType: typeof(ISecurityGroupIngressProperty), fullyQualifiedName: "@alicloud/ros-cdk-ens.RosSecurityGroup.SecurityGroupIngressProperty")]
-            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ens.RosSecurityGroup.ISecurityGroupIngressProperty
-            {
-                private _Proxy(ByRefValue reference): base(reference)
-                {
-                }
-
-                /// <remarks>
-                /// <strong>Property</strong>: ipProtocol: Ip protocol for in rule.
-                /// </remarks>
-                [JsiiProperty(name: "ipProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-                public object IpProtocol
-                {
-                    get => GetInstanceProperty<object>()!;
-                }
-
-                /// <remarks>
-                /// <strong>Property</strong>: portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1\/200'For icmp|gre|all protocel, the port range should be '-1\/-1'
-                /// </remarks>
-                [JsiiProperty(name: "portRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-                public object PortRange
-                {
-                    get => GetInstanceProperty<object>()!;
-                }
-
-                /// <remarks>
-                /// <strong>Property</strong>: policy: Authorization policies, parameter values can be: accept (accepted access), drop (denied access). Default value is accept.
-                /// </remarks>
-                [JsiiOptional]
-                [JsiiProperty(name: "policy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-                public object? Policy
-                {
-                    get => GetInstanceProperty<object?>();
-                }
-
-                /// <remarks>
-                /// <strong>Property</strong>: priority: Authorization policies priority range[1, 100]
-                /// </remarks>
-                [JsiiOptional]
-                [JsiiProperty(name: "priority", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-                public object? Priority
-                {
-                    get => GetInstanceProperty<object?>();
-                }
-
-                /// <remarks>
-                /// <strong>Property</strong>: sourceCidrIp: Source CIDR Ip Address range.
-                /// </remarks>
-                [JsiiOptional]
-                [JsiiProperty(name: "sourceCidrIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-                public object? SourceCidrIp
-                {
-                    get => GetInstanceProperty<object?>();
-                }
-
-                /// <remarks>
-                /// <strong>Property</strong>: sourcePortRange: The range of the ports enabled by the source security group for the transport layer protocol. Valid values: TCP\/UDP: Value range: 1 to 65535. The start port and the end port are separated by a slash (\/). Correct example: 1\/200. Incorrect example: 200\/1.ICMP: -1\/-1.GRE: -1\/-1.ALL: -1\/-1.
-                /// </remarks>
-                [JsiiOptional]
-                [JsiiProperty(name: "sourcePortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-                public object? SourcePortRange
-                {
-                    get => GetInstanceProperty<object?>();
-                }
-            }
-        }
-        #pragma warning disable CS8618
-
-        [JsiiByValue(fqn: "@alicloud/ros-cdk-ens.RosSecurityGroup.SecurityGroupIngressProperty")]
-        public class SecurityGroupIngressProperty : AlibabaCloud.SDK.ROS.CDK.Ens.RosSecurityGroup.ISecurityGroupIngressProperty
-        {
-            private object _ipProtocol;
-
-            /// <remarks>
-            /// <strong>Property</strong>: ipProtocol: Ip protocol for in rule.
-            /// </remarks>
-            [JsiiProperty(name: "ipProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object IpProtocol
-            {
-                get => _ipProtocol;
-                set
-                {
-                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                    {
-                        switch (value)
-                        {
-                            case string cast_cd4240:
-                                break;
-                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                                break;
-                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                                // Not enough information to type-check...
-                                break;
-                            case null:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
-                            default:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                        }
-                    }
-                    _ipProtocol = value;
-                }
-            }
-
-            private object _portRange;
-
-            /// <remarks>
-            /// <strong>Property</strong>: portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1\/200'For icmp|gre|all protocel, the port range should be '-1\/-1'
-            /// </remarks>
-            [JsiiProperty(name: "portRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object PortRange
-            {
-                get => _portRange;
-                set
-                {
-                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                    {
-                        switch (value)
-                        {
-                            case string cast_cd4240:
-                                break;
-                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                                break;
-                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                                // Not enough information to type-check...
-                                break;
-                            case null:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
-                            default:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                        }
-                    }
-                    _portRange = value;
-                }
-            }
-
-            private object? _policy;
-
-            /// <remarks>
-            /// <strong>Property</strong>: policy: Authorization policies, parameter values can be: accept (accepted access), drop (denied access). Default value is accept.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "policy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? Policy
-            {
-                get => _policy;
-                set
-                {
-                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                    {
-                        switch (value)
-                        {
-                            case string cast_cd4240:
-                                break;
-                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                                break;
-                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                                // Not enough information to type-check...
-                                break;
-                            case null:
-                                break;
-                            default:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                        }
-                    }
-                    _policy = value;
-                }
-            }
-
-            private object? _priority;
-
-            /// <remarks>
-            /// <strong>Property</strong>: priority: Authorization policies priority range[1, 100]
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "priority", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? Priority
-            {
-                get => _priority;
-                set
-                {
-                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                    {
-                        switch (value)
-                        {
-                            case double cast_cd4240:
-                                break;
-                            case byte cast_cd4240:
-                                break;
-                            case decimal cast_cd4240:
-                                break;
-                            case float cast_cd4240:
-                                break;
-                            case int cast_cd4240:
-                                break;
-                            case long cast_cd4240:
-                                break;
-                            case sbyte cast_cd4240:
-                                break;
-                            case short cast_cd4240:
-                                break;
-                            case uint cast_cd4240:
-                                break;
-                            case ulong cast_cd4240:
-                                break;
-                            case ushort cast_cd4240:
-                                break;
-                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                                break;
-                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                                // Not enough information to type-check...
-                                break;
-                            case null:
-                                break;
-                            default:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                        }
-                    }
-                    _priority = value;
                 }
             }
 
@@ -922,7 +703,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
             private object? _sourcePortRange;
 
             /// <remarks>
-            /// <strong>Property</strong>: sourcePortRange: The range of the ports enabled by the source security group for the transport layer protocol. Valid values: TCP\/UDP: Value range: 1 to 65535. The start port and the end port are separated by a slash (\/). Correct example: 1\/200. Incorrect example: 200\/1.ICMP: -1\/-1.GRE: -1\/-1.ALL: -1\/-1.
+            /// <strong>Property</strong>: sourcePortRange: The range of destination ports that the security group opens for each protocol. Range:
+            /// - TCP\/UDP protocol: range from 1 to 65535. Use a forward slash (\/) to separate the start and end ports. For example: 1\/200
+            /// - ICMP protocol: -1\/-1.
+            /// - ALL: -1\/-1.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "sourcePortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

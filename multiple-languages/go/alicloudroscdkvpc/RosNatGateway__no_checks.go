@@ -84,10 +84,6 @@ func validateRosNatGateway_IsRosResourceParameters(construct alicloudroscdkcore.
 	return nil
 }
 
-func (j *jsiiProxy_RosNatGateway) validateSetAutoPayParameters(val interface{}) error {
-	return nil
-}
-
 func (j *jsiiProxy_RosNatGateway) validateSetDeletionForceParameters(val interface{}) error {
 	return nil
 }
@@ -97,10 +93,6 @@ func (j *jsiiProxy_RosNatGateway) validateSetDeletionProtectionParameters(val in
 }
 
 func (j *jsiiProxy_RosNatGateway) validateSetDescriptionParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosNatGateway) validateSetDurationParameters(val interface{}) error {
 	return nil
 }
 
@@ -133,10 +125,6 @@ func (j *jsiiProxy_RosNatGateway) validateSetNatTypeParameters(val interface{}) 
 }
 
 func (j *jsiiProxy_RosNatGateway) validateSetNetworkTypeParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosNatGateway) validateSetPricingCycleParameters(val interface{}) error {
 	return nil
 }
 

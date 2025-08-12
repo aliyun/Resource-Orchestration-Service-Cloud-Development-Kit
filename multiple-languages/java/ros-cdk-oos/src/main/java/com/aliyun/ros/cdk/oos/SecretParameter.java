@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.oos;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::OOS::SecretParameter</code>, which is used to create an encryption parameter.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::OOS::SecretParameter</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.428Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.948Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.SecretParameter")
 public class SecretParameter extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.oos.ISecretParameter {
 
@@ -218,7 +218,7 @@ public class SecretParameter extends com.aliyun.ros.cdk.core.Resource implements
         /**
          * Property secretParameterName: The name of the encryption parameter.
          * <p>
-         * The name must be 1 to 180 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
+         * The name must be 1 to 180 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ALIBABA, ALICLOUD, ACS or OOS.
          * <p>
          * @return {@code this}
          * @param secretParameterName Property secretParameterName: The name of the encryption parameter. This parameter is required.
@@ -230,7 +230,7 @@ public class SecretParameter extends com.aliyun.ros.cdk.core.Resource implements
         /**
          * Property secretParameterName: The name of the encryption parameter.
          * <p>
-         * The name must be 1 to 180 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
+         * The name must be 1 to 180 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ALIBABA, ALICLOUD, ACS or OOS.
          * <p>
          * @return {@code this}
          * @param secretParameterName Property secretParameterName: The name of the encryption parameter. This parameter is required.

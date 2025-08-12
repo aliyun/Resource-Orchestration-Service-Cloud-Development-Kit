@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::VSwitch</code>, which is used to create a vSwitch.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:05.371Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.643Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.VSwitch")
 public class VSwitch extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.IVSwitch {
 
@@ -285,20 +285,20 @@ public class VSwitch extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property vSwitchName: Display name of the vSwitch instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
+         * Property vSwitchName: The value contains 1 to 128 characters and cannot start with http:// or https://.
          * <p>
          * @return {@code this}
-         * @param vSwitchName Property vSwitchName: Display name of the vSwitch instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'. This parameter is required.
+         * @param vSwitchName Property vSwitchName: The value contains 1 to 128 characters and cannot start with http:// or https://. This parameter is required.
          */
         public Builder vSwitchName(final java.lang.String vSwitchName) {
             this.props.vSwitchName(vSwitchName);
             return this;
         }
         /**
-         * Property vSwitchName: Display name of the vSwitch instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
+         * Property vSwitchName: The value contains 1 to 128 characters and cannot start with http:// or https://.
          * <p>
          * @return {@code this}
-         * @param vSwitchName Property vSwitchName: Display name of the vSwitch instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'. This parameter is required.
+         * @param vSwitchName Property vSwitchName: The value contains 1 to 128 characters and cannot start with http:// or https://. This parameter is required.
          */
         public Builder vSwitchName(final com.aliyun.ros.cdk.core.IResolvable vSwitchName) {
             this.props.vSwitchName(vSwitchName);

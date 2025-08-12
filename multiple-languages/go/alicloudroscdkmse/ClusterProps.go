@@ -50,6 +50,12 @@ type ClusterProps struct {
 	PubSlbSpecification interface{} `field:"optional" json:"pubSlbSpecification" yaml:"pubSlbSpecification"`
 	// Property requestPars:.
 	RequestPars interface{} `field:"optional" json:"requestPars" yaml:"requestPars"`
+	// Property resourceGroupId: Resource group id.
+	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
+	// Property tags: Tags to attach to instance.
+	//
+	// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+	Tags *[]*RosCluster_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 	// Property vpcId: vpc id.
 	VpcId interface{} `field:"optional" json:"vpcId" yaml:"vpcId"`
 	// Property vSwitchId: switcher Id.

@@ -9,6 +9,8 @@ type BucketProps struct {
 	BucketName interface{} `field:"required" json:"bucketName" yaml:"bucketName"`
 	// Property accessControl: The access control list.
 	AccessControl interface{} `field:"optional" json:"accessControl" yaml:"accessControl"`
+	// Property blockPublicAccess: Whether to block public access.
+	BlockPublicAccess interface{} `field:"optional" json:"blockPublicAccess" yaml:"blockPublicAccess"`
 	// Property corsConfiguration: Rules that define cross-origin resource sharing of objects in this bucket.
 	CorsConfiguration interface{} `field:"optional" json:"corsConfiguration" yaml:"corsConfiguration"`
 	// Property deletionForce: Whether force delete the relative objects in the bucket.

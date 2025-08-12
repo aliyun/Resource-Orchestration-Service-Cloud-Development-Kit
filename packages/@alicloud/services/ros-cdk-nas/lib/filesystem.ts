@@ -17,7 +17,7 @@ export interface FileSystemProps {
     /**
      * Property storageType: The storage type of the file System.
      * Valid values:
-     * Performance、Capacity(Available when the file_system_type is standard)
+     * Performance、Capacity、Premium(Available when the file_system_type is standard)
      * standard、advance(Available when the file_system_type is extreme)
      * advance_100、advance_200(Available when the file_system_type is cpfs)
      *
@@ -70,6 +70,11 @@ export interface FileSystemProps {
     readonly fileSystemType?: string | ros.IResolvable;
 
     /**
+     * Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * Property snapshotId: Snapshot ID.
      */
     readonly snapshotId?: string | ros.IResolvable;
@@ -107,7 +112,7 @@ export interface IFileSystem extends ros.IResource {
     readonly attrFileSystemId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::NAS::FileSystem`, which is used to create a file system of File Storage NAS (NAS).
+ * This class encapsulates and extends the ROS resource type `ALIYUN::NAS::FileSystem`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFileSystem`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-filesystem
  */
@@ -138,6 +143,7 @@ export class FileSystem extends ros.Resource implements IFileSystem {
             description: props.description,
             storageType: props.storageType,
             zoneId: props.zoneId,
+            resourceGroupId: props.resourceGroupId,
             vSwitchId: props.vSwitchId,
             duration: props.duration,
             snapshotId: props.snapshotId,

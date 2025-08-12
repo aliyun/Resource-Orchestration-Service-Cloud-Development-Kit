@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nlb;
 /**
  * Represents a <code>BackendServerAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.299Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.831Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.IBackendServerAttachment")
 @software.amazon.jsii.Jsii.Proxy(IBackendServerAttachment.Jsii$Proxy.class)
 public interface IBackendServerAttachment extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

@@ -73,6 +73,11 @@ export interface BucketProps {
     readonly accessControl?: string | ros.IResolvable;
 
     /**
+     * Property blockPublicAccess: Whether to block public access.
+     */
+    readonly blockPublicAccess?: boolean | ros.IResolvable;
+
+    /**
      * Property corsConfiguration: Rules that define cross-origin resource sharing of objects in this bucket.
      */
     readonly corsConfiguration?: RosBucket.CORSConfigurationProperty | ros.IResolvable;
@@ -340,6 +345,7 @@ export class Bucket extends ros.Resource implements IBucket {
             lifecycleConfiguration: props.lifecycleConfiguration,
             serverSideEncryptionConfiguration: props.serverSideEncryptionConfiguration,
             versioningConfiguration: props.versioningConfiguration,
+            blockPublicAccess: props.blockPublicAccess === undefined || props.blockPublicAccess === null ? false : props.blockPublicAccess,
             accessControl: props.accessControl === undefined || props.accessControl === null ? 'private' : props.accessControl,
             corsConfiguration: props.corsConfiguration,
             bucketName: props.bucketName,

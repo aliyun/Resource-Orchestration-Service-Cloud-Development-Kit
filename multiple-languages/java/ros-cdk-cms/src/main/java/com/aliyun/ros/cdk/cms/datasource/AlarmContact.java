@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::CMS::AlarmContact</code>, which is used to query the information about an alert contact.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:03.112Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:44.923Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.datasource.AlarmContact")
 public class AlarmContact extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cms.datasource.IAlarmContact {
 
@@ -49,7 +49,7 @@ public class AlarmContact extends com.aliyun.ros.cdk.core.Resource implements co
     }
 
     /**
-     * Attribute ChannelsAliIm: ChannelsAliIM.
+     * Attribute ChannelsAliIm: ChannelsAliIm.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrChannelsAliIm() {
@@ -81,7 +81,7 @@ public class AlarmContact extends com.aliyun.ros.cdk.core.Resource implements co
     }
 
     /**
-     * Attribute ChannelsStateAliIm: ChannelsStateAliIM.
+     * Attribute ChannelsStateAliIm: ChannelsStateAliIm.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrChannelsStateAliIm() {

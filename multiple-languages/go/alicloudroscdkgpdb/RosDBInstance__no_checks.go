@@ -168,6 +168,10 @@ func (j *jsiiProxy_RosDBInstance) validateSetProdTypeParameters(val interface{})
 	return nil
 }
 
+func (j *jsiiProxy_RosDBInstance) validateSetResourceGroupIdParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosDBInstance) validateSetSecurityIpListParameters(val interface{}) error {
 	return nil
 }

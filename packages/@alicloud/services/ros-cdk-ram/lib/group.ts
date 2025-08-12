@@ -74,7 +74,7 @@ export class Group extends ros.Resource implements IGroup, IPrincipal {
     public readonly attrGroupName: ros.IResolvable | string;
 
     public readonly grantPrincipal: IPrincipal = this;
-    public readonly principalName: string | ros.IResolvable = this.attrGroupName;
+    public readonly principalName: string | ros.IResolvable;
     public readonly principalType: string = 'group';
 
     public addToPolicy(policyDocument: RosManagedPolicy.PolicyDocumentProperty): ManagedPolicy {
@@ -108,5 +108,6 @@ export class Group extends ros.Resource implements IGroup, IPrincipal {
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosGroup;
         this.attrGroupName = rosGroup.attrGroupName;
+        this.principalName = this.attrGroupName;
     }
 }

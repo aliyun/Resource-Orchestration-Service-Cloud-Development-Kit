@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.dts;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DTS::Instance</code>, which is a new resource type that is used to create a Data Transmission Service (DTS) instance.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DTS::Instance</code>, which is a new resource type used to create a Data Transmission Service (DTS) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:04.114Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.768Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -279,6 +279,42 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setJobId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "jobId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMaxDu() {
+        return software.amazon.jsii.Kernel.get(this, "maxDu", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setMaxDu(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "maxDu", value);
+    }
+
+    /**
+     */
+    public void setMaxDu(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "maxDu", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMinDu() {
+        return software.amazon.jsii.Kernel.get(this, "minDu", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setMinDu(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "minDu", value);
+    }
+
+    /**
+     */
+    public void setMinDu(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "minDu", value);
     }
 
     /**
@@ -616,6 +652,40 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder jobId(final com.aliyun.ros.cdk.core.IResolvable jobId) {
             this.props.jobId(jobId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param maxDu This parameter is required.
+         */
+        public Builder maxDu(final java.lang.Number maxDu) {
+            this.props.maxDu(maxDu);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param maxDu This parameter is required.
+         */
+        public Builder maxDu(final com.aliyun.ros.cdk.core.IResolvable maxDu) {
+            this.props.maxDu(maxDu);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param minDu This parameter is required.
+         */
+        public Builder minDu(final java.lang.Number minDu) {
+            this.props.minDu(minDu);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param minDu This parameter is required.
+         */
+        public Builder minDu(final com.aliyun.ros.cdk.core.IResolvable minDu) {
+            this.props.minDu(minDu);
             return this;
         }
 

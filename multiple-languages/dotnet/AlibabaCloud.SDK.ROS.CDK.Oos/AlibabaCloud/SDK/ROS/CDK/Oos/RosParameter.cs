@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Oos
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Parameter`, which is used to create a common parameter.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Parameter`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Parameter` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-parameter
@@ -87,7 +87,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         /// <remarks>
         /// <strong>Property</strong>: name: The name of the parameter.
         /// The name must be 1 to 200 characters in length,and can contain letters, digits, hyphens (-), and underscores (_).
-        /// It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
+        /// It cannot start with ALIYUN, ALIBABA, ALICLOUD, ACS or OOS.
         /// </remarks>
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object Name

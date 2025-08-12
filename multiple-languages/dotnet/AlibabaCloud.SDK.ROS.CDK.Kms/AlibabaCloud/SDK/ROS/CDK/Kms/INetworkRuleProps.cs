@@ -18,6 +18,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
             get;
         }
 
+        /// <summary>Property type: Network type.</summary>
+        /// <remarks>
+        /// The value can be Private only, that is, only private IP addresses are supported.
+        /// </remarks>
+        [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Type
+        {
+            get;
+        }
+
         /// <summary>Property description: The description of the network rule.</summary>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -54,6 +64,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
             /// <summary>Property networkRuleName: The name of the access control rule.</summary>
             [JsiiProperty(name: "networkRuleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object NetworkRuleName
+            {
+                get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property type: Network type.</summary>
+            /// <remarks>
+            /// The value can be Private only, that is, only private IP addresses are supported.
+            /// </remarks>
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Type
             {
                 get => GetInstanceProperty<object>()!;
             }

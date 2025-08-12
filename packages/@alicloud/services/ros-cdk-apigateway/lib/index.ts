@@ -1,6 +1,7 @@
 export * from './api';
 export * from './app';
 export * from './authorization';
+export * from './backend';
 export * from './customdomain';
 export * from './deployment';
 export * from './group';

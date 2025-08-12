@@ -13,6 +13,66 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apig
     [JsiiByValue(fqn: "@alicloud/ros-cdk-apig.GatewayProps")]
     public class GatewayProps : AlibabaCloud.SDK.ROS.CDK.Apig.IGatewayProps
     {
+        private object _gatewayName;
+
+        /// <summary>Property gatewayName: The name of the Gateway.</summary>
+        [JsiiProperty(name: "gatewayName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public object GatewayName
+        {
+            get => _gatewayName;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _gatewayName = value;
+            }
+        }
+
+        private object _networkAccessConfig;
+
+        /// <summary>Property networkAccessConfig: Network Access Configuration.</summary>
+        [JsiiProperty(name: "networkAccessConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-apig.RosGateway.NetworkAccessConfigProperty\"}]}}")]
+        public object NetworkAccessConfig
+        {
+            get => _networkAccessConfig;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Apig.RosGateway.INetworkAccessConfigProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Apig.RosGateway.INetworkAccessConfigProperty).FullName}; received null", nameof(value));
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Apig.RosGateway.INetworkAccessConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _networkAccessConfig = value;
+            }
+        }
+
         private object _paymentType;
 
         /// <summary>Property paymentType: The payment type of the gateway.</summary>
@@ -111,14 +171,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apig
             }
         }
 
-        private object? _gatewayName;
+        private object? _gatewayType;
 
-        /// <summary>Property gatewayName: The name of the Gateway.</summary>
+        /// <summary>Property gatewayType: Describes the gateway type, which is categorized into the following two types: * API: indicates an API gateway * AI: Indicates an AI gateway.</summary>
+        /// <remarks>
+        /// Default value: API.
+        /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "gatewayName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        public object? GatewayName
+        [JsiiProperty(name: "gatewayType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? GatewayType
         {
-            get => _gatewayName;
+            get => _gatewayType;
             set
             {
                 if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
@@ -138,7 +201,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apig
                             throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
                     }
                 }
-                _gatewayName = value;
+                _gatewayType = value;
             }
         }
 
@@ -173,23 +236,46 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apig
             }
         }
 
-        private object? _networkAccessConfig;
+        private object? _period;
 
-        /// <summary>Property networkAccessConfig: Network Access Configuration.</summary>
+        /// <summary>Property period: The purchase time of the gateway.</summary>
+        /// <remarks>
+        /// This parameter is only valid when updating PaymentType from PayAsYouGo to Subscription.
+        /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "networkAccessConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-apig.RosGateway.NetworkAccessConfigProperty\"}]}}", isOptional: true)]
-        public object? NetworkAccessConfig
+        [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? Period
         {
-            get => _networkAccessConfig;
+            get => _period;
             set
             {
                 if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
                 {
                     switch (value)
                     {
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                        case double cast_cd4240:
                             break;
-                        case AlibabaCloud.SDK.ROS.CDK.Apig.RosGateway.INetworkAccessConfigProperty cast_cd4240:
+                        case byte cast_cd4240:
+                            break;
+                        case decimal cast_cd4240:
+                            break;
+                        case float cast_cd4240:
+                            break;
+                        case int cast_cd4240:
+                            break;
+                        case long cast_cd4240:
+                            break;
+                        case sbyte cast_cd4240:
+                            break;
+                        case short cast_cd4240:
+                            break;
+                        case uint cast_cd4240:
+                            break;
+                        case ulong cast_cd4240:
+                            break;
+                        case ushort cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
                             break;
                         case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
                             // Not enough information to type-check...
@@ -197,11 +283,85 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apig
                         case null:
                             break;
                         default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Apig.RosGateway.INetworkAccessConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
                     }
                 }
-                _networkAccessConfig = value;
+                _period = value;
             }
+        }
+
+        private object? _periodUnit;
+
+        /// <summary>Property periodUnit: The unit of the purchase time of the gateway.</summary>
+        /// <remarks>
+        /// This parameter is only valid when updating PaymentType from PayAsYouGo to Subscription.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? PeriodUnit
+        {
+            get => _periodUnit;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _periodUnit = value;
+            }
+        }
+
+        private object? _resourceGroupId;
+
+        /// <summary>Property resourceGroupId: The ID of the resource group.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ResourceGroupId
+        {
+            get => _resourceGroupId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _resourceGroupId = value;
+            }
+        }
+
+        /// <summary>Property tags: Tags of The tags of the Gateway..</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-apig.RosGateway.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        public AlibabaCloud.SDK.ROS.CDK.Apig.RosGateway.ITagsProperty[]? Tags
+        {
+            get;
+            set;
         }
 
         private object? _vpc;

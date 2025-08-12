@@ -150,14 +150,14 @@ export class DefaultTokenResolver implements ITokenResolver {
       resolved = postProcessor.postProcess(resolved, context);
       return resolved;
     } catch (e) {
-      let message = `Resolution error: ${e.message}.`;
+      let message = `Resolution error: ${(e as any).message}.`;
       if (t.creationStack && t.creationStack.length > 0) {
         message += `\nObject creation stack:\n  at ${t.creationStack.join(
           "\n  at "
         )}`;
       }
 
-      e.message = message;
+      (e as any).message = message;
       throw e;
     }
   }

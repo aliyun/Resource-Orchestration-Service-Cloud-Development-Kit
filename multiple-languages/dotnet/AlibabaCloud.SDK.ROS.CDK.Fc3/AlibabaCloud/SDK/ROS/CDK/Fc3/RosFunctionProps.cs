@@ -800,6 +800,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc3
             }
         }
 
+        /// <remarks>
+        /// <strong>Property</strong>: tags: Tags to attach to function. Max support 20 tags to add during create function. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-fc3.RosFunction.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        public AlibabaCloud.SDK.ROS.CDK.Fc3.RosFunction.ITagsProperty[]? Tags
+        {
+            get;
+            set;
+        }
+
         private object? _timeout;
 
         /// <remarks>

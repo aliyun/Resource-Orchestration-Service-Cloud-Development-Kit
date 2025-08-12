@@ -112,6 +112,10 @@ func (j *jsiiProxy_RosLoadBalancer) validateSetEnableResourcePropertyConstraintP
 	return nil
 }
 
+func (j *jsiiProxy_RosLoadBalancer) validateSetIpv6AddressTypeParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosLoadBalancer) validateSetLoadBalancerBillingConfigParameters(val interface{}) error {
 	return nil
 }

@@ -104,6 +104,10 @@ func (j *jsiiProxy_RosApp) validateSetEnableResourcePropertyConstraintParameters
 	return nil
 }
 
+func (j *jsiiProxy_RosApp) validateSetLogProConfigurationParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosApp) validateSetNetworkParameters(val interface{}) error {
 	return nil
 }
@@ -113,6 +117,10 @@ func (j *jsiiProxy_RosApp) validateSetPrivateNetworkParameters(val interface{}) 
 }
 
 func (j *jsiiProxy_RosApp) validateSetQuotaInfoParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosApp) validateSetScenarioParameters(val interface{}) error {
 	return nil
 }
 

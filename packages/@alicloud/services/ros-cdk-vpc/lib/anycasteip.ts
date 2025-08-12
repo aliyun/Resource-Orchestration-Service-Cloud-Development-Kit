@@ -35,6 +35,11 @@ export interface AnycastEIPProps {
     readonly name?: string | ros.IResolvable;
 
     /**
+     * Property resourceGroupId: The ID of the resource group
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * Property serviceLocation: Anycast EIP instance access area
      */
     readonly serviceLocation?: string | ros.IResolvable;
@@ -111,6 +116,7 @@ export class AnycastEIP extends ros.Resource implements IAnycastEIP {
 
         const rosAnycastEIP = new RosAnycastEIP(this, id,  {
             description: props.description,
+            resourceGroupId: props.resourceGroupId,
             serviceLocation: props.serviceLocation === undefined || props.serviceLocation === null ? 'international' : props.serviceLocation,
             instanceChargeType: props.instanceChargeType,
             bandwidth: props.bandwidth,

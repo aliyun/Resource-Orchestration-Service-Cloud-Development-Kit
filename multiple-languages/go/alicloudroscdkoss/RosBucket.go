@@ -18,6 +18,8 @@ type RosBucket interface {
 	AttrDomainName() alicloudroscdkcore.IResolvable
 	AttrInternalDomainName() alicloudroscdkcore.IResolvable
 	AttrName() alicloudroscdkcore.IResolvable
+	BlockPublicAccess() interface{}
+	SetBlockPublicAccess(val interface{})
 	BucketName() interface{}
 	SetBucketName(val interface{})
 	CorsConfiguration() interface{}
@@ -249,6 +251,16 @@ func (j *jsiiProxy_RosBucket) AttrName() alicloudroscdkcore.IResolvable {
 	_jsii_.Get(
 		j,
 		"attrName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosBucket) BlockPublicAccess() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"blockPublicAccess",
 		&returns,
 	)
 	return returns
@@ -539,6 +551,17 @@ func (j *jsiiProxy_RosBucket)SetAccessControl(val interface{}) {
 	_jsii_.Set(
 		j,
 		"accessControl",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosBucket)SetBlockPublicAccess(val interface{}) {
+	if err := j.validateSetBlockPublicAccessParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"blockPublicAccess",
 		val,
 	)
 }

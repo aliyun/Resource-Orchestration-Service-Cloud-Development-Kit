@@ -72,7 +72,7 @@ export interface IBasicEndpoint extends ros.IResource {
     readonly attrEndpointId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::GA::BasicEndpoint`, which is used to create an endpoint for a basic Global Accelerator (GA) instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::GA::BasicEndpoint`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBasicEndpoint`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicendpoint
  */

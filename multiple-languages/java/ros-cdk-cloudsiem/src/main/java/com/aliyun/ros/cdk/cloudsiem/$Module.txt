@@ -1,0 +1,11 @@
+@alicloud/ros-cdk-cloudsiem.IImportLogTasksSubmission=com.aliyun.ros.cdk.cloudsiem.IImportLogTasksSubmission
+@alicloud/ros-cdk-cloudsiem.IUserSourceLogConfig=com.aliyun.ros.cdk.cloudsiem.IUserSourceLogConfig
+@alicloud/ros-cdk-cloudsiem.ImportLogTasksSubmission=com.aliyun.ros.cdk.cloudsiem.ImportLogTasksSubmission
+@alicloud/ros-cdk-cloudsiem.ImportLogTasksSubmissionProps=com.aliyun.ros.cdk.cloudsiem.ImportLogTasksSubmissionProps
+@alicloud/ros-cdk-cloudsiem.RosImportLogTasksSubmission=com.aliyun.ros.cdk.cloudsiem.RosImportLogTasksSubmission
+@alicloud/ros-cdk-cloudsiem.RosImportLogTasksSubmissionProps=com.aliyun.ros.cdk.cloudsiem.RosImportLogTasksSubmissionProps
+@alicloud/ros-cdk-cloudsiem.RosUserSourceLogConfig=com.aliyun.ros.cdk.cloudsiem.RosUserSourceLogConfig
+@alicloud/ros-cdk-cloudsiem.RosUserSourceLogConfig.SourceLogInfoProperty=com.aliyun.ros.cdk.cloudsiem.RosUserSourceLogConfig$SourceLogInfoProperty
+@alicloud/ros-cdk-cloudsiem.RosUserSourceLogConfigProps=com.aliyun.ros.cdk.cloudsiem.RosUserSourceLogConfigProps
+@alicloud/ros-cdk-cloudsiem.UserSourceLogConfig=com.aliyun.ros.cdk.cloudsiem.UserSourceLogConfig
+@alicloud/ros-cdk-cloudsiem.UserSourceLogConfigProps=com.aliyun.ros.cdk.cloudsiem.UserSourceLogConfigProps

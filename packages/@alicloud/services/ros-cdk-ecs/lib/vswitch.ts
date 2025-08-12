@@ -46,7 +46,7 @@ export interface VSwitchProps {
     readonly vpcIpv6CidrBlock?: string | ros.IResolvable;
 
     /**
-     * Property vSwitchName: Display name of the vSwitch instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
+     * Property vSwitchName: The value contains 1 to 128 characters and cannot start with http:\/\/ or https:\/\/
      */
     readonly vSwitchName?: string | ros.IResolvable;
 

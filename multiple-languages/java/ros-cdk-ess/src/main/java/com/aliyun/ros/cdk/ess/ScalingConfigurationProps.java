@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ess;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalingconfiguration
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:06.765Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.547Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScalingConfigurationProps")
 @software.amazon.jsii.Jsii.Proxy(ScalingConfigurationProps.Jsii$Proxy.class)
 public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSerializable {
@@ -189,7 +189,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
     /**
      * Property internetMaxBandwidthIn: Maximum incoming bandwidth from the public network, measured in Mbps (Mega bit per second).
      * <p>
-     * The value range is [1,200]. If this parameter value is not specified, AliyunAPI automatically sets the value to 200 Mbps.
+     * The value range is [1,200]. If this parameter value is not specified, API automatically sets the value to 200 Mbps.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInternetMaxBandwidthIn() {
         return null;
@@ -198,7 +198,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
     /**
      * Property internetMaxBandwidthOut: Maximum outgoing bandwidth from the public network, measured in Mbps (Mega bit per second).
      * <p>
-     * The value range for PayByBandwidth is [0,100]. If this parameter value is not specified, AliyunAPI automatically sets the value to 0 Mbps.
+     * The value range for PayByBandwidth is [0,100]. If this parameter value is not specified, API automatically sets the value to 0 Mbps.
      * The value range for PayByTraffic is [0,100]. If this parameter value is not specified, an error is reported
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInternetMaxBandwidthOut() {
@@ -1101,7 +1101,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         /**
          * Sets the value of {@link ScalingConfigurationProps#getInternetMaxBandwidthIn}
          * @param internetMaxBandwidthIn Property internetMaxBandwidthIn: Maximum incoming bandwidth from the public network, measured in Mbps (Mega bit per second).
-         *                               The value range is [1,200]. If this parameter value is not specified, AliyunAPI automatically sets the value to 200 Mbps.
+         *                               The value range is [1,200]. If this parameter value is not specified, API automatically sets the value to 200 Mbps.
          * @return {@code this}
          */
         public Builder internetMaxBandwidthIn(java.lang.Number internetMaxBandwidthIn) {
@@ -1112,7 +1112,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         /**
          * Sets the value of {@link ScalingConfigurationProps#getInternetMaxBandwidthIn}
          * @param internetMaxBandwidthIn Property internetMaxBandwidthIn: Maximum incoming bandwidth from the public network, measured in Mbps (Mega bit per second).
-         *                               The value range is [1,200]. If this parameter value is not specified, AliyunAPI automatically sets the value to 200 Mbps.
+         *                               The value range is [1,200]. If this parameter value is not specified, API automatically sets the value to 200 Mbps.
          * @return {@code this}
          */
         public Builder internetMaxBandwidthIn(com.aliyun.ros.cdk.core.IResolvable internetMaxBandwidthIn) {
@@ -1123,7 +1123,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         /**
          * Sets the value of {@link ScalingConfigurationProps#getInternetMaxBandwidthOut}
          * @param internetMaxBandwidthOut Property internetMaxBandwidthOut: Maximum outgoing bandwidth from the public network, measured in Mbps (Mega bit per second).
-         *                                The value range for PayByBandwidth is [0,100]. If this parameter value is not specified, AliyunAPI automatically sets the value to 0 Mbps.
+         *                                The value range for PayByBandwidth is [0,100]. If this parameter value is not specified, API automatically sets the value to 0 Mbps.
          *                                The value range for PayByTraffic is [0,100]. If this parameter value is not specified, an error is reported
          * @return {@code this}
          */
@@ -1135,7 +1135,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         /**
          * Sets the value of {@link ScalingConfigurationProps#getInternetMaxBandwidthOut}
          * @param internetMaxBandwidthOut Property internetMaxBandwidthOut: Maximum outgoing bandwidth from the public network, measured in Mbps (Mega bit per second).
-         *                                The value range for PayByBandwidth is [0,100]. If this parameter value is not specified, AliyunAPI automatically sets the value to 0 Mbps.
+         *                                The value range for PayByBandwidth is [0,100]. If this parameter value is not specified, API automatically sets the value to 0 Mbps.
          *                                The value range for PayByTraffic is [0,100]. If this parameter value is not specified, an error is reported
          * @return {@code this}
          */

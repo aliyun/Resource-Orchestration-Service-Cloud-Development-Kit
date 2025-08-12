@@ -40,7 +40,7 @@ export interface INetworkRule extends ros.IResource {
     readonly attrSourcePrivateIp: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::KMS::NetworkRule`, which is used to query the information about a network access rule.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::KMS::NetworkRule`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNetworkRule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kms-networkrule
  */

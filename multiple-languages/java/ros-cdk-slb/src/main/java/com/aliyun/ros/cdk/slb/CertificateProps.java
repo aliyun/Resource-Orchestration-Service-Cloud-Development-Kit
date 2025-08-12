@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.slb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-certificate
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:10.536Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:50.609Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.CertificateProps")
 @software.amazon.jsii.Jsii.Proxy(CertificateProps.Jsii$Proxy.class)
 public interface CertificateProps extends software.amazon.jsii.JsiiSerializable {
@@ -21,6 +21,13 @@ public interface CertificateProps extends software.amazon.jsii.JsiiSerializable 
      * Property aliCloudCertificateName: The name of the Alibaba Cloud certificate.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAliCloudCertificateName() {
+        return null;
+    }
+
+    /**
+     * Property aliCloudCertificateRegionId: The ID of the Alibaba Cloud region.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAliCloudCertificateRegionId() {
         return null;
     }
 
@@ -80,6 +87,7 @@ public interface CertificateProps extends software.amazon.jsii.JsiiSerializable 
     public static final class Builder implements software.amazon.jsii.Builder<CertificateProps> {
         java.lang.Object aliCloudCertificateId;
         java.lang.Object aliCloudCertificateName;
+        java.lang.Object aliCloudCertificateRegionId;
         java.lang.Object certificate;
         java.lang.Object certificateName;
         java.lang.Object certificateType;
@@ -124,6 +132,26 @@ public interface CertificateProps extends software.amazon.jsii.JsiiSerializable 
          */
         public Builder aliCloudCertificateName(com.aliyun.ros.cdk.core.IResolvable aliCloudCertificateName) {
             this.aliCloudCertificateName = aliCloudCertificateName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link CertificateProps#getAliCloudCertificateRegionId}
+         * @param aliCloudCertificateRegionId Property aliCloudCertificateRegionId: The ID of the Alibaba Cloud region.
+         * @return {@code this}
+         */
+        public Builder aliCloudCertificateRegionId(java.lang.String aliCloudCertificateRegionId) {
+            this.aliCloudCertificateRegionId = aliCloudCertificateRegionId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link CertificateProps#getAliCloudCertificateRegionId}
+         * @param aliCloudCertificateRegionId Property aliCloudCertificateRegionId: The ID of the Alibaba Cloud region.
+         * @return {@code this}
+         */
+        public Builder aliCloudCertificateRegionId(com.aliyun.ros.cdk.core.IResolvable aliCloudCertificateRegionId) {
+            this.aliCloudCertificateRegionId = aliCloudCertificateRegionId;
             return this;
         }
 
@@ -257,6 +285,7 @@ public interface CertificateProps extends software.amazon.jsii.JsiiSerializable 
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements CertificateProps {
         private final java.lang.Object aliCloudCertificateId;
         private final java.lang.Object aliCloudCertificateName;
+        private final java.lang.Object aliCloudCertificateRegionId;
         private final java.lang.Object certificate;
         private final java.lang.Object certificateName;
         private final java.lang.Object certificateType;
@@ -272,6 +301,7 @@ public interface CertificateProps extends software.amazon.jsii.JsiiSerializable 
             super(objRef);
             this.aliCloudCertificateId = software.amazon.jsii.Kernel.get(this, "aliCloudCertificateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.aliCloudCertificateName = software.amazon.jsii.Kernel.get(this, "aliCloudCertificateName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.aliCloudCertificateRegionId = software.amazon.jsii.Kernel.get(this, "aliCloudCertificateRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.certificate = software.amazon.jsii.Kernel.get(this, "certificate", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.certificateName = software.amazon.jsii.Kernel.get(this, "certificateName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.certificateType = software.amazon.jsii.Kernel.get(this, "certificateType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -288,6 +318,7 @@ public interface CertificateProps extends software.amazon.jsii.JsiiSerializable 
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.aliCloudCertificateId = builder.aliCloudCertificateId;
             this.aliCloudCertificateName = builder.aliCloudCertificateName;
+            this.aliCloudCertificateRegionId = builder.aliCloudCertificateRegionId;
             this.certificate = builder.certificate;
             this.certificateName = builder.certificateName;
             this.certificateType = builder.certificateType;
@@ -304,6 +335,11 @@ public interface CertificateProps extends software.amazon.jsii.JsiiSerializable 
         @Override
         public final java.lang.Object getAliCloudCertificateName() {
             return this.aliCloudCertificateName;
+        }
+
+        @Override
+        public final java.lang.Object getAliCloudCertificateRegionId() {
+            return this.aliCloudCertificateRegionId;
         }
 
         @Override
@@ -348,6 +384,9 @@ public interface CertificateProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getAliCloudCertificateName() != null) {
                 data.set("aliCloudCertificateName", om.valueToTree(this.getAliCloudCertificateName()));
             }
+            if (this.getAliCloudCertificateRegionId() != null) {
+                data.set("aliCloudCertificateRegionId", om.valueToTree(this.getAliCloudCertificateRegionId()));
+            }
             if (this.getCertificate() != null) {
                 data.set("certificate", om.valueToTree(this.getCertificate()));
             }
@@ -386,6 +425,7 @@ public interface CertificateProps extends software.amazon.jsii.JsiiSerializable 
 
             if (this.aliCloudCertificateId != null ? !this.aliCloudCertificateId.equals(that.aliCloudCertificateId) : that.aliCloudCertificateId != null) return false;
             if (this.aliCloudCertificateName != null ? !this.aliCloudCertificateName.equals(that.aliCloudCertificateName) : that.aliCloudCertificateName != null) return false;
+            if (this.aliCloudCertificateRegionId != null ? !this.aliCloudCertificateRegionId.equals(that.aliCloudCertificateRegionId) : that.aliCloudCertificateRegionId != null) return false;
             if (this.certificate != null ? !this.certificate.equals(that.certificate) : that.certificate != null) return false;
             if (this.certificateName != null ? !this.certificateName.equals(that.certificateName) : that.certificateName != null) return false;
             if (this.certificateType != null ? !this.certificateType.equals(that.certificateType) : that.certificateType != null) return false;
@@ -398,6 +438,7 @@ public interface CertificateProps extends software.amazon.jsii.JsiiSerializable 
         public final int hashCode() {
             int result = this.aliCloudCertificateId != null ? this.aliCloudCertificateId.hashCode() : 0;
             result = 31 * result + (this.aliCloudCertificateName != null ? this.aliCloudCertificateName.hashCode() : 0);
+            result = 31 * result + (this.aliCloudCertificateRegionId != null ? this.aliCloudCertificateRegionId.hashCode() : 0);
             result = 31 * result + (this.certificate != null ? this.certificate.hashCode() : 0);
             result = 31 * result + (this.certificateName != null ? this.certificateName.hashCode() : 0);
             result = 31 * result + (this.certificateType != null ? this.certificateType.hashCode() : 0);

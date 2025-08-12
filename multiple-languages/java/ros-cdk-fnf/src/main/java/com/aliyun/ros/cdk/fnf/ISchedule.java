@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fnf;
 /**
  * Represents a <code>Schedule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:06.991Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.734Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fnf.$Module.class, fqn = "@alicloud/ros-cdk-fnf.ISchedule")
 @software.amazon.jsii.Jsii.Proxy(ISchedule.Jsii$Proxy.class)
 public interface ISchedule extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

@@ -42,6 +42,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             get;
         }
 
+        /// <summary>Property associationMode: The association mode.</summary>
+        [JsiiProperty(name: "associationMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AssociationMode
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property popLocations: The pop locations.</summary>
+        [JsiiProperty(name: "popLocations", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-vpc.RosAnycastEIPAssociation.PopLocationsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? PopLocations
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property privateIpAddress: The private IP address.</summary>
+        [JsiiProperty(name: "privateIpAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? PrivateIpAddress
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `AnycastEIPAssociation`.</summary>
         /// <remarks>
         /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-anycasteipassociation
@@ -82,6 +115,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             public object BindInstanceType
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property associationMode: The association mode.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "associationMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AssociationMode
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property popLocations: The pop locations.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "popLocations", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-vpc.RosAnycastEIPAssociation.PopLocationsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? PopLocations
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property privateIpAddress: The private IP address.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "privateIpAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PrivateIpAddress
+            {
+                get => GetInstanceProperty<object?>();
             }
         }
     }

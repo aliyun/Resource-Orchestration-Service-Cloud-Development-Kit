@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.tsdb;
 /**
  * Represents a <code>InfluxDBUser</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:11.092Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:51.054Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.tsdb.$Module.class, fqn = "@alicloud/ros-cdk-tsdb.IInfluxDBUser")
 @software.amazon.jsii.Jsii.Proxy(IInfluxDBUser.Jsii$Proxy.class)
 public interface IInfluxDBUser extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

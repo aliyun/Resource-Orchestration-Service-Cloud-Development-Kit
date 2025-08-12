@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Represents file path ignoring behavior.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:00.719Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:42.980Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.IgnoreStrategy")
 public abstract class IgnoreStrategy extends software.amazon.jsii.JsiiObject {
 

@@ -502,6 +502,11 @@ export interface RosTGWProps {
      * @Property resourceGroupId: The ID of the resource group.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property wafInstanceRegion: The ID of the resource group.
+     */
+    readonly wafInstanceRegion?: string | ros.IResolvable;
 }
 
 /**
@@ -519,6 +524,13 @@ function RosTGWPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
     errors.collect(ros.propertyValidator('listen', ros.requiredValidator)(properties.listen));
     errors.collect(ros.propertyValidator('listen', RosTGW_ListenPropertyValidator)(properties.listen));
+    if(properties.wafInstanceRegion && (typeof properties.wafInstanceRegion) !== 'object') {
+        errors.collect(ros.propertyValidator('wafInstanceRegion', ros.validateAllowedValues)({
+          data: properties.wafInstanceRegion,
+          allowedValues: ["ChineseMainland","NonMainland"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('wafInstanceRegion', ros.validateString)(properties.wafInstanceRegion));
     errors.collect(ros.propertyValidator('redirect', RosTGW_RedirectPropertyValidator)(properties.redirect));
     return errors.wrap('supplied properties not correct for "RosTGWProps"');
 }
@@ -541,6 +553,7 @@ function rosTGWPropsToRosTemplate(properties: any, enableResourcePropertyConstra
       'Listen': rosTGWListenPropertyToRosTemplate(properties.listen),
       'Redirect': rosTGWRedirectPropertyToRosTemplate(properties.redirect),
       'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'WAFInstanceRegion': ros.stringToRosTemplate(properties.wafInstanceRegion),
     };
 }
 
@@ -599,6 +612,11 @@ export class RosTGW extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property wafInstanceRegion: The ID of the resource group.
+     */
+    public wafInstanceRegion: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -615,6 +633,7 @@ export class RosTGW extends ros.RosResource {
         this.listen = props.listen;
         this.redirect = props.redirect;
         this.resourceGroupId = props.resourceGroupId;
+        this.wafInstanceRegion = props.wafInstanceRegion;
     }
 
 
@@ -624,6 +643,7 @@ export class RosTGW extends ros.RosResource {
             listen: this.listen,
             redirect: this.redirect,
             resourceGroupId: this.resourceGroupId,
+            wafInstanceRegion: this.wafInstanceRegion,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -774,6 +794,12 @@ function RosTGW_ListenPropertyValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('port', ros.requiredValidator)(properties.port));
     errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
     errors.collect(ros.propertyValidator('resourceProduct', ros.requiredValidator)(properties.resourceProduct));
+    if(properties.resourceProduct && (typeof properties.resourceProduct) !== 'object') {
+        errors.collect(ros.propertyValidator('resourceProduct', ros.validateAllowedValues)({
+          data: properties.resourceProduct,
+          allowedValues: ["clb7","clb4","ecs","nlb"],
+        }));
+    }
     errors.collect(ros.propertyValidator('resourceProduct', ros.validateString)(properties.resourceProduct));
     if(properties.certificates && (Array.isArray(properties.certificates) || (typeof properties.certificates) === 'string')) {
         errors.collect(ros.propertyValidator('certificates', ros.validateLength)({

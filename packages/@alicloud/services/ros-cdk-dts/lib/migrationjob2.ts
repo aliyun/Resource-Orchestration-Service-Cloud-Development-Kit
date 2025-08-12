@@ -65,8 +65,8 @@ export interface MigrationJob2Props {
     readonly delayNotice?: boolean | ros.IResolvable;
 
     /**
-     * Property delayPhone: The mobile numbers that receive latency-related alerts. Separate multiple mobile numbers with commas (,).
-     * **Note**: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+     * Property delayPhone: The mobile numbers that receive latency-related alerts. Separate multiple mobile numbers with commas (,). You can specify up to 10 mobile numbers.
+     * **Note**: You can also configure alert rules for DTS tasks in the CloudMonitor console.This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers.
      */
     readonly delayPhone?: string | ros.IResolvable;
 
@@ -74,6 +74,16 @@ export interface MigrationJob2Props {
      * Property delayRuleTime: The threshold for latency alerts. Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
      */
     readonly delayRuleTime?: number | ros.IResolvable;
+
+    /**
+     * Property destPrimaryVswId: The primary VSW ID at the destination end of the VPC NAT.
+     */
+    readonly destPrimaryVswId?: string | ros.IResolvable;
+
+    /**
+     * Property destSecondaryVswId: The secondary VSW ID at the destination end of the VPC NAT.
+     */
+    readonly destSecondaryVswId?: string | ros.IResolvable;
 
     /**
      * Property disasterRecoveryJob: Specifies whether the instance is a disaster recovery instance. Valid values: **true** and **false**
@@ -101,8 +111,8 @@ export interface MigrationJob2Props {
     readonly errorNotice?: boolean | ros.IResolvable;
 
     /**
-     * Property errorPhone: The mobile numbers that receive status-related alerts. Separate multiple mobile numbers with commas (,).
-     * **Note**: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+     * Property errorPhone: The mobile numbers that receive status-related alerts. Separate multiple mobile numbers with commas (,). You can specify up to 10 mobile numbers.
+     * **Note**: You can also configure alert rules for DTS tasks in the CloudMonitor console.This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers.
      */
     readonly errorPhone?: string | ros.IResolvable;
 
@@ -112,9 +122,34 @@ export interface MigrationJob2Props {
     readonly fileOssUrl?: string | ros.IResolvable;
 
     /**
+     * Property maxDu: The upper limit of DU. This parameter is supported only for serverless instances.
+     */
+    readonly maxDu?: number | ros.IResolvable;
+
+    /**
+     * Property minDu: The lower limit of DU. This parameter is supported only for serverless instances.
+     */
+    readonly minDu?: number | ros.IResolvable;
+
+    /**
      * Property reserve: The reserved parameter of DTS. You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
      */
     readonly reserve?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * Property srcPrimaryVswId: The primary VSW ID at the source end of the VPC NAT.
+     */
+    readonly srcPrimaryVswId?: string | ros.IResolvable;
+
+    /**
+     * Property srcSecondaryVswId: The secondary VSW ID at the source end of the VPC NAT.
+     */
+    readonly srcSecondaryVswId?: string | ros.IResolvable;
 
     /**
      * Property status: The status of the resource. Valid values:
@@ -185,27 +220,34 @@ export class MigrationJob2 extends ros.Resource implements IMigrationJob2 {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosMigrationJob2 = new RosMigrationJob2(this, id,  {
-            status: props.status,
             reserve: props.reserve,
+            srcSecondaryVswId: props.srcSecondaryVswId,
+            resourceGroupId: props.resourceGroupId,
             dataSynchronization: props.dataSynchronization,
-            dedicatedClusterId: props.dedicatedClusterId,
             delayPhone: props.delayPhone,
             errorNotice: props.errorNotice,
             dtsJobName: props.dtsJobName,
             delayRuleTime: props.delayRuleTime,
-            dtsInstanceId: props.dtsInstanceId,
+            minDu: props.minDu,
             dbList: props.dbList,
             fileOssUrl: props.fileOssUrl,
+            dtsJobId: props.dtsJobId,
+            dataInitialization: props.dataInitialization,
+            errorPhone: props.errorPhone,
+            destSecondaryVswId: props.destSecondaryVswId,
+            maxDu: props.maxDu,
+            status: props.status,
+            srcPrimaryVswId: props.srcPrimaryVswId,
+            dedicatedClusterId: props.dedicatedClusterId,
+            destPrimaryVswId: props.destPrimaryVswId,
+            dtsInstanceId: props.dtsInstanceId,
             dataCheckConfigure: props.dataCheckConfigure,
             dtsBisLabel: props.dtsBisLabel,
             checkpoint: props.checkpoint,
             disasterRecoveryJob: props.disasterRecoveryJob,
-            dtsJobId: props.dtsJobId,
             delayNotice: props.delayNotice,
-            dataInitialization: props.dataInitialization,
             destinationEndpoint: props.destinationEndpoint,
             sourceEndpoint: props.sourceEndpoint,
-            errorPhone: props.errorPhone,
             structureInitialization: props.structureInitialization,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosMigrationJob2;

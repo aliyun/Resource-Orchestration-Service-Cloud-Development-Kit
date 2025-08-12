@@ -1,4 +1,14 @@
 # Aliyun ROS Cloud Development Toolkit Changelog
+## [ros-cdk-cli 1.9.0] (2025-08-07)
+### Features
+- Update ROS resource sdk packages(Added the DATASOURCE::APIG::Domain、DATASOURCE::APIG::Domains、DATASOURCE::APIG::Environment、DATASOURCE::APIG::Environments、DATASOURCE::APIG::Gateway、DATASOURCE::APIG::Gateways、DATASOURCE::APIG::HttpApi、DATASOURCE::APIG::HttpApis、DATASOURCE::APIG::Plugin、DATASOURCE::APIG::Plugins、DATASOURCE::APIG::PluginClass、DATASOURCE::APIG::PluginClasses、DATASOURCE::APIG::Route、DATASOURCE::APIG::Routes、DATASOURCE::APIG::Service、DATASOURCE::APIG::Services、ALIYUN::ApiGateway::Backend、ALIYUN::AppFlow::Chatbot、ALIYUN::AppFlow::ChatbotFlow、ALIYUN::AppFlow::ChatbotModel、DATASOURCE::AppFlow::UserAuthConfigs、ALIYUN::CMS::MetricRuleTemplateDeployment、ALIYUN::DataWorks::ResourceGroup、ALIYUN::DataWorks::ResourceGroupRelation、ALIYUN::ESA::CompressionRule、ALIYUN::ESA::CustomScenePolicy、ALIYUN::ESA::EdgeContainerApp、ALIYUN::ESA::HttpsApplicationConfiguration、ALIYUN::ESA::ImageTransform、ALIYUN::ESA::KvNamespace、ALIYUN::Flink::Member、ALIYUN::MaxCompute::Quota、ALIYUN::MSE::Gateway2、DATASOURCE::NLB::LoadBalancer、DATASOURCE::OOS::Template、DATASOURCE::OOS::Templates、ALIYUN::OSS::BucketReplication、ALIYUN::OTS::InstanceV2、ALIYUN::RDS::DBProxy、ALIYUN::REDIS::UpgradeVersion、ALIYUN::SAE::Secret、ALIYUN::SELECTDB::DBInstance、ALIYUN::SLS::AnalyzeProductLog、ALIYUN::SLS::EtlV2、ALIYUN::VPC::VcoRouteEntry、ALIYUN::VPC::VpcGatewayEndpoint、ALIYUN::VPC::VpcGatewayEndpointAssociation)
+
+### Bug Fixes
+
+- Fixed OssDeployment resource creating AliyunOSSFullAccess, AliyunLogFullAccess custom policies.
+- Fixed a compilation issue with RAM::Group/Role/User using variables before initialization.
+- Fixed the Catch clause variable cannot have a type annotation in the latest typescript version, and other compiler issues.
+- Optimize typescript initialization template, optimize App class member variable description, solve the outdir problem.
 
 ## [ros-cdk-cli 1.8.0] (2025-03-06)
 ### Features

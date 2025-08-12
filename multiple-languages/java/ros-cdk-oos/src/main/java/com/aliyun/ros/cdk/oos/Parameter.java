@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.oos;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::OOS::Parameter</code>, which is used to create a common parameter.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::OOS::Parameter</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.394Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.927Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.Parameter")
 public class Parameter extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.oos.IParameter {
 
@@ -123,7 +123,7 @@ public class Parameter extends com.aliyun.ros.cdk.core.Resource implements com.a
          * Property name: The name of the parameter.
          * <p>
          * The name must be 1 to 200 characters in length,and can contain letters, digits, hyphens (-), and underscores (_).
-         * It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
+         * It cannot start with ALIYUN, ALIBABA, ALICLOUD, ACS or OOS.
          * <p>
          * @return {@code this}
          * @param name Property name: The name of the parameter. This parameter is required.
@@ -136,7 +136,7 @@ public class Parameter extends com.aliyun.ros.cdk.core.Resource implements com.a
          * Property name: The name of the parameter.
          * <p>
          * The name must be 1 to 200 characters in length,and can contain letters, digits, hyphens (-), and underscores (_).
-         * It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
+         * It cannot start with ALIYUN, ALIBABA, ALICLOUD, ACS or OOS.
          * <p>
          * @return {@code this}
          * @param name Property name: The name of the parameter. This parameter is required.

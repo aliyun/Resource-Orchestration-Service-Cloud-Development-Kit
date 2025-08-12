@@ -28,6 +28,21 @@ export interface AnycastEIPAssociationProps {
      * Property bindInstanceType: The cloud resource instance type to be bound. Valid value: SlbInstance, SLB instance of private network type.
      */
     readonly bindInstanceType: string | ros.IResolvable;
+
+    /**
+     * Property associationMode: The association mode.
+     */
+    readonly associationMode?: string | ros.IResolvable;
+
+    /**
+     * Property popLocations: The pop locations.
+     */
+    readonly popLocations?: Array<RosAnycastEIPAssociation.PopLocationsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property privateIpAddress: The private IP address.
+     */
+    readonly privateIpAddress?: string | ros.IResolvable;
 }
 
 /**
@@ -101,9 +116,12 @@ export class AnycastEIPAssociation extends ros.Resource implements IAnycastEIPAs
 
         const rosAnycastEIPAssociation = new RosAnycastEIPAssociation(this, id,  {
             bindInstanceId: props.bindInstanceId,
+            privateIpAddress: props.privateIpAddress,
             bindInstanceRegionId: props.bindInstanceRegionId,
             bindInstanceType: props.bindInstanceType,
             anycastId: props.anycastId,
+            associationMode: props.associationMode,
+            popLocations: props.popLocations,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAnycastEIPAssociation;
         this.attrAnycastId = rosAnycastEIPAssociation.attrAnycastId;

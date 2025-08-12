@@ -88,6 +88,10 @@ func (j *jsiiProxy_RosAnycastEIPAssociation) validateSetAnycastIdParameters(val 
 	return nil
 }
 
+func (j *jsiiProxy_RosAnycastEIPAssociation) validateSetAssociationModeParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosAnycastEIPAssociation) validateSetBindInstanceIdParameters(val interface{}) error {
 	return nil
 }
@@ -101,6 +105,14 @@ func (j *jsiiProxy_RosAnycastEIPAssociation) validateSetBindInstanceTypeParamete
 }
 
 func (j *jsiiProxy_RosAnycastEIPAssociation) validateSetEnableResourcePropertyConstraintParameters(val *bool) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosAnycastEIPAssociation) validateSetPopLocationsParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosAnycastEIPAssociation) validateSetPrivateIpAddressParameters(val interface{}) error {
 	return nil
 }
 

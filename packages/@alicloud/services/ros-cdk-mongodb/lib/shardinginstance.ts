@@ -83,7 +83,7 @@ export interface ShardingInstanceProps {
     readonly secondaryZoneId?: string | ros.IResolvable;
 
     /**
-     * Property securityIpArray: Security ips to add or remove.
+     * Property securityIpArray: Security ips to add or remove. Update to this property will cover the current security ips.
      */
     readonly securityIpArray?: string | ros.IResolvable;
 
@@ -160,7 +160,7 @@ export interface IShardingInstance extends ros.IResource {
     readonly attrOrderId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::MONGODB::ShardingInstance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MONGODB::ShardingInstance`, which is used to create or clone an ApsaraDB for MongoDB sharded cluster instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosShardingInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mongodb-shardinginstance
  */

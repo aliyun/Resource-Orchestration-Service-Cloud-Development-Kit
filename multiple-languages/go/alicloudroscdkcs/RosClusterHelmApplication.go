@@ -42,6 +42,8 @@ type RosClusterHelmApplication interface {
 	SetName(val interface{})
 	Namespace() interface{}
 	SetNamespace(val interface{})
+	NamespaceDeletion() interface{}
+	SetNamespaceDeletion(val interface{})
 	// The construct tree node associated with this construct.
 	Node() alicloudroscdkcore.ConstructNode
 	// Return a string that will be resolved to a RosTemplate `{ Ref }` for this element.
@@ -298,6 +300,16 @@ func (j *jsiiProxy_RosClusterHelmApplication) Namespace() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosClusterHelmApplication) NamespaceDeletion() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"namespaceDeletion",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosClusterHelmApplication) Node() alicloudroscdkcore.ConstructNode {
 	var returns alicloudroscdkcore.ConstructNode
 	_jsii_.Get(
@@ -499,6 +511,17 @@ func (j *jsiiProxy_RosClusterHelmApplication)SetNamespace(val interface{}) {
 	_jsii_.Set(
 		j,
 		"namespace",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosClusterHelmApplication)SetNamespaceDeletion(val interface{}) {
+	if err := j.validateSetNamespaceDeletionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"namespaceDeletion",
 		val,
 	)
 }

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.nas;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-filesystem
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.243Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.775Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.RosFileSystemProps")
 @software.amazon.jsii.Jsii.Proxy(RosFileSystemProps.Jsii$Proxy.class)
 public interface RosFileSystemProps extends software.amazon.jsii.JsiiSerializable {
@@ -68,6 +68,12 @@ public interface RosFileSystemProps extends software.amazon.jsii.JsiiSerializabl
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSnapshotId() {
         return null;
     }
@@ -116,6 +122,7 @@ public interface RosFileSystemProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object duration;
         java.lang.Object encryptType;
         java.lang.Object fileSystemType;
+        java.lang.Object resourceGroupId;
         java.lang.Object snapshotId;
         java.util.List<com.aliyun.ros.cdk.nas.RosFileSystem.TagsProperty> tags;
         java.lang.Object vpcId;
@@ -323,6 +330,26 @@ public interface RosFileSystemProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosFileSystemProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFileSystemProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosFileSystemProps#getSnapshotId}
          * @param snapshotId the value to be set.
          * @return {@code this}
@@ -439,6 +466,7 @@ public interface RosFileSystemProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object duration;
         private final java.lang.Object encryptType;
         private final java.lang.Object fileSystemType;
+        private final java.lang.Object resourceGroupId;
         private final java.lang.Object snapshotId;
         private final java.util.List<com.aliyun.ros.cdk.nas.RosFileSystem.TagsProperty> tags;
         private final java.lang.Object vpcId;
@@ -461,6 +489,7 @@ public interface RosFileSystemProps extends software.amazon.jsii.JsiiSerializabl
             this.duration = software.amazon.jsii.Kernel.get(this, "duration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.encryptType = software.amazon.jsii.Kernel.get(this, "encryptType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.fileSystemType = software.amazon.jsii.Kernel.get(this, "fileSystemType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.snapshotId = software.amazon.jsii.Kernel.get(this, "snapshotId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.nas.RosFileSystem.TagsProperty.class)));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -484,6 +513,7 @@ public interface RosFileSystemProps extends software.amazon.jsii.JsiiSerializabl
             this.duration = builder.duration;
             this.encryptType = builder.encryptType;
             this.fileSystemType = builder.fileSystemType;
+            this.resourceGroupId = builder.resourceGroupId;
             this.snapshotId = builder.snapshotId;
             this.tags = (java.util.List<com.aliyun.ros.cdk.nas.RosFileSystem.TagsProperty>)builder.tags;
             this.vpcId = builder.vpcId;
@@ -539,6 +569,11 @@ public interface RosFileSystemProps extends software.amazon.jsii.JsiiSerializabl
         @Override
         public final java.lang.Object getFileSystemType() {
             return this.fileSystemType;
+        }
+
+        @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
         }
 
         @Override
@@ -598,6 +633,9 @@ public interface RosFileSystemProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getFileSystemType() != null) {
                 data.set("fileSystemType", om.valueToTree(this.getFileSystemType()));
             }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
             if (this.getSnapshotId() != null) {
                 data.set("snapshotId", om.valueToTree(this.getSnapshotId()));
             }
@@ -641,6 +679,7 @@ public interface RosFileSystemProps extends software.amazon.jsii.JsiiSerializabl
             if (this.duration != null ? !this.duration.equals(that.duration) : that.duration != null) return false;
             if (this.encryptType != null ? !this.encryptType.equals(that.encryptType) : that.encryptType != null) return false;
             if (this.fileSystemType != null ? !this.fileSystemType.equals(that.fileSystemType) : that.fileSystemType != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.snapshotId != null ? !this.snapshotId.equals(that.snapshotId) : that.snapshotId != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.vpcId != null ? !this.vpcId.equals(that.vpcId) : that.vpcId != null) return false;
@@ -660,6 +699,7 @@ public interface RosFileSystemProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.duration != null ? this.duration.hashCode() : 0);
             result = 31 * result + (this.encryptType != null ? this.encryptType.hashCode() : 0);
             result = 31 * result + (this.fileSystemType != null ? this.fileSystemType.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.snapshotId != null ? this.snapshotId.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);

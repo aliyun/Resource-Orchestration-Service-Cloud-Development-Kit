@@ -11,21 +11,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sas
     [JsiiInterface(nativeType: typeof(IInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-sas.InstanceProps")]
     public interface IInstanceProps
     {
-        /// <summary>Property period: The subscription period of the firewallIf PeriodUnit is month, the valid range is 1, 3, 6 If periodUnit is year, the valid range is 1, 2, 3.</summary>
-        [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object Period
-        {
-            get;
-        }
-
-        /// <summary>Property periodUnit: The unit of the subscription duration.</summary>
+        /// <summary>Property payType: The billing method of the firewall instance.</summary>
         /// <remarks>
         /// Valid values:
-        /// Month
-        /// Year
+        /// PayAsYouGo: pay-as-you-go
+        /// Subscription: subscription
         /// </remarks>
-        [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object PeriodUnit
+        [JsiiProperty(name: "payType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object PayType
         {
             get;
         }
@@ -151,6 +144,44 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sas
         [JsiiProperty(name: "maliciousFileDetectionSdk", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? MaliciousFileDetectionSdk
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property period: The subscription period of the firewallIf PeriodUnit is month, the valid range is 1, 3, 6 If periodUnit is year, the valid range is 1, 2, 3.</summary>
+        [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Period
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property periodUnit: The unit of the subscription duration.</summary>
+        /// <remarks>
+        /// Valid values:
+        /// Month
+        /// Year
+        /// </remarks>
+        [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? PeriodUnit
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property postPayInstanceModule: PayAsYouGo instance module configuration.</summary>
+        [JsiiProperty(name: "postPayInstanceModule", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sas.RosInstance.PostPayInstanceModuleProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? PostPayInstanceModule
         {
             get
             {
@@ -313,21 +344,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sas
             {
             }
 
-            /// <summary>Property period: The subscription period of the firewallIf PeriodUnit is month, the valid range is 1, 3, 6 If periodUnit is year, the valid range is 1, 2, 3.</summary>
-            [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object Period
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
-            /// <summary>Property periodUnit: The unit of the subscription duration.</summary>
+            /// <summary>Property payType: The billing method of the firewall instance.</summary>
             /// <remarks>
             /// Valid values:
-            /// Month
-            /// Year
+            /// PayAsYouGo: pay-as-you-go
+            /// Subscription: subscription
             /// </remarks>
-            [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object PeriodUnit
+            [JsiiProperty(name: "payType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object PayType
             {
                 get => GetInstanceProperty<object>()!;
             }
@@ -426,6 +450,35 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sas
             [JsiiOptional]
             [JsiiProperty(name: "maliciousFileDetectionSdk", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? MaliciousFileDetectionSdk
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property period: The subscription period of the firewallIf PeriodUnit is month, the valid range is 1, 3, 6 If periodUnit is year, the valid range is 1, 2, 3.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Period
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property periodUnit: The unit of the subscription duration.</summary>
+            /// <remarks>
+            /// Valid values:
+            /// Month
+            /// Year
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PeriodUnit
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property postPayInstanceModule: PayAsYouGo instance module configuration.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "postPayInstanceModule", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sas.RosInstance.PostPayInstanceModuleProperty\"}]}}", isOptional: true)]
+            public object? PostPayInstanceModule
             {
                 get => GetInstanceProperty<object?>();
             }

@@ -108,6 +108,10 @@ func (j *jsiiProxy_RosCustomImage) validateSetEnableResourcePropertyConstraintPa
 	return nil
 }
 
+func (j *jsiiProxy_RosCustomImage) validateSetFeaturesParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosCustomImage) validateSetImageFamilyParameters(val interface{}) error {
 	return nil
 }

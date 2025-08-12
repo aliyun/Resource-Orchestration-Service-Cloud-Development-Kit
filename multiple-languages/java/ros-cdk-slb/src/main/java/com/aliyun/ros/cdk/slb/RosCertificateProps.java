@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.slb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-certificate
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:10.619Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:50.672Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosCertificateProps")
 @software.amazon.jsii.Jsii.Proxy(RosCertificateProps.Jsii$Proxy.class)
 public interface RosCertificateProps extends software.amazon.jsii.JsiiSerializable {
@@ -19,6 +19,12 @@ public interface RosCertificateProps extends software.amazon.jsii.JsiiSerializab
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAliCloudCertificateName() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAliCloudCertificateRegionId() {
         return null;
     }
 
@@ -70,6 +76,7 @@ public interface RosCertificateProps extends software.amazon.jsii.JsiiSerializab
     public static final class Builder implements software.amazon.jsii.Builder<RosCertificateProps> {
         java.lang.Object aliCloudCertificateId;
         java.lang.Object aliCloudCertificateName;
+        java.lang.Object aliCloudCertificateRegionId;
         java.lang.Object certificate;
         java.lang.Object certificateName;
         java.lang.Object certificateType;
@@ -114,6 +121,26 @@ public interface RosCertificateProps extends software.amazon.jsii.JsiiSerializab
          */
         public Builder aliCloudCertificateName(com.aliyun.ros.cdk.core.IResolvable aliCloudCertificateName) {
             this.aliCloudCertificateName = aliCloudCertificateName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCertificateProps#getAliCloudCertificateRegionId}
+         * @param aliCloudCertificateRegionId the value to be set.
+         * @return {@code this}
+         */
+        public Builder aliCloudCertificateRegionId(java.lang.String aliCloudCertificateRegionId) {
+            this.aliCloudCertificateRegionId = aliCloudCertificateRegionId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCertificateProps#getAliCloudCertificateRegionId}
+         * @param aliCloudCertificateRegionId the value to be set.
+         * @return {@code this}
+         */
+        public Builder aliCloudCertificateRegionId(com.aliyun.ros.cdk.core.IResolvable aliCloudCertificateRegionId) {
+            this.aliCloudCertificateRegionId = aliCloudCertificateRegionId;
             return this;
         }
 
@@ -246,6 +273,7 @@ public interface RosCertificateProps extends software.amazon.jsii.JsiiSerializab
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosCertificateProps {
         private final java.lang.Object aliCloudCertificateId;
         private final java.lang.Object aliCloudCertificateName;
+        private final java.lang.Object aliCloudCertificateRegionId;
         private final java.lang.Object certificate;
         private final java.lang.Object certificateName;
         private final java.lang.Object certificateType;
@@ -261,6 +289,7 @@ public interface RosCertificateProps extends software.amazon.jsii.JsiiSerializab
             super(objRef);
             this.aliCloudCertificateId = software.amazon.jsii.Kernel.get(this, "aliCloudCertificateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.aliCloudCertificateName = software.amazon.jsii.Kernel.get(this, "aliCloudCertificateName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.aliCloudCertificateRegionId = software.amazon.jsii.Kernel.get(this, "aliCloudCertificateRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.certificate = software.amazon.jsii.Kernel.get(this, "certificate", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.certificateName = software.amazon.jsii.Kernel.get(this, "certificateName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.certificateType = software.amazon.jsii.Kernel.get(this, "certificateType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -277,6 +306,7 @@ public interface RosCertificateProps extends software.amazon.jsii.JsiiSerializab
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.aliCloudCertificateId = builder.aliCloudCertificateId;
             this.aliCloudCertificateName = builder.aliCloudCertificateName;
+            this.aliCloudCertificateRegionId = builder.aliCloudCertificateRegionId;
             this.certificate = builder.certificate;
             this.certificateName = builder.certificateName;
             this.certificateType = builder.certificateType;
@@ -293,6 +323,11 @@ public interface RosCertificateProps extends software.amazon.jsii.JsiiSerializab
         @Override
         public final java.lang.Object getAliCloudCertificateName() {
             return this.aliCloudCertificateName;
+        }
+
+        @Override
+        public final java.lang.Object getAliCloudCertificateRegionId() {
+            return this.aliCloudCertificateRegionId;
         }
 
         @Override
@@ -337,6 +372,9 @@ public interface RosCertificateProps extends software.amazon.jsii.JsiiSerializab
             if (this.getAliCloudCertificateName() != null) {
                 data.set("aliCloudCertificateName", om.valueToTree(this.getAliCloudCertificateName()));
             }
+            if (this.getAliCloudCertificateRegionId() != null) {
+                data.set("aliCloudCertificateRegionId", om.valueToTree(this.getAliCloudCertificateRegionId()));
+            }
             if (this.getCertificate() != null) {
                 data.set("certificate", om.valueToTree(this.getCertificate()));
             }
@@ -375,6 +413,7 @@ public interface RosCertificateProps extends software.amazon.jsii.JsiiSerializab
 
             if (this.aliCloudCertificateId != null ? !this.aliCloudCertificateId.equals(that.aliCloudCertificateId) : that.aliCloudCertificateId != null) return false;
             if (this.aliCloudCertificateName != null ? !this.aliCloudCertificateName.equals(that.aliCloudCertificateName) : that.aliCloudCertificateName != null) return false;
+            if (this.aliCloudCertificateRegionId != null ? !this.aliCloudCertificateRegionId.equals(that.aliCloudCertificateRegionId) : that.aliCloudCertificateRegionId != null) return false;
             if (this.certificate != null ? !this.certificate.equals(that.certificate) : that.certificate != null) return false;
             if (this.certificateName != null ? !this.certificateName.equals(that.certificateName) : that.certificateName != null) return false;
             if (this.certificateType != null ? !this.certificateType.equals(that.certificateType) : that.certificateType != null) return false;
@@ -387,6 +426,7 @@ public interface RosCertificateProps extends software.amazon.jsii.JsiiSerializab
         public final int hashCode() {
             int result = this.aliCloudCertificateId != null ? this.aliCloudCertificateId.hashCode() : 0;
             result = 31 * result + (this.aliCloudCertificateName != null ? this.aliCloudCertificateName.hashCode() : 0);
+            result = 31 * result + (this.aliCloudCertificateRegionId != null ? this.aliCloudCertificateRegionId.hashCode() : 0);
             result = 31 * result + (this.certificate != null ? this.certificate.hashCode() : 0);
             result = 31 * result + (this.certificateName != null ? this.certificateName.hashCode() : 0);
             result = 31 * result + (this.certificateType != null ? this.certificateType.hashCode() : 0);

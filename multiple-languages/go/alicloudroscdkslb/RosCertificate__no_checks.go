@@ -92,6 +92,10 @@ func (j *jsiiProxy_RosCertificate) validateSetAliCloudCertificateNameParameters(
 	return nil
 }
 
+func (j *jsiiProxy_RosCertificate) validateSetAliCloudCertificateRegionIdParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosCertificate) validateSetCertificateParameters(val interface{}) error {
 	return nil
 }

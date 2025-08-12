@@ -1,0 +1,64 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Names = void 0;
+const encoding_1 = require("./private/encoding");
+const unique_resource_name_1 = require("./private/unique-resource-name");
+const uniqueid_1 = require("./private/uniqueid");
+const stack_1 = require("./stack");
+/**
+ * Functions for devising unique names for constructs. For example, those can be
+ * used to allocate unique physical names for resources.
+ */
+class Names {
+    /**
+     * Returns a ROS-compatible unique identifier for a construct based
+     * on its path. The identifier includes a human readable portion rendered
+     * from the path components and a hash suffix. uniqueId is not unique if multiple
+     * copies of the stack are deployed. Prefer using uniqueResourceName().
+     *
+     * @param construct The construct
+     * @returns a unique id based on the construct path
+     */
+    static uniqueId(construct) {
+        const node = construct.node;
+        const components = node.scopes.slice(1).map(c => c.node.id);
+        return components.length > 0 ? (0, uniqueid_1.makeUniqueId)(components) : '';
+    }
+    /**
+     * Returns a ROS-compatible unique identifier for a construct based
+     * on its path. The identifier includes a human readable portion rendered
+     * from the path components and a hash suffix.
+     *
+     * TODO (v2): replace with API to use `constructs.Node`.
+     *
+     * @param node The construct node
+     * @returns a unique id based on the construct path
+     */
+    static nodeUniqueId(node) {
+        const components = node.scopes.slice(1).map(c => c.node.id);
+        return components.length > 0 ? (0, uniqueid_1.makeUniqueId)(components) : '';
+    }
+    /**
+     * Returns a ROS-compatible unique identifier for a construct based
+     * on its path. This function finds the stackName of the parent stack (non-nested)
+     * to the construct, and the ids of the components in the construct path.
+     *
+     * The user can define allowed special characters, a separator between the elements,
+     * and the maximum length of the resource name. The name includes a human readable portion rendered
+     * from the path components, with or without user defined separators, and a hash suffix.
+     * If the resource name is longer than the maximum length, it is trimmed in the middle.
+     *
+     * @param construct The construct
+     * @param options Options for defining the unique resource name
+     * @returns a unique resource name based on the construct path
+     */
+    static uniqueResourceName(construct, options) {
+        const node = construct.node;
+        const componentsPath = node.scopes.slice(node.scopes.indexOf(node.scopes.reverse()
+            .find(component => (stack_1.Stack.isStack(component) && !(0, encoding_1.unresolved)(component.stackName))))).map(component => stack_1.Stack.isStack(component) && !(0, encoding_1.unresolved)(component.stackName) ? component.stackName : component.node.id);
+        return (0, unique_resource_name_1.makeUniqueResourceName)(componentsPath, options);
+    }
+    constructor() { }
+}
+exports.Names = Names;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibmFtZXMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuYW1lcy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFDQSxpREFBZ0Q7QUFDaEQseUVBQXdFO0FBQ3hFLGlEQUFrRDtBQUNsRCxtQ0FBZ0M7QUE2QmhDOzs7R0FHRztBQUNILE1BQWEsS0FBSztJQUNoQjs7Ozs7Ozs7T0FRRztJQUNJLE1BQU0sQ0FBQyxRQUFRLENBQUMsU0FBcUI7UUFDMUMsTUFBTSxJQUFJLEdBQUcsU0FBUyxDQUFDLElBQUksQ0FBQztRQUM1QixNQUFNLFVBQVUsR0FBRyxJQUFJLENBQUMsTUFBTSxDQUFDLEtBQUssQ0FBQyxDQUFDLENBQUMsQ0FBQyxHQUFHLENBQUMsQ0FBQyxDQUFDLEVBQUUsQ0FBQyxDQUFDLENBQUMsSUFBSSxDQUFDLEVBQUUsQ0FBQyxDQUFDO1FBQzVELE9BQU8sVUFBVSxDQUFDLE1BQU0sR0FBRyxDQUFDLENBQUMsQ0FBQyxDQUFDLElBQUEsdUJBQVksRUFBQyxVQUFVLENBQUMsQ0FBQyxDQUFDLENBQUMsRUFBRSxDQUFDO0lBQy9ELENBQUM7SUFFRDs7Ozs7Ozs7O09BU0c7SUFDSSxNQUFNLENBQUMsWUFBWSxDQUFDLElBQW1CO1FBQzVDLE1BQU0sVUFBVSxHQUFHLElBQUksQ0FBQyxNQUFNLENBQUMsS0FBSyxDQUFDLENBQUMsQ0FBQyxDQUFDLEdBQUcsQ0FBQyxDQUFDLENBQUMsRUFBRSxDQUFDLENBQUMsQ0FBQyxJQUFJLENBQUMsRUFBRSxDQUFDLENBQUM7UUFDNUQsT0FBTyxVQUFVLENBQUMsTUFBTSxHQUFHLENBQUMsQ0FBQyxDQUFDLENBQUMsSUFBQSx1QkFBWSxFQUFDLFVBQVUsQ0FBQyxDQUFDLENBQUMsQ0FBQyxFQUFFLENBQUM7SUFDL0QsQ0FBQztJQUVEOzs7Ozs7Ozs7Ozs7O09BYUc7SUFDSSxNQUFNLENBQUMsa0JBQWtCLENBQUMsU0FBcUIsRUFBRSxPQUFrQztRQUN4RixNQUFNLElBQUksR0FBRyxTQUFTLENBQUMsSUFBSSxDQUFDO1FBRTVCLE1BQU0sY0FBYyxHQUFHLElBQUksQ0FBQyxNQUFNLENBQUMsS0FBSyxDQUFDLElBQUksQ0FBQyxNQUFNLENBQUMsT0FBTyxDQUFDLElBQUksQ0FBQyxNQUFNLENBQUMsT0FBTyxFQUFFO2FBQy9FLElBQUksQ0FBQyxTQUFTLENBQUMsRUFBRSxDQUFDLENBQUMsYUFBSyxDQUFDLE9BQU8sQ0FBQyxTQUFTLENBQUMsSUFBSSxDQUFDLElBQUEscUJBQVUsRUFBQyxTQUFTLENBQUMsU0FBUyxDQUFDLENBQUMsQ0FBRSxDQUNwRixDQUFDLENBQUMsR0FBRyxDQUFDLFNBQVMsQ0FBQyxFQUFFLENBQUMsYUFBSyxDQUFDLE9BQU8sQ0FBQyxTQUFTLENBQUMsSUFBSSxDQUFDLElBQUEscUJBQVUsRUFBQyxTQUFTLENBQUMsU0FBUyxDQUFDLENBQUMsQ0FBQyxDQUFDLFNBQVMsQ0FBQyxTQUFTLENBQUMsQ0FBQyxDQUFDLFNBQVMsQ0FBQyxJQUFJLENBQUMsRUFBRSxDQUFDLENBQUM7UUFFNUgsT0FBTyxJQUFBLDZDQUFzQixFQUFDLGNBQWMsRUFBRSxPQUFPLENBQUMsQ0FBQztJQUN6RCxDQUFDO0lBRUQsZ0JBQXVCLENBQUM7Q0FDekI7QUF4REQsc0JBd0RDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtDb25zdHJ1Y3ROb2RlLCBJQ29uc3RydWN0fSBmcm9tIFwiLi9jb25zdHJ1Y3QtY29tcGF0XCI7XG5pbXBvcnQgeyB1bnJlc29sdmVkIH0gZnJvbSAnLi9wcml2YXRlL2VuY29kaW5nJztcbmltcG9ydCB7IG1ha2VVbmlxdWVSZXNvdXJjZU5hbWUgfSBmcm9tICcuL3ByaXZhdGUvdW5pcXVlLXJlc291cmNlLW5hbWUnO1xuaW1wb3J0IHsgbWFrZVVuaXF1ZUlkIH0gZnJvbSAnLi9wcml2YXRlL3VuaXF1ZWlkJztcbmltcG9ydCB7IFN0YWNrIH0gZnJvbSAnLi9zdGFjayc7XG5cbi8qKlxuICogT3B0aW9ucyBmb3IgY3JlYXRpbmcgYSB1bmlxdWUgcmVzb3VyY2UgbmFtZS5cbiovXG5leHBvcnQgaW50ZXJmYWNlIFVuaXF1ZVJlc291cmNlTmFtZU9wdGlvbnMge1xuXG4gIC8qKlxuICAgKiBUaGUgbWF4aW11bSBsZW5ndGggb2YgdGhlIHVuaXF1ZSByZXNvdXJjZSBuYW1lLlxuICAgKlxuICAgKiBAZGVmYXVsdCAtIDI1NlxuICAgKi9cbiAgcmVhZG9ubHkgbWF4TGVuZ3RoPzogbnVtYmVyO1xuXG4gIC8qKlxuICAgKiBUaGUgc2VwYXJhdG9yIHVzZWQgYmV0d2VlbiB0aGUgcGF0aCBjb21wb25lbnRzLlxuICAgKlxuICAgKiBAZGVmYXVsdCAtIG5vbmVcbiAgICovXG4gIHJlYWRvbmx5IHNlcGFyYXRvcj86IHN0cmluZztcblxuICAvKipcbiAgICogTm9uLWFscGhhbnVtZXJpYyBjaGFyYWN0ZXJzIGFsbG93ZWQgaW4gdGhlIHVuaXF1ZSByZXNvdXJjZSBuYW1lLlxuICAgKlxuICAgKiBAZGVmYXVsdCAtIG5vbmVcbiAgICovXG4gIHJlYWRvbmx5IGFsbG93ZWRTcGVjaWFsQ2hhcmFjdGVycz86IHN0cmluZztcbn1cblxuLyoqXG4gKiBGdW5jdGlvbnMgZm9yIGRldmlzaW5nIHVuaXF1ZSBuYW1lcyBmb3IgY29uc3RydWN0cy4gRm9yIGV4YW1wbGUsIHRob3NlIGNhbiBiZVxuICogdXNlZCB0byBhbGxvY2F0ZSB1bmlxdWUgcGh5c2ljYWwgbmFtZXMgZm9yIHJlc291cmNlcy5cbiAqL1xuZXhwb3J0IGNsYXNzIE5hbWVzIHtcbiAgLyoqXG4gICAqIFJldHVybnMgYSBST1MtY29tcGF0aWJsZSB1bmlxdWUgaWRlbnRpZmllciBmb3IgYSBjb25zdHJ1Y3QgYmFzZWRcbiAgICogb24gaXRzIHBhdGguIFRoZSBpZGVudGlmaWVyIGluY2x1ZGVzIGEgaHVtYW4gcmVhZGFibGUgcG9ydGlvbiByZW5kZXJlZFxuICAgKiBmcm9tIHRoZSBwYXRoIGNvbXBvbmVudHMgYW5kIGEgaGFzaCBzdWZmaXguIHVuaXF1ZUlkIGlzIG5vdCB1bmlxdWUgaWYgbXVsdGlwbGVcbiAgICogY29waWVzIG9mIHRoZSBzdGFjayBhcmUgZGVwbG95ZWQuIFByZWZlciB1c2luZyB1bmlxdWVSZXNvdXJjZU5hbWUoKS5cbiAgICpcbiAgICogQHBhcmFtIGNvbnN0cnVjdCBUaGUgY29uc3RydWN0XG4gICAqIEByZXR1cm5zIGEgdW5pcXVlIGlkIGJhc2VkIG9uIHRoZSBjb25zdHJ1Y3QgcGF0aFxuICAgKi9cbiAgcHVibGljIHN0YXRpYyB1bmlxdWVJZChjb25zdHJ1Y3Q6IElDb25zdHJ1Y3QpOiBzdHJpbmcge1xuICAgIGNvbnN0IG5vZGUgPSBjb25zdHJ1Y3Qubm9kZTtcbiAgICBjb25zdCBjb21wb25lbnRzID0gbm9kZS5zY29wZXMuc2xpY2UoMSkubWFwKGMgPT4gYy5ub2RlLmlkKTtcbiAgICByZXR1cm4gY29tcG9uZW50cy5sZW5ndGggPiAwID8gbWFrZVVuaXF1ZUlkKGNvbXBvbmVudHMpIDogJyc7XG4gIH1cblxuICAvKipcbiAgICogUmV0dXJucyBhIFJPUy1jb21wYXRpYmxlIHVuaXF1ZSBpZGVudGlmaWVyIGZvciBhIGNvbnN0cnVjdCBiYXNlZFxuICAgKiBvbiBpdHMgcGF0aC4gVGhlIGlkZW50aWZpZXIgaW5jbHVkZXMgYSBodW1hbiByZWFkYWJsZSBwb3J0aW9uIHJlbmRlcmVkXG4gICAqIGZyb20gdGhlIHBhdGggY29tcG9uZW50cyBhbmQgYSBoYXNoIHN1ZmZpeC5cbiAgICpcbiAgICogVE9ETyAodjIpOiByZXBsYWNlIHdpdGggQVBJIHRvIHVzZSBgY29uc3RydWN0cy5Ob2RlYC5cbiAgICpcbiAgICogQHBhcmFtIG5vZGUgVGhlIGNvbnN0cnVjdCBub2RlXG4gICAqIEByZXR1cm5zIGEgdW5pcXVlIGlkIGJhc2VkIG9uIHRoZSBjb25zdHJ1Y3QgcGF0aFxuICAgKi9cbiAgcHVibGljIHN0YXRpYyBub2RlVW5pcXVlSWQobm9kZTogQ29uc3RydWN0Tm9kZSk6IHN0cmluZyB7XG4gICAgY29uc3QgY29tcG9uZW50cyA9IG5vZGUuc2NvcGVzLnNsaWNlKDEpLm1hcChjID0+IGMubm9kZS5pZCk7XG4gICAgcmV0dXJuIGNvbXBvbmVudHMubGVuZ3RoID4gMCA/IG1ha2VVbmlxdWVJZChjb21wb25lbnRzKSA6ICcnO1xuICB9XG5cbiAgLyoqXG4gICAqIFJldHVybnMgYSBST1MtY29tcGF0aWJsZSB1bmlxdWUgaWRlbnRpZmllciBmb3IgYSBjb25zdHJ1Y3QgYmFzZWRcbiAgICogb24gaXRzIHBhdGguIFRoaXMgZnVuY3Rpb24gZmluZHMgdGhlIHN0YWNrTmFtZSBvZiB0aGUgcGFyZW50IHN0YWNrIChub24tbmVzdGVkKVxuICAgKiB0byB0aGUgY29uc3RydWN0LCBhbmQgdGhlIGlkcyBvZiB0aGUgY29tcG9uZW50cyBpbiB0aGUgY29uc3RydWN0IHBhdGguXG4gICAqXG4gICAqIFRoZSB1c2VyIGNhbiBkZWZpbmUgYWxsb3dlZCBzcGVjaWFsIGNoYXJhY3RlcnMsIGEgc2VwYXJhdG9yIGJldHdlZW4gdGhlIGVsZW1lbnRzLFxuICAgKiBhbmQgdGhlIG1heGltdW0gbGVuZ3RoIG9mIHRoZSByZXNvdXJjZSBuYW1lLiBUaGUgbmFtZSBpbmNsdWRlcyBhIGh1bWFuIHJlYWRhYmxlIHBvcnRpb24gcmVuZGVyZWRcbiAgICogZnJvbSB0aGUgcGF0aCBjb21wb25lbnRzLCB3aXRoIG9yIHdpdGhvdXQgdXNlciBkZWZpbmVkIHNlcGFyYXRvcnMsIGFuZCBhIGhhc2ggc3VmZml4LlxuICAgKiBJZiB0aGUgcmVzb3VyY2UgbmFtZSBpcyBsb25nZXIgdGhhbiB0aGUgbWF4aW11bSBsZW5ndGgsIGl0IGlzIHRyaW1tZWQgaW4gdGhlIG1pZGRsZS5cbiAgICpcbiAgICogQHBhcmFtIGNvbnN0cnVjdCBUaGUgY29uc3RydWN0XG4gICAqIEBwYXJhbSBvcHRpb25zIE9wdGlvbnMgZm9yIGRlZmluaW5nIHRoZSB1bmlxdWUgcmVzb3VyY2UgbmFtZVxuICAgKiBAcmV0dXJucyBhIHVuaXF1ZSByZXNvdXJjZSBuYW1lIGJhc2VkIG9uIHRoZSBjb25zdHJ1Y3QgcGF0aFxuICAgKi9cbiAgcHVibGljIHN0YXRpYyB1bmlxdWVSZXNvdXJjZU5hbWUoY29uc3RydWN0OiBJQ29uc3RydWN0LCBvcHRpb25zOiBVbmlxdWVSZXNvdXJjZU5hbWVPcHRpb25zKSB7XG4gICAgY29uc3Qgbm9kZSA9IGNvbnN0cnVjdC5ub2RlO1xuXG4gICAgY29uc3QgY29tcG9uZW50c1BhdGggPSBub2RlLnNjb3Blcy5zbGljZShub2RlLnNjb3Blcy5pbmRleE9mKG5vZGUuc2NvcGVzLnJldmVyc2UoKVxuICAgICAgLmZpbmQoY29tcG9uZW50ID0+IChTdGFjay5pc1N0YWNrKGNvbXBvbmVudCkgJiYgIXVucmVzb2x2ZWQoY29tcG9uZW50LnN0YWNrTmFtZSkpKSEsXG4gICAgKSkubWFwKGNvbXBvbmVudCA9PiBTdGFjay5pc1N0YWNrKGNvbXBvbmVudCkgJiYgIXVucmVzb2x2ZWQoY29tcG9uZW50LnN0YWNrTmFtZSkgPyBjb21wb25lbnQuc3RhY2tOYW1lIDogY29tcG9uZW50Lm5vZGUuaWQpO1xuXG4gICAgcmV0dXJuIG1ha2VVbmlxdWVSZXNvdXJjZU5hbWUoY29tcG9uZW50c1BhdGgsIG9wdGlvbnMpO1xuICB9XG5cbiAgcHJpdmF0ZSBjb25zdHJ1Y3RvcigpIHt9XG59XG4iXX0=

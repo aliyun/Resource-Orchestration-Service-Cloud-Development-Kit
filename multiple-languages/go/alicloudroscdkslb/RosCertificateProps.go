@@ -7,6 +7,7 @@ package alicloudroscdkslb
 type RosCertificateProps struct {
 	AliCloudCertificateId interface{} `field:"optional" json:"aliCloudCertificateId" yaml:"aliCloudCertificateId"`
 	AliCloudCertificateName interface{} `field:"optional" json:"aliCloudCertificateName" yaml:"aliCloudCertificateName"`
+	AliCloudCertificateRegionId interface{} `field:"optional" json:"aliCloudCertificateRegionId" yaml:"aliCloudCertificateRegionId"`
 	Certificate interface{} `field:"optional" json:"certificate" yaml:"certificate"`
 	CertificateName interface{} `field:"optional" json:"certificateName" yaml:"certificateName"`
 	CertificateType interface{} `field:"optional" json:"certificateType" yaml:"certificateType"`

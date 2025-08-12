@@ -32,11 +32,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// <remarks>
         /// <strong>Property</strong>: defaultNamespace: The default namespace for the application, default value is default.
         /// If a namespace is defined in yaml metadata, its priority is higher than DefaultNamespace.
-        /// If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
+        /// If the DefaultNamespace does not exist, ROS will create it automatically and keep it by default during the delete phase.
         /// </remarks>
         [JsiiProperty(name: "defaultNamespace", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? DefaultNamespace
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: defaultNamespaceDeletion: Whether to delete the namespace specified by DefaultNamespace. If DefaultNamespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether DefaultNamespaceDeletion is true or not, it will not be deleted.
+        /// </remarks>
+        [JsiiProperty(name: "defaultNamespaceDeletion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DefaultNamespaceDeletion
         {
             get
             {
@@ -136,11 +149,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// <remarks>
             /// <strong>Property</strong>: defaultNamespace: The default namespace for the application, default value is default.
             /// If a namespace is defined in yaml metadata, its priority is higher than DefaultNamespace.
-            /// If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
+            /// If the DefaultNamespace does not exist, ROS will create it automatically and keep it by default during the delete phase.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "defaultNamespace", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DefaultNamespace
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: defaultNamespaceDeletion: Whether to delete the namespace specified by DefaultNamespace. If DefaultNamespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether DefaultNamespaceDeletion is true or not, it will not be deleted.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "defaultNamespaceDeletion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DefaultNamespaceDeletion
             {
                 get => GetInstanceProperty<object?>();
             }

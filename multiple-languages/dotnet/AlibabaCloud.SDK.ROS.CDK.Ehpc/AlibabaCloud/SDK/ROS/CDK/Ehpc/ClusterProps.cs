@@ -236,39 +236,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
             }
         }
 
-        private object _osTag;
-
-        /// <summary>Property osTag: Operating system image tag.</summary>
-        /// <remarks>
-        /// You can call ListImages API to query.
-        /// </remarks>
-        [JsiiProperty(name: "osTag", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        public object OsTag
-        {
-            get => _osTag;
-            set
-            {
-                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                {
-                    switch (value)
-                    {
-                        case string cast_cd4240:
-                            break;
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                            break;
-                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                            // Not enough information to type-check...
-                            break;
-                        case null:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
-                        default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                    }
-                }
-                _osTag = value;
-            }
-        }
-
         private object _vSwitchId;
 
         /// <summary>Property vSwitchId: VPC in switch ID.</summary>
@@ -1108,6 +1075,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
                     }
                 }
                 _networkInterfaceTrafficMode = value;
+            }
+        }
+
+        private object? _osTag;
+
+        /// <summary>Property osTag: Operating system image tag.</summary>
+        /// <remarks>
+        /// You can call ListImages API to query.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "osTag", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? OsTag
+        {
+            get => _osTag;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _osTag = value;
             }
         }
 

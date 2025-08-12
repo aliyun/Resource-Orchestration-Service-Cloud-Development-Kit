@@ -119,7 +119,7 @@ export interface InstanceProps {
     readonly securityGroupId?: string | ros.IResolvable;
 
     /**
-     * Property securityIpArray: Security ips to add or remove.
+     * Property securityIpArray: Security ips to add or remove. Update to this property will cover the current security ips.
      */
     readonly securityIpArray?: string | ros.IResolvable;
 

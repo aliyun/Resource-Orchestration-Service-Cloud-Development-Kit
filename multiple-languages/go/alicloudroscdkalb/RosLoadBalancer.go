@@ -37,6 +37,8 @@ type RosLoadBalancer interface {
 	SetDeletionProtectionEnabled(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	Ipv6AddressType() interface{}
+	SetIpv6AddressType(val interface{})
 	LoadBalancerBillingConfig() interface{}
 	SetLoadBalancerBillingConfig(val interface{})
 	LoadBalancerEdition() interface{}
@@ -355,6 +357,16 @@ func (j *jsiiProxy_RosLoadBalancer) EnableResourcePropertyConstraint() *bool {
 	return returns
 }
 
+func (j *jsiiProxy_RosLoadBalancer) Ipv6AddressType() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"ipv6AddressType",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosLoadBalancer) LoadBalancerBillingConfig() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -626,6 +638,17 @@ func (j *jsiiProxy_RosLoadBalancer)SetEnableResourcePropertyConstraint(val *bool
 	_jsii_.Set(
 		j,
 		"enableResourcePropertyConstraint",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosLoadBalancer)SetIpv6AddressType(val interface{}) {
+	if err := j.validateSetIpv6AddressTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"ipv6AddressType",
 		val,
 	)
 }

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.oss;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucket
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:12.151Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:51.903Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.RosBucketProps")
 @software.amazon.jsii.Jsii.Proxy(RosBucketProps.Jsii$Proxy.class)
 public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
@@ -17,6 +17,12 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAccessControl() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBlockPublicAccess() {
         return null;
     }
 
@@ -116,6 +122,7 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
     public static final class Builder implements software.amazon.jsii.Builder<RosBucketProps> {
         java.lang.Object bucketName;
         java.lang.Object accessControl;
+        java.lang.Object blockPublicAccess;
         java.lang.Object corsConfiguration;
         java.lang.Object deletionForce;
         java.lang.Object enableOssHdfsService;
@@ -168,6 +175,26 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder accessControl(com.aliyun.ros.cdk.core.IResolvable accessControl) {
             this.accessControl = accessControl;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosBucketProps#getBlockPublicAccess}
+         * @param blockPublicAccess the value to be set.
+         * @return {@code this}
+         */
+        public Builder blockPublicAccess(java.lang.Boolean blockPublicAccess) {
+            this.blockPublicAccess = blockPublicAccess;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosBucketProps#getBlockPublicAccess}
+         * @param blockPublicAccess the value to be set.
+         * @return {@code this}
+         */
+        public Builder blockPublicAccess(com.aliyun.ros.cdk.core.IResolvable blockPublicAccess) {
+            this.blockPublicAccess = blockPublicAccess;
             return this;
         }
 
@@ -460,6 +487,7 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosBucketProps {
         private final java.lang.Object bucketName;
         private final java.lang.Object accessControl;
+        private final java.lang.Object blockPublicAccess;
         private final java.lang.Object corsConfiguration;
         private final java.lang.Object deletionForce;
         private final java.lang.Object enableOssHdfsService;
@@ -483,6 +511,7 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
             super(objRef);
             this.bucketName = software.amazon.jsii.Kernel.get(this, "bucketName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.accessControl = software.amazon.jsii.Kernel.get(this, "accessControl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.blockPublicAccess = software.amazon.jsii.Kernel.get(this, "blockPublicAccess", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.corsConfiguration = software.amazon.jsii.Kernel.get(this, "corsConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionForce = software.amazon.jsii.Kernel.get(this, "deletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableOssHdfsService = software.amazon.jsii.Kernel.get(this, "enableOssHdfsService", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -507,6 +536,7 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.bucketName = java.util.Objects.requireNonNull(builder.bucketName, "bucketName is required");
             this.accessControl = builder.accessControl;
+            this.blockPublicAccess = builder.blockPublicAccess;
             this.corsConfiguration = builder.corsConfiguration;
             this.deletionForce = builder.deletionForce;
             this.enableOssHdfsService = builder.enableOssHdfsService;
@@ -531,6 +561,11 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getAccessControl() {
             return this.accessControl;
+        }
+
+        @Override
+        public final java.lang.Object getBlockPublicAccess() {
+            return this.blockPublicAccess;
         }
 
         @Override
@@ -613,6 +648,9 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getAccessControl() != null) {
                 data.set("accessControl", om.valueToTree(this.getAccessControl()));
             }
+            if (this.getBlockPublicAccess() != null) {
+                data.set("blockPublicAccess", om.valueToTree(this.getBlockPublicAccess()));
+            }
             if (this.getCorsConfiguration() != null) {
                 data.set("corsConfiguration", om.valueToTree(this.getCorsConfiguration()));
             }
@@ -675,6 +713,7 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
 
             if (!bucketName.equals(that.bucketName)) return false;
             if (this.accessControl != null ? !this.accessControl.equals(that.accessControl) : that.accessControl != null) return false;
+            if (this.blockPublicAccess != null ? !this.blockPublicAccess.equals(that.blockPublicAccess) : that.blockPublicAccess != null) return false;
             if (this.corsConfiguration != null ? !this.corsConfiguration.equals(that.corsConfiguration) : that.corsConfiguration != null) return false;
             if (this.deletionForce != null ? !this.deletionForce.equals(that.deletionForce) : that.deletionForce != null) return false;
             if (this.enableOssHdfsService != null ? !this.enableOssHdfsService.equals(that.enableOssHdfsService) : that.enableOssHdfsService != null) return false;
@@ -695,6 +734,7 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
         public final int hashCode() {
             int result = this.bucketName.hashCode();
             result = 31 * result + (this.accessControl != null ? this.accessControl.hashCode() : 0);
+            result = 31 * result + (this.blockPublicAccess != null ? this.blockPublicAccess.hashCode() : 0);
             result = 31 * result + (this.corsConfiguration != null ? this.corsConfiguration.hashCode() : 0);
             result = 31 * result + (this.deletionForce != null ? this.deletionForce.hashCode() : 0);
             result = 31 * result + (this.enableOssHdfsService != null ? this.enableOssHdfsService.hashCode() : 0);

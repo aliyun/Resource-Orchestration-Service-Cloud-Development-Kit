@@ -22,6 +22,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Flink
             get;
         }
 
+        /// <summary>Attribute WorkspaceId: Workspace ID.</summary>
+        [JsiiProperty(name: "attrWorkspaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrWorkspaceId
+        {
+            get;
+        }
+
         [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-flink.InstanceProps\"}")]
         AlibabaCloud.SDK.ROS.CDK.Flink.IInstanceProps Props
         {
@@ -46,6 +53,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Flink
             /// <summary>Attribute OrderId: Order information.</summary>
             [JsiiProperty(name: "attrOrderId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AttrOrderId
+            {
+                get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Attribute WorkspaceId: Workspace ID.</summary>
+            [JsiiProperty(name: "attrWorkspaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrWorkspaceId
             {
                 get => GetInstanceProperty<object>()!;
             }

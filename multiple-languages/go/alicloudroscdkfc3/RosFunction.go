@@ -89,6 +89,8 @@ type RosFunction interface {
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
 	Stack() alicloudroscdkcore.Stack
+	Tags() *[]*RosFunction_TagsProperty
+	SetTags(val *[]*RosFunction_TagsProperty)
 	Timeout() interface{}
 	SetTimeout(val interface{})
 	TracingConfig() interface{}
@@ -549,6 +551,16 @@ func (j *jsiiProxy_RosFunction) Stack() alicloudroscdkcore.Stack {
 	return returns
 }
 
+func (j *jsiiProxy_RosFunction) Tags() *[]*RosFunction_TagsProperty {
+	var returns *[]*RosFunction_TagsProperty
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosFunction) Timeout() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -855,6 +867,17 @@ func (j *jsiiProxy_RosFunction)SetRuntime(val interface{}) {
 	_jsii_.Set(
 		j,
 		"runtime",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosFunction)SetTags(val *[]*RosFunction_TagsProperty) {
+	if err := j.validateSetTagsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"tags",
 		val,
 	)
 }

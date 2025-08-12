@@ -73,6 +73,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
         }
 
+        private object? _aliCloudCertificateRegionId;
+
+        /// <summary>Property aliCloudCertificateRegionId: The ID of the Alibaba Cloud region.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "aliCloudCertificateRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? AliCloudCertificateRegionId
+        {
+            get => _aliCloudCertificateRegionId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _aliCloudCertificateRegionId = value;
+            }
+        }
+
         private object? _certificate;
 
         /// <summary>Property certificate: The content of the certificate public key.</summary>

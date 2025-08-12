@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.privatelink;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpointserviceattachment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:09.187Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.539Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.RosVpcEndpointServiceAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(RosVpcEndpointServiceAttachmentProps.Jsii$Proxy.class)
 public interface RosVpcEndpointServiceAttachmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -23,6 +23,12 @@ public interface RosVpcEndpointServiceAttachmentProps extends software.amazon.js
     @org.jetbrains.annotations.NotNull java.lang.Object getServiceId();
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosVpcEndpointServiceAttachmentProps}
      */
     static Builder builder() {
@@ -35,6 +41,7 @@ public interface RosVpcEndpointServiceAttachmentProps extends software.amazon.js
         java.lang.Object resourceId;
         java.lang.Object resourceType;
         java.lang.Object serviceId;
+        java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link RosVpcEndpointServiceAttachmentProps#getResourceId}
@@ -97,6 +104,26 @@ public interface RosVpcEndpointServiceAttachmentProps extends software.amazon.js
         }
 
         /**
+         * Sets the value of {@link RosVpcEndpointServiceAttachmentProps#getZoneId}
+         * @param zoneId the value to be set.
+         * @return {@code this}
+         */
+        public Builder zoneId(java.lang.String zoneId) {
+            this.zoneId = zoneId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpcEndpointServiceAttachmentProps#getZoneId}
+         * @param zoneId the value to be set.
+         * @return {@code this}
+         */
+        public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {
+            this.zoneId = zoneId;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosVpcEndpointServiceAttachmentProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -115,6 +142,7 @@ public interface RosVpcEndpointServiceAttachmentProps extends software.amazon.js
         private final java.lang.Object resourceId;
         private final java.lang.Object resourceType;
         private final java.lang.Object serviceId;
+        private final java.lang.Object zoneId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -125,6 +153,7 @@ public interface RosVpcEndpointServiceAttachmentProps extends software.amazon.js
             this.resourceId = software.amazon.jsii.Kernel.get(this, "resourceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceType = software.amazon.jsii.Kernel.get(this, "resourceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serviceId = software.amazon.jsii.Kernel.get(this, "serviceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -135,6 +164,7 @@ public interface RosVpcEndpointServiceAttachmentProps extends software.amazon.js
             this.resourceId = java.util.Objects.requireNonNull(builder.resourceId, "resourceId is required");
             this.resourceType = java.util.Objects.requireNonNull(builder.resourceType, "resourceType is required");
             this.serviceId = java.util.Objects.requireNonNull(builder.serviceId, "serviceId is required");
+            this.zoneId = builder.zoneId;
         }
 
         @Override
@@ -153,6 +183,11 @@ public interface RosVpcEndpointServiceAttachmentProps extends software.amazon.js
         }
 
         @Override
+        public final java.lang.Object getZoneId() {
+            return this.zoneId;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -161,6 +196,9 @@ public interface RosVpcEndpointServiceAttachmentProps extends software.amazon.js
             data.set("resourceId", om.valueToTree(this.getResourceId()));
             data.set("resourceType", om.valueToTree(this.getResourceType()));
             data.set("serviceId", om.valueToTree(this.getServiceId()));
+            if (this.getZoneId() != null) {
+                data.set("zoneId", om.valueToTree(this.getZoneId()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-privatelink.RosVpcEndpointServiceAttachmentProps"));
@@ -181,7 +219,8 @@ public interface RosVpcEndpointServiceAttachmentProps extends software.amazon.js
 
             if (!resourceId.equals(that.resourceId)) return false;
             if (!resourceType.equals(that.resourceType)) return false;
-            return this.serviceId.equals(that.serviceId);
+            if (!serviceId.equals(that.serviceId)) return false;
+            return this.zoneId != null ? this.zoneId.equals(that.zoneId) : that.zoneId == null;
         }
 
         @Override
@@ -189,6 +228,7 @@ public interface RosVpcEndpointServiceAttachmentProps extends software.amazon.js
             int result = this.resourceId.hashCode();
             result = 31 * result + (this.resourceType.hashCode());
             result = 31 * result + (this.serviceId.hashCode());
+            result = 31 * result + (this.zoneId != null ? this.zoneId.hashCode() : 0);
             return result;
         }
     }

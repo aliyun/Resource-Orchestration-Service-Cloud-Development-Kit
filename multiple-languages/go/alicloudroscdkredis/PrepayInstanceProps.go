@@ -68,6 +68,10 @@ type PrepayInstanceProps struct {
 	//
 	// Valid values:Local: Community Edition(Local) or Enhanced Edition(Local)Tair_rdb: Performance Enhanced(Cloud Disk)Tair_scm: Persistent Memory(Cloud Disk)Tair_essd: Capacity Storage(Cloud Disk)OnECS: Community Edition(Cloud Disk).
 	ProductType interface{} `field:"optional" json:"productType" yaml:"productType"`
+	// Property readOnlyCount: The number of read replicas in the primary zone.
+	//
+	// Valid values: 1 to 9.
+	ReadOnlyCount interface{} `field:"optional" json:"readOnlyCount" yaml:"readOnlyCount"`
 	// Property resourceGroupId: Resource group id.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 	// Property secondaryZoneId: The secondary zone ID of the instance.
@@ -91,6 +95,10 @@ type PrepayInstanceProps struct {
 	// Enable: enables SSL encryption.
 	// Update: updates the SSL certificate.
 	SslEnabled interface{} `field:"optional" json:"sslEnabled" yaml:"sslEnabled"`
+	// Property subscriptionDeletionForce: This option is only applicable to subscription instances.
+	//
+	// For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+	SubscriptionDeletionForce interface{} `field:"optional" json:"subscriptionDeletionForce" yaml:"subscriptionDeletionForce"`
 	// Property tags: Tags to attach to redis.
 	//
 	// Max support 20 tags to add during create redis. Each tag with two properties Key and Value, and Key is required.

@@ -180,6 +180,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         /// normal: Normal version
         /// professional: Professional Edition (high writing edition)
         /// professionalForHighRead: Professional Edition (high reading edition)
+        /// basic: Basic Edition (only for serverless)
         /// </remarks>
         [JsiiProperty(name: "specType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -371,6 +372,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             /// normal: Normal version
             /// professional: Professional Edition (high writing edition)
             /// professionalForHighRead: Professional Edition (high reading edition)
+            /// basic: Basic Edition (only for serverless)
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "specType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

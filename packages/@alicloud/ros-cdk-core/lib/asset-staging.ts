@@ -547,7 +547,7 @@ function sanitizeHashValue(key: string, value: any): any {
                 return url.toString();
             }
         } catch (e) {
-            if (e.name === 'TypeError') {
+            if ((e as any).name === 'TypeError') {
                 throw new Error(`${key} must be a valid URL, got ${value}.`);
             }
             throw e;

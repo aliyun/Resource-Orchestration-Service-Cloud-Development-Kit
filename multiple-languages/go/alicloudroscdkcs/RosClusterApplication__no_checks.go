@@ -92,6 +92,10 @@ func (j *jsiiProxy_RosClusterApplication) validateSetDefaultNamespaceParameters(
 	return nil
 }
 
+func (j *jsiiProxy_RosClusterApplication) validateSetDefaultNamespaceDeletionParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosClusterApplication) validateSetEnableResourcePropertyConstraintParameters(val *bool) error {
 	return nil
 }

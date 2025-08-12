@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.flink;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::Flink::Instance</code>, which is used to create a subscription or pay-as-you-go Realtime Compute for Apache Flink instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:06.962Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.705Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.flink.$Module.class, fqn = "@alicloud/ros-cdk-flink.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.flink.IInstance {
 
@@ -54,6 +54,14 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrOrderId() {
         return software.amazon.jsii.Kernel.get(this, "attrOrderId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     * Attribute WorkspaceId: Workspace ID.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrWorkspaceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrWorkspaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     @Override

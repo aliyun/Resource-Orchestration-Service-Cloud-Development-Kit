@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Represents a <code>MigrateTask</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:09.611Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.830Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.IMigrateTask")
 @software.amazon.jsii.Jsii.Proxy(IMigrateTask.Jsii$Proxy.class)
 public interface IMigrateTask extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

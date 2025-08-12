@@ -82,7 +82,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// <remarks>
         /// <strong>Property</strong>: defaultNamespace: The default namespace for the application, default value is default.
         /// If a namespace is defined in yaml metadata, its priority is higher than DefaultNamespace.
-        /// If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
+        /// If the DefaultNamespace does not exist, ROS will create it automatically and keep it by default during the delete phase.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "defaultNamespace", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -109,6 +109,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                     }
                 }
                 _defaultNamespace = value;
+            }
+        }
+
+        private object? _defaultNamespaceDeletion;
+
+        /// <remarks>
+        /// <strong>Property</strong>: defaultNamespaceDeletion: Whether to delete the namespace specified by DefaultNamespace. If DefaultNamespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether DefaultNamespaceDeletion is true or not, it will not be deleted.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "defaultNamespaceDeletion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? DefaultNamespaceDeletion
+        {
+            get => _defaultNamespaceDeletion;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _defaultNamespaceDeletion = value;
             }
         }
 

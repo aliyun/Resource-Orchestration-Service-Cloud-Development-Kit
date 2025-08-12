@@ -308,6 +308,11 @@ export interface RosDBInstanceProps {
     readonly prodType?: string | ros.IResolvable;
 
     /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * @Property securityIpList: The whitelist of IP addresses that are allowed to access the instance. Default value:
      * 127.0.0.1.
      */
@@ -402,6 +407,7 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('standbyZoneId', ros.validateString)(properties.standbyZoneId));
     errors.collect(ros.propertyValidator('instanceSpec', ros.validateString)(properties.instanceSpec));
     errors.collect(ros.propertyValidator('privateIpAddress', ros.validateString)(properties.privateIpAddress));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.idleTime && (typeof properties.idleTime) !== 'object') {
         errors.collect(ros.propertyValidator('idleTime', ros.validateRange)({
             data: properties.idleTime,
@@ -602,6 +608,7 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
       'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
       'PrivateIpAddress': ros.stringToRosTemplate(properties.privateIpAddress),
       'ProdType': ros.stringToRosTemplate(properties.prodType),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
       'SecurityIPList': ros.stringToRosTemplate(properties.securityIpList),
       'SegDiskPerformanceLevel': ros.stringToRosTemplate(properties.segDiskPerformanceLevel),
       'SegNodeNum': ros.numberToRosTemplate(properties.segNodeNum),
@@ -781,6 +788,11 @@ export class RosDBInstance extends ros.RosResource {
     public prodType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property securityIpList: The whitelist of IP addresses that are allowed to access the instance. Default value:
      * 127.0.0.1.
      */
@@ -889,6 +901,7 @@ export class RosDBInstance extends ros.RosResource {
         this.periodUnit = props.periodUnit;
         this.privateIpAddress = props.privateIpAddress;
         this.prodType = props.prodType;
+        this.resourceGroupId = props.resourceGroupId;
         this.securityIpList = props.securityIpList;
         this.segDiskPerformanceLevel = props.segDiskPerformanceLevel;
         this.segNodeNum = props.segNodeNum;
@@ -928,6 +941,7 @@ export class RosDBInstance extends ros.RosResource {
             periodUnit: this.periodUnit,
             privateIpAddress: this.privateIpAddress,
             prodType: this.prodType,
+            resourceGroupId: this.resourceGroupId,
             securityIpList: this.securityIpList,
             segDiskPerformanceLevel: this.segDiskPerformanceLevel,
             segNodeNum: this.segNodeNum,

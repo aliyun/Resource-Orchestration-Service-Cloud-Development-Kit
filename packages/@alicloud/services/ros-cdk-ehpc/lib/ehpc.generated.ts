@@ -821,11 +821,6 @@ export interface RosClusterProps {
     readonly name: string | ros.IResolvable;
 
     /**
-     * @Property osTag: Operating system image tag. You can call ListImages API to query.
-     */
-    readonly osTag: string | ros.IResolvable;
-
-    /**
      * @Property vSwitchId: VPC in switch ID. Products currently only supports VPC network.
      */
     readonly vSwitchId: string | ros.IResolvable;
@@ -959,6 +954,11 @@ export interface RosClusterProps {
      * - **HighPerformance**: Enables the Elastic RDMA Interface (ERI) and uses the RDMA communication mode.
      */
     readonly networkInterfaceTrafficMode?: string | ros.IResolvable;
+
+    /**
+     * @Property osTag: Operating system image tag. You can call ListImages API to query.
+     */
+    readonly osTag?: string | ros.IResolvable;
 
     /**
      * @Property password: Root password of jump server (login node). 8 to 30 characters, must contain three (upper and lower case letters, numbers and special symbols). ! Supports the following special characters :() `~ @ # $% ^ & * - + = | {} []:; '<>, \/ Be sure to use the HTTPS protocol API call to avoid password leaks that may occur.?.
@@ -1247,7 +1247,6 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('schedulerType', ros.validateString)(properties.schedulerType));
     errors.collect(ros.propertyValidator('accountType', ros.validateString)(properties.accountType));
     errors.collect(ros.propertyValidator('haEnable', ros.validateBoolean)(properties.haEnable));
-    errors.collect(ros.propertyValidator('osTag', ros.requiredValidator)(properties.osTag));
     errors.collect(ros.propertyValidator('osTag', ros.validateString)(properties.osTag));
     if(properties.ecsChargeType && (typeof properties.ecsChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('ecsChargeType', ros.validateAllowedValues)({
@@ -1279,7 +1278,6 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
       'EcsOrderLoginInstanceType': ros.stringToRosTemplate(properties.ecsOrderLoginInstanceType),
       'EcsOrderManagerInstanceType': ros.stringToRosTemplate(properties.ecsOrderManagerInstanceType),
       'Name': ros.stringToRosTemplate(properties.name),
-      'OsTag': ros.stringToRosTemplate(properties.osTag),
       'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
       'AccountType': ros.stringToRosTemplate(properties.accountType),
       'AdditionalVolumes': ros.listMapper(rosClusterAdditionalVolumesPropertyToRosTemplate)(properties.additionalVolumes),
@@ -1303,6 +1301,7 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
       'JobQueue': ros.stringToRosTemplate(properties.jobQueue),
       'KeyPairName': ros.stringToRosTemplate(properties.keyPairName),
       'NetworkInterfaceTrafficMode': ros.stringToRosTemplate(properties.networkInterfaceTrafficMode),
+      'OsTag': ros.stringToRosTemplate(properties.osTag),
       'Password': ros.stringToRosTemplate(properties.password),
       'Period': ros.numberToRosTemplate(properties.period),
       'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
@@ -1393,11 +1392,6 @@ You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2,
      * @Property name: Cluster name. 2-64 characters in length, allowing only include Chinese, letters, numbers, dashes (-) and underscore (_), must begin with a letter or Chinese.
      */
     public name: string | ros.IResolvable;
-
-    /**
-     * @Property osTag: Operating system image tag. You can call ListImages API to query.
-     */
-    public osTag: string | ros.IResolvable;
 
     /**
      * @Property vSwitchId: VPC in switch ID. Products currently only supports VPC network.
@@ -1533,6 +1527,11 @@ You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2,
      * - **HighPerformance**: Enables the Elastic RDMA Interface (ERI) and uses the RDMA communication mode.
      */
     public networkInterfaceTrafficMode: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property osTag: Operating system image tag. You can call ListImages API to query.
+     */
+    public osTag: string | ros.IResolvable | undefined;
 
     /**
      * @Property password: Root password of jump server (login node). 8 to 30 characters, must contain three (upper and lower case letters, numbers and special symbols). ! Supports the following special characters :() `~ @ # $% ^ & * - + = | {} []:; '<>, \/ Be sure to use the HTTPS protocol API call to avoid password leaks that may occur.?.
@@ -1697,7 +1696,6 @@ You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2,
         this.ecsOrderLoginInstanceType = props.ecsOrderLoginInstanceType;
         this.ecsOrderManagerInstanceType = props.ecsOrderManagerInstanceType;
         this.name = props.name;
-        this.osTag = props.osTag;
         this.vSwitchId = props.vSwitchId;
         this.accountType = props.accountType;
         this.additionalVolumes = props.additionalVolumes;
@@ -1721,6 +1719,7 @@ You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2,
         this.jobQueue = props.jobQueue;
         this.keyPairName = props.keyPairName;
         this.networkInterfaceTrafficMode = props.networkInterfaceTrafficMode;
+        this.osTag = props.osTag;
         this.password = props.password;
         this.period = props.period;
         this.periodUnit = props.periodUnit;
@@ -1755,7 +1754,6 @@ You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2,
             ecsOrderLoginInstanceType: this.ecsOrderLoginInstanceType,
             ecsOrderManagerInstanceType: this.ecsOrderManagerInstanceType,
             name: this.name,
-            osTag: this.osTag,
             vSwitchId: this.vSwitchId,
             accountType: this.accountType,
             additionalVolumes: this.additionalVolumes,
@@ -1779,6 +1777,7 @@ You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2,
             jobQueue: this.jobQueue,
             keyPairName: this.keyPairName,
             networkInterfaceTrafficMode: this.networkInterfaceTrafficMode,
+            osTag: this.osTag,
             password: this.password,
             period: this.period,
             periodUnit: this.periodUnit,
@@ -2254,7 +2253,7 @@ function rosClusterV2PropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::EHPC::ClusterV2`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EHPC::ClusterV2`, which is used to create a cluster in Elastic High Performance Computing (E-HPC) of the new version.
  * @Note This class does not contain additional functions, so it is recommended to use the `ClusterV2` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-clusterv2
  */

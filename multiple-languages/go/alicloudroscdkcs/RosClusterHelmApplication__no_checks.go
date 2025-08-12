@@ -112,6 +112,10 @@ func (j *jsiiProxy_RosClusterHelmApplication) validateSetNamespaceParameters(val
 	return nil
 }
 
+func (j *jsiiProxy_RosClusterHelmApplication) validateSetNamespaceDeletionParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosClusterHelmApplication) validateSetRolePolicyParameters(val interface{}) error {
 	return nil
 }

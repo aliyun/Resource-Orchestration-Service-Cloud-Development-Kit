@@ -20,6 +20,11 @@ export interface DiskAttachmentProps {
     readonly instanceId: string | ros.IResolvable;
 
     /**
+     * Property bootable: Whether the disk is bootable.
+     */
+    readonly bootable?: boolean | ros.IResolvable;
+
+    /**
      * Property deleteAutoSnapshot: Whether the auto snapshot is released with the disk. Default to true.
      */
     readonly deleteAutoSnapshot?: boolean | ros.IResolvable;
@@ -33,6 +38,26 @@ export interface DiskAttachmentProps {
      * Property device: The device where the volume is exposed on the instance. could be \/dev\/xvd[b-z]. If not specification, will use default value.
      */
     readonly device?: string | ros.IResolvable;
+
+    /**
+     * Property force: Whether to force the operation.
+     */
+    readonly force?: boolean | ros.IResolvable;
+
+    /**
+     * Property instanceType: The instance type. Allowed values are LingJun and ECS, Default is ECS.
+     */
+    readonly instanceType?: string | ros.IResolvable;
+
+    /**
+     * Property keyPairName: The name of the key pair.
+     */
+    readonly keyPairName?: string | ros.IResolvable;
+
+    /**
+     * Property password: The password for the disk.
+     */
+    readonly password?: string | ros.IResolvable;
 }
 
 /**
@@ -57,7 +82,7 @@ export interface IDiskAttachment extends ros.IResource {
     readonly attrStatus: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::DiskAttachment`, which is used to attach a disk to an ECS instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::DiskAttachment`, which is used to attach a disk to an Elastic Compute Service (ECS) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDiskAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-diskattachment
  */
@@ -95,10 +120,15 @@ export class DiskAttachment extends ros.Resource implements IDiskAttachment {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDiskAttachment = new RosDiskAttachment(this, id,  {
+            keyPairName: props.keyPairName,
+            force: props.force,
             instanceId: props.instanceId,
             device: props.device,
             deleteWithInstance: props.deleteWithInstance,
+            bootable: props.bootable,
             deleteAutoSnapshot: props.deleteAutoSnapshot === undefined || props.deleteAutoSnapshot === null ? true : props.deleteAutoSnapshot,
+            instanceType: props.instanceType === undefined || props.instanceType === null ? 'ECS' : props.instanceType,
+            password: props.password,
             diskId: props.diskId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDiskAttachment;

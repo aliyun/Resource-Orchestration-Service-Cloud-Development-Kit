@@ -17,9 +17,13 @@ type AppProps struct {
 	AppVersion interface{} `field:"optional" json:"appVersion" yaml:"appVersion"`
 	// Property description: The description of the app.
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
+	// Property logProConfiguration: The log pro configuration of the app.
+	LogProConfiguration interface{} `field:"optional" json:"logProConfiguration" yaml:"logProConfiguration"`
 	// Property network: The public network of the app.
 	Network interface{} `field:"optional" json:"network" yaml:"network"`
 	// Property privateNetwork: The private network of the app.
 	PrivateNetwork interface{} `field:"optional" json:"privateNetwork" yaml:"privateNetwork"`
+	// Property scenario: The scenario of the app.
+	Scenario interface{} `field:"optional" json:"scenario" yaml:"scenario"`
 }
 

@@ -100,6 +100,10 @@ func (j *jsiiProxy_RosVpcEndpointServiceAttachment) validateSetServiceIdParamete
 	return nil
 }
 
+func (j *jsiiProxy_RosVpcEndpointServiceAttachment) validateSetZoneIdParameters(val interface{}) error {
+	return nil
+}
+
 func validateNewRosVpcEndpointServiceAttachmentParameters(scope alicloudroscdkcore.Construct, id *string, props *RosVpcEndpointServiceAttachmentProps, enableResourcePropertyConstraint *bool) error {
 	return nil
 }

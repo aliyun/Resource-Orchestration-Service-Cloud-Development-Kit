@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.elasticsearch;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ElasticSearch::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:06.252Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.137Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.elasticsearch.$Module.class, fqn = "@alicloud/ros-cdk-elasticsearch.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -189,6 +189,24 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setVSwitchId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "vSwitchId", java.util.Objects.requireNonNull(value, "vSwitchId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDeleteType() {
+        return software.amazon.jsii.Kernel.get(this, "deleteType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDeleteType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "deleteType", value);
+    }
+
+    /**
+     */
+    public void setDeleteType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "deleteType", value);
     }
 
     /**
@@ -1791,6 +1809,23 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder vSwitchId(final com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.props.vSwitchId(vSwitchId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param deleteType This parameter is required.
+         */
+        public Builder deleteType(final java.lang.String deleteType) {
+            this.props.deleteType(deleteType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param deleteType This parameter is required.
+         */
+        public Builder deleteType(final com.aliyun.ros.cdk.core.IResolvable deleteType) {
+            this.props.deleteType(deleteType);
             return this;
         }
 

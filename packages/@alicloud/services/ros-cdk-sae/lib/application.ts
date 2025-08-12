@@ -15,12 +15,12 @@ export interface ApplicationProps {
     readonly appName: string | ros.IResolvable;
 
     /**
-     * Property cpu: Each instance of the CPU required, in units of milli core, can not be zero. Currently only supports fixed specifications instance type.
+     * Property cpu: The CPU required for each instance. Valid values: 500, 1000, 2000, 4000, 8000, 16000, 32000.
      */
     readonly cpu: number | ros.IResolvable;
 
     /**
-     * Property memory: Each instance of the required memory, in units of MB, can not be zero. Currently only supports fixed specifications instance type.
+     * Property memory: The memory required for each instance, in MB, cannot be 0. One-to-one correspondence with CPU. Valid values: 1024, 2048, 4096, 8192, 12288, 16384, 24576, 32768, 65536, 131072.
      */
     readonly memory: number | ros.IResolvable;
 
@@ -117,6 +117,11 @@ export interface ApplicationProps {
     readonly enableEbpf?: string | ros.IResolvable;
 
     /**
+     * Property enableNewArms: Whether to enable the new ARMS feature.
+     */
+    readonly enableNewArms?: boolean | ros.IResolvable;
+
+    /**
      * Property envs: Container environment variable parameters. For example: [{ "name": "envtmp", "value": "0"}]
      */
     readonly envs?: string | ros.IResolvable;
@@ -200,6 +205,11 @@ export interface ApplicationProps {
     readonly nasId?: string | ros.IResolvable;
 
     /**
+     * Property newSaeVersion: The new SAE version. Supported versions: lite, std, pro.
+     */
+    readonly newSaeVersion?: string | ros.IResolvable;
+
+    /**
      * Property ossAkId: AccessKey ID of the OSS.
      */
     readonly ossAkId?: string | ros.IResolvable;
@@ -264,7 +274,10 @@ export interface ApplicationProps {
      * Property programmingLanguage: Create the stack language for the application. The values are explained as follows:
      * - java: The Java language
      * - php: PHP language.
-     * - other: Multiple languages such as Python, C++, Go,.NET, Node.js, etc.
+     * - python: Python language.
+     * - dotnet: .NET Core language.
+     * - golang: GoLang language.
+     * - other: Multiple languages such as C++, Node.js, etc.
      */
     readonly programmingLanguage?: string | ros.IResolvable;
 
@@ -413,8 +426,8 @@ export class Application extends ros.Resource implements IApplication {
             phpConfig: props.phpConfig,
             mountDesc: props.mountDesc,
             microRegistrationConfig: props.microRegistrationConfig,
-            liveness: props.liveness,
             warStartOptions: props.warStartOptions,
+            liveness: props.liveness,
             memory: props.memory,
             webContainer: props.webContainer,
             cpu: props.cpu,
@@ -432,6 +445,7 @@ export class Application extends ros.Resource implements IApplication {
             postStart: props.postStart,
             baseAppId: props.baseAppId,
             configMapMountDesc: props.configMapMountDesc,
+            newSaeVersion: props.newSaeVersion,
             vpcId: props.vpcId,
             enableEbpf: props.enableEbpf,
             edasContainerVersion: props.edasContainerVersion,
@@ -470,6 +484,7 @@ export class Application extends ros.Resource implements IApplication {
             command: props.command,
             packageUrl: props.packageUrl,
             phpConfigLocation: props.phpConfigLocation,
+            enableNewArms: props.enableNewArms,
             programmingLanguage: props.programmingLanguage,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosApplication;

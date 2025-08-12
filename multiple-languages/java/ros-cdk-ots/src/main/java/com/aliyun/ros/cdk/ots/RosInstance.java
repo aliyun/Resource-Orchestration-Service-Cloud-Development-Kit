@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ots;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::OTS::Instance</code>, which is used to create a Tablestore instance.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::OTS::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.492Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.035Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 

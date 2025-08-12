@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fnf.datasource;
 /**
  * Represents a <code>Schedules</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:07.026Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.748Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fnf.$Module.class, fqn = "@alicloud/ros-cdk-fnf.datasource.ISchedules")
 @software.amazon.jsii.Jsii.Proxy(ISchedules.Jsii$Proxy.class)
 public interface ISchedules extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

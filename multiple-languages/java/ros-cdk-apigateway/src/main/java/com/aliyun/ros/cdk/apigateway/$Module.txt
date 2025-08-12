@@ -4,6 +4,8 @@
 @alicloud/ros-cdk-apigateway.AppProps=com.aliyun.ros.cdk.apigateway.AppProps
 @alicloud/ros-cdk-apigateway.Authorization=com.aliyun.ros.cdk.apigateway.Authorization
 @alicloud/ros-cdk-apigateway.AuthorizationProps=com.aliyun.ros.cdk.apigateway.AuthorizationProps
+@alicloud/ros-cdk-apigateway.Backend=com.aliyun.ros.cdk.apigateway.Backend
+@alicloud/ros-cdk-apigateway.BackendProps=com.aliyun.ros.cdk.apigateway.BackendProps
 @alicloud/ros-cdk-apigateway.CustomDomain=com.aliyun.ros.cdk.apigateway.CustomDomain
 @alicloud/ros-cdk-apigateway.CustomDomainProps=com.aliyun.ros.cdk.apigateway.CustomDomainProps
 @alicloud/ros-cdk-apigateway.Deployment=com.aliyun.ros.cdk.apigateway.Deployment
@@ -13,6 +15,7 @@
 @alicloud/ros-cdk-apigateway.IApi=com.aliyun.ros.cdk.apigateway.IApi
 @alicloud/ros-cdk-apigateway.IApp=com.aliyun.ros.cdk.apigateway.IApp
 @alicloud/ros-cdk-apigateway.IAuthorization=com.aliyun.ros.cdk.apigateway.IAuthorization
+@alicloud/ros-cdk-apigateway.IBackend=com.aliyun.ros.cdk.apigateway.IBackend
 @alicloud/ros-cdk-apigateway.ICustomDomain=com.aliyun.ros.cdk.apigateway.ICustomDomain
 @alicloud/ros-cdk-apigateway.IDeployment=com.aliyun.ros.cdk.apigateway.IDeployment
 @alicloud/ros-cdk-apigateway.IGroup=com.aliyun.ros.cdk.apigateway.IGroup
@@ -54,6 +57,9 @@
 @alicloud/ros-cdk-apigateway.RosAppProps=com.aliyun.ros.cdk.apigateway.RosAppProps
 @alicloud/ros-cdk-apigateway.RosAuthorization=com.aliyun.ros.cdk.apigateway.RosAuthorization
 @alicloud/ros-cdk-apigateway.RosAuthorizationProps=com.aliyun.ros.cdk.apigateway.RosAuthorizationProps
+@alicloud/ros-cdk-apigateway.RosBackend=com.aliyun.ros.cdk.apigateway.RosBackend
+@alicloud/ros-cdk-apigateway.RosBackend.TagsProperty=com.aliyun.ros.cdk.apigateway.RosBackend$TagsProperty
+@alicloud/ros-cdk-apigateway.RosBackendProps=com.aliyun.ros.cdk.apigateway.RosBackendProps
 @alicloud/ros-cdk-apigateway.RosCustomDomain=com.aliyun.ros.cdk.apigateway.RosCustomDomain
 @alicloud/ros-cdk-apigateway.RosCustomDomainProps=com.aliyun.ros.cdk.apigateway.RosCustomDomainProps
 @alicloud/ros-cdk-apigateway.RosDeployment=com.aliyun.ros.cdk.apigateway.RosDeployment

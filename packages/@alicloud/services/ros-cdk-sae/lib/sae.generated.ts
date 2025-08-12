@@ -14,12 +14,12 @@ export interface RosApplicationProps {
     readonly appName: string | ros.IResolvable;
 
     /**
-     * @Property cpu: Each instance of the CPU required, in units of milli core, can not be zero. Currently only supports fixed specifications instance type.
+     * @Property cpu: The CPU required for each instance. Valid values: 500, 1000, 2000, 4000, 8000, 16000, 32000.
      */
     readonly cpu: number | ros.IResolvable;
 
     /**
-     * @Property memory: Each instance of the required memory, in units of MB, can not be zero. Currently only supports fixed specifications instance type.
+     * @Property memory: The memory required for each instance, in MB, cannot be 0. One-to-one correspondence with CPU. Valid values: 1024, 2048, 4096, 8192, 12288, 16384, 24576, 32768, 65536, 131072.
      */
     readonly memory: number | ros.IResolvable;
 
@@ -116,6 +116,11 @@ export interface RosApplicationProps {
     readonly enableEbpf?: string | ros.IResolvable;
 
     /**
+     * @Property enableNewArms: Whether to enable the new ARMS feature.
+     */
+    readonly enableNewArms?: boolean | ros.IResolvable;
+
+    /**
      * @Property envs: Container environment variable parameters. For example: [{ "name": "envtmp", "value": "0"}]
      */
     readonly envs?: string | ros.IResolvable;
@@ -199,6 +204,11 @@ export interface RosApplicationProps {
     readonly nasId?: string | ros.IResolvable;
 
     /**
+     * @Property newSaeVersion: The new SAE version. Supported versions: lite, std, pro.
+     */
+    readonly newSaeVersion?: string | ros.IResolvable;
+
+    /**
      * @Property ossAkId: AccessKey ID of the OSS.
      */
     readonly ossAkId?: string | ros.IResolvable;
@@ -263,7 +273,10 @@ export interface RosApplicationProps {
      * @Property programmingLanguage: Create the stack language for the application. The values are explained as follows:
      * - java: The Java language
      * - php: PHP language.
-     * - other: Multiple languages such as Python, C++, Go,.NET, Node.js, etc.
+     * - python: Python language.
+     * - dotnet: .NET Core language.
+     * - golang: GoLang language.
+     * - other: Multiple languages such as C++, Node.js, etc.
      */
     readonly programmingLanguage?: string | ros.IResolvable;
 
@@ -372,25 +385,23 @@ function RosApplicationPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('phpConfig', ros.validateString)(properties.phpConfig));
     errors.collect(ros.propertyValidator('mountDesc', ros.validateString)(properties.mountDesc));
     errors.collect(ros.propertyValidator('microRegistrationConfig', ros.validateString)(properties.microRegistrationConfig));
-    errors.collect(ros.propertyValidator('liveness', ros.validateString)(properties.liveness));
     errors.collect(ros.propertyValidator('warStartOptions', ros.validateString)(properties.warStartOptions));
+    errors.collect(ros.propertyValidator('liveness', ros.validateString)(properties.liveness));
     errors.collect(ros.propertyValidator('memory', ros.requiredValidator)(properties.memory));
     if(properties.memory && (typeof properties.memory) !== 'object') {
-        errors.collect(ros.propertyValidator('memory', ros.validateRange)({
-            data: properties.memory,
-            min: 1,
-            max: undefined,
-          }));
+        errors.collect(ros.propertyValidator('memory', ros.validateAllowedValues)({
+          data: properties.memory,
+          allowedValues: [1024,2048,4096,8192,12288,16384,24576,32768,65536,131072],
+        }));
     }
     errors.collect(ros.propertyValidator('memory', ros.validateNumber)(properties.memory));
     errors.collect(ros.propertyValidator('webContainer', ros.validateString)(properties.webContainer));
     errors.collect(ros.propertyValidator('cpu', ros.requiredValidator)(properties.cpu));
     if(properties.cpu && (typeof properties.cpu) !== 'object') {
-        errors.collect(ros.propertyValidator('cpu', ros.validateRange)({
-            data: properties.cpu,
-            min: 1,
-            max: undefined,
-          }));
+        errors.collect(ros.propertyValidator('cpu', ros.validateAllowedValues)({
+          data: properties.cpu,
+          allowedValues: [500,1000,2000,4000,8000,16000,32000],
+        }));
     }
     errors.collect(ros.propertyValidator('cpu', ros.validateNumber)(properties.cpu));
     errors.collect(ros.propertyValidator('nasConfigs', ros.validateString)(properties.nasConfigs));
@@ -415,6 +426,13 @@ function RosApplicationPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('postStart', ros.validateString)(properties.postStart));
     errors.collect(ros.propertyValidator('baseAppId', ros.validateString)(properties.baseAppId));
     errors.collect(ros.propertyValidator('configMapMountDesc', ros.validateString)(properties.configMapMountDesc));
+    if(properties.newSaeVersion && (typeof properties.newSaeVersion) !== 'object') {
+        errors.collect(ros.propertyValidator('newSaeVersion', ros.validateAllowedValues)({
+          data: properties.newSaeVersion,
+          allowedValues: ["lite","std","pro"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('newSaeVersion', ros.validateString)(properties.newSaeVersion));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     if(properties.enableEbpf && (typeof properties.enableEbpf) !== 'object') {
         errors.collect(ros.propertyValidator('enableEbpf', ros.validateAllowedValues)({
@@ -446,6 +464,12 @@ function RosApplicationPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('deploy', ros.validateBoolean)(properties.deploy));
     errors.collect(ros.propertyValidator('packageVersion', ros.validateString)(properties.packageVersion));
     errors.collect(ros.propertyValidator('appName', ros.requiredValidator)(properties.appName));
+    if(properties.appName && (typeof properties.appName) !== 'object') {
+        errors.collect(ros.propertyValidator('appName', ros.validateAllowedPattern)({
+          data: properties.appName,
+          reg: /^[a-zA-Z][a-zA-Z0-9-]{0,35}$/
+        }));
+    }
     errors.collect(ros.propertyValidator('appName', ros.validateString)(properties.appName));
     errors.collect(ros.propertyValidator('jdk', ros.validateString)(properties.jdk));
     errors.collect(ros.propertyValidator('readiness', ros.validateString)(properties.readiness));
@@ -482,10 +506,11 @@ function RosApplicationPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('command', ros.validateString)(properties.command));
     errors.collect(ros.propertyValidator('packageUrl', ros.validateString)(properties.packageUrl));
     errors.collect(ros.propertyValidator('phpConfigLocation', ros.validateString)(properties.phpConfigLocation));
+    errors.collect(ros.propertyValidator('enableNewArms', ros.validateBoolean)(properties.enableNewArms));
     if(properties.programmingLanguage && (typeof properties.programmingLanguage) !== 'object') {
         errors.collect(ros.propertyValidator('programmingLanguage', ros.validateAllowedValues)({
           data: properties.programmingLanguage,
-          allowedValues: ["java","php","other"],
+          allowedValues: ["java","php","python","dotnet","golang","other"],
         }));
     }
     errors.collect(ros.propertyValidator('programmingLanguage', ros.validateString)(properties.programmingLanguage));
@@ -526,6 +551,7 @@ function rosApplicationPropsToRosTemplate(properties: any, enableResourcePropert
       'Deploy': ros.booleanToRosTemplate(properties.deploy),
       'EdasContainerVersion': ros.stringToRosTemplate(properties.edasContainerVersion),
       'EnableEbpf': ros.stringToRosTemplate(properties.enableEbpf),
+      'EnableNewArms': ros.booleanToRosTemplate(properties.enableNewArms),
       'Envs': ros.stringToRosTemplate(properties.envs),
       'ImagePullSecrets': ros.stringToRosTemplate(properties.imagePullSecrets),
       'ImageUrl': ros.stringToRosTemplate(properties.imageUrl),
@@ -540,6 +566,7 @@ function rosApplicationPropsToRosTemplate(properties: any, enableResourcePropert
       'MountHost': ros.stringToRosTemplate(properties.mountHost),
       'NasConfigs': ros.stringToRosTemplate(properties.nasConfigs),
       'NasId': ros.stringToRosTemplate(properties.nasId),
+      'NewSaeVersion': ros.stringToRosTemplate(properties.newSaeVersion),
       'OssAkId': ros.stringToRosTemplate(properties.ossAkId),
       'OssAkSecret': ros.stringToRosTemplate(properties.ossAkSecret),
       'OssMountDescs': ros.listMapper(ros.objectToRosTemplate)(properties.ossMountDescs),
@@ -601,12 +628,12 @@ export class RosApplication extends ros.RosResource {
     public appName: string | ros.IResolvable;
 
     /**
-     * @Property cpu: Each instance of the CPU required, in units of milli core, can not be zero. Currently only supports fixed specifications instance type.
+     * @Property cpu: The CPU required for each instance. Valid values: 500, 1000, 2000, 4000, 8000, 16000, 32000.
      */
     public cpu: number | ros.IResolvable;
 
     /**
-     * @Property memory: Each instance of the required memory, in units of MB, can not be zero. Currently only supports fixed specifications instance type.
+     * @Property memory: The memory required for each instance, in MB, cannot be 0. One-to-one correspondence with CPU. Valid values: 1024, 2048, 4096, 8192, 12288, 16384, 24576, 32768, 65536, 131072.
      */
     public memory: number | ros.IResolvable;
 
@@ -703,6 +730,11 @@ export class RosApplication extends ros.RosResource {
     public enableEbpf: string | ros.IResolvable | undefined;
 
     /**
+     * @Property enableNewArms: Whether to enable the new ARMS feature.
+     */
+    public enableNewArms: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property envs: Container environment variable parameters. For example: [{ "name": "envtmp", "value": "0"}]
      */
     public envs: string | ros.IResolvable | undefined;
@@ -786,6 +818,11 @@ export class RosApplication extends ros.RosResource {
     public nasId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property newSaeVersion: The new SAE version. Supported versions: lite, std, pro.
+     */
+    public newSaeVersion: string | ros.IResolvable | undefined;
+
+    /**
      * @Property ossAkId: AccessKey ID of the OSS.
      */
     public ossAkId: string | ros.IResolvable | undefined;
@@ -850,7 +887,10 @@ export class RosApplication extends ros.RosResource {
      * @Property programmingLanguage: Create the stack language for the application. The values are explained as follows:
      * - java: The Java language
      * - php: PHP language.
-     * - other: Multiple languages such as Python, C++, Go,.NET, Node.js, etc.
+     * - python: Python language.
+     * - dotnet: .NET Core language.
+     * - golang: GoLang language.
+     * - other: Multiple languages such as C++, Node.js, etc.
      */
     public programmingLanguage: string | ros.IResolvable | undefined;
 
@@ -975,6 +1015,7 @@ export class RosApplication extends ros.RosResource {
         this.deploy = props.deploy;
         this.edasContainerVersion = props.edasContainerVersion;
         this.enableEbpf = props.enableEbpf;
+        this.enableNewArms = props.enableNewArms;
         this.envs = props.envs;
         this.imagePullSecrets = props.imagePullSecrets;
         this.imageUrl = props.imageUrl;
@@ -989,6 +1030,7 @@ export class RosApplication extends ros.RosResource {
         this.mountHost = props.mountHost;
         this.nasConfigs = props.nasConfigs;
         this.nasId = props.nasId;
+        this.newSaeVersion = props.newSaeVersion;
         this.ossAkId = props.ossAkId;
         this.ossAkSecret = props.ossAkSecret;
         this.ossMountDescs = props.ossMountDescs;
@@ -1042,6 +1084,7 @@ export class RosApplication extends ros.RosResource {
             deploy: this.deploy,
             edasContainerVersion: this.edasContainerVersion,
             enableEbpf: this.enableEbpf,
+            enableNewArms: this.enableNewArms,
             envs: this.envs,
             imagePullSecrets: this.imagePullSecrets,
             imageUrl: this.imageUrl,
@@ -1056,6 +1099,7 @@ export class RosApplication extends ros.RosResource {
             mountHost: this.mountHost,
             nasConfigs: this.nasConfigs,
             nasId: this.nasId,
+            newSaeVersion: this.newSaeVersion,
             ossAkId: this.ossAkId,
             ossAkSecret: this.ossAkSecret,
             ossMountDescs: this.ossMountDescs,
@@ -2425,6 +2469,168 @@ export class RosNamespace extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosNamespacePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosSecret`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-secret
+ */
+export interface RosSecretProps {
+
+    /**
+     * @Property namespaceId: The namespace ID where the Secret instance resides. If the namespace you are in is the default namespace, you just need to fill in the RegionId.
+     */
+    readonly namespaceId: string | ros.IResolvable;
+
+    /**
+     * @Property secretData: Secret key-value pair data, required.The format is as follows:
+     * {"Data":"{"k1":"v1", "k2":"v2"}"}
+     * k represents the key and v represents the value.
+     */
+    readonly secretData: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property secretName: Secret instance name.Allows combinations of numbers, letters, en dash (-) and underscores (_) and only start with letters.
+     */
+    readonly secretName: string | ros.IResolvable;
+
+    /**
+     * @Property secretType: The currently supported Secret instance type.The values are as follows:
+     * kubernetes.io\/dockerconfigjson: A confidential dictionary that stores the username and password of the mirror repository, used to pull mirror authentication during deployment.
+     */
+    readonly secretType: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSecretProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSecretProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSecretPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('secretName', ros.requiredValidator)(properties.secretName));
+    if(properties.secretName && (typeof properties.secretName) !== 'object') {
+        errors.collect(ros.propertyValidator('secretName', ros.validateAllowedPattern)({
+          data: properties.secretName,
+          reg: /^[a-zA-Z][a-zA-Z0-9_-]*$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('secretName', ros.validateString)(properties.secretName));
+    errors.collect(ros.propertyValidator('secretType', ros.requiredValidator)(properties.secretType));
+    if(properties.secretType && (typeof properties.secretType) !== 'object') {
+        errors.collect(ros.propertyValidator('secretType', ros.validateAllowedValues)({
+          data: properties.secretType,
+          allowedValues: ["Opaque","kubernetes.io/dockerconfigjson","kubernetes.io/tls"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('secretType', ros.validateString)(properties.secretType));
+    errors.collect(ros.propertyValidator('namespaceId', ros.requiredValidator)(properties.namespaceId));
+    errors.collect(ros.propertyValidator('namespaceId', ros.validateString)(properties.namespaceId));
+    errors.collect(ros.propertyValidator('secretData', ros.requiredValidator)(properties.secretData));
+    errors.collect(ros.propertyValidator('secretData', ros.hashValidator(ros.validateAny))(properties.secretData));
+    return errors.wrap('supplied properties not correct for "RosSecretProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SAE::Secret` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSecretProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SAE::Secret` resource.
+ */
+// @ts-ignore TS6133
+function rosSecretPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSecretPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'NamespaceId': ros.stringToRosTemplate(properties.namespaceId),
+      'SecretData': ros.hashMapper(ros.objectToRosTemplate)(properties.secretData),
+      'SecretName': ros.stringToRosTemplate(properties.secretName),
+      'SecretType': ros.stringToRosTemplate(properties.secretType),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::Secret`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Secret` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-secret
+ */
+export class RosSecret extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SAE::Secret";
+
+    /**
+     * @Attribute NamespaceId: The namespace ID that the Secret instance belongs to.
+     */
+    public readonly attrNamespaceId: ros.IResolvable;
+
+    /**
+     * @Attribute SecretId: The ID of the secret.
+     */
+    public readonly attrSecretId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property namespaceId: The namespace ID where the Secret instance resides. If the namespace you are in is the default namespace, you just need to fill in the RegionId.
+     */
+    public namespaceId: string | ros.IResolvable;
+
+    /**
+     * @Property secretData: Secret key-value pair data, required.The format is as follows:
+     * {"Data":"{"k1":"v1", "k2":"v2"}"}
+     * k represents the key and v represents the value.
+     */
+    public secretData: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property secretName: Secret instance name.Allows combinations of numbers, letters, en dash (-) and underscores (_) and only start with letters.
+     */
+    public secretName: string | ros.IResolvable;
+
+    /**
+     * @Property secretType: The currently supported Secret instance type.The values are as follows:
+     * kubernetes.io\/dockerconfigjson: A confidential dictionary that stores the username and password of the mirror repository, used to pull mirror authentication during deployment.
+     */
+    public secretType: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSecretProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSecret.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrNamespaceId = this.getAtt('NamespaceId');
+        this.attrSecretId = this.getAtt('SecretId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.namespaceId = props.namespaceId;
+        this.secretData = props.secretData;
+        this.secretName = props.secretName;
+        this.secretType = props.secretType;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            namespaceId: this.namespaceId,
+            secretData: this.secretData,
+            secretName: this.secretName,
+            secretType: this.secretType,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSecretPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.maxcompute;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::MaxCompute::Project</code>, which is used to create a MaxCompute project.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:07.942Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.500Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.maxcompute.$Module.class, fqn = "@alicloud/ros-cdk-maxcompute.Project")
 public class Project extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.maxcompute.IProject {
 
@@ -238,6 +238,31 @@ public class Project extends com.aliyun.ros.cdk.core.Resource implements com.ali
          */
         public Builder properties(final com.aliyun.ros.cdk.maxcompute.RosProject.PropertiesProperty properties) {
             this.props.properties(properties);
+            return this;
+        }
+
+        /**
+         * Property supportSchemaLevels: Whether to support schema level.
+         * <p>
+         * Default: False
+         * <p>
+         * @return {@code this}
+         * @param supportSchemaLevels Property supportSchemaLevels: Whether to support schema level. This parameter is required.
+         */
+        public Builder supportSchemaLevels(final java.lang.Boolean supportSchemaLevels) {
+            this.props.supportSchemaLevels(supportSchemaLevels);
+            return this;
+        }
+        /**
+         * Property supportSchemaLevels: Whether to support schema level.
+         * <p>
+         * Default: False
+         * <p>
+         * @return {@code this}
+         * @param supportSchemaLevels Property supportSchemaLevels: Whether to support schema level. This parameter is required.
+         */
+        public Builder supportSchemaLevels(final com.aliyun.ros.cdk.core.IResolvable supportSchemaLevels) {
+            this.props.supportSchemaLevels(supportSchemaLevels);
             return this;
         }
 

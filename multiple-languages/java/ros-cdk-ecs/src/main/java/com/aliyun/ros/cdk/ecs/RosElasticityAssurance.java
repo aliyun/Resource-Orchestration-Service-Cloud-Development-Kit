@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ECS::ElasticityAssurance</code>, which is used to create an elasticity assurance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:04.919Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.414Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosElasticityAssurance")
 public class RosElasticityAssurance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -131,6 +131,42 @@ public class RosElasticityAssurance extends com.aliyun.ros.cdk.core.RosResource 
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenew() {
+        return software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAutoRenew(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "autoRenew", value);
+    }
+
+    /**
+     */
+    public void setAutoRenew(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "autoRenew", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenewPeriod() {
+        return software.amazon.jsii.Kernel.get(this, "autoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAutoRenewPeriod(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "autoRenewPeriod", value);
+    }
+
+    /**
+     */
+    public void setAutoRenewPeriod(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "autoRenewPeriod", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -145,6 +181,24 @@ public class RosElasticityAssurance extends com.aliyun.ros.cdk.core.RosResource 
      */
     public void setDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInstanceCpuCoreCount() {
+        return software.amazon.jsii.Kernel.get(this, "instanceCpuCoreCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setInstanceCpuCoreCount(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "instanceCpuCoreCount", value);
+    }
+
+    /**
+     */
+    public void setInstanceCpuCoreCount(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "instanceCpuCoreCount", value);
     }
 
     /**
@@ -199,6 +253,40 @@ public class RosElasticityAssurance extends com.aliyun.ros.cdk.core.RosResource 
      */
     public void setPrivatePoolOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.ecs.RosElasticityAssurance.PrivatePoolOptionsProperty value) {
         software.amazon.jsii.Kernel.set(this, "privatePoolOptions", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRecurrenceRules() {
+        return software.amazon.jsii.Kernel.get(this, "recurrenceRules", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setRecurrenceRules(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "recurrenceRules", value);
+    }
+
+    /**
+     */
+    public void setRecurrenceRules(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.ecs.RosElasticityAssurance.RecurrenceRulesProperty)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.ecs.RosElasticityAssurance.RecurrenceRulesProperty; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "recurrenceRules", value);
     }
 
     /**
@@ -416,6 +504,264 @@ public class RosElasticityAssurance extends com.aliyun.ros.cdk.core.RosResource 
             public final int hashCode() {
                 int result = this.matchCriteria != null ? this.matchCriteria.hashCode() : 0;
                 result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosElasticityAssurance.RecurrenceRulesProperty")
+    @software.amazon.jsii.Jsii.Proxy(RecurrenceRulesProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface RecurrenceRulesProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEndHour() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getRecurrenceType() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getRecurrenceValue() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getStartHour() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link RecurrenceRulesProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link RecurrenceRulesProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<RecurrenceRulesProperty> {
+            java.lang.Object endHour;
+            java.lang.Object recurrenceType;
+            java.lang.Object recurrenceValue;
+            java.lang.Object startHour;
+
+            /**
+             * Sets the value of {@link RecurrenceRulesProperty#getEndHour}
+             * @param endHour the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder endHour(java.lang.Number endHour) {
+                this.endHour = endHour;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link RecurrenceRulesProperty#getEndHour}
+             * @param endHour the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder endHour(com.aliyun.ros.cdk.core.IResolvable endHour) {
+                this.endHour = endHour;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link RecurrenceRulesProperty#getRecurrenceType}
+             * @param recurrenceType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder recurrenceType(java.lang.String recurrenceType) {
+                this.recurrenceType = recurrenceType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link RecurrenceRulesProperty#getRecurrenceType}
+             * @param recurrenceType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder recurrenceType(com.aliyun.ros.cdk.core.IResolvable recurrenceType) {
+                this.recurrenceType = recurrenceType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link RecurrenceRulesProperty#getRecurrenceValue}
+             * @param recurrenceValue the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder recurrenceValue(java.lang.String recurrenceValue) {
+                this.recurrenceValue = recurrenceValue;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link RecurrenceRulesProperty#getRecurrenceValue}
+             * @param recurrenceValue the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder recurrenceValue(com.aliyun.ros.cdk.core.IResolvable recurrenceValue) {
+                this.recurrenceValue = recurrenceValue;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link RecurrenceRulesProperty#getStartHour}
+             * @param startHour the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder startHour(java.lang.Number startHour) {
+                this.startHour = startHour;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link RecurrenceRulesProperty#getStartHour}
+             * @param startHour the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder startHour(com.aliyun.ros.cdk.core.IResolvable startHour) {
+                this.startHour = startHour;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link RecurrenceRulesProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public RecurrenceRulesProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link RecurrenceRulesProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RecurrenceRulesProperty {
+            private final java.lang.Object endHour;
+            private final java.lang.Object recurrenceType;
+            private final java.lang.Object recurrenceValue;
+            private final java.lang.Object startHour;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.endHour = software.amazon.jsii.Kernel.get(this, "endHour", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.recurrenceType = software.amazon.jsii.Kernel.get(this, "recurrenceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.recurrenceValue = software.amazon.jsii.Kernel.get(this, "recurrenceValue", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.startHour = software.amazon.jsii.Kernel.get(this, "startHour", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.endHour = builder.endHour;
+                this.recurrenceType = builder.recurrenceType;
+                this.recurrenceValue = builder.recurrenceValue;
+                this.startHour = builder.startHour;
+            }
+
+            @Override
+            public final java.lang.Object getEndHour() {
+                return this.endHour;
+            }
+
+            @Override
+            public final java.lang.Object getRecurrenceType() {
+                return this.recurrenceType;
+            }
+
+            @Override
+            public final java.lang.Object getRecurrenceValue() {
+                return this.recurrenceValue;
+            }
+
+            @Override
+            public final java.lang.Object getStartHour() {
+                return this.startHour;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getEndHour() != null) {
+                    data.set("endHour", om.valueToTree(this.getEndHour()));
+                }
+                if (this.getRecurrenceType() != null) {
+                    data.set("recurrenceType", om.valueToTree(this.getRecurrenceType()));
+                }
+                if (this.getRecurrenceValue() != null) {
+                    data.set("recurrenceValue", om.valueToTree(this.getRecurrenceValue()));
+                }
+                if (this.getStartHour() != null) {
+                    data.set("startHour", om.valueToTree(this.getStartHour()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ecs.RosElasticityAssurance.RecurrenceRulesProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                RecurrenceRulesProperty.Jsii$Proxy that = (RecurrenceRulesProperty.Jsii$Proxy) o;
+
+                if (this.endHour != null ? !this.endHour.equals(that.endHour) : that.endHour != null) return false;
+                if (this.recurrenceType != null ? !this.recurrenceType.equals(that.recurrenceType) : that.recurrenceType != null) return false;
+                if (this.recurrenceValue != null ? !this.recurrenceValue.equals(that.recurrenceValue) : that.recurrenceValue != null) return false;
+                return this.startHour != null ? this.startHour.equals(that.startHour) : that.startHour == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.endHour != null ? this.endHour.hashCode() : 0;
+                result = 31 * result + (this.recurrenceType != null ? this.recurrenceType.hashCode() : 0);
+                result = 31 * result + (this.recurrenceValue != null ? this.recurrenceValue.hashCode() : 0);
+                result = 31 * result + (this.startHour != null ? this.startHour.hashCode() : 0);
                 return result;
             }
         }
@@ -672,6 +1018,40 @@ public class RosElasticityAssurance extends com.aliyun.ros.cdk.core.RosResource 
 
         /**
          * @return {@code this}
+         * @param autoRenew This parameter is required.
+         */
+        public Builder autoRenew(final java.lang.Boolean autoRenew) {
+            this.props.autoRenew(autoRenew);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param autoRenew This parameter is required.
+         */
+        public Builder autoRenew(final com.aliyun.ros.cdk.core.IResolvable autoRenew) {
+            this.props.autoRenew(autoRenew);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param autoRenewPeriod This parameter is required.
+         */
+        public Builder autoRenewPeriod(final java.lang.Number autoRenewPeriod) {
+            this.props.autoRenewPeriod(autoRenewPeriod);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param autoRenewPeriod This parameter is required.
+         */
+        public Builder autoRenewPeriod(final com.aliyun.ros.cdk.core.IResolvable autoRenewPeriod) {
+            this.props.autoRenewPeriod(autoRenewPeriod);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param description This parameter is required.
          */
         public Builder description(final java.lang.String description) {
@@ -684,6 +1064,23 @@ public class RosElasticityAssurance extends com.aliyun.ros.cdk.core.RosResource 
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param instanceCpuCoreCount This parameter is required.
+         */
+        public Builder instanceCpuCoreCount(final java.lang.Number instanceCpuCoreCount) {
+            this.props.instanceCpuCoreCount(instanceCpuCoreCount);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param instanceCpuCoreCount This parameter is required.
+         */
+        public Builder instanceCpuCoreCount(final com.aliyun.ros.cdk.core.IResolvable instanceCpuCoreCount) {
+            this.props.instanceCpuCoreCount(instanceCpuCoreCount);
             return this;
         }
 
@@ -735,6 +1132,23 @@ public class RosElasticityAssurance extends com.aliyun.ros.cdk.core.RosResource 
          */
         public Builder privatePoolOptions(final com.aliyun.ros.cdk.ecs.RosElasticityAssurance.PrivatePoolOptionsProperty privatePoolOptions) {
             this.props.privatePoolOptions(privatePoolOptions);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param recurrenceRules This parameter is required.
+         */
+        public Builder recurrenceRules(final com.aliyun.ros.cdk.core.IResolvable recurrenceRules) {
+            this.props.recurrenceRules(recurrenceRules);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param recurrenceRules This parameter is required.
+         */
+        public Builder recurrenceRules(final java.util.List<? extends java.lang.Object> recurrenceRules) {
+            this.props.recurrenceRules(recurrenceRules);
             return this;
         }
 

@@ -63,7 +63,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms.Datasource
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: ChannelsAliIm: ChannelsAliIM.
+        /// <strong>Attribute</strong>: ChannelsAliIm: ChannelsAliIm.
         /// </remarks>
         [JsiiProperty(name: "attrChannelsAliIm", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrChannelsAliIm
@@ -99,7 +99,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms.Datasource
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: ChannelsStateAliIm: ChannelsStateAliIM.
+        /// <strong>Attribute</strong>: ChannelsStateAliIm: ChannelsStateAliIm.
         /// </remarks>
         [JsiiProperty(name: "attrChannelsStateAliIm", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrChannelsStateAliIm

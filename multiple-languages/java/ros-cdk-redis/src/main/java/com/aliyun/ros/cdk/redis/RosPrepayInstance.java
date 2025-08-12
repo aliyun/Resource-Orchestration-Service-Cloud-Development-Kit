@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::REDIS::PrepayInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:09.888Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:50.063Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.RosPrepayInstance")
 public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -529,6 +529,24 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getReadOnlyCount() {
+        return software.amazon.jsii.Kernel.get(this, "readOnlyCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setReadOnlyCount(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "readOnlyCount", value);
+    }
+
+    /**
+     */
+    public void setReadOnlyCount(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "readOnlyCount", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -615,6 +633,24 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setSslEnabled(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "sslEnabled", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSubscriptionDeletionForce() {
+        return software.amazon.jsii.Kernel.get(this, "subscriptionDeletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSubscriptionDeletionForce(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "subscriptionDeletionForce", value);
+    }
+
+    /**
+     */
+    public void setSubscriptionDeletionForce(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "subscriptionDeletionForce", value);
     }
 
     /**
@@ -2695,6 +2731,23 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param readOnlyCount This parameter is required.
+         */
+        public Builder readOnlyCount(final java.lang.Number readOnlyCount) {
+            this.props.readOnlyCount(readOnlyCount);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param readOnlyCount This parameter is required.
+         */
+        public Builder readOnlyCount(final com.aliyun.ros.cdk.core.IResolvable readOnlyCount) {
+            this.props.readOnlyCount(readOnlyCount);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param resourceGroupId This parameter is required.
          */
         public Builder resourceGroupId(final java.lang.String resourceGroupId) {
@@ -2775,6 +2828,23 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder sslEnabled(final com.aliyun.ros.cdk.core.IResolvable sslEnabled) {
             this.props.sslEnabled(sslEnabled);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param subscriptionDeletionForce This parameter is required.
+         */
+        public Builder subscriptionDeletionForce(final java.lang.Boolean subscriptionDeletionForce) {
+            this.props.subscriptionDeletionForce(subscriptionDeletionForce);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param subscriptionDeletionForce This parameter is required.
+         */
+        public Builder subscriptionDeletionForce(final com.aliyun.ros.cdk.core.IResolvable subscriptionDeletionForce) {
+            this.props.subscriptionDeletionForce(subscriptionDeletionForce);
             return this;
         }
 

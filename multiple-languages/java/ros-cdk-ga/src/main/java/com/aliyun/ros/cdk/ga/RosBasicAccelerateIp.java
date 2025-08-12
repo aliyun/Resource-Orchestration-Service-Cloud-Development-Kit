@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ga;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::GA::BasicAccelerateIp</code>, which is used to create an accelerated IP address for a basic Global Accelerator (GA) instance.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::GA::BasicAccelerateIp</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:07.160Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.873Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.RosBasicAccelerateIp")
 public class RosBasicAccelerateIp extends com.aliyun.ros.cdk.core.RosResource {
 

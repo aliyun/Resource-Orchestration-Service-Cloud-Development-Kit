@@ -64,7 +64,7 @@ function rosImagePropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ENS::Image`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ENS::Image`, which is used to query the information about a custom image.
  * @Note This class does not contain additional functions, so it is recommended to use the `Image` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ens-image
  */
@@ -253,7 +253,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ENS::Instance`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ENS::Instance`, which is used to query the information about an Edge Node Service (ENS) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ens-instance
  */

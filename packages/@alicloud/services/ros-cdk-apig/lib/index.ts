@@ -13,3 +13,4 @@ export * from './service';
 
 // ALIYUN::APIG Resources:
 export * from './apig.generated';
+export * as datasource from './datasource';

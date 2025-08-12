@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.eventbridge;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::EventBridge::Rule</code>, which is used to create an event rule for an event bus.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:06.885Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.647Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eventbridge.$Module.class, fqn = "@alicloud/ros-cdk-eventbridge.RosRule")
 public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -205,6 +205,256 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setStatus(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "status", value);
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eventbridge.$Module.class, fqn = "@alicloud/ros-cdk-eventbridge.RosRule.ConcurrentConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(ConcurrentConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface ConcurrentConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getConcurrency();
+
+        /**
+         * @return a {@link Builder} of {@link ConcurrentConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link ConcurrentConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<ConcurrentConfigProperty> {
+            java.lang.Object concurrency;
+
+            /**
+             * Sets the value of {@link ConcurrentConfigProperty#getConcurrency}
+             * @param concurrency the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder concurrency(java.lang.Number concurrency) {
+                this.concurrency = concurrency;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConcurrentConfigProperty#getConcurrency}
+             * @param concurrency the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder concurrency(com.aliyun.ros.cdk.core.IResolvable concurrency) {
+                this.concurrency = concurrency;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link ConcurrentConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public ConcurrentConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link ConcurrentConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ConcurrentConfigProperty {
+            private final java.lang.Object concurrency;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.concurrency = software.amazon.jsii.Kernel.get(this, "concurrency", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.concurrency = java.util.Objects.requireNonNull(builder.concurrency, "concurrency is required");
+            }
+
+            @Override
+            public final java.lang.Object getConcurrency() {
+                return this.concurrency;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("concurrency", om.valueToTree(this.getConcurrency()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-eventbridge.RosRule.ConcurrentConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                ConcurrentConfigProperty.Jsii$Proxy that = (ConcurrentConfigProperty.Jsii$Proxy) o;
+
+                return this.concurrency.equals(that.concurrency);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.concurrency.hashCode();
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eventbridge.$Module.class, fqn = "@alicloud/ros-cdk-eventbridge.RosRule.DeadLetterQueueProperty")
+    @software.amazon.jsii.Jsii.Proxy(DeadLetterQueueProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface DeadLetterQueueProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getArn();
+
+        /**
+         * @return a {@link Builder} of {@link DeadLetterQueueProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link DeadLetterQueueProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<DeadLetterQueueProperty> {
+            java.lang.Object arn;
+
+            /**
+             * Sets the value of {@link DeadLetterQueueProperty#getArn}
+             * @param arn the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder arn(java.lang.String arn) {
+                this.arn = arn;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DeadLetterQueueProperty#getArn}
+             * @param arn the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder arn(com.aliyun.ros.cdk.core.IResolvable arn) {
+                this.arn = arn;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link DeadLetterQueueProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public DeadLetterQueueProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link DeadLetterQueueProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DeadLetterQueueProperty {
+            private final java.lang.Object arn;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.arn = software.amazon.jsii.Kernel.get(this, "arn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.arn = java.util.Objects.requireNonNull(builder.arn, "arn is required");
+            }
+
+            @Override
+            public final java.lang.Object getArn() {
+                return this.arn;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("arn", om.valueToTree(this.getArn()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-eventbridge.RosRule.DeadLetterQueueProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                DeadLetterQueueProperty.Jsii$Proxy that = (DeadLetterQueueProperty.Jsii$Proxy) o;
+
+                return this.arn.equals(that.arn);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.arn.hashCode();
+                return result;
+            }
+        }
     }
     /**
      */
@@ -482,6 +732,27 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getConcurrentConfig() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDeadLetterQueue() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getErrorsTolerance() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getPushRetryStrategy() {
             return null;
         }
@@ -502,6 +773,9 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object identity;
             java.lang.Object paramList;
             java.lang.Object type;
+            java.lang.Object concurrentConfig;
+            java.lang.Object deadLetterQueue;
+            java.lang.Object errorsTolerance;
             java.lang.Object pushRetryStrategy;
 
             /**
@@ -593,6 +867,72 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link TargetsProperty#getConcurrentConfig}
+             * @param concurrentConfig the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder concurrentConfig(com.aliyun.ros.cdk.core.IResolvable concurrentConfig) {
+                this.concurrentConfig = concurrentConfig;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TargetsProperty#getConcurrentConfig}
+             * @param concurrentConfig the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder concurrentConfig(com.aliyun.ros.cdk.eventbridge.RosRule.ConcurrentConfigProperty concurrentConfig) {
+                this.concurrentConfig = concurrentConfig;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TargetsProperty#getDeadLetterQueue}
+             * @param deadLetterQueue the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder deadLetterQueue(com.aliyun.ros.cdk.core.IResolvable deadLetterQueue) {
+                this.deadLetterQueue = deadLetterQueue;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TargetsProperty#getDeadLetterQueue}
+             * @param deadLetterQueue the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder deadLetterQueue(com.aliyun.ros.cdk.eventbridge.RosRule.DeadLetterQueueProperty deadLetterQueue) {
+                this.deadLetterQueue = deadLetterQueue;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TargetsProperty#getErrorsTolerance}
+             * @param errorsTolerance the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder errorsTolerance(java.lang.String errorsTolerance) {
+                this.errorsTolerance = errorsTolerance;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TargetsProperty#getErrorsTolerance}
+             * @param errorsTolerance the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder errorsTolerance(com.aliyun.ros.cdk.core.IResolvable errorsTolerance) {
+                this.errorsTolerance = errorsTolerance;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link TargetsProperty#getPushRetryStrategy}
              * @param pushRetryStrategy the value to be set.
              * @return {@code this}
@@ -636,6 +976,9 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object identity;
             private final java.lang.Object paramList;
             private final java.lang.Object type;
+            private final java.lang.Object concurrentConfig;
+            private final java.lang.Object deadLetterQueue;
+            private final java.lang.Object errorsTolerance;
             private final java.lang.Object pushRetryStrategy;
 
             /**
@@ -648,6 +991,9 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
                 this.identity = software.amazon.jsii.Kernel.get(this, "identity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.paramList = software.amazon.jsii.Kernel.get(this, "paramList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.concurrentConfig = software.amazon.jsii.Kernel.get(this, "concurrentConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.deadLetterQueue = software.amazon.jsii.Kernel.get(this, "deadLetterQueue", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.errorsTolerance = software.amazon.jsii.Kernel.get(this, "errorsTolerance", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.pushRetryStrategy = software.amazon.jsii.Kernel.get(this, "pushRetryStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
@@ -660,6 +1006,9 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
                 this.identity = java.util.Objects.requireNonNull(builder.identity, "identity is required");
                 this.paramList = java.util.Objects.requireNonNull(builder.paramList, "paramList is required");
                 this.type = java.util.Objects.requireNonNull(builder.type, "type is required");
+                this.concurrentConfig = builder.concurrentConfig;
+                this.deadLetterQueue = builder.deadLetterQueue;
+                this.errorsTolerance = builder.errorsTolerance;
                 this.pushRetryStrategy = builder.pushRetryStrategy;
             }
 
@@ -684,6 +1033,21 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getConcurrentConfig() {
+                return this.concurrentConfig;
+            }
+
+            @Override
+            public final java.lang.Object getDeadLetterQueue() {
+                return this.deadLetterQueue;
+            }
+
+            @Override
+            public final java.lang.Object getErrorsTolerance() {
+                return this.errorsTolerance;
+            }
+
+            @Override
             public final java.lang.Object getPushRetryStrategy() {
                 return this.pushRetryStrategy;
             }
@@ -698,6 +1062,15 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
                 data.set("identity", om.valueToTree(this.getIdentity()));
                 data.set("paramList", om.valueToTree(this.getParamList()));
                 data.set("type", om.valueToTree(this.getType()));
+                if (this.getConcurrentConfig() != null) {
+                    data.set("concurrentConfig", om.valueToTree(this.getConcurrentConfig()));
+                }
+                if (this.getDeadLetterQueue() != null) {
+                    data.set("deadLetterQueue", om.valueToTree(this.getDeadLetterQueue()));
+                }
+                if (this.getErrorsTolerance() != null) {
+                    data.set("errorsTolerance", om.valueToTree(this.getErrorsTolerance()));
+                }
                 if (this.getPushRetryStrategy() != null) {
                     data.set("pushRetryStrategy", om.valueToTree(this.getPushRetryStrategy()));
                 }
@@ -723,6 +1096,9 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
                 if (!identity.equals(that.identity)) return false;
                 if (!paramList.equals(that.paramList)) return false;
                 if (!type.equals(that.type)) return false;
+                if (this.concurrentConfig != null ? !this.concurrentConfig.equals(that.concurrentConfig) : that.concurrentConfig != null) return false;
+                if (this.deadLetterQueue != null ? !this.deadLetterQueue.equals(that.deadLetterQueue) : that.deadLetterQueue != null) return false;
+                if (this.errorsTolerance != null ? !this.errorsTolerance.equals(that.errorsTolerance) : that.errorsTolerance != null) return false;
                 return this.pushRetryStrategy != null ? this.pushRetryStrategy.equals(that.pushRetryStrategy) : that.pushRetryStrategy == null;
             }
 
@@ -732,6 +1108,9 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.identity.hashCode());
                 result = 31 * result + (this.paramList.hashCode());
                 result = 31 * result + (this.type.hashCode());
+                result = 31 * result + (this.concurrentConfig != null ? this.concurrentConfig.hashCode() : 0);
+                result = 31 * result + (this.deadLetterQueue != null ? this.deadLetterQueue.hashCode() : 0);
+                result = 31 * result + (this.errorsTolerance != null ? this.errorsTolerance.hashCode() : 0);
                 result = 31 * result + (this.pushRetryStrategy != null ? this.pushRetryStrategy.hashCode() : 0);
                 return result;
             }

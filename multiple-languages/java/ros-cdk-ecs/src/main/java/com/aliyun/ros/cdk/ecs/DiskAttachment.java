@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::DiskAttachment</code>, which is used to attach a disk to an ECS instance.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::DiskAttachment</code>, which is used to attach a disk to an Elastic Compute Service (ECS) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:04.581Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.153Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.DiskAttachment")
 public class DiskAttachment extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.IDiskAttachment {
 
@@ -170,6 +170,27 @@ public class DiskAttachment extends com.aliyun.ros.cdk.core.Resource implements 
         }
 
         /**
+         * Property bootable: Whether the disk is bootable.
+         * <p>
+         * @return {@code this}
+         * @param bootable Property bootable: Whether the disk is bootable. This parameter is required.
+         */
+        public Builder bootable(final java.lang.Boolean bootable) {
+            this.props.bootable(bootable);
+            return this;
+        }
+        /**
+         * Property bootable: Whether the disk is bootable.
+         * <p>
+         * @return {@code this}
+         * @param bootable Property bootable: Whether the disk is bootable. This parameter is required.
+         */
+        public Builder bootable(final com.aliyun.ros.cdk.core.IResolvable bootable) {
+            this.props.bootable(bootable);
+            return this;
+        }
+
+        /**
          * Property deleteAutoSnapshot: Whether the auto snapshot is released with the disk.
          * <p>
          * Default to true.
@@ -237,6 +258,94 @@ public class DiskAttachment extends com.aliyun.ros.cdk.core.Resource implements 
          */
         public Builder device(final com.aliyun.ros.cdk.core.IResolvable device) {
             this.props.device(device);
+            return this;
+        }
+
+        /**
+         * Property force: Whether to force the operation.
+         * <p>
+         * @return {@code this}
+         * @param force Property force: Whether to force the operation. This parameter is required.
+         */
+        public Builder force(final java.lang.Boolean force) {
+            this.props.force(force);
+            return this;
+        }
+        /**
+         * Property force: Whether to force the operation.
+         * <p>
+         * @return {@code this}
+         * @param force Property force: Whether to force the operation. This parameter is required.
+         */
+        public Builder force(final com.aliyun.ros.cdk.core.IResolvable force) {
+            this.props.force(force);
+            return this;
+        }
+
+        /**
+         * Property instanceType: The instance type.
+         * <p>
+         * Allowed values are LingJun and ECS, Default is ECS.
+         * <p>
+         * @return {@code this}
+         * @param instanceType Property instanceType: The instance type. This parameter is required.
+         */
+        public Builder instanceType(final java.lang.String instanceType) {
+            this.props.instanceType(instanceType);
+            return this;
+        }
+        /**
+         * Property instanceType: The instance type.
+         * <p>
+         * Allowed values are LingJun and ECS, Default is ECS.
+         * <p>
+         * @return {@code this}
+         * @param instanceType Property instanceType: The instance type. This parameter is required.
+         */
+        public Builder instanceType(final com.aliyun.ros.cdk.core.IResolvable instanceType) {
+            this.props.instanceType(instanceType);
+            return this;
+        }
+
+        /**
+         * Property keyPairName: The name of the key pair.
+         * <p>
+         * @return {@code this}
+         * @param keyPairName Property keyPairName: The name of the key pair. This parameter is required.
+         */
+        public Builder keyPairName(final java.lang.String keyPairName) {
+            this.props.keyPairName(keyPairName);
+            return this;
+        }
+        /**
+         * Property keyPairName: The name of the key pair.
+         * <p>
+         * @return {@code this}
+         * @param keyPairName Property keyPairName: The name of the key pair. This parameter is required.
+         */
+        public Builder keyPairName(final com.aliyun.ros.cdk.core.IResolvable keyPairName) {
+            this.props.keyPairName(keyPairName);
+            return this;
+        }
+
+        /**
+         * Property password: The password for the disk.
+         * <p>
+         * @return {@code this}
+         * @param password Property password: The password for the disk. This parameter is required.
+         */
+        public Builder password(final java.lang.String password) {
+            this.props.password(password);
+            return this;
+        }
+        /**
+         * Property password: The password for the disk.
+         * <p>
+         * @return {@code this}
+         * @param password Property password: The password for the disk. This parameter is required.
+         */
+        public Builder password(final com.aliyun.ros.cdk.core.IResolvable password) {
+            this.props.password(password);
             return this;
         }
 

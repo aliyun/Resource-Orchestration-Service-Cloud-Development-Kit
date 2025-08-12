@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managededgekubernetescluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:03.445Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.174Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ManagedEdgeKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(ManagedEdgeKubernetesClusterProps.Jsii$Proxy.class)
 public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -195,6 +195,13 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
     }
 
     /**
+     * Property vSwitchIds: The virtual switch ID of the worker node.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchIds() {
+        return null;
+    }
+
+    /**
      * Property zoneIds: Zone ids of worker node virtual switches belongs to.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getZoneIds() {
@@ -231,6 +238,7 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
         java.util.List<com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster.TagsProperty> tags;
         java.lang.Object timeoutMins;
         java.lang.Object vpcId;
+        java.lang.Object vSwitchIds;
         java.lang.Object zoneIds;
 
         /**
@@ -687,6 +695,26 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
         }
 
         /**
+         * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getVSwitchIds}
+         * @param vSwitchIds Property vSwitchIds: The virtual switch ID of the worker node.
+         * @return {@code this}
+         */
+        public Builder vSwitchIds(java.util.List<? extends java.lang.Object> vSwitchIds) {
+            this.vSwitchIds = vSwitchIds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getVSwitchIds}
+         * @param vSwitchIds Property vSwitchIds: The virtual switch ID of the worker node.
+         * @return {@code this}
+         */
+        public Builder vSwitchIds(com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
+            this.vSwitchIds = vSwitchIds;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getZoneIds}
          * @param zoneIds Property zoneIds: Zone ids of worker node virtual switches belongs to.
          * @return {@code this}
@@ -742,6 +770,7 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
         private final java.util.List<com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster.TagsProperty> tags;
         private final java.lang.Object timeoutMins;
         private final java.lang.Object vpcId;
+        private final java.lang.Object vSwitchIds;
         private final java.lang.Object zoneIds;
 
         /**
@@ -770,6 +799,7 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster.TagsProperty.class)));
             this.timeoutMins = software.amazon.jsii.Kernel.get(this, "timeoutMins", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vSwitchIds = software.amazon.jsii.Kernel.get(this, "vSwitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneIds = software.amazon.jsii.Kernel.get(this, "zoneIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -799,6 +829,7 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
             this.tags = (java.util.List<com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster.TagsProperty>)builder.tags;
             this.timeoutMins = builder.timeoutMins;
             this.vpcId = builder.vpcId;
+            this.vSwitchIds = builder.vSwitchIds;
             this.zoneIds = builder.zoneIds;
         }
 
@@ -903,6 +934,11 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
         }
 
         @Override
+        public final java.lang.Object getVSwitchIds() {
+            return this.vSwitchIds;
+        }
+
+        @Override
         public final java.lang.Object getZoneIds() {
             return this.zoneIds;
         }
@@ -971,6 +1007,9 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
             if (this.getVpcId() != null) {
                 data.set("vpcId", om.valueToTree(this.getVpcId()));
             }
+            if (this.getVSwitchIds() != null) {
+                data.set("vSwitchIds", om.valueToTree(this.getVSwitchIds()));
+            }
             if (this.getZoneIds() != null) {
                 data.set("zoneIds", om.valueToTree(this.getZoneIds()));
             }
@@ -1012,6 +1051,7 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.timeoutMins != null ? !this.timeoutMins.equals(that.timeoutMins) : that.timeoutMins != null) return false;
             if (this.vpcId != null ? !this.vpcId.equals(that.vpcId) : that.vpcId != null) return false;
+            if (this.vSwitchIds != null ? !this.vSwitchIds.equals(that.vSwitchIds) : that.vSwitchIds != null) return false;
             return this.zoneIds != null ? this.zoneIds.equals(that.zoneIds) : that.zoneIds == null;
         }
 
@@ -1037,6 +1077,7 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.timeoutMins != null ? this.timeoutMins.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
+            result = 31 * result + (this.vSwitchIds != null ? this.vSwitchIds.hashCode() : 0);
             result = 31 * result + (this.zoneIds != null ? this.zoneIds.hashCode() : 0);
             return result;
         }

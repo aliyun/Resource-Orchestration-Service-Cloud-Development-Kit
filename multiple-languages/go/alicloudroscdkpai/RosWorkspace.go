@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::Workspace`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::Workspace`, which is used to create a workspace.
 type RosWorkspace interface {
 	alicloudroscdkcore.RosResource
 	AttrAdminNames() alicloudroscdkcore.IResolvable

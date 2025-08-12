@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sas;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SAS::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:10.503Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:50.559Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sas.$Module.class, fqn = "@alicloud/ros-cdk-sas.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -61,38 +61,20 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getPeriod() {
-        return software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getPayType() {
+        return software.amazon.jsii.Kernel.get(this, "payType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
-    public void setPeriod(final @org.jetbrains.annotations.NotNull java.lang.Number value) {
-        software.amazon.jsii.Kernel.set(this, "period", java.util.Objects.requireNonNull(value, "period is required"));
+    public void setPayType(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "payType", java.util.Objects.requireNonNull(value, "payType is required"));
     }
 
     /**
      */
-    public void setPeriod(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "period", java.util.Objects.requireNonNull(value, "period is required"));
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getPeriodUnit() {
-        return software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setPeriodUnit(final @org.jetbrains.annotations.NotNull java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "periodUnit", java.util.Objects.requireNonNull(value, "periodUnit is required"));
-    }
-
-    /**
-     */
-    public void setPeriodUnit(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "periodUnit", java.util.Objects.requireNonNull(value, "periodUnit is required"));
+    public void setPayType(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "payType", java.util.Objects.requireNonNull(value, "payType is required"));
     }
 
     /**
@@ -273,6 +255,60 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setMaliciousFileDetectionSdk(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "maliciousFileDetectionSdk", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
+        return software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPeriod(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "period", value);
+    }
+
+    /**
+     */
+    public void setPeriod(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "period", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPeriodUnit() {
+        return software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPeriodUnit(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "periodUnit", value);
+    }
+
+    /**
+     */
+    public void setPeriodUnit(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "periodUnit", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPostPayInstanceModule() {
+        return software.amazon.jsii.Kernel.get(this, "postPayInstanceModule", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPostPayInstanceModule(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "postPayInstanceModule", value);
+    }
+
+    /**
+     */
+    public void setPostPayInstanceModule(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.sas.RosInstance.PostPayInstanceModuleProperty value) {
+        software.amazon.jsii.Kernel.set(this, "postPayInstanceModule", value);
     }
 
     /**
@@ -490,6 +526,350 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
     public void setWebTamperProtection(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "webTamperProtection", value);
     }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sas.$Module.class, fqn = "@alicloud/ros-cdk-sas.RosInstance.PostPayInstanceModuleProperty")
+    @software.amazon.jsii.Jsii.Proxy(PostPayInstanceModuleProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface PostPayInstanceModuleProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAgentlessDetection() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCloudSecurityPostureManagement() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCtdr() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getHostAndContainerSecurity() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getServerlessAssetProtection() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getVulnerabilityFixing() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link PostPayInstanceModuleProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link PostPayInstanceModuleProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<PostPayInstanceModuleProperty> {
+            java.lang.Object agentlessDetection;
+            java.lang.Object cloudSecurityPostureManagement;
+            java.lang.Object ctdr;
+            java.lang.Object hostAndContainerSecurity;
+            java.lang.Object serverlessAssetProtection;
+            java.lang.Object vulnerabilityFixing;
+
+            /**
+             * Sets the value of {@link PostPayInstanceModuleProperty#getAgentlessDetection}
+             * @param agentlessDetection the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder agentlessDetection(java.lang.Boolean agentlessDetection) {
+                this.agentlessDetection = agentlessDetection;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PostPayInstanceModuleProperty#getAgentlessDetection}
+             * @param agentlessDetection the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder agentlessDetection(com.aliyun.ros.cdk.core.IResolvable agentlessDetection) {
+                this.agentlessDetection = agentlessDetection;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PostPayInstanceModuleProperty#getCloudSecurityPostureManagement}
+             * @param cloudSecurityPostureManagement the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder cloudSecurityPostureManagement(java.lang.Boolean cloudSecurityPostureManagement) {
+                this.cloudSecurityPostureManagement = cloudSecurityPostureManagement;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PostPayInstanceModuleProperty#getCloudSecurityPostureManagement}
+             * @param cloudSecurityPostureManagement the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder cloudSecurityPostureManagement(com.aliyun.ros.cdk.core.IResolvable cloudSecurityPostureManagement) {
+                this.cloudSecurityPostureManagement = cloudSecurityPostureManagement;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PostPayInstanceModuleProperty#getCtdr}
+             * @param ctdr the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ctdr(java.lang.Boolean ctdr) {
+                this.ctdr = ctdr;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PostPayInstanceModuleProperty#getCtdr}
+             * @param ctdr the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ctdr(com.aliyun.ros.cdk.core.IResolvable ctdr) {
+                this.ctdr = ctdr;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PostPayInstanceModuleProperty#getHostAndContainerSecurity}
+             * @param hostAndContainerSecurity the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder hostAndContainerSecurity(java.lang.Boolean hostAndContainerSecurity) {
+                this.hostAndContainerSecurity = hostAndContainerSecurity;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PostPayInstanceModuleProperty#getHostAndContainerSecurity}
+             * @param hostAndContainerSecurity the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder hostAndContainerSecurity(com.aliyun.ros.cdk.core.IResolvable hostAndContainerSecurity) {
+                this.hostAndContainerSecurity = hostAndContainerSecurity;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PostPayInstanceModuleProperty#getServerlessAssetProtection}
+             * @param serverlessAssetProtection the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder serverlessAssetProtection(java.lang.Boolean serverlessAssetProtection) {
+                this.serverlessAssetProtection = serverlessAssetProtection;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PostPayInstanceModuleProperty#getServerlessAssetProtection}
+             * @param serverlessAssetProtection the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder serverlessAssetProtection(com.aliyun.ros.cdk.core.IResolvable serverlessAssetProtection) {
+                this.serverlessAssetProtection = serverlessAssetProtection;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PostPayInstanceModuleProperty#getVulnerabilityFixing}
+             * @param vulnerabilityFixing the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder vulnerabilityFixing(java.lang.Boolean vulnerabilityFixing) {
+                this.vulnerabilityFixing = vulnerabilityFixing;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PostPayInstanceModuleProperty#getVulnerabilityFixing}
+             * @param vulnerabilityFixing the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder vulnerabilityFixing(com.aliyun.ros.cdk.core.IResolvable vulnerabilityFixing) {
+                this.vulnerabilityFixing = vulnerabilityFixing;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link PostPayInstanceModuleProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public PostPayInstanceModuleProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link PostPayInstanceModuleProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements PostPayInstanceModuleProperty {
+            private final java.lang.Object agentlessDetection;
+            private final java.lang.Object cloudSecurityPostureManagement;
+            private final java.lang.Object ctdr;
+            private final java.lang.Object hostAndContainerSecurity;
+            private final java.lang.Object serverlessAssetProtection;
+            private final java.lang.Object vulnerabilityFixing;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.agentlessDetection = software.amazon.jsii.Kernel.get(this, "agentlessDetection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.cloudSecurityPostureManagement = software.amazon.jsii.Kernel.get(this, "cloudSecurityPostureManagement", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.ctdr = software.amazon.jsii.Kernel.get(this, "ctdr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.hostAndContainerSecurity = software.amazon.jsii.Kernel.get(this, "hostAndContainerSecurity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.serverlessAssetProtection = software.amazon.jsii.Kernel.get(this, "serverlessAssetProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.vulnerabilityFixing = software.amazon.jsii.Kernel.get(this, "vulnerabilityFixing", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.agentlessDetection = builder.agentlessDetection;
+                this.cloudSecurityPostureManagement = builder.cloudSecurityPostureManagement;
+                this.ctdr = builder.ctdr;
+                this.hostAndContainerSecurity = builder.hostAndContainerSecurity;
+                this.serverlessAssetProtection = builder.serverlessAssetProtection;
+                this.vulnerabilityFixing = builder.vulnerabilityFixing;
+            }
+
+            @Override
+            public final java.lang.Object getAgentlessDetection() {
+                return this.agentlessDetection;
+            }
+
+            @Override
+            public final java.lang.Object getCloudSecurityPostureManagement() {
+                return this.cloudSecurityPostureManagement;
+            }
+
+            @Override
+            public final java.lang.Object getCtdr() {
+                return this.ctdr;
+            }
+
+            @Override
+            public final java.lang.Object getHostAndContainerSecurity() {
+                return this.hostAndContainerSecurity;
+            }
+
+            @Override
+            public final java.lang.Object getServerlessAssetProtection() {
+                return this.serverlessAssetProtection;
+            }
+
+            @Override
+            public final java.lang.Object getVulnerabilityFixing() {
+                return this.vulnerabilityFixing;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getAgentlessDetection() != null) {
+                    data.set("agentlessDetection", om.valueToTree(this.getAgentlessDetection()));
+                }
+                if (this.getCloudSecurityPostureManagement() != null) {
+                    data.set("cloudSecurityPostureManagement", om.valueToTree(this.getCloudSecurityPostureManagement()));
+                }
+                if (this.getCtdr() != null) {
+                    data.set("ctdr", om.valueToTree(this.getCtdr()));
+                }
+                if (this.getHostAndContainerSecurity() != null) {
+                    data.set("hostAndContainerSecurity", om.valueToTree(this.getHostAndContainerSecurity()));
+                }
+                if (this.getServerlessAssetProtection() != null) {
+                    data.set("serverlessAssetProtection", om.valueToTree(this.getServerlessAssetProtection()));
+                }
+                if (this.getVulnerabilityFixing() != null) {
+                    data.set("vulnerabilityFixing", om.valueToTree(this.getVulnerabilityFixing()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-sas.RosInstance.PostPayInstanceModuleProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                PostPayInstanceModuleProperty.Jsii$Proxy that = (PostPayInstanceModuleProperty.Jsii$Proxy) o;
+
+                if (this.agentlessDetection != null ? !this.agentlessDetection.equals(that.agentlessDetection) : that.agentlessDetection != null) return false;
+                if (this.cloudSecurityPostureManagement != null ? !this.cloudSecurityPostureManagement.equals(that.cloudSecurityPostureManagement) : that.cloudSecurityPostureManagement != null) return false;
+                if (this.ctdr != null ? !this.ctdr.equals(that.ctdr) : that.ctdr != null) return false;
+                if (this.hostAndContainerSecurity != null ? !this.hostAndContainerSecurity.equals(that.hostAndContainerSecurity) : that.hostAndContainerSecurity != null) return false;
+                if (this.serverlessAssetProtection != null ? !this.serverlessAssetProtection.equals(that.serverlessAssetProtection) : that.serverlessAssetProtection != null) return false;
+                return this.vulnerabilityFixing != null ? this.vulnerabilityFixing.equals(that.vulnerabilityFixing) : that.vulnerabilityFixing == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.agentlessDetection != null ? this.agentlessDetection.hashCode() : 0;
+                result = 31 * result + (this.cloudSecurityPostureManagement != null ? this.cloudSecurityPostureManagement.hashCode() : 0);
+                result = 31 * result + (this.ctdr != null ? this.ctdr.hashCode() : 0);
+                result = 31 * result + (this.hostAndContainerSecurity != null ? this.hostAndContainerSecurity.hashCode() : 0);
+                result = 31 * result + (this.serverlessAssetProtection != null ? this.serverlessAssetProtection.hashCode() : 0);
+                result = 31 * result + (this.vulnerabilityFixing != null ? this.vulnerabilityFixing.hashCode() : 0);
+                return result;
+            }
+        }
+    }
 
     /**
      * A fluent builder for {@link com.aliyun.ros.cdk.sas.RosInstance}.
@@ -519,35 +899,18 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param period This parameter is required.
+         * @param payType This parameter is required.
          */
-        public Builder period(final java.lang.Number period) {
-            this.props.period(period);
+        public Builder payType(final java.lang.String payType) {
+            this.props.payType(payType);
             return this;
         }
         /**
          * @return {@code this}
-         * @param period This parameter is required.
+         * @param payType This parameter is required.
          */
-        public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
-            this.props.period(period);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param periodUnit This parameter is required.
-         */
-        public Builder periodUnit(final java.lang.String periodUnit) {
-            this.props.periodUnit(periodUnit);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param periodUnit This parameter is required.
-         */
-        public Builder periodUnit(final com.aliyun.ros.cdk.core.IResolvable periodUnit) {
-            this.props.periodUnit(periodUnit);
+        public Builder payType(final com.aliyun.ros.cdk.core.IResolvable payType) {
+            this.props.payType(payType);
             return this;
         }
 
@@ -718,6 +1081,57 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder maliciousFileDetectionSdk(final com.aliyun.ros.cdk.core.IResolvable maliciousFileDetectionSdk) {
             this.props.maliciousFileDetectionSdk(maliciousFileDetectionSdk);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param period This parameter is required.
+         */
+        public Builder period(final java.lang.Number period) {
+            this.props.period(period);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param period This parameter is required.
+         */
+        public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
+            this.props.period(period);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param periodUnit This parameter is required.
+         */
+        public Builder periodUnit(final java.lang.String periodUnit) {
+            this.props.periodUnit(periodUnit);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param periodUnit This parameter is required.
+         */
+        public Builder periodUnit(final com.aliyun.ros.cdk.core.IResolvable periodUnit) {
+            this.props.periodUnit(periodUnit);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param postPayInstanceModule This parameter is required.
+         */
+        public Builder postPayInstanceModule(final com.aliyun.ros.cdk.core.IResolvable postPayInstanceModule) {
+            this.props.postPayInstanceModule(postPayInstanceModule);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param postPayInstanceModule This parameter is required.
+         */
+        public Builder postPayInstanceModule(final com.aliyun.ros.cdk.sas.RosInstance.PostPayInstanceModuleProperty postPayInstanceModule) {
+            this.props.postPayInstanceModule(postPayInstanceModule);
             return this;
         }
 

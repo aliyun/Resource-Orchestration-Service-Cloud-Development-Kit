@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.resourcemanager;
 /**
  * Represents a <code>ResourceShare</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:10.003Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:50.153Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.IResourceShare")
 @software.amazon.jsii.Jsii.Proxy(IResourceShare.Jsii$Proxy.class)
 public interface IResourceShare extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

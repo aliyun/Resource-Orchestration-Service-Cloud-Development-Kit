@@ -44,6 +44,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: dlqPolicy: Dead-letter queue policy
+        /// </remarks>
+        [JsiiProperty(name: "dlqPolicy", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-mns.RosSubscription.DlqPolicyProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DlqPolicy
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: filterTag: Message filter tag in the created subscription (Only messages with consistent tags are pushed.)
         /// The value is a string of no more than 16 characters. The default value is no message filter.
         /// </remarks>
@@ -78,6 +91,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         [JsiiProperty(name: "notifyStrategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? NotifyStrategy
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: pushType: Push type of the created subscription.
+        /// </remarks>
+        [JsiiProperty(name: "pushType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? PushType
         {
             get
             {
@@ -129,6 +155,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: dlqPolicy: Dead-letter queue policy
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "dlqPolicy", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-mns.RosSubscription.DlqPolicyProperty\"}]}}", isOptional: true)]
+            public object? DlqPolicy
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: filterTag: Message filter tag in the created subscription (Only messages with consistent tags are pushed.)
             /// The value is a string of no more than 16 characters. The default value is no message filter.
             /// </remarks>
@@ -157,6 +193,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
             [JsiiOptional]
             [JsiiProperty(name: "notifyStrategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? NotifyStrategy
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: pushType: Push type of the created subscription.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "pushType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PushType
             {
                 get => GetInstanceProperty<object?>();
             }

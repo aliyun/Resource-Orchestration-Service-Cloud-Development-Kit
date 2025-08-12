@@ -19,6 +19,11 @@ export interface RosBucketProps {
     readonly accessControl?: string | ros.IResolvable;
 
     /**
+     * @Property blockPublicAccess: Whether to block public access.
+     */
+    readonly blockPublicAccess?: boolean | ros.IResolvable;
+
+    /**
      * @Property corsConfiguration: Rules that define cross-origin resource sharing of objects in this bucket.
      */
     readonly corsConfiguration?: RosBucket.CORSConfigurationProperty | ros.IResolvable;
@@ -122,6 +127,7 @@ function RosBucketPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('lifecycleConfiguration', RosBucket_LifecycleConfigurationPropertyValidator)(properties.lifecycleConfiguration));
     errors.collect(ros.propertyValidator('serverSideEncryptionConfiguration', RosBucket_ServerSideEncryptionConfigurationPropertyValidator)(properties.serverSideEncryptionConfiguration));
     errors.collect(ros.propertyValidator('versioningConfiguration', RosBucket_VersioningConfigurationPropertyValidator)(properties.versioningConfiguration));
+    errors.collect(ros.propertyValidator('blockPublicAccess', ros.validateBoolean)(properties.blockPublicAccess));
     if(properties.accessControl && (typeof properties.accessControl) !== 'object') {
         errors.collect(ros.propertyValidator('accessControl', ros.validateAllowedValues)({
           data: properties.accessControl,
@@ -156,6 +162,7 @@ function rosBucketPropsToRosTemplate(properties: any, enableResourcePropertyCons
     return {
       'BucketName': ros.stringToRosTemplate(properties.bucketName),
       'AccessControl': ros.stringToRosTemplate(properties.accessControl),
+      'BlockPublicAccess': ros.booleanToRosTemplate(properties.blockPublicAccess),
       'CORSConfiguration': rosBucketCORSConfigurationPropertyToRosTemplate(properties.corsConfiguration),
       'DeletionForce': ros.booleanToRosTemplate(properties.deletionForce),
       'EnableOssHdfsService': ros.booleanToRosTemplate(properties.enableOssHdfsService),
@@ -216,6 +223,11 @@ export class RosBucket extends ros.RosResource {
      * @Property accessControl: The access control list.
      */
     public accessControl: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property blockPublicAccess: Whether to block public access.
+     */
+    public blockPublicAccess: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property corsConfiguration: Rules that define cross-origin resource sharing of objects in this bucket.
@@ -305,6 +317,7 @@ export class RosBucket extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.bucketName = props.bucketName;
         this.accessControl = props.accessControl;
+        this.blockPublicAccess = props.blockPublicAccess;
         this.corsConfiguration = props.corsConfiguration;
         this.deletionForce = props.deletionForce;
         this.enableOssHdfsService = props.enableOssHdfsService;
@@ -326,6 +339,7 @@ export class RosBucket extends ros.RosResource {
         return {
             bucketName: this.bucketName,
             accessControl: this.accessControl,
+            blockPublicAccess: this.blockPublicAccess,
             corsConfiguration: this.corsConfiguration,
             deletionForce: this.deletionForce,
             enableOssHdfsService: this.enableOssHdfsService,
@@ -1651,6 +1665,490 @@ function rosBucketWebsiteConfigurationV2PropertyToRosTemplate(properties: any): 
 }
 
 /**
+ * Properties for defining a `RosBucketReplication`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucketreplication
+ */
+export interface RosBucketReplicationProps {
+
+    /**
+     * @Property bucketName: Bucket name.
+     */
+    readonly bucketName: string | ros.IResolvable;
+
+    /**
+     * @Property replicationConfiguration: Replication configuration.
+     */
+    readonly replicationConfiguration: RosBucketReplication.ReplicationConfigurationProperty | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosBucketReplicationProps`
+ *
+ * @param properties - the TypeScript properties of a `RosBucketReplicationProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosBucketReplicationPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('bucketName', ros.requiredValidator)(properties.bucketName));
+    errors.collect(ros.propertyValidator('bucketName', ros.validateString)(properties.bucketName));
+    errors.collect(ros.propertyValidator('replicationConfiguration', ros.requiredValidator)(properties.replicationConfiguration));
+    errors.collect(ros.propertyValidator('replicationConfiguration', RosBucketReplication_ReplicationConfigurationPropertyValidator)(properties.replicationConfiguration));
+    return errors.wrap('supplied properties not correct for "RosBucketReplicationProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketReplication` resource
+ *
+ * @param properties - the TypeScript properties of a `RosBucketReplicationProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketReplication` resource.
+ */
+// @ts-ignore TS6133
+function rosBucketReplicationPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosBucketReplicationPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'BucketName': ros.stringToRosTemplate(properties.bucketName),
+      'ReplicationConfiguration': rosBucketReplicationReplicationConfigurationPropertyToRosTemplate(properties.replicationConfiguration),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::BucketReplication`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `BucketReplication` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucketreplication
+ */
+export class RosBucketReplication extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OSS::BucketReplication";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property bucketName: Bucket name.
+     */
+    public bucketName: string | ros.IResolvable;
+
+    /**
+     * @Property replicationConfiguration: Replication configuration.
+     */
+    public replicationConfiguration: RosBucketReplication.ReplicationConfigurationProperty | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosBucketReplicationProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosBucketReplication.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.bucketName = props.bucketName;
+        this.replicationConfiguration = props.replicationConfiguration;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            bucketName: this.bucketName,
+            replicationConfiguration: this.replicationConfiguration,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosBucketReplicationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosBucketReplication {
+    /**
+     * @stability external
+     */
+    export interface DestinationProperty {
+        /**
+         * @Property bucket: Destination bucket name.
+         */
+        readonly bucket: string | ros.IResolvable;
+        /**
+         * @Property transferType: Transfer type for replication.
+         */
+        readonly transferType: string | ros.IResolvable;
+        /**
+         * @Property location: Destination region.
+         */
+        readonly location: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DestinationProperty`
+ *
+ * @param properties - the TypeScript properties of a `DestinationProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosBucketReplication_DestinationPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('bucket', ros.requiredValidator)(properties.bucket));
+    errors.collect(ros.propertyValidator('bucket', ros.validateString)(properties.bucket));
+    errors.collect(ros.propertyValidator('transferType', ros.requiredValidator)(properties.transferType));
+    if(properties.transferType && (typeof properties.transferType) !== 'object') {
+        errors.collect(ros.propertyValidator('transferType', ros.validateAllowedValues)({
+          data: properties.transferType,
+          allowedValues: ["internal","accelerate"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('transferType', ros.validateString)(properties.transferType));
+    errors.collect(ros.propertyValidator('location', ros.requiredValidator)(properties.location));
+    errors.collect(ros.propertyValidator('location', ros.validateString)(properties.location));
+    return errors.wrap('supplied properties not correct for "DestinationProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketReplication.Destination` resource
+ *
+ * @param properties - the TypeScript properties of a `DestinationProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketReplication.Destination` resource.
+ */
+// @ts-ignore TS6133
+function rosBucketReplicationDestinationPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosBucketReplication_DestinationPropertyValidator(properties).assertSuccess();
+    return {
+      'Bucket': ros.stringToRosTemplate(properties.bucket),
+      'TransferType': ros.stringToRosTemplate(properties.transferType),
+      'Location': ros.stringToRosTemplate(properties.location),
+    };
+}
+
+export namespace RosBucketReplication {
+    /**
+     * @stability external
+     */
+    export interface EncryptionConfigurationProperty {
+        /**
+         * @Property replicaKmsKeyId: ARN of the KMS key used to encrypt replica objects.
+         */
+        readonly replicaKmsKeyId?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `EncryptionConfigurationProperty`
+ *
+ * @param properties - the TypeScript properties of a `EncryptionConfigurationProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosBucketReplication_EncryptionConfigurationPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('replicaKmsKeyId', ros.validateString)(properties.replicaKmsKeyId));
+    return errors.wrap('supplied properties not correct for "EncryptionConfigurationProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketReplication.EncryptionConfiguration` resource
+ *
+ * @param properties - the TypeScript properties of a `EncryptionConfigurationProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketReplication.EncryptionConfiguration` resource.
+ */
+// @ts-ignore TS6133
+function rosBucketReplicationEncryptionConfigurationPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosBucketReplication_EncryptionConfigurationPropertyValidator(properties).assertSuccess();
+    return {
+      'ReplicaKmsKeyID': ros.stringToRosTemplate(properties.replicaKmsKeyId),
+    };
+}
+
+export namespace RosBucketReplication {
+    /**
+     * @stability external
+     */
+    export interface RTCProperty {
+        /**
+         * @Property status: Whether to enable real-time replication.
+         */
+        readonly status?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `RTCProperty`
+ *
+ * @param properties - the TypeScript properties of a `RTCProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosBucketReplication_RTCPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.status && (typeof properties.status) !== 'object') {
+        errors.collect(ros.propertyValidator('status', ros.validateAllowedValues)({
+          data: properties.status,
+          allowedValues: ["enabled","disabled"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('status', ros.validateString)(properties.status));
+    return errors.wrap('supplied properties not correct for "RTCProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketReplication.RTC` resource
+ *
+ * @param properties - the TypeScript properties of a `RTCProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketReplication.RTC` resource.
+ */
+// @ts-ignore TS6133
+function rosBucketReplicationRTCPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosBucketReplication_RTCPropertyValidator(properties).assertSuccess();
+    return {
+      'Status': ros.stringToRosTemplate(properties.status),
+    };
+}
+
+export namespace RosBucketReplication {
+    /**
+     * @stability external
+     */
+    export interface ReplicationConfigurationProperty {
+        /**
+         * @Property rule: Replication Rule
+         */
+        readonly rule: RosBucketReplication.RuleProperty | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ReplicationConfigurationProperty`
+ *
+ * @param properties - the TypeScript properties of a `ReplicationConfigurationProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosBucketReplication_ReplicationConfigurationPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('rule', ros.requiredValidator)(properties.rule));
+    errors.collect(ros.propertyValidator('rule', RosBucketReplication_RulePropertyValidator)(properties.rule));
+    return errors.wrap('supplied properties not correct for "ReplicationConfigurationProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketReplication.ReplicationConfiguration` resource
+ *
+ * @param properties - the TypeScript properties of a `ReplicationConfigurationProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketReplication.ReplicationConfiguration` resource.
+ */
+// @ts-ignore TS6133
+function rosBucketReplicationReplicationConfigurationPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosBucketReplication_ReplicationConfigurationPropertyValidator(properties).assertSuccess();
+    return {
+      'Rule': rosBucketReplicationRulePropertyToRosTemplate(properties.rule),
+    };
+}
+
+export namespace RosBucketReplication {
+    /**
+     * @stability external
+     */
+    export interface RuleProperty {
+        /**
+         * @Property rtc: undefined
+         */
+        readonly rtc?: RosBucketReplication.RTCProperty | ros.IResolvable;
+        /**
+         * @Property destination: Destination bucket and location for replication.
+         */
+        readonly destination: RosBucketReplication.DestinationProperty | ros.IResolvable;
+        /**
+         * @Property action: Action to be taken on matching objects. Valid values are ALL, PUT, DELETE.
+         */
+        readonly action?: string | ros.IResolvable;
+        /**
+         * @Property syncRole: Role used for replication synchronization.
+         */
+        readonly syncRole?: string | ros.IResolvable;
+        /**
+         * @Property encryptionConfiguration: undefined
+         */
+        readonly encryptionConfiguration?: RosBucketReplication.EncryptionConfigurationProperty | ros.IResolvable;
+        /**
+         * @Property sourceSelectionCriteria: Criteria for selecting source objects.
+         */
+        readonly sourceSelectionCriteria?: RosBucketReplication.SourceSelectionCriteriaProperty | ros.IResolvable;
+        /**
+         * @Property prefixSet: List of prefixes to which this rule applies.
+         */
+        readonly prefixSet?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property historicalObjectReplication: Whether to replicate existing objects.
+         */
+        readonly historicalObjectReplication?: string | ros.IResolvable;
+        /**
+         * @Property identity: ID of the rule applied.
+         */
+        readonly identity?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `RuleProperty`
+ *
+ * @param properties - the TypeScript properties of a `RuleProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosBucketReplication_RulePropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('rtc', RosBucketReplication_RTCPropertyValidator)(properties.rtc));
+    errors.collect(ros.propertyValidator('destination', ros.requiredValidator)(properties.destination));
+    errors.collect(ros.propertyValidator('destination', RosBucketReplication_DestinationPropertyValidator)(properties.destination));
+    if(properties.action && (typeof properties.action) !== 'object') {
+        errors.collect(ros.propertyValidator('action', ros.validateAllowedValues)({
+          data: properties.action,
+          allowedValues: ["ALL","PUT","DELETE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('action', ros.validateString)(properties.action));
+    errors.collect(ros.propertyValidator('syncRole', ros.validateString)(properties.syncRole));
+    errors.collect(ros.propertyValidator('encryptionConfiguration', RosBucketReplication_EncryptionConfigurationPropertyValidator)(properties.encryptionConfiguration));
+    errors.collect(ros.propertyValidator('sourceSelectionCriteria', RosBucketReplication_SourceSelectionCriteriaPropertyValidator)(properties.sourceSelectionCriteria));
+    errors.collect(ros.propertyValidator('prefixSet', ros.listValidator(ros.validateString))(properties.prefixSet));
+    if(properties.historicalObjectReplication && (typeof properties.historicalObjectReplication) !== 'object') {
+        errors.collect(ros.propertyValidator('historicalObjectReplication', ros.validateAllowedValues)({
+          data: properties.historicalObjectReplication,
+          allowedValues: ["enabled","disabled"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('historicalObjectReplication', ros.validateString)(properties.historicalObjectReplication));
+    errors.collect(ros.propertyValidator('identity', ros.validateString)(properties.identity));
+    return errors.wrap('supplied properties not correct for "RuleProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketReplication.Rule` resource
+ *
+ * @param properties - the TypeScript properties of a `RuleProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketReplication.Rule` resource.
+ */
+// @ts-ignore TS6133
+function rosBucketReplicationRulePropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosBucketReplication_RulePropertyValidator(properties).assertSuccess();
+    return {
+      'RTC': rosBucketReplicationRTCPropertyToRosTemplate(properties.rtc),
+      'Destination': rosBucketReplicationDestinationPropertyToRosTemplate(properties.destination),
+      'Action': ros.stringToRosTemplate(properties.action),
+      'SyncRole': ros.stringToRosTemplate(properties.syncRole),
+      'EncryptionConfiguration': rosBucketReplicationEncryptionConfigurationPropertyToRosTemplate(properties.encryptionConfiguration),
+      'SourceSelectionCriteria': rosBucketReplicationSourceSelectionCriteriaPropertyToRosTemplate(properties.sourceSelectionCriteria),
+      'PrefixSet': ros.listMapper(ros.stringToRosTemplate)(properties.prefixSet),
+      'HistoricalObjectReplication': ros.stringToRosTemplate(properties.historicalObjectReplication),
+      'Id': ros.stringToRosTemplate(properties.identity),
+    };
+}
+
+export namespace RosBucketReplication {
+    /**
+     * @stability external
+     */
+    export interface SourceSelectionCriteriaProperty {
+        /**
+         * @Property sseKmsEncryptedObjects: undefined
+         */
+        readonly sseKmsEncryptedObjects?: RosBucketReplication.SseKmsEncryptedObjectsProperty | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `SourceSelectionCriteriaProperty`
+ *
+ * @param properties - the TypeScript properties of a `SourceSelectionCriteriaProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosBucketReplication_SourceSelectionCriteriaPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('sseKmsEncryptedObjects', RosBucketReplication_SseKmsEncryptedObjectsPropertyValidator)(properties.sseKmsEncryptedObjects));
+    return errors.wrap('supplied properties not correct for "SourceSelectionCriteriaProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketReplication.SourceSelectionCriteria` resource
+ *
+ * @param properties - the TypeScript properties of a `SourceSelectionCriteriaProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketReplication.SourceSelectionCriteria` resource.
+ */
+// @ts-ignore TS6133
+function rosBucketReplicationSourceSelectionCriteriaPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosBucketReplication_SourceSelectionCriteriaPropertyValidator(properties).assertSuccess();
+    return {
+      'SseKmsEncryptedObjects': rosBucketReplicationSseKmsEncryptedObjectsPropertyToRosTemplate(properties.sseKmsEncryptedObjects),
+    };
+}
+
+export namespace RosBucketReplication {
+    /**
+     * @stability external
+     */
+    export interface SseKmsEncryptedObjectsProperty {
+        /**
+         * @Property status: Status of KMS encrypted object replication.
+         */
+        readonly status?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `SseKmsEncryptedObjectsProperty`
+ *
+ * @param properties - the TypeScript properties of a `SseKmsEncryptedObjectsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosBucketReplication_SseKmsEncryptedObjectsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.status && (typeof properties.status) !== 'object') {
+        errors.collect(ros.propertyValidator('status', ros.validateAllowedValues)({
+          data: properties.status,
+          allowedValues: ["Enabled","Disabled"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('status', ros.validateString)(properties.status));
+    return errors.wrap('supplied properties not correct for "SseKmsEncryptedObjectsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketReplication.SseKmsEncryptedObjects` resource
+ *
+ * @param properties - the TypeScript properties of a `SseKmsEncryptedObjectsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketReplication.SseKmsEncryptedObjects` resource.
+ */
+// @ts-ignore TS6133
+function rosBucketReplicationSseKmsEncryptedObjectsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosBucketReplication_SseKmsEncryptedObjectsPropertyValidator(properties).assertSuccess();
+    return {
+      'Status': ros.stringToRosTemplate(properties.status),
+    };
+}
+
+/**
  * Properties for defining a `RosDirectory`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-directory
  */
@@ -1717,7 +2215,7 @@ function rosDirectoryPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Directory`, which is used to create a directory for a specified bucket.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Directory`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Directory` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-directory
  */
@@ -1845,7 +2343,7 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Domain`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Domain`, which is used to bind a custom domain name.
  * @Note This class does not contain additional functions, so it is recommended to use the `Domain` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-domain
  */

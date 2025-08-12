@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-natgateway
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:11.436Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:51.337Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosNatGatewayProps")
 @software.amazon.jsii.Jsii.Proxy(RosNatGatewayProps.Jsii$Proxy.class)
 public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializable {
@@ -17,12 +17,6 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
     /**
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchId();
-
-    /**
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoPay() {
-        return null;
-    }
 
     /**
      */
@@ -39,12 +33,6 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
-        return null;
-    }
-
-    /**
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getDuration() {
         return null;
     }
 
@@ -92,12 +80,6 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getPricingCycle() {
-        return null;
-    }
-
-    /**
-     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityProtectionEnabled() {
         return null;
     }
@@ -120,11 +102,9 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
     public static final class Builder implements software.amazon.jsii.Builder<RosNatGatewayProps> {
         java.lang.Object vpcId;
         java.lang.Object vSwitchId;
-        java.lang.Object autoPay;
         java.lang.Object deletionForce;
         java.lang.Object deletionProtection;
         java.lang.Object description;
-        java.lang.Object duration;
         java.lang.Object eipBindMode;
         java.lang.Object icmpReplyEnabled;
         java.lang.Object instanceChargeType;
@@ -132,7 +112,6 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object natGatewayName;
         java.lang.Object natType;
         java.lang.Object networkType;
-        java.lang.Object pricingCycle;
         java.lang.Object securityProtectionEnabled;
         java.util.List<com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty> tags;
 
@@ -173,26 +152,6 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
          */
         public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.vSwitchId = vSwitchId;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosNatGatewayProps#getAutoPay}
-         * @param autoPay the value to be set.
-         * @return {@code this}
-         */
-        public Builder autoPay(java.lang.Boolean autoPay) {
-            this.autoPay = autoPay;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosNatGatewayProps#getAutoPay}
-         * @param autoPay the value to be set.
-         * @return {@code this}
-         */
-        public Builder autoPay(com.aliyun.ros.cdk.core.IResolvable autoPay) {
-            this.autoPay = autoPay;
             return this;
         }
 
@@ -253,26 +212,6 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosNatGatewayProps#getDuration}
-         * @param duration the value to be set.
-         * @return {@code this}
-         */
-        public Builder duration(java.lang.Number duration) {
-            this.duration = duration;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosNatGatewayProps#getDuration}
-         * @param duration the value to be set.
-         * @return {@code this}
-         */
-        public Builder duration(com.aliyun.ros.cdk.core.IResolvable duration) {
-            this.duration = duration;
             return this;
         }
 
@@ -417,26 +356,6 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
-         * Sets the value of {@link RosNatGatewayProps#getPricingCycle}
-         * @param pricingCycle the value to be set.
-         * @return {@code this}
-         */
-        public Builder pricingCycle(java.lang.String pricingCycle) {
-            this.pricingCycle = pricingCycle;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosNatGatewayProps#getPricingCycle}
-         * @param pricingCycle the value to be set.
-         * @return {@code this}
-         */
-        public Builder pricingCycle(com.aliyun.ros.cdk.core.IResolvable pricingCycle) {
-            this.pricingCycle = pricingCycle;
-            return this;
-        }
-
-        /**
          * Sets the value of {@link RosNatGatewayProps#getSecurityProtectionEnabled}
          * @param securityProtectionEnabled the value to be set.
          * @return {@code this}
@@ -485,11 +404,9 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosNatGatewayProps {
         private final java.lang.Object vpcId;
         private final java.lang.Object vSwitchId;
-        private final java.lang.Object autoPay;
         private final java.lang.Object deletionForce;
         private final java.lang.Object deletionProtection;
         private final java.lang.Object description;
-        private final java.lang.Object duration;
         private final java.lang.Object eipBindMode;
         private final java.lang.Object icmpReplyEnabled;
         private final java.lang.Object instanceChargeType;
@@ -497,7 +414,6 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object natGatewayName;
         private final java.lang.Object natType;
         private final java.lang.Object networkType;
-        private final java.lang.Object pricingCycle;
         private final java.lang.Object securityProtectionEnabled;
         private final java.util.List<com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty> tags;
 
@@ -509,11 +425,9 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
             super(objRef);
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.autoPay = software.amazon.jsii.Kernel.get(this, "autoPay", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionForce = software.amazon.jsii.Kernel.get(this, "deletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.duration = software.amazon.jsii.Kernel.get(this, "duration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.eipBindMode = software.amazon.jsii.Kernel.get(this, "eipBindMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.icmpReplyEnabled = software.amazon.jsii.Kernel.get(this, "icmpReplyEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -521,7 +435,6 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
             this.natGatewayName = software.amazon.jsii.Kernel.get(this, "natGatewayName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.natType = software.amazon.jsii.Kernel.get(this, "natType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityProtectionEnabled = software.amazon.jsii.Kernel.get(this, "securityProtectionEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty.class)));
         }
@@ -534,11 +447,9 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
             this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
-            this.autoPay = builder.autoPay;
             this.deletionForce = builder.deletionForce;
             this.deletionProtection = builder.deletionProtection;
             this.description = builder.description;
-            this.duration = builder.duration;
             this.eipBindMode = builder.eipBindMode;
             this.icmpReplyEnabled = builder.icmpReplyEnabled;
             this.instanceChargeType = builder.instanceChargeType;
@@ -546,7 +457,6 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
             this.natGatewayName = builder.natGatewayName;
             this.natType = builder.natType;
             this.networkType = builder.networkType;
-            this.pricingCycle = builder.pricingCycle;
             this.securityProtectionEnabled = builder.securityProtectionEnabled;
             this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty>)builder.tags;
         }
@@ -562,11 +472,6 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.Object getAutoPay() {
-            return this.autoPay;
-        }
-
-        @Override
         public final java.lang.Object getDeletionForce() {
             return this.deletionForce;
         }
@@ -579,11 +484,6 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
         @Override
         public final java.lang.Object getDescription() {
             return this.description;
-        }
-
-        @Override
-        public final java.lang.Object getDuration() {
-            return this.duration;
         }
 
         @Override
@@ -622,11 +522,6 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.Object getPricingCycle() {
-            return this.pricingCycle;
-        }
-
-        @Override
         public final java.lang.Object getSecurityProtectionEnabled() {
             return this.securityProtectionEnabled;
         }
@@ -644,9 +539,6 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
 
             data.set("vpcId", om.valueToTree(this.getVpcId()));
             data.set("vSwitchId", om.valueToTree(this.getVSwitchId()));
-            if (this.getAutoPay() != null) {
-                data.set("autoPay", om.valueToTree(this.getAutoPay()));
-            }
             if (this.getDeletionForce() != null) {
                 data.set("deletionForce", om.valueToTree(this.getDeletionForce()));
             }
@@ -655,9 +547,6 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
             }
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
-            }
-            if (this.getDuration() != null) {
-                data.set("duration", om.valueToTree(this.getDuration()));
             }
             if (this.getEipBindMode() != null) {
                 data.set("eipBindMode", om.valueToTree(this.getEipBindMode()));
@@ -679,9 +568,6 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
             }
             if (this.getNetworkType() != null) {
                 data.set("networkType", om.valueToTree(this.getNetworkType()));
-            }
-            if (this.getPricingCycle() != null) {
-                data.set("pricingCycle", om.valueToTree(this.getPricingCycle()));
             }
             if (this.getSecurityProtectionEnabled() != null) {
                 data.set("securityProtectionEnabled", om.valueToTree(this.getSecurityProtectionEnabled()));
@@ -709,11 +595,9 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
 
             if (!vpcId.equals(that.vpcId)) return false;
             if (!vSwitchId.equals(that.vSwitchId)) return false;
-            if (this.autoPay != null ? !this.autoPay.equals(that.autoPay) : that.autoPay != null) return false;
             if (this.deletionForce != null ? !this.deletionForce.equals(that.deletionForce) : that.deletionForce != null) return false;
             if (this.deletionProtection != null ? !this.deletionProtection.equals(that.deletionProtection) : that.deletionProtection != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
-            if (this.duration != null ? !this.duration.equals(that.duration) : that.duration != null) return false;
             if (this.eipBindMode != null ? !this.eipBindMode.equals(that.eipBindMode) : that.eipBindMode != null) return false;
             if (this.icmpReplyEnabled != null ? !this.icmpReplyEnabled.equals(that.icmpReplyEnabled) : that.icmpReplyEnabled != null) return false;
             if (this.instanceChargeType != null ? !this.instanceChargeType.equals(that.instanceChargeType) : that.instanceChargeType != null) return false;
@@ -721,7 +605,6 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
             if (this.natGatewayName != null ? !this.natGatewayName.equals(that.natGatewayName) : that.natGatewayName != null) return false;
             if (this.natType != null ? !this.natType.equals(that.natType) : that.natType != null) return false;
             if (this.networkType != null ? !this.networkType.equals(that.networkType) : that.networkType != null) return false;
-            if (this.pricingCycle != null ? !this.pricingCycle.equals(that.pricingCycle) : that.pricingCycle != null) return false;
             if (this.securityProtectionEnabled != null ? !this.securityProtectionEnabled.equals(that.securityProtectionEnabled) : that.securityProtectionEnabled != null) return false;
             return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
@@ -730,11 +613,9 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
         public final int hashCode() {
             int result = this.vpcId.hashCode();
             result = 31 * result + (this.vSwitchId.hashCode());
-            result = 31 * result + (this.autoPay != null ? this.autoPay.hashCode() : 0);
             result = 31 * result + (this.deletionForce != null ? this.deletionForce.hashCode() : 0);
             result = 31 * result + (this.deletionProtection != null ? this.deletionProtection.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
-            result = 31 * result + (this.duration != null ? this.duration.hashCode() : 0);
             result = 31 * result + (this.eipBindMode != null ? this.eipBindMode.hashCode() : 0);
             result = 31 * result + (this.icmpReplyEnabled != null ? this.icmpReplyEnabled.hashCode() : 0);
             result = 31 * result + (this.instanceChargeType != null ? this.instanceChargeType.hashCode() : 0);
@@ -742,7 +623,6 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.natGatewayName != null ? this.natGatewayName.hashCode() : 0);
             result = 31 * result + (this.natType != null ? this.natType.hashCode() : 0);
             result = 31 * result + (this.networkType != null ? this.networkType.hashCode() : 0);
-            result = 31 * result + (this.pricingCycle != null ? this.pricingCycle.hashCode() : 0);
             result = 31 * result + (this.securityProtectionEnabled != null ? this.securityProtectionEnabled.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;

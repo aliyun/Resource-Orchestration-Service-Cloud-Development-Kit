@@ -112,6 +112,10 @@ func (j *jsiiProxy_RosInvocation) validateSetInstanceIdsParameters(val interface
 	return nil
 }
 
+func (j *jsiiProxy_RosInvocation) validateSetLauncherParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosInvocation) validateSetParametersParameters(val interface{}) error {
 	return nil
 }

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.adblake;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ADBLake::DBCluster</code>, which is used to create an AnalyticDB for MySQL Data Lakehouse Edition (V3.0) cluster.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ADBLake::DBCluster</code>, which type is used to create an AnalyticDB for MySQL Data Lakehouse Edition cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:01.117Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:43.195Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.adblake.$Module.class, fqn = "@alicloud/ros-cdk-adblake.RosDBCluster")
 public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -65,24 +65,6 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getComputeResource() {
-        return software.amazon.jsii.Kernel.get(this, "computeResource", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setComputeResource(final @org.jetbrains.annotations.NotNull java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "computeResource", java.util.Objects.requireNonNull(value, "computeResource is required"));
-    }
-
-    /**
-     */
-    public void setComputeResource(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "computeResource", java.util.Objects.requireNonNull(value, "computeResource is required"));
-    }
-
-    /**
-     */
     public @org.jetbrains.annotations.NotNull java.lang.Object getDbClusterVersion() {
         return software.amazon.jsii.Kernel.get(this, "dbClusterVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -123,24 +105,6 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setPayType(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "payType", java.util.Objects.requireNonNull(value, "payType is required"));
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getStorageResource() {
-        return software.amazon.jsii.Kernel.get(this, "storageResource", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setStorageResource(final @org.jetbrains.annotations.NotNull java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "storageResource", java.util.Objects.requireNonNull(value, "storageResource is required"));
-    }
-
-    /**
-     */
-    public void setStorageResource(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "storageResource", java.util.Objects.requireNonNull(value, "storageResource is required"));
     }
 
     /**
@@ -231,6 +195,24 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setCloneSourceRegionId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "cloneSourceRegionId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getComputeResource() {
+        return software.amazon.jsii.Kernel.get(this, "computeResource", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setComputeResource(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "computeResource", value);
+    }
+
+    /**
+     */
+    public void setComputeResource(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "computeResource", value);
     }
 
     /**
@@ -379,6 +361,24 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getProductVersion() {
+        return software.amazon.jsii.Kernel.get(this, "productVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setProductVersion(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "productVersion", value);
+    }
+
+    /**
+     */
+    public void setProductVersion(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "productVersion", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getReservedNodeCount() {
         return software.amazon.jsii.Kernel.get(this, "reservedNodeCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -469,6 +469,42 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSecondaryVSwitchId() {
+        return software.amazon.jsii.Kernel.get(this, "secondaryVSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSecondaryVSwitchId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "secondaryVSwitchId", value);
+    }
+
+    /**
+     */
+    public void setSecondaryVSwitchId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "secondaryVSwitchId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSecondaryZoneId() {
+        return software.amazon.jsii.Kernel.get(this, "secondaryZoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSecondaryZoneId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "secondaryZoneId", value);
+    }
+
+    /**
+     */
+    public void setSecondaryZoneId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "secondaryZoneId", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getSourceDbClusterId() {
         return software.amazon.jsii.Kernel.get(this, "sourceDbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -483,6 +519,24 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setSourceDbClusterId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "sourceDbClusterId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getStorageResource() {
+        return software.amazon.jsii.Kernel.get(this, "storageResource", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setStorageResource(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "storageResource", value);
+    }
+
+    /**
+     */
+    public void setStorageResource(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "storageResource", value);
     }
 
     /**
@@ -693,23 +747,6 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param computeResource This parameter is required.
-         */
-        public Builder computeResource(final java.lang.String computeResource) {
-            this.props.computeResource(computeResource);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param computeResource This parameter is required.
-         */
-        public Builder computeResource(final com.aliyun.ros.cdk.core.IResolvable computeResource) {
-            this.props.computeResource(computeResource);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param dbClusterVersion This parameter is required.
          */
         public Builder dbClusterVersion(final java.lang.String dbClusterVersion) {
@@ -739,23 +776,6 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder payType(final com.aliyun.ros.cdk.core.IResolvable payType) {
             this.props.payType(payType);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param storageResource This parameter is required.
-         */
-        public Builder storageResource(final java.lang.String storageResource) {
-            this.props.storageResource(storageResource);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param storageResource This parameter is required.
-         */
-        public Builder storageResource(final com.aliyun.ros.cdk.core.IResolvable storageResource) {
-            this.props.storageResource(storageResource);
             return this;
         }
 
@@ -841,6 +861,23 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder cloneSourceRegionId(final com.aliyun.ros.cdk.core.IResolvable cloneSourceRegionId) {
             this.props.cloneSourceRegionId(cloneSourceRegionId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param computeResource This parameter is required.
+         */
+        public Builder computeResource(final java.lang.String computeResource) {
+            this.props.computeResource(computeResource);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param computeResource This parameter is required.
+         */
+        public Builder computeResource(final com.aliyun.ros.cdk.core.IResolvable computeResource) {
+            this.props.computeResource(computeResource);
             return this;
         }
 
@@ -982,6 +1019,23 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param productVersion This parameter is required.
+         */
+        public Builder productVersion(final java.lang.String productVersion) {
+            this.props.productVersion(productVersion);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param productVersion This parameter is required.
+         */
+        public Builder productVersion(final com.aliyun.ros.cdk.core.IResolvable productVersion) {
+            this.props.productVersion(productVersion);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param reservedNodeCount This parameter is required.
          */
         public Builder reservedNodeCount(final java.lang.Number reservedNodeCount) {
@@ -1067,6 +1121,40 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param secondaryVSwitchId This parameter is required.
+         */
+        public Builder secondaryVSwitchId(final java.lang.String secondaryVSwitchId) {
+            this.props.secondaryVSwitchId(secondaryVSwitchId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param secondaryVSwitchId This parameter is required.
+         */
+        public Builder secondaryVSwitchId(final com.aliyun.ros.cdk.core.IResolvable secondaryVSwitchId) {
+            this.props.secondaryVSwitchId(secondaryVSwitchId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param secondaryZoneId This parameter is required.
+         */
+        public Builder secondaryZoneId(final java.lang.String secondaryZoneId) {
+            this.props.secondaryZoneId(secondaryZoneId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param secondaryZoneId This parameter is required.
+         */
+        public Builder secondaryZoneId(final com.aliyun.ros.cdk.core.IResolvable secondaryZoneId) {
+            this.props.secondaryZoneId(secondaryZoneId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param sourceDbClusterId This parameter is required.
          */
         public Builder sourceDbClusterId(final java.lang.String sourceDbClusterId) {
@@ -1079,6 +1167,23 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder sourceDbClusterId(final com.aliyun.ros.cdk.core.IResolvable sourceDbClusterId) {
             this.props.sourceDbClusterId(sourceDbClusterId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param storageResource This parameter is required.
+         */
+        public Builder storageResource(final java.lang.String storageResource) {
+            this.props.storageResource(storageResource);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param storageResource This parameter is required.
+         */
+        public Builder storageResource(final com.aliyun.ros.cdk.core.IResolvable storageResource) {
+            this.props.storageResource(storageResource);
             return this;
         }
 

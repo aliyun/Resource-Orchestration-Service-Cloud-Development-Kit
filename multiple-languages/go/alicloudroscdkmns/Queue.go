@@ -9,9 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::MNS::Queue`, which is used to create a queue to contain messages.
-//
-// Queues can be classified into standard and delayed queues.
+// This class encapsulates and extends the ROS resource type `ALIYUN::MNS::Queue`.
 type Queue interface {
 	alicloudroscdkcore.Resource
 	IQueue

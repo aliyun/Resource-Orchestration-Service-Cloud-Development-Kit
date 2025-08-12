@@ -23,6 +23,8 @@ type App interface {
 	AttrPublicEsDomain() interface{}
 	// Attribute PublicKibanaDomain: The public network kibana domain of the app.
 	AttrPublicKibanaDomain() interface{}
+	// Attribute Username: The username of the app.
+	AttrUsername() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
 	// The environment this resource belongs to.
@@ -163,6 +165,16 @@ func (j *jsiiProxy_App) AttrPublicKibanaDomain() interface{} {
 	_jsii_.Get(
 		j,
 		"attrPublicKibanaDomain",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_App) AttrUsername() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrUsername",
 		&returns,
 	)
 	return returns

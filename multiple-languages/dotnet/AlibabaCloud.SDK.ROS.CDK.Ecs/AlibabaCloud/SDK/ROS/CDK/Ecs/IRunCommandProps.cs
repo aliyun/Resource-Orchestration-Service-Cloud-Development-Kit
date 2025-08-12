@@ -168,6 +168,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
+        /// <summary>Property launcher: A bootloader for script execution.</summary>
+        /// <remarks>
+        /// The length cannot exceed 1 KB.
+        /// </remarks>
+        [JsiiProperty(name: "launcher", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Launcher
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property name: The name of the script, which supports all character sets.</summary>
         /// <remarks>
         /// It can be up to 128 characters in length.
@@ -484,6 +498,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             [JsiiOptional]
             [JsiiProperty(name: "keepCommand", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? KeepCommand
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property launcher: A bootloader for script execution.</summary>
+            /// <remarks>
+            /// The length cannot exceed 1 KB.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "launcher", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Launcher
             {
                 get => GetInstanceProperty<object?>();
             }

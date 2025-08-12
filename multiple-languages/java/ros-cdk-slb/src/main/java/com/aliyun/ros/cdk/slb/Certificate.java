@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SLB::Certificate</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:10.535Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:50.608Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.Certificate")
 public class Certificate extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.slb.ICertificate {
 
@@ -176,6 +176,27 @@ public class Certificate extends com.aliyun.ros.cdk.core.Resource implements com
          */
         public Builder aliCloudCertificateName(final com.aliyun.ros.cdk.core.IResolvable aliCloudCertificateName) {
             this.props().aliCloudCertificateName(aliCloudCertificateName);
+            return this;
+        }
+
+        /**
+         * Property aliCloudCertificateRegionId: The ID of the Alibaba Cloud region.
+         * <p>
+         * @return {@code this}
+         * @param aliCloudCertificateRegionId Property aliCloudCertificateRegionId: The ID of the Alibaba Cloud region. This parameter is required.
+         */
+        public Builder aliCloudCertificateRegionId(final java.lang.String aliCloudCertificateRegionId) {
+            this.props().aliCloudCertificateRegionId(aliCloudCertificateRegionId);
+            return this;
+        }
+        /**
+         * Property aliCloudCertificateRegionId: The ID of the Alibaba Cloud region.
+         * <p>
+         * @return {@code this}
+         * @param aliCloudCertificateRegionId Property aliCloudCertificateRegionId: The ID of the Alibaba Cloud region. This parameter is required.
+         */
+        public Builder aliCloudCertificateRegionId(final com.aliyun.ros.cdk.core.IResolvable aliCloudCertificateRegionId) {
+            this.props().aliCloudCertificateRegionId(aliCloudCertificateRegionId);
             return this;
         }
 

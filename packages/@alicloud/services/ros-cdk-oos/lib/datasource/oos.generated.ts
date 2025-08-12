@@ -835,7 +835,7 @@ function rosSecretParametersPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::SecretParameters`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::SecretParameters`, which is used to query encryption parameters.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecretParameters` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-secretparameters
  */
@@ -902,5 +902,601 @@ export class RosSecretParameters extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosSecretParametersPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosTemplate`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-template
+ */
+export interface RosTemplateProps {
+
+    /**
+     * @Property templateName: The name of the template.
+     */
+    readonly templateName: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
+     * @Property templateVersion: The version of the template. The default value is the latest version of the template.Format: "v" + number. Value range: v1-v200.
+     */
+    readonly templateVersion?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosTemplateProps`
+ *
+ * @param properties - the TypeScript properties of a `RosTemplateProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosTemplatePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('templateVersion', ros.validateString)(properties.templateVersion));
+    errors.collect(ros.propertyValidator('templateName', ros.requiredValidator)(properties.templateName));
+    errors.collect(ros.propertyValidator('templateName', ros.validateString)(properties.templateName));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
+    return errors.wrap('supplied properties not correct for "RosTemplateProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::OOS::Template` resource
+ *
+ * @param properties - the TypeScript properties of a `RosTemplateProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::OOS::Template` resource.
+ */
+// @ts-ignore TS6133
+function rosTemplatePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosTemplatePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'TemplateName': ros.stringToRosTemplate(properties.templateName),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'TemplateVersion': ros.stringToRosTemplate(properties.templateVersion),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::Template`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Template` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-template
+ */
+export class RosTemplate extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::OOS::Template";
+
+    /**
+     * @Attribute Content: The content of the template.
+     */
+    public readonly attrContent: ros.IResolvable;
+
+    /**
+     * @Attribute CreatedBy: The creator of the template.
+     */
+    public readonly attrCreatedBy: ros.IResolvable;
+
+    /**
+     * @Attribute CreatedDate: Specifies to query the template that is created at or before the specified time.The value must be in the YYYY-MM-DDThh:mm::ssZ format.
+     */
+    public readonly attrCreatedDate: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The description of the template.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute HasTrigger: Specifies whether to query the template that is configured with a trigger.
+     */
+    public readonly attrHasTrigger: ros.IResolvable;
+
+    /**
+     * @Attribute Hash: The SHA-256 value of the template content.
+     */
+    public readonly attrHash: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of the resource group.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute ShareType: The share type of the template. Valid values:
+Public
+Private
+     */
+    public readonly attrShareType: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: The tag keys and values. The number of key-value pairs ranges from 1 to 20. Example: {"k1":"k2","k2":"v2"}
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    /**
+     * @Attribute TemplateFormat: The format of the template. Valid values:
+JSON
+YAML
+     */
+    public readonly attrTemplateFormat: ros.IResolvable;
+
+    /**
+     * @Attribute TemplateId: The ID of the template.
+     */
+    public readonly attrTemplateId: ros.IResolvable;
+
+    /**
+     * @Attribute TemplateType: The type of the template. Valid values:
+Automation: the template for automated tasks.
+State: the template for configuration inventories.
+Package: the template for software packages.
+     */
+    public readonly attrTemplateType: ros.IResolvable;
+
+    /**
+     * @Attribute UpdatedBy: The user who last updated the template.
+     */
+    public readonly attrUpdatedBy: ros.IResolvable;
+
+    /**
+     * @Attribute UpdatedDate: The time when the template was last updated.
+     */
+    public readonly attrUpdatedDate: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property templateName: The name of the template.
+     */
+    public templateName: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property templateVersion: The version of the template. The default value is the latest version of the template.Format: "v" + number. Value range: v1-v200.
+     */
+    public templateVersion: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosTemplateProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosTemplate.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrContent = this.getAtt('Content');
+        this.attrCreatedBy = this.getAtt('CreatedBy');
+        this.attrCreatedDate = this.getAtt('CreatedDate');
+        this.attrDescription = this.getAtt('Description');
+        this.attrHasTrigger = this.getAtt('HasTrigger');
+        this.attrHash = this.getAtt('Hash');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrShareType = this.getAtt('ShareType');
+        this.attrTags = this.getAtt('Tags');
+        this.attrTemplateFormat = this.getAtt('TemplateFormat');
+        this.attrTemplateId = this.getAtt('TemplateId');
+        this.attrTemplateType = this.getAtt('TemplateType');
+        this.attrUpdatedBy = this.getAtt('UpdatedBy');
+        this.attrUpdatedDate = this.getAtt('UpdatedDate');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.templateName = props.templateName;
+        this.refreshOptions = props.refreshOptions;
+        this.templateVersion = props.templateVersion;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            templateName: this.templateName,
+            refreshOptions: this.refreshOptions,
+            templateVersion: this.templateVersion,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosTemplatePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosTemplates`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-templates
+ */
+export interface RosTemplatesProps {
+
+    /**
+     * @Property category: The type of the template. Valid values include TimerTrigger, EventTrigger, AlarmTrigger, and Other.
+     */
+    readonly category?: string | ros.IResolvable;
+
+    /**
+     * @Property createdBy: The creator of the template.
+     */
+    readonly createdBy?: string | ros.IResolvable;
+
+    /**
+     * @Property createdDateAfter: Specifies to query the template that is created at or later than the specified time.The value must be in the YYYY-MM-DDThh:mm:ssZ format.
+     */
+    readonly createdDateAfter?: string | ros.IResolvable;
+
+    /**
+     * @Property createdDateBefore: Specifies to query the template that is created at or before the specified time.The value must be in the YYYY-MM-DDThh:mm::ssZ format.
+     */
+    readonly createdDateBefore?: string | ros.IResolvable;
+
+    /**
+     * @Property hasTrigger: Specifies whether to query the template that is configured with a trigger.
+     */
+    readonly hasTrigger?: boolean | ros.IResolvable;
+
+    /**
+     * @Property isExample: Specifies whether the template is an example template.
+     */
+    readonly isExample?: boolean | ros.IResolvable;
+
+    /**
+     * @Property isFavorite: Specifies whether the template is added to favorites.
+     */
+    readonly isFavorite?: boolean | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property shareType: The share type of the template. Valid values:
+     * Public
+     * Private
+     */
+    readonly shareType?: string | ros.IResolvable;
+
+    /**
+     * @Property sortField: The field that is used to sort the templates to be queried. Valid values:
+     * TotalExecutionCount (default): The system sorts the returned templates based on the total number of times that the templates are used.
+     * Popularity: The system sorts the returned templates based on the popularity of the templates.
+     * TemplateName: The system sorts the returned templates based on the names of the templates.
+     * CreatedDate: The system sorts the returned templates based on the points in time when the templates are created.
+     * UpdatedDate: The system sorts the returned templates based on the points in time when the templates are updated.
+     */
+    readonly sortField?: string | ros.IResolvable;
+
+    /**
+     * @Property sortOrder: The order in which you want to sort the results. Valid values:
+     * Ascending: ascending order.
+     * Descending: descending order. This is the default value.
+     */
+    readonly sortOrder?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: The tag keys and values. The number of key-value pairs ranges from 1 to 20. Example: {"k1":"k2","k2":"v2"}
+     */
+    readonly tags?: { [key: string]: (any) };
+
+    /**
+     * @Property templateFormat: The format of the template. Valid values:
+     * JSON
+     * YAML
+     */
+    readonly templateFormat?: string | ros.IResolvable;
+
+    /**
+     * @Property templateName: The name of the template.
+     */
+    readonly templateName?: string | ros.IResolvable;
+
+    /**
+     * @Property templateType: The type of the template. Valid values:
+     * Automation: the template for automated tasks.
+     * State: the template for configuration inventories.
+     * Package: the template for software packages.
+     */
+    readonly templateType?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosTemplatesProps`
+ *
+ * @param properties - the TypeScript properties of a `RosTemplatesProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosTemplatesPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.category && (typeof properties.category) !== 'object') {
+        errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
+          data: properties.category,
+          allowedValues: ["TimerTrigger","EventTrigger","AlarmTrigger","Other"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
+    errors.collect(ros.propertyValidator('createdBy', ros.validateString)(properties.createdBy));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('templateFormat', ros.validateString)(properties.templateFormat));
+    errors.collect(ros.propertyValidator('createdDateAfter', ros.validateString)(properties.createdDateAfter));
+    errors.collect(ros.propertyValidator('isExample', ros.validateBoolean)(properties.isExample));
+    errors.collect(ros.propertyValidator('createdDateBefore', ros.validateString)(properties.createdDateBefore));
+    if(properties.sortOrder && (typeof properties.sortOrder) !== 'object') {
+        errors.collect(ros.propertyValidator('sortOrder', ros.validateAllowedValues)({
+          data: properties.sortOrder,
+          allowedValues: ["Ascending","Descending"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('sortOrder', ros.validateString)(properties.sortOrder));
+    if(properties.sortField && (typeof properties.sortField) !== 'object') {
+        errors.collect(ros.propertyValidator('sortField', ros.validateAllowedValues)({
+          data: properties.sortField,
+          allowedValues: ["TotalExecutionCount","Popularity","TemplateName","CreatedDate","UpdatedDate"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('sortField', ros.validateString)(properties.sortField));
+    if(properties.templateType && (typeof properties.templateType) !== 'object') {
+        errors.collect(ros.propertyValidator('templateType', ros.validateAllowedValues)({
+          data: properties.templateType,
+          allowedValues: ["Automation","State","Package"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('templateType', ros.validateString)(properties.templateType));
+    errors.collect(ros.propertyValidator('isFavorite', ros.validateBoolean)(properties.isFavorite));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
+    errors.collect(ros.propertyValidator('hasTrigger', ros.validateBoolean)(properties.hasTrigger));
+    errors.collect(ros.propertyValidator('templateName', ros.validateString)(properties.templateName));
+    errors.collect(ros.propertyValidator('tags', ros.hashValidator(ros.validateAny))(properties.tags));
+    if(properties.shareType && (typeof properties.shareType) !== 'object') {
+        errors.collect(ros.propertyValidator('shareType', ros.validateAllowedValues)({
+          data: properties.shareType,
+          allowedValues: ["Public","Private"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('shareType', ros.validateString)(properties.shareType));
+    return errors.wrap('supplied properties not correct for "RosTemplatesProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::OOS::Templates` resource
+ *
+ * @param properties - the TypeScript properties of a `RosTemplatesProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::OOS::Templates` resource.
+ */
+// @ts-ignore TS6133
+function rosTemplatesPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosTemplatesPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'Category': ros.stringToRosTemplate(properties.category),
+      'CreatedBy': ros.stringToRosTemplate(properties.createdBy),
+      'CreatedDateAfter': ros.stringToRosTemplate(properties.createdDateAfter),
+      'CreatedDateBefore': ros.stringToRosTemplate(properties.createdDateBefore),
+      'HasTrigger': ros.booleanToRosTemplate(properties.hasTrigger),
+      'IsExample': ros.booleanToRosTemplate(properties.isExample),
+      'IsFavorite': ros.booleanToRosTemplate(properties.isFavorite),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'ShareType': ros.stringToRosTemplate(properties.shareType),
+      'SortField': ros.stringToRosTemplate(properties.sortField),
+      'SortOrder': ros.stringToRosTemplate(properties.sortOrder),
+      'Tags': ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
+      'TemplateFormat': ros.stringToRosTemplate(properties.templateFormat),
+      'TemplateName': ros.stringToRosTemplate(properties.templateName),
+      'TemplateType': ros.stringToRosTemplate(properties.templateType),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::Templates`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Templates` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-templates
+ */
+export class RosTemplates extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::OOS::Templates";
+
+    /**
+     * @Attribute TemplateNames: The list of template_names.
+     */
+    public readonly attrTemplateNames: ros.IResolvable;
+
+    /**
+     * @Attribute Templates: The list of templates.
+     */
+    public readonly attrTemplates: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property category: The type of the template. Valid values include TimerTrigger, EventTrigger, AlarmTrigger, and Other.
+     */
+    public category: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property createdBy: The creator of the template.
+     */
+    public createdBy: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property createdDateAfter: Specifies to query the template that is created at or later than the specified time.The value must be in the YYYY-MM-DDThh:mm:ssZ format.
+     */
+    public createdDateAfter: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property createdDateBefore: Specifies to query the template that is created at or before the specified time.The value must be in the YYYY-MM-DDThh:mm::ssZ format.
+     */
+    public createdDateBefore: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property hasTrigger: Specifies whether to query the template that is configured with a trigger.
+     */
+    public hasTrigger: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property isExample: Specifies whether the template is an example template.
+     */
+    public isExample: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property isFavorite: Specifies whether the template is added to favorites.
+     */
+    public isFavorite: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property shareType: The share type of the template. Valid values:
+     * Public
+     * Private
+     */
+    public shareType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property sortField: The field that is used to sort the templates to be queried. Valid values:
+     * TotalExecutionCount (default): The system sorts the returned templates based on the total number of times that the templates are used.
+     * Popularity: The system sorts the returned templates based on the popularity of the templates.
+     * TemplateName: The system sorts the returned templates based on the names of the templates.
+     * CreatedDate: The system sorts the returned templates based on the points in time when the templates are created.
+     * UpdatedDate: The system sorts the returned templates based on the points in time when the templates are updated.
+     */
+    public sortField: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property sortOrder: The order in which you want to sort the results. Valid values:
+     * Ascending: ascending order.
+     * Descending: descending order. This is the default value.
+     */
+    public sortOrder: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: The tag keys and values. The number of key-value pairs ranges from 1 to 20. Example: {"k1":"k2","k2":"v2"}
+     */
+    public tags: { [key: string]: (any) } | undefined;
+
+    /**
+     * @Property templateFormat: The format of the template. Valid values:
+     * JSON
+     * YAML
+     */
+    public templateFormat: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property templateName: The name of the template.
+     */
+    public templateName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property templateType: The type of the template. Valid values:
+     * Automation: the template for automated tasks.
+     * State: the template for configuration inventories.
+     * Package: the template for software packages.
+     */
+    public templateType: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosTemplatesProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosTemplates.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrTemplateNames = this.getAtt('TemplateNames');
+        this.attrTemplates = this.getAtt('Templates');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.category = props.category;
+        this.createdBy = props.createdBy;
+        this.createdDateAfter = props.createdDateAfter;
+        this.createdDateBefore = props.createdDateBefore;
+        this.hasTrigger = props.hasTrigger;
+        this.isExample = props.isExample;
+        this.isFavorite = props.isFavorite;
+        this.refreshOptions = props.refreshOptions;
+        this.resourceGroupId = props.resourceGroupId;
+        this.shareType = props.shareType;
+        this.sortField = props.sortField;
+        this.sortOrder = props.sortOrder;
+        this.tags = props.tags;
+        this.templateFormat = props.templateFormat;
+        this.templateName = props.templateName;
+        this.templateType = props.templateType;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            category: this.category,
+            createdBy: this.createdBy,
+            createdDateAfter: this.createdDateAfter,
+            createdDateBefore: this.createdDateBefore,
+            hasTrigger: this.hasTrigger,
+            isExample: this.isExample,
+            isFavorite: this.isFavorite,
+            refreshOptions: this.refreshOptions,
+            resourceGroupId: this.resourceGroupId,
+            shareType: this.shareType,
+            sortField: this.sortField,
+            sortOrder: this.sortOrder,
+            tags: this.tags,
+            templateFormat: this.templateFormat,
+            templateName: this.templateName,
+            templateType: this.templateType,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosTemplatesPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }

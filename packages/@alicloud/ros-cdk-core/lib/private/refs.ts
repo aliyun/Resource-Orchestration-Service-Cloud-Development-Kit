@@ -136,7 +136,7 @@ function findAllReferences(root: IConstruct) {
       // This does make the assumption that the error will not be rectified,
       // but the error will be thrown later on anyway. If the error doesn't
       // get thrown down the line, we may miss references.
-      if (e.type === "RosSynthesisError") {
+      if ((e as any).type === "RosSynthesisError") {
         continue;
       }
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Represents a <code>EIPPro</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:11.262Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:51.184Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.IEIPPro")
 @software.amazon.jsii.Jsii.Proxy(IEIPPro.Jsii$Proxy.class)
 public interface IEIPPro extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

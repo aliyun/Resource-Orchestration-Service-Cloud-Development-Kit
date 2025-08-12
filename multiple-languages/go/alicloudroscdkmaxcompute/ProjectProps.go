@@ -19,5 +19,9 @@ type ProjectProps struct {
 	IpWhiteList interface{} `field:"optional" json:"ipWhiteList" yaml:"ipWhiteList"`
 	// Property properties: Project base attributes.
 	Properties interface{} `field:"optional" json:"properties" yaml:"properties"`
+	// Property supportSchemaLevels: Whether to support schema level.
+	//
+	// Default: False.
+	SupportSchemaLevels interface{} `field:"optional" json:"supportSchemaLevels" yaml:"supportSchemaLevels"`
 }
 

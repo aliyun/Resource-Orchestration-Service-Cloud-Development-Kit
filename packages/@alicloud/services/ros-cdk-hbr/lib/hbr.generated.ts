@@ -270,7 +270,7 @@ function rosDbAgentPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::DbAgent`, which is used to install a Cloud Backup backup client for a database.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::DbAgent`, which is used to install a Data Disaster Recovery client.
  * @Note This class does not contain additional functions, so it is recommended to use the `DbAgent` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbagent
  */
@@ -951,7 +951,7 @@ function rosDbVaultPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::DbVault`, which is used to create a mirror vault.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::DbVault`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DbVault` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbvault
  */
@@ -1220,7 +1220,7 @@ function rosRestoreJobPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::RestoreJob`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::RestoreJob`, which is used to create a restore job.
  * @Note This class does not contain additional functions, so it is recommended to use the `RestoreJob` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-restorejob
  */
@@ -1495,7 +1495,7 @@ function rosVaultPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::Vault`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::Vault`, which is used to create a backup vault.
  * @Note This class does not contain additional functions, so it is recommended to use the `Vault` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-vault
  */

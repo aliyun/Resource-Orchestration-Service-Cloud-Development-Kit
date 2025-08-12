@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.computenest;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ComputeNest::ServiceInstance</code>, which is used to create and deploy a service instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:03.185Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:44.984Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.computenest.$Module.class, fqn = "@alicloud/ros-cdk-computenest.ServiceInstance")
 public class ServiceInstance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.computenest.IServiceInstance {
 
@@ -89,11 +89,11 @@ public class ServiceInstance extends com.aliyun.ros.cdk.core.Resource implements
     }
 
     /**
-     * Attribute Name: The name of the service instance.
+     * Attribute MarketInstanceId: The ID of the cloud marketplace instance.
      */
     @Override
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrName() {
-        return software.amazon.jsii.Kernel.get(this, "attrName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrMarketInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrMarketInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -102,6 +102,14 @@ public class ServiceInstance extends com.aliyun.ros.cdk.core.Resource implements
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrNetworkConfig() {
         return software.amazon.jsii.Kernel.get(this, "attrNetworkConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     * Attribute Output: Create the output Field returned by the service instance.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrOutput() {
+        return software.amazon.jsii.Kernel.get(this, "attrOutput", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -160,6 +168,14 @@ public class ServiceInstance extends com.aliyun.ros.cdk.core.Resource implements
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrServiceInstanceId() {
         return software.amazon.jsii.Kernel.get(this, "attrServiceInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     * Attribute ServiceInstanceName: The name of the resource.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrServiceInstanceName() {
+        return software.amazon.jsii.Kernel.get(this, "attrServiceInstanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -311,20 +327,20 @@ public class ServiceInstance extends com.aliyun.ros.cdk.core.Resource implements
         }
 
         /**
-         * Property commodity: Cloud market commodity purchase parameters.
+         * Property commodity: The purchase order information of the cloud market does not need to be transmitted if the service is not on the cloud market or charged by volume.
          * <p>
          * @return {@code this}
-         * @param commodity Property commodity: Cloud market commodity purchase parameters. This parameter is required.
+         * @param commodity Property commodity: The purchase order information of the cloud market does not need to be transmitted if the service is not on the cloud market or charged by volume. This parameter is required.
          */
         public Builder commodity(final com.aliyun.ros.cdk.core.IResolvable commodity) {
             this.props.commodity(commodity);
             return this;
         }
         /**
-         * Property commodity: Cloud market commodity purchase parameters.
+         * Property commodity: The purchase order information of the cloud market does not need to be transmitted if the service is not on the cloud market or charged by volume.
          * <p>
          * @return {@code this}
-         * @param commodity Property commodity: Cloud market commodity purchase parameters. This parameter is required.
+         * @param commodity Property commodity: The purchase order information of the cloud market does not need to be transmitted if the service is not on the cloud market or charged by volume. This parameter is required.
          */
         public Builder commodity(final com.aliyun.ros.cdk.computenest.RosServiceInstance.CommodityProperty commodity) {
             this.props.commodity(commodity);
@@ -349,6 +365,41 @@ public class ServiceInstance extends com.aliyun.ros.cdk.core.Resource implements
          */
         public Builder contactGroup(final com.aliyun.ros.cdk.core.IResolvable contactGroup) {
             this.props.contactGroup(contactGroup);
+            return this;
+        }
+
+        /**
+         * Property dryRun: Whether to perform PreCheck on the creation request, including permissions and instance status verification.
+         * <p>
+         * Possible values:
+         * <p>
+         * <ul>
+         * <li><strong>true</strong>: The request is sent without creating a service instance.</li>
+         * <li><strong>false</strong>: Sends the request and creates a service instance after the check is passed.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param dryRun Property dryRun: Whether to perform PreCheck on the creation request, including permissions and instance status verification. This parameter is required.
+         */
+        public Builder dryRun(final java.lang.Boolean dryRun) {
+            this.props.dryRun(dryRun);
+            return this;
+        }
+        /**
+         * Property dryRun: Whether to perform PreCheck on the creation request, including permissions and instance status verification.
+         * <p>
+         * Possible values:
+         * <p>
+         * <ul>
+         * <li><strong>true</strong>: The request is sent without creating a service instance.</li>
+         * <li><strong>false</strong>: Sends the request and creates a service instance after the check is passed.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param dryRun Property dryRun: Whether to perform PreCheck on the creation request, including permissions and instance status verification. This parameter is required.
+         */
+        public Builder dryRun(final com.aliyun.ros.cdk.core.IResolvable dryRun) {
+            this.props.dryRun(dryRun);
             return this;
         }
 
@@ -423,48 +474,6 @@ public class ServiceInstance extends com.aliyun.ros.cdk.core.Resource implements
         }
 
         /**
-         * Property marketInstanceId: The ID of the cloud marketplace instance.
-         * <p>
-         * @return {@code this}
-         * @param marketInstanceId Property marketInstanceId: The ID of the cloud marketplace instance. This parameter is required.
-         */
-        public Builder marketInstanceId(final java.lang.String marketInstanceId) {
-            this.props.marketInstanceId(marketInstanceId);
-            return this;
-        }
-        /**
-         * Property marketInstanceId: The ID of the cloud marketplace instance.
-         * <p>
-         * @return {@code this}
-         * @param marketInstanceId Property marketInstanceId: The ID of the cloud marketplace instance. This parameter is required.
-         */
-        public Builder marketInstanceId(final com.aliyun.ros.cdk.core.IResolvable marketInstanceId) {
-            this.props.marketInstanceId(marketInstanceId);
-            return this;
-        }
-
-        /**
-         * Property name: The name of the service instance.
-         * <p>
-         * @return {@code this}
-         * @param name Property name: The name of the service instance. This parameter is required.
-         */
-        public Builder name(final java.lang.String name) {
-            this.props.name(name);
-            return this;
-        }
-        /**
-         * Property name: The name of the service instance.
-         * <p>
-         * @return {@code this}
-         * @param name Property name: The name of the service instance. This parameter is required.
-         */
-        public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
-            this.props.name(name);
-            return this;
-        }
-
-        /**
          * Property operationName: Change operation name.
          * <p>
          * @return {@code this}
@@ -491,7 +500,7 @@ public class ServiceInstance extends com.aliyun.ros.cdk.core.Resource implements
          * @return {@code this}
          * @param parameters Property parameters: The parameters entered by the deployment service instance. This parameter is required.
          */
-        public Builder parameters(final com.aliyun.ros.cdk.core.IResolvable parameters) {
+        public Builder parameters(final java.lang.String parameters) {
             this.props.parameters(parameters);
             return this;
         }
@@ -501,7 +510,7 @@ public class ServiceInstance extends com.aliyun.ros.cdk.core.Resource implements
          * @return {@code this}
          * @param parameters Property parameters: The parameters entered by the deployment service instance. This parameter is required.
          */
-        public Builder parameters(final java.util.Map<java.lang.String, ? extends java.lang.Object> parameters) {
+        public Builder parameters(final com.aliyun.ros.cdk.core.IResolvable parameters) {
             this.props.parameters(parameters);
             return this;
         }
@@ -528,6 +537,41 @@ public class ServiceInstance extends com.aliyun.ros.cdk.core.Resource implements
         }
 
         /**
+         * Property resourceAutoPay: Whether the resource is automatically deducted from the balance.
+         * <p>
+         * Value:
+         * <p>
+         * <ul>
+         * <li><strong>true</strong>: automatic payment.</li>
+         * <li><strong>false</strong>: Do not pay automatically.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param resourceAutoPay Property resourceAutoPay: Whether the resource is automatically deducted from the balance. This parameter is required.
+         */
+        public Builder resourceAutoPay(final java.lang.Boolean resourceAutoPay) {
+            this.props.resourceAutoPay(resourceAutoPay);
+            return this;
+        }
+        /**
+         * Property resourceAutoPay: Whether the resource is automatically deducted from the balance.
+         * <p>
+         * Value:
+         * <p>
+         * <ul>
+         * <li><strong>true</strong>: automatic payment.</li>
+         * <li><strong>false</strong>: Do not pay automatically.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param resourceAutoPay Property resourceAutoPay: Whether the resource is automatically deducted from the balance. This parameter is required.
+         */
+        public Builder resourceAutoPay(final com.aliyun.ros.cdk.core.IResolvable resourceAutoPay) {
+            this.props.resourceAutoPay(resourceAutoPay);
+            return this;
+        }
+
+        /**
          * Property resourceGroupId: The ID of the resource group.
          * <p>
          * @return {@code this}
@@ -545,6 +589,27 @@ public class ServiceInstance extends com.aliyun.ros.cdk.core.Resource implements
          */
         public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * Property serviceInstanceName: The name of the service instance.
+         * <p>
+         * @return {@code this}
+         * @param serviceInstanceName Property serviceInstanceName: The name of the service instance. This parameter is required.
+         */
+        public Builder serviceInstanceName(final java.lang.String serviceInstanceName) {
+            this.props.serviceInstanceName(serviceInstanceName);
+            return this;
+        }
+        /**
+         * Property serviceInstanceName: The name of the service instance.
+         * <p>
+         * @return {@code this}
+         * @param serviceInstanceName Property serviceInstanceName: The name of the service instance. This parameter is required.
+         */
+        public Builder serviceInstanceName(final com.aliyun.ros.cdk.core.IResolvable serviceInstanceName) {
+            this.props.serviceInstanceName(serviceInstanceName);
             return this;
         }
 

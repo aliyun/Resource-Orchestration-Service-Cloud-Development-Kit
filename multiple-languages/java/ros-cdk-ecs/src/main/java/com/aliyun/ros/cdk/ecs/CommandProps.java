@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-command
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:04.551Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.126Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.CommandProps")
 @software.amazon.jsii.Jsii.Proxy(CommandProps.Jsii$Proxy.class)
 public interface CommandProps extends software.amazon.jsii.JsiiSerializable {
@@ -49,6 +49,15 @@ public interface CommandProps extends software.amazon.jsii.JsiiSerializable {
      * Default value: false
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEnableParameter() {
+        return null;
+    }
+
+    /**
+     * Property launcher: A bootloader for script execution.
+     * <p>
+     * The length cannot exceed 1 KB.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLauncher() {
         return null;
     }
 
@@ -106,6 +115,7 @@ public interface CommandProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object contentEncoding;
         java.lang.Object description;
         java.lang.Object enableParameter;
+        java.lang.Object launcher;
         java.lang.Object name;
         java.lang.Object resourceGroupId;
         java.util.List<com.aliyun.ros.cdk.ecs.RosCommand.TagsProperty> tags;
@@ -225,6 +235,28 @@ public interface CommandProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link CommandProps#getLauncher}
+         * @param launcher Property launcher: A bootloader for script execution.
+         *                 The length cannot exceed 1 KB.
+         * @return {@code this}
+         */
+        public Builder launcher(java.lang.String launcher) {
+            this.launcher = launcher;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link CommandProps#getLauncher}
+         * @param launcher Property launcher: A bootloader for script execution.
+         *                 The length cannot exceed 1 KB.
+         * @return {@code this}
+         */
+        public Builder launcher(com.aliyun.ros.cdk.core.IResolvable launcher) {
+            this.launcher = launcher;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CommandProps#getName}
          * @param name Property name: The name of command.
          * @return {@code this}
@@ -339,6 +371,7 @@ public interface CommandProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object contentEncoding;
         private final java.lang.Object description;
         private final java.lang.Object enableParameter;
+        private final java.lang.Object launcher;
         private final java.lang.Object name;
         private final java.lang.Object resourceGroupId;
         private final java.util.List<com.aliyun.ros.cdk.ecs.RosCommand.TagsProperty> tags;
@@ -356,6 +389,7 @@ public interface CommandProps extends software.amazon.jsii.JsiiSerializable {
             this.contentEncoding = software.amazon.jsii.Kernel.get(this, "contentEncoding", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableParameter = software.amazon.jsii.Kernel.get(this, "enableParameter", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.launcher = software.amazon.jsii.Kernel.get(this, "launcher", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosCommand.TagsProperty.class)));
@@ -374,6 +408,7 @@ public interface CommandProps extends software.amazon.jsii.JsiiSerializable {
             this.contentEncoding = builder.contentEncoding;
             this.description = builder.description;
             this.enableParameter = builder.enableParameter;
+            this.launcher = builder.launcher;
             this.name = builder.name;
             this.resourceGroupId = builder.resourceGroupId;
             this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosCommand.TagsProperty>)builder.tags;
@@ -404,6 +439,11 @@ public interface CommandProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getEnableParameter() {
             return this.enableParameter;
+        }
+
+        @Override
+        public final java.lang.Object getLauncher() {
+            return this.launcher;
         }
 
         @Override
@@ -450,6 +490,9 @@ public interface CommandProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getEnableParameter() != null) {
                 data.set("enableParameter", om.valueToTree(this.getEnableParameter()));
             }
+            if (this.getLauncher() != null) {
+                data.set("launcher", om.valueToTree(this.getLauncher()));
+            }
             if (this.getName() != null) {
                 data.set("name", om.valueToTree(this.getName()));
             }
@@ -488,6 +531,7 @@ public interface CommandProps extends software.amazon.jsii.JsiiSerializable {
             if (this.contentEncoding != null ? !this.contentEncoding.equals(that.contentEncoding) : that.contentEncoding != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.enableParameter != null ? !this.enableParameter.equals(that.enableParameter) : that.enableParameter != null) return false;
+            if (this.launcher != null ? !this.launcher.equals(that.launcher) : that.launcher != null) return false;
             if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
@@ -502,6 +546,7 @@ public interface CommandProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.contentEncoding != null ? this.contentEncoding.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.enableParameter != null ? this.enableParameter.hashCode() : 0);
+            result = 31 * result + (this.launcher != null ? this.launcher.hashCode() : 0);
             result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);

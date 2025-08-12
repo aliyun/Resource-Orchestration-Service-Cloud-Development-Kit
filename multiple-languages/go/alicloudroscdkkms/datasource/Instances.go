@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::KMS::Instances`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::KMS::Instances`, which is used to query Key Management Service (KMS) instances that are created within the current account in the current region.
 type Instances interface {
 	alicloudroscdkcore.Resource
 	IInstances

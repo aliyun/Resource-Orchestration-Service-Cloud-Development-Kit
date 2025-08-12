@@ -132,9 +132,9 @@ export interface DBClusterProps {
     readonly dbMinorVersion?: string | ros.IResolvable;
 
     /**
-     * Property dbNodeNum: The number of Standard Edition nodes. Default value: 1. Valid values:
-     * 1: only one primary node.
-     * 2: one read-only node and one primary node.
+     * Property dbNodeNum: The number of Standard Edition nodes.
+     * Valid values for PolarDB for MySQL Standard Edition: 1 to 8.
+     * Valid values for PolarDB for MySQL Enterprise Edition: 1 to 16.
      */
     readonly dbNodeNum?: number | ros.IResolvable;
 
@@ -481,7 +481,7 @@ export interface IDBCluster extends ros.IResource {
     readonly attrPrimaryEndpointIds: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::DBCluster`, which is used to create a PolarDB cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::DBCluster`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbcluster
  */

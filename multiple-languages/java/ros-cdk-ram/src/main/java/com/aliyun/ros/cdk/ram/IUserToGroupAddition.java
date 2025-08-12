@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * Represents a <code>UserToGroupAddition</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:09.403Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.651Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.IUserToGroupAddition")
 @software.amazon.jsii.Jsii.Proxy(IUserToGroupAddition.Jsii$Proxy.class)
 public interface IUserToGroupAddition extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

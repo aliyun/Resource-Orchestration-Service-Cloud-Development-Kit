@@ -25,13 +25,17 @@ type SubscriptionJob2Props struct {
 	DelayNotice interface{} `field:"optional" json:"delayNotice" yaml:"delayNotice"`
 	// Property delayPhone: The mobile numbers that receive latency-related alerts.
 	//
-	// Separate multiple mobile numbers with commas (,).
-	// **Note**: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+	// Separate multiple mobile numbers with commas (,). You can specify up to 10 mobile numbers.
+	// **Note**: You can also configure alert rules for DTS tasks in the CloudMonitor console.This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers.
 	DelayPhone interface{} `field:"optional" json:"delayPhone" yaml:"delayPhone"`
 	// Property delayRuleTime: The threshold for latency alerts.
 	//
 	// Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
 	DelayRuleTime interface{} `field:"optional" json:"delayRuleTime" yaml:"delayRuleTime"`
+	// Property destPrimaryVswId: The primary VSW ID at the destination end of the VPC NAT.
+	DestPrimaryVswId interface{} `field:"optional" json:"destPrimaryVswId" yaml:"destPrimaryVswId"`
+	// Property destSecondaryVswId: The secondary VSW ID at the destination end of the VPC NAT.
+	DestSecondaryVswId interface{} `field:"optional" json:"destSecondaryVswId" yaml:"destSecondaryVswId"`
 	// Property dtsBisLabel: The environment tag of the DTS instance.
 	//
 	// Valid values: **normal** and **online**.
@@ -46,13 +50,27 @@ type SubscriptionJob2Props struct {
 	ErrorNotice interface{} `field:"optional" json:"errorNotice" yaml:"errorNotice"`
 	// Property errorPhone: The mobile numbers that receive status-related alerts.
 	//
-	// Separate multiple mobile numbers with commas (,).
-	// **Note**: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+	// Separate multiple mobile numbers with commas (,). You can specify up to 10 mobile numbers.
+	// **Note**: You can also configure alert rules for DTS tasks in the CloudMonitor console.This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers.
 	ErrorPhone interface{} `field:"optional" json:"errorPhone" yaml:"errorPhone"`
+	// Property maxDu: The upper limit of DU.
+	//
+	// This parameter is supported only for serverless instances.
+	MaxDu interface{} `field:"optional" json:"maxDu" yaml:"maxDu"`
+	// Property minDu: The lower limit of DU.
+	//
+	// This parameter is supported only for serverless instances.
+	MinDu interface{} `field:"optional" json:"minDu" yaml:"minDu"`
 	// Property reserve: The reserved parameter of DTS.
 	//
 	// You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
 	Reserve interface{} `field:"optional" json:"reserve" yaml:"reserve"`
+	// Property resourceGroupId: The ID of the resource group.
+	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
+	// Property srcPrimaryVswId: The primary VSW ID at the source end of the VPC NAT.
+	SrcPrimaryVswId interface{} `field:"optional" json:"srcPrimaryVswId" yaml:"srcPrimaryVswId"`
+	// Property srcSecondaryVswId: The secondary VSW ID at the source end of the VPC NAT.
+	SrcSecondaryVswId interface{} `field:"optional" json:"srcSecondaryVswId" yaml:"srcSecondaryVswId"`
 	// Property status: The status of the resource.
 	//
 	// Valid values:

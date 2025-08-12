@@ -108,7 +108,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: cpu: Each instance of the CPU required, in units of milli core, can not be zero. Currently only supports fixed specifications instance type.
+        /// <strong>Property</strong>: cpu: The CPU required for each instance. Valid values: 500, 1000, 2000, 4000, 8000, 16000, 32000.
         /// </remarks>
         [JsiiProperty(name: "cpu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object Cpu
@@ -165,7 +165,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: memory: Each instance of the required memory, in units of MB, can not be zero. Currently only supports fixed specifications instance type.
+        /// <strong>Property</strong>: memory: The memory required for each instance, in MB, cannot be 0. One-to-one correspondence with CPU. Valid values: 1024, 2048, 4096, 8192, 12288, 16384, 24576, 32768, 65536, 131072.
         /// </remarks>
         [JsiiProperty(name: "memory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object Memory
@@ -766,6 +766,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: enableNewArms: Whether to enable the new ARMS feature.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "enableNewArms", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? EnableNewArms
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: envs: Container environment variable parameters. For example: [{ "name": "envtmp", "value": "0"}]
         /// </remarks>
         [JsiiOptional]
@@ -1213,6 +1244,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: newSaeVersion: The new SAE version. Supported versions: lite, std, pro.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "newSaeVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? NewSaeVersion
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: ossAkId: AccessKey ID of the OSS.
         /// </remarks>
         [JsiiOptional]
@@ -1563,7 +1625,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// <strong>Property</strong>: programmingLanguage: Create the stack language for the application. The values are explained as follows:
         /// - java: The Java language
         /// - php: PHP language.
-        /// - other: Multiple languages such as Python, C++, Go,.NET, Node.js, etc.
+        /// - python: Python language.
+        /// - dotnet: .NET Core language.
+        /// - golang: GoLang language.
+        /// - other: Multiple languages such as C++, Node.js, etc.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "programmingLanguage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

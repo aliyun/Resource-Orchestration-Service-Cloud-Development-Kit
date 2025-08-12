@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.aligreen;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::Aligreen::Callback</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::Aligreen::Callback</code>, which is used to create a callback.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:01.453Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:43.372Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.aligreen.$Module.class, fqn = "@alicloud/ros-cdk-aligreen.Callback")
 public class Callback extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.aligreen.ICallback {
 

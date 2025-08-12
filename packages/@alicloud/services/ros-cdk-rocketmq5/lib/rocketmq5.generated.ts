@@ -707,8 +707,8 @@ function RosInstance_ProductInfoPropertyValidator(properties: any): ros.Validati
     if(properties.sendReceiveRatio && (typeof properties.sendReceiveRatio) !== 'object') {
         errors.collect(ros.propertyValidator('sendReceiveRatio', ros.validateRange)({
             data: properties.sendReceiveRatio,
-            min: 0.2,
-            max: 0.5,
+            min: 0,
+            max: 1,
           }));
     }
     errors.collect(ros.propertyValidator('sendReceiveRatio', ros.validateNumber)(properties.sendReceiveRatio));

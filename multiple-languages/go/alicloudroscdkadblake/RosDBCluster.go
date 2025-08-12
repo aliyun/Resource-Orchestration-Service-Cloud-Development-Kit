@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ADBLake::DBCluster`, which is used to create an AnalyticDB for MySQL Data Lakehouse Edition (V3.0) cluster.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ADBLake::DBCluster`, which type is used to create an AnalyticDB for MySQL Data Lakehouse Edition cluster.
 type RosDBCluster interface {
 	alicloudroscdkcore.RosResource
 	AttrConnectionString() alicloudroscdkcore.IResolvable
@@ -59,6 +59,8 @@ type RosDBCluster interface {
 	SetPeriodType(val interface{})
 	ProductForm() interface{}
 	SetProductForm(val interface{})
+	ProductVersion() interface{}
+	SetProductVersion(val interface{})
 	// Return a string that will be resolved to a RosTemplate `{ Ref }` for this element.
 	//
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
@@ -79,6 +81,10 @@ type RosDBCluster interface {
 	RosProperties() *map[string]interface{}
 	// ROS resource type.
 	RosResourceType() *string
+	SecondaryVSwitchId() interface{}
+	SetSecondaryVSwitchId(val interface{})
+	SecondaryZoneId() interface{}
+	SetSecondaryZoneId(val interface{})
 	SourceDbClusterId() interface{}
 	SetSourceDbClusterId(val interface{})
 	// The stack in which this element is defined.
@@ -419,6 +425,16 @@ func (j *jsiiProxy_RosDBCluster) ProductForm() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosDBCluster) ProductVersion() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"productVersion",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosDBCluster) Ref() *string {
 	var returns *string
 	_jsii_.Get(
@@ -504,6 +520,26 @@ func (j *jsiiProxy_RosDBCluster) RosResourceType() *string {
 	_jsii_.Get(
 		j,
 		"rosResourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDBCluster) SecondaryVSwitchId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"secondaryVSwitchId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDBCluster) SecondaryZoneId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"secondaryZoneId",
 		&returns,
 	)
 	return returns
@@ -771,6 +807,17 @@ func (j *jsiiProxy_RosDBCluster)SetProductForm(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosDBCluster)SetProductVersion(val interface{}) {
+	if err := j.validateSetProductVersionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"productVersion",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosDBCluster)SetReservedNodeCount(val interface{}) {
 	if err := j.validateSetReservedNodeCountParameters(val); err != nil {
 		panic(err)
@@ -822,6 +869,28 @@ func (j *jsiiProxy_RosDBCluster)SetRestoreType(val interface{}) {
 	_jsii_.Set(
 		j,
 		"restoreType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDBCluster)SetSecondaryVSwitchId(val interface{}) {
+	if err := j.validateSetSecondaryVSwitchIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"secondaryVSwitchId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDBCluster)SetSecondaryZoneId(val interface{}) {
+	if err := j.validateSetSecondaryZoneIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"secondaryZoneId",
 		val,
 	)
 }

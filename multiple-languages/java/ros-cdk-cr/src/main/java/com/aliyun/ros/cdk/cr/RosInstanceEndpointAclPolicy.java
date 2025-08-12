@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cr;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CR::InstanceEndpointAclPolicy</code>, which is used to create a whitelist policy for the public endpoint of an instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:03.294Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.085Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.RosInstanceEndpointAclPolicy")
 public class RosInstanceEndpointAclPolicy extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -99,6 +99,24 @@ public class RosInstanceEndpointAclPolicy extends com.aliyun.ros.cdk.core.RosRes
      */
     public void setInstanceId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "instanceId", java.util.Objects.requireNonNull(value, "instanceId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAutoEnableType() {
+        return software.amazon.jsii.Kernel.get(this, "autoEnableType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAutoEnableType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "autoEnableType", value);
+    }
+
+    /**
+     */
+    public void setAutoEnableType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "autoEnableType", value);
     }
 
     /**
@@ -230,6 +248,23 @@ public class RosInstanceEndpointAclPolicy extends com.aliyun.ros.cdk.core.RosRes
          */
         public Builder instanceId(final com.aliyun.ros.cdk.core.IResolvable instanceId) {
             this.props.instanceId(instanceId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param autoEnableType This parameter is required.
+         */
+        public Builder autoEnableType(final java.lang.String autoEnableType) {
+            this.props.autoEnableType(autoEnableType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param autoEnableType This parameter is required.
+         */
+        public Builder autoEnableType(final com.aliyun.ros.cdk.core.IResolvable autoEnableType) {
+            this.props.autoEnableType(autoEnableType);
             return this;
         }
 

@@ -3,80 +3,15 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Represents a <code>TransitRouterPeerAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:02.420Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:44.320Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.ITransitRouterPeerAttachment")
 @software.amazon.jsii.Jsii.Proxy(ITransitRouterPeerAttachment.Jsii$Proxy.class)
 public interface ITransitRouterPeerAttachment extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
 
     /**
-     * Attribute AutoPublishRouteEnabled: AutoPublishRouteEnabled.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getAttrAutoPublishRouteEnabled();
-
-    /**
-     * Attribute Bandwidth: Bandwidth.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getAttrBandwidth();
-
-    /**
-     * Attribute CenBandwidthPackageId: BandwidthPackageId.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getAttrCenBandwidthPackageId();
-
-    /**
-     * Attribute CenId: CenId.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getAttrCenId();
-
-    /**
-     * Attribute ClientToken: ClientToken.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getAttrClientToken();
-
-    /**
-     * Attribute GeographicSpanId: GeographicSpanId.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getAttrGeographicSpanId();
-
-    /**
-     * Attribute PeerTransitRouterId: PeerTransitRouterId.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getAttrPeerTransitRouterId();
-
-    /**
-     * Attribute PeerTransitRouterOwnerId: PeerTransitRouterOwnerId.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getAttrPeerTransitRouterOwnerId();
-
-    /**
-     * Attribute PeerTransitRouterRegionId: PeerTransitRouterRegionId.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getAttrPeerTransitRouterRegionId();
-
-    /**
-     * Attribute ResourceType: ResourceType.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceType();
-
-    /**
-     * Attribute TransitRouterAttachmentDescription: TransitRouterAttachmentDescription.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterAttachmentDescription();
-
-    /**
-     * Attribute TransitRouterAttachmentId: The first ID of the resource.
+     * Attribute TransitRouterAttachmentId: Cross-region connection ID.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterAttachmentId();
-
-    /**
-     * Attribute TransitRouterAttachmentName: TransitRouterAttachmentName.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterAttachmentName();
-
-    /**
-     * Attribute TransitRouterId: TransitRouterId.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterId();
 
     @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cen.TransitRouterPeerAttachmentProps getProps();
 
@@ -121,115 +56,11 @@ public interface ITransitRouterPeerAttachment extends software.amazon.jsii.JsiiS
         }
 
         /**
-         * Attribute AutoPublishRouteEnabled: AutoPublishRouteEnabled.
-         */
-        @Override
-        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrAutoPublishRouteEnabled() {
-            return software.amazon.jsii.Kernel.get(this, "attrAutoPublishRouteEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute Bandwidth: Bandwidth.
-         */
-        @Override
-        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrBandwidth() {
-            return software.amazon.jsii.Kernel.get(this, "attrBandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute CenBandwidthPackageId: BandwidthPackageId.
-         */
-        @Override
-        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrCenBandwidthPackageId() {
-            return software.amazon.jsii.Kernel.get(this, "attrCenBandwidthPackageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute CenId: CenId.
-         */
-        @Override
-        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrCenId() {
-            return software.amazon.jsii.Kernel.get(this, "attrCenId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute ClientToken: ClientToken.
-         */
-        @Override
-        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrClientToken() {
-            return software.amazon.jsii.Kernel.get(this, "attrClientToken", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute GeographicSpanId: GeographicSpanId.
-         */
-        @Override
-        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrGeographicSpanId() {
-            return software.amazon.jsii.Kernel.get(this, "attrGeographicSpanId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute PeerTransitRouterId: PeerTransitRouterId.
-         */
-        @Override
-        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrPeerTransitRouterId() {
-            return software.amazon.jsii.Kernel.get(this, "attrPeerTransitRouterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute PeerTransitRouterOwnerId: PeerTransitRouterOwnerId.
-         */
-        @Override
-        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrPeerTransitRouterOwnerId() {
-            return software.amazon.jsii.Kernel.get(this, "attrPeerTransitRouterOwnerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute PeerTransitRouterRegionId: PeerTransitRouterRegionId.
-         */
-        @Override
-        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrPeerTransitRouterRegionId() {
-            return software.amazon.jsii.Kernel.get(this, "attrPeerTransitRouterRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute ResourceType: ResourceType.
-         */
-        @Override
-        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceType() {
-            return software.amazon.jsii.Kernel.get(this, "attrResourceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute TransitRouterAttachmentDescription: TransitRouterAttachmentDescription.
-         */
-        @Override
-        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterAttachmentDescription() {
-            return software.amazon.jsii.Kernel.get(this, "attrTransitRouterAttachmentDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute TransitRouterAttachmentId: The first ID of the resource.
+         * Attribute TransitRouterAttachmentId: Cross-region connection ID.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterAttachmentId() {
             return software.amazon.jsii.Kernel.get(this, "attrTransitRouterAttachmentId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute TransitRouterAttachmentName: TransitRouterAttachmentName.
-         */
-        @Override
-        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterAttachmentName() {
-            return software.amazon.jsii.Kernel.get(this, "attrTransitRouterAttachmentName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute TransitRouterId: TransitRouterId.
-         */
-        @Override
-        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterId() {
-            return software.amazon.jsii.Kernel.get(this, "attrTransitRouterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         @Override
@@ -276,115 +107,11 @@ public interface ITransitRouterPeerAttachment extends software.amazon.jsii.JsiiS
         }
 
         /**
-         * Attribute AutoPublishRouteEnabled: AutoPublishRouteEnabled.
-         */
-        @Override
-        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrAutoPublishRouteEnabled() {
-            return software.amazon.jsii.Kernel.get(this, "attrAutoPublishRouteEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute Bandwidth: Bandwidth.
-         */
-        @Override
-        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrBandwidth() {
-            return software.amazon.jsii.Kernel.get(this, "attrBandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute CenBandwidthPackageId: BandwidthPackageId.
-         */
-        @Override
-        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrCenBandwidthPackageId() {
-            return software.amazon.jsii.Kernel.get(this, "attrCenBandwidthPackageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute CenId: CenId.
-         */
-        @Override
-        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrCenId() {
-            return software.amazon.jsii.Kernel.get(this, "attrCenId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute ClientToken: ClientToken.
-         */
-        @Override
-        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrClientToken() {
-            return software.amazon.jsii.Kernel.get(this, "attrClientToken", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute GeographicSpanId: GeographicSpanId.
-         */
-        @Override
-        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrGeographicSpanId() {
-            return software.amazon.jsii.Kernel.get(this, "attrGeographicSpanId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute PeerTransitRouterId: PeerTransitRouterId.
-         */
-        @Override
-        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrPeerTransitRouterId() {
-            return software.amazon.jsii.Kernel.get(this, "attrPeerTransitRouterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute PeerTransitRouterOwnerId: PeerTransitRouterOwnerId.
-         */
-        @Override
-        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrPeerTransitRouterOwnerId() {
-            return software.amazon.jsii.Kernel.get(this, "attrPeerTransitRouterOwnerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute PeerTransitRouterRegionId: PeerTransitRouterRegionId.
-         */
-        @Override
-        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrPeerTransitRouterRegionId() {
-            return software.amazon.jsii.Kernel.get(this, "attrPeerTransitRouterRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute ResourceType: ResourceType.
-         */
-        @Override
-        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceType() {
-            return software.amazon.jsii.Kernel.get(this, "attrResourceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute TransitRouterAttachmentDescription: TransitRouterAttachmentDescription.
-         */
-        @Override
-        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterAttachmentDescription() {
-            return software.amazon.jsii.Kernel.get(this, "attrTransitRouterAttachmentDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute TransitRouterAttachmentId: The first ID of the resource.
+         * Attribute TransitRouterAttachmentId: Cross-region connection ID.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterAttachmentId() {
             return software.amazon.jsii.Kernel.get(this, "attrTransitRouterAttachmentId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute TransitRouterAttachmentName: TransitRouterAttachmentName.
-         */
-        @Override
-        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterAttachmentName() {
-            return software.amazon.jsii.Kernel.get(this, "attrTransitRouterAttachmentName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute TransitRouterId: TransitRouterId.
-         */
-        @Override
-        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterId() {
-            return software.amazon.jsii.Kernel.get(this, "attrTransitRouterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         @Override

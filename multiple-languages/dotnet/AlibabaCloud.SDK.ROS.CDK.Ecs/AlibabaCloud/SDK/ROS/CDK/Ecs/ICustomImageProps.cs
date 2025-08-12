@@ -85,6 +85,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
+        /// <summary>Property features: Mirror feature-related properties.</summary>
+        [JsiiProperty(name: "features", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ecs.RosCustomImage.FeaturesProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Features
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property imageFamily: The name of the image family of the image.</summary>
         /// <remarks>
         /// The name must be 2 to 128 characters in length and can contain letters, digits, colons (:), underscores (_), and hyphens (-). It cannot contain http:// or https://. It must start with a letter and cannot start with acs: or aliyun.This parameter is empty by default.
@@ -266,6 +277,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             [JsiiOptional]
             [JsiiProperty(name: "diskDeviceMapping", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ecs.RosCustomImage.DiskDeviceMappingProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? DiskDeviceMapping
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property features: Mirror feature-related properties.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "features", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ecs.RosCustomImage.FeaturesProperty\"}]}}", isOptional: true)]
+            public object? Features
             {
                 get => GetInstanceProperty<object?>();
             }

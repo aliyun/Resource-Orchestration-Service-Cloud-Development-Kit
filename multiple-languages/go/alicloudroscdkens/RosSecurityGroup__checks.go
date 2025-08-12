@@ -260,7 +260,7 @@ func (j *jsiiProxy_RosSecurityGroup) validateSetEnableResourcePropertyConstraint
 	return nil
 }
 
-func (j *jsiiProxy_RosSecurityGroup) validateSetSecurityGroupEgressParameters(val interface{}) error {
+func (j *jsiiProxy_RosSecurityGroup) validateSetPermissionsParameters(val interface{}) error {
 	switch val.(type) {
 	case alicloudroscdkcore.IResolvable:
 		// ok
@@ -270,20 +270,20 @@ func (j *jsiiProxy_RosSecurityGroup) validateSetSecurityGroupEgressParameters(va
 			switch v.(type) {
 			case alicloudroscdkcore.IResolvable:
 				// ok
-			case *RosSecurityGroup_SecurityGroupEgressProperty:
-				v := v.(*RosSecurityGroup_SecurityGroupEgressProperty)
+			case *RosSecurityGroup_PermissionsProperty:
+				v := v.(*RosSecurityGroup_PermissionsProperty)
 				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
 					return err
 				}
-			case RosSecurityGroup_SecurityGroupEgressProperty:
-				v_ := v.(RosSecurityGroup_SecurityGroupEgressProperty)
+			case RosSecurityGroup_PermissionsProperty:
+				v_ := v.(RosSecurityGroup_PermissionsProperty)
 				v := &v_
 				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
 					return err
 				}
 			default:
 				if !_jsii_.IsAnonymousProxy(v) {
-					return fmt.Errorf("parameter val[%#v] must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosSecurityGroup_SecurityGroupEgressProperty; received %#v (a %T)", idx_97dfc6, v, v)
+					return fmt.Errorf("parameter val[%#v] must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosSecurityGroup_PermissionsProperty; received %#v (a %T)", idx_97dfc6, v, v)
 				}
 			}
 		}
@@ -294,80 +294,20 @@ func (j *jsiiProxy_RosSecurityGroup) validateSetSecurityGroupEgressParameters(va
 			switch v.(type) {
 			case alicloudroscdkcore.IResolvable:
 				// ok
-			case *RosSecurityGroup_SecurityGroupEgressProperty:
-				v := v.(*RosSecurityGroup_SecurityGroupEgressProperty)
+			case *RosSecurityGroup_PermissionsProperty:
+				v := v.(*RosSecurityGroup_PermissionsProperty)
 				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
 					return err
 				}
-			case RosSecurityGroup_SecurityGroupEgressProperty:
-				v_ := v.(RosSecurityGroup_SecurityGroupEgressProperty)
+			case RosSecurityGroup_PermissionsProperty:
+				v_ := v.(RosSecurityGroup_PermissionsProperty)
 				v := &v_
 				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
 					return err
 				}
 			default:
 				if !_jsii_.IsAnonymousProxy(v) {
-					return fmt.Errorf("parameter val[%#v] must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosSecurityGroup_SecurityGroupEgressProperty; received %#v (a %T)", idx_97dfc6, v, v)
-				}
-			}
-		}
-	default:
-		if !_jsii_.IsAnonymousProxy(val) {
-			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *[]interface{}; received %#v (a %T)", val, val)
-		}
-	}
-
-	return nil
-}
-
-func (j *jsiiProxy_RosSecurityGroup) validateSetSecurityGroupIngressParameters(val interface{}) error {
-	switch val.(type) {
-	case alicloudroscdkcore.IResolvable:
-		// ok
-	case *[]interface{}:
-		val := val.(*[]interface{})
-		for idx_97dfc6, v := range *val {
-			switch v.(type) {
-			case alicloudroscdkcore.IResolvable:
-				// ok
-			case *RosSecurityGroup_SecurityGroupIngressProperty:
-				v := v.(*RosSecurityGroup_SecurityGroupIngressProperty)
-				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
-					return err
-				}
-			case RosSecurityGroup_SecurityGroupIngressProperty:
-				v_ := v.(RosSecurityGroup_SecurityGroupIngressProperty)
-				v := &v_
-				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
-					return err
-				}
-			default:
-				if !_jsii_.IsAnonymousProxy(v) {
-					return fmt.Errorf("parameter val[%#v] must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosSecurityGroup_SecurityGroupIngressProperty; received %#v (a %T)", idx_97dfc6, v, v)
-				}
-			}
-		}
-	case []interface{}:
-		val_ := val.([]interface{})
-		val := &val_
-		for idx_97dfc6, v := range *val {
-			switch v.(type) {
-			case alicloudroscdkcore.IResolvable:
-				// ok
-			case *RosSecurityGroup_SecurityGroupIngressProperty:
-				v := v.(*RosSecurityGroup_SecurityGroupIngressProperty)
-				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
-					return err
-				}
-			case RosSecurityGroup_SecurityGroupIngressProperty:
-				v_ := v.(RosSecurityGroup_SecurityGroupIngressProperty)
-				v := &v_
-				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
-					return err
-				}
-			default:
-				if !_jsii_.IsAnonymousProxy(v) {
-					return fmt.Errorf("parameter val[%#v] must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosSecurityGroup_SecurityGroupIngressProperty; received %#v (a %T)", idx_97dfc6, v, v)
+					return fmt.Errorf("parameter val[%#v] must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosSecurityGroup_PermissionsProperty; received %#v (a %T)", idx_97dfc6, v, v)
 				}
 			}
 		}

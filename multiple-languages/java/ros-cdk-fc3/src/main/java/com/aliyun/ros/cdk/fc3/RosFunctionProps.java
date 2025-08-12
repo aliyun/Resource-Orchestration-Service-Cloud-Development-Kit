@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.fc3;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-function
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:06.943Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.691Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc3.$Module.class, fqn = "@alicloud/ros-cdk-fc3.RosFunctionProps")
 @software.amazon.jsii.Jsii.Proxy(RosFunctionProps.Jsii$Proxy.class)
 public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable {
@@ -132,6 +132,12 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.fc3.RosFunction.TagsProperty> getTags() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTimeout() {
         return null;
     }
@@ -179,6 +185,7 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object nasConfig;
         java.lang.Object ossMountConfig;
         java.lang.Object role;
+        java.util.List<com.aliyun.ros.cdk.fc3.RosFunction.TagsProperty> tags;
         java.lang.Object timeout;
         java.lang.Object tracingConfig;
         java.lang.Object vpcConfig;
@@ -604,6 +611,17 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosFunctionProps#getTags}
+         * @param tags the value to be set.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.fc3.RosFunction.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.fc3.RosFunction.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosFunctionProps#getTimeout}
          * @param timeout the value to be set.
          * @return {@code this}
@@ -700,6 +718,7 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object nasConfig;
         private final java.lang.Object ossMountConfig;
         private final java.lang.Object role;
+        private final java.util.List<com.aliyun.ros.cdk.fc3.RosFunction.TagsProperty> tags;
         private final java.lang.Object timeout;
         private final java.lang.Object tracingConfig;
         private final java.lang.Object vpcConfig;
@@ -731,6 +750,7 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
             this.nasConfig = software.amazon.jsii.Kernel.get(this, "nasConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ossMountConfig = software.amazon.jsii.Kernel.get(this, "ossMountConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.role = software.amazon.jsii.Kernel.get(this, "role", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.fc3.RosFunction.TagsProperty.class)));
             this.timeout = software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tracingConfig = software.amazon.jsii.Kernel.get(this, "tracingConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcConfig = software.amazon.jsii.Kernel.get(this, "vpcConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -739,6 +759,7 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
+        @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.functionName = java.util.Objects.requireNonNull(builder.functionName, "functionName is required");
@@ -762,6 +783,7 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
             this.nasConfig = builder.nasConfig;
             this.ossMountConfig = builder.ossMountConfig;
             this.role = builder.role;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.fc3.RosFunction.TagsProperty>)builder.tags;
             this.timeout = builder.timeout;
             this.tracingConfig = builder.tracingConfig;
             this.vpcConfig = builder.vpcConfig;
@@ -873,6 +895,11 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.util.List<com.aliyun.ros.cdk.fc3.RosFunction.TagsProperty> getTags() {
+            return this.tags;
+        }
+
+        @Override
         public final java.lang.Object getTimeout() {
             return this.timeout;
         }
@@ -950,6 +977,9 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getRole() != null) {
                 data.set("role", om.valueToTree(this.getRole()));
             }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
+            }
             if (this.getTimeout() != null) {
                 data.set("timeout", om.valueToTree(this.getTimeout()));
             }
@@ -998,6 +1028,7 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
             if (this.nasConfig != null ? !this.nasConfig.equals(that.nasConfig) : that.nasConfig != null) return false;
             if (this.ossMountConfig != null ? !this.ossMountConfig.equals(that.ossMountConfig) : that.ossMountConfig != null) return false;
             if (this.role != null ? !this.role.equals(that.role) : that.role != null) return false;
+            if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.timeout != null ? !this.timeout.equals(that.timeout) : that.timeout != null) return false;
             if (this.tracingConfig != null ? !this.tracingConfig.equals(that.tracingConfig) : that.tracingConfig != null) return false;
             return this.vpcConfig != null ? this.vpcConfig.equals(that.vpcConfig) : that.vpcConfig == null;
@@ -1026,6 +1057,7 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.nasConfig != null ? this.nasConfig.hashCode() : 0);
             result = 31 * result + (this.ossMountConfig != null ? this.ossMountConfig.hashCode() : 0);
             result = 31 * result + (this.role != null ? this.role.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.timeout != null ? this.timeout.hashCode() : 0);
             result = 31 * result + (this.tracingConfig != null ? this.tracingConfig.hashCode() : 0);
             result = 31 * result + (this.vpcConfig != null ? this.vpcConfig.hashCode() : 0);

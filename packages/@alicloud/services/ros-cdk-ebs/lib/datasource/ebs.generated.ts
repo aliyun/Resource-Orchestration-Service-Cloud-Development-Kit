@@ -64,7 +64,7 @@ function rosDedicatedBlockStorageClusterPropsToRosTemplate(properties: any, enab
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::EBS::DedicatedBlockStorageCluster`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::EBS::DedicatedBlockStorageCluster`, which is used to query the information about a dedicated block storage cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `DedicatedBlockStorageCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ebs-dedicatedblockstoragecluster
  */
@@ -279,7 +279,7 @@ function rosDedicatedBlockStorageClustersPropsToRosTemplate(properties: any, ena
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::EBS::DedicatedBlockStorageClusters`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::EBS::DedicatedBlockStorageClusters`, which is used to query dedicated block storage clusters.
  * @Note This class does not contain additional functions, so it is recommended to use the `DedicatedBlockStorageClusters` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ebs-dedicatedblockstorageclusters
  */
@@ -411,7 +411,7 @@ function rosDiskReplicaGroupPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::EBS::DiskReplicaGroup`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::EBS::DiskReplicaGroup`, which is used to query the information about a replication pair-consistent group.
  * @Note This class does not contain additional functions, so it is recommended to use the `DiskReplicaGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ebs-diskreplicagroup
  */
@@ -774,7 +774,7 @@ function rosDiskReplicaPairPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::EBS::DiskReplicaPair`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::EBS::DiskReplicaPair`, which is used to query a replication pair.
  * @Note This class does not contain additional functions, so it is recommended to use the `DiskReplicaPair` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ebs-diskreplicapair
  */

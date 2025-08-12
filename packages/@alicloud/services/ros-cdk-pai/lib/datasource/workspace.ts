@@ -80,7 +80,7 @@ export interface IWorkspace extends ros.IResource {
     readonly attrWorkspaceName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::Workspace`, which is used to query the information about a Platform for AI (PAI) workspace.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::Workspace`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosWorkspace`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-workspace
  */

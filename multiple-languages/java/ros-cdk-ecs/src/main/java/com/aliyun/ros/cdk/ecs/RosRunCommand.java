@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ECS::RunCommand</code>, which is used to run a shell, PowerShell, or batch command on Elastic Compute Service (ECS) instances.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:05.131Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.526Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosRunCommand")
 public class RosRunCommand extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -271,6 +271,24 @@ public class RosRunCommand extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setKeepCommand(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "keepCommand", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getLauncher() {
+        return software.amazon.jsii.Kernel.get(this, "launcher", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setLauncher(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "launcher", value);
+    }
+
+    /**
+     */
+    public void setLauncher(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "launcher", value);
     }
 
     /**
@@ -854,6 +872,23 @@ public class RosRunCommand extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder keepCommand(final com.aliyun.ros.cdk.core.IResolvable keepCommand) {
             this.props.keepCommand(keepCommand);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param launcher This parameter is required.
+         */
+        public Builder launcher(final java.lang.String launcher) {
+            this.props.launcher(launcher);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param launcher This parameter is required.
+         */
+        public Builder launcher(final com.aliyun.ros.cdk.core.IResolvable launcher) {
+            this.props.launcher(launcher);
             return this;
         }
 

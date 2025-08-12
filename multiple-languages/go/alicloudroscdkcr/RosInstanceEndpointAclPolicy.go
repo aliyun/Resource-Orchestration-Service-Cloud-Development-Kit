@@ -14,6 +14,8 @@ type RosInstanceEndpointAclPolicy interface {
 	alicloudroscdkcore.RosResource
 	AttrEntry() alicloudroscdkcore.IResolvable
 	AttrInstanceId() alicloudroscdkcore.IResolvable
+	AutoEnableType() interface{}
+	SetAutoEnableType(val interface{})
 	Comment() interface{}
 	SetComment(val interface{})
 	// Returns: the stack trace of the point where this Resource was created from, sourced
@@ -197,6 +199,16 @@ func (j *jsiiProxy_RosInstanceEndpointAclPolicy) AttrInstanceId() alicloudroscdk
 	_jsii_.Get(
 		j,
 		"attrInstanceId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosInstanceEndpointAclPolicy) AutoEnableType() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"autoEnableType",
 		&returns,
 	)
 	return returns
@@ -387,6 +399,17 @@ func NewRosInstanceEndpointAclPolicy_Override(r RosInstanceEndpointAclPolicy, sc
 		"@alicloud/ros-cdk-cr.RosInstanceEndpointAclPolicy",
 		[]interface{}{scope, id, props, enableResourcePropertyConstraint},
 		r,
+	)
+}
+
+func (j *jsiiProxy_RosInstanceEndpointAclPolicy)SetAutoEnableType(val interface{}) {
+	if err := j.validateSetAutoEnableTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"autoEnableType",
+		val,
 	)
 }
 

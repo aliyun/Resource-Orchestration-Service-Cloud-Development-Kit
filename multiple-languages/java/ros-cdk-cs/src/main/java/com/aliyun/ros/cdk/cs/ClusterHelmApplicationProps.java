@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterhelmapplication
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:03.398Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.142Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ClusterHelmApplicationProps")
 @software.amazon.jsii.Jsii.Proxy(ClusterHelmApplicationProps.Jsii$Proxy.class)
 public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSerializable {
@@ -50,6 +50,15 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
      * If the Namespace does not exist, ROS will automatically create it and delete it during the deletion phase.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNamespace() {
+        return null;
+    }
+
+    /**
+     * Property namespaceDeletion: Whether to delete the namespace specified.
+     * <p>
+     * If Namespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether NamespaceDeletion is true or not, it will not be deleted.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNamespaceDeletion() {
         return null;
     }
 
@@ -102,6 +111,7 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
         java.lang.Object chartValues;
         java.lang.Object credential;
         java.lang.Object namespace;
+        java.lang.Object namespaceDeletion;
         java.lang.Object rolePolicy;
         java.lang.Object validationMode;
         java.lang.Object waitUntil;
@@ -235,6 +245,28 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
         }
 
         /**
+         * Sets the value of {@link ClusterHelmApplicationProps#getNamespaceDeletion}
+         * @param namespaceDeletion Property namespaceDeletion: Whether to delete the namespace specified.
+         *                          If Namespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether NamespaceDeletion is true or not, it will not be deleted.
+         * @return {@code this}
+         */
+        public Builder namespaceDeletion(java.lang.Boolean namespaceDeletion) {
+            this.namespaceDeletion = namespaceDeletion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ClusterHelmApplicationProps#getNamespaceDeletion}
+         * @param namespaceDeletion Property namespaceDeletion: Whether to delete the namespace specified.
+         *                          If Namespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether NamespaceDeletion is true or not, it will not be deleted.
+         * @return {@code this}
+         */
+        public Builder namespaceDeletion(com.aliyun.ros.cdk.core.IResolvable namespaceDeletion) {
+            this.namespaceDeletion = namespaceDeletion;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ClusterHelmApplicationProps#getRolePolicy}
          * @param rolePolicy Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user.
          *                   Valid values:
@@ -336,6 +368,7 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
         private final java.lang.Object chartValues;
         private final java.lang.Object credential;
         private final java.lang.Object namespace;
+        private final java.lang.Object namespaceDeletion;
         private final java.lang.Object rolePolicy;
         private final java.lang.Object validationMode;
         private final java.lang.Object waitUntil;
@@ -352,6 +385,7 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
             this.chartValues = software.amazon.jsii.Kernel.get(this, "chartValues", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.credential = software.amazon.jsii.Kernel.get(this, "credential", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.namespace = software.amazon.jsii.Kernel.get(this, "namespace", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.namespaceDeletion = software.amazon.jsii.Kernel.get(this, "namespaceDeletion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.rolePolicy = software.amazon.jsii.Kernel.get(this, "rolePolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.validationMode = software.amazon.jsii.Kernel.get(this, "validationMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.waitUntil = software.amazon.jsii.Kernel.get(this, "waitUntil", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -368,6 +402,7 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
             this.chartValues = builder.chartValues;
             this.credential = builder.credential;
             this.namespace = builder.namespace;
+            this.namespaceDeletion = builder.namespaceDeletion;
             this.rolePolicy = builder.rolePolicy;
             this.validationMode = builder.validationMode;
             this.waitUntil = builder.waitUntil;
@@ -404,6 +439,11 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
         }
 
         @Override
+        public final java.lang.Object getNamespaceDeletion() {
+            return this.namespaceDeletion;
+        }
+
+        @Override
         public final java.lang.Object getRolePolicy() {
             return this.rolePolicy;
         }
@@ -435,6 +475,9 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
             }
             if (this.getNamespace() != null) {
                 data.set("namespace", om.valueToTree(this.getNamespace()));
+            }
+            if (this.getNamespaceDeletion() != null) {
+                data.set("namespaceDeletion", om.valueToTree(this.getNamespaceDeletion()));
             }
             if (this.getRolePolicy() != null) {
                 data.set("rolePolicy", om.valueToTree(this.getRolePolicy()));
@@ -469,6 +512,7 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
             if (this.chartValues != null ? !this.chartValues.equals(that.chartValues) : that.chartValues != null) return false;
             if (this.credential != null ? !this.credential.equals(that.credential) : that.credential != null) return false;
             if (this.namespace != null ? !this.namespace.equals(that.namespace) : that.namespace != null) return false;
+            if (this.namespaceDeletion != null ? !this.namespaceDeletion.equals(that.namespaceDeletion) : that.namespaceDeletion != null) return false;
             if (this.rolePolicy != null ? !this.rolePolicy.equals(that.rolePolicy) : that.rolePolicy != null) return false;
             if (this.validationMode != null ? !this.validationMode.equals(that.validationMode) : that.validationMode != null) return false;
             return this.waitUntil != null ? this.waitUntil.equals(that.waitUntil) : that.waitUntil == null;
@@ -482,6 +526,7 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
             result = 31 * result + (this.chartValues != null ? this.chartValues.hashCode() : 0);
             result = 31 * result + (this.credential != null ? this.credential.hashCode() : 0);
             result = 31 * result + (this.namespace != null ? this.namespace.hashCode() : 0);
+            result = 31 * result + (this.namespaceDeletion != null ? this.namespaceDeletion.hashCode() : 0);
             result = 31 * result + (this.rolePolicy != null ? this.rolePolicy.hashCode() : 0);
             result = 31 * result + (this.validationMode != null ? this.validationMode.hashCode() : 0);
             result = 31 * result + (this.waitUntil != null ? this.waitUntil.hashCode() : 0);

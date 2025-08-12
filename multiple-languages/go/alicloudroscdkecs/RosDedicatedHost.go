@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::DedicatedHost`, which is used to create a dedicated host.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::DedicatedHost`, which is used to create dedicated hosts.
 type RosDedicatedHost interface {
 	alicloudroscdkcore.RosResource
 	ActionOnMaintenance() interface{}
@@ -27,10 +27,14 @@ type RosDedicatedHost interface {
 	SetAutoRenewPeriod(val interface{})
 	ChargeType() interface{}
 	SetChargeType(val interface{})
+	CpuOverCommitRatio() interface{}
+	SetCpuOverCommitRatio(val interface{})
 	// Returns: the stack trace of the point where this Resource was created from, sourced
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
 	CreationStack() *[]*string
+	DedicatedHostClusterId() interface{}
+	SetDedicatedHostClusterId(val interface{})
 	DedicatedHostName() interface{}
 	SetDedicatedHostName(val interface{})
 	DedicatedHostType() interface{}
@@ -49,6 +53,8 @@ type RosDedicatedHost interface {
 	// Returns: the logical ID as a stringified token. This value will only get
 	// resolved during synthesis.
 	LogicalId() *string
+	MinQuantity() interface{}
+	SetMinQuantity(val interface{})
 	NetworkAttributesSlbUdpTimeout() interface{}
 	SetNetworkAttributesSlbUdpTimeout(val interface{})
 	NetworkAttributesUdpTimeout() interface{}
@@ -295,11 +301,31 @@ func (j *jsiiProxy_RosDedicatedHost) ChargeType() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosDedicatedHost) CpuOverCommitRatio() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"cpuOverCommitRatio",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosDedicatedHost) CreationStack() *[]*string {
 	var returns *[]*string
 	_jsii_.Get(
 		j,
 		"creationStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDedicatedHost) DedicatedHostClusterId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"dedicatedHostClusterId",
 		&returns,
 	)
 	return returns
@@ -350,6 +376,16 @@ func (j *jsiiProxy_RosDedicatedHost) LogicalId() *string {
 	_jsii_.Get(
 		j,
 		"logicalId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDedicatedHost) MinQuantity() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"minQuantity",
 		&returns,
 	)
 	return returns
@@ -599,6 +635,28 @@ func (j *jsiiProxy_RosDedicatedHost)SetChargeType(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosDedicatedHost)SetCpuOverCommitRatio(val interface{}) {
+	if err := j.validateSetCpuOverCommitRatioParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"cpuOverCommitRatio",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDedicatedHost)SetDedicatedHostClusterId(val interface{}) {
+	if err := j.validateSetDedicatedHostClusterIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"dedicatedHostClusterId",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosDedicatedHost)SetDedicatedHostName(val interface{}) {
 	if err := j.validateSetDedicatedHostNameParameters(val); err != nil {
 		panic(err)
@@ -639,6 +697,17 @@ func (j *jsiiProxy_RosDedicatedHost)SetEnableResourcePropertyConstraint(val *boo
 	_jsii_.Set(
 		j,
 		"enableResourcePropertyConstraint",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDedicatedHost)SetMinQuantity(val interface{}) {
+	if err := j.validateSetMinQuantityParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"minQuantity",
 		val,
 	)
 }

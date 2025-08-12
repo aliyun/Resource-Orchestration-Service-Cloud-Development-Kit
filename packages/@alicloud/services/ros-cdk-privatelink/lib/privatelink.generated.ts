@@ -882,6 +882,11 @@ export interface RosVpcEndpointServiceAttachmentProps {
      * @Property serviceId: The endpoint service that is associated with the endpoint.
      */
     readonly serviceId: string | ros.IResolvable;
+
+    /**
+     * @Property zoneId: Zone id of the service resource.
+     */
+    readonly zoneId?: string | ros.IResolvable;
 }
 
 /**
@@ -894,6 +899,7 @@ export interface RosVpcEndpointServiceAttachmentProps {
 function RosVpcEndpointServiceAttachmentPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('resourceId', ros.requiredValidator)(properties.resourceId));
     errors.collect(ros.propertyValidator('resourceId', ros.validateString)(properties.resourceId));
     errors.collect(ros.propertyValidator('resourceType', ros.requiredValidator)(properties.resourceType));
@@ -920,11 +926,12 @@ function rosVpcEndpointServiceAttachmentPropsToRosTemplate(properties: any, enab
       'ResourceId': ros.stringToRosTemplate(properties.resourceId),
       'ResourceType': ros.stringToRosTemplate(properties.resourceType),
       'ServiceId': ros.stringToRosTemplate(properties.serviceId),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
     };
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PrivateLink::VpcEndpointServiceAttachment`, which is used to add a service resource to an endpoint service.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PrivateLink::VpcEndpointServiceAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `VpcEndpointServiceAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpointserviceattachment
  */
@@ -971,6 +978,11 @@ export class RosVpcEndpointServiceAttachment extends ros.RosResource {
     public serviceId: string | ros.IResolvable;
 
     /**
+     * @Property zoneId: Zone id of the service resource.
+     */
+    public zoneId: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -985,6 +997,7 @@ export class RosVpcEndpointServiceAttachment extends ros.RosResource {
         this.resourceId = props.resourceId;
         this.resourceType = props.resourceType;
         this.serviceId = props.serviceId;
+        this.zoneId = props.zoneId;
     }
 
 
@@ -993,6 +1006,7 @@ export class RosVpcEndpointServiceAttachment extends ros.RosResource {
             resourceId: this.resourceId,
             resourceType: this.resourceType,
             serviceId: this.serviceId,
+            zoneId: this.zoneId,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

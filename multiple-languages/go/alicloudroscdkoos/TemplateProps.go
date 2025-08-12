@@ -11,7 +11,7 @@ type TemplateProps struct {
 	Content interface{} `field:"required" json:"content" yaml:"content"`
 	// Property templateName: The name of the template.
 	//
-	// The template name can be up to 200 characters in length. The name can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ACS, ALIBABA, or ALICLOUD.
+	// The template name can be up to 200 characters in length. The name can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ACS, ALIYUN, ALIBABA, or ALICLOUD.
 	TemplateName interface{} `field:"required" json:"templateName" yaml:"templateName"`
 	// Property resourceGroupId: Resource group id.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`

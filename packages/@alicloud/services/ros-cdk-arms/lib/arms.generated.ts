@@ -690,7 +690,7 @@ function RosDeliverTaskPropsValidator(properties: any): ros.ValidationResult {
     if(properties.taskName && (typeof properties.taskName) !== 'object') {
         errors.collect(ros.propertyValidator('taskName', ros.validateAllowedPattern)({
           data: properties.taskName,
-          reg: /[a-zA-Z0-9-]{1,64}/
+          reg: /^[a-zA-Z0-9-]{1,64}$/
         }));
     }
     errors.collect(ros.propertyValidator('taskName', ros.validateString)(properties.taskName));
@@ -2186,7 +2186,7 @@ function rosXTraceAppPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::XTraceApp`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::XTraceApp`, which is used to create an application monitoring task.
  * @Note This class does not contain additional functions, so it is recommended to use the `XTraceApp` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-xtraceapp
  */

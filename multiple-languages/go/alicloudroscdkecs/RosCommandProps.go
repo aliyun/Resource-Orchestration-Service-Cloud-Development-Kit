@@ -10,6 +10,7 @@ type RosCommandProps struct {
 	ContentEncoding interface{} `field:"optional" json:"contentEncoding" yaml:"contentEncoding"`
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
 	EnableParameter interface{} `field:"optional" json:"enableParameter" yaml:"enableParameter"`
+	Launcher interface{} `field:"optional" json:"launcher" yaml:"launcher"`
 	Name interface{} `field:"optional" json:"name" yaml:"name"`
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 	Tags *[]*RosCommand_TagsProperty `field:"optional" json:"tags" yaml:"tags"`

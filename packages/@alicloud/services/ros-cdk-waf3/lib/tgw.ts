@@ -28,6 +28,11 @@ export interface TGWProps {
      * Property resourceGroupId: The ID of the resource group.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * Property wafInstanceRegion: The ID of the resource group.
+     */
+    readonly wafInstanceRegion?: string | ros.IResolvable;
 }
 
 /**
@@ -103,6 +108,7 @@ export class Tgw extends ros.Resource implements ITgw {
             resourceGroupId: props.resourceGroupId,
             instanceId: props.instanceId,
             listen: props.listen,
+            wafInstanceRegion: props.wafInstanceRegion === undefined || props.wafInstanceRegion === null ? 'ChineseMainland' : props.wafInstanceRegion,
             redirect: props.redirect,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosTGW;

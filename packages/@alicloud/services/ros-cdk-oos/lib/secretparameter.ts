@@ -10,7 +10,7 @@ export { RosSecretParameter as SecretParameterProperty };
 export interface SecretParameterProps {
 
     /**
-     * Property secretParameterName: The name of the encryption parameter. The name must be 1 to 180 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
+     * Property secretParameterName: The name of the encryption parameter. The name must be 1 to 180 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ALIBABA, ALICLOUD, ACS or OOS.
      */
     readonly secretParameterName: string | ros.IResolvable;
 
@@ -122,7 +122,7 @@ export interface ISecretParameter extends ros.IResource {
     readonly attrUpdatedDate: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::SecretParameter`, which is used to create an encryption parameter.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::SecretParameter`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecretParameter`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-secretparameter
  */

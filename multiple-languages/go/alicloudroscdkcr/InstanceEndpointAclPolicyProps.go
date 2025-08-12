@@ -9,6 +9,8 @@ type InstanceEndpointAclPolicyProps struct {
 	Entry interface{} `field:"required" json:"entry" yaml:"entry"`
 	// Property instanceId: The ID of the instance.
 	InstanceId interface{} `field:"required" json:"instanceId" yaml:"instanceId"`
+	// Property autoEnableType: Whether to auto enable the type of the endpoint.
+	AutoEnableType interface{} `field:"optional" json:"autoEnableType" yaml:"autoEnableType"`
 	// Property comment: The description of the entry.
 	Comment interface{} `field:"optional" json:"comment" yaml:"comment"`
 	// Property endpointType: The type of the endpoint.

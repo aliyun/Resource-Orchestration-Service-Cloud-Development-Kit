@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::ENS::Instance`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::ENS::Instance`, which is used to query the information about an Edge Node Service (ENS) instance.
 type Instance interface {
 	alicloudroscdkcore.Resource
 	IInstance

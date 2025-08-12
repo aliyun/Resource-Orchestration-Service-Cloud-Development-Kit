@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ALB::LoadBalancer</code>, which is used to create an Application Load Balancer (ALB) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:01.340Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:43.282Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosLoadBalancer")
 public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -151,24 +151,6 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getLoadBalancerName() {
-        return software.amazon.jsii.Kernel.get(this, "loadBalancerName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setLoadBalancerName(final @org.jetbrains.annotations.NotNull java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "loadBalancerName", java.util.Objects.requireNonNull(value, "loadBalancerName is required"));
-    }
-
-    /**
-     */
-    public void setLoadBalancerName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "loadBalancerName", java.util.Objects.requireNonNull(value, "loadBalancerName is required"));
-    }
-
-    /**
-     */
     public @org.jetbrains.annotations.NotNull java.lang.Object getVpcId() {
         return software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -307,6 +289,42 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setDeletionProtectionEnabled(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "deletionProtectionEnabled", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIpv6AddressType() {
+        return software.amazon.jsii.Kernel.get(this, "ipv6AddressType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIpv6AddressType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "ipv6AddressType", value);
+    }
+
+    /**
+     */
+    public void setIpv6AddressType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ipv6AddressType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getLoadBalancerName() {
+        return software.amazon.jsii.Kernel.get(this, "loadBalancerName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setLoadBalancerName(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "loadBalancerName", value);
+    }
+
+    /**
+     */
+    public void setLoadBalancerName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "loadBalancerName", value);
     }
 
     /**
@@ -1685,23 +1703,6 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param loadBalancerName This parameter is required.
-         */
-        public Builder loadBalancerName(final java.lang.String loadBalancerName) {
-            this.props.loadBalancerName(loadBalancerName);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param loadBalancerName This parameter is required.
-         */
-        public Builder loadBalancerName(final com.aliyun.ros.cdk.core.IResolvable loadBalancerName) {
-            this.props.loadBalancerName(loadBalancerName);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param vpcId This parameter is required.
          */
         public Builder vpcId(final java.lang.String vpcId) {
@@ -1816,6 +1817,40 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder deletionProtectionEnabled(final com.aliyun.ros.cdk.core.IResolvable deletionProtectionEnabled) {
             this.props.deletionProtectionEnabled(deletionProtectionEnabled);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param ipv6AddressType This parameter is required.
+         */
+        public Builder ipv6AddressType(final java.lang.String ipv6AddressType) {
+            this.props.ipv6AddressType(ipv6AddressType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ipv6AddressType This parameter is required.
+         */
+        public Builder ipv6AddressType(final com.aliyun.ros.cdk.core.IResolvable ipv6AddressType) {
+            this.props.ipv6AddressType(ipv6AddressType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param loadBalancerName This parameter is required.
+         */
+        public Builder loadBalancerName(final java.lang.String loadBalancerName) {
+            this.props.loadBalancerName(loadBalancerName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param loadBalancerName This parameter is required.
+         */
+        public Builder loadBalancerName(final com.aliyun.ros.cdk.core.IResolvable loadBalancerName) {
+            this.props.loadBalancerName(loadBalancerName);
             return this;
         }
 

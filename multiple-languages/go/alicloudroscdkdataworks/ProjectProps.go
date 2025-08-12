@@ -36,7 +36,7 @@ type ProjectProps struct {
 	ProjectMode interface{} `field:"optional" json:"projectMode" yaml:"projectMode"`
 	// Property projectName: The display name of the workspace.
 	//
-	// If not provided, it is the same as ProjectIdentifier.
+	// If not provided, it is the same as ProjectIdentifier.The value contains 3 to 28 characters.
 	ProjectName interface{} `field:"optional" json:"projectName" yaml:"projectName"`
 	// Property resourceGroupId: The ID of the resource group.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`

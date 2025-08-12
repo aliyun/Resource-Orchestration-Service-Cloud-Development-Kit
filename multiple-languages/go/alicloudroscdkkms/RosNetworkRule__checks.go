@@ -326,6 +326,26 @@ func (j *jsiiProxy_RosNetworkRule) validateSetSourcePrivateIpParameters(val inte
 	return nil
 }
 
+func (j *jsiiProxy_RosNetworkRule) validateSetTypeParameters(val interface{}) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func validateNewRosNetworkRuleParameters(scope alicloudroscdkcore.Construct, id *string, props *RosNetworkRuleProps, enableResourcePropertyConstraint *bool) error {
 	if scope == nil {
 		return fmt.Errorf("parameter scope is required, but nil was provided")

@@ -103,6 +103,11 @@ export interface PrepayInstanceProps {
     readonly productType?: string | ros.IResolvable;
 
     /**
+     * Property readOnlyCount: The number of read replicas in the primary zone. Valid values: 1 to 9.
+     */
+    readonly readOnlyCount?: number | ros.IResolvable;
+
+    /**
      * Property resourceGroupId: Resource group id.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -133,6 +138,11 @@ export interface PrepayInstanceProps {
      * Update: updates the SSL certificate.
      */
     readonly sslEnabled?: string | ros.IResolvable;
+
+    /**
+     * Property subscriptionDeletionForce: This option is only applicable to subscription instances. For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+     */
+    readonly subscriptionDeletionForce?: boolean | ros.IResolvable;
 
     /**
      * Property tags: Tags to attach to redis. Max support 20 tags to add during create redis. Each tag with two properties Key and Value, and Key is required.
@@ -519,9 +529,11 @@ export class PrepayInstance extends ros.Resource implements IPrepayInstance {
             engineVersion: props.engineVersion,
             zoneId: props.zoneId,
             evictionPolicy: props.evictionPolicy,
+            subscriptionDeletionForce: props.subscriptionDeletionForce === undefined || props.subscriptionDeletionForce === null ? false : props.subscriptionDeletionForce,
             vSwitchId: props.vSwitchId,
             securityGroupId: props.securityGroupId,
             productType: props.productType,
+            readOnlyCount: props.readOnlyCount,
             instanceMaintainTime: props.instanceMaintainTime,
             period: props.period === undefined || props.period === null ? 1 : props.period,
             instanceClass: props.instanceClass,

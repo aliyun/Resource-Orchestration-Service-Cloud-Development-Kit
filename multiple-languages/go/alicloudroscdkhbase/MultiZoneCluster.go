@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::HBase::MultiZoneCluster`, which is used to create an ApsaraDB for HBase cluster that resides in multiple zones.
+// This class encapsulates and extends the ROS resource type `ALIYUN::HBase::MultiZoneCluster`.
 type MultiZoneCluster interface {
 	alicloudroscdkcore.Resource
 	IMultiZoneCluster

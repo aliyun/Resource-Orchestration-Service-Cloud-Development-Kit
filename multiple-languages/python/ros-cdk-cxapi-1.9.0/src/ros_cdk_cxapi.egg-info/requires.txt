@@ -1,0 +1,4 @@
+jsii<=1.85.0,>1.12.0
+publication>=0.0.3
+ros-cdk-assembly-schema<2.0.0,>=1.9.0
+typeguard~=2.13.3

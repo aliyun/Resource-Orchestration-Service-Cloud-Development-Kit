@@ -78,7 +78,7 @@ export interface ISchedule extends ros.IResource {
     readonly attrScheduleName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::FNF::Schedule`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::FNF::Schedule`, which is used to query the information about a time-based schedule.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSchedule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fnf-schedule
  */

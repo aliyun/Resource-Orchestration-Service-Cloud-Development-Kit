@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-invocation
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:05.044Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.492Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInvocationProps")
 @software.amazon.jsii.Jsii.Proxy(RosInvocationProps.Jsii$Proxy.class)
 public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializable {
@@ -41,6 +41,12 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getFrequency() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLauncher() {
         return null;
     }
 
@@ -108,6 +114,7 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object containerId;
         java.lang.Object containerName;
         java.lang.Object frequency;
+        java.lang.Object launcher;
         java.lang.Object parameters;
         java.lang.Object repeatMode;
         java.lang.Object resourceGroupId;
@@ -234,6 +241,26 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
          */
         public Builder frequency(com.aliyun.ros.cdk.core.IResolvable frequency) {
             this.frequency = frequency;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInvocationProps#getLauncher}
+         * @param launcher the value to be set.
+         * @return {@code this}
+         */
+        public Builder launcher(java.lang.String launcher) {
+            this.launcher = launcher;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInvocationProps#getLauncher}
+         * @param launcher the value to be set.
+         * @return {@code this}
+         */
+        public Builder launcher(com.aliyun.ros.cdk.core.IResolvable launcher) {
+            this.launcher = launcher;
             return this;
         }
 
@@ -410,6 +437,7 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object containerId;
         private final java.lang.Object containerName;
         private final java.lang.Object frequency;
+        private final java.lang.Object launcher;
         private final java.lang.Object parameters;
         private final java.lang.Object repeatMode;
         private final java.lang.Object resourceGroupId;
@@ -431,6 +459,7 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
             this.containerId = software.amazon.jsii.Kernel.get(this, "containerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.containerName = software.amazon.jsii.Kernel.get(this, "containerName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.frequency = software.amazon.jsii.Kernel.get(this, "frequency", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.launcher = software.amazon.jsii.Kernel.get(this, "launcher", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.parameters = software.amazon.jsii.Kernel.get(this, "parameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.repeatMode = software.amazon.jsii.Kernel.get(this, "repeatMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -453,6 +482,7 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
             this.containerId = builder.containerId;
             this.containerName = builder.containerName;
             this.frequency = builder.frequency;
+            this.launcher = builder.launcher;
             this.parameters = builder.parameters;
             this.repeatMode = builder.repeatMode;
             this.resourceGroupId = builder.resourceGroupId;
@@ -491,6 +521,11 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
         @Override
         public final java.lang.Object getFrequency() {
             return this.frequency;
+        }
+
+        @Override
+        public final java.lang.Object getLauncher() {
+            return this.launcher;
         }
 
         @Override
@@ -555,6 +590,9 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getFrequency() != null) {
                 data.set("frequency", om.valueToTree(this.getFrequency()));
             }
+            if (this.getLauncher() != null) {
+                data.set("launcher", om.valueToTree(this.getLauncher()));
+            }
             if (this.getParameters() != null) {
                 data.set("parameters", om.valueToTree(this.getParameters()));
             }
@@ -603,6 +641,7 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
             if (this.containerId != null ? !this.containerId.equals(that.containerId) : that.containerId != null) return false;
             if (this.containerName != null ? !this.containerName.equals(that.containerName) : that.containerName != null) return false;
             if (this.frequency != null ? !this.frequency.equals(that.frequency) : that.frequency != null) return false;
+            if (this.launcher != null ? !this.launcher.equals(that.launcher) : that.launcher != null) return false;
             if (this.parameters != null ? !this.parameters.equals(that.parameters) : that.parameters != null) return false;
             if (this.repeatMode != null ? !this.repeatMode.equals(that.repeatMode) : that.repeatMode != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
@@ -621,6 +660,7 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.containerId != null ? this.containerId.hashCode() : 0);
             result = 31 * result + (this.containerName != null ? this.containerName.hashCode() : 0);
             result = 31 * result + (this.frequency != null ? this.frequency.hashCode() : 0);
+            result = 31 * result + (this.launcher != null ? this.launcher.hashCode() : 0);
             result = 31 * result + (this.parameters != null ? this.parameters.hashCode() : 0);
             result = 31 * result + (this.repeatMode != null ? this.repeatMode.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);

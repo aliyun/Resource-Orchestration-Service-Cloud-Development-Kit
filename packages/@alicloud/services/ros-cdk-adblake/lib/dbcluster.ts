@@ -10,12 +10,6 @@ export { RosDBCluster as DBClusterProperty };
 export interface DBClusterProps {
 
     /**
-     * Property computeResource: The amount of reserved computing resources. Unit: ACUs. Valid values: 0ACU to 4096ACU. The value must be in increments of 16 ACUs. Each ACU is equivalent to 1 core and 4 GB memory.
-     * Note This parameter must be specified with a unit.
-     */
-    readonly computeResource: string | ros.IResolvable;
-
-    /**
      * Property dbClusterVersion: The version of the cluster. Set the value to 5.0.
      */
     readonly dbClusterVersion: string | ros.IResolvable;
@@ -26,12 +20,6 @@ export interface DBClusterProps {
      * Prepaid: subscription.
      */
     readonly payType: string | ros.IResolvable;
-
-    /**
-     * Property storageResource: The amount of reserved storage resources. Unit: AnalyticDB compute units (ACUs). Valid values: 0ACU to 2064ACU. The value must be in increments of 24 ACUs. Each ACU is equivalent to 1 core and 4 GB memory.
-     * Note This parameter must be specified with a unit.
-     */
-    readonly storageResource: string | ros.IResolvable;
 
     /**
      * Property vpcId: The virtual private cloud (VPC) ID of the cluster.
@@ -59,6 +47,12 @@ export interface DBClusterProps {
      * Property cloneSourceRegionId: The ID of the source region where the cluster is located.
      */
     readonly cloneSourceRegionId?: string | ros.IResolvable;
+
+    /**
+     * Property computeResource: The amount of reserved computing resources. Unit: ACUs. Valid values: 0ACU to 4096ACU. The value must be in increments of 16 ACUs. Each ACU is equivalent to 1 core and 4 GB memory.
+     * Note This parameter must be specified with a unit.
+     */
+    readonly computeResource?: string | ros.IResolvable;
 
     /**
      * Property dbClusterDescription: The description of the cluster.
@@ -116,6 +110,11 @@ export interface DBClusterProps {
     readonly productForm?: string | ros.IResolvable;
 
     /**
+     * Property productVersion: The version of the cluster.Note If only ProductForm is set to IntegrationForm, enter this parameter.
+     */
+    readonly productVersion?: string | ros.IResolvable;
+
+    /**
      * Property reservedNodeCount: The number of reserved nodes. Must be 1 for basic version and multiple 
      * of 3 for enterprise version.
      */
@@ -144,9 +143,25 @@ export interface DBClusterProps {
     readonly restoreType?: string | ros.IResolvable;
 
     /**
+     * Property secondaryVSwitchId: The secondary vSwitch ID of the cluster.
+     */
+    readonly secondaryVSwitchId?: string | ros.IResolvable;
+
+    /**
+     * Property secondaryZoneId: The secondary zone ID.
+     */
+    readonly secondaryZoneId?: string | ros.IResolvable;
+
+    /**
      * Property sourceDbClusterId: The ID of the source AnalyticDB for MySQL Data Warehouse Edition cluster. If you want to restore a Data Lakehouse Edition cluster from a Data Warehouse Edition cluster, you must specify this parameter.
      */
     readonly sourceDbClusterId?: string | ros.IResolvable;
+
+    /**
+     * Property storageResource: The amount of reserved storage resources. Unit: AnalyticDB compute units (ACUs). Valid values: 0ACU to 2064ACU. The value must be in increments of 24 ACUs. Each ACU is equivalent to 1 core and 4 GB memory.
+     * Note This parameter must be specified with a unit.
+     */
+    readonly storageResource?: string | ros.IResolvable;
 
     /**
      * Property tags: Tags to attach to cluster. Max support 20 tags to add during create cluster. Each tag with two properties Key and Value, and Key is required.
@@ -176,7 +191,7 @@ export interface IDBCluster extends ros.IResource {
     readonly attrOrderId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ADBLake::DBCluster`, which is used to create an AnalyticDB for MySQL Data Lakehouse Edition (V3.0) cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ADBLake::DBCluster`, which type is used to create an AnalyticDB for MySQL Data Lakehouse Edition cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adblake-dbcluster
  */
@@ -215,29 +230,32 @@ export class DBCluster extends ros.Resource implements IDBCluster {
 
         const rosDBCluster = new RosDBCluster(this, id,  {
             periodType: props.periodType,
-            enableDefaultResourcePool: props.enableDefaultResourcePool,
             storageResource: props.storageResource,
             restoreToTime: props.restoreToTime,
-            cloneSourceRegionId: props.cloneSourceRegionId,
             resourceGroupId: props.resourceGroupId,
+            productForm: props.productForm,
+            dbClusterNetworkType: props.dbClusterNetworkType,
+            productVersion: props.productVersion,
+            reservedNodeCount: props.reservedNodeCount,
+            diskEncryption: props.diskEncryption,
+            dbClusterVersion: props.dbClusterVersion,
+            restoreType: props.restoreType,
+            tags: props.tags,
+            enableDefaultResourcePool: props.enableDefaultResourcePool,
+            cloneSourceRegionId: props.cloneSourceRegionId,
             zoneId: props.zoneId,
             vpcId: props.vpcId,
             vSwitchId: props.vSwitchId,
             dbClusterDescription: props.dbClusterDescription,
-            productForm: props.productForm,
+            secondaryVSwitchId: props.secondaryVSwitchId,
             reservedNodeSize: props.reservedNodeSize,
             computeResource: props.computeResource,
             period: props.period,
-            dbClusterNetworkType: props.dbClusterNetworkType,
             payType: props.payType === undefined || props.payType === null ? 'Postpaid' : props.payType,
             backupSetId: props.backupSetId,
+            secondaryZoneId: props.secondaryZoneId,
             sourceDbClusterId: props.sourceDbClusterId,
-            reservedNodeCount: props.reservedNodeCount,
-            diskEncryption: props.diskEncryption,
-            dbClusterVersion: props.dbClusterVersion,
             kmsId: props.kmsId,
-            restoreType: props.restoreType,
-            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDBCluster;
         this.attrConnectionString = rosDBCluster.attrConnectionString;

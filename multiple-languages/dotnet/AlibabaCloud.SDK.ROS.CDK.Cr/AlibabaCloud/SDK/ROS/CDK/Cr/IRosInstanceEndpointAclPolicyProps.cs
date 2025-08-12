@@ -30,6 +30,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: autoEnableType: Whether to auto enable the type of the endpoint.
+        /// </remarks>
+        [JsiiProperty(name: "autoEnableType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AutoEnableType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: comment: The description of the entry.
         /// </remarks>
         [JsiiProperty(name: "comment", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -109,6 +122,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
             public object InstanceId
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: autoEnableType: Whether to auto enable the type of the endpoint.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "autoEnableType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AutoEnableType
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>

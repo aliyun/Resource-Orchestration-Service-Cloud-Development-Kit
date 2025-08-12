@@ -14,12 +14,19 @@ type RosSubscriptionJob2Props struct {
 	DelayNotice interface{} `field:"optional" json:"delayNotice" yaml:"delayNotice"`
 	DelayPhone interface{} `field:"optional" json:"delayPhone" yaml:"delayPhone"`
 	DelayRuleTime interface{} `field:"optional" json:"delayRuleTime" yaml:"delayRuleTime"`
+	DestPrimaryVswId interface{} `field:"optional" json:"destPrimaryVswId" yaml:"destPrimaryVswId"`
+	DestSecondaryVswId interface{} `field:"optional" json:"destSecondaryVswId" yaml:"destSecondaryVswId"`
 	DtsBisLabel interface{} `field:"optional" json:"dtsBisLabel" yaml:"dtsBisLabel"`
 	DtsInstanceId interface{} `field:"optional" json:"dtsInstanceId" yaml:"dtsInstanceId"`
 	DtsJobId interface{} `field:"optional" json:"dtsJobId" yaml:"dtsJobId"`
 	ErrorNotice interface{} `field:"optional" json:"errorNotice" yaml:"errorNotice"`
 	ErrorPhone interface{} `field:"optional" json:"errorPhone" yaml:"errorPhone"`
+	MaxDu interface{} `field:"optional" json:"maxDu" yaml:"maxDu"`
+	MinDu interface{} `field:"optional" json:"minDu" yaml:"minDu"`
 	Reserve interface{} `field:"optional" json:"reserve" yaml:"reserve"`
+	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
+	SrcPrimaryVswId interface{} `field:"optional" json:"srcPrimaryVswId" yaml:"srcPrimaryVswId"`
+	SrcSecondaryVswId interface{} `field:"optional" json:"srcSecondaryVswId" yaml:"srcSecondaryVswId"`
 	Status interface{} `field:"optional" json:"status" yaml:"status"`
 	SubscriptionDataType interface{} `field:"optional" json:"subscriptionDataType" yaml:"subscriptionDataType"`
 }

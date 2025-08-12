@@ -11,6 +11,7 @@ type RosInvocationProps struct {
 	ContainerId interface{} `field:"optional" json:"containerId" yaml:"containerId"`
 	ContainerName interface{} `field:"optional" json:"containerName" yaml:"containerName"`
 	Frequency interface{} `field:"optional" json:"frequency" yaml:"frequency"`
+	Launcher interface{} `field:"optional" json:"launcher" yaml:"launcher"`
 	Parameters interface{} `field:"optional" json:"parameters" yaml:"parameters"`
 	RepeatMode interface{} `field:"optional" json:"repeatMode" yaml:"repeatMode"`
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`

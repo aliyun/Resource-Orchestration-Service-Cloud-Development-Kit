@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs.datasource;
 /**
  * Represents a <code>KeyPairs</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:05.627Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.746Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.IKeyPairs")
 @software.amazon.jsii.Jsii.Proxy(IKeyPairs.Jsii$Proxy.class)
 public interface IKeyPairs extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::ESS::ScalingRule`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::ESS::ScalingRule`, which is used to query the information about a scaling rule.
 type ScalingRule interface {
 	alicloudroscdkcore.Resource
 	IScalingRule

@@ -44,7 +44,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms.Datasource
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute ChannelsAliIm: ChannelsAliIM.</summary>
+        /// <summary>Attribute ChannelsAliIm: ChannelsAliIm.</summary>
         [JsiiProperty(name: "attrChannelsAliIm", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrChannelsAliIm
         {
@@ -72,7 +72,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms.Datasource
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute ChannelsStateAliIm: ChannelsStateAliIM.</summary>
+        /// <summary>Attribute ChannelsStateAliIm: ChannelsStateAliIm.</summary>
         [JsiiProperty(name: "attrChannelsStateAliIm", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrChannelsStateAliIm
         {

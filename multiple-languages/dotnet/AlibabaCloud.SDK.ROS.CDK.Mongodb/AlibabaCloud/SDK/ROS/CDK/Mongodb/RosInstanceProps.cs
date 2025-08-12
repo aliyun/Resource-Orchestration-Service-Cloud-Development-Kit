@@ -759,7 +759,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
         private object? _securityIpArray;
 
         /// <remarks>
-        /// <strong>Property</strong>: securityIpArray: Security ips to add or remove.
+        /// <strong>Property</strong>: securityIpArray: Security ips to add or remove. Update to this property will cover the current security ips.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "securityIpArray", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

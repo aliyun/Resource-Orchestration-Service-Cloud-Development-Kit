@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sas;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SAS::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:10.480Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:50.553Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sas.$Module.class, fqn = "@alicloud/ros-cdk-sas.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.sas.IInstance {
 
@@ -112,52 +112,31 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property period: The subscription period of the firewallIf PeriodUnit is month, the valid range is 1, 3, 6 If periodUnit is year, the valid range is 1, 2, 3.
-         * <p>
-         * @return {@code this}
-         * @param period Property period: The subscription period of the firewallIf PeriodUnit is month, the valid range is 1, 3, 6 If periodUnit is year, the valid range is 1, 2, 3. This parameter is required.
-         */
-        public Builder period(final java.lang.Number period) {
-            this.props.period(period);
-            return this;
-        }
-        /**
-         * Property period: The subscription period of the firewallIf PeriodUnit is month, the valid range is 1, 3, 6 If periodUnit is year, the valid range is 1, 2, 3.
-         * <p>
-         * @return {@code this}
-         * @param period Property period: The subscription period of the firewallIf PeriodUnit is month, the valid range is 1, 3, 6 If periodUnit is year, the valid range is 1, 2, 3. This parameter is required.
-         */
-        public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
-            this.props.period(period);
-            return this;
-        }
-
-        /**
-         * Property periodUnit: The unit of the subscription duration.
+         * Property payType: The billing method of the firewall instance.
          * <p>
          * Valid values:
-         * Month
-         * Year
+         * PayAsYouGo: pay-as-you-go
+         * Subscription: subscription
          * <p>
          * @return {@code this}
-         * @param periodUnit Property periodUnit: The unit of the subscription duration. This parameter is required.
+         * @param payType Property payType: The billing method of the firewall instance. This parameter is required.
          */
-        public Builder periodUnit(final java.lang.String periodUnit) {
-            this.props.periodUnit(periodUnit);
+        public Builder payType(final java.lang.String payType) {
+            this.props.payType(payType);
             return this;
         }
         /**
-         * Property periodUnit: The unit of the subscription duration.
+         * Property payType: The billing method of the firewall instance.
          * <p>
          * Valid values:
-         * Month
-         * Year
+         * PayAsYouGo: pay-as-you-go
+         * Subscription: subscription
          * <p>
          * @return {@code this}
-         * @param periodUnit Property periodUnit: The unit of the subscription duration. This parameter is required.
+         * @param payType Property payType: The billing method of the firewall instance. This parameter is required.
          */
-        public Builder periodUnit(final com.aliyun.ros.cdk.core.IResolvable periodUnit) {
-            this.props.periodUnit(periodUnit);
+        public Builder payType(final com.aliyun.ros.cdk.core.IResolvable payType) {
+            this.props.payType(payType);
             return this;
         }
 
@@ -392,6 +371,77 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
          */
         public Builder maliciousFileDetectionSdk(final com.aliyun.ros.cdk.core.IResolvable maliciousFileDetectionSdk) {
             this.props.maliciousFileDetectionSdk(maliciousFileDetectionSdk);
+            return this;
+        }
+
+        /**
+         * Property period: The subscription period of the firewallIf PeriodUnit is month, the valid range is 1, 3, 6 If periodUnit is year, the valid range is 1, 2, 3.
+         * <p>
+         * @return {@code this}
+         * @param period Property period: The subscription period of the firewallIf PeriodUnit is month, the valid range is 1, 3, 6 If periodUnit is year, the valid range is 1, 2, 3. This parameter is required.
+         */
+        public Builder period(final java.lang.Number period) {
+            this.props.period(period);
+            return this;
+        }
+        /**
+         * Property period: The subscription period of the firewallIf PeriodUnit is month, the valid range is 1, 3, 6 If periodUnit is year, the valid range is 1, 2, 3.
+         * <p>
+         * @return {@code this}
+         * @param period Property period: The subscription period of the firewallIf PeriodUnit is month, the valid range is 1, 3, 6 If periodUnit is year, the valid range is 1, 2, 3. This parameter is required.
+         */
+        public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
+            this.props.period(period);
+            return this;
+        }
+
+        /**
+         * Property periodUnit: The unit of the subscription duration.
+         * <p>
+         * Valid values:
+         * Month
+         * Year
+         * <p>
+         * @return {@code this}
+         * @param periodUnit Property periodUnit: The unit of the subscription duration. This parameter is required.
+         */
+        public Builder periodUnit(final java.lang.String periodUnit) {
+            this.props.periodUnit(periodUnit);
+            return this;
+        }
+        /**
+         * Property periodUnit: The unit of the subscription duration.
+         * <p>
+         * Valid values:
+         * Month
+         * Year
+         * <p>
+         * @return {@code this}
+         * @param periodUnit Property periodUnit: The unit of the subscription duration. This parameter is required.
+         */
+        public Builder periodUnit(final com.aliyun.ros.cdk.core.IResolvable periodUnit) {
+            this.props.periodUnit(periodUnit);
+            return this;
+        }
+
+        /**
+         * Property postPayInstanceModule: PayAsYouGo instance module configuration.
+         * <p>
+         * @return {@code this}
+         * @param postPayInstanceModule Property postPayInstanceModule: PayAsYouGo instance module configuration. This parameter is required.
+         */
+        public Builder postPayInstanceModule(final com.aliyun.ros.cdk.core.IResolvable postPayInstanceModule) {
+            this.props.postPayInstanceModule(postPayInstanceModule);
+            return this;
+        }
+        /**
+         * Property postPayInstanceModule: PayAsYouGo instance module configuration.
+         * <p>
+         * @return {@code this}
+         * @param postPayInstanceModule Property postPayInstanceModule: PayAsYouGo instance module configuration. This parameter is required.
+         */
+        public Builder postPayInstanceModule(final com.aliyun.ros.cdk.sas.RosInstance.PostPayInstanceModuleProperty postPayInstanceModule) {
+            this.props.postPayInstanceModule(postPayInstanceModule);
             return this;
         }
 

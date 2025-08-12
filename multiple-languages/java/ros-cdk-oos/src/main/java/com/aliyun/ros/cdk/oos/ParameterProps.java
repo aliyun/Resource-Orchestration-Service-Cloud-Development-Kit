@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.oos;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-parameter
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.395Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.928Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.ParameterProps")
 @software.amazon.jsii.Jsii.Proxy(ParameterProps.Jsii$Proxy.class)
 public interface ParameterProps extends software.amazon.jsii.JsiiSerializable {
@@ -14,7 +14,7 @@ public interface ParameterProps extends software.amazon.jsii.JsiiSerializable {
      * Property name: The name of the parameter.
      * <p>
      * The name must be 1 to 200 characters in length,and can contain letters, digits, hyphens (-), and underscores (_).
-     * It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
+     * It cannot start with ALIYUN, ALIBABA, ALICLOUD, ACS or OOS.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getName();
 
@@ -82,7 +82,7 @@ public interface ParameterProps extends software.amazon.jsii.JsiiSerializable {
          * Sets the value of {@link ParameterProps#getName}
          * @param name Property name: The name of the parameter. This parameter is required.
          *             The name must be 1 to 200 characters in length,and can contain letters, digits, hyphens (-), and underscores (_).
-         *             It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
+         *             It cannot start with ALIYUN, ALIBABA, ALICLOUD, ACS or OOS.
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -94,7 +94,7 @@ public interface ParameterProps extends software.amazon.jsii.JsiiSerializable {
          * Sets the value of {@link ParameterProps#getName}
          * @param name Property name: The name of the parameter. This parameter is required.
          *             The name must be 1 to 200 characters in length,and can contain letters, digits, hyphens (-), and underscores (_).
-         *             It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
+         *             It cannot start with ALIYUN, ALIBABA, ALICLOUD, ACS or OOS.
          * @return {@code this}
          */
         public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {

@@ -14,6 +14,8 @@ type IInstance interface {
 	AttrInstanceId() interface{}
 	// Attribute OrderId: Order information.
 	AttrOrderId() interface{}
+	// Attribute WorkspaceId: Workspace ID.
+	AttrWorkspaceId() interface{}
 	Props() *InstanceProps
 }
 
@@ -37,6 +39,16 @@ func (j *jsiiProxy_IInstance) AttrOrderId() interface{} {
 	_jsii_.Get(
 		j,
 		"attrOrderId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IInstance) AttrWorkspaceId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrWorkspaceId",
 		&returns,
 	)
 	return returns

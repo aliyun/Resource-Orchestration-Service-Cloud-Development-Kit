@@ -106,7 +106,7 @@ export class Role extends ros.Resource implements IRole, IPrincipal {
     public readonly attrRoleName: ros.IResolvable | string;
 
     public readonly grantPrincipal: IPrincipal = this;
-    public readonly principalName: string | ros.IResolvable = this.attrRoleName;
+    public readonly principalName: string | ros.IResolvable;
     public readonly principalType: string = 'role';
 
     public addToPolicy(policyDocument: RosManagedPolicy.PolicyDocumentProperty): ManagedPolicy {
@@ -144,5 +144,6 @@ export class Role extends ros.Resource implements IRole, IPrincipal {
         this.attrArn = rosRole.attrArn;
         this.attrRoleId = rosRole.attrRoleId;
         this.attrRoleName = rosRole.attrRoleName;
+        this.principalName = this.attrRoleName;
     }
 }

@@ -96,6 +96,10 @@ func (j *jsiiProxy_RosTopic) validateSetMaximumMessageSizeParameters(val interfa
 	return nil
 }
 
+func (j *jsiiProxy_RosTopic) validateSetTagsParameters(val *[]*RosTopic_TagsProperty) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosTopic) validateSetTopicNameParameters(val interface{}) error {
 	return nil
 }

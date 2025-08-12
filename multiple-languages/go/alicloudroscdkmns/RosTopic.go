@@ -51,6 +51,8 @@ type RosTopic interface {
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
 	Stack() alicloudroscdkcore.Stack
+	Tags() *[]*RosTopic_TagsProperty
+	SetTags(val *[]*RosTopic_TagsProperty)
 	TopicName() interface{}
 	SetTopicName(val interface{})
 	// Return properties modified after initiation.
@@ -317,6 +319,16 @@ func (j *jsiiProxy_RosTopic) Stack() alicloudroscdkcore.Stack {
 	return returns
 }
 
+func (j *jsiiProxy_RosTopic) Tags() *[]*RosTopic_TagsProperty {
+	var returns *[]*RosTopic_TagsProperty
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosTopic) TopicName() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -394,6 +406,17 @@ func (j *jsiiProxy_RosTopic)SetMaximumMessageSize(val interface{}) {
 	_jsii_.Set(
 		j,
 		"maximumMessageSize",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosTopic)SetTags(val *[]*RosTopic_TagsProperty) {
+	if err := j.validateSetTagsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"tags",
 		val,
 	)
 }

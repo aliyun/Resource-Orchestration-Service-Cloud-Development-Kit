@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.oos;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-secretparameter
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.430Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.949Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.SecretParameterProps")
 @software.amazon.jsii.Jsii.Proxy(SecretParameterProps.Jsii$Proxy.class)
 public interface SecretParameterProps extends software.amazon.jsii.JsiiSerializable {
@@ -13,7 +13,7 @@ public interface SecretParameterProps extends software.amazon.jsii.JsiiSerializa
     /**
      * Property secretParameterName: The name of the encryption parameter.
      * <p>
-     * The name must be 1 to 180 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
+     * The name must be 1 to 180 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ALIBABA, ALICLOUD, ACS or OOS.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getSecretParameterName();
 
@@ -82,7 +82,7 @@ public interface SecretParameterProps extends software.amazon.jsii.JsiiSerializa
         /**
          * Sets the value of {@link SecretParameterProps#getSecretParameterName}
          * @param secretParameterName Property secretParameterName: The name of the encryption parameter. This parameter is required.
-         *                            The name must be 1 to 180 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
+         *                            The name must be 1 to 180 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ALIBABA, ALICLOUD, ACS or OOS.
          * @return {@code this}
          */
         public Builder secretParameterName(java.lang.String secretParameterName) {
@@ -93,7 +93,7 @@ public interface SecretParameterProps extends software.amazon.jsii.JsiiSerializa
         /**
          * Sets the value of {@link SecretParameterProps#getSecretParameterName}
          * @param secretParameterName Property secretParameterName: The name of the encryption parameter. This parameter is required.
-         *                            The name must be 1 to 180 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
+         *                            The name must be 1 to 180 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ALIBABA, ALICLOUD, ACS or OOS.
          * @return {@code this}
          */
         public Builder secretParameterName(com.aliyun.ros.cdk.core.IResolvable secretParameterName) {

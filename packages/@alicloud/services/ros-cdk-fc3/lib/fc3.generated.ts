@@ -63,7 +63,7 @@ function rosConcurrencyConfigPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::FC3::ConcurrencyConfig`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC3::ConcurrencyConfig`, which is used to configure reserved concurrency for a function in Function Compute 3.0.
  * @Note This class does not contain additional functions, so it is recommended to use the `ConcurrencyConfig` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-concurrencyconfig
  */
@@ -210,7 +210,7 @@ function rosCustomDomainPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::FC3::CustomDomain`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC3::CustomDomain`, which is used to create a custom domain name in Function Compute 3.0.
  * @Note This class does not contain additional functions, so it is recommended to use the `CustomDomain` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-customdomain
  */
@@ -972,6 +972,11 @@ export interface RosFunctionProps {
     readonly role?: string | ros.IResolvable;
 
     /**
+     * @Property tags: Tags to attach to function. Max support 20 tags to add during create function. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosFunction.TagsProperty[];
+
+    /**
      * @Property timeout: The timeout of the function.
      */
     readonly timeout?: number | ros.IResolvable;
@@ -997,14 +1002,6 @@ export interface RosFunctionProps {
 function RosFunctionPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    if(properties.memorySize && (typeof properties.memorySize) !== 'object') {
-        errors.collect(ros.propertyValidator('memorySize', ros.validateRange)({
-            data: properties.memorySize,
-            min: 128,
-            max: 65536,
-          }));
-    }
-    errors.collect(ros.propertyValidator('memorySize', ros.validateNumber)(properties.memorySize));
     if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
         errors.collect(ros.propertyValidator('description', ros.validateLength)({
             data: properties.description.length,
@@ -1015,17 +1012,7 @@ function RosFunctionPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('tracingConfig', RosFunction_TracingConfigPropertyValidator)(properties.tracingConfig));
     errors.collect(ros.propertyValidator('vpcConfig', RosFunction_VpcConfigPropertyValidator)(properties.vpcConfig));
-    if(properties.timeout && (typeof properties.timeout) !== 'object') {
-        errors.collect(ros.propertyValidator('timeout', ros.validateRange)({
-            data: properties.timeout,
-            min: 1,
-            max: 86400,
-          }));
-    }
-    errors.collect(ros.propertyValidator('timeout', ros.validateNumber)(properties.timeout));
     errors.collect(ros.propertyValidator('instanceLifecycleConfig', RosFunction_InstanceLifecycleConfigPropertyValidator)(properties.instanceLifecycleConfig));
-    errors.collect(ros.propertyValidator('handler', ros.requiredValidator)(properties.handler));
-    errors.collect(ros.propertyValidator('handler', ros.validateString)(properties.handler));
     if(properties.cpu && (typeof properties.cpu) !== 'object') {
         errors.collect(ros.propertyValidator('cpu', ros.validateRange)({
             data: properties.cpu,
@@ -1034,18 +1021,11 @@ function RosFunctionPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('cpu', ros.validateNumber)(properties.cpu));
-    errors.collect(ros.propertyValidator('customContainerConfig', RosFunction_CustomContainerConfigPropertyValidator)(properties.customContainerConfig));
-    errors.collect(ros.propertyValidator('code', RosFunction_CodePropertyValidator)(properties.code));
-    errors.collect(ros.propertyValidator('role', ros.validateString)(properties.role));
     errors.collect(ros.propertyValidator('functionName', ros.requiredValidator)(properties.functionName));
     errors.collect(ros.propertyValidator('functionName', ros.validateString)(properties.functionName));
-    errors.collect(ros.propertyValidator('internetAccess', ros.validateBoolean)(properties.internetAccess));
     errors.collect(ros.propertyValidator('runtime', ros.requiredValidator)(properties.runtime));
     errors.collect(ros.propertyValidator('runtime', ros.validateString)(properties.runtime));
     errors.collect(ros.propertyValidator('environmentVariables', ros.hashValidator(ros.validateAny))(properties.environmentVariables));
-    errors.collect(ros.propertyValidator('customRuntimeConfig', RosFunction_CustomRuntimeConfigPropertyValidator)(properties.customRuntimeConfig));
-    errors.collect(ros.propertyValidator('gpuConfig', RosFunction_GpuConfigPropertyValidator)(properties.gpuConfig));
-    errors.collect(ros.propertyValidator('ossMountConfig', RosFunction_OssMountConfigPropertyValidator)(properties.ossMountConfig));
     errors.collect(ros.propertyValidator('diskSize', ros.validateNumber)(properties.diskSize));
     errors.collect(ros.propertyValidator('customDns', RosFunction_CustomDnsPropertyValidator)(properties.customDns));
     if(properties.instanceConcurrency && (typeof properties.instanceConcurrency) !== 'object') {
@@ -1064,7 +1044,40 @@ function RosFunctionPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('layers', ros.listValidator(ros.validateString))(properties.layers));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosFunction_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('nasConfig', RosFunction_NasConfigPropertyValidator)(properties.nasConfig));
+    if(properties.memorySize && (typeof properties.memorySize) !== 'object') {
+        errors.collect(ros.propertyValidator('memorySize', ros.validateRange)({
+            data: properties.memorySize,
+            min: 128,
+            max: 65536,
+          }));
+    }
+    errors.collect(ros.propertyValidator('memorySize', ros.validateNumber)(properties.memorySize));
+    if(properties.timeout && (typeof properties.timeout) !== 'object') {
+        errors.collect(ros.propertyValidator('timeout', ros.validateRange)({
+            data: properties.timeout,
+            min: 1,
+            max: 86400,
+          }));
+    }
+    errors.collect(ros.propertyValidator('timeout', ros.validateNumber)(properties.timeout));
+    errors.collect(ros.propertyValidator('handler', ros.requiredValidator)(properties.handler));
+    errors.collect(ros.propertyValidator('handler', ros.validateString)(properties.handler));
+    errors.collect(ros.propertyValidator('customContainerConfig', RosFunction_CustomContainerConfigPropertyValidator)(properties.customContainerConfig));
+    errors.collect(ros.propertyValidator('code', RosFunction_CodePropertyValidator)(properties.code));
+    errors.collect(ros.propertyValidator('role', ros.validateString)(properties.role));
+    errors.collect(ros.propertyValidator('internetAccess', ros.validateBoolean)(properties.internetAccess));
+    errors.collect(ros.propertyValidator('customRuntimeConfig', RosFunction_CustomRuntimeConfigPropertyValidator)(properties.customRuntimeConfig));
+    errors.collect(ros.propertyValidator('gpuConfig', RosFunction_GpuConfigPropertyValidator)(properties.gpuConfig));
+    errors.collect(ros.propertyValidator('ossMountConfig', RosFunction_OssMountConfigPropertyValidator)(properties.ossMountConfig));
     errors.collect(ros.propertyValidator('logConfig', RosFunction_LogConfigPropertyValidator)(properties.logConfig));
     return errors.wrap('supplied properties not correct for "RosFunctionProps"');
 }
@@ -1104,6 +1117,7 @@ function rosFunctionPropsToRosTemplate(properties: any, enableResourcePropertyCo
       'NasConfig': rosFunctionNasConfigPropertyToRosTemplate(properties.nasConfig),
       'OssMountConfig': rosFunctionOssMountConfigPropertyToRosTemplate(properties.ossMountConfig),
       'Role': ros.stringToRosTemplate(properties.role),
+      'Tags': ros.listMapper(rosFunctionTagsPropertyToRosTemplate)(properties.tags),
       'Timeout': ros.numberToRosTemplate(properties.timeout),
       'TracingConfig': rosFunctionTracingConfigPropertyToRosTemplate(properties.tracingConfig),
       'VpcConfig': rosFunctionVpcConfigPropertyToRosTemplate(properties.vpcConfig),
@@ -1245,6 +1259,11 @@ export class RosFunction extends ros.RosResource {
     public role: string | ros.IResolvable | undefined;
 
     /**
+     * @Property tags: Tags to attach to function. Max support 20 tags to add during create function. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosFunction.TagsProperty[] | undefined;
+
+    /**
      * @Property timeout: The timeout of the function.
      */
     public timeout: number | ros.IResolvable | undefined;
@@ -1292,6 +1311,7 @@ export class RosFunction extends ros.RosResource {
         this.nasConfig = props.nasConfig;
         this.ossMountConfig = props.ossMountConfig;
         this.role = props.role;
+        this.tags = props.tags;
         this.timeout = props.timeout;
         this.tracingConfig = props.tracingConfig;
         this.vpcConfig = props.vpcConfig;
@@ -1321,6 +1341,7 @@ export class RosFunction extends ros.RosResource {
             nasConfig: this.nasConfig,
             ossMountConfig: this.ossMountConfig,
             role: this.role,
+            tags: this.tags,
             timeout: this.timeout,
             tracingConfig: this.tracingConfig,
             vpcConfig: this.vpcConfig,
@@ -2665,6 +2686,54 @@ export namespace RosFunction {
     /**
      * @stability external
      */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosFunction_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC3::Function.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC3::Function.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosFunctionTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosFunction_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
+}
+
+export namespace RosFunction {
+    /**
+     * @stability external
+     */
     export interface TracingConfigProperty {
         /**
          * @Property type: The type of the function.
@@ -2878,7 +2947,7 @@ function rosProvisionConfigPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::FC3::ProvisionConfig`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC3::ProvisionConfig`, which is used to create a provisioned configuration in Function Compute 3.0.
  * @Note This class does not contain additional functions, so it is recommended to use the `ProvisionConfig` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-provisionconfig
  */

@@ -26,10 +26,25 @@ export interface ElasticityAssuranceProps {
     readonly zoneId: string | ros.IResolvable;
 
     /**
+     * Property autoRenew: Whether to enable automatic renewal.
+     */
+    readonly autoRenew?: boolean | ros.IResolvable;
+
+    /**
+     * Property autoRenewPeriod: The period for automatic renewal.
+     */
+    readonly autoRenewPeriod?: number | ros.IResolvable;
+
+    /**
      * Property description: The description of the elasticity assurance. The description must be 2 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
      * This parameter is empty by default.
      */
     readonly description?: string | ros.IResolvable;
+
+    /**
+     * Property instanceCpuCoreCount: The number of CPU cores for the instance.
+     */
+    readonly instanceCpuCoreCount?: number | ros.IResolvable;
 
     /**
      * Property period: The effective duration of the elasticity assurance. The unit of the effective duration is determined by the PeriodUnit value. Valid values:
@@ -51,6 +66,11 @@ export interface ElasticityAssuranceProps {
      * Property privatePoolOptions:
      */
     readonly privatePoolOptions?: RosElasticityAssurance.PrivatePoolOptionsProperty | ros.IResolvable;
+
+    /**
+     * Property recurrenceRules: Recurrence rules for the elasticity assurance.
+     */
+    readonly recurrenceRules?: Array<RosElasticityAssurance.RecurrenceRulesProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property resourceGroupId: The ID of the resource group to which to assign the elasticity assurance.
@@ -108,13 +128,17 @@ export class ElasticityAssurance extends ros.Resource implements IElasticityAssu
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosElasticityAssurance = new RosElasticityAssurance(this, id,  {
+            autoRenewPeriod: props.autoRenewPeriod,
             description: props.description,
-            instanceAmount: props.instanceAmount,
-            privatePoolOptions: props.privatePoolOptions,
             zoneId: props.zoneId,
             resourceGroupId: props.resourceGroupId,
+            autoRenew: props.autoRenew,
             startTime: props.startTime,
+            recurrenceRules: props.recurrenceRules,
             period: props.period,
+            instanceCpuCoreCount: props.instanceCpuCoreCount,
+            instanceAmount: props.instanceAmount,
+            privatePoolOptions: props.privatePoolOptions,
             instanceTypes: props.instanceTypes,
             tags: props.tags,
             periodUnit: props.periodUnit,

@@ -402,7 +402,7 @@ function rosScalingRulePropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ESS::ScalingRule`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ESS::ScalingRule`, which is used to query the information about a scaling rule.
  * @Note This class does not contain additional functions, so it is recommended to use the `ScalingRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ess-scalingrule
  */
@@ -728,7 +728,7 @@ function rosScalingRulesPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ESS::ScalingRules`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ESS::ScalingRules`, which are used to query the information about scaling rules.
  * @Note This class does not contain additional functions, so it is recommended to use the `ScalingRules` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ess-scalingrules
  */

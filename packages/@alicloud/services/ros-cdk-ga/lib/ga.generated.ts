@@ -1378,7 +1378,7 @@ function rosBandwidthPackageAcceleratorAdditionPropsToRosTemplate(properties: an
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BandwidthPackageAcceleratorAddition`, which is used to bind a bandwidth plan to a global acceleration instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BandwidthPackageAcceleratorAddition`.
  * @Note This class does not contain additional functions, so it is recommended to use the `BandwidthPackageAcceleratorAddition` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-bandwidthpackageacceleratoraddition
  */
@@ -1493,7 +1493,7 @@ function rosBasicAccelerateIpPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicAccelerateIp`, which is used to create an accelerated IP address for a basic Global Accelerator (GA) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicAccelerateIp`.
  * @Note This class does not contain additional functions, so it is recommended to use the `BasicAccelerateIp` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicaccelerateip
  */
@@ -2147,7 +2147,7 @@ function rosBasicEndpointPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicEndpoint`, which is used to create an endpoint for a basic Global Accelerator (GA) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicEndpoint`.
  * @Note This class does not contain additional functions, so it is recommended to use the `BasicEndpoint` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicendpoint
  */
@@ -2550,7 +2550,7 @@ function rosBasicIpSetPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicIpSet`, which is used to create an acceleration region for a basic Global Accelerator (GA) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicIpSet`.
  * @Note This class does not contain additional functions, so it is recommended to use the `BasicIpSet` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicipset
  */
@@ -2688,7 +2688,7 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Domain`, which is used to create a domain name.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Domain`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Domain` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-domain
  */
@@ -3758,7 +3758,7 @@ function rosForwardingRulesPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::ForwardingRules`, which is used to create forwarding rules.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::ForwardingRules`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ForwardingRules` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-forwardingrules
  */
@@ -4103,7 +4103,7 @@ function RosIpSetsPropsValidator(properties: any): ros.ValidationResult {
         errors.collect(ros.propertyValidator('accelerateRegion', ros.validateLength)({
             data: properties.accelerateRegion.length,
             min: undefined,
-            max: 5,
+            max: 100,
           }));
     }
     errors.collect(ros.propertyValidator('accelerateRegion', ros.listValidator(RosIpSets_AccelerateRegionPropertyValidator))(properties.accelerateRegion));

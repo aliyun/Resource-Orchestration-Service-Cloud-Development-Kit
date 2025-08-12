@@ -27,6 +27,7 @@ type RosDBInstanceProps struct {
 	PeriodUnit interface{} `field:"optional" json:"periodUnit" yaml:"periodUnit"`
 	PrivateIpAddress interface{} `field:"optional" json:"privateIpAddress" yaml:"privateIpAddress"`
 	ProdType interface{} `field:"optional" json:"prodType" yaml:"prodType"`
+	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 	SecurityIpList interface{} `field:"optional" json:"securityIpList" yaml:"securityIpList"`
 	SegDiskPerformanceLevel interface{} `field:"optional" json:"segDiskPerformanceLevel" yaml:"segDiskPerformanceLevel"`
 	SegNodeNum interface{} `field:"optional" json:"segNodeNum" yaml:"segNodeNum"`

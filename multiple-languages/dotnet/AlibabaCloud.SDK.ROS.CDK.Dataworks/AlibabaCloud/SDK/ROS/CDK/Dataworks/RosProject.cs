@@ -65,21 +65,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dataworks
         }
 
         /// <remarks>
+        /// <strong>Attribute</strong>: Id: The ID number of the workspace.
+        /// </remarks>
+        [JsiiProperty(name: "attrId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
         /// <strong>Attribute</strong>: IsDefault: Indicates whether the workspace is the default workspace. Valid values:
         /// 1: The workspace is the default workspace.
         /// 0: The workspace is not the default workspace.
         /// </remarks>
         [JsiiProperty(name: "attrIsDefault", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrIsDefault
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: ProjectId: The ID of the workspace.
-        /// </remarks>
-        [JsiiProperty(name: "attrProjectId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrProjectId
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
@@ -339,7 +339,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dataworks
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: projectName: The display name of the workspace. If not provided, it is the same as ProjectIdentifier.
+        /// <strong>Property</strong>: projectName: The display name of the workspace. If not provided, it is the same as ProjectIdentifier.The value contains 3 to 28 characters.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "projectName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

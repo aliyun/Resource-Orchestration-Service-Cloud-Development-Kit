@@ -12,7 +12,7 @@ type FileSystemProps struct {
 	// Property storageType: The storage type of the file System.
 	//
 	// Valid values:
-	// Performance、Capacity(Available when the file_system_type is standard)
+	// Performance、Capacity、Premium(Available when the file_system_type is standard)
 	// standard、advance(Available when the file_system_type is extreme)
 	// advance_100、advance_200(Available when the file_system_type is cpfs).
 	StorageType interface{} `field:"required" json:"storageType" yaml:"storageType"`
@@ -47,6 +47,8 @@ type FileSystemProps struct {
 	//
 	// Allowed values: standard(default), extreme, cpfs.
 	FileSystemType interface{} `field:"optional" json:"fileSystemType" yaml:"fileSystemType"`
+	// Property resourceGroupId: Resource group id.
+	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 	// Property snapshotId: Snapshot ID.
 	SnapshotId interface{} `field:"optional" json:"snapshotId" yaml:"snapshotId"`
 	// Property tags: Tags to attach to filesystem.

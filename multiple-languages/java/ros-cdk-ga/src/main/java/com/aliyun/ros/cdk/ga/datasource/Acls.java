@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ga.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::GA::Acls</code>, which is used to query access control lists (ACLs).
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::GA::Acls</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:07.214Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.900Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.datasource.Acls")
 public class Acls extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ga.datasource.IAcls {
 

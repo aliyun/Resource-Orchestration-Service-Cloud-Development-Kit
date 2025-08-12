@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ens;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-securitygroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:06.549Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.310Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ens.$Module.class, fqn = "@alicloud/ros-cdk-ens.SecurityGroupProps")
 @software.amazon.jsii.Jsii.Proxy(SecurityGroupProps.Jsii$Proxy.class)
 public interface SecurityGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -20,16 +20,9 @@ public interface SecurityGroupProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
-     * Property securityGroupEgress: egress rules for the security group.
+     * Property permissions: undefined.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupEgress() {
-        return null;
-    }
-
-    /**
-     * Property securityGroupIngress: Ingress rules for the security group.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupIngress() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPermissions() {
         return null;
     }
 
@@ -53,8 +46,7 @@ public interface SecurityGroupProps extends software.amazon.jsii.JsiiSerializabl
      */
     public static final class Builder implements software.amazon.jsii.Builder<SecurityGroupProps> {
         java.lang.Object description;
-        java.lang.Object securityGroupEgress;
-        java.lang.Object securityGroupIngress;
+        java.lang.Object permissions;
         java.lang.Object securityGroupName;
 
         /**
@@ -80,42 +72,22 @@ public interface SecurityGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
-         * Sets the value of {@link SecurityGroupProps#getSecurityGroupEgress}
-         * @param securityGroupEgress Property securityGroupEgress: egress rules for the security group.
+         * Sets the value of {@link SecurityGroupProps#getPermissions}
+         * @param permissions Property permissions: undefined.
          * @return {@code this}
          */
-        public Builder securityGroupEgress(com.aliyun.ros.cdk.core.IResolvable securityGroupEgress) {
-            this.securityGroupEgress = securityGroupEgress;
+        public Builder permissions(com.aliyun.ros.cdk.core.IResolvable permissions) {
+            this.permissions = permissions;
             return this;
         }
 
         /**
-         * Sets the value of {@link SecurityGroupProps#getSecurityGroupEgress}
-         * @param securityGroupEgress Property securityGroupEgress: egress rules for the security group.
+         * Sets the value of {@link SecurityGroupProps#getPermissions}
+         * @param permissions Property permissions: undefined.
          * @return {@code this}
          */
-        public Builder securityGroupEgress(java.util.List<? extends java.lang.Object> securityGroupEgress) {
-            this.securityGroupEgress = securityGroupEgress;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link SecurityGroupProps#getSecurityGroupIngress}
-         * @param securityGroupIngress Property securityGroupIngress: Ingress rules for the security group.
-         * @return {@code this}
-         */
-        public Builder securityGroupIngress(com.aliyun.ros.cdk.core.IResolvable securityGroupIngress) {
-            this.securityGroupIngress = securityGroupIngress;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link SecurityGroupProps#getSecurityGroupIngress}
-         * @param securityGroupIngress Property securityGroupIngress: Ingress rules for the security group.
-         * @return {@code this}
-         */
-        public Builder securityGroupIngress(java.util.List<? extends java.lang.Object> securityGroupIngress) {
-            this.securityGroupIngress = securityGroupIngress;
+        public Builder permissions(java.util.List<? extends java.lang.Object> permissions) {
+            this.permissions = permissions;
             return this;
         }
 
@@ -158,8 +130,7 @@ public interface SecurityGroupProps extends software.amazon.jsii.JsiiSerializabl
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements SecurityGroupProps {
         private final java.lang.Object description;
-        private final java.lang.Object securityGroupEgress;
-        private final java.lang.Object securityGroupIngress;
+        private final java.lang.Object permissions;
         private final java.lang.Object securityGroupName;
 
         /**
@@ -169,8 +140,7 @@ public interface SecurityGroupProps extends software.amazon.jsii.JsiiSerializabl
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.securityGroupEgress = software.amazon.jsii.Kernel.get(this, "securityGroupEgress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.securityGroupIngress = software.amazon.jsii.Kernel.get(this, "securityGroupIngress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.permissions = software.amazon.jsii.Kernel.get(this, "permissions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupName = software.amazon.jsii.Kernel.get(this, "securityGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -180,8 +150,7 @@ public interface SecurityGroupProps extends software.amazon.jsii.JsiiSerializabl
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.description = builder.description;
-            this.securityGroupEgress = builder.securityGroupEgress;
-            this.securityGroupIngress = builder.securityGroupIngress;
+            this.permissions = builder.permissions;
             this.securityGroupName = builder.securityGroupName;
         }
 
@@ -191,13 +160,8 @@ public interface SecurityGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.Object getSecurityGroupEgress() {
-            return this.securityGroupEgress;
-        }
-
-        @Override
-        public final java.lang.Object getSecurityGroupIngress() {
-            return this.securityGroupIngress;
+        public final java.lang.Object getPermissions() {
+            return this.permissions;
         }
 
         @Override
@@ -214,11 +178,8 @@ public interface SecurityGroupProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
             }
-            if (this.getSecurityGroupEgress() != null) {
-                data.set("securityGroupEgress", om.valueToTree(this.getSecurityGroupEgress()));
-            }
-            if (this.getSecurityGroupIngress() != null) {
-                data.set("securityGroupIngress", om.valueToTree(this.getSecurityGroupIngress()));
+            if (this.getPermissions() != null) {
+                data.set("permissions", om.valueToTree(this.getPermissions()));
             }
             if (this.getSecurityGroupName() != null) {
                 data.set("securityGroupName", om.valueToTree(this.getSecurityGroupName()));
@@ -242,16 +203,14 @@ public interface SecurityGroupProps extends software.amazon.jsii.JsiiSerializabl
             SecurityGroupProps.Jsii$Proxy that = (SecurityGroupProps.Jsii$Proxy) o;
 
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
-            if (this.securityGroupEgress != null ? !this.securityGroupEgress.equals(that.securityGroupEgress) : that.securityGroupEgress != null) return false;
-            if (this.securityGroupIngress != null ? !this.securityGroupIngress.equals(that.securityGroupIngress) : that.securityGroupIngress != null) return false;
+            if (this.permissions != null ? !this.permissions.equals(that.permissions) : that.permissions != null) return false;
             return this.securityGroupName != null ? this.securityGroupName.equals(that.securityGroupName) : that.securityGroupName == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.description != null ? this.description.hashCode() : 0;
-            result = 31 * result + (this.securityGroupEgress != null ? this.securityGroupEgress.hashCode() : 0);
-            result = 31 * result + (this.securityGroupIngress != null ? this.securityGroupIngress.hashCode() : 0);
+            result = 31 * result + (this.permissions != null ? this.permissions.hashCode() : 0);
             result = 31 * result + (this.securityGroupName != null ? this.securityGroupName.hashCode() : 0);
             return result;
         }

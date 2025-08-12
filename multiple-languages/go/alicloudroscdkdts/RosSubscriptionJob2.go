@@ -31,6 +31,10 @@ type RosSubscriptionJob2 interface {
 	SetDelayPhone(val interface{})
 	DelayRuleTime() interface{}
 	SetDelayRuleTime(val interface{})
+	DestPrimaryVswId() interface{}
+	SetDestPrimaryVswId(val interface{})
+	DestSecondaryVswId() interface{}
+	SetDestSecondaryVswId(val interface{})
 	DtsBisLabel() interface{}
 	SetDtsBisLabel(val interface{})
 	DtsInstanceId() interface{}
@@ -55,6 +59,10 @@ type RosSubscriptionJob2 interface {
 	// Returns: the logical ID as a stringified token. This value will only get
 	// resolved during synthesis.
 	LogicalId() *string
+	MaxDu() interface{}
+	SetMaxDu(val interface{})
+	MinDu() interface{}
+	SetMinDu(val interface{})
 	// The construct tree node associated with this construct.
 	Node() alicloudroscdkcore.ConstructNode
 	// Return a string that will be resolved to a RosTemplate `{ Ref }` for this element.
@@ -64,6 +72,8 @@ type RosSubscriptionJob2 interface {
 	Ref() *string
 	Reserve() interface{}
 	SetReserve(val interface{})
+	ResourceGroupId() interface{}
+	SetResourceGroupId(val interface{})
 	// Options for this resource, such as condition, update policy etc.
 	RosOptions() alicloudroscdkcore.IRosResourceOptions
 	RosProperties() *map[string]interface{}
@@ -71,6 +81,10 @@ type RosSubscriptionJob2 interface {
 	RosResourceType() *string
 	SourceEndpoint() interface{}
 	SetSourceEndpoint(val interface{})
+	SrcPrimaryVswId() interface{}
+	SetSrcPrimaryVswId(val interface{})
+	SrcSecondaryVswId() interface{}
+	SetSrcSecondaryVswId(val interface{})
 	// The stack in which this element is defined.
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
@@ -305,6 +319,26 @@ func (j *jsiiProxy_RosSubscriptionJob2) DelayRuleTime() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosSubscriptionJob2) DestPrimaryVswId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"destPrimaryVswId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosSubscriptionJob2) DestSecondaryVswId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"destSecondaryVswId",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosSubscriptionJob2) DtsBisLabel() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -385,6 +419,26 @@ func (j *jsiiProxy_RosSubscriptionJob2) LogicalId() *string {
 	return returns
 }
 
+func (j *jsiiProxy_RosSubscriptionJob2) MaxDu() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"maxDu",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosSubscriptionJob2) MinDu() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"minDu",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosSubscriptionJob2) Node() alicloudroscdkcore.ConstructNode {
 	var returns alicloudroscdkcore.ConstructNode
 	_jsii_.Get(
@@ -410,6 +464,16 @@ func (j *jsiiProxy_RosSubscriptionJob2) Reserve() interface{} {
 	_jsii_.Get(
 		j,
 		"reserve",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosSubscriptionJob2) ResourceGroupId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"resourceGroupId",
 		&returns,
 	)
 	return returns
@@ -450,6 +514,26 @@ func (j *jsiiProxy_RosSubscriptionJob2) SourceEndpoint() interface{} {
 	_jsii_.Get(
 		j,
 		"sourceEndpoint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosSubscriptionJob2) SrcPrimaryVswId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"srcPrimaryVswId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosSubscriptionJob2) SrcSecondaryVswId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"srcSecondaryVswId",
 		&returns,
 	)
 	return returns
@@ -599,6 +683,28 @@ func (j *jsiiProxy_RosSubscriptionJob2)SetDelayRuleTime(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosSubscriptionJob2)SetDestPrimaryVswId(val interface{}) {
+	if err := j.validateSetDestPrimaryVswIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"destPrimaryVswId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosSubscriptionJob2)SetDestSecondaryVswId(val interface{}) {
+	if err := j.validateSetDestSecondaryVswIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"destSecondaryVswId",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosSubscriptionJob2)SetDtsBisLabel(val interface{}) {
 	if err := j.validateSetDtsBisLabelParameters(val); err != nil {
 		panic(err)
@@ -676,6 +782,28 @@ func (j *jsiiProxy_RosSubscriptionJob2)SetErrorPhone(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosSubscriptionJob2)SetMaxDu(val interface{}) {
+	if err := j.validateSetMaxDuParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"maxDu",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosSubscriptionJob2)SetMinDu(val interface{}) {
+	if err := j.validateSetMinDuParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"minDu",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosSubscriptionJob2)SetReserve(val interface{}) {
 	if err := j.validateSetReserveParameters(val); err != nil {
 		panic(err)
@@ -687,6 +815,17 @@ func (j *jsiiProxy_RosSubscriptionJob2)SetReserve(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosSubscriptionJob2)SetResourceGroupId(val interface{}) {
+	if err := j.validateSetResourceGroupIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"resourceGroupId",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosSubscriptionJob2)SetSourceEndpoint(val interface{}) {
 	if err := j.validateSetSourceEndpointParameters(val); err != nil {
 		panic(err)
@@ -694,6 +833,28 @@ func (j *jsiiProxy_RosSubscriptionJob2)SetSourceEndpoint(val interface{}) {
 	_jsii_.Set(
 		j,
 		"sourceEndpoint",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosSubscriptionJob2)SetSrcPrimaryVswId(val interface{}) {
+	if err := j.validateSetSrcPrimaryVswIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"srcPrimaryVswId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosSubscriptionJob2)SetSrcSecondaryVswId(val interface{}) {
+	if err := j.validateSetSrcSecondaryVswIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"srcSecondaryVswId",
 		val,
 	)
 }

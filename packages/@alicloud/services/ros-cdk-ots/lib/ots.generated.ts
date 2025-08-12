@@ -51,7 +51,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if(properties.instanceName && (typeof properties.instanceName) !== 'object') {
         errors.collect(ros.propertyValidator('instanceName', ros.validateAllowedPattern)({
           data: properties.instanceName,
-          reg: /[a-zA-Z][-a-zA-Z0-9]{1,14}[a-zA-Z0-9]/
+          reg: /^[a-zA-Z][-a-zA-Z0-9]{1,14}[a-zA-Z0-9]$/
         }));
     }
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
@@ -111,7 +111,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::Instance`, which is used to create a Tablestore instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::Instance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-instance
  */
@@ -256,6 +256,300 @@ function rosInstanceTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
+ * Properties for defining a `RosInstanceV2`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-instancev2
+ */
+export interface RosInstanceV2Props {
+
+    /**
+     * @Property clusterType: Cluster type (i.e. instance specification).
+     * Enumeration values:
+     * SSD: High performance.
+     * HYBRID: Capacity type.
+     */
+    readonly clusterType: string | ros.IResolvable;
+
+    /**
+     * @Property instanceName: Instance name.The naming specifications for instances are as follows:
+     * Must consist of English letters, numbers or dash lines (-).
+     * The first character must be in English letters.
+     * The end character cannot be a dash (-).
+     * Insensitive case.
+     * The length is between 3 and 16 characters.
+     *
+     */
+    readonly instanceName: string | ros.IResolvable;
+
+    /**
+     * @Property instanceDescription: Example description. The length is limited to between 3-256 characters.
+     */
+    readonly instanceDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property networkSourceAcl: The allowed-network source list. All networks are allowed by default.
+     */
+    readonly networkSourceAcl?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property networkTypeAcl: The instance allows the network type list, which is allowed by default.
+     */
+    readonly networkTypeAcl?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: Resource Group ID.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: The list of instance tags in the form of key\/value pairs.
+     * You can define a maximum of 20 tags for instance.
+     */
+    readonly tags?: RosInstanceV2.TagsProperty[];
+}
+
+/**
+ * Determine whether the given properties match those of a `RosInstanceV2Props`
+ *
+ * @param properties - the TypeScript properties of a `RosInstanceV2Props`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstanceV2PropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('instanceName', ros.requiredValidator)(properties.instanceName));
+    if(properties.instanceName && (typeof properties.instanceName) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceName', ros.validateAllowedPattern)({
+          data: properties.instanceName,
+          reg: /[A-Za-z][A-Za-z0-9\-]*[A-Za-z0-9]$/
+        }));
+    }
+    if(properties.instanceName && (Array.isArray(properties.instanceName) || (typeof properties.instanceName) === 'string')) {
+        errors.collect(ros.propertyValidator('instanceName', ros.validateLength)({
+            data: properties.instanceName.length,
+            min: 3,
+            max: 16,
+          }));
+    }
+    errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    if(properties.networkSourceAcl && (Array.isArray(properties.networkSourceAcl) || (typeof properties.networkSourceAcl) === 'string')) {
+        errors.collect(ros.propertyValidator('networkSourceAcl', ros.validateLength)({
+            data: properties.networkSourceAcl.length,
+            min: undefined,
+            max: 1,
+          }));
+    }
+    errors.collect(ros.propertyValidator('networkSourceAcl', ros.listValidator(ros.validateString))(properties.networkSourceAcl));
+    if(properties.networkTypeAcl && (Array.isArray(properties.networkTypeAcl) || (typeof properties.networkTypeAcl) === 'string')) {
+        errors.collect(ros.propertyValidator('networkTypeAcl', ros.validateLength)({
+            data: properties.networkTypeAcl.length,
+            min: undefined,
+            max: 3,
+          }));
+    }
+    errors.collect(ros.propertyValidator('networkTypeAcl', ros.listValidator(ros.validateString))(properties.networkTypeAcl));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    if(properties.instanceDescription && (Array.isArray(properties.instanceDescription) || (typeof properties.instanceDescription) === 'string')) {
+        errors.collect(ros.propertyValidator('instanceDescription', ros.validateLength)({
+            data: properties.instanceDescription.length,
+            min: 3,
+            max: 256,
+          }));
+    }
+    errors.collect(ros.propertyValidator('instanceDescription', ros.validateString)(properties.instanceDescription));
+    errors.collect(ros.propertyValidator('clusterType', ros.requiredValidator)(properties.clusterType));
+    if(properties.clusterType && (typeof properties.clusterType) !== 'object') {
+        errors.collect(ros.propertyValidator('clusterType', ros.validateAllowedValues)({
+          data: properties.clusterType,
+          allowedValues: ["SSD","HYBRID"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('clusterType', ros.validateString)(properties.clusterType));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosInstanceV2_TagsPropertyValidator))(properties.tags));
+    return errors.wrap('supplied properties not correct for "RosInstanceV2Props"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OTS::InstanceV2` resource
+ *
+ * @param properties - the TypeScript properties of a `RosInstanceV2Props`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OTS::InstanceV2` resource.
+ */
+// @ts-ignore TS6133
+function rosInstanceV2PropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosInstanceV2PropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ClusterType': ros.stringToRosTemplate(properties.clusterType),
+      'InstanceName': ros.stringToRosTemplate(properties.instanceName),
+      'InstanceDescription': ros.stringToRosTemplate(properties.instanceDescription),
+      'NetworkSourceACL': ros.listMapper(ros.stringToRosTemplate)(properties.networkSourceAcl),
+      'NetworkTypeACL': ros.listMapper(ros.stringToRosTemplate)(properties.networkTypeAcl),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.listMapper(rosInstanceV2TagsPropertyToRosTemplate)(properties.tags),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::InstanceV2`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `InstanceV2` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-instancev2
+ */
+export class RosInstanceV2 extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OTS::InstanceV2";
+
+    /**
+     * @Attribute InstanceName: Name of the tablestore instance.
+     */
+    public readonly attrInstanceName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property clusterType: Cluster type (i.e. instance specification).
+     * Enumeration values:
+     * SSD: High performance.
+     * HYBRID: Capacity type.
+     */
+    public clusterType: string | ros.IResolvable;
+
+    /**
+     * @Property instanceName: Instance name.The naming specifications for instances are as follows:
+     * Must consist of English letters, numbers or dash lines (-).
+     * The first character must be in English letters.
+     * The end character cannot be a dash (-).
+     * Insensitive case.
+     * The length is between 3 and 16 characters.
+     *
+     */
+    public instanceName: string | ros.IResolvable;
+
+    /**
+     * @Property instanceDescription: Example description. The length is limited to between 3-256 characters.
+     */
+    public instanceDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property networkSourceAcl: The allowed-network source list. All networks are allowed by default.
+     */
+    public networkSourceAcl: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property networkTypeAcl: The instance allows the network type list, which is allowed by default.
+     */
+    public networkTypeAcl: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: Resource Group ID.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: The list of instance tags in the form of key\/value pairs.
+     * You can define a maximum of 20 tags for instance.
+     */
+    public tags: RosInstanceV2.TagsProperty[] | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosInstanceV2Props, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosInstanceV2.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrInstanceName = this.getAtt('InstanceName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.clusterType = props.clusterType;
+        this.instanceName = props.instanceName;
+        this.instanceDescription = props.instanceDescription;
+        this.networkSourceAcl = props.networkSourceAcl;
+        this.networkTypeAcl = props.networkTypeAcl;
+        this.resourceGroupId = props.resourceGroupId;
+        this.tags = props.tags;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            clusterType: this.clusterType,
+            instanceName: this.instanceName,
+            instanceDescription: this.instanceDescription,
+            networkSourceAcl: this.networkSourceAcl,
+            networkTypeAcl: this.networkTypeAcl,
+            resourceGroupId: this.resourceGroupId,
+            tags: this.tags,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosInstanceV2PropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosInstanceV2 {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: The value of the tag.
+         */
+        readonly value: string | ros.IResolvable;
+        /**
+         * @Property key: The keyword of the tag.
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstanceV2_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.requiredValidator)(properties.value));
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OTS::InstanceV2.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OTS::InstanceV2.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosInstanceV2TagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosInstanceV2_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
  * Properties for defining a `RosSearchIndex`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-searchindex
  */
@@ -310,7 +604,7 @@ function RosSearchIndexPropsValidator(properties: any): ros.ValidationResult {
     if(properties.instanceName && (typeof properties.instanceName) !== 'object') {
         errors.collect(ros.propertyValidator('instanceName', ros.validateAllowedPattern)({
           data: properties.instanceName,
-          reg: /[a-zA-Z][-a-zA-Z0-9]{1,14}[a-zA-Z0-9]/
+          reg: /^[a-zA-Z][-a-zA-Z0-9]{1,14}[a-zA-Z0-9]$/
         }));
     }
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
@@ -318,7 +612,7 @@ function RosSearchIndexPropsValidator(properties: any): ros.ValidationResult {
     if(properties.tableName && (typeof properties.tableName) !== 'object') {
         errors.collect(ros.propertyValidator('tableName', ros.validateAllowedPattern)({
           data: properties.tableName,
-          reg: /[_a-zA-Z][_a-zA-Z0-9]{0,254}/
+          reg: /^[_a-zA-Z][_a-zA-Z0-9]{0,254}$/
         }));
     }
     errors.collect(ros.propertyValidator('tableName', ros.validateString)(properties.tableName));
@@ -353,7 +647,7 @@ function rosSearchIndexPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::SearchIndex`, which is used to create a search index for a data table. You can create multiple search indexes for a data table.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::SearchIndex`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SearchIndex` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-searchindex
  */
@@ -504,6 +798,12 @@ function RosSearchIndex_FieldSchemasPropertyValidator(properties: any): ros.Vali
     errors.collect(ros.propertyValidator('fieldName', ros.requiredValidator)(properties.fieldName));
     errors.collect(ros.propertyValidator('fieldName', ros.validateString)(properties.fieldName));
     errors.collect(ros.propertyValidator('fieldType', ros.requiredValidator)(properties.fieldType));
+    if(properties.fieldType && (typeof properties.fieldType) !== 'object') {
+        errors.collect(ros.propertyValidator('fieldType', ros.validateAllowedValues)({
+          data: properties.fieldType,
+          allowedValues: ["FieldType.LONG","FieldType.DOUBLE","FieldType.BOOLEAN","FieldType.KEYWORD","FieldType.TEXT","FieldType.GEOPOINT","FieldType.NESTED"],
+        }));
+    }
     errors.collect(ros.propertyValidator('fieldType', ros.validateString)(properties.fieldType));
     return errors.wrap('supplied properties not correct for "FieldSchemasProperty"');
 }
@@ -939,6 +1239,12 @@ function RosSearchIndex_SubFieldSchemasPropertyValidator(properties: any): ros.V
     errors.collect(ros.propertyValidator('fieldName', ros.requiredValidator)(properties.fieldName));
     errors.collect(ros.propertyValidator('fieldName', ros.validateString)(properties.fieldName));
     errors.collect(ros.propertyValidator('fieldType', ros.requiredValidator)(properties.fieldType));
+    if(properties.fieldType && (typeof properties.fieldType) !== 'object') {
+        errors.collect(ros.propertyValidator('fieldType', ros.validateAllowedValues)({
+          data: properties.fieldType,
+          allowedValues: ["FieldType.LONG","FieldType.DOUBLE","FieldType.BOOLEAN","FieldType.KEYWORD","FieldType.TEXT","FieldType.GEOPOINT","FieldType.NESTED"],
+        }));
+    }
     errors.collect(ros.propertyValidator('fieldType', ros.validateString)(properties.fieldType));
     return errors.wrap('supplied properties not correct for "SubFieldSchemasProperty"');
 }
@@ -1031,7 +1337,7 @@ function RosTablePropsValidator(properties: any): ros.ValidationResult {
     if(properties.instanceName && (typeof properties.instanceName) !== 'object') {
         errors.collect(ros.propertyValidator('instanceName', ros.validateAllowedPattern)({
           data: properties.instanceName,
-          reg: /[a-zA-Z][-a-zA-Z0-9]{1,14}[a-zA-Z0-9]/
+          reg: /^[a-zA-Z][-a-zA-Z0-9]{1,14}[a-zA-Z0-9]$/
         }));
     }
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
@@ -1039,7 +1345,7 @@ function RosTablePropsValidator(properties: any): ros.ValidationResult {
     if(properties.tableName && (typeof properties.tableName) !== 'object') {
         errors.collect(ros.propertyValidator('tableName', ros.validateAllowedPattern)({
           data: properties.tableName,
-          reg: /[_a-zA-Z][_a-zA-Z0-9]{0,254}/
+          reg: /^[_a-zA-Z][_a-zA-Z0-9]{0,254}$/
         }));
     }
     errors.collect(ros.propertyValidator('tableName', ros.validateString)(properties.tableName));
@@ -1249,7 +1555,7 @@ function RosTable_ColumnsPropertyValidator(properties: any): ros.ValidationResul
     if(properties.name && (typeof properties.name) !== 'object') {
         errors.collect(ros.propertyValidator('name', ros.validateAllowedPattern)({
           data: properties.name,
-          reg: /[_a-zA-Z][_a-zA-Z0-9]{0,254}/
+          reg: /^[_a-zA-Z][_a-zA-Z0-9]{0,254}$/
         }));
     }
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
@@ -1310,7 +1616,7 @@ function RosTable_PrimaryKeyPropertyValidator(properties: any): ros.ValidationRe
     if(properties.name && (typeof properties.name) !== 'object') {
         errors.collect(ros.propertyValidator('name', ros.validateAllowedPattern)({
           data: properties.name,
-          reg: /[_a-zA-Z][_a-zA-Z0-9]{0,254}/
+          reg: /^[_a-zA-Z][_a-zA-Z0-9]{0,254}$/
         }));
     }
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
@@ -1628,7 +1934,7 @@ function RosVpcBinder_VpcsPropertyValidator(properties: any): ros.ValidationResu
     if(properties.instanceVpcName && (typeof properties.instanceVpcName) !== 'object') {
         errors.collect(ros.propertyValidator('instanceVpcName', ros.validateAllowedPattern)({
           data: properties.instanceVpcName,
-          reg: /[a-zA-Z][a-zA-Z0-9]{2,15}/
+          reg: /^[a-zA-Z][a-zA-Z0-9]{2,15}$/
         }));
     }
     errors.collect(ros.propertyValidator('instanceVpcName', ros.validateString)(properties.instanceVpcName));

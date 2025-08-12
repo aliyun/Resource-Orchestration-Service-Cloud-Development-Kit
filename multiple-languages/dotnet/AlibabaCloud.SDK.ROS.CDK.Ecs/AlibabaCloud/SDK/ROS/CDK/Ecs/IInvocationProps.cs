@@ -102,6 +102,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
+        /// <summary>Property launcher: A bootloader for script execution.</summary>
+        /// <remarks>
+        /// The length cannot exceed 1 KB.
+        /// </remarks>
+        [JsiiProperty(name: "launcher", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Launcher
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property parameters: The key-value pairs of custom parameters passed in when the script contains custom parameters.</summary>
         /// <remarks>
         /// Number of custom parameters: 0 to 10.
@@ -323,6 +337,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             [JsiiOptional]
             [JsiiProperty(name: "frequency", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Frequency
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property launcher: A bootloader for script execution.</summary>
+            /// <remarks>
+            /// The length cannot exceed 1 KB.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "launcher", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Launcher
             {
                 get => GetInstanceProperty<object?>();
             }

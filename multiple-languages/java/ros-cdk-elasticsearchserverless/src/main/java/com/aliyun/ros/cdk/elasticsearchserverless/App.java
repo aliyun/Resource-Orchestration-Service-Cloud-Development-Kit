@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.elasticsearchserverless;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ElasticSearchServerless::App</code>, which is used to create an Elasticsearch serverless application.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:06.295Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.156Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.elasticsearchserverless.$Module.class, fqn = "@alicloud/ros-cdk-elasticsearchserverless.App")
 public class App extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.elasticsearchserverless.IApp {
 
@@ -78,6 +78,14 @@ public class App extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPublicKibanaDomain() {
         return software.amazon.jsii.Kernel.get(this, "attrPublicKibanaDomain", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     * Attribute Username: The username of the app.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrUsername() {
+        return software.amazon.jsii.Kernel.get(this, "attrUsername", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     @Override
@@ -253,6 +261,27 @@ public class App extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
+         * Property logProConfiguration: The log pro configuration of the app.
+         * <p>
+         * @return {@code this}
+         * @param logProConfiguration Property logProConfiguration: The log pro configuration of the app. This parameter is required.
+         */
+        public Builder logProConfiguration(final com.aliyun.ros.cdk.core.IResolvable logProConfiguration) {
+            this.props.logProConfiguration(logProConfiguration);
+            return this;
+        }
+        /**
+         * Property logProConfiguration: The log pro configuration of the app.
+         * <p>
+         * @return {@code this}
+         * @param logProConfiguration Property logProConfiguration: The log pro configuration of the app. This parameter is required.
+         */
+        public Builder logProConfiguration(final com.aliyun.ros.cdk.elasticsearchserverless.RosApp.LogProConfigurationProperty logProConfiguration) {
+            this.props.logProConfiguration(logProConfiguration);
+            return this;
+        }
+
+        /**
          * Property network: The public network of the app.
          * <p>
          * @return {@code this}
@@ -291,6 +320,27 @@ public class App extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
          */
         public Builder privateNetwork(final java.util.List<? extends java.lang.Object> privateNetwork) {
             this.props.privateNetwork(privateNetwork);
+            return this;
+        }
+
+        /**
+         * Property scenario: The scenario of the app.
+         * <p>
+         * @return {@code this}
+         * @param scenario Property scenario: The scenario of the app. This parameter is required.
+         */
+        public Builder scenario(final java.lang.String scenario) {
+            this.props.scenario(scenario);
+            return this;
+        }
+        /**
+         * Property scenario: The scenario of the app.
+         * <p>
+         * @return {@code this}
+         * @param scenario Property scenario: The scenario of the app. This parameter is required.
+         */
+        public Builder scenario(final com.aliyun.ros.cdk.core.IResolvable scenario) {
+            this.props.scenario(scenario);
             return this;
         }
 

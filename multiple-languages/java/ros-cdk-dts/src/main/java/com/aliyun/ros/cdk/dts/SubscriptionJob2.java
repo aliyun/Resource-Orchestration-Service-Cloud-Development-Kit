@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dts;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::DTS::SubscriptionJob2</code>, which is used to configure a change tracking task.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:04.158Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.804Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.SubscriptionJob2")
 public class SubscriptionJob2 extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.dts.ISubscriptionJob2 {
 
@@ -285,8 +285,8 @@ public class SubscriptionJob2 extends com.aliyun.ros.cdk.core.Resource implement
         /**
          * Property delayPhone: The mobile numbers that receive latency-related alerts.
          * <p>
-         * Separate multiple mobile numbers with commas (,).
-         * <strong>Note</strong>: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+         * Separate multiple mobile numbers with commas (,). You can specify up to 10 mobile numbers.
+         * <strong>Note</strong>: You can also configure alert rules for DTS tasks in the CloudMonitor console.This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers.
          * <p>
          * @return {@code this}
          * @param delayPhone Property delayPhone: The mobile numbers that receive latency-related alerts. This parameter is required.
@@ -298,8 +298,8 @@ public class SubscriptionJob2 extends com.aliyun.ros.cdk.core.Resource implement
         /**
          * Property delayPhone: The mobile numbers that receive latency-related alerts.
          * <p>
-         * Separate multiple mobile numbers with commas (,).
-         * <strong>Note</strong>: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+         * Separate multiple mobile numbers with commas (,). You can specify up to 10 mobile numbers.
+         * <strong>Note</strong>: You can also configure alert rules for DTS tasks in the CloudMonitor console.This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers.
          * <p>
          * @return {@code this}
          * @param delayPhone Property delayPhone: The mobile numbers that receive latency-related alerts. This parameter is required.
@@ -331,6 +331,48 @@ public class SubscriptionJob2 extends com.aliyun.ros.cdk.core.Resource implement
          */
         public Builder delayRuleTime(final com.aliyun.ros.cdk.core.IResolvable delayRuleTime) {
             this.props.delayRuleTime(delayRuleTime);
+            return this;
+        }
+
+        /**
+         * Property destPrimaryVswId: The primary VSW ID at the destination end of the VPC NAT.
+         * <p>
+         * @return {@code this}
+         * @param destPrimaryVswId Property destPrimaryVswId: The primary VSW ID at the destination end of the VPC NAT. This parameter is required.
+         */
+        public Builder destPrimaryVswId(final java.lang.String destPrimaryVswId) {
+            this.props.destPrimaryVswId(destPrimaryVswId);
+            return this;
+        }
+        /**
+         * Property destPrimaryVswId: The primary VSW ID at the destination end of the VPC NAT.
+         * <p>
+         * @return {@code this}
+         * @param destPrimaryVswId Property destPrimaryVswId: The primary VSW ID at the destination end of the VPC NAT. This parameter is required.
+         */
+        public Builder destPrimaryVswId(final com.aliyun.ros.cdk.core.IResolvable destPrimaryVswId) {
+            this.props.destPrimaryVswId(destPrimaryVswId);
+            return this;
+        }
+
+        /**
+         * Property destSecondaryVswId: The secondary VSW ID at the destination end of the VPC NAT.
+         * <p>
+         * @return {@code this}
+         * @param destSecondaryVswId Property destSecondaryVswId: The secondary VSW ID at the destination end of the VPC NAT. This parameter is required.
+         */
+        public Builder destSecondaryVswId(final java.lang.String destSecondaryVswId) {
+            this.props.destSecondaryVswId(destSecondaryVswId);
+            return this;
+        }
+        /**
+         * Property destSecondaryVswId: The secondary VSW ID at the destination end of the VPC NAT.
+         * <p>
+         * @return {@code this}
+         * @param destSecondaryVswId Property destSecondaryVswId: The secondary VSW ID at the destination end of the VPC NAT. This parameter is required.
+         */
+        public Builder destSecondaryVswId(final com.aliyun.ros.cdk.core.IResolvable destSecondaryVswId) {
+            this.props.destSecondaryVswId(destSecondaryVswId);
             return this;
         }
 
@@ -429,8 +471,8 @@ public class SubscriptionJob2 extends com.aliyun.ros.cdk.core.Resource implement
         /**
          * Property errorPhone: The mobile numbers that receive status-related alerts.
          * <p>
-         * Separate multiple mobile numbers with commas (,).
-         * <strong>Note</strong>: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+         * Separate multiple mobile numbers with commas (,). You can specify up to 10 mobile numbers.
+         * <strong>Note</strong>: You can also configure alert rules for DTS tasks in the CloudMonitor console.This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers.
          * <p>
          * @return {@code this}
          * @param errorPhone Property errorPhone: The mobile numbers that receive status-related alerts. This parameter is required.
@@ -442,14 +484,64 @@ public class SubscriptionJob2 extends com.aliyun.ros.cdk.core.Resource implement
         /**
          * Property errorPhone: The mobile numbers that receive status-related alerts.
          * <p>
-         * Separate multiple mobile numbers with commas (,).
-         * <strong>Note</strong>: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+         * Separate multiple mobile numbers with commas (,). You can specify up to 10 mobile numbers.
+         * <strong>Note</strong>: You can also configure alert rules for DTS tasks in the CloudMonitor console.This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers.
          * <p>
          * @return {@code this}
          * @param errorPhone Property errorPhone: The mobile numbers that receive status-related alerts. This parameter is required.
          */
         public Builder errorPhone(final com.aliyun.ros.cdk.core.IResolvable errorPhone) {
             this.props.errorPhone(errorPhone);
+            return this;
+        }
+
+        /**
+         * Property maxDu: The upper limit of DU.
+         * <p>
+         * This parameter is supported only for serverless instances.
+         * <p>
+         * @return {@code this}
+         * @param maxDu Property maxDu: The upper limit of DU. This parameter is required.
+         */
+        public Builder maxDu(final java.lang.Number maxDu) {
+            this.props.maxDu(maxDu);
+            return this;
+        }
+        /**
+         * Property maxDu: The upper limit of DU.
+         * <p>
+         * This parameter is supported only for serverless instances.
+         * <p>
+         * @return {@code this}
+         * @param maxDu Property maxDu: The upper limit of DU. This parameter is required.
+         */
+        public Builder maxDu(final com.aliyun.ros.cdk.core.IResolvable maxDu) {
+            this.props.maxDu(maxDu);
+            return this;
+        }
+
+        /**
+         * Property minDu: The lower limit of DU.
+         * <p>
+         * This parameter is supported only for serverless instances.
+         * <p>
+         * @return {@code this}
+         * @param minDu Property minDu: The lower limit of DU. This parameter is required.
+         */
+        public Builder minDu(final java.lang.Number minDu) {
+            this.props.minDu(minDu);
+            return this;
+        }
+        /**
+         * Property minDu: The lower limit of DU.
+         * <p>
+         * This parameter is supported only for serverless instances.
+         * <p>
+         * @return {@code this}
+         * @param minDu Property minDu: The lower limit of DU. This parameter is required.
+         */
+        public Builder minDu(final com.aliyun.ros.cdk.core.IResolvable minDu) {
+            this.props.minDu(minDu);
             return this;
         }
 
@@ -475,6 +567,69 @@ public class SubscriptionJob2 extends com.aliyun.ros.cdk.core.Resource implement
          */
         public Builder reserve(final java.util.Map<java.lang.String, ? extends java.lang.Object> reserve) {
             this.props.reserve(reserve);
+            return this;
+        }
+
+        /**
+         * Property resourceGroupId: The ID of the resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: The ID of the resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * Property srcPrimaryVswId: The primary VSW ID at the source end of the VPC NAT.
+         * <p>
+         * @return {@code this}
+         * @param srcPrimaryVswId Property srcPrimaryVswId: The primary VSW ID at the source end of the VPC NAT. This parameter is required.
+         */
+        public Builder srcPrimaryVswId(final java.lang.String srcPrimaryVswId) {
+            this.props.srcPrimaryVswId(srcPrimaryVswId);
+            return this;
+        }
+        /**
+         * Property srcPrimaryVswId: The primary VSW ID at the source end of the VPC NAT.
+         * <p>
+         * @return {@code this}
+         * @param srcPrimaryVswId Property srcPrimaryVswId: The primary VSW ID at the source end of the VPC NAT. This parameter is required.
+         */
+        public Builder srcPrimaryVswId(final com.aliyun.ros.cdk.core.IResolvable srcPrimaryVswId) {
+            this.props.srcPrimaryVswId(srcPrimaryVswId);
+            return this;
+        }
+
+        /**
+         * Property srcSecondaryVswId: The secondary VSW ID at the source end of the VPC NAT.
+         * <p>
+         * @return {@code this}
+         * @param srcSecondaryVswId Property srcSecondaryVswId: The secondary VSW ID at the source end of the VPC NAT. This parameter is required.
+         */
+        public Builder srcSecondaryVswId(final java.lang.String srcSecondaryVswId) {
+            this.props.srcSecondaryVswId(srcSecondaryVswId);
+            return this;
+        }
+        /**
+         * Property srcSecondaryVswId: The secondary VSW ID at the source end of the VPC NAT.
+         * <p>
+         * @return {@code this}
+         * @param srcSecondaryVswId Property srcSecondaryVswId: The secondary VSW ID at the source end of the VPC NAT. This parameter is required.
+         */
+        public Builder srcSecondaryVswId(final com.aliyun.ros.cdk.core.IResolvable srcSecondaryVswId) {
+            this.props.srcSecondaryVswId(srcSecondaryVswId);
             return this;
         }
 

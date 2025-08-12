@@ -420,6 +420,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             }
         }
 
+        private object? _autoUpgradeMinorVersion;
+
+        /// <summary>Property autoUpgradeMinorVersion: How the instance upgrades to a minor version.Valid values: - Auto (default) : Updates minor versions automatically. - Manual: No automatic upgrade, only forced when the current version is offline.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "autoUpgradeMinorVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? AutoUpgradeMinorVersion
+        {
+            get => _autoUpgradeMinorVersion;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _autoUpgradeMinorVersion = value;
+            }
+        }
+
         private object? _backUpCategory;
 
         /// <summary>Property backUpCategory: Specifies whether to enable the second-level backup function.</summary>
@@ -2023,9 +2054,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 
         /// <summary>Property releasedKeepPolicy: The policy used to retain archived backups if the instance is released.</summary>
         /// <remarks>
-        /// Default value: None.
         /// Valid values:
-        /// Lastest: Only the last archived backup is retained.
+        /// None: No archived backup files are retained.Lastest: Only the last archived backup is retained.
         /// All: All of the archived backups are retained.
         /// </remarks>
         [JsiiOptional]
@@ -2444,6 +2474,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
                     }
                 }
                 _storageUpperBound = value;
+            }
+        }
+
+        private object? _subscriptionDeletionForce;
+
+        /// <summary>Property subscriptionDeletionForce: This option is only applicable to subscription instances.</summary>
+        /// <remarks>
+        /// For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "subscriptionDeletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? SubscriptionDeletionForce
+        {
+            get => _subscriptionDeletionForce;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _subscriptionDeletionForce = value;
             }
         }
 

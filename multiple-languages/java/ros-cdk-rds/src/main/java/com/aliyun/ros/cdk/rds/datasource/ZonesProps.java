@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.rds.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-zones
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:09.802Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.995Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.datasource.ZonesProps")
 @software.amazon.jsii.Jsii.Proxy(ZonesProps.Jsii$Proxy.class)
 public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {
@@ -72,7 +72,7 @@ public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property zoneId: The ID of the zone in which the instance is located.
      * <p>
-     * If the instance spans more than one zone, the value of this parameter contains an MAZ part,such as cn-hangzhou-MAZ6(b,f) and cn-hangzhou-MAZ5(b,e,f)
+     * If the instance spans more than one zone, the value of this parameter contains an MAZ part, such as cn-hangzhou-MAZ6(b,f) and cn-hangzhou-MAZ5(b,e,f).
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
         return null;
@@ -251,7 +251,7 @@ public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link ZonesProps#getZoneId}
          * @param zoneId Property zoneId: The ID of the zone in which the instance is located.
-         *               If the instance spans more than one zone, the value of this parameter contains an MAZ part,such as cn-hangzhou-MAZ6(b,f) and cn-hangzhou-MAZ5(b,e,f)
+         *               If the instance spans more than one zone, the value of this parameter contains an MAZ part, such as cn-hangzhou-MAZ6(b,f) and cn-hangzhou-MAZ5(b,e,f).
          * @return {@code this}
          */
         public Builder zoneId(java.lang.String zoneId) {
@@ -262,7 +262,7 @@ public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link ZonesProps#getZoneId}
          * @param zoneId Property zoneId: The ID of the zone in which the instance is located.
-         *               If the instance spans more than one zone, the value of this parameter contains an MAZ part,such as cn-hangzhou-MAZ6(b,f) and cn-hangzhou-MAZ5(b,e,f)
+         *               If the instance spans more than one zone, the value of this parameter contains an MAZ part, such as cn-hangzhou-MAZ6(b,f) and cn-hangzhou-MAZ5(b,e,f).
          * @return {@code this}
          */
         public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {

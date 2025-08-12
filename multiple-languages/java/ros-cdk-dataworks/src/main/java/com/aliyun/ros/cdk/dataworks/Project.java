@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dataworks;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::DataWorks::Project</code>, which is used to create a DataWorks workspace.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:03.625Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.326Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dataworks.$Module.class, fqn = "@alicloud/ros-cdk-dataworks.Project")
 public class Project extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.dataworks.IProject {
 
@@ -53,6 +53,14 @@ public class Project extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
+     * Attribute Id: The ID number of the workspace.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrId() {
+        return software.amazon.jsii.Kernel.get(this, "attrId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
      * Attribute IsDefault: Indicates whether the workspace is the default workspace.
      * <p>
      * Valid values:
@@ -62,14 +70,6 @@ public class Project extends com.aliyun.ros.cdk.core.Resource implements com.ali
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrIsDefault() {
         return software.amazon.jsii.Kernel.get(this, "attrIsDefault", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     * Attribute ProjectId: The ID of the workspace.
-     */
-    @Override
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrProjectId() {
-        return software.amazon.jsii.Kernel.get(this, "attrProjectId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -343,7 +343,7 @@ public class Project extends com.aliyun.ros.cdk.core.Resource implements com.ali
         /**
          * Property projectName: The display name of the workspace.
          * <p>
-         * If not provided, it is the same as ProjectIdentifier.
+         * If not provided, it is the same as ProjectIdentifier.The value contains 3 to 28 characters.
          * <p>
          * @return {@code this}
          * @param projectName Property projectName: The display name of the workspace. This parameter is required.
@@ -355,7 +355,7 @@ public class Project extends com.aliyun.ros.cdk.core.Resource implements com.ali
         /**
          * Property projectName: The display name of the workspace.
          * <p>
-         * If not provided, it is the same as ProjectIdentifier.
+         * If not provided, it is the same as ProjectIdentifier.The value contains 3 to 28 characters.
          * <p>
          * @return {@code this}
          * @param projectName Property projectName: The display name of the workspace. This parameter is required.

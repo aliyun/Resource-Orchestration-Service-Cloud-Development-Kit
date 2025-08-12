@@ -26,7 +26,7 @@ type VSwitchProps struct {
 	Tags *[]*RosVSwitch_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 	// Property vpcIpv6CidrBlock: The IPv6 CIDR block of the VPC.
 	VpcIpv6CidrBlock interface{} `field:"optional" json:"vpcIpv6CidrBlock" yaml:"vpcIpv6CidrBlock"`
-	// Property vSwitchName: Display name of the vSwitch instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
+	// Property vSwitchName: The value contains 1 to 128 characters and cannot start with http:\/\/ or https:\/\/.
 	VSwitchName interface{} `field:"optional" json:"vSwitchName" yaml:"vSwitchName"`
 	// Property zoneType: The type of the zones to be queried.
 	//

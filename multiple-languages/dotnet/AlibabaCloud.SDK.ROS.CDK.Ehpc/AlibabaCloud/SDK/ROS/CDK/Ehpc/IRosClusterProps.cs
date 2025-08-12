@@ -66,15 +66,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: osTag: Operating system image tag. You can call ListImages API to query.
-        /// </remarks>
-        [JsiiProperty(name: "osTag", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object OsTag
-        {
-            get;
-        }
-
-        /// <remarks>
         /// <strong>Property</strong>: vSwitchId: VPC in switch ID. Products currently only supports VPC network.
         /// </remarks>
         [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
@@ -382,6 +373,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         [JsiiProperty(name: "networkInterfaceTrafficMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? NetworkInterfaceTrafficMode
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: osTag: Operating system image tag. You can call ListImages API to query.
+        /// </remarks>
+        [JsiiProperty(name: "osTag", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? OsTag
         {
             get
             {
@@ -783,15 +787,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: osTag: Operating system image tag. You can call ListImages API to query.
-            /// </remarks>
-            [JsiiProperty(name: "osTag", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object OsTag
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
-            /// <remarks>
             /// <strong>Property</strong>: vSwitchId: VPC in switch ID. Products currently only supports VPC network.
             /// </remarks>
             [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
@@ -1036,6 +1031,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
             [JsiiOptional]
             [JsiiProperty(name: "networkInterfaceTrafficMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? NetworkInterfaceTrafficMode
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: osTag: Operating system image tag. You can call ListImages API to query.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "osTag", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? OsTag
             {
                 get => GetInstanceProperty<object?>();
             }

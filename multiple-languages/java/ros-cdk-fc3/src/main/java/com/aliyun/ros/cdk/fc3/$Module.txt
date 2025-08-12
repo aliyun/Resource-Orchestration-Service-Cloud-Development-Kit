@@ -47,6 +47,7 @@
 @alicloud/ros-cdk-fc3.RosFunction.OssMountConfigProperty=com.aliyun.ros.cdk.fc3.RosFunction$OssMountConfigProperty
 @alicloud/ros-cdk-fc3.RosFunction.PreStopProperty=com.aliyun.ros.cdk.fc3.RosFunction$PreStopProperty
 @alicloud/ros-cdk-fc3.RosFunction.RegistryConfigProperty=com.aliyun.ros.cdk.fc3.RosFunction$RegistryConfigProperty
+@alicloud/ros-cdk-fc3.RosFunction.TagsProperty=com.aliyun.ros.cdk.fc3.RosFunction$TagsProperty
 @alicloud/ros-cdk-fc3.RosFunction.TracingConfigProperty=com.aliyun.ros.cdk.fc3.RosFunction$TracingConfigProperty
 @alicloud/ros-cdk-fc3.RosFunction.VpcConfigProperty=com.aliyun.ros.cdk.fc3.RosFunction$VpcConfigProperty
 @alicloud/ros-cdk-fc3.RosFunctionProps=com.aliyun.ros.cdk.fc3.RosFunctionProps

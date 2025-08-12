@@ -20,6 +20,11 @@ export interface CertificateProps {
     readonly aliCloudCertificateName?: string | ros.IResolvable;
 
     /**
+     * Property aliCloudCertificateRegionId: The ID of the Alibaba Cloud region.
+     */
+    readonly aliCloudCertificateRegionId?: string | ros.IResolvable;
+
+    /**
      * Property certificate: The content of the certificate public key.
      */
     readonly certificate?: string | ros.IResolvable;
@@ -114,6 +119,7 @@ export class Certificate extends ros.Resource implements ICertificate {
             aliCloudCertificateName: props.aliCloudCertificateName,
             privateKey: props.privateKey,
             resourceGroupId: props.resourceGroupId,
+            aliCloudCertificateRegionId: props.aliCloudCertificateRegionId,
             certificateName: props.certificateName,
             tags: props.tags,
             certificate: props.certificate,

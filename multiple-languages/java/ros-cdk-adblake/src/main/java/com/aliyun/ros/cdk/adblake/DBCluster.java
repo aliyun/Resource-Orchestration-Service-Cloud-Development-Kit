@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.adblake;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ADBLake::DBCluster</code>, which is used to create an AnalyticDB for MySQL Data Lakehouse Edition (V3.0) cluster.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ADBLake::DBCluster</code>, which type is used to create an AnalyticDB for MySQL Data Lakehouse Edition cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:00.965Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:43.161Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.adblake.$Module.class, fqn = "@alicloud/ros-cdk-adblake.DBCluster")
 public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.adblake.IDBCluster {
 
@@ -128,33 +128,6 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property computeResource: The amount of reserved computing resources.
-         * <p>
-         * Unit: ACUs. Valid values: 0ACU to 4096ACU. The value must be in increments of 16 ACUs. Each ACU is equivalent to 1 core and 4 GB memory.
-         * Note This parameter must be specified with a unit.
-         * <p>
-         * @return {@code this}
-         * @param computeResource Property computeResource: The amount of reserved computing resources. This parameter is required.
-         */
-        public Builder computeResource(final java.lang.String computeResource) {
-            this.props.computeResource(computeResource);
-            return this;
-        }
-        /**
-         * Property computeResource: The amount of reserved computing resources.
-         * <p>
-         * Unit: ACUs. Valid values: 0ACU to 4096ACU. The value must be in increments of 16 ACUs. Each ACU is equivalent to 1 core and 4 GB memory.
-         * Note This parameter must be specified with a unit.
-         * <p>
-         * @return {@code this}
-         * @param computeResource Property computeResource: The amount of reserved computing resources. This parameter is required.
-         */
-        public Builder computeResource(final com.aliyun.ros.cdk.core.IResolvable computeResource) {
-            this.props.computeResource(computeResource);
-            return this;
-        }
-
-        /**
          * Property dbClusterVersion: The version of the cluster.
          * <p>
          * Set the value to 5.0.
@@ -205,33 +178,6 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
          */
         public Builder payType(final com.aliyun.ros.cdk.core.IResolvable payType) {
             this.props.payType(payType);
-            return this;
-        }
-
-        /**
-         * Property storageResource: The amount of reserved storage resources.
-         * <p>
-         * Unit: AnalyticDB compute units (ACUs). Valid values: 0ACU to 2064ACU. The value must be in increments of 24 ACUs. Each ACU is equivalent to 1 core and 4 GB memory.
-         * Note This parameter must be specified with a unit.
-         * <p>
-         * @return {@code this}
-         * @param storageResource Property storageResource: The amount of reserved storage resources. This parameter is required.
-         */
-        public Builder storageResource(final java.lang.String storageResource) {
-            this.props.storageResource(storageResource);
-            return this;
-        }
-        /**
-         * Property storageResource: The amount of reserved storage resources.
-         * <p>
-         * Unit: AnalyticDB compute units (ACUs). Valid values: 0ACU to 2064ACU. The value must be in increments of 24 ACUs. Each ACU is equivalent to 1 core and 4 GB memory.
-         * Note This parameter must be specified with a unit.
-         * <p>
-         * @return {@code this}
-         * @param storageResource Property storageResource: The amount of reserved storage resources. This parameter is required.
-         */
-        public Builder storageResource(final com.aliyun.ros.cdk.core.IResolvable storageResource) {
-            this.props.storageResource(storageResource);
             return this;
         }
 
@@ -345,6 +291,33 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
          */
         public Builder cloneSourceRegionId(final com.aliyun.ros.cdk.core.IResolvable cloneSourceRegionId) {
             this.props.cloneSourceRegionId(cloneSourceRegionId);
+            return this;
+        }
+
+        /**
+         * Property computeResource: The amount of reserved computing resources.
+         * <p>
+         * Unit: ACUs. Valid values: 0ACU to 4096ACU. The value must be in increments of 16 ACUs. Each ACU is equivalent to 1 core and 4 GB memory.
+         * Note This parameter must be specified with a unit.
+         * <p>
+         * @return {@code this}
+         * @param computeResource Property computeResource: The amount of reserved computing resources. This parameter is required.
+         */
+        public Builder computeResource(final java.lang.String computeResource) {
+            this.props.computeResource(computeResource);
+            return this;
+        }
+        /**
+         * Property computeResource: The amount of reserved computing resources.
+         * <p>
+         * Unit: ACUs. Valid values: 0ACU to 4096ACU. The value must be in increments of 16 ACUs. Each ACU is equivalent to 1 core and 4 GB memory.
+         * Note This parameter must be specified with a unit.
+         * <p>
+         * @return {@code this}
+         * @param computeResource Property computeResource: The amount of reserved computing resources. This parameter is required.
+         */
+        public Builder computeResource(final com.aliyun.ros.cdk.core.IResolvable computeResource) {
+            this.props.computeResource(computeResource);
             return this;
         }
 
@@ -563,6 +536,27 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
+         * Property productVersion: The version of the cluster.Note If only ProductForm is set to IntegrationForm, enter this parameter.
+         * <p>
+         * @return {@code this}
+         * @param productVersion Property productVersion: The version of the cluster.Note If only ProductForm is set to IntegrationForm, enter this parameter. This parameter is required.
+         */
+        public Builder productVersion(final java.lang.String productVersion) {
+            this.props.productVersion(productVersion);
+            return this;
+        }
+        /**
+         * Property productVersion: The version of the cluster.Note If only ProductForm is set to IntegrationForm, enter this parameter.
+         * <p>
+         * @return {@code this}
+         * @param productVersion Property productVersion: The version of the cluster.Note If only ProductForm is set to IntegrationForm, enter this parameter. This parameter is required.
+         */
+        public Builder productVersion(final com.aliyun.ros.cdk.core.IResolvable productVersion) {
+            this.props.productVersion(productVersion);
+            return this;
+        }
+
+        /**
          * Property reservedNodeCount: The number of reserved nodes.
          * <p>
          * Must be 1 for basic version and multiple
@@ -682,6 +676,48 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
+         * Property secondaryVSwitchId: The secondary vSwitch ID of the cluster.
+         * <p>
+         * @return {@code this}
+         * @param secondaryVSwitchId Property secondaryVSwitchId: The secondary vSwitch ID of the cluster. This parameter is required.
+         */
+        public Builder secondaryVSwitchId(final java.lang.String secondaryVSwitchId) {
+            this.props.secondaryVSwitchId(secondaryVSwitchId);
+            return this;
+        }
+        /**
+         * Property secondaryVSwitchId: The secondary vSwitch ID of the cluster.
+         * <p>
+         * @return {@code this}
+         * @param secondaryVSwitchId Property secondaryVSwitchId: The secondary vSwitch ID of the cluster. This parameter is required.
+         */
+        public Builder secondaryVSwitchId(final com.aliyun.ros.cdk.core.IResolvable secondaryVSwitchId) {
+            this.props.secondaryVSwitchId(secondaryVSwitchId);
+            return this;
+        }
+
+        /**
+         * Property secondaryZoneId: The secondary zone ID.
+         * <p>
+         * @return {@code this}
+         * @param secondaryZoneId Property secondaryZoneId: The secondary zone ID. This parameter is required.
+         */
+        public Builder secondaryZoneId(final java.lang.String secondaryZoneId) {
+            this.props.secondaryZoneId(secondaryZoneId);
+            return this;
+        }
+        /**
+         * Property secondaryZoneId: The secondary zone ID.
+         * <p>
+         * @return {@code this}
+         * @param secondaryZoneId Property secondaryZoneId: The secondary zone ID. This parameter is required.
+         */
+        public Builder secondaryZoneId(final com.aliyun.ros.cdk.core.IResolvable secondaryZoneId) {
+            this.props.secondaryZoneId(secondaryZoneId);
+            return this;
+        }
+
+        /**
          * Property sourceDbClusterId: The ID of the source AnalyticDB for MySQL Data Warehouse Edition cluster.
          * <p>
          * If you want to restore a Data Lakehouse Edition cluster from a Data Warehouse Edition cluster, you must specify this parameter.
@@ -703,6 +739,33 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
          */
         public Builder sourceDbClusterId(final com.aliyun.ros.cdk.core.IResolvable sourceDbClusterId) {
             this.props.sourceDbClusterId(sourceDbClusterId);
+            return this;
+        }
+
+        /**
+         * Property storageResource: The amount of reserved storage resources.
+         * <p>
+         * Unit: AnalyticDB compute units (ACUs). Valid values: 0ACU to 2064ACU. The value must be in increments of 24 ACUs. Each ACU is equivalent to 1 core and 4 GB memory.
+         * Note This parameter must be specified with a unit.
+         * <p>
+         * @return {@code this}
+         * @param storageResource Property storageResource: The amount of reserved storage resources. This parameter is required.
+         */
+        public Builder storageResource(final java.lang.String storageResource) {
+            this.props.storageResource(storageResource);
+            return this;
+        }
+        /**
+         * Property storageResource: The amount of reserved storage resources.
+         * <p>
+         * Unit: AnalyticDB compute units (ACUs). Valid values: 0ACU to 2064ACU. The value must be in increments of 24 ACUs. Each ACU is equivalent to 1 core and 4 GB memory.
+         * Note This parameter must be specified with a unit.
+         * <p>
+         * @return {@code this}
+         * @param storageResource Property storageResource: The amount of reserved storage resources. This parameter is required.
+         */
+        public Builder storageResource(final com.aliyun.ros.cdk.core.IResolvable storageResource) {
+            this.props.storageResource(storageResource);
             return this;
         }
 

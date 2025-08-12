@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.arms;
 /**
  * Represents a <code>AddonRelease</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:01.954Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:43.950Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.IAddonRelease")
 @software.amazon.jsii.Jsii.Proxy(IAddonRelease.Jsii$Proxy.class)
 public interface IAddonRelease extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

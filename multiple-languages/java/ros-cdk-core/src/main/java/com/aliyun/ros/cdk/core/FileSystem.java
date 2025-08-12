@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * File system utilities.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:00.657Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:42.935Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.FileSystem")
 public class FileSystem extends software.amazon.jsii.JsiiObject {
 

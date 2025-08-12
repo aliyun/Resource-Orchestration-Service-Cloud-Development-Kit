@@ -64,7 +64,7 @@ function rosAccessGroupPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::NAS::AccessGroup`, which is used to query the information about a permission group.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::NAS::AccessGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AccessGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-accessgroup
  */
@@ -331,7 +331,7 @@ function rosFileSystemPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::NAS::FileSystem`, which is used to query the information about a file system.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::NAS::FileSystem`.
  * @Note This class does not contain additional functions, so it is recommended to use the `FileSystem` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-filesystem
  */
@@ -556,7 +556,7 @@ function rosFileSystemsPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::NAS::FileSystems`, which is used to query the information about file systems.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::NAS::FileSystems`.
  * @Note This class does not contain additional functions, so it is recommended to use the `FileSystems` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-filesystems
  */

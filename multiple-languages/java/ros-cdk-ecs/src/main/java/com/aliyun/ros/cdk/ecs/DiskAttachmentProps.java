@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-diskattachment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:04.583Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.155Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.DiskAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(DiskAttachmentProps.Jsii$Proxy.class)
 public interface DiskAttachmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -19,6 +19,13 @@ public interface DiskAttachmentProps extends software.amazon.jsii.JsiiSerializab
      * Property instanceId: The instanceId to attach the disk.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getInstanceId();
+
+    /**
+     * Property bootable: Whether the disk is bootable.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBootable() {
+        return null;
+    }
 
     /**
      * Property deleteAutoSnapshot: Whether the auto snapshot is released with the disk.
@@ -46,6 +53,36 @@ public interface DiskAttachmentProps extends software.amazon.jsii.JsiiSerializab
     }
 
     /**
+     * Property force: Whether to force the operation.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getForce() {
+        return null;
+    }
+
+    /**
+     * Property instanceType: The instance type.
+     * <p>
+     * Allowed values are LingJun and ECS, Default is ECS.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceType() {
+        return null;
+    }
+
+    /**
+     * Property keyPairName: The name of the key pair.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getKeyPairName() {
+        return null;
+    }
+
+    /**
+     * Property password: The password for the disk.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPassword() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link DiskAttachmentProps}
      */
     static Builder builder() {
@@ -57,9 +94,14 @@ public interface DiskAttachmentProps extends software.amazon.jsii.JsiiSerializab
     public static final class Builder implements software.amazon.jsii.Builder<DiskAttachmentProps> {
         java.lang.Object diskId;
         java.lang.Object instanceId;
+        java.lang.Object bootable;
         java.lang.Object deleteAutoSnapshot;
         java.lang.Object deleteWithInstance;
         java.lang.Object device;
+        java.lang.Object force;
+        java.lang.Object instanceType;
+        java.lang.Object keyPairName;
+        java.lang.Object password;
 
         /**
          * Sets the value of {@link DiskAttachmentProps#getDiskId}
@@ -98,6 +140,26 @@ public interface DiskAttachmentProps extends software.amazon.jsii.JsiiSerializab
          */
         public Builder instanceId(com.aliyun.ros.cdk.core.IResolvable instanceId) {
             this.instanceId = instanceId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DiskAttachmentProps#getBootable}
+         * @param bootable Property bootable: Whether the disk is bootable.
+         * @return {@code this}
+         */
+        public Builder bootable(java.lang.Boolean bootable) {
+            this.bootable = bootable;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DiskAttachmentProps#getBootable}
+         * @param bootable Property bootable: Whether the disk is bootable.
+         * @return {@code this}
+         */
+        public Builder bootable(com.aliyun.ros.cdk.core.IResolvable bootable) {
+            this.bootable = bootable;
             return this;
         }
 
@@ -166,6 +228,88 @@ public interface DiskAttachmentProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link DiskAttachmentProps#getForce}
+         * @param force Property force: Whether to force the operation.
+         * @return {@code this}
+         */
+        public Builder force(java.lang.Boolean force) {
+            this.force = force;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DiskAttachmentProps#getForce}
+         * @param force Property force: Whether to force the operation.
+         * @return {@code this}
+         */
+        public Builder force(com.aliyun.ros.cdk.core.IResolvable force) {
+            this.force = force;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DiskAttachmentProps#getInstanceType}
+         * @param instanceType Property instanceType: The instance type.
+         *                     Allowed values are LingJun and ECS, Default is ECS.
+         * @return {@code this}
+         */
+        public Builder instanceType(java.lang.String instanceType) {
+            this.instanceType = instanceType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DiskAttachmentProps#getInstanceType}
+         * @param instanceType Property instanceType: The instance type.
+         *                     Allowed values are LingJun and ECS, Default is ECS.
+         * @return {@code this}
+         */
+        public Builder instanceType(com.aliyun.ros.cdk.core.IResolvable instanceType) {
+            this.instanceType = instanceType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DiskAttachmentProps#getKeyPairName}
+         * @param keyPairName Property keyPairName: The name of the key pair.
+         * @return {@code this}
+         */
+        public Builder keyPairName(java.lang.String keyPairName) {
+            this.keyPairName = keyPairName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DiskAttachmentProps#getKeyPairName}
+         * @param keyPairName Property keyPairName: The name of the key pair.
+         * @return {@code this}
+         */
+        public Builder keyPairName(com.aliyun.ros.cdk.core.IResolvable keyPairName) {
+            this.keyPairName = keyPairName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DiskAttachmentProps#getPassword}
+         * @param password Property password: The password for the disk.
+         * @return {@code this}
+         */
+        public Builder password(java.lang.String password) {
+            this.password = password;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DiskAttachmentProps#getPassword}
+         * @param password Property password: The password for the disk.
+         * @return {@code this}
+         */
+        public Builder password(com.aliyun.ros.cdk.core.IResolvable password) {
+            this.password = password;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link DiskAttachmentProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -183,9 +327,14 @@ public interface DiskAttachmentProps extends software.amazon.jsii.JsiiSerializab
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DiskAttachmentProps {
         private final java.lang.Object diskId;
         private final java.lang.Object instanceId;
+        private final java.lang.Object bootable;
         private final java.lang.Object deleteAutoSnapshot;
         private final java.lang.Object deleteWithInstance;
         private final java.lang.Object device;
+        private final java.lang.Object force;
+        private final java.lang.Object instanceType;
+        private final java.lang.Object keyPairName;
+        private final java.lang.Object password;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -195,9 +344,14 @@ public interface DiskAttachmentProps extends software.amazon.jsii.JsiiSerializab
             super(objRef);
             this.diskId = software.amazon.jsii.Kernel.get(this, "diskId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.bootable = software.amazon.jsii.Kernel.get(this, "bootable", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deleteAutoSnapshot = software.amazon.jsii.Kernel.get(this, "deleteAutoSnapshot", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deleteWithInstance = software.amazon.jsii.Kernel.get(this, "deleteWithInstance", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.device = software.amazon.jsii.Kernel.get(this, "device", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.force = software.amazon.jsii.Kernel.get(this, "force", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceType = software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.keyPairName = software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -207,9 +361,14 @@ public interface DiskAttachmentProps extends software.amazon.jsii.JsiiSerializab
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.diskId = java.util.Objects.requireNonNull(builder.diskId, "diskId is required");
             this.instanceId = java.util.Objects.requireNonNull(builder.instanceId, "instanceId is required");
+            this.bootable = builder.bootable;
             this.deleteAutoSnapshot = builder.deleteAutoSnapshot;
             this.deleteWithInstance = builder.deleteWithInstance;
             this.device = builder.device;
+            this.force = builder.force;
+            this.instanceType = builder.instanceType;
+            this.keyPairName = builder.keyPairName;
+            this.password = builder.password;
         }
 
         @Override
@@ -220,6 +379,11 @@ public interface DiskAttachmentProps extends software.amazon.jsii.JsiiSerializab
         @Override
         public final java.lang.Object getInstanceId() {
             return this.instanceId;
+        }
+
+        @Override
+        public final java.lang.Object getBootable() {
+            return this.bootable;
         }
 
         @Override
@@ -238,6 +402,26 @@ public interface DiskAttachmentProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
+        public final java.lang.Object getForce() {
+            return this.force;
+        }
+
+        @Override
+        public final java.lang.Object getInstanceType() {
+            return this.instanceType;
+        }
+
+        @Override
+        public final java.lang.Object getKeyPairName() {
+            return this.keyPairName;
+        }
+
+        @Override
+        public final java.lang.Object getPassword() {
+            return this.password;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -245,6 +429,9 @@ public interface DiskAttachmentProps extends software.amazon.jsii.JsiiSerializab
 
             data.set("diskId", om.valueToTree(this.getDiskId()));
             data.set("instanceId", om.valueToTree(this.getInstanceId()));
+            if (this.getBootable() != null) {
+                data.set("bootable", om.valueToTree(this.getBootable()));
+            }
             if (this.getDeleteAutoSnapshot() != null) {
                 data.set("deleteAutoSnapshot", om.valueToTree(this.getDeleteAutoSnapshot()));
             }
@@ -253,6 +440,18 @@ public interface DiskAttachmentProps extends software.amazon.jsii.JsiiSerializab
             }
             if (this.getDevice() != null) {
                 data.set("device", om.valueToTree(this.getDevice()));
+            }
+            if (this.getForce() != null) {
+                data.set("force", om.valueToTree(this.getForce()));
+            }
+            if (this.getInstanceType() != null) {
+                data.set("instanceType", om.valueToTree(this.getInstanceType()));
+            }
+            if (this.getKeyPairName() != null) {
+                data.set("keyPairName", om.valueToTree(this.getKeyPairName()));
+            }
+            if (this.getPassword() != null) {
+                data.set("password", om.valueToTree(this.getPassword()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -274,18 +473,28 @@ public interface DiskAttachmentProps extends software.amazon.jsii.JsiiSerializab
 
             if (!diskId.equals(that.diskId)) return false;
             if (!instanceId.equals(that.instanceId)) return false;
+            if (this.bootable != null ? !this.bootable.equals(that.bootable) : that.bootable != null) return false;
             if (this.deleteAutoSnapshot != null ? !this.deleteAutoSnapshot.equals(that.deleteAutoSnapshot) : that.deleteAutoSnapshot != null) return false;
             if (this.deleteWithInstance != null ? !this.deleteWithInstance.equals(that.deleteWithInstance) : that.deleteWithInstance != null) return false;
-            return this.device != null ? this.device.equals(that.device) : that.device == null;
+            if (this.device != null ? !this.device.equals(that.device) : that.device != null) return false;
+            if (this.force != null ? !this.force.equals(that.force) : that.force != null) return false;
+            if (this.instanceType != null ? !this.instanceType.equals(that.instanceType) : that.instanceType != null) return false;
+            if (this.keyPairName != null ? !this.keyPairName.equals(that.keyPairName) : that.keyPairName != null) return false;
+            return this.password != null ? this.password.equals(that.password) : that.password == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.diskId.hashCode();
             result = 31 * result + (this.instanceId.hashCode());
+            result = 31 * result + (this.bootable != null ? this.bootable.hashCode() : 0);
             result = 31 * result + (this.deleteAutoSnapshot != null ? this.deleteAutoSnapshot.hashCode() : 0);
             result = 31 * result + (this.deleteWithInstance != null ? this.deleteWithInstance.hashCode() : 0);
             result = 31 * result + (this.device != null ? this.device.hashCode() : 0);
+            result = 31 * result + (this.force != null ? this.force.hashCode() : 0);
+            result = 31 * result + (this.instanceType != null ? this.instanceType.hashCode() : 0);
+            result = 31 * result + (this.keyPairName != null ? this.keyPairName.hashCode() : 0);
+            result = 31 * result + (this.password != null ? this.password.hashCode() : 0);
             return result;
         }
     }

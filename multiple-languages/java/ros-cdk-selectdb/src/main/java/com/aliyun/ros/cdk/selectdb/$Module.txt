@@ -1,0 +1,6 @@
+@alicloud/ros-cdk-selectdb.DBInstance=com.aliyun.ros.cdk.selectdb.DBInstance
+@alicloud/ros-cdk-selectdb.DBInstanceProps=com.aliyun.ros.cdk.selectdb.DBInstanceProps
+@alicloud/ros-cdk-selectdb.IDBInstance=com.aliyun.ros.cdk.selectdb.IDBInstance
+@alicloud/ros-cdk-selectdb.RosDBInstance=com.aliyun.ros.cdk.selectdb.RosDBInstance
+@alicloud/ros-cdk-selectdb.RosDBInstance.TagsProperty=com.aliyun.ros.cdk.selectdb.RosDBInstance$TagsProperty
+@alicloud/ros-cdk-selectdb.RosDBInstanceProps=com.aliyun.ros.cdk.selectdb.RosDBInstanceProps

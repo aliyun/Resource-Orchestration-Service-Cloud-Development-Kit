@@ -33,6 +33,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
             }
         }
 
+        /// <summary>Property dlqPolicy: Dead-letter queue policy.</summary>
+        [JsiiProperty(name: "dlqPolicy", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-mns.RosQueue.DlqPolicyProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DlqPolicy
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property loggingEnabled: Whether to enable log management.</summary>
         /// <remarks>
         /// "true" indicates that log management is enabled, whereas "false" indicates that log management is disabled.
@@ -92,6 +103,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
             }
         }
 
+        /// <summary>Property tags: Tags to attach to Queue.</summary>
+        /// <remarks>
+        /// Max support 20 tags to add during create Queue. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-mns.RosQueue.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        AlibabaCloud.SDK.ROS.CDK.Mns.RosQueue.ITagsProperty[]? Tags
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property visibilityTimeout: Duration in which a message stays in Inactive status after it is consumed from the queue.</summary>
         /// <remarks>
         /// Measured in seconds.
@@ -133,6 +158,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
             [JsiiOptional]
             [JsiiProperty(name: "delaySeconds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DelaySeconds
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property dlqPolicy: Dead-letter queue policy.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "dlqPolicy", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-mns.RosQueue.DlqPolicyProperty\"}]}}", isOptional: true)]
+            public object? DlqPolicy
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -182,6 +215,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
             public object? PollingWaitSeconds
             {
                 get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property tags: Tags to attach to Queue.</summary>
+            /// <remarks>
+            /// Max support 20 tags to add during create Queue. Each tag with two properties Key and Value, and Key is required.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-mns.RosQueue.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+            public AlibabaCloud.SDK.ROS.CDK.Mns.RosQueue.ITagsProperty[]? Tags
+            {
+                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Mns.RosQueue.ITagsProperty[]?>();
             }
 
             /// <summary>Property visibilityTimeout: Duration in which a message stays in Inactive status after it is consumed from the queue.</summary>

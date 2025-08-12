@@ -11,7 +11,6 @@ type RosClusterProps struct {
 	EcsOrderLoginInstanceType interface{} `field:"required" json:"ecsOrderLoginInstanceType" yaml:"ecsOrderLoginInstanceType"`
 	EcsOrderManagerInstanceType interface{} `field:"required" json:"ecsOrderManagerInstanceType" yaml:"ecsOrderManagerInstanceType"`
 	Name interface{} `field:"required" json:"name" yaml:"name"`
-	OsTag interface{} `field:"required" json:"osTag" yaml:"osTag"`
 	VSwitchId interface{} `field:"required" json:"vSwitchId" yaml:"vSwitchId"`
 	AccountType interface{} `field:"optional" json:"accountType" yaml:"accountType"`
 	AdditionalVolumes interface{} `field:"optional" json:"additionalVolumes" yaml:"additionalVolumes"`
@@ -35,6 +34,7 @@ type RosClusterProps struct {
 	JobQueue interface{} `field:"optional" json:"jobQueue" yaml:"jobQueue"`
 	KeyPairName interface{} `field:"optional" json:"keyPairName" yaml:"keyPairName"`
 	NetworkInterfaceTrafficMode interface{} `field:"optional" json:"networkInterfaceTrafficMode" yaml:"networkInterfaceTrafficMode"`
+	OsTag interface{} `field:"optional" json:"osTag" yaml:"osTag"`
 	Password interface{} `field:"optional" json:"password" yaml:"password"`
 	Period interface{} `field:"optional" json:"period" yaml:"period"`
 	PeriodUnit interface{} `field:"optional" json:"periodUnit" yaml:"periodUnit"`

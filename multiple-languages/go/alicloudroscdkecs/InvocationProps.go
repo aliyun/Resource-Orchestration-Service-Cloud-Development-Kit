@@ -35,6 +35,10 @@ type InvocationProps struct {
 	//
 	// It iss mandatory when Timing is True.The value rule follows the rules of the cron expression.
 	Frequency interface{} `field:"optional" json:"frequency" yaml:"frequency"`
+	// Property launcher: A bootloader for script execution.
+	//
+	// The length cannot exceed 1 KB.
+	Launcher interface{} `field:"optional" json:"launcher" yaml:"launcher"`
 	// Property parameters: The key-value pairs of custom parameters passed in when the script contains custom parameters.
 	//
 	// Number of custom parameters: 0 to 10.

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.oos;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-template
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.437Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.969Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.TemplateProps")
 @software.amazon.jsii.Jsii.Proxy(TemplateProps.Jsii$Proxy.class)
 public interface TemplateProps extends software.amazon.jsii.JsiiSerializable {
@@ -20,7 +20,7 @@ public interface TemplateProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property templateName: The name of the template.
      * <p>
-     * The template name can be up to 200 characters in length. The name can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ACS, ALIBABA, or ALICLOUD.
+     * The template name can be up to 200 characters in length. The name can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ACS, ALIYUN, ALIBABA, or ALICLOUD.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getTemplateName();
 
@@ -78,7 +78,7 @@ public interface TemplateProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link TemplateProps#getTemplateName}
          * @param templateName Property templateName: The name of the template. This parameter is required.
-         *                     The template name can be up to 200 characters in length. The name can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ACS, ALIBABA, or ALICLOUD.
+         *                     The template name can be up to 200 characters in length. The name can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ACS, ALIYUN, ALIBABA, or ALICLOUD.
          * @return {@code this}
          */
         public Builder templateName(java.lang.String templateName) {
@@ -89,7 +89,7 @@ public interface TemplateProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link TemplateProps#getTemplateName}
          * @param templateName Property templateName: The name of the template. This parameter is required.
-         *                     The template name can be up to 200 characters in length. The name can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ACS, ALIBABA, or ALICLOUD.
+         *                     The template name can be up to 200 characters in length. The name can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ACS, ALIYUN, ALIBABA, or ALICLOUD.
          * @return {@code this}
          */
         public Builder templateName(com.aliyun.ros.cdk.core.IResolvable templateName) {

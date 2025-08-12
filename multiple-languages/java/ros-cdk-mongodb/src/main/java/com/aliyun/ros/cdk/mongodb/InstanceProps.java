@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.mongodb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mongodb-instance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:12.028Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:51.796Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -168,6 +168,8 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      * Property securityIpArray: Security ips to add or remove.
+     * <p>
+     * Update to this property will cover the current security ips.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityIpArray() {
         return null;
@@ -721,6 +723,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link InstanceProps#getSecurityIpArray}
          * @param securityIpArray Property securityIpArray: Security ips to add or remove.
+         *                        Update to this property will cover the current security ips.
          * @return {@code this}
          */
         public Builder securityIpArray(java.lang.String securityIpArray) {
@@ -731,6 +734,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link InstanceProps#getSecurityIpArray}
          * @param securityIpArray Property securityIpArray: Security ips to add or remove.
+         *                        Update to this property will cover the current security ips.
          * @return {@code this}
          */
         public Builder securityIpArray(com.aliyun.ros.cdk.core.IResolvable securityIpArray) {

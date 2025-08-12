@@ -20,6 +20,8 @@ type RosClusterProps struct {
 	PubNetworkFlow interface{} `field:"optional" json:"pubNetworkFlow" yaml:"pubNetworkFlow"`
 	PubSlbSpecification interface{} `field:"optional" json:"pubSlbSpecification" yaml:"pubSlbSpecification"`
 	RequestPars interface{} `field:"optional" json:"requestPars" yaml:"requestPars"`
+	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
+	Tags *[]*RosCluster_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 	VpcId interface{} `field:"optional" json:"vpcId" yaml:"vpcId"`
 	VSwitchId interface{} `field:"optional" json:"vSwitchId" yaml:"vSwitchId"`
 }

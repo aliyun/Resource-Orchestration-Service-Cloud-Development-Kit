@@ -22,9 +22,14 @@ export interface ClusterApplicationProps {
     /**
      * Property defaultNamespace: The default namespace for the application, default value is default.
      * If a namespace is defined in yaml metadata, its priority is higher than DefaultNamespace.
-     * If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
+     * If the DefaultNamespace does not exist, ROS will create it automatically and keep it by default during the delete phase.
      */
     readonly defaultNamespace?: string | ros.IResolvable;
+
+    /**
+     * Property defaultNamespaceDeletion: Whether to delete the namespace specified by DefaultNamespace. If DefaultNamespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether DefaultNamespaceDeletion is true or not, it will not be deleted.
+     */
+    readonly defaultNamespaceDeletion?: boolean | ros.IResolvable;
 
     /**
      * Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user. Valid values:
@@ -112,6 +117,7 @@ export class ClusterApplication extends ros.Resource implements IClusterApplicat
             stage: props.stage === undefined || props.stage === null ? 'All' : props.stage,
             validationMode: props.validationMode === undefined || props.validationMode === null ? 'Strict' : props.validationMode,
             waitUntil: props.waitUntil,
+            defaultNamespaceDeletion: props.defaultNamespaceDeletion,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosClusterApplication;
         this.attrClusterId = rosClusterApplication.attrClusterId;

@@ -135,6 +135,11 @@ export interface ManagedEdgeKubernetesClusterProps {
     readonly vpcId?: string | ros.IResolvable;
 
     /**
+     * Property vSwitchIds: The virtual switch ID of the worker node.
+     */
+    readonly vSwitchIds?: Array<any | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * Property zoneIds: Zone ids of worker node virtual switches belongs to.
      */
     readonly zoneIds?: Array<string | ros.IResolvable> | ros.IResolvable;
@@ -202,7 +207,7 @@ export interface IManagedEdgeKubernetesCluster extends ros.IResource {
     readonly attrWorkerRamRoleName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ManagedEdgeKubernetesCluster`, which is used to create a Container Service for Kubernetes (ACK) edge cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ManagedEdgeKubernetesCluster`, which is used to create a Container Service for Kubernetes (ACK) Edge cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosManagedEdgeKubernetesCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managededgekubernetescluster
  */
@@ -285,10 +290,11 @@ export class ManagedEdgeKubernetesCluster extends ros.Resource implements IManag
             keyPair: props.keyPair,
             resourceGroupId: props.resourceGroupId,
             nodeCidrMask: props.nodeCidrMask,
+            vSwitchIds: props.vSwitchIds,
             timeoutMins: props.timeoutMins === undefined || props.timeoutMins === null ? 60 : props.timeoutMins,
             addons: props.addons,
-            deletionProtection: props.deletionProtection,
             clusterSpec: props.clusterSpec,
+            deletionProtection: props.deletionProtection,
             profile: props.profile === undefined || props.profile === null ? 'Edge' : props.profile,
             name: props.name,
             isEnterpriseSecurityGroup: props.isEnterpriseSecurityGroup,
@@ -296,10 +302,10 @@ export class ManagedEdgeKubernetesCluster extends ros.Resource implements IManag
             cloudMonitorFlags: props.cloudMonitorFlags === undefined || props.cloudMonitorFlags === null ? false : props.cloudMonitorFlags,
             serviceCidr: props.serviceCidr === undefined || props.serviceCidr === null ? '172.19.0.0/20' : props.serviceCidr,
             snatEntry: props.snatEntry === undefined || props.snatEntry === null ? true : props.snatEntry,
-            zoneIds: props.zoneIds,
             maintenanceWindow: props.maintenanceWindow,
-            tags: props.tags,
+            zoneIds: props.zoneIds,
             proxyMode: props.proxyMode === undefined || props.proxyMode === null ? 'iptables' : props.proxyMode,
+            tags: props.tags,
             loginPassword: props.loginPassword,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosManagedEdgeKubernetesCluster;

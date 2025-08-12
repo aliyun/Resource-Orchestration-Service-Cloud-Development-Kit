@@ -30,7 +30,22 @@ export interface RouteProps {
     readonly nextHopList?: Array<RosRoute.NextHopListProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property nextHopType: The next hop type. Now support 'Instance|HaVip|RouterInterface|NetworkInterface|VpnGateway|IPv6Gateway|NatGateway|Attachment'. The default value is Instance.When the NextHopList is specified, the value will be ignored.
+     * Property nextHopType: The route entry next hop type. Valid values:
+     * Instance (default): Elastic Compute Service (ECS) instance.
+     * HaVip: High Availability Virtual IP (HAVIP).
+     * RouterInterface: Router interface.
+     * NetworkInterface: Elastic Network Interface (ENI).
+     * VpnGateway: VPN gateway.
+     * IPv6Gateway: IPv6 gateway.
+     * NatGateway: NAT gateway.
+     * Attachment: Transit router.
+     * VpcPeer: VPC peering connection.
+     * Ipv4Gateway: IPv4 gateway.
+     * GatewayEndpoint: Gateway endpoint.
+     * Ecr: Express Connect router.
+     * GatewayLoadBalancerEndpoint: Gateway Load Balancer endpoint.
+     * The default value is 'Instance'.
+     * If NextHopList is specified, this field will be ignored.
      */
     readonly nextHopType?: string | ros.IResolvable;
 }

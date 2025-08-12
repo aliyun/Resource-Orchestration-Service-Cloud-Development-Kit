@@ -349,6 +349,11 @@ export interface InstanceGroupProps {
     readonly storageSetPartitionNumber?: number | ros.IResolvable;
 
     /**
+     * Property subscriptionDeletionForce: This option is only applicable to subscription instances. For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+     */
+    readonly subscriptionDeletionForce?: boolean | ros.IResolvable;
+
+    /**
      * Property systemDiskAutoSnapshotPolicyId: Auto snapshot policy ID.
      */
     readonly systemDiskAutoSnapshotPolicyId?: string | ros.IResolvable;
@@ -524,6 +529,11 @@ export interface IInstanceGroup extends ros.IResource {
     readonly attrPublicIps: ros.IResolvable | string;
 
     /**
+     * Attribute RelatedOrderIds: The related order id list of created ecs instances
+     */
+    readonly attrRelatedOrderIds: ros.IResolvable | string;
+
+    /**
      * Attribute ZoneIds: Zone id of created instances.
      */
     readonly attrZoneIds: ros.IResolvable | string;
@@ -578,6 +588,11 @@ export class InstanceGroup extends ros.Resource implements IInstanceGroup {
      * Attribute PublicIps: Public IP address list of created ecs instances.
      */
     public readonly attrPublicIps: ros.IResolvable | string;
+
+    /**
+     * Attribute RelatedOrderIds: The related order id list of created ecs instances
+     */
+    public readonly attrRelatedOrderIds: ros.IResolvable | string;
 
     /**
      * Attribute ZoneIds: Zone id of created instances.
@@ -667,6 +682,7 @@ export class InstanceGroup extends ros.Resource implements IInstanceGroup {
             keyPairName: props.keyPairName,
             ioOptimized: props.ioOptimized === undefined || props.ioOptimized === null ? 'optimized' : props.ioOptimized,
             zoneId: props.zoneId,
+            subscriptionDeletionForce: props.subscriptionDeletionForce === undefined || props.subscriptionDeletionForce === null ? false : props.subscriptionDeletionForce,
             hpcClusterId: props.hpcClusterId,
             securityGroupId: props.securityGroupId,
             deploymentSetGroupNo: props.deploymentSetGroupNo,
@@ -687,6 +703,7 @@ export class InstanceGroup extends ros.Resource implements IInstanceGroup {
         this.attrOrderId = rosInstanceGroup.attrOrderId;
         this.attrPrivateIps = rosInstanceGroup.attrPrivateIps;
         this.attrPublicIps = rosInstanceGroup.attrPublicIps;
+        this.attrRelatedOrderIds = rosInstanceGroup.attrRelatedOrderIds;
         this.attrZoneIds = rosInstanceGroup.attrZoneIds;
     }
 }

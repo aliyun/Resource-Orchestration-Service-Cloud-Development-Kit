@@ -16,5 +16,9 @@ type TopicProps struct {
 	//
 	// An integer in the range of 1,024 (1 KB) to 65, 536 (64 KB); default value: 65,536 (64 KB).
 	MaximumMessageSize interface{} `field:"optional" json:"maximumMessageSize" yaml:"maximumMessageSize"`
+	// Property tags: Tags to attach to Topic.
+	//
+	// Max support 20 tags to add during create Topic. Each tag with two properties Key and Value, and Key is required.
+	Tags *[]*RosTopic_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 }
 

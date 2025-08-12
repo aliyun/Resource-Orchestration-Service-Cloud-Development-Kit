@@ -130,7 +130,7 @@ export interface ILoadBalancer extends ros.IResource {
     readonly attrZoneMappings: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::NLB::LoadBalancer`, which is used to create a Network Load Balancer (NLB) instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::NLB::LoadBalancer`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLoadBalancer`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-loadbalancer
  */

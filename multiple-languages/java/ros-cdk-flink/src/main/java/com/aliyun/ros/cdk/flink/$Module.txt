@@ -1,12 +1,17 @@
 @alicloud/ros-cdk-flink.IInstance=com.aliyun.ros.cdk.flink.IInstance
+@alicloud/ros-cdk-flink.IMember=com.aliyun.ros.cdk.flink.IMember
 @alicloud/ros-cdk-flink.INamespace=com.aliyun.ros.cdk.flink.INamespace
 @alicloud/ros-cdk-flink.Instance=com.aliyun.ros.cdk.flink.Instance
 @alicloud/ros-cdk-flink.InstanceProps=com.aliyun.ros.cdk.flink.InstanceProps
+@alicloud/ros-cdk-flink.Member=com.aliyun.ros.cdk.flink.Member
+@alicloud/ros-cdk-flink.MemberProps=com.aliyun.ros.cdk.flink.MemberProps
 @alicloud/ros-cdk-flink.Namespace=com.aliyun.ros.cdk.flink.Namespace
 @alicloud/ros-cdk-flink.NamespaceProps=com.aliyun.ros.cdk.flink.NamespaceProps
 @alicloud/ros-cdk-flink.RosInstance=com.aliyun.ros.cdk.flink.RosInstance
 @alicloud/ros-cdk-flink.RosInstance.ResourceSpecProperty=com.aliyun.ros.cdk.flink.RosInstance$ResourceSpecProperty
 @alicloud/ros-cdk-flink.RosInstanceProps=com.aliyun.ros.cdk.flink.RosInstanceProps
+@alicloud/ros-cdk-flink.RosMember=com.aliyun.ros.cdk.flink.RosMember
+@alicloud/ros-cdk-flink.RosMemberProps=com.aliyun.ros.cdk.flink.RosMemberProps
 @alicloud/ros-cdk-flink.RosNamespace=com.aliyun.ros.cdk.flink.RosNamespace
 @alicloud/ros-cdk-flink.RosNamespace.ResourceSpecProperty=com.aliyun.ros.cdk.flink.RosNamespace$ResourceSpecProperty
 @alicloud/ros-cdk-flink.RosNamespaceProps=com.aliyun.ros.cdk.flink.RosNamespaceProps

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.pvtz;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-syncecshost
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:09.265Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.579Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.SyncEcsHostProps")
 @software.amazon.jsii.Jsii.Proxy(SyncEcsHostProps.Jsii$Proxy.class)
 public interface SyncEcsHostProps extends software.amazon.jsii.JsiiSerializable {

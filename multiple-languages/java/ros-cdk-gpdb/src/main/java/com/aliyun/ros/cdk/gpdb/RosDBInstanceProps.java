@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.gpdb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-dbinstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:07.298Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.979Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.RosDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosDBInstanceProps.Jsii$Proxy.class)
 public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -138,6 +138,12 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityIpList() {
         return null;
     }
@@ -240,6 +246,7 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object periodUnit;
         java.lang.Object privateIpAddress;
         java.lang.Object prodType;
+        java.lang.Object resourceGroupId;
         java.lang.Object securityIpList;
         java.lang.Object segDiskPerformanceLevel;
         java.lang.Object segNodeNum;
@@ -694,6 +701,26 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosDBInstanceProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBInstanceProps#getSecurityIpList}
          * @param securityIpList the value to be set.
          * @return {@code this}
@@ -962,6 +989,7 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object periodUnit;
         private final java.lang.Object privateIpAddress;
         private final java.lang.Object prodType;
+        private final java.lang.Object resourceGroupId;
         private final java.lang.Object securityIpList;
         private final java.lang.Object segDiskPerformanceLevel;
         private final java.lang.Object segNodeNum;
@@ -1003,6 +1031,7 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.privateIpAddress = software.amazon.jsii.Kernel.get(this, "privateIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.prodType = software.amazon.jsii.Kernel.get(this, "prodType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityIpList = software.amazon.jsii.Kernel.get(this, "securityIpList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.segDiskPerformanceLevel = software.amazon.jsii.Kernel.get(this, "segDiskPerformanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.segNodeNum = software.amazon.jsii.Kernel.get(this, "segNodeNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1045,6 +1074,7 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             this.periodUnit = builder.periodUnit;
             this.privateIpAddress = builder.privateIpAddress;
             this.prodType = builder.prodType;
+            this.resourceGroupId = builder.resourceGroupId;
             this.securityIpList = builder.securityIpList;
             this.segDiskPerformanceLevel = builder.segDiskPerformanceLevel;
             this.segNodeNum = builder.segNodeNum;
@@ -1167,6 +1197,11 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         @Override
         public final java.lang.Object getProdType() {
             return this.prodType;
+        }
+
+        @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
         }
 
         @Override
@@ -1295,6 +1330,9 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getProdType() != null) {
                 data.set("prodType", om.valueToTree(this.getProdType()));
             }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
             if (this.getSecurityIpList() != null) {
                 data.set("securityIpList", om.valueToTree(this.getSecurityIpList()));
             }
@@ -1371,6 +1409,7 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             if (this.periodUnit != null ? !this.periodUnit.equals(that.periodUnit) : that.periodUnit != null) return false;
             if (this.privateIpAddress != null ? !this.privateIpAddress.equals(that.privateIpAddress) : that.privateIpAddress != null) return false;
             if (this.prodType != null ? !this.prodType.equals(that.prodType) : that.prodType != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.securityIpList != null ? !this.securityIpList.equals(that.securityIpList) : that.securityIpList != null) return false;
             if (this.segDiskPerformanceLevel != null ? !this.segDiskPerformanceLevel.equals(that.segDiskPerformanceLevel) : that.segDiskPerformanceLevel != null) return false;
             if (this.segNodeNum != null ? !this.segNodeNum.equals(that.segNodeNum) : that.segNodeNum != null) return false;
@@ -1409,6 +1448,7 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.periodUnit != null ? this.periodUnit.hashCode() : 0);
             result = 31 * result + (this.privateIpAddress != null ? this.privateIpAddress.hashCode() : 0);
             result = 31 * result + (this.prodType != null ? this.prodType.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.securityIpList != null ? this.securityIpList.hashCode() : 0);
             result = 31 * result + (this.segDiskPerformanceLevel != null ? this.segDiskPerformanceLevel.hashCode() : 0);
             result = 31 * result + (this.segNodeNum != null ? this.segNodeNum.hashCode() : 0);

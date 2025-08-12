@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hbr;
 /**
  * Represents a <code>DbAgent</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:07.441Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.099Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.IDbAgent")
 @software.amazon.jsii.Jsii.Proxy(IDbAgent.Jsii$Proxy.class)
 public interface IDbAgent extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

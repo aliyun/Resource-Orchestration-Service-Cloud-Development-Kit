@@ -9,6 +9,8 @@ type CertificateProps struct {
 	AliCloudCertificateId interface{} `field:"optional" json:"aliCloudCertificateId" yaml:"aliCloudCertificateId"`
 	// Property aliCloudCertificateName: The name of the Alibaba Cloud certificate.
 	AliCloudCertificateName interface{} `field:"optional" json:"aliCloudCertificateName" yaml:"aliCloudCertificateName"`
+	// Property aliCloudCertificateRegionId: The ID of the Alibaba Cloud region.
+	AliCloudCertificateRegionId interface{} `field:"optional" json:"aliCloudCertificateRegionId" yaml:"aliCloudCertificateRegionId"`
 	// Property certificate: The content of the certificate public key.
 	Certificate interface{} `field:"optional" json:"certificate" yaml:"certificate"`
 	// Property certificateName: The name of the certificate.

@@ -75,6 +75,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
+        /// <summary>Property namespaceDeletion: Whether to delete the namespace specified.</summary>
+        /// <remarks>
+        /// If Namespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether NamespaceDeletion is true or not, it will not be deleted.
+        /// </remarks>
+        [JsiiProperty(name: "namespaceDeletion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? NamespaceDeletion
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user.</summary>
         /// <remarks>
         /// Valid values:
@@ -184,6 +198,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             [JsiiOptional]
             [JsiiProperty(name: "namespace", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Namespace
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property namespaceDeletion: Whether to delete the namespace specified.</summary>
+            /// <remarks>
+            /// If Namespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether NamespaceDeletion is true or not, it will not be deleted.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "namespaceDeletion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? NamespaceDeletion
             {
                 get => GetInstanceProperty<object?>();
             }

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.aligreen;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::Aligreen::KeywordLib</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::Aligreen::KeywordLib</code>, which is used to create a custom text library.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:01.522Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:43.429Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.aligreen.$Module.class, fqn = "@alicloud/ros-cdk-aligreen.RosKeywordLib")
 public class RosKeywordLib extends com.aliyun.ros.cdk.core.RosResource {
 

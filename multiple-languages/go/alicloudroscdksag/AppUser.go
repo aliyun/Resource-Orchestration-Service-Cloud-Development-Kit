@@ -15,7 +15,7 @@ type AppUser interface {
 	IAppUser
 	// Attribute SmartAGId: The ID of the SAG APP instance.
 	AttrSmartAgId() interface{}
-	// Attribute UserName: <heat.engine.properties.Schema object at 0x7f2959675f90>.
+	// Attribute UserName: The name of the user.
 	AttrUserName() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)

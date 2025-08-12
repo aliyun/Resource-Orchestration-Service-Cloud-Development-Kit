@@ -9,9 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::MNS::Queue`, which is used to create a queue to contain messages.
-//
-// Queues can be classified into standard and delayed queues.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::MNS::Queue`.
 type RosQueue interface {
 	alicloudroscdkcore.RosResource
 	AttrArnWithSlash() alicloudroscdkcore.IResolvable
@@ -23,6 +21,8 @@ type RosQueue interface {
 	CreationStack() *[]*string
 	DelaySeconds() interface{}
 	SetDelaySeconds(val interface{})
+	DlqPolicy() interface{}
+	SetDlqPolicy(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
 	LoggingEnabled() interface{}
@@ -61,6 +61,8 @@ type RosQueue interface {
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
 	Stack() alicloudroscdkcore.Stack
+	Tags() *[]*RosQueue_TagsProperty
+	SetTags(val *[]*RosQueue_TagsProperty)
 	// Return properties modified after initiation.
 	//
 	// Resources that expose mutable properties should override this function to
@@ -237,6 +239,16 @@ func (j *jsiiProxy_RosQueue) DelaySeconds() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosQueue) DlqPolicy() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"dlqPolicy",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosQueue) EnableResourcePropertyConstraint() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -367,6 +379,16 @@ func (j *jsiiProxy_RosQueue) Stack() alicloudroscdkcore.Stack {
 	return returns
 }
 
+func (j *jsiiProxy_RosQueue) Tags() *[]*RosQueue_TagsProperty {
+	var returns *[]*RosQueue_TagsProperty
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosQueue) UpdatedProperites() *map[string]interface{} {
 	var returns *map[string]interface{}
 	_jsii_.Get(
@@ -422,6 +444,17 @@ func (j *jsiiProxy_RosQueue)SetDelaySeconds(val interface{}) {
 	_jsii_.Set(
 		j,
 		"delaySeconds",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosQueue)SetDlqPolicy(val interface{}) {
+	if err := j.validateSetDlqPolicyParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"dlqPolicy",
 		val,
 	)
 }
@@ -488,6 +521,17 @@ func (j *jsiiProxy_RosQueue)SetQueueName(val interface{}) {
 	_jsii_.Set(
 		j,
 		"queueName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosQueue)SetTags(val *[]*RosQueue_TagsProperty) {
+	if err := j.validateSetTagsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"tags",
 		val,
 	)
 }

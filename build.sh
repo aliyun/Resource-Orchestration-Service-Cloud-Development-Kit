@@ -25,7 +25,7 @@ setup_dependency() {
     esac
 
     lerna link
-    lerna bootstrap
+    lerna bootstrap || (echo "exec lerna bootstrap failed, try again..." && lerna clean -y && lerna bootstrap)
     npm install
 }
 

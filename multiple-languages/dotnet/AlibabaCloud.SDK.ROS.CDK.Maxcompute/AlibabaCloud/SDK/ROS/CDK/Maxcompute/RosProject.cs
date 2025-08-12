@@ -260,6 +260,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Maxcompute
                 SetInstanceProperty(value);
             }
         }
+
+        /// <remarks>
+        /// <strong>Property</strong>: supportSchemaLevels: Whether to support schema level. Default: False
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "supportSchemaLevels", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? SupportSchemaLevels
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
         [JsiiInterface(nativeType: typeof(IEncryptionProperty), fullyQualifiedName: "@alicloud/ros-cdk-maxcompute.RosProject.EncryptionProperty")]
         public interface IEncryptionProperty
         {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Initialization props for apps.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:00.599Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:42.879Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.AppProps")
 @software.amazon.jsii.Jsii.Proxy(AppProps.Jsii$Proxy.class)
 public interface AppProps extends software.amazon.jsii.JsiiSerializable {
@@ -38,8 +38,14 @@ public interface AppProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * The output directory into which to emit synthesized artifacts.
      * <p>
-     * Default - If this value is <em>not</em> set, considers the environment variable 'CDK_OUTDIR'.
-     * If 'CDK_OUTDIR' is not defined, uses a temp directory.
+     * You should never need to set this value. By default, the value you pass to
+     * the CLI's <code>--output</code> flag will be used, and if you change it to a different
+     * directory the CLI will fail to pick up the generated Cloud Assembly.
+     * <p>
+     * This property is intended for internal and testing use.
+     * <p>
+     * Default: - If this value is _not_ set, considers the environment variable `CDK_OUTDIR`.
+     *   If `CDK_OUTDIR` is not defined, uses a temp directory.
      */
     default @org.jetbrains.annotations.Nullable java.lang.String getOutdir() {
         return null;
@@ -121,8 +127,11 @@ public interface AppProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link AppProps#getOutdir}
          * @param outdir The output directory into which to emit synthesized artifacts.
-         *               Default - If this value is <em>not</em> set, considers the environment variable 'CDK_OUTDIR'.
-         *               If 'CDK_OUTDIR' is not defined, uses a temp directory.
+         *               You should never need to set this value. By default, the value you pass to
+         *               the CLI's <code>--output</code> flag will be used, and if you change it to a different
+         *               directory the CLI will fail to pick up the generated Cloud Assembly.
+         *               <p>
+         *               This property is intended for internal and testing use.
          * @return {@code this}
          */
         public Builder outdir(java.lang.String outdir) {

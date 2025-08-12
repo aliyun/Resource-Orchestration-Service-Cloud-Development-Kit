@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oss.datasource;
 /**
  * Represents a <code>Bucket</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:12.170Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:51.919Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.datasource.IBucket")
 @software.amazon.jsii.Jsii.Proxy(IBucket.Jsii$Proxy.class)
 public interface IBucket extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

@@ -620,12 +620,12 @@ export interface RosFunctionProps {
     readonly instanceSoftConcurrency?: number | ros.IResolvable;
 
     /**
-     * @Property instanceType: Instance type. Value:e1: flexible instance. Memory size between 128 and 3072c1: performance instance. Memory size allow values are 4096, 8192, 16384 and 32768
+     * @Property instanceType: Instance type. Value:- e1: Elastic Instance.- c1: Performance Instance.- fc.gpu.tesla.1: GPU Tesla Series Instance Type.- fc.gpu.ampere.1: GPU Ampere Series Instance Type.- fc.gpu.ada.1: GPU Ada Series Instance Type.- g1: Same as fc.gpu.tesla.1.
      */
     readonly instanceType?: string | ros.IResolvable;
 
     /**
-     * @Property memorySize: The amount of memory that’s used to run function, in MB. Function Compute uses this value to allocate CPU resources proportionally. Defaults to 128 MB. It can be multiple of 64 MB and between 128 MB and 3072 MB.
+     * @Property memorySize: The amount of memory that’s used to run function, in MB. Function Compute uses this value to allocate CPU resources proportionally. Defaults to 128 MB. It can be multiple of 64 MB and between 128 MB and 32768 MB.
      */
     readonly memorySize?: number | ros.IResolvable;
 
@@ -708,7 +708,7 @@ function RosFunctionPropsValidator(properties: any): ros.ValidationResult {
     if(properties.instanceType && (typeof properties.instanceType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceType', ros.validateAllowedValues)({
           data: properties.instanceType,
-          allowedValues: ["e1","c1","fc.gpu.tesla.1","fc.gpu.ampere.1","g1"],
+          allowedValues: ["e1","c1","fc.gpu.tesla.1","fc.gpu.ampere.1","fc.gpu.ada.1","g1"],
         }));
     }
     errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
@@ -909,12 +909,12 @@ export class RosFunction extends ros.RosResource {
     public instanceSoftConcurrency: number | ros.IResolvable | undefined;
 
     /**
-     * @Property instanceType: Instance type. Value:e1: flexible instance. Memory size between 128 and 3072c1: performance instance. Memory size allow values are 4096, 8192, 16384 and 32768
+     * @Property instanceType: Instance type. Value:- e1: Elastic Instance.- c1: Performance Instance.- fc.gpu.tesla.1: GPU Tesla Series Instance Type.- fc.gpu.ampere.1: GPU Ampere Series Instance Type.- fc.gpu.ada.1: GPU Ada Series Instance Type.- g1: Same as fc.gpu.tesla.1.
      */
     public instanceType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property memorySize: The amount of memory that’s used to run function, in MB. Function Compute uses this value to allocate CPU resources proportionally. Defaults to 128 MB. It can be multiple of 64 MB and between 128 MB and 3072 MB.
+     * @Property memorySize: The amount of memory that’s used to run function, in MB. Function Compute uses this value to allocate CPU resources proportionally. Defaults to 128 MB. It can be multiple of 64 MB and between 128 MB and 32768 MB.
      */
     public memorySize: number | ros.IResolvable | undefined;
 
@@ -1689,6 +1689,11 @@ export interface RosFunctionInvokerProps {
     readonly async?: boolean | ros.IResolvable;
 
     /**
+     * @Property checkAsyncInvocation: Check async invocation setting.
+     */
+    readonly checkAsyncInvocation?: RosFunctionInvoker.CheckAsyncInvocationProperty | ros.IResolvable;
+
+    /**
      * @Property checkError: Whether check error for function invocation result.
      * If set true and function invocation result has error, the resource creation will be regard as failed.
      * Default is false
@@ -1744,6 +1749,7 @@ function RosFunctionInvokerPropsValidator(properties: any): ros.ValidationResult
     errors.collect(ros.propertyValidator('event', ros.validateString)(properties.event));
     errors.collect(ros.propertyValidator('qualifier', ros.validateString)(properties.qualifier));
     errors.collect(ros.propertyValidator('checkError', ros.validateBoolean)(properties.checkError));
+    errors.collect(ros.propertyValidator('checkAsyncInvocation', RosFunctionInvoker_CheckAsyncInvocationPropertyValidator)(properties.checkAsyncInvocation));
     return errors.wrap('supplied properties not correct for "RosFunctionInvokerProps"');
 }
 
@@ -1764,6 +1770,7 @@ function rosFunctionInvokerPropsToRosTemplate(properties: any, enableResourcePro
       'FunctionName': ros.stringToRosTemplate(properties.functionName),
       'ServiceName': ros.stringToRosTemplate(properties.serviceName),
       'Async': ros.booleanToRosTemplate(properties.async),
+      'CheckAsyncInvocation': rosFunctionInvokerCheckAsyncInvocationPropertyToRosTemplate(properties.checkAsyncInvocation),
       'CheckError': ros.booleanToRosTemplate(properties.checkError),
       'Event': ros.stringToRosTemplate(properties.event),
       'ExecuteVersion': ros.numberToRosTemplate(properties.executeVersion),
@@ -1818,6 +1825,11 @@ Failure: Sync invoke fails.
     public async: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property checkAsyncInvocation: Check async invocation setting.
+     */
+    public checkAsyncInvocation: RosFunctionInvoker.CheckAsyncInvocationProperty | ros.IResolvable | undefined;
+
+    /**
      * @Property checkError: Whether check error for function invocation result.
      * If set true and function invocation result has error, the resource creation will be regard as failed.
      * Default is false
@@ -1859,6 +1871,7 @@ Failure: Sync invoke fails.
         this.functionName = props.functionName;
         this.serviceName = props.serviceName;
         this.async = props.async;
+        this.checkAsyncInvocation = props.checkAsyncInvocation;
         this.checkError = props.checkError;
         this.event = props.event;
         this.executeVersion = props.executeVersion;
@@ -1872,6 +1885,7 @@ Failure: Sync invoke fails.
             functionName: this.functionName,
             serviceName: this.serviceName,
             async: this.async,
+            checkAsyncInvocation: this.checkAsyncInvocation,
             checkError: this.checkError,
             event: this.event,
             executeVersion: this.executeVersion,
@@ -1882,6 +1896,80 @@ Failure: Sync invoke fails.
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosFunctionInvokerPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosFunctionInvoker {
+    /**
+     * @stability external
+     */
+    export interface CheckAsyncInvocationProperty {
+        /**
+         * @Property checkTimes: Check times for async invocation result.
+     * Default is 10 times.
+         */
+        readonly checkTimes: number | ros.IResolvable;
+        /**
+         * @Property checkInterval: Check interval for async invocation result.
+     * Default is 10 seconds. Unit is second
+         */
+        readonly checkInterval: number | ros.IResolvable;
+        /**
+         * @Property enabled: Whether check async invocation result.
+     * If set true and function invocation type is async, the resource creation will wait until invocation finish and check result.
+     * Default is false
+         */
+        readonly enabled: boolean | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `CheckAsyncInvocationProperty`
+ *
+ * @param properties - the TypeScript properties of a `CheckAsyncInvocationProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosFunctionInvoker_CheckAsyncInvocationPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('checkTimes', ros.requiredValidator)(properties.checkTimes));
+    if(properties.checkTimes && (typeof properties.checkTimes) !== 'object') {
+        errors.collect(ros.propertyValidator('checkTimes', ros.validateRange)({
+            data: properties.checkTimes,
+            min: 1,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('checkTimes', ros.validateNumber)(properties.checkTimes));
+    errors.collect(ros.propertyValidator('checkInterval', ros.requiredValidator)(properties.checkInterval));
+    if(properties.checkInterval && (typeof properties.checkInterval) !== 'object') {
+        errors.collect(ros.propertyValidator('checkInterval', ros.validateRange)({
+            data: properties.checkInterval,
+            min: 10,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('checkInterval', ros.validateNumber)(properties.checkInterval));
+    errors.collect(ros.propertyValidator('enabled', ros.requiredValidator)(properties.enabled));
+    errors.collect(ros.propertyValidator('enabled', ros.validateBoolean)(properties.enabled));
+    return errors.wrap('supplied properties not correct for "CheckAsyncInvocationProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC::FunctionInvoker.CheckAsyncInvocation` resource
+ *
+ * @param properties - the TypeScript properties of a `CheckAsyncInvocationProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC::FunctionInvoker.CheckAsyncInvocation` resource.
+ */
+// @ts-ignore TS6133
+function rosFunctionInvokerCheckAsyncInvocationPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosFunctionInvoker_CheckAsyncInvocationPropertyValidator(properties).assertSuccess();
+    return {
+      'CheckTimes': ros.numberToRosTemplate(properties.checkTimes),
+      'CheckInterval': ros.numberToRosTemplate(properties.checkInterval),
+      'Enabled': ros.booleanToRosTemplate(properties.enabled),
+    };
 }
 
 /**
@@ -1942,7 +2030,7 @@ function RosLayerPropsValidator(properties: any): ros.ValidationResult {
     if(properties.layerName && (typeof properties.layerName) !== 'object') {
         errors.collect(ros.propertyValidator('layerName', ros.validateAllowedPattern)({
           data: properties.layerName,
-          reg: /[a-zA-Z][_a-zA-Z0-9-]+/
+          reg: /^[a-zA-Z][_a-zA-Z0-9-]+$/
         }));
     }
     errors.collect(ros.propertyValidator('layerName', ros.validateString)(properties.layerName));

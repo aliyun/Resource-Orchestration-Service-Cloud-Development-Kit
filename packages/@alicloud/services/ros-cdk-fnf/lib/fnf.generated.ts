@@ -97,7 +97,7 @@ function rosFlowPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::FNF::Flow`, which is used to create a flow.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FNF::Flow`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Flow` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fnf-flow
  */
@@ -287,7 +287,7 @@ function rosSchedulePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::FNF::Schedule`, which is used to create a time-based schedule.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FNF::Schedule`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Schedule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fnf-schedule
  */

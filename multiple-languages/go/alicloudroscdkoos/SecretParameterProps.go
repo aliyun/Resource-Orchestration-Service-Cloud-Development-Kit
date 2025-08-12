@@ -7,7 +7,7 @@ package alicloudroscdkoos
 type SecretParameterProps struct {
 	// Property secretParameterName: The name of the encryption parameter.
 	//
-	// The name must be 1 to 180 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
+	// The name must be 1 to 180 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ALIBABA, ALICLOUD, ACS or OOS.
 	SecretParameterName interface{} `field:"required" json:"secretParameterName" yaml:"secretParameterName"`
 	// Property value: The value of the encryption parameter.
 	//

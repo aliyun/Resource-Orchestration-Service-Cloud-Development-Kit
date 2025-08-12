@@ -252,6 +252,30 @@ func (j *jsiiProxy_RosFunctionInvoker) validateSetAsyncParameters(val interface{
 	return nil
 }
 
+func (j *jsiiProxy_RosFunctionInvoker) validateSetCheckAsyncInvocationParameters(val interface{}) error {
+	switch val.(type) {
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	case *RosFunctionInvoker_CheckAsyncInvocationProperty:
+		val := val.(*RosFunctionInvoker_CheckAsyncInvocationProperty)
+		if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
+			return err
+		}
+	case RosFunctionInvoker_CheckAsyncInvocationProperty:
+		val_ := val.(RosFunctionInvoker_CheckAsyncInvocationProperty)
+		val := &val_
+		if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
+			return err
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosFunctionInvoker_CheckAsyncInvocationProperty; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosFunctionInvoker) validateSetCheckErrorParameters(val interface{}) error {
 	switch val.(type) {
 	case *bool:

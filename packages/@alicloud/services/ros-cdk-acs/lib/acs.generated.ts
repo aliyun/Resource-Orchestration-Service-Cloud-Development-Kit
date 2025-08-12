@@ -27,6 +27,16 @@ export interface RosClusterProps {
     readonly clusterSpec?: string | ros.IResolvable;
 
     /**
+     * @Property computeClass: The compute class of the cluster. This parameter is only used as a parameter query for ZoneIds and is not used in the actual creation.
+     */
+    readonly computeClass?: string | ros.IResolvable;
+
+    /**
+     * @Property deleteOptions: Delete options, only work for deleting resource.
+     */
+    readonly deleteOptions?: Array<RosCluster.DeleteOptionsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * @Property deletionProtection: Specifies whether to enable deletion protection for the cluster. 
      * After deletion protection is enabled, the cluster cannot be deleted 
      * in the ACK console or by calling API operations. Valid values:true: enables deletion protection for the cluster.
@@ -66,6 +76,11 @@ export interface RosClusterProps {
      * @Property maintenanceWindow: The maintenance window of the cluster.
      */
     readonly maintenanceWindow?: RosCluster.MaintenanceWindowProperty | ros.IResolvable;
+
+    /**
+     * @Property podPostpaidSpec: Postpaid pod spec for inquiry.
+     */
+    readonly podPostpaidSpec?: RosCluster.PodPostpaidSpecProperty | ros.IResolvable;
 
     /**
      * @Property podVSwitchIds: The list of pod vSwitches. For each vSwitch that is allocated to nodes, 
@@ -154,6 +169,8 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('kubernetesVersion', ros.validateString)(properties.kubernetesVersion));
     errors.collect(ros.propertyValidator('endpointPublicAccess', ros.validateBoolean)(properties.endpointPublicAccess));
+    errors.collect(ros.propertyValidator('podPostpaidSpec', RosCluster_PodPostpaidSpecPropertyValidator)(properties.podPostpaidSpec));
+    errors.collect(ros.propertyValidator('deleteOptions', ros.listValidator(RosCluster_DeleteOptionsPropertyValidator))(properties.deleteOptions));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.vSwitchIds && (Array.isArray(properties.vSwitchIds) || (typeof properties.vSwitchIds) === 'string')) {
         errors.collect(ros.propertyValidator('vSwitchIds', ros.validateLength)({
@@ -165,13 +182,13 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateString))(properties.vSwitchIds));
     errors.collect(ros.propertyValidator('addons', ros.listValidator(RosCluster_AddonsPropertyValidator))(properties.addons));
     errors.collect(ros.propertyValidator('podVSwitchIds', ros.listValidator(ros.validateString))(properties.podVSwitchIds));
-    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
     errors.collect(ros.propertyValidator('clusterSpec', ros.validateString)(properties.clusterSpec));
+    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
     errors.collect(ros.propertyValidator('loggingType', ros.validateString)(properties.loggingType));
     errors.collect(ros.propertyValidator('ipStack', ros.validateString)(properties.ipStack));
-    errors.collect(ros.propertyValidator('loadBalancerSpec', ros.validateString)(properties.loadBalancerSpec));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    errors.collect(ros.propertyValidator('loadBalancerSpec', ros.validateString)(properties.loadBalancerSpec));
     errors.collect(ros.propertyValidator('timeZone', ros.validateString)(properties.timeZone));
     if(properties.serviceDiscoveryTypes && (Array.isArray(properties.serviceDiscoveryTypes) || (typeof properties.serviceDiscoveryTypes) === 'string')) {
         errors.collect(ros.propertyValidator('serviceDiscoveryTypes', ros.validateLength)({
@@ -183,8 +200,10 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('serviceDiscoveryTypes', ros.listValidator(ros.validateString))(properties.serviceDiscoveryTypes));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('slsProjectName', ros.validateString)(properties.slsProjectName));
+    errors.collect(ros.propertyValidator('computeClass', ros.validateString)(properties.computeClass));
     errors.collect(ros.propertyValidator('serviceCidr', ros.validateString)(properties.serviceCidr));
     errors.collect(ros.propertyValidator('snatEntry', ros.validateBoolean)(properties.snatEntry));
+    errors.collect(ros.propertyValidator('maintenanceWindow', RosCluster_MaintenanceWindowPropertyValidator)(properties.maintenanceWindow));
     if(properties.zoneIds && (Array.isArray(properties.zoneIds) || (typeof properties.zoneIds) === 'string')) {
         errors.collect(ros.propertyValidator('zoneIds', ros.validateLength)({
             data: properties.zoneIds.length,
@@ -193,7 +212,6 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('zoneIds', ros.listValidator(ros.validateString))(properties.zoneIds));
-    errors.collect(ros.propertyValidator('maintenanceWindow', RosCluster_MaintenanceWindowPropertyValidator)(properties.maintenanceWindow));
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosCluster_TagsPropertyValidator))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosClusterProps"');
 }
@@ -215,6 +233,8 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
       'Name': ros.stringToRosTemplate(properties.name),
       'Addons': ros.listMapper(rosClusterAddonsPropertyToRosTemplate)(properties.addons),
       'ClusterSpec': ros.stringToRosTemplate(properties.clusterSpec),
+      'ComputeClass': ros.stringToRosTemplate(properties.computeClass),
+      'DeleteOptions': ros.listMapper(rosClusterDeleteOptionsPropertyToRosTemplate)(properties.deleteOptions),
       'DeletionProtection': ros.booleanToRosTemplate(properties.deletionProtection),
       'EndpointPublicAccess': ros.booleanToRosTemplate(properties.endpointPublicAccess),
       'IpStack': ros.stringToRosTemplate(properties.ipStack),
@@ -222,6 +242,7 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
       'LoadBalancerSpec': ros.stringToRosTemplate(properties.loadBalancerSpec),
       'LoggingType': ros.stringToRosTemplate(properties.loggingType),
       'MaintenanceWindow': rosClusterMaintenanceWindowPropertyToRosTemplate(properties.maintenanceWindow),
+      'PodPostpaidSpec': rosClusterPodPostpaidSpecPropertyToRosTemplate(properties.podPostpaidSpec),
       'PodVSwitchIds': ros.listMapper(ros.stringToRosTemplate)(properties.podVSwitchIds),
       'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
       'ServiceCidr': ros.stringToRosTemplate(properties.serviceCidr),
@@ -237,7 +258,7 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ACS::Cluster`, which is used to create a Container Compute Service (ACS) cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ACS::Cluster`, which is used to create an Alibaba Cloud Container Service (ACS) cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `Cluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acs-cluster
  */
@@ -324,6 +345,16 @@ export class RosCluster extends ros.RosResource {
     public clusterSpec: string | ros.IResolvable | undefined;
 
     /**
+     * @Property computeClass: The compute class of the cluster. This parameter is only used as a parameter query for ZoneIds and is not used in the actual creation.
+     */
+    public computeClass: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property deleteOptions: Delete options, only work for deleting resource.
+     */
+    public deleteOptions: Array<RosCluster.DeleteOptionsProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * @Property deletionProtection: Specifies whether to enable deletion protection for the cluster. 
      * After deletion protection is enabled, the cluster cannot be deleted 
      * in the ACK console or by calling API operations. Valid values:true: enables deletion protection for the cluster.
@@ -363,6 +394,11 @@ export class RosCluster extends ros.RosResource {
      * @Property maintenanceWindow: The maintenance window of the cluster.
      */
     public maintenanceWindow: RosCluster.MaintenanceWindowProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property podPostpaidSpec: Postpaid pod spec for inquiry.
+     */
+    public podPostpaidSpec: RosCluster.PodPostpaidSpecProperty | ros.IResolvable | undefined;
 
     /**
      * @Property podVSwitchIds: The list of pod vSwitches. For each vSwitch that is allocated to nodes, 
@@ -461,6 +497,8 @@ export class RosCluster extends ros.RosResource {
         this.name = props.name;
         this.addons = props.addons;
         this.clusterSpec = props.clusterSpec;
+        this.computeClass = props.computeClass;
+        this.deleteOptions = props.deleteOptions;
         this.deletionProtection = props.deletionProtection;
         this.endpointPublicAccess = props.endpointPublicAccess;
         this.ipStack = props.ipStack;
@@ -468,6 +506,7 @@ export class RosCluster extends ros.RosResource {
         this.loadBalancerSpec = props.loadBalancerSpec;
         this.loggingType = props.loggingType;
         this.maintenanceWindow = props.maintenanceWindow;
+        this.podPostpaidSpec = props.podPostpaidSpec;
         this.podVSwitchIds = props.podVSwitchIds;
         this.resourceGroupId = props.resourceGroupId;
         this.serviceCidr = props.serviceCidr;
@@ -487,6 +526,8 @@ export class RosCluster extends ros.RosResource {
             name: this.name,
             addons: this.addons,
             clusterSpec: this.clusterSpec,
+            computeClass: this.computeClass,
+            deleteOptions: this.deleteOptions,
             deletionProtection: this.deletionProtection,
             endpointPublicAccess: this.endpointPublicAccess,
             ipStack: this.ipStack,
@@ -494,6 +535,7 @@ export class RosCluster extends ros.RosResource {
             loadBalancerSpec: this.loadBalancerSpec,
             loggingType: this.loggingType,
             maintenanceWindow: this.maintenanceWindow,
+            podPostpaidSpec: this.podPostpaidSpec,
             podVSwitchIds: this.podVSwitchIds,
             resourceGroupId: this.resourceGroupId,
             serviceCidr: this.serviceCidr,
@@ -570,6 +612,145 @@ export namespace RosCluster {
     /**
      * @stability external
      */
+    export interface DeleteOptionsProperty {
+        /**
+         * @Property deleteMode: Deletion policy of this type of resource. The value can be:
+     * - delete: delete the resource.
+     * - retain: retain the resource.
+         */
+        readonly deleteMode?: string | ros.IResolvable;
+        /**
+         * @Property resourceType: Resource type. The value can be:
+     * - SLB: SLB resource created by service. It is deleted by default but can be retained
+     * - ALB: ALB Ingress Controller Created ALB resource. It is reserved by default and can be deleted
+     * - SLS_Data: log service Project used by the cluster log function. This service is reserved by default and can be deleted
+     * - SLS_ControlPlane: Project log service used for logs of the managed cluster control plane. This service is reserved by default and can be deleted
+     * - PrivateZone: ACK Serverless PrivateZone resource created in the cluster. It is reserved by default and can be deleted
+     *
+         */
+        readonly resourceType?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DeleteOptionsProperty`
+ *
+ * @param properties - the TypeScript properties of a `DeleteOptionsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosCluster_DeleteOptionsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.deleteMode && (typeof properties.deleteMode) !== 'object') {
+        errors.collect(ros.propertyValidator('deleteMode', ros.validateAllowedValues)({
+          data: properties.deleteMode,
+          allowedValues: ["delete","retain"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('deleteMode', ros.validateString)(properties.deleteMode));
+    if(properties.resourceType && (typeof properties.resourceType) !== 'object') {
+        errors.collect(ros.propertyValidator('resourceType', ros.validateAllowedValues)({
+          data: properties.resourceType,
+          allowedValues: ["SLB","ALB","SLS_Data","SLS_ControlPlane","PrivateZone"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
+    return errors.wrap('supplied properties not correct for "DeleteOptionsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ACS::Cluster.DeleteOptions` resource
+ *
+ * @param properties - the TypeScript properties of a `DeleteOptionsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ACS::Cluster.DeleteOptions` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterDeleteOptionsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosCluster_DeleteOptionsPropertyValidator(properties).assertSuccess();
+    return {
+      'DeleteMode': ros.stringToRosTemplate(properties.deleteMode),
+      'ResourceType': ros.stringToRosTemplate(properties.resourceType),
+    };
+}
+
+export namespace RosCluster {
+    /**
+     * @stability external
+     */
+    export interface GpuQuantityConfigsProperty {
+        /**
+         * @Property gpuModel: The GPU model type.
+         */
+        readonly gpuModel?: string | ros.IResolvable;
+        /**
+         * @Property computeQos: The QoS of the GPU compute.
+         */
+        readonly computeQos?: string | ros.IResolvable;
+        /**
+         * @Property arch: The architecture of the GPU.
+         */
+        readonly arch?: string | ros.IResolvable;
+        /**
+         * @Property gpuQuantity: The number of GPUs.
+         */
+        readonly gpuQuantity?: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `GpuQuantityConfigsProperty`
+ *
+ * @param properties - the TypeScript properties of a `GpuQuantityConfigsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosCluster_GpuQuantityConfigsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('gpuModel', ros.validateString)(properties.gpuModel));
+    if(properties.computeQos && (typeof properties.computeQos) !== 'object') {
+        errors.collect(ros.propertyValidator('computeQos', ros.validateAllowedValues)({
+          data: properties.computeQos,
+          allowedValues: ["default","best-effort"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('computeQos', ros.validateString)(properties.computeQos));
+    errors.collect(ros.propertyValidator('arch', ros.validateString)(properties.arch));
+    if(properties.gpuQuantity && (typeof properties.gpuQuantity) !== 'object') {
+        errors.collect(ros.propertyValidator('gpuQuantity', ros.validateRange)({
+            data: properties.gpuQuantity,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('gpuQuantity', ros.validateNumber)(properties.gpuQuantity));
+    return errors.wrap('supplied properties not correct for "GpuQuantityConfigsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ACS::Cluster.GpuQuantityConfigs` resource
+ *
+ * @param properties - the TypeScript properties of a `GpuQuantityConfigsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ACS::Cluster.GpuQuantityConfigs` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterGpuQuantityConfigsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosCluster_GpuQuantityConfigsPropertyValidator(properties).assertSuccess();
+    return {
+      'GpuModel': ros.stringToRosTemplate(properties.gpuModel),
+      'ComputeQos': ros.stringToRosTemplate(properties.computeQos),
+      'Arch': ros.stringToRosTemplate(properties.arch),
+      'GpuQuantity': ros.numberToRosTemplate(properties.gpuQuantity),
+    };
+}
+
+export namespace RosCluster {
+    /**
+     * @stability external
+     */
     export interface MaintenanceWindowProperty {
         /**
          * @Property maintenanceTime: The maintenance time of the maintenance window.
@@ -628,6 +809,86 @@ function rosClusterMaintenanceWindowPropertyToRosTemplate(properties: any): any 
       'WeeklyPeriod': ros.stringToRosTemplate(properties.weeklyPeriod),
       'Enable': ros.booleanToRosTemplate(properties.enable),
       'Duration': ros.stringToRosTemplate(properties.duration),
+    };
+}
+
+export namespace RosCluster {
+    /**
+     * @stability external
+     */
+    export interface PodPostpaidSpecProperty {
+        /**
+         * @Property gpuQuantityConfigs: The GPU spec module.
+         */
+        readonly gpuQuantityConfigs?: RosCluster.GpuQuantityConfigsProperty | ros.IResolvable;
+        /**
+         * @Property cpuCore: The number of CPU cores.
+         */
+        readonly cpuCore?: number | ros.IResolvable;
+        /**
+         * @Property memGib: The memory size of the GPU.
+         */
+        readonly memGib?: number | ros.IResolvable;
+        /**
+         * @Property replicas: The number of the replicas.
+         */
+        readonly replicas?: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `PodPostpaidSpecProperty`
+ *
+ * @param properties - the TypeScript properties of a `PodPostpaidSpecProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosCluster_PodPostpaidSpecPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('gpuQuantityConfigs', RosCluster_GpuQuantityConfigsPropertyValidator)(properties.gpuQuantityConfigs));
+    if(properties.cpuCore && (typeof properties.cpuCore) !== 'object') {
+        errors.collect(ros.propertyValidator('cpuCore', ros.validateRange)({
+            data: properties.cpuCore,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('cpuCore', ros.validateNumber)(properties.cpuCore));
+    if(properties.memGib && (typeof properties.memGib) !== 'object') {
+        errors.collect(ros.propertyValidator('memGib', ros.validateRange)({
+            data: properties.memGib,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('memGib', ros.validateNumber)(properties.memGib));
+    if(properties.replicas && (typeof properties.replicas) !== 'object') {
+        errors.collect(ros.propertyValidator('replicas', ros.validateRange)({
+            data: properties.replicas,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('replicas', ros.validateNumber)(properties.replicas));
+    return errors.wrap('supplied properties not correct for "PodPostpaidSpecProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ACS::Cluster.PodPostpaidSpec` resource
+ *
+ * @param properties - the TypeScript properties of a `PodPostpaidSpecProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ACS::Cluster.PodPostpaidSpec` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterPodPostpaidSpecPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosCluster_PodPostpaidSpecPropertyValidator(properties).assertSuccess();
+    return {
+      'GpuQuantityConfigs': rosClusterGpuQuantityConfigsPropertyToRosTemplate(properties.gpuQuantityConfigs),
+      'CpuCore': ros.numberToRosTemplate(properties.cpuCore),
+      'MemGib': ros.numberToRosTemplate(properties.memGib),
+      'Replicas': ros.numberToRosTemplate(properties.replicas),
     };
 }
 

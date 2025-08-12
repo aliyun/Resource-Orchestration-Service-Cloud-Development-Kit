@@ -84,6 +84,14 @@ func validateRosElasticityAssurance_IsRosResourceParameters(construct alicloudro
 	return nil
 }
 
+func (j *jsiiProxy_RosElasticityAssurance) validateSetAutoRenewParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosElasticityAssurance) validateSetAutoRenewPeriodParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosElasticityAssurance) validateSetDescriptionParameters(val interface{}) error {
 	return nil
 }
@@ -93,6 +101,10 @@ func (j *jsiiProxy_RosElasticityAssurance) validateSetEnableResourcePropertyCons
 }
 
 func (j *jsiiProxy_RosElasticityAssurance) validateSetInstanceAmountParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosElasticityAssurance) validateSetInstanceCpuCoreCountParameters(val interface{}) error {
 	return nil
 }
 
@@ -109,6 +121,10 @@ func (j *jsiiProxy_RosElasticityAssurance) validateSetPeriodUnitParameters(val i
 }
 
 func (j *jsiiProxy_RosElasticityAssurance) validateSetPrivatePoolOptionsParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosElasticityAssurance) validateSetRecurrenceRulesParameters(val interface{}) error {
 	return nil
 }
 

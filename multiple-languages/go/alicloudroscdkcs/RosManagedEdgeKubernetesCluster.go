@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ManagedEdgeKubernetesCluster`, which is used to create a Container Service for Kubernetes (ACK) edge cluster.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ManagedEdgeKubernetesCluster`, which is used to create a Container Service for Kubernetes (ACK) Edge cluster.
 type RosManagedEdgeKubernetesCluster interface {
 	alicloudroscdkcore.RosResource
 	Addons() interface{}
@@ -100,6 +100,8 @@ type RosManagedEdgeKubernetesCluster interface {
 	UpdatedProperites() *map[string]interface{}
 	VpcId() interface{}
 	SetVpcId(val interface{})
+	VSwitchIds() interface{}
+	SetVSwitchIds(val interface{})
 	ZoneIds() interface{}
 	SetZoneIds(val interface{})
 	AddCondition(con alicloudroscdkcore.RosCondition)
@@ -631,6 +633,16 @@ func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) VpcId() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) VSwitchIds() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"vSwitchIds",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) ZoneIds() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -896,6 +908,17 @@ func (j *jsiiProxy_RosManagedEdgeKubernetesCluster)SetVpcId(val interface{}) {
 	_jsii_.Set(
 		j,
 		"vpcId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosManagedEdgeKubernetesCluster)SetVSwitchIds(val interface{}) {
+	if err := j.validateSetVSwitchIdsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"vSwitchIds",
 		val,
 	)
 }

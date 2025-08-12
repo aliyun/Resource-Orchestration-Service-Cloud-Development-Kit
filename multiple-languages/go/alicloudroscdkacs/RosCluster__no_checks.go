@@ -92,6 +92,14 @@ func (j *jsiiProxy_RosCluster) validateSetClusterSpecParameters(val interface{})
 	return nil
 }
 
+func (j *jsiiProxy_RosCluster) validateSetComputeClassParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosCluster) validateSetDeleteOptionsParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosCluster) validateSetDeletionProtectionParameters(val interface{}) error {
 	return nil
 }
@@ -125,6 +133,10 @@ func (j *jsiiProxy_RosCluster) validateSetMaintenanceWindowParameters(val interf
 }
 
 func (j *jsiiProxy_RosCluster) validateSetNameParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosCluster) validateSetPodPostpaidSpecParameters(val interface{}) error {
 	return nil
 }
 

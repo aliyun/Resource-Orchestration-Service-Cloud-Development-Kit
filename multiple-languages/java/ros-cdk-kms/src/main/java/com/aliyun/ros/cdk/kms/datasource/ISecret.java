@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kms.datasource;
 /**
  * Represents a <code>Secret</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:07.819Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.405Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.datasource.ISecret")
 @software.amazon.jsii.Jsii.Proxy(ISecret.Jsii$Proxy.class)
 public interface ISecret extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

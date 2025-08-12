@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.acs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ACS::Cluster</code>, which is used to create a Container Compute Service (ACS) cluster.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ACS::Cluster</code>, which is used to create an Alibaba Cloud Container Service (ACS) cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:00.834Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:43.078Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acs.$Module.class, fqn = "@alicloud/ros-cdk-acs.Cluster")
 public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.acs.ICluster {
 
@@ -271,6 +271,52 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
+         * Property computeClass: The compute class of the cluster.
+         * <p>
+         * This parameter is only used as a parameter query for ZoneIds and is not used in the actual creation.
+         * <p>
+         * @return {@code this}
+         * @param computeClass Property computeClass: The compute class of the cluster. This parameter is required.
+         */
+        public Builder computeClass(final java.lang.String computeClass) {
+            this.props.computeClass(computeClass);
+            return this;
+        }
+        /**
+         * Property computeClass: The compute class of the cluster.
+         * <p>
+         * This parameter is only used as a parameter query for ZoneIds and is not used in the actual creation.
+         * <p>
+         * @return {@code this}
+         * @param computeClass Property computeClass: The compute class of the cluster. This parameter is required.
+         */
+        public Builder computeClass(final com.aliyun.ros.cdk.core.IResolvable computeClass) {
+            this.props.computeClass(computeClass);
+            return this;
+        }
+
+        /**
+         * Property deleteOptions: Delete options, only work for deleting resource.
+         * <p>
+         * @return {@code this}
+         * @param deleteOptions Property deleteOptions: Delete options, only work for deleting resource. This parameter is required.
+         */
+        public Builder deleteOptions(final com.aliyun.ros.cdk.core.IResolvable deleteOptions) {
+            this.props.deleteOptions(deleteOptions);
+            return this;
+        }
+        /**
+         * Property deleteOptions: Delete options, only work for deleting resource.
+         * <p>
+         * @return {@code this}
+         * @param deleteOptions Property deleteOptions: Delete options, only work for deleting resource. This parameter is required.
+         */
+        public Builder deleteOptions(final java.util.List<? extends java.lang.Object> deleteOptions) {
+            this.props.deleteOptions(deleteOptions);
+            return this;
+        }
+
+        /**
          * Property deletionProtection: Specifies whether to enable deletion protection for the cluster.
          * <p>
          * After deletion protection is enabled, the cluster cannot be deleted
@@ -436,6 +482,27 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
          */
         public Builder maintenanceWindow(final com.aliyun.ros.cdk.acs.RosCluster.MaintenanceWindowProperty maintenanceWindow) {
             this.props.maintenanceWindow(maintenanceWindow);
+            return this;
+        }
+
+        /**
+         * Property podPostpaidSpec: Postpaid pod spec for inquiry.
+         * <p>
+         * @return {@code this}
+         * @param podPostpaidSpec Property podPostpaidSpec: Postpaid pod spec for inquiry. This parameter is required.
+         */
+        public Builder podPostpaidSpec(final com.aliyun.ros.cdk.core.IResolvable podPostpaidSpec) {
+            this.props.podPostpaidSpec(podPostpaidSpec);
+            return this;
+        }
+        /**
+         * Property podPostpaidSpec: Postpaid pod spec for inquiry.
+         * <p>
+         * @return {@code this}
+         * @param podPostpaidSpec Property podPostpaidSpec: Postpaid pod spec for inquiry. This parameter is required.
+         */
+        public Builder podPostpaidSpec(final com.aliyun.ros.cdk.acs.RosCluster.PodPostpaidSpecProperty podPostpaidSpec) {
+            this.props.podPostpaidSpec(podPostpaidSpec);
             return this;
         }
 

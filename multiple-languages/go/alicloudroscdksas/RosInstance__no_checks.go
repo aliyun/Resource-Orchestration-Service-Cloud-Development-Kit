@@ -128,11 +128,19 @@ func (j *jsiiProxy_RosInstance) validateSetMaliciousFileDetectionSdkParameters(v
 	return nil
 }
 
+func (j *jsiiProxy_RosInstance) validateSetPayTypeParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosInstance) validateSetPeriodParameters(val interface{}) error {
 	return nil
 }
 
 func (j *jsiiProxy_RosInstance) validateSetPeriodUnitParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosInstance) validateSetPostPayInstanceModuleParameters(val interface{}) error {
 	return nil
 }
 

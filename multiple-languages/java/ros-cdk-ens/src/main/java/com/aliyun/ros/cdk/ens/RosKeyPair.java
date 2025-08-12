@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ens;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ENS::KeyPair</code>, which is used to import the public key of a Rivest-Shamir-Adleman (RSA)-encrypted key pair.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:06.535Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.299Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ens.$Module.class, fqn = "@alicloud/ros-cdk-ens.RosKeyPair")
 public class RosKeyPair extends com.aliyun.ros.cdk.core.RosResource {
 

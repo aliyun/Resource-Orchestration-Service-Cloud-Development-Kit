@@ -7,6 +7,7 @@ package alicloudroscdkcr
 type RosInstanceEndpointAclPolicyProps struct {
 	Entry interface{} `field:"required" json:"entry" yaml:"entry"`
 	InstanceId interface{} `field:"required" json:"instanceId" yaml:"instanceId"`
+	AutoEnableType interface{} `field:"optional" json:"autoEnableType" yaml:"autoEnableType"`
 	Comment interface{} `field:"optional" json:"comment" yaml:"comment"`
 	EndpointType interface{} `field:"optional" json:"endpointType" yaml:"endpointType"`
 	ModuleName interface{} `field:"optional" json:"moduleName" yaml:"moduleName"`

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ess;
  * <p>
  * Supported SLB server groups include Application Load Balancer (ALB) server groups and Network Load Balancer (NLB) server groups.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:06.837Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.610Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ServerGroupAttachment")
 public class ServerGroupAttachment extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ess.IServerGroupAttachment {
 

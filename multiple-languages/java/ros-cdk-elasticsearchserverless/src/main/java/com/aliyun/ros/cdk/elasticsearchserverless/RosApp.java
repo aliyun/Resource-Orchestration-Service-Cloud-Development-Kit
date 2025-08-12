@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.elasticsearchserverless;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ElasticSearchServerless::App</code>, which is used to create an Elasticsearch serverless application.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:06.302Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.162Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.elasticsearchserverless.$Module.class, fqn = "@alicloud/ros-cdk-elasticsearchserverless.RosApp")
 public class RosApp extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -68,6 +68,12 @@ public class RosApp extends com.aliyun.ros.cdk.core.RosResource {
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPublicKibanaDomain() {
         return software.amazon.jsii.Kernel.get(this, "attrPublicKibanaDomain", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrUsername() {
+        return software.amazon.jsii.Kernel.get(this, "attrUsername", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -175,6 +181,24 @@ public class RosApp extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getLogProConfiguration() {
+        return software.amazon.jsii.Kernel.get(this, "logProConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setLogProConfiguration(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "logProConfiguration", value);
+    }
+
+    /**
+     */
+    public void setLogProConfiguration(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.elasticsearchserverless.RosApp.LogProConfigurationProperty value) {
+        software.amazon.jsii.Kernel.set(this, "logProConfiguration", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getNetwork() {
         return software.amazon.jsii.Kernel.get(this, "network", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -239,6 +263,24 @@ public class RosApp extends com.aliyun.ros.cdk.core.RosResource {
             }
         }
         software.amazon.jsii.Kernel.set(this, "privateNetwork", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getScenario() {
+        return software.amazon.jsii.Kernel.get(this, "scenario", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setScenario(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "scenario", value);
+    }
+
+    /**
+     */
+    public void setScenario(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "scenario", value);
     }
     /**
      */
@@ -486,6 +528,287 @@ public class RosApp extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final int hashCode() {
                 int result = this.password.hashCode();
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.elasticsearchserverless.$Module.class, fqn = "@alicloud/ros-cdk-elasticsearchserverless.RosApp.LogProConfigurationProperty")
+    @software.amazon.jsii.Jsii.Proxy(LogProConfigurationProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface LogProConfigurationProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getAdvancedIndexingOptimization();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getAutoDataOrganization();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getExpirationDays();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getLogProDynamicFieldConfigType();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getWriteWithPrimaryKey();
+
+        /**
+         * @return a {@link Builder} of {@link LogProConfigurationProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link LogProConfigurationProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<LogProConfigurationProperty> {
+            java.lang.Object advancedIndexingOptimization;
+            java.lang.Object autoDataOrganization;
+            java.lang.Object expirationDays;
+            java.lang.Object logProDynamicFieldConfigType;
+            java.lang.Object writeWithPrimaryKey;
+
+            /**
+             * Sets the value of {@link LogProConfigurationProperty#getAdvancedIndexingOptimization}
+             * @param advancedIndexingOptimization the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder advancedIndexingOptimization(java.lang.Boolean advancedIndexingOptimization) {
+                this.advancedIndexingOptimization = advancedIndexingOptimization;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LogProConfigurationProperty#getAdvancedIndexingOptimization}
+             * @param advancedIndexingOptimization the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder advancedIndexingOptimization(com.aliyun.ros.cdk.core.IResolvable advancedIndexingOptimization) {
+                this.advancedIndexingOptimization = advancedIndexingOptimization;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LogProConfigurationProperty#getAutoDataOrganization}
+             * @param autoDataOrganization the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder autoDataOrganization(java.lang.Boolean autoDataOrganization) {
+                this.autoDataOrganization = autoDataOrganization;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LogProConfigurationProperty#getAutoDataOrganization}
+             * @param autoDataOrganization the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder autoDataOrganization(com.aliyun.ros.cdk.core.IResolvable autoDataOrganization) {
+                this.autoDataOrganization = autoDataOrganization;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LogProConfigurationProperty#getExpirationDays}
+             * @param expirationDays the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder expirationDays(java.lang.Number expirationDays) {
+                this.expirationDays = expirationDays;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LogProConfigurationProperty#getExpirationDays}
+             * @param expirationDays the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder expirationDays(com.aliyun.ros.cdk.core.IResolvable expirationDays) {
+                this.expirationDays = expirationDays;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LogProConfigurationProperty#getLogProDynamicFieldConfigType}
+             * @param logProDynamicFieldConfigType the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder logProDynamicFieldConfigType(java.lang.String logProDynamicFieldConfigType) {
+                this.logProDynamicFieldConfigType = logProDynamicFieldConfigType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LogProConfigurationProperty#getLogProDynamicFieldConfigType}
+             * @param logProDynamicFieldConfigType the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder logProDynamicFieldConfigType(com.aliyun.ros.cdk.core.IResolvable logProDynamicFieldConfigType) {
+                this.logProDynamicFieldConfigType = logProDynamicFieldConfigType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LogProConfigurationProperty#getWriteWithPrimaryKey}
+             * @param writeWithPrimaryKey the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder writeWithPrimaryKey(java.lang.Boolean writeWithPrimaryKey) {
+                this.writeWithPrimaryKey = writeWithPrimaryKey;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LogProConfigurationProperty#getWriteWithPrimaryKey}
+             * @param writeWithPrimaryKey the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder writeWithPrimaryKey(com.aliyun.ros.cdk.core.IResolvable writeWithPrimaryKey) {
+                this.writeWithPrimaryKey = writeWithPrimaryKey;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link LogProConfigurationProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public LogProConfigurationProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link LogProConfigurationProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements LogProConfigurationProperty {
+            private final java.lang.Object advancedIndexingOptimization;
+            private final java.lang.Object autoDataOrganization;
+            private final java.lang.Object expirationDays;
+            private final java.lang.Object logProDynamicFieldConfigType;
+            private final java.lang.Object writeWithPrimaryKey;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.advancedIndexingOptimization = software.amazon.jsii.Kernel.get(this, "advancedIndexingOptimization", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.autoDataOrganization = software.amazon.jsii.Kernel.get(this, "autoDataOrganization", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.expirationDays = software.amazon.jsii.Kernel.get(this, "expirationDays", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.logProDynamicFieldConfigType = software.amazon.jsii.Kernel.get(this, "logProDynamicFieldConfigType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.writeWithPrimaryKey = software.amazon.jsii.Kernel.get(this, "writeWithPrimaryKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.advancedIndexingOptimization = java.util.Objects.requireNonNull(builder.advancedIndexingOptimization, "advancedIndexingOptimization is required");
+                this.autoDataOrganization = java.util.Objects.requireNonNull(builder.autoDataOrganization, "autoDataOrganization is required");
+                this.expirationDays = java.util.Objects.requireNonNull(builder.expirationDays, "expirationDays is required");
+                this.logProDynamicFieldConfigType = java.util.Objects.requireNonNull(builder.logProDynamicFieldConfigType, "logProDynamicFieldConfigType is required");
+                this.writeWithPrimaryKey = java.util.Objects.requireNonNull(builder.writeWithPrimaryKey, "writeWithPrimaryKey is required");
+            }
+
+            @Override
+            public final java.lang.Object getAdvancedIndexingOptimization() {
+                return this.advancedIndexingOptimization;
+            }
+
+            @Override
+            public final java.lang.Object getAutoDataOrganization() {
+                return this.autoDataOrganization;
+            }
+
+            @Override
+            public final java.lang.Object getExpirationDays() {
+                return this.expirationDays;
+            }
+
+            @Override
+            public final java.lang.Object getLogProDynamicFieldConfigType() {
+                return this.logProDynamicFieldConfigType;
+            }
+
+            @Override
+            public final java.lang.Object getWriteWithPrimaryKey() {
+                return this.writeWithPrimaryKey;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("advancedIndexingOptimization", om.valueToTree(this.getAdvancedIndexingOptimization()));
+                data.set("autoDataOrganization", om.valueToTree(this.getAutoDataOrganization()));
+                data.set("expirationDays", om.valueToTree(this.getExpirationDays()));
+                data.set("logProDynamicFieldConfigType", om.valueToTree(this.getLogProDynamicFieldConfigType()));
+                data.set("writeWithPrimaryKey", om.valueToTree(this.getWriteWithPrimaryKey()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-elasticsearchserverless.RosApp.LogProConfigurationProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                LogProConfigurationProperty.Jsii$Proxy that = (LogProConfigurationProperty.Jsii$Proxy) o;
+
+                if (!advancedIndexingOptimization.equals(that.advancedIndexingOptimization)) return false;
+                if (!autoDataOrganization.equals(that.autoDataOrganization)) return false;
+                if (!expirationDays.equals(that.expirationDays)) return false;
+                if (!logProDynamicFieldConfigType.equals(that.logProDynamicFieldConfigType)) return false;
+                return this.writeWithPrimaryKey.equals(that.writeWithPrimaryKey);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.advancedIndexingOptimization.hashCode();
+                result = 31 * result + (this.autoDataOrganization.hashCode());
+                result = 31 * result + (this.expirationDays.hashCode());
+                result = 31 * result + (this.logProDynamicFieldConfigType.hashCode());
+                result = 31 * result + (this.writeWithPrimaryKey.hashCode());
                 return result;
             }
         }
@@ -1165,12 +1488,37 @@ public class RosApp extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getCu();
+        default @org.jetbrains.annotations.Nullable java.lang.Object getElastic() {
+            return null;
+        }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getStorage();
+        default @org.jetbrains.annotations.Nullable java.lang.Object getMaxCu() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getMinCu() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getReadCu() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getWriteCu() {
+            return null;
+        }
 
         /**
          * @return a {@link Builder} of {@link QuotaInfoProperty}
@@ -1185,8 +1533,11 @@ public class RosApp extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<QuotaInfoProperty> {
             java.lang.Object appType;
-            java.lang.Object cu;
-            java.lang.Object storage;
+            java.lang.Object elastic;
+            java.lang.Object maxCu;
+            java.lang.Object minCu;
+            java.lang.Object readCu;
+            java.lang.Object writeCu;
 
             /**
              * Sets the value of {@link QuotaInfoProperty#getAppType}
@@ -1211,46 +1562,112 @@ public class RosApp extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
-             * Sets the value of {@link QuotaInfoProperty#getCu}
-             * @param cu the value to be set. This parameter is required.
+             * Sets the value of {@link QuotaInfoProperty#getElastic}
+             * @param elastic the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder cu(java.lang.Number cu) {
-                this.cu = cu;
+            public Builder elastic(java.lang.Boolean elastic) {
+                this.elastic = elastic;
                 return this;
             }
 
             /**
-             * Sets the value of {@link QuotaInfoProperty#getCu}
-             * @param cu the value to be set. This parameter is required.
+             * Sets the value of {@link QuotaInfoProperty#getElastic}
+             * @param elastic the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder cu(com.aliyun.ros.cdk.core.IResolvable cu) {
-                this.cu = cu;
+            public Builder elastic(com.aliyun.ros.cdk.core.IResolvable elastic) {
+                this.elastic = elastic;
                 return this;
             }
 
             /**
-             * Sets the value of {@link QuotaInfoProperty#getStorage}
-             * @param storage the value to be set. This parameter is required.
+             * Sets the value of {@link QuotaInfoProperty#getMaxCu}
+             * @param maxCu the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder storage(java.lang.Number storage) {
-                this.storage = storage;
+            public Builder maxCu(java.lang.Number maxCu) {
+                this.maxCu = maxCu;
                 return this;
             }
 
             /**
-             * Sets the value of {@link QuotaInfoProperty#getStorage}
-             * @param storage the value to be set. This parameter is required.
+             * Sets the value of {@link QuotaInfoProperty#getMaxCu}
+             * @param maxCu the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder storage(com.aliyun.ros.cdk.core.IResolvable storage) {
-                this.storage = storage;
+            public Builder maxCu(com.aliyun.ros.cdk.core.IResolvable maxCu) {
+                this.maxCu = maxCu;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link QuotaInfoProperty#getMinCu}
+             * @param minCu the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder minCu(java.lang.Number minCu) {
+                this.minCu = minCu;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link QuotaInfoProperty#getMinCu}
+             * @param minCu the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder minCu(com.aliyun.ros.cdk.core.IResolvable minCu) {
+                this.minCu = minCu;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link QuotaInfoProperty#getReadCu}
+             * @param readCu the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder readCu(java.lang.Number readCu) {
+                this.readCu = readCu;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link QuotaInfoProperty#getReadCu}
+             * @param readCu the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder readCu(com.aliyun.ros.cdk.core.IResolvable readCu) {
+                this.readCu = readCu;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link QuotaInfoProperty#getWriteCu}
+             * @param writeCu the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder writeCu(java.lang.Number writeCu) {
+                this.writeCu = writeCu;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link QuotaInfoProperty#getWriteCu}
+             * @param writeCu the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder writeCu(com.aliyun.ros.cdk.core.IResolvable writeCu) {
+                this.writeCu = writeCu;
                 return this;
             }
 
@@ -1273,8 +1690,11 @@ public class RosApp extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements QuotaInfoProperty {
             private final java.lang.Object appType;
-            private final java.lang.Object cu;
-            private final java.lang.Object storage;
+            private final java.lang.Object elastic;
+            private final java.lang.Object maxCu;
+            private final java.lang.Object minCu;
+            private final java.lang.Object readCu;
+            private final java.lang.Object writeCu;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -1283,8 +1703,11 @@ public class RosApp extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
                 this.appType = software.amazon.jsii.Kernel.get(this, "appType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.cu = software.amazon.jsii.Kernel.get(this, "cu", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.storage = software.amazon.jsii.Kernel.get(this, "storage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.elastic = software.amazon.jsii.Kernel.get(this, "elastic", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.maxCu = software.amazon.jsii.Kernel.get(this, "maxCu", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.minCu = software.amazon.jsii.Kernel.get(this, "minCu", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.readCu = software.amazon.jsii.Kernel.get(this, "readCu", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.writeCu = software.amazon.jsii.Kernel.get(this, "writeCu", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -1293,8 +1716,11 @@ public class RosApp extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.appType = java.util.Objects.requireNonNull(builder.appType, "appType is required");
-                this.cu = java.util.Objects.requireNonNull(builder.cu, "cu is required");
-                this.storage = java.util.Objects.requireNonNull(builder.storage, "storage is required");
+                this.elastic = builder.elastic;
+                this.maxCu = builder.maxCu;
+                this.minCu = builder.minCu;
+                this.readCu = builder.readCu;
+                this.writeCu = builder.writeCu;
             }
 
             @Override
@@ -1303,13 +1729,28 @@ public class RosApp extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.Object getCu() {
-                return this.cu;
+            public final java.lang.Object getElastic() {
+                return this.elastic;
             }
 
             @Override
-            public final java.lang.Object getStorage() {
-                return this.storage;
+            public final java.lang.Object getMaxCu() {
+                return this.maxCu;
+            }
+
+            @Override
+            public final java.lang.Object getMinCu() {
+                return this.minCu;
+            }
+
+            @Override
+            public final java.lang.Object getReadCu() {
+                return this.readCu;
+            }
+
+            @Override
+            public final java.lang.Object getWriteCu() {
+                return this.writeCu;
             }
 
             @Override
@@ -1319,8 +1760,21 @@ public class RosApp extends com.aliyun.ros.cdk.core.RosResource {
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
                 data.set("appType", om.valueToTree(this.getAppType()));
-                data.set("cu", om.valueToTree(this.getCu()));
-                data.set("storage", om.valueToTree(this.getStorage()));
+                if (this.getElastic() != null) {
+                    data.set("elastic", om.valueToTree(this.getElastic()));
+                }
+                if (this.getMaxCu() != null) {
+                    data.set("maxCu", om.valueToTree(this.getMaxCu()));
+                }
+                if (this.getMinCu() != null) {
+                    data.set("minCu", om.valueToTree(this.getMinCu()));
+                }
+                if (this.getReadCu() != null) {
+                    data.set("readCu", om.valueToTree(this.getReadCu()));
+                }
+                if (this.getWriteCu() != null) {
+                    data.set("writeCu", om.valueToTree(this.getWriteCu()));
+                }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
                 struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-elasticsearchserverless.RosApp.QuotaInfoProperty"));
@@ -1340,15 +1794,21 @@ public class RosApp extends com.aliyun.ros.cdk.core.RosResource {
                 QuotaInfoProperty.Jsii$Proxy that = (QuotaInfoProperty.Jsii$Proxy) o;
 
                 if (!appType.equals(that.appType)) return false;
-                if (!cu.equals(that.cu)) return false;
-                return this.storage.equals(that.storage);
+                if (this.elastic != null ? !this.elastic.equals(that.elastic) : that.elastic != null) return false;
+                if (this.maxCu != null ? !this.maxCu.equals(that.maxCu) : that.maxCu != null) return false;
+                if (this.minCu != null ? !this.minCu.equals(that.minCu) : that.minCu != null) return false;
+                if (this.readCu != null ? !this.readCu.equals(that.readCu) : that.readCu != null) return false;
+                return this.writeCu != null ? this.writeCu.equals(that.writeCu) : that.writeCu == null;
             }
 
             @Override
             public final int hashCode() {
                 int result = this.appType.hashCode();
-                result = 31 * result + (this.cu.hashCode());
-                result = 31 * result + (this.storage.hashCode());
+                result = 31 * result + (this.elastic != null ? this.elastic.hashCode() : 0);
+                result = 31 * result + (this.maxCu != null ? this.maxCu.hashCode() : 0);
+                result = 31 * result + (this.minCu != null ? this.minCu.hashCode() : 0);
+                result = 31 * result + (this.readCu != null ? this.readCu.hashCode() : 0);
+                result = 31 * result + (this.writeCu != null ? this.writeCu.hashCode() : 0);
                 return result;
             }
         }
@@ -1635,6 +2095,23 @@ public class RosApp extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param logProConfiguration This parameter is required.
+         */
+        public Builder logProConfiguration(final com.aliyun.ros.cdk.core.IResolvable logProConfiguration) {
+            this.props.logProConfiguration(logProConfiguration);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param logProConfiguration This parameter is required.
+         */
+        public Builder logProConfiguration(final com.aliyun.ros.cdk.elasticsearchserverless.RosApp.LogProConfigurationProperty logProConfiguration) {
+            this.props.logProConfiguration(logProConfiguration);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param network This parameter is required.
          */
         public Builder network(final com.aliyun.ros.cdk.core.IResolvable network) {
@@ -1664,6 +2141,23 @@ public class RosApp extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder privateNetwork(final java.util.List<? extends java.lang.Object> privateNetwork) {
             this.props.privateNetwork(privateNetwork);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param scenario This parameter is required.
+         */
+        public Builder scenario(final java.lang.String scenario) {
+            this.props.scenario(scenario);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param scenario This parameter is required.
+         */
+        public Builder scenario(final com.aliyun.ros.cdk.core.IResolvable scenario) {
+            this.props.scenario(scenario);
             return this;
         }
 

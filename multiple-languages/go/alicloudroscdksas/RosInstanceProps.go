@@ -5,8 +5,7 @@ package alicloudroscdksas
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sas-instance
 type RosInstanceProps struct {
-	Period interface{} `field:"required" json:"period" yaml:"period"`
-	PeriodUnit interface{} `field:"required" json:"periodUnit" yaml:"periodUnit"`
+	PayType interface{} `field:"required" json:"payType" yaml:"payType"`
 	AntiRansomware interface{} `field:"optional" json:"antiRansomware" yaml:"antiRansomware"`
 	AntiRansomwareManageService interface{} `field:"optional" json:"antiRansomwareManageService" yaml:"antiRansomwareManageService"`
 	AutoPay interface{} `field:"optional" json:"autoPay" yaml:"autoPay"`
@@ -17,6 +16,9 @@ type RosInstanceProps struct {
 	Edition interface{} `field:"optional" json:"edition" yaml:"edition"`
 	LogAnalysis interface{} `field:"optional" json:"logAnalysis" yaml:"logAnalysis"`
 	MaliciousFileDetectionSdk interface{} `field:"optional" json:"maliciousFileDetectionSdk" yaml:"maliciousFileDetectionSdk"`
+	Period interface{} `field:"optional" json:"period" yaml:"period"`
+	PeriodUnit interface{} `field:"optional" json:"periodUnit" yaml:"periodUnit"`
+	PostPayInstanceModule interface{} `field:"optional" json:"postPayInstanceModule" yaml:"postPayInstanceModule"`
 	ProtectedServers interface{} `field:"optional" json:"protectedServers" yaml:"protectedServers"`
 	QuotaForApplicationProtection interface{} `field:"optional" json:"quotaForApplicationProtection" yaml:"quotaForApplicationProtection"`
 	QuotaForCloudHoneypot interface{} `field:"optional" json:"quotaForCloudHoneypot" yaml:"quotaForCloudHoneypot"`

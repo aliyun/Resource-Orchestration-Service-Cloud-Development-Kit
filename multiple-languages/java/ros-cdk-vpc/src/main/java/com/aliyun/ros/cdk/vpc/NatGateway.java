@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::NatGateway</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:11.337Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:51.255Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.NatGateway")
 public class NatGateway extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.INatGateway {
 
@@ -170,31 +170,6 @@ public class NatGateway extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property autoPay: Specifies whether to enable automatic payment.
-         * <p>
-         * Default is true.
-         * <p>
-         * @return {@code this}
-         * @param autoPay Property autoPay: Specifies whether to enable automatic payment. This parameter is required.
-         */
-        public Builder autoPay(final java.lang.Boolean autoPay) {
-            this.props.autoPay(autoPay);
-            return this;
-        }
-        /**
-         * Property autoPay: Specifies whether to enable automatic payment.
-         * <p>
-         * Default is true.
-         * <p>
-         * @return {@code this}
-         * @param autoPay Property autoPay: Specifies whether to enable automatic payment. This parameter is required.
-         */
-        public Builder autoPay(final com.aliyun.ros.cdk.core.IResolvable autoPay) {
-            this.props.autoPay(autoPay);
-            return this;
-        }
-
-        /**
          * Property deletionForce: Whether force delete the relative snat and dnat entries in the net gateway and unbind eips.
          * <p>
          * Default value is false.
@@ -266,31 +241,6 @@ public class NatGateway extends com.aliyun.ros.cdk.core.Resource implements com.
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
-            return this;
-        }
-
-        /**
-         * Property duration: The subscription duration.
-         * <p>
-         * While choose by pay by month, it could be from 1 to 9 or 12, 24, 36. While choose pay by year, it could be from 1 to 3.
-         * <p>
-         * @return {@code this}
-         * @param duration Property duration: The subscription duration. This parameter is required.
-         */
-        public Builder duration(final java.lang.Number duration) {
-            this.props.duration(duration);
-            return this;
-        }
-        /**
-         * Property duration: The subscription duration.
-         * <p>
-         * While choose by pay by month, it could be from 1 to 9 or 12, 24, 36. While choose pay by year, it could be from 1 to 3.
-         * <p>
-         * @return {@code this}
-         * @param duration Property duration: The subscription duration. This parameter is required.
-         */
-        public Builder duration(final com.aliyun.ros.cdk.core.IResolvable duration) {
-            this.props.duration(duration);
             return this;
         }
 
@@ -486,31 +436,6 @@ public class NatGateway extends com.aliyun.ros.cdk.core.Resource implements com.
          */
         public Builder networkType(final com.aliyun.ros.cdk.core.IResolvable networkType) {
             this.props.networkType(networkType);
-            return this;
-        }
-
-        /**
-         * Property pricingCycle: Price cycle of the resource.
-         * <p>
-         * This property has no default value.
-         * <p>
-         * @return {@code this}
-         * @param pricingCycle Property pricingCycle: Price cycle of the resource. This parameter is required.
-         */
-        public Builder pricingCycle(final java.lang.String pricingCycle) {
-            this.props.pricingCycle(pricingCycle);
-            return this;
-        }
-        /**
-         * Property pricingCycle: Price cycle of the resource.
-         * <p>
-         * This property has no default value.
-         * <p>
-         * @return {@code this}
-         * @param pricingCycle Property pricingCycle: Price cycle of the resource. This parameter is required.
-         */
-        public Builder pricingCycle(final com.aliyun.ros.cdk.core.IResolvable pricingCycle) {
-            this.props.pricingCycle(pricingCycle);
             return this;
         }
 

@@ -128,6 +128,14 @@ func (j *jsiiProxy_RosInstance) validateSetJobIdParameters(val interface{}) erro
 	return nil
 }
 
+func (j *jsiiProxy_RosInstance) validateSetMaxDuParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosInstance) validateSetMinDuParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosInstance) validateSetPayTypeParameters(val interface{}) error {
 	return nil
 }

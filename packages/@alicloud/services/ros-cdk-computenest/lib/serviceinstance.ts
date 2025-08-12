@@ -15,7 +15,7 @@ export interface ServiceInstanceProps {
     readonly service: RosServiceInstance.ServiceProperty | ros.IResolvable;
 
     /**
-     * Property commodity: Cloud market commodity purchase parameters.
+     * Property commodity: The purchase order information of the cloud market does not need to be transmitted if the service is not on the cloud market or charged by volume.
      */
     readonly commodity?: RosServiceInstance.CommodityProperty | ros.IResolvable;
 
@@ -23,6 +23,13 @@ export interface ServiceInstanceProps {
      * Property contactGroup: Alarm Contact Group.
      */
     readonly contactGroup?: string | ros.IResolvable;
+
+    /**
+     * Property dryRun: Whether to perform PreCheck on the creation request, including permissions and instance status verification. Possible values:
+     * - **true**: The request is sent without creating a service instance.
+     * - **false**: Sends the request and creates a service instance after the check is passed.
+     */
+    readonly dryRun?: boolean | ros.IResolvable;
 
     /**
      * Property enableInstanceOps: Whether the service instance has the O & M function. Possible values:
@@ -39,16 +46,6 @@ export interface ServiceInstanceProps {
     readonly enableUserPrometheus?: boolean | ros.IResolvable;
 
     /**
-     * Property marketInstanceId: The ID of the cloud marketplace instance.
-     */
-    readonly marketInstanceId?: string | ros.IResolvable;
-
-    /**
-     * Property name: The name of the service instance.
-     */
-    readonly name?: string | ros.IResolvable;
-
-    /**
      * Property operationName: Change operation name.
      */
     readonly operationName?: string | ros.IResolvable;
@@ -56,7 +53,7 @@ export interface ServiceInstanceProps {
     /**
      * Property parameters: The parameters entered by the deployment service instance.
      */
-    readonly parameters?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+    readonly parameters?: string | ros.IResolvable;
 
     /**
      * Property predefinedParameterName: Package name.
@@ -64,9 +61,21 @@ export interface ServiceInstanceProps {
     readonly predefinedParameterName?: string | ros.IResolvable;
 
     /**
+     * Property resourceAutoPay: Whether the resource is automatically deducted from the balance. Value:
+     * - **true**: automatic payment.
+     * - **false**: Do not pay automatically.
+     */
+    readonly resourceAutoPay?: boolean | ros.IResolvable;
+
+    /**
      * Property resourceGroupId: The ID of the resource group.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * Property serviceInstanceName: The name of the service instance.
+     */
+    readonly serviceInstanceName?: string | ros.IResolvable;
 
     /**
      * Property specificationCode: Commodity specification Code.
@@ -121,14 +130,19 @@ export interface IServiceInstance extends ros.IResource {
     readonly attrLicenseEndTime: ros.IResolvable | string;
 
     /**
-     * Attribute Name: The name of the service instance.
+     * Attribute MarketInstanceId: The ID of the cloud marketplace instance.
      */
-    readonly attrName: ros.IResolvable | string;
+    readonly attrMarketInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute NetworkConfig: Network configuration information.
      */
     readonly attrNetworkConfig: ros.IResolvable | string;
+
+    /**
+     * Attribute Output: Create the output Field returned by the service instance.
+     */
+    readonly attrOutput: ros.IResolvable | string;
 
     /**
      * Attribute Outputs: Create the output Field returned by the service instance.
@@ -164,6 +178,11 @@ export interface IServiceInstance extends ros.IResource {
      * Attribute ServiceInstanceId: The ID of the service instance.
      */
     readonly attrServiceInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute ServiceInstanceName: The name of the resource.
+     */
+    readonly attrServiceInstanceName: ros.IResolvable | string;
 
     /**
      * Attribute ServiceType: Service type.
@@ -247,14 +266,19 @@ export class ServiceInstance extends ros.Resource implements IServiceInstance {
     public readonly attrLicenseEndTime: ros.IResolvable | string;
 
     /**
-     * Attribute Name: The name of the service instance.
+     * Attribute MarketInstanceId: The ID of the cloud marketplace instance.
      */
-    public readonly attrName: ros.IResolvable | string;
+    public readonly attrMarketInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute NetworkConfig: Network configuration information.
      */
     public readonly attrNetworkConfig: ros.IResolvable | string;
+
+    /**
+     * Attribute Output: Create the output Field returned by the service instance.
+     */
+    public readonly attrOutput: ros.IResolvable | string;
 
     /**
      * Attribute Outputs: Create the output Field returned by the service instance.
@@ -290,6 +314,11 @@ export class ServiceInstance extends ros.Resource implements IServiceInstance {
      * Attribute ServiceInstanceId: The ID of the service instance.
      */
     public readonly attrServiceInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute ServiceInstanceName: The name of the resource.
+     */
+    public readonly attrServiceInstanceName: ros.IResolvable | string;
 
     /**
      * Attribute ServiceType: Service type.
@@ -348,14 +377,15 @@ export class ServiceInstance extends ros.Resource implements IServiceInstance {
             parameters: props.parameters,
             resourceGroupId: props.resourceGroupId,
             operationName: props.operationName,
+            serviceInstanceName: props.serviceInstanceName,
             enableInstanceOps: props.enableInstanceOps,
+            dryRun: props.dryRun,
             service: props.service,
             predefinedParameterName: props.predefinedParameterName,
-            name: props.name,
+            resourceAutoPay: props.resourceAutoPay,
             commodity: props.commodity,
             enableUserPrometheus: props.enableUserPrometheus,
             templateName: props.templateName,
-            marketInstanceId: props.marketInstanceId,
             contactGroup: props.contactGroup,
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
@@ -366,8 +396,9 @@ export class ServiceInstance extends ros.Resource implements IServiceInstance {
         this.attrEnableUserPrometheus = rosServiceInstance.attrEnableUserPrometheus;
         this.attrIsOperated = rosServiceInstance.attrIsOperated;
         this.attrLicenseEndTime = rosServiceInstance.attrLicenseEndTime;
-        this.attrName = rosServiceInstance.attrName;
+        this.attrMarketInstanceId = rosServiceInstance.attrMarketInstanceId;
         this.attrNetworkConfig = rosServiceInstance.attrNetworkConfig;
+        this.attrOutput = rosServiceInstance.attrOutput;
         this.attrOutputs = rosServiceInstance.attrOutputs;
         this.attrParameters = rosServiceInstance.attrParameters;
         this.attrPredefinedParameterName = rosServiceInstance.attrPredefinedParameterName;
@@ -375,6 +406,7 @@ export class ServiceInstance extends ros.Resource implements IServiceInstance {
         this.attrResourceGroupId = rosServiceInstance.attrResourceGroupId;
         this.attrService = rosServiceInstance.attrService;
         this.attrServiceInstanceId = rosServiceInstance.attrServiceInstanceId;
+        this.attrServiceInstanceName = rosServiceInstance.attrServiceInstanceName;
         this.attrServiceType = rosServiceInstance.attrServiceType;
         this.attrSource = rosServiceInstance.attrSource;
         this.attrStatusDetail = rosServiceInstance.attrStatusDetail;

@@ -25,6 +25,7 @@ type RosApplicationProps struct {
 	Deploy interface{} `field:"optional" json:"deploy" yaml:"deploy"`
 	EdasContainerVersion interface{} `field:"optional" json:"edasContainerVersion" yaml:"edasContainerVersion"`
 	EnableEbpf interface{} `field:"optional" json:"enableEbpf" yaml:"enableEbpf"`
+	EnableNewArms interface{} `field:"optional" json:"enableNewArms" yaml:"enableNewArms"`
 	Envs interface{} `field:"optional" json:"envs" yaml:"envs"`
 	ImagePullSecrets interface{} `field:"optional" json:"imagePullSecrets" yaml:"imagePullSecrets"`
 	ImageUrl interface{} `field:"optional" json:"imageUrl" yaml:"imageUrl"`
@@ -39,6 +40,7 @@ type RosApplicationProps struct {
 	MountHost interface{} `field:"optional" json:"mountHost" yaml:"mountHost"`
 	NasConfigs interface{} `field:"optional" json:"nasConfigs" yaml:"nasConfigs"`
 	NasId interface{} `field:"optional" json:"nasId" yaml:"nasId"`
+	NewSaeVersion interface{} `field:"optional" json:"newSaeVersion" yaml:"newSaeVersion"`
 	OssAkId interface{} `field:"optional" json:"ossAkId" yaml:"ossAkId"`
 	OssAkSecret interface{} `field:"optional" json:"ossAkSecret" yaml:"ossAkSecret"`
 	OssMountDescs interface{} `field:"optional" json:"ossMountDescs" yaml:"ossMountDescs"`

@@ -47,6 +47,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf3
             }
         }
 
+        /// <summary>Property wafInstanceRegion: The ID of the resource group.</summary>
+        [JsiiProperty(name: "wafInstanceRegion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? WafInstanceRegion
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `TGW`.</summary>
         /// <remarks>
         /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf3-tgw
@@ -84,6 +95,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf3
             [JsiiOptional]
             [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ResourceGroupId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property wafInstanceRegion: The ID of the resource group.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "wafInstanceRegion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? WafInstanceRegion
             {
                 get => GetInstanceProperty<object?>();
             }

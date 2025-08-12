@@ -29,6 +29,8 @@ type RosInstance interface {
 	CreationStack() *[]*string
 	DataNode() interface{}
 	SetDataNode(val interface{})
+	DeleteType() interface{}
+	SetDeleteType(val interface{})
 	Description() interface{}
 	SetDescription(val interface{})
 	EnableKibanaPrivate() interface{}
@@ -348,6 +350,16 @@ func (j *jsiiProxy_RosInstance) DataNode() interface{} {
 	_jsii_.Get(
 		j,
 		"dataNode",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosInstance) DeleteType() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"deleteType",
 		&returns,
 	)
 	return returns
@@ -688,6 +700,17 @@ func (j *jsiiProxy_RosInstance)SetDataNode(val interface{}) {
 	_jsii_.Set(
 		j,
 		"dataNode",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosInstance)SetDeleteType(val interface{}) {
+	if err := j.validateSetDeleteTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"deleteType",
 		val,
 	)
 }

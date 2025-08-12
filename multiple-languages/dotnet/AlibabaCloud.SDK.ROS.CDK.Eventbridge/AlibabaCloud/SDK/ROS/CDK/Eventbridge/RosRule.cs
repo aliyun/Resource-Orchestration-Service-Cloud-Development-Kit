@@ -293,6 +293,158 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eventbridge
                 SetInstanceProperty(value);
             }
         }
+        [JsiiInterface(nativeType: typeof(IConcurrentConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-eventbridge.RosRule.ConcurrentConfigProperty")]
+        public interface IConcurrentConfigProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: concurrency: Number of concurrent connections.
+            /// </remarks>
+            [JsiiProperty(name: "concurrency", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Concurrency
+            {
+                get;
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IConcurrentConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-eventbridge.RosRule.ConcurrentConfigProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Eventbridge.RosRule.IConcurrentConfigProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: concurrency: Number of concurrent connections.
+                /// </remarks>
+                [JsiiProperty(name: "concurrency", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Concurrency
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-eventbridge.RosRule.ConcurrentConfigProperty")]
+        public class ConcurrentConfigProperty : AlibabaCloud.SDK.ROS.CDK.Eventbridge.RosRule.IConcurrentConfigProperty
+        {
+            private object _concurrency;
+
+            /// <remarks>
+            /// <strong>Property</strong>: concurrency: Number of concurrent connections.
+            /// </remarks>
+            [JsiiProperty(name: "concurrency", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Concurrency
+            {
+                get => _concurrency;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _concurrency = value;
+                }
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IDeadLetterQueueProperty), fullyQualifiedName: "@alicloud/ros-cdk-eventbridge.RosRule.DeadLetterQueueProperty")]
+        public interface IDeadLetterQueueProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: arn: The Alibaba Cloud Resource Name (ARN) of the dead-letter queue. Events that are not processed or whose maximum retries are exceeded are written to the dead-letter queue. The ARN feature is supported by the following queue types: MNS and Message Queue for Apache RocketMQ.
+            /// </remarks>
+            [JsiiProperty(name: "arn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Arn
+            {
+                get;
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IDeadLetterQueueProperty), fullyQualifiedName: "@alicloud/ros-cdk-eventbridge.RosRule.DeadLetterQueueProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Eventbridge.RosRule.IDeadLetterQueueProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: arn: The Alibaba Cloud Resource Name (ARN) of the dead-letter queue. Events that are not processed or whose maximum retries are exceeded are written to the dead-letter queue. The ARN feature is supported by the following queue types: MNS and Message Queue for Apache RocketMQ.
+                /// </remarks>
+                [JsiiProperty(name: "arn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Arn
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-eventbridge.RosRule.DeadLetterQueueProperty")]
+        public class DeadLetterQueueProperty : AlibabaCloud.SDK.ROS.CDK.Eventbridge.RosRule.IDeadLetterQueueProperty
+        {
+            private object _arn;
+
+            /// <remarks>
+            /// <strong>Property</strong>: arn: The Alibaba Cloud Resource Name (ARN) of the dead-letter queue. Events that are not processed or whose maximum retries are exceeded are written to the dead-letter queue. The ARN feature is supported by the following queue types: MNS and Message Queue for Apache RocketMQ.
+            /// </remarks>
+            [JsiiProperty(name: "arn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Arn
+            {
+                get => _arn;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _arn = value;
+                }
+            }
+        }
         [JsiiInterface(nativeType: typeof(IParamListProperty), fullyQualifiedName: "@alicloud/ros-cdk-eventbridge.RosRule.ParamListProperty")]
         public interface IParamListProperty
         {
@@ -555,6 +707,47 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eventbridge
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: concurrentConfig: Concurrency control configuration.
+            /// </remarks>
+            [JsiiProperty(name: "concurrentConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eventbridge.RosRule.ConcurrentConfigProperty\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ConcurrentConfig
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: deadLetterQueue: The dead-letter queue. Events that are not processed or whose maximum retries are exceeded are written to the dead-letter queue. The dead-letter queue feature is supported by the following queue types: Message Queue for Apache RocketMQ, Message Service (MNS), Message Queue for Apache Kafka, and EventBridge.
+            /// </remarks>
+            [JsiiProperty(name: "deadLetterQueue", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eventbridge.RosRule.DeadLetterQueueProperty\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? DeadLetterQueue
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: errorsTolerance: The fault tolerance policy. Valid values:
+            /// - ALL: allows fault tolerance. If an error occurs, the event processing is not blocked. If the message fails to be sent after the maximum number of retries specified by the retry policy is reached, the message is delivered to the dead-letter queue or discarded based on your configurations.
+            /// - NONE: does not allow fault tolerance. If an error occurs and the message fails to be sent after the maximum number of retries specified by the retry policy is reached, the event processing is blocked.
+            /// </remarks>
+            [JsiiProperty(name: "errorsTolerance", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ErrorsTolerance
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: pushRetryStrategy: The retry policy that is used to push the event. Valid values: BACKOFF_RETRY: backoff retry. The request can be retried up to three times. The interval between two consecutive retries is a random value between 10 and 20 seconds. EXPONENTIAL_DECAY_RETRY: exponential decay retry. The request can be retried up to 176 times. The interval between two consecutive retries exponentially increases to 512 seconds, and the total retry time is one day. The specific retry intervals are 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 512, ..., and 512 seconds, including a maximum of one hundred and sixty-seven 512 seconds in total.
             /// </remarks>
             [JsiiProperty(name: "pushRetryStrategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -608,6 +801,38 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eventbridge
                 public object Type
                 {
                     get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: concurrentConfig: Concurrency control configuration.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "concurrentConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eventbridge.RosRule.ConcurrentConfigProperty\"}]}}", isOptional: true)]
+                public object? ConcurrentConfig
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: deadLetterQueue: The dead-letter queue. Events that are not processed or whose maximum retries are exceeded are written to the dead-letter queue. The dead-letter queue feature is supported by the following queue types: Message Queue for Apache RocketMQ, Message Service (MNS), Message Queue for Apache Kafka, and EventBridge.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "deadLetterQueue", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eventbridge.RosRule.DeadLetterQueueProperty\"}]}}", isOptional: true)]
+                public object? DeadLetterQueue
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: errorsTolerance: The fault tolerance policy. Valid values:
+                /// - ALL: allows fault tolerance. If an error occurs, the event processing is not blocked. If the message fails to be sent after the maximum number of retries specified by the retry policy is reached, the message is delivered to the dead-letter queue or discarded based on your configurations.
+                /// - NONE: does not allow fault tolerance. If an error occurs and the message fails to be sent after the maximum number of retries specified by the retry policy is reached, the event processing is blocked.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "errorsTolerance", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ErrorsTolerance
+                {
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
@@ -768,6 +993,107 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eventbridge
                         }
                     }
                     _type = value;
+                }
+            }
+
+            private object? _concurrentConfig;
+
+            /// <remarks>
+            /// <strong>Property</strong>: concurrentConfig: Concurrency control configuration.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "concurrentConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eventbridge.RosRule.ConcurrentConfigProperty\"}]}}", isOptional: true)]
+            public object? ConcurrentConfig
+            {
+                get => _concurrentConfig;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Eventbridge.RosRule.IConcurrentConfigProperty cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Eventbridge.RosRule.IConcurrentConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _concurrentConfig = value;
+                }
+            }
+
+            private object? _deadLetterQueue;
+
+            /// <remarks>
+            /// <strong>Property</strong>: deadLetterQueue: The dead-letter queue. Events that are not processed or whose maximum retries are exceeded are written to the dead-letter queue. The dead-letter queue feature is supported by the following queue types: Message Queue for Apache RocketMQ, Message Service (MNS), Message Queue for Apache Kafka, and EventBridge.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "deadLetterQueue", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eventbridge.RosRule.DeadLetterQueueProperty\"}]}}", isOptional: true)]
+            public object? DeadLetterQueue
+            {
+                get => _deadLetterQueue;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Eventbridge.RosRule.IDeadLetterQueueProperty cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Eventbridge.RosRule.IDeadLetterQueueProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _deadLetterQueue = value;
+                }
+            }
+
+            private object? _errorsTolerance;
+
+            /// <remarks>
+            /// <strong>Property</strong>: errorsTolerance: The fault tolerance policy. Valid values:
+            /// - ALL: allows fault tolerance. If an error occurs, the event processing is not blocked. If the message fails to be sent after the maximum number of retries specified by the retry policy is reached, the message is delivered to the dead-letter queue or discarded based on your configurations.
+            /// - NONE: does not allow fault tolerance. If an error occurs and the message fails to be sent after the maximum number of retries specified by the retry policy is reached, the event processing is blocked.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "errorsTolerance", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ErrorsTolerance
+            {
+                get => _errorsTolerance;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _errorsTolerance = value;
                 }
             }
 

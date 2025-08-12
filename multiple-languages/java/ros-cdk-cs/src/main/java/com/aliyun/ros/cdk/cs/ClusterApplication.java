@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::ClusterApplication</code>, which is used to deploy an application in a Container Service for Kubernetes (ACK) cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:03.387Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.136Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ClusterApplication")
 public class ClusterApplication extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cs.IClusterApplication {
 
@@ -165,7 +165,7 @@ public class ClusterApplication extends com.aliyun.ros.cdk.core.Resource impleme
          * Property defaultNamespace: The default namespace for the application, default value is default.
          * <p>
          * If a namespace is defined in yaml metadata, its priority is higher than DefaultNamespace.
-         * If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
+         * If the DefaultNamespace does not exist, ROS will create it automatically and keep it by default during the delete phase.
          * <p>
          * @return {@code this}
          * @param defaultNamespace Property defaultNamespace: The default namespace for the application, default value is default. This parameter is required.
@@ -178,13 +178,38 @@ public class ClusterApplication extends com.aliyun.ros.cdk.core.Resource impleme
          * Property defaultNamespace: The default namespace for the application, default value is default.
          * <p>
          * If a namespace is defined in yaml metadata, its priority is higher than DefaultNamespace.
-         * If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
+         * If the DefaultNamespace does not exist, ROS will create it automatically and keep it by default during the delete phase.
          * <p>
          * @return {@code this}
          * @param defaultNamespace Property defaultNamespace: The default namespace for the application, default value is default. This parameter is required.
          */
         public Builder defaultNamespace(final com.aliyun.ros.cdk.core.IResolvable defaultNamespace) {
             this.props.defaultNamespace(defaultNamespace);
+            return this;
+        }
+
+        /**
+         * Property defaultNamespaceDeletion: Whether to delete the namespace specified by DefaultNamespace.
+         * <p>
+         * If DefaultNamespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether DefaultNamespaceDeletion is true or not, it will not be deleted.
+         * <p>
+         * @return {@code this}
+         * @param defaultNamespaceDeletion Property defaultNamespaceDeletion: Whether to delete the namespace specified by DefaultNamespace. This parameter is required.
+         */
+        public Builder defaultNamespaceDeletion(final java.lang.Boolean defaultNamespaceDeletion) {
+            this.props.defaultNamespaceDeletion(defaultNamespaceDeletion);
+            return this;
+        }
+        /**
+         * Property defaultNamespaceDeletion: Whether to delete the namespace specified by DefaultNamespace.
+         * <p>
+         * If DefaultNamespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether DefaultNamespaceDeletion is true or not, it will not be deleted.
+         * <p>
+         * @return {@code this}
+         * @param defaultNamespaceDeletion Property defaultNamespaceDeletion: Whether to delete the namespace specified by DefaultNamespace. This parameter is required.
+         */
+        public Builder defaultNamespaceDeletion(final com.aliyun.ros.cdk.core.IResolvable defaultNamespaceDeletion) {
+            this.props.defaultNamespaceDeletion(defaultNamespaceDeletion);
             return this;
         }
 

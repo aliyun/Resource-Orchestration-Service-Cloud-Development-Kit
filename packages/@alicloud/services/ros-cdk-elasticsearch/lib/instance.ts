@@ -30,6 +30,13 @@ export interface InstanceProps {
     readonly vSwitchId: string | ros.IResolvable;
 
     /**
+     * Property deleteType: The release type. Valid values:
+     * - immediate: The cluster is immediately deleted when it is released. After the cluster is deleted, the data stored in the cluster is deleted, and the system removes the cluster from the Logstash cluster list.
+     * - protective (default): The instance is frozen for 24 hours before data is completely cleared. During this period, the instance is still displayed in the instance list. You can select Restore Instance or Release Now.
+     */
+    readonly deleteType?: string | ros.IResolvable;
+
+    /**
      * Property description: The description of instance. It a string of 0 to 128 characters. It can contain numbers, letters, underscores, (_) and hyphens (-). It must start with a letter, a number or Chinese character.
      */
     readonly description?: string | ros.IResolvable;
@@ -282,6 +289,7 @@ export class Instance extends ros.Resource implements IInstance {
             dataNode: props.dataNode,
             kibanaWhitelist: props.kibanaWhitelist,
             ymlConfig: props.ymlConfig,
+            deleteType: props.deleteType,
             tags: props.tags,
             periodUnit: props.periodUnit,
             password: props.password,

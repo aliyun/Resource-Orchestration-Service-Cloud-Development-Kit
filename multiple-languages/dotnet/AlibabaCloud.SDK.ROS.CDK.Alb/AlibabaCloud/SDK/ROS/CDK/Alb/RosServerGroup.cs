@@ -856,7 +856,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: healthCheckProtocol: The protocol that is used for health checks.
+            /// <strong>Property</strong>: healthCheckProtocol: The protocol that is used for health checks. Valid values:
+            /// HTTP: HTTP health checks simulate browser behaviors by sending HEAD or GET requests to probe the availability of backend servers.
+            /// HTTPS: HTTPS health checks simulate browser behaviors by sending HEAD or GET requests to probe the availability of backend servers. HTTPS provides higher security than HTTP because HTTPS supports data encryption.
+            /// TCP: TCP health checks send TCP SYN packets to a backend server to probe the availability of backend servers.
+            /// gRPC: gRPC health checks send POST or GET requests to a backend server to check whether the backend server is healthy.
             /// </remarks>
             [JsiiProperty(name: "healthCheckProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1038,7 +1042,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: healthCheckProtocol: The protocol that is used for health checks.
+                /// <strong>Property</strong>: healthCheckProtocol: The protocol that is used for health checks. Valid values:
+                /// HTTP: HTTP health checks simulate browser behaviors by sending HEAD or GET requests to probe the availability of backend servers.
+                /// HTTPS: HTTPS health checks simulate browser behaviors by sending HEAD or GET requests to probe the availability of backend servers. HTTPS provides higher security than HTTP because HTTPS supports data encryption.
+                /// TCP: TCP health checks send TCP SYN packets to a backend server to probe the availability of backend servers.
+                /// gRPC: gRPC health checks send POST or GET requests to a backend server to check whether the backend server is healthy.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "healthCheckProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1450,7 +1458,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             private object? _healthCheckProtocol;
 
             /// <remarks>
-            /// <strong>Property</strong>: healthCheckProtocol: The protocol that is used for health checks.
+            /// <strong>Property</strong>: healthCheckProtocol: The protocol that is used for health checks. Valid values:
+            /// HTTP: HTTP health checks simulate browser behaviors by sending HEAD or GET requests to probe the availability of backend servers.
+            /// HTTPS: HTTPS health checks simulate browser behaviors by sending HEAD or GET requests to probe the availability of backend servers. HTTPS provides higher security than HTTP because HTTPS supports data encryption.
+            /// TCP: TCP health checks send TCP SYN packets to a backend server to probe the availability of backend servers.
+            /// gRPC: gRPC health checks send POST or GET requests to a backend server to check whether the backend server is healthy.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "healthCheckProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

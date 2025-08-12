@@ -481,7 +481,7 @@ function rosPolicyPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoS::Policy`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoS::Policy`, which is used to create a mitigation policy.
  * @Note This class does not contain additional functions, so it is recommended to use the `Policy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddos-policy
  */

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.fc;
  * <p>
  * A function must belong to a service. All functions of a service share the same attributes as the service, such as the service authorization and log configurations.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:12.182Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:51.928Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.Function")
 public class Function extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.fc.IFunction {
 
@@ -649,7 +649,7 @@ public class Function extends com.aliyun.ros.cdk.core.Resource implements com.al
         /**
          * Property instanceType: Instance type.
          * <p>
-         * Value:e1: flexible instance. Memory size between 128 and 3072c1: performance instance. Memory size allow values are 4096, 8192, 16384 and 32768
+         * Value:- e1: Elastic Instance.- c1: Performance Instance.- fc.gpu.tesla.1: GPU Tesla Series Instance Type.- fc.gpu.ampere.1: GPU Ampere Series Instance Type.- fc.gpu.ada.1: GPU Ada Series Instance Type.- g1: Same as fc.gpu.tesla.1.
          * <p>
          * @return {@code this}
          * @param instanceType Property instanceType: Instance type. This parameter is required.
@@ -661,7 +661,7 @@ public class Function extends com.aliyun.ros.cdk.core.Resource implements com.al
         /**
          * Property instanceType: Instance type.
          * <p>
-         * Value:e1: flexible instance. Memory size between 128 and 3072c1: performance instance. Memory size allow values are 4096, 8192, 16384 and 32768
+         * Value:- e1: Elastic Instance.- c1: Performance Instance.- fc.gpu.tesla.1: GPU Tesla Series Instance Type.- fc.gpu.ampere.1: GPU Ampere Series Instance Type.- fc.gpu.ada.1: GPU Ada Series Instance Type.- g1: Same as fc.gpu.tesla.1.
          * <p>
          * @return {@code this}
          * @param instanceType Property instanceType: Instance type. This parameter is required.
@@ -674,7 +674,7 @@ public class Function extends com.aliyun.ros.cdk.core.Resource implements com.al
         /**
          * Property memorySize: The amount of memory that’s used to run function, in MB.
          * <p>
-         * Function Compute uses this value to allocate CPU resources proportionally. Defaults to 128 MB. It can be multiple of 64 MB and between 128 MB and 3072 MB.
+         * Function Compute uses this value to allocate CPU resources proportionally. Defaults to 128 MB. It can be multiple of 64 MB and between 128 MB and 32768 MB.
          * <p>
          * @return {@code this}
          * @param memorySize Property memorySize: The amount of memory that’s used to run function, in MB. This parameter is required.
@@ -686,7 +686,7 @@ public class Function extends com.aliyun.ros.cdk.core.Resource implements com.al
         /**
          * Property memorySize: The amount of memory that’s used to run function, in MB.
          * <p>
-         * Function Compute uses this value to allocate CPU resources proportionally. Defaults to 128 MB. It can be multiple of 64 MB and between 128 MB and 3072 MB.
+         * Function Compute uses this value to allocate CPU resources proportionally. Defaults to 128 MB. It can be multiple of 64 MB and between 128 MB and 32768 MB.
          * <p>
          * @return {@code this}
          * @param memorySize Property memorySize: The amount of memory that’s used to run function, in MB. This parameter is required.

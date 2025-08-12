@@ -46,6 +46,7 @@ type RosInstanceProps struct {
 	SpotStrategy interface{} `field:"optional" json:"spotStrategy" yaml:"spotStrategy"`
 	StorageSetId interface{} `field:"optional" json:"storageSetId" yaml:"storageSetId"`
 	StorageSetPartitionNumber interface{} `field:"optional" json:"storageSetPartitionNumber" yaml:"storageSetPartitionNumber"`
+	SubscriptionDeletionForce interface{} `field:"optional" json:"subscriptionDeletionForce" yaml:"subscriptionDeletionForce"`
 	SystemDiskCategory interface{} `field:"optional" json:"systemDiskCategory" yaml:"systemDiskCategory"`
 	SystemDiskDescription interface{} `field:"optional" json:"systemDiskDescription" yaml:"systemDiskDescription"`
 	SystemDiskDiskName interface{} `field:"optional" json:"systemDiskDiskName" yaml:"systemDiskDiskName"`

@@ -100,6 +100,10 @@ func (j *jsiiProxy_RosNetworkRule) validateSetSourcePrivateIpParameters(val inte
 	return nil
 }
 
+func (j *jsiiProxy_RosNetworkRule) validateSetTypeParameters(val interface{}) error {
+	return nil
+}
+
 func validateNewRosNetworkRuleParameters(scope alicloudroscdkcore.Construct, id *string, props *RosNetworkRuleProps, enableResourcePropertyConstraint *bool) error {
 	return nil
 }

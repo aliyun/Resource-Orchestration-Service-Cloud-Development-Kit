@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.graphdatabase.datasource;
 /**
  * Represents a <code>DbInstances</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:07.365Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.033Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.graphdatabase.$Module.class, fqn = "@alicloud/ros-cdk-graphdatabase.datasource.IDbInstances")
 @software.amazon.jsii.Jsii.Proxy(IDbInstances.Jsii$Proxy.class)
 public interface IDbInstances extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

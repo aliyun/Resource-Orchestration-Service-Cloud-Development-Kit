@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:05.011Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.480Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInstanceGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceGroupProps.Jsii$Proxy.class)
 public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -356,6 +356,12 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSubscriptionDeletionForce() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskAutoSnapshotPolicyId() {
         return null;
     }
@@ -554,6 +560,7 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         java.lang.Object spotStrategy;
         java.lang.Object storageSetId;
         java.lang.Object storageSetPartitionNumber;
+        java.lang.Object subscriptionDeletionForce;
         java.lang.Object systemDiskAutoSnapshotPolicyId;
         java.lang.Object systemDiskBurstingEnabled;
         java.lang.Object systemDiskCategory;
@@ -1738,6 +1745,26 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceGroupProps#getSubscriptionDeletionForce}
+         * @param subscriptionDeletionForce the value to be set.
+         * @return {@code this}
+         */
+        public Builder subscriptionDeletionForce(java.lang.Boolean subscriptionDeletionForce) {
+            this.subscriptionDeletionForce = subscriptionDeletionForce;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceGroupProps#getSubscriptionDeletionForce}
+         * @param subscriptionDeletionForce the value to be set.
+         * @return {@code this}
+         */
+        public Builder subscriptionDeletionForce(com.aliyun.ros.cdk.core.IResolvable subscriptionDeletionForce) {
+            this.subscriptionDeletionForce = subscriptionDeletionForce;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceGroupProps#getSystemDiskAutoSnapshotPolicyId}
          * @param systemDiskAutoSnapshotPolicyId the value to be set.
          * @return {@code this}
@@ -2242,6 +2269,7 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         private final java.lang.Object spotStrategy;
         private final java.lang.Object storageSetId;
         private final java.lang.Object storageSetPartitionNumber;
+        private final java.lang.Object subscriptionDeletionForce;
         private final java.lang.Object systemDiskAutoSnapshotPolicyId;
         private final java.lang.Object systemDiskBurstingEnabled;
         private final java.lang.Object systemDiskCategory;
@@ -2329,6 +2357,7 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
             this.spotStrategy = software.amazon.jsii.Kernel.get(this, "spotStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.storageSetId = software.amazon.jsii.Kernel.get(this, "storageSetId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.storageSetPartitionNumber = software.amazon.jsii.Kernel.get(this, "storageSetPartitionNumber", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.subscriptionDeletionForce = software.amazon.jsii.Kernel.get(this, "subscriptionDeletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskAutoSnapshotPolicyId = software.amazon.jsii.Kernel.get(this, "systemDiskAutoSnapshotPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskBurstingEnabled = software.amazon.jsii.Kernel.get(this, "systemDiskBurstingEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskCategory = software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -2417,6 +2446,7 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
             this.spotStrategy = builder.spotStrategy;
             this.storageSetId = builder.storageSetId;
             this.storageSetPartitionNumber = builder.storageSetPartitionNumber;
+            this.subscriptionDeletionForce = builder.subscriptionDeletionForce;
             this.systemDiskAutoSnapshotPolicyId = builder.systemDiskAutoSnapshotPolicyId;
             this.systemDiskBurstingEnabled = builder.systemDiskBurstingEnabled;
             this.systemDiskCategory = builder.systemDiskCategory;
@@ -2732,6 +2762,11 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
+        public final java.lang.Object getSubscriptionDeletionForce() {
+            return this.subscriptionDeletionForce;
+        }
+
+        @Override
         public final java.lang.Object getSystemDiskAutoSnapshotPolicyId() {
             return this.systemDiskAutoSnapshotPolicyId;
         }
@@ -3017,6 +3052,9 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
             if (this.getStorageSetPartitionNumber() != null) {
                 data.set("storageSetPartitionNumber", om.valueToTree(this.getStorageSetPartitionNumber()));
             }
+            if (this.getSubscriptionDeletionForce() != null) {
+                data.set("subscriptionDeletionForce", om.valueToTree(this.getSubscriptionDeletionForce()));
+            }
             if (this.getSystemDiskAutoSnapshotPolicyId() != null) {
                 data.set("systemDiskAutoSnapshotPolicyId", om.valueToTree(this.getSystemDiskAutoSnapshotPolicyId()));
             }
@@ -3159,6 +3197,7 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
             if (this.spotStrategy != null ? !this.spotStrategy.equals(that.spotStrategy) : that.spotStrategy != null) return false;
             if (this.storageSetId != null ? !this.storageSetId.equals(that.storageSetId) : that.storageSetId != null) return false;
             if (this.storageSetPartitionNumber != null ? !this.storageSetPartitionNumber.equals(that.storageSetPartitionNumber) : that.storageSetPartitionNumber != null) return false;
+            if (this.subscriptionDeletionForce != null ? !this.subscriptionDeletionForce.equals(that.subscriptionDeletionForce) : that.subscriptionDeletionForce != null) return false;
             if (this.systemDiskAutoSnapshotPolicyId != null ? !this.systemDiskAutoSnapshotPolicyId.equals(that.systemDiskAutoSnapshotPolicyId) : that.systemDiskAutoSnapshotPolicyId != null) return false;
             if (this.systemDiskBurstingEnabled != null ? !this.systemDiskBurstingEnabled.equals(that.systemDiskBurstingEnabled) : that.systemDiskBurstingEnabled != null) return false;
             if (this.systemDiskCategory != null ? !this.systemDiskCategory.equals(that.systemDiskCategory) : that.systemDiskCategory != null) return false;
@@ -3243,6 +3282,7 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
             result = 31 * result + (this.spotStrategy != null ? this.spotStrategy.hashCode() : 0);
             result = 31 * result + (this.storageSetId != null ? this.storageSetId.hashCode() : 0);
             result = 31 * result + (this.storageSetPartitionNumber != null ? this.storageSetPartitionNumber.hashCode() : 0);
+            result = 31 * result + (this.subscriptionDeletionForce != null ? this.subscriptionDeletionForce.hashCode() : 0);
             result = 31 * result + (this.systemDiskAutoSnapshotPolicyId != null ? this.systemDiskAutoSnapshotPolicyId.hashCode() : 0);
             result = 31 * result + (this.systemDiskBurstingEnabled != null ? this.systemDiskBurstingEnabled.hashCode() : 0);
             result = 31 * result + (this.systemDiskCategory != null ? this.systemDiskCategory.hashCode() : 0);

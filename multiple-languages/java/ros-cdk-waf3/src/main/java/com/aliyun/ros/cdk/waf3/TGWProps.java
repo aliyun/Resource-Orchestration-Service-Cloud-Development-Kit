@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.waf3;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf3-tgw
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:12.001Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:51.787Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.waf3.$Module.class, fqn = "@alicloud/ros-cdk-waf3.TGWProps")
 @software.amazon.jsii.Jsii.Proxy(TGWProps.Jsii$Proxy.class)
 public interface TGWProps extends software.amazon.jsii.JsiiSerializable {
@@ -35,6 +35,13 @@ public interface TGWProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property wafInstanceRegion: The ID of the resource group.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getWafInstanceRegion() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link TGWProps}
      */
     static Builder builder() {
@@ -48,6 +55,7 @@ public interface TGWProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object listen;
         java.lang.Object redirect;
         java.lang.Object resourceGroupId;
+        java.lang.Object wafInstanceRegion;
 
         /**
          * Sets the value of {@link TGWProps#getInstanceId}
@@ -130,6 +138,26 @@ public interface TGWProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link TGWProps#getWafInstanceRegion}
+         * @param wafInstanceRegion Property wafInstanceRegion: The ID of the resource group.
+         * @return {@code this}
+         */
+        public Builder wafInstanceRegion(java.lang.String wafInstanceRegion) {
+            this.wafInstanceRegion = wafInstanceRegion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TGWProps#getWafInstanceRegion}
+         * @param wafInstanceRegion Property wafInstanceRegion: The ID of the resource group.
+         * @return {@code this}
+         */
+        public Builder wafInstanceRegion(com.aliyun.ros.cdk.core.IResolvable wafInstanceRegion) {
+            this.wafInstanceRegion = wafInstanceRegion;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link TGWProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -149,6 +177,7 @@ public interface TGWProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object listen;
         private final java.lang.Object redirect;
         private final java.lang.Object resourceGroupId;
+        private final java.lang.Object wafInstanceRegion;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -160,6 +189,7 @@ public interface TGWProps extends software.amazon.jsii.JsiiSerializable {
             this.listen = software.amazon.jsii.Kernel.get(this, "listen", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.redirect = software.amazon.jsii.Kernel.get(this, "redirect", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.wafInstanceRegion = software.amazon.jsii.Kernel.get(this, "wafInstanceRegion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -171,6 +201,7 @@ public interface TGWProps extends software.amazon.jsii.JsiiSerializable {
             this.listen = java.util.Objects.requireNonNull(builder.listen, "listen is required");
             this.redirect = builder.redirect;
             this.resourceGroupId = builder.resourceGroupId;
+            this.wafInstanceRegion = builder.wafInstanceRegion;
         }
 
         @Override
@@ -194,6 +225,11 @@ public interface TGWProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getWafInstanceRegion() {
+            return this.wafInstanceRegion;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -206,6 +242,9 @@ public interface TGWProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
+            if (this.getWafInstanceRegion() != null) {
+                data.set("wafInstanceRegion", om.valueToTree(this.getWafInstanceRegion()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -228,7 +267,8 @@ public interface TGWProps extends software.amazon.jsii.JsiiSerializable {
             if (!instanceId.equals(that.instanceId)) return false;
             if (!listen.equals(that.listen)) return false;
             if (this.redirect != null ? !this.redirect.equals(that.redirect) : that.redirect != null) return false;
-            return this.resourceGroupId != null ? this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId == null;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
+            return this.wafInstanceRegion != null ? this.wafInstanceRegion.equals(that.wafInstanceRegion) : that.wafInstanceRegion == null;
         }
 
         @Override
@@ -237,6 +277,7 @@ public interface TGWProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.listen.hashCode());
             result = 31 * result + (this.redirect != null ? this.redirect.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
+            result = 31 * result + (this.wafInstanceRegion != null ? this.wafInstanceRegion.hashCode() : 0);
             return result;
         }
     }

@@ -239,6 +239,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc3
             }
         }
 
+        /// <summary>Property tags: Tags to attach to function.</summary>
+        /// <remarks>
+        /// Max support 20 tags to add during create function. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-fc3.RosFunction.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        AlibabaCloud.SDK.ROS.CDK.Fc3.RosFunction.ITagsProperty[]? Tags
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property timeout: The timeout of the function.</summary>
         [JsiiProperty(name: "timeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -455,6 +469,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc3
             public object? Role
             {
                 get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property tags: Tags to attach to function.</summary>
+            /// <remarks>
+            /// Max support 20 tags to add during create function. Each tag with two properties Key and Value, and Key is required.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-fc3.RosFunction.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+            public AlibabaCloud.SDK.ROS.CDK.Fc3.RosFunction.ITagsProperty[]? Tags
+            {
+                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Fc3.RosFunction.ITagsProperty[]?>();
             }
 
             /// <summary>Property timeout: The timeout of the function.</summary>

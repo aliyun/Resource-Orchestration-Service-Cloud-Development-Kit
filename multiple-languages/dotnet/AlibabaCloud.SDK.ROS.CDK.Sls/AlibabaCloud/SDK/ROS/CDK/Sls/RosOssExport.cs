@@ -247,7 +247,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: roleArn: Used to control permissions of writing data to OSS and reading data in Logstores. Example: acs:ram::13234:role\/aliyunlogdefaultrole.
+            /// <strong>Property</strong>: roleArn: Used to control permissions of writing data to OSS and reading data in Logstores. Example: acs:ram::13234:role\/%s.
             /// </remarks>
             [JsiiProperty(name: "roleArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             object RoleArn
@@ -307,7 +307,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: roleArn: Used to control permissions of writing data to OSS and reading data in Logstores. Example: acs:ram::13234:role\/aliyunlogdefaultrole.
+                /// <strong>Property</strong>: roleArn: Used to control permissions of writing data to OSS and reading data in Logstores. Example: acs:ram::13234:role\/%s.
                 /// </remarks>
                 [JsiiProperty(name: "roleArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
                 public object RoleArn
@@ -385,7 +385,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             private object _roleArn;
 
             /// <remarks>
-            /// <strong>Property</strong>: roleArn: Used to control permissions of writing data to OSS and reading data in Logstores. Example: acs:ram::13234:role\/aliyunlogdefaultrole.
+            /// <strong>Property</strong>: roleArn: Used to control permissions of writing data to OSS and reading data in Logstores. Example: acs:ram::13234:role\/%s.
             /// </remarks>
             [JsiiProperty(name: "roleArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object RoleArn

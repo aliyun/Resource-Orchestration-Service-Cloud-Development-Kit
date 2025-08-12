@@ -1,11 +1,9 @@
 package com.aliyun.ros.cdk.mns;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::MNS::Subscription</code>, which is used to subscribe an endpoint to an Alibaba Cloud Message Service (MNS) topic.
- * <p>
- * For a subscription to be created, the owner of the endpoint must confirm the subscription.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::MNS::Subscription</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.015Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.572Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.Subscription")
 public class Subscription extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.mns.ISubscription {
 
@@ -211,6 +209,27 @@ public class Subscription extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
+         * Property dlqPolicy: Dead-letter queue policy.
+         * <p>
+         * @return {@code this}
+         * @param dlqPolicy Property dlqPolicy: Dead-letter queue policy. This parameter is required.
+         */
+        public Builder dlqPolicy(final com.aliyun.ros.cdk.core.IResolvable dlqPolicy) {
+            this.props.dlqPolicy(dlqPolicy);
+            return this;
+        }
+        /**
+         * Property dlqPolicy: Dead-letter queue policy.
+         * <p>
+         * @return {@code this}
+         * @param dlqPolicy Property dlqPolicy: Dead-letter queue policy. This parameter is required.
+         */
+        public Builder dlqPolicy(final com.aliyun.ros.cdk.mns.RosSubscription.DlqPolicyProperty dlqPolicy) {
+            this.props.dlqPolicy(dlqPolicy);
+            return this;
+        }
+
+        /**
          * Property filterTag: Message filter tag in the created subscription (Only messages with consistent tags are pushed.) The value is a string of no more than 16 characters. The default value is no message filter.
          * <p>
          * @return {@code this}
@@ -278,6 +297,27 @@ public class Subscription extends com.aliyun.ros.cdk.core.Resource implements co
          */
         public Builder notifyStrategy(final com.aliyun.ros.cdk.core.IResolvable notifyStrategy) {
             this.props.notifyStrategy(notifyStrategy);
+            return this;
+        }
+
+        /**
+         * Property pushType: Push type of the created subscription.
+         * <p>
+         * @return {@code this}
+         * @param pushType Property pushType: Push type of the created subscription. This parameter is required.
+         */
+        public Builder pushType(final java.lang.String pushType) {
+            this.props.pushType(pushType);
+            return this;
+        }
+        /**
+         * Property pushType: Push type of the created subscription.
+         * <p>
+         * @return {@code this}
+         * @param pushType Property pushType: Push type of the created subscription. This parameter is required.
+         */
+        public Builder pushType(final com.aliyun.ros.cdk.core.IResolvable pushType) {
+            this.props.pushType(pushType);
             return this;
         }
 

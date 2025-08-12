@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::OOS::Parameter`, which is used to create a common parameter.
+// This class encapsulates and extends the ROS resource type `ALIYUN::OOS::Parameter`.
 type Parameter interface {
 	alicloudroscdkcore.Resource
 	IParameter

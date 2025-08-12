@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ALB::LoadBalancer</code>, which is used to create an Application Load Balancer (ALB) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:01.292Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:43.255Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.LoadBalancer")
 public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.alb.ILoadBalancer {
 
@@ -241,31 +241,6 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property loadBalancerName: The name of the ALB instance.
-         * <p>
-         * The name must be 2 to 128 characters in length, and can contain letters, digits, periods(.), underscores (_), and hyphens (-). The name must start with a letter.
-         * <p>
-         * @return {@code this}
-         * @param loadBalancerName Property loadBalancerName: The name of the ALB instance. This parameter is required.
-         */
-        public Builder loadBalancerName(final java.lang.String loadBalancerName) {
-            this.props.loadBalancerName(loadBalancerName);
-            return this;
-        }
-        /**
-         * Property loadBalancerName: The name of the ALB instance.
-         * <p>
-         * The name must be 2 to 128 characters in length, and can contain letters, digits, periods(.), underscores (_), and hyphens (-). The name must start with a letter.
-         * <p>
-         * @return {@code this}
-         * @param loadBalancerName Property loadBalancerName: The name of the ALB instance. This parameter is required.
-         */
-        public Builder loadBalancerName(final com.aliyun.ros.cdk.core.IResolvable loadBalancerName) {
-            this.props.loadBalancerName(loadBalancerName);
-            return this;
-        }
-
-        /**
          * Property vpcId: The ID of the virtual private cloud (VPC) where the ALB instance is deployed.
          * <p>
          * @return {@code this}
@@ -437,6 +412,60 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource implements co
          */
         public Builder deletionProtectionEnabled(final com.aliyun.ros.cdk.core.IResolvable deletionProtectionEnabled) {
             this.props.deletionProtectionEnabled(deletionProtectionEnabled);
+            return this;
+        }
+
+        /**
+         * Property ipv6AddressType: The type of IPv6 address that the ALB instance uses to provide services.
+         * <p>
+         * Valid values:
+         * Internet: The ALB instance uses a public IPv6 address. The domain name of the ALB instance is resolved to the public IPv6 address.
+         * Intranet: The ALB instance uses a private IPv6 address. The domain name of the ALB instance is resolved to the private IP address.
+         * <p>
+         * @return {@code this}
+         * @param ipv6AddressType Property ipv6AddressType: The type of IPv6 address that the ALB instance uses to provide services. This parameter is required.
+         */
+        public Builder ipv6AddressType(final java.lang.String ipv6AddressType) {
+            this.props.ipv6AddressType(ipv6AddressType);
+            return this;
+        }
+        /**
+         * Property ipv6AddressType: The type of IPv6 address that the ALB instance uses to provide services.
+         * <p>
+         * Valid values:
+         * Internet: The ALB instance uses a public IPv6 address. The domain name of the ALB instance is resolved to the public IPv6 address.
+         * Intranet: The ALB instance uses a private IPv6 address. The domain name of the ALB instance is resolved to the private IP address.
+         * <p>
+         * @return {@code this}
+         * @param ipv6AddressType Property ipv6AddressType: The type of IPv6 address that the ALB instance uses to provide services. This parameter is required.
+         */
+        public Builder ipv6AddressType(final com.aliyun.ros.cdk.core.IResolvable ipv6AddressType) {
+            this.props.ipv6AddressType(ipv6AddressType);
+            return this;
+        }
+
+        /**
+         * Property loadBalancerName: The name of the ALB instance.
+         * <p>
+         * The name must be 2 to 128 characters in length, and can contain letters, digits, periods(.), underscores (_), and hyphens (-). The name must start with a letter.
+         * <p>
+         * @return {@code this}
+         * @param loadBalancerName Property loadBalancerName: The name of the ALB instance. This parameter is required.
+         */
+        public Builder loadBalancerName(final java.lang.String loadBalancerName) {
+            this.props.loadBalancerName(loadBalancerName);
+            return this;
+        }
+        /**
+         * Property loadBalancerName: The name of the ALB instance.
+         * <p>
+         * The name must be 2 to 128 characters in length, and can contain letters, digits, periods(.), underscores (_), and hyphens (-). The name must start with a letter.
+         * <p>
+         * @return {@code this}
+         * @param loadBalancerName Property loadBalancerName: The name of the ALB instance. This parameter is required.
+         */
+        public Builder loadBalancerName(final com.aliyun.ros.cdk.core.IResolvable loadBalancerName) {
+            this.props.loadBalancerName(loadBalancerName);
             return this;
         }
 

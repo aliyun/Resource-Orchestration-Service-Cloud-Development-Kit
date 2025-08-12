@@ -2,11 +2,17 @@
   "name": "root",
   "private": true,
   "devDependencies": {
+    "@types/minimatch": "^5.1.2",
+    "@types/node": "~18.11.9",
     "jsii": ">1.12.0 <=1.85.0",
-    "jsii-pacmak": ">1.12.0 <=1.85.0",
     "jsii-docgen": "~10.2.3",
+    "jsii-pacmak": ">1.12.0 <=1.85.0",
     "lerna": "^3.22.1",
-    "@types/node": "~18.11.9"
+    "typescript": "~4.9.5"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@types/semver": "^7.7.0",
+    "jsonschema": "^1.5.0",
+    "typescript-json-schema": "^0.65.1"
+  }
 }

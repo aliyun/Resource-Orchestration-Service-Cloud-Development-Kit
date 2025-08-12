@@ -1,4 +1,5 @@
 export * from './instance';
+export * from './instancev2';
 export * from './searchindex';
 export * from './table';
 export * from './vpcbinder';

@@ -104,6 +104,10 @@ func (j *jsiiProxy_RosCommand) validateSetEnableResourcePropertyConstraintParame
 	return nil
 }
 
+func (j *jsiiProxy_RosCommand) validateSetLauncherParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosCommand) validateSetNameParameters(val interface{}) error {
 	return nil
 }

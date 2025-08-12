@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cs;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CS::ManagedEdgeKubernetesCluster</code>, which is used to create a Container Service for Kubernetes (ACK) edge cluster.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CS::ManagedEdgeKubernetesCluster</code>, which is used to create a Container Service for Kubernetes (ACK) Edge cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:03.512Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.231Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster")
 public class RosManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -487,6 +487,29 @@ public class RosManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Ros
      */
     public void setVpcId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "vpcId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchIds() {
+        return software.amazon.jsii.Kernel.get(this, "vSwitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setVSwitchIds(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "vSwitchIds", value);
+    }
+
+    /**
+     */
+    public void setVSwitchIds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "vSwitchIds", value);
     }
 
     /**
@@ -1558,6 +1581,23 @@ public class RosManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Ros
          */
         public Builder vpcId(final com.aliyun.ros.cdk.core.IResolvable vpcId) {
             this.props.vpcId(vpcId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param vSwitchIds This parameter is required.
+         */
+        public Builder vSwitchIds(final java.util.List<? extends java.lang.Object> vSwitchIds) {
+            this.props.vSwitchIds(vSwitchIds);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param vSwitchIds This parameter is required.
+         */
+        public Builder vSwitchIds(final com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
+            this.props.vSwitchIds(vSwitchIds);
             return this;
         }
 

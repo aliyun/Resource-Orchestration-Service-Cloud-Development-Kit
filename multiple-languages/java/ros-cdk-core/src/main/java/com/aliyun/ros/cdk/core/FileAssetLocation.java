@@ -6,7 +6,7 @@ package com.aliyun.ros.cdk.core;
  * This is where the asset
  * can be consumed at runtime.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:00.649Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:42.931Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.FileAssetLocation")
 @software.amazon.jsii.Jsii.Proxy(FileAssetLocation.Jsii$Proxy.class)
 public interface FileAssetLocation extends software.amazon.jsii.JsiiSerializable {

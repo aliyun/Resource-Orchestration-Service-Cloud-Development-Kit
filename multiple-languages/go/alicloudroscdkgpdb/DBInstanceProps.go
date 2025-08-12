@@ -94,6 +94,8 @@ type DBInstanceProps struct {
 	//
 	// The value can be: standard, cost-effective. The default value is standard.
 	ProdType interface{} `field:"optional" json:"prodType" yaml:"prodType"`
+	// Property resourceGroupId: The ID of the resource group.
+	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 	// Property securityIpList: The whitelist of IP addresses that are allowed to access the instance.
 	//
 	// Default value:

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nlb;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::NLB::ServerGroup</code>, which is used to create a server group for a Network Load Balancer (NLB) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.333Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.858Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.RosServerGroup")
 public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -9,9 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::MNS::Subscription`, which is used to subscribe an endpoint to an Alibaba Cloud Message Service (MNS) topic.
-//
-// For a subscription to be created, the owner of the endpoint must confirm the subscription.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::MNS::Subscription`.
 type RosSubscription interface {
 	alicloudroscdkcore.RosResource
 	AttrSubscriptionName() alicloudroscdkcore.IResolvable
@@ -21,6 +19,8 @@ type RosSubscription interface {
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
 	CreationStack() *[]*string
+	DlqPolicy() interface{}
+	SetDlqPolicy(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
 	Endpoint() interface{}
@@ -43,6 +43,8 @@ type RosSubscription interface {
 	SetNotifyContentFormat(val interface{})
 	NotifyStrategy() interface{}
 	SetNotifyStrategy(val interface{})
+	PushType() interface{}
+	SetPushType(val interface{})
 	// Return a string that will be resolved to a RosTemplate `{ Ref }` for this element.
 	//
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
@@ -225,6 +227,16 @@ func (j *jsiiProxy_RosSubscription) CreationStack() *[]*string {
 	return returns
 }
 
+func (j *jsiiProxy_RosSubscription) DlqPolicy() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"dlqPolicy",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosSubscription) EnableResourcePropertyConstraint() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -290,6 +302,16 @@ func (j *jsiiProxy_RosSubscription) NotifyStrategy() interface{} {
 	_jsii_.Get(
 		j,
 		"notifyStrategy",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosSubscription) PushType() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"pushType",
 		&returns,
 	)
 	return returns
@@ -403,6 +425,17 @@ func NewRosSubscription_Override(r RosSubscription, scope alicloudroscdkcore.Con
 	)
 }
 
+func (j *jsiiProxy_RosSubscription)SetDlqPolicy(val interface{}) {
+	if err := j.validateSetDlqPolicyParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"dlqPolicy",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosSubscription)SetEnableResourcePropertyConstraint(val *bool) {
 	if err := j.validateSetEnableResourcePropertyConstraintParameters(val); err != nil {
 		panic(err)
@@ -454,6 +487,17 @@ func (j *jsiiProxy_RosSubscription)SetNotifyStrategy(val interface{}) {
 	_jsii_.Set(
 		j,
 		"notifyStrategy",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosSubscription)SetPushType(val interface{}) {
+	if err := j.validateSetPushTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"pushType",
 		val,
 	)
 }

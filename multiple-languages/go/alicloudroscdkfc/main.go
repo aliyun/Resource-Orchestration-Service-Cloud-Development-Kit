@@ -731,6 +731,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "async", GoGetter: "Async"},
 			_jsii_.MemberProperty{JsiiProperty: "attrResult", GoGetter: "AttrResult"},
 			_jsii_.MemberProperty{JsiiProperty: "attrResultType", GoGetter: "AttrResultType"},
+			_jsii_.MemberProperty{JsiiProperty: "checkAsyncInvocation", GoGetter: "CheckAsyncInvocation"},
 			_jsii_.MemberProperty{JsiiProperty: "checkError", GoGetter: "CheckError"},
 			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
@@ -768,6 +769,10 @@ func init() {
 			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreRosResource)
 			return &j
 		},
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-fc.RosFunctionInvoker.CheckAsyncInvocationProperty",
+		reflect.TypeOf((*RosFunctionInvoker_CheckAsyncInvocationProperty)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-fc.RosFunctionInvokerProps",

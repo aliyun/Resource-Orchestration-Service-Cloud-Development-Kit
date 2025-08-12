@@ -2325,9 +2325,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: internetMaxBandwidthOut: The release version of the operating system. Valid values:
-            /// CentOS, AliyunLinux, Windows, WindowsCore.
-            /// Default value: AliyunLinux.
+            /// <strong>Property</strong>: internetMaxBandwidthOut:
             /// </remarks>
             [JsiiProperty(name: "internetMaxBandwidthOut", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -2730,9 +2728,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: internetMaxBandwidthOut: The release version of the operating system. Valid values:
-                /// CentOS, AliyunLinux, Windows, WindowsCore.
-                /// Default value: AliyunLinux.
+                /// <strong>Property</strong>: internetMaxBandwidthOut:
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "internetMaxBandwidthOut", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -3397,9 +3393,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             private object? _internetMaxBandwidthOut;
 
             /// <remarks>
-            /// <strong>Property</strong>: internetMaxBandwidthOut: The release version of the operating system. Valid values:
-            /// CentOS, AliyunLinux, Windows, WindowsCore.
-            /// Default value: AliyunLinux.
+            /// <strong>Property</strong>: internetMaxBandwidthOut:
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "internetMaxBandwidthOut", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

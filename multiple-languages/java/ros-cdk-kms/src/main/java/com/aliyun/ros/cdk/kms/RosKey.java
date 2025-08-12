@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.kms;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::KMS::Key</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::KMS::Key</code>, which is used to create a customer master key (CMK).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:07.784Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.376Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.RosKey")
 public class RosKey extends com.aliyun.ros.cdk.core.RosResource {
 

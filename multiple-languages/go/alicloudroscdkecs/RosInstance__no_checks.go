@@ -252,6 +252,10 @@ func (j *jsiiProxy_RosInstance) validateSetStorageSetPartitionNumberParameters(v
 	return nil
 }
 
+func (j *jsiiProxy_RosInstance) validateSetSubscriptionDeletionForceParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosInstance) validateSetSystemDiskCategoryParameters(val interface{}) error {
 	return nil
 }

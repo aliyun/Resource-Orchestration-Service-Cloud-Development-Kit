@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.edas;
 /**
  * Represents a <code>K8sSlbBinding</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:05.878Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.950Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.IK8sSlbBinding")
 @software.amazon.jsii.Jsii.Proxy(IK8sSlbBinding.Jsii$Proxy.class)
 public interface IK8sSlbBinding extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

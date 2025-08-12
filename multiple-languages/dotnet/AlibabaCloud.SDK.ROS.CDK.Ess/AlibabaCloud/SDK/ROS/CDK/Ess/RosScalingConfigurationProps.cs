@@ -810,7 +810,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         private object? _internetMaxBandwidthIn;
 
         /// <remarks>
-        /// <strong>Property</strong>: internetMaxBandwidthIn: Maximum incoming bandwidth from the public network, measured in Mbps (Mega bit per second). The value range is [1,200]. If this parameter value is not specified, AliyunAPI automatically sets the value to 200 Mbps.
+        /// <strong>Property</strong>: internetMaxBandwidthIn: Maximum incoming bandwidth from the public network, measured in Mbps (Mega bit per second). The value range is [1,200]. If this parameter value is not specified, API automatically sets the value to 200 Mbps.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "internetMaxBandwidthIn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -864,7 +864,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
 
         /// <remarks>
         /// <strong>Property</strong>: internetMaxBandwidthOut: Maximum outgoing bandwidth from the public network, measured in Mbps (Mega bit per second).
-        /// The value range for PayByBandwidth is [0,100]. If this parameter value is not specified, AliyunAPI automatically sets the value to 0 Mbps.
+        /// The value range for PayByBandwidth is [0,100]. If this parameter value is not specified, API automatically sets the value to 0 Mbps.
         /// The value range for PayByTraffic is [0,100]. If this parameter value is not specified, an error is reported
         /// </remarks>
         [JsiiOptional]

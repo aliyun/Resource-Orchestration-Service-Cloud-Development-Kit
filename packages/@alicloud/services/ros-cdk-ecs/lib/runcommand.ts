@@ -85,6 +85,11 @@ export interface RunCommandProps {
     readonly keepCommand?: boolean | ros.IResolvable;
 
     /**
+     * Property launcher: A bootloader for script execution. The length cannot exceed 1 KB.
+     */
+    readonly launcher?: string | ros.IResolvable;
+
+    /**
      * Property name: The name of the script, which supports all character sets. It can be up to 128 characters in length.
      */
     readonly name?: string | ros.IResolvable;
@@ -231,8 +236,8 @@ export class RunCommand extends ros.Resource implements IRunCommand {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosRunCommand = new RosRunCommand(this, id,  {
-            description: props.description,
             parameters: props.parameters,
+            description: props.description,
             resourceGroupId: props.resourceGroupId,
             timeout: props.timeout,
             windowsPasswordName: props.windowsPasswordName,
@@ -240,16 +245,17 @@ export class RunCommand extends ros.Resource implements IRunCommand {
             name: props.name,
             workingDir: props.workingDir,
             commandContent: props.commandContent,
-            repeatMode: props.repeatMode,
             type: props.type,
-            username: props.username,
+            repeatMode: props.repeatMode,
             containerName: props.containerName,
+            username: props.username,
             containerId: props.containerId,
+            launcher: props.launcher,
             frequency: props.frequency,
             runAgainOn: props.runAgainOn,
             enableParameter: props.enableParameter,
-            sync: props.sync === undefined || props.sync === null ? false : props.sync,
             instanceIds: props.instanceIds,
+            sync: props.sync === undefined || props.sync === null ? false : props.sync,
             keepCommand: props.keepCommand,
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

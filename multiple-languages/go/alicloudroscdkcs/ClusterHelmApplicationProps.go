@@ -24,6 +24,10 @@ type ClusterHelmApplicationProps struct {
 	// Default is default.
 	// If the Namespace does not exist, ROS will automatically create it and delete it during the deletion phase.
 	Namespace interface{} `field:"optional" json:"namespace" yaml:"namespace"`
+	// Property namespaceDeletion: Whether to delete the namespace specified.
+	//
+	// If Namespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether NamespaceDeletion is true or not, it will not be deleted.
+	NamespaceDeletion interface{} `field:"optional" json:"namespaceDeletion" yaml:"namespaceDeletion"`
 	// Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user.
 	//
 	// Valid values:

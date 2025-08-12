@@ -108,6 +108,14 @@ func (j *jsiiProxy_RosDedicatedHost) validateSetChargeTypeParameters(val interfa
 	return nil
 }
 
+func (j *jsiiProxy_RosDedicatedHost) validateSetCpuOverCommitRatioParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosDedicatedHost) validateSetDedicatedHostClusterIdParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosDedicatedHost) validateSetDedicatedHostNameParameters(val interface{}) error {
 	return nil
 }
@@ -121,6 +129,10 @@ func (j *jsiiProxy_RosDedicatedHost) validateSetDescriptionParameters(val interf
 }
 
 func (j *jsiiProxy_RosDedicatedHost) validateSetEnableResourcePropertyConstraintParameters(val *bool) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosDedicatedHost) validateSetMinQuantityParameters(val interface{}) error {
 	return nil
 }
 

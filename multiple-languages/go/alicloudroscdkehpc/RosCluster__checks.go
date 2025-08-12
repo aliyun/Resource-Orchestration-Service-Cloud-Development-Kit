@@ -984,9 +984,6 @@ func (j *jsiiProxy_RosCluster) validateSetNetworkInterfaceTrafficModeParameters(
 }
 
 func (j *jsiiProxy_RosCluster) validateSetOsTagParameters(val interface{}) error {
-	if val == nil {
-		return fmt.Errorf("parameter val is required, but nil was provided")
-	}
 	switch val.(type) {
 	case *string:
 		// ok

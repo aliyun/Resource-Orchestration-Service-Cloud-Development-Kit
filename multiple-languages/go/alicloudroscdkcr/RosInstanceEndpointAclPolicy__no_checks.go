@@ -84,6 +84,10 @@ func validateRosInstanceEndpointAclPolicy_IsRosResourceParameters(construct alic
 	return nil
 }
 
+func (j *jsiiProxy_RosInstanceEndpointAclPolicy) validateSetAutoEnableTypeParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosInstanceEndpointAclPolicy) validateSetCommentParameters(val interface{}) error {
 	return nil
 }

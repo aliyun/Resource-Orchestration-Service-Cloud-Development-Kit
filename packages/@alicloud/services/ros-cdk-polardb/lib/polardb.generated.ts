@@ -504,7 +504,7 @@ function rosAccountPrivilegePropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::AccountPrivilege`, which is used to grant access permissions on one or more databases in a specified ApsaraDB for POLARDB cluster to a standard account.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::AccountPrivilege`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AccountPrivilege` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-accountprivilege
  */
@@ -802,9 +802,9 @@ export interface RosDBClusterProps {
     readonly dbMinorVersion?: string | ros.IResolvable;
 
     /**
-     * @Property dbNodeNum: The number of Standard Edition nodes. Default value: 1. Valid values:
-     * 1: only one primary node.
-     * 2: one read-only node and one primary node.
+     * @Property dbNodeNum: The number of Standard Edition nodes.
+     * Valid values for PolarDB for MySQL Standard Edition: 1 to 8.
+     * Valid values for PolarDB for MySQL Enterprise Edition: 1 to 16.
      */
     readonly dbNodeNum?: number | ros.IResolvable;
 
@@ -1173,6 +1173,13 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('loosePolarLogBin', ros.validateString)(properties.loosePolarLogBin));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('proxyType', ros.validateString)(properties.proxyType));
+    if(properties.dbNodeNum && (typeof properties.dbNodeNum) !== 'object') {
+        errors.collect(ros.propertyValidator('dbNodeNum', ros.validateRange)({
+            data: properties.dbNodeNum,
+            min: 1,
+            max: 16,
+          }));
+    }
     errors.collect(ros.propertyValidator('dbNodeNum', ros.validateNumber)(properties.dbNodeNum));
     if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
         errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
@@ -1342,7 +1349,7 @@ function rosDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBCluster`, which is used to create a PolarDB cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBCluster`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbcluster
  */
@@ -1548,9 +1555,9 @@ export class RosDBCluster extends ros.RosResource {
     public dbMinorVersion: string | ros.IResolvable | undefined;
 
     /**
-     * @Property dbNodeNum: The number of Standard Edition nodes. Default value: 1. Valid values:
-     * 1: only one primary node.
-     * 2: one read-only node and one primary node.
+     * @Property dbNodeNum: The number of Standard Edition nodes.
+     * Valid values for PolarDB for MySQL Standard Edition: 1 to 8.
+     * Valid values for PolarDB for MySQL Enterprise Edition: 1 to 16.
      */
     public dbNodeNum: number | ros.IResolvable | undefined;
 
@@ -2660,7 +2667,7 @@ function RosDBClusterEndpointAddressPropsValidator(properties: any): ros.Validat
     if(properties.connectionStringPrefix && (typeof properties.connectionStringPrefix) !== 'object') {
         errors.collect(ros.propertyValidator('connectionStringPrefix', ros.validateAllowedPattern)({
           data: properties.connectionStringPrefix,
-          reg: /[a-z][-a-z0-9]{4,28}[a-z0-9]/
+          reg: /^[a-z][-a-z0-9]{4,28}[a-z0-9]$/
         }));
     }
     errors.collect(ros.propertyValidator('connectionStringPrefix', ros.validateString)(properties.connectionStringPrefix));
@@ -2897,7 +2904,7 @@ function rosDBNodesPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBNodes`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBNodes`, which is used to add nodes to a PolarDB cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBNodes` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbnodes
  */
@@ -3132,7 +3139,7 @@ function rosDatabasePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::Database`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::Database`, which is used to create a database in a PolarDB cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `Database` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-database
  */

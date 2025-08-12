@@ -62,7 +62,7 @@ export interface ISchedule extends ros.IResource {
     readonly attrScheduleName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::FNF::Schedule`, which is used to create a time-based schedule.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::FNF::Schedule`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSchedule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fnf-schedule
  */

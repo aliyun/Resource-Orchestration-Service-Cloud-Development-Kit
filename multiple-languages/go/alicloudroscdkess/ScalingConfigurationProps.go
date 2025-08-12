@@ -77,11 +77,11 @@ type ScalingConfigurationProps struct {
 	InternetChargeType interface{} `field:"optional" json:"internetChargeType" yaml:"internetChargeType"`
 	// Property internetMaxBandwidthIn: Maximum incoming bandwidth from the public network, measured in Mbps (Mega bit per second).
 	//
-	// The value range is [1,200]. If this parameter value is not specified, AliyunAPI automatically sets the value to 200 Mbps.
+	// The value range is [1,200]. If this parameter value is not specified, API automatically sets the value to 200 Mbps.
 	InternetMaxBandwidthIn interface{} `field:"optional" json:"internetMaxBandwidthIn" yaml:"internetMaxBandwidthIn"`
 	// Property internetMaxBandwidthOut: Maximum outgoing bandwidth from the public network, measured in Mbps (Mega bit per second).
 	//
-	// The value range for PayByBandwidth is [0,100]. If this parameter value is not specified, AliyunAPI automatically sets the value to 0 Mbps.
+	// The value range for PayByBandwidth is [0,100]. If this parameter value is not specified, API automatically sets the value to 0 Mbps.
 	// The value range for PayByTraffic is [0,100]. If this parameter value is not specified, an error is reported
 	InternetMaxBandwidthOut interface{} `field:"optional" json:"internetMaxBandwidthOut" yaml:"internetMaxBandwidthOut"`
 	// Property ioOptimized: The 'optimized' instance can provide better IO performance.

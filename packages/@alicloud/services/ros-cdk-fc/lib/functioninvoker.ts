@@ -25,6 +25,11 @@ export interface FunctionInvokerProps {
     readonly async?: boolean | ros.IResolvable;
 
     /**
+     * Property checkAsyncInvocation: Check async invocation setting.
+     */
+    readonly checkAsyncInvocation?: RosFunctionInvoker.CheckAsyncInvocationProperty | ros.IResolvable;
+
+    /**
      * Property checkError: Whether check error for function invocation result.
      * If set true and function invocation result has error, the resource creation will be regard as failed.
      * Default is false
@@ -123,6 +128,7 @@ Failure: Sync invoke fails.
             event: props.event,
             qualifier: props.qualifier,
             checkError: props.checkError,
+            checkAsyncInvocation: props.checkAsyncInvocation,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosFunctionInvoker;
         this.attrResult = rosFunctionInvoker.attrResult;

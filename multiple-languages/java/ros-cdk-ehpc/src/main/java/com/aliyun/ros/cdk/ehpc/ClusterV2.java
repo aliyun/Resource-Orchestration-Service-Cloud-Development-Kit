@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ehpc;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::EHPC::ClusterV2</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::EHPC::ClusterV2</code>, which is used to create a cluster in Elastic High Performance Computing (E-HPC) of the new version.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:06.126Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.075Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.ClusterV2")
 public class ClusterV2 extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ehpc.IClusterV2 {
 
