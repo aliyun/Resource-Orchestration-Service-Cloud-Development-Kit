@@ -72,7 +72,7 @@ export interface IInferenceJob extends ros.IResource {
     readonly attrInferenceJobId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::PAIPlugin::InferenceJob`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PAIPlugin::InferenceJob`, which is used to create a prediction job.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInferenceJob`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paiplugin-inferencejob
  */

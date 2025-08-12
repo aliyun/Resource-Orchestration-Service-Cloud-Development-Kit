@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ens;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ENS::SecurityGroup</code>, which is used to create a security group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:06.548Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.309Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ens.$Module.class, fqn = "@alicloud/ros-cdk-ens.SecurityGroup")
 public class SecurityGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ens.ISecurityGroup {
 
@@ -147,44 +147,23 @@ public class SecurityGroup extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property securityGroupEgress: egress rules for the security group.
+         * Property permissions: undefined.
          * <p>
          * @return {@code this}
-         * @param securityGroupEgress Property securityGroupEgress: egress rules for the security group. This parameter is required.
+         * @param permissions Property permissions: undefined. This parameter is required.
          */
-        public Builder securityGroupEgress(final com.aliyun.ros.cdk.core.IResolvable securityGroupEgress) {
-            this.props().securityGroupEgress(securityGroupEgress);
+        public Builder permissions(final com.aliyun.ros.cdk.core.IResolvable permissions) {
+            this.props().permissions(permissions);
             return this;
         }
         /**
-         * Property securityGroupEgress: egress rules for the security group.
+         * Property permissions: undefined.
          * <p>
          * @return {@code this}
-         * @param securityGroupEgress Property securityGroupEgress: egress rules for the security group. This parameter is required.
+         * @param permissions Property permissions: undefined. This parameter is required.
          */
-        public Builder securityGroupEgress(final java.util.List<? extends java.lang.Object> securityGroupEgress) {
-            this.props().securityGroupEgress(securityGroupEgress);
-            return this;
-        }
-
-        /**
-         * Property securityGroupIngress: Ingress rules for the security group.
-         * <p>
-         * @return {@code this}
-         * @param securityGroupIngress Property securityGroupIngress: Ingress rules for the security group. This parameter is required.
-         */
-        public Builder securityGroupIngress(final com.aliyun.ros.cdk.core.IResolvable securityGroupIngress) {
-            this.props().securityGroupIngress(securityGroupIngress);
-            return this;
-        }
-        /**
-         * Property securityGroupIngress: Ingress rules for the security group.
-         * <p>
-         * @return {@code this}
-         * @param securityGroupIngress Property securityGroupIngress: Ingress rules for the security group. This parameter is required.
-         */
-        public Builder securityGroupIngress(final java.util.List<? extends java.lang.Object> securityGroupIngress) {
-            this.props().securityGroupIngress(securityGroupIngress);
+        public Builder permissions(final java.util.List<? extends java.lang.Object> permissions) {
+            this.props().permissions(permissions);
             return this;
         }
 

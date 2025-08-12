@@ -233,6 +233,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: readOnlyCount: The number of read replicas in the primary zone. Valid values: 1 to 9.
+        /// </remarks>
+        [JsiiProperty(name: "readOnlyCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ReadOnlyCount
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: resourceGroupId: Resource group id.
         /// </remarks>
         [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -297,6 +310,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         [JsiiProperty(name: "sslEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? SslEnabled
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: subscriptionDeletionForce: This option is only applicable to subscription instances. For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+        /// </remarks>
+        [JsiiProperty(name: "subscriptionDeletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SubscriptionDeletionForce
         {
             get
             {
@@ -569,6 +595,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: readOnlyCount: The number of read replicas in the primary zone. Valid values: 1 to 9.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "readOnlyCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ReadOnlyCount
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: resourceGroupId: Resource group id.
             /// </remarks>
             [JsiiOptional]
@@ -621,6 +657,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             [JsiiOptional]
             [JsiiProperty(name: "sslEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SslEnabled
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: subscriptionDeletionForce: This option is only applicable to subscription instances. For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "subscriptionDeletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SubscriptionDeletionForce
             {
                 get => GetInstanceProperty<object?>();
             }

@@ -15,6 +15,7 @@ type RosFileSystemProps struct {
 	Duration interface{} `field:"optional" json:"duration" yaml:"duration"`
 	EncryptType interface{} `field:"optional" json:"encryptType" yaml:"encryptType"`
 	FileSystemType interface{} `field:"optional" json:"fileSystemType" yaml:"fileSystemType"`
+	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 	SnapshotId interface{} `field:"optional" json:"snapshotId" yaml:"snapshotId"`
 	Tags *[]*RosFileSystem_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 	VpcId interface{} `field:"optional" json:"vpcId" yaml:"vpcId"`

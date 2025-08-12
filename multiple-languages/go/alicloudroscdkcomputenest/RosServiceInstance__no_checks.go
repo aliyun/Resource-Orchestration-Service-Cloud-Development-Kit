@@ -92,6 +92,10 @@ func (j *jsiiProxy_RosServiceInstance) validateSetContactGroupParameters(val int
 	return nil
 }
 
+func (j *jsiiProxy_RosServiceInstance) validateSetDryRunParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosServiceInstance) validateSetEnableInstanceOpsParameters(val interface{}) error {
 	return nil
 }
@@ -101,14 +105,6 @@ func (j *jsiiProxy_RosServiceInstance) validateSetEnableResourcePropertyConstrai
 }
 
 func (j *jsiiProxy_RosServiceInstance) validateSetEnableUserPrometheusParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosServiceInstance) validateSetMarketInstanceIdParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosServiceInstance) validateSetNameParameters(val interface{}) error {
 	return nil
 }
 
@@ -124,11 +120,19 @@ func (j *jsiiProxy_RosServiceInstance) validateSetPredefinedParameterNameParamet
 	return nil
 }
 
+func (j *jsiiProxy_RosServiceInstance) validateSetResourceAutoPayParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosServiceInstance) validateSetResourceGroupIdParameters(val interface{}) error {
 	return nil
 }
 
 func (j *jsiiProxy_RosServiceInstance) validateSetServiceParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceInstance) validateSetServiceInstanceNameParameters(val interface{}) error {
 	return nil
 }
 

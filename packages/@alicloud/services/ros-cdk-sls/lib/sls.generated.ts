@@ -1044,6 +1044,137 @@ function rosAlertSeverityConfigurationsPropertyToRosTemplate(properties: any): a
 }
 
 /**
+ * Properties for defining a `RosAnalyzeProductLog`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-analyzeproductlog
+ */
+export interface RosAnalyzeProductLogProps {
+
+    /**
+     * @Property cloudProduct: The cloud product name.
+     */
+    readonly cloudProduct: string | ros.IResolvable;
+
+    /**
+     * @Property logstore: The logstore name.
+     */
+    readonly logstore: string | ros.IResolvable;
+
+    /**
+     * @Property project: The project name.
+     */
+    readonly project: string | ros.IResolvable;
+
+    /**
+     * @Property overwrite: Whether to overwrite the existing analysis rule.
+     */
+    readonly overwrite?: boolean | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAnalyzeProductLogProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAnalyzeProductLogProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAnalyzeProductLogPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('project', ros.requiredValidator)(properties.project));
+    errors.collect(ros.propertyValidator('project', ros.validateString)(properties.project));
+    errors.collect(ros.propertyValidator('overwrite', ros.validateBoolean)(properties.overwrite));
+    errors.collect(ros.propertyValidator('logstore', ros.requiredValidator)(properties.logstore));
+    errors.collect(ros.propertyValidator('logstore', ros.validateString)(properties.logstore));
+    errors.collect(ros.propertyValidator('cloudProduct', ros.requiredValidator)(properties.cloudProduct));
+    errors.collect(ros.propertyValidator('cloudProduct', ros.validateString)(properties.cloudProduct));
+    return errors.wrap('supplied properties not correct for "RosAnalyzeProductLogProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLS::AnalyzeProductLog` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAnalyzeProductLogProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLS::AnalyzeProductLog` resource.
+ */
+// @ts-ignore TS6133
+function rosAnalyzeProductLogPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAnalyzeProductLogPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'CloudProduct': ros.stringToRosTemplate(properties.cloudProduct),
+      'Logstore': ros.stringToRosTemplate(properties.logstore),
+      'Project': ros.stringToRosTemplate(properties.project),
+      'Overwrite': ros.booleanToRosTemplate(properties.overwrite),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::AnalyzeProductLog`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AnalyzeProductLog` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-analyzeproductlog
+ */
+export class RosAnalyzeProductLog extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLS::AnalyzeProductLog";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property cloudProduct: The cloud product name.
+     */
+    public cloudProduct: string | ros.IResolvable;
+
+    /**
+     * @Property logstore: The logstore name.
+     */
+    public logstore: string | ros.IResolvable;
+
+    /**
+     * @Property project: The project name.
+     */
+    public project: string | ros.IResolvable;
+
+    /**
+     * @Property overwrite: Whether to overwrite the existing analysis rule.
+     */
+    public overwrite: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAnalyzeProductLogProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAnalyzeProductLog.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.cloudProduct = props.cloudProduct;
+        this.logstore = props.logstore;
+        this.project = props.project;
+        this.overwrite = props.overwrite;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            cloudProduct: this.cloudProduct,
+            logstore: this.logstore,
+            project: this.project,
+            overwrite: this.overwrite,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAnalyzeProductLogPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosApplyConfigToMachineGroup`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-applyconfigtomachinegroup
  */
@@ -3147,6 +3278,334 @@ function rosEtlSinksPropertyToRosTemplate(properties: any): any {
 }
 
 /**
+ * Properties for defining a `RosEtlV2`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-etlv2
+ */
+export interface RosEtlV2Props {
+
+    /**
+     * @Property configuration: The configuration of the etl job.
+     */
+    readonly configuration: RosEtlV2.ConfigurationProperty | ros.IResolvable;
+
+    /**
+     * @Property displayName: The display name of the etl job.
+     */
+    readonly displayName: string | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the etl job.
+     */
+    readonly name: string | ros.IResolvable;
+
+    /**
+     * @Property project: The name of the project.
+     */
+    readonly project: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the etl job.
+     */
+    readonly description?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosEtlV2Props`
+ *
+ * @param properties - the TypeScript properties of a `RosEtlV2Props`
+ *
+ * @returns the result of the validation.
+ */
+function RosEtlV2PropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('project', ros.requiredValidator)(properties.project));
+    errors.collect(ros.propertyValidator('project', ros.validateString)(properties.project));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('configuration', ros.requiredValidator)(properties.configuration));
+    errors.collect(ros.propertyValidator('configuration', RosEtlV2_ConfigurationPropertyValidator)(properties.configuration));
+    errors.collect(ros.propertyValidator('displayName', ros.requiredValidator)(properties.displayName));
+    errors.collect(ros.propertyValidator('displayName', ros.validateString)(properties.displayName));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "RosEtlV2Props"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLS::EtlV2` resource
+ *
+ * @param properties - the TypeScript properties of a `RosEtlV2Props`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLS::EtlV2` resource.
+ */
+// @ts-ignore TS6133
+function rosEtlV2PropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosEtlV2PropsValidator(properties).assertSuccess();
+    }
+    return {
+      'Configuration': rosEtlV2ConfigurationPropertyToRosTemplate(properties.configuration),
+      'DisplayName': ros.stringToRosTemplate(properties.displayName),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'Project': ros.stringToRosTemplate(properties.project),
+      'Description': ros.stringToRosTemplate(properties.description),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::EtlV2`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `EtlV2` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-etlv2
+ */
+export class RosEtlV2 extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLS::EtlV2";
+
+    /**
+     * @Attribute Name: ETL name.
+     */
+    public readonly attrName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property configuration: The configuration of the etl job.
+     */
+    public configuration: RosEtlV2.ConfigurationProperty | ros.IResolvable;
+
+    /**
+     * @Property displayName: The display name of the etl job.
+     */
+    public displayName: string | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the etl job.
+     */
+    public name: string | ros.IResolvable;
+
+    /**
+     * @Property project: The name of the project.
+     */
+    public project: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the etl job.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosEtlV2Props, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosEtlV2.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrName = this.getAtt('Name');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.configuration = props.configuration;
+        this.displayName = props.displayName;
+        this.name = props.name;
+        this.project = props.project;
+        this.description = props.description;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            configuration: this.configuration,
+            displayName: this.displayName,
+            name: this.name,
+            project: this.project,
+            description: this.description,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosEtlV2PropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosEtlV2 {
+    /**
+     * @stability external
+     */
+    export interface ConfigurationProperty {
+        /**
+         * @Property script: The script of the etl job.
+         */
+        readonly script: string | ros.IResolvable;
+        /**
+         * @Property sinks: The processing result outputs the target list.
+         */
+        readonly sinks: Array<RosEtlV2.SinksProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property parameters: The parameters of the etl job.
+         */
+        readonly parameters?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+        /**
+         * @Property toTime: Deadline of processing job, the default value is 0, which means that it will continue to consume until it is manually stopped.
+         */
+        readonly toTime?: number | ros.IResolvable;
+        /**
+         * @Property logstore: Source Logstore name.
+         */
+        readonly logstore: string | ros.IResolvable;
+        /**
+         * @Property lang: The language of the etl job.
+         */
+        readonly lang?: string | ros.IResolvable;
+        /**
+         * @Property fromTime: The start time of the processing job, the default starts from the current time.
+         */
+        readonly fromTime?: number | ros.IResolvable;
+        /**
+         * @Property roleArn: The role ARN authorized to read the source Logstore.
+         */
+        readonly roleArn: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ConfigurationProperty`
+ *
+ * @param properties - the TypeScript properties of a `ConfigurationProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosEtlV2_ConfigurationPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('script', ros.requiredValidator)(properties.script));
+    errors.collect(ros.propertyValidator('script', ros.validateString)(properties.script));
+    errors.collect(ros.propertyValidator('sinks', ros.requiredValidator)(properties.sinks));
+    if(properties.sinks && (Array.isArray(properties.sinks) || (typeof properties.sinks) === 'string')) {
+        errors.collect(ros.propertyValidator('sinks', ros.validateLength)({
+            data: properties.sinks.length,
+            min: 1,
+            max: 50,
+          }));
+    }
+    errors.collect(ros.propertyValidator('sinks', ros.listValidator(RosEtlV2_SinksPropertyValidator))(properties.sinks));
+    errors.collect(ros.propertyValidator('parameters', ros.hashValidator(ros.validateAny))(properties.parameters));
+    errors.collect(ros.propertyValidator('toTime', ros.validateNumber)(properties.toTime));
+    errors.collect(ros.propertyValidator('logstore', ros.requiredValidator)(properties.logstore));
+    errors.collect(ros.propertyValidator('logstore', ros.validateString)(properties.logstore));
+    errors.collect(ros.propertyValidator('lang', ros.validateString)(properties.lang));
+    errors.collect(ros.propertyValidator('fromTime', ros.validateNumber)(properties.fromTime));
+    errors.collect(ros.propertyValidator('roleArn', ros.requiredValidator)(properties.roleArn));
+    errors.collect(ros.propertyValidator('roleArn', ros.validateString)(properties.roleArn));
+    return errors.wrap('supplied properties not correct for "ConfigurationProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLS::EtlV2.Configuration` resource
+ *
+ * @param properties - the TypeScript properties of a `ConfigurationProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLS::EtlV2.Configuration` resource.
+ */
+// @ts-ignore TS6133
+function rosEtlV2ConfigurationPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosEtlV2_ConfigurationPropertyValidator(properties).assertSuccess();
+    return {
+      'Script': ros.stringToRosTemplate(properties.script),
+      'Sinks': ros.listMapper(rosEtlV2SinksPropertyToRosTemplate)(properties.sinks),
+      'Parameters': ros.hashMapper(ros.objectToRosTemplate)(properties.parameters),
+      'ToTime': ros.numberToRosTemplate(properties.toTime),
+      'Logstore': ros.stringToRosTemplate(properties.logstore),
+      'Lang': ros.stringToRosTemplate(properties.lang),
+      'FromTime': ros.numberToRosTemplate(properties.fromTime),
+      'RoleArn': ros.stringToRosTemplate(properties.roleArn),
+    };
+}
+
+export namespace RosEtlV2 {
+    /**
+     * @stability external
+     */
+    export interface SinksProperty {
+        /**
+         * @Property datasets: The processing result outputs the target list.
+         */
+        readonly datasets?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property project: The name of output target project.
+         */
+        readonly project: string | ros.IResolvable;
+        /**
+         * @Property endpoint: The endpoint of the region where the target Project resides.
+         */
+        readonly endpoint?: string | ros.IResolvable;
+        /**
+         * @Property logstore: Target Logstore name.
+         */
+        readonly logstore: string | ros.IResolvable;
+        /**
+         * @Property roleArn: The role ARN authorized to write the target Logstore.
+         */
+        readonly roleArn: string | ros.IResolvable;
+        /**
+         * @Property name: Output target name.
+         */
+        readonly name: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `SinksProperty`
+ *
+ * @param properties - the TypeScript properties of a `SinksProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosEtlV2_SinksPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.datasets && (Array.isArray(properties.datasets) || (typeof properties.datasets) === 'string')) {
+        errors.collect(ros.propertyValidator('datasets', ros.validateLength)({
+            data: properties.datasets.length,
+            min: 1,
+            max: 50,
+          }));
+    }
+    errors.collect(ros.propertyValidator('datasets', ros.listValidator(ros.validateString))(properties.datasets));
+    errors.collect(ros.propertyValidator('project', ros.requiredValidator)(properties.project));
+    errors.collect(ros.propertyValidator('project', ros.validateString)(properties.project));
+    errors.collect(ros.propertyValidator('endpoint', ros.validateString)(properties.endpoint));
+    errors.collect(ros.propertyValidator('logstore', ros.requiredValidator)(properties.logstore));
+    errors.collect(ros.propertyValidator('logstore', ros.validateString)(properties.logstore));
+    errors.collect(ros.propertyValidator('roleArn', ros.requiredValidator)(properties.roleArn));
+    errors.collect(ros.propertyValidator('roleArn', ros.validateString)(properties.roleArn));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "SinksProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLS::EtlV2.Sinks` resource
+ *
+ * @param properties - the TypeScript properties of a `SinksProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLS::EtlV2.Sinks` resource.
+ */
+// @ts-ignore TS6133
+function rosEtlV2SinksPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosEtlV2_SinksPropertyValidator(properties).assertSuccess();
+    return {
+      'Datasets': ros.listMapper(ros.stringToRosTemplate)(properties.datasets),
+      'Project': ros.stringToRosTemplate(properties.project),
+      'Endpoint': ros.stringToRosTemplate(properties.endpoint),
+      'Logstore': ros.stringToRosTemplate(properties.logstore),
+      'RoleArn': ros.stringToRosTemplate(properties.roleArn),
+      'Name': ros.stringToRosTemplate(properties.name),
+    };
+}
+
+/**
  * Properties for defining a `RosIndex`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-index
  */
@@ -5025,7 +5484,7 @@ export namespace RosOssExport {
          */
         readonly fromTime?: number | ros.IResolvable;
         /**
-         * @Property roleArn: Used to control permissions of writing data to OSS and reading data in Logstores. Example: acs:ram::13234:role\/aliyunlogdefaultrole.
+         * @Property roleArn: Used to control permissions of writing data to OSS and reading data in Logstores. Example: acs:ram::13234:role\/%s.
          */
         readonly roleArn: string | ros.IResolvable;
     }

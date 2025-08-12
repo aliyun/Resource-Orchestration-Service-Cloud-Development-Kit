@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::EBS::DiskReplicaGroup`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::EBS::DiskReplicaGroup`, which is used to query the information about a replication pair-consistent group.
 type DiskReplicaGroup interface {
 	alicloudroscdkcore.Resource
 	IDiskReplicaGroup

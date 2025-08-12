@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.aligreen;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::Aligreen::AuditCallback</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::Aligreen::AuditCallback</code>, which is used to create an audit callback.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:01.512Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:43.422Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.aligreen.$Module.class, fqn = "@alicloud/ros-cdk-aligreen.RosAuditCallback")
 public class RosAuditCallback extends com.aliyun.ros.cdk.core.RosResource {
 

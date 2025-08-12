@@ -728,6 +728,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "protocolType", GoGetter: "ProtocolType"},
 			_jsii_.MemberProperty{JsiiProperty: "ref", GoGetter: "Ref"},
 			_jsii_.MemberMethod{JsiiMethod: "renderProperties", GoMethod: "RenderProperties"},
+			_jsii_.MemberProperty{JsiiProperty: "resourceGroupId", GoGetter: "ResourceGroupId"},
 			_jsii_.MemberProperty{JsiiProperty: "rosOptions", GoGetter: "RosOptions"},
 			_jsii_.MemberProperty{JsiiProperty: "rosProperties", GoGetter: "RosProperties"},
 			_jsii_.MemberProperty{JsiiProperty: "rosResourceType", GoGetter: "RosResourceType"},

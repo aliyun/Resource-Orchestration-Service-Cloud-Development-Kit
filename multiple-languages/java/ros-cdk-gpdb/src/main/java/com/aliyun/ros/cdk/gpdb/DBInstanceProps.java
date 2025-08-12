@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.gpdb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-dbinstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:07.270Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.944Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.DBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(DBInstanceProps.Jsii$Proxy.class)
 public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -206,6 +206,13 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property resourceGroupId: The ID of the resource group.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
      * Property securityIpList: The whitelist of IP addresses that are allowed to access the instance.
      * <p>
      * Default value:
@@ -356,6 +363,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object periodUnit;
         java.lang.Object privateIpAddress;
         java.lang.Object prodType;
+        java.lang.Object resourceGroupId;
         java.lang.Object securityIpList;
         java.lang.Object segDiskPerformanceLevel;
         java.lang.Object segNodeNum;
@@ -870,6 +878,26 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link DBInstanceProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBInstanceProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DBInstanceProps#getSecurityIpList}
          * @param securityIpList Property securityIpList: The whitelist of IP addresses that are allowed to access the instance.
          *                       Default value:
@@ -1187,6 +1215,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object periodUnit;
         private final java.lang.Object privateIpAddress;
         private final java.lang.Object prodType;
+        private final java.lang.Object resourceGroupId;
         private final java.lang.Object securityIpList;
         private final java.lang.Object segDiskPerformanceLevel;
         private final java.lang.Object segNodeNum;
@@ -1228,6 +1257,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.privateIpAddress = software.amazon.jsii.Kernel.get(this, "privateIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.prodType = software.amazon.jsii.Kernel.get(this, "prodType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityIpList = software.amazon.jsii.Kernel.get(this, "securityIpList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.segDiskPerformanceLevel = software.amazon.jsii.Kernel.get(this, "segDiskPerformanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.segNodeNum = software.amazon.jsii.Kernel.get(this, "segNodeNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1270,6 +1300,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.periodUnit = builder.periodUnit;
             this.privateIpAddress = builder.privateIpAddress;
             this.prodType = builder.prodType;
+            this.resourceGroupId = builder.resourceGroupId;
             this.securityIpList = builder.securityIpList;
             this.segDiskPerformanceLevel = builder.segDiskPerformanceLevel;
             this.segNodeNum = builder.segNodeNum;
@@ -1392,6 +1423,11 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getProdType() {
             return this.prodType;
+        }
+
+        @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
         }
 
         @Override
@@ -1520,6 +1556,9 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getProdType() != null) {
                 data.set("prodType", om.valueToTree(this.getProdType()));
             }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
             if (this.getSecurityIpList() != null) {
                 data.set("securityIpList", om.valueToTree(this.getSecurityIpList()));
             }
@@ -1596,6 +1635,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.periodUnit != null ? !this.periodUnit.equals(that.periodUnit) : that.periodUnit != null) return false;
             if (this.privateIpAddress != null ? !this.privateIpAddress.equals(that.privateIpAddress) : that.privateIpAddress != null) return false;
             if (this.prodType != null ? !this.prodType.equals(that.prodType) : that.prodType != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.securityIpList != null ? !this.securityIpList.equals(that.securityIpList) : that.securityIpList != null) return false;
             if (this.segDiskPerformanceLevel != null ? !this.segDiskPerformanceLevel.equals(that.segDiskPerformanceLevel) : that.segDiskPerformanceLevel != null) return false;
             if (this.segNodeNum != null ? !this.segNodeNum.equals(that.segNodeNum) : that.segNodeNum != null) return false;
@@ -1634,6 +1674,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.periodUnit != null ? this.periodUnit.hashCode() : 0);
             result = 31 * result + (this.privateIpAddress != null ? this.privateIpAddress.hashCode() : 0);
             result = 31 * result + (this.prodType != null ? this.prodType.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.securityIpList != null ? this.securityIpList.hashCode() : 0);
             result = 31 * result + (this.segDiskPerformanceLevel != null ? this.segDiskPerformanceLevel.hashCode() : 0);
             result = 31 * result + (this.segNodeNum != null ? this.segNodeNum.hashCode() : 0);

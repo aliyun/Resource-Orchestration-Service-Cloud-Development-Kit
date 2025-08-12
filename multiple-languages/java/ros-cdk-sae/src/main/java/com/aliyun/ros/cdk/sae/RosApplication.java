@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sae;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SAE::Application</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:10.342Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:50.427Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.RosApplication")
 public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -427,6 +427,24 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEnableNewArms() {
+        return software.amazon.jsii.Kernel.get(this, "enableNewArms", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setEnableNewArms(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "enableNewArms", value);
+    }
+
+    /**
+     */
+    public void setEnableNewArms(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "enableNewArms", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getEnvs() {
         return software.amazon.jsii.Kernel.get(this, "envs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -675,6 +693,24 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setNasId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "nasId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getNewSaeVersion() {
+        return software.amazon.jsii.Kernel.get(this, "newSaeVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setNewSaeVersion(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "newSaeVersion", value);
+    }
+
+    /**
+     */
+    public void setNewSaeVersion(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "newSaeVersion", value);
     }
 
     /**
@@ -1716,6 +1752,23 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param enableNewArms This parameter is required.
+         */
+        public Builder enableNewArms(final java.lang.Boolean enableNewArms) {
+            this.props.enableNewArms(enableNewArms);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param enableNewArms This parameter is required.
+         */
+        public Builder enableNewArms(final com.aliyun.ros.cdk.core.IResolvable enableNewArms) {
+            this.props.enableNewArms(enableNewArms);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param envs This parameter is required.
          */
         public Builder envs(final java.lang.String envs) {
@@ -1949,6 +2002,23 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder nasId(final com.aliyun.ros.cdk.core.IResolvable nasId) {
             this.props.nasId(nasId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param newSaeVersion This parameter is required.
+         */
+        public Builder newSaeVersion(final java.lang.String newSaeVersion) {
+            this.props.newSaeVersion(newSaeVersion);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param newSaeVersion This parameter is required.
+         */
+        public Builder newSaeVersion(final com.aliyun.ros.cdk.core.IResolvable newSaeVersion) {
+            this.props.newSaeVersion(newSaeVersion);
             return this;
         }
 

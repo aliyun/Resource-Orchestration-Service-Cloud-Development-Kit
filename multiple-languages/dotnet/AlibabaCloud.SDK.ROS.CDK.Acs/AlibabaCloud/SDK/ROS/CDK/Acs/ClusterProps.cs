@@ -131,6 +131,88 @@ namespace AlibabaCloud.SDK.ROS.CDK.Acs
             }
         }
 
+        private object? _computeClass;
+
+        /// <summary>Property computeClass: The compute class of the cluster.</summary>
+        /// <remarks>
+        /// This parameter is only used as a parameter query for ZoneIds and is not used in the actual creation.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "computeClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ComputeClass
+        {
+            get => _computeClass;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _computeClass = value;
+            }
+        }
+
+        private object? _deleteOptions;
+
+        /// <summary>Property deleteOptions: Delete options, only work for deleting resource.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "deleteOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-acs.RosCluster.DeleteOptionsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public object? DeleteOptions
+        {
+            get => _deleteOptions;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case object[] cast_cd4240:
+                            for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                            {
+                                switch (cast_cd4240[__idx_f64a5c])
+                                {
+                                    case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                        break;
+                                    case AlibabaCloud.SDK.ROS.CDK.Acs.RosCluster.IDeleteOptionsProperty cast_201718:
+                                        break;
+                                    case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                        // Not enough information to type-check...
+                                        break;
+                                    case null:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Acs.RosCluster.IDeleteOptionsProperty).FullName}; received null", nameof(value));
+                                    default:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Acs.RosCluster.IDeleteOptionsProperty).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                }
+                            }
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _deleteOptions = value;
+            }
+        }
+
         private object? _deletionProtection;
 
         /// <summary>Property deletionProtection: Specifies whether to enable deletion protection for the cluster.</summary>
@@ -360,6 +442,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Acs
                     }
                 }
                 _maintenanceWindow = value;
+            }
+        }
+
+        private object? _podPostpaidSpec;
+
+        /// <summary>Property podPostpaidSpec: Postpaid pod spec for inquiry.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "podPostpaidSpec", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-acs.RosCluster.PodPostpaidSpecProperty\"}]}}", isOptional: true)]
+        public object? PodPostpaidSpec
+        {
+            get => _podPostpaidSpec;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Acs.RosCluster.IPodPostpaidSpecProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Acs.RosCluster.IPodPostpaidSpecProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _podPostpaidSpec = value;
             }
         }
 

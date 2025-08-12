@@ -18,6 +18,8 @@ type RosSynchronizationJob2Props struct {
 	DelayNotice interface{} `field:"optional" json:"delayNotice" yaml:"delayNotice"`
 	DelayPhone interface{} `field:"optional" json:"delayPhone" yaml:"delayPhone"`
 	DelayRuleTime interface{} `field:"optional" json:"delayRuleTime" yaml:"delayRuleTime"`
+	DestPrimaryVswId interface{} `field:"optional" json:"destPrimaryVswId" yaml:"destPrimaryVswId"`
+	DestSecondaryVswId interface{} `field:"optional" json:"destSecondaryVswId" yaml:"destSecondaryVswId"`
 	DisasterRecoveryJob interface{} `field:"optional" json:"disasterRecoveryJob" yaml:"disasterRecoveryJob"`
 	DtsBisLabel interface{} `field:"optional" json:"dtsBisLabel" yaml:"dtsBisLabel"`
 	DtsInstanceId interface{} `field:"optional" json:"dtsInstanceId" yaml:"dtsInstanceId"`
@@ -25,7 +27,12 @@ type RosSynchronizationJob2Props struct {
 	ErrorNotice interface{} `field:"optional" json:"errorNotice" yaml:"errorNotice"`
 	ErrorPhone interface{} `field:"optional" json:"errorPhone" yaml:"errorPhone"`
 	FileOssUrl interface{} `field:"optional" json:"fileOssUrl" yaml:"fileOssUrl"`
+	MaxDu interface{} `field:"optional" json:"maxDu" yaml:"maxDu"`
+	MinDu interface{} `field:"optional" json:"minDu" yaml:"minDu"`
 	Reserve interface{} `field:"optional" json:"reserve" yaml:"reserve"`
+	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
+	SrcPrimaryVswId interface{} `field:"optional" json:"srcPrimaryVswId" yaml:"srcPrimaryVswId"`
+	SrcSecondaryVswId interface{} `field:"optional" json:"srcSecondaryVswId" yaml:"srcSecondaryVswId"`
 	Status interface{} `field:"optional" json:"status" yaml:"status"`
 	SynchronizationDirection interface{} `field:"optional" json:"synchronizationDirection" yaml:"synchronizationDirection"`
 }

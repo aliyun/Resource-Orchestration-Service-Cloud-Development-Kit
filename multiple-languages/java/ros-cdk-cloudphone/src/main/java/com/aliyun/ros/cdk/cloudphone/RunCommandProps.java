@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cloudphone;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-runcommand
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:02.847Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:44.670Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudphone.$Module.class, fqn = "@alicloud/ros-cdk-cloudphone.RunCommandProps")
 @software.amazon.jsii.Jsii.Proxy(RunCommandProps.Jsii$Proxy.class)
 public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {

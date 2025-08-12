@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dts;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-synchronizationjob2
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:04.169Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.815Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.SynchronizationJob2Props")
 @software.amazon.jsii.Jsii.Proxy(SynchronizationJob2Props.Jsii$Proxy.class)
 public interface SynchronizationJob2Props extends software.amazon.jsii.JsiiSerializable {
@@ -86,8 +86,8 @@ public interface SynchronizationJob2Props extends software.amazon.jsii.JsiiSeria
     /**
      * Property delayPhone: The mobile numbers that receive latency-related alerts.
      * <p>
-     * Separate multiple mobile numbers with commas (,).
-     * <strong>Note</strong>: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+     * Separate multiple mobile numbers with commas (,). You can specify up to 10 mobile numbers.
+     * <strong>Note</strong>: You can also configure alert rules for DTS tasks in the CloudMonitor console.This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDelayPhone() {
         return null;
@@ -99,6 +99,20 @@ public interface SynchronizationJob2Props extends software.amazon.jsii.JsiiSeria
      * Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDelayRuleTime() {
+        return null;
+    }
+
+    /**
+     * Property destPrimaryVswId: The primary VSW ID at the destination end of the VPC NAT.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDestPrimaryVswId() {
+        return null;
+    }
+
+    /**
+     * Property destSecondaryVswId: The secondary VSW ID at the destination end of the VPC NAT.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDestSecondaryVswId() {
         return null;
     }
 
@@ -146,8 +160,8 @@ public interface SynchronizationJob2Props extends software.amazon.jsii.JsiiSeria
     /**
      * Property errorPhone: The mobile numbers that receive status-related alerts.
      * <p>
-     * Separate multiple mobile numbers with commas (,).
-     * <strong>Note</strong>: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+     * Separate multiple mobile numbers with commas (,). You can specify up to 10 mobile numbers.
+     * <strong>Note</strong>: You can also configure alert rules for DTS tasks in the CloudMonitor console.This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getErrorPhone() {
         return null;
@@ -161,11 +175,50 @@ public interface SynchronizationJob2Props extends software.amazon.jsii.JsiiSeria
     }
 
     /**
+     * Property maxDu: The upper limit of DU.
+     * <p>
+     * This parameter is supported only for serverless instances.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMaxDu() {
+        return null;
+    }
+
+    /**
+     * Property minDu: The lower limit of DU.
+     * <p>
+     * This parameter is supported only for serverless instances.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMinDu() {
+        return null;
+    }
+
+    /**
      * Property reserve: The reserved parameter of DTS.
      * <p>
      * You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getReserve() {
+        return null;
+    }
+
+    /**
+     * Property resourceGroupId: The ID of the resource group.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
+     * Property srcPrimaryVswId: The primary VSW ID at the source end of the VPC NAT.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSrcPrimaryVswId() {
+        return null;
+    }
+
+    /**
+     * Property srcSecondaryVswId: The secondary VSW ID at the source end of the VPC NAT.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSrcSecondaryVswId() {
         return null;
     }
 
@@ -223,6 +276,8 @@ public interface SynchronizationJob2Props extends software.amazon.jsii.JsiiSeria
         java.lang.Object delayNotice;
         java.lang.Object delayPhone;
         java.lang.Object delayRuleTime;
+        java.lang.Object destPrimaryVswId;
+        java.lang.Object destSecondaryVswId;
         java.lang.Object disasterRecoveryJob;
         java.lang.Object dtsBisLabel;
         java.lang.Object dtsInstanceId;
@@ -230,7 +285,12 @@ public interface SynchronizationJob2Props extends software.amazon.jsii.JsiiSeria
         java.lang.Object errorNotice;
         java.lang.Object errorPhone;
         java.lang.Object fileOssUrl;
+        java.lang.Object maxDu;
+        java.lang.Object minDu;
         java.lang.Object reserve;
+        java.lang.Object resourceGroupId;
+        java.lang.Object srcPrimaryVswId;
+        java.lang.Object srcSecondaryVswId;
         java.lang.Object status;
         java.lang.Object synchronizationDirection;
 
@@ -467,8 +527,8 @@ public interface SynchronizationJob2Props extends software.amazon.jsii.JsiiSeria
         /**
          * Sets the value of {@link SynchronizationJob2Props#getDelayPhone}
          * @param delayPhone Property delayPhone: The mobile numbers that receive latency-related alerts.
-         *                   Separate multiple mobile numbers with commas (,).
-         *                   <strong>Note</strong>: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+         *                   Separate multiple mobile numbers with commas (,). You can specify up to 10 mobile numbers.
+         *                   <strong>Note</strong>: You can also configure alert rules for DTS tasks in the CloudMonitor console.This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers.
          * @return {@code this}
          */
         public Builder delayPhone(java.lang.String delayPhone) {
@@ -479,8 +539,8 @@ public interface SynchronizationJob2Props extends software.amazon.jsii.JsiiSeria
         /**
          * Sets the value of {@link SynchronizationJob2Props#getDelayPhone}
          * @param delayPhone Property delayPhone: The mobile numbers that receive latency-related alerts.
-         *                   Separate multiple mobile numbers with commas (,).
-         *                   <strong>Note</strong>: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+         *                   Separate multiple mobile numbers with commas (,). You can specify up to 10 mobile numbers.
+         *                   <strong>Note</strong>: You can also configure alert rules for DTS tasks in the CloudMonitor console.This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers.
          * @return {@code this}
          */
         public Builder delayPhone(com.aliyun.ros.cdk.core.IResolvable delayPhone) {
@@ -507,6 +567,46 @@ public interface SynchronizationJob2Props extends software.amazon.jsii.JsiiSeria
          */
         public Builder delayRuleTime(com.aliyun.ros.cdk.core.IResolvable delayRuleTime) {
             this.delayRuleTime = delayRuleTime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SynchronizationJob2Props#getDestPrimaryVswId}
+         * @param destPrimaryVswId Property destPrimaryVswId: The primary VSW ID at the destination end of the VPC NAT.
+         * @return {@code this}
+         */
+        public Builder destPrimaryVswId(java.lang.String destPrimaryVswId) {
+            this.destPrimaryVswId = destPrimaryVswId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SynchronizationJob2Props#getDestPrimaryVswId}
+         * @param destPrimaryVswId Property destPrimaryVswId: The primary VSW ID at the destination end of the VPC NAT.
+         * @return {@code this}
+         */
+        public Builder destPrimaryVswId(com.aliyun.ros.cdk.core.IResolvable destPrimaryVswId) {
+            this.destPrimaryVswId = destPrimaryVswId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SynchronizationJob2Props#getDestSecondaryVswId}
+         * @param destSecondaryVswId Property destSecondaryVswId: The secondary VSW ID at the destination end of the VPC NAT.
+         * @return {@code this}
+         */
+        public Builder destSecondaryVswId(java.lang.String destSecondaryVswId) {
+            this.destSecondaryVswId = destSecondaryVswId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SynchronizationJob2Props#getDestSecondaryVswId}
+         * @param destSecondaryVswId Property destSecondaryVswId: The secondary VSW ID at the destination end of the VPC NAT.
+         * @return {@code this}
+         */
+        public Builder destSecondaryVswId(com.aliyun.ros.cdk.core.IResolvable destSecondaryVswId) {
+            this.destSecondaryVswId = destSecondaryVswId;
             return this;
         }
 
@@ -619,8 +719,8 @@ public interface SynchronizationJob2Props extends software.amazon.jsii.JsiiSeria
         /**
          * Sets the value of {@link SynchronizationJob2Props#getErrorPhone}
          * @param errorPhone Property errorPhone: The mobile numbers that receive status-related alerts.
-         *                   Separate multiple mobile numbers with commas (,).
-         *                   <strong>Note</strong>: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+         *                   Separate multiple mobile numbers with commas (,). You can specify up to 10 mobile numbers.
+         *                   <strong>Note</strong>: You can also configure alert rules for DTS tasks in the CloudMonitor console.This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers.
          * @return {@code this}
          */
         public Builder errorPhone(java.lang.String errorPhone) {
@@ -631,8 +731,8 @@ public interface SynchronizationJob2Props extends software.amazon.jsii.JsiiSeria
         /**
          * Sets the value of {@link SynchronizationJob2Props#getErrorPhone}
          * @param errorPhone Property errorPhone: The mobile numbers that receive status-related alerts.
-         *                   Separate multiple mobile numbers with commas (,).
-         *                   <strong>Note</strong>: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+         *                   Separate multiple mobile numbers with commas (,). You can specify up to 10 mobile numbers.
+         *                   <strong>Note</strong>: You can also configure alert rules for DTS tasks in the CloudMonitor console.This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers.
          * @return {@code this}
          */
         public Builder errorPhone(com.aliyun.ros.cdk.core.IResolvable errorPhone) {
@@ -661,6 +761,50 @@ public interface SynchronizationJob2Props extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link SynchronizationJob2Props#getMaxDu}
+         * @param maxDu Property maxDu: The upper limit of DU.
+         *              This parameter is supported only for serverless instances.
+         * @return {@code this}
+         */
+        public Builder maxDu(java.lang.Number maxDu) {
+            this.maxDu = maxDu;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SynchronizationJob2Props#getMaxDu}
+         * @param maxDu Property maxDu: The upper limit of DU.
+         *              This parameter is supported only for serverless instances.
+         * @return {@code this}
+         */
+        public Builder maxDu(com.aliyun.ros.cdk.core.IResolvable maxDu) {
+            this.maxDu = maxDu;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SynchronizationJob2Props#getMinDu}
+         * @param minDu Property minDu: The lower limit of DU.
+         *              This parameter is supported only for serverless instances.
+         * @return {@code this}
+         */
+        public Builder minDu(java.lang.Number minDu) {
+            this.minDu = minDu;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SynchronizationJob2Props#getMinDu}
+         * @param minDu Property minDu: The lower limit of DU.
+         *              This parameter is supported only for serverless instances.
+         * @return {@code this}
+         */
+        public Builder minDu(com.aliyun.ros.cdk.core.IResolvable minDu) {
+            this.minDu = minDu;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SynchronizationJob2Props#getReserve}
          * @param reserve Property reserve: The reserved parameter of DTS.
          *                You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
@@ -679,6 +823,66 @@ public interface SynchronizationJob2Props extends software.amazon.jsii.JsiiSeria
          */
         public Builder reserve(java.util.Map<java.lang.String, ? extends java.lang.Object> reserve) {
             this.reserve = reserve;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SynchronizationJob2Props#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SynchronizationJob2Props#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SynchronizationJob2Props#getSrcPrimaryVswId}
+         * @param srcPrimaryVswId Property srcPrimaryVswId: The primary VSW ID at the source end of the VPC NAT.
+         * @return {@code this}
+         */
+        public Builder srcPrimaryVswId(java.lang.String srcPrimaryVswId) {
+            this.srcPrimaryVswId = srcPrimaryVswId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SynchronizationJob2Props#getSrcPrimaryVswId}
+         * @param srcPrimaryVswId Property srcPrimaryVswId: The primary VSW ID at the source end of the VPC NAT.
+         * @return {@code this}
+         */
+        public Builder srcPrimaryVswId(com.aliyun.ros.cdk.core.IResolvable srcPrimaryVswId) {
+            this.srcPrimaryVswId = srcPrimaryVswId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SynchronizationJob2Props#getSrcSecondaryVswId}
+         * @param srcSecondaryVswId Property srcSecondaryVswId: The secondary VSW ID at the source end of the VPC NAT.
+         * @return {@code this}
+         */
+        public Builder srcSecondaryVswId(java.lang.String srcSecondaryVswId) {
+            this.srcSecondaryVswId = srcSecondaryVswId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SynchronizationJob2Props#getSrcSecondaryVswId}
+         * @param srcSecondaryVswId Property srcSecondaryVswId: The secondary VSW ID at the source end of the VPC NAT.
+         * @return {@code this}
+         */
+        public Builder srcSecondaryVswId(com.aliyun.ros.cdk.core.IResolvable srcSecondaryVswId) {
+            this.srcSecondaryVswId = srcSecondaryVswId;
             return this;
         }
 
@@ -781,6 +985,8 @@ public interface SynchronizationJob2Props extends software.amazon.jsii.JsiiSeria
         private final java.lang.Object delayNotice;
         private final java.lang.Object delayPhone;
         private final java.lang.Object delayRuleTime;
+        private final java.lang.Object destPrimaryVswId;
+        private final java.lang.Object destSecondaryVswId;
         private final java.lang.Object disasterRecoveryJob;
         private final java.lang.Object dtsBisLabel;
         private final java.lang.Object dtsInstanceId;
@@ -788,7 +994,12 @@ public interface SynchronizationJob2Props extends software.amazon.jsii.JsiiSeria
         private final java.lang.Object errorNotice;
         private final java.lang.Object errorPhone;
         private final java.lang.Object fileOssUrl;
+        private final java.lang.Object maxDu;
+        private final java.lang.Object minDu;
         private final java.lang.Object reserve;
+        private final java.lang.Object resourceGroupId;
+        private final java.lang.Object srcPrimaryVswId;
+        private final java.lang.Object srcSecondaryVswId;
         private final java.lang.Object status;
         private final java.lang.Object synchronizationDirection;
 
@@ -811,6 +1022,8 @@ public interface SynchronizationJob2Props extends software.amazon.jsii.JsiiSeria
             this.delayNotice = software.amazon.jsii.Kernel.get(this, "delayNotice", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.delayPhone = software.amazon.jsii.Kernel.get(this, "delayPhone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.delayRuleTime = software.amazon.jsii.Kernel.get(this, "delayRuleTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.destPrimaryVswId = software.amazon.jsii.Kernel.get(this, "destPrimaryVswId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.destSecondaryVswId = software.amazon.jsii.Kernel.get(this, "destSecondaryVswId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.disasterRecoveryJob = software.amazon.jsii.Kernel.get(this, "disasterRecoveryJob", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dtsBisLabel = software.amazon.jsii.Kernel.get(this, "dtsBisLabel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dtsInstanceId = software.amazon.jsii.Kernel.get(this, "dtsInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -818,7 +1031,12 @@ public interface SynchronizationJob2Props extends software.amazon.jsii.JsiiSeria
             this.errorNotice = software.amazon.jsii.Kernel.get(this, "errorNotice", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.errorPhone = software.amazon.jsii.Kernel.get(this, "errorPhone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.fileOssUrl = software.amazon.jsii.Kernel.get(this, "fileOssUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.maxDu = software.amazon.jsii.Kernel.get(this, "maxDu", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.minDu = software.amazon.jsii.Kernel.get(this, "minDu", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.reserve = software.amazon.jsii.Kernel.get(this, "reserve", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.srcPrimaryVswId = software.amazon.jsii.Kernel.get(this, "srcPrimaryVswId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.srcSecondaryVswId = software.amazon.jsii.Kernel.get(this, "srcSecondaryVswId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.status = software.amazon.jsii.Kernel.get(this, "status", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.synchronizationDirection = software.amazon.jsii.Kernel.get(this, "synchronizationDirection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -841,6 +1059,8 @@ public interface SynchronizationJob2Props extends software.amazon.jsii.JsiiSeria
             this.delayNotice = builder.delayNotice;
             this.delayPhone = builder.delayPhone;
             this.delayRuleTime = builder.delayRuleTime;
+            this.destPrimaryVswId = builder.destPrimaryVswId;
+            this.destSecondaryVswId = builder.destSecondaryVswId;
             this.disasterRecoveryJob = builder.disasterRecoveryJob;
             this.dtsBisLabel = builder.dtsBisLabel;
             this.dtsInstanceId = builder.dtsInstanceId;
@@ -848,7 +1068,12 @@ public interface SynchronizationJob2Props extends software.amazon.jsii.JsiiSeria
             this.errorNotice = builder.errorNotice;
             this.errorPhone = builder.errorPhone;
             this.fileOssUrl = builder.fileOssUrl;
+            this.maxDu = builder.maxDu;
+            this.minDu = builder.minDu;
             this.reserve = builder.reserve;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.srcPrimaryVswId = builder.srcPrimaryVswId;
+            this.srcSecondaryVswId = builder.srcSecondaryVswId;
             this.status = builder.status;
             this.synchronizationDirection = builder.synchronizationDirection;
         }
@@ -919,6 +1144,16 @@ public interface SynchronizationJob2Props extends software.amazon.jsii.JsiiSeria
         }
 
         @Override
+        public final java.lang.Object getDestPrimaryVswId() {
+            return this.destPrimaryVswId;
+        }
+
+        @Override
+        public final java.lang.Object getDestSecondaryVswId() {
+            return this.destSecondaryVswId;
+        }
+
+        @Override
         public final java.lang.Object getDisasterRecoveryJob() {
             return this.disasterRecoveryJob;
         }
@@ -954,8 +1189,33 @@ public interface SynchronizationJob2Props extends software.amazon.jsii.JsiiSeria
         }
 
         @Override
+        public final java.lang.Object getMaxDu() {
+            return this.maxDu;
+        }
+
+        @Override
+        public final java.lang.Object getMinDu() {
+            return this.minDu;
+        }
+
+        @Override
         public final java.lang.Object getReserve() {
             return this.reserve;
+        }
+
+        @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
+        }
+
+        @Override
+        public final java.lang.Object getSrcPrimaryVswId() {
+            return this.srcPrimaryVswId;
+        }
+
+        @Override
+        public final java.lang.Object getSrcSecondaryVswId() {
+            return this.srcSecondaryVswId;
         }
 
         @Override
@@ -999,6 +1259,12 @@ public interface SynchronizationJob2Props extends software.amazon.jsii.JsiiSeria
             if (this.getDelayRuleTime() != null) {
                 data.set("delayRuleTime", om.valueToTree(this.getDelayRuleTime()));
             }
+            if (this.getDestPrimaryVswId() != null) {
+                data.set("destPrimaryVswId", om.valueToTree(this.getDestPrimaryVswId()));
+            }
+            if (this.getDestSecondaryVswId() != null) {
+                data.set("destSecondaryVswId", om.valueToTree(this.getDestSecondaryVswId()));
+            }
             if (this.getDisasterRecoveryJob() != null) {
                 data.set("disasterRecoveryJob", om.valueToTree(this.getDisasterRecoveryJob()));
             }
@@ -1020,8 +1286,23 @@ public interface SynchronizationJob2Props extends software.amazon.jsii.JsiiSeria
             if (this.getFileOssUrl() != null) {
                 data.set("fileOssUrl", om.valueToTree(this.getFileOssUrl()));
             }
+            if (this.getMaxDu() != null) {
+                data.set("maxDu", om.valueToTree(this.getMaxDu()));
+            }
+            if (this.getMinDu() != null) {
+                data.set("minDu", om.valueToTree(this.getMinDu()));
+            }
             if (this.getReserve() != null) {
                 data.set("reserve", om.valueToTree(this.getReserve()));
+            }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
+            if (this.getSrcPrimaryVswId() != null) {
+                data.set("srcPrimaryVswId", om.valueToTree(this.getSrcPrimaryVswId()));
+            }
+            if (this.getSrcSecondaryVswId() != null) {
+                data.set("srcSecondaryVswId", om.valueToTree(this.getSrcSecondaryVswId()));
             }
             if (this.getStatus() != null) {
                 data.set("status", om.valueToTree(this.getStatus()));
@@ -1060,6 +1341,8 @@ public interface SynchronizationJob2Props extends software.amazon.jsii.JsiiSeria
             if (this.delayNotice != null ? !this.delayNotice.equals(that.delayNotice) : that.delayNotice != null) return false;
             if (this.delayPhone != null ? !this.delayPhone.equals(that.delayPhone) : that.delayPhone != null) return false;
             if (this.delayRuleTime != null ? !this.delayRuleTime.equals(that.delayRuleTime) : that.delayRuleTime != null) return false;
+            if (this.destPrimaryVswId != null ? !this.destPrimaryVswId.equals(that.destPrimaryVswId) : that.destPrimaryVswId != null) return false;
+            if (this.destSecondaryVswId != null ? !this.destSecondaryVswId.equals(that.destSecondaryVswId) : that.destSecondaryVswId != null) return false;
             if (this.disasterRecoveryJob != null ? !this.disasterRecoveryJob.equals(that.disasterRecoveryJob) : that.disasterRecoveryJob != null) return false;
             if (this.dtsBisLabel != null ? !this.dtsBisLabel.equals(that.dtsBisLabel) : that.dtsBisLabel != null) return false;
             if (this.dtsInstanceId != null ? !this.dtsInstanceId.equals(that.dtsInstanceId) : that.dtsInstanceId != null) return false;
@@ -1067,7 +1350,12 @@ public interface SynchronizationJob2Props extends software.amazon.jsii.JsiiSeria
             if (this.errorNotice != null ? !this.errorNotice.equals(that.errorNotice) : that.errorNotice != null) return false;
             if (this.errorPhone != null ? !this.errorPhone.equals(that.errorPhone) : that.errorPhone != null) return false;
             if (this.fileOssUrl != null ? !this.fileOssUrl.equals(that.fileOssUrl) : that.fileOssUrl != null) return false;
+            if (this.maxDu != null ? !this.maxDu.equals(that.maxDu) : that.maxDu != null) return false;
+            if (this.minDu != null ? !this.minDu.equals(that.minDu) : that.minDu != null) return false;
             if (this.reserve != null ? !this.reserve.equals(that.reserve) : that.reserve != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
+            if (this.srcPrimaryVswId != null ? !this.srcPrimaryVswId.equals(that.srcPrimaryVswId) : that.srcPrimaryVswId != null) return false;
+            if (this.srcSecondaryVswId != null ? !this.srcSecondaryVswId.equals(that.srcSecondaryVswId) : that.srcSecondaryVswId != null) return false;
             if (this.status != null ? !this.status.equals(that.status) : that.status != null) return false;
             return this.synchronizationDirection != null ? this.synchronizationDirection.equals(that.synchronizationDirection) : that.synchronizationDirection == null;
         }
@@ -1087,6 +1375,8 @@ public interface SynchronizationJob2Props extends software.amazon.jsii.JsiiSeria
             result = 31 * result + (this.delayNotice != null ? this.delayNotice.hashCode() : 0);
             result = 31 * result + (this.delayPhone != null ? this.delayPhone.hashCode() : 0);
             result = 31 * result + (this.delayRuleTime != null ? this.delayRuleTime.hashCode() : 0);
+            result = 31 * result + (this.destPrimaryVswId != null ? this.destPrimaryVswId.hashCode() : 0);
+            result = 31 * result + (this.destSecondaryVswId != null ? this.destSecondaryVswId.hashCode() : 0);
             result = 31 * result + (this.disasterRecoveryJob != null ? this.disasterRecoveryJob.hashCode() : 0);
             result = 31 * result + (this.dtsBisLabel != null ? this.dtsBisLabel.hashCode() : 0);
             result = 31 * result + (this.dtsInstanceId != null ? this.dtsInstanceId.hashCode() : 0);
@@ -1094,7 +1384,12 @@ public interface SynchronizationJob2Props extends software.amazon.jsii.JsiiSeria
             result = 31 * result + (this.errorNotice != null ? this.errorNotice.hashCode() : 0);
             result = 31 * result + (this.errorPhone != null ? this.errorPhone.hashCode() : 0);
             result = 31 * result + (this.fileOssUrl != null ? this.fileOssUrl.hashCode() : 0);
+            result = 31 * result + (this.maxDu != null ? this.maxDu.hashCode() : 0);
+            result = 31 * result + (this.minDu != null ? this.minDu.hashCode() : 0);
             result = 31 * result + (this.reserve != null ? this.reserve.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
+            result = 31 * result + (this.srcPrimaryVswId != null ? this.srcPrimaryVswId.hashCode() : 0);
+            result = 31 * result + (this.srcSecondaryVswId != null ? this.srcSecondaryVswId.hashCode() : 0);
             result = 31 * result + (this.status != null ? this.status.hashCode() : 0);
             result = 31 * result + (this.synchronizationDirection != null ? this.synchronizationDirection.hashCode() : 0);
             return result;

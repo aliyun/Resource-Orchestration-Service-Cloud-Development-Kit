@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SAG::AppUser</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:10.400Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:50.474Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.AppUser")
 public class AppUser extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.sag.IAppUser {
 
@@ -49,7 +49,7 @@ public class AppUser extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute UserName: &lt;heat.engine.properties.Schema object at 0x7f2959675f90&gt;.
+     * Attribute UserName: The name of the user.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrUserName() {

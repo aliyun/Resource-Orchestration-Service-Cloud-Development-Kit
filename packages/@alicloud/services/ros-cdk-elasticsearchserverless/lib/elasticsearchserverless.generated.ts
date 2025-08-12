@@ -34,6 +34,11 @@ export interface RosAppProps {
     readonly description?: string | ros.IResolvable;
 
     /**
+     * @Property logProConfiguration: The log pro configuration of the app.
+     */
+    readonly logProConfiguration?: RosApp.LogProConfigurationProperty | ros.IResolvable;
+
+    /**
      * @Property network: The public network of the app.
      */
     readonly network?: Array<RosApp.NetworkProperty | ros.IResolvable> | ros.IResolvable;
@@ -42,6 +47,11 @@ export interface RosAppProps {
      * @Property privateNetwork: The private network of the app.
      */
     readonly privateNetwork?: Array<RosApp.PrivateNetworkProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property scenario: The scenario of the app.
+     */
+    readonly scenario?: string | ros.IResolvable;
 }
 
 /**
@@ -57,7 +67,7 @@ function RosAppPropsValidator(properties: any): ros.ValidationResult {
     if(properties.appVersion && (typeof properties.appVersion) !== 'object') {
         errors.collect(ros.propertyValidator('appVersion', ros.validateAllowedValues)({
           data: properties.appVersion,
-          allowedValues: ["7.10"],
+          allowedValues: ["7.10","8.17"],
         }));
     }
     errors.collect(ros.propertyValidator('appVersion', ros.validateString)(properties.appVersion));
@@ -67,7 +77,15 @@ function RosAppPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('quotaInfo', ros.requiredValidator)(properties.quotaInfo));
     errors.collect(ros.propertyValidator('quotaInfo', RosApp_QuotaInfoPropertyValidator)(properties.quotaInfo));
     errors.collect(ros.propertyValidator('network', ros.listValidator(RosApp_NetworkPropertyValidator))(properties.network));
+    errors.collect(ros.propertyValidator('logProConfiguration', RosApp_LogProConfigurationPropertyValidator)(properties.logProConfiguration));
     errors.collect(ros.propertyValidator('privateNetwork', ros.listValidator(RosApp_PrivateNetworkPropertyValidator))(properties.privateNetwork));
+    if(properties.scenario && (typeof properties.scenario) !== 'object') {
+        errors.collect(ros.propertyValidator('scenario', ros.validateAllowedValues)({
+          data: properties.scenario,
+          allowedValues: ["SEARCH","LOG_PRO","GENERAL"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('scenario', ros.validateString)(properties.scenario));
     errors.collect(ros.propertyValidator('appName', ros.requiredValidator)(properties.appName));
     errors.collect(ros.propertyValidator('appName', ros.validateString)(properties.appName));
     return errors.wrap('supplied properties not correct for "RosAppProps"');
@@ -92,8 +110,10 @@ function rosAppPropsToRosTemplate(properties: any, enableResourcePropertyConstra
       'QuotaInfo': rosAppQuotaInfoPropertyToRosTemplate(properties.quotaInfo),
       'AppVersion': ros.stringToRosTemplate(properties.appVersion),
       'Description': ros.stringToRosTemplate(properties.description),
+      'LogProConfiguration': rosAppLogProConfigurationPropertyToRosTemplate(properties.logProConfiguration),
       'Network': ros.listMapper(rosAppNetworkPropertyToRosTemplate)(properties.network),
       'PrivateNetwork': ros.listMapper(rosAppPrivateNetworkPropertyToRosTemplate)(properties.privateNetwork),
+      'Scenario': ros.stringToRosTemplate(properties.scenario),
     };
 }
 
@@ -133,6 +153,11 @@ export class RosApp extends ros.RosResource {
      */
     public readonly attrPublicKibanaDomain: ros.IResolvable;
 
+    /**
+     * @Attribute Username: The username of the app.
+     */
+    public readonly attrUsername: ros.IResolvable;
+
     public enableResourcePropertyConstraint: boolean;
 
 
@@ -162,6 +187,11 @@ export class RosApp extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
+     * @Property logProConfiguration: The log pro configuration of the app.
+     */
+    public logProConfiguration: RosApp.LogProConfigurationProperty | ros.IResolvable | undefined;
+
+    /**
      * @Property network: The public network of the app.
      */
     public network: Array<RosApp.NetworkProperty | ros.IResolvable> | ros.IResolvable | undefined;
@@ -170,6 +200,11 @@ export class RosApp extends ros.RosResource {
      * @Property privateNetwork: The private network of the app.
      */
     public privateNetwork: Array<RosApp.PrivateNetworkProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property scenario: The scenario of the app.
+     */
+    public scenario: string | ros.IResolvable | undefined;
 
     /**
      * @param scope - scope in which this resource is defined
@@ -183,6 +218,7 @@ export class RosApp extends ros.RosResource {
         this.attrPrivateKibanaDomain = this.getAtt('PrivateKibanaDomain');
         this.attrPublicEsDomain = this.getAtt('PublicESDomain');
         this.attrPublicKibanaDomain = this.getAtt('PublicKibanaDomain');
+        this.attrUsername = this.getAtt('Username');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.appName = props.appName;
@@ -190,8 +226,10 @@ export class RosApp extends ros.RosResource {
         this.quotaInfo = props.quotaInfo;
         this.appVersion = props.appVersion;
         this.description = props.description;
+        this.logProConfiguration = props.logProConfiguration;
         this.network = props.network;
         this.privateNetwork = props.privateNetwork;
+        this.scenario = props.scenario;
     }
 
 
@@ -202,8 +240,10 @@ export class RosApp extends ros.RosResource {
             quotaInfo: this.quotaInfo,
             appVersion: this.appVersion,
             description: this.description,
+            logProConfiguration: this.logProConfiguration,
             network: this.network,
             privateNetwork: this.privateNetwork,
+            scenario: this.scenario,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -292,6 +332,89 @@ function rosAppBasicAuthPropertyToRosTemplate(properties: any): any {
     RosApp_BasicAuthPropertyValidator(properties).assertSuccess();
     return {
       'Password': ros.stringToRosTemplate(properties.password),
+    };
+}
+
+export namespace RosApp {
+    /**
+     * @stability external
+     */
+    export interface LogProConfigurationProperty {
+        /**
+         * @Property autoDataOrganization: Whether to enable auto data organization.
+         */
+        readonly autoDataOrganization: boolean | ros.IResolvable;
+        /**
+         * @Property advancedIndexingOptimization: Whether to enable advanced indexing optimization.
+         */
+        readonly advancedIndexingOptimization: boolean | ros.IResolvable;
+        /**
+         * @Property writeWithPrimaryKey: Whether to enable write with primary key.
+         */
+        readonly writeWithPrimaryKey: boolean | ros.IResolvable;
+        /**
+         * @Property logProDynamicFieldConfigType: The log pro dynamic field config type of the app.
+         */
+        readonly logProDynamicFieldConfigType: string | ros.IResolvable;
+        /**
+         * @Property expirationDays: The expiration days of the app.
+         */
+        readonly expirationDays: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `LogProConfigurationProperty`
+ *
+ * @param properties - the TypeScript properties of a `LogProConfigurationProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosApp_LogProConfigurationPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('autoDataOrganization', ros.requiredValidator)(properties.autoDataOrganization));
+    errors.collect(ros.propertyValidator('autoDataOrganization', ros.validateBoolean)(properties.autoDataOrganization));
+    errors.collect(ros.propertyValidator('advancedIndexingOptimization', ros.requiredValidator)(properties.advancedIndexingOptimization));
+    errors.collect(ros.propertyValidator('advancedIndexingOptimization', ros.validateBoolean)(properties.advancedIndexingOptimization));
+    errors.collect(ros.propertyValidator('writeWithPrimaryKey', ros.requiredValidator)(properties.writeWithPrimaryKey));
+    errors.collect(ros.propertyValidator('writeWithPrimaryKey', ros.validateBoolean)(properties.writeWithPrimaryKey));
+    errors.collect(ros.propertyValidator('logProDynamicFieldConfigType', ros.requiredValidator)(properties.logProDynamicFieldConfigType));
+    if(properties.logProDynamicFieldConfigType && (typeof properties.logProDynamicFieldConfigType) !== 'object') {
+        errors.collect(ros.propertyValidator('logProDynamicFieldConfigType', ros.validateAllowedValues)({
+          data: properties.logProDynamicFieldConfigType,
+          allowedValues: ["RECOGNIZE","MERGE","IGNORE","ERROR"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('logProDynamicFieldConfigType', ros.validateString)(properties.logProDynamicFieldConfigType));
+    errors.collect(ros.propertyValidator('expirationDays', ros.requiredValidator)(properties.expirationDays));
+    if(properties.expirationDays && (typeof properties.expirationDays) !== 'object') {
+        errors.collect(ros.propertyValidator('expirationDays', ros.validateRange)({
+            data: properties.expirationDays,
+            min: -1,
+            max: 365,
+          }));
+    }
+    errors.collect(ros.propertyValidator('expirationDays', ros.validateNumber)(properties.expirationDays));
+    return errors.wrap('supplied properties not correct for "LogProConfigurationProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ElasticSearchServerless::App.LogProConfiguration` resource
+ *
+ * @param properties - the TypeScript properties of a `LogProConfigurationProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ElasticSearchServerless::App.LogProConfiguration` resource.
+ */
+// @ts-ignore TS6133
+function rosAppLogProConfigurationPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosApp_LogProConfigurationPropertyValidator(properties).assertSuccess();
+    return {
+      'AutoDataOrganization': ros.booleanToRosTemplate(properties.autoDataOrganization),
+      'AdvancedIndexingOptimization': ros.booleanToRosTemplate(properties.advancedIndexingOptimization),
+      'WriteWithPrimaryKey': ros.booleanToRosTemplate(properties.writeWithPrimaryKey),
+      'LogProDynamicFieldConfigType': ros.stringToRosTemplate(properties.logProDynamicFieldConfigType),
+      'ExpirationDays': ros.numberToRosTemplate(properties.expirationDays),
     };
 }
 
@@ -485,13 +608,25 @@ export namespace RosApp {
      */
     export interface QuotaInfoProperty {
         /**
-         * @Property cu: The cu of the app.
+         * @Property readCu: The read cu of the app.
          */
-        readonly cu: number | ros.IResolvable;
+        readonly readCu?: number | ros.IResolvable;
         /**
-         * @Property storage: The storage of the app.
+         * @Property elastic: Whether the app is elastic.
          */
-        readonly storage: number | ros.IResolvable;
+        readonly elastic?: boolean | ros.IResolvable;
+        /**
+         * @Property writeCu: The write cu of the app.
+         */
+        readonly writeCu?: number | ros.IResolvable;
+        /**
+         * @Property minCu: The min cu of the app.
+         */
+        readonly minCu?: number | ros.IResolvable;
+        /**
+         * @Property maxCu: The max cu of the app.
+         */
+        readonly maxCu?: number | ros.IResolvable;
         /**
          * @Property appType: The type of the app.
          */
@@ -508,10 +643,11 @@ export namespace RosApp {
 function RosApp_QuotaInfoPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('cu', ros.requiredValidator)(properties.cu));
-    errors.collect(ros.propertyValidator('cu', ros.validateNumber)(properties.cu));
-    errors.collect(ros.propertyValidator('storage', ros.requiredValidator)(properties.storage));
-    errors.collect(ros.propertyValidator('storage', ros.validateNumber)(properties.storage));
+    errors.collect(ros.propertyValidator('readCu', ros.validateNumber)(properties.readCu));
+    errors.collect(ros.propertyValidator('elastic', ros.validateBoolean)(properties.elastic));
+    errors.collect(ros.propertyValidator('writeCu', ros.validateNumber)(properties.writeCu));
+    errors.collect(ros.propertyValidator('minCu', ros.validateNumber)(properties.minCu));
+    errors.collect(ros.propertyValidator('maxCu', ros.validateNumber)(properties.maxCu));
     errors.collect(ros.propertyValidator('appType', ros.requiredValidator)(properties.appType));
     if(properties.appType && (typeof properties.appType) !== 'object') {
         errors.collect(ros.propertyValidator('appType', ros.validateAllowedValues)({
@@ -535,8 +671,11 @@ function rosAppQuotaInfoPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosApp_QuotaInfoPropertyValidator(properties).assertSuccess();
     return {
-      'Cu': ros.numberToRosTemplate(properties.cu),
-      'Storage': ros.numberToRosTemplate(properties.storage),
+      'ReadCu': ros.numberToRosTemplate(properties.readCu),
+      'Elastic': ros.booleanToRosTemplate(properties.elastic),
+      'WriteCu': ros.numberToRosTemplate(properties.writeCu),
+      'MinCu': ros.numberToRosTemplate(properties.minCu),
+      'MaxCu': ros.numberToRosTemplate(properties.maxCu),
       'AppType': ros.stringToRosTemplate(properties.appType),
     };
 }
@@ -551,7 +690,7 @@ export namespace RosApp {
          */
         readonly groupName: string | ros.IResolvable;
         /**
-         * @Property ips: The ips ofthe white ip group.
+         * @Property ips: The ips of the white ip group.
          */
         readonly ips?: Array<any | ros.IResolvable> | ros.IResolvable;
     }
@@ -586,5 +725,208 @@ function rosAppWhiteIpGroupPropertyToRosTemplate(properties: any): any {
     return {
       'GroupName': ros.stringToRosTemplate(properties.groupName),
       'Ips': ros.listMapper(ros.objectToRosTemplate)(properties.ips),
+    };
+}
+
+/**
+ * Properties for defining a `RosEndpoint`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-elasticsearchserverless-endpoint
+ */
+export interface RosEndpointProps {
+
+    /**
+     * @Property endpointZones: The zone configurations of the endpoint.
+     */
+    readonly endpointZones: Array<RosEndpoint.EndpointZonesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the endpoint.
+     */
+    readonly name?: string | ros.IResolvable;
+
+    /**
+     * @Property type: Endpoint type, default value: VPC.
+     */
+    readonly type?: string | ros.IResolvable;
+
+    /**
+     * @Property vpcId: The vpc id of the endpoint.
+     */
+    readonly vpcId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosEndpointProps`
+ *
+ * @param properties - the TypeScript properties of a `RosEndpointProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosEndpointPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('endpointZones', ros.requiredValidator)(properties.endpointZones));
+    if(properties.endpointZones && (Array.isArray(properties.endpointZones) || (typeof properties.endpointZones) === 'string')) {
+        errors.collect(ros.propertyValidator('endpointZones', ros.validateLength)({
+            data: properties.endpointZones.length,
+            min: 1,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('endpointZones', ros.listValidator(RosEndpoint_EndpointZonesPropertyValidator))(properties.endpointZones));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "RosEndpointProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ElasticSearchServerless::Endpoint` resource
+ *
+ * @param properties - the TypeScript properties of a `RosEndpointProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ElasticSearchServerless::Endpoint` resource.
+ */
+// @ts-ignore TS6133
+function rosEndpointPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosEndpointPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'EndpointZones': ros.listMapper(rosEndpointEndpointZonesPropertyToRosTemplate)(properties.endpointZones),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ElasticSearchServerless::Endpoint`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Endpoint` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-elasticsearchserverless-endpoint
+ */
+export class RosEndpoint extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ElasticSearchServerless::Endpoint";
+
+    /**
+     * @Attribute Domain: The domain of the endpoint.
+     */
+    public readonly attrDomain: ros.IResolvable;
+
+    /**
+     * @Attribute EndpointId: The Id of the endpoint.
+     */
+    public readonly attrEndpointId: ros.IResolvable;
+
+    /**
+     * @Attribute PvlEndpointId: The Id of the private link endpoint.
+     */
+    public readonly attrPvlEndpointId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property endpointZones: The zone configurations of the endpoint.
+     */
+    public endpointZones: Array<RosEndpoint.EndpointZonesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the endpoint.
+     */
+    public name: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property type: Endpoint type, default value: VPC.
+     */
+    public type: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property vpcId: The vpc id of the endpoint.
+     */
+    public vpcId: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosEndpointProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosEndpoint.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDomain = this.getAtt('Domain');
+        this.attrEndpointId = this.getAtt('EndpointId');
+        this.attrPvlEndpointId = this.getAtt('PvlEndpointId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.endpointZones = props.endpointZones;
+        this.name = props.name;
+        this.type = props.type;
+        this.vpcId = props.vpcId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            endpointZones: this.endpointZones,
+            name: this.name,
+            type: this.type,
+            vpcId: this.vpcId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosEndpointPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosEndpoint {
+    /**
+     * @stability external
+     */
+    export interface EndpointZonesProperty {
+        /**
+         * @Property zoneId: Availability zone ID.
+         */
+        readonly zoneId: string | ros.IResolvable;
+        /**
+         * @Property vSwitchId: Virtual switch ID.
+         */
+        readonly vSwitchId: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `EndpointZonesProperty`
+ *
+ * @param properties - the TypeScript properties of a `EndpointZonesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosEndpoint_EndpointZonesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    return errors.wrap('supplied properties not correct for "EndpointZonesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ElasticSearchServerless::Endpoint.EndpointZones` resource
+ *
+ * @param properties - the TypeScript properties of a `EndpointZonesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ElasticSearchServerless::Endpoint.EndpointZones` resource.
+ */
+// @ts-ignore TS6133
+function rosEndpointEndpointZonesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosEndpoint_EndpointZonesPropertyValidator(properties).assertSuccess();
+    return {
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
     };
 }

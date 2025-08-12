@@ -107,8 +107,10 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "onSynthesize", GoMethod: "OnSynthesize"},
 			_jsii_.MemberMethod{JsiiMethod: "onValidate", GoMethod: "OnValidate"},
 			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "payType", GoGetter: "PayType"},
 			_jsii_.MemberProperty{JsiiProperty: "period", GoGetter: "Period"},
 			_jsii_.MemberProperty{JsiiProperty: "periodUnit", GoGetter: "PeriodUnit"},
+			_jsii_.MemberProperty{JsiiProperty: "postPayInstanceModule", GoGetter: "PostPayInstanceModule"},
 			_jsii_.MemberMethod{JsiiMethod: "prepare", GoMethod: "Prepare"},
 			_jsii_.MemberProperty{JsiiProperty: "protectedServers", GoGetter: "ProtectedServers"},
 			_jsii_.MemberProperty{JsiiProperty: "quotaForApplicationProtection", GoGetter: "QuotaForApplicationProtection"},
@@ -139,6 +141,10 @@ func init() {
 			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreRosResource)
 			return &j
 		},
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-sas.RosInstance.PostPayInstanceModuleProperty",
+		reflect.TypeOf((*RosInstance_PostPayInstanceModuleProperty)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-sas.RosInstanceProps",

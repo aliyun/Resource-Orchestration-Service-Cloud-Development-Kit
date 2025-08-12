@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.maxcompute;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-maxcompute-project
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:07.952Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.510Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.maxcompute.$Module.class, fqn = "@alicloud/ros-cdk-maxcompute.RosProjectProps")
 @software.amazon.jsii.Jsii.Proxy(RosProjectProps.Jsii$Proxy.class)
 public interface RosProjectProps extends software.amazon.jsii.JsiiSerializable {
@@ -45,6 +45,12 @@ public interface RosProjectProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSupportSchemaLevels() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosProjectProps}
      */
     static Builder builder() {
@@ -60,6 +66,7 @@ public interface RosProjectProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object defaultQuota;
         java.lang.Object ipWhiteList;
         java.lang.Object properties;
+        java.lang.Object supportSchemaLevels;
 
         /**
          * Sets the value of {@link RosProjectProps#getName}
@@ -182,6 +189,26 @@ public interface RosProjectProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosProjectProps#getSupportSchemaLevels}
+         * @param supportSchemaLevels the value to be set.
+         * @return {@code this}
+         */
+        public Builder supportSchemaLevels(java.lang.Boolean supportSchemaLevels) {
+            this.supportSchemaLevels = supportSchemaLevels;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosProjectProps#getSupportSchemaLevels}
+         * @param supportSchemaLevels the value to be set.
+         * @return {@code this}
+         */
+        public Builder supportSchemaLevels(com.aliyun.ros.cdk.core.IResolvable supportSchemaLevels) {
+            this.supportSchemaLevels = supportSchemaLevels;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosProjectProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -203,6 +230,7 @@ public interface RosProjectProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object defaultQuota;
         private final java.lang.Object ipWhiteList;
         private final java.lang.Object properties;
+        private final java.lang.Object supportSchemaLevels;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -216,6 +244,7 @@ public interface RosProjectProps extends software.amazon.jsii.JsiiSerializable {
             this.defaultQuota = software.amazon.jsii.Kernel.get(this, "defaultQuota", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ipWhiteList = software.amazon.jsii.Kernel.get(this, "ipWhiteList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.properties = software.amazon.jsii.Kernel.get(this, "properties", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.supportSchemaLevels = software.amazon.jsii.Kernel.get(this, "supportSchemaLevels", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -229,6 +258,7 @@ public interface RosProjectProps extends software.amazon.jsii.JsiiSerializable {
             this.defaultQuota = builder.defaultQuota;
             this.ipWhiteList = builder.ipWhiteList;
             this.properties = builder.properties;
+            this.supportSchemaLevels = builder.supportSchemaLevels;
         }
 
         @Override
@@ -262,6 +292,11 @@ public interface RosProjectProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getSupportSchemaLevels() {
+            return this.supportSchemaLevels;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -282,6 +317,9 @@ public interface RosProjectProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getProperties() != null) {
                 data.set("properties", om.valueToTree(this.getProperties()));
+            }
+            if (this.getSupportSchemaLevels() != null) {
+                data.set("supportSchemaLevels", om.valueToTree(this.getSupportSchemaLevels()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -306,7 +344,8 @@ public interface RosProjectProps extends software.amazon.jsii.JsiiSerializable {
             if (this.comment != null ? !this.comment.equals(that.comment) : that.comment != null) return false;
             if (this.defaultQuota != null ? !this.defaultQuota.equals(that.defaultQuota) : that.defaultQuota != null) return false;
             if (this.ipWhiteList != null ? !this.ipWhiteList.equals(that.ipWhiteList) : that.ipWhiteList != null) return false;
-            return this.properties != null ? this.properties.equals(that.properties) : that.properties == null;
+            if (this.properties != null ? !this.properties.equals(that.properties) : that.properties != null) return false;
+            return this.supportSchemaLevels != null ? this.supportSchemaLevels.equals(that.supportSchemaLevels) : that.supportSchemaLevels == null;
         }
 
         @Override
@@ -317,6 +356,7 @@ public interface RosProjectProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.defaultQuota != null ? this.defaultQuota.hashCode() : 0);
             result = 31 * result + (this.ipWhiteList != null ? this.ipWhiteList.hashCode() : 0);
             result = 31 * result + (this.properties != null ? this.properties.hashCode() : 0);
+            result = 31 * result + (this.supportSchemaLevels != null ? this.supportSchemaLevels.hashCode() : 0);
             return result;
         }
     }

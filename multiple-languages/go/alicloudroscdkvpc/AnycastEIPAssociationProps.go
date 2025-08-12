@@ -15,5 +15,11 @@ type AnycastEIPAssociationProps struct {
 	//
 	// Valid value: SlbInstance, SLB instance of private network type.
 	BindInstanceType interface{} `field:"required" json:"bindInstanceType" yaml:"bindInstanceType"`
+	// Property associationMode: The association mode.
+	AssociationMode interface{} `field:"optional" json:"associationMode" yaml:"associationMode"`
+	// Property popLocations: The pop locations.
+	PopLocations interface{} `field:"optional" json:"popLocations" yaml:"popLocations"`
+	// Property privateIpAddress: The private IP address.
+	PrivateIpAddress interface{} `field:"optional" json:"privateIpAddress" yaml:"privateIpAddress"`
 }
 

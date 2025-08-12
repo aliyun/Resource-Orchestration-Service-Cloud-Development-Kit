@@ -134,6 +134,8 @@ type RosInstance interface {
 	SetStorageSetId(val interface{})
 	StorageSetPartitionNumber() interface{}
 	SetStorageSetPartitionNumber(val interface{})
+	SubscriptionDeletionForce() interface{}
+	SetSubscriptionDeletionForce(val interface{})
 	SystemDiskCategory() interface{}
 	SetSystemDiskCategory(val interface{})
 	SystemDiskDescription() interface{}
@@ -864,6 +866,16 @@ func (j *jsiiProxy_RosInstance) StorageSetPartitionNumber() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosInstance) SubscriptionDeletionForce() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"subscriptionDeletionForce",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosInstance) SystemDiskCategory() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -1490,6 +1502,17 @@ func (j *jsiiProxy_RosInstance)SetStorageSetPartitionNumber(val interface{}) {
 	_jsii_.Set(
 		j,
 		"storageSetPartitionNumber",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosInstance)SetSubscriptionDeletionForce(val interface{}) {
+	if err := j.validateSetSubscriptionDeletionForceParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"subscriptionDeletionForce",
 		val,
 	)
 }

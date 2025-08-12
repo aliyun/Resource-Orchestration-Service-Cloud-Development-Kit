@@ -29,12 +29,18 @@ type DedicatedHostProps struct {
 	//
 	// If specified Prepaid, please ensure you have sufficient balance in your account. Or instance creation will be failure. Default value is Postpaid.
 	ChargeType interface{} `field:"optional" json:"chargeType" yaml:"chargeType"`
+	// Property cpuOverCommitRatio: The CPU overcommit ratio of the dedicated host.
+	CpuOverCommitRatio interface{} `field:"optional" json:"cpuOverCommitRatio" yaml:"cpuOverCommitRatio"`
+	// Property dedicatedHostClusterId: The ID of the dedicated host cluster.
+	DedicatedHostClusterId interface{} `field:"optional" json:"dedicatedHostClusterId" yaml:"dedicatedHostClusterId"`
 	// Property dedicatedHostName: The name of the dedicated host, [2, 128] English or Chinese characters.
 	//
 	// It must begin with an uppercase\/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:\/\/ or https:\/\/.
 	DedicatedHostName interface{} `field:"optional" json:"dedicatedHostName" yaml:"dedicatedHostName"`
 	// Property description: The description of host.
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
+	// Property minQuantity: The minimum number of dedicated hosts that you want to create.
+	MinQuantity interface{} `field:"optional" json:"minQuantity" yaml:"minQuantity"`
 	// Property networkAttributesSlbUdpTimeout: The duration of UDP timeout for sessions between Server Load Balancer (SLB) and the dedicated host.
 	//
 	// Unit: seconds. Valid values: 15 to 310.

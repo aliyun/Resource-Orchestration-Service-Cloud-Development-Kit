@@ -5,14 +5,12 @@ package alicloudroscdksas
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sas-instance
 type InstanceProps struct {
-	// Property period: The subscription period of the firewallIf PeriodUnit is month, the valid range is 1, 3, 6 If periodUnit is year, the valid range is 1, 2, 3.
-	Period interface{} `field:"required" json:"period" yaml:"period"`
-	// Property periodUnit: The unit of the subscription duration.
+	// Property payType: The billing method of the firewall instance.
 	//
 	// Valid values:
-	// Month
-	// Year.
-	PeriodUnit interface{} `field:"required" json:"periodUnit" yaml:"periodUnit"`
+	// PayAsYouGo: pay-as-you-go
+	// Subscription: subscription.
+	PayType interface{} `field:"required" json:"payType" yaml:"payType"`
 	// Property antiRansomware: Security Center provides a comprehensive anti-ransomware solution to protect your business.
 	//
 	// We recommend that you configure a data protection capacity of 50GB for each server.
@@ -45,6 +43,16 @@ type InstanceProps struct {
 	//
 	// This ensures the security of the running environment of your cloud services.
 	MaliciousFileDetectionSdk interface{} `field:"optional" json:"maliciousFileDetectionSdk" yaml:"maliciousFileDetectionSdk"`
+	// Property period: The subscription period of the firewallIf PeriodUnit is month, the valid range is 1, 3, 6 If periodUnit is year, the valid range is 1, 2, 3.
+	Period interface{} `field:"optional" json:"period" yaml:"period"`
+	// Property periodUnit: The unit of the subscription duration.
+	//
+	// Valid values:
+	// Month
+	// Year.
+	PeriodUnit interface{} `field:"optional" json:"periodUnit" yaml:"periodUnit"`
+	// Property postPayInstanceModule: PayAsYouGo instance module configuration.
+	PostPayInstanceModule interface{} `field:"optional" json:"postPayInstanceModule" yaml:"postPayInstanceModule"`
 	// Property protectedServers: Authorization is the same as the number of servers you have.
 	ProtectedServers interface{} `field:"optional" json:"protectedServers" yaml:"protectedServers"`
 	// Property quotaForApplicationProtection: The application protection feature can detect attacks on applications and provide self-protection during application runtime.

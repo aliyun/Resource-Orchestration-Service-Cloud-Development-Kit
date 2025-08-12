@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Cluster`, which is used to create a cluster.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Cluster`.
 type RosCluster interface {
 	alicloudroscdkcore.RosResource
 	AcceptLanguage() interface{}
@@ -97,6 +97,8 @@ type RosCluster interface {
 	Ref() *string
 	RequestPars() interface{}
 	SetRequestPars(val interface{})
+	ResourceGroupId() interface{}
+	SetResourceGroupId(val interface{})
 	// Options for this resource, such as condition, update policy etc.
 	RosOptions() alicloudroscdkcore.IRosResourceOptions
 	RosProperties() *map[string]interface{}
@@ -106,6 +108,8 @@ type RosCluster interface {
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
 	Stack() alicloudroscdkcore.Stack
+	Tags() *[]*RosCluster_TagsProperty
+	SetTags(val *[]*RosCluster_TagsProperty)
 	// Return properties modified after initiation.
 	//
 	// Resources that expose mutable properties should override this function to
@@ -754,6 +758,16 @@ func (j *jsiiProxy_RosCluster) RequestPars() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosCluster) ResourceGroupId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"resourceGroupId",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosCluster) RosOptions() alicloudroscdkcore.IRosResourceOptions {
 	var returns alicloudroscdkcore.IRosResourceOptions
 	_jsii_.Get(
@@ -789,6 +803,16 @@ func (j *jsiiProxy_RosCluster) Stack() alicloudroscdkcore.Stack {
 	_jsii_.Get(
 		j,
 		"stack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosCluster) Tags() *[]*RosCluster_TagsProperty {
+	var returns *[]*RosCluster_TagsProperty
+	_jsii_.Get(
+		j,
+		"tags",
 		&returns,
 	)
 	return returns
@@ -1024,6 +1048,28 @@ func (j *jsiiProxy_RosCluster)SetRequestPars(val interface{}) {
 	_jsii_.Set(
 		j,
 		"requestPars",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosCluster)SetResourceGroupId(val interface{}) {
+	if err := j.validateSetResourceGroupIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"resourceGroupId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosCluster)SetTags(val *[]*RosCluster_TagsProperty) {
+	if err := j.validateSetTagsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"tags",
 		val,
 	)
 }

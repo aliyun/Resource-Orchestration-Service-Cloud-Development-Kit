@@ -61,6 +61,8 @@ type RosTGW interface {
 	// Resources that expose mutable properties should override this function to
 	// collect and return the properties object for this resource.
 	UpdatedProperites() *map[string]interface{}
+	WafInstanceRegion() interface{}
+	SetWafInstanceRegion(val interface{})
 	AddCondition(con alicloudroscdkcore.RosCondition)
 	AddCount(count interface{})
 	// Syntactic sugar for `addOverride(path, undefined)`.
@@ -360,6 +362,16 @@ func (j *jsiiProxy_RosTGW) UpdatedProperites() *map[string]interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosTGW) WafInstanceRegion() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"wafInstanceRegion",
+		&returns,
+	)
+	return returns
+}
+
 
 func NewRosTGW(scope alicloudroscdkcore.Construct, id *string, props *RosTGWProps, enableResourcePropertyConstraint *bool) RosTGW {
 	_init_.Initialize()
@@ -439,6 +451,17 @@ func (j *jsiiProxy_RosTGW)SetResourceGroupId(val interface{}) {
 	_jsii_.Set(
 		j,
 		"resourceGroupId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosTGW)SetWafInstanceRegion(val interface{}) {
+	if err := j.validateSetWafInstanceRegionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"wafInstanceRegion",
 		val,
 	)
 }

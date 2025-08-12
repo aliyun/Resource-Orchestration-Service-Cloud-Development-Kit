@@ -35,7 +35,7 @@ export interface IAlarmContact extends ros.IResource {
     readonly attrAlarmContactName: ros.IResolvable | string;
 
     /**
-     * Attribute ChannelsAliIm: ChannelsAliIM.
+     * Attribute ChannelsAliIm: ChannelsAliIm.
      */
     readonly attrChannelsAliIm: ros.IResolvable | string;
 
@@ -55,7 +55,7 @@ export interface IAlarmContact extends ros.IResource {
     readonly attrChannelsSms: ros.IResolvable | string;
 
     /**
-     * Attribute ChannelsStateAliIm: ChannelsStateAliIM.
+     * Attribute ChannelsStateAliIm: ChannelsStateAliIm.
      */
     readonly attrChannelsStateAliIm: ros.IResolvable | string;
 
@@ -116,7 +116,7 @@ export class AlarmContact extends ros.Resource implements IAlarmContact {
     public readonly attrAlarmContactName: ros.IResolvable | string;
 
     /**
-     * Attribute ChannelsAliIm: ChannelsAliIM.
+     * Attribute ChannelsAliIm: ChannelsAliIm.
      */
     public readonly attrChannelsAliIm: ros.IResolvable | string;
 
@@ -136,7 +136,7 @@ export class AlarmContact extends ros.Resource implements IAlarmContact {
     public readonly attrChannelsSms: ros.IResolvable | string;
 
     /**
-     * Attribute ChannelsStateAliIm: ChannelsStateAliIM.
+     * Attribute ChannelsStateAliIm: ChannelsStateAliIm.
      */
     public readonly attrChannelsStateAliIm: ros.IResolvable | string;
 

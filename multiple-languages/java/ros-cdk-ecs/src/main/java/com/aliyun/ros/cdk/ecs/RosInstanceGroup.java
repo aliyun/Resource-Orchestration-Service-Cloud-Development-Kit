@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ECS::InstanceGroup</code>, which is used to create Elastic Compute Service (ECS) instances that have the same configurations.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:04.947Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.445Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInstanceGroup")
 public class RosInstanceGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -86,6 +86,12 @@ public class RosInstanceGroup extends com.aliyun.ros.cdk.core.RosResource {
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPublicIps() {
         return software.amazon.jsii.Kernel.get(this, "attrPublicIps", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrRelatedOrderIds() {
+        return software.amazon.jsii.Kernel.get(this, "attrRelatedOrderIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -1218,6 +1224,24 @@ public class RosInstanceGroup extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setStorageSetPartitionNumber(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "storageSetPartitionNumber", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSubscriptionDeletionForce() {
+        return software.amazon.jsii.Kernel.get(this, "subscriptionDeletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSubscriptionDeletionForce(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "subscriptionDeletionForce", value);
+    }
+
+    /**
+     */
+    public void setSubscriptionDeletionForce(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "subscriptionDeletionForce", value);
     }
 
     /**
@@ -5078,6 +5102,23 @@ public class RosInstanceGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder storageSetPartitionNumber(final com.aliyun.ros.cdk.core.IResolvable storageSetPartitionNumber) {
             this.props.storageSetPartitionNumber(storageSetPartitionNumber);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param subscriptionDeletionForce This parameter is required.
+         */
+        public Builder subscriptionDeletionForce(final java.lang.Boolean subscriptionDeletionForce) {
+            this.props.subscriptionDeletionForce(subscriptionDeletionForce);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param subscriptionDeletionForce This parameter is required.
+         */
+        public Builder subscriptionDeletionForce(final com.aliyun.ros.cdk.core.IResolvable subscriptionDeletionForce) {
+            this.props.subscriptionDeletionForce(subscriptionDeletionForce);
             return this;
         }
 

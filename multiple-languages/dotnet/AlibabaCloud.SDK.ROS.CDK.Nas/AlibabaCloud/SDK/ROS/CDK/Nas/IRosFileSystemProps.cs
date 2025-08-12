@@ -23,7 +23,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         /// <remarks>
         /// <strong>Property</strong>: storageType: The storage type of the file System.
         /// Valid values:
-        /// Performance、Capacity(Available when the file_system_type is standard)
+        /// Performance、Capacity、Premium(Available when the file_system_type is standard)
         /// standard、advance(Available when the file_system_type is extreme)
         /// advance_100、advance_200(Available when the file_system_type is cpfs)
         /// </remarks>
@@ -143,6 +143,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: resourceGroupId: Resource group id.
+        /// </remarks>
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ResourceGroupId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: snapshotId: Snapshot ID.
         /// </remarks>
         [JsiiProperty(name: "snapshotId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -230,7 +243,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             /// <remarks>
             /// <strong>Property</strong>: storageType: The storage type of the file System.
             /// Valid values:
-            /// Performance、Capacity(Available when the file_system_type is standard)
+            /// Performance、Capacity、Premium(Available when the file_system_type is standard)
             /// standard、advance(Available when the file_system_type is extreme)
             /// advance_100、advance_200(Available when the file_system_type is cpfs)
             /// </remarks>
@@ -321,6 +334,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             [JsiiOptional]
             [JsiiProperty(name: "fileSystemType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? FileSystemType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: resourceGroupId: Resource group id.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ResourceGroupId
             {
                 get => GetInstanceProperty<object?>();
             }

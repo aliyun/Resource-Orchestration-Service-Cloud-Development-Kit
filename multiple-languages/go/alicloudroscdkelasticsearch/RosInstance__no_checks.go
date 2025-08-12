@@ -88,6 +88,10 @@ func (j *jsiiProxy_RosInstance) validateSetDataNodeParameters(val interface{}) e
 	return nil
 }
 
+func (j *jsiiProxy_RosInstance) validateSetDeleteTypeParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosInstance) validateSetDescriptionParameters(val interface{}) error {
 	return nil
 }

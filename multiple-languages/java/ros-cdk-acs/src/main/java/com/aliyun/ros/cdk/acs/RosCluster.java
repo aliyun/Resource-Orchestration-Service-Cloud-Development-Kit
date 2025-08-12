@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.acs;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ACS::Cluster</code>, which is used to create a Container Compute Service (ACS) cluster.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ACS::Cluster</code>, which is used to create an Alibaba Cloud Container Service (ACS) cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:00.852Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:43.095Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acs.$Module.class, fqn = "@alicloud/ros-cdk-acs.RosCluster")
 public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -191,6 +191,58 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getComputeClass() {
+        return software.amazon.jsii.Kernel.get(this, "computeClass", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setComputeClass(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "computeClass", value);
+    }
+
+    /**
+     */
+    public void setComputeClass(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "computeClass", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDeleteOptions() {
+        return software.amazon.jsii.Kernel.get(this, "deleteOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDeleteOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "deleteOptions", value);
+    }
+
+    /**
+     */
+    public void setDeleteOptions(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.acs.RosCluster.DeleteOptionsProperty)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.acs.RosCluster.DeleteOptionsProperty; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "deleteOptions", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getDeletionProtection() {
         return software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -313,6 +365,24 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setMaintenanceWindow(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.acs.RosCluster.MaintenanceWindowProperty value) {
         software.amazon.jsii.Kernel.set(this, "maintenanceWindow", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPodPostpaidSpec() {
+        return software.amazon.jsii.Kernel.get(this, "podPostpaidSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPodPostpaidSpec(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "podPostpaidSpec", value);
+    }
+
+    /**
+     */
+    public void setPodPostpaidSpec(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.acs.RosCluster.PodPostpaidSpecProperty value) {
+        software.amazon.jsii.Kernel.set(this, "podPostpaidSpec", value);
     }
 
     /**
@@ -783,6 +853,436 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
     }
     /**
      */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acs.$Module.class, fqn = "@alicloud/ros-cdk-acs.RosCluster.DeleteOptionsProperty")
+    @software.amazon.jsii.Jsii.Proxy(DeleteOptionsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface DeleteOptionsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDeleteMode() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getResourceType() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link DeleteOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link DeleteOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<DeleteOptionsProperty> {
+            java.lang.Object deleteMode;
+            java.lang.Object resourceType;
+
+            /**
+             * Sets the value of {@link DeleteOptionsProperty#getDeleteMode}
+             * @param deleteMode the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder deleteMode(java.lang.String deleteMode) {
+                this.deleteMode = deleteMode;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DeleteOptionsProperty#getDeleteMode}
+             * @param deleteMode the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder deleteMode(com.aliyun.ros.cdk.core.IResolvable deleteMode) {
+                this.deleteMode = deleteMode;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DeleteOptionsProperty#getResourceType}
+             * @param resourceType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder resourceType(java.lang.String resourceType) {
+                this.resourceType = resourceType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DeleteOptionsProperty#getResourceType}
+             * @param resourceType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder resourceType(com.aliyun.ros.cdk.core.IResolvable resourceType) {
+                this.resourceType = resourceType;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link DeleteOptionsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public DeleteOptionsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link DeleteOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DeleteOptionsProperty {
+            private final java.lang.Object deleteMode;
+            private final java.lang.Object resourceType;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.deleteMode = software.amazon.jsii.Kernel.get(this, "deleteMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.resourceType = software.amazon.jsii.Kernel.get(this, "resourceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.deleteMode = builder.deleteMode;
+                this.resourceType = builder.resourceType;
+            }
+
+            @Override
+            public final java.lang.Object getDeleteMode() {
+                return this.deleteMode;
+            }
+
+            @Override
+            public final java.lang.Object getResourceType() {
+                return this.resourceType;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getDeleteMode() != null) {
+                    data.set("deleteMode", om.valueToTree(this.getDeleteMode()));
+                }
+                if (this.getResourceType() != null) {
+                    data.set("resourceType", om.valueToTree(this.getResourceType()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-acs.RosCluster.DeleteOptionsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                DeleteOptionsProperty.Jsii$Proxy that = (DeleteOptionsProperty.Jsii$Proxy) o;
+
+                if (this.deleteMode != null ? !this.deleteMode.equals(that.deleteMode) : that.deleteMode != null) return false;
+                return this.resourceType != null ? this.resourceType.equals(that.resourceType) : that.resourceType == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.deleteMode != null ? this.deleteMode.hashCode() : 0;
+                result = 31 * result + (this.resourceType != null ? this.resourceType.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acs.$Module.class, fqn = "@alicloud/ros-cdk-acs.RosCluster.GpuQuantityConfigsProperty")
+    @software.amazon.jsii.Jsii.Proxy(GpuQuantityConfigsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface GpuQuantityConfigsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getArch() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getComputeQos() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getGpuModel() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getGpuQuantity() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link GpuQuantityConfigsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link GpuQuantityConfigsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<GpuQuantityConfigsProperty> {
+            java.lang.Object arch;
+            java.lang.Object computeQos;
+            java.lang.Object gpuModel;
+            java.lang.Object gpuQuantity;
+
+            /**
+             * Sets the value of {@link GpuQuantityConfigsProperty#getArch}
+             * @param arch the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder arch(java.lang.String arch) {
+                this.arch = arch;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link GpuQuantityConfigsProperty#getArch}
+             * @param arch the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder arch(com.aliyun.ros.cdk.core.IResolvable arch) {
+                this.arch = arch;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link GpuQuantityConfigsProperty#getComputeQos}
+             * @param computeQos the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder computeQos(java.lang.String computeQos) {
+                this.computeQos = computeQos;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link GpuQuantityConfigsProperty#getComputeQos}
+             * @param computeQos the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder computeQos(com.aliyun.ros.cdk.core.IResolvable computeQos) {
+                this.computeQos = computeQos;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link GpuQuantityConfigsProperty#getGpuModel}
+             * @param gpuModel the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder gpuModel(java.lang.String gpuModel) {
+                this.gpuModel = gpuModel;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link GpuQuantityConfigsProperty#getGpuModel}
+             * @param gpuModel the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder gpuModel(com.aliyun.ros.cdk.core.IResolvable gpuModel) {
+                this.gpuModel = gpuModel;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link GpuQuantityConfigsProperty#getGpuQuantity}
+             * @param gpuQuantity the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder gpuQuantity(java.lang.Number gpuQuantity) {
+                this.gpuQuantity = gpuQuantity;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link GpuQuantityConfigsProperty#getGpuQuantity}
+             * @param gpuQuantity the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder gpuQuantity(com.aliyun.ros.cdk.core.IResolvable gpuQuantity) {
+                this.gpuQuantity = gpuQuantity;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link GpuQuantityConfigsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public GpuQuantityConfigsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link GpuQuantityConfigsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements GpuQuantityConfigsProperty {
+            private final java.lang.Object arch;
+            private final java.lang.Object computeQos;
+            private final java.lang.Object gpuModel;
+            private final java.lang.Object gpuQuantity;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.arch = software.amazon.jsii.Kernel.get(this, "arch", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.computeQos = software.amazon.jsii.Kernel.get(this, "computeQos", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.gpuModel = software.amazon.jsii.Kernel.get(this, "gpuModel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.gpuQuantity = software.amazon.jsii.Kernel.get(this, "gpuQuantity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.arch = builder.arch;
+                this.computeQos = builder.computeQos;
+                this.gpuModel = builder.gpuModel;
+                this.gpuQuantity = builder.gpuQuantity;
+            }
+
+            @Override
+            public final java.lang.Object getArch() {
+                return this.arch;
+            }
+
+            @Override
+            public final java.lang.Object getComputeQos() {
+                return this.computeQos;
+            }
+
+            @Override
+            public final java.lang.Object getGpuModel() {
+                return this.gpuModel;
+            }
+
+            @Override
+            public final java.lang.Object getGpuQuantity() {
+                return this.gpuQuantity;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getArch() != null) {
+                    data.set("arch", om.valueToTree(this.getArch()));
+                }
+                if (this.getComputeQos() != null) {
+                    data.set("computeQos", om.valueToTree(this.getComputeQos()));
+                }
+                if (this.getGpuModel() != null) {
+                    data.set("gpuModel", om.valueToTree(this.getGpuModel()));
+                }
+                if (this.getGpuQuantity() != null) {
+                    data.set("gpuQuantity", om.valueToTree(this.getGpuQuantity()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-acs.RosCluster.GpuQuantityConfigsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                GpuQuantityConfigsProperty.Jsii$Proxy that = (GpuQuantityConfigsProperty.Jsii$Proxy) o;
+
+                if (this.arch != null ? !this.arch.equals(that.arch) : that.arch != null) return false;
+                if (this.computeQos != null ? !this.computeQos.equals(that.computeQos) : that.computeQos != null) return false;
+                if (this.gpuModel != null ? !this.gpuModel.equals(that.gpuModel) : that.gpuModel != null) return false;
+                return this.gpuQuantity != null ? this.gpuQuantity.equals(that.gpuQuantity) : that.gpuQuantity == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.arch != null ? this.arch.hashCode() : 0;
+                result = 31 * result + (this.computeQos != null ? this.computeQos.hashCode() : 0);
+                result = 31 * result + (this.gpuModel != null ? this.gpuModel.hashCode() : 0);
+                result = 31 * result + (this.gpuQuantity != null ? this.gpuQuantity.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
     @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acs.$Module.class, fqn = "@alicloud/ros-cdk-acs.RosCluster.MaintenanceWindowProperty")
     @software.amazon.jsii.Jsii.Proxy(MaintenanceWindowProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -1041,6 +1541,264 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
     }
     /**
      */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acs.$Module.class, fqn = "@alicloud/ros-cdk-acs.RosCluster.PodPostpaidSpecProperty")
+    @software.amazon.jsii.Jsii.Proxy(PodPostpaidSpecProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface PodPostpaidSpecProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCpuCore() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getGpuQuantityConfigs() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getMemGib() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getReplicas() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link PodPostpaidSpecProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link PodPostpaidSpecProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<PodPostpaidSpecProperty> {
+            java.lang.Object cpuCore;
+            java.lang.Object gpuQuantityConfigs;
+            java.lang.Object memGib;
+            java.lang.Object replicas;
+
+            /**
+             * Sets the value of {@link PodPostpaidSpecProperty#getCpuCore}
+             * @param cpuCore the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder cpuCore(java.lang.Number cpuCore) {
+                this.cpuCore = cpuCore;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PodPostpaidSpecProperty#getCpuCore}
+             * @param cpuCore the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder cpuCore(com.aliyun.ros.cdk.core.IResolvable cpuCore) {
+                this.cpuCore = cpuCore;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PodPostpaidSpecProperty#getGpuQuantityConfigs}
+             * @param gpuQuantityConfigs the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder gpuQuantityConfigs(com.aliyun.ros.cdk.core.IResolvable gpuQuantityConfigs) {
+                this.gpuQuantityConfigs = gpuQuantityConfigs;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PodPostpaidSpecProperty#getGpuQuantityConfigs}
+             * @param gpuQuantityConfigs the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder gpuQuantityConfigs(com.aliyun.ros.cdk.acs.RosCluster.GpuQuantityConfigsProperty gpuQuantityConfigs) {
+                this.gpuQuantityConfigs = gpuQuantityConfigs;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PodPostpaidSpecProperty#getMemGib}
+             * @param memGib the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder memGib(java.lang.Number memGib) {
+                this.memGib = memGib;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PodPostpaidSpecProperty#getMemGib}
+             * @param memGib the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder memGib(com.aliyun.ros.cdk.core.IResolvable memGib) {
+                this.memGib = memGib;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PodPostpaidSpecProperty#getReplicas}
+             * @param replicas the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder replicas(java.lang.Number replicas) {
+                this.replicas = replicas;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PodPostpaidSpecProperty#getReplicas}
+             * @param replicas the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder replicas(com.aliyun.ros.cdk.core.IResolvable replicas) {
+                this.replicas = replicas;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link PodPostpaidSpecProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public PodPostpaidSpecProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link PodPostpaidSpecProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements PodPostpaidSpecProperty {
+            private final java.lang.Object cpuCore;
+            private final java.lang.Object gpuQuantityConfigs;
+            private final java.lang.Object memGib;
+            private final java.lang.Object replicas;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.cpuCore = software.amazon.jsii.Kernel.get(this, "cpuCore", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.gpuQuantityConfigs = software.amazon.jsii.Kernel.get(this, "gpuQuantityConfigs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.memGib = software.amazon.jsii.Kernel.get(this, "memGib", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.replicas = software.amazon.jsii.Kernel.get(this, "replicas", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.cpuCore = builder.cpuCore;
+                this.gpuQuantityConfigs = builder.gpuQuantityConfigs;
+                this.memGib = builder.memGib;
+                this.replicas = builder.replicas;
+            }
+
+            @Override
+            public final java.lang.Object getCpuCore() {
+                return this.cpuCore;
+            }
+
+            @Override
+            public final java.lang.Object getGpuQuantityConfigs() {
+                return this.gpuQuantityConfigs;
+            }
+
+            @Override
+            public final java.lang.Object getMemGib() {
+                return this.memGib;
+            }
+
+            @Override
+            public final java.lang.Object getReplicas() {
+                return this.replicas;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getCpuCore() != null) {
+                    data.set("cpuCore", om.valueToTree(this.getCpuCore()));
+                }
+                if (this.getGpuQuantityConfigs() != null) {
+                    data.set("gpuQuantityConfigs", om.valueToTree(this.getGpuQuantityConfigs()));
+                }
+                if (this.getMemGib() != null) {
+                    data.set("memGib", om.valueToTree(this.getMemGib()));
+                }
+                if (this.getReplicas() != null) {
+                    data.set("replicas", om.valueToTree(this.getReplicas()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-acs.RosCluster.PodPostpaidSpecProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                PodPostpaidSpecProperty.Jsii$Proxy that = (PodPostpaidSpecProperty.Jsii$Proxy) o;
+
+                if (this.cpuCore != null ? !this.cpuCore.equals(that.cpuCore) : that.cpuCore != null) return false;
+                if (this.gpuQuantityConfigs != null ? !this.gpuQuantityConfigs.equals(that.gpuQuantityConfigs) : that.gpuQuantityConfigs != null) return false;
+                if (this.memGib != null ? !this.memGib.equals(that.memGib) : that.memGib != null) return false;
+                return this.replicas != null ? this.replicas.equals(that.replicas) : that.replicas == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.cpuCore != null ? this.cpuCore.hashCode() : 0;
+                result = 31 * result + (this.gpuQuantityConfigs != null ? this.gpuQuantityConfigs.hashCode() : 0);
+                result = 31 * result + (this.memGib != null ? this.memGib.hashCode() : 0);
+                result = 31 * result + (this.replicas != null ? this.replicas.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
     @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acs.$Module.class, fqn = "@alicloud/ros-cdk-acs.RosCluster.TagsProperty")
     @software.amazon.jsii.Jsii.Proxy(TagsProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -1287,6 +2045,40 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param computeClass This parameter is required.
+         */
+        public Builder computeClass(final java.lang.String computeClass) {
+            this.props.computeClass(computeClass);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param computeClass This parameter is required.
+         */
+        public Builder computeClass(final com.aliyun.ros.cdk.core.IResolvable computeClass) {
+            this.props.computeClass(computeClass);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param deleteOptions This parameter is required.
+         */
+        public Builder deleteOptions(final com.aliyun.ros.cdk.core.IResolvable deleteOptions) {
+            this.props.deleteOptions(deleteOptions);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param deleteOptions This parameter is required.
+         */
+        public Builder deleteOptions(final java.util.List<? extends java.lang.Object> deleteOptions) {
+            this.props.deleteOptions(deleteOptions);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param deletionProtection This parameter is required.
          */
         public Builder deletionProtection(final java.lang.Boolean deletionProtection) {
@@ -1401,6 +2193,23 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder maintenanceWindow(final com.aliyun.ros.cdk.acs.RosCluster.MaintenanceWindowProperty maintenanceWindow) {
             this.props.maintenanceWindow(maintenanceWindow);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param podPostpaidSpec This parameter is required.
+         */
+        public Builder podPostpaidSpec(final com.aliyun.ros.cdk.core.IResolvable podPostpaidSpec) {
+            this.props.podPostpaidSpec(podPostpaidSpec);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param podPostpaidSpec This parameter is required.
+         */
+        public Builder podPostpaidSpec(final com.aliyun.ros.cdk.acs.RosCluster.PodPostpaidSpecProperty podPostpaidSpec) {
+            this.props.podPostpaidSpec(podPostpaidSpec);
             return this;
         }
 

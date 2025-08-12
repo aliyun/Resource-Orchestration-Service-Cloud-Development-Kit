@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::PVTZ::ZoneRecord`, which is used to add a Domain Name Service (DNS) record to a private zone.
+// This class encapsulates and extends the ROS resource type `ALIYUN::PVTZ::ZoneRecord`.
 type ZoneRecord interface {
 	alicloudroscdkcore.Resource
 	IZoneRecord

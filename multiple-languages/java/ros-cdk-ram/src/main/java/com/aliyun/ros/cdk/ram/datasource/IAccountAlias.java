@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram.datasource;
 /**
  * Represents a <code>AccountAlias</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:09.484Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.728Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.datasource.IAccountAlias")
 @software.amazon.jsii.Jsii.Proxy(IAccountAlias.Jsii$Proxy.class)
 public interface IAccountAlias extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

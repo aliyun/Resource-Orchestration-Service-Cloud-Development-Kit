@@ -92,6 +92,10 @@ func (j *jsiiProxy_RosGateway) validateSetGatewayNameParameters(val interface{})
 	return nil
 }
 
+func (j *jsiiProxy_RosGateway) validateSetGatewayTypeParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosGateway) validateSetLogConfigParameters(val interface{}) error {
 	return nil
 }
@@ -104,7 +108,23 @@ func (j *jsiiProxy_RosGateway) validateSetPaymentTypeParameters(val interface{})
 	return nil
 }
 
+func (j *jsiiProxy_RosGateway) validateSetPeriodParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosGateway) validateSetPeriodUnitParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosGateway) validateSetResourceGroupIdParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosGateway) validateSetSpecParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosGateway) validateSetTagsParameters(val *[]*RosGateway_TagsProperty) error {
 	return nil
 }
 

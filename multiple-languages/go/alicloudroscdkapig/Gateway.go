@@ -27,14 +27,20 @@ type Gateway interface {
 	AttrGatewayId() interface{}
 	// Attribute GatewayName: The name of the resource.
 	AttrGatewayName() interface{}
+	// Attribute GatewayType: The type of the gateway.
+	AttrGatewayType() interface{}
 	// Attribute LoadBalancers: The list of Gateway ingress addresses.
 	AttrLoadBalancers() interface{}
 	// Attribute PaymentType: The payment type of the gateway.
 	AttrPaymentType() interface{}
+	// Attribute ResourceGroupId: The ID of the resource group.
+	AttrResourceGroupId() interface{}
 	// Attribute SecurityGroup: The Security Group of the Gateway.
 	AttrSecurityGroup() interface{}
 	// Attribute Spec: Gateway instance specifications.
 	AttrSpec() interface{}
+	// Attribute Tags: The tags of the Gateway.
+	AttrTags() interface{}
 	// Attribute UpdateTime: Update the timestamp.
 	//
 	// Unit: milliseconds.
@@ -192,6 +198,16 @@ func (j *jsiiProxy_Gateway) AttrGatewayName() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_Gateway) AttrGatewayType() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrGatewayType",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_Gateway) AttrLoadBalancers() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -212,6 +228,16 @@ func (j *jsiiProxy_Gateway) AttrPaymentType() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_Gateway) AttrResourceGroupId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrResourceGroupId",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_Gateway) AttrSecurityGroup() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -227,6 +253,16 @@ func (j *jsiiProxy_Gateway) AttrSpec() interface{} {
 	_jsii_.Get(
 		j,
 		"attrSpec",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Gateway) AttrTags() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrTags",
 		&returns,
 	)
 	return returns

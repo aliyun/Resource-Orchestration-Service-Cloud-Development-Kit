@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.fc3;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::FC3::CustomDomain</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::FC3::CustomDomain</code>, which is used to create a custom domain name in Function Compute 3.0.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:06.894Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.655Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc3.$Module.class, fqn = "@alicloud/ros-cdk-fc3.CustomDomain")
 public class CustomDomain extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.fc3.ICustomDomain {
 

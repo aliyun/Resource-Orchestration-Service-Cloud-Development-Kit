@@ -244,6 +244,10 @@ func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetVpcIdParameters(val i
 	return nil
 }
 
+func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetVSwitchIdsParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetZoneIdsParameters(val interface{}) error {
 	return nil
 }

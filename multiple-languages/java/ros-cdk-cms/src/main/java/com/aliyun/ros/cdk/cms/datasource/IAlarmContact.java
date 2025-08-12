@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms.datasource;
 /**
  * Represents a <code>AlarmContact</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:03.116Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:44.927Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.datasource.IAlarmContact")
 @software.amazon.jsii.Jsii.Proxy(IAlarmContact.Jsii$Proxy.class)
 public interface IAlarmContact extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
@@ -14,7 +14,7 @@ public interface IAlarmContact extends software.amazon.jsii.JsiiSerializable, co
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrAlarmContactName();
 
     /**
-     * Attribute ChannelsAliIm: ChannelsAliIM.
+     * Attribute ChannelsAliIm: ChannelsAliIm.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrChannelsAliIm();
 
@@ -34,7 +34,7 @@ public interface IAlarmContact extends software.amazon.jsii.JsiiSerializable, co
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrChannelsSms();
 
     /**
-     * Attribute ChannelsStateAliIm: ChannelsStateAliIM.
+     * Attribute ChannelsStateAliIm: ChannelsStateAliIm.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrChannelsStateAliIm();
 
@@ -129,7 +129,7 @@ public interface IAlarmContact extends software.amazon.jsii.JsiiSerializable, co
         }
 
         /**
-         * Attribute ChannelsAliIm: ChannelsAliIM.
+         * Attribute ChannelsAliIm: ChannelsAliIm.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrChannelsAliIm() {
@@ -161,7 +161,7 @@ public interface IAlarmContact extends software.amazon.jsii.JsiiSerializable, co
         }
 
         /**
-         * Attribute ChannelsStateAliIm: ChannelsStateAliIM.
+         * Attribute ChannelsStateAliIm: ChannelsStateAliIm.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrChannelsStateAliIm() {
@@ -284,7 +284,7 @@ public interface IAlarmContact extends software.amazon.jsii.JsiiSerializable, co
         }
 
         /**
-         * Attribute ChannelsAliIm: ChannelsAliIM.
+         * Attribute ChannelsAliIm: ChannelsAliIm.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrChannelsAliIm() {
@@ -316,7 +316,7 @@ public interface IAlarmContact extends software.amazon.jsii.JsiiSerializable, co
         }
 
         /**
-         * Attribute ChannelsStateAliIm: ChannelsStateAliIM.
+         * Attribute ChannelsStateAliIm: ChannelsStateAliIm.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrChannelsStateAliIm() {

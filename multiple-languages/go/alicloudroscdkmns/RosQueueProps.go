@@ -7,10 +7,12 @@ package alicloudroscdkmns
 type RosQueueProps struct {
 	QueueName interface{} `field:"required" json:"queueName" yaml:"queueName"`
 	DelaySeconds interface{} `field:"optional" json:"delaySeconds" yaml:"delaySeconds"`
+	DlqPolicy interface{} `field:"optional" json:"dlqPolicy" yaml:"dlqPolicy"`
 	LoggingEnabled interface{} `field:"optional" json:"loggingEnabled" yaml:"loggingEnabled"`
 	MaximumMessageSize interface{} `field:"optional" json:"maximumMessageSize" yaml:"maximumMessageSize"`
 	MessageRetentionPeriod interface{} `field:"optional" json:"messageRetentionPeriod" yaml:"messageRetentionPeriod"`
 	PollingWaitSeconds interface{} `field:"optional" json:"pollingWaitSeconds" yaml:"pollingWaitSeconds"`
+	Tags *[]*RosQueue_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 	VisibilityTimeout interface{} `field:"optional" json:"visibilityTimeout" yaml:"visibilityTimeout"`
 }
 

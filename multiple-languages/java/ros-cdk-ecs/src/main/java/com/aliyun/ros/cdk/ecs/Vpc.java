@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::VPC</code>, which is used to create a virtual private cloud (VPC).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:05.379Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.645Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.Vpc")
 public class Vpc extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.IVpc {
 
@@ -359,20 +359,20 @@ public class Vpc extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property vpcName: Display name of the vpc instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
+         * Property vpcName: The value contains 1 to 128 characters and cannot start with http:// or https://.
          * <p>
          * @return {@code this}
-         * @param vpcName Property vpcName: Display name of the vpc instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'. This parameter is required.
+         * @param vpcName Property vpcName: The value contains 1 to 128 characters and cannot start with http:// or https://. This parameter is required.
          */
         public Builder vpcName(final java.lang.String vpcName) {
             this.props().vpcName(vpcName);
             return this;
         }
         /**
-         * Property vpcName: Display name of the vpc instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
+         * Property vpcName: The value contains 1 to 128 characters and cannot start with http:// or https://.
          * <p>
          * @return {@code this}
-         * @param vpcName Property vpcName: Display name of the vpc instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'. This parameter is required.
+         * @param vpcName Property vpcName: The value contains 1 to 128 characters and cannot start with http:// or https://. This parameter is required.
          */
         public Builder vpcName(final com.aliyun.ros.cdk.core.IResolvable vpcName) {
             this.props().vpcName(vpcName);

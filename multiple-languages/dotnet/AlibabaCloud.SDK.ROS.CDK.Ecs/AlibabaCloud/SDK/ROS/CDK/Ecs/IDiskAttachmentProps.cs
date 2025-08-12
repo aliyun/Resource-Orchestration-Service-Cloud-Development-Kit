@@ -25,6 +25,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             get;
         }
 
+        /// <summary>Property bootable: Whether the disk is bootable.</summary>
+        [JsiiProperty(name: "bootable", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Bootable
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property deleteAutoSnapshot: Whether the auto snapshot is released with the disk.</summary>
         /// <remarks>
         /// Default to true.
@@ -64,6 +75,53 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
+        /// <summary>Property force: Whether to force the operation.</summary>
+        [JsiiProperty(name: "force", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Force
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property instanceType: The instance type.</summary>
+        /// <remarks>
+        /// Allowed values are LingJun and ECS, Default is ECS.
+        /// </remarks>
+        [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? InstanceType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property keyPairName: The name of the key pair.</summary>
+        [JsiiProperty(name: "keyPairName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? KeyPairName
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property password: The password for the disk.</summary>
+        [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Password
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `DiskAttachment`.</summary>
         /// <remarks>
         /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-diskattachment
@@ -87,6 +145,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             public object InstanceId
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property bootable: Whether the disk is bootable.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "bootable", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Bootable
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property deleteAutoSnapshot: Whether the auto snapshot is released with the disk.</summary>
@@ -115,6 +181,41 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             [JsiiOptional]
             [JsiiProperty(name: "device", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Device
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property force: Whether to force the operation.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "force", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Force
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property instanceType: The instance type.</summary>
+            /// <remarks>
+            /// Allowed values are LingJun and ECS, Default is ECS.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? InstanceType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property keyPairName: The name of the key pair.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "keyPairName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? KeyPairName
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property password: The password for the disk.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Password
             {
                 get => GetInstanceProperty<object?>();
             }

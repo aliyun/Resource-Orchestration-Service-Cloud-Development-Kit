@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::MarketPlace::Order`, which is used to purchase resources from Alibaba Cloud Marketplace.
+// This class encapsulates and extends the ROS resource type `ALIYUN::MarketPlace::Order`.
 type Order interface {
 	alicloudroscdkcore.Resource
 	IOrder

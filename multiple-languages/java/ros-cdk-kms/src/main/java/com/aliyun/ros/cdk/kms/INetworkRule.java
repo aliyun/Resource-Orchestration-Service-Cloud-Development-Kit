@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kms;
 /**
  * Represents a <code>NetworkRule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:07.765Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.359Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.INetworkRule")
 @software.amazon.jsii.Jsii.Proxy(INetworkRule.Jsii$Proxy.class)
 public interface INetworkRule extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

@@ -7,6 +7,7 @@ package alicloudroscdkoss
 type RosBucketProps struct {
 	BucketName interface{} `field:"required" json:"bucketName" yaml:"bucketName"`
 	AccessControl interface{} `field:"optional" json:"accessControl" yaml:"accessControl"`
+	BlockPublicAccess interface{} `field:"optional" json:"blockPublicAccess" yaml:"blockPublicAccess"`
 	CorsConfiguration interface{} `field:"optional" json:"corsConfiguration" yaml:"corsConfiguration"`
 	DeletionForce interface{} `field:"optional" json:"deletionForce" yaml:"deletionForce"`
 	EnableOssHdfsService interface{} `field:"optional" json:"enableOssHdfsService" yaml:"enableOssHdfsService"`

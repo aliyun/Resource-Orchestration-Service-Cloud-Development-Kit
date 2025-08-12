@@ -26,6 +26,7 @@ type RosFunctionProps struct {
 	NasConfig interface{} `field:"optional" json:"nasConfig" yaml:"nasConfig"`
 	OssMountConfig interface{} `field:"optional" json:"ossMountConfig" yaml:"ossMountConfig"`
 	Role interface{} `field:"optional" json:"role" yaml:"role"`
+	Tags *[]*RosFunction_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 	Timeout interface{} `field:"optional" json:"timeout" yaml:"timeout"`
 	TracingConfig interface{} `field:"optional" json:"tracingConfig" yaml:"tracingConfig"`
 	VpcConfig interface{} `field:"optional" json:"vpcConfig" yaml:"vpcConfig"`

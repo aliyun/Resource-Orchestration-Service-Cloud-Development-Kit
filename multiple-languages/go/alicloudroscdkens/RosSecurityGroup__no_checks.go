@@ -92,11 +92,7 @@ func (j *jsiiProxy_RosSecurityGroup) validateSetEnableResourcePropertyConstraint
 	return nil
 }
 
-func (j *jsiiProxy_RosSecurityGroup) validateSetSecurityGroupEgressParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosSecurityGroup) validateSetSecurityGroupIngressParameters(val interface{}) error {
+func (j *jsiiProxy_RosSecurityGroup) validateSetPermissionsParameters(val interface{}) error {
 	return nil
 }
 

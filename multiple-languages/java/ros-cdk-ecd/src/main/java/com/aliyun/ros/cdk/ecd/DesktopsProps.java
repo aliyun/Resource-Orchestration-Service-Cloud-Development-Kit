@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecd;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-desktops
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:04.362Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.991Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecd.$Module.class, fqn = "@alicloud/ros-cdk-ecd.DesktopsProps")
 @software.amazon.jsii.Jsii.Proxy(DesktopsProps.Jsii$Proxy.class)
 public interface DesktopsProps extends software.amazon.jsii.JsiiSerializable {

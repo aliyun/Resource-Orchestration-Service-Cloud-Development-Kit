@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::PAI::WorkspaceResourceMaxComputes`, which is used to query the MaxCompute resources that are associated with a workspace.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::PAI::WorkspaceResourceMaxComputes`.
 type RosWorkspaceResourceMaxComputes interface {
 	alicloudroscdkcore.RosResource
 	AttrGroupNames() alicloudroscdkcore.IResolvable

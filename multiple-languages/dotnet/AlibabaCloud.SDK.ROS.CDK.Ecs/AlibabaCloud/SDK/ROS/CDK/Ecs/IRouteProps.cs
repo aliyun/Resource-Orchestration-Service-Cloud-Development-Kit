@@ -53,9 +53,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Property nextHopType: The next hop type.</summary>
+        /// <summary>Property nextHopType: The route entry next hop type.</summary>
         /// <remarks>
-        /// Now support 'Instance|HaVip|RouterInterface|NetworkInterface|VpnGateway|IPv6Gateway|NatGateway|Attachment'. The default value is Instance.When the NextHopList is specified, the value will be ignored.
+        /// Valid values:
+        /// Instance (default): Elastic Compute Service (ECS) instance.
+        /// HaVip: High Availability Virtual IP (HAVIP).
+        /// RouterInterface: Router interface.
+        /// NetworkInterface: Elastic Network Interface (ENI).
+        /// VpnGateway: VPN gateway.
+        /// IPv6Gateway: IPv6 gateway.
+        /// NatGateway: NAT gateway.
+        /// Attachment: Transit router.
+        /// VpcPeer: VPC peering connection.
+        /// Ipv4Gateway: IPv4 gateway.
+        /// GatewayEndpoint: Gateway endpoint.
+        /// Ecr: Express Connect router.
+        /// GatewayLoadBalancerEndpoint: Gateway Load Balancer endpoint.
+        /// The default value is 'Instance'.
+        /// If NextHopList is specified, this field will be ignored.
         /// </remarks>
         [JsiiProperty(name: "nextHopType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -114,9 +129,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property nextHopType: The next hop type.</summary>
+            /// <summary>Property nextHopType: The route entry next hop type.</summary>
             /// <remarks>
-            /// Now support 'Instance|HaVip|RouterInterface|NetworkInterface|VpnGateway|IPv6Gateway|NatGateway|Attachment'. The default value is Instance.When the NextHopList is specified, the value will be ignored.
+            /// Valid values:
+            /// Instance (default): Elastic Compute Service (ECS) instance.
+            /// HaVip: High Availability Virtual IP (HAVIP).
+            /// RouterInterface: Router interface.
+            /// NetworkInterface: Elastic Network Interface (ENI).
+            /// VpnGateway: VPN gateway.
+            /// IPv6Gateway: IPv6 gateway.
+            /// NatGateway: NAT gateway.
+            /// Attachment: Transit router.
+            /// VpcPeer: VPC peering connection.
+            /// Ipv4Gateway: IPv4 gateway.
+            /// GatewayEndpoint: Gateway endpoint.
+            /// Ecr: Express Connect router.
+            /// GatewayLoadBalancerEndpoint: Gateway Load Balancer endpoint.
+            /// The default value is 'Instance'.
+            /// If NextHopList is specified, this field will be ignored.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "nextHopType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kms;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::KMS::NetworkRule</code>, which is used to create a network access rule.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:07.776Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.369Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.NetworkRule")
 public class NetworkRule extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.kms.INetworkRule {
 
@@ -137,6 +137,31 @@ public class NetworkRule extends com.aliyun.ros.cdk.core.Resource implements com
          */
         public Builder networkRuleName(final com.aliyun.ros.cdk.core.IResolvable networkRuleName) {
             this.props.networkRuleName(networkRuleName);
+            return this;
+        }
+
+        /**
+         * Property type: Network type.
+         * <p>
+         * The value can be Private only, that is, only private IP addresses are supported.
+         * <p>
+         * @return {@code this}
+         * @param type Property type: Network type. This parameter is required.
+         */
+        public Builder type(final java.lang.String type) {
+            this.props.type(type);
+            return this;
+        }
+        /**
+         * Property type: Network type.
+         * <p>
+         * The value can be Private only, that is, only private IP addresses are supported.
+         * <p>
+         * @return {@code this}
+         * @param type Property type: Network type. This parameter is required.
+         */
+        public Builder type(final com.aliyun.ros.cdk.core.IResolvable type) {
+            this.props.type(type);
             return this;
         }
 

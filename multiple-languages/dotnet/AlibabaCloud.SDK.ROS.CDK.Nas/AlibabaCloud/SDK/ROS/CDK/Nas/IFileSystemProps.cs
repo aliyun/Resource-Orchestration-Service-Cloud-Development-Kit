@@ -24,7 +24,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         /// <summary>Property storageType: The storage type of the file System.</summary>
         /// <remarks>
         /// Valid values:
-        /// Performance、Capacity(Available when the file_system_type is standard)
+        /// Performance、Capacity、Premium(Available when the file_system_type is standard)
         /// standard、advance(Available when the file_system_type is extreme)
         /// advance_100、advance_200(Available when the file_system_type is cpfs)
         /// </remarks>
@@ -143,6 +143,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             }
         }
 
+        /// <summary>Property resourceGroupId: Resource group id.</summary>
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ResourceGroupId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property snapshotId: Snapshot ID.</summary>
         [JsiiProperty(name: "snapshotId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -225,7 +236,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             /// <summary>Property storageType: The storage type of the file System.</summary>
             /// <remarks>
             /// Valid values:
-            /// Performance、Capacity(Available when the file_system_type is standard)
+            /// Performance、Capacity、Premium(Available when the file_system_type is standard)
             /// standard、advance(Available when the file_system_type is extreme)
             /// advance_100、advance_200(Available when the file_system_type is cpfs)
             /// </remarks>
@@ -316,6 +327,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             [JsiiOptional]
             [JsiiProperty(name: "fileSystemType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? FileSystemType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property resourceGroupId: Resource group id.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ResourceGroupId
             {
                 get => GetInstanceProperty<object?>();
             }

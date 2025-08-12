@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: ros-cdk-cxapi
+Version: 1.9.0
+Summary: Aliyun SDK Copyright (C) Alibaba Cloud Computing All rights reserved. http://www.aliyun.com
+Home-page: https://github.com/aliyun/Resource-Orchestration-Service-Cloud-Development-Kit.git
+Author: ROS Development Team
+License: Apache-2.0
+Project-URL: Source, https://github.com/aliyun/Resource-Orchestration-Service-Cloud-Development-Kit.git
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: JavaScript
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Typing :: Typed
+Classifier: License :: OSI Approved
+Classifier: Programming Language :: Python :: 3
+Requires-Python: ~=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: NOTICE
+
+# `@alicloud/ros-cdk-cxapi`
+
+> TODO: description
+
+## Usage
+
+```
+const rosCxapi = require('@alicloud/ros-cdk-cxapi');
+
+// TODO: DEMONSTRATE API
+```

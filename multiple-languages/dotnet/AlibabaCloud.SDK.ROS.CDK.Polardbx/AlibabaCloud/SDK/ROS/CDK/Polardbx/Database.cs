@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Polardbx
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::PolarDBX::Database`, which is used to create a database.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::PolarDBX::Database`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDatabase`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardbx-database

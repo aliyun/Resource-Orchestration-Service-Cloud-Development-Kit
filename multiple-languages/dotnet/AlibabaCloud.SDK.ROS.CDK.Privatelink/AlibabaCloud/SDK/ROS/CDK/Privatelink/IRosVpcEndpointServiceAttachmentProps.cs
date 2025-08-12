@@ -41,6 +41,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
             get;
         }
 
+        /// <remarks>
+        /// <strong>Property</strong>: zoneId: Zone id of the service resource.
+        /// </remarks>
+        [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ZoneId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `RosVpcEndpointServiceAttachment`.</summary>
         /// <remarks>
         /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpointserviceattachment
@@ -80,6 +93,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
             public object ServiceId
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: zoneId: Zone id of the service resource.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ZoneId
+            {
+                get => GetInstanceProperty<object?>();
             }
         }
     }

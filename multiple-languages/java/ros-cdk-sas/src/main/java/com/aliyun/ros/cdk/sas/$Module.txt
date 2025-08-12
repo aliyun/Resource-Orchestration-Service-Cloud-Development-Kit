@@ -2,4 +2,5 @@
 @alicloud/ros-cdk-sas.Instance=com.aliyun.ros.cdk.sas.Instance
 @alicloud/ros-cdk-sas.InstanceProps=com.aliyun.ros.cdk.sas.InstanceProps
 @alicloud/ros-cdk-sas.RosInstance=com.aliyun.ros.cdk.sas.RosInstance
+@alicloud/ros-cdk-sas.RosInstance.PostPayInstanceModuleProperty=com.aliyun.ros.cdk.sas.RosInstance$PostPayInstanceModuleProperty
 @alicloud/ros-cdk-sas.RosInstanceProps=com.aliyun.ros.cdk.sas.RosInstanceProps

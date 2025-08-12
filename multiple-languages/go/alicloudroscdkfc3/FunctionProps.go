@@ -53,6 +53,10 @@ type FunctionProps struct {
 	//
 	// After setting, Function Compute will assume the role and generate temporary access credentials. The temporary access credentials of this role can be used in functions to access specified Alibaba Cloud services, such as OSS and OTS.
 	Role interface{} `field:"optional" json:"role" yaml:"role"`
+	// Property tags: Tags to attach to function.
+	//
+	// Max support 20 tags to add during create function. Each tag with two properties Key and Value, and Key is required.
+	Tags *[]*RosFunction_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 	// Property timeout: The timeout of the function.
 	Timeout interface{} `field:"optional" json:"timeout" yaml:"timeout"`
 	// Property tracingConfig: The tracing configuration of the function.

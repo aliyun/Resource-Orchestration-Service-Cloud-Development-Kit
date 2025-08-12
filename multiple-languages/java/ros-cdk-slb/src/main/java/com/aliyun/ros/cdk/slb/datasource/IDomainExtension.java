@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb.datasource;
 /**
  * Represents a <code>DomainExtension</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:10.685Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:50.725Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.datasource.IDomainExtension")
 @software.amazon.jsii.Jsii.Proxy(IDomainExtension.Jsii$Proxy.class)
 public interface IDomainExtension extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

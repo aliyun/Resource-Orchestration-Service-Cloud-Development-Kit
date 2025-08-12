@@ -124,6 +124,14 @@ func (j *jsiiProxy_RosMigrationJob2) validateSetDestinationEndpointParameters(va
 	return nil
 }
 
+func (j *jsiiProxy_RosMigrationJob2) validateSetDestPrimaryVswIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosMigrationJob2) validateSetDestSecondaryVswIdParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosMigrationJob2) validateSetDisasterRecoveryJobParameters(val interface{}) error {
 	return nil
 }
@@ -160,11 +168,31 @@ func (j *jsiiProxy_RosMigrationJob2) validateSetFileOssUrlParameters(val interfa
 	return nil
 }
 
+func (j *jsiiProxy_RosMigrationJob2) validateSetMaxDuParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosMigrationJob2) validateSetMinDuParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosMigrationJob2) validateSetReserveParameters(val interface{}) error {
 	return nil
 }
 
+func (j *jsiiProxy_RosMigrationJob2) validateSetResourceGroupIdParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosMigrationJob2) validateSetSourceEndpointParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosMigrationJob2) validateSetSrcPrimaryVswIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosMigrationJob2) validateSetSrcSecondaryVswIdParameters(val interface{}) error {
 	return nil
 }
 

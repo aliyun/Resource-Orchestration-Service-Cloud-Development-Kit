@@ -92,11 +92,19 @@ func (j *jsiiProxy_RosTransitRouterPeerAttachment) validateSetBandwidthParameter
 	return nil
 }
 
+func (j *jsiiProxy_RosTransitRouterPeerAttachment) validateSetBandwidthTypeParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosTransitRouterPeerAttachment) validateSetCenBandwidthPackageIdParameters(val interface{}) error {
 	return nil
 }
 
 func (j *jsiiProxy_RosTransitRouterPeerAttachment) validateSetCenIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosTransitRouterPeerAttachment) validateSetDefaultLinkTypeParameters(val interface{}) error {
 	return nil
 }
 
@@ -109,6 +117,10 @@ func (j *jsiiProxy_RosTransitRouterPeerAttachment) validateSetPeerTransitRouterI
 }
 
 func (j *jsiiProxy_RosTransitRouterPeerAttachment) validateSetPeerTransitRouterRegionIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosTransitRouterPeerAttachment) validateSetTagsParameters(val *[]*RosTransitRouterPeerAttachment_TagsProperty) error {
 	return nil
 }
 

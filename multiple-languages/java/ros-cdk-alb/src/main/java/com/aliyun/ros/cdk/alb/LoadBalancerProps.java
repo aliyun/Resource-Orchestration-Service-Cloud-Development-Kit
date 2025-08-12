@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.alb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-loadbalancer
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:01.295Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:43.258Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.LoadBalancerProps")
 @software.amazon.jsii.Jsii.Proxy(LoadBalancerProps.Jsii$Proxy.class)
 public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable {
@@ -33,13 +33,6 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
      * StandardWithWaf: Standard Edition with WAF
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getLoadBalancerEdition();
-
-    /**
-     * Property loadBalancerName: The name of the ALB instance.
-     * <p>
-     * The name must be 2 to 128 characters in length, and can contain letters, digits, periods(.), underscores (_), and hyphens (-). The name must start with a letter.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getLoadBalancerName();
 
     /**
      * Property vpcId: The ID of the virtual private cloud (VPC) where the ALB instance is deployed.
@@ -101,6 +94,26 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
     }
 
     /**
+     * Property ipv6AddressType: The type of IPv6 address that the ALB instance uses to provide services.
+     * <p>
+     * Valid values:
+     * Internet: The ALB instance uses a public IPv6 address. The domain name of the ALB instance is resolved to the public IPv6 address.
+     * Intranet: The ALB instance uses a private IPv6 address. The domain name of the ALB instance is resolved to the private IP address.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIpv6AddressType() {
+        return null;
+    }
+
+    /**
+     * Property loadBalancerName: The name of the ALB instance.
+     * <p>
+     * The name must be 2 to 128 characters in length, and can contain letters, digits, periods(.), underscores (_), and hyphens (-). The name must start with a letter.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLoadBalancerName() {
+        return null;
+    }
+
+    /**
      * Property modificationProtectionConfig: The configuration of modification protection.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getModificationProtectionConfig() {
@@ -143,7 +156,6 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         java.lang.Object addressType;
         java.lang.Object loadBalancerBillingConfig;
         java.lang.Object loadBalancerEdition;
-        java.lang.Object loadBalancerName;
         java.lang.Object vpcId;
         java.lang.Object zoneMappings;
         java.lang.Object accessLogConfig;
@@ -151,6 +163,8 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         java.lang.Object addressIpVersion;
         java.lang.Object bandwidthPackageId;
         java.lang.Object deletionProtectionEnabled;
+        java.lang.Object ipv6AddressType;
+        java.lang.Object loadBalancerName;
         java.lang.Object modificationProtectionConfig;
         java.lang.Object resourceGroupId;
         java.lang.Object securityGroupIds;
@@ -227,28 +241,6 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
          */
         public Builder loadBalancerEdition(com.aliyun.ros.cdk.core.IResolvable loadBalancerEdition) {
             this.loadBalancerEdition = loadBalancerEdition;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link LoadBalancerProps#getLoadBalancerName}
-         * @param loadBalancerName Property loadBalancerName: The name of the ALB instance. This parameter is required.
-         *                         The name must be 2 to 128 characters in length, and can contain letters, digits, periods(.), underscores (_), and hyphens (-). The name must start with a letter.
-         * @return {@code this}
-         */
-        public Builder loadBalancerName(java.lang.String loadBalancerName) {
-            this.loadBalancerName = loadBalancerName;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link LoadBalancerProps#getLoadBalancerName}
-         * @param loadBalancerName Property loadBalancerName: The name of the ALB instance. This parameter is required.
-         *                         The name must be 2 to 128 characters in length, and can contain letters, digits, periods(.), underscores (_), and hyphens (-). The name must start with a letter.
-         * @return {@code this}
-         */
-        public Builder loadBalancerName(com.aliyun.ros.cdk.core.IResolvable loadBalancerName) {
-            this.loadBalancerName = loadBalancerName;
             return this;
         }
 
@@ -411,6 +403,54 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link LoadBalancerProps#getIpv6AddressType}
+         * @param ipv6AddressType Property ipv6AddressType: The type of IPv6 address that the ALB instance uses to provide services.
+         *                        Valid values:
+         *                        Internet: The ALB instance uses a public IPv6 address. The domain name of the ALB instance is resolved to the public IPv6 address.
+         *                        Intranet: The ALB instance uses a private IPv6 address. The domain name of the ALB instance is resolved to the private IP address.
+         * @return {@code this}
+         */
+        public Builder ipv6AddressType(java.lang.String ipv6AddressType) {
+            this.ipv6AddressType = ipv6AddressType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link LoadBalancerProps#getIpv6AddressType}
+         * @param ipv6AddressType Property ipv6AddressType: The type of IPv6 address that the ALB instance uses to provide services.
+         *                        Valid values:
+         *                        Internet: The ALB instance uses a public IPv6 address. The domain name of the ALB instance is resolved to the public IPv6 address.
+         *                        Intranet: The ALB instance uses a private IPv6 address. The domain name of the ALB instance is resolved to the private IP address.
+         * @return {@code this}
+         */
+        public Builder ipv6AddressType(com.aliyun.ros.cdk.core.IResolvable ipv6AddressType) {
+            this.ipv6AddressType = ipv6AddressType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link LoadBalancerProps#getLoadBalancerName}
+         * @param loadBalancerName Property loadBalancerName: The name of the ALB instance.
+         *                         The name must be 2 to 128 characters in length, and can contain letters, digits, periods(.), underscores (_), and hyphens (-). The name must start with a letter.
+         * @return {@code this}
+         */
+        public Builder loadBalancerName(java.lang.String loadBalancerName) {
+            this.loadBalancerName = loadBalancerName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link LoadBalancerProps#getLoadBalancerName}
+         * @param loadBalancerName Property loadBalancerName: The name of the ALB instance.
+         *                         The name must be 2 to 128 characters in length, and can contain letters, digits, periods(.), underscores (_), and hyphens (-). The name must start with a letter.
+         * @return {@code this}
+         */
+        public Builder loadBalancerName(com.aliyun.ros.cdk.core.IResolvable loadBalancerName) {
+            this.loadBalancerName = loadBalancerName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LoadBalancerProps#getModificationProtectionConfig}
          * @param modificationProtectionConfig Property modificationProtectionConfig: The configuration of modification protection.
          * @return {@code this}
@@ -501,7 +541,6 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         private final java.lang.Object addressType;
         private final java.lang.Object loadBalancerBillingConfig;
         private final java.lang.Object loadBalancerEdition;
-        private final java.lang.Object loadBalancerName;
         private final java.lang.Object vpcId;
         private final java.lang.Object zoneMappings;
         private final java.lang.Object accessLogConfig;
@@ -509,6 +548,8 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         private final java.lang.Object addressIpVersion;
         private final java.lang.Object bandwidthPackageId;
         private final java.lang.Object deletionProtectionEnabled;
+        private final java.lang.Object ipv6AddressType;
+        private final java.lang.Object loadBalancerName;
         private final java.lang.Object modificationProtectionConfig;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object securityGroupIds;
@@ -523,7 +564,6 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             this.addressType = software.amazon.jsii.Kernel.get(this, "addressType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loadBalancerBillingConfig = software.amazon.jsii.Kernel.get(this, "loadBalancerBillingConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loadBalancerEdition = software.amazon.jsii.Kernel.get(this, "loadBalancerEdition", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.loadBalancerName = software.amazon.jsii.Kernel.get(this, "loadBalancerName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneMappings = software.amazon.jsii.Kernel.get(this, "zoneMappings", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.accessLogConfig = software.amazon.jsii.Kernel.get(this, "accessLogConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -531,6 +571,8 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             this.addressIpVersion = software.amazon.jsii.Kernel.get(this, "addressIpVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.bandwidthPackageId = software.amazon.jsii.Kernel.get(this, "bandwidthPackageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionProtectionEnabled = software.amazon.jsii.Kernel.get(this, "deletionProtectionEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ipv6AddressType = software.amazon.jsii.Kernel.get(this, "ipv6AddressType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.loadBalancerName = software.amazon.jsii.Kernel.get(this, "loadBalancerName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.modificationProtectionConfig = software.amazon.jsii.Kernel.get(this, "modificationProtectionConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupIds = software.amazon.jsii.Kernel.get(this, "securityGroupIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -546,7 +588,6 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             this.addressType = java.util.Objects.requireNonNull(builder.addressType, "addressType is required");
             this.loadBalancerBillingConfig = java.util.Objects.requireNonNull(builder.loadBalancerBillingConfig, "loadBalancerBillingConfig is required");
             this.loadBalancerEdition = java.util.Objects.requireNonNull(builder.loadBalancerEdition, "loadBalancerEdition is required");
-            this.loadBalancerName = java.util.Objects.requireNonNull(builder.loadBalancerName, "loadBalancerName is required");
             this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
             this.zoneMappings = java.util.Objects.requireNonNull(builder.zoneMappings, "zoneMappings is required");
             this.accessLogConfig = builder.accessLogConfig;
@@ -554,6 +595,8 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             this.addressIpVersion = builder.addressIpVersion;
             this.bandwidthPackageId = builder.bandwidthPackageId;
             this.deletionProtectionEnabled = builder.deletionProtectionEnabled;
+            this.ipv6AddressType = builder.ipv6AddressType;
+            this.loadBalancerName = builder.loadBalancerName;
             this.modificationProtectionConfig = builder.modificationProtectionConfig;
             this.resourceGroupId = builder.resourceGroupId;
             this.securityGroupIds = builder.securityGroupIds;
@@ -573,11 +616,6 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         @Override
         public final java.lang.Object getLoadBalancerEdition() {
             return this.loadBalancerEdition;
-        }
-
-        @Override
-        public final java.lang.Object getLoadBalancerName() {
-            return this.loadBalancerName;
         }
 
         @Override
@@ -616,6 +654,16 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
+        public final java.lang.Object getIpv6AddressType() {
+            return this.ipv6AddressType;
+        }
+
+        @Override
+        public final java.lang.Object getLoadBalancerName() {
+            return this.loadBalancerName;
+        }
+
+        @Override
         public final java.lang.Object getModificationProtectionConfig() {
             return this.modificationProtectionConfig;
         }
@@ -644,7 +692,6 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             data.set("addressType", om.valueToTree(this.getAddressType()));
             data.set("loadBalancerBillingConfig", om.valueToTree(this.getLoadBalancerBillingConfig()));
             data.set("loadBalancerEdition", om.valueToTree(this.getLoadBalancerEdition()));
-            data.set("loadBalancerName", om.valueToTree(this.getLoadBalancerName()));
             data.set("vpcId", om.valueToTree(this.getVpcId()));
             data.set("zoneMappings", om.valueToTree(this.getZoneMappings()));
             if (this.getAccessLogConfig() != null) {
@@ -661,6 +708,12 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             }
             if (this.getDeletionProtectionEnabled() != null) {
                 data.set("deletionProtectionEnabled", om.valueToTree(this.getDeletionProtectionEnabled()));
+            }
+            if (this.getIpv6AddressType() != null) {
+                data.set("ipv6AddressType", om.valueToTree(this.getIpv6AddressType()));
+            }
+            if (this.getLoadBalancerName() != null) {
+                data.set("loadBalancerName", om.valueToTree(this.getLoadBalancerName()));
             }
             if (this.getModificationProtectionConfig() != null) {
                 data.set("modificationProtectionConfig", om.valueToTree(this.getModificationProtectionConfig()));
@@ -695,7 +748,6 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             if (!addressType.equals(that.addressType)) return false;
             if (!loadBalancerBillingConfig.equals(that.loadBalancerBillingConfig)) return false;
             if (!loadBalancerEdition.equals(that.loadBalancerEdition)) return false;
-            if (!loadBalancerName.equals(that.loadBalancerName)) return false;
             if (!vpcId.equals(that.vpcId)) return false;
             if (!zoneMappings.equals(that.zoneMappings)) return false;
             if (this.accessLogConfig != null ? !this.accessLogConfig.equals(that.accessLogConfig) : that.accessLogConfig != null) return false;
@@ -703,6 +755,8 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             if (this.addressIpVersion != null ? !this.addressIpVersion.equals(that.addressIpVersion) : that.addressIpVersion != null) return false;
             if (this.bandwidthPackageId != null ? !this.bandwidthPackageId.equals(that.bandwidthPackageId) : that.bandwidthPackageId != null) return false;
             if (this.deletionProtectionEnabled != null ? !this.deletionProtectionEnabled.equals(that.deletionProtectionEnabled) : that.deletionProtectionEnabled != null) return false;
+            if (this.ipv6AddressType != null ? !this.ipv6AddressType.equals(that.ipv6AddressType) : that.ipv6AddressType != null) return false;
+            if (this.loadBalancerName != null ? !this.loadBalancerName.equals(that.loadBalancerName) : that.loadBalancerName != null) return false;
             if (this.modificationProtectionConfig != null ? !this.modificationProtectionConfig.equals(that.modificationProtectionConfig) : that.modificationProtectionConfig != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.securityGroupIds != null ? !this.securityGroupIds.equals(that.securityGroupIds) : that.securityGroupIds != null) return false;
@@ -714,7 +768,6 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             int result = this.addressType.hashCode();
             result = 31 * result + (this.loadBalancerBillingConfig.hashCode());
             result = 31 * result + (this.loadBalancerEdition.hashCode());
-            result = 31 * result + (this.loadBalancerName.hashCode());
             result = 31 * result + (this.vpcId.hashCode());
             result = 31 * result + (this.zoneMappings.hashCode());
             result = 31 * result + (this.accessLogConfig != null ? this.accessLogConfig.hashCode() : 0);
@@ -722,6 +775,8 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             result = 31 * result + (this.addressIpVersion != null ? this.addressIpVersion.hashCode() : 0);
             result = 31 * result + (this.bandwidthPackageId != null ? this.bandwidthPackageId.hashCode() : 0);
             result = 31 * result + (this.deletionProtectionEnabled != null ? this.deletionProtectionEnabled.hashCode() : 0);
+            result = 31 * result + (this.ipv6AddressType != null ? this.ipv6AddressType.hashCode() : 0);
+            result = 31 * result + (this.loadBalancerName != null ? this.loadBalancerName.hashCode() : 0);
             result = 31 * result + (this.modificationProtectionConfig != null ? this.modificationProtectionConfig.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.securityGroupIds != null ? this.securityGroupIds.hashCode() : 0);

@@ -175,6 +175,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearchserverless
             }
         }
 
+        private object? _logProConfiguration;
+
+        /// <remarks>
+        /// <strong>Property</strong>: logProConfiguration: The log pro configuration of the app.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "logProConfiguration", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-elasticsearchserverless.RosApp.LogProConfigurationProperty\"}]}}", isOptional: true)]
+        public object? LogProConfiguration
+        {
+            get => _logProConfiguration;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Elasticsearchserverless.RosApp.ILogProConfigurationProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Elasticsearchserverless.RosApp.ILogProConfigurationProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _logProConfiguration = value;
+            }
+        }
+
         private object? _network;
 
         /// <remarks>
@@ -272,6 +305,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearchserverless
                     }
                 }
                 _privateNetwork = value;
+            }
+        }
+
+        private object? _scenario;
+
+        /// <remarks>
+        /// <strong>Property</strong>: scenario: The scenario of the app.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "scenario", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? Scenario
+        {
+            get => _scenario;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _scenario = value;
             }
         }
     }

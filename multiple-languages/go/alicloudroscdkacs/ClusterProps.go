@@ -18,6 +18,12 @@ type ClusterProps struct {
 	// ack.standard: Standard hosting cluster.
 	// Default value: ack.pro.small.
 	ClusterSpec interface{} `field:"optional" json:"clusterSpec" yaml:"clusterSpec"`
+	// Property computeClass: The compute class of the cluster.
+	//
+	// This parameter is only used as a parameter query for ZoneIds and is not used in the actual creation.
+	ComputeClass interface{} `field:"optional" json:"computeClass" yaml:"computeClass"`
+	// Property deleteOptions: Delete options, only work for deleting resource.
+	DeleteOptions interface{} `field:"optional" json:"deleteOptions" yaml:"deleteOptions"`
 	// Property deletionProtection: Specifies whether to enable deletion protection for the cluster.
 	//
 	// After deletion protection is enabled, the cluster cannot be deleted
@@ -43,6 +49,8 @@ type ClusterProps struct {
 	LoggingType interface{} `field:"optional" json:"loggingType" yaml:"loggingType"`
 	// Property maintenanceWindow: The maintenance window of the cluster.
 	MaintenanceWindow interface{} `field:"optional" json:"maintenanceWindow" yaml:"maintenanceWindow"`
+	// Property podPostpaidSpec: Postpaid pod spec for inquiry.
+	PodPostpaidSpec interface{} `field:"optional" json:"podPostpaidSpec" yaml:"podPostpaidSpec"`
 	// Property podVSwitchIds: The list of pod vSwitches.
 	//
 	// For each vSwitch that is allocated to nodes,

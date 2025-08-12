@@ -152,6 +152,10 @@ func (j *jsiiProxy_RosInstance) validateSetProductTypeParameters(val interface{}
 	return nil
 }
 
+func (j *jsiiProxy_RosInstance) validateSetReadOnlyCountParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosInstance) validateSetResourceGroupIdParameters(val interface{}) error {
 	return nil
 }
@@ -169,6 +173,10 @@ func (j *jsiiProxy_RosInstance) validateSetShardCountParameters(val interface{})
 }
 
 func (j *jsiiProxy_RosInstance) validateSetSslEnabledParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosInstance) validateSetSubscriptionDeletionForceParameters(val interface{}) error {
 	return nil
 }
 

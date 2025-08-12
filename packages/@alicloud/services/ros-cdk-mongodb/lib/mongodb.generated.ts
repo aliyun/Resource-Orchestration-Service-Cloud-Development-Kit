@@ -114,7 +114,7 @@ export interface RosInstanceProps {
     readonly securityGroupId?: string | ros.IResolvable;
 
     /**
-     * @Property securityIpArray: Security ips to add or remove.
+     * @Property securityIpArray: Security ips to add or remove. Update to this property will cover the current security ips.
      */
     readonly securityIpArray?: string | ros.IResolvable;
 
@@ -450,7 +450,7 @@ export class RosInstance extends ros.RosResource {
     public securityGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property securityIpArray: Security ips to add or remove.
+     * @Property securityIpArray: Security ips to add or remove. Update to this property will cover the current security ips.
      */
     public securityIpArray: string | ros.IResolvable | undefined;
 
@@ -834,7 +834,7 @@ export interface RosShardingInstanceProps {
     readonly secondaryZoneId?: string | ros.IResolvable;
 
     /**
-     * @Property securityIpArray: Security ips to add or remove.
+     * @Property securityIpArray: Security ips to add or remove. Update to this property will cover the current security ips.
      */
     readonly securityIpArray?: string | ros.IResolvable;
 
@@ -1016,7 +1016,7 @@ function rosShardingInstancePropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MONGODB::ShardingInstance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MONGODB::ShardingInstance`, which is used to create or clone an ApsaraDB for MongoDB sharded cluster instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `ShardingInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mongodb-shardinginstance
  */
@@ -1123,7 +1123,7 @@ export class RosShardingInstance extends ros.RosResource {
     public secondaryZoneId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property securityIpArray: Security ips to add or remove.
+     * @Property securityIpArray: Security ips to add or remove. Update to this property will cover the current security ips.
      */
     public securityIpArray: string | ros.IResolvable | undefined;
 

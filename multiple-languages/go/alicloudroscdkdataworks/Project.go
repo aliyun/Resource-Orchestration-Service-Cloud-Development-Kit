@@ -19,14 +19,14 @@ type Project interface {
 	// The value PROD indicates the production environment. Workspaces in basic mode provide only the production environment.
 	// The value DEV indicates the development environment. Workspaces in standard mode provide both the development environment and the production environment.
 	AttrEnvTypes() interface{}
+	// Attribute Id: The ID number of the workspace.
+	AttrId() interface{}
 	// Attribute IsDefault: Indicates whether the workspace is the default workspace.
 	//
 	// Valid values:
 	// 1: The workspace is the default workspace.
 	// 0: The workspace is not the default workspace.
 	AttrIsDefault() interface{}
-	// Attribute ProjectId: The ID of the workspace.
-	AttrProjectId() interface{}
 	// Attribute ProjectIdentifier: The name of the workspace.
 	//
 	// The name can contain letters, digits, and underscores (_) and must start with a letter or digit.
@@ -158,21 +158,21 @@ func (j *jsiiProxy_Project) AttrEnvTypes() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Project) AttrIsDefault() interface{} {
+func (j *jsiiProxy_Project) AttrId() interface{} {
 	var returns interface{}
 	_jsii_.Get(
 		j,
-		"attrIsDefault",
+		"attrId",
 		&returns,
 	)
 	return returns
 }
 
-func (j *jsiiProxy_Project) AttrProjectId() interface{} {
+func (j *jsiiProxy_Project) AttrIsDefault() interface{} {
 	var returns interface{}
 	_jsii_.Get(
 		j,
-		"attrProjectId",
+		"attrIsDefault",
 		&returns,
 	)
 	return returns

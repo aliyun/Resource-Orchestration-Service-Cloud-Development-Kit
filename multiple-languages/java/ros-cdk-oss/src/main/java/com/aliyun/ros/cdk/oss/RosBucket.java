@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oss;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::OSS::Bucket</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:12.141Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:51.887Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.RosBucket")
 public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -111,6 +111,24 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setAccessControl(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "accessControl", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getBlockPublicAccess() {
+        return software.amazon.jsii.Kernel.get(this, "blockPublicAccess", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setBlockPublicAccess(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "blockPublicAccess", value);
+    }
+
+    /**
+     */
+    public void setBlockPublicAccess(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "blockPublicAccess", value);
     }
 
     /**
@@ -4977,6 +4995,23 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder accessControl(final com.aliyun.ros.cdk.core.IResolvable accessControl) {
             this.props.accessControl(accessControl);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param blockPublicAccess This parameter is required.
+         */
+        public Builder blockPublicAccess(final java.lang.Boolean blockPublicAccess) {
+            this.props.blockPublicAccess(blockPublicAccess);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param blockPublicAccess This parameter is required.
+         */
+        public Builder blockPublicAccess(final com.aliyun.ros.cdk.core.IResolvable blockPublicAccess) {
+            this.props.blockPublicAccess(blockPublicAccess);
             return this;
         }
 

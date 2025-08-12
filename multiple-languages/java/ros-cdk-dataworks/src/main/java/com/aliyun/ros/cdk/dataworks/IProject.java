@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dataworks;
 /**
  * Represents a <code>Project</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:03.622Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.322Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dataworks.$Module.class, fqn = "@alicloud/ros-cdk-dataworks.IProject")
 @software.amazon.jsii.Jsii.Proxy(IProject.Jsii$Proxy.class)
 public interface IProject extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
@@ -18,6 +18,11 @@ public interface IProject extends software.amazon.jsii.JsiiSerializable, com.ali
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrEnvTypes();
 
     /**
+     * Attribute Id: The ID number of the workspace.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrId();
+
+    /**
      * Attribute IsDefault: Indicates whether the workspace is the default workspace.
      * <p>
      * Valid values:
@@ -25,11 +30,6 @@ public interface IProject extends software.amazon.jsii.JsiiSerializable, com.ali
      * 0: The workspace is not the default workspace.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrIsDefault();
-
-    /**
-     * Attribute ProjectId: The ID of the workspace.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getAttrProjectId();
 
     /**
      * Attribute ProjectIdentifier: The name of the workspace.
@@ -130,6 +130,14 @@ public interface IProject extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
+         * Attribute Id: The ID number of the workspace.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrId() {
+            return software.amazon.jsii.Kernel.get(this, "attrId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
          * Attribute IsDefault: Indicates whether the workspace is the default workspace.
          * <p>
          * Valid values:
@@ -139,14 +147,6 @@ public interface IProject extends software.amazon.jsii.JsiiSerializable, com.ali
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrIsDefault() {
             return software.amazon.jsii.Kernel.get(this, "attrIsDefault", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute ProjectId: The ID of the workspace.
-         */
-        @Override
-        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrProjectId() {
-            return software.amazon.jsii.Kernel.get(this, "attrProjectId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -267,6 +267,14 @@ public interface IProject extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
+         * Attribute Id: The ID number of the workspace.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrId() {
+            return software.amazon.jsii.Kernel.get(this, "attrId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
          * Attribute IsDefault: Indicates whether the workspace is the default workspace.
          * <p>
          * Valid values:
@@ -276,14 +284,6 @@ public interface IProject extends software.amazon.jsii.JsiiSerializable, com.ali
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrIsDefault() {
             return software.amazon.jsii.Kernel.get(this, "attrIsDefault", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute ProjectId: The ID of the workspace.
-         */
-        @Override
-        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrProjectId() {
-            return software.amazon.jsii.Kernel.get(this, "attrProjectId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**

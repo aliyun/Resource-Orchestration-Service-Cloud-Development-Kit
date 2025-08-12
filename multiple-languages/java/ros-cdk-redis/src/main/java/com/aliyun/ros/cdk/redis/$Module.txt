@@ -9,6 +9,7 @@
 @alicloud/ros-cdk-redis.IConnection=com.aliyun.ros.cdk.redis.IConnection
 @alicloud/ros-cdk-redis.IInstance=com.aliyun.ros.cdk.redis.IInstance
 @alicloud/ros-cdk-redis.IPrepayInstance=com.aliyun.ros.cdk.redis.IPrepayInstance
+@alicloud/ros-cdk-redis.IUpgradeVersion=com.aliyun.ros.cdk.redis.IUpgradeVersion
 @alicloud/ros-cdk-redis.IWhitelist=com.aliyun.ros.cdk.redis.IWhitelist
 @alicloud/ros-cdk-redis.Instance=com.aliyun.ros.cdk.redis.Instance
 @alicloud/ros-cdk-redis.InstanceProps=com.aliyun.ros.cdk.redis.InstanceProps
@@ -42,8 +43,12 @@
 @alicloud/ros-cdk-redis.RosPrepayInstance.TairConfigProperty=com.aliyun.ros.cdk.redis.RosPrepayInstance$TairConfigProperty
 @alicloud/ros-cdk-redis.RosPrepayInstance.VpcPrivateConnectionProperty=com.aliyun.ros.cdk.redis.RosPrepayInstance$VpcPrivateConnectionProperty
 @alicloud/ros-cdk-redis.RosPrepayInstanceProps=com.aliyun.ros.cdk.redis.RosPrepayInstanceProps
+@alicloud/ros-cdk-redis.RosUpgradeVersion=com.aliyun.ros.cdk.redis.RosUpgradeVersion
+@alicloud/ros-cdk-redis.RosUpgradeVersionProps=com.aliyun.ros.cdk.redis.RosUpgradeVersionProps
 @alicloud/ros-cdk-redis.RosWhitelist=com.aliyun.ros.cdk.redis.RosWhitelist
 @alicloud/ros-cdk-redis.RosWhitelistProps=com.aliyun.ros.cdk.redis.RosWhitelistProps
+@alicloud/ros-cdk-redis.UpgradeVersion=com.aliyun.ros.cdk.redis.UpgradeVersion
+@alicloud/ros-cdk-redis.UpgradeVersionProps=com.aliyun.ros.cdk.redis.UpgradeVersionProps
 @alicloud/ros-cdk-redis.Whitelist=com.aliyun.ros.cdk.redis.Whitelist
 @alicloud/ros-cdk-redis.WhitelistProps=com.aliyun.ros.cdk.redis.WhitelistProps
 @alicloud/ros-cdk-redis.datasource.Account=com.aliyun.ros.cdk.redis.datasource.Account

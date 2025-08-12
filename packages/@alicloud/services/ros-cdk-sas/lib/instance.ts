@@ -10,18 +10,11 @@ export { RosInstance as InstanceProperty };
 export interface InstanceProps {
 
     /**
-     * Property period: The subscription period of the firewallIf PeriodUnit is month, the valid range is 1, 3, 6
-     * If periodUnit is year, the valid range is 1, 2, 3
+     * Property payType: The billing method of the firewall instance. Valid values:
+     * PayAsYouGo: pay-as-you-go
+     * Subscription: subscription
      */
-    readonly period: number | ros.IResolvable;
-
-    /**
-     * Property periodUnit: The unit of the subscription duration. Valid values:
-     * Month
-     * Year
-     *
-     */
-    readonly periodUnit: string | ros.IResolvable;
+    readonly payType: string | ros.IResolvable;
 
     /**
      * Property antiRansomware: Security Center provides a comprehensive anti-ransomware solution to protect your business. We recommend that you configure a data protection capacity of 50GB for each server.
@@ -73,6 +66,25 @@ export interface InstanceProps {
      * Property maliciousFileDetectionSdk: The configuration assessment feature detects configuration errors and security risks on cloud services from the following dimensions: identity and permission management, security risks in Alibaba Cloud services, and compliance risks. This ensures the security of the running environment of your cloud services.
      */
     readonly maliciousFileDetectionSdk?: boolean | ros.IResolvable;
+
+    /**
+     * Property period: The subscription period of the firewallIf PeriodUnit is month, the valid range is 1, 3, 6
+     * If periodUnit is year, the valid range is 1, 2, 3
+     */
+    readonly period?: number | ros.IResolvable;
+
+    /**
+     * Property periodUnit: The unit of the subscription duration. Valid values:
+     * Month
+     * Year
+     *
+     */
+    readonly periodUnit?: string | ros.IResolvable;
+
+    /**
+     * Property postPayInstanceModule: PayAsYouGo instance module configuration.
+     */
+    readonly postPayInstanceModule?: RosInstance.PostPayInstanceModuleProperty | ros.IResolvable;
 
     /**
      * Property protectedServers: Authorization is the same as the number of servers you have.
@@ -175,7 +187,6 @@ export class Instance extends ros.Resource implements IInstance {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosInstance = new RosInstance(this, id,  {
-            quotaForApplicationProtection: props.quotaForApplicationProtection,
             threatAnalysis: props.threatAnalysis,
             quotaForMaliciousFileDetectionSdk: props.quotaForMaliciousFileDetectionSdk,
             containerImageScan: props.containerImageScan,
@@ -183,21 +194,24 @@ export class Instance extends ros.Resource implements IInstance {
             autoRenew: props.autoRenew === undefined || props.autoRenew === null ? false : props.autoRenew,
             maliciousFileDetectionSdk: props.maliciousFileDetectionSdk,
             vCore: props.vCore,
-            period: props.period,
             vulnerabilityFixing: props.vulnerabilityFixing,
-            quotaForCloudHoneypot: props.quotaForCloudHoneypot,
             quotaForWebTamperProofing: props.quotaForWebTamperProofing,
-            autoPay: props.autoPay === undefined || props.autoPay === null ? true : props.autoPay,
             antiRansomwareManageService: props.antiRansomwareManageService,
-            edition: props.edition,
             configurationAssessment: props.configurationAssessment,
-            logAnalysis: props.logAnalysis,
-            protectedServers: props.protectedServers,
-            cloudHoneypot: props.cloudHoneypot,
             webTamperProtection: props.webTamperProtection,
             quotaForConfigurationAssessment: props.quotaForConfigurationAssessment,
-            quotaForVulnerabilityFixing: props.quotaForVulnerabilityFixing,
             antiRansomware: props.antiRansomware,
+            quotaForApplicationProtection: props.quotaForApplicationProtection,
+            period: props.period,
+            quotaForCloudHoneypot: props.quotaForCloudHoneypot,
+            autoPay: props.autoPay === undefined || props.autoPay === null ? true : props.autoPay,
+            payType: props.payType === undefined || props.payType === null ? 'PREPAY' : props.payType,
+            edition: props.edition,
+            logAnalysis: props.logAnalysis,
+            postPayInstanceModule: props.postPayInstanceModule,
+            protectedServers: props.protectedServers,
+            cloudHoneypot: props.cloudHoneypot,
+            quotaForVulnerabilityFixing: props.quotaForVulnerabilityFixing,
             periodUnit: props.periodUnit,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstance;

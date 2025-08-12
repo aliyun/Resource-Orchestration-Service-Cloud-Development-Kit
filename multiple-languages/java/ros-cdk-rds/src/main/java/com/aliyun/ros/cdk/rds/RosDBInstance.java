@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::RDS::DBInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:09.665Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.887Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosDBInstance")
 public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -273,6 +273,24 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setAutoRenew(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "autoRenew", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAutoUpgradeMinorVersion() {
+        return software.amazon.jsii.Kernel.get(this, "autoUpgradeMinorVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAutoUpgradeMinorVersion(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "autoUpgradeMinorVersion", value);
+    }
+
+    /**
+     */
+    public void setAutoUpgradeMinorVersion(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "autoUpgradeMinorVersion", value);
     }
 
     /**
@@ -1261,6 +1279,24 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSubscriptionDeletionForce() {
+        return software.amazon.jsii.Kernel.get(this, "subscriptionDeletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSubscriptionDeletionForce(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "subscriptionDeletionForce", value);
+    }
+
+    /**
+     */
+    public void setSubscriptionDeletionForce(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "subscriptionDeletionForce", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.util.Map<java.lang.String, java.lang.Object> getTags() {
         return java.util.Optional.ofNullable((java.util.Map<java.lang.String, java.lang.Object>)(software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class))))).map(java.util.Collections::unmodifiableMap).orElse(null);
     }
@@ -2029,6 +2065,23 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder autoRenew(final com.aliyun.ros.cdk.core.IResolvable autoRenew) {
             this.props.autoRenew(autoRenew);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param autoUpgradeMinorVersion This parameter is required.
+         */
+        public Builder autoUpgradeMinorVersion(final java.lang.String autoUpgradeMinorVersion) {
+            this.props.autoUpgradeMinorVersion(autoUpgradeMinorVersion);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param autoUpgradeMinorVersion This parameter is required.
+         */
+        public Builder autoUpgradeMinorVersion(final com.aliyun.ros.cdk.core.IResolvable autoUpgradeMinorVersion) {
+            this.props.autoUpgradeMinorVersion(autoUpgradeMinorVersion);
             return this;
         }
 
@@ -2913,6 +2966,23 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder storageUpperBound(final com.aliyun.ros.cdk.core.IResolvable storageUpperBound) {
             this.props.storageUpperBound(storageUpperBound);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param subscriptionDeletionForce This parameter is required.
+         */
+        public Builder subscriptionDeletionForce(final java.lang.Boolean subscriptionDeletionForce) {
+            this.props.subscriptionDeletionForce(subscriptionDeletionForce);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param subscriptionDeletionForce This parameter is required.
+         */
+        public Builder subscriptionDeletionForce(final com.aliyun.ros.cdk.core.IResolvable subscriptionDeletionForce) {
+            this.props.subscriptionDeletionForce(subscriptionDeletionForce);
             return this;
         }
 

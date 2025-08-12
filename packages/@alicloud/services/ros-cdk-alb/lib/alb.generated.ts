@@ -60,7 +60,7 @@ function RosAScriptPropsValidator(properties: any): ros.ValidationResult {
     if(properties.aScriptName && (typeof properties.aScriptName) !== 'object') {
         errors.collect(ros.propertyValidator('aScriptName', ros.validateAllowedPattern)({
           data: properties.aScriptName,
-          reg: /^[a-zA-Z][.-_a-zA-Z0-9]{1,127}$/
+          reg: /^[a-zA-Z一-龥][.\-_a-zA-Z0-9一-龥]{1,127}$/
         }));
     }
     errors.collect(ros.propertyValidator('aScriptName', ros.validateString)(properties.aScriptName));
@@ -2216,7 +2216,7 @@ function RosListener_XForwardedForConfigPropertyValidator(properties: any): ros.
     if(properties.xForwardedForClientCertFingerprintAlias && (typeof properties.xForwardedForClientCertFingerprintAlias) !== 'object') {
         errors.collect(ros.propertyValidator('xForwardedForClientCertFingerprintAlias', ros.validateAllowedPattern)({
           data: properties.xForwardedForClientCertFingerprintAlias,
-          reg: /[-a-z0-9_]{2,40}/
+          reg: /^[-a-z0-9_]{2,40}$/
         }));
     }
     errors.collect(ros.propertyValidator('xForwardedForClientCertFingerprintAlias', ros.validateString)(properties.xForwardedForClientCertFingerprintAlias));
@@ -2226,14 +2226,14 @@ function RosListener_XForwardedForConfigPropertyValidator(properties: any): ros.
     if(properties.xForwardedForClientCertIssuerDnAlias && (typeof properties.xForwardedForClientCertIssuerDnAlias) !== 'object') {
         errors.collect(ros.propertyValidator('xForwardedForClientCertIssuerDnAlias', ros.validateAllowedPattern)({
           data: properties.xForwardedForClientCertIssuerDnAlias,
-          reg: /[-a-z0-9_]{2,40}/
+          reg: /^[-a-z0-9_]{2,40}$/
         }));
     }
     errors.collect(ros.propertyValidator('xForwardedForClientCertIssuerDnAlias', ros.validateString)(properties.xForwardedForClientCertIssuerDnAlias));
     if(properties.xForwardedForClientCertClientVerifyAlias && (typeof properties.xForwardedForClientCertClientVerifyAlias) !== 'object') {
         errors.collect(ros.propertyValidator('xForwardedForClientCertClientVerifyAlias', ros.validateAllowedPattern)({
           data: properties.xForwardedForClientCertClientVerifyAlias,
-          reg: /[-a-z0-9_]{2,40}/
+          reg: /^[-a-z0-9_]{2,40}$/
         }));
     }
     errors.collect(ros.propertyValidator('xForwardedForClientCertClientVerifyAlias', ros.validateString)(properties.xForwardedForClientCertClientVerifyAlias));
@@ -2242,7 +2242,7 @@ function RosListener_XForwardedForConfigPropertyValidator(properties: any): ros.
     if(properties.xForwardedForClientCertSubjectDnAlias && (typeof properties.xForwardedForClientCertSubjectDnAlias) !== 'object') {
         errors.collect(ros.propertyValidator('xForwardedForClientCertSubjectDnAlias', ros.validateAllowedPattern)({
           data: properties.xForwardedForClientCertSubjectDnAlias,
-          reg: /[-a-z0-9_]{2,40}/
+          reg: /^[-a-z0-9_]{2,40}$/
         }));
     }
     errors.collect(ros.propertyValidator('xForwardedForClientCertSubjectDnAlias', ros.validateString)(properties.xForwardedForClientCertSubjectDnAlias));
@@ -2321,12 +2321,6 @@ export interface RosLoadBalancerProps {
     readonly loadBalancerEdition: string | ros.IResolvable;
 
     /**
-     * @Property loadBalancerName: The name of the ALB instance.
-     * The name must be 2 to 128 characters in length, and can contain letters, digits, periods(.), underscores (_), and hyphens (-). The name must start with a letter.
-     */
-    readonly loadBalancerName: string | ros.IResolvable;
-
-    /**
      * @Property vpcId: The ID of the virtual private cloud (VPC) where the ALB instance is deployed.
      */
     readonly vpcId: string | ros.IResolvable;
@@ -2364,6 +2358,19 @@ export interface RosLoadBalancerProps {
      * @Property deletionProtectionEnabled: Specifies whether to enable deletion protection. Default value: false.
      */
     readonly deletionProtectionEnabled?: boolean | ros.IResolvable;
+
+    /**
+     * @Property ipv6AddressType: The type of IPv6 address that the ALB instance uses to provide services. Valid values:
+     * Internet: The ALB instance uses a public IPv6 address. The domain name of the ALB instance is resolved to the public IPv6 address.
+     * Intranet: The ALB instance uses a private IPv6 address. The domain name of the ALB instance is resolved to the private IP address.
+     */
+    readonly ipv6AddressType?: string | ros.IResolvable;
+
+    /**
+     * @Property loadBalancerName: The name of the ALB instance.
+     * The name must be 2 to 128 characters in length, and can contain letters, digits, periods(.), underscores (_), and hyphens (-). The name must start with a letter.
+     */
+    readonly loadBalancerName?: string | ros.IResolvable;
 
     /**
      * @Property modificationProtectionConfig: The configuration of modification protection.
@@ -2432,7 +2439,13 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('securityGroupIds', ros.listValidator(ros.validateString))(properties.securityGroupIds));
-    errors.collect(ros.propertyValidator('loadBalancerName', ros.requiredValidator)(properties.loadBalancerName));
+    if(properties.ipv6AddressType && (typeof properties.ipv6AddressType) !== 'object') {
+        errors.collect(ros.propertyValidator('ipv6AddressType', ros.validateAllowedValues)({
+          data: properties.ipv6AddressType,
+          allowedValues: ["Internet","Intranet"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ipv6AddressType', ros.validateString)(properties.ipv6AddressType));
     errors.collect(ros.propertyValidator('loadBalancerName', ros.validateString)(properties.loadBalancerName));
     errors.collect(ros.propertyValidator('accessLogConfig', RosLoadBalancer_AccessLogConfigPropertyValidator)(properties.accessLogConfig));
     errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
@@ -2482,7 +2495,6 @@ function rosLoadBalancerPropsToRosTemplate(properties: any, enableResourceProper
       'AddressType': ros.stringToRosTemplate(properties.addressType),
       'LoadBalancerBillingConfig': rosLoadBalancerLoadBalancerBillingConfigPropertyToRosTemplate(properties.loadBalancerBillingConfig),
       'LoadBalancerEdition': ros.stringToRosTemplate(properties.loadBalancerEdition),
-      'LoadBalancerName': ros.stringToRosTemplate(properties.loadBalancerName),
       'VpcId': ros.stringToRosTemplate(properties.vpcId),
       'ZoneMappings': ros.listMapper(rosLoadBalancerZoneMappingsPropertyToRosTemplate)(properties.zoneMappings),
       'AccessLogConfig': rosLoadBalancerAccessLogConfigPropertyToRosTemplate(properties.accessLogConfig),
@@ -2490,6 +2502,8 @@ function rosLoadBalancerPropsToRosTemplate(properties: any, enableResourceProper
       'AddressIpVersion': ros.stringToRosTemplate(properties.addressIpVersion),
       'BandwidthPackageId': ros.stringToRosTemplate(properties.bandwidthPackageId),
       'DeletionProtectionEnabled': ros.booleanToRosTemplate(properties.deletionProtectionEnabled),
+      'Ipv6AddressType': ros.stringToRosTemplate(properties.ipv6AddressType),
+      'LoadBalancerName': ros.stringToRosTemplate(properties.loadBalancerName),
       'ModificationProtectionConfig': rosLoadBalancerModificationProtectionConfigPropertyToRosTemplate(properties.modificationProtectionConfig),
       'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
       'SecurityGroupIds': ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupIds),
@@ -2567,12 +2581,6 @@ export class RosLoadBalancer extends ros.RosResource {
     public loadBalancerEdition: string | ros.IResolvable;
 
     /**
-     * @Property loadBalancerName: The name of the ALB instance.
-     * The name must be 2 to 128 characters in length, and can contain letters, digits, periods(.), underscores (_), and hyphens (-). The name must start with a letter.
-     */
-    public loadBalancerName: string | ros.IResolvable;
-
-    /**
      * @Property vpcId: The ID of the virtual private cloud (VPC) where the ALB instance is deployed.
      */
     public vpcId: string | ros.IResolvable;
@@ -2610,6 +2618,19 @@ export class RosLoadBalancer extends ros.RosResource {
      * @Property deletionProtectionEnabled: Specifies whether to enable deletion protection. Default value: false.
      */
     public deletionProtectionEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipv6AddressType: The type of IPv6 address that the ALB instance uses to provide services. Valid values:
+     * Internet: The ALB instance uses a public IPv6 address. The domain name of the ALB instance is resolved to the public IPv6 address.
+     * Intranet: The ALB instance uses a private IPv6 address. The domain name of the ALB instance is resolved to the private IP address.
+     */
+    public ipv6AddressType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property loadBalancerName: The name of the ALB instance.
+     * The name must be 2 to 128 characters in length, and can contain letters, digits, periods(.), underscores (_), and hyphens (-). The name must start with a letter.
+     */
+    public loadBalancerName: string | ros.IResolvable | undefined;
 
     /**
      * @Property modificationProtectionConfig: The configuration of modification protection.
@@ -2650,7 +2671,6 @@ export class RosLoadBalancer extends ros.RosResource {
         this.addressType = props.addressType;
         this.loadBalancerBillingConfig = props.loadBalancerBillingConfig;
         this.loadBalancerEdition = props.loadBalancerEdition;
-        this.loadBalancerName = props.loadBalancerName;
         this.vpcId = props.vpcId;
         this.zoneMappings = props.zoneMappings;
         this.accessLogConfig = props.accessLogConfig;
@@ -2658,6 +2678,8 @@ export class RosLoadBalancer extends ros.RosResource {
         this.addressIpVersion = props.addressIpVersion;
         this.bandwidthPackageId = props.bandwidthPackageId;
         this.deletionProtectionEnabled = props.deletionProtectionEnabled;
+        this.ipv6AddressType = props.ipv6AddressType;
+        this.loadBalancerName = props.loadBalancerName;
         this.modificationProtectionConfig = props.modificationProtectionConfig;
         this.resourceGroupId = props.resourceGroupId;
         this.securityGroupIds = props.securityGroupIds;
@@ -2670,7 +2692,6 @@ export class RosLoadBalancer extends ros.RosResource {
             addressType: this.addressType,
             loadBalancerBillingConfig: this.loadBalancerBillingConfig,
             loadBalancerEdition: this.loadBalancerEdition,
-            loadBalancerName: this.loadBalancerName,
             vpcId: this.vpcId,
             zoneMappings: this.zoneMappings,
             accessLogConfig: this.accessLogConfig,
@@ -2678,6 +2699,8 @@ export class RosLoadBalancer extends ros.RosResource {
             addressIpVersion: this.addressIpVersion,
             bandwidthPackageId: this.bandwidthPackageId,
             deletionProtectionEnabled: this.deletionProtectionEnabled,
+            ipv6AddressType: this.ipv6AddressType,
+            loadBalancerName: this.loadBalancerName,
             modificationProtectionConfig: this.modificationProtectionConfig,
             resourceGroupId: this.resourceGroupId,
             securityGroupIds: this.securityGroupIds,
@@ -3496,7 +3519,7 @@ function RosRule_HeaderConfigPropertyValidator(properties: any): ros.ValidationR
     if(properties.key && (typeof properties.key) !== 'object') {
         errors.collect(ros.propertyValidator('key', ros.validateAllowedPattern)({
           data: properties.key,
-          reg: /[-a-z0-9_]{1,40}/
+          reg: /^[-a-zA-Z0-9_]{1,40}$/
         }));
     }
     errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
@@ -3623,7 +3646,7 @@ function RosRule_InsertHeaderConfigPropertyValidator(properties: any): ros.Valid
     if(properties.key && (typeof properties.key) !== 'object') {
         errors.collect(ros.propertyValidator('key', ros.validateAllowedPattern)({
           data: properties.key,
-          reg: /[-a-z0-9_]{1,40}/
+          reg: /^[-a-zA-Z0-9_]{1,40}$/
         }));
     }
     errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
@@ -4044,7 +4067,7 @@ function RosRule_RemoveHeaderConfigPropertyValidator(properties: any): ros.Valid
     if(properties.key && (typeof properties.key) !== 'object') {
         errors.collect(ros.propertyValidator('key', ros.validateAllowedPattern)({
           data: properties.key,
-          reg: /[-a-zA-Z0-9_]{1,40}/
+          reg: /^[-a-zA-Z0-9_]{1,40}$/
         }));
     }
     errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
@@ -4554,7 +4577,9 @@ export namespace RosRule {
          */
         readonly serverGroupId?: string | ros.IResolvable;
         /**
-         * @Property weight: The weight of the server group. A larger value specifies a higher weight. A server group with a higher weight receives more requests. Default value: 100.
+         * @Property weight: The weight of the server group. A larger value specifies a higher weight. A server group with a higher weight receives more requests. Valid values: 0 to 100.
+     * If the number of destination server groups is 1, the default weight of the server group is 100, unless you specify a weight.
+     * If the number of destination server groups is larger than 1, you must specify a weight.
          */
         readonly weight?: number | ros.IResolvable;
     }
@@ -4573,7 +4598,7 @@ function RosRule_ServerGroupTuplesPropertyValidator(properties: any): ros.Valida
     if(properties.weight && (typeof properties.weight) !== 'object') {
         errors.collect(ros.propertyValidator('weight', ros.validateRange)({
             data: properties.weight,
-            min: 1,
+            min: 0,
             max: 100,
           }));
     }
@@ -5594,7 +5619,11 @@ export namespace RosServerGroup {
          */
         readonly healthyThreshold?: number | ros.IResolvable;
         /**
-         * @Property healthCheckProtocol: The protocol that is used for health checks.
+         * @Property healthCheckProtocol: The protocol that is used for health checks. Valid values:
+     * HTTP: HTTP health checks simulate browser behaviors by sending HEAD or GET requests to probe the availability of backend servers.
+     * HTTPS: HTTPS health checks simulate browser behaviors by sending HEAD or GET requests to probe the availability of backend servers. HTTPS provides higher security than HTTP because HTTPS supports data encryption.
+     * TCP: TCP health checks send TCP SYN packets to a backend server to probe the availability of backend servers.
+     * gRPC: gRPC health checks send POST or GET requests to a backend server to check whether the backend server is healthy.
          */
         readonly healthCheckProtocol?: string | ros.IResolvable;
         /**
@@ -5640,7 +5669,7 @@ function RosServerGroup_HealthCheckConfigPropertyValidator(properties: any): ros
     if(properties.healthCheckProtocol && (typeof properties.healthCheckProtocol) !== 'object') {
         errors.collect(ros.propertyValidator('healthCheckProtocol', ros.validateAllowedValues)({
           data: properties.healthCheckProtocol,
-          allowedValues: ["HTTPS","HTTP","gRPC","GRPC"],
+          allowedValues: ["HTTPS","HTTP","gRPC","GRPC","TCP"],
         }));
     }
     errors.collect(ros.propertyValidator('healthCheckProtocol', ros.validateString)(properties.healthCheckProtocol));

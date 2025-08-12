@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.polardb;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::POLARDB::DBCluster</code>, which is used to create a PolarDB cluster.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::POLARDB::DBCluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.902Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.355Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBCluster")
 public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.polardb.IDBCluster {
 
@@ -680,9 +680,8 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         /**
          * Property dbNodeNum: The number of Standard Edition nodes.
          * <p>
-         * Default value: 1. Valid values:
-         * 1: only one primary node.
-         * 2: one read-only node and one primary node.
+         * Valid values for PolarDB for MySQL Standard Edition: 1 to 8.
+         * Valid values for PolarDB for MySQL Enterprise Edition: 1 to 16.
          * <p>
          * @return {@code this}
          * @param dbNodeNum Property dbNodeNum: The number of Standard Edition nodes. This parameter is required.
@@ -694,9 +693,8 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         /**
          * Property dbNodeNum: The number of Standard Edition nodes.
          * <p>
-         * Default value: 1. Valid values:
-         * 1: only one primary node.
-         * 2: one read-only node and one primary node.
+         * Valid values for PolarDB for MySQL Standard Edition: 1 to 8.
+         * Valid values for PolarDB for MySQL Enterprise Edition: 1 to 16.
          * <p>
          * @return {@code this}
          * @param dbNodeNum Property dbNodeNum: The number of Standard Edition nodes. This parameter is required.

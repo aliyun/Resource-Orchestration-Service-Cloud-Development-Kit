@@ -97,7 +97,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds.Datasource
 
         /// <summary>Property zoneId: The ID of the zone in which the instance is located.</summary>
         /// <remarks>
-        /// If the instance spans more than one zone, the value of this parameter contains an MAZ part,such as cn-hangzhou-MAZ6(b,f) and cn-hangzhou-MAZ5(b,e,f)
+        /// If the instance spans more than one zone, the value of this parameter contains an MAZ part, such as cn-hangzhou-MAZ6(b,f) and cn-hangzhou-MAZ5(b,e,f).
         /// </remarks>
         [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -191,7 +191,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds.Datasource
 
             /// <summary>Property zoneId: The ID of the zone in which the instance is located.</summary>
             /// <remarks>
-            /// If the instance spans more than one zone, the value of this parameter contains an MAZ part,such as cn-hangzhou-MAZ6(b,f) and cn-hangzhou-MAZ5(b,e,f)
+            /// If the instance spans more than one zone, the value of this parameter contains an MAZ part, such as cn-hangzhou-MAZ6(b,f) and cn-hangzhou-MAZ5(b,e,f).
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

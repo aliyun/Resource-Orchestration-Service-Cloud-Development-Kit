@@ -4718,7 +4718,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: weight: The weight of the server group. A larger value specifies a higher weight. A server group with a higher weight receives more requests. Default value: 100.
+            /// <strong>Property</strong>: weight: The weight of the server group. A larger value specifies a higher weight. A server group with a higher weight receives more requests. Valid values: 0 to 100.
+            /// If the number of destination server groups is 1, the default weight of the server group is 100, unless you specify a weight.
+            /// If the number of destination server groups is larger than 1, you must specify a weight.
             /// </remarks>
             [JsiiProperty(name: "weight", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -4748,7 +4750,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: weight: The weight of the server group. A larger value specifies a higher weight. A server group with a higher weight receives more requests. Default value: 100.
+                /// <strong>Property</strong>: weight: The weight of the server group. A larger value specifies a higher weight. A server group with a higher weight receives more requests. Valid values: 0 to 100.
+                /// If the number of destination server groups is 1, the default weight of the server group is 100, unless you specify a weight.
+                /// If the number of destination server groups is larger than 1, you must specify a weight.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "weight", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -4797,7 +4801,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             private object? _weight;
 
             /// <remarks>
-            /// <strong>Property</strong>: weight: The weight of the server group. A larger value specifies a higher weight. A server group with a higher weight receives more requests. Default value: 100.
+            /// <strong>Property</strong>: weight: The weight of the server group. A larger value specifies a higher weight. A server group with a higher weight receives more requests. Valid values: 0 to 100.
+            /// If the number of destination server groups is 1, the default weight of the server group is 100, unless you specify a weight.
+            /// If the number of destination server groups is larger than 1, you must specify a weight.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "weight", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

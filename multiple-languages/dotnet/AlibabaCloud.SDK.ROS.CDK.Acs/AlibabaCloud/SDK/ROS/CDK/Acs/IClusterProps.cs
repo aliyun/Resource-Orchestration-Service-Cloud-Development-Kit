@@ -49,6 +49,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Acs
             }
         }
 
+        /// <summary>Property computeClass: The compute class of the cluster.</summary>
+        /// <remarks>
+        /// This parameter is only used as a parameter query for ZoneIds and is not used in the actual creation.
+        /// </remarks>
+        [JsiiProperty(name: "computeClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ComputeClass
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property deleteOptions: Delete options, only work for deleting resource.</summary>
+        [JsiiProperty(name: "deleteOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-acs.RosCluster.DeleteOptionsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DeleteOptions
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property deletionProtection: Specifies whether to enable deletion protection for the cluster.</summary>
         /// <remarks>
         /// After deletion protection is enabled, the cluster cannot be deleted
@@ -134,6 +159,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Acs
         [JsiiProperty(name: "maintenanceWindow", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-acs.RosCluster.MaintenanceWindowProperty\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? MaintenanceWindow
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property podPostpaidSpec: Postpaid pod spec for inquiry.</summary>
+        [JsiiProperty(name: "podPostpaidSpec", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-acs.RosCluster.PodPostpaidSpecProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? PodPostpaidSpec
         {
             get
             {
@@ -339,6 +375,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Acs
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property computeClass: The compute class of the cluster.</summary>
+            /// <remarks>
+            /// This parameter is only used as a parameter query for ZoneIds and is not used in the actual creation.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "computeClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ComputeClass
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property deleteOptions: Delete options, only work for deleting resource.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "deleteOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-acs.RosCluster.DeleteOptionsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? DeleteOptions
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property deletionProtection: Specifies whether to enable deletion protection for the cluster.</summary>
             /// <remarks>
             /// After deletion protection is enabled, the cluster cannot be deleted
@@ -406,6 +461,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Acs
             [JsiiOptional]
             [JsiiProperty(name: "maintenanceWindow", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-acs.RosCluster.MaintenanceWindowProperty\"}]}}", isOptional: true)]
             public object? MaintenanceWindow
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property podPostpaidSpec: Postpaid pod spec for inquiry.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "podPostpaidSpec", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-acs.RosCluster.PodPostpaidSpecProperty\"}]}}", isOptional: true)]
+            public object? PodPostpaidSpec
             {
                 get => GetInstanceProperty<object?>();
             }

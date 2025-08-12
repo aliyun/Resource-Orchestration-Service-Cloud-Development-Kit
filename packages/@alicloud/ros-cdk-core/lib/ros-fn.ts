@@ -426,7 +426,7 @@ export class FnIndent extends FnBase {
     if (typeof level === 'number' && (level < 0 || level > 20)) {
       throw new Error("level must be greater than 0 or less than 20");
     }
-    if (indent && typeof level === 'number' && (indent < 0 || indent > 4)) {
+    if (indent && typeof indent === 'number' && (indent < 0 || indent > 4)) {
       throw new Error("indent must be greater than 0 or less than 4");
     }
     super("Fn::Indent", [str, level, indent]);

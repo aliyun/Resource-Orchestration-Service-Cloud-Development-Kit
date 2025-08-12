@@ -15,14 +15,9 @@ export interface SecurityGroupProps {
     readonly description?: string | ros.IResolvable;
 
     /**
-     * Property securityGroupEgress: egress rules for the security group.
+     * Property permissions: undefined
      */
-    readonly securityGroupEgress?: Array<RosSecurityGroup.SecurityGroupEgressProperty | ros.IResolvable> | ros.IResolvable;
-
-    /**
-     * Property securityGroupIngress: Ingress rules for the security group.
-     */
-    readonly securityGroupIngress?: Array<RosSecurityGroup.SecurityGroupIngressProperty | ros.IResolvable> | ros.IResolvable;
+    readonly permissions?: Array<RosSecurityGroup.PermissionsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property securityGroupName: The name of the security group. The name must be 2 to 128 characters in length. The name must start with a letter and cannot start with http:\/\/ or https:\/\/. It can contain letters, digits, colons (:), underscores (_), and hyphens (-). By default, this parameter is empty.
@@ -72,8 +67,7 @@ export class SecurityGroup extends ros.Resource implements ISecurityGroup {
         const rosSecurityGroup = new RosSecurityGroup(this, id,  {
             description: props.description,
             securityGroupName: props.securityGroupName,
-            securityGroupIngress: props.securityGroupIngress,
-            securityGroupEgress: props.securityGroupEgress,
+            permissions: props.permissions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosSecurityGroup;
         this.attrSecurityGroupId = rosSecurityGroup.attrSecurityGroupId;

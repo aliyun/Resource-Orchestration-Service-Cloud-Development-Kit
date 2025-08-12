@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.threatdetection;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ThreatDetection::AntiBruteForceRule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:11.008Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:51.001Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.threatdetection.$Module.class, fqn = "@alicloud/ros-cdk-threatdetection.AntiBruteForceRule")
 public class AntiBruteForceRule extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.threatdetection.IAntiBruteForceRule {
 

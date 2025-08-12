@@ -235,6 +235,30 @@ func validateRosSubscription_IsRosResourceParameters(construct alicloudroscdkcor
 	return nil
 }
 
+func (j *jsiiProxy_RosSubscription) validateSetDlqPolicyParameters(val interface{}) error {
+	switch val.(type) {
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	case *RosSubscription_DlqPolicyProperty:
+		val := val.(*RosSubscription_DlqPolicyProperty)
+		if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
+			return err
+		}
+	case RosSubscription_DlqPolicyProperty:
+		val_ := val.(RosSubscription_DlqPolicyProperty)
+		val := &val_
+		if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
+			return err
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosSubscription_DlqPolicyProperty; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosSubscription) validateSetEnableResourcePropertyConstraintParameters(val *bool) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
@@ -298,6 +322,23 @@ func (j *jsiiProxy_RosSubscription) validateSetNotifyContentFormatParameters(val
 }
 
 func (j *jsiiProxy_RosSubscription) validateSetNotifyStrategyParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosSubscription) validateSetPushTypeParameters(val interface{}) error {
 	switch val.(type) {
 	case *string:
 		// ok

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::Instance`, which is used to create an ApsaraMQ for Kafka instance.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::Instance`.
 type RosInstance interface {
 	alicloudroscdkcore.RosResource
 	AttrArn() alicloudroscdkcore.IResolvable

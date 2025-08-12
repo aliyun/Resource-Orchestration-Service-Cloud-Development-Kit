@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::Invocation</code>, which is used to run a Cloud Assistant command on Elastic Compute Service (ECS) instances.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:04.799Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.323Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.Invocation")
 public class Invocation extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.IInvocation {
 
@@ -298,6 +298,31 @@ public class Invocation extends com.aliyun.ros.cdk.core.Resource implements com.
          */
         public Builder frequency(final com.aliyun.ros.cdk.core.IResolvable frequency) {
             this.props.frequency(frequency);
+            return this;
+        }
+
+        /**
+         * Property launcher: A bootloader for script execution.
+         * <p>
+         * The length cannot exceed 1 KB.
+         * <p>
+         * @return {@code this}
+         * @param launcher Property launcher: A bootloader for script execution. This parameter is required.
+         */
+        public Builder launcher(final java.lang.String launcher) {
+            this.props.launcher(launcher);
+            return this;
+        }
+        /**
+         * Property launcher: A bootloader for script execution.
+         * <p>
+         * The length cannot exceed 1 KB.
+         * <p>
+         * @return {@code this}
+         * @param launcher Property launcher: A bootloader for script execution. This parameter is required.
+         */
+        public Builder launcher(final com.aliyun.ros.cdk.core.IResolvable launcher) {
+            this.props.launcher(launcher);
             return this;
         }
 

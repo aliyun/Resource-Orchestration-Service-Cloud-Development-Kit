@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cen;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterpeerattachment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:02.484Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:44.354Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosTransitRouterPeerAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(RosTransitRouterPeerAttachmentProps.Jsii$Proxy.class)
 public interface RosTransitRouterPeerAttachmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -28,6 +28,12 @@ public interface RosTransitRouterPeerAttachmentProps extends software.amazon.jsi
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBandwidthType() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCenBandwidthPackageId() {
         return null;
     }
@@ -40,7 +46,19 @@ public interface RosTransitRouterPeerAttachmentProps extends software.amazon.jsi
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDefaultLinkType() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeerTransitRouterRegionId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.cen.RosTransitRouterPeerAttachment.TagsProperty> getTags() {
         return null;
     }
 
@@ -75,9 +93,12 @@ public interface RosTransitRouterPeerAttachmentProps extends software.amazon.jsi
         java.lang.Object peerTransitRouterId;
         java.lang.Object autoPublishRouteEnabled;
         java.lang.Object bandwidth;
+        java.lang.Object bandwidthType;
         java.lang.Object cenBandwidthPackageId;
         java.lang.Object cenId;
+        java.lang.Object defaultLinkType;
         java.lang.Object peerTransitRouterRegionId;
+        java.util.List<com.aliyun.ros.cdk.cen.RosTransitRouterPeerAttachment.TagsProperty> tags;
         java.lang.Object transitRouterAttachmentDescription;
         java.lang.Object transitRouterAttachmentName;
         java.lang.Object transitRouterId;
@@ -143,6 +164,26 @@ public interface RosTransitRouterPeerAttachmentProps extends software.amazon.jsi
         }
 
         /**
+         * Sets the value of {@link RosTransitRouterPeerAttachmentProps#getBandwidthType}
+         * @param bandwidthType the value to be set.
+         * @return {@code this}
+         */
+        public Builder bandwidthType(java.lang.String bandwidthType) {
+            this.bandwidthType = bandwidthType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosTransitRouterPeerAttachmentProps#getBandwidthType}
+         * @param bandwidthType the value to be set.
+         * @return {@code this}
+         */
+        public Builder bandwidthType(com.aliyun.ros.cdk.core.IResolvable bandwidthType) {
+            this.bandwidthType = bandwidthType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosTransitRouterPeerAttachmentProps#getCenBandwidthPackageId}
          * @param cenBandwidthPackageId the value to be set.
          * @return {@code this}
@@ -183,6 +224,26 @@ public interface RosTransitRouterPeerAttachmentProps extends software.amazon.jsi
         }
 
         /**
+         * Sets the value of {@link RosTransitRouterPeerAttachmentProps#getDefaultLinkType}
+         * @param defaultLinkType the value to be set.
+         * @return {@code this}
+         */
+        public Builder defaultLinkType(java.lang.String defaultLinkType) {
+            this.defaultLinkType = defaultLinkType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosTransitRouterPeerAttachmentProps#getDefaultLinkType}
+         * @param defaultLinkType the value to be set.
+         * @return {@code this}
+         */
+        public Builder defaultLinkType(com.aliyun.ros.cdk.core.IResolvable defaultLinkType) {
+            this.defaultLinkType = defaultLinkType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosTransitRouterPeerAttachmentProps#getPeerTransitRouterRegionId}
          * @param peerTransitRouterRegionId the value to be set.
          * @return {@code this}
@@ -199,6 +260,17 @@ public interface RosTransitRouterPeerAttachmentProps extends software.amazon.jsi
          */
         public Builder peerTransitRouterRegionId(com.aliyun.ros.cdk.core.IResolvable peerTransitRouterRegionId) {
             this.peerTransitRouterRegionId = peerTransitRouterRegionId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosTransitRouterPeerAttachmentProps#getTags}
+         * @param tags the value to be set.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.cen.RosTransitRouterPeerAttachment.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.cen.RosTransitRouterPeerAttachment.TagsProperty>)tags;
             return this;
         }
 
@@ -281,9 +353,12 @@ public interface RosTransitRouterPeerAttachmentProps extends software.amazon.jsi
         private final java.lang.Object peerTransitRouterId;
         private final java.lang.Object autoPublishRouteEnabled;
         private final java.lang.Object bandwidth;
+        private final java.lang.Object bandwidthType;
         private final java.lang.Object cenBandwidthPackageId;
         private final java.lang.Object cenId;
+        private final java.lang.Object defaultLinkType;
         private final java.lang.Object peerTransitRouterRegionId;
+        private final java.util.List<com.aliyun.ros.cdk.cen.RosTransitRouterPeerAttachment.TagsProperty> tags;
         private final java.lang.Object transitRouterAttachmentDescription;
         private final java.lang.Object transitRouterAttachmentName;
         private final java.lang.Object transitRouterId;
@@ -297,9 +372,12 @@ public interface RosTransitRouterPeerAttachmentProps extends software.amazon.jsi
             this.peerTransitRouterId = software.amazon.jsii.Kernel.get(this, "peerTransitRouterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoPublishRouteEnabled = software.amazon.jsii.Kernel.get(this, "autoPublishRouteEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.bandwidthType = software.amazon.jsii.Kernel.get(this, "bandwidthType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.cenBandwidthPackageId = software.amazon.jsii.Kernel.get(this, "cenBandwidthPackageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.cenId = software.amazon.jsii.Kernel.get(this, "cenId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.defaultLinkType = software.amazon.jsii.Kernel.get(this, "defaultLinkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.peerTransitRouterRegionId = software.amazon.jsii.Kernel.get(this, "peerTransitRouterRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cen.RosTransitRouterPeerAttachment.TagsProperty.class)));
             this.transitRouterAttachmentDescription = software.amazon.jsii.Kernel.get(this, "transitRouterAttachmentDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.transitRouterAttachmentName = software.amazon.jsii.Kernel.get(this, "transitRouterAttachmentName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.transitRouterId = software.amazon.jsii.Kernel.get(this, "transitRouterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -308,14 +386,18 @@ public interface RosTransitRouterPeerAttachmentProps extends software.amazon.jsi
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
+        @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.peerTransitRouterId = java.util.Objects.requireNonNull(builder.peerTransitRouterId, "peerTransitRouterId is required");
             this.autoPublishRouteEnabled = builder.autoPublishRouteEnabled;
             this.bandwidth = builder.bandwidth;
+            this.bandwidthType = builder.bandwidthType;
             this.cenBandwidthPackageId = builder.cenBandwidthPackageId;
             this.cenId = builder.cenId;
+            this.defaultLinkType = builder.defaultLinkType;
             this.peerTransitRouterRegionId = builder.peerTransitRouterRegionId;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.cen.RosTransitRouterPeerAttachment.TagsProperty>)builder.tags;
             this.transitRouterAttachmentDescription = builder.transitRouterAttachmentDescription;
             this.transitRouterAttachmentName = builder.transitRouterAttachmentName;
             this.transitRouterId = builder.transitRouterId;
@@ -337,6 +419,11 @@ public interface RosTransitRouterPeerAttachmentProps extends software.amazon.jsi
         }
 
         @Override
+        public final java.lang.Object getBandwidthType() {
+            return this.bandwidthType;
+        }
+
+        @Override
         public final java.lang.Object getCenBandwidthPackageId() {
             return this.cenBandwidthPackageId;
         }
@@ -347,8 +434,18 @@ public interface RosTransitRouterPeerAttachmentProps extends software.amazon.jsi
         }
 
         @Override
+        public final java.lang.Object getDefaultLinkType() {
+            return this.defaultLinkType;
+        }
+
+        @Override
         public final java.lang.Object getPeerTransitRouterRegionId() {
             return this.peerTransitRouterRegionId;
+        }
+
+        @Override
+        public final java.util.List<com.aliyun.ros.cdk.cen.RosTransitRouterPeerAttachment.TagsProperty> getTags() {
+            return this.tags;
         }
 
         @Override
@@ -379,14 +476,23 @@ public interface RosTransitRouterPeerAttachmentProps extends software.amazon.jsi
             if (this.getBandwidth() != null) {
                 data.set("bandwidth", om.valueToTree(this.getBandwidth()));
             }
+            if (this.getBandwidthType() != null) {
+                data.set("bandwidthType", om.valueToTree(this.getBandwidthType()));
+            }
             if (this.getCenBandwidthPackageId() != null) {
                 data.set("cenBandwidthPackageId", om.valueToTree(this.getCenBandwidthPackageId()));
             }
             if (this.getCenId() != null) {
                 data.set("cenId", om.valueToTree(this.getCenId()));
             }
+            if (this.getDefaultLinkType() != null) {
+                data.set("defaultLinkType", om.valueToTree(this.getDefaultLinkType()));
+            }
             if (this.getPeerTransitRouterRegionId() != null) {
                 data.set("peerTransitRouterRegionId", om.valueToTree(this.getPeerTransitRouterRegionId()));
+            }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
             }
             if (this.getTransitRouterAttachmentDescription() != null) {
                 data.set("transitRouterAttachmentDescription", om.valueToTree(this.getTransitRouterAttachmentDescription()));
@@ -418,9 +524,12 @@ public interface RosTransitRouterPeerAttachmentProps extends software.amazon.jsi
             if (!peerTransitRouterId.equals(that.peerTransitRouterId)) return false;
             if (this.autoPublishRouteEnabled != null ? !this.autoPublishRouteEnabled.equals(that.autoPublishRouteEnabled) : that.autoPublishRouteEnabled != null) return false;
             if (this.bandwidth != null ? !this.bandwidth.equals(that.bandwidth) : that.bandwidth != null) return false;
+            if (this.bandwidthType != null ? !this.bandwidthType.equals(that.bandwidthType) : that.bandwidthType != null) return false;
             if (this.cenBandwidthPackageId != null ? !this.cenBandwidthPackageId.equals(that.cenBandwidthPackageId) : that.cenBandwidthPackageId != null) return false;
             if (this.cenId != null ? !this.cenId.equals(that.cenId) : that.cenId != null) return false;
+            if (this.defaultLinkType != null ? !this.defaultLinkType.equals(that.defaultLinkType) : that.defaultLinkType != null) return false;
             if (this.peerTransitRouterRegionId != null ? !this.peerTransitRouterRegionId.equals(that.peerTransitRouterRegionId) : that.peerTransitRouterRegionId != null) return false;
+            if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.transitRouterAttachmentDescription != null ? !this.transitRouterAttachmentDescription.equals(that.transitRouterAttachmentDescription) : that.transitRouterAttachmentDescription != null) return false;
             if (this.transitRouterAttachmentName != null ? !this.transitRouterAttachmentName.equals(that.transitRouterAttachmentName) : that.transitRouterAttachmentName != null) return false;
             return this.transitRouterId != null ? this.transitRouterId.equals(that.transitRouterId) : that.transitRouterId == null;
@@ -431,9 +540,12 @@ public interface RosTransitRouterPeerAttachmentProps extends software.amazon.jsi
             int result = this.peerTransitRouterId.hashCode();
             result = 31 * result + (this.autoPublishRouteEnabled != null ? this.autoPublishRouteEnabled.hashCode() : 0);
             result = 31 * result + (this.bandwidth != null ? this.bandwidth.hashCode() : 0);
+            result = 31 * result + (this.bandwidthType != null ? this.bandwidthType.hashCode() : 0);
             result = 31 * result + (this.cenBandwidthPackageId != null ? this.cenBandwidthPackageId.hashCode() : 0);
             result = 31 * result + (this.cenId != null ? this.cenId.hashCode() : 0);
+            result = 31 * result + (this.defaultLinkType != null ? this.defaultLinkType.hashCode() : 0);
             result = 31 * result + (this.peerTransitRouterRegionId != null ? this.peerTransitRouterRegionId.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.transitRouterAttachmentDescription != null ? this.transitRouterAttachmentDescription.hashCode() : 0);
             result = 31 * result + (this.transitRouterAttachmentName != null ? this.transitRouterAttachmentName.hashCode() : 0);
             result = 31 * result + (this.transitRouterId != null ? this.transitRouterId.hashCode() : 0);

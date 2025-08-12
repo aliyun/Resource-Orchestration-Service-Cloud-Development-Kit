@@ -56,7 +56,7 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     if(properties.clusterName && (typeof properties.clusterName) !== 'object') {
         errors.collect(ros.propertyValidator('clusterName', ros.validateAllowedPattern)({
           data: properties.clusterName,
-          reg: /[-a-zA-Z0-9_]{3,32}/
+          reg: /^[-a-zA-Z0-9_]{3,32}$/
         }));
     }
     errors.collect(ros.propertyValidator('clusterName', ros.validateString)(properties.clusterName));

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * Represents a <code>AlarmTaskEnable</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:06.614Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.432Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.IAlarmTaskEnable")
 @software.amazon.jsii.Jsii.Proxy(IAlarmTaskEnable.Jsii$Proxy.class)
 public interface IAlarmTaskEnable extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

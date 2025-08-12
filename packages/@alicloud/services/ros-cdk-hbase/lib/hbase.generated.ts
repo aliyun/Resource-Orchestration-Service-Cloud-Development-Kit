@@ -276,7 +276,7 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::HBase::Cluster`, which is used to create an ApsaraDB for HBase cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::HBase::Cluster`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Cluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbase-cluster
  */
@@ -857,7 +857,7 @@ function rosMultiZoneClusterPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::HBase::MultiZoneCluster`, which is used to create an ApsaraDB for HBase cluster that resides in multiple zones.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::HBase::MultiZoneCluster`.
  * @Note This class does not contain additional functions, so it is recommended to use the `MultiZoneCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbase-multizonecluster
  */

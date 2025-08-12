@@ -57,6 +57,8 @@ type RosProject interface {
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
 	Stack() alicloudroscdkcore.Stack
+	SupportSchemaLevels() interface{}
+	SetSupportSchemaLevels(val interface{})
 	// Return properties modified after initiation.
 	//
 	// Resources that expose mutable properties should override this function to
@@ -341,6 +343,16 @@ func (j *jsiiProxy_RosProject) Stack() alicloudroscdkcore.Stack {
 	return returns
 }
 
+func (j *jsiiProxy_RosProject) SupportSchemaLevels() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"supportSchemaLevels",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosProject) UpdatedProperites() *map[string]interface{} {
 	var returns *map[string]interface{}
 	_jsii_.Get(
@@ -452,6 +464,17 @@ func (j *jsiiProxy_RosProject)SetProperties(val interface{}) {
 	_jsii_.Set(
 		j,
 		"properties",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosProject)SetSupportSchemaLevels(val interface{}) {
+	if err := j.validateSetSupportSchemaLevelsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"supportSchemaLevels",
 		val,
 	)
 }

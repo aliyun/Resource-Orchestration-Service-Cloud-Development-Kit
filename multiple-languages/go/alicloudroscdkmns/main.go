@@ -133,6 +133,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "attrQueueUrl", GoGetter: "AttrQueueUrl"},
 			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
 			_jsii_.MemberProperty{JsiiProperty: "delaySeconds", GoGetter: "DelaySeconds"},
+			_jsii_.MemberProperty{JsiiProperty: "dlqPolicy", GoGetter: "DlqPolicy"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
 			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
 			_jsii_.MemberMethod{JsiiMethod: "fetchDesc", GoMethod: "FetchDesc"},
@@ -157,6 +158,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "rosResourceType", GoGetter: "RosResourceType"},
 			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
 			_jsii_.MemberMethod{JsiiMethod: "synthesize", GoMethod: "Synthesize"},
+			_jsii_.MemberProperty{JsiiProperty: "tags", GoGetter: "Tags"},
 			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
 			_jsii_.MemberProperty{JsiiProperty: "updatedProperites", GoGetter: "UpdatedProperites"},
 			_jsii_.MemberMethod{JsiiMethod: "validate", GoMethod: "Validate"},
@@ -168,6 +170,14 @@ func init() {
 			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreRosResource)
 			return &j
 		},
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-mns.RosQueue.DlqPolicyProperty",
+		reflect.TypeOf((*RosQueue_DlqPolicyProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-mns.RosQueue.TagsProperty",
+		reflect.TypeOf((*RosQueue_TagsProperty)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-mns.RosQueueProps",
@@ -192,6 +202,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "attrSubscriptionUrl", GoGetter: "AttrSubscriptionUrl"},
 			_jsii_.MemberProperty{JsiiProperty: "attrTopicName", GoGetter: "AttrTopicName"},
 			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
+			_jsii_.MemberProperty{JsiiProperty: "dlqPolicy", GoGetter: "DlqPolicy"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
 			_jsii_.MemberProperty{JsiiProperty: "endpoint", GoGetter: "Endpoint"},
 			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
@@ -208,6 +219,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "onValidate", GoMethod: "OnValidate"},
 			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
 			_jsii_.MemberMethod{JsiiMethod: "prepare", GoMethod: "Prepare"},
+			_jsii_.MemberProperty{JsiiProperty: "pushType", GoGetter: "PushType"},
 			_jsii_.MemberProperty{JsiiProperty: "ref", GoGetter: "Ref"},
 			_jsii_.MemberMethod{JsiiMethod: "renderProperties", GoMethod: "RenderProperties"},
 			_jsii_.MemberProperty{JsiiProperty: "rosOptions", GoGetter: "RosOptions"},
@@ -227,6 +239,10 @@ func init() {
 			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreRosResource)
 			return &j
 		},
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-mns.RosSubscription.DlqPolicyProperty",
+		reflect.TypeOf((*RosSubscription_DlqPolicyProperty)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-mns.RosSubscriptionProps",
@@ -272,6 +288,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "rosResourceType", GoGetter: "RosResourceType"},
 			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
 			_jsii_.MemberMethod{JsiiMethod: "synthesize", GoMethod: "Synthesize"},
+			_jsii_.MemberProperty{JsiiProperty: "tags", GoGetter: "Tags"},
 			_jsii_.MemberProperty{JsiiProperty: "topicName", GoGetter: "TopicName"},
 			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
 			_jsii_.MemberProperty{JsiiProperty: "updatedProperites", GoGetter: "UpdatedProperites"},
@@ -283,6 +300,10 @@ func init() {
 			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreRosResource)
 			return &j
 		},
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-mns.RosTopic.TagsProperty",
+		reflect.TypeOf((*RosTopic_TagsProperty)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-mns.RosTopicProps",

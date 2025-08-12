@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.emr;
 /**
  * Represents a <code>FlowProject</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:06.355Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.200Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.IFlowProject")
 @software.amazon.jsii.Jsii.Proxy(IFlowProject.Jsii$Proxy.class)
 public interface IFlowProject extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

@@ -15,8 +15,6 @@ type RosNatGateway interface {
 	AttrForwardTableId() alicloudroscdkcore.IResolvable
 	AttrNatGatewayId() alicloudroscdkcore.IResolvable
 	AttrSNatTableId() alicloudroscdkcore.IResolvable
-	AutoPay() interface{}
-	SetAutoPay(val interface{})
 	// Returns: the stack trace of the point where this Resource was created from, sourced
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
@@ -27,8 +25,6 @@ type RosNatGateway interface {
 	SetDeletionProtection(val interface{})
 	Description() interface{}
 	SetDescription(val interface{})
-	Duration() interface{}
-	SetDuration(val interface{})
 	EipBindMode() interface{}
 	SetEipBindMode(val interface{})
 	EnableResourcePropertyConstraint() *bool
@@ -57,8 +53,6 @@ type RosNatGateway interface {
 	SetNetworkType(val interface{})
 	// The construct tree node associated with this construct.
 	Node() alicloudroscdkcore.ConstructNode
-	PricingCycle() interface{}
-	SetPricingCycle(val interface{})
 	// Return a string that will be resolved to a RosTemplate `{ Ref }` for this element.
 	//
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
@@ -235,16 +229,6 @@ func (j *jsiiProxy_RosNatGateway) AttrSNatTableId() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_RosNatGateway) AutoPay() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"autoPay",
-		&returns,
-	)
-	return returns
-}
-
 func (j *jsiiProxy_RosNatGateway) CreationStack() *[]*string {
 	var returns *[]*string
 	_jsii_.Get(
@@ -280,16 +264,6 @@ func (j *jsiiProxy_RosNatGateway) Description() interface{} {
 	_jsii_.Get(
 		j,
 		"description",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosNatGateway) Duration() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"duration",
 		&returns,
 	)
 	return returns
@@ -390,16 +364,6 @@ func (j *jsiiProxy_RosNatGateway) Node() alicloudroscdkcore.ConstructNode {
 	_jsii_.Get(
 		j,
 		"node",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosNatGateway) PricingCycle() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"pricingCycle",
 		&returns,
 	)
 	return returns
@@ -533,17 +497,6 @@ func NewRosNatGateway_Override(r RosNatGateway, scope alicloudroscdkcore.Constru
 	)
 }
 
-func (j *jsiiProxy_RosNatGateway)SetAutoPay(val interface{}) {
-	if err := j.validateSetAutoPayParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"autoPay",
-		val,
-	)
-}
-
 func (j *jsiiProxy_RosNatGateway)SetDeletionForce(val interface{}) {
 	if err := j.validateSetDeletionForceParameters(val); err != nil {
 		panic(err)
@@ -573,17 +526,6 @@ func (j *jsiiProxy_RosNatGateway)SetDescription(val interface{}) {
 	_jsii_.Set(
 		j,
 		"description",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosNatGateway)SetDuration(val interface{}) {
-	if err := j.validateSetDurationParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"duration",
 		val,
 	)
 }
@@ -672,17 +614,6 @@ func (j *jsiiProxy_RosNatGateway)SetNetworkType(val interface{}) {
 	_jsii_.Set(
 		j,
 		"networkType",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosNatGateway)SetPricingCycle(val interface{}) {
-	if err := j.validateSetPricingCycleParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"pricingCycle",
 		val,
 	)
 }

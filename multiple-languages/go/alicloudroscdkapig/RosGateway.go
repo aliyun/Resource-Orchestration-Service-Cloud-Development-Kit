@@ -17,10 +17,13 @@ type RosGateway interface {
 	AttrExpireTime() alicloudroscdkcore.IResolvable
 	AttrGatewayId() alicloudroscdkcore.IResolvable
 	AttrGatewayName() alicloudroscdkcore.IResolvable
+	AttrGatewayType() alicloudroscdkcore.IResolvable
 	AttrLoadBalancers() alicloudroscdkcore.IResolvable
 	AttrPaymentType() alicloudroscdkcore.IResolvable
+	AttrResourceGroupId() alicloudroscdkcore.IResolvable
 	AttrSecurityGroup() alicloudroscdkcore.IResolvable
 	AttrSpec() alicloudroscdkcore.IResolvable
+	AttrTags() alicloudroscdkcore.IResolvable
 	AttrUpdateTime() alicloudroscdkcore.IResolvable
 	AttrVersion() alicloudroscdkcore.IResolvable
 	AttrVpc() alicloudroscdkcore.IResolvable
@@ -34,6 +37,8 @@ type RosGateway interface {
 	SetEnableResourcePropertyConstraint(val *bool)
 	GatewayName() interface{}
 	SetGatewayName(val interface{})
+	GatewayType() interface{}
+	SetGatewayType(val interface{})
 	LogConfig() interface{}
 	SetLogConfig(val interface{})
 	// The logical ID for this stack element.
@@ -52,11 +57,17 @@ type RosGateway interface {
 	Node() alicloudroscdkcore.ConstructNode
 	PaymentType() interface{}
 	SetPaymentType(val interface{})
+	Period() interface{}
+	SetPeriod(val interface{})
+	PeriodUnit() interface{}
+	SetPeriodUnit(val interface{})
 	// Return a string that will be resolved to a RosTemplate `{ Ref }` for this element.
 	//
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
 	// coerce it to an IResolvable through `Lazy.any({ produce: resource.ref })`.
 	Ref() *string
+	ResourceGroupId() interface{}
+	SetResourceGroupId(val interface{})
 	// Options for this resource, such as condition, update policy etc.
 	RosOptions() alicloudroscdkcore.IRosResourceOptions
 	RosProperties() *map[string]interface{}
@@ -68,6 +79,8 @@ type RosGateway interface {
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
 	Stack() alicloudroscdkcore.Stack
+	Tags() *[]*RosGateway_TagsProperty
+	SetTags(val *[]*RosGateway_TagsProperty)
 	// Return properties modified after initiation.
 	//
 	// Resources that expose mutable properties should override this function to
@@ -248,6 +261,16 @@ func (j *jsiiProxy_RosGateway) AttrGatewayName() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
+func (j *jsiiProxy_RosGateway) AttrGatewayType() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrGatewayType",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosGateway) AttrLoadBalancers() alicloudroscdkcore.IResolvable {
 	var returns alicloudroscdkcore.IResolvable
 	_jsii_.Get(
@@ -268,6 +291,16 @@ func (j *jsiiProxy_RosGateway) AttrPaymentType() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
+func (j *jsiiProxy_RosGateway) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrResourceGroupId",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosGateway) AttrSecurityGroup() alicloudroscdkcore.IResolvable {
 	var returns alicloudroscdkcore.IResolvable
 	_jsii_.Get(
@@ -283,6 +316,16 @@ func (j *jsiiProxy_RosGateway) AttrSpec() alicloudroscdkcore.IResolvable {
 	_jsii_.Get(
 		j,
 		"attrSpec",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosGateway) AttrTags() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrTags",
 		&returns,
 	)
 	return returns
@@ -368,6 +411,16 @@ func (j *jsiiProxy_RosGateway) GatewayName() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosGateway) GatewayType() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"gatewayType",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosGateway) LogConfig() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -418,11 +471,41 @@ func (j *jsiiProxy_RosGateway) PaymentType() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosGateway) Period() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"period",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosGateway) PeriodUnit() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"periodUnit",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosGateway) Ref() *string {
 	var returns *string
 	_jsii_.Get(
 		j,
 		"ref",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosGateway) ResourceGroupId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"resourceGroupId",
 		&returns,
 	)
 	return returns
@@ -473,6 +556,16 @@ func (j *jsiiProxy_RosGateway) Stack() alicloudroscdkcore.Stack {
 	_jsii_.Get(
 		j,
 		"stack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosGateway) Tags() *[]*RosGateway_TagsProperty {
+	var returns *[]*RosGateway_TagsProperty
+	_jsii_.Get(
+		j,
+		"tags",
 		&returns,
 	)
 	return returns
@@ -568,6 +661,17 @@ func (j *jsiiProxy_RosGateway)SetGatewayName(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosGateway)SetGatewayType(val interface{}) {
+	if err := j.validateSetGatewayTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"gatewayType",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosGateway)SetLogConfig(val interface{}) {
 	if err := j.validateSetLogConfigParameters(val); err != nil {
 		panic(err)
@@ -601,6 +705,39 @@ func (j *jsiiProxy_RosGateway)SetPaymentType(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosGateway)SetPeriod(val interface{}) {
+	if err := j.validateSetPeriodParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"period",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosGateway)SetPeriodUnit(val interface{}) {
+	if err := j.validateSetPeriodUnitParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"periodUnit",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosGateway)SetResourceGroupId(val interface{}) {
+	if err := j.validateSetResourceGroupIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"resourceGroupId",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosGateway)SetSpec(val interface{}) {
 	if err := j.validateSetSpecParameters(val); err != nil {
 		panic(err)
@@ -608,6 +745,17 @@ func (j *jsiiProxy_RosGateway)SetSpec(val interface{}) {
 	_jsii_.Set(
 		j,
 		"spec",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosGateway)SetTags(val *[]*RosGateway_TagsProperty) {
+	if err := j.validateSetTagsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"tags",
 		val,
 	)
 }

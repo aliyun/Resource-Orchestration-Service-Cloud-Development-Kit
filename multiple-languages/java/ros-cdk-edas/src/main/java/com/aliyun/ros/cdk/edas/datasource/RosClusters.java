@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.edas.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::EDAS::Clusters</code>, which is used to query clusters in Enterprise Distributed Application Service (EDAS).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:06.046Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.032Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.datasource.RosClusters")
 public class RosClusters extends com.aliyun.ros.cdk.core.RosResource {
 

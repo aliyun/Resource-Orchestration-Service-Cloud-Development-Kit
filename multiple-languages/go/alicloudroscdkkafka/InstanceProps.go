@@ -55,7 +55,8 @@ type InstanceProps struct {
 	// Valid values:
 	// normal: Normal version
 	// professional: Professional Edition (high writing edition)
-	// professionalForHighRead: Professional Edition (high reading edition).
+	// professionalForHighRead: Professional Edition (high reading edition)
+	// basic: Basic Edition (only for serverless).
 	SpecType interface{} `field:"optional" json:"specType" yaml:"specType"`
 	// Property tags: Tags to attach to instance.
 	//

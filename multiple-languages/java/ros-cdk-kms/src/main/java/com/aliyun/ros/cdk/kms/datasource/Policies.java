@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.kms.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::KMS::Policies</code>.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::KMS::Policies</code>, which is used to query permission policies.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:07.832Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.415Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.datasource.Policies")
 public class Policies extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.kms.datasource.IPolicies {
 

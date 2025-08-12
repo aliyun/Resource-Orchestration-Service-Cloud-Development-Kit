@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-vswitch
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:05.376Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.644Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.VSwitchProps")
 @software.amazon.jsii.Jsii.Proxy(VSwitchProps.Jsii$Proxy.class)
 public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
@@ -61,7 +61,7 @@ public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property vSwitchName: Display name of the vSwitch instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
+     * Property vSwitchName: The value contains 1 to 128 characters and cannot start with http:// or https://.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchName() {
         return null;
@@ -236,7 +236,7 @@ public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link VSwitchProps#getVSwitchName}
-         * @param vSwitchName Property vSwitchName: Display name of the vSwitch instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
+         * @param vSwitchName Property vSwitchName: The value contains 1 to 128 characters and cannot start with http:// or https://.
          * @return {@code this}
          */
         public Builder vSwitchName(java.lang.String vSwitchName) {
@@ -246,7 +246,7 @@ public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link VSwitchProps#getVSwitchName}
-         * @param vSwitchName Property vSwitchName: Display name of the vSwitch instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
+         * @param vSwitchName Property vSwitchName: The value contains 1 to 128 characters and cannot start with http:// or https://.
          * @return {@code this}
          */
         public Builder vSwitchName(com.aliyun.ros.cdk.core.IResolvable vSwitchName) {

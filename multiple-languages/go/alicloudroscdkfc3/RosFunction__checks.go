@@ -861,6 +861,16 @@ func (j *jsiiProxy_RosFunction) validateSetRuntimeParameters(val interface{}) er
 	return nil
 }
 
+func (j *jsiiProxy_RosFunction) validateSetTagsParameters(val *[]*RosFunction_TagsProperty) error {
+	for idx_97dfc6, v := range *val {
+		if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosFunction) validateSetTimeoutParameters(val interface{}) error {
 	switch val.(type) {
 	case *float64:

@@ -6,6 +6,7 @@ package alicloudroscdkkms
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-networkrule
 type RosNetworkRuleProps struct {
 	NetworkRuleName interface{} `field:"required" json:"networkRuleName" yaml:"networkRuleName"`
+	Type interface{} `field:"required" json:"type" yaml:"type"`
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
 	SourcePrivateIp interface{} `field:"optional" json:"sourcePrivateIp" yaml:"sourcePrivateIp"`
 }

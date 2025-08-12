@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mns;
 /**
  * Represents a <code>Queue</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.005Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.554Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.QueueAttributes")
 @software.amazon.jsii.Jsii.Proxy(QueueAttributes.Jsii$Proxy.class)
 public interface QueueAttributes extends software.amazon.jsii.JsiiSerializable {

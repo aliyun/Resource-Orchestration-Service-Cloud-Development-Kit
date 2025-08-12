@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.fc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-function
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:12.202Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:51.948Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.FunctionProps")
 @software.amazon.jsii.Jsii.Proxy(FunctionProps.Jsii$Proxy.class)
 public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
@@ -168,7 +168,7 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property instanceType: Instance type.
      * <p>
-     * Value:e1: flexible instance. Memory size between 128 and 3072c1: performance instance. Memory size allow values are 4096, 8192, 16384 and 32768
+     * Value:- e1: Elastic Instance.- c1: Performance Instance.- fc.gpu.tesla.1: GPU Tesla Series Instance Type.- fc.gpu.ampere.1: GPU Ampere Series Instance Type.- fc.gpu.ada.1: GPU Ada Series Instance Type.- g1: Same as fc.gpu.tesla.1.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceType() {
         return null;
@@ -177,7 +177,7 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property memorySize: The amount of memory that’s used to run function, in MB.
      * <p>
-     * Function Compute uses this value to allocate CPU resources proportionally. Defaults to 128 MB. It can be multiple of 64 MB and between 128 MB and 3072 MB.
+     * Function Compute uses this value to allocate CPU resources proportionally. Defaults to 128 MB. It can be multiple of 64 MB and between 128 MB and 32768 MB.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMemorySize() {
         return null;
@@ -666,7 +666,7 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link FunctionProps#getInstanceType}
          * @param instanceType Property instanceType: Instance type.
-         *                     Value:e1: flexible instance. Memory size between 128 and 3072c1: performance instance. Memory size allow values are 4096, 8192, 16384 and 32768
+         *                     Value:- e1: Elastic Instance.- c1: Performance Instance.- fc.gpu.tesla.1: GPU Tesla Series Instance Type.- fc.gpu.ampere.1: GPU Ampere Series Instance Type.- fc.gpu.ada.1: GPU Ada Series Instance Type.- g1: Same as fc.gpu.tesla.1.
          * @return {@code this}
          */
         public Builder instanceType(java.lang.String instanceType) {
@@ -677,7 +677,7 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link FunctionProps#getInstanceType}
          * @param instanceType Property instanceType: Instance type.
-         *                     Value:e1: flexible instance. Memory size between 128 and 3072c1: performance instance. Memory size allow values are 4096, 8192, 16384 and 32768
+         *                     Value:- e1: Elastic Instance.- c1: Performance Instance.- fc.gpu.tesla.1: GPU Tesla Series Instance Type.- fc.gpu.ampere.1: GPU Ampere Series Instance Type.- fc.gpu.ada.1: GPU Ada Series Instance Type.- g1: Same as fc.gpu.tesla.1.
          * @return {@code this}
          */
         public Builder instanceType(com.aliyun.ros.cdk.core.IResolvable instanceType) {
@@ -688,7 +688,7 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link FunctionProps#getMemorySize}
          * @param memorySize Property memorySize: The amount of memory that’s used to run function, in MB.
-         *                   Function Compute uses this value to allocate CPU resources proportionally. Defaults to 128 MB. It can be multiple of 64 MB and between 128 MB and 3072 MB.
+         *                   Function Compute uses this value to allocate CPU resources proportionally. Defaults to 128 MB. It can be multiple of 64 MB and between 128 MB and 32768 MB.
          * @return {@code this}
          */
         public Builder memorySize(java.lang.Number memorySize) {
@@ -699,7 +699,7 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link FunctionProps#getMemorySize}
          * @param memorySize Property memorySize: The amount of memory that’s used to run function, in MB.
-         *                   Function Compute uses this value to allocate CPU resources proportionally. Defaults to 128 MB. It can be multiple of 64 MB and between 128 MB and 3072 MB.
+         *                   Function Compute uses this value to allocate CPU resources proportionally. Defaults to 128 MB. It can be multiple of 64 MB and between 128 MB and 32768 MB.
          * @return {@code this}
          */
         public Builder memorySize(com.aliyun.ros.cdk.core.IResolvable memorySize) {

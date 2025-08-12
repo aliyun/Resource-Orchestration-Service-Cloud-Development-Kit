@@ -149,7 +149,7 @@ function rosBundlePropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::Bundle`, which is used to create a custom desktop template.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::Bundle`, which is used to create a custom cloud computer template.
  * @Note This class does not contain additional functions, so it is recommended to use the `Bundle` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-bundle
  */
@@ -2131,7 +2131,7 @@ function rosUserDesktopGroupAdditionPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::UserDesktopGroupAddition`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::UserDesktopGroupAddition`, which is used grant the permissions on a cloud computer pool to users.
  * @Note This class does not contain additional functions, so it is recommended to use the `UserDesktopGroupAddition` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-userdesktopgroupaddition
  */

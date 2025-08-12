@@ -1,3 +1,6 @@
+export * from './chatbot';
+export * from './chatbotflow';
+export * from './chatbotmodel';
 export * from './flow';
 export * from './userauthconfig';
 

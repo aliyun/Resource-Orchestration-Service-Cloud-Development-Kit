@@ -126,7 +126,7 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ADBLake::Account`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ADBLake::Account`, which is used to create a database account for an AnalyticDB for MySQL Data Lakehouse Edition cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adblake-account
  */
@@ -222,12 +222,6 @@ export class RosAccount extends ros.RosResource {
 export interface RosDBClusterProps {
 
     /**
-     * @Property computeResource: The amount of reserved computing resources. Unit: ACUs. Valid values: 0ACU to 4096ACU. The value must be in increments of 16 ACUs. Each ACU is equivalent to 1 core and 4 GB memory.
-     * Note This parameter must be specified with a unit.
-     */
-    readonly computeResource: string | ros.IResolvable;
-
-    /**
      * @Property dbClusterVersion: The version of the cluster. Set the value to 5.0.
      */
     readonly dbClusterVersion: string | ros.IResolvable;
@@ -238,12 +232,6 @@ export interface RosDBClusterProps {
      * Prepaid: subscription.
      */
     readonly payType: string | ros.IResolvable;
-
-    /**
-     * @Property storageResource: The amount of reserved storage resources. Unit: AnalyticDB compute units (ACUs). Valid values: 0ACU to 2064ACU. The value must be in increments of 24 ACUs. Each ACU is equivalent to 1 core and 4 GB memory.
-     * Note This parameter must be specified with a unit.
-     */
-    readonly storageResource: string | ros.IResolvable;
 
     /**
      * @Property vpcId: The virtual private cloud (VPC) ID of the cluster.
@@ -271,6 +259,12 @@ export interface RosDBClusterProps {
      * @Property cloneSourceRegionId: The ID of the source region where the cluster is located.
      */
     readonly cloneSourceRegionId?: string | ros.IResolvable;
+
+    /**
+     * @Property computeResource: The amount of reserved computing resources. Unit: ACUs. Valid values: 0ACU to 4096ACU. The value must be in increments of 16 ACUs. Each ACU is equivalent to 1 core and 4 GB memory.
+     * Note This parameter must be specified with a unit.
+     */
+    readonly computeResource?: string | ros.IResolvable;
 
     /**
      * @Property dbClusterDescription: The description of the cluster.
@@ -328,6 +322,11 @@ export interface RosDBClusterProps {
     readonly productForm?: string | ros.IResolvable;
 
     /**
+     * @Property productVersion: The version of the cluster.Note If only ProductForm is set to IntegrationForm, enter this parameter.
+     */
+    readonly productVersion?: string | ros.IResolvable;
+
+    /**
      * @Property reservedNodeCount: The number of reserved nodes. Must be 1 for basic version and multiple 
      * of 3 for enterprise version.
      */
@@ -356,9 +355,25 @@ export interface RosDBClusterProps {
     readonly restoreType?: string | ros.IResolvable;
 
     /**
+     * @Property secondaryVSwitchId: The secondary vSwitch ID of the cluster.
+     */
+    readonly secondaryVSwitchId?: string | ros.IResolvable;
+
+    /**
+     * @Property secondaryZoneId: The secondary zone ID.
+     */
+    readonly secondaryZoneId?: string | ros.IResolvable;
+
+    /**
      * @Property sourceDbClusterId: The ID of the source AnalyticDB for MySQL Data Warehouse Edition cluster. If you want to restore a Data Lakehouse Edition cluster from a Data Warehouse Edition cluster, you must specify this parameter.
      */
     readonly sourceDbClusterId?: string | ros.IResolvable;
+
+    /**
+     * @Property storageResource: The amount of reserved storage resources. Unit: AnalyticDB compute units (ACUs). Valid values: 0ACU to 2064ACU. The value must be in increments of 24 ACUs. Each ACU is equivalent to 1 core and 4 GB memory.
+     * Note This parameter must be specified with a unit.
+     */
+    readonly storageResource?: string | ros.IResolvable;
 
     /**
      * @Property tags: Tags to attach to cluster. Max support 20 tags to add during create cluster. Each tag with two properties Key and Value, and Key is required.
@@ -383,19 +398,9 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('periodType', ros.validateString)(properties.periodType));
-    errors.collect(ros.propertyValidator('enableDefaultResourcePool', ros.validateBoolean)(properties.enableDefaultResourcePool));
-    errors.collect(ros.propertyValidator('storageResource', ros.requiredValidator)(properties.storageResource));
     errors.collect(ros.propertyValidator('storageResource', ros.validateString)(properties.storageResource));
     errors.collect(ros.propertyValidator('restoreToTime', ros.validateString)(properties.restoreToTime));
-    errors.collect(ros.propertyValidator('cloneSourceRegionId', ros.validateString)(properties.cloneSourceRegionId));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
-    errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
-    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
-    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
-    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
-    errors.collect(ros.propertyValidator('dbClusterDescription', ros.validateString)(properties.dbClusterDescription));
     if(properties.productForm && (typeof properties.productForm) !== 'object') {
         errors.collect(ros.propertyValidator('productForm', ros.validateAllowedValues)({
           data: properties.productForm,
@@ -403,16 +408,6 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('productForm', ros.validateString)(properties.productForm));
-    if(properties.reservedNodeSize && (typeof properties.reservedNodeSize) !== 'object') {
-        errors.collect(ros.propertyValidator('reservedNodeSize', ros.validateAllowedValues)({
-          data: properties.reservedNodeSize,
-          allowedValues: [8,12,16,24,32],
-        }));
-    }
-    errors.collect(ros.propertyValidator('reservedNodeSize', ros.validateNumber)(properties.reservedNodeSize));
-    errors.collect(ros.propertyValidator('computeResource', ros.requiredValidator)(properties.computeResource));
-    errors.collect(ros.propertyValidator('computeResource', ros.validateString)(properties.computeResource));
-    errors.collect(ros.propertyValidator('period', ros.validateString)(properties.period));
     if(properties.dbClusterNetworkType && (typeof properties.dbClusterNetworkType) !== 'object') {
         errors.collect(ros.propertyValidator('dbClusterNetworkType', ros.validateAllowedValues)({
           data: properties.dbClusterNetworkType,
@@ -420,16 +415,13 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('dbClusterNetworkType', ros.validateString)(properties.dbClusterNetworkType));
-    errors.collect(ros.propertyValidator('payType', ros.requiredValidator)(properties.payType));
-    if(properties.payType && (typeof properties.payType) !== 'object') {
-        errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
-          data: properties.payType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
+    if(properties.productVersion && (typeof properties.productVersion) !== 'object') {
+        errors.collect(ros.propertyValidator('productVersion', ros.validateAllowedValues)({
+          data: properties.productVersion,
+          allowedValues: ["BasicVersion","EnterpriseVersion"],
         }));
     }
-    errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
-    errors.collect(ros.propertyValidator('backupSetId', ros.validateString)(properties.backupSetId));
-    errors.collect(ros.propertyValidator('sourceDbClusterId', ros.validateString)(properties.sourceDbClusterId));
+    errors.collect(ros.propertyValidator('productVersion', ros.validateString)(properties.productVersion));
     if(properties.reservedNodeCount && (typeof properties.reservedNodeCount) !== 'object') {
         errors.collect(ros.propertyValidator('reservedNodeCount', ros.validateRange)({
             data: properties.reservedNodeCount,
@@ -441,7 +433,6 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('diskEncryption', ros.validateBoolean)(properties.diskEncryption));
     errors.collect(ros.propertyValidator('dbClusterVersion', ros.requiredValidator)(properties.dbClusterVersion));
     errors.collect(ros.propertyValidator('dbClusterVersion', ros.validateString)(properties.dbClusterVersion));
-    errors.collect(ros.propertyValidator('kmsId', ros.validateString)(properties.kmsId));
     if(properties.restoreType && (typeof properties.restoreType) !== 'object') {
         errors.collect(ros.propertyValidator('restoreType', ros.validateAllowedValues)({
           data: properties.restoreType,
@@ -457,6 +448,37 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosDBCluster_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('enableDefaultResourcePool', ros.validateBoolean)(properties.enableDefaultResourcePool));
+    errors.collect(ros.propertyValidator('cloneSourceRegionId', ros.validateString)(properties.cloneSourceRegionId));
+    errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('dbClusterDescription', ros.validateString)(properties.dbClusterDescription));
+    errors.collect(ros.propertyValidator('secondaryVSwitchId', ros.validateString)(properties.secondaryVSwitchId));
+    if(properties.reservedNodeSize && (typeof properties.reservedNodeSize) !== 'object') {
+        errors.collect(ros.propertyValidator('reservedNodeSize', ros.validateAllowedValues)({
+          data: properties.reservedNodeSize,
+          allowedValues: [8,12,16,24,32],
+        }));
+    }
+    errors.collect(ros.propertyValidator('reservedNodeSize', ros.validateNumber)(properties.reservedNodeSize));
+    errors.collect(ros.propertyValidator('computeResource', ros.validateString)(properties.computeResource));
+    errors.collect(ros.propertyValidator('period', ros.validateString)(properties.period));
+    errors.collect(ros.propertyValidator('payType', ros.requiredValidator)(properties.payType));
+    if(properties.payType && (typeof properties.payType) !== 'object') {
+        errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
+          data: properties.payType,
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
+    errors.collect(ros.propertyValidator('backupSetId', ros.validateString)(properties.backupSetId));
+    errors.collect(ros.propertyValidator('secondaryZoneId', ros.validateString)(properties.secondaryZoneId));
+    errors.collect(ros.propertyValidator('sourceDbClusterId', ros.validateString)(properties.sourceDbClusterId));
+    errors.collect(ros.propertyValidator('kmsId', ros.validateString)(properties.kmsId));
     return errors.wrap('supplied properties not correct for "RosDBClusterProps"');
 }
 
@@ -474,15 +496,14 @@ function rosDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyC
         RosDBClusterPropsValidator(properties).assertSuccess();
     }
     return {
-      'ComputeResource': ros.stringToRosTemplate(properties.computeResource),
       'DBClusterVersion': ros.stringToRosTemplate(properties.dbClusterVersion),
       'PayType': ros.stringToRosTemplate(properties.payType),
-      'StorageResource': ros.stringToRosTemplate(properties.storageResource),
       'VPCId': ros.stringToRosTemplate(properties.vpcId),
       'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
       'ZoneId': ros.stringToRosTemplate(properties.zoneId),
       'BackupSetId': ros.stringToRosTemplate(properties.backupSetId),
       'CloneSourceRegionId': ros.stringToRosTemplate(properties.cloneSourceRegionId),
+      'ComputeResource': ros.stringToRosTemplate(properties.computeResource),
       'DBClusterDescription': ros.stringToRosTemplate(properties.dbClusterDescription),
       'DBClusterNetworkType': ros.stringToRosTemplate(properties.dbClusterNetworkType),
       'DiskEncryption': ros.booleanToRosTemplate(properties.diskEncryption),
@@ -491,18 +512,22 @@ function rosDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyC
       'Period': ros.stringToRosTemplate(properties.period),
       'PeriodType': ros.stringToRosTemplate(properties.periodType),
       'ProductForm': ros.stringToRosTemplate(properties.productForm),
+      'ProductVersion': ros.stringToRosTemplate(properties.productVersion),
       'ReservedNodeCount': ros.numberToRosTemplate(properties.reservedNodeCount),
       'ReservedNodeSize': ros.numberToRosTemplate(properties.reservedNodeSize),
       'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
       'RestoreToTime': ros.stringToRosTemplate(properties.restoreToTime),
       'RestoreType': ros.stringToRosTemplate(properties.restoreType),
+      'SecondaryVSwitchId': ros.stringToRosTemplate(properties.secondaryVSwitchId),
+      'SecondaryZoneId': ros.stringToRosTemplate(properties.secondaryZoneId),
       'SourceDbClusterId': ros.stringToRosTemplate(properties.sourceDbClusterId),
+      'StorageResource': ros.stringToRosTemplate(properties.storageResource),
       'Tags': ros.listMapper(rosDBClusterTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ADBLake::DBCluster`, which is used to create an AnalyticDB for MySQL Data Lakehouse Edition (V3.0) cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ADBLake::DBCluster`, which type is used to create an AnalyticDB for MySQL Data Lakehouse Edition cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adblake-dbcluster
  */
@@ -531,12 +556,6 @@ export class RosDBCluster extends ros.RosResource {
 
 
     /**
-     * @Property computeResource: The amount of reserved computing resources. Unit: ACUs. Valid values: 0ACU to 4096ACU. The value must be in increments of 16 ACUs. Each ACU is equivalent to 1 core and 4 GB memory.
-     * Note This parameter must be specified with a unit.
-     */
-    public computeResource: string | ros.IResolvable;
-
-    /**
      * @Property dbClusterVersion: The version of the cluster. Set the value to 5.0.
      */
     public dbClusterVersion: string | ros.IResolvable;
@@ -547,12 +566,6 @@ export class RosDBCluster extends ros.RosResource {
      * Prepaid: subscription.
      */
     public payType: string | ros.IResolvable;
-
-    /**
-     * @Property storageResource: The amount of reserved storage resources. Unit: AnalyticDB compute units (ACUs). Valid values: 0ACU to 2064ACU. The value must be in increments of 24 ACUs. Each ACU is equivalent to 1 core and 4 GB memory.
-     * Note This parameter must be specified with a unit.
-     */
-    public storageResource: string | ros.IResolvable;
 
     /**
      * @Property vpcId: The virtual private cloud (VPC) ID of the cluster.
@@ -580,6 +593,12 @@ export class RosDBCluster extends ros.RosResource {
      * @Property cloneSourceRegionId: The ID of the source region where the cluster is located.
      */
     public cloneSourceRegionId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property computeResource: The amount of reserved computing resources. Unit: ACUs. Valid values: 0ACU to 4096ACU. The value must be in increments of 16 ACUs. Each ACU is equivalent to 1 core and 4 GB memory.
+     * Note This parameter must be specified with a unit.
+     */
+    public computeResource: string | ros.IResolvable | undefined;
 
     /**
      * @Property dbClusterDescription: The description of the cluster.
@@ -637,6 +656,11 @@ export class RosDBCluster extends ros.RosResource {
     public productForm: string | ros.IResolvable | undefined;
 
     /**
+     * @Property productVersion: The version of the cluster.Note If only ProductForm is set to IntegrationForm, enter this parameter.
+     */
+    public productVersion: string | ros.IResolvable | undefined;
+
+    /**
      * @Property reservedNodeCount: The number of reserved nodes. Must be 1 for basic version and multiple 
      * of 3 for enterprise version.
      */
@@ -665,9 +689,25 @@ export class RosDBCluster extends ros.RosResource {
     public restoreType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property secondaryVSwitchId: The secondary vSwitch ID of the cluster.
+     */
+    public secondaryVSwitchId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property secondaryZoneId: The secondary zone ID.
+     */
+    public secondaryZoneId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property sourceDbClusterId: The ID of the source AnalyticDB for MySQL Data Warehouse Edition cluster. If you want to restore a Data Lakehouse Edition cluster from a Data Warehouse Edition cluster, you must specify this parameter.
      */
     public sourceDbClusterId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property storageResource: The amount of reserved storage resources. Unit: AnalyticDB compute units (ACUs). Valid values: 0ACU to 2064ACU. The value must be in increments of 24 ACUs. Each ACU is equivalent to 1 core and 4 GB memory.
+     * Note This parameter must be specified with a unit.
+     */
+    public storageResource: string | ros.IResolvable | undefined;
 
     /**
      * @Property tags: Tags to attach to cluster. Max support 20 tags to add during create cluster. Each tag with two properties Key and Value, and Key is required.
@@ -686,15 +726,14 @@ export class RosDBCluster extends ros.RosResource {
         this.attrOrderId = this.getAtt('OrderId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-        this.computeResource = props.computeResource;
         this.dbClusterVersion = props.dbClusterVersion;
         this.payType = props.payType;
-        this.storageResource = props.storageResource;
         this.vpcId = props.vpcId;
         this.vSwitchId = props.vSwitchId;
         this.zoneId = props.zoneId;
         this.backupSetId = props.backupSetId;
         this.cloneSourceRegionId = props.cloneSourceRegionId;
+        this.computeResource = props.computeResource;
         this.dbClusterDescription = props.dbClusterDescription;
         this.dbClusterNetworkType = props.dbClusterNetworkType;
         this.diskEncryption = props.diskEncryption;
@@ -703,27 +742,30 @@ export class RosDBCluster extends ros.RosResource {
         this.period = props.period;
         this.periodType = props.periodType;
         this.productForm = props.productForm;
+        this.productVersion = props.productVersion;
         this.reservedNodeCount = props.reservedNodeCount;
         this.reservedNodeSize = props.reservedNodeSize;
         this.resourceGroupId = props.resourceGroupId;
         this.restoreToTime = props.restoreToTime;
         this.restoreType = props.restoreType;
+        this.secondaryVSwitchId = props.secondaryVSwitchId;
+        this.secondaryZoneId = props.secondaryZoneId;
         this.sourceDbClusterId = props.sourceDbClusterId;
+        this.storageResource = props.storageResource;
         this.tags = props.tags;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
-            computeResource: this.computeResource,
             dbClusterVersion: this.dbClusterVersion,
             payType: this.payType,
-            storageResource: this.storageResource,
             vpcId: this.vpcId,
             vSwitchId: this.vSwitchId,
             zoneId: this.zoneId,
             backupSetId: this.backupSetId,
             cloneSourceRegionId: this.cloneSourceRegionId,
+            computeResource: this.computeResource,
             dbClusterDescription: this.dbClusterDescription,
             dbClusterNetworkType: this.dbClusterNetworkType,
             diskEncryption: this.diskEncryption,
@@ -732,12 +774,16 @@ export class RosDBCluster extends ros.RosResource {
             period: this.period,
             periodType: this.periodType,
             productForm: this.productForm,
+            productVersion: this.productVersion,
             reservedNodeCount: this.reservedNodeCount,
             reservedNodeSize: this.reservedNodeSize,
             resourceGroupId: this.resourceGroupId,
             restoreToTime: this.restoreToTime,
             restoreType: this.restoreType,
+            secondaryVSwitchId: this.secondaryVSwitchId,
+            secondaryZoneId: this.secondaryZoneId,
             sourceDbClusterId: this.sourceDbClusterId,
+            storageResource: this.storageResource,
             tags: this.tags,
         };
     }
@@ -980,7 +1026,7 @@ function rosResourceGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ADBLake::ResourceGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ADBLake::ResourceGroup`, which is used to create a resource group for an AnalyticDB for MySQL Data Lakehouse Edition (V3.0) cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `ResourceGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adblake-resourcegroup
  */
@@ -1291,7 +1337,7 @@ function rosResourceGroupAccountBindingPropsToRosTemplate(properties: any, enabl
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ADBLake::ResourceGroupAccountBinding`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ADBLake::ResourceGroupAccountBinding`, which is used to associate a resource group with a database account.
  * @Note This class does not contain additional functions, so it is recommended to use the `ResourceGroupAccountBinding` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adblake-resourcegroupaccountbinding
  */

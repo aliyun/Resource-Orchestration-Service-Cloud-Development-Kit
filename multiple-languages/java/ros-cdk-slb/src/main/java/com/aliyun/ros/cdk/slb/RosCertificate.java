@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SLB::Certificate</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:10.617Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:50.671Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosCertificate")
 public class RosCertificate extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -105,6 +105,24 @@ public class RosCertificate extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setAliCloudCertificateName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "aliCloudCertificateName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAliCloudCertificateRegionId() {
+        return software.amazon.jsii.Kernel.get(this, "aliCloudCertificateRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAliCloudCertificateRegionId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "aliCloudCertificateRegionId", value);
+    }
+
+    /**
+     */
+    public void setAliCloudCertificateRegionId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "aliCloudCertificateRegionId", value);
     }
 
     /**
@@ -434,6 +452,23 @@ public class RosCertificate extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder aliCloudCertificateName(final com.aliyun.ros.cdk.core.IResolvable aliCloudCertificateName) {
             this.props.aliCloudCertificateName(aliCloudCertificateName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param aliCloudCertificateRegionId This parameter is required.
+         */
+        public Builder aliCloudCertificateRegionId(final java.lang.String aliCloudCertificateRegionId) {
+            this.props.aliCloudCertificateRegionId(aliCloudCertificateRegionId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param aliCloudCertificateRegionId This parameter is required.
+         */
+        public Builder aliCloudCertificateRegionId(final com.aliyun.ros.cdk.core.IResolvable aliCloudCertificateRegionId) {
+            this.props.aliCloudCertificateRegionId(aliCloudCertificateRegionId);
             return this;
         }
 

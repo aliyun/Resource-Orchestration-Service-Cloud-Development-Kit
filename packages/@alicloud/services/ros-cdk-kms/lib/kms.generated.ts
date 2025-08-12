@@ -657,7 +657,7 @@ function rosKeyPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Key`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Key`, which is used to create a customer master key (CMK).
  * @Note This class does not contain additional functions, so it is recommended to use the `Key` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-key
  */
@@ -791,6 +791,11 @@ export interface RosNetworkRuleProps {
     readonly networkRuleName: string | ros.IResolvable;
 
     /**
+     * @Property type: Network type. The value can be Private only, that is, only private IP addresses are supported.
+     */
+    readonly type: string | ros.IResolvable;
+
+    /**
      * @Property description: The description of the network rule.
      */
     readonly description?: string | ros.IResolvable;
@@ -811,6 +816,14 @@ export interface RosNetworkRuleProps {
 function RosNetworkRulePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('type', ros.requiredValidator)(properties.type));
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["Private"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     if(properties.sourcePrivateIp && (Array.isArray(properties.sourcePrivateIp) || (typeof properties.sourcePrivateIp) === 'string')) {
         errors.collect(ros.propertyValidator('sourcePrivateIp', ros.validateLength)({
@@ -840,6 +853,7 @@ function rosNetworkRulePropsToRosTemplate(properties: any, enableResourcePropert
     }
     return {
       'NetworkRuleName': ros.stringToRosTemplate(properties.networkRuleName),
+      'Type': ros.stringToRosTemplate(properties.type),
       'Description': ros.stringToRosTemplate(properties.description),
       'SourcePrivateIp': ros.listMapper(ros.stringToRosTemplate)(properties.sourcePrivateIp),
     };
@@ -875,6 +889,11 @@ export class RosNetworkRule extends ros.RosResource {
     public networkRuleName: string | ros.IResolvable;
 
     /**
+     * @Property type: Network type. The value can be Private only, that is, only private IP addresses are supported.
+     */
+    public type: string | ros.IResolvable;
+
+    /**
      * @Property description: The description of the network rule.
      */
     public description: string | ros.IResolvable | undefined;
@@ -896,6 +915,7 @@ export class RosNetworkRule extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.networkRuleName = props.networkRuleName;
+        this.type = props.type;
         this.description = props.description;
         this.sourcePrivateIp = props.sourcePrivateIp;
     }
@@ -904,6 +924,7 @@ export class RosNetworkRule extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             networkRuleName: this.networkRuleName,
+            type: this.type,
             description: this.description,
             sourcePrivateIp: this.sourcePrivateIp,
         };
@@ -1350,7 +1371,7 @@ function rosSecretPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Secret`, which is used to create a secret and store the initial version of the secret.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Secret`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Secret` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-secret
  */

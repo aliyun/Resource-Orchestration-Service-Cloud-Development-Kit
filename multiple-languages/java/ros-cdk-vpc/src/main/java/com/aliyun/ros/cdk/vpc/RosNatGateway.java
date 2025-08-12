@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::NatGateway</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:11.434Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:51.335Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosNatGateway")
 public class RosNatGateway extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -109,24 +109,6 @@ public class RosNatGateway extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getAutoPay() {
-        return software.amazon.jsii.Kernel.get(this, "autoPay", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setAutoPay(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
-        software.amazon.jsii.Kernel.set(this, "autoPay", value);
-    }
-
-    /**
-     */
-    public void setAutoPay(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "autoPay", value);
-    }
-
-    /**
-     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getDeletionForce() {
         return software.amazon.jsii.Kernel.get(this, "deletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -177,24 +159,6 @@ public class RosNatGateway extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "description", value);
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getDuration() {
-        return software.amazon.jsii.Kernel.get(this, "duration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setDuration(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
-        software.amazon.jsii.Kernel.set(this, "duration", value);
-    }
-
-    /**
-     */
-    public void setDuration(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "duration", value);
     }
 
     /**
@@ -321,24 +285,6 @@ public class RosNatGateway extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setNetworkType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "networkType", value);
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getPricingCycle() {
-        return software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setPricingCycle(final @org.jetbrains.annotations.Nullable java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "pricingCycle", value);
-    }
-
-    /**
-     */
-    public void setPricingCycle(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "pricingCycle", value);
     }
 
     /**
@@ -601,23 +547,6 @@ public class RosNatGateway extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param autoPay This parameter is required.
-         */
-        public Builder autoPay(final java.lang.Boolean autoPay) {
-            this.props.autoPay(autoPay);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param autoPay This parameter is required.
-         */
-        public Builder autoPay(final com.aliyun.ros.cdk.core.IResolvable autoPay) {
-            this.props.autoPay(autoPay);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param deletionForce This parameter is required.
          */
         public Builder deletionForce(final java.lang.Boolean deletionForce) {
@@ -664,23 +593,6 @@ public class RosNatGateway extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param duration This parameter is required.
-         */
-        public Builder duration(final java.lang.Number duration) {
-            this.props.duration(duration);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param duration This parameter is required.
-         */
-        public Builder duration(final com.aliyun.ros.cdk.core.IResolvable duration) {
-            this.props.duration(duration);
             return this;
         }
 
@@ -800,23 +712,6 @@ public class RosNatGateway extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder networkType(final com.aliyun.ros.cdk.core.IResolvable networkType) {
             this.props.networkType(networkType);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param pricingCycle This parameter is required.
-         */
-        public Builder pricingCycle(final java.lang.String pricingCycle) {
-            this.props.pricingCycle(pricingCycle);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param pricingCycle This parameter is required.
-         */
-        public Builder pricingCycle(final com.aliyun.ros.cdk.core.IResolvable pricingCycle) {
-            this.props.pricingCycle(pricingCycle);
             return this;
         }
 

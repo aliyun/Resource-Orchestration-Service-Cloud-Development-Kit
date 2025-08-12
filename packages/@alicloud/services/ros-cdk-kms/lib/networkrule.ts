@@ -15,6 +15,11 @@ export interface NetworkRuleProps {
     readonly networkRuleName: string | ros.IResolvable;
 
     /**
+     * Property type: Network type. The value can be Private only, that is, only private IP addresses are supported.
+     */
+    readonly type: string | ros.IResolvable;
+
+    /**
      * Property description: The description of the network rule.
      */
     readonly description?: string | ros.IResolvable;
@@ -75,6 +80,7 @@ export class NetworkRule extends ros.Resource implements INetworkRule {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosNetworkRule = new RosNetworkRule(this, id,  {
+            type: props.type === undefined || props.type === null ? 'Private' : props.type,
             description: props.description,
             sourcePrivateIp: props.sourcePrivateIp,
             networkRuleName: props.networkRuleName,

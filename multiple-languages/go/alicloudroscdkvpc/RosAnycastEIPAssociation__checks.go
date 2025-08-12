@@ -255,6 +255,23 @@ func (j *jsiiProxy_RosAnycastEIPAssociation) validateSetAnycastIdParameters(val 
 	return nil
 }
 
+func (j *jsiiProxy_RosAnycastEIPAssociation) validateSetAssociationModeParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosAnycastEIPAssociation) validateSetBindInstanceIdParameters(val interface{}) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
@@ -318,6 +335,83 @@ func (j *jsiiProxy_RosAnycastEIPAssociation) validateSetBindInstanceTypeParamete
 func (j *jsiiProxy_RosAnycastEIPAssociation) validateSetEnableResourcePropertyConstraintParameters(val *bool) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosAnycastEIPAssociation) validateSetPopLocationsParameters(val interface{}) error {
+	switch val.(type) {
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	case *[]interface{}:
+		val := val.(*[]interface{})
+		for idx_97dfc6, v := range *val {
+			switch v.(type) {
+			case alicloudroscdkcore.IResolvable:
+				// ok
+			case *RosAnycastEIPAssociation_PopLocationsProperty:
+				v := v.(*RosAnycastEIPAssociation_PopLocationsProperty)
+				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
+					return err
+				}
+			case RosAnycastEIPAssociation_PopLocationsProperty:
+				v_ := v.(RosAnycastEIPAssociation_PopLocationsProperty)
+				v := &v_
+				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
+					return err
+				}
+			default:
+				if !_jsii_.IsAnonymousProxy(v) {
+					return fmt.Errorf("parameter val[%#v] must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosAnycastEIPAssociation_PopLocationsProperty; received %#v (a %T)", idx_97dfc6, v, v)
+				}
+			}
+		}
+	case []interface{}:
+		val_ := val.([]interface{})
+		val := &val_
+		for idx_97dfc6, v := range *val {
+			switch v.(type) {
+			case alicloudroscdkcore.IResolvable:
+				// ok
+			case *RosAnycastEIPAssociation_PopLocationsProperty:
+				v := v.(*RosAnycastEIPAssociation_PopLocationsProperty)
+				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
+					return err
+				}
+			case RosAnycastEIPAssociation_PopLocationsProperty:
+				v_ := v.(RosAnycastEIPAssociation_PopLocationsProperty)
+				v := &v_
+				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
+					return err
+				}
+			default:
+				if !_jsii_.IsAnonymousProxy(v) {
+					return fmt.Errorf("parameter val[%#v] must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosAnycastEIPAssociation_PopLocationsProperty; received %#v (a %T)", idx_97dfc6, v, v)
+				}
+			}
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *[]interface{}; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosAnycastEIPAssociation) validateSetPrivateIpAddressParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
 	}
 
 	return nil

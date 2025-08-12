@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.kms;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-networkrule
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:07.777Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.370Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.NetworkRuleProps")
 @software.amazon.jsii.Jsii.Proxy(NetworkRuleProps.Jsii$Proxy.class)
 public interface NetworkRuleProps extends software.amazon.jsii.JsiiSerializable {
@@ -14,6 +14,13 @@ public interface NetworkRuleProps extends software.amazon.jsii.JsiiSerializable 
      * Property networkRuleName: The name of the access control rule.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getNetworkRuleName();
+
+    /**
+     * Property type: Network type.
+     * <p>
+     * The value can be Private only, that is, only private IP addresses are supported.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getType();
 
     /**
      * Property description: The description of the network rule.
@@ -40,6 +47,7 @@ public interface NetworkRuleProps extends software.amazon.jsii.JsiiSerializable 
      */
     public static final class Builder implements software.amazon.jsii.Builder<NetworkRuleProps> {
         java.lang.Object networkRuleName;
+        java.lang.Object type;
         java.lang.Object description;
         java.lang.Object sourcePrivateIp;
 
@@ -60,6 +68,28 @@ public interface NetworkRuleProps extends software.amazon.jsii.JsiiSerializable 
          */
         public Builder networkRuleName(com.aliyun.ros.cdk.core.IResolvable networkRuleName) {
             this.networkRuleName = networkRuleName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link NetworkRuleProps#getType}
+         * @param type Property type: Network type. This parameter is required.
+         *             The value can be Private only, that is, only private IP addresses are supported.
+         * @return {@code this}
+         */
+        public Builder type(java.lang.String type) {
+            this.type = type;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link NetworkRuleProps#getType}
+         * @param type Property type: Network type. This parameter is required.
+         *             The value can be Private only, that is, only private IP addresses are supported.
+         * @return {@code this}
+         */
+        public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
+            this.type = type;
             return this;
         }
 
@@ -120,6 +150,7 @@ public interface NetworkRuleProps extends software.amazon.jsii.JsiiSerializable 
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements NetworkRuleProps {
         private final java.lang.Object networkRuleName;
+        private final java.lang.Object type;
         private final java.lang.Object description;
         private final java.lang.Object sourcePrivateIp;
 
@@ -130,6 +161,7 @@ public interface NetworkRuleProps extends software.amazon.jsii.JsiiSerializable 
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.networkRuleName = software.amazon.jsii.Kernel.get(this, "networkRuleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sourcePrivateIp = software.amazon.jsii.Kernel.get(this, "sourcePrivateIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -140,6 +172,7 @@ public interface NetworkRuleProps extends software.amazon.jsii.JsiiSerializable 
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.networkRuleName = java.util.Objects.requireNonNull(builder.networkRuleName, "networkRuleName is required");
+            this.type = java.util.Objects.requireNonNull(builder.type, "type is required");
             this.description = builder.description;
             this.sourcePrivateIp = builder.sourcePrivateIp;
         }
@@ -147,6 +180,11 @@ public interface NetworkRuleProps extends software.amazon.jsii.JsiiSerializable 
         @Override
         public final java.lang.Object getNetworkRuleName() {
             return this.networkRuleName;
+        }
+
+        @Override
+        public final java.lang.Object getType() {
+            return this.type;
         }
 
         @Override
@@ -166,6 +204,7 @@ public interface NetworkRuleProps extends software.amazon.jsii.JsiiSerializable 
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
             data.set("networkRuleName", om.valueToTree(this.getNetworkRuleName()));
+            data.set("type", om.valueToTree(this.getType()));
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
             }
@@ -191,6 +230,7 @@ public interface NetworkRuleProps extends software.amazon.jsii.JsiiSerializable 
             NetworkRuleProps.Jsii$Proxy that = (NetworkRuleProps.Jsii$Proxy) o;
 
             if (!networkRuleName.equals(that.networkRuleName)) return false;
+            if (!type.equals(that.type)) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             return this.sourcePrivateIp != null ? this.sourcePrivateIp.equals(that.sourcePrivateIp) : that.sourcePrivateIp == null;
         }
@@ -198,6 +238,7 @@ public interface NetworkRuleProps extends software.amazon.jsii.JsiiSerializable 
         @Override
         public final int hashCode() {
             int result = this.networkRuleName.hashCode();
+            result = 31 * result + (this.type.hashCode());
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.sourcePrivateIp != null ? this.sourcePrivateIp.hashCode() : 0);
             return result;

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.computenest;
 /**
  * Represents a <code>ServiceInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:03.171Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:44.971Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.computenest.$Module.class, fqn = "@alicloud/ros-cdk-computenest.IServiceInstance")
 @software.amazon.jsii.Jsii.Proxy(IServiceInstance.Jsii$Proxy.class)
 public interface IServiceInstance extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
@@ -39,14 +39,19 @@ public interface IServiceInstance extends software.amazon.jsii.JsiiSerializable,
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrLicenseEndTime();
 
     /**
-     * Attribute Name: The name of the service instance.
+     * Attribute MarketInstanceId: The ID of the cloud marketplace instance.
      */
-    @org.jetbrains.annotations.NotNull java.lang.Object getAttrName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrMarketInstanceId();
 
     /**
      * Attribute NetworkConfig: Network configuration information.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrNetworkConfig();
+
+    /**
+     * Attribute Output: Create the output Field returned by the service instance.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrOutput();
 
     /**
      * Attribute Outputs: Create the output Field returned by the service instance.
@@ -84,6 +89,11 @@ public interface IServiceInstance extends software.amazon.jsii.JsiiSerializable,
      * Attribute ServiceInstanceId: The ID of the service instance.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrServiceInstanceId();
+
+    /**
+     * Attribute ServiceInstanceName: The name of the resource.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrServiceInstanceName();
 
     /**
      * Attribute ServiceType: Service type.
@@ -216,11 +226,11 @@ public interface IServiceInstance extends software.amazon.jsii.JsiiSerializable,
         }
 
         /**
-         * Attribute Name: The name of the service instance.
+         * Attribute MarketInstanceId: The ID of the cloud marketplace instance.
          */
         @Override
-        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrName() {
-            return software.amazon.jsii.Kernel.get(this, "attrName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrMarketInstanceId() {
+            return software.amazon.jsii.Kernel.get(this, "attrMarketInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -229,6 +239,14 @@ public interface IServiceInstance extends software.amazon.jsii.JsiiSerializable,
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrNetworkConfig() {
             return software.amazon.jsii.Kernel.get(this, "attrNetworkConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute Output: Create the output Field returned by the service instance.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrOutput() {
+            return software.amazon.jsii.Kernel.get(this, "attrOutput", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -287,6 +305,14 @@ public interface IServiceInstance extends software.amazon.jsii.JsiiSerializable,
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrServiceInstanceId() {
             return software.amazon.jsii.Kernel.get(this, "attrServiceInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute ServiceInstanceName: The name of the resource.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrServiceInstanceName() {
+            return software.amazon.jsii.Kernel.get(this, "attrServiceInstanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -445,11 +471,11 @@ public interface IServiceInstance extends software.amazon.jsii.JsiiSerializable,
         }
 
         /**
-         * Attribute Name: The name of the service instance.
+         * Attribute MarketInstanceId: The ID of the cloud marketplace instance.
          */
         @Override
-        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrName() {
-            return software.amazon.jsii.Kernel.get(this, "attrName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrMarketInstanceId() {
+            return software.amazon.jsii.Kernel.get(this, "attrMarketInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -458,6 +484,14 @@ public interface IServiceInstance extends software.amazon.jsii.JsiiSerializable,
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrNetworkConfig() {
             return software.amazon.jsii.Kernel.get(this, "attrNetworkConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute Output: Create the output Field returned by the service instance.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrOutput() {
+            return software.amazon.jsii.Kernel.get(this, "attrOutput", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -516,6 +550,14 @@ public interface IServiceInstance extends software.amazon.jsii.JsiiSerializable,
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrServiceInstanceId() {
             return software.amazon.jsii.Kernel.get(this, "attrServiceInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute ServiceInstanceName: The name of the resource.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrServiceInstanceName() {
+            return software.amazon.jsii.Kernel.get(this, "attrServiceInstanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**

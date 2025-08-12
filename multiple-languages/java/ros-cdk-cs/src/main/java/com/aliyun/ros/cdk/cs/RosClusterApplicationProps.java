@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterapplication
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:03.491Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.216Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosClusterApplicationProps")
 @software.amazon.jsii.Jsii.Proxy(RosClusterApplicationProps.Jsii$Proxy.class)
 public interface RosClusterApplicationProps extends software.amazon.jsii.JsiiSerializable {
@@ -21,6 +21,12 @@ public interface RosClusterApplicationProps extends software.amazon.jsii.JsiiSer
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDefaultNamespace() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDefaultNamespaceDeletion() {
         return null;
     }
 
@@ -61,6 +67,7 @@ public interface RosClusterApplicationProps extends software.amazon.jsii.JsiiSer
         java.lang.Object clusterId;
         java.lang.Object yamlContent;
         java.lang.Object defaultNamespace;
+        java.lang.Object defaultNamespaceDeletion;
         java.lang.Object rolePolicy;
         java.lang.Object stage;
         java.lang.Object validationMode;
@@ -123,6 +130,26 @@ public interface RosClusterApplicationProps extends software.amazon.jsii.JsiiSer
          */
         public Builder defaultNamespace(com.aliyun.ros.cdk.core.IResolvable defaultNamespace) {
             this.defaultNamespace = defaultNamespace;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterApplicationProps#getDefaultNamespaceDeletion}
+         * @param defaultNamespaceDeletion the value to be set.
+         * @return {@code this}
+         */
+        public Builder defaultNamespaceDeletion(java.lang.Boolean defaultNamespaceDeletion) {
+            this.defaultNamespaceDeletion = defaultNamespaceDeletion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterApplicationProps#getDefaultNamespaceDeletion}
+         * @param defaultNamespaceDeletion the value to be set.
+         * @return {@code this}
+         */
+        public Builder defaultNamespaceDeletion(com.aliyun.ros.cdk.core.IResolvable defaultNamespaceDeletion) {
+            this.defaultNamespaceDeletion = defaultNamespaceDeletion;
             return this;
         }
 
@@ -225,6 +252,7 @@ public interface RosClusterApplicationProps extends software.amazon.jsii.JsiiSer
         private final java.lang.Object clusterId;
         private final java.lang.Object yamlContent;
         private final java.lang.Object defaultNamespace;
+        private final java.lang.Object defaultNamespaceDeletion;
         private final java.lang.Object rolePolicy;
         private final java.lang.Object stage;
         private final java.lang.Object validationMode;
@@ -239,6 +267,7 @@ public interface RosClusterApplicationProps extends software.amazon.jsii.JsiiSer
             this.clusterId = software.amazon.jsii.Kernel.get(this, "clusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.yamlContent = software.amazon.jsii.Kernel.get(this, "yamlContent", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.defaultNamespace = software.amazon.jsii.Kernel.get(this, "defaultNamespace", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.defaultNamespaceDeletion = software.amazon.jsii.Kernel.get(this, "defaultNamespaceDeletion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.rolePolicy = software.amazon.jsii.Kernel.get(this, "rolePolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.stage = software.amazon.jsii.Kernel.get(this, "stage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.validationMode = software.amazon.jsii.Kernel.get(this, "validationMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -253,6 +282,7 @@ public interface RosClusterApplicationProps extends software.amazon.jsii.JsiiSer
             this.clusterId = java.util.Objects.requireNonNull(builder.clusterId, "clusterId is required");
             this.yamlContent = java.util.Objects.requireNonNull(builder.yamlContent, "yamlContent is required");
             this.defaultNamespace = builder.defaultNamespace;
+            this.defaultNamespaceDeletion = builder.defaultNamespaceDeletion;
             this.rolePolicy = builder.rolePolicy;
             this.stage = builder.stage;
             this.validationMode = builder.validationMode;
@@ -272,6 +302,11 @@ public interface RosClusterApplicationProps extends software.amazon.jsii.JsiiSer
         @Override
         public final java.lang.Object getDefaultNamespace() {
             return this.defaultNamespace;
+        }
+
+        @Override
+        public final java.lang.Object getDefaultNamespaceDeletion() {
+            return this.defaultNamespaceDeletion;
         }
 
         @Override
@@ -304,6 +339,9 @@ public interface RosClusterApplicationProps extends software.amazon.jsii.JsiiSer
             data.set("yamlContent", om.valueToTree(this.getYamlContent()));
             if (this.getDefaultNamespace() != null) {
                 data.set("defaultNamespace", om.valueToTree(this.getDefaultNamespace()));
+            }
+            if (this.getDefaultNamespaceDeletion() != null) {
+                data.set("defaultNamespaceDeletion", om.valueToTree(this.getDefaultNamespaceDeletion()));
             }
             if (this.getRolePolicy() != null) {
                 data.set("rolePolicy", om.valueToTree(this.getRolePolicy()));
@@ -338,6 +376,7 @@ public interface RosClusterApplicationProps extends software.amazon.jsii.JsiiSer
             if (!clusterId.equals(that.clusterId)) return false;
             if (!yamlContent.equals(that.yamlContent)) return false;
             if (this.defaultNamespace != null ? !this.defaultNamespace.equals(that.defaultNamespace) : that.defaultNamespace != null) return false;
+            if (this.defaultNamespaceDeletion != null ? !this.defaultNamespaceDeletion.equals(that.defaultNamespaceDeletion) : that.defaultNamespaceDeletion != null) return false;
             if (this.rolePolicy != null ? !this.rolePolicy.equals(that.rolePolicy) : that.rolePolicy != null) return false;
             if (this.stage != null ? !this.stage.equals(that.stage) : that.stage != null) return false;
             if (this.validationMode != null ? !this.validationMode.equals(that.validationMode) : that.validationMode != null) return false;
@@ -349,6 +388,7 @@ public interface RosClusterApplicationProps extends software.amazon.jsii.JsiiSer
             int result = this.clusterId.hashCode();
             result = 31 * result + (this.yamlContent.hashCode());
             result = 31 * result + (this.defaultNamespace != null ? this.defaultNamespace.hashCode() : 0);
+            result = 31 * result + (this.defaultNamespaceDeletion != null ? this.defaultNamespaceDeletion.hashCode() : 0);
             result = 31 * result + (this.rolePolicy != null ? this.rolePolicy.hashCode() : 0);
             result = 31 * result + (this.stage != null ? this.stage.hashCode() : 0);
             result = 31 * result + (this.validationMode != null ? this.validationMode.hashCode() : 0);

@@ -13,34 +13,8 @@ import (
 type TransitRouterPeerAttachment interface {
 	alicloudroscdkcore.Resource
 	ITransitRouterPeerAttachment
-	// Attribute AutoPublishRouteEnabled: AutoPublishRouteEnabled.
-	AttrAutoPublishRouteEnabled() interface{}
-	// Attribute Bandwidth: Bandwidth.
-	AttrBandwidth() interface{}
-	// Attribute CenBandwidthPackageId: BandwidthPackageId.
-	AttrCenBandwidthPackageId() interface{}
-	// Attribute CenId: CenId.
-	AttrCenId() interface{}
-	// Attribute ClientToken: ClientToken.
-	AttrClientToken() interface{}
-	// Attribute GeographicSpanId: GeographicSpanId.
-	AttrGeographicSpanId() interface{}
-	// Attribute PeerTransitRouterId: PeerTransitRouterId.
-	AttrPeerTransitRouterId() interface{}
-	// Attribute PeerTransitRouterOwnerId: PeerTransitRouterOwnerId.
-	AttrPeerTransitRouterOwnerId() interface{}
-	// Attribute PeerTransitRouterRegionId: PeerTransitRouterRegionId.
-	AttrPeerTransitRouterRegionId() interface{}
-	// Attribute ResourceType: ResourceType.
-	AttrResourceType() interface{}
-	// Attribute TransitRouterAttachmentDescription: TransitRouterAttachmentDescription.
-	AttrTransitRouterAttachmentDescription() interface{}
-	// Attribute TransitRouterAttachmentId: The first ID of the resource.
+	// Attribute TransitRouterAttachmentId: Cross-region connection ID.
 	AttrTransitRouterAttachmentId() interface{}
-	// Attribute TransitRouterAttachmentName: TransitRouterAttachmentName.
-	AttrTransitRouterAttachmentName() interface{}
-	// Attribute TransitRouterId: TransitRouterId.
-	AttrTransitRouterId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
 	// The environment this resource belongs to.
@@ -136,141 +110,11 @@ type jsiiProxy_TransitRouterPeerAttachment struct {
 	jsiiProxy_ITransitRouterPeerAttachment
 }
 
-func (j *jsiiProxy_TransitRouterPeerAttachment) AttrAutoPublishRouteEnabled() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"attrAutoPublishRouteEnabled",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_TransitRouterPeerAttachment) AttrBandwidth() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"attrBandwidth",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_TransitRouterPeerAttachment) AttrCenBandwidthPackageId() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"attrCenBandwidthPackageId",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_TransitRouterPeerAttachment) AttrCenId() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"attrCenId",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_TransitRouterPeerAttachment) AttrClientToken() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"attrClientToken",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_TransitRouterPeerAttachment) AttrGeographicSpanId() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"attrGeographicSpanId",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_TransitRouterPeerAttachment) AttrPeerTransitRouterId() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"attrPeerTransitRouterId",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_TransitRouterPeerAttachment) AttrPeerTransitRouterOwnerId() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"attrPeerTransitRouterOwnerId",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_TransitRouterPeerAttachment) AttrPeerTransitRouterRegionId() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"attrPeerTransitRouterRegionId",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_TransitRouterPeerAttachment) AttrResourceType() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"attrResourceType",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_TransitRouterPeerAttachment) AttrTransitRouterAttachmentDescription() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"attrTransitRouterAttachmentDescription",
-		&returns,
-	)
-	return returns
-}
-
 func (j *jsiiProxy_TransitRouterPeerAttachment) AttrTransitRouterAttachmentId() interface{} {
 	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTransitRouterAttachmentId",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_TransitRouterPeerAttachment) AttrTransitRouterAttachmentName() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"attrTransitRouterAttachmentName",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_TransitRouterPeerAttachment) AttrTransitRouterId() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"attrTransitRouterId",
 		&returns,
 	)
 	return returns

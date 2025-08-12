@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.polardb;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::POLARDB::AccountPrivilege</code>, which is used to grant access permissions on one or more databases in a specified ApsaraDB for POLARDB cluster to a standard account.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::POLARDB::AccountPrivilege</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.986Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.410Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosAccountPrivilege")
 public class RosAccountPrivilege extends com.aliyun.ros.cdk.core.RosResource {
 

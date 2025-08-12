@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.maxcompute;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::MaxCompute::Project</code>, which is used to create a MaxCompute project.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:07.949Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.508Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.maxcompute.$Module.class, fqn = "@alicloud/ros-cdk-maxcompute.RosProject")
 public class RosProject extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -165,6 +165,24 @@ public class RosProject extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setProperties(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.maxcompute.RosProject.PropertiesProperty value) {
         software.amazon.jsii.Kernel.set(this, "properties", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSupportSchemaLevels() {
+        return software.amazon.jsii.Kernel.get(this, "supportSchemaLevels", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSupportSchemaLevels(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "supportSchemaLevels", value);
+    }
+
+    /**
+     */
+    public void setSupportSchemaLevels(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "supportSchemaLevels", value);
     }
     /**
      */
@@ -1023,6 +1041,23 @@ public class RosProject extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder properties(final com.aliyun.ros.cdk.maxcompute.RosProject.PropertiesProperty properties) {
             this.props.properties(properties);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param supportSchemaLevels This parameter is required.
+         */
+        public Builder supportSchemaLevels(final java.lang.Boolean supportSchemaLevels) {
+            this.props.supportSchemaLevels(supportSchemaLevels);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param supportSchemaLevels This parameter is required.
+         */
+        public Builder supportSchemaLevels(final com.aliyun.ros.cdk.core.IResolvable supportSchemaLevels) {
+            this.props.supportSchemaLevels(supportSchemaLevels);
             return this;
         }
 

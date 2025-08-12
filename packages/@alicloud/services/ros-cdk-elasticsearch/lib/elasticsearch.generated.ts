@@ -29,6 +29,13 @@ export interface RosInstanceProps {
     readonly vSwitchId: string | ros.IResolvable;
 
     /**
+     * @Property deleteType: The release type. Valid values:
+     * - immediate: The cluster is immediately deleted when it is released. After the cluster is deleted, the data stored in the cluster is deleted, and the system removes the cluster from the Logstash cluster list.
+     * - protective (default): The instance is frozen for 24 hours before data is completely cleared. During this period, the instance is still displayed in the instance list. You can select Restore Instance or Release Now.
+     */
+    readonly deleteType?: string | ros.IResolvable;
+
+    /**
      * @Property description: The description of instance. It a string of 0 to 128 characters. It can contain numbers, letters, underscores, (_) and hyphens (-). It must start with a letter, a number or Chinese character.
      */
     readonly description?: string | ros.IResolvable;
@@ -179,6 +186,13 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('dataNode', RosInstance_DataNodePropertyValidator)(properties.dataNode));
     errors.collect(ros.propertyValidator('kibanaWhitelist', ros.listValidator(ros.validateAny))(properties.kibanaWhitelist));
     errors.collect(ros.propertyValidator('ymlConfig', RosInstance_YMLConfigPropertyValidator)(properties.ymlConfig));
+    if(properties.deleteType && (typeof properties.deleteType) !== 'object') {
+        errors.collect(ros.propertyValidator('deleteType', ros.validateAllowedValues)({
+          data: properties.deleteType,
+          allowedValues: ["immediate","protective"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('deleteType', ros.validateString)(properties.deleteType));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -224,6 +238,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       'Password': ros.stringToRosTemplate(properties.password),
       'Version': ros.stringToRosTemplate(properties.version),
       'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'DeleteType': ros.stringToRosTemplate(properties.deleteType),
       'Description': ros.stringToRosTemplate(properties.description),
       'EnableKibanaPrivate': ros.booleanToRosTemplate(properties.enableKibanaPrivate),
       'EnableKibanaPublic': ros.booleanToRosTemplate(properties.enableKibanaPublic),
@@ -333,6 +348,13 @@ export class RosInstance extends ros.RosResource {
      * @Property vSwitchId: The ID of VSwitch.
      */
     public vSwitchId: string | ros.IResolvable;
+
+    /**
+     * @Property deleteType: The release type. Valid values:
+     * - immediate: The cluster is immediately deleted when it is released. After the cluster is deleted, the data stored in the cluster is deleted, and the system removes the cluster from the Logstash cluster list.
+     * - protective (default): The instance is frozen for 24 hours before data is completely cleared. During this period, the instance is still displayed in the instance list. You can select Restore Instance or Release Now.
+     */
+    public deleteType: string | ros.IResolvable | undefined;
 
     /**
      * @Property description: The description of instance. It a string of 0 to 128 characters. It can contain numbers, letters, underscores, (_) and hyphens (-). It must start with a letter, a number or Chinese character.
@@ -452,6 +474,7 @@ export class RosInstance extends ros.RosResource {
         this.password = props.password;
         this.version = props.version;
         this.vSwitchId = props.vSwitchId;
+        this.deleteType = props.deleteType;
         this.description = props.description;
         this.enableKibanaPrivate = props.enableKibanaPrivate;
         this.enableKibanaPublic = props.enableKibanaPublic;
@@ -479,6 +502,7 @@ export class RosInstance extends ros.RosResource {
             password: this.password,
             version: this.version,
             vSwitchId: this.vSwitchId,
+            deleteType: this.deleteType,
             description: this.description,
             enableKibanaPrivate: this.enableKibanaPrivate,
             enableKibanaPublic: this.enableKibanaPublic,

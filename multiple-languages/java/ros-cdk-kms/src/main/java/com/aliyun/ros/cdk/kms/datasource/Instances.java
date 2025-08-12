@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.kms.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::KMS::Instances</code>.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::KMS::Instances</code>, which is used to query Key Management Service (KMS) instances that are created within the current account in the current region.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:07.827Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.411Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.datasource.Instances")
 public class Instances extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.kms.datasource.IInstances {
 

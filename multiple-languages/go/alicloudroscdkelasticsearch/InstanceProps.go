@@ -17,6 +17,12 @@ type InstanceProps struct {
 	Version interface{} `field:"required" json:"version" yaml:"version"`
 	// Property vSwitchId: The ID of VSwitch.
 	VSwitchId interface{} `field:"required" json:"vSwitchId" yaml:"vSwitchId"`
+	// Property deleteType: The release type.
+	//
+	// Valid values:
+	// - immediate: The cluster is immediately deleted when it is released. After the cluster is deleted, the data stored in the cluster is deleted, and the system removes the cluster from the Logstash cluster list.
+	// - protective (default): The instance is frozen for 24 hours before data is completely cleared. During this period, the instance is still displayed in the instance list. You can select Restore Instance or Release Now.
+	DeleteType interface{} `field:"optional" json:"deleteType" yaml:"deleteType"`
 	// Property description: The description of instance.
 	//
 	// It a string of 0 to 128 characters. It can contain numbers, letters, underscores, (_) and hyphens (-). It must start with a letter, a number or Chinese character.

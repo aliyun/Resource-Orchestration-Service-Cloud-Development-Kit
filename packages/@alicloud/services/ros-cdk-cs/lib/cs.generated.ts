@@ -1462,9 +1462,14 @@ export interface RosClusterApplicationProps {
     /**
      * @Property defaultNamespace: The default namespace for the application, default value is default.
      * If a namespace is defined in yaml metadata, its priority is higher than DefaultNamespace.
-     * If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
+     * If the DefaultNamespace does not exist, ROS will create it automatically and keep it by default during the delete phase.
      */
     readonly defaultNamespace?: string | ros.IResolvable;
+
+    /**
+     * @Property defaultNamespaceDeletion: Whether to delete the namespace specified by DefaultNamespace. If DefaultNamespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether DefaultNamespaceDeletion is true or not, it will not be deleted.
+     */
+    readonly defaultNamespaceDeletion?: boolean | ros.IResolvable;
 
     /**
      * @Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user. Valid values:
@@ -1546,6 +1551,7 @@ function RosClusterApplicationPropsValidator(properties: any): ros.ValidationRes
           }));
     }
     errors.collect(ros.propertyValidator('waitUntil', ros.listValidator(RosClusterApplication_WaitUntilPropertyValidator))(properties.waitUntil));
+    errors.collect(ros.propertyValidator('defaultNamespaceDeletion', ros.validateBoolean)(properties.defaultNamespaceDeletion));
     return errors.wrap('supplied properties not correct for "RosClusterApplicationProps"');
 }
 
@@ -1566,6 +1572,7 @@ function rosClusterApplicationPropsToRosTemplate(properties: any, enableResource
       'ClusterId': ros.stringToRosTemplate(properties.clusterId),
       'YamlContent': ros.stringToRosTemplate(properties.yamlContent),
       'DefaultNamespace': ros.stringToRosTemplate(properties.defaultNamespace),
+      'DefaultNamespaceDeletion': ros.booleanToRosTemplate(properties.defaultNamespaceDeletion),
       'RolePolicy': ros.stringToRosTemplate(properties.rolePolicy),
       'Stage': ros.stringToRosTemplate(properties.stage),
       'ValidationMode': ros.stringToRosTemplate(properties.validationMode),
@@ -1610,9 +1617,14 @@ export class RosClusterApplication extends ros.RosResource {
     /**
      * @Property defaultNamespace: The default namespace for the application, default value is default.
      * If a namespace is defined in yaml metadata, its priority is higher than DefaultNamespace.
-     * If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
+     * If the DefaultNamespace does not exist, ROS will create it automatically and keep it by default during the delete phase.
      */
     public defaultNamespace: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property defaultNamespaceDeletion: Whether to delete the namespace specified by DefaultNamespace. If DefaultNamespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether DefaultNamespaceDeletion is true or not, it will not be deleted.
+     */
+    public defaultNamespaceDeletion: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user. Valid values:
@@ -1656,6 +1668,7 @@ export class RosClusterApplication extends ros.RosResource {
         this.clusterId = props.clusterId;
         this.yamlContent = props.yamlContent;
         this.defaultNamespace = props.defaultNamespace;
+        this.defaultNamespaceDeletion = props.defaultNamespaceDeletion;
         this.rolePolicy = props.rolePolicy;
         this.stage = props.stage;
         this.validationMode = props.validationMode;
@@ -1668,6 +1681,7 @@ export class RosClusterApplication extends ros.RosResource {
             clusterId: this.clusterId,
             yamlContent: this.yamlContent,
             defaultNamespace: this.defaultNamespace,
+            defaultNamespaceDeletion: this.defaultNamespaceDeletion,
             rolePolicy: this.rolePolicy,
             stage: this.stage,
             validationMode: this.validationMode,
@@ -1849,6 +1863,11 @@ export interface RosClusterHelmApplicationProps {
     readonly namespace?: string | ros.IResolvable;
 
     /**
+     * @Property namespaceDeletion: Whether to delete the namespace specified. If Namespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether NamespaceDeletion is true or not, it will not be deleted.
+     */
+    readonly namespaceDeletion?: boolean | ros.IResolvable;
+
+    /**
      * @Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user. Valid values:
      * - EnsureAdminRoleAndBinding: Automatically create a role named "ros:application-admin:${user-id}" with administrator permissions and bind it to the current user.
      * - None: Do nothing.
@@ -1890,6 +1909,7 @@ function RosClusterHelmApplicationPropsValidator(properties: any): ros.Validatio
     errors.collect(ros.propertyValidator('credential', RosClusterHelmApplication_CredentialPropertyValidator)(properties.credential));
     errors.collect(ros.propertyValidator('clusterId', ros.requiredValidator)(properties.clusterId));
     errors.collect(ros.propertyValidator('clusterId', ros.validateString)(properties.clusterId));
+    errors.collect(ros.propertyValidator('namespaceDeletion', ros.validateBoolean)(properties.namespaceDeletion));
     errors.collect(ros.propertyValidator('chartUrl', ros.requiredValidator)(properties.chartUrl));
     if(properties.chartUrl && (typeof properties.chartUrl) !== 'object') {
         errors.collect(ros.propertyValidator('chartUrl', ros.validateAllowedPattern)({
@@ -1939,6 +1959,7 @@ function rosClusterHelmApplicationPropsToRosTemplate(properties: any, enableReso
       'ChartValues': ros.hashMapper(ros.objectToRosTemplate)(properties.chartValues),
       'Credential': rosClusterHelmApplicationCredentialPropertyToRosTemplate(properties.credential),
       'Namespace': ros.stringToRosTemplate(properties.namespace),
+      'NamespaceDeletion': ros.booleanToRosTemplate(properties.namespaceDeletion),
       'RolePolicy': ros.stringToRosTemplate(properties.rolePolicy),
       'ValidationMode': ros.stringToRosTemplate(properties.validationMode),
       'WaitUntil': ros.listMapper(rosClusterHelmApplicationWaitUntilPropertyToRosTemplate)(properties.waitUntil),
@@ -2001,6 +2022,11 @@ export class RosClusterHelmApplication extends ros.RosResource {
     public namespace: string | ros.IResolvable | undefined;
 
     /**
+     * @Property namespaceDeletion: Whether to delete the namespace specified. If Namespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether NamespaceDeletion is true or not, it will not be deleted.
+     */
+    public namespaceDeletion: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user. Valid values:
      * - EnsureAdminRoleAndBinding: Automatically create a role named "ros:application-admin:${user-id}" with administrator permissions and bind it to the current user.
      * - None: Do nothing.
@@ -2037,6 +2063,7 @@ export class RosClusterHelmApplication extends ros.RosResource {
         this.chartValues = props.chartValues;
         this.credential = props.credential;
         this.namespace = props.namespace;
+        this.namespaceDeletion = props.namespaceDeletion;
         this.rolePolicy = props.rolePolicy;
         this.validationMode = props.validationMode;
         this.waitUntil = props.waitUntil;
@@ -2051,6 +2078,7 @@ export class RosClusterHelmApplication extends ros.RosResource {
             chartValues: this.chartValues,
             credential: this.credential,
             namespace: this.namespace,
+            namespaceDeletion: this.namespaceDeletion,
             rolePolicy: this.rolePolicy,
             validationMode: this.validationMode,
             waitUntil: this.waitUntil,
@@ -3035,9 +3063,7 @@ export namespace RosClusterNodePool {
          */
         readonly systemDiskCategory?: string | ros.IResolvable;
         /**
-         * @Property internetMaxBandwidthOut: The release version of the operating system. Valid values:
-     * CentOS, AliyunLinux, Windows, WindowsCore.
-     * Default value: AliyunLinux.
+         * @Property internetMaxBandwidthOut:
          */
         readonly internetMaxBandwidthOut?: number | ros.IResolvable;
         /**
@@ -3825,6 +3851,11 @@ export interface RosManagedEdgeKubernetesClusterProps {
     readonly vpcId?: string | ros.IResolvable;
 
     /**
+     * @Property vSwitchIds: The virtual switch ID of the worker node.
+     */
+    readonly vSwitchIds?: Array<any | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * @Property zoneIds: Zone ids of worker node virtual switches belongs to.
      */
     readonly zoneIds?: Array<string | ros.IResolvable> | ros.IResolvable;
@@ -3845,10 +3876,18 @@ function RosManagedEdgeKubernetesClusterPropsValidator(properties: any): ros.Val
     errors.collect(ros.propertyValidator('keyPair', ros.validateString)(properties.keyPair));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('nodeCidrMask', ros.validateString)(properties.nodeCidrMask));
+    if(properties.vSwitchIds && (Array.isArray(properties.vSwitchIds) || (typeof properties.vSwitchIds) === 'string')) {
+        errors.collect(ros.propertyValidator('vSwitchIds', ros.validateLength)({
+            data: properties.vSwitchIds.length,
+            min: 1,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateAny))(properties.vSwitchIds));
     errors.collect(ros.propertyValidator('timeoutMins', ros.validateNumber)(properties.timeoutMins));
     errors.collect(ros.propertyValidator('addons', ros.listValidator(RosManagedEdgeKubernetesCluster_AddonsPropertyValidator))(properties.addons));
-    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
     errors.collect(ros.propertyValidator('clusterSpec', ros.validateString)(properties.clusterSpec));
+    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
     errors.collect(ros.propertyValidator('profile', ros.validateString)(properties.profile));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
@@ -3857,10 +3896,10 @@ function RosManagedEdgeKubernetesClusterPropsValidator(properties: any): ros.Val
     errors.collect(ros.propertyValidator('cloudMonitorFlags', ros.validateBoolean)(properties.cloudMonitorFlags));
     errors.collect(ros.propertyValidator('serviceCidr', ros.validateString)(properties.serviceCidr));
     errors.collect(ros.propertyValidator('snatEntry', ros.validateBoolean)(properties.snatEntry));
-    errors.collect(ros.propertyValidator('zoneIds', ros.listValidator(ros.validateString))(properties.zoneIds));
     errors.collect(ros.propertyValidator('maintenanceWindow', RosManagedEdgeKubernetesCluster_MaintenanceWindowPropertyValidator)(properties.maintenanceWindow));
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosManagedEdgeKubernetesCluster_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('zoneIds', ros.listValidator(ros.validateString))(properties.zoneIds));
     errors.collect(ros.propertyValidator('proxyMode', ros.validateString)(properties.proxyMode));
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosManagedEdgeKubernetesCluster_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('loginPassword', ros.validateString)(properties.loginPassword));
     return errors.wrap('supplied properties not correct for "RosManagedEdgeKubernetesClusterProps"');
 }
@@ -3899,12 +3938,13 @@ function rosManagedEdgeKubernetesClusterPropsToRosTemplate(properties: any, enab
       'Tags': ros.listMapper(rosManagedEdgeKubernetesClusterTagsPropertyToRosTemplate)(properties.tags),
       'TimeoutMins': ros.numberToRosTemplate(properties.timeoutMins),
       'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchIds': ros.listMapper(ros.objectToRosTemplate)(properties.vSwitchIds),
       'ZoneIds': ros.listMapper(ros.stringToRosTemplate)(properties.zoneIds),
     };
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ManagedEdgeKubernetesCluster`, which is used to create a Container Service for Kubernetes (ACK) edge cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ManagedEdgeKubernetesCluster`, which is used to create a Container Service for Kubernetes (ACK) Edge cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `ManagedEdgeKubernetesCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managededgekubernetescluster
  */
@@ -4098,6 +4138,11 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
     public vpcId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property vSwitchIds: The virtual switch ID of the worker node.
+     */
+    public vSwitchIds: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * @Property zoneIds: Zone ids of worker node virtual switches belongs to.
      */
     public zoneIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
@@ -4142,6 +4187,7 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
         this.tags = props.tags;
         this.timeoutMins = props.timeoutMins;
         this.vpcId = props.vpcId;
+        this.vSwitchIds = props.vSwitchIds;
         this.zoneIds = props.zoneIds;
     }
 
@@ -4168,6 +4214,7 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
             tags: this.tags,
             timeoutMins: this.timeoutMins,
             vpcId: this.vpcId,
+            vSwitchIds: this.vSwitchIds,
             zoneIds: this.zoneIds,
         };
     }
@@ -4362,6 +4409,11 @@ export interface RosManagedKubernetesClusterProps {
      * @Property vpcId: VPC ID.
      */
     readonly vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchIds: The virtual switch ID of the worker node.
+     */
+    readonly vSwitchIds: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property addons: A combination of addon plugins for Kubernetes clusters.
@@ -4686,6 +4738,15 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     errors.collect(ros.propertyValidator('deleteOptions', ros.listValidator(RosManagedKubernetesCluster_DeleteOptionsPropertyValidator))(properties.deleteOptions));
     errors.collect(ros.propertyValidator('keyPair', ros.validateString)(properties.keyPair));
     errors.collect(ros.propertyValidator('nodeCidrMask', ros.validateString)(properties.nodeCidrMask));
+    errors.collect(ros.propertyValidator('vSwitchIds', ros.requiredValidator)(properties.vSwitchIds));
+    if(properties.vSwitchIds && (Array.isArray(properties.vSwitchIds) || (typeof properties.vSwitchIds) === 'string')) {
+        errors.collect(ros.propertyValidator('vSwitchIds', ros.validateLength)({
+            data: properties.vSwitchIds.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateString))(properties.vSwitchIds));
     errors.collect(ros.propertyValidator('timeoutMins', ros.validateNumber)(properties.timeoutMins));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('clusterSpec', ros.validateString)(properties.clusterSpec));
@@ -4731,6 +4792,7 @@ function rosManagedKubernetesClusterPropsToRosTemplate(properties: any, enableRe
     return {
       'Name': ros.stringToRosTemplate(properties.name),
       'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchIds': ros.listMapper(ros.stringToRosTemplate)(properties.vSwitchIds),
       'Addons': ros.listMapper(rosManagedKubernetesClusterAddonsPropertyToRosTemplate)(properties.addons),
       'CloudMonitorFlags': ros.booleanToRosTemplate(properties.cloudMonitorFlags),
       'ClusterSpec': ros.stringToRosTemplate(properties.clusterSpec),
@@ -4850,6 +4912,11 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
      * @Property vpcId: VPC ID.
      */
     public vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchIds: The virtual switch ID of the worker node.
+     */
+    public vSwitchIds: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property addons: A combination of addon plugins for Kubernetes clusters.
@@ -5129,6 +5196,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.name = props.name;
         this.vpcId = props.vpcId;
+        this.vSwitchIds = props.vSwitchIds;
         this.addons = props.addons;
         this.cloudMonitorFlags = props.cloudMonitorFlags;
         this.clusterSpec = props.clusterSpec;
@@ -5174,6 +5242,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
         return {
             name: this.name,
             vpcId: this.vpcId,
+            vSwitchIds: this.vSwitchIds,
             addons: this.addons,
             cloudMonitorFlags: this.cloudMonitorFlags,
             clusterSpec: this.clusterSpec,
@@ -5864,9 +5933,7 @@ export namespace RosManagedKubernetesCluster {
          */
         readonly isEnterpriseSecurityGroup?: boolean | ros.IResolvable;
         /**
-         * @Property internetMaxBandwidthOut: The release version of the operating system. Valid values:
-     * CentOS, AliyunLinux, Windows, WindowsCore.
-     * Default value: AliyunLinux.
+         * @Property internetMaxBandwidthOut:
          */
         readonly internetMaxBandwidthOut?: number | ros.IResolvable;
         /**

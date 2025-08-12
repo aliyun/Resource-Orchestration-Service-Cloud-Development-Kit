@@ -54,127 +54,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Cen.RosTransitRouterPeerAttachment))!;
 
         /// <remarks>
-        /// <strong>Attribute</strong>: AutoPublishRouteEnabled: AutoPublishRouteEnabled
-        /// </remarks>
-        [JsiiProperty(name: "attrAutoPublishRouteEnabled", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAutoPublishRouteEnabled
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: Bandwidth: Bandwidth
-        /// </remarks>
-        [JsiiProperty(name: "attrBandwidth", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrBandwidth
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: CenBandwidthPackageId: BandwidthPackageId
-        /// </remarks>
-        [JsiiProperty(name: "attrCenBandwidthPackageId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCenBandwidthPackageId
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: CenId: CenId
-        /// </remarks>
-        [JsiiProperty(name: "attrCenId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCenId
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: ClientToken: ClientToken
-        /// </remarks>
-        [JsiiProperty(name: "attrClientToken", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClientToken
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: GeographicSpanId: GeographicSpanId
-        /// </remarks>
-        [JsiiProperty(name: "attrGeographicSpanId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrGeographicSpanId
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: PeerTransitRouterId: PeerTransitRouterId
-        /// </remarks>
-        [JsiiProperty(name: "attrPeerTransitRouterId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPeerTransitRouterId
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: PeerTransitRouterOwnerId: PeerTransitRouterOwnerId
-        /// </remarks>
-        [JsiiProperty(name: "attrPeerTransitRouterOwnerId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPeerTransitRouterOwnerId
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: PeerTransitRouterRegionId: PeerTransitRouterRegionId
-        /// </remarks>
-        [JsiiProperty(name: "attrPeerTransitRouterRegionId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPeerTransitRouterRegionId
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: ResourceType: ResourceType
-        /// </remarks>
-        [JsiiProperty(name: "attrResourceType", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrResourceType
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: TransitRouterAttachmentDescription: TransitRouterAttachmentDescription
-        /// </remarks>
-        [JsiiProperty(name: "attrTransitRouterAttachmentDescription", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrTransitRouterAttachmentDescription
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: TransitRouterAttachmentId: The first ID of the resource
+        /// <strong>Attribute</strong>: TransitRouterAttachmentId: Cross-region connection ID.
         /// </remarks>
         [JsiiProperty(name: "attrTransitRouterAttachmentId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrTransitRouterAttachmentId
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: TransitRouterAttachmentName: TransitRouterAttachmentName
-        /// </remarks>
-        [JsiiProperty(name: "attrTransitRouterAttachmentName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrTransitRouterAttachmentName
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: TransitRouterId: TransitRouterId
-        /// </remarks>
-        [JsiiProperty(name: "attrTransitRouterId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrTransitRouterId
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
@@ -193,7 +76,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: peerTransitRouterId: PeerTransitRouterId
+        /// <strong>Property</strong>: peerTransitRouterId: Peer forwarding router instance ID.
         /// </remarks>
         [JsiiProperty(name: "peerTransitRouterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object PeerTransitRouterId
@@ -223,7 +106,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: autoPublishRouteEnabled: AutoPublishRouteEnabled
+        /// <strong>Property</strong>: autoPublishRouteEnabled: Whether to make the enterprise version forwarding router automatically publish routes across regions to the peer region.
+        /// false (default): No.
+        /// true: Yes.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "autoPublishRouteEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -254,7 +139,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: bandwidth: Bandwidth
+        /// <strong>Property</strong>: bandwidth: The bandwidth value for cross-region connections.Unit: Mbps.
+        /// When the BandwidthType value is BandwidthPackage, this parameter represents the bandwidth value that can be used by cross-region connections.
+        /// When the BandwidthType value is DataTransfer, this parameter represents the speed limit bandwidth value for cross-region connections.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -305,7 +192,41 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: cenBandwidthPackageId: BandwidthPackageId
+        /// <strong>Property</strong>: bandwidthType: The bandwidth allocation method for cross-regional connections.Value:
+        /// BandwidthPackage: Allocate bandwidth from bandwidth packets.
+        /// DataTransfer: Do not allocate bandwidth for cross-region connections, and is billed based on usage traffic.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "bandwidthType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? BandwidthType
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: cenBandwidthPackageId: The bandwidth packet ID to bind to across regions.
+        /// Note When the value of BandwidthType is DataTransfer, this item is not required.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "cenBandwidthPackageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -336,7 +257,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: cenId: CenId
+        /// <strong>Property</strong>: cenId: Cloud Enterprise Network Instance ID.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "cenId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -367,7 +288,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: peerTransitRouterRegionId: PeerTransitRouterRegionId
+        /// <strong>Property</strong>: defaultLinkType: Default link type.
+        /// Optional values are Platinum, Gold, and default to Gold.
+        /// And it can only be configured as Platinum (Platinum) when the bandwidth allocation method is billed by traffic.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "defaultLinkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? DefaultLinkType
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: peerTransitRouterRegionId: The region ID to which the peer forwarding router instance belongs.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "peerTransitRouterRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -398,7 +352,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: transitRouterAttachmentDescription: TransitRouterAttachmentDescription
+        /// <strong>Property</strong>: tags: The list of tags in the form of key\/value pairs. You can define a maximum of 20 tags.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-cen.RosTransitRouterPeerAttachment.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Cen.RosTransitRouterPeerAttachment.ITagsProperty[]? Tags
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Cen.RosTransitRouterPeerAttachment.ITagsProperty[]?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: transitRouterAttachmentDescription: Description information for cross-region connections.
+        /// The description can be empty or has a length of 1 to 256 characters and cannot start with http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "transitRouterAttachmentDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -429,7 +395,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: transitRouterAttachmentName: TransitRouterAttachmentName
+        /// <strong>Property</strong>: transitRouterAttachmentName: The name of the cross-region connection.
+        /// The name can be empty or has a length of 1 to 128 characters, and cannot start with http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "transitRouterAttachmentName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -460,7 +427,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: transitRouterId: TransitRouterId
+        /// <strong>Property</strong>: transitRouterId: Local Enterprise Edition forwarding router instance ID.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "transitRouterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -487,6 +454,128 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
                     }
                 }
                 SetInstanceProperty(value);
+            }
+        }
+        [JsiiInterface(nativeType: typeof(ITagsProperty), fullyQualifiedName: "@alicloud/ros-cdk-cen.RosTransitRouterPeerAttachment.TagsProperty")]
+        public interface ITagsProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: key: The keyword of the tag.
+            /// </remarks>
+            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Key
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: value: The value of the tag.
+            /// </remarks>
+            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Value
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(ITagsProperty), fullyQualifiedName: "@alicloud/ros-cdk-cen.RosTransitRouterPeerAttachment.TagsProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cen.RosTransitRouterPeerAttachment.ITagsProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: key: The keyword of the tag.
+                /// </remarks>
+                [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Key
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: value: The value of the tag.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Value
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-cen.RosTransitRouterPeerAttachment.TagsProperty")]
+        public class TagsProperty : AlibabaCloud.SDK.ROS.CDK.Cen.RosTransitRouterPeerAttachment.ITagsProperty
+        {
+            private object _key;
+
+            /// <remarks>
+            /// <strong>Property</strong>: key: The keyword of the tag.
+            /// </remarks>
+            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Key
+            {
+                get => _key;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _key = value;
+                }
+            }
+
+            private object? _value;
+
+            /// <remarks>
+            /// <strong>Property</strong>: value: The value of the tag.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Value
+            {
+                get => _value;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _value = value;
+                }
             }
         }
     }

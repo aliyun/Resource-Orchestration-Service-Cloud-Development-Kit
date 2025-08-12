@@ -1249,14 +1249,13 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "onSynthesize", GoMethod: "OnSynthesize"},
 			_jsii_.MemberMethod{JsiiMethod: "onValidate", GoMethod: "OnValidate"},
 			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "permissions", GoGetter: "Permissions"},
 			_jsii_.MemberMethod{JsiiMethod: "prepare", GoMethod: "Prepare"},
 			_jsii_.MemberProperty{JsiiProperty: "ref", GoGetter: "Ref"},
 			_jsii_.MemberMethod{JsiiMethod: "renderProperties", GoMethod: "RenderProperties"},
 			_jsii_.MemberProperty{JsiiProperty: "rosOptions", GoGetter: "RosOptions"},
 			_jsii_.MemberProperty{JsiiProperty: "rosProperties", GoGetter: "RosProperties"},
 			_jsii_.MemberProperty{JsiiProperty: "rosResourceType", GoGetter: "RosResourceType"},
-			_jsii_.MemberProperty{JsiiProperty: "securityGroupEgress", GoGetter: "SecurityGroupEgress"},
-			_jsii_.MemberProperty{JsiiProperty: "securityGroupIngress", GoGetter: "SecurityGroupIngress"},
 			_jsii_.MemberProperty{JsiiProperty: "securityGroupName", GoGetter: "SecurityGroupName"},
 			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
 			_jsii_.MemberMethod{JsiiMethod: "synthesize", GoMethod: "Synthesize"},
@@ -1272,12 +1271,8 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"@alicloud/ros-cdk-ens.RosSecurityGroup.SecurityGroupEgressProperty",
-		reflect.TypeOf((*RosSecurityGroup_SecurityGroupEgressProperty)(nil)).Elem(),
-	)
-	_jsii_.RegisterStruct(
-		"@alicloud/ros-cdk-ens.RosSecurityGroup.SecurityGroupIngressProperty",
-		reflect.TypeOf((*RosSecurityGroup_SecurityGroupIngressProperty)(nil)).Elem(),
+		"@alicloud/ros-cdk-ens.RosSecurityGroup.PermissionsProperty",
+		reflect.TypeOf((*RosSecurityGroup_PermissionsProperty)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-ens.RosSecurityGroupProps",

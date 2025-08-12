@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cr;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instanceendpointaclpolicy
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:03.282Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.075Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.InstanceEndpointAclPolicyProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceEndpointAclPolicyProps.Jsii$Proxy.class)
 public interface InstanceEndpointAclPolicyProps extends software.amazon.jsii.JsiiSerializable {
@@ -19,6 +19,13 @@ public interface InstanceEndpointAclPolicyProps extends software.amazon.jsii.Jsi
      * Property instanceId: The ID of the instance.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getInstanceId();
+
+    /**
+     * Property autoEnableType: Whether to auto enable the type of the endpoint.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoEnableType() {
+        return null;
+    }
 
     /**
      * Property comment: The description of the entry.
@@ -65,6 +72,7 @@ public interface InstanceEndpointAclPolicyProps extends software.amazon.jsii.Jsi
     public static final class Builder implements software.amazon.jsii.Builder<InstanceEndpointAclPolicyProps> {
         java.lang.Object entry;
         java.lang.Object instanceId;
+        java.lang.Object autoEnableType;
         java.lang.Object comment;
         java.lang.Object endpointType;
         java.lang.Object moduleName;
@@ -107,6 +115,26 @@ public interface InstanceEndpointAclPolicyProps extends software.amazon.jsii.Jsi
          */
         public Builder instanceId(com.aliyun.ros.cdk.core.IResolvable instanceId) {
             this.instanceId = instanceId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceEndpointAclPolicyProps#getAutoEnableType}
+         * @param autoEnableType Property autoEnableType: Whether to auto enable the type of the endpoint.
+         * @return {@code this}
+         */
+        public Builder autoEnableType(java.lang.String autoEnableType) {
+            this.autoEnableType = autoEnableType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceEndpointAclPolicyProps#getAutoEnableType}
+         * @param autoEnableType Property autoEnableType: Whether to auto enable the type of the endpoint.
+         * @return {@code this}
+         */
+        public Builder autoEnableType(com.aliyun.ros.cdk.core.IResolvable autoEnableType) {
+            this.autoEnableType = autoEnableType;
             return this;
         }
 
@@ -214,6 +242,7 @@ public interface InstanceEndpointAclPolicyProps extends software.amazon.jsii.Jsi
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements InstanceEndpointAclPolicyProps {
         private final java.lang.Object entry;
         private final java.lang.Object instanceId;
+        private final java.lang.Object autoEnableType;
         private final java.lang.Object comment;
         private final java.lang.Object endpointType;
         private final java.lang.Object moduleName;
@@ -227,6 +256,7 @@ public interface InstanceEndpointAclPolicyProps extends software.amazon.jsii.Jsi
             super(objRef);
             this.entry = software.amazon.jsii.Kernel.get(this, "entry", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoEnableType = software.amazon.jsii.Kernel.get(this, "autoEnableType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.comment = software.amazon.jsii.Kernel.get(this, "comment", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.endpointType = software.amazon.jsii.Kernel.get(this, "endpointType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.moduleName = software.amazon.jsii.Kernel.get(this, "moduleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -240,6 +270,7 @@ public interface InstanceEndpointAclPolicyProps extends software.amazon.jsii.Jsi
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.entry = java.util.Objects.requireNonNull(builder.entry, "entry is required");
             this.instanceId = java.util.Objects.requireNonNull(builder.instanceId, "instanceId is required");
+            this.autoEnableType = builder.autoEnableType;
             this.comment = builder.comment;
             this.endpointType = builder.endpointType;
             this.moduleName = builder.moduleName;
@@ -254,6 +285,11 @@ public interface InstanceEndpointAclPolicyProps extends software.amazon.jsii.Jsi
         @Override
         public final java.lang.Object getInstanceId() {
             return this.instanceId;
+        }
+
+        @Override
+        public final java.lang.Object getAutoEnableType() {
+            return this.autoEnableType;
         }
 
         @Override
@@ -284,6 +320,9 @@ public interface InstanceEndpointAclPolicyProps extends software.amazon.jsii.Jsi
 
             data.set("entry", om.valueToTree(this.getEntry()));
             data.set("instanceId", om.valueToTree(this.getInstanceId()));
+            if (this.getAutoEnableType() != null) {
+                data.set("autoEnableType", om.valueToTree(this.getAutoEnableType()));
+            }
             if (this.getComment() != null) {
                 data.set("comment", om.valueToTree(this.getComment()));
             }
@@ -316,6 +355,7 @@ public interface InstanceEndpointAclPolicyProps extends software.amazon.jsii.Jsi
 
             if (!entry.equals(that.entry)) return false;
             if (!instanceId.equals(that.instanceId)) return false;
+            if (this.autoEnableType != null ? !this.autoEnableType.equals(that.autoEnableType) : that.autoEnableType != null) return false;
             if (this.comment != null ? !this.comment.equals(that.comment) : that.comment != null) return false;
             if (this.endpointType != null ? !this.endpointType.equals(that.endpointType) : that.endpointType != null) return false;
             if (this.moduleName != null ? !this.moduleName.equals(that.moduleName) : that.moduleName != null) return false;
@@ -326,6 +366,7 @@ public interface InstanceEndpointAclPolicyProps extends software.amazon.jsii.Jsi
         public final int hashCode() {
             int result = this.entry.hashCode();
             result = 31 * result + (this.instanceId.hashCode());
+            result = 31 * result + (this.autoEnableType != null ? this.autoEnableType.hashCode() : 0);
             result = 31 * result + (this.comment != null ? this.comment.hashCode() : 0);
             result = 31 * result + (this.endpointType != null ? this.endpointType.hashCode() : 0);
             result = 31 * result + (this.moduleName != null ? this.moduleName.hashCode() : 0);

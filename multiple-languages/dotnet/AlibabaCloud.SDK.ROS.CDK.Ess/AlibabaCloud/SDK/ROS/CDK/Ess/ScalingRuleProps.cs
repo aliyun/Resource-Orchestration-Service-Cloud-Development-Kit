@@ -350,16 +350,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// Valid values of a target tracking scaling rule:
         ///
         /// <list type="bullet">
-        /// <description>CpuUtilization: the average CPU utilization- ClassicInternetRx: the average public network inbound traffic over the classic network</description>
-        /// <description>ClassicInternetTx: the average public network outbound traffic over the classic network</description>
-        /// <description>VpcInternetRx: the average public network inbound traffic over the VPC</description>
-        /// <description>VpcInternetTx: the average public network outbound traffic over the VPC</description>
-        /// <description>IntranetRx: the average internal network inbound traffic</description>
-        /// <description>IntranetTx: the average internal network outbound traffic
+        /// <description>CpuUtilizationAgent:  (recommended) the CPU utilization.</description>
+        /// <description>MemoryUtilization: (recommended) the memory usage.- CpuUtilization: the average CPU utilization.</description>
+        /// <description>IntranetTx: the outbound traffic over an internal network.</description>
+        /// <description>IntranetRx: the average inbound traffic over an internal network.</description>
+        /// <description>VpcInternetTx: the outbound traffic from a virtual private cloud (VPC) to the Internet.</description>
+        /// <description>VpcInternetRx: the inbound traffic from the Internet to a VPC.</description>
+        /// <description>LoadBalancerRealServerAverageQps: the queries per second (QPS) per Application Load Balancer (ALB) server group.
         /// Valid values of a predictive scaling rule:</description>
-        /// <description>CpuUtilization: the average CPU utilization</description>
-        /// <description>IntranetRx: the average internal network inbound traffic</description>
-        /// <description>IntranetTx: the average internal network outbound traffic</description>
+        /// <description>CpuUtilization: the average CPU utilization.</description>
+        /// <description>IntranetRx: the average inbound traffic over an internal network.</description>
+        /// <description>IntranetTx: the average outbound traffic over an internal network.</description>
         /// </list>
         /// </remarks>
         [JsiiOptional]

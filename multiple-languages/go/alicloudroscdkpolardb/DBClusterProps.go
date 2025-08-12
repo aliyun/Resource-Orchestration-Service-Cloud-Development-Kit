@@ -102,9 +102,8 @@ type DBClusterProps struct {
 	DbMinorVersion interface{} `field:"optional" json:"dbMinorVersion" yaml:"dbMinorVersion"`
 	// Property dbNodeNum: The number of Standard Edition nodes.
 	//
-	// Default value: 1. Valid values:
-	// 1: only one primary node.
-	// 2: one read-only node and one primary node.
+	// Valid values for PolarDB for MySQL Standard Edition: 1 to 8.
+	// Valid values for PolarDB for MySQL Enterprise Edition: 1 to 16.
 	DbNodeNum interface{} `field:"optional" json:"dbNodeNum" yaml:"dbNodeNum"`
 	// Property defaultTimeZone: Set up a time zone (UTC), the value range is as follows: System:  The default time zone is the same as the time zone where the region is located.
 	//

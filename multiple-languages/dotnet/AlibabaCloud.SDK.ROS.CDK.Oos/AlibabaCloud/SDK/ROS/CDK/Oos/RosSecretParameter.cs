@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Oos
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::SecretParameter`, which is used to create an encryption parameter.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::SecretParameter`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `SecretParameter` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-secretparameter
@@ -193,7 +193,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: secretParameterName: The name of the encryption parameter. The name must be 1 to 180 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
+        /// <strong>Property</strong>: secretParameterName: The name of the encryption parameter. The name must be 1 to 180 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ALIBABA, ALICLOUD, ACS or OOS.
         /// </remarks>
         [JsiiProperty(name: "secretParameterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object SecretParameterName

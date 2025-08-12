@@ -25,24 +25,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: securityGroupEgress: egress rules for the security group.
+        /// <strong>Property</strong>: permissions: undefined
         /// </remarks>
-        [JsiiProperty(name: "securityGroupEgress", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ens.RosSecurityGroup.SecurityGroupEgressProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [JsiiProperty(name: "permissions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ens.RosSecurityGroup.PermissionsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? SecurityGroupEgress
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <remarks>
-        /// <strong>Property</strong>: securityGroupIngress: Ingress rules for the security group.
-        /// </remarks>
-        [JsiiProperty(name: "securityGroupIngress", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ens.RosSecurityGroup.SecurityGroupIngressProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? SecurityGroupIngress
+        object? Permissions
         {
             get
             {
@@ -85,21 +72,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: securityGroupEgress: egress rules for the security group.
+            /// <strong>Property</strong>: permissions: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "securityGroupEgress", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ens.RosSecurityGroup.SecurityGroupEgressProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
-            public object? SecurityGroupEgress
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: securityGroupIngress: Ingress rules for the security group.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "securityGroupIngress", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ens.RosSecurityGroup.SecurityGroupIngressProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
-            public object? SecurityGroupIngress
+            [JsiiProperty(name: "permissions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ens.RosSecurityGroup.PermissionsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? Permissions
             {
                 get => GetInstanceProperty<object?>();
             }

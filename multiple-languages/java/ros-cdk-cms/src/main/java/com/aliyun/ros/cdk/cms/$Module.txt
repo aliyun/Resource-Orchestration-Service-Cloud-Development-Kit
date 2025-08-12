@@ -18,6 +18,7 @@
 @alicloud/ros-cdk-cms.IGroupMetricRule=com.aliyun.ros.cdk.cms.IGroupMetricRule
 @alicloud/ros-cdk-cms.IMetricRuleTargets=com.aliyun.ros.cdk.cms.IMetricRuleTargets
 @alicloud/ros-cdk-cms.IMetricRuleTemplate=com.aliyun.ros.cdk.cms.IMetricRuleTemplate
+@alicloud/ros-cdk-cms.IMetricRuleTemplateDeployment=com.aliyun.ros.cdk.cms.IMetricRuleTemplateDeployment
 @alicloud/ros-cdk-cms.IMonitorGroup=com.aliyun.ros.cdk.cms.IMonitorGroup
 @alicloud/ros-cdk-cms.IMonitorGroupInstances=com.aliyun.ros.cdk.cms.IMonitorGroupInstances
 @alicloud/ros-cdk-cms.IMonitoringAgent=com.aliyun.ros.cdk.cms.IMonitoringAgent
@@ -29,6 +30,8 @@
 @alicloud/ros-cdk-cms.MetricRuleTargets=com.aliyun.ros.cdk.cms.MetricRuleTargets
 @alicloud/ros-cdk-cms.MetricRuleTargetsProps=com.aliyun.ros.cdk.cms.MetricRuleTargetsProps
 @alicloud/ros-cdk-cms.MetricRuleTemplate=com.aliyun.ros.cdk.cms.MetricRuleTemplate
+@alicloud/ros-cdk-cms.MetricRuleTemplateDeployment=com.aliyun.ros.cdk.cms.MetricRuleTemplateDeployment
+@alicloud/ros-cdk-cms.MetricRuleTemplateDeploymentProps=com.aliyun.ros.cdk.cms.MetricRuleTemplateDeploymentProps
 @alicloud/ros-cdk-cms.MetricRuleTemplateProps=com.aliyun.ros.cdk.cms.MetricRuleTemplateProps
 @alicloud/ros-cdk-cms.MonitorGroup=com.aliyun.ros.cdk.cms.MonitorGroup
 @alicloud/ros-cdk-cms.MonitorGroupInstances=com.aliyun.ros.cdk.cms.MonitorGroupInstances
@@ -75,6 +78,8 @@
 @alicloud/ros-cdk-cms.RosMetricRuleTemplate.EscalationsProperty=com.aliyun.ros.cdk.cms.RosMetricRuleTemplate$EscalationsProperty
 @alicloud/ros-cdk-cms.RosMetricRuleTemplate.InfoProperty=com.aliyun.ros.cdk.cms.RosMetricRuleTemplate$InfoProperty
 @alicloud/ros-cdk-cms.RosMetricRuleTemplate.WarnProperty=com.aliyun.ros.cdk.cms.RosMetricRuleTemplate$WarnProperty
+@alicloud/ros-cdk-cms.RosMetricRuleTemplateDeployment=com.aliyun.ros.cdk.cms.RosMetricRuleTemplateDeployment
+@alicloud/ros-cdk-cms.RosMetricRuleTemplateDeploymentProps=com.aliyun.ros.cdk.cms.RosMetricRuleTemplateDeploymentProps
 @alicloud/ros-cdk-cms.RosMetricRuleTemplateProps=com.aliyun.ros.cdk.cms.RosMetricRuleTemplateProps
 @alicloud/ros-cdk-cms.RosMonitorGroup=com.aliyun.ros.cdk.cms.RosMonitorGroup
 @alicloud/ros-cdk-cms.RosMonitorGroupInstances=com.aliyun.ros.cdk.cms.RosMonitorGroupInstances

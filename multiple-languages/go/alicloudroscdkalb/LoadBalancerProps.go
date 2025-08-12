@@ -20,10 +20,6 @@ type LoadBalancerProps struct {
 	// Standard: Standard Edition
 	// StandardWithWaf: Standard Edition with WAF.
 	LoadBalancerEdition interface{} `field:"required" json:"loadBalancerEdition" yaml:"loadBalancerEdition"`
-	// Property loadBalancerName: The name of the ALB instance.
-	//
-	// The name must be 2 to 128 characters in length, and can contain letters, digits, periods(.), underscores (_), and hyphens (-). The name must start with a letter.
-	LoadBalancerName interface{} `field:"required" json:"loadBalancerName" yaml:"loadBalancerName"`
 	// Property vpcId: The ID of the virtual private cloud (VPC) where the ALB instance is deployed.
 	VpcId interface{} `field:"required" json:"vpcId" yaml:"vpcId"`
 	// Property zoneMappings: The zones and the vSwitches in the zones.
@@ -52,6 +48,16 @@ type LoadBalancerProps struct {
 	//
 	// Default value: false.
 	DeletionProtectionEnabled interface{} `field:"optional" json:"deletionProtectionEnabled" yaml:"deletionProtectionEnabled"`
+	// Property ipv6AddressType: The type of IPv6 address that the ALB instance uses to provide services.
+	//
+	// Valid values:
+	// Internet: The ALB instance uses a public IPv6 address. The domain name of the ALB instance is resolved to the public IPv6 address.
+	// Intranet: The ALB instance uses a private IPv6 address. The domain name of the ALB instance is resolved to the private IP address.
+	Ipv6AddressType interface{} `field:"optional" json:"ipv6AddressType" yaml:"ipv6AddressType"`
+	// Property loadBalancerName: The name of the ALB instance.
+	//
+	// The name must be 2 to 128 characters in length, and can contain letters, digits, periods(.), underscores (_), and hyphens (-). The name must start with a letter.
+	LoadBalancerName interface{} `field:"optional" json:"loadBalancerName" yaml:"loadBalancerName"`
 	// Property modificationProtectionConfig: The configuration of modification protection.
 	ModificationProtectionConfig interface{} `field:"optional" json:"modificationProtectionConfig" yaml:"modificationProtectionConfig"`
 	// Property resourceGroupId: The ID of the resource group.

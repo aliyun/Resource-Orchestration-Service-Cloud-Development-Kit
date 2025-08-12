@@ -182,6 +182,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: checkAsyncInvocation: Check async invocation setting.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "checkAsyncInvocation", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc.RosFunctionInvoker.CheckAsyncInvocationProperty\"}]}}", isOptional: true)]
+        public virtual object? CheckAsyncInvocation
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Fc.RosFunctionInvoker.ICheckAsyncInvocationProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Fc.RosFunctionInvoker.ICheckAsyncInvocationProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: checkError: Whether check error for function invocation result.
         /// If set true and function invocation result has error, the resource creation will be regard as failed.
         /// Default is false
@@ -356,6 +387,224 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
                     }
                 }
                 SetInstanceProperty(value);
+            }
+        }
+        [JsiiInterface(nativeType: typeof(ICheckAsyncInvocationProperty), fullyQualifiedName: "@alicloud/ros-cdk-fc.RosFunctionInvoker.CheckAsyncInvocationProperty")]
+        public interface ICheckAsyncInvocationProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: checkInterval: Check interval for async invocation result.
+            /// Default is 10 seconds. Unit is second
+            /// </remarks>
+            [JsiiProperty(name: "checkInterval", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object CheckInterval
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: checkTimes: Check times for async invocation result.
+            /// Default is 10 times.
+            /// </remarks>
+            [JsiiProperty(name: "checkTimes", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object CheckTimes
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: enabled: Whether check async invocation result.
+            /// If set true and function invocation type is async, the resource creation will wait until invocation finish and check result.
+            /// Default is false
+            /// </remarks>
+            [JsiiProperty(name: "enabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Enabled
+            {
+                get;
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(ICheckAsyncInvocationProperty), fullyQualifiedName: "@alicloud/ros-cdk-fc.RosFunctionInvoker.CheckAsyncInvocationProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Fc.RosFunctionInvoker.ICheckAsyncInvocationProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: checkInterval: Check interval for async invocation result.
+                /// Default is 10 seconds. Unit is second
+                /// </remarks>
+                [JsiiProperty(name: "checkInterval", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object CheckInterval
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: checkTimes: Check times for async invocation result.
+                /// Default is 10 times.
+                /// </remarks>
+                [JsiiProperty(name: "checkTimes", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object CheckTimes
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: enabled: Whether check async invocation result.
+                /// If set true and function invocation type is async, the resource creation will wait until invocation finish and check result.
+                /// Default is false
+                /// </remarks>
+                [JsiiProperty(name: "enabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Enabled
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-fc.RosFunctionInvoker.CheckAsyncInvocationProperty")]
+        public class CheckAsyncInvocationProperty : AlibabaCloud.SDK.ROS.CDK.Fc.RosFunctionInvoker.ICheckAsyncInvocationProperty
+        {
+            private object _checkInterval;
+
+            /// <remarks>
+            /// <strong>Property</strong>: checkInterval: Check interval for async invocation result.
+            /// Default is 10 seconds. Unit is second
+            /// </remarks>
+            [JsiiProperty(name: "checkInterval", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object CheckInterval
+            {
+                get => _checkInterval;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _checkInterval = value;
+                }
+            }
+
+            private object _checkTimes;
+
+            /// <remarks>
+            /// <strong>Property</strong>: checkTimes: Check times for async invocation result.
+            /// Default is 10 times.
+            /// </remarks>
+            [JsiiProperty(name: "checkTimes", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object CheckTimes
+            {
+                get => _checkTimes;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _checkTimes = value;
+                }
+            }
+
+            private object _enabled;
+
+            /// <remarks>
+            /// <strong>Property</strong>: enabled: Whether check async invocation result.
+            /// If set true and function invocation type is async, the resource creation will wait until invocation finish and check result.
+            /// Default is false
+            /// </remarks>
+            [JsiiProperty(name: "enabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Enabled
+            {
+                get => _enabled;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _enabled = value;
+                }
             }
         }
     }

@@ -35,6 +35,11 @@ export interface AppProps {
     readonly description?: string | ros.IResolvable;
 
     /**
+     * Property logProConfiguration: The log pro configuration of the app.
+     */
+    readonly logProConfiguration?: RosApp.LogProConfigurationProperty | ros.IResolvable;
+
+    /**
      * Property network: The public network of the app.
      */
     readonly network?: Array<RosApp.NetworkProperty | ros.IResolvable> | ros.IResolvable;
@@ -43,6 +48,11 @@ export interface AppProps {
      * Property privateNetwork: The private network of the app.
      */
     readonly privateNetwork?: Array<RosApp.PrivateNetworkProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property scenario: The scenario of the app.
+     */
+    readonly scenario?: string | ros.IResolvable;
 }
 
 /**
@@ -75,6 +85,11 @@ export interface IApp extends ros.IResource {
      * Attribute PublicKibanaDomain: The public network kibana domain of the app.
      */
     readonly attrPublicKibanaDomain: ros.IResolvable | string;
+
+    /**
+     * Attribute Username: The username of the app.
+     */
+    readonly attrUsername: ros.IResolvable | string;
 }
 /**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ElasticSearchServerless::App`, which is used to create an Elasticsearch serverless application.
@@ -113,6 +128,11 @@ export class App extends ros.Resource implements IApp {
     public readonly attrPublicKibanaDomain: ros.IResolvable | string;
 
     /**
+     * Attribute Username: The username of the app.
+     */
+    public readonly attrUsername: ros.IResolvable | string;
+
+    /**
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties
@@ -130,7 +150,9 @@ export class App extends ros.Resource implements IApp {
             authentication: props.authentication,
             quotaInfo: props.quotaInfo,
             network: props.network,
+            logProConfiguration: props.logProConfiguration,
             privateNetwork: props.privateNetwork,
+            scenario: props.scenario === undefined || props.scenario === null ? 'SEARCH' : props.scenario,
             appName: props.appName,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosApp;
@@ -139,5 +161,6 @@ export class App extends ros.Resource implements IApp {
         this.attrPrivateKibanaDomain = rosApp.attrPrivateKibanaDomain;
         this.attrPublicEsDomain = rosApp.attrPublicEsDomain;
         this.attrPublicKibanaDomain = rosApp.attrPublicKibanaDomain;
+        this.attrUsername = rosApp.attrUsername;
     }
 }

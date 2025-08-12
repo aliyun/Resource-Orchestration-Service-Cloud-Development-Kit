@@ -39,6 +39,11 @@ export interface CommandProps {
     readonly enableParameter?: boolean | ros.IResolvable;
 
     /**
+     * Property launcher: A bootloader for script execution. The length cannot exceed 1 KB.
+     */
+    readonly launcher?: string | ros.IResolvable;
+
+    /**
      * Property name: The name of command.
      */
     readonly name?: string | ros.IResolvable;
@@ -110,6 +115,7 @@ export class Command extends ros.Resource implements ICommand {
             description: props.description,
             resourceGroupId: props.resourceGroupId,
             timeout: props.timeout,
+            launcher: props.launcher,
             enableParameter: props.enableParameter,
             contentEncoding: props.contentEncoding,
             tags: props.tags,

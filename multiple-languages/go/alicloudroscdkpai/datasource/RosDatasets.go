@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::PAI::Datasets`, which is used to query the basic information about datasets.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::PAI::Datasets`.
 type RosDatasets interface {
 	alicloudroscdkcore.RosResource
 	AttrDatasetIds() alicloudroscdkcore.IResolvable

@@ -5,24 +5,19 @@ package com.aliyun.ros.cdk.sas;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sas-instance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:10.484Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:50.556Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sas.$Module.class, fqn = "@alicloud/ros-cdk-sas.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property period: The subscription period of the firewallIf PeriodUnit is month, the valid range is 1, 3, 6 If periodUnit is year, the valid range is 1, 2, 3.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getPeriod();
-
-    /**
-     * Property periodUnit: The unit of the subscription duration.
+     * Property payType: The billing method of the firewall instance.
      * <p>
      * Valid values:
-     * Month
-     * Year
+     * PayAsYouGo: pay-as-you-go
+     * Subscription: subscription
      */
-    @org.jetbrains.annotations.NotNull java.lang.Object getPeriodUnit();
+    @org.jetbrains.annotations.NotNull java.lang.Object getPayType();
 
     /**
      * Property antiRansomware: Security Center provides a comprehensive anti-ransomware solution to protect your business.
@@ -103,6 +98,31 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
      * This ensures the security of the running environment of your cloud services.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMaliciousFileDetectionSdk() {
+        return null;
+    }
+
+    /**
+     * Property period: The subscription period of the firewallIf PeriodUnit is month, the valid range is 1, 3, 6 If periodUnit is year, the valid range is 1, 2, 3.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
+        return null;
+    }
+
+    /**
+     * Property periodUnit: The unit of the subscription duration.
+     * <p>
+     * Valid values:
+     * Month
+     * Year
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriodUnit() {
+        return null;
+    }
+
+    /**
+     * Property postPayInstanceModule: PayAsYouGo instance module configuration.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPostPayInstanceModule() {
         return null;
     }
 
@@ -208,8 +228,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link InstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<InstanceProps> {
-        java.lang.Object period;
-        java.lang.Object periodUnit;
+        java.lang.Object payType;
         java.lang.Object antiRansomware;
         java.lang.Object antiRansomwareManageService;
         java.lang.Object autoPay;
@@ -220,6 +239,9 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object edition;
         java.lang.Object logAnalysis;
         java.lang.Object maliciousFileDetectionSdk;
+        java.lang.Object period;
+        java.lang.Object periodUnit;
+        java.lang.Object postPayInstanceModule;
         java.lang.Object protectedServers;
         java.lang.Object quotaForApplicationProtection;
         java.lang.Object quotaForCloudHoneypot;
@@ -234,48 +256,28 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object webTamperProtection;
 
         /**
-         * Sets the value of {@link InstanceProps#getPeriod}
-         * @param period Property period: The subscription period of the firewallIf PeriodUnit is month, the valid range is 1, 3, 6 If periodUnit is year, the valid range is 1, 2, 3. This parameter is required.
+         * Sets the value of {@link InstanceProps#getPayType}
+         * @param payType Property payType: The billing method of the firewall instance. This parameter is required.
+         *                Valid values:
+         *                PayAsYouGo: pay-as-you-go
+         *                Subscription: subscription
          * @return {@code this}
          */
-        public Builder period(java.lang.Number period) {
-            this.period = period;
+        public Builder payType(java.lang.String payType) {
+            this.payType = payType;
             return this;
         }
 
         /**
-         * Sets the value of {@link InstanceProps#getPeriod}
-         * @param period Property period: The subscription period of the firewallIf PeriodUnit is month, the valid range is 1, 3, 6 If periodUnit is year, the valid range is 1, 2, 3. This parameter is required.
+         * Sets the value of {@link InstanceProps#getPayType}
+         * @param payType Property payType: The billing method of the firewall instance. This parameter is required.
+         *                Valid values:
+         *                PayAsYouGo: pay-as-you-go
+         *                Subscription: subscription
          * @return {@code this}
          */
-        public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
-            this.period = period;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link InstanceProps#getPeriodUnit}
-         * @param periodUnit Property periodUnit: The unit of the subscription duration. This parameter is required.
-         *                   Valid values:
-         *                   Month
-         *                   Year
-         * @return {@code this}
-         */
-        public Builder periodUnit(java.lang.String periodUnit) {
-            this.periodUnit = periodUnit;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link InstanceProps#getPeriodUnit}
-         * @param periodUnit Property periodUnit: The unit of the subscription duration. This parameter is required.
-         *                   Valid values:
-         *                   Month
-         *                   Year
-         * @return {@code this}
-         */
-        public Builder periodUnit(com.aliyun.ros.cdk.core.IResolvable periodUnit) {
-            this.periodUnit = periodUnit;
+        public Builder payType(com.aliyun.ros.cdk.core.IResolvable payType) {
+            this.payType = payType;
             return this;
         }
 
@@ -488,6 +490,72 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder maliciousFileDetectionSdk(com.aliyun.ros.cdk.core.IResolvable maliciousFileDetectionSdk) {
             this.maliciousFileDetectionSdk = maliciousFileDetectionSdk;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getPeriod}
+         * @param period Property period: The subscription period of the firewallIf PeriodUnit is month, the valid range is 1, 3, 6 If periodUnit is year, the valid range is 1, 2, 3.
+         * @return {@code this}
+         */
+        public Builder period(java.lang.Number period) {
+            this.period = period;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getPeriod}
+         * @param period Property period: The subscription period of the firewallIf PeriodUnit is month, the valid range is 1, 3, 6 If periodUnit is year, the valid range is 1, 2, 3.
+         * @return {@code this}
+         */
+        public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
+            this.period = period;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getPeriodUnit}
+         * @param periodUnit Property periodUnit: The unit of the subscription duration.
+         *                   Valid values:
+         *                   Month
+         *                   Year
+         * @return {@code this}
+         */
+        public Builder periodUnit(java.lang.String periodUnit) {
+            this.periodUnit = periodUnit;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getPeriodUnit}
+         * @param periodUnit Property periodUnit: The unit of the subscription duration.
+         *                   Valid values:
+         *                   Month
+         *                   Year
+         * @return {@code this}
+         */
+        public Builder periodUnit(com.aliyun.ros.cdk.core.IResolvable periodUnit) {
+            this.periodUnit = periodUnit;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getPostPayInstanceModule}
+         * @param postPayInstanceModule Property postPayInstanceModule: PayAsYouGo instance module configuration.
+         * @return {@code this}
+         */
+        public Builder postPayInstanceModule(com.aliyun.ros.cdk.core.IResolvable postPayInstanceModule) {
+            this.postPayInstanceModule = postPayInstanceModule;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getPostPayInstanceModule}
+         * @param postPayInstanceModule Property postPayInstanceModule: PayAsYouGo instance module configuration.
+         * @return {@code this}
+         */
+        public Builder postPayInstanceModule(com.aliyun.ros.cdk.sas.RosInstance.PostPayInstanceModuleProperty postPayInstanceModule) {
+            this.postPayInstanceModule = postPayInstanceModule;
             return this;
         }
 
@@ -755,8 +823,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements InstanceProps {
-        private final java.lang.Object period;
-        private final java.lang.Object periodUnit;
+        private final java.lang.Object payType;
         private final java.lang.Object antiRansomware;
         private final java.lang.Object antiRansomwareManageService;
         private final java.lang.Object autoPay;
@@ -767,6 +834,9 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object edition;
         private final java.lang.Object logAnalysis;
         private final java.lang.Object maliciousFileDetectionSdk;
+        private final java.lang.Object period;
+        private final java.lang.Object periodUnit;
+        private final java.lang.Object postPayInstanceModule;
         private final java.lang.Object protectedServers;
         private final java.lang.Object quotaForApplicationProtection;
         private final java.lang.Object quotaForCloudHoneypot;
@@ -786,8 +856,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.payType = software.amazon.jsii.Kernel.get(this, "payType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.antiRansomware = software.amazon.jsii.Kernel.get(this, "antiRansomware", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.antiRansomwareManageService = software.amazon.jsii.Kernel.get(this, "antiRansomwareManageService", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoPay = software.amazon.jsii.Kernel.get(this, "autoPay", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -798,6 +867,9 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.edition = software.amazon.jsii.Kernel.get(this, "edition", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.logAnalysis = software.amazon.jsii.Kernel.get(this, "logAnalysis", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.maliciousFileDetectionSdk = software.amazon.jsii.Kernel.get(this, "maliciousFileDetectionSdk", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.postPayInstanceModule = software.amazon.jsii.Kernel.get(this, "postPayInstanceModule", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.protectedServers = software.amazon.jsii.Kernel.get(this, "protectedServers", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.quotaForApplicationProtection = software.amazon.jsii.Kernel.get(this, "quotaForApplicationProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.quotaForCloudHoneypot = software.amazon.jsii.Kernel.get(this, "quotaForCloudHoneypot", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -817,8 +889,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.period = java.util.Objects.requireNonNull(builder.period, "period is required");
-            this.periodUnit = java.util.Objects.requireNonNull(builder.periodUnit, "periodUnit is required");
+            this.payType = java.util.Objects.requireNonNull(builder.payType, "payType is required");
             this.antiRansomware = builder.antiRansomware;
             this.antiRansomwareManageService = builder.antiRansomwareManageService;
             this.autoPay = builder.autoPay;
@@ -829,6 +900,9 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.edition = builder.edition;
             this.logAnalysis = builder.logAnalysis;
             this.maliciousFileDetectionSdk = builder.maliciousFileDetectionSdk;
+            this.period = builder.period;
+            this.periodUnit = builder.periodUnit;
+            this.postPayInstanceModule = builder.postPayInstanceModule;
             this.protectedServers = builder.protectedServers;
             this.quotaForApplicationProtection = builder.quotaForApplicationProtection;
             this.quotaForCloudHoneypot = builder.quotaForCloudHoneypot;
@@ -844,13 +918,8 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Object getPeriod() {
-            return this.period;
-        }
-
-        @Override
-        public final java.lang.Object getPeriodUnit() {
-            return this.periodUnit;
+        public final java.lang.Object getPayType() {
+            return this.payType;
         }
 
         @Override
@@ -901,6 +970,21 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getMaliciousFileDetectionSdk() {
             return this.maliciousFileDetectionSdk;
+        }
+
+        @Override
+        public final java.lang.Object getPeriod() {
+            return this.period;
+        }
+
+        @Override
+        public final java.lang.Object getPeriodUnit() {
+            return this.periodUnit;
+        }
+
+        @Override
+        public final java.lang.Object getPostPayInstanceModule() {
+            return this.postPayInstanceModule;
         }
 
         @Override
@@ -969,8 +1053,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
-            data.set("period", om.valueToTree(this.getPeriod()));
-            data.set("periodUnit", om.valueToTree(this.getPeriodUnit()));
+            data.set("payType", om.valueToTree(this.getPayType()));
             if (this.getAntiRansomware() != null) {
                 data.set("antiRansomware", om.valueToTree(this.getAntiRansomware()));
             }
@@ -1000,6 +1083,15 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getMaliciousFileDetectionSdk() != null) {
                 data.set("maliciousFileDetectionSdk", om.valueToTree(this.getMaliciousFileDetectionSdk()));
+            }
+            if (this.getPeriod() != null) {
+                data.set("period", om.valueToTree(this.getPeriod()));
+            }
+            if (this.getPeriodUnit() != null) {
+                data.set("periodUnit", om.valueToTree(this.getPeriodUnit()));
+            }
+            if (this.getPostPayInstanceModule() != null) {
+                data.set("postPayInstanceModule", om.valueToTree(this.getPostPayInstanceModule()));
             }
             if (this.getProtectedServers() != null) {
                 data.set("protectedServers", om.valueToTree(this.getProtectedServers()));
@@ -1055,8 +1147,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
             InstanceProps.Jsii$Proxy that = (InstanceProps.Jsii$Proxy) o;
 
-            if (!period.equals(that.period)) return false;
-            if (!periodUnit.equals(that.periodUnit)) return false;
+            if (!payType.equals(that.payType)) return false;
             if (this.antiRansomware != null ? !this.antiRansomware.equals(that.antiRansomware) : that.antiRansomware != null) return false;
             if (this.antiRansomwareManageService != null ? !this.antiRansomwareManageService.equals(that.antiRansomwareManageService) : that.antiRansomwareManageService != null) return false;
             if (this.autoPay != null ? !this.autoPay.equals(that.autoPay) : that.autoPay != null) return false;
@@ -1067,6 +1158,9 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.edition != null ? !this.edition.equals(that.edition) : that.edition != null) return false;
             if (this.logAnalysis != null ? !this.logAnalysis.equals(that.logAnalysis) : that.logAnalysis != null) return false;
             if (this.maliciousFileDetectionSdk != null ? !this.maliciousFileDetectionSdk.equals(that.maliciousFileDetectionSdk) : that.maliciousFileDetectionSdk != null) return false;
+            if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
+            if (this.periodUnit != null ? !this.periodUnit.equals(that.periodUnit) : that.periodUnit != null) return false;
+            if (this.postPayInstanceModule != null ? !this.postPayInstanceModule.equals(that.postPayInstanceModule) : that.postPayInstanceModule != null) return false;
             if (this.protectedServers != null ? !this.protectedServers.equals(that.protectedServers) : that.protectedServers != null) return false;
             if (this.quotaForApplicationProtection != null ? !this.quotaForApplicationProtection.equals(that.quotaForApplicationProtection) : that.quotaForApplicationProtection != null) return false;
             if (this.quotaForCloudHoneypot != null ? !this.quotaForCloudHoneypot.equals(that.quotaForCloudHoneypot) : that.quotaForCloudHoneypot != null) return false;
@@ -1083,8 +1177,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         @Override
         public final int hashCode() {
-            int result = this.period.hashCode();
-            result = 31 * result + (this.periodUnit.hashCode());
+            int result = this.payType.hashCode();
             result = 31 * result + (this.antiRansomware != null ? this.antiRansomware.hashCode() : 0);
             result = 31 * result + (this.antiRansomwareManageService != null ? this.antiRansomwareManageService.hashCode() : 0);
             result = 31 * result + (this.autoPay != null ? this.autoPay.hashCode() : 0);
@@ -1095,6 +1188,9 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.edition != null ? this.edition.hashCode() : 0);
             result = 31 * result + (this.logAnalysis != null ? this.logAnalysis.hashCode() : 0);
             result = 31 * result + (this.maliciousFileDetectionSdk != null ? this.maliciousFileDetectionSdk.hashCode() : 0);
+            result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
+            result = 31 * result + (this.periodUnit != null ? this.periodUnit.hashCode() : 0);
+            result = 31 * result + (this.postPayInstanceModule != null ? this.postPayInstanceModule.hashCode() : 0);
             result = 31 * result + (this.protectedServers != null ? this.protectedServers.hashCode() : 0);
             result = 31 * result + (this.quotaForApplicationProtection != null ? this.quotaForApplicationProtection.hashCode() : 0);
             result = 31 * result + (this.quotaForCloudHoneypot != null ? this.quotaForCloudHoneypot.hashCode() : 0);

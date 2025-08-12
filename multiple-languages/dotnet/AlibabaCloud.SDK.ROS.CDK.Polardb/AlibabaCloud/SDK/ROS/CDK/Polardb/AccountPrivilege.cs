@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::AccountPrivilege`, which is used to grant access permissions on one or more databases in a specified ApsaraDB for POLARDB cluster to a standard account.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::AccountPrivilege`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccountPrivilege`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-accountprivilege

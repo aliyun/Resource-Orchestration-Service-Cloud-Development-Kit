@@ -20,6 +20,11 @@ export interface RosQueueProps {
     readonly delaySeconds?: number | ros.IResolvable;
 
     /**
+     * @Property dlqPolicy: Dead-letter queue policy
+     */
+    readonly dlqPolicy?: RosQueue.DlqPolicyProperty | ros.IResolvable;
+
+    /**
      * @Property loggingEnabled: Whether to enable log management. "true" indicates that log management is enabled, whereas "false" indicates that log management is disabled. 
      * The default value is false
      */
@@ -42,6 +47,11 @@ export interface RosQueueProps {
      * An integer between 0 and 30 seconds. The default value is 0 (seconds)
      */
     readonly pollingWaitSeconds?: number | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to Queue. Max support 20 tags to add during create Queue. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosQueue.TagsProperty[];
 
     /**
      * @Property visibilityTimeout: Duration in which a message stays in Inactive status after it is consumed from the queue. Measured in seconds.
@@ -68,6 +78,7 @@ function RosQueuePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('delaySeconds', ros.validateNumber)(properties.delaySeconds));
+    errors.collect(ros.propertyValidator('dlqPolicy', RosQueue_DlqPolicyPropertyValidator)(properties.dlqPolicy));
     if(properties.pollingWaitSeconds && (typeof properties.pollingWaitSeconds) !== 'object') {
         errors.collect(ros.propertyValidator('pollingWaitSeconds', ros.validateRange)({
             data: properties.pollingWaitSeconds,
@@ -109,6 +120,14 @@ function RosQueuePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('queueName', ros.validateString)(properties.queueName));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosQueue_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('loggingEnabled', ros.validateBoolean)(properties.loggingEnabled));
     return errors.wrap('supplied properties not correct for "RosQueueProps"');
 }
@@ -129,16 +148,18 @@ function rosQueuePropsToRosTemplate(properties: any, enableResourcePropertyConst
     return {
       'QueueName': ros.stringToRosTemplate(properties.queueName),
       'DelaySeconds': ros.numberToRosTemplate(properties.delaySeconds),
+      'DlqPolicy': rosQueueDlqPolicyPropertyToRosTemplate(properties.dlqPolicy),
       'LoggingEnabled': ros.booleanToRosTemplate(properties.loggingEnabled),
       'MaximumMessageSize': ros.numberToRosTemplate(properties.maximumMessageSize),
       'MessageRetentionPeriod': ros.numberToRosTemplate(properties.messageRetentionPeriod),
       'PollingWaitSeconds': ros.numberToRosTemplate(properties.pollingWaitSeconds),
+      'Tags': ros.listMapper(rosQueueTagsPropertyToRosTemplate)(properties.tags),
       'VisibilityTimeout': ros.numberToRosTemplate(properties.visibilityTimeout),
     };
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MNS::Queue`, which is used to create a queue to contain messages. Queues can be classified into standard and delayed queues.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MNS::Queue`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Queue` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-queue
  */
@@ -178,6 +199,11 @@ export class RosQueue extends ros.RosResource {
     public delaySeconds: number | ros.IResolvable | undefined;
 
     /**
+     * @Property dlqPolicy: Dead-letter queue policy
+     */
+    public dlqPolicy: RosQueue.DlqPolicyProperty | ros.IResolvable | undefined;
+
+    /**
      * @Property loggingEnabled: Whether to enable log management. "true" indicates that log management is enabled, whereas "false" indicates that log management is disabled. 
      * The default value is false
      */
@@ -202,6 +228,11 @@ export class RosQueue extends ros.RosResource {
     public pollingWaitSeconds: number | ros.IResolvable | undefined;
 
     /**
+     * @Property tags: Tags to attach to Queue. Max support 20 tags to add during create Queue. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosQueue.TagsProperty[] | undefined;
+
+    /**
      * @Property visibilityTimeout: Duration in which a message stays in Inactive status after it is consumed from the queue. Measured in seconds.
      * An integer between 1 and 43200 (12 hours). The default value is 30 (seconds)
      */
@@ -221,10 +252,12 @@ export class RosQueue extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.queueName = props.queueName;
         this.delaySeconds = props.delaySeconds;
+        this.dlqPolicy = props.dlqPolicy;
         this.loggingEnabled = props.loggingEnabled;
         this.maximumMessageSize = props.maximumMessageSize;
         this.messageRetentionPeriod = props.messageRetentionPeriod;
         this.pollingWaitSeconds = props.pollingWaitSeconds;
+        this.tags = props.tags;
         this.visibilityTimeout = props.visibilityTimeout;
     }
 
@@ -233,16 +266,122 @@ export class RosQueue extends ros.RosResource {
         return {
             queueName: this.queueName,
             delaySeconds: this.delaySeconds,
+            dlqPolicy: this.dlqPolicy,
             loggingEnabled: this.loggingEnabled,
             maximumMessageSize: this.maximumMessageSize,
             messageRetentionPeriod: this.messageRetentionPeriod,
             pollingWaitSeconds: this.pollingWaitSeconds,
+            tags: this.tags,
             visibilityTimeout: this.visibilityTimeout,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosQueuePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosQueue {
+    /**
+     * @stability external
+     */
+    export interface DlqPolicyProperty {
+        /**
+         * @Property maxReceiveCount: Maximum number of retries
+         */
+        readonly maxReceiveCount: number | ros.IResolvable;
+        /**
+         * @Property deadLetterTargetQueue: Dead-letter queue name
+         */
+        readonly deadLetterTargetQueue: string | ros.IResolvable;
+        /**
+         * @Property enabled: Whether to enable dead-letter queue
+         */
+        readonly enabled: boolean | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DlqPolicyProperty`
+ *
+ * @param properties - the TypeScript properties of a `DlqPolicyProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosQueue_DlqPolicyPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('maxReceiveCount', ros.requiredValidator)(properties.maxReceiveCount));
+    errors.collect(ros.propertyValidator('maxReceiveCount', ros.validateNumber)(properties.maxReceiveCount));
+    errors.collect(ros.propertyValidator('deadLetterTargetQueue', ros.requiredValidator)(properties.deadLetterTargetQueue));
+    errors.collect(ros.propertyValidator('deadLetterTargetQueue', ros.validateString)(properties.deadLetterTargetQueue));
+    errors.collect(ros.propertyValidator('enabled', ros.requiredValidator)(properties.enabled));
+    errors.collect(ros.propertyValidator('enabled', ros.validateBoolean)(properties.enabled));
+    return errors.wrap('supplied properties not correct for "DlqPolicyProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MNS::Queue.DlqPolicy` resource
+ *
+ * @param properties - the TypeScript properties of a `DlqPolicyProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MNS::Queue.DlqPolicy` resource.
+ */
+// @ts-ignore TS6133
+function rosQueueDlqPolicyPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosQueue_DlqPolicyPropertyValidator(properties).assertSuccess();
+    return {
+      'MaxReceiveCount': ros.numberToRosTemplate(properties.maxReceiveCount),
+      'DeadLetterTargetQueue': ros.stringToRosTemplate(properties.deadLetterTargetQueue),
+      'Enabled': ros.booleanToRosTemplate(properties.enabled),
+    };
+}
+
+export namespace RosQueue {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosQueue_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MNS::Queue.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MNS::Queue.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosQueueTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosQueue_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -272,6 +411,11 @@ export interface RosSubscriptionProps {
     readonly topicName: string | ros.IResolvable;
 
     /**
+     * @Property dlqPolicy: Dead-letter queue policy
+     */
+    readonly dlqPolicy?: RosSubscription.DlqPolicyProperty | ros.IResolvable;
+
+    /**
      * @Property filterTag: Message filter tag in the created subscription (Only messages with consistent tags are pushed.)
      * The value is a string of no more than 16 characters. The default value is no message filter.
      */
@@ -288,6 +432,11 @@ export interface RosSubscriptionProps {
      * BACKOFF_RETRY or EXPONENTIAL_DECAY_RETRY; default value: BACKOFF_RETRY. For details about retry policies, refer to Basic Concepts\/NotifyStrategy.
      */
     readonly notifyStrategy?: string | ros.IResolvable;
+
+    /**
+     * @Property pushType: Push type of the created subscription.
+     */
+    readonly pushType?: string | ros.IResolvable;
 }
 
 /**
@@ -300,8 +449,16 @@ export interface RosSubscriptionProps {
 function RosSubscriptionPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    if(properties.pushType && (typeof properties.pushType) !== 'object') {
+        errors.collect(ros.propertyValidator('pushType', ros.validateAllowedValues)({
+          data: properties.pushType,
+          allowedValues: ["http","queue","mpush","email","alisms"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('pushType', ros.validateString)(properties.pushType));
     errors.collect(ros.propertyValidator('endpoint', ros.requiredValidator)(properties.endpoint));
     errors.collect(ros.propertyValidator('endpoint', ros.validateString)(properties.endpoint));
+    errors.collect(ros.propertyValidator('dlqPolicy', RosSubscription_DlqPolicyPropertyValidator)(properties.dlqPolicy));
     if(properties.notifyStrategy && (typeof properties.notifyStrategy) !== 'object') {
         errors.collect(ros.propertyValidator('notifyStrategy', ros.validateAllowedValues)({
           data: properties.notifyStrategy,
@@ -362,14 +519,16 @@ function rosSubscriptionPropsToRosTemplate(properties: any, enableResourceProper
       'Endpoint': ros.stringToRosTemplate(properties.endpoint),
       'SubscriptionName': ros.stringToRosTemplate(properties.subscriptionName),
       'TopicName': ros.stringToRosTemplate(properties.topicName),
+      'DlqPolicy': rosSubscriptionDlqPolicyPropertyToRosTemplate(properties.dlqPolicy),
       'FilterTag': ros.stringToRosTemplate(properties.filterTag),
       'NotifyContentFormat': ros.stringToRosTemplate(properties.notifyContentFormat),
       'NotifyStrategy': ros.stringToRosTemplate(properties.notifyStrategy),
+      'PushType': ros.stringToRosTemplate(properties.pushType),
     };
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MNS::Subscription`, which is used to subscribe an endpoint to an Alibaba Cloud Message Service (MNS) topic. For a subscription to be created, the owner of the endpoint must confirm the subscription.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MNS::Subscription`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Subscription` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-subscription
  */
@@ -418,6 +577,11 @@ export class RosSubscription extends ros.RosResource {
     public topicName: string | ros.IResolvable;
 
     /**
+     * @Property dlqPolicy: Dead-letter queue policy
+     */
+    public dlqPolicy: RosSubscription.DlqPolicyProperty | ros.IResolvable | undefined;
+
+    /**
      * @Property filterTag: Message filter tag in the created subscription (Only messages with consistent tags are pushed.)
      * The value is a string of no more than 16 characters. The default value is no message filter.
      */
@@ -436,6 +600,11 @@ export class RosSubscription extends ros.RosResource {
     public notifyStrategy: string | ros.IResolvable | undefined;
 
     /**
+     * @Property pushType: Push type of the created subscription.
+     */
+    public pushType: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -450,9 +619,11 @@ export class RosSubscription extends ros.RosResource {
         this.endpoint = props.endpoint;
         this.subscriptionName = props.subscriptionName;
         this.topicName = props.topicName;
+        this.dlqPolicy = props.dlqPolicy;
         this.filterTag = props.filterTag;
         this.notifyContentFormat = props.notifyContentFormat;
         this.notifyStrategy = props.notifyStrategy;
+        this.pushType = props.pushType;
     }
 
 
@@ -461,14 +632,65 @@ export class RosSubscription extends ros.RosResource {
             endpoint: this.endpoint,
             subscriptionName: this.subscriptionName,
             topicName: this.topicName,
+            dlqPolicy: this.dlqPolicy,
             filterTag: this.filterTag,
             notifyContentFormat: this.notifyContentFormat,
             notifyStrategy: this.notifyStrategy,
+            pushType: this.pushType,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosSubscriptionPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosSubscription {
+    /**
+     * @stability external
+     */
+    export interface DlqPolicyProperty {
+        /**
+         * @Property deadLetterTargetQueue: Dead-letter queue name
+         */
+        readonly deadLetterTargetQueue: string | ros.IResolvable;
+        /**
+         * @Property enabled: Whether to enable dead-letter queue
+         */
+        readonly enabled: boolean | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DlqPolicyProperty`
+ *
+ * @param properties - the TypeScript properties of a `DlqPolicyProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSubscription_DlqPolicyPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('deadLetterTargetQueue', ros.requiredValidator)(properties.deadLetterTargetQueue));
+    errors.collect(ros.propertyValidator('deadLetterTargetQueue', ros.validateString)(properties.deadLetterTargetQueue));
+    errors.collect(ros.propertyValidator('enabled', ros.requiredValidator)(properties.enabled));
+    errors.collect(ros.propertyValidator('enabled', ros.validateBoolean)(properties.enabled));
+    return errors.wrap('supplied properties not correct for "DlqPolicyProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MNS::Subscription.DlqPolicy` resource
+ *
+ * @param properties - the TypeScript properties of a `DlqPolicyProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MNS::Subscription.DlqPolicy` resource.
+ */
+// @ts-ignore TS6133
+function rosSubscriptionDlqPolicyPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSubscription_DlqPolicyPropertyValidator(properties).assertSuccess();
+    return {
+      'DeadLetterTargetQueue': ros.stringToRosTemplate(properties.deadLetterTargetQueue),
+      'Enabled': ros.booleanToRosTemplate(properties.enabled),
+    };
 }
 
 /**
@@ -493,6 +715,11 @@ export interface RosTopicProps {
      * An integer in the range of 1,024 (1 KB) to 65, 536 (64 KB); default value: 65,536 (64 KB).
      */
     readonly maximumMessageSize?: number | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to Topic. Max support 20 tags to add during create Topic. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosTopic.TagsProperty[];
 }
 
 /**
@@ -513,6 +740,14 @@ function RosTopicPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('maximumMessageSize', ros.validateNumber)(properties.maximumMessageSize));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosTopic_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('loggingEnabled', ros.validateBoolean)(properties.loggingEnabled));
     errors.collect(ros.propertyValidator('topicName', ros.requiredValidator)(properties.topicName));
     if(properties.topicName && (Array.isArray(properties.topicName) || (typeof properties.topicName) === 'string')) {
@@ -543,6 +778,7 @@ function rosTopicPropsToRosTemplate(properties: any, enableResourcePropertyConst
       'TopicName': ros.stringToRosTemplate(properties.topicName),
       'LoggingEnabled': ros.booleanToRosTemplate(properties.loggingEnabled),
       'MaximumMessageSize': ros.numberToRosTemplate(properties.maximumMessageSize),
+      'Tags': ros.listMapper(rosTopicTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -593,6 +829,11 @@ export class RosTopic extends ros.RosResource {
     public maximumMessageSize: number | ros.IResolvable | undefined;
 
     /**
+     * @Property tags: Tags to attach to Topic. Max support 20 tags to add during create Topic. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosTopic.TagsProperty[] | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -607,6 +848,7 @@ export class RosTopic extends ros.RosResource {
         this.topicName = props.topicName;
         this.loggingEnabled = props.loggingEnabled;
         this.maximumMessageSize = props.maximumMessageSize;
+        this.tags = props.tags;
     }
 
 
@@ -615,9 +857,58 @@ export class RosTopic extends ros.RosResource {
             topicName: this.topicName,
             loggingEnabled: this.loggingEnabled,
             maximumMessageSize: this.maximumMessageSize,
+            tags: this.tags,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosTopicPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosTopic {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosTopic_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MNS::Topic.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MNS::Topic.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosTopicTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosTopic_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
 }

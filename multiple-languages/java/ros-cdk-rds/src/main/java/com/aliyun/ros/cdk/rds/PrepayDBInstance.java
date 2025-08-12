@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::RDS::PrepayDBInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:09.621Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.848Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.PrepayDBInstance")
 public class PrepayDBInstance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.rds.IPrepayDBInstance {
 
@@ -509,6 +509,27 @@ public class PrepayDBInstance extends com.aliyun.ros.cdk.core.Resource implement
          */
         public Builder autoRenew(final com.aliyun.ros.cdk.core.IResolvable autoRenew) {
             this.props.autoRenew(autoRenew);
+            return this;
+        }
+
+        /**
+         * Property autoUpgradeMinorVersion: How the instance upgrades to a minor version.Valid values: - Auto (default) : Updates minor versions automatically. - Manual: No automatic upgrade, only forced when the current version is offline.
+         * <p>
+         * @return {@code this}
+         * @param autoUpgradeMinorVersion Property autoUpgradeMinorVersion: How the instance upgrades to a minor version.Valid values: - Auto (default) : Updates minor versions automatically. - Manual: No automatic upgrade, only forced when the current version is offline. This parameter is required.
+         */
+        public Builder autoUpgradeMinorVersion(final java.lang.String autoUpgradeMinorVersion) {
+            this.props.autoUpgradeMinorVersion(autoUpgradeMinorVersion);
+            return this;
+        }
+        /**
+         * Property autoUpgradeMinorVersion: How the instance upgrades to a minor version.Valid values: - Auto (default) : Updates minor versions automatically. - Manual: No automatic upgrade, only forced when the current version is offline.
+         * <p>
+         * @return {@code this}
+         * @param autoUpgradeMinorVersion Property autoUpgradeMinorVersion: How the instance upgrades to a minor version.Valid values: - Auto (default) : Updates minor versions automatically. - Manual: No automatic upgrade, only forced when the current version is offline. This parameter is required.
+         */
+        public Builder autoUpgradeMinorVersion(final com.aliyun.ros.cdk.core.IResolvable autoUpgradeMinorVersion) {
+            this.props.autoUpgradeMinorVersion(autoUpgradeMinorVersion);
             return this;
         }
 
@@ -1529,9 +1550,8 @@ public class PrepayDBInstance extends com.aliyun.ros.cdk.core.Resource implement
         /**
          * Property releasedKeepPolicy: The policy used to retain archived backups if the instance is released.
          * <p>
-         * Default value: None.
          * Valid values:
-         * Lastest: Only the last archived backup is retained.
+         * None: No archived backup files are retained.Lastest: Only the last archived backup is retained.
          * All: All of the archived backups are retained.
          * <p>
          * @return {@code this}
@@ -1544,9 +1564,8 @@ public class PrepayDBInstance extends com.aliyun.ros.cdk.core.Resource implement
         /**
          * Property releasedKeepPolicy: The policy used to retain archived backups if the instance is released.
          * <p>
-         * Default value: None.
          * Valid values:
-         * Lastest: Only the last archived backup is retained.
+         * None: No archived backup files are retained.Lastest: Only the last archived backup is retained.
          * All: All of the archived backups are retained.
          * <p>
          * @return {@code this}
@@ -1800,6 +1819,31 @@ public class PrepayDBInstance extends com.aliyun.ros.cdk.core.Resource implement
          */
         public Builder storageUpperBound(final com.aliyun.ros.cdk.core.IResolvable storageUpperBound) {
             this.props.storageUpperBound(storageUpperBound);
+            return this;
+        }
+
+        /**
+         * Property subscriptionDeletionForce: This option is only applicable to subscription instances.
+         * <p>
+         * For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+         * <p>
+         * @return {@code this}
+         * @param subscriptionDeletionForce Property subscriptionDeletionForce: This option is only applicable to subscription instances. This parameter is required.
+         */
+        public Builder subscriptionDeletionForce(final java.lang.Boolean subscriptionDeletionForce) {
+            this.props.subscriptionDeletionForce(subscriptionDeletionForce);
+            return this;
+        }
+        /**
+         * Property subscriptionDeletionForce: This option is only applicable to subscription instances.
+         * <p>
+         * For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+         * <p>
+         * @return {@code this}
+         * @param subscriptionDeletionForce Property subscriptionDeletionForce: This option is only applicable to subscription instances. This parameter is required.
+         */
+        public Builder subscriptionDeletionForce(final com.aliyun.ros.cdk.core.IResolvable subscriptionDeletionForce) {
+            this.props.subscriptionDeletionForce(subscriptionDeletionForce);
             return this;
         }
 

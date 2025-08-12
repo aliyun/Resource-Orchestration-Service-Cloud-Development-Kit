@@ -35,7 +35,7 @@ export interface DrdsInstanceProps {
     readonly type: string | ros.IResolvable;
 
     /**
-     * Property zoneId: Availability zone, an available zone belongs to a certain zone, such as Hangzhou Availability Zone A (cn-hangzhou-a) belongs to the region Hangzhou (cn-hangzhou)
+     * Property zoneId: Availability zone, an available zone belongs to a certain zone, such as Hangzhou Availability Zone A (cn-hangzhou-a) belongs to the region Hangzhou (cn-hangzhou).
      */
     readonly zoneId: string | ros.IResolvable;
 

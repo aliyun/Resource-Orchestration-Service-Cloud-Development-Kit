@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ice;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ICE::MediaInfo</code>, which is used to register a media asset in Intelligent Media Services (IMS).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:07.575Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.206Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ice.$Module.class, fqn = "@alicloud/ros-cdk-ice.RosMediaInfo")
 public class RosMediaInfo extends com.aliyun.ros.cdk.core.RosResource {
 

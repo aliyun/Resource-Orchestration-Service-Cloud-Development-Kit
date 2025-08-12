@@ -38,6 +38,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: aliCloudCertificateRegionId: The ID of the Alibaba Cloud region.
+        /// </remarks>
+        [JsiiProperty(name: "aliCloudCertificateRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AliCloudCertificateRegionId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: certificate: The content of the certificate public key.
         /// </remarks>
         [JsiiProperty(name: "certificate", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -142,6 +155,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             [JsiiOptional]
             [JsiiProperty(name: "aliCloudCertificateName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? AliCloudCertificateName
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: aliCloudCertificateRegionId: The ID of the Alibaba Cloud region.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "aliCloudCertificateRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AliCloudCertificateRegionId
             {
                 get => GetInstanceProperty<object?>();
             }

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.mse;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::MSE::Cluster</code>, which is used to create a cluster.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::MSE::Cluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.097Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.633Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.Cluster")
 public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.mse.ICluster {
 
@@ -720,6 +720,40 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
          */
         public Builder requestPars(final com.aliyun.ros.cdk.core.IResolvable requestPars) {
             this.props.requestPars(requestPars);
+            return this;
+        }
+
+        /**
+         * Property resourceGroupId: Resource group id.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: Resource group id. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: Resource group id.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: Resource group id. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * Property tags: Tags to attach to instance.
+         * <p>
+         * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+         * <p>
+         * @return {@code this}
+         * @param tags Property tags: Tags to attach to instance. This parameter is required.
+         */
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.mse.RosCluster.TagsProperty> tags) {
+            this.props.tags(tags);
             return this;
         }
 

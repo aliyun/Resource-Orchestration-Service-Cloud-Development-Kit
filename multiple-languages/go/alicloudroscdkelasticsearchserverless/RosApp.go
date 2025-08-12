@@ -21,6 +21,7 @@ type RosApp interface {
 	AttrPrivateKibanaDomain() alicloudroscdkcore.IResolvable
 	AttrPublicEsDomain() alicloudroscdkcore.IResolvable
 	AttrPublicKibanaDomain() alicloudroscdkcore.IResolvable
+	AttrUsername() alicloudroscdkcore.IResolvable
 	Authentication() interface{}
 	SetAuthentication(val interface{})
 	// Returns: the stack trace of the point where this Resource was created from, sourced
@@ -41,6 +42,8 @@ type RosApp interface {
 	// Returns: the logical ID as a stringified token. This value will only get
 	// resolved during synthesis.
 	LogicalId() *string
+	LogProConfiguration() interface{}
+	SetLogProConfiguration(val interface{})
 	Network() interface{}
 	SetNetwork(val interface{})
 	// The construct tree node associated with this construct.
@@ -59,6 +62,8 @@ type RosApp interface {
 	RosProperties() *map[string]interface{}
 	// ROS resource type.
 	RosResourceType() *string
+	Scenario() interface{}
+	SetScenario(val interface{})
 	// The stack in which this element is defined.
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
@@ -257,6 +262,16 @@ func (j *jsiiProxy_RosApp) AttrPublicKibanaDomain() alicloudroscdkcore.IResolvab
 	return returns
 }
 
+func (j *jsiiProxy_RosApp) AttrUsername() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrUsername",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosApp) Authentication() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -302,6 +317,16 @@ func (j *jsiiProxy_RosApp) LogicalId() *string {
 	_jsii_.Get(
 		j,
 		"logicalId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosApp) LogProConfiguration() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"logProConfiguration",
 		&returns,
 	)
 	return returns
@@ -382,6 +407,16 @@ func (j *jsiiProxy_RosApp) RosResourceType() *string {
 	_jsii_.Get(
 		j,
 		"rosResourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosApp) Scenario() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"scenario",
 		&returns,
 	)
 	return returns
@@ -490,6 +525,17 @@ func (j *jsiiProxy_RosApp)SetEnableResourcePropertyConstraint(val *bool) {
 	)
 }
 
+func (j *jsiiProxy_RosApp)SetLogProConfiguration(val interface{}) {
+	if err := j.validateSetLogProConfigurationParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"logProConfiguration",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosApp)SetNetwork(val interface{}) {
 	if err := j.validateSetNetworkParameters(val); err != nil {
 		panic(err)
@@ -519,6 +565,17 @@ func (j *jsiiProxy_RosApp)SetQuotaInfo(val interface{}) {
 	_jsii_.Set(
 		j,
 		"quotaInfo",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosApp)SetScenario(val interface{}) {
+	if err := j.validateSetScenarioParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"scenario",
 		val,
 	)
 }

@@ -11,5 +11,6 @@ type RosProjectProps struct {
 	DefaultQuota interface{} `field:"optional" json:"defaultQuota" yaml:"defaultQuota"`
 	IpWhiteList interface{} `field:"optional" json:"ipWhiteList" yaml:"ipWhiteList"`
 	Properties interface{} `field:"optional" json:"properties" yaml:"properties"`
+	SupportSchemaLevels interface{} `field:"optional" json:"supportSchemaLevels" yaml:"supportSchemaLevels"`
 }
 

@@ -276,6 +276,23 @@ func (j *jsiiProxy_RosServiceInstance) validateSetContactGroupParameters(val int
 	return nil
 }
 
+func (j *jsiiProxy_RosServiceInstance) validateSetDryRunParameters(val interface{}) error {
+	switch val.(type) {
+	case *bool:
+		// ok
+	case bool:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *bool, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosServiceInstance) validateSetEnableInstanceOpsParameters(val interface{}) error {
 	switch val.(type) {
 	case *bool:
@@ -318,40 +335,6 @@ func (j *jsiiProxy_RosServiceInstance) validateSetEnableUserPrometheusParameters
 	return nil
 }
 
-func (j *jsiiProxy_RosServiceInstance) validateSetMarketInstanceIdParameters(val interface{}) error {
-	switch val.(type) {
-	case *string:
-		// ok
-	case string:
-		// ok
-	case alicloudroscdkcore.IResolvable:
-		// ok
-	default:
-		if !_jsii_.IsAnonymousProxy(val) {
-			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
-		}
-	}
-
-	return nil
-}
-
-func (j *jsiiProxy_RosServiceInstance) validateSetNameParameters(val interface{}) error {
-	switch val.(type) {
-	case *string:
-		// ok
-	case string:
-		// ok
-	case alicloudroscdkcore.IResolvable:
-		// ok
-	default:
-		if !_jsii_.IsAnonymousProxy(val) {
-			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
-		}
-	}
-
-	return nil
-}
-
 func (j *jsiiProxy_RosServiceInstance) validateSetOperationNameParameters(val interface{}) error {
 	switch val.(type) {
 	case *string:
@@ -371,15 +354,15 @@ func (j *jsiiProxy_RosServiceInstance) validateSetOperationNameParameters(val in
 
 func (j *jsiiProxy_RosServiceInstance) validateSetParametersParameters(val interface{}) error {
 	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
 	case alicloudroscdkcore.IResolvable:
-		// ok
-	case *map[string]interface{}:
-		// ok
-	case map[string]interface{}:
 		// ok
 	default:
 		if !_jsii_.IsAnonymousProxy(val) {
-			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *map[string]interface{}; received %#v (a %T)", val, val)
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
 		}
 	}
 
@@ -397,6 +380,23 @@ func (j *jsiiProxy_RosServiceInstance) validateSetPredefinedParameterNameParamet
 	default:
 		if !_jsii_.IsAnonymousProxy(val) {
 			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceInstance) validateSetResourceAutoPayParameters(val interface{}) error {
+	switch val.(type) {
+	case *bool:
+		// ok
+	case bool:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *bool, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
 		}
 	}
 
@@ -441,6 +441,23 @@ func (j *jsiiProxy_RosServiceInstance) validateSetServiceParameters(val interfac
 	default:
 		if !_jsii_.IsAnonymousProxy(val) {
 			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosServiceInstance_ServiceProperty; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceInstance) validateSetServiceInstanceNameParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
 		}
 	}
 

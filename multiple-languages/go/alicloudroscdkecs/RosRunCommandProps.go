@@ -15,6 +15,7 @@ type RosRunCommandProps struct {
 	EnableParameter interface{} `field:"optional" json:"enableParameter" yaml:"enableParameter"`
 	Frequency interface{} `field:"optional" json:"frequency" yaml:"frequency"`
 	KeepCommand interface{} `field:"optional" json:"keepCommand" yaml:"keepCommand"`
+	Launcher interface{} `field:"optional" json:"launcher" yaml:"launcher"`
 	Name interface{} `field:"optional" json:"name" yaml:"name"`
 	Parameters interface{} `field:"optional" json:"parameters" yaml:"parameters"`
 	RepeatMode interface{} `field:"optional" json:"repeatMode" yaml:"repeatMode"`

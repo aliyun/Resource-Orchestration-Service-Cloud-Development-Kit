@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cr;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CR::InstanceEndpointAclPolicy</code>, which is used to create a whitelist policy for the public endpoint of an instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:03.281Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.067Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.InstanceEndpointAclPolicy")
 public class InstanceEndpointAclPolicy extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cr.IInstanceEndpointAclPolicy {
 
@@ -158,6 +158,27 @@ public class InstanceEndpointAclPolicy extends com.aliyun.ros.cdk.core.Resource 
          */
         public Builder instanceId(final com.aliyun.ros.cdk.core.IResolvable instanceId) {
             this.props.instanceId(instanceId);
+            return this;
+        }
+
+        /**
+         * Property autoEnableType: Whether to auto enable the type of the endpoint.
+         * <p>
+         * @return {@code this}
+         * @param autoEnableType Property autoEnableType: Whether to auto enable the type of the endpoint. This parameter is required.
+         */
+        public Builder autoEnableType(final java.lang.String autoEnableType) {
+            this.props.autoEnableType(autoEnableType);
+            return this;
+        }
+        /**
+         * Property autoEnableType: Whether to auto enable the type of the endpoint.
+         * <p>
+         * @return {@code this}
+         * @param autoEnableType Property autoEnableType: Whether to auto enable the type of the endpoint. This parameter is required.
+         */
+        public Builder autoEnableType(final com.aliyun.ros.cdk.core.IResolvable autoEnableType) {
+            this.props.autoEnableType(autoEnableType);
             return this;
         }
 

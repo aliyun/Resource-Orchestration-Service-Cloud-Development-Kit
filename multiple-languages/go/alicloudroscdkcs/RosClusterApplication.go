@@ -22,6 +22,8 @@ type RosClusterApplication interface {
 	CreationStack() *[]*string
 	DefaultNamespace() interface{}
 	SetDefaultNamespace(val interface{})
+	DefaultNamespaceDeletion() interface{}
+	SetDefaultNamespaceDeletion(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
 	// The logical ID for this stack element.
@@ -234,6 +236,16 @@ func (j *jsiiProxy_RosClusterApplication) DefaultNamespace() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosClusterApplication) DefaultNamespaceDeletion() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"defaultNamespaceDeletion",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosClusterApplication) EnableResourcePropertyConstraint() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -420,6 +432,17 @@ func (j *jsiiProxy_RosClusterApplication)SetDefaultNamespace(val interface{}) {
 	_jsii_.Set(
 		j,
 		"defaultNamespace",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosClusterApplication)SetDefaultNamespaceDeletion(val interface{}) {
+	if err := j.validateSetDefaultNamespaceDeletionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"defaultNamespaceDeletion",
 		val,
 	)
 }

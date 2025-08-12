@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::REDIS::PrepayInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:09.855Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:50.036Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.PrepayInstance")
 public class PrepayInstance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.redis.IPrepayInstance {
 
@@ -770,6 +770,31 @@ public class PrepayInstance extends com.aliyun.ros.cdk.core.Resource implements 
         }
 
         /**
+         * Property readOnlyCount: The number of read replicas in the primary zone.
+         * <p>
+         * Valid values: 1 to 9.
+         * <p>
+         * @return {@code this}
+         * @param readOnlyCount Property readOnlyCount: The number of read replicas in the primary zone. This parameter is required.
+         */
+        public Builder readOnlyCount(final java.lang.Number readOnlyCount) {
+            this.props().readOnlyCount(readOnlyCount);
+            return this;
+        }
+        /**
+         * Property readOnlyCount: The number of read replicas in the primary zone.
+         * <p>
+         * Valid values: 1 to 9.
+         * <p>
+         * @return {@code this}
+         * @param readOnlyCount Property readOnlyCount: The number of read replicas in the primary zone. This parameter is required.
+         */
+        public Builder readOnlyCount(final com.aliyun.ros.cdk.core.IResolvable readOnlyCount) {
+            this.props().readOnlyCount(readOnlyCount);
+            return this;
+        }
+
+        /**
          * Property resourceGroupId: Resource group id.
          * <p>
          * @return {@code this}
@@ -897,6 +922,31 @@ public class PrepayInstance extends com.aliyun.ros.cdk.core.Resource implements 
          */
         public Builder sslEnabled(final com.aliyun.ros.cdk.core.IResolvable sslEnabled) {
             this.props().sslEnabled(sslEnabled);
+            return this;
+        }
+
+        /**
+         * Property subscriptionDeletionForce: This option is only applicable to subscription instances.
+         * <p>
+         * For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+         * <p>
+         * @return {@code this}
+         * @param subscriptionDeletionForce Property subscriptionDeletionForce: This option is only applicable to subscription instances. This parameter is required.
+         */
+        public Builder subscriptionDeletionForce(final java.lang.Boolean subscriptionDeletionForce) {
+            this.props().subscriptionDeletionForce(subscriptionDeletionForce);
+            return this;
+        }
+        /**
+         * Property subscriptionDeletionForce: This option is only applicable to subscription instances.
+         * <p>
+         * For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+         * <p>
+         * @return {@code this}
+         * @param subscriptionDeletionForce Property subscriptionDeletionForce: This option is only applicable to subscription instances. This parameter is required.
+         */
+        public Builder subscriptionDeletionForce(final com.aliyun.ros.cdk.core.IResolvable subscriptionDeletionForce) {
+            this.props().subscriptionDeletionForce(subscriptionDeletionForce);
             return this;
         }
 

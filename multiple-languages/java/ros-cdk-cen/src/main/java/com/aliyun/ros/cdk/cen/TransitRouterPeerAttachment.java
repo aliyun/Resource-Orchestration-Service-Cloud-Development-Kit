@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CEN::TransitRouterPeerAttachment</code>, which is used to create a cross-region connection for an Enterprise Edition transit router.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:02.505Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:44.391Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.TransitRouterPeerAttachment")
 public class TransitRouterPeerAttachment extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cen.ITransitRouterPeerAttachment {
 
@@ -41,115 +41,11 @@ public class TransitRouterPeerAttachment extends com.aliyun.ros.cdk.core.Resourc
     }
 
     /**
-     * Attribute AutoPublishRouteEnabled: AutoPublishRouteEnabled.
-     */
-    @Override
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAutoPublishRouteEnabled() {
-        return software.amazon.jsii.Kernel.get(this, "attrAutoPublishRouteEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     * Attribute Bandwidth: Bandwidth.
-     */
-    @Override
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrBandwidth() {
-        return software.amazon.jsii.Kernel.get(this, "attrBandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     * Attribute CenBandwidthPackageId: BandwidthPackageId.
-     */
-    @Override
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrCenBandwidthPackageId() {
-        return software.amazon.jsii.Kernel.get(this, "attrCenBandwidthPackageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     * Attribute CenId: CenId.
-     */
-    @Override
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrCenId() {
-        return software.amazon.jsii.Kernel.get(this, "attrCenId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     * Attribute ClientToken: ClientToken.
-     */
-    @Override
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrClientToken() {
-        return software.amazon.jsii.Kernel.get(this, "attrClientToken", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     * Attribute GeographicSpanId: GeographicSpanId.
-     */
-    @Override
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrGeographicSpanId() {
-        return software.amazon.jsii.Kernel.get(this, "attrGeographicSpanId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     * Attribute PeerTransitRouterId: PeerTransitRouterId.
-     */
-    @Override
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPeerTransitRouterId() {
-        return software.amazon.jsii.Kernel.get(this, "attrPeerTransitRouterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     * Attribute PeerTransitRouterOwnerId: PeerTransitRouterOwnerId.
-     */
-    @Override
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPeerTransitRouterOwnerId() {
-        return software.amazon.jsii.Kernel.get(this, "attrPeerTransitRouterOwnerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     * Attribute PeerTransitRouterRegionId: PeerTransitRouterRegionId.
-     */
-    @Override
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPeerTransitRouterRegionId() {
-        return software.amazon.jsii.Kernel.get(this, "attrPeerTransitRouterRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     * Attribute ResourceType: ResourceType.
-     */
-    @Override
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceType() {
-        return software.amazon.jsii.Kernel.get(this, "attrResourceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     * Attribute TransitRouterAttachmentDescription: TransitRouterAttachmentDescription.
-     */
-    @Override
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterAttachmentDescription() {
-        return software.amazon.jsii.Kernel.get(this, "attrTransitRouterAttachmentDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     * Attribute TransitRouterAttachmentId: The first ID of the resource.
+     * Attribute TransitRouterAttachmentId: Cross-region connection ID.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterAttachmentId() {
         return software.amazon.jsii.Kernel.get(this, "attrTransitRouterAttachmentId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     * Attribute TransitRouterAttachmentName: TransitRouterAttachmentName.
-     */
-    @Override
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterAttachmentName() {
-        return software.amazon.jsii.Kernel.get(this, "attrTransitRouterAttachmentName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     * Attribute TransitRouterId: TransitRouterId.
-     */
-    @Override
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterId() {
-        return software.amazon.jsii.Kernel.get(this, "attrTransitRouterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     @Override
@@ -216,20 +112,20 @@ public class TransitRouterPeerAttachment extends com.aliyun.ros.cdk.core.Resourc
         }
 
         /**
-         * Property peerTransitRouterId: PeerTransitRouterId.
+         * Property peerTransitRouterId: Peer forwarding router instance ID.
          * <p>
          * @return {@code this}
-         * @param peerTransitRouterId Property peerTransitRouterId: PeerTransitRouterId. This parameter is required.
+         * @param peerTransitRouterId Property peerTransitRouterId: Peer forwarding router instance ID. This parameter is required.
          */
         public Builder peerTransitRouterId(final java.lang.String peerTransitRouterId) {
             this.props.peerTransitRouterId(peerTransitRouterId);
             return this;
         }
         /**
-         * Property peerTransitRouterId: PeerTransitRouterId.
+         * Property peerTransitRouterId: Peer forwarding router instance ID.
          * <p>
          * @return {@code this}
-         * @param peerTransitRouterId Property peerTransitRouterId: PeerTransitRouterId. This parameter is required.
+         * @param peerTransitRouterId Property peerTransitRouterId: Peer forwarding router instance ID. This parameter is required.
          */
         public Builder peerTransitRouterId(final com.aliyun.ros.cdk.core.IResolvable peerTransitRouterId) {
             this.props.peerTransitRouterId(peerTransitRouterId);
@@ -237,20 +133,26 @@ public class TransitRouterPeerAttachment extends com.aliyun.ros.cdk.core.Resourc
         }
 
         /**
-         * Property autoPublishRouteEnabled: AutoPublishRouteEnabled.
+         * Property autoPublishRouteEnabled: Whether to make the enterprise version forwarding router automatically publish routes across regions to the peer region.
+         * <p>
+         * false (default): No.
+         * true: Yes.
          * <p>
          * @return {@code this}
-         * @param autoPublishRouteEnabled Property autoPublishRouteEnabled: AutoPublishRouteEnabled. This parameter is required.
+         * @param autoPublishRouteEnabled Property autoPublishRouteEnabled: Whether to make the enterprise version forwarding router automatically publish routes across regions to the peer region. This parameter is required.
          */
         public Builder autoPublishRouteEnabled(final java.lang.Boolean autoPublishRouteEnabled) {
             this.props.autoPublishRouteEnabled(autoPublishRouteEnabled);
             return this;
         }
         /**
-         * Property autoPublishRouteEnabled: AutoPublishRouteEnabled.
+         * Property autoPublishRouteEnabled: Whether to make the enterprise version forwarding router automatically publish routes across regions to the peer region.
+         * <p>
+         * false (default): No.
+         * true: Yes.
          * <p>
          * @return {@code this}
-         * @param autoPublishRouteEnabled Property autoPublishRouteEnabled: AutoPublishRouteEnabled. This parameter is required.
+         * @param autoPublishRouteEnabled Property autoPublishRouteEnabled: Whether to make the enterprise version forwarding router automatically publish routes across regions to the peer region. This parameter is required.
          */
         public Builder autoPublishRouteEnabled(final com.aliyun.ros.cdk.core.IResolvable autoPublishRouteEnabled) {
             this.props.autoPublishRouteEnabled(autoPublishRouteEnabled);
@@ -258,20 +160,20 @@ public class TransitRouterPeerAttachment extends com.aliyun.ros.cdk.core.Resourc
         }
 
         /**
-         * Property bandwidth: Bandwidth.
+         * Property bandwidth: The bandwidth value for cross-region connections.Unit: Mbps. When the BandwidthType value is BandwidthPackage, this parameter represents the bandwidth value that can be used by cross-region connections. When the BandwidthType value is DataTransfer, this parameter represents the speed limit bandwidth value for cross-region connections.
          * <p>
          * @return {@code this}
-         * @param bandwidth Property bandwidth: Bandwidth. This parameter is required.
+         * @param bandwidth Property bandwidth: The bandwidth value for cross-region connections.Unit: Mbps. When the BandwidthType value is BandwidthPackage, this parameter represents the bandwidth value that can be used by cross-region connections. When the BandwidthType value is DataTransfer, this parameter represents the speed limit bandwidth value for cross-region connections. This parameter is required.
          */
         public Builder bandwidth(final java.lang.Number bandwidth) {
             this.props.bandwidth(bandwidth);
             return this;
         }
         /**
-         * Property bandwidth: Bandwidth.
+         * Property bandwidth: The bandwidth value for cross-region connections.Unit: Mbps. When the BandwidthType value is BandwidthPackage, this parameter represents the bandwidth value that can be used by cross-region connections. When the BandwidthType value is DataTransfer, this parameter represents the speed limit bandwidth value for cross-region connections.
          * <p>
          * @return {@code this}
-         * @param bandwidth Property bandwidth: Bandwidth. This parameter is required.
+         * @param bandwidth Property bandwidth: The bandwidth value for cross-region connections.Unit: Mbps. When the BandwidthType value is BandwidthPackage, this parameter represents the bandwidth value that can be used by cross-region connections. When the BandwidthType value is DataTransfer, this parameter represents the speed limit bandwidth value for cross-region connections. This parameter is required.
          */
         public Builder bandwidth(final com.aliyun.ros.cdk.core.IResolvable bandwidth) {
             this.props.bandwidth(bandwidth);
@@ -279,20 +181,45 @@ public class TransitRouterPeerAttachment extends com.aliyun.ros.cdk.core.Resourc
         }
 
         /**
-         * Property cenBandwidthPackageId: BandwidthPackageId.
+         * Property bandwidthType: The bandwidth allocation method for cross-regional connections.Value: BandwidthPackage: Allocate bandwidth from bandwidth packets. DataTransfer: Do not allocate bandwidth for cross-region connections, and is billed based on usage traffic.
          * <p>
          * @return {@code this}
-         * @param cenBandwidthPackageId Property cenBandwidthPackageId: BandwidthPackageId. This parameter is required.
+         * @param bandwidthType Property bandwidthType: The bandwidth allocation method for cross-regional connections.Value: BandwidthPackage: Allocate bandwidth from bandwidth packets. DataTransfer: Do not allocate bandwidth for cross-region connections, and is billed based on usage traffic. This parameter is required.
+         */
+        public Builder bandwidthType(final java.lang.String bandwidthType) {
+            this.props.bandwidthType(bandwidthType);
+            return this;
+        }
+        /**
+         * Property bandwidthType: The bandwidth allocation method for cross-regional connections.Value: BandwidthPackage: Allocate bandwidth from bandwidth packets. DataTransfer: Do not allocate bandwidth for cross-region connections, and is billed based on usage traffic.
+         * <p>
+         * @return {@code this}
+         * @param bandwidthType Property bandwidthType: The bandwidth allocation method for cross-regional connections.Value: BandwidthPackage: Allocate bandwidth from bandwidth packets. DataTransfer: Do not allocate bandwidth for cross-region connections, and is billed based on usage traffic. This parameter is required.
+         */
+        public Builder bandwidthType(final com.aliyun.ros.cdk.core.IResolvable bandwidthType) {
+            this.props.bandwidthType(bandwidthType);
+            return this;
+        }
+
+        /**
+         * Property cenBandwidthPackageId: The bandwidth packet ID to bind to across regions.
+         * <p>
+         * Note When the value of BandwidthType is DataTransfer, this item is not required.
+         * <p>
+         * @return {@code this}
+         * @param cenBandwidthPackageId Property cenBandwidthPackageId: The bandwidth packet ID to bind to across regions. This parameter is required.
          */
         public Builder cenBandwidthPackageId(final java.lang.String cenBandwidthPackageId) {
             this.props.cenBandwidthPackageId(cenBandwidthPackageId);
             return this;
         }
         /**
-         * Property cenBandwidthPackageId: BandwidthPackageId.
+         * Property cenBandwidthPackageId: The bandwidth packet ID to bind to across regions.
+         * <p>
+         * Note When the value of BandwidthType is DataTransfer, this item is not required.
          * <p>
          * @return {@code this}
-         * @param cenBandwidthPackageId Property cenBandwidthPackageId: BandwidthPackageId. This parameter is required.
+         * @param cenBandwidthPackageId Property cenBandwidthPackageId: The bandwidth packet ID to bind to across regions. This parameter is required.
          */
         public Builder cenBandwidthPackageId(final com.aliyun.ros.cdk.core.IResolvable cenBandwidthPackageId) {
             this.props.cenBandwidthPackageId(cenBandwidthPackageId);
@@ -300,20 +227,20 @@ public class TransitRouterPeerAttachment extends com.aliyun.ros.cdk.core.Resourc
         }
 
         /**
-         * Property cenId: CenId.
+         * Property cenId: Cloud Enterprise Network Instance ID.
          * <p>
          * @return {@code this}
-         * @param cenId Property cenId: CenId. This parameter is required.
+         * @param cenId Property cenId: Cloud Enterprise Network Instance ID. This parameter is required.
          */
         public Builder cenId(final java.lang.String cenId) {
             this.props.cenId(cenId);
             return this;
         }
         /**
-         * Property cenId: CenId.
+         * Property cenId: Cloud Enterprise Network Instance ID.
          * <p>
          * @return {@code this}
-         * @param cenId Property cenId: CenId. This parameter is required.
+         * @param cenId Property cenId: Cloud Enterprise Network Instance ID. This parameter is required.
          */
         public Builder cenId(final com.aliyun.ros.cdk.core.IResolvable cenId) {
             this.props.cenId(cenId);
@@ -321,20 +248,47 @@ public class TransitRouterPeerAttachment extends com.aliyun.ros.cdk.core.Resourc
         }
 
         /**
-         * Property peerTransitRouterRegionId: PeerTransitRouterRegionId.
+         * Property defaultLinkType: Default link type.
+         * <p>
+         * Optional values are Platinum, Gold, and default to Gold.
+         * And it can only be configured as Platinum (Platinum) when the bandwidth allocation method is billed by traffic.
          * <p>
          * @return {@code this}
-         * @param peerTransitRouterRegionId Property peerTransitRouterRegionId: PeerTransitRouterRegionId. This parameter is required.
+         * @param defaultLinkType Property defaultLinkType: Default link type. This parameter is required.
+         */
+        public Builder defaultLinkType(final java.lang.String defaultLinkType) {
+            this.props.defaultLinkType(defaultLinkType);
+            return this;
+        }
+        /**
+         * Property defaultLinkType: Default link type.
+         * <p>
+         * Optional values are Platinum, Gold, and default to Gold.
+         * And it can only be configured as Platinum (Platinum) when the bandwidth allocation method is billed by traffic.
+         * <p>
+         * @return {@code this}
+         * @param defaultLinkType Property defaultLinkType: Default link type. This parameter is required.
+         */
+        public Builder defaultLinkType(final com.aliyun.ros.cdk.core.IResolvable defaultLinkType) {
+            this.props.defaultLinkType(defaultLinkType);
+            return this;
+        }
+
+        /**
+         * Property peerTransitRouterRegionId: The region ID to which the peer forwarding router instance belongs.
+         * <p>
+         * @return {@code this}
+         * @param peerTransitRouterRegionId Property peerTransitRouterRegionId: The region ID to which the peer forwarding router instance belongs. This parameter is required.
          */
         public Builder peerTransitRouterRegionId(final java.lang.String peerTransitRouterRegionId) {
             this.props.peerTransitRouterRegionId(peerTransitRouterRegionId);
             return this;
         }
         /**
-         * Property peerTransitRouterRegionId: PeerTransitRouterRegionId.
+         * Property peerTransitRouterRegionId: The region ID to which the peer forwarding router instance belongs.
          * <p>
          * @return {@code this}
-         * @param peerTransitRouterRegionId Property peerTransitRouterRegionId: PeerTransitRouterRegionId. This parameter is required.
+         * @param peerTransitRouterRegionId Property peerTransitRouterRegionId: The region ID to which the peer forwarding router instance belongs. This parameter is required.
          */
         public Builder peerTransitRouterRegionId(final com.aliyun.ros.cdk.core.IResolvable peerTransitRouterRegionId) {
             this.props.peerTransitRouterRegionId(peerTransitRouterRegionId);
@@ -342,20 +296,37 @@ public class TransitRouterPeerAttachment extends com.aliyun.ros.cdk.core.Resourc
         }
 
         /**
-         * Property transitRouterAttachmentDescription: TransitRouterAttachmentDescription.
+         * Property tags: The list of tags in the form of key/value pairs.
+         * <p>
+         * You can define a maximum of 20 tags.
          * <p>
          * @return {@code this}
-         * @param transitRouterAttachmentDescription Property transitRouterAttachmentDescription: TransitRouterAttachmentDescription. This parameter is required.
+         * @param tags Property tags: The list of tags in the form of key/value pairs. This parameter is required.
+         */
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.cen.RosTransitRouterPeerAttachment.TagsProperty> tags) {
+            this.props.tags(tags);
+            return this;
+        }
+
+        /**
+         * Property transitRouterAttachmentDescription: Description information for cross-region connections.
+         * <p>
+         * The description can be empty or has a length of 1 to 256 characters and cannot start with http:// or https://.
+         * <p>
+         * @return {@code this}
+         * @param transitRouterAttachmentDescription Property transitRouterAttachmentDescription: Description information for cross-region connections. This parameter is required.
          */
         public Builder transitRouterAttachmentDescription(final java.lang.String transitRouterAttachmentDescription) {
             this.props.transitRouterAttachmentDescription(transitRouterAttachmentDescription);
             return this;
         }
         /**
-         * Property transitRouterAttachmentDescription: TransitRouterAttachmentDescription.
+         * Property transitRouterAttachmentDescription: Description information for cross-region connections.
+         * <p>
+         * The description can be empty or has a length of 1 to 256 characters and cannot start with http:// or https://.
          * <p>
          * @return {@code this}
-         * @param transitRouterAttachmentDescription Property transitRouterAttachmentDescription: TransitRouterAttachmentDescription. This parameter is required.
+         * @param transitRouterAttachmentDescription Property transitRouterAttachmentDescription: Description information for cross-region connections. This parameter is required.
          */
         public Builder transitRouterAttachmentDescription(final com.aliyun.ros.cdk.core.IResolvable transitRouterAttachmentDescription) {
             this.props.transitRouterAttachmentDescription(transitRouterAttachmentDescription);
@@ -363,20 +334,24 @@ public class TransitRouterPeerAttachment extends com.aliyun.ros.cdk.core.Resourc
         }
 
         /**
-         * Property transitRouterAttachmentName: TransitRouterAttachmentName.
+         * Property transitRouterAttachmentName: The name of the cross-region connection.
+         * <p>
+         * The name can be empty or has a length of 1 to 128 characters, and cannot start with http:// or https://.
          * <p>
          * @return {@code this}
-         * @param transitRouterAttachmentName Property transitRouterAttachmentName: TransitRouterAttachmentName. This parameter is required.
+         * @param transitRouterAttachmentName Property transitRouterAttachmentName: The name of the cross-region connection. This parameter is required.
          */
         public Builder transitRouterAttachmentName(final java.lang.String transitRouterAttachmentName) {
             this.props.transitRouterAttachmentName(transitRouterAttachmentName);
             return this;
         }
         /**
-         * Property transitRouterAttachmentName: TransitRouterAttachmentName.
+         * Property transitRouterAttachmentName: The name of the cross-region connection.
+         * <p>
+         * The name can be empty or has a length of 1 to 128 characters, and cannot start with http:// or https://.
          * <p>
          * @return {@code this}
-         * @param transitRouterAttachmentName Property transitRouterAttachmentName: TransitRouterAttachmentName. This parameter is required.
+         * @param transitRouterAttachmentName Property transitRouterAttachmentName: The name of the cross-region connection. This parameter is required.
          */
         public Builder transitRouterAttachmentName(final com.aliyun.ros.cdk.core.IResolvable transitRouterAttachmentName) {
             this.props.transitRouterAttachmentName(transitRouterAttachmentName);
@@ -384,20 +359,20 @@ public class TransitRouterPeerAttachment extends com.aliyun.ros.cdk.core.Resourc
         }
 
         /**
-         * Property transitRouterId: TransitRouterId.
+         * Property transitRouterId: Local Enterprise Edition forwarding router instance ID.
          * <p>
          * @return {@code this}
-         * @param transitRouterId Property transitRouterId: TransitRouterId. This parameter is required.
+         * @param transitRouterId Property transitRouterId: Local Enterprise Edition forwarding router instance ID. This parameter is required.
          */
         public Builder transitRouterId(final java.lang.String transitRouterId) {
             this.props.transitRouterId(transitRouterId);
             return this;
         }
         /**
-         * Property transitRouterId: TransitRouterId.
+         * Property transitRouterId: Local Enterprise Edition forwarding router instance ID.
          * <p>
          * @return {@code this}
-         * @param transitRouterId Property transitRouterId: TransitRouterId. This parameter is required.
+         * @param transitRouterId Property transitRouterId: Local Enterprise Edition forwarding router instance ID. This parameter is required.
          */
         public Builder transitRouterId(final com.aliyun.ros.cdk.core.IResolvable transitRouterId) {
             this.props.transitRouterId(transitRouterId);

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::GA::BasicAccelerator</code>, which is used to create a basic Global Accelerator (GA) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:07.083Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.793Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.BasicAccelerator")
 public class BasicAccelerator extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ga.IBasicAccelerator {
 

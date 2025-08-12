@@ -237,7 +237,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         private object? _vSwitchName;
 
-        /// <summary>Property vSwitchName: Display name of the vSwitch instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.</summary>
+        /// <summary>Property vSwitchName: The value contains 1 to 128 characters and cannot start with http:\/\/ or https:\/\/.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "vSwitchName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? VSwitchName

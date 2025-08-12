@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::DedicatedHost</code>, which is used to create a dedicated host.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::DedicatedHost</code>, which is used to create dedicated hosts.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:04.565Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.135Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.DedicatedHost")
 public class DedicatedHost extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.IDedicatedHost {
 
@@ -295,6 +295,48 @@ public class DedicatedHost extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
+         * Property cpuOverCommitRatio: The CPU overcommit ratio of the dedicated host.
+         * <p>
+         * @return {@code this}
+         * @param cpuOverCommitRatio Property cpuOverCommitRatio: The CPU overcommit ratio of the dedicated host. This parameter is required.
+         */
+        public Builder cpuOverCommitRatio(final java.lang.Number cpuOverCommitRatio) {
+            this.props.cpuOverCommitRatio(cpuOverCommitRatio);
+            return this;
+        }
+        /**
+         * Property cpuOverCommitRatio: The CPU overcommit ratio of the dedicated host.
+         * <p>
+         * @return {@code this}
+         * @param cpuOverCommitRatio Property cpuOverCommitRatio: The CPU overcommit ratio of the dedicated host. This parameter is required.
+         */
+        public Builder cpuOverCommitRatio(final com.aliyun.ros.cdk.core.IResolvable cpuOverCommitRatio) {
+            this.props.cpuOverCommitRatio(cpuOverCommitRatio);
+            return this;
+        }
+
+        /**
+         * Property dedicatedHostClusterId: The ID of the dedicated host cluster.
+         * <p>
+         * @return {@code this}
+         * @param dedicatedHostClusterId Property dedicatedHostClusterId: The ID of the dedicated host cluster. This parameter is required.
+         */
+        public Builder dedicatedHostClusterId(final java.lang.String dedicatedHostClusterId) {
+            this.props.dedicatedHostClusterId(dedicatedHostClusterId);
+            return this;
+        }
+        /**
+         * Property dedicatedHostClusterId: The ID of the dedicated host cluster.
+         * <p>
+         * @return {@code this}
+         * @param dedicatedHostClusterId Property dedicatedHostClusterId: The ID of the dedicated host cluster. This parameter is required.
+         */
+        public Builder dedicatedHostClusterId(final com.aliyun.ros.cdk.core.IResolvable dedicatedHostClusterId) {
+            this.props.dedicatedHostClusterId(dedicatedHostClusterId);
+            return this;
+        }
+
+        /**
          * Property dedicatedHostName: The name of the dedicated host, [2, 128] English or Chinese characters.
          * <p>
          * It must begin with an uppercase/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:// or https://.
@@ -337,6 +379,27 @@ public class DedicatedHost extends com.aliyun.ros.cdk.core.Resource implements c
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
+            return this;
+        }
+
+        /**
+         * Property minQuantity: The minimum number of dedicated hosts that you want to create.
+         * <p>
+         * @return {@code this}
+         * @param minQuantity Property minQuantity: The minimum number of dedicated hosts that you want to create. This parameter is required.
+         */
+        public Builder minQuantity(final java.lang.Number minQuantity) {
+            this.props.minQuantity(minQuantity);
+            return this;
+        }
+        /**
+         * Property minQuantity: The minimum number of dedicated hosts that you want to create.
+         * <p>
+         * @return {@code this}
+         * @param minQuantity Property minQuantity: The minimum number of dedicated hosts that you want to create. This parameter is required.
+         */
+        public Builder minQuantity(final com.aliyun.ros.cdk.core.IResolvable minQuantity) {
+            this.props.minQuantity(minQuantity);
             return this;
         }
 

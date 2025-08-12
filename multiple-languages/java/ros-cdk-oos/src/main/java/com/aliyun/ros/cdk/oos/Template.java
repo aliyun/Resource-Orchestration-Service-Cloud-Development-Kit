@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.oos;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::OOS::Template</code>, which is used to create a template.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::OOS::Template</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.436Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.968Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.Template")
 public class Template extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.oos.ITemplate {
 
@@ -155,7 +155,7 @@ public class Template extends com.aliyun.ros.cdk.core.Resource implements com.al
         /**
          * Property templateName: The name of the template.
          * <p>
-         * The template name can be up to 200 characters in length. The name can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ACS, ALIBABA, or ALICLOUD.
+         * The template name can be up to 200 characters in length. The name can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ACS, ALIYUN, ALIBABA, or ALICLOUD.
          * <p>
          * @return {@code this}
          * @param templateName Property templateName: The name of the template. This parameter is required.
@@ -167,7 +167,7 @@ public class Template extends com.aliyun.ros.cdk.core.Resource implements com.al
         /**
          * Property templateName: The name of the template.
          * <p>
-         * The template name can be up to 200 characters in length. The name can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ACS, ALIBABA, or ALICLOUD.
+         * The template name can be up to 200 characters in length. The name can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ACS, ALIYUN, ALIBABA, or ALICLOUD.
          * <p>
          * @return {@code this}
          * @param templateName Property templateName: The name of the template. This parameter is required.

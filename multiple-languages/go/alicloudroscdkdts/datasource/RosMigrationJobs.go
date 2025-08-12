@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::DTS::MigrationJobs`.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::DTS::MigrationJobs`, which is used to query the information about data migration tasks in Data Transmission Service (DTS).
 type RosMigrationJobs interface {
 	alicloudroscdkcore.RosResource
 	AttrDtsInstanceIds() alicloudroscdkcore.IResolvable

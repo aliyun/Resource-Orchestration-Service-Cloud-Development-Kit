@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.sae;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-application
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:10.348Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:50.431Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.RosApplicationProps")
 @software.amazon.jsii.Jsii.Proxy(RosApplicationProps.Jsii$Proxy.class)
 public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializable {
@@ -120,6 +120,12 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEnableNewArms() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEnvs() {
         return null;
     }
@@ -199,6 +205,12 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNasId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNewSaeVersion() {
         return null;
     }
 
@@ -400,6 +412,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         java.lang.Object deploy;
         java.lang.Object edasContainerVersion;
         java.lang.Object enableEbpf;
+        java.lang.Object enableNewArms;
         java.lang.Object envs;
         java.lang.Object imagePullSecrets;
         java.lang.Object imageUrl;
@@ -414,6 +427,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         java.lang.Object mountHost;
         java.lang.Object nasConfigs;
         java.lang.Object nasId;
+        java.lang.Object newSaeVersion;
         java.lang.Object ossAkId;
         java.lang.Object ossAkSecret;
         java.lang.Object ossMountDescs;
@@ -844,6 +858,26 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosApplicationProps#getEnableNewArms}
+         * @param enableNewArms the value to be set.
+         * @return {@code this}
+         */
+        public Builder enableNewArms(java.lang.Boolean enableNewArms) {
+            this.enableNewArms = enableNewArms;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationProps#getEnableNewArms}
+         * @param enableNewArms the value to be set.
+         * @return {@code this}
+         */
+        public Builder enableNewArms(com.aliyun.ros.cdk.core.IResolvable enableNewArms) {
+            this.enableNewArms = enableNewArms;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosApplicationProps#getEnvs}
          * @param envs the value to be set.
          * @return {@code this}
@@ -1120,6 +1154,26 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
          */
         public Builder nasId(com.aliyun.ros.cdk.core.IResolvable nasId) {
             this.nasId = nasId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationProps#getNewSaeVersion}
+         * @param newSaeVersion the value to be set.
+         * @return {@code this}
+         */
+        public Builder newSaeVersion(java.lang.String newSaeVersion) {
+            this.newSaeVersion = newSaeVersion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationProps#getNewSaeVersion}
+         * @param newSaeVersion the value to be set.
+         * @return {@code this}
+         */
+        public Builder newSaeVersion(com.aliyun.ros.cdk.core.IResolvable newSaeVersion) {
+            this.newSaeVersion = newSaeVersion;
             return this;
         }
 
@@ -1710,6 +1764,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         private final java.lang.Object deploy;
         private final java.lang.Object edasContainerVersion;
         private final java.lang.Object enableEbpf;
+        private final java.lang.Object enableNewArms;
         private final java.lang.Object envs;
         private final java.lang.Object imagePullSecrets;
         private final java.lang.Object imageUrl;
@@ -1724,6 +1779,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         private final java.lang.Object mountHost;
         private final java.lang.Object nasConfigs;
         private final java.lang.Object nasId;
+        private final java.lang.Object newSaeVersion;
         private final java.lang.Object ossAkId;
         private final java.lang.Object ossAkSecret;
         private final java.lang.Object ossMountDescs;
@@ -1779,6 +1835,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             this.deploy = software.amazon.jsii.Kernel.get(this, "deploy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.edasContainerVersion = software.amazon.jsii.Kernel.get(this, "edasContainerVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableEbpf = software.amazon.jsii.Kernel.get(this, "enableEbpf", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.enableNewArms = software.amazon.jsii.Kernel.get(this, "enableNewArms", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.envs = software.amazon.jsii.Kernel.get(this, "envs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.imagePullSecrets = software.amazon.jsii.Kernel.get(this, "imagePullSecrets", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.imageUrl = software.amazon.jsii.Kernel.get(this, "imageUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1793,6 +1850,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             this.mountHost = software.amazon.jsii.Kernel.get(this, "mountHost", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.nasConfigs = software.amazon.jsii.Kernel.get(this, "nasConfigs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.nasId = software.amazon.jsii.Kernel.get(this, "nasId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.newSaeVersion = software.amazon.jsii.Kernel.get(this, "newSaeVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ossAkId = software.amazon.jsii.Kernel.get(this, "ossAkId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ossAkSecret = software.amazon.jsii.Kernel.get(this, "ossAkSecret", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ossMountDescs = software.amazon.jsii.Kernel.get(this, "ossMountDescs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1849,6 +1907,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             this.deploy = builder.deploy;
             this.edasContainerVersion = builder.edasContainerVersion;
             this.enableEbpf = builder.enableEbpf;
+            this.enableNewArms = builder.enableNewArms;
             this.envs = builder.envs;
             this.imagePullSecrets = builder.imagePullSecrets;
             this.imageUrl = builder.imageUrl;
@@ -1863,6 +1922,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             this.mountHost = builder.mountHost;
             this.nasConfigs = builder.nasConfigs;
             this.nasId = builder.nasId;
+            this.newSaeVersion = builder.newSaeVersion;
             this.ossAkId = builder.ossAkId;
             this.ossAkSecret = builder.ossAkSecret;
             this.ossMountDescs = builder.ossMountDescs;
@@ -1994,6 +2054,11 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
+        public final java.lang.Object getEnableNewArms() {
+            return this.enableNewArms;
+        }
+
+        @Override
         public final java.lang.Object getEnvs() {
             return this.envs;
         }
@@ -2061,6 +2126,11 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         @Override
         public final java.lang.Object getNasId() {
             return this.nasId;
+        }
+
+        @Override
+        public final java.lang.Object getNewSaeVersion() {
+            return this.newSaeVersion;
         }
 
         @Override
@@ -2257,6 +2327,9 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             if (this.getEnableEbpf() != null) {
                 data.set("enableEbpf", om.valueToTree(this.getEnableEbpf()));
             }
+            if (this.getEnableNewArms() != null) {
+                data.set("enableNewArms", om.valueToTree(this.getEnableNewArms()));
+            }
             if (this.getEnvs() != null) {
                 data.set("envs", om.valueToTree(this.getEnvs()));
             }
@@ -2298,6 +2371,9 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             }
             if (this.getNasId() != null) {
                 data.set("nasId", om.valueToTree(this.getNasId()));
+            }
+            if (this.getNewSaeVersion() != null) {
+                data.set("newSaeVersion", om.valueToTree(this.getNewSaeVersion()));
             }
             if (this.getOssAkId() != null) {
                 data.set("ossAkId", om.valueToTree(this.getOssAkId()));
@@ -2421,6 +2497,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             if (this.deploy != null ? !this.deploy.equals(that.deploy) : that.deploy != null) return false;
             if (this.edasContainerVersion != null ? !this.edasContainerVersion.equals(that.edasContainerVersion) : that.edasContainerVersion != null) return false;
             if (this.enableEbpf != null ? !this.enableEbpf.equals(that.enableEbpf) : that.enableEbpf != null) return false;
+            if (this.enableNewArms != null ? !this.enableNewArms.equals(that.enableNewArms) : that.enableNewArms != null) return false;
             if (this.envs != null ? !this.envs.equals(that.envs) : that.envs != null) return false;
             if (this.imagePullSecrets != null ? !this.imagePullSecrets.equals(that.imagePullSecrets) : that.imagePullSecrets != null) return false;
             if (this.imageUrl != null ? !this.imageUrl.equals(that.imageUrl) : that.imageUrl != null) return false;
@@ -2435,6 +2512,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             if (this.mountHost != null ? !this.mountHost.equals(that.mountHost) : that.mountHost != null) return false;
             if (this.nasConfigs != null ? !this.nasConfigs.equals(that.nasConfigs) : that.nasConfigs != null) return false;
             if (this.nasId != null ? !this.nasId.equals(that.nasId) : that.nasId != null) return false;
+            if (this.newSaeVersion != null ? !this.newSaeVersion.equals(that.newSaeVersion) : that.newSaeVersion != null) return false;
             if (this.ossAkId != null ? !this.ossAkId.equals(that.ossAkId) : that.ossAkId != null) return false;
             if (this.ossAkSecret != null ? !this.ossAkSecret.equals(that.ossAkSecret) : that.ossAkSecret != null) return false;
             if (this.ossMountDescs != null ? !this.ossMountDescs.equals(that.ossMountDescs) : that.ossMountDescs != null) return false;
@@ -2487,6 +2565,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             result = 31 * result + (this.deploy != null ? this.deploy.hashCode() : 0);
             result = 31 * result + (this.edasContainerVersion != null ? this.edasContainerVersion.hashCode() : 0);
             result = 31 * result + (this.enableEbpf != null ? this.enableEbpf.hashCode() : 0);
+            result = 31 * result + (this.enableNewArms != null ? this.enableNewArms.hashCode() : 0);
             result = 31 * result + (this.envs != null ? this.envs.hashCode() : 0);
             result = 31 * result + (this.imagePullSecrets != null ? this.imagePullSecrets.hashCode() : 0);
             result = 31 * result + (this.imageUrl != null ? this.imageUrl.hashCode() : 0);
@@ -2501,6 +2580,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             result = 31 * result + (this.mountHost != null ? this.mountHost.hashCode() : 0);
             result = 31 * result + (this.nasConfigs != null ? this.nasConfigs.hashCode() : 0);
             result = 31 * result + (this.nasId != null ? this.nasId.hashCode() : 0);
+            result = 31 * result + (this.newSaeVersion != null ? this.newSaeVersion.hashCode() : 0);
             result = 31 * result + (this.ossAkId != null ? this.ossAkId.hashCode() : 0);
             result = 31 * result + (this.ossAkSecret != null ? this.ossAkSecret.hashCode() : 0);
             result = 31 * result + (this.ossMountDescs != null ? this.ossMountDescs.hashCode() : 0);

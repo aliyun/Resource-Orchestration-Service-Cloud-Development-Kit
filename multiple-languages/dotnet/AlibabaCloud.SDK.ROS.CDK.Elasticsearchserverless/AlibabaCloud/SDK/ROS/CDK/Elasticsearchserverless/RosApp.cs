@@ -98,6 +98,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearchserverless
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
+        /// <remarks>
+        /// <strong>Attribute</strong>: Username: The username of the app.
+        /// </remarks>
+        [JsiiProperty(name: "attrUsername", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrUsername
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
         protected override System.Collections.Generic.IDictionary<string, object> RosProperties
         {
@@ -264,6 +273,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearchserverless
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: logProConfiguration: The log pro configuration of the app.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "logProConfiguration", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-elasticsearchserverless.RosApp.LogProConfigurationProperty\"}]}}", isOptional: true)]
+        public virtual object? LogProConfiguration
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Elasticsearchserverless.RosApp.ILogProConfigurationProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Elasticsearchserverless.RosApp.ILogProConfigurationProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: network: The public network of the app.
         /// </remarks>
         [JsiiOptional]
@@ -353,6 +393,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearchserverless
                             break;
                         default:
                             throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: scenario: The scenario of the app.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "scenario", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Scenario
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
                     }
                 }
                 SetInstanceProperty(value);
@@ -504,6 +575,292 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearchserverless
                         }
                     }
                     _password = value;
+                }
+            }
+        }
+        [JsiiInterface(nativeType: typeof(ILogProConfigurationProperty), fullyQualifiedName: "@alicloud/ros-cdk-elasticsearchserverless.RosApp.LogProConfigurationProperty")]
+        public interface ILogProConfigurationProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: advancedIndexingOptimization: Whether to enable advanced indexing optimization.
+            /// </remarks>
+            [JsiiProperty(name: "advancedIndexingOptimization", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object AdvancedIndexingOptimization
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: autoDataOrganization: Whether to enable auto data organization.
+            /// </remarks>
+            [JsiiProperty(name: "autoDataOrganization", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object AutoDataOrganization
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: expirationDays: The expiration days of the app.
+            /// </remarks>
+            [JsiiProperty(name: "expirationDays", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object ExpirationDays
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: logProDynamicFieldConfigType: The log pro dynamic field config type of the app.
+            /// </remarks>
+            [JsiiProperty(name: "logProDynamicFieldConfigType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object LogProDynamicFieldConfigType
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: writeWithPrimaryKey: Whether to enable write with primary key.
+            /// </remarks>
+            [JsiiProperty(name: "writeWithPrimaryKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object WriteWithPrimaryKey
+            {
+                get;
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(ILogProConfigurationProperty), fullyQualifiedName: "@alicloud/ros-cdk-elasticsearchserverless.RosApp.LogProConfigurationProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Elasticsearchserverless.RosApp.ILogProConfigurationProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: advancedIndexingOptimization: Whether to enable advanced indexing optimization.
+                /// </remarks>
+                [JsiiProperty(name: "advancedIndexingOptimization", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object AdvancedIndexingOptimization
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: autoDataOrganization: Whether to enable auto data organization.
+                /// </remarks>
+                [JsiiProperty(name: "autoDataOrganization", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object AutoDataOrganization
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: expirationDays: The expiration days of the app.
+                /// </remarks>
+                [JsiiProperty(name: "expirationDays", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object ExpirationDays
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: logProDynamicFieldConfigType: The log pro dynamic field config type of the app.
+                /// </remarks>
+                [JsiiProperty(name: "logProDynamicFieldConfigType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object LogProDynamicFieldConfigType
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: writeWithPrimaryKey: Whether to enable write with primary key.
+                /// </remarks>
+                [JsiiProperty(name: "writeWithPrimaryKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object WriteWithPrimaryKey
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-elasticsearchserverless.RosApp.LogProConfigurationProperty")]
+        public class LogProConfigurationProperty : AlibabaCloud.SDK.ROS.CDK.Elasticsearchserverless.RosApp.ILogProConfigurationProperty
+        {
+            private object _advancedIndexingOptimization;
+
+            /// <remarks>
+            /// <strong>Property</strong>: advancedIndexingOptimization: Whether to enable advanced indexing optimization.
+            /// </remarks>
+            [JsiiProperty(name: "advancedIndexingOptimization", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AdvancedIndexingOptimization
+            {
+                get => _advancedIndexingOptimization;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _advancedIndexingOptimization = value;
+                }
+            }
+
+            private object _autoDataOrganization;
+
+            /// <remarks>
+            /// <strong>Property</strong>: autoDataOrganization: Whether to enable auto data organization.
+            /// </remarks>
+            [JsiiProperty(name: "autoDataOrganization", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AutoDataOrganization
+            {
+                get => _autoDataOrganization;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _autoDataOrganization = value;
+                }
+            }
+
+            private object _expirationDays;
+
+            /// <remarks>
+            /// <strong>Property</strong>: expirationDays: The expiration days of the app.
+            /// </remarks>
+            [JsiiProperty(name: "expirationDays", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ExpirationDays
+            {
+                get => _expirationDays;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _expirationDays = value;
+                }
+            }
+
+            private object _logProDynamicFieldConfigType;
+
+            /// <remarks>
+            /// <strong>Property</strong>: logProDynamicFieldConfigType: The log pro dynamic field config type of the app.
+            /// </remarks>
+            [JsiiProperty(name: "logProDynamicFieldConfigType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object LogProDynamicFieldConfigType
+            {
+                get => _logProDynamicFieldConfigType;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _logProDynamicFieldConfigType = value;
+                }
+            }
+
+            private object _writeWithPrimaryKey;
+
+            /// <remarks>
+            /// <strong>Property</strong>: writeWithPrimaryKey: Whether to enable write with primary key.
+            /// </remarks>
+            [JsiiProperty(name: "writeWithPrimaryKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object WriteWithPrimaryKey
+            {
+                get => _writeWithPrimaryKey;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _writeWithPrimaryKey = value;
                 }
             }
         }
@@ -1120,21 +1477,68 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearchserverless
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: cu: The cu of the app.
+            /// <strong>Property</strong>: elastic: Whether the app is elastic.
             /// </remarks>
-            [JsiiProperty(name: "cu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            object Cu
+            [JsiiProperty(name: "elastic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Elastic
             {
-                get;
+                get
+                {
+                    return null;
+                }
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: storage: The storage of the app.
+            /// <strong>Property</strong>: maxCu: The max cu of the app.
             /// </remarks>
-            [JsiiProperty(name: "storage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            object Storage
+            [JsiiProperty(name: "maxCu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? MaxCu
             {
-                get;
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: minCu: The min cu of the app.
+            /// </remarks>
+            [JsiiProperty(name: "minCu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? MinCu
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: readCu: The read cu of the app.
+            /// </remarks>
+            [JsiiProperty(name: "readCu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ReadCu
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: writeCu: The write cu of the app.
+            /// </remarks>
+            [JsiiProperty(name: "writeCu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? WriteCu
+            {
+                get
+                {
+                    return null;
+                }
             }
 
             [JsiiTypeProxy(nativeType: typeof(IQuotaInfoProperty), fullyQualifiedName: "@alicloud/ros-cdk-elasticsearchserverless.RosApp.QuotaInfoProperty")]
@@ -1154,21 +1558,53 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearchserverless
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: cu: The cu of the app.
+                /// <strong>Property</strong>: elastic: Whether the app is elastic.
                 /// </remarks>
-                [JsiiProperty(name: "cu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-                public object Cu
+                [JsiiOptional]
+                [JsiiProperty(name: "elastic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Elastic
                 {
-                    get => GetInstanceProperty<object>()!;
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: storage: The storage of the app.
+                /// <strong>Property</strong>: maxCu: The max cu of the app.
                 /// </remarks>
-                [JsiiProperty(name: "storage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-                public object Storage
+                [JsiiOptional]
+                [JsiiProperty(name: "maxCu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? MaxCu
                 {
-                    get => GetInstanceProperty<object>()!;
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: minCu: The min cu of the app.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "minCu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? MinCu
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: readCu: The read cu of the app.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "readCu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ReadCu
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: writeCu: The write cu of the app.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "writeCu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? WriteCu
+                {
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -1209,42 +1645,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearchserverless
                 }
             }
 
-            private object _cu;
+            private object? _elastic;
 
             /// <remarks>
-            /// <strong>Property</strong>: cu: The cu of the app.
+            /// <strong>Property</strong>: elastic: Whether the app is elastic.
             /// </remarks>
-            [JsiiProperty(name: "cu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object Cu
+            [JsiiOptional]
+            [JsiiProperty(name: "elastic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Elastic
             {
-                get => _cu;
+                get => _elastic;
                 set
                 {
                     if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
                     {
                         switch (value)
                         {
-                            case double cast_cd4240:
-                                break;
-                            case byte cast_cd4240:
-                                break;
-                            case decimal cast_cd4240:
-                                break;
-                            case float cast_cd4240:
-                                break;
-                            case int cast_cd4240:
-                                break;
-                            case long cast_cd4240:
-                                break;
-                            case sbyte cast_cd4240:
-                                break;
-                            case short cast_cd4240:
-                                break;
-                            case uint cast_cd4240:
-                                break;
-                            case ulong cast_cd4240:
-                                break;
-                            case ushort cast_cd4240:
+                            case bool cast_cd4240:
                                 break;
                             case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
                                 break;
@@ -1252,24 +1669,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearchserverless
                                 // Not enough information to type-check...
                                 break;
                             case null:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                                break;
                             default:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
                         }
                     }
-                    _cu = value;
+                    _elastic = value;
                 }
             }
 
-            private object _storage;
+            private object? _maxCu;
 
             /// <remarks>
-            /// <strong>Property</strong>: storage: The storage of the app.
+            /// <strong>Property</strong>: maxCu: The max cu of the app.
             /// </remarks>
-            [JsiiProperty(name: "storage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object Storage
+            [JsiiOptional]
+            [JsiiProperty(name: "maxCu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MaxCu
             {
-                get => _storage;
+                get => _maxCu;
                 set
                 {
                     if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
@@ -1304,12 +1722,171 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearchserverless
                                 // Not enough information to type-check...
                                 break;
                             case null:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                                break;
                             default:
                                 throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
                         }
                     }
-                    _storage = value;
+                    _maxCu = value;
+                }
+            }
+
+            private object? _minCu;
+
+            /// <remarks>
+            /// <strong>Property</strong>: minCu: The min cu of the app.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "minCu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MinCu
+            {
+                get => _minCu;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _minCu = value;
+                }
+            }
+
+            private object? _readCu;
+
+            /// <remarks>
+            /// <strong>Property</strong>: readCu: The read cu of the app.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "readCu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ReadCu
+            {
+                get => _readCu;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _readCu = value;
+                }
+            }
+
+            private object? _writeCu;
+
+            /// <remarks>
+            /// <strong>Property</strong>: writeCu: The write cu of the app.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "writeCu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? WriteCu
+            {
+                get => _writeCu;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _writeCu = value;
                 }
             }
         }
@@ -1326,7 +1903,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearchserverless
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: ips: The ips ofthe white ip group.
+            /// <strong>Property</strong>: ips: The ips of the white ip group.
             /// </remarks>
             [JsiiProperty(name: "ips", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1355,7 +1932,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearchserverless
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: ips: The ips ofthe white ip group.
+                /// <strong>Property</strong>: ips: The ips of the white ip group.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "ips", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1405,7 +1982,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearchserverless
             private object? _ips;
 
             /// <remarks>
-            /// <strong>Property</strong>: ips: The ips ofthe white ip group.
+            /// <strong>Property</strong>: ips: The ips of the white ip group.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "ips", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

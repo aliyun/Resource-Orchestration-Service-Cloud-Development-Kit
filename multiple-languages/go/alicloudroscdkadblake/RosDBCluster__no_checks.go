@@ -140,6 +140,10 @@ func (j *jsiiProxy_RosDBCluster) validateSetProductFormParameters(val interface{
 	return nil
 }
 
+func (j *jsiiProxy_RosDBCluster) validateSetProductVersionParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosDBCluster) validateSetReservedNodeCountParameters(val interface{}) error {
 	return nil
 }
@@ -157,6 +161,14 @@ func (j *jsiiProxy_RosDBCluster) validateSetRestoreToTimeParameters(val interfac
 }
 
 func (j *jsiiProxy_RosDBCluster) validateSetRestoreTypeParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosDBCluster) validateSetSecondaryVSwitchIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosDBCluster) validateSetSecondaryZoneIdParameters(val interface{}) error {
 	return nil
 }
 

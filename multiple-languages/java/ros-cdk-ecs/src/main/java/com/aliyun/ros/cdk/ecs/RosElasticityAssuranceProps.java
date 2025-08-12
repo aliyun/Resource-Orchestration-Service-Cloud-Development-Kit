@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-elasticityassurance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:04.921Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.425Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosElasticityAssuranceProps")
 @software.amazon.jsii.Jsii.Proxy(RosElasticityAssuranceProps.Jsii$Proxy.class)
 public interface RosElasticityAssuranceProps extends software.amazon.jsii.JsiiSerializable {
@@ -24,7 +24,25 @@ public interface RosElasticityAssuranceProps extends software.amazon.jsii.JsiiSe
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenew() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenewPeriod() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceCpuCoreCount() {
         return null;
     }
 
@@ -43,6 +61,12 @@ public interface RosElasticityAssuranceProps extends software.amazon.jsii.JsiiSe
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPrivatePoolOptions() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRecurrenceRules() {
         return null;
     }
 
@@ -77,10 +101,14 @@ public interface RosElasticityAssuranceProps extends software.amazon.jsii.JsiiSe
         java.lang.Object instanceAmount;
         java.lang.Object instanceTypes;
         java.lang.Object zoneId;
+        java.lang.Object autoRenew;
+        java.lang.Object autoRenewPeriod;
         java.lang.Object description;
+        java.lang.Object instanceCpuCoreCount;
         java.lang.Object period;
         java.lang.Object periodUnit;
         java.lang.Object privatePoolOptions;
+        java.lang.Object recurrenceRules;
         java.lang.Object resourceGroupId;
         java.lang.Object startTime;
         java.util.List<com.aliyun.ros.cdk.ecs.RosElasticityAssurance.TagsProperty> tags;
@@ -146,6 +174,46 @@ public interface RosElasticityAssuranceProps extends software.amazon.jsii.JsiiSe
         }
 
         /**
+         * Sets the value of {@link RosElasticityAssuranceProps#getAutoRenew}
+         * @param autoRenew the value to be set.
+         * @return {@code this}
+         */
+        public Builder autoRenew(java.lang.Boolean autoRenew) {
+            this.autoRenew = autoRenew;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosElasticityAssuranceProps#getAutoRenew}
+         * @param autoRenew the value to be set.
+         * @return {@code this}
+         */
+        public Builder autoRenew(com.aliyun.ros.cdk.core.IResolvable autoRenew) {
+            this.autoRenew = autoRenew;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosElasticityAssuranceProps#getAutoRenewPeriod}
+         * @param autoRenewPeriod the value to be set.
+         * @return {@code this}
+         */
+        public Builder autoRenewPeriod(java.lang.Number autoRenewPeriod) {
+            this.autoRenewPeriod = autoRenewPeriod;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosElasticityAssuranceProps#getAutoRenewPeriod}
+         * @param autoRenewPeriod the value to be set.
+         * @return {@code this}
+         */
+        public Builder autoRenewPeriod(com.aliyun.ros.cdk.core.IResolvable autoRenewPeriod) {
+            this.autoRenewPeriod = autoRenewPeriod;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosElasticityAssuranceProps#getDescription}
          * @param description the value to be set.
          * @return {@code this}
@@ -162,6 +230,26 @@ public interface RosElasticityAssuranceProps extends software.amazon.jsii.JsiiSe
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosElasticityAssuranceProps#getInstanceCpuCoreCount}
+         * @param instanceCpuCoreCount the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceCpuCoreCount(java.lang.Number instanceCpuCoreCount) {
+            this.instanceCpuCoreCount = instanceCpuCoreCount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosElasticityAssuranceProps#getInstanceCpuCoreCount}
+         * @param instanceCpuCoreCount the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceCpuCoreCount(com.aliyun.ros.cdk.core.IResolvable instanceCpuCoreCount) {
+            this.instanceCpuCoreCount = instanceCpuCoreCount;
             return this;
         }
 
@@ -222,6 +310,26 @@ public interface RosElasticityAssuranceProps extends software.amazon.jsii.JsiiSe
          */
         public Builder privatePoolOptions(com.aliyun.ros.cdk.ecs.RosElasticityAssurance.PrivatePoolOptionsProperty privatePoolOptions) {
             this.privatePoolOptions = privatePoolOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosElasticityAssuranceProps#getRecurrenceRules}
+         * @param recurrenceRules the value to be set.
+         * @return {@code this}
+         */
+        public Builder recurrenceRules(com.aliyun.ros.cdk.core.IResolvable recurrenceRules) {
+            this.recurrenceRules = recurrenceRules;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosElasticityAssuranceProps#getRecurrenceRules}
+         * @param recurrenceRules the value to be set.
+         * @return {@code this}
+         */
+        public Builder recurrenceRules(java.util.List<? extends java.lang.Object> recurrenceRules) {
+            this.recurrenceRules = recurrenceRules;
             return this;
         }
 
@@ -295,10 +403,14 @@ public interface RosElasticityAssuranceProps extends software.amazon.jsii.JsiiSe
         private final java.lang.Object instanceAmount;
         private final java.lang.Object instanceTypes;
         private final java.lang.Object zoneId;
+        private final java.lang.Object autoRenew;
+        private final java.lang.Object autoRenewPeriod;
         private final java.lang.Object description;
+        private final java.lang.Object instanceCpuCoreCount;
         private final java.lang.Object period;
         private final java.lang.Object periodUnit;
         private final java.lang.Object privatePoolOptions;
+        private final java.lang.Object recurrenceRules;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object startTime;
         private final java.util.List<com.aliyun.ros.cdk.ecs.RosElasticityAssurance.TagsProperty> tags;
@@ -312,10 +424,14 @@ public interface RosElasticityAssuranceProps extends software.amazon.jsii.JsiiSe
             this.instanceAmount = software.amazon.jsii.Kernel.get(this, "instanceAmount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceTypes = software.amazon.jsii.Kernel.get(this, "instanceTypes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoRenewPeriod = software.amazon.jsii.Kernel.get(this, "autoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceCpuCoreCount = software.amazon.jsii.Kernel.get(this, "instanceCpuCoreCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.privatePoolOptions = software.amazon.jsii.Kernel.get(this, "privatePoolOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.recurrenceRules = software.amazon.jsii.Kernel.get(this, "recurrenceRules", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.startTime = software.amazon.jsii.Kernel.get(this, "startTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosElasticityAssurance.TagsProperty.class)));
@@ -330,10 +446,14 @@ public interface RosElasticityAssuranceProps extends software.amazon.jsii.JsiiSe
             this.instanceAmount = java.util.Objects.requireNonNull(builder.instanceAmount, "instanceAmount is required");
             this.instanceTypes = java.util.Objects.requireNonNull(builder.instanceTypes, "instanceTypes is required");
             this.zoneId = java.util.Objects.requireNonNull(builder.zoneId, "zoneId is required");
+            this.autoRenew = builder.autoRenew;
+            this.autoRenewPeriod = builder.autoRenewPeriod;
             this.description = builder.description;
+            this.instanceCpuCoreCount = builder.instanceCpuCoreCount;
             this.period = builder.period;
             this.periodUnit = builder.periodUnit;
             this.privatePoolOptions = builder.privatePoolOptions;
+            this.recurrenceRules = builder.recurrenceRules;
             this.resourceGroupId = builder.resourceGroupId;
             this.startTime = builder.startTime;
             this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosElasticityAssurance.TagsProperty>)builder.tags;
@@ -355,8 +475,23 @@ public interface RosElasticityAssuranceProps extends software.amazon.jsii.JsiiSe
         }
 
         @Override
+        public final java.lang.Object getAutoRenew() {
+            return this.autoRenew;
+        }
+
+        @Override
+        public final java.lang.Object getAutoRenewPeriod() {
+            return this.autoRenewPeriod;
+        }
+
+        @Override
         public final java.lang.Object getDescription() {
             return this.description;
+        }
+
+        @Override
+        public final java.lang.Object getInstanceCpuCoreCount() {
+            return this.instanceCpuCoreCount;
         }
 
         @Override
@@ -372,6 +507,11 @@ public interface RosElasticityAssuranceProps extends software.amazon.jsii.JsiiSe
         @Override
         public final java.lang.Object getPrivatePoolOptions() {
             return this.privatePoolOptions;
+        }
+
+        @Override
+        public final java.lang.Object getRecurrenceRules() {
+            return this.recurrenceRules;
         }
 
         @Override
@@ -398,8 +538,17 @@ public interface RosElasticityAssuranceProps extends software.amazon.jsii.JsiiSe
             data.set("instanceAmount", om.valueToTree(this.getInstanceAmount()));
             data.set("instanceTypes", om.valueToTree(this.getInstanceTypes()));
             data.set("zoneId", om.valueToTree(this.getZoneId()));
+            if (this.getAutoRenew() != null) {
+                data.set("autoRenew", om.valueToTree(this.getAutoRenew()));
+            }
+            if (this.getAutoRenewPeriod() != null) {
+                data.set("autoRenewPeriod", om.valueToTree(this.getAutoRenewPeriod()));
+            }
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
+            }
+            if (this.getInstanceCpuCoreCount() != null) {
+                data.set("instanceCpuCoreCount", om.valueToTree(this.getInstanceCpuCoreCount()));
             }
             if (this.getPeriod() != null) {
                 data.set("period", om.valueToTree(this.getPeriod()));
@@ -409,6 +558,9 @@ public interface RosElasticityAssuranceProps extends software.amazon.jsii.JsiiSe
             }
             if (this.getPrivatePoolOptions() != null) {
                 data.set("privatePoolOptions", om.valueToTree(this.getPrivatePoolOptions()));
+            }
+            if (this.getRecurrenceRules() != null) {
+                data.set("recurrenceRules", om.valueToTree(this.getRecurrenceRules()));
             }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
@@ -440,10 +592,14 @@ public interface RosElasticityAssuranceProps extends software.amazon.jsii.JsiiSe
             if (!instanceAmount.equals(that.instanceAmount)) return false;
             if (!instanceTypes.equals(that.instanceTypes)) return false;
             if (!zoneId.equals(that.zoneId)) return false;
+            if (this.autoRenew != null ? !this.autoRenew.equals(that.autoRenew) : that.autoRenew != null) return false;
+            if (this.autoRenewPeriod != null ? !this.autoRenewPeriod.equals(that.autoRenewPeriod) : that.autoRenewPeriod != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+            if (this.instanceCpuCoreCount != null ? !this.instanceCpuCoreCount.equals(that.instanceCpuCoreCount) : that.instanceCpuCoreCount != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
             if (this.periodUnit != null ? !this.periodUnit.equals(that.periodUnit) : that.periodUnit != null) return false;
             if (this.privatePoolOptions != null ? !this.privatePoolOptions.equals(that.privatePoolOptions) : that.privatePoolOptions != null) return false;
+            if (this.recurrenceRules != null ? !this.recurrenceRules.equals(that.recurrenceRules) : that.recurrenceRules != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.startTime != null ? !this.startTime.equals(that.startTime) : that.startTime != null) return false;
             return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
@@ -454,10 +610,14 @@ public interface RosElasticityAssuranceProps extends software.amazon.jsii.JsiiSe
             int result = this.instanceAmount.hashCode();
             result = 31 * result + (this.instanceTypes.hashCode());
             result = 31 * result + (this.zoneId.hashCode());
+            result = 31 * result + (this.autoRenew != null ? this.autoRenew.hashCode() : 0);
+            result = 31 * result + (this.autoRenewPeriod != null ? this.autoRenewPeriod.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+            result = 31 * result + (this.instanceCpuCoreCount != null ? this.instanceCpuCoreCount.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.periodUnit != null ? this.periodUnit.hashCode() : 0);
             result = 31 * result + (this.privatePoolOptions != null ? this.privatePoolOptions.hashCode() : 0);
+            result = 31 * result + (this.recurrenceRules != null ? this.recurrenceRules.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.startTime != null ? this.startTime.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);

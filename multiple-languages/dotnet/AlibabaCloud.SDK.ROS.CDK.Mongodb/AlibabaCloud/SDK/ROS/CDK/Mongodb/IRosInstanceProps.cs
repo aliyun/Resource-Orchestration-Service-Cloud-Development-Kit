@@ -269,7 +269,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: securityIpArray: Security ips to add or remove.
+        /// <strong>Property</strong>: securityIpArray: Security ips to add or remove. Update to this property will cover the current security ips.
         /// </remarks>
         [JsiiProperty(name: "securityIpArray", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -620,7 +620,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: securityIpArray: Security ips to add or remove.
+            /// <strong>Property</strong>: securityIpArray: Security ips to add or remove. Update to this property will cover the current security ips.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "securityIpArray", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

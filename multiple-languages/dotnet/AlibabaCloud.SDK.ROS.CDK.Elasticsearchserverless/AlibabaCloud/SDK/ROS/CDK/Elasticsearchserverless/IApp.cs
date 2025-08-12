@@ -43,6 +43,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearchserverless
             get;
         }
 
+        /// <summary>Attribute Username: The username of the app.</summary>
+        [JsiiProperty(name: "attrUsername", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrUsername
+        {
+            get;
+        }
+
         [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-elasticsearchserverless.AppProps\"}")]
         AlibabaCloud.SDK.ROS.CDK.Elasticsearchserverless.IAppProps Props
         {
@@ -88,6 +95,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearchserverless
             /// <summary>Attribute PublicKibanaDomain: The public network kibana domain of the app.</summary>
             [JsiiProperty(name: "attrPublicKibanaDomain", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AttrPublicKibanaDomain
+            {
+                get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Attribute Username: The username of the app.</summary>
+            [JsiiProperty(name: "attrUsername", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrUsername
             {
                 get => GetInstanceProperty<object>()!;
             }

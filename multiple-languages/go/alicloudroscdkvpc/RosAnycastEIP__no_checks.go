@@ -108,6 +108,10 @@ func (j *jsiiProxy_RosAnycastEIP) validateSetNameParameters(val interface{}) err
 	return nil
 }
 
+func (j *jsiiProxy_RosAnycastEIP) validateSetResourceGroupIdParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosAnycastEIP) validateSetServiceLocationParameters(val interface{}) error {
 	return nil
 }

@@ -17,6 +17,8 @@ type Instance interface {
 	AttrInstanceId() interface{}
 	// Attribute OrderId: Order information.
 	AttrOrderId() interface{}
+	// Attribute WorkspaceId: Workspace ID.
+	AttrWorkspaceId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
 	// The environment this resource belongs to.
@@ -127,6 +129,16 @@ func (j *jsiiProxy_Instance) AttrOrderId() interface{} {
 	_jsii_.Get(
 		j,
 		"attrOrderId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Instance) AttrWorkspaceId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrWorkspaceId",
 		&returns,
 	)
 	return returns

@@ -88,6 +88,10 @@ func (j *jsiiProxy_RosFunctionInvoker) validateSetAsyncParameters(val interface{
 	return nil
 }
 
+func (j *jsiiProxy_RosFunctionInvoker) validateSetCheckAsyncInvocationParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosFunctionInvoker) validateSetCheckErrorParameters(val interface{}) error {
 	return nil
 }

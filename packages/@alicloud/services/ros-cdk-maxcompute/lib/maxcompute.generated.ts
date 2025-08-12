@@ -63,7 +63,7 @@ function rosPackagePropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MaxCompute::Package`, which is used to create a package.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MaxCompute::Package`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Package` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-maxcompute-package
  */
@@ -363,6 +363,11 @@ export interface RosProjectProps {
      * @Property properties: Project base attributes.
      */
     readonly properties?: RosProject.PropertiesProperty | ros.IResolvable;
+
+    /**
+     * @Property supportSchemaLevels: Whether to support schema level. Default: False
+     */
+    readonly supportSchemaLevels?: boolean | ros.IResolvable;
 }
 
 /**
@@ -385,6 +390,7 @@ function RosProjectPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
     errors.collect(ros.propertyValidator('ipWhiteList', RosProject_IpWhiteListPropertyValidator)(properties.ipWhiteList));
+    errors.collect(ros.propertyValidator('supportSchemaLevels', ros.validateBoolean)(properties.supportSchemaLevels));
     errors.collect(ros.propertyValidator('properties', RosProject_PropertiesPropertyValidator)(properties.properties));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     if(properties.name && (typeof properties.name) !== 'object') {
@@ -417,6 +423,7 @@ function rosProjectPropsToRosTemplate(properties: any, enableResourcePropertyCon
       'DefaultQuota': ros.stringToRosTemplate(properties.defaultQuota),
       'IpWhiteList': rosProjectIpWhiteListPropertyToRosTemplate(properties.ipWhiteList),
       'Properties': rosProjectPropertiesPropertyToRosTemplate(properties.properties),
+      'SupportSchemaLevels': ros.booleanToRosTemplate(properties.supportSchemaLevels),
     };
 }
 
@@ -471,6 +478,11 @@ export class RosProject extends ros.RosResource {
     public properties: RosProject.PropertiesProperty | ros.IResolvable | undefined;
 
     /**
+     * @Property supportSchemaLevels: Whether to support schema level. Default: False
+     */
+    public supportSchemaLevels: boolean | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -486,6 +498,7 @@ export class RosProject extends ros.RosResource {
         this.defaultQuota = props.defaultQuota;
         this.ipWhiteList = props.ipWhiteList;
         this.properties = props.properties;
+        this.supportSchemaLevels = props.supportSchemaLevels;
     }
 
 
@@ -497,6 +510,7 @@ export class RosProject extends ros.RosResource {
             defaultQuota: this.defaultQuota,
             ipWhiteList: this.ipWhiteList,
             properties: this.properties,
+            supportSchemaLevels: this.supportSchemaLevels,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -679,6 +693,253 @@ function rosProjectPropertiesPropertyToRosTemplate(properties: any): any {
       'AllowFullScan': ros.booleanToRosTemplate(properties.allowFullScan),
       'EnableDecimal2': ros.booleanToRosTemplate(properties.enableDecimal2),
     };
+}
+
+/**
+ * Properties for defining a `RosQuota`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-maxcompute-quota
+ */
+export interface RosQuotaProps {
+
+    /**
+     * @Property payType: The billing method of the odps quota instance. Valid values:
+     * PayAsYouGo: pay-as-you-go
+     * Subscription: subscription
+     */
+    readonly payType: string | ros.IResolvable;
+
+    /**
+     * @Property autoPay: Whether to auto pay the bill.
+     */
+    readonly autoPay?: boolean | ros.IResolvable;
+
+    /**
+     * @Property autoRenew: Whether to auto renew the prepay instance.
+     */
+    readonly autoRenew?: boolean | ros.IResolvable;
+
+    /**
+     * @Property cu: The compute unit of the odps quota instance. When the specification is the StandardCompute, this parameter is required.
+     */
+    readonly cu?: number | ros.IResolvable;
+
+    /**
+     * @Property period: The subscription period of the odps quotaIf PeriodUnit is month, the valid range is 1-9
+     * If periodUnit is year, the valid range is 1, 2, 3, 4, 5
+     */
+    readonly period?: number | ros.IResolvable;
+
+    /**
+     * @Property periodUnit: The unit of the subscription duration. Valid values:
+     * Month
+     * Year
+     * Default value: Month.
+     */
+    readonly periodUnit?: string | ros.IResolvable;
+
+    /**
+     * @Property quotaNickname: The nickname of the odps quota instance.
+     */
+    readonly quotaNickname?: string | ros.IResolvable;
+
+    /**
+     * @Property specification: The specification of the odps quota instance.
+     */
+    readonly specification?: string | ros.IResolvable;
+
+    /**
+     * @Property tunnel: The tunnel unit of the odps quota instance. When the specification is the Tunnel, this parameter is required
+     */
+    readonly tunnel?: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosQuotaProps`
+ *
+ * @param properties - the TypeScript properties of a `RosQuotaProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosQuotaPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('cu', ros.validateNumber)(properties.cu));
+    errors.collect(ros.propertyValidator('quotaNickname', ros.validateString)(properties.quotaNickname));
+    errors.collect(ros.propertyValidator('tunnel', ros.validateNumber)(properties.tunnel));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
+          allowedValues: [1,2,3,4,5,6,7,8,9],
+        }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    if(properties.specification && (typeof properties.specification) !== 'object') {
+        errors.collect(ros.propertyValidator('specification', ros.validateAllowedValues)({
+          data: properties.specification,
+          allowedValues: ["StandardCompute","Tunnel"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('specification', ros.validateString)(properties.specification));
+    errors.collect(ros.propertyValidator('payType', ros.requiredValidator)(properties.payType));
+    if(properties.payType && (typeof properties.payType) !== 'object') {
+        errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
+          data: properties.payType,
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
+    errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
+    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
+        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
+          data: properties.periodUnit,
+          allowedValues: ["Month","Year"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
+    return errors.wrap('supplied properties not correct for "RosQuotaProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MaxCompute::Quota` resource
+ *
+ * @param properties - the TypeScript properties of a `RosQuotaProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MaxCompute::Quota` resource.
+ */
+// @ts-ignore TS6133
+function rosQuotaPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosQuotaPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'PayType': ros.stringToRosTemplate(properties.payType),
+      'AutoPay': ros.booleanToRosTemplate(properties.autoPay),
+      'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
+      'CU': ros.numberToRosTemplate(properties.cu),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
+      'QuotaNickname': ros.stringToRosTemplate(properties.quotaNickname),
+      'Specification': ros.stringToRosTemplate(properties.specification),
+      'Tunnel': ros.numberToRosTemplate(properties.tunnel),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MaxCompute::Quota`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Quota` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-maxcompute-quota
+ */
+export class RosQuota extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::MaxCompute::Quota";
+
+    /**
+     * @Attribute DefaultSubQuotaNickname: The default sub quota nickname of the odps quota instance.
+     */
+    public readonly attrDefaultSubQuotaNickname: ros.IResolvable;
+
+    /**
+     * @Attribute Nickname: The nickname of the odps quota instance.
+     */
+    public readonly attrNickname: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property payType: The billing method of the odps quota instance. Valid values:
+     * PayAsYouGo: pay-as-you-go
+     * Subscription: subscription
+     */
+    public payType: string | ros.IResolvable;
+
+    /**
+     * @Property autoPay: Whether to auto pay the bill.
+     */
+    public autoPay: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property autoRenew: Whether to auto renew the prepay instance.
+     */
+    public autoRenew: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property cu: The compute unit of the odps quota instance. When the specification is the StandardCompute, this parameter is required.
+     */
+    public cu: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property period: The subscription period of the odps quotaIf PeriodUnit is month, the valid range is 1-9
+     * If periodUnit is year, the valid range is 1, 2, 3, 4, 5
+     */
+    public period: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property periodUnit: The unit of the subscription duration. Valid values:
+     * Month
+     * Year
+     * Default value: Month.
+     */
+    public periodUnit: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property quotaNickname: The nickname of the odps quota instance.
+     */
+    public quotaNickname: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property specification: The specification of the odps quota instance.
+     */
+    public specification: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tunnel: The tunnel unit of the odps quota instance. When the specification is the Tunnel, this parameter is required
+     */
+    public tunnel: number | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosQuotaProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosQuota.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDefaultSubQuotaNickname = this.getAtt('DefaultSubQuotaNickname');
+        this.attrNickname = this.getAtt('Nickname');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.payType = props.payType;
+        this.autoPay = props.autoPay;
+        this.autoRenew = props.autoRenew;
+        this.cu = props.cu;
+        this.period = props.period;
+        this.periodUnit = props.periodUnit;
+        this.quotaNickname = props.quotaNickname;
+        this.specification = props.specification;
+        this.tunnel = props.tunnel;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            payType: this.payType,
+            autoPay: this.autoPay,
+            autoRenew: this.autoRenew,
+            cu: this.cu,
+            period: this.period,
+            periodUnit: this.periodUnit,
+            quotaNickname: this.quotaNickname,
+            specification: this.specification,
+            tunnel: this.tunnel,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosQuotaPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
 }
 
 /**
@@ -1278,7 +1539,7 @@ function RosTablePropsValidator(properties: any): ros.ValidationResult {
     if(properties.name && (typeof properties.name) !== 'object') {
         errors.collect(ros.propertyValidator('name', ros.validateAllowedPattern)({
           data: properties.name,
-          reg: /[A-Za-z0-9_]{1,128}/
+          reg: /^[A-Za-z0-9_]{1,128}$/
         }));
     }
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));

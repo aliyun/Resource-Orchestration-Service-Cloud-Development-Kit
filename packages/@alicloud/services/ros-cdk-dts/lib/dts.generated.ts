@@ -258,6 +258,18 @@ export interface RosInstanceProps {
     readonly jobId?: string | ros.IResolvable;
 
     /**
+     * @Property maxDu: The upper limit of DU.
+     * > Only Serverless instances are supported.
+     */
+    readonly maxDu?: number | ros.IResolvable;
+
+    /**
+     * @Property minDu: The lower limit of DU.
+     * > Only Serverless instances are supported.
+     */
+    readonly minDu?: number | ros.IResolvable;
+
+    /**
      * @Property period: The unit of the subscription duration. Valid values: **Year** and **Month**.
      * **Note**: You must specify this parameter only if the **PayType** parameter is set to **PrePaid**.
      */
@@ -357,6 +369,13 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
     errors.collect(ros.propertyValidator('destinationEndpointEngineName', ros.validateString)(properties.destinationEndpointEngineName));
     errors.collect(ros.propertyValidator('sourceRegion', ros.validateString)(properties.sourceRegion));
+    if(properties.minDu && (typeof properties.minDu) !== 'object') {
+        errors.collect(ros.propertyValidator('minDu', ros.validateAllowedValues)({
+          data: properties.minDu,
+          allowedValues: [1,2,4,8,16,32],
+        }));
+    }
+    errors.collect(ros.propertyValidator('minDu', ros.validateNumber)(properties.minDu));
     if(properties.du && (typeof properties.du) !== 'object') {
         errors.collect(ros.propertyValidator('du', ros.validateRange)({
             data: properties.du,
@@ -390,6 +409,13 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('syncArchitecture', ros.validateString)(properties.syncArchitecture));
+    if(properties.maxDu && (typeof properties.maxDu) !== 'object') {
+        errors.collect(ros.propertyValidator('maxDu', ros.validateAllowedValues)({
+          data: properties.maxDu,
+          allowedValues: [2,4,8,16,32],
+        }));
+    }
+    errors.collect(ros.propertyValidator('maxDu', ros.validateNumber)(properties.maxDu));
     return errors.wrap('supplied properties not correct for "RosInstanceProps"');
 }
 
@@ -419,6 +445,8 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       'Du': ros.numberToRosTemplate(properties.du),
       'FeeType': ros.stringToRosTemplate(properties.feeType),
       'JobId': ros.stringToRosTemplate(properties.jobId),
+      'MaxDu': ros.numberToRosTemplate(properties.maxDu),
+      'MinDu': ros.numberToRosTemplate(properties.minDu),
       'Period': ros.stringToRosTemplate(properties.period),
       'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
       'SourceEndpointEngineName': ros.stringToRosTemplate(properties.sourceEndpointEngineName),
@@ -429,7 +457,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::Instance`, which is a new resource type that is used to create a Data Transmission Service (DTS) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::Instance`, which is a new resource type used to create a Data Transmission Service (DTS) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-instance
  */
@@ -552,6 +580,18 @@ export class RosInstance extends ros.RosResource {
     public jobId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property maxDu: The upper limit of DU.
+     * > Only Serverless instances are supported.
+     */
+    public maxDu: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property minDu: The lower limit of DU.
+     * > Only Serverless instances are supported.
+     */
+    public minDu: number | ros.IResolvable | undefined;
+
+    /**
      * @Property period: The unit of the subscription duration. Valid values: **Year** and **Month**.
      * **Note**: You must specify this parameter only if the **PayType** parameter is set to **PrePaid**.
      */
@@ -632,6 +672,8 @@ export class RosInstance extends ros.RosResource {
         this.du = props.du;
         this.feeType = props.feeType;
         this.jobId = props.jobId;
+        this.maxDu = props.maxDu;
+        this.minDu = props.minDu;
         this.period = props.period;
         this.resourceGroupId = props.resourceGroupId;
         this.sourceEndpointEngineName = props.sourceEndpointEngineName;
@@ -655,6 +697,8 @@ export class RosInstance extends ros.RosResource {
             du: this.du,
             feeType: this.feeType,
             jobId: this.jobId,
+            maxDu: this.maxDu,
+            minDu: this.minDu,
             period: this.period,
             resourceGroupId: this.resourceGroupId,
             sourceEndpointEngineName: this.sourceEndpointEngineName,
@@ -730,8 +774,8 @@ export interface RosMigrationJob2Props {
     readonly delayNotice?: boolean | ros.IResolvable;
 
     /**
-     * @Property delayPhone: The mobile numbers that receive latency-related alerts. Separate multiple mobile numbers with commas (,).
-     * **Note**: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+     * @Property delayPhone: The mobile numbers that receive latency-related alerts. Separate multiple mobile numbers with commas (,). You can specify up to 10 mobile numbers.
+     * **Note**: You can also configure alert rules for DTS tasks in the CloudMonitor console.This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers.
      */
     readonly delayPhone?: string | ros.IResolvable;
 
@@ -739,6 +783,16 @@ export interface RosMigrationJob2Props {
      * @Property delayRuleTime: The threshold for latency alerts. Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
      */
     readonly delayRuleTime?: number | ros.IResolvable;
+
+    /**
+     * @Property destPrimaryVswId: The primary VSW ID at the destination end of the VPC NAT.
+     */
+    readonly destPrimaryVswId?: string | ros.IResolvable;
+
+    /**
+     * @Property destSecondaryVswId: The secondary VSW ID at the destination end of the VPC NAT.
+     */
+    readonly destSecondaryVswId?: string | ros.IResolvable;
 
     /**
      * @Property disasterRecoveryJob: Specifies whether the instance is a disaster recovery instance. Valid values: **true** and **false**
@@ -766,8 +820,8 @@ export interface RosMigrationJob2Props {
     readonly errorNotice?: boolean | ros.IResolvable;
 
     /**
-     * @Property errorPhone: The mobile numbers that receive status-related alerts. Separate multiple mobile numbers with commas (,).
-     * **Note**: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+     * @Property errorPhone: The mobile numbers that receive status-related alerts. Separate multiple mobile numbers with commas (,). You can specify up to 10 mobile numbers.
+     * **Note**: You can also configure alert rules for DTS tasks in the CloudMonitor console.This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers.
      */
     readonly errorPhone?: string | ros.IResolvable;
 
@@ -777,9 +831,34 @@ export interface RosMigrationJob2Props {
     readonly fileOssUrl?: string | ros.IResolvable;
 
     /**
+     * @Property maxDu: The upper limit of DU. This parameter is supported only for serverless instances.
+     */
+    readonly maxDu?: number | ros.IResolvable;
+
+    /**
+     * @Property minDu: The lower limit of DU. This parameter is supported only for serverless instances.
+     */
+    readonly minDu?: number | ros.IResolvable;
+
+    /**
      * @Property reserve: The reserved parameter of DTS. You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
      */
     readonly reserve?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property srcPrimaryVswId: The primary VSW ID at the source end of the VPC NAT.
+     */
+    readonly srcPrimaryVswId?: string | ros.IResolvable;
+
+    /**
+     * @Property srcSecondaryVswId: The secondary VSW ID at the source end of the VPC NAT.
+     */
+    readonly srcSecondaryVswId?: string | ros.IResolvable;
 
     /**
      * @Property status: The status of the resource. Valid values:
@@ -800,6 +879,38 @@ export interface RosMigrationJob2Props {
 function RosMigrationJob2PropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('reserve', ros.hashValidator(ros.validateAny))(properties.reserve));
+    errors.collect(ros.propertyValidator('srcSecondaryVswId', ros.validateString)(properties.srcSecondaryVswId));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('dataSynchronization', ros.requiredValidator)(properties.dataSynchronization));
+    errors.collect(ros.propertyValidator('dataSynchronization', ros.validateBoolean)(properties.dataSynchronization));
+    errors.collect(ros.propertyValidator('delayPhone', ros.validateString)(properties.delayPhone));
+    errors.collect(ros.propertyValidator('errorNotice', ros.validateBoolean)(properties.errorNotice));
+    errors.collect(ros.propertyValidator('dtsJobName', ros.requiredValidator)(properties.dtsJobName));
+    errors.collect(ros.propertyValidator('dtsJobName', ros.validateString)(properties.dtsJobName));
+    errors.collect(ros.propertyValidator('delayRuleTime', ros.validateNumber)(properties.delayRuleTime));
+    if(properties.minDu && (typeof properties.minDu) !== 'object') {
+        errors.collect(ros.propertyValidator('minDu', ros.validateAllowedValues)({
+          data: properties.minDu,
+          allowedValues: [1,2,4,8,16,32],
+        }));
+    }
+    errors.collect(ros.propertyValidator('minDu', ros.validateNumber)(properties.minDu));
+    errors.collect(ros.propertyValidator('dbList', ros.requiredValidator)(properties.dbList));
+    errors.collect(ros.propertyValidator('dbList', ros.hashValidator(ros.validateAny))(properties.dbList));
+    errors.collect(ros.propertyValidator('fileOssUrl', ros.validateString)(properties.fileOssUrl));
+    errors.collect(ros.propertyValidator('dtsJobId', ros.validateString)(properties.dtsJobId));
+    errors.collect(ros.propertyValidator('dataInitialization', ros.requiredValidator)(properties.dataInitialization));
+    errors.collect(ros.propertyValidator('dataInitialization', ros.validateBoolean)(properties.dataInitialization));
+    errors.collect(ros.propertyValidator('errorPhone', ros.validateString)(properties.errorPhone));
+    errors.collect(ros.propertyValidator('destSecondaryVswId', ros.validateString)(properties.destSecondaryVswId));
+    if(properties.maxDu && (typeof properties.maxDu) !== 'object') {
+        errors.collect(ros.propertyValidator('maxDu', ros.validateAllowedValues)({
+          data: properties.maxDu,
+          allowedValues: [2,4,8,16,32],
+        }));
+    }
+    errors.collect(ros.propertyValidator('maxDu', ros.validateNumber)(properties.maxDu));
     if(properties.status && (typeof properties.status) !== 'object') {
         errors.collect(ros.propertyValidator('status', ros.validateAllowedValues)({
           data: properties.status,
@@ -807,32 +918,19 @@ function RosMigrationJob2PropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('status', ros.validateString)(properties.status));
-    errors.collect(ros.propertyValidator('reserve', ros.hashValidator(ros.validateAny))(properties.reserve));
-    errors.collect(ros.propertyValidator('dataSynchronization', ros.requiredValidator)(properties.dataSynchronization));
-    errors.collect(ros.propertyValidator('dataSynchronization', ros.validateBoolean)(properties.dataSynchronization));
+    errors.collect(ros.propertyValidator('srcPrimaryVswId', ros.validateString)(properties.srcPrimaryVswId));
     errors.collect(ros.propertyValidator('dedicatedClusterId', ros.validateString)(properties.dedicatedClusterId));
-    errors.collect(ros.propertyValidator('delayPhone', ros.validateString)(properties.delayPhone));
-    errors.collect(ros.propertyValidator('errorNotice', ros.validateBoolean)(properties.errorNotice));
-    errors.collect(ros.propertyValidator('dtsJobName', ros.requiredValidator)(properties.dtsJobName));
-    errors.collect(ros.propertyValidator('dtsJobName', ros.validateString)(properties.dtsJobName));
-    errors.collect(ros.propertyValidator('delayRuleTime', ros.validateNumber)(properties.delayRuleTime));
+    errors.collect(ros.propertyValidator('destPrimaryVswId', ros.validateString)(properties.destPrimaryVswId));
     errors.collect(ros.propertyValidator('dtsInstanceId', ros.validateString)(properties.dtsInstanceId));
-    errors.collect(ros.propertyValidator('dbList', ros.requiredValidator)(properties.dbList));
-    errors.collect(ros.propertyValidator('dbList', ros.hashValidator(ros.validateAny))(properties.dbList));
-    errors.collect(ros.propertyValidator('fileOssUrl', ros.validateString)(properties.fileOssUrl));
     errors.collect(ros.propertyValidator('dataCheckConfigure', RosMigrationJob2_DataCheckConfigurePropertyValidator)(properties.dataCheckConfigure));
     errors.collect(ros.propertyValidator('dtsBisLabel', ros.validateString)(properties.dtsBisLabel));
     errors.collect(ros.propertyValidator('checkpoint', ros.validateString)(properties.checkpoint));
     errors.collect(ros.propertyValidator('disasterRecoveryJob', ros.validateBoolean)(properties.disasterRecoveryJob));
-    errors.collect(ros.propertyValidator('dtsJobId', ros.validateString)(properties.dtsJobId));
     errors.collect(ros.propertyValidator('delayNotice', ros.validateBoolean)(properties.delayNotice));
-    errors.collect(ros.propertyValidator('dataInitialization', ros.requiredValidator)(properties.dataInitialization));
-    errors.collect(ros.propertyValidator('dataInitialization', ros.validateBoolean)(properties.dataInitialization));
     errors.collect(ros.propertyValidator('destinationEndpoint', ros.requiredValidator)(properties.destinationEndpoint));
     errors.collect(ros.propertyValidator('destinationEndpoint', RosMigrationJob2_DestinationEndpointPropertyValidator)(properties.destinationEndpoint));
     errors.collect(ros.propertyValidator('sourceEndpoint', ros.requiredValidator)(properties.sourceEndpoint));
     errors.collect(ros.propertyValidator('sourceEndpoint', RosMigrationJob2_SourceEndpointPropertyValidator)(properties.sourceEndpoint));
-    errors.collect(ros.propertyValidator('errorPhone', ros.validateString)(properties.errorPhone));
     errors.collect(ros.propertyValidator('structureInitialization', ros.requiredValidator)(properties.structureInitialization));
     errors.collect(ros.propertyValidator('structureInitialization', ros.validateBoolean)(properties.structureInitialization));
     return errors.wrap('supplied properties not correct for "RosMigrationJob2Props"');
@@ -865,6 +963,8 @@ function rosMigrationJob2PropsToRosTemplate(properties: any, enableResourcePrope
       'DelayNotice': ros.booleanToRosTemplate(properties.delayNotice),
       'DelayPhone': ros.stringToRosTemplate(properties.delayPhone),
       'DelayRuleTime': ros.numberToRosTemplate(properties.delayRuleTime),
+      'DestPrimaryVswId': ros.stringToRosTemplate(properties.destPrimaryVswId),
+      'DestSecondaryVswId': ros.stringToRosTemplate(properties.destSecondaryVswId),
       'DisasterRecoveryJob': ros.booleanToRosTemplate(properties.disasterRecoveryJob),
       'DtsBisLabel': ros.stringToRosTemplate(properties.dtsBisLabel),
       'DtsInstanceId': ros.stringToRosTemplate(properties.dtsInstanceId),
@@ -872,7 +972,12 @@ function rosMigrationJob2PropsToRosTemplate(properties: any, enableResourcePrope
       'ErrorNotice': ros.booleanToRosTemplate(properties.errorNotice),
       'ErrorPhone': ros.stringToRosTemplate(properties.errorPhone),
       'FileOssUrl': ros.stringToRosTemplate(properties.fileOssUrl),
+      'MaxDu': ros.numberToRosTemplate(properties.maxDu),
+      'MinDu': ros.numberToRosTemplate(properties.minDu),
       'Reserve': ros.hashMapper(ros.objectToRosTemplate)(properties.reserve),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'SrcPrimaryVswId': ros.stringToRosTemplate(properties.srcPrimaryVswId),
+      'SrcSecondaryVswId': ros.stringToRosTemplate(properties.srcSecondaryVswId),
       'Status': ros.stringToRosTemplate(properties.status),
     };
 }
@@ -962,8 +1067,8 @@ export class RosMigrationJob2 extends ros.RosResource {
     public delayNotice: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property delayPhone: The mobile numbers that receive latency-related alerts. Separate multiple mobile numbers with commas (,).
-     * **Note**: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+     * @Property delayPhone: The mobile numbers that receive latency-related alerts. Separate multiple mobile numbers with commas (,). You can specify up to 10 mobile numbers.
+     * **Note**: You can also configure alert rules for DTS tasks in the CloudMonitor console.This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers.
      */
     public delayPhone: string | ros.IResolvable | undefined;
 
@@ -971,6 +1076,16 @@ export class RosMigrationJob2 extends ros.RosResource {
      * @Property delayRuleTime: The threshold for latency alerts. Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
      */
     public delayRuleTime: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property destPrimaryVswId: The primary VSW ID at the destination end of the VPC NAT.
+     */
+    public destPrimaryVswId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property destSecondaryVswId: The secondary VSW ID at the destination end of the VPC NAT.
+     */
+    public destSecondaryVswId: string | ros.IResolvable | undefined;
 
     /**
      * @Property disasterRecoveryJob: Specifies whether the instance is a disaster recovery instance. Valid values: **true** and **false**
@@ -998,8 +1113,8 @@ export class RosMigrationJob2 extends ros.RosResource {
     public errorNotice: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property errorPhone: The mobile numbers that receive status-related alerts. Separate multiple mobile numbers with commas (,).
-     * **Note**: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+     * @Property errorPhone: The mobile numbers that receive status-related alerts. Separate multiple mobile numbers with commas (,). You can specify up to 10 mobile numbers.
+     * **Note**: You can also configure alert rules for DTS tasks in the CloudMonitor console.This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers.
      */
     public errorPhone: string | ros.IResolvable | undefined;
 
@@ -1009,9 +1124,34 @@ export class RosMigrationJob2 extends ros.RosResource {
     public fileOssUrl: string | ros.IResolvable | undefined;
 
     /**
+     * @Property maxDu: The upper limit of DU. This parameter is supported only for serverless instances.
+     */
+    public maxDu: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property minDu: The lower limit of DU. This parameter is supported only for serverless instances.
+     */
+    public minDu: number | ros.IResolvable | undefined;
+
+    /**
      * @Property reserve: The reserved parameter of DTS. You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
      */
     public reserve: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property srcPrimaryVswId: The primary VSW ID at the source end of the VPC NAT.
+     */
+    public srcPrimaryVswId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property srcSecondaryVswId: The secondary VSW ID at the source end of the VPC NAT.
+     */
+    public srcSecondaryVswId: string | ros.IResolvable | undefined;
 
     /**
      * @Property status: The status of the resource. Valid values:
@@ -1046,6 +1186,8 @@ export class RosMigrationJob2 extends ros.RosResource {
         this.delayNotice = props.delayNotice;
         this.delayPhone = props.delayPhone;
         this.delayRuleTime = props.delayRuleTime;
+        this.destPrimaryVswId = props.destPrimaryVswId;
+        this.destSecondaryVswId = props.destSecondaryVswId;
         this.disasterRecoveryJob = props.disasterRecoveryJob;
         this.dtsBisLabel = props.dtsBisLabel;
         this.dtsInstanceId = props.dtsInstanceId;
@@ -1053,7 +1195,12 @@ export class RosMigrationJob2 extends ros.RosResource {
         this.errorNotice = props.errorNotice;
         this.errorPhone = props.errorPhone;
         this.fileOssUrl = props.fileOssUrl;
+        this.maxDu = props.maxDu;
+        this.minDu = props.minDu;
         this.reserve = props.reserve;
+        this.resourceGroupId = props.resourceGroupId;
+        this.srcPrimaryVswId = props.srcPrimaryVswId;
+        this.srcSecondaryVswId = props.srcSecondaryVswId;
         this.status = props.status;
     }
 
@@ -1073,6 +1220,8 @@ export class RosMigrationJob2 extends ros.RosResource {
             delayNotice: this.delayNotice,
             delayPhone: this.delayPhone,
             delayRuleTime: this.delayRuleTime,
+            destPrimaryVswId: this.destPrimaryVswId,
+            destSecondaryVswId: this.destSecondaryVswId,
             disasterRecoveryJob: this.disasterRecoveryJob,
             dtsBisLabel: this.dtsBisLabel,
             dtsInstanceId: this.dtsInstanceId,
@@ -1080,7 +1229,12 @@ export class RosMigrationJob2 extends ros.RosResource {
             errorNotice: this.errorNotice,
             errorPhone: this.errorPhone,
             fileOssUrl: this.fileOssUrl,
+            maxDu: this.maxDu,
+            minDu: this.minDu,
             reserve: this.reserve,
+            resourceGroupId: this.resourceGroupId,
+            srcPrimaryVswId: this.srcPrimaryVswId,
+            srcSecondaryVswId: this.srcSecondaryVswId,
             status: this.status,
         };
     }
@@ -1719,8 +1873,8 @@ export interface RosSubscriptionJob2Props {
     readonly delayNotice?: boolean | ros.IResolvable;
 
     /**
-     * @Property delayPhone: The mobile numbers that receive latency-related alerts. Separate multiple mobile numbers with commas (,).
-     * **Note**: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+     * @Property delayPhone: The mobile numbers that receive latency-related alerts. Separate multiple mobile numbers with commas (,). You can specify up to 10 mobile numbers.
+     * **Note**: You can also configure alert rules for DTS tasks in the CloudMonitor console.This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers.
      */
     readonly delayPhone?: string | ros.IResolvable;
 
@@ -1728,6 +1882,16 @@ export interface RosSubscriptionJob2Props {
      * @Property delayRuleTime: The threshold for latency alerts. Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
      */
     readonly delayRuleTime?: number | ros.IResolvable;
+
+    /**
+     * @Property destPrimaryVswId: The primary VSW ID at the destination end of the VPC NAT.
+     */
+    readonly destPrimaryVswId?: string | ros.IResolvable;
+
+    /**
+     * @Property destSecondaryVswId: The secondary VSW ID at the destination end of the VPC NAT.
+     */
+    readonly destSecondaryVswId?: string | ros.IResolvable;
 
     /**
      * @Property dtsBisLabel: The environment tag of the DTS instance. Valid values: **normal** and **online**.
@@ -1750,15 +1914,40 @@ export interface RosSubscriptionJob2Props {
     readonly errorNotice?: boolean | ros.IResolvable;
 
     /**
-     * @Property errorPhone: The mobile numbers that receive status-related alerts. Separate multiple mobile numbers with commas (,).
-     * **Note**: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+     * @Property errorPhone: The mobile numbers that receive status-related alerts. Separate multiple mobile numbers with commas (,). You can specify up to 10 mobile numbers.
+     * **Note**: You can also configure alert rules for DTS tasks in the CloudMonitor console.This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers.
      */
     readonly errorPhone?: string | ros.IResolvable;
+
+    /**
+     * @Property maxDu: The upper limit of DU. This parameter is supported only for serverless instances.
+     */
+    readonly maxDu?: number | ros.IResolvable;
+
+    /**
+     * @Property minDu: The lower limit of DU. This parameter is supported only for serverless instances.
+     */
+    readonly minDu?: number | ros.IResolvable;
 
     /**
      * @Property reserve: The reserved parameter of DTS. You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
      */
     readonly reserve?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property srcPrimaryVswId: The primary VSW ID at the source end of the VPC NAT.
+     */
+    readonly srcPrimaryVswId?: string | ros.IResolvable;
+
+    /**
+     * @Property srcSecondaryVswId: The secondary VSW ID at the source end of the VPC NAT.
+     */
+    readonly srcSecondaryVswId?: string | ros.IResolvable;
 
     /**
      * @Property status: The status of the resource. Valid values:
@@ -1792,25 +1981,44 @@ function RosSubscriptionJob2PropsValidator(properties: any): ros.ValidationResul
     }
     errors.collect(ros.propertyValidator('status', ros.validateString)(properties.status));
     errors.collect(ros.propertyValidator('reserve', ros.hashValidator(ros.validateAny))(properties.reserve));
-    errors.collect(ros.propertyValidator('delayPhone', ros.validateString)(properties.delayPhone));
+    errors.collect(ros.propertyValidator('srcPrimaryVswId', ros.validateString)(properties.srcPrimaryVswId));
+    errors.collect(ros.propertyValidator('srcSecondaryVswId', ros.validateString)(properties.srcSecondaryVswId));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('dedicatedClusterId', ros.validateString)(properties.dedicatedClusterId));
+    errors.collect(ros.propertyValidator('delayPhone', ros.validateString)(properties.delayPhone));
+    errors.collect(ros.propertyValidator('destPrimaryVswId', ros.validateString)(properties.destPrimaryVswId));
     errors.collect(ros.propertyValidator('errorNotice', ros.validateBoolean)(properties.errorNotice));
     errors.collect(ros.propertyValidator('dtsJobName', ros.requiredValidator)(properties.dtsJobName));
     errors.collect(ros.propertyValidator('dtsJobName', ros.validateString)(properties.dtsJobName));
     errors.collect(ros.propertyValidator('delayRuleTime', ros.validateNumber)(properties.delayRuleTime));
+    if(properties.minDu && (typeof properties.minDu) !== 'object') {
+        errors.collect(ros.propertyValidator('minDu', ros.validateAllowedValues)({
+          data: properties.minDu,
+          allowedValues: [1,2,4,8,16,32],
+        }));
+    }
+    errors.collect(ros.propertyValidator('minDu', ros.validateNumber)(properties.minDu));
     errors.collect(ros.propertyValidator('dtsInstanceId', ros.validateString)(properties.dtsInstanceId));
     errors.collect(ros.propertyValidator('dbList', ros.requiredValidator)(properties.dbList));
     errors.collect(ros.propertyValidator('dbList', ros.hashValidator(ros.validateAny))(properties.dbList));
-    errors.collect(ros.propertyValidator('dtsBisLabel', ros.validateString)(properties.dtsBisLabel));
     errors.collect(ros.propertyValidator('subscriptionDataType', RosSubscriptionJob2_SubscriptionDataTypePropertyValidator)(properties.subscriptionDataType));
+    errors.collect(ros.propertyValidator('dtsBisLabel', ros.validateString)(properties.dtsBisLabel));
     errors.collect(ros.propertyValidator('checkpoint', ros.validateString)(properties.checkpoint));
-    errors.collect(ros.propertyValidator('delayNotice', ros.validateBoolean)(properties.delayNotice));
     errors.collect(ros.propertyValidator('dtsJobId', ros.validateString)(properties.dtsJobId));
+    errors.collect(ros.propertyValidator('delayNotice', ros.validateBoolean)(properties.delayNotice));
     errors.collect(ros.propertyValidator('subscriptionInstance', ros.requiredValidator)(properties.subscriptionInstance));
     errors.collect(ros.propertyValidator('subscriptionInstance', RosSubscriptionJob2_SubscriptionInstancePropertyValidator)(properties.subscriptionInstance));
     errors.collect(ros.propertyValidator('sourceEndpoint', ros.requiredValidator)(properties.sourceEndpoint));
     errors.collect(ros.propertyValidator('sourceEndpoint', RosSubscriptionJob2_SourceEndpointPropertyValidator)(properties.sourceEndpoint));
     errors.collect(ros.propertyValidator('errorPhone', ros.validateString)(properties.errorPhone));
+    errors.collect(ros.propertyValidator('destSecondaryVswId', ros.validateString)(properties.destSecondaryVswId));
+    if(properties.maxDu && (typeof properties.maxDu) !== 'object') {
+        errors.collect(ros.propertyValidator('maxDu', ros.validateAllowedValues)({
+          data: properties.maxDu,
+          allowedValues: [2,4,8,16,32],
+        }));
+    }
+    errors.collect(ros.propertyValidator('maxDu', ros.validateNumber)(properties.maxDu));
     return errors.wrap('supplied properties not correct for "RosSubscriptionJob2Props"');
 }
 
@@ -1837,12 +2045,19 @@ function rosSubscriptionJob2PropsToRosTemplate(properties: any, enableResourcePr
       'DelayNotice': ros.booleanToRosTemplate(properties.delayNotice),
       'DelayPhone': ros.stringToRosTemplate(properties.delayPhone),
       'DelayRuleTime': ros.numberToRosTemplate(properties.delayRuleTime),
+      'DestPrimaryVswId': ros.stringToRosTemplate(properties.destPrimaryVswId),
+      'DestSecondaryVswId': ros.stringToRosTemplate(properties.destSecondaryVswId),
       'DtsBisLabel': ros.stringToRosTemplate(properties.dtsBisLabel),
       'DtsInstanceId': ros.stringToRosTemplate(properties.dtsInstanceId),
       'DtsJobId': ros.stringToRosTemplate(properties.dtsJobId),
       'ErrorNotice': ros.booleanToRosTemplate(properties.errorNotice),
       'ErrorPhone': ros.stringToRosTemplate(properties.errorPhone),
+      'MaxDu': ros.numberToRosTemplate(properties.maxDu),
+      'MinDu': ros.numberToRosTemplate(properties.minDu),
       'Reserve': ros.hashMapper(ros.objectToRosTemplate)(properties.reserve),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'SrcPrimaryVswId': ros.stringToRosTemplate(properties.srcPrimaryVswId),
+      'SrcSecondaryVswId': ros.stringToRosTemplate(properties.srcSecondaryVswId),
       'Status': ros.stringToRosTemplate(properties.status),
       'SubscriptionDataType': rosSubscriptionJob2SubscriptionDataTypePropertyToRosTemplate(properties.subscriptionDataType),
     };
@@ -1913,8 +2128,8 @@ export class RosSubscriptionJob2 extends ros.RosResource {
     public delayNotice: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property delayPhone: The mobile numbers that receive latency-related alerts. Separate multiple mobile numbers with commas (,).
-     * **Note**: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+     * @Property delayPhone: The mobile numbers that receive latency-related alerts. Separate multiple mobile numbers with commas (,). You can specify up to 10 mobile numbers.
+     * **Note**: You can also configure alert rules for DTS tasks in the CloudMonitor console.This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers.
      */
     public delayPhone: string | ros.IResolvable | undefined;
 
@@ -1922,6 +2137,16 @@ export class RosSubscriptionJob2 extends ros.RosResource {
      * @Property delayRuleTime: The threshold for latency alerts. Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
      */
     public delayRuleTime: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property destPrimaryVswId: The primary VSW ID at the destination end of the VPC NAT.
+     */
+    public destPrimaryVswId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property destSecondaryVswId: The secondary VSW ID at the destination end of the VPC NAT.
+     */
+    public destSecondaryVswId: string | ros.IResolvable | undefined;
 
     /**
      * @Property dtsBisLabel: The environment tag of the DTS instance. Valid values: **normal** and **online**.
@@ -1944,15 +2169,40 @@ export class RosSubscriptionJob2 extends ros.RosResource {
     public errorNotice: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property errorPhone: The mobile numbers that receive status-related alerts. Separate multiple mobile numbers with commas (,).
-     * **Note**: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+     * @Property errorPhone: The mobile numbers that receive status-related alerts. Separate multiple mobile numbers with commas (,). You can specify up to 10 mobile numbers.
+     * **Note**: You can also configure alert rules for DTS tasks in the CloudMonitor console.This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers.
      */
     public errorPhone: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property maxDu: The upper limit of DU. This parameter is supported only for serverless instances.
+     */
+    public maxDu: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property minDu: The lower limit of DU. This parameter is supported only for serverless instances.
+     */
+    public minDu: number | ros.IResolvable | undefined;
 
     /**
      * @Property reserve: The reserved parameter of DTS. You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
      */
     public reserve: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property srcPrimaryVswId: The primary VSW ID at the source end of the VPC NAT.
+     */
+    public srcPrimaryVswId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property srcSecondaryVswId: The secondary VSW ID at the source end of the VPC NAT.
+     */
+    public srcSecondaryVswId: string | ros.IResolvable | undefined;
 
     /**
      * @Property status: The status of the resource. Valid values:
@@ -1988,12 +2238,19 @@ export class RosSubscriptionJob2 extends ros.RosResource {
         this.delayNotice = props.delayNotice;
         this.delayPhone = props.delayPhone;
         this.delayRuleTime = props.delayRuleTime;
+        this.destPrimaryVswId = props.destPrimaryVswId;
+        this.destSecondaryVswId = props.destSecondaryVswId;
         this.dtsBisLabel = props.dtsBisLabel;
         this.dtsInstanceId = props.dtsInstanceId;
         this.dtsJobId = props.dtsJobId;
         this.errorNotice = props.errorNotice;
         this.errorPhone = props.errorPhone;
+        this.maxDu = props.maxDu;
+        this.minDu = props.minDu;
         this.reserve = props.reserve;
+        this.resourceGroupId = props.resourceGroupId;
+        this.srcPrimaryVswId = props.srcPrimaryVswId;
+        this.srcSecondaryVswId = props.srcSecondaryVswId;
         this.status = props.status;
         this.subscriptionDataType = props.subscriptionDataType;
     }
@@ -2010,12 +2267,19 @@ export class RosSubscriptionJob2 extends ros.RosResource {
             delayNotice: this.delayNotice,
             delayPhone: this.delayPhone,
             delayRuleTime: this.delayRuleTime,
+            destPrimaryVswId: this.destPrimaryVswId,
+            destSecondaryVswId: this.destSecondaryVswId,
             dtsBisLabel: this.dtsBisLabel,
             dtsInstanceId: this.dtsInstanceId,
             dtsJobId: this.dtsJobId,
             errorNotice: this.errorNotice,
             errorPhone: this.errorPhone,
+            maxDu: this.maxDu,
+            minDu: this.minDu,
             reserve: this.reserve,
+            resourceGroupId: this.resourceGroupId,
+            srcPrimaryVswId: this.srcPrimaryVswId,
+            srcSecondaryVswId: this.srcSecondaryVswId,
             status: this.status,
             subscriptionDataType: this.subscriptionDataType,
         };
@@ -2332,8 +2596,8 @@ export interface RosSynchronizationJob2Props {
     readonly delayNotice?: boolean | ros.IResolvable;
 
     /**
-     * @Property delayPhone: The mobile numbers that receive latency-related alerts. Separate multiple mobile numbers with commas (,).
-     * **Note**: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+     * @Property delayPhone: The mobile numbers that receive latency-related alerts. Separate multiple mobile numbers with commas (,). You can specify up to 10 mobile numbers.
+     * **Note**: You can also configure alert rules for DTS tasks in the CloudMonitor console.This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers.
      */
     readonly delayPhone?: string | ros.IResolvable;
 
@@ -2341,6 +2605,16 @@ export interface RosSynchronizationJob2Props {
      * @Property delayRuleTime: The threshold for latency alerts. Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
      */
     readonly delayRuleTime?: number | ros.IResolvable;
+
+    /**
+     * @Property destPrimaryVswId: The primary VSW ID at the destination end of the VPC NAT.
+     */
+    readonly destPrimaryVswId?: string | ros.IResolvable;
+
+    /**
+     * @Property destSecondaryVswId: The secondary VSW ID at the destination end of the VPC NAT.
+     */
+    readonly destSecondaryVswId?: string | ros.IResolvable;
 
     /**
      * @Property disasterRecoveryJob: Specifies whether the instance is a disaster recovery instance. Valid values: **true** and **false**
@@ -2368,8 +2642,8 @@ export interface RosSynchronizationJob2Props {
     readonly errorNotice?: boolean | ros.IResolvable;
 
     /**
-     * @Property errorPhone: The mobile numbers that receive status-related alerts. Separate multiple mobile numbers with commas (,).
-     * **Note**: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+     * @Property errorPhone: The mobile numbers that receive status-related alerts. Separate multiple mobile numbers with commas (,). You can specify up to 10 mobile numbers.
+     * **Note**: You can also configure alert rules for DTS tasks in the CloudMonitor console.This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers.
      */
     readonly errorPhone?: string | ros.IResolvable;
 
@@ -2379,9 +2653,34 @@ export interface RosSynchronizationJob2Props {
     readonly fileOssUrl?: string | ros.IResolvable;
 
     /**
+     * @Property maxDu: The upper limit of DU. This parameter is supported only for serverless instances.
+     */
+    readonly maxDu?: number | ros.IResolvable;
+
+    /**
+     * @Property minDu: The lower limit of DU. This parameter is supported only for serverless instances.
+     */
+    readonly minDu?: number | ros.IResolvable;
+
+    /**
      * @Property reserve: The reserved parameter of DTS. You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
      */
     readonly reserve?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property srcPrimaryVswId: The primary VSW ID at the source end of the VPC NAT.
+     */
+    readonly srcPrimaryVswId?: string | ros.IResolvable;
+
+    /**
+     * @Property srcSecondaryVswId: The secondary VSW ID at the source end of the VPC NAT.
+     */
+    readonly srcSecondaryVswId?: string | ros.IResolvable;
 
     /**
      * @Property status: The status of the resource. Valid values:
@@ -2411,6 +2710,38 @@ export interface RosSynchronizationJob2Props {
 function RosSynchronizationJob2PropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('reserve', ros.hashValidator(ros.validateAny))(properties.reserve));
+    errors.collect(ros.propertyValidator('srcSecondaryVswId', ros.validateString)(properties.srcSecondaryVswId));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('dataSynchronization', ros.requiredValidator)(properties.dataSynchronization));
+    errors.collect(ros.propertyValidator('dataSynchronization', ros.validateBoolean)(properties.dataSynchronization));
+    errors.collect(ros.propertyValidator('delayPhone', ros.validateString)(properties.delayPhone));
+    errors.collect(ros.propertyValidator('errorNotice', ros.validateBoolean)(properties.errorNotice));
+    errors.collect(ros.propertyValidator('dtsJobName', ros.requiredValidator)(properties.dtsJobName));
+    errors.collect(ros.propertyValidator('dtsJobName', ros.validateString)(properties.dtsJobName));
+    errors.collect(ros.propertyValidator('delayRuleTime', ros.validateNumber)(properties.delayRuleTime));
+    if(properties.minDu && (typeof properties.minDu) !== 'object') {
+        errors.collect(ros.propertyValidator('minDu', ros.validateAllowedValues)({
+          data: properties.minDu,
+          allowedValues: [1,2,4,8,16,32],
+        }));
+    }
+    errors.collect(ros.propertyValidator('minDu', ros.validateNumber)(properties.minDu));
+    errors.collect(ros.propertyValidator('dbList', ros.requiredValidator)(properties.dbList));
+    errors.collect(ros.propertyValidator('dbList', ros.hashValidator(ros.validateAny))(properties.dbList));
+    errors.collect(ros.propertyValidator('fileOssUrl', ros.validateString)(properties.fileOssUrl));
+    errors.collect(ros.propertyValidator('dtsJobId', ros.validateString)(properties.dtsJobId));
+    errors.collect(ros.propertyValidator('dataInitialization', ros.requiredValidator)(properties.dataInitialization));
+    errors.collect(ros.propertyValidator('dataInitialization', ros.validateBoolean)(properties.dataInitialization));
+    errors.collect(ros.propertyValidator('errorPhone', ros.validateString)(properties.errorPhone));
+    errors.collect(ros.propertyValidator('destSecondaryVswId', ros.validateString)(properties.destSecondaryVswId));
+    if(properties.maxDu && (typeof properties.maxDu) !== 'object') {
+        errors.collect(ros.propertyValidator('maxDu', ros.validateAllowedValues)({
+          data: properties.maxDu,
+          allowedValues: [2,4,8,16,32],
+        }));
+    }
+    errors.collect(ros.propertyValidator('maxDu', ros.validateNumber)(properties.maxDu));
     if(properties.status && (typeof properties.status) !== 'object') {
         errors.collect(ros.propertyValidator('status', ros.validateAllowedValues)({
           data: properties.status,
@@ -2418,32 +2749,19 @@ function RosSynchronizationJob2PropsValidator(properties: any): ros.ValidationRe
         }));
     }
     errors.collect(ros.propertyValidator('status', ros.validateString)(properties.status));
-    errors.collect(ros.propertyValidator('reserve', ros.hashValidator(ros.validateAny))(properties.reserve));
-    errors.collect(ros.propertyValidator('dataSynchronization', ros.requiredValidator)(properties.dataSynchronization));
-    errors.collect(ros.propertyValidator('dataSynchronization', ros.validateBoolean)(properties.dataSynchronization));
-    errors.collect(ros.propertyValidator('delayPhone', ros.validateString)(properties.delayPhone));
+    errors.collect(ros.propertyValidator('srcPrimaryVswId', ros.validateString)(properties.srcPrimaryVswId));
     errors.collect(ros.propertyValidator('dedicatedClusterId', ros.validateString)(properties.dedicatedClusterId));
-    errors.collect(ros.propertyValidator('errorNotice', ros.validateBoolean)(properties.errorNotice));
-    errors.collect(ros.propertyValidator('dtsJobName', ros.requiredValidator)(properties.dtsJobName));
-    errors.collect(ros.propertyValidator('dtsJobName', ros.validateString)(properties.dtsJobName));
-    errors.collect(ros.propertyValidator('delayRuleTime', ros.validateNumber)(properties.delayRuleTime));
+    errors.collect(ros.propertyValidator('destPrimaryVswId', ros.validateString)(properties.destPrimaryVswId));
     errors.collect(ros.propertyValidator('dtsInstanceId', ros.validateString)(properties.dtsInstanceId));
-    errors.collect(ros.propertyValidator('dbList', ros.requiredValidator)(properties.dbList));
-    errors.collect(ros.propertyValidator('dbList', ros.hashValidator(ros.validateAny))(properties.dbList));
-    errors.collect(ros.propertyValidator('fileOssUrl', ros.validateString)(properties.fileOssUrl));
     errors.collect(ros.propertyValidator('dataCheckConfigure', RosSynchronizationJob2_DataCheckConfigurePropertyValidator)(properties.dataCheckConfigure));
     errors.collect(ros.propertyValidator('dtsBisLabel', ros.validateString)(properties.dtsBisLabel));
     errors.collect(ros.propertyValidator('checkpoint', ros.validateString)(properties.checkpoint));
     errors.collect(ros.propertyValidator('disasterRecoveryJob', ros.validateBoolean)(properties.disasterRecoveryJob));
-    errors.collect(ros.propertyValidator('dtsJobId', ros.validateString)(properties.dtsJobId));
     errors.collect(ros.propertyValidator('delayNotice', ros.validateBoolean)(properties.delayNotice));
-    errors.collect(ros.propertyValidator('dataInitialization', ros.requiredValidator)(properties.dataInitialization));
-    errors.collect(ros.propertyValidator('dataInitialization', ros.validateBoolean)(properties.dataInitialization));
     errors.collect(ros.propertyValidator('destinationEndpoint', ros.requiredValidator)(properties.destinationEndpoint));
     errors.collect(ros.propertyValidator('destinationEndpoint', RosSynchronizationJob2_DestinationEndpointPropertyValidator)(properties.destinationEndpoint));
     errors.collect(ros.propertyValidator('sourceEndpoint', ros.requiredValidator)(properties.sourceEndpoint));
     errors.collect(ros.propertyValidator('sourceEndpoint', RosSynchronizationJob2_SourceEndpointPropertyValidator)(properties.sourceEndpoint));
-    errors.collect(ros.propertyValidator('errorPhone', ros.validateString)(properties.errorPhone));
     errors.collect(ros.propertyValidator('structureInitialization', ros.requiredValidator)(properties.structureInitialization));
     errors.collect(ros.propertyValidator('structureInitialization', ros.validateBoolean)(properties.structureInitialization));
     errors.collect(ros.propertyValidator('synchronizationDirection', ros.validateString)(properties.synchronizationDirection));
@@ -2477,6 +2795,8 @@ function rosSynchronizationJob2PropsToRosTemplate(properties: any, enableResourc
       'DelayNotice': ros.booleanToRosTemplate(properties.delayNotice),
       'DelayPhone': ros.stringToRosTemplate(properties.delayPhone),
       'DelayRuleTime': ros.numberToRosTemplate(properties.delayRuleTime),
+      'DestPrimaryVswId': ros.stringToRosTemplate(properties.destPrimaryVswId),
+      'DestSecondaryVswId': ros.stringToRosTemplate(properties.destSecondaryVswId),
       'DisasterRecoveryJob': ros.booleanToRosTemplate(properties.disasterRecoveryJob),
       'DtsBisLabel': ros.stringToRosTemplate(properties.dtsBisLabel),
       'DtsInstanceId': ros.stringToRosTemplate(properties.dtsInstanceId),
@@ -2484,7 +2804,12 @@ function rosSynchronizationJob2PropsToRosTemplate(properties: any, enableResourc
       'ErrorNotice': ros.booleanToRosTemplate(properties.errorNotice),
       'ErrorPhone': ros.stringToRosTemplate(properties.errorPhone),
       'FileOssUrl': ros.stringToRosTemplate(properties.fileOssUrl),
+      'MaxDu': ros.numberToRosTemplate(properties.maxDu),
+      'MinDu': ros.numberToRosTemplate(properties.minDu),
       'Reserve': ros.hashMapper(ros.objectToRosTemplate)(properties.reserve),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'SrcPrimaryVswId': ros.stringToRosTemplate(properties.srcPrimaryVswId),
+      'SrcSecondaryVswId': ros.stringToRosTemplate(properties.srcSecondaryVswId),
       'Status': ros.stringToRosTemplate(properties.status),
       'SynchronizationDirection': ros.stringToRosTemplate(properties.synchronizationDirection),
     };
@@ -2575,8 +2900,8 @@ export class RosSynchronizationJob2 extends ros.RosResource {
     public delayNotice: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property delayPhone: The mobile numbers that receive latency-related alerts. Separate multiple mobile numbers with commas (,).
-     * **Note**: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+     * @Property delayPhone: The mobile numbers that receive latency-related alerts. Separate multiple mobile numbers with commas (,). You can specify up to 10 mobile numbers.
+     * **Note**: You can also configure alert rules for DTS tasks in the CloudMonitor console.This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers.
      */
     public delayPhone: string | ros.IResolvable | undefined;
 
@@ -2584,6 +2909,16 @@ export class RosSynchronizationJob2 extends ros.RosResource {
      * @Property delayRuleTime: The threshold for latency alerts. Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
      */
     public delayRuleTime: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property destPrimaryVswId: The primary VSW ID at the destination end of the VPC NAT.
+     */
+    public destPrimaryVswId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property destSecondaryVswId: The secondary VSW ID at the destination end of the VPC NAT.
+     */
+    public destSecondaryVswId: string | ros.IResolvable | undefined;
 
     /**
      * @Property disasterRecoveryJob: Specifies whether the instance is a disaster recovery instance. Valid values: **true** and **false**
@@ -2611,8 +2946,8 @@ export class RosSynchronizationJob2 extends ros.RosResource {
     public errorNotice: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property errorPhone: The mobile numbers that receive status-related alerts. Separate multiple mobile numbers with commas (,).
-     * **Note**: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+     * @Property errorPhone: The mobile numbers that receive status-related alerts. Separate multiple mobile numbers with commas (,). You can specify up to 10 mobile numbers.
+     * **Note**: You can also configure alert rules for DTS tasks in the CloudMonitor console.This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers.
      */
     public errorPhone: string | ros.IResolvable | undefined;
 
@@ -2622,9 +2957,34 @@ export class RosSynchronizationJob2 extends ros.RosResource {
     public fileOssUrl: string | ros.IResolvable | undefined;
 
     /**
+     * @Property maxDu: The upper limit of DU. This parameter is supported only for serverless instances.
+     */
+    public maxDu: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property minDu: The lower limit of DU. This parameter is supported only for serverless instances.
+     */
+    public minDu: number | ros.IResolvable | undefined;
+
+    /**
      * @Property reserve: The reserved parameter of DTS. You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
      */
     public reserve: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property srcPrimaryVswId: The primary VSW ID at the source end of the VPC NAT.
+     */
+    public srcPrimaryVswId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property srcSecondaryVswId: The secondary VSW ID at the source end of the VPC NAT.
+     */
+    public srcSecondaryVswId: string | ros.IResolvable | undefined;
 
     /**
      * @Property status: The status of the resource. Valid values:
@@ -2668,6 +3028,8 @@ export class RosSynchronizationJob2 extends ros.RosResource {
         this.delayNotice = props.delayNotice;
         this.delayPhone = props.delayPhone;
         this.delayRuleTime = props.delayRuleTime;
+        this.destPrimaryVswId = props.destPrimaryVswId;
+        this.destSecondaryVswId = props.destSecondaryVswId;
         this.disasterRecoveryJob = props.disasterRecoveryJob;
         this.dtsBisLabel = props.dtsBisLabel;
         this.dtsInstanceId = props.dtsInstanceId;
@@ -2675,7 +3037,12 @@ export class RosSynchronizationJob2 extends ros.RosResource {
         this.errorNotice = props.errorNotice;
         this.errorPhone = props.errorPhone;
         this.fileOssUrl = props.fileOssUrl;
+        this.maxDu = props.maxDu;
+        this.minDu = props.minDu;
         this.reserve = props.reserve;
+        this.resourceGroupId = props.resourceGroupId;
+        this.srcPrimaryVswId = props.srcPrimaryVswId;
+        this.srcSecondaryVswId = props.srcSecondaryVswId;
         this.status = props.status;
         this.synchronizationDirection = props.synchronizationDirection;
     }
@@ -2696,6 +3063,8 @@ export class RosSynchronizationJob2 extends ros.RosResource {
             delayNotice: this.delayNotice,
             delayPhone: this.delayPhone,
             delayRuleTime: this.delayRuleTime,
+            destPrimaryVswId: this.destPrimaryVswId,
+            destSecondaryVswId: this.destSecondaryVswId,
             disasterRecoveryJob: this.disasterRecoveryJob,
             dtsBisLabel: this.dtsBisLabel,
             dtsInstanceId: this.dtsInstanceId,
@@ -2703,7 +3072,12 @@ export class RosSynchronizationJob2 extends ros.RosResource {
             errorNotice: this.errorNotice,
             errorPhone: this.errorPhone,
             fileOssUrl: this.fileOssUrl,
+            maxDu: this.maxDu,
+            minDu: this.minDu,
             reserve: this.reserve,
+            resourceGroupId: this.resourceGroupId,
+            srcPrimaryVswId: this.srcPrimaryVswId,
+            srcSecondaryVswId: this.srcSecondaryVswId,
             status: this.status,
             synchronizationDirection: this.synchronizationDirection,
         };

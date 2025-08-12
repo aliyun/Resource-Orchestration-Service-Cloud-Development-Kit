@@ -13,5 +13,7 @@ type TGWProps struct {
 	Redirect interface{} `field:"optional" json:"redirect" yaml:"redirect"`
 	// Property resourceGroupId: The ID of the resource group.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
+	// Property wafInstanceRegion: The ID of the resource group.
+	WafInstanceRegion interface{} `field:"optional" json:"wafInstanceRegion" yaml:"wafInstanceRegion"`
 }
 

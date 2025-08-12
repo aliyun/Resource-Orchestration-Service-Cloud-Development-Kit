@@ -73,40 +73,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
-        private object? _autoPay;
-
-        /// <summary>Property autoPay: Specifies whether to enable automatic payment.</summary>
-        /// <remarks>
-        /// Default is true.
-        /// </remarks>
-        [JsiiOptional]
-        [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        public object? AutoPay
-        {
-            get => _autoPay;
-            set
-            {
-                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                {
-                    switch (value)
-                    {
-                        case bool cast_cd4240:
-                            break;
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                            break;
-                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                            // Not enough information to type-check...
-                            break;
-                        case null:
-                            break;
-                        default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                    }
-                }
-                _autoPay = value;
-            }
-        }
-
         private object? _deletionForce;
 
         /// <summary>Property deletionForce: Whether force delete the relative snat and dnat entries in the net gateway and unbind eips.</summary>
@@ -206,60 +172,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                     }
                 }
                 _description = value;
-            }
-        }
-
-        private object? _duration;
-
-        /// <summary>Property duration: The subscription duration.</summary>
-        /// <remarks>
-        /// While choose by pay by month, it could be from 1 to 9 or 12, 24, 36. While choose pay by year, it could be from 1 to 3.
-        /// </remarks>
-        [JsiiOptional]
-        [JsiiProperty(name: "duration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        public object? Duration
-        {
-            get => _duration;
-            set
-            {
-                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                {
-                    switch (value)
-                    {
-                        case double cast_cd4240:
-                            break;
-                        case byte cast_cd4240:
-                            break;
-                        case decimal cast_cd4240:
-                            break;
-                        case float cast_cd4240:
-                            break;
-                        case int cast_cd4240:
-                            break;
-                        case long cast_cd4240:
-                            break;
-                        case sbyte cast_cd4240:
-                            break;
-                        case short cast_cd4240:
-                            break;
-                        case uint cast_cd4240:
-                            break;
-                        case ulong cast_cd4240:
-                            break;
-                        case ushort cast_cd4240:
-                            break;
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                            break;
-                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                            // Not enough information to type-check...
-                            break;
-                        case null:
-                            break;
-                        default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                    }
-                }
-                _duration = value;
             }
         }
 
@@ -507,40 +419,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                     }
                 }
                 _networkType = value;
-            }
-        }
-
-        private object? _pricingCycle;
-
-        /// <summary>Property pricingCycle: Price cycle of the resource.</summary>
-        /// <remarks>
-        /// This property has no default value.
-        /// </remarks>
-        [JsiiOptional]
-        [JsiiProperty(name: "pricingCycle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        public object? PricingCycle
-        {
-            get => _pricingCycle;
-            set
-            {
-                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                {
-                    switch (value)
-                    {
-                        case string cast_cd4240:
-                            break;
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                            break;
-                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                            // Not enough information to type-check...
-                            break;
-                        case null:
-                            break;
-                        default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                    }
-                }
-                _pricingCycle = value;
             }
         }
 

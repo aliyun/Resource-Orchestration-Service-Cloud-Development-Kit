@@ -382,7 +382,7 @@ function rosAssignIpv6AddressesPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::AssignIpv6Addresses`, which is used to assign one or more IPv6 addresses to an elastic network interface (ENI).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::AssignIpv6Addresses`, which is used to assign IPv6 addresses to an elastic network interface (ENI).
  * @Note This class does not contain additional functions, so it is recommended to use the `AssignIpv6Addresses` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-assignipv6addresses
  */
@@ -571,7 +571,7 @@ function rosAssignPrivateIpAddressesPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::AssignPrivateIpAddresses`, which is used to assign one or more secondary private IP addresses to an ENI. You can specify private IP addresses within the CIDR block of the vSwitch that hosts the ENI. You can also specify the number of private IP addresses for ECS to assign them automatically.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::AssignPrivateIpAddresses`, which is used to assign secondary private IP addresses to an elastic network interface (ENI). You can specify available private IP addresses within the CIDR block of the vSwitch that is associated with the ENI. Alternatively, you can specify a number to have the specified number of private IP addresses automatically assigned to the ENI.
  * @Note This class does not contain additional functions, so it is recommended to use the `AssignPrivateIpAddresses` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-assignprivateipaddresses
  */
@@ -2830,6 +2830,11 @@ export interface RosCommandProps {
     readonly enableParameter?: boolean | ros.IResolvable;
 
     /**
+     * @Property launcher: A bootloader for script execution. The length cannot exceed 1 KB.
+     */
+    readonly launcher?: string | ros.IResolvable;
+
+    /**
      * @Property name: The name of command.
      */
     readonly name?: string | ros.IResolvable;
@@ -2872,6 +2877,7 @@ function RosCommandPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('timeout', ros.validateNumber)(properties.timeout));
+    errors.collect(ros.propertyValidator('launcher', ros.validateString)(properties.launcher));
     errors.collect(ros.propertyValidator('enableParameter', ros.validateBoolean)(properties.enableParameter));
     if(properties.contentEncoding && (typeof properties.contentEncoding) !== 'object') {
         errors.collect(ros.propertyValidator('contentEncoding', ros.validateAllowedValues)({
@@ -2911,6 +2917,7 @@ function rosCommandPropsToRosTemplate(properties: any, enableResourcePropertyCon
       'ContentEncoding': ros.stringToRosTemplate(properties.contentEncoding),
       'Description': ros.stringToRosTemplate(properties.description),
       'EnableParameter': ros.booleanToRosTemplate(properties.enableParameter),
+      'Launcher': ros.stringToRosTemplate(properties.launcher),
       'Name': ros.stringToRosTemplate(properties.name),
       'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
       'Tags': ros.listMapper(rosCommandTagsPropertyToRosTemplate)(properties.tags),
@@ -2968,6 +2975,11 @@ export class RosCommand extends ros.RosResource {
     public enableParameter: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property launcher: A bootloader for script execution. The length cannot exceed 1 KB.
+     */
+    public launcher: string | ros.IResolvable | undefined;
+
+    /**
      * @Property name: The name of command.
      */
     public name: string | ros.IResolvable | undefined;
@@ -3007,6 +3019,7 @@ export class RosCommand extends ros.RosResource {
         this.contentEncoding = props.contentEncoding;
         this.description = props.description;
         this.enableParameter = props.enableParameter;
+        this.launcher = props.launcher;
         this.name = props.name;
         this.resourceGroupId = props.resourceGroupId;
         this.tags = props.tags;
@@ -3022,6 +3035,7 @@ export class RosCommand extends ros.RosResource {
             contentEncoding: this.contentEncoding,
             description: this.description,
             enableParameter: this.enableParameter,
+            launcher: this.launcher,
             name: this.name,
             resourceGroupId: this.resourceGroupId,
             tags: this.tags,
@@ -3403,6 +3417,11 @@ export interface RosCustomImageProps {
     readonly diskDeviceMapping?: Array<RosCustomImage.DiskDeviceMappingProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * @Property features: Mirror feature-related properties.
+     */
+    readonly features?: RosCustomImage.FeaturesProperty | ros.IResolvable;
+
+    /**
      * @Property imageFamily: The name of the image family of the image. The name must be 2 to 128 characters in length and can contain letters, digits, colons (:), underscores (_), and hyphens (-). It cannot contain http:\/\/ or https:\/\/. It must start with a letter and cannot start with acs: or aliyun.This parameter is empty by default.
      */
     readonly imageFamily?: string | ros.IResolvable;
@@ -3480,6 +3499,7 @@ function RosCustomImagePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('sourceRegionId', ros.validateString)(properties.sourceRegionId));
     errors.collect(ros.propertyValidator('snapshotId', ros.validateString)(properties.snapshotId));
     errors.collect(ros.propertyValidator('imageVersion', ros.validateString)(properties.imageVersion));
+    errors.collect(ros.propertyValidator('features', RosCustomImage_FeaturesPropertyValidator)(properties.features));
     errors.collect(ros.propertyValidator('tag', ros.listValidator(ros.validateRosTag))(properties.tag));
     return errors.wrap('supplied properties not correct for "RosCustomImageProps"');
 }
@@ -3503,6 +3523,7 @@ function rosCustomImagePropsToRosTemplate(properties: any, enableResourcePropert
       'Description': ros.stringToRosTemplate(properties.description),
       'DetectionStrategy': ros.stringToRosTemplate(properties.detectionStrategy),
       'DiskDeviceMapping': ros.listMapper(rosCustomImageDiskDeviceMappingPropertyToRosTemplate)(properties.diskDeviceMapping),
+      'Features': rosCustomImageFeaturesPropertyToRosTemplate(properties.features),
       'ImageFamily': ros.stringToRosTemplate(properties.imageFamily),
       'ImageName': ros.stringToRosTemplate(properties.imageName),
       'ImageVersion': ros.stringToRosTemplate(properties.imageVersion),
@@ -3573,6 +3594,11 @@ export class RosCustomImage extends ros.RosResource {
     public diskDeviceMapping: Array<RosCustomImage.DiskDeviceMappingProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
+     * @Property features: Mirror feature-related properties.
+     */
+    public features: RosCustomImage.FeaturesProperty | ros.IResolvable | undefined;
+
+    /**
      * @Property imageFamily: The name of the image family of the image. The name must be 2 to 128 characters in length and can contain letters, digits, colons (:), underscores (_), and hyphens (-). It cannot contain http:\/\/ or https:\/\/. It must start with a letter and cannot start with acs: or aliyun.This parameter is empty by default.
      */
     public imageFamily: string | ros.IResolvable | undefined;
@@ -3636,6 +3662,7 @@ export class RosCustomImage extends ros.RosResource {
         this.description = props.description;
         this.detectionStrategy = props.detectionStrategy;
         this.diskDeviceMapping = props.diskDeviceMapping;
+        this.features = props.features;
         this.imageFamily = props.imageFamily;
         this.imageName = props.imageName;
         this.imageVersion = props.imageVersion;
@@ -3655,6 +3682,7 @@ export class RosCustomImage extends ros.RosResource {
             description: this.description,
             detectionStrategy: this.detectionStrategy,
             diskDeviceMapping: this.diskDeviceMapping,
+            features: this.features,
             imageFamily: this.imageFamily,
             imageName: this.imageName,
             imageVersion: this.imageVersion,
@@ -3748,6 +3776,56 @@ export namespace RosCustomImage {
     /**
      * @stability external
      */
+    export interface FeaturesProperty {
+        /**
+         * @Property imdsSupport: Mirrored metadata access pattern, possible values:
+     * - v1: Setting the metadata access mode to "hardened only mode" is not supported when creating an ECS instance through this image.
+     * - v2: Supports setting the metadata access mode to hardened mode only when creating an ECS instance through this image.
+     * Default: v1 is the default when using snapshots to create images. When an instance is used to create an image, the default is the value of the ImdsSupport property of the image at the time of instance creation.
+         */
+        readonly imdsSupport?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `FeaturesProperty`
+ *
+ * @param properties - the TypeScript properties of a `FeaturesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosCustomImage_FeaturesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.imdsSupport && (typeof properties.imdsSupport) !== 'object') {
+        errors.collect(ros.propertyValidator('imdsSupport', ros.validateAllowedValues)({
+          data: properties.imdsSupport,
+          allowedValues: ["v1","v2"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('imdsSupport', ros.validateString)(properties.imdsSupport));
+    return errors.wrap('supplied properties not correct for "FeaturesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::CustomImage.Features` resource
+ *
+ * @param properties - the TypeScript properties of a `FeaturesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::CustomImage.Features` resource.
+ */
+// @ts-ignore TS6133
+function rosCustomImageFeaturesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosCustomImage_FeaturesPropertyValidator(properties).assertSuccess();
+    return {
+      'ImdsSupport': ros.stringToRosTemplate(properties.imdsSupport),
+    };
+}
+
+export namespace RosCustomImage {
+    /**
+     * @stability external
+     */
     export interface TagProperty {
         /**
          * @Property value: The value of a tag of which n is a number from 1 to 20. Once you use this parameter, it can be a null string. It can be up to 128 characters in length. It cannot begin with "aliyun", "acs:", "http:\/\/", or "https:\/\/".
@@ -3833,6 +3911,16 @@ export interface RosDedicatedHostProps {
     readonly chargeType?: string | ros.IResolvable;
 
     /**
+     * @Property cpuOverCommitRatio: The CPU overcommit ratio of the dedicated host.
+     */
+    readonly cpuOverCommitRatio?: number | ros.IResolvable;
+
+    /**
+     * @Property dedicatedHostClusterId: The ID of the dedicated host cluster.
+     */
+    readonly dedicatedHostClusterId?: string | ros.IResolvable;
+
+    /**
      * @Property dedicatedHostName: The name of the dedicated host, [2, 128] English or Chinese characters. It must begin with an uppercase\/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:\/\/ or https:\/\/.
      */
     readonly dedicatedHostName?: string | ros.IResolvable;
@@ -3841,6 +3929,11 @@ export interface RosDedicatedHostProps {
      * @Property description: The description of host.
      */
     readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property minQuantity: The minimum number of dedicated hosts that you want to create.
+     */
+    readonly minQuantity?: number | ros.IResolvable;
 
     /**
      * @Property networkAttributesSlbUdpTimeout: The duration of UDP timeout for sessions between Server Load Balancer (SLB) and the dedicated host. Unit: seconds. Valid values: 15 to 310.
@@ -3950,6 +4043,7 @@ function RosDedicatedHostPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('quantity', ros.validateNumber)(properties.quantity));
     errors.collect(ros.propertyValidator('dedicatedHostType', ros.requiredValidator)(properties.dedicatedHostType));
     errors.collect(ros.propertyValidator('dedicatedHostType', ros.validateString)(properties.dedicatedHostType));
+    errors.collect(ros.propertyValidator('minQuantity', ros.validateNumber)(properties.minQuantity));
     errors.collect(ros.propertyValidator('dedicatedHostName', ros.validateString)(properties.dedicatedHostName));
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
@@ -3958,6 +4052,14 @@ function RosDedicatedHostPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
+    if(properties.cpuOverCommitRatio && (typeof properties.cpuOverCommitRatio) !== 'object') {
+        errors.collect(ros.propertyValidator('cpuOverCommitRatio', ros.validateRange)({
+            data: properties.cpuOverCommitRatio,
+            min: 1,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('cpuOverCommitRatio', ros.validateNumber)(properties.cpuOverCommitRatio));
     if(properties.actionOnMaintenance && (typeof properties.actionOnMaintenance) !== 'object') {
         errors.collect(ros.propertyValidator('actionOnMaintenance', ros.validateAllowedValues)({
           data: properties.actionOnMaintenance,
@@ -3973,6 +4075,7 @@ function RosDedicatedHostPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosDedicatedHost_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('dedicatedHostClusterId', ros.validateString)(properties.dedicatedHostClusterId));
     if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
         errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
           data: properties.periodUnit,
@@ -4005,8 +4108,11 @@ function rosDedicatedHostPropsToRosTemplate(properties: any, enableResourcePrope
       'AutoRenew': ros.stringToRosTemplate(properties.autoRenew),
       'AutoRenewPeriod': ros.numberToRosTemplate(properties.autoRenewPeriod),
       'ChargeType': ros.stringToRosTemplate(properties.chargeType),
+      'CpuOverCommitRatio': ros.numberToRosTemplate(properties.cpuOverCommitRatio),
+      'DedicatedHostClusterId': ros.stringToRosTemplate(properties.dedicatedHostClusterId),
       'DedicatedHostName': ros.stringToRosTemplate(properties.dedicatedHostName),
       'Description': ros.stringToRosTemplate(properties.description),
+      'MinQuantity': ros.numberToRosTemplate(properties.minQuantity),
       'NetworkAttributesSlbUdpTimeout': ros.numberToRosTemplate(properties.networkAttributesSlbUdpTimeout),
       'NetworkAttributesUdpTimeout': ros.numberToRosTemplate(properties.networkAttributesUdpTimeout),
       'Period': ros.numberToRosTemplate(properties.period),
@@ -4019,7 +4125,7 @@ function rosDedicatedHostPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::DedicatedHost`, which is used to create a dedicated host.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::DedicatedHost`, which is used to create dedicated hosts.
  * @Note This class does not contain additional functions, so it is recommended to use the `DedicatedHost` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-dedicatedhost
  */
@@ -4083,6 +4189,16 @@ export class RosDedicatedHost extends ros.RosResource {
     public chargeType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property cpuOverCommitRatio: The CPU overcommit ratio of the dedicated host.
+     */
+    public cpuOverCommitRatio: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property dedicatedHostClusterId: The ID of the dedicated host cluster.
+     */
+    public dedicatedHostClusterId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property dedicatedHostName: The name of the dedicated host, [2, 128] English or Chinese characters. It must begin with an uppercase\/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:\/\/ or https:\/\/.
      */
     public dedicatedHostName: string | ros.IResolvable | undefined;
@@ -4091,6 +4207,11 @@ export class RosDedicatedHost extends ros.RosResource {
      * @Property description: The description of host.
      */
     public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property minQuantity: The minimum number of dedicated hosts that you want to create.
+     */
+    public minQuantity: number | ros.IResolvable | undefined;
 
     /**
      * @Property networkAttributesSlbUdpTimeout: The duration of UDP timeout for sessions between Server Load Balancer (SLB) and the dedicated host. Unit: seconds. Valid values: 15 to 310.
@@ -4151,8 +4272,11 @@ export class RosDedicatedHost extends ros.RosResource {
         this.autoRenew = props.autoRenew;
         this.autoRenewPeriod = props.autoRenewPeriod;
         this.chargeType = props.chargeType;
+        this.cpuOverCommitRatio = props.cpuOverCommitRatio;
+        this.dedicatedHostClusterId = props.dedicatedHostClusterId;
         this.dedicatedHostName = props.dedicatedHostName;
         this.description = props.description;
+        this.minQuantity = props.minQuantity;
         this.networkAttributesSlbUdpTimeout = props.networkAttributesSlbUdpTimeout;
         this.networkAttributesUdpTimeout = props.networkAttributesUdpTimeout;
         this.period = props.period;
@@ -4173,8 +4297,11 @@ export class RosDedicatedHost extends ros.RosResource {
             autoRenew: this.autoRenew,
             autoRenewPeriod: this.autoRenewPeriod,
             chargeType: this.chargeType,
+            cpuOverCommitRatio: this.cpuOverCommitRatio,
+            dedicatedHostClusterId: this.dedicatedHostClusterId,
             dedicatedHostName: this.dedicatedHostName,
             description: this.description,
+            minQuantity: this.minQuantity,
             networkAttributesSlbUdpTimeout: this.networkAttributesSlbUdpTimeout,
             networkAttributesUdpTimeout: this.networkAttributesUdpTimeout,
             period: this.period,
@@ -4880,6 +5007,11 @@ export interface RosDiskAttachmentProps {
     readonly instanceId: string | ros.IResolvable;
 
     /**
+     * @Property bootable: Whether the disk is bootable.
+     */
+    readonly bootable?: boolean | ros.IResolvable;
+
+    /**
      * @Property deleteAutoSnapshot: Whether the auto snapshot is released with the disk. Default to true.
      */
     readonly deleteAutoSnapshot?: boolean | ros.IResolvable;
@@ -4893,6 +5025,26 @@ export interface RosDiskAttachmentProps {
      * @Property device: The device where the volume is exposed on the instance. could be \/dev\/xvd[b-z]. If not specification, will use default value.
      */
     readonly device?: string | ros.IResolvable;
+
+    /**
+     * @Property force: Whether to force the operation.
+     */
+    readonly force?: boolean | ros.IResolvable;
+
+    /**
+     * @Property instanceType: The instance type. Allowed values are LingJun and ECS, Default is ECS.
+     */
+    readonly instanceType?: string | ros.IResolvable;
+
+    /**
+     * @Property keyPairName: The name of the key pair.
+     */
+    readonly keyPairName?: string | ros.IResolvable;
+
+    /**
+     * @Property password: The password for the disk.
+     */
+    readonly password?: string | ros.IResolvable;
 }
 
 /**
@@ -4905,11 +5057,22 @@ export interface RosDiskAttachmentProps {
 function RosDiskAttachmentPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('keyPairName', ros.validateString)(properties.keyPairName));
+    errors.collect(ros.propertyValidator('force', ros.validateBoolean)(properties.force));
     errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
     errors.collect(ros.propertyValidator('device', ros.validateString)(properties.device));
     errors.collect(ros.propertyValidator('deleteWithInstance', ros.validateBoolean)(properties.deleteWithInstance));
+    errors.collect(ros.propertyValidator('bootable', ros.validateBoolean)(properties.bootable));
     errors.collect(ros.propertyValidator('deleteAutoSnapshot', ros.validateBoolean)(properties.deleteAutoSnapshot));
+    if(properties.instanceType && (typeof properties.instanceType) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceType', ros.validateAllowedValues)({
+          data: properties.instanceType,
+          allowedValues: ["LingJun","ECS"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
+    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
     errors.collect(ros.propertyValidator('diskId', ros.requiredValidator)(properties.diskId));
     errors.collect(ros.propertyValidator('diskId', ros.validateString)(properties.diskId));
     return errors.wrap('supplied properties not correct for "RosDiskAttachmentProps"');
@@ -4931,14 +5094,19 @@ function rosDiskAttachmentPropsToRosTemplate(properties: any, enableResourceProp
     return {
       'DiskId': ros.stringToRosTemplate(properties.diskId),
       'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'Bootable': ros.booleanToRosTemplate(properties.bootable),
       'DeleteAutoSnapshot': ros.booleanToRosTemplate(properties.deleteAutoSnapshot),
       'DeleteWithInstance': ros.booleanToRosTemplate(properties.deleteWithInstance),
       'Device': ros.stringToRosTemplate(properties.device),
+      'Force': ros.booleanToRosTemplate(properties.force),
+      'InstanceType': ros.stringToRosTemplate(properties.instanceType),
+      'KeyPairName': ros.stringToRosTemplate(properties.keyPairName),
+      'Password': ros.stringToRosTemplate(properties.password),
     };
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::DiskAttachment`, which is used to attach a disk to an ECS instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::DiskAttachment`, which is used to attach a disk to an Elastic Compute Service (ECS) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `DiskAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-diskattachment
  */
@@ -4977,6 +5145,11 @@ export class RosDiskAttachment extends ros.RosResource {
     public instanceId: string | ros.IResolvable;
 
     /**
+     * @Property bootable: Whether the disk is bootable.
+     */
+    public bootable: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property deleteAutoSnapshot: Whether the auto snapshot is released with the disk. Default to true.
      */
     public deleteAutoSnapshot: boolean | ros.IResolvable | undefined;
@@ -4992,6 +5165,26 @@ export class RosDiskAttachment extends ros.RosResource {
     public device: string | ros.IResolvable | undefined;
 
     /**
+     * @Property force: Whether to force the operation.
+     */
+    public force: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceType: The instance type. Allowed values are LingJun and ECS, Default is ECS.
+     */
+    public instanceType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property keyPairName: The name of the key pair.
+     */
+    public keyPairName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property password: The password for the disk.
+     */
+    public password: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -5005,9 +5198,14 @@ export class RosDiskAttachment extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.diskId = props.diskId;
         this.instanceId = props.instanceId;
+        this.bootable = props.bootable;
         this.deleteAutoSnapshot = props.deleteAutoSnapshot;
         this.deleteWithInstance = props.deleteWithInstance;
         this.device = props.device;
+        this.force = props.force;
+        this.instanceType = props.instanceType;
+        this.keyPairName = props.keyPairName;
+        this.password = props.password;
     }
 
 
@@ -5015,9 +5213,14 @@ export class RosDiskAttachment extends ros.RosResource {
         return {
             diskId: this.diskId,
             instanceId: this.instanceId,
+            bootable: this.bootable,
             deleteAutoSnapshot: this.deleteAutoSnapshot,
             deleteWithInstance: this.deleteWithInstance,
             device: this.device,
+            force: this.force,
+            instanceType: this.instanceType,
+            keyPairName: this.keyPairName,
+            password: this.password,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -5048,10 +5251,25 @@ export interface RosElasticityAssuranceProps {
     readonly zoneId: string | ros.IResolvable;
 
     /**
+     * @Property autoRenew: Whether to enable automatic renewal.
+     */
+    readonly autoRenew?: boolean | ros.IResolvable;
+
+    /**
+     * @Property autoRenewPeriod: The period for automatic renewal.
+     */
+    readonly autoRenewPeriod?: number | ros.IResolvable;
+
+    /**
      * @Property description: The description of the elasticity assurance. The description must be 2 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
      * This parameter is empty by default.
      */
     readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property instanceCpuCoreCount: The number of CPU cores for the instance.
+     */
+    readonly instanceCpuCoreCount?: number | ros.IResolvable;
 
     /**
      * @Property period: The effective duration of the elasticity assurance. The unit of the effective duration is determined by the PeriodUnit value. Valid values:
@@ -5073,6 +5291,11 @@ export interface RosElasticityAssuranceProps {
      * @Property privatePoolOptions:
      */
     readonly privatePoolOptions?: RosElasticityAssurance.PrivatePoolOptionsProperty | ros.IResolvable;
+
+    /**
+     * @Property recurrenceRules: Recurrence rules for the elasticity assurance.
+     */
+    readonly recurrenceRules?: Array<RosElasticityAssurance.RecurrenceRulesProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property resourceGroupId: The ID of the resource group to which to assign the elasticity assurance.
@@ -5100,7 +5323,23 @@ export interface RosElasticityAssuranceProps {
 function RosElasticityAssurancePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateNumber)(properties.autoRenewPeriod));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
+    errors.collect(ros.propertyValidator('startTime', ros.validateString)(properties.startTime));
+    if(properties.recurrenceRules && (Array.isArray(properties.recurrenceRules) || (typeof properties.recurrenceRules) === 'string')) {
+        errors.collect(ros.propertyValidator('recurrenceRules', ros.validateLength)({
+            data: properties.recurrenceRules.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('recurrenceRules', ros.listValidator(RosElasticityAssurance_RecurrenceRulesPropertyValidator))(properties.recurrenceRules));
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    errors.collect(ros.propertyValidator('instanceCpuCoreCount', ros.validateNumber)(properties.instanceCpuCoreCount));
     errors.collect(ros.propertyValidator('instanceAmount', ros.requiredValidator)(properties.instanceAmount));
     if(properties.instanceAmount && (typeof properties.instanceAmount) !== 'object') {
         errors.collect(ros.propertyValidator('instanceAmount', ros.validateRange)({
@@ -5111,11 +5350,6 @@ function RosElasticityAssurancePropsValidator(properties: any): ros.ValidationRe
     }
     errors.collect(ros.propertyValidator('instanceAmount', ros.validateNumber)(properties.instanceAmount));
     errors.collect(ros.propertyValidator('privatePoolOptions', RosElasticityAssurance_PrivatePoolOptionsPropertyValidator)(properties.privatePoolOptions));
-    errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
-    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
-    errors.collect(ros.propertyValidator('startTime', ros.validateString)(properties.startTime));
-    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     errors.collect(ros.propertyValidator('instanceTypes', ros.requiredValidator)(properties.instanceTypes));
     if(properties.instanceTypes && (Array.isArray(properties.instanceTypes) || (typeof properties.instanceTypes) === 'string')) {
         errors.collect(ros.propertyValidator('instanceTypes', ros.validateLength)({
@@ -5160,10 +5394,14 @@ function rosElasticityAssurancePropsToRosTemplate(properties: any, enableResourc
       'InstanceAmount': ros.numberToRosTemplate(properties.instanceAmount),
       'InstanceTypes': ros.listMapper(ros.stringToRosTemplate)(properties.instanceTypes),
       'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
+      'AutoRenewPeriod': ros.numberToRosTemplate(properties.autoRenewPeriod),
       'Description': ros.stringToRosTemplate(properties.description),
+      'InstanceCpuCoreCount': ros.numberToRosTemplate(properties.instanceCpuCoreCount),
       'Period': ros.numberToRosTemplate(properties.period),
       'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
       'PrivatePoolOptions': rosElasticityAssurancePrivatePoolOptionsPropertyToRosTemplate(properties.privatePoolOptions),
+      'RecurrenceRules': ros.listMapper(rosElasticityAssuranceRecurrenceRulesPropertyToRosTemplate)(properties.recurrenceRules),
       'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
       'StartTime': ros.stringToRosTemplate(properties.startTime),
       'Tags': ros.listMapper(rosElasticityAssuranceTagsPropertyToRosTemplate)(properties.tags),
@@ -5206,10 +5444,25 @@ export class RosElasticityAssurance extends ros.RosResource {
     public zoneId: string | ros.IResolvable;
 
     /**
+     * @Property autoRenew: Whether to enable automatic renewal.
+     */
+    public autoRenew: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property autoRenewPeriod: The period for automatic renewal.
+     */
+    public autoRenewPeriod: number | ros.IResolvable | undefined;
+
+    /**
      * @Property description: The description of the elasticity assurance. The description must be 2 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
      * This parameter is empty by default.
      */
     public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceCpuCoreCount: The number of CPU cores for the instance.
+     */
+    public instanceCpuCoreCount: number | ros.IResolvable | undefined;
 
     /**
      * @Property period: The effective duration of the elasticity assurance. The unit of the effective duration is determined by the PeriodUnit value. Valid values:
@@ -5231,6 +5484,11 @@ export class RosElasticityAssurance extends ros.RosResource {
      * @Property privatePoolOptions:
      */
     public privatePoolOptions: RosElasticityAssurance.PrivatePoolOptionsProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property recurrenceRules: Recurrence rules for the elasticity assurance.
+     */
+    public recurrenceRules: Array<RosElasticityAssurance.RecurrenceRulesProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property resourceGroupId: The ID of the resource group to which to assign the elasticity assurance.
@@ -5260,10 +5518,14 @@ export class RosElasticityAssurance extends ros.RosResource {
         this.instanceAmount = props.instanceAmount;
         this.instanceTypes = props.instanceTypes;
         this.zoneId = props.zoneId;
+        this.autoRenew = props.autoRenew;
+        this.autoRenewPeriod = props.autoRenewPeriod;
         this.description = props.description;
+        this.instanceCpuCoreCount = props.instanceCpuCoreCount;
         this.period = props.period;
         this.periodUnit = props.periodUnit;
         this.privatePoolOptions = props.privatePoolOptions;
+        this.recurrenceRules = props.recurrenceRules;
         this.resourceGroupId = props.resourceGroupId;
         this.startTime = props.startTime;
         this.tags = props.tags;
@@ -5275,10 +5537,14 @@ export class RosElasticityAssurance extends ros.RosResource {
             instanceAmount: this.instanceAmount,
             instanceTypes: this.instanceTypes,
             zoneId: this.zoneId,
+            autoRenew: this.autoRenew,
+            autoRenewPeriod: this.autoRenewPeriod,
             description: this.description,
+            instanceCpuCoreCount: this.instanceCpuCoreCount,
             period: this.period,
             periodUnit: this.periodUnit,
             privatePoolOptions: this.privatePoolOptions,
+            recurrenceRules: this.recurrenceRules,
             resourceGroupId: this.resourceGroupId,
             startTime: this.startTime,
             tags: this.tags,
@@ -5342,6 +5608,65 @@ function rosElasticityAssurancePrivatePoolOptionsPropertyToRosTemplate(propertie
     return {
       'MatchCriteria': ros.stringToRosTemplate(properties.matchCriteria),
       'Name': ros.stringToRosTemplate(properties.name),
+    };
+}
+
+export namespace RosElasticityAssurance {
+    /**
+     * @stability external
+     */
+    export interface RecurrenceRulesProperty {
+        /**
+         * @Property startHour: The start hour for recurrence.
+         */
+        readonly startHour?: number | ros.IResolvable;
+        /**
+         * @Property recurrenceType: The type of recurrence.
+         */
+        readonly recurrenceType?: string | ros.IResolvable;
+        /**
+         * @Property endHour: The end hour for recurrence.
+         */
+        readonly endHour?: number | ros.IResolvable;
+        /**
+         * @Property recurrenceValue: The value of recurrence.
+         */
+        readonly recurrenceValue?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `RecurrenceRulesProperty`
+ *
+ * @param properties - the TypeScript properties of a `RecurrenceRulesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosElasticityAssurance_RecurrenceRulesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('startHour', ros.validateNumber)(properties.startHour));
+    errors.collect(ros.propertyValidator('recurrenceType', ros.validateString)(properties.recurrenceType));
+    errors.collect(ros.propertyValidator('endHour', ros.validateNumber)(properties.endHour));
+    errors.collect(ros.propertyValidator('recurrenceValue', ros.validateString)(properties.recurrenceValue));
+    return errors.wrap('supplied properties not correct for "RecurrenceRulesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::ElasticityAssurance.RecurrenceRules` resource
+ *
+ * @param properties - the TypeScript properties of a `RecurrenceRulesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::ElasticityAssurance.RecurrenceRules` resource.
+ */
+// @ts-ignore TS6133
+function rosElasticityAssuranceRecurrenceRulesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosElasticityAssurance_RecurrenceRulesPropertyValidator(properties).assertSuccess();
+    return {
+      'StartHour': ros.numberToRosTemplate(properties.startHour),
+      'RecurrenceType': ros.stringToRosTemplate(properties.recurrenceType),
+      'EndHour': ros.numberToRosTemplate(properties.endHour),
+      'RecurrenceValue': ros.stringToRosTemplate(properties.recurrenceValue),
     };
 }
 
@@ -6739,6 +7064,11 @@ export interface RosInstanceProps {
     readonly storageSetPartitionNumber?: number | ros.IResolvable;
 
     /**
+     * @Property subscriptionDeletionForce: This option is only applicable to subscription instances. For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+     */
+    readonly subscriptionDeletionForce?: boolean | ros.IResolvable;
+
+    /**
      * @Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto|cloud_essd_entry
      */
     readonly systemDiskCategory?: string | ros.IResolvable;
@@ -6977,6 +7307,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('ioOptimized', ros.validateString)(properties.ioOptimized));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('subscriptionDeletionForce', ros.validateBoolean)(properties.subscriptionDeletionForce));
     errors.collect(ros.propertyValidator('hpcClusterId', ros.validateString)(properties.hpcClusterId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     if(properties.deploymentSetGroupNo && (typeof properties.deploymentSetGroupNo) !== 'object') {
@@ -7048,6 +7379,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       'SpotStrategy': ros.stringToRosTemplate(properties.spotStrategy),
       'StorageSetId': ros.stringToRosTemplate(properties.storageSetId),
       'StorageSetPartitionNumber': ros.numberToRosTemplate(properties.storageSetPartitionNumber),
+      'SubscriptionDeletionForce': ros.booleanToRosTemplate(properties.subscriptionDeletionForce),
       'SystemDiskCategory': ros.stringToRosTemplate(properties.systemDiskCategory),
       'SystemDiskDescription': ros.stringToRosTemplate(properties.systemDiskDescription),
       'SystemDiskDiskName': ros.stringToRosTemplate(properties.systemDiskDiskName),
@@ -7341,6 +7673,11 @@ export class RosInstance extends ros.RosResource {
     public storageSetPartitionNumber: number | ros.IResolvable | undefined;
 
     /**
+     * @Property subscriptionDeletionForce: This option is only applicable to subscription instances. For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+     */
+    public subscriptionDeletionForce: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto|cloud_essd_entry
      */
     public systemDiskCategory: string | ros.IResolvable | undefined;
@@ -7468,6 +7805,7 @@ export class RosInstance extends ros.RosResource {
         this.spotStrategy = props.spotStrategy;
         this.storageSetId = props.storageSetId;
         this.storageSetPartitionNumber = props.storageSetPartitionNumber;
+        this.subscriptionDeletionForce = props.subscriptionDeletionForce;
         this.systemDiskCategory = props.systemDiskCategory;
         this.systemDiskDescription = props.systemDiskDescription;
         this.systemDiskDiskName = props.systemDiskDiskName;
@@ -7527,6 +7865,7 @@ export class RosInstance extends ros.RosResource {
             spotStrategy: this.spotStrategy,
             storageSetId: this.storageSetId,
             storageSetPartitionNumber: this.storageSetPartitionNumber,
+            subscriptionDeletionForce: this.subscriptionDeletionForce,
             systemDiskCategory: this.systemDiskCategory,
             systemDiskDescription: this.systemDiskDescription,
             systemDiskDiskName: this.systemDiskDiskName,
@@ -8659,6 +8998,11 @@ export interface RosInstanceGroupProps {
     readonly storageSetPartitionNumber?: number | ros.IResolvable;
 
     /**
+     * @Property subscriptionDeletionForce: This option is only applicable to subscription instances. For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+     */
+    readonly subscriptionDeletionForce?: boolean | ros.IResolvable;
+
+    /**
      * @Property systemDiskAutoSnapshotPolicyId: Auto snapshot policy ID.
      */
     readonly systemDiskAutoSnapshotPolicyId?: string | ros.IResolvable;
@@ -9022,6 +9366,7 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('ioOptimized', ros.validateString)(properties.ioOptimized));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('subscriptionDeletionForce', ros.validateBoolean)(properties.subscriptionDeletionForce));
     errors.collect(ros.propertyValidator('hpcClusterId', ros.validateString)(properties.hpcClusterId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     if(properties.deploymentSetGroupNo && (typeof properties.deploymentSetGroupNo) !== 'object') {
@@ -9121,6 +9466,7 @@ function rosInstanceGroupPropsToRosTemplate(properties: any, enableResourcePrope
       'SpotStrategy': ros.stringToRosTemplate(properties.spotStrategy),
       'StorageSetId': ros.stringToRosTemplate(properties.storageSetId),
       'StorageSetPartitionNumber': ros.numberToRosTemplate(properties.storageSetPartitionNumber),
+      'SubscriptionDeletionForce': ros.booleanToRosTemplate(properties.subscriptionDeletionForce),
       'SystemDiskAutoSnapshotPolicyId': ros.stringToRosTemplate(properties.systemDiskAutoSnapshotPolicyId),
       'SystemDiskBurstingEnabled': ros.booleanToRosTemplate(properties.systemDiskBurstingEnabled),
       'SystemDiskCategory': ros.stringToRosTemplate(properties.systemDiskCategory),
@@ -9196,6 +9542,11 @@ export class RosInstanceGroup extends ros.RosResource {
      * @Attribute PublicIps: Public IP address list of created ecs instances.
      */
     public readonly attrPublicIps: ros.IResolvable;
+
+    /**
+     * @Attribute RelatedOrderIds: The related order id list of created ecs instances
+     */
+    public readonly attrRelatedOrderIds: ros.IResolvable;
 
     /**
      * @Attribute ZoneIds: Zone id of created instances.
@@ -9545,6 +9896,11 @@ export class RosInstanceGroup extends ros.RosResource {
     public storageSetPartitionNumber: number | ros.IResolvable | undefined;
 
     /**
+     * @Property subscriptionDeletionForce: This option is only applicable to subscription instances. For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+     */
+    public subscriptionDeletionForce: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property systemDiskAutoSnapshotPolicyId: Auto snapshot policy ID.
      */
     public systemDiskAutoSnapshotPolicyId: string | ros.IResolvable | undefined;
@@ -9687,6 +10043,7 @@ export class RosInstanceGroup extends ros.RosResource {
         this.attrOrderId = this.getAtt('OrderId');
         this.attrPrivateIps = this.getAtt('PrivateIps');
         this.attrPublicIps = this.getAtt('PublicIps');
+        this.attrRelatedOrderIds = this.getAtt('RelatedOrderIds');
         this.attrZoneIds = this.getAtt('ZoneIds');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
@@ -9748,6 +10105,7 @@ export class RosInstanceGroup extends ros.RosResource {
         this.spotStrategy = props.spotStrategy;
         this.storageSetId = props.storageSetId;
         this.storageSetPartitionNumber = props.storageSetPartitionNumber;
+        this.subscriptionDeletionForce = props.subscriptionDeletionForce;
         this.systemDiskAutoSnapshotPolicyId = props.systemDiskAutoSnapshotPolicyId;
         this.systemDiskBurstingEnabled = props.systemDiskBurstingEnabled;
         this.systemDiskCategory = props.systemDiskCategory;
@@ -9833,6 +10191,7 @@ export class RosInstanceGroup extends ros.RosResource {
             spotStrategy: this.spotStrategy,
             storageSetId: this.storageSetId,
             storageSetPartitionNumber: this.storageSetPartitionNumber,
+            subscriptionDeletionForce: this.subscriptionDeletionForce,
             systemDiskAutoSnapshotPolicyId: this.systemDiskAutoSnapshotPolicyId,
             systemDiskBurstingEnabled: this.systemDiskBurstingEnabled,
             systemDiskCategory: this.systemDiskCategory,
@@ -11120,6 +11479,11 @@ export class RosInstanceGroupClone extends ros.RosResource {
     public readonly attrPublicIps: ros.IResolvable;
 
     /**
+     * @Attribute RelatedOrderIds: The related order id list of created ecs instances
+     */
+    public readonly attrRelatedOrderIds: ros.IResolvable;
+
+    /**
      * @Attribute ZoneIds: Zone id of created instances.
      */
     public readonly attrZoneIds: ros.IResolvable;
@@ -11445,6 +11809,7 @@ export class RosInstanceGroupClone extends ros.RosResource {
         this.attrOrderId = this.getAtt('OrderId');
         this.attrPrivateIps = this.getAtt('PrivateIps');
         this.attrPublicIps = this.getAtt('PublicIps');
+        this.attrRelatedOrderIds = this.getAtt('RelatedOrderIds');
         this.attrZoneIds = this.getAtt('ZoneIds');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
@@ -12134,6 +12499,11 @@ export interface RosInvocationProps {
     readonly frequency?: string | ros.IResolvable;
 
     /**
+     * @Property launcher: A bootloader for script execution. The length cannot exceed 1 KB.
+     */
+    readonly launcher?: string | ros.IResolvable;
+
+    /**
      * @Property parameters: The key-value pairs of custom parameters passed in when the script contains custom parameters.
      * Number of custom parameters: 0 to 10.
      * The key cannot be an empty string. It can be up to 64 characters in length.
@@ -12234,6 +12604,7 @@ function RosInvocationPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('username', ros.validateString)(properties.username));
     errors.collect(ros.propertyValidator('containerName', ros.validateString)(properties.containerName));
     errors.collect(ros.propertyValidator('containerId', ros.validateString)(properties.containerId));
+    errors.collect(ros.propertyValidator('launcher', ros.validateString)(properties.launcher));
     errors.collect(ros.propertyValidator('frequency', ros.validateString)(properties.frequency));
     errors.collect(ros.propertyValidator('commandName', ros.validateString)(properties.commandName));
     errors.collect(ros.propertyValidator('commandId', ros.validateString)(properties.commandId));
@@ -12278,6 +12649,7 @@ function rosInvocationPropsToRosTemplate(properties: any, enableResourceProperty
       'ContainerId': ros.stringToRosTemplate(properties.containerId),
       'ContainerName': ros.stringToRosTemplate(properties.containerName),
       'Frequency': ros.stringToRosTemplate(properties.frequency),
+      'Launcher': ros.stringToRosTemplate(properties.launcher),
       'Parameters': ros.hashMapper(ros.objectToRosTemplate)(properties.parameters),
       'RepeatMode': ros.stringToRosTemplate(properties.repeatMode),
       'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
@@ -12358,6 +12730,11 @@ export class RosInvocation extends ros.RosResource {
     public frequency: string | ros.IResolvable | undefined;
 
     /**
+     * @Property launcher: A bootloader for script execution. The length cannot exceed 1 KB.
+     */
+    public launcher: string | ros.IResolvable | undefined;
+
+    /**
      * @Property parameters: The key-value pairs of custom parameters passed in when the script contains custom parameters.
      * Number of custom parameters: 0 to 10.
      * The key cannot be an empty string. It can be up to 64 characters in length.
@@ -12436,6 +12813,7 @@ export class RosInvocation extends ros.RosResource {
         this.containerId = props.containerId;
         this.containerName = props.containerName;
         this.frequency = props.frequency;
+        this.launcher = props.launcher;
         this.parameters = props.parameters;
         this.repeatMode = props.repeatMode;
         this.resourceGroupId = props.resourceGroupId;
@@ -12455,6 +12833,7 @@ export class RosInvocation extends ros.RosResource {
             containerId: this.containerId,
             containerName: this.containerName,
             frequency: this.frequency,
+            launcher: this.launcher,
             parameters: this.parameters,
             repeatMode: this.repeatMode,
             resourceGroupId: this.resourceGroupId,
@@ -14944,7 +15323,22 @@ export interface RosRouteProps {
     readonly nextHopList?: Array<RosRoute.NextHopListProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property nextHopType: The next hop type. Now support 'Instance|HaVip|RouterInterface|NetworkInterface|VpnGateway|IPv6Gateway|NatGateway|Attachment'. The default value is Instance.When the NextHopList is specified, the value will be ignored.
+     * @Property nextHopType: The route entry next hop type. Valid values:
+     * Instance (default): Elastic Compute Service (ECS) instance.
+     * HaVip: High Availability Virtual IP (HAVIP).
+     * RouterInterface: Router interface.
+     * NetworkInterface: Elastic Network Interface (ENI).
+     * VpnGateway: VPN gateway.
+     * IPv6Gateway: IPv6 gateway.
+     * NatGateway: NAT gateway.
+     * Attachment: Transit router.
+     * VpcPeer: VPC peering connection.
+     * Ipv4Gateway: IPv4 gateway.
+     * GatewayEndpoint: Gateway endpoint.
+     * Ecr: Express Connect router.
+     * GatewayLoadBalancerEndpoint: Gateway Load Balancer endpoint.
+     * The default value is 'Instance'.
+     * If NextHopList is specified, this field will be ignored.
      */
     readonly nextHopType?: string | ros.IResolvable;
 }
@@ -15031,7 +15425,22 @@ export class RosRoute extends ros.RosResource {
     public nextHopList: Array<RosRoute.NextHopListProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property nextHopType: The next hop type. Now support 'Instance|HaVip|RouterInterface|NetworkInterface|VpnGateway|IPv6Gateway|NatGateway|Attachment'. The default value is Instance.When the NextHopList is specified, the value will be ignored.
+     * @Property nextHopType: The route entry next hop type. Valid values:
+     * Instance (default): Elastic Compute Service (ECS) instance.
+     * HaVip: High Availability Virtual IP (HAVIP).
+     * RouterInterface: Router interface.
+     * NetworkInterface: Elastic Network Interface (ENI).
+     * VpnGateway: VPN gateway.
+     * IPv6Gateway: IPv6 gateway.
+     * NatGateway: NAT gateway.
+     * Attachment: Transit router.
+     * VpcPeer: VPC peering connection.
+     * Ipv4Gateway: IPv4 gateway.
+     * GatewayEndpoint: Gateway endpoint.
+     * Ecr: Express Connect router.
+     * GatewayLoadBalancerEndpoint: Gateway Load Balancer endpoint.
+     * The default value is 'Instance'.
+     * If NextHopList is specified, this field will be ignored.
      */
     public nextHopType: string | ros.IResolvable | undefined;
 
@@ -15197,6 +15606,11 @@ export interface RosRunCommandProps {
     readonly keepCommand?: boolean | ros.IResolvable;
 
     /**
+     * @Property launcher: A bootloader for script execution. The length cannot exceed 1 KB.
+     */
+    readonly launcher?: string | ros.IResolvable;
+
+    /**
      * @Property name: The name of the script, which supports all character sets. It can be up to 128 characters in length.
      */
     readonly name?: string | ros.IResolvable;
@@ -15283,8 +15697,8 @@ export interface RosRunCommandProps {
 function RosRunCommandPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('parameters', ros.hashValidator(ros.validateAny))(properties.parameters));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('timeout', ros.validateNumber)(properties.timeout));
     if(properties.windowsPasswordName && (Array.isArray(properties.windowsPasswordName) || (typeof properties.windowsPasswordName) === 'string')) {
@@ -15300,9 +15714,10 @@ function RosRunCommandPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('workingDir', ros.validateString)(properties.workingDir));
     errors.collect(ros.propertyValidator('commandContent', ros.requiredValidator)(properties.commandContent));
     errors.collect(ros.propertyValidator('commandContent', ros.validateString)(properties.commandContent));
-    errors.collect(ros.propertyValidator('repeatMode', ros.validateString)(properties.repeatMode));
     errors.collect(ros.propertyValidator('type', ros.requiredValidator)(properties.type));
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('repeatMode', ros.validateString)(properties.repeatMode));
+    errors.collect(ros.propertyValidator('containerName', ros.validateString)(properties.containerName));
     if(properties.username && (Array.isArray(properties.username) || (typeof properties.username) === 'string')) {
         errors.collect(ros.propertyValidator('username', ros.validateLength)({
             data: properties.username.length,
@@ -15311,8 +15726,8 @@ function RosRunCommandPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('username', ros.validateString)(properties.username));
-    errors.collect(ros.propertyValidator('containerName', ros.validateString)(properties.containerName));
     errors.collect(ros.propertyValidator('containerId', ros.validateString)(properties.containerId));
+    errors.collect(ros.propertyValidator('launcher', ros.validateString)(properties.launcher));
     errors.collect(ros.propertyValidator('frequency', ros.validateString)(properties.frequency));
     if(properties.runAgainOn && (Array.isArray(properties.runAgainOn) || (typeof properties.runAgainOn) === 'string')) {
         errors.collect(ros.propertyValidator('runAgainOn', ros.validateLength)({
@@ -15323,7 +15738,6 @@ function RosRunCommandPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('runAgainOn', ros.listValidator(ros.validateString))(properties.runAgainOn));
     errors.collect(ros.propertyValidator('enableParameter', ros.validateBoolean)(properties.enableParameter));
-    errors.collect(ros.propertyValidator('sync', ros.validateBoolean)(properties.sync));
     errors.collect(ros.propertyValidator('instanceIds', ros.requiredValidator)(properties.instanceIds));
     if(properties.instanceIds && (Array.isArray(properties.instanceIds) || (typeof properties.instanceIds) === 'string')) {
         errors.collect(ros.propertyValidator('instanceIds', ros.validateLength)({
@@ -15333,6 +15747,7 @@ function RosRunCommandPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('instanceIds', ros.listValidator(ros.validateString))(properties.instanceIds));
+    errors.collect(ros.propertyValidator('sync', ros.validateBoolean)(properties.sync));
     errors.collect(ros.propertyValidator('keepCommand', ros.validateBoolean)(properties.keepCommand));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
@@ -15369,6 +15784,7 @@ function rosRunCommandPropsToRosTemplate(properties: any, enableResourceProperty
       'EnableParameter': ros.booleanToRosTemplate(properties.enableParameter),
       'Frequency': ros.stringToRosTemplate(properties.frequency),
       'KeepCommand': ros.booleanToRosTemplate(properties.keepCommand),
+      'Launcher': ros.stringToRosTemplate(properties.launcher),
       'Name': ros.stringToRosTemplate(properties.name),
       'Parameters': ros.hashMapper(ros.objectToRosTemplate)(properties.parameters),
       'RepeatMode': ros.stringToRosTemplate(properties.repeatMode),
@@ -15493,6 +15909,11 @@ export class RosRunCommand extends ros.RosResource {
     public keepCommand: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property launcher: A bootloader for script execution. The length cannot exceed 1 KB.
+     */
+    public launcher: string | ros.IResolvable | undefined;
+
+    /**
      * @Property name: The name of the script, which supports all character sets. It can be up to 128 characters in length.
      */
     public name: string | ros.IResolvable | undefined;
@@ -15591,6 +16012,7 @@ export class RosRunCommand extends ros.RosResource {
         this.enableParameter = props.enableParameter;
         this.frequency = props.frequency;
         this.keepCommand = props.keepCommand;
+        this.launcher = props.launcher;
         this.name = props.name;
         this.parameters = props.parameters;
         this.repeatMode = props.repeatMode;
@@ -15617,6 +16039,7 @@ export class RosRunCommand extends ros.RosResource {
             enableParameter: this.enableParameter,
             frequency: this.frequency,
             keepCommand: this.keepCommand,
+            launcher: this.launcher,
             name: this.name,
             parameters: this.parameters,
             repeatMode: this.repeatMode,
@@ -15677,6 +16100,526 @@ function RosRunCommand_TagsPropertyValidator(properties: any): ros.ValidationRes
 function rosRunCommandTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosRunCommand_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
+ * Properties for defining a `RosRunCommandOfLifespan`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-runcommandoflifespan
+ */
+export interface RosRunCommandOfLifespanProps {
+
+    /**
+     * @Property instanceIds: The instance id list. Instances status must be running.
+     */
+    readonly instanceIds: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property type: The language type of the O&M script. Valid values:
+     * RunBatScript: batch scripts for Windows instances
+     * RunPowerShellScript: PowerShell scripts for Windows instances
+     * RunShellScript: shell scripts for Linux instances
+     */
+    readonly type: string | ros.IResolvable;
+
+    /**
+     * @Property commandContent: When this resource is created, this content will be executed. When this parameter changes, the new content will be executed. Either CommandContent or CommandContentOnDeletion must be specified. The plaintext content or the Base64-encoded content of the script. The Base64-encoded script content cannot exceed 16 KB.
+     * You can enable the custom parameter function by setting EnableParameter=true in the script content:
+     * Define custom parameters in the {{}} format. Within {{}}, the spaces and line breaks before and after the name of the parameter are ignored.
+     * The number of custom parameters cannot exceed 20.
+     * A custom parameter name can contain only letters, digits, underscores (_), and hyphens (-). It is case insensitive.
+     * Each custom parameter key cannot exceed 64 bytes.
+     */
+    readonly commandContent?: string | ros.IResolvable;
+
+    /**
+     * @Property commandContentOnDeletion: When this resource is deleted, this content will be executed. Either CommandContent or CommandContentOnDeletion must be specified. The plaintext content or the Base64-encoded content of the script. The Base64-encoded script content cannot exceed 16 KB.
+     * You can enable the custom parameter function by setting EnableParameter=true in the script content:
+     * Define custom parameters in the {{}} format. Within {{}}, the spaces and line breaks before and after the name of the parameter are ignored.
+     * The number of custom parameters cannot exceed 20.
+     * A custom parameter name can contain only letters, digits, underscores (_), and hyphens (-). It is case insensitive.
+     * Each custom parameter key cannot exceed 64 bytes.
+     */
+    readonly commandContentOnDeletion?: string | ros.IResolvable;
+
+    /**
+     * @Property containerId: The ID of the container. Only 64-bit hexadecimal strings are supported. You can use container IDs that are prefixed with docker:\/\/, containerd:\/\/, or cri-o:\/\/ to specify container runtimes.
+     * Take note of the following items:
+     * - If you specify this parameter, Cloud Assistant runs scripts in the specified container of the instance.
+     * - If you specify this parameter, make sure that the version of Cloud Assistant Agent installed on Linux instances is 2.2.3.344 or later.- If you specify this parameter, Username that is specified in a request to call this operation and WorkingDir that is specified in a request to call the CreateCommand operation do not take effect. You can run the command only in the default working directory of the container by using the default user of the container. 
+     * - If you specify this parameter, only shell scripts can be run in Linux containers. You cannot add a command in the format similar to #!\/usr\/bin\/python at the beginning of a script to specify a script interpreter.
+     */
+    readonly containerId?: string | ros.IResolvable;
+
+    /**
+     * @Property containerName: The name of the container.
+     * Take note of the following items:
+     * - If you specify this parameter, Cloud Assistant runs scripts in the specified container of the instance.
+     * - If you specify this parameter, make sure that the version of Cloud Assistant Agent installed on Linux instances is 2.2.3.344 or later.
+     * - If you specify this parameter, Username that is specified in a request to call this operation and WorkingDir that is specified in a request to call the CreateCommand operation do not take effect. You can run the command only in the default working directory of the container by using the default user of the container. 
+     * - If you specify this parameter, only shell scripts can be run in Linux containers. You cannot add a command in the format similar to #!\/usr\/bin\/python at the beginning of a script to specify a script interpreter.
+     */
+    readonly containerName?: string | ros.IResolvable;
+
+    /**
+     * @Property contentEncoding: The encoding mode of script content (CommandContent). Valid values (case insensitive):
+     * PlainText: The script content is not encoded, and transmitted in plaintext.
+     * Base64: base64-encoded.
+     * Default value: PlainText. If the specified value of this parameter is invalid, PlainText is used by default.
+     */
+    readonly contentEncoding?: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the script, which supports all character sets. It can be up to 512 characters in length.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property enableParameter: Specifies whether the script contains custom parameters.
+     * Default value: false
+     */
+    readonly enableParameter?: boolean | ros.IResolvable;
+
+    /**
+     * @Property launcher: A bootloader for script execution. The length cannot exceed 1 KB.
+     */
+    readonly launcher?: string | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the script, which supports all character sets. It can be up to 128 characters in length.
+     */
+    readonly name?: string | ros.IResolvable;
+
+    /**
+     * @Property parameters: The key-value pairs of custom parameters passed in when the script contains custom parameters.
+     * Number of custom parameters: 0 to 10.
+     * The key cannot be an empty string. It can be up to 64 characters in length.
+     * The value can be an empty string.
+     * After the custom parameters and the original script content are Base64 encoded, the total size cannot exceed 16 KB.
+     * The set of custom parameter names must be a subset of the parameter set that is defined when you created the script. You can use an empty string to represent the parameters that are not passed in.
+     * Default value: null, indicating that this parameter is canceled and customer parameters are disabled.
+     */
+    readonly parameters?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which to assign the command executions. The instances specified by InstanceIds must belong to the specified resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property sync: Whether to invoke synchronously.
+     */
+    readonly sync?: boolean | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to run_command. Max support 20 tags to add during create run_command. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosRunCommandOfLifespan.TagsProperty[];
+
+    /**
+     * @Property timeout: The timeout period for script execution. Unit: seconds. A timeout error occurs when a script cannot be run because the process slows down, a specific module or the Cloud Assistant client does not exist. When the script times out, the script process is forcibly terminated.
+     * Default value: 60.
+     */
+    readonly timeout?: number | ros.IResolvable;
+
+    /**
+     * @Property username: The username to use to run the command on instances. The username can be up to 255 characters in length.
+     * - For Linux instances, the root username is used by default.
+     * - For Windows instances, the System username is used by default.
+     * You can also specify other usernames that already exist in the instances to run the command. For security purposes, we recommend that you run Cloud Assistant commands as a regular user.
+     */
+    readonly username?: string | ros.IResolvable;
+
+    /**
+     * @Property windowsPasswordName: The name of the password to use to run the command on Windows instances. The name can be up to 255 characters in length.
+     * If you do not want to use the default System user to run the command on Windows instances, specify both **WindowsPasswordName** and **Username**. To mitigate the risk of password leaks, the password is stored in plaintext in Operation Orchestration Service (OOS) Parameter Store, and only the name of the password is passed in by using WindowsPasswordName.
+     */
+    readonly windowsPasswordName?: string | ros.IResolvable;
+
+    /**
+     * @Property workingDir: The running directory of the script in the ECS instance.
+     * Default value:
+     * Linux instances: under the home directory of the administrator (root user): \/root.
+     * Windows instances: under the directory where the process of the Cloud Assistant client is located, such as C:\ProgramData\aliyun\assist\$(version).
+     */
+    readonly workingDir?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosRunCommandOfLifespanProps`
+ *
+ * @param properties - the TypeScript properties of a `RosRunCommandOfLifespanProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosRunCommandOfLifespanPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('parameters', ros.hashValidator(ros.validateAny))(properties.parameters));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('timeout', ros.validateNumber)(properties.timeout));
+    if(properties.windowsPasswordName && (Array.isArray(properties.windowsPasswordName) || (typeof properties.windowsPasswordName) === 'string')) {
+        errors.collect(ros.propertyValidator('windowsPasswordName', ros.validateLength)({
+            data: properties.windowsPasswordName.length,
+            min: undefined,
+            max: 255,
+          }));
+    }
+    errors.collect(ros.propertyValidator('windowsPasswordName', ros.validateString)(properties.windowsPasswordName));
+    errors.collect(ros.propertyValidator('contentEncoding', ros.validateString)(properties.contentEncoding));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    errors.collect(ros.propertyValidator('workingDir', ros.validateString)(properties.workingDir));
+    errors.collect(ros.propertyValidator('commandContent', ros.validateString)(properties.commandContent));
+    errors.collect(ros.propertyValidator('commandContentOnDeletion', ros.validateString)(properties.commandContentOnDeletion));
+    errors.collect(ros.propertyValidator('type', ros.requiredValidator)(properties.type));
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    if(properties.username && (Array.isArray(properties.username) || (typeof properties.username) === 'string')) {
+        errors.collect(ros.propertyValidator('username', ros.validateLength)({
+            data: properties.username.length,
+            min: undefined,
+            max: 255,
+          }));
+    }
+    errors.collect(ros.propertyValidator('username', ros.validateString)(properties.username));
+    errors.collect(ros.propertyValidator('containerName', ros.validateString)(properties.containerName));
+    errors.collect(ros.propertyValidator('containerId', ros.validateString)(properties.containerId));
+    errors.collect(ros.propertyValidator('launcher', ros.validateString)(properties.launcher));
+    errors.collect(ros.propertyValidator('enableParameter', ros.validateBoolean)(properties.enableParameter));
+    errors.collect(ros.propertyValidator('sync', ros.validateBoolean)(properties.sync));
+    errors.collect(ros.propertyValidator('instanceIds', ros.requiredValidator)(properties.instanceIds));
+    if(properties.instanceIds && (Array.isArray(properties.instanceIds) || (typeof properties.instanceIds) === 'string')) {
+        errors.collect(ros.propertyValidator('instanceIds', ros.validateLength)({
+            data: properties.instanceIds.length,
+            min: 1,
+            max: 50,
+          }));
+    }
+    errors.collect(ros.propertyValidator('instanceIds', ros.listValidator(ros.validateString))(properties.instanceIds));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosRunCommandOfLifespan_TagsPropertyValidator))(properties.tags));
+    return errors.wrap('supplied properties not correct for "RosRunCommandOfLifespanProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::RunCommandOfLifespan` resource
+ *
+ * @param properties - the TypeScript properties of a `RosRunCommandOfLifespanProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::RunCommandOfLifespan` resource.
+ */
+// @ts-ignore TS6133
+function rosRunCommandOfLifespanPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosRunCommandOfLifespanPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'InstanceIds': ros.listMapper(ros.stringToRosTemplate)(properties.instanceIds),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'CommandContent': ros.stringToRosTemplate(properties.commandContent),
+      'CommandContentOnDeletion': ros.stringToRosTemplate(properties.commandContentOnDeletion),
+      'ContainerId': ros.stringToRosTemplate(properties.containerId),
+      'ContainerName': ros.stringToRosTemplate(properties.containerName),
+      'ContentEncoding': ros.stringToRosTemplate(properties.contentEncoding),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'EnableParameter': ros.booleanToRosTemplate(properties.enableParameter),
+      'Launcher': ros.stringToRosTemplate(properties.launcher),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'Parameters': ros.hashMapper(ros.objectToRosTemplate)(properties.parameters),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Sync': ros.booleanToRosTemplate(properties.sync),
+      'Tags': ros.listMapper(rosRunCommandOfLifespanTagsPropertyToRosTemplate)(properties.tags),
+      'Timeout': ros.numberToRosTemplate(properties.timeout),
+      'Username': ros.stringToRosTemplate(properties.username),
+      'WindowsPasswordName': ros.stringToRosTemplate(properties.windowsPasswordName),
+      'WorkingDir': ros.stringToRosTemplate(properties.workingDir),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::RunCommandOfLifespan`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `RunCommandOfLifespan` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-runcommandoflifespan
+ */
+export class RosRunCommandOfLifespan extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::RunCommandOfLifespan";
+
+    /**
+     * @Attribute CommandId: The id of command created.
+     */
+    public readonly attrCommandId: ros.IResolvable;
+
+    /**
+     * @Attribute InvokeId: The invoke id of command.
+     */
+    public readonly attrInvokeId: ros.IResolvable;
+
+    /**
+     * @Attribute InvokeInstances: The InvokeInstances of command.
+     */
+    public readonly attrInvokeInstances: ros.IResolvable;
+
+    /**
+     * @Attribute InvokeResults: The results of invoke command.
+     */
+    public readonly attrInvokeResults: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property instanceIds: The instance id list. Instances status must be running.
+     */
+    public instanceIds: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property type: The language type of the O&M script. Valid values:
+     * RunBatScript: batch scripts for Windows instances
+     * RunPowerShellScript: PowerShell scripts for Windows instances
+     * RunShellScript: shell scripts for Linux instances
+     */
+    public type: string | ros.IResolvable;
+
+    /**
+     * @Property commandContent: When this resource is created, this content will be executed. When this parameter changes, the new content will be executed. Either CommandContent or CommandContentOnDeletion must be specified. The plaintext content or the Base64-encoded content of the script. The Base64-encoded script content cannot exceed 16 KB.
+     * You can enable the custom parameter function by setting EnableParameter=true in the script content:
+     * Define custom parameters in the {{}} format. Within {{}}, the spaces and line breaks before and after the name of the parameter are ignored.
+     * The number of custom parameters cannot exceed 20.
+     * A custom parameter name can contain only letters, digits, underscores (_), and hyphens (-). It is case insensitive.
+     * Each custom parameter key cannot exceed 64 bytes.
+     */
+    public commandContent: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property commandContentOnDeletion: When this resource is deleted, this content will be executed. Either CommandContent or CommandContentOnDeletion must be specified. The plaintext content or the Base64-encoded content of the script. The Base64-encoded script content cannot exceed 16 KB.
+     * You can enable the custom parameter function by setting EnableParameter=true in the script content:
+     * Define custom parameters in the {{}} format. Within {{}}, the spaces and line breaks before and after the name of the parameter are ignored.
+     * The number of custom parameters cannot exceed 20.
+     * A custom parameter name can contain only letters, digits, underscores (_), and hyphens (-). It is case insensitive.
+     * Each custom parameter key cannot exceed 64 bytes.
+     */
+    public commandContentOnDeletion: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property containerId: The ID of the container. Only 64-bit hexadecimal strings are supported. You can use container IDs that are prefixed with docker:\/\/, containerd:\/\/, or cri-o:\/\/ to specify container runtimes.
+     * Take note of the following items:
+     * - If you specify this parameter, Cloud Assistant runs scripts in the specified container of the instance.
+     * - If you specify this parameter, make sure that the version of Cloud Assistant Agent installed on Linux instances is 2.2.3.344 or later.- If you specify this parameter, Username that is specified in a request to call this operation and WorkingDir that is specified in a request to call the CreateCommand operation do not take effect. You can run the command only in the default working directory of the container by using the default user of the container. 
+     * - If you specify this parameter, only shell scripts can be run in Linux containers. You cannot add a command in the format similar to #!\/usr\/bin\/python at the beginning of a script to specify a script interpreter.
+     */
+    public containerId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property containerName: The name of the container.
+     * Take note of the following items:
+     * - If you specify this parameter, Cloud Assistant runs scripts in the specified container of the instance.
+     * - If you specify this parameter, make sure that the version of Cloud Assistant Agent installed on Linux instances is 2.2.3.344 or later.
+     * - If you specify this parameter, Username that is specified in a request to call this operation and WorkingDir that is specified in a request to call the CreateCommand operation do not take effect. You can run the command only in the default working directory of the container by using the default user of the container. 
+     * - If you specify this parameter, only shell scripts can be run in Linux containers. You cannot add a command in the format similar to #!\/usr\/bin\/python at the beginning of a script to specify a script interpreter.
+     */
+    public containerName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property contentEncoding: The encoding mode of script content (CommandContent). Valid values (case insensitive):
+     * PlainText: The script content is not encoded, and transmitted in plaintext.
+     * Base64: base64-encoded.
+     * Default value: PlainText. If the specified value of this parameter is invalid, PlainText is used by default.
+     */
+    public contentEncoding: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property description: The description of the script, which supports all character sets. It can be up to 512 characters in length.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property enableParameter: Specifies whether the script contains custom parameters.
+     * Default value: false
+     */
+    public enableParameter: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property launcher: A bootloader for script execution. The length cannot exceed 1 KB.
+     */
+    public launcher: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property name: The name of the script, which supports all character sets. It can be up to 128 characters in length.
+     */
+    public name: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property parameters: The key-value pairs of custom parameters passed in when the script contains custom parameters.
+     * Number of custom parameters: 0 to 10.
+     * The key cannot be an empty string. It can be up to 64 characters in length.
+     * The value can be an empty string.
+     * After the custom parameters and the original script content are Base64 encoded, the total size cannot exceed 16 KB.
+     * The set of custom parameter names must be a subset of the parameter set that is defined when you created the script. You can use an empty string to represent the parameters that are not passed in.
+     * Default value: null, indicating that this parameter is canceled and customer parameters are disabled.
+     */
+    public parameters: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which to assign the command executions. The instances specified by InstanceIds must belong to the specified resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property sync: Whether to invoke synchronously.
+     */
+    public sync: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags to attach to run_command. Max support 20 tags to add during create run_command. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosRunCommandOfLifespan.TagsProperty[] | undefined;
+
+    /**
+     * @Property timeout: The timeout period for script execution. Unit: seconds. A timeout error occurs when a script cannot be run because the process slows down, a specific module or the Cloud Assistant client does not exist. When the script times out, the script process is forcibly terminated.
+     * Default value: 60.
+     */
+    public timeout: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property username: The username to use to run the command on instances. The username can be up to 255 characters in length.
+     * - For Linux instances, the root username is used by default.
+     * - For Windows instances, the System username is used by default.
+     * You can also specify other usernames that already exist in the instances to run the command. For security purposes, we recommend that you run Cloud Assistant commands as a regular user.
+     */
+    public username: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property windowsPasswordName: The name of the password to use to run the command on Windows instances. The name can be up to 255 characters in length.
+     * If you do not want to use the default System user to run the command on Windows instances, specify both **WindowsPasswordName** and **Username**. To mitigate the risk of password leaks, the password is stored in plaintext in Operation Orchestration Service (OOS) Parameter Store, and only the name of the password is passed in by using WindowsPasswordName.
+     */
+    public windowsPasswordName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property workingDir: The running directory of the script in the ECS instance.
+     * Default value:
+     * Linux instances: under the home directory of the administrator (root user): \/root.
+     * Windows instances: under the directory where the process of the Cloud Assistant client is located, such as C:\ProgramData\aliyun\assist\$(version).
+     */
+    public workingDir: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosRunCommandOfLifespanProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosRunCommandOfLifespan.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCommandId = this.getAtt('CommandId');
+        this.attrInvokeId = this.getAtt('InvokeId');
+        this.attrInvokeInstances = this.getAtt('InvokeInstances');
+        this.attrInvokeResults = this.getAtt('InvokeResults');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.instanceIds = props.instanceIds;
+        this.type = props.type;
+        this.commandContent = props.commandContent;
+        this.commandContentOnDeletion = props.commandContentOnDeletion;
+        this.containerId = props.containerId;
+        this.containerName = props.containerName;
+        this.contentEncoding = props.contentEncoding;
+        this.description = props.description;
+        this.enableParameter = props.enableParameter;
+        this.launcher = props.launcher;
+        this.name = props.name;
+        this.parameters = props.parameters;
+        this.resourceGroupId = props.resourceGroupId;
+        this.sync = props.sync;
+        this.tags = props.tags;
+        this.timeout = props.timeout;
+        this.username = props.username;
+        this.windowsPasswordName = props.windowsPasswordName;
+        this.workingDir = props.workingDir;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            instanceIds: this.instanceIds,
+            type: this.type,
+            commandContent: this.commandContent,
+            commandContentOnDeletion: this.commandContentOnDeletion,
+            containerId: this.containerId,
+            containerName: this.containerName,
+            contentEncoding: this.contentEncoding,
+            description: this.description,
+            enableParameter: this.enableParameter,
+            launcher: this.launcher,
+            name: this.name,
+            parameters: this.parameters,
+            resourceGroupId: this.resourceGroupId,
+            sync: this.sync,
+            tags: this.tags,
+            timeout: this.timeout,
+            username: this.username,
+            windowsPasswordName: this.windowsPasswordName,
+            workingDir: this.workingDir,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosRunCommandOfLifespanPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosRunCommandOfLifespan {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosRunCommandOfLifespan_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::RunCommandOfLifespan.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::RunCommandOfLifespan.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosRunCommandOfLifespanTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosRunCommandOfLifespan_TagsPropertyValidator(properties).assertSuccess();
     return {
       'Value': ros.stringToRosTemplate(properties.value),
       'Key': ros.stringToRosTemplate(properties.key),
@@ -15907,7 +16850,7 @@ function rosSSHKeyPairPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SSHKeyPair`, which is used to create an SSH key pair or import an existing SSH key pair to access an Elastic Compute Service (ECS) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SSHKeyPair`, which is used to create an SSH key pair or import an existing SSH key pair.
  * @Note This class does not contain additional functions, so it is recommended to use the `SSHKeyPair` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-sshkeypair
  */
@@ -16103,7 +17046,7 @@ function rosSSHKeyPairAttachmentPropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SSHKeyPairAttachment`, which is used to attach an SSH key pair to Elastic Compute Service (ECS) instances.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SSHKeyPairAttachment`, which is used to bind an SSH key pair to Elastic Compute Service (ECS) instances.
  * @Note This class does not contain additional functions, so it is recommended to use the `SSHKeyPairAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-sshkeypairattachment
  */
@@ -18710,7 +19653,7 @@ export interface RosVPCProps {
     readonly userCidr?: string | ros.IResolvable;
 
     /**
-     * @Property vpcName: Display name of the vpc instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
+     * @Property vpcName: The value contains 1 to 128 characters and cannot start with http:\/\/ or https:\/\/
      */
     readonly vpcName?: string | ros.IResolvable;
 }
@@ -18737,6 +19680,12 @@ function RosVPCPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('secondaryCidrBlocks', ros.listValidator(ros.validateString))(properties.secondaryCidrBlocks));
     errors.collect(ros.propertyValidator('cidrBlock', ros.validateString)(properties.cidrBlock));
+    if(properties.vpcName && (typeof properties.vpcName) !== 'object') {
+        errors.collect(ros.propertyValidator('vpcName', ros.validateAllowedPattern)({
+          data: properties.vpcName,
+          reg: /^(?!http:\/\/|https:\/\/).{1,128}$/
+        }));
+    }
     errors.collect(ros.propertyValidator('vpcName', ros.validateString)(properties.vpcName));
     if(properties.ipv6CidrBlock && (Array.isArray(properties.ipv6CidrBlock) || (typeof properties.ipv6CidrBlock) === 'string')) {
         errors.collect(ros.propertyValidator('ipv6CidrBlock', ros.validateLength)({
@@ -18875,7 +19824,7 @@ export class RosVPC extends ros.RosResource {
     public userCidr: string | ros.IResolvable | undefined;
 
     /**
-     * @Property vpcName: Display name of the vpc instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
+     * @Property vpcName: The value contains 1 to 128 characters and cannot start with http:\/\/ or https:\/\/
      */
     public vpcName: string | ros.IResolvable | undefined;
 
@@ -19015,7 +19964,7 @@ export interface RosVSwitchProps {
     readonly vpcIpv6CidrBlock?: string | ros.IResolvable;
 
     /**
-     * @Property vSwitchName: Display name of the vSwitch instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
+     * @Property vSwitchName: The value contains 1 to 128 characters and cannot start with http:\/\/ or https:\/\/
      */
     readonly vSwitchName?: string | ros.IResolvable;
 
@@ -19044,6 +19993,12 @@ function RosVSwitchPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('cidrBlock', ros.requiredValidator)(properties.cidrBlock));
     errors.collect(ros.propertyValidator('cidrBlock', ros.validateString)(properties.cidrBlock));
+    if(properties.vSwitchName && (typeof properties.vSwitchName) !== 'object') {
+        errors.collect(ros.propertyValidator('vSwitchName', ros.validateAllowedPattern)({
+          data: properties.vSwitchName,
+          reg: /^(?!http:\/\/|https:\/\/).{1,128}$/
+        }));
+    }
     errors.collect(ros.propertyValidator('vSwitchName', ros.validateString)(properties.vSwitchName));
     errors.collect(ros.propertyValidator('vpcIpv6CidrBlock', ros.validateString)(properties.vpcIpv6CidrBlock));
     if(properties.ipv6CidrBlock && (typeof properties.ipv6CidrBlock) !== 'object') {
@@ -19163,7 +20118,7 @@ export class RosVSwitch extends ros.RosResource {
     public vpcIpv6CidrBlock: string | ros.IResolvable | undefined;
 
     /**
-     * @Property vSwitchName: Display name of the vSwitch instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
+     * @Property vSwitchName: The value contains 1 to 128 characters and cannot start with http:\/\/ or https:\/\/
      */
     public vSwitchName: string | ros.IResolvable | undefined;
 

@@ -5,11 +5,6 @@ package alicloudroscdkadblake
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adblake-dbcluster
 type DBClusterProps struct {
-	// Property computeResource: The amount of reserved computing resources.
-	//
-	// Unit: ACUs. Valid values: 0ACU to 4096ACU. The value must be in increments of 16 ACUs. Each ACU is equivalent to 1 core and 4 GB memory.
-	// Note This parameter must be specified with a unit.
-	ComputeResource interface{} `field:"required" json:"computeResource" yaml:"computeResource"`
 	// Property dbClusterVersion: The version of the cluster.
 	//
 	// Set the value to 5.0.
@@ -20,11 +15,6 @@ type DBClusterProps struct {
 	// Postpaid: pay-as-you-go.
 	// Prepaid: subscription.
 	PayType interface{} `field:"required" json:"payType" yaml:"payType"`
-	// Property storageResource: The amount of reserved storage resources.
-	//
-	// Unit: AnalyticDB compute units (ACUs). Valid values: 0ACU to 2064ACU. The value must be in increments of 24 ACUs. Each ACU is equivalent to 1 core and 4 GB memory.
-	// Note This parameter must be specified with a unit.
-	StorageResource interface{} `field:"required" json:"storageResource" yaml:"storageResource"`
 	// Property vpcId: The virtual private cloud (VPC) ID of the cluster.
 	VpcId interface{} `field:"required" json:"vpcId" yaml:"vpcId"`
 	// Property vSwitchId: The vSwitch ID of the cluster.
@@ -39,6 +29,11 @@ type DBClusterProps struct {
 	BackupSetId interface{} `field:"optional" json:"backupSetId" yaml:"backupSetId"`
 	// Property cloneSourceRegionId: The ID of the source region where the cluster is located.
 	CloneSourceRegionId interface{} `field:"optional" json:"cloneSourceRegionId" yaml:"cloneSourceRegionId"`
+	// Property computeResource: The amount of reserved computing resources.
+	//
+	// Unit: ACUs. Valid values: 0ACU to 4096ACU. The value must be in increments of 16 ACUs. Each ACU is equivalent to 1 core and 4 GB memory.
+	// Note This parameter must be specified with a unit.
+	ComputeResource interface{} `field:"optional" json:"computeResource" yaml:"computeResource"`
 	// Property dbClusterDescription: The description of the cluster.
 	//
 	// The description cannot start with http:\/\/ or https:\/\/.
@@ -78,6 +73,8 @@ type DBClusterProps struct {
 	PeriodType interface{} `field:"optional" json:"periodType" yaml:"periodType"`
 	// Property productForm: Valid values: IntegrationForm LegacyForm.
 	ProductForm interface{} `field:"optional" json:"productForm" yaml:"productForm"`
+	// Property productVersion: The version of the cluster.Note If only ProductForm is set to IntegrationForm, enter this parameter.
+	ProductVersion interface{} `field:"optional" json:"productVersion" yaml:"productVersion"`
 	// Property reservedNodeCount: The number of reserved nodes.
 	//
 	// Must be 1 for basic version and multiple
@@ -95,10 +92,19 @@ type DBClusterProps struct {
 	// backup: restores data from a backup set. You must also specify the BackupSetId and SourceDBClusterId parameters.
 	// timepoint: restores data to a point in time. You must also specify the RestoreToTime and SourceDBClusterId parameters.
 	RestoreType interface{} `field:"optional" json:"restoreType" yaml:"restoreType"`
+	// Property secondaryVSwitchId: The secondary vSwitch ID of the cluster.
+	SecondaryVSwitchId interface{} `field:"optional" json:"secondaryVSwitchId" yaml:"secondaryVSwitchId"`
+	// Property secondaryZoneId: The secondary zone ID.
+	SecondaryZoneId interface{} `field:"optional" json:"secondaryZoneId" yaml:"secondaryZoneId"`
 	// Property sourceDbClusterId: The ID of the source AnalyticDB for MySQL Data Warehouse Edition cluster.
 	//
 	// If you want to restore a Data Lakehouse Edition cluster from a Data Warehouse Edition cluster, you must specify this parameter.
 	SourceDbClusterId interface{} `field:"optional" json:"sourceDbClusterId" yaml:"sourceDbClusterId"`
+	// Property storageResource: The amount of reserved storage resources.
+	//
+	// Unit: AnalyticDB compute units (ACUs). Valid values: 0ACU to 2064ACU. The value must be in increments of 24 ACUs. Each ACU is equivalent to 1 core and 4 GB memory.
+	// Note This parameter must be specified with a unit.
+	StorageResource interface{} `field:"optional" json:"storageResource" yaml:"storageResource"`
 	// Property tags: Tags to attach to cluster.
 	//
 	// Max support 20 tags to add during create cluster. Each tag with two properties Key and Value, and Key is required.

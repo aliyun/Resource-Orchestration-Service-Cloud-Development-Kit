@@ -12,6 +12,8 @@ type QueueProps struct {
 	// All messages sent to the queue can be consumed until the DelaySeconds expires.
 	// An integer between 0 and 604800 (7 days). The default value is 0
 	DelaySeconds interface{} `field:"optional" json:"delaySeconds" yaml:"delaySeconds"`
+	// Property dlqPolicy: Dead-letter queue policy.
+	DlqPolicy interface{} `field:"optional" json:"dlqPolicy" yaml:"dlqPolicy"`
 	// Property loggingEnabled: Whether to enable log management.
 	//
 	// "true" indicates that log management is enabled, whereas "false" indicates that log management is disabled.
@@ -31,6 +33,10 @@ type QueueProps struct {
 	// Measured in seconds.
 	// An integer between 0 and 30 seconds. The default value is 0 (seconds)
 	PollingWaitSeconds interface{} `field:"optional" json:"pollingWaitSeconds" yaml:"pollingWaitSeconds"`
+	// Property tags: Tags to attach to Queue.
+	//
+	// Max support 20 tags to add during create Queue. Each tag with two properties Key and Value, and Key is required.
+	Tags *[]*RosQueue_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 	// Property visibilityTimeout: Duration in which a message stays in Inactive status after it is consumed from the queue.
 	//
 	// Measured in seconds.

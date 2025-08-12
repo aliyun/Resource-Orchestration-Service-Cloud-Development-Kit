@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.nas;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::NAS::FileSystem</code>, which is used to create a file system of File Storage NAS (NAS).
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::NAS::FileSystem</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.204Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.731Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.FileSystem")
 public class FileSystem extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.nas.IFileSystem {
 
@@ -140,7 +140,7 @@ public class FileSystem extends com.aliyun.ros.cdk.core.Resource implements com.
          * Property storageType: The storage type of the file System.
          * <p>
          * Valid values:
-         * Performance、Capacity(Available when the file_system_type is standard)
+         * Performance、Capacity、Premium(Available when the file_system_type is standard)
          * standard、advance(Available when the file_system_type is extreme)
          * advance_100、advance_200(Available when the file_system_type is cpfs)
          * <p>
@@ -155,7 +155,7 @@ public class FileSystem extends com.aliyun.ros.cdk.core.Resource implements com.
          * Property storageType: The storage type of the file System.
          * <p>
          * Valid values:
-         * Performance、Capacity(Available when the file_system_type is standard)
+         * Performance、Capacity、Premium(Available when the file_system_type is standard)
          * standard、advance(Available when the file_system_type is extreme)
          * advance_100、advance_200(Available when the file_system_type is cpfs)
          * <p>
@@ -362,6 +362,27 @@ public class FileSystem extends com.aliyun.ros.cdk.core.Resource implements com.
          */
         public Builder fileSystemType(final com.aliyun.ros.cdk.core.IResolvable fileSystemType) {
             this.props.fileSystemType(fileSystemType);
+            return this;
+        }
+
+        /**
+         * Property resourceGroupId: Resource group id.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: Resource group id. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: Resource group id.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: Resource group id. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
             return this;
         }
 

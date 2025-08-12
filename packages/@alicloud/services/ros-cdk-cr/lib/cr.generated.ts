@@ -287,6 +287,11 @@ export interface RosInstanceEndpointAclPolicyProps {
     readonly instanceId: string | ros.IResolvable;
 
     /**
+     * @Property autoEnableType: Whether to auto enable the type of the endpoint.
+     */
+    readonly autoEnableType?: string | ros.IResolvable;
+
+    /**
      * @Property comment: The description of the entry.
      */
     readonly comment?: string | ros.IResolvable;
@@ -325,6 +330,13 @@ function RosInstanceEndpointAclPolicyPropsValidator(properties: any): ros.Valida
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
     errors.collect(ros.propertyValidator('moduleName', ros.validateString)(properties.moduleName));
     errors.collect(ros.propertyValidator('endpointType', ros.validateString)(properties.endpointType));
+    if(properties.autoEnableType && (typeof properties.autoEnableType) !== 'object') {
+        errors.collect(ros.propertyValidator('autoEnableType', ros.validateAllowedValues)({
+          data: properties.autoEnableType,
+          allowedValues: ["internet"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('autoEnableType', ros.validateString)(properties.autoEnableType));
     errors.collect(ros.propertyValidator('regionId', ros.validateString)(properties.regionId));
     return errors.wrap('supplied properties not correct for "RosInstanceEndpointAclPolicyProps"');
 }
@@ -345,6 +357,7 @@ function rosInstanceEndpointAclPolicyPropsToRosTemplate(properties: any, enableR
     return {
       'Entry': ros.stringToRosTemplate(properties.entry),
       'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'AutoEnableType': ros.stringToRosTemplate(properties.autoEnableType),
       'Comment': ros.stringToRosTemplate(properties.comment),
       'EndpointType': ros.stringToRosTemplate(properties.endpointType),
       'ModuleName': ros.stringToRosTemplate(properties.moduleName),
@@ -387,6 +400,11 @@ export class RosInstanceEndpointAclPolicy extends ros.RosResource {
     public instanceId: string | ros.IResolvable;
 
     /**
+     * @Property autoEnableType: Whether to auto enable the type of the endpoint.
+     */
+    public autoEnableType: string | ros.IResolvable | undefined;
+
+    /**
      * @Property comment: The description of the entry.
      */
     public comment: string | ros.IResolvable | undefined;
@@ -420,6 +438,7 @@ export class RosInstanceEndpointAclPolicy extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.entry = props.entry;
         this.instanceId = props.instanceId;
+        this.autoEnableType = props.autoEnableType;
         this.comment = props.comment;
         this.endpointType = props.endpointType;
         this.moduleName = props.moduleName;
@@ -431,6 +450,7 @@ export class RosInstanceEndpointAclPolicy extends ros.RosResource {
         return {
             entry: this.entry,
             instanceId: this.instanceId,
+            autoEnableType: this.autoEnableType,
             comment: this.comment,
             endpointType: this.endpointType,
             moduleName: this.moduleName,

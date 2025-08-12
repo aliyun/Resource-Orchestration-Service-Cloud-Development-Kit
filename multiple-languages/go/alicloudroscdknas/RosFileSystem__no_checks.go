@@ -124,6 +124,10 @@ func (j *jsiiProxy_RosFileSystem) validateSetProtocolTypeParameters(val interfac
 	return nil
 }
 
+func (j *jsiiProxy_RosFileSystem) validateSetResourceGroupIdParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosFileSystem) validateSetSnapshotIdParameters(val interface{}) error {
 	return nil
 }

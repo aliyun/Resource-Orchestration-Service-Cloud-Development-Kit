@@ -270,9 +270,6 @@ func (j *jsiiProxy_RosDBCluster) validateSetCloneSourceRegionIdParameters(val in
 }
 
 func (j *jsiiProxy_RosDBCluster) validateSetComputeResourceParameters(val interface{}) error {
-	if val == nil {
-		return fmt.Errorf("parameter val is required, but nil was provided")
-	}
 	switch val.(type) {
 	case *string:
 		// ok
@@ -473,6 +470,23 @@ func (j *jsiiProxy_RosDBCluster) validateSetProductFormParameters(val interface{
 	return nil
 }
 
+func (j *jsiiProxy_RosDBCluster) validateSetProductVersionParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosDBCluster) validateSetReservedNodeCountParameters(val interface{}) error {
 	switch val.(type) {
 	case *float64:
@@ -638,6 +652,40 @@ func (j *jsiiProxy_RosDBCluster) validateSetRestoreTypeParameters(val interface{
 	return nil
 }
 
+func (j *jsiiProxy_RosDBCluster) validateSetSecondaryVSwitchIdParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosDBCluster) validateSetSecondaryZoneIdParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosDBCluster) validateSetSourceDbClusterIdParameters(val interface{}) error {
 	switch val.(type) {
 	case *string:
@@ -656,9 +704,6 @@ func (j *jsiiProxy_RosDBCluster) validateSetSourceDbClusterIdParameters(val inte
 }
 
 func (j *jsiiProxy_RosDBCluster) validateSetStorageResourceParameters(val interface{}) error {
-	if val == nil {
-		return fmt.Errorf("parameter val is required, but nil was provided")
-	}
 	switch val.(type) {
 	case *string:
 		// ok

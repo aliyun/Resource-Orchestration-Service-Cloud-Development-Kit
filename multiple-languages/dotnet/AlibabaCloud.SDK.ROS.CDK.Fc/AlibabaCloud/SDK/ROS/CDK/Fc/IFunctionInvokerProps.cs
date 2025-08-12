@@ -39,6 +39,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             }
         }
 
+        /// <summary>Property checkAsyncInvocation: Check async invocation setting.</summary>
+        [JsiiProperty(name: "checkAsyncInvocation", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc.RosFunctionInvoker.CheckAsyncInvocationProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? CheckAsyncInvocation
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property checkError: Whether check error for function invocation result.</summary>
         /// <remarks>
         /// If set true and function invocation result has error, the resource creation will be regard as failed.
@@ -133,6 +144,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             [JsiiOptional]
             [JsiiProperty(name: "async", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Async
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property checkAsyncInvocation: Check async invocation setting.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "checkAsyncInvocation", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc.RosFunctionInvoker.CheckAsyncInvocationProperty\"}]}}", isOptional: true)]
+            public object? CheckAsyncInvocation
             {
                 get => GetInstanceProperty<object?>();
             }

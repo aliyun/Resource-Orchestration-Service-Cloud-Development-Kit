@@ -14,6 +14,8 @@ type RosAnycastEIPAssociation interface {
 	alicloudroscdkcore.RosResource
 	AnycastId() interface{}
 	SetAnycastId(val interface{})
+	AssociationMode() interface{}
+	SetAssociationMode(val interface{})
 	AttrAnycastId() alicloudroscdkcore.IResolvable
 	AttrBindInstanceId() alicloudroscdkcore.IResolvable
 	AttrBindInstanceRegionId() alicloudroscdkcore.IResolvable
@@ -42,6 +44,10 @@ type RosAnycastEIPAssociation interface {
 	LogicalId() *string
 	// The construct tree node associated with this construct.
 	Node() alicloudroscdkcore.ConstructNode
+	PopLocations() interface{}
+	SetPopLocations(val interface{})
+	PrivateIpAddress() interface{}
+	SetPrivateIpAddress(val interface{})
 	// Return a string that will be resolved to a RosTemplate `{ Ref }` for this element.
 	//
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
@@ -190,6 +196,16 @@ func (j *jsiiProxy_RosAnycastEIPAssociation) AnycastId() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosAnycastEIPAssociation) AssociationMode() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"associationMode",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosAnycastEIPAssociation) AttrAnycastId() alicloudroscdkcore.IResolvable {
 	var returns alicloudroscdkcore.IResolvable
 	_jsii_.Get(
@@ -300,6 +316,26 @@ func (j *jsiiProxy_RosAnycastEIPAssociation) Node() alicloudroscdkcore.Construct
 	return returns
 }
 
+func (j *jsiiProxy_RosAnycastEIPAssociation) PopLocations() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"popLocations",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosAnycastEIPAssociation) PrivateIpAddress() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"privateIpAddress",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosAnycastEIPAssociation) Ref() *string {
 	var returns *string
 	_jsii_.Get(
@@ -399,6 +435,17 @@ func (j *jsiiProxy_RosAnycastEIPAssociation)SetAnycastId(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosAnycastEIPAssociation)SetAssociationMode(val interface{}) {
+	if err := j.validateSetAssociationModeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"associationMode",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosAnycastEIPAssociation)SetBindInstanceId(val interface{}) {
 	if err := j.validateSetBindInstanceIdParameters(val); err != nil {
 		panic(err)
@@ -439,6 +486,28 @@ func (j *jsiiProxy_RosAnycastEIPAssociation)SetEnableResourcePropertyConstraint(
 	_jsii_.Set(
 		j,
 		"enableResourcePropertyConstraint",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosAnycastEIPAssociation)SetPopLocations(val interface{}) {
+	if err := j.validateSetPopLocationsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"popLocations",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosAnycastEIPAssociation)SetPrivateIpAddress(val interface{}) {
+	if err := j.validateSetPrivateIpAddressParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"privateIpAddress",
 		val,
 	)
 }

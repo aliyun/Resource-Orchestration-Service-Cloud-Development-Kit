@@ -552,7 +552,7 @@ function RosConnectionPropsValidator(properties: any): ros.ValidationResult {
     if(properties.connectionStringPrefix && (typeof properties.connectionStringPrefix) !== 'object') {
         errors.collect(ros.propertyValidator('connectionStringPrefix', ros.validateAllowedPattern)({
           data: properties.connectionStringPrefix,
-          reg: /[a-zA-Z0-9-]{5,40}/
+          reg: /^[a-zA-Z0-9-]{5,40}$/
         }));
     }
     errors.collect(ros.propertyValidator('connectionStringPrefix', ros.validateString)(properties.connectionStringPrefix));
@@ -583,7 +583,7 @@ function rosConnectionPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::Connection`, which is used to apply for a public endpoint.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::Connection`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Connection` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-connection
  */
@@ -756,6 +756,13 @@ export interface RosDBInstanceProps {
      * Annual subscription: The auto-renewal cycle is one year.
      */
     readonly autoRenew?: boolean | ros.IResolvable;
+
+    /**
+     * @Property autoUpgradeMinorVersion: How the instance upgrades to a minor version.Valid values:
+     * - Auto (default) : Updates minor versions automatically.
+     * - Manual: No automatic upgrade, only forced when the current version is offline.
+     */
+    readonly autoUpgradeMinorVersion?: string | ros.IResolvable;
 
     /**
      * @Property backUpCategory: Specifies whether to enable the second-level backup function. This function allows a backup 
@@ -1016,9 +1023,9 @@ export interface RosDBInstanceProps {
     readonly privateIpAddress?: string | ros.IResolvable;
 
     /**
-     * @Property releasedKeepPolicy: The policy used to retain archived backups if the instance is released. Default value: None. 
+     * @Property releasedKeepPolicy: The policy used to retain archived backups if the instance is released. 
      *  Valid values: 
-     * Lastest: Only the last archived backup is retained. 
+     * None: No archived backup files are retained.Lastest: Only the last archived backup is retained. 
      *  All: All of the archived backups are retained.
      */
     readonly releasedKeepPolicy?: string | ros.IResolvable;
@@ -1081,6 +1088,11 @@ export interface RosDBInstanceProps {
      * @Property storageUpperBound: The total storage space upper limit for automatic storage space expansion, that is, automatic expansion will not cause the total storage space of the instance to exceed this value.
      */
     readonly storageUpperBound?: number | ros.IResolvable;
+
+    /**
+     * @Property subscriptionDeletionForce: This option is only applicable to subscription instances. For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+     */
+    readonly subscriptionDeletionForce?: boolean | ros.IResolvable;
 
     /**
      * @Property tags: The tags of an instance.
@@ -1190,13 +1202,20 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('logBackupRetentionPeriod', ros.validateNumber)(properties.logBackupRetentionPeriod));
+    if(properties.autoUpgradeMinorVersion && (typeof properties.autoUpgradeMinorVersion) !== 'object') {
+        errors.collect(ros.propertyValidator('autoUpgradeMinorVersion', ros.validateAllowedValues)({
+          data: properties.autoUpgradeMinorVersion,
+          allowedValues: ["Auto","Manual"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('autoUpgradeMinorVersion', ros.validateString)(properties.autoUpgradeMinorVersion));
     errors.collect(ros.propertyValidator('dbInstanceStorage', ros.requiredValidator)(properties.dbInstanceStorage));
     errors.collect(ros.propertyValidator('dbInstanceStorage', ros.validateNumber)(properties.dbInstanceStorage));
     errors.collect(ros.propertyValidator('dbMappings', ros.listValidator(RosDBInstance_DBMappingsPropertyValidator))(properties.dbMappings));
     if(properties.connectionStringPrefix && (typeof properties.connectionStringPrefix) !== 'object') {
         errors.collect(ros.propertyValidator('connectionStringPrefix', ros.validateAllowedPattern)({
           data: properties.connectionStringPrefix,
-          reg: /[a-zA-Z0-9-]{8,64}/
+          reg: /^[a-zA-Z0-9-]{8,64}$/
         }));
     }
     errors.collect(ros.propertyValidator('connectionStringPrefix', ros.validateString)(properties.connectionStringPrefix));
@@ -1291,7 +1310,6 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('masterUserPassword', ros.validateString)(properties.masterUserPassword));
-    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     if(properties.sslSetting && (typeof properties.sslSetting) !== 'object') {
         errors.collect(ros.propertyValidator('sslSetting', ros.validateAllowedValues)({
           data: properties.sslSetting,
@@ -1299,6 +1317,7 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('sslSetting', ros.validateString)(properties.sslSetting));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('masterUsername', ros.validateString)(properties.masterUsername));
     errors.collect(ros.propertyValidator('connectionMode', ros.validateString)(properties.connectionMode));
     if(properties.localLogRetentionSpace && (typeof properties.localLogRetentionSpace) !== 'object') {
@@ -1323,7 +1342,7 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     if(properties.releasedKeepPolicy && (typeof properties.releasedKeepPolicy) !== 'object') {
         errors.collect(ros.propertyValidator('releasedKeepPolicy', ros.validateAllowedValues)({
           data: properties.releasedKeepPolicy,
-          allowedValues: ["Lastest","All"],
+          allowedValues: ["None","Lastest","All"],
         }));
     }
     errors.collect(ros.propertyValidator('releasedKeepPolicy', ros.validateString)(properties.releasedKeepPolicy));
@@ -1362,6 +1381,7 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('coldDataEnabled', ros.validateBoolean)(properties.coldDataEnabled));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('targetDedicatedHostIdForLog', ros.validateString)(properties.targetDedicatedHostIdForLog));
+    errors.collect(ros.propertyValidator('subscriptionDeletionForce', ros.validateBoolean)(properties.subscriptionDeletionForce));
     errors.collect(ros.propertyValidator('allocatePublicConnection', ros.validateBoolean)(properties.allocatePublicConnection));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('preferredBackupTime', ros.validateString)(properties.preferredBackupTime));
@@ -1426,6 +1446,7 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
       'ArchiveBackupKeepPolicy': ros.stringToRosTemplate(properties.archiveBackupKeepPolicy),
       'ArchiveBackupRetentionPeriod': ros.numberToRosTemplate(properties.archiveBackupRetentionPeriod),
       'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
+      'AutoUpgradeMinorVersion': ros.stringToRosTemplate(properties.autoUpgradeMinorVersion),
       'BackUpCategory': ros.stringToRosTemplate(properties.backUpCategory),
       'BackupPolicyMode': ros.stringToRosTemplate(properties.backupPolicyMode),
       'BackupRetentionPeriod': ros.numberToRosTemplate(properties.backupRetentionPeriod),
@@ -1478,6 +1499,7 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
       'StorageAutoScale': ros.stringToRosTemplate(properties.storageAutoScale),
       'StorageThreshold': ros.numberToRosTemplate(properties.storageThreshold),
       'StorageUpperBound': ros.numberToRosTemplate(properties.storageUpperBound),
+      'SubscriptionDeletionForce': ros.booleanToRosTemplate(properties.subscriptionDeletionForce),
       'Tags': ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
       'TargetDedicatedHostIdForLog': ros.stringToRosTemplate(properties.targetDedicatedHostIdForLog),
       'TargetDedicatedHostIdForMaster': ros.stringToRosTemplate(properties.targetDedicatedHostIdForMaster),
@@ -1605,6 +1627,13 @@ export class RosDBInstance extends ros.RosResource {
      * Annual subscription: The auto-renewal cycle is one year.
      */
     public autoRenew: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property autoUpgradeMinorVersion: How the instance upgrades to a minor version.Valid values:
+     * - Auto (default) : Updates minor versions automatically.
+     * - Manual: No automatic upgrade, only forced when the current version is offline.
+     */
+    public autoUpgradeMinorVersion: string | ros.IResolvable | undefined;
 
     /**
      * @Property backUpCategory: Specifies whether to enable the second-level backup function. This function allows a backup 
@@ -1865,9 +1894,9 @@ export class RosDBInstance extends ros.RosResource {
     public privateIpAddress: string | ros.IResolvable | undefined;
 
     /**
-     * @Property releasedKeepPolicy: The policy used to retain archived backups if the instance is released. Default value: None. 
+     * @Property releasedKeepPolicy: The policy used to retain archived backups if the instance is released. 
      *  Valid values: 
-     * Lastest: Only the last archived backup is retained. 
+     * None: No archived backup files are retained.Lastest: Only the last archived backup is retained. 
      *  All: All of the archived backups are retained.
      */
     public releasedKeepPolicy: string | ros.IResolvable | undefined;
@@ -1930,6 +1959,11 @@ export class RosDBInstance extends ros.RosResource {
      * @Property storageUpperBound: The total storage space upper limit for automatic storage space expansion, that is, automatic expansion will not cause the total storage space of the instance to exceed this value.
      */
     public storageUpperBound: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property subscriptionDeletionForce: This option is only applicable to subscription instances. For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+     */
+    public subscriptionDeletionForce: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property tags: The tags of an instance.
@@ -2004,6 +2038,7 @@ export class RosDBInstance extends ros.RosResource {
         this.archiveBackupKeepPolicy = props.archiveBackupKeepPolicy;
         this.archiveBackupRetentionPeriod = props.archiveBackupRetentionPeriod;
         this.autoRenew = props.autoRenew;
+        this.autoUpgradeMinorVersion = props.autoUpgradeMinorVersion;
         this.backUpCategory = props.backUpCategory;
         this.backupPolicyMode = props.backupPolicyMode;
         this.backupRetentionPeriod = props.backupRetentionPeriod;
@@ -2056,6 +2091,7 @@ export class RosDBInstance extends ros.RosResource {
         this.storageAutoScale = props.storageAutoScale;
         this.storageThreshold = props.storageThreshold;
         this.storageUpperBound = props.storageUpperBound;
+        this.subscriptionDeletionForce = props.subscriptionDeletionForce;
         this.tags = props.tags;
         this.targetDedicatedHostIdForLog = props.targetDedicatedHostIdForLog;
         this.targetDedicatedHostIdForMaster = props.targetDedicatedHostIdForMaster;
@@ -2078,6 +2114,7 @@ export class RosDBInstance extends ros.RosResource {
             archiveBackupKeepPolicy: this.archiveBackupKeepPolicy,
             archiveBackupRetentionPeriod: this.archiveBackupRetentionPeriod,
             autoRenew: this.autoRenew,
+            autoUpgradeMinorVersion: this.autoUpgradeMinorVersion,
             backUpCategory: this.backUpCategory,
             backupPolicyMode: this.backupPolicyMode,
             backupRetentionPeriod: this.backupRetentionPeriod,
@@ -2130,6 +2167,7 @@ export class RosDBInstance extends ros.RosResource {
             storageAutoScale: this.storageAutoScale,
             storageThreshold: this.storageThreshold,
             storageUpperBound: this.storageUpperBound,
+            subscriptionDeletionForce: this.subscriptionDeletionForce,
             tags: this.tags,
             targetDedicatedHostIdForLog: this.targetDedicatedHostIdForLog,
             targetDedicatedHostIdForMaster: this.targetDedicatedHostIdForMaster,
@@ -2601,7 +2639,7 @@ function RosDBInstanceClonePropsValidator(properties: any): ros.ValidationResult
     if(properties.connectionStringPrefix && (typeof properties.connectionStringPrefix) !== 'object') {
         errors.collect(ros.propertyValidator('connectionStringPrefix', ros.validateAllowedPattern)({
           data: properties.connectionStringPrefix,
-          reg: /[a-zA-Z0-9-]{8,64}/
+          reg: /^[a-zA-Z0-9-]{8,64}$/
         }));
     }
     errors.collect(ros.propertyValidator('connectionStringPrefix', ros.validateString)(properties.connectionStringPrefix));
@@ -3623,6 +3661,307 @@ export class RosDBInstanceSecurityIps extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosDBProxy`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbproxy
+ */
+export interface RosDBProxyProps {
+
+    /**
+     * @Property dbInstanceId: Instance ID of the DB. DescribeDBInstances can be called to get it.
+     */
+    readonly dbInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property vpcId: The VPC ID to which the instance belongs.
+     */
+    readonly vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchId: The virtual switch ID to which the instance belongs.
+     */
+    readonly vSwitchId: string | ros.IResolvable;
+
+    /**
+     * @Property dbProxyInstanceNum: The number of activated proxy instances, the value is: 1~16.Default value: 1.
+     * Description More proxy instances can handle more requests, you can understand the load of proxy instances based on the monitoring data, and then set a reasonable number of proxy instances.
+     */
+    readonly dbProxyInstanceNum?: number | ros.IResolvable;
+
+    /**
+     * @Property dbProxyInstanceType: Database proxy instance type, value:
+     * common: general-purpose agent
+     * exclusive: exclusive proxy (default)
+     */
+    readonly dbProxyInstanceType?: string | ros.IResolvable;
+
+    /**
+     * @Property dbProxyNodes: List of proxy nodes.
+     */
+    readonly dbProxyNodes?: Array<RosDBProxy.DBProxyNodesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property persistentConnectionStatus: Whether to enable connection hold.Value:
+     * Enabled: Turn on connection hold
+     * Disabled: Close connection hold
+     * illustrate
+     * Only RDS MySQL supports this parameter.
+     * When modifying the connection remains, the ConfigDBProxyService value is Modify.
+     */
+    readonly persistentConnectionStatus?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: Resource Group ID.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosDBProxyProps`
+ *
+ * @param properties - the TypeScript properties of a `RosDBProxyProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosDBProxyPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.dbProxyInstanceNum && (typeof properties.dbProxyInstanceNum) !== 'object') {
+        errors.collect(ros.propertyValidator('dbProxyInstanceNum', ros.validateRange)({
+            data: properties.dbProxyInstanceNum,
+            min: 1,
+            max: 16,
+          }));
+    }
+    errors.collect(ros.propertyValidator('dbProxyInstanceNum', ros.validateNumber)(properties.dbProxyInstanceNum));
+    if(properties.persistentConnectionStatus && (typeof properties.persistentConnectionStatus) !== 'object') {
+        errors.collect(ros.propertyValidator('persistentConnectionStatus', ros.validateAllowedValues)({
+          data: properties.persistentConnectionStatus,
+          allowedValues: ["Disabled","Enabled"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('persistentConnectionStatus', ros.validateString)(properties.persistentConnectionStatus));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('dbInstanceId', ros.requiredValidator)(properties.dbInstanceId));
+    errors.collect(ros.propertyValidator('dbInstanceId', ros.validateString)(properties.dbInstanceId));
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    if(properties.dbProxyNodes && (Array.isArray(properties.dbProxyNodes) || (typeof properties.dbProxyNodes) === 'string')) {
+        errors.collect(ros.propertyValidator('dbProxyNodes', ros.validateLength)({
+            data: properties.dbProxyNodes.length,
+            min: undefined,
+            max: 2,
+          }));
+    }
+    errors.collect(ros.propertyValidator('dbProxyNodes', ros.listValidator(RosDBProxy_DBProxyNodesPropertyValidator))(properties.dbProxyNodes));
+    if(properties.dbProxyInstanceType && (typeof properties.dbProxyInstanceType) !== 'object') {
+        errors.collect(ros.propertyValidator('dbProxyInstanceType', ros.validateAllowedValues)({
+          data: properties.dbProxyInstanceType,
+          allowedValues: ["common","exclusive"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('dbProxyInstanceType', ros.validateString)(properties.dbProxyInstanceType));
+    return errors.wrap('supplied properties not correct for "RosDBProxyProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::RDS::DBProxy` resource
+ *
+ * @param properties - the TypeScript properties of a `RosDBProxyProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::RDS::DBProxy` resource.
+ */
+// @ts-ignore TS6133
+function rosDBProxyPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosDBProxyPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'DBInstanceId': ros.stringToRosTemplate(properties.dbInstanceId),
+      'VPCId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'DBProxyInstanceNum': ros.numberToRosTemplate(properties.dbProxyInstanceNum),
+      'DBProxyInstanceType': ros.stringToRosTemplate(properties.dbProxyInstanceType),
+      'DBProxyNodes': ros.listMapper(rosDBProxyDBProxyNodesPropertyToRosTemplate)(properties.dbProxyNodes),
+      'PersistentConnectionStatus': ros.stringToRosTemplate(properties.persistentConnectionStatus),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBProxy`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DBProxy` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbproxy
+ */
+export class RosDBProxy extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RDS::DBProxy";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property dbInstanceId: Instance ID of the DB. DescribeDBInstances can be called to get it.
+     */
+    public dbInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property vpcId: The VPC ID to which the instance belongs.
+     */
+    public vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchId: The virtual switch ID to which the instance belongs.
+     */
+    public vSwitchId: string | ros.IResolvable;
+
+    /**
+     * @Property dbProxyInstanceNum: The number of activated proxy instances, the value is: 1~16.Default value: 1.
+     * Description More proxy instances can handle more requests, you can understand the load of proxy instances based on the monitoring data, and then set a reasonable number of proxy instances.
+     */
+    public dbProxyInstanceNum: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property dbProxyInstanceType: Database proxy instance type, value:
+     * common: general-purpose agent
+     * exclusive: exclusive proxy (default)
+     */
+    public dbProxyInstanceType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property dbProxyNodes: List of proxy nodes.
+     */
+    public dbProxyNodes: Array<RosDBProxy.DBProxyNodesProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property persistentConnectionStatus: Whether to enable connection hold.Value:
+     * Enabled: Turn on connection hold
+     * Disabled: Close connection hold
+     * illustrate
+     * Only RDS MySQL supports this parameter.
+     * When modifying the connection remains, the ConfigDBProxyService value is Modify.
+     */
+    public persistentConnectionStatus: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: Resource Group ID.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosDBProxyProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosDBProxy.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.dbInstanceId = props.dbInstanceId;
+        this.vpcId = props.vpcId;
+        this.vSwitchId = props.vSwitchId;
+        this.dbProxyInstanceNum = props.dbProxyInstanceNum;
+        this.dbProxyInstanceType = props.dbProxyInstanceType;
+        this.dbProxyNodes = props.dbProxyNodes;
+        this.persistentConnectionStatus = props.persistentConnectionStatus;
+        this.resourceGroupId = props.resourceGroupId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            dbInstanceId: this.dbInstanceId,
+            vpcId: this.vpcId,
+            vSwitchId: this.vSwitchId,
+            dbProxyInstanceNum: this.dbProxyInstanceNum,
+            dbProxyInstanceType: this.dbProxyInstanceType,
+            dbProxyNodes: this.dbProxyNodes,
+            persistentConnectionStatus: this.persistentConnectionStatus,
+            resourceGroupId: this.resourceGroupId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosDBProxyPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosDBProxy {
+    /**
+     * @stability external
+     */
+    export interface DBProxyNodesProperty {
+        /**
+         * @Property zoneId: The Availability Zone ID where the node resides.
+     * This parameter is required when selecting DBProxyNodes.
+         */
+        readonly zoneId: string | ros.IResolvable;
+        /**
+         * @Property cpuCores: The number of node CPU cores, the values are 1~16.
+     * This parameter is required when selecting DBProxyNodes.
+         */
+        readonly cpuCores: number | ros.IResolvable;
+        /**
+         * @Property nodeCounts: The number of proxy nodes in the Availability Zone, with values ranging from 1 to 2.
+     * This parameter is required when selecting DBProxyNodes.
+         */
+        readonly nodeCounts: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DBProxyNodesProperty`
+ *
+ * @param properties - the TypeScript properties of a `DBProxyNodesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosDBProxy_DBProxyNodesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('cpuCores', ros.requiredValidator)(properties.cpuCores));
+    if(properties.cpuCores && (typeof properties.cpuCores) !== 'object') {
+        errors.collect(ros.propertyValidator('cpuCores', ros.validateRange)({
+            data: properties.cpuCores,
+            min: 1,
+            max: 16,
+          }));
+    }
+    errors.collect(ros.propertyValidator('cpuCores', ros.validateNumber)(properties.cpuCores));
+    errors.collect(ros.propertyValidator('nodeCounts', ros.requiredValidator)(properties.nodeCounts));
+    if(properties.nodeCounts && (typeof properties.nodeCounts) !== 'object') {
+        errors.collect(ros.propertyValidator('nodeCounts', ros.validateAllowedValues)({
+          data: properties.nodeCounts,
+          allowedValues: [1,2],
+        }));
+    }
+    errors.collect(ros.propertyValidator('nodeCounts', ros.validateNumber)(properties.nodeCounts));
+    return errors.wrap('supplied properties not correct for "DBProxyNodesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::RDS::DBProxy.DBProxyNodes` resource
+ *
+ * @param properties - the TypeScript properties of a `DBProxyNodesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::RDS::DBProxy.DBProxyNodes` resource.
+ */
+// @ts-ignore TS6133
+function rosDBProxyDBProxyNodesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosDBProxy_DBProxyNodesPropertyValidator(properties).assertSuccess();
+    return {
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'CpuCores': ros.numberToRosTemplate(properties.cpuCores),
+      'NodeCounts': ros.numberToRosTemplate(properties.nodeCounts),
+    };
+}
+
+/**
  * Properties for defining a `RosDatabase`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-database
  */
@@ -4091,7 +4430,7 @@ function RosPostgresExtensionsPropsValidator(properties: any): ros.ValidationRes
     if(properties.dbInstanceId && (typeof properties.dbInstanceId) !== 'object') {
         errors.collect(ros.propertyValidator('dbInstanceId', ros.validateAllowedPattern)({
           data: properties.dbInstanceId,
-          reg: /[_a-zA-Z0-9-]{1,65}/
+          reg: /^[_a-zA-Z0-9-]{1,65}$/
         }));
     }
     errors.collect(ros.propertyValidator('dbInstanceId', ros.validateString)(properties.dbInstanceId));
@@ -4100,7 +4439,7 @@ function RosPostgresExtensionsPropsValidator(properties: any): ros.ValidationRes
     if(properties.dbName && (typeof properties.dbName) !== 'object') {
         errors.collect(ros.propertyValidator('dbName', ros.validateAllowedPattern)({
           data: properties.dbName,
-          reg: /[_a-zA-Z0-9-]{1,65}/
+          reg: /^[_a-zA-Z0-9-]{1,65}$/
         }));
     }
     errors.collect(ros.propertyValidator('dbName', ros.validateString)(properties.dbName));
@@ -4322,6 +4661,13 @@ export interface RosPrepayDBInstanceProps {
      * @Property autoRenew: Auto renew the prepay instance. If the period type is by year, it will renew by year, else it will renew by month.
      */
     readonly autoRenew?: boolean | ros.IResolvable;
+
+    /**
+     * @Property autoUpgradeMinorVersion: How the instance upgrades to a minor version.Valid values:
+     * - Auto (default) : Updates minor versions automatically.
+     * - Manual: No automatic upgrade, only forced when the current version is offline.
+     */
+    readonly autoUpgradeMinorVersion?: string | ros.IResolvable;
 
     /**
      * @Property backUpCategory: Specifies whether to enable the second-level backup function. This function allows a backup 
@@ -4575,9 +4921,9 @@ export interface RosPrepayDBInstanceProps {
     readonly quantity?: number | ros.IResolvable;
 
     /**
-     * @Property releasedKeepPolicy: The policy used to retain archived backups if the instance is released. Default value: None. 
+     * @Property releasedKeepPolicy: The policy used to retain archived backups if the instance is released. 
      *  Valid values: 
-     * Lastest: Only the last archived backup is retained. 
+     * None: No archived backup files are retained.Lastest: Only the last archived backup is retained. 
      *  All: All of the archived backups are retained.
      */
     readonly releasedKeepPolicy?: string | ros.IResolvable;
@@ -4640,6 +4986,11 @@ export interface RosPrepayDBInstanceProps {
      * @Property storageUpperBound: The total storage space upper limit for automatic storage space expansion, that is, automatic expansion will not cause the total storage space of the instance to exceed this value.
      */
     readonly storageUpperBound?: number | ros.IResolvable;
+
+    /**
+     * @Property subscriptionDeletionForce: This option is only applicable to subscription instances. For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+     */
+    readonly subscriptionDeletionForce?: boolean | ros.IResolvable;
 
     /**
      * @Property tags: The tags of an instance.
@@ -4750,13 +5101,20 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
           }));
     }
     errors.collect(ros.propertyValidator('logBackupRetentionPeriod', ros.validateNumber)(properties.logBackupRetentionPeriod));
+    if(properties.autoUpgradeMinorVersion && (typeof properties.autoUpgradeMinorVersion) !== 'object') {
+        errors.collect(ros.propertyValidator('autoUpgradeMinorVersion', ros.validateAllowedValues)({
+          data: properties.autoUpgradeMinorVersion,
+          allowedValues: ["Auto","Manual"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('autoUpgradeMinorVersion', ros.validateString)(properties.autoUpgradeMinorVersion));
     errors.collect(ros.propertyValidator('dbInstanceStorage', ros.requiredValidator)(properties.dbInstanceStorage));
     errors.collect(ros.propertyValidator('dbInstanceStorage', ros.validateNumber)(properties.dbInstanceStorage));
     errors.collect(ros.propertyValidator('dbMappings', ros.listValidator(RosPrepayDBInstance_DBMappingsPropertyValidator))(properties.dbMappings));
     if(properties.connectionStringPrefix && (typeof properties.connectionStringPrefix) !== 'object') {
         errors.collect(ros.propertyValidator('connectionStringPrefix', ros.validateAllowedPattern)({
           data: properties.connectionStringPrefix,
-          reg: /[a-zA-Z0-9-]{8,64}/
+          reg: /^[a-zA-Z0-9-]{8,64}$/
         }));
     }
     errors.collect(ros.propertyValidator('connectionStringPrefix', ros.validateString)(properties.connectionStringPrefix));
@@ -4846,7 +5204,6 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
           }));
     }
     errors.collect(ros.propertyValidator('masterUserPassword', ros.validateString)(properties.masterUserPassword));
-    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     if(properties.sslSetting && (typeof properties.sslSetting) !== 'object') {
         errors.collect(ros.propertyValidator('sslSetting', ros.validateAllowedValues)({
           data: properties.sslSetting,
@@ -4854,6 +5211,7 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
         }));
     }
     errors.collect(ros.propertyValidator('sslSetting', ros.validateString)(properties.sslSetting));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('masterUsername', ros.validateString)(properties.masterUsername));
     errors.collect(ros.propertyValidator('connectionMode', ros.validateString)(properties.connectionMode));
     if(properties.localLogRetentionSpace && (typeof properties.localLogRetentionSpace) !== 'object') {
@@ -4878,7 +5236,7 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
     if(properties.releasedKeepPolicy && (typeof properties.releasedKeepPolicy) !== 'object') {
         errors.collect(ros.propertyValidator('releasedKeepPolicy', ros.validateAllowedValues)({
           data: properties.releasedKeepPolicy,
-          allowedValues: ["Lastest","All"],
+          allowedValues: ["None","Lastest","All"],
         }));
     }
     errors.collect(ros.propertyValidator('releasedKeepPolicy', ros.validateString)(properties.releasedKeepPolicy));
@@ -4923,6 +5281,7 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
     errors.collect(ros.propertyValidator('coldDataEnabled', ros.validateBoolean)(properties.coldDataEnabled));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('targetDedicatedHostIdForLog', ros.validateString)(properties.targetDedicatedHostIdForLog));
+    errors.collect(ros.propertyValidator('subscriptionDeletionForce', ros.validateBoolean)(properties.subscriptionDeletionForce));
     errors.collect(ros.propertyValidator('allocatePublicConnection', ros.validateBoolean)(properties.allocatePublicConnection));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('preferredBackupTime', ros.validateString)(properties.preferredBackupTime));
@@ -5000,6 +5359,7 @@ function rosPrepayDBInstancePropsToRosTemplate(properties: any, enableResourcePr
       'ArchiveBackupRetentionPeriod': ros.numberToRosTemplate(properties.archiveBackupRetentionPeriod),
       'AutoPay': ros.booleanToRosTemplate(properties.autoPay),
       'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
+      'AutoUpgradeMinorVersion': ros.stringToRosTemplate(properties.autoUpgradeMinorVersion),
       'BackUpCategory': ros.stringToRosTemplate(properties.backUpCategory),
       'BackupPolicyMode': ros.stringToRosTemplate(properties.backupPolicyMode),
       'BackupRetentionPeriod': ros.numberToRosTemplate(properties.backupRetentionPeriod),
@@ -5051,6 +5411,7 @@ function rosPrepayDBInstancePropsToRosTemplate(properties: any, enableResourcePr
       'StorageAutoScale': ros.stringToRosTemplate(properties.storageAutoScale),
       'StorageThreshold': ros.numberToRosTemplate(properties.storageThreshold),
       'StorageUpperBound': ros.numberToRosTemplate(properties.storageUpperBound),
+      'SubscriptionDeletionForce': ros.booleanToRosTemplate(properties.subscriptionDeletionForce),
       'Tags': ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
       'TargetDedicatedHostIdForLog': ros.stringToRosTemplate(properties.targetDedicatedHostIdForLog),
       'TargetDedicatedHostIdForMaster': ros.stringToRosTemplate(properties.targetDedicatedHostIdForMaster),
@@ -5196,6 +5557,13 @@ export class RosPrepayDBInstance extends ros.RosResource {
      * @Property autoRenew: Auto renew the prepay instance. If the period type is by year, it will renew by year, else it will renew by month.
      */
     public autoRenew: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property autoUpgradeMinorVersion: How the instance upgrades to a minor version.Valid values:
+     * - Auto (default) : Updates minor versions automatically.
+     * - Manual: No automatic upgrade, only forced when the current version is offline.
+     */
+    public autoUpgradeMinorVersion: string | ros.IResolvable | undefined;
 
     /**
      * @Property backUpCategory: Specifies whether to enable the second-level backup function. This function allows a backup 
@@ -5449,9 +5817,9 @@ export class RosPrepayDBInstance extends ros.RosResource {
     public quantity: number | ros.IResolvable | undefined;
 
     /**
-     * @Property releasedKeepPolicy: The policy used to retain archived backups if the instance is released. Default value: None. 
+     * @Property releasedKeepPolicy: The policy used to retain archived backups if the instance is released. 
      *  Valid values: 
-     * Lastest: Only the last archived backup is retained. 
+     * None: No archived backup files are retained.Lastest: Only the last archived backup is retained. 
      *  All: All of the archived backups are retained.
      */
     public releasedKeepPolicy: string | ros.IResolvable | undefined;
@@ -5514,6 +5882,11 @@ export class RosPrepayDBInstance extends ros.RosResource {
      * @Property storageUpperBound: The total storage space upper limit for automatic storage space expansion, that is, automatic expansion will not cause the total storage space of the instance to exceed this value.
      */
     public storageUpperBound: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property subscriptionDeletionForce: This option is only applicable to subscription instances. For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+     */
+    public subscriptionDeletionForce: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property tags: The tags of an instance.
@@ -5592,6 +5965,7 @@ export class RosPrepayDBInstance extends ros.RosResource {
         this.archiveBackupRetentionPeriod = props.archiveBackupRetentionPeriod;
         this.autoPay = props.autoPay;
         this.autoRenew = props.autoRenew;
+        this.autoUpgradeMinorVersion = props.autoUpgradeMinorVersion;
         this.backUpCategory = props.backUpCategory;
         this.backupPolicyMode = props.backupPolicyMode;
         this.backupRetentionPeriod = props.backupRetentionPeriod;
@@ -5643,6 +6017,7 @@ export class RosPrepayDBInstance extends ros.RosResource {
         this.storageAutoScale = props.storageAutoScale;
         this.storageThreshold = props.storageThreshold;
         this.storageUpperBound = props.storageUpperBound;
+        this.subscriptionDeletionForce = props.subscriptionDeletionForce;
         this.tags = props.tags;
         this.targetDedicatedHostIdForLog = props.targetDedicatedHostIdForLog;
         this.targetDedicatedHostIdForMaster = props.targetDedicatedHostIdForMaster;
@@ -5668,6 +6043,7 @@ export class RosPrepayDBInstance extends ros.RosResource {
             archiveBackupRetentionPeriod: this.archiveBackupRetentionPeriod,
             autoPay: this.autoPay,
             autoRenew: this.autoRenew,
+            autoUpgradeMinorVersion: this.autoUpgradeMinorVersion,
             backUpCategory: this.backUpCategory,
             backupPolicyMode: this.backupPolicyMode,
             backupRetentionPeriod: this.backupRetentionPeriod,
@@ -5719,6 +6095,7 @@ export class RosPrepayDBInstance extends ros.RosResource {
             storageAutoScale: this.storageAutoScale,
             storageThreshold: this.storageThreshold,
             storageUpperBound: this.storageUpperBound,
+            subscriptionDeletionForce: this.subscriptionDeletionForce,
             tags: this.tags,
             targetDedicatedHostIdForLog: this.targetDedicatedHostIdForLog,
             targetDedicatedHostIdForMaster: this.targetDedicatedHostIdForMaster,

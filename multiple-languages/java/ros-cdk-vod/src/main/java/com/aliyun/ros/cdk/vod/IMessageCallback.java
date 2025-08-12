@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vod;
 /**
  * Represents a <code>MessageCallback</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:11.109Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:51.075Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vod.$Module.class, fqn = "@alicloud/ros-cdk-vod.IMessageCallback")
 @software.amazon.jsii.Jsii.Proxy(IMessageCallback.Jsii$Proxy.class)
 public interface IMessageCallback extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudstoragegateway;
 /**
  * Represents a <code>StorageBundle</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:02.951Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:44.779Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudstoragegateway.$Module.class, fqn = "@alicloud/ros-cdk-cloudstoragegateway.IStorageBundle")
 @software.amazon.jsii.Jsii.Proxy(IStorageBundle.Jsii$Proxy.class)
 public interface IStorageBundle extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

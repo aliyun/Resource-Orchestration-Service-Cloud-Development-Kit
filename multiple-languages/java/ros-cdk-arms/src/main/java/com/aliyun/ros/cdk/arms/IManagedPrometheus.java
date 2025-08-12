@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.arms;
 /**
  * Represents a <code>ManagedPrometheus</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:01.962Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:43.966Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.IManagedPrometheus")
 @software.amazon.jsii.Jsii.Proxy(IManagedPrometheus.Jsii$Proxy.class)
 public interface IManagedPrometheus extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

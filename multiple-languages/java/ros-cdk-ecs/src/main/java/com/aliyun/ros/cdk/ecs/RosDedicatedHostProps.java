@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-dedicatedhost
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:04.890Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.406Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosDedicatedHostProps")
 @software.amazon.jsii.Jsii.Proxy(RosDedicatedHostProps.Jsii$Proxy.class)
 public interface RosDedicatedHostProps extends software.amazon.jsii.JsiiSerializable {
@@ -52,6 +52,18 @@ public interface RosDedicatedHostProps extends software.amazon.jsii.JsiiSerializ
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCpuOverCommitRatio() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDedicatedHostClusterId() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDedicatedHostName() {
         return null;
     }
@@ -59,6 +71,12 @@ public interface RosDedicatedHostProps extends software.amazon.jsii.JsiiSerializ
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMinQuantity() {
         return null;
     }
 
@@ -127,8 +145,11 @@ public interface RosDedicatedHostProps extends software.amazon.jsii.JsiiSerializ
         java.lang.Object autoRenew;
         java.lang.Object autoRenewPeriod;
         java.lang.Object chargeType;
+        java.lang.Object cpuOverCommitRatio;
+        java.lang.Object dedicatedHostClusterId;
         java.lang.Object dedicatedHostName;
         java.lang.Object description;
+        java.lang.Object minQuantity;
         java.lang.Object networkAttributesSlbUdpTimeout;
         java.lang.Object networkAttributesUdpTimeout;
         java.lang.Object period;
@@ -279,6 +300,46 @@ public interface RosDedicatedHostProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosDedicatedHostProps#getCpuOverCommitRatio}
+         * @param cpuOverCommitRatio the value to be set.
+         * @return {@code this}
+         */
+        public Builder cpuOverCommitRatio(java.lang.Number cpuOverCommitRatio) {
+            this.cpuOverCommitRatio = cpuOverCommitRatio;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDedicatedHostProps#getCpuOverCommitRatio}
+         * @param cpuOverCommitRatio the value to be set.
+         * @return {@code this}
+         */
+        public Builder cpuOverCommitRatio(com.aliyun.ros.cdk.core.IResolvable cpuOverCommitRatio) {
+            this.cpuOverCommitRatio = cpuOverCommitRatio;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDedicatedHostProps#getDedicatedHostClusterId}
+         * @param dedicatedHostClusterId the value to be set.
+         * @return {@code this}
+         */
+        public Builder dedicatedHostClusterId(java.lang.String dedicatedHostClusterId) {
+            this.dedicatedHostClusterId = dedicatedHostClusterId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDedicatedHostProps#getDedicatedHostClusterId}
+         * @param dedicatedHostClusterId the value to be set.
+         * @return {@code this}
+         */
+        public Builder dedicatedHostClusterId(com.aliyun.ros.cdk.core.IResolvable dedicatedHostClusterId) {
+            this.dedicatedHostClusterId = dedicatedHostClusterId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDedicatedHostProps#getDedicatedHostName}
          * @param dedicatedHostName the value to be set.
          * @return {@code this}
@@ -315,6 +376,26 @@ public interface RosDedicatedHostProps extends software.amazon.jsii.JsiiSerializ
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDedicatedHostProps#getMinQuantity}
+         * @param minQuantity the value to be set.
+         * @return {@code this}
+         */
+        public Builder minQuantity(java.lang.Number minQuantity) {
+            this.minQuantity = minQuantity;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDedicatedHostProps#getMinQuantity}
+         * @param minQuantity the value to be set.
+         * @return {@code this}
+         */
+        public Builder minQuantity(com.aliyun.ros.cdk.core.IResolvable minQuantity) {
+            this.minQuantity = minQuantity;
             return this;
         }
 
@@ -492,8 +573,11 @@ public interface RosDedicatedHostProps extends software.amazon.jsii.JsiiSerializ
         private final java.lang.Object autoRenew;
         private final java.lang.Object autoRenewPeriod;
         private final java.lang.Object chargeType;
+        private final java.lang.Object cpuOverCommitRatio;
+        private final java.lang.Object dedicatedHostClusterId;
         private final java.lang.Object dedicatedHostName;
         private final java.lang.Object description;
+        private final java.lang.Object minQuantity;
         private final java.lang.Object networkAttributesSlbUdpTimeout;
         private final java.lang.Object networkAttributesUdpTimeout;
         private final java.lang.Object period;
@@ -516,8 +600,11 @@ public interface RosDedicatedHostProps extends software.amazon.jsii.JsiiSerializ
             this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoRenewPeriod = software.amazon.jsii.Kernel.get(this, "autoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.chargeType = software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.cpuOverCommitRatio = software.amazon.jsii.Kernel.get(this, "cpuOverCommitRatio", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dedicatedHostClusterId = software.amazon.jsii.Kernel.get(this, "dedicatedHostClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dedicatedHostName = software.amazon.jsii.Kernel.get(this, "dedicatedHostName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.minQuantity = software.amazon.jsii.Kernel.get(this, "minQuantity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.networkAttributesSlbUdpTimeout = software.amazon.jsii.Kernel.get(this, "networkAttributesSlbUdpTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.networkAttributesUdpTimeout = software.amazon.jsii.Kernel.get(this, "networkAttributesUdpTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -541,8 +628,11 @@ public interface RosDedicatedHostProps extends software.amazon.jsii.JsiiSerializ
             this.autoRenew = builder.autoRenew;
             this.autoRenewPeriod = builder.autoRenewPeriod;
             this.chargeType = builder.chargeType;
+            this.cpuOverCommitRatio = builder.cpuOverCommitRatio;
+            this.dedicatedHostClusterId = builder.dedicatedHostClusterId;
             this.dedicatedHostName = builder.dedicatedHostName;
             this.description = builder.description;
+            this.minQuantity = builder.minQuantity;
             this.networkAttributesSlbUdpTimeout = builder.networkAttributesSlbUdpTimeout;
             this.networkAttributesUdpTimeout = builder.networkAttributesUdpTimeout;
             this.period = builder.period;
@@ -589,6 +679,16 @@ public interface RosDedicatedHostProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
+        public final java.lang.Object getCpuOverCommitRatio() {
+            return this.cpuOverCommitRatio;
+        }
+
+        @Override
+        public final java.lang.Object getDedicatedHostClusterId() {
+            return this.dedicatedHostClusterId;
+        }
+
+        @Override
         public final java.lang.Object getDedicatedHostName() {
             return this.dedicatedHostName;
         }
@@ -596,6 +696,11 @@ public interface RosDedicatedHostProps extends software.amazon.jsii.JsiiSerializ
         @Override
         public final java.lang.Object getDescription() {
             return this.description;
+        }
+
+        @Override
+        public final java.lang.Object getMinQuantity() {
+            return this.minQuantity;
         }
 
         @Override
@@ -663,11 +768,20 @@ public interface RosDedicatedHostProps extends software.amazon.jsii.JsiiSerializ
             if (this.getChargeType() != null) {
                 data.set("chargeType", om.valueToTree(this.getChargeType()));
             }
+            if (this.getCpuOverCommitRatio() != null) {
+                data.set("cpuOverCommitRatio", om.valueToTree(this.getCpuOverCommitRatio()));
+            }
+            if (this.getDedicatedHostClusterId() != null) {
+                data.set("dedicatedHostClusterId", om.valueToTree(this.getDedicatedHostClusterId()));
+            }
             if (this.getDedicatedHostName() != null) {
                 data.set("dedicatedHostName", om.valueToTree(this.getDedicatedHostName()));
             }
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
+            }
+            if (this.getMinQuantity() != null) {
+                data.set("minQuantity", om.valueToTree(this.getMinQuantity()));
             }
             if (this.getNetworkAttributesSlbUdpTimeout() != null) {
                 data.set("networkAttributesSlbUdpTimeout", om.valueToTree(this.getNetworkAttributesSlbUdpTimeout()));
@@ -718,8 +832,11 @@ public interface RosDedicatedHostProps extends software.amazon.jsii.JsiiSerializ
             if (this.autoRenew != null ? !this.autoRenew.equals(that.autoRenew) : that.autoRenew != null) return false;
             if (this.autoRenewPeriod != null ? !this.autoRenewPeriod.equals(that.autoRenewPeriod) : that.autoRenewPeriod != null) return false;
             if (this.chargeType != null ? !this.chargeType.equals(that.chargeType) : that.chargeType != null) return false;
+            if (this.cpuOverCommitRatio != null ? !this.cpuOverCommitRatio.equals(that.cpuOverCommitRatio) : that.cpuOverCommitRatio != null) return false;
+            if (this.dedicatedHostClusterId != null ? !this.dedicatedHostClusterId.equals(that.dedicatedHostClusterId) : that.dedicatedHostClusterId != null) return false;
             if (this.dedicatedHostName != null ? !this.dedicatedHostName.equals(that.dedicatedHostName) : that.dedicatedHostName != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+            if (this.minQuantity != null ? !this.minQuantity.equals(that.minQuantity) : that.minQuantity != null) return false;
             if (this.networkAttributesSlbUdpTimeout != null ? !this.networkAttributesSlbUdpTimeout.equals(that.networkAttributesSlbUdpTimeout) : that.networkAttributesSlbUdpTimeout != null) return false;
             if (this.networkAttributesUdpTimeout != null ? !this.networkAttributesUdpTimeout.equals(that.networkAttributesUdpTimeout) : that.networkAttributesUdpTimeout != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
@@ -739,8 +856,11 @@ public interface RosDedicatedHostProps extends software.amazon.jsii.JsiiSerializ
             result = 31 * result + (this.autoRenew != null ? this.autoRenew.hashCode() : 0);
             result = 31 * result + (this.autoRenewPeriod != null ? this.autoRenewPeriod.hashCode() : 0);
             result = 31 * result + (this.chargeType != null ? this.chargeType.hashCode() : 0);
+            result = 31 * result + (this.cpuOverCommitRatio != null ? this.cpuOverCommitRatio.hashCode() : 0);
+            result = 31 * result + (this.dedicatedHostClusterId != null ? this.dedicatedHostClusterId.hashCode() : 0);
             result = 31 * result + (this.dedicatedHostName != null ? this.dedicatedHostName.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+            result = 31 * result + (this.minQuantity != null ? this.minQuantity.hashCode() : 0);
             result = 31 * result + (this.networkAttributesSlbUdpTimeout != null ? this.networkAttributesSlbUdpTimeout.hashCode() : 0);
             result = 31 * result + (this.networkAttributesUdpTimeout != null ? this.networkAttributesUdpTimeout.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);

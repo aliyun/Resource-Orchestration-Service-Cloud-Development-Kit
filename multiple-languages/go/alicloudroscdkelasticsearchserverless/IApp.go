@@ -20,6 +20,8 @@ type IApp interface {
 	AttrPublicEsDomain() interface{}
 	// Attribute PublicKibanaDomain: The public network kibana domain of the app.
 	AttrPublicKibanaDomain() interface{}
+	// Attribute Username: The username of the app.
+	AttrUsername() interface{}
 	Props() *AppProps
 }
 
@@ -73,6 +75,16 @@ func (j *jsiiProxy_IApp) AttrPublicKibanaDomain() interface{} {
 	_jsii_.Get(
 		j,
 		"attrPublicKibanaDomain",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IApp) AttrUsername() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrUsername",
 		&returns,
 	)
 	return returns

@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::MONGODB::ShardingInstance`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::MONGODB::ShardingInstance`, which is used to create or clone an ApsaraDB for MongoDB sharded cluster instance.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `ShardingInstance` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mongodb-shardinginstance
@@ -608,7 +608,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: securityIpArray: Security ips to add or remove.
+        /// <strong>Property</strong>: securityIpArray: Security ips to add or remove. Update to this property will cover the current security ips.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "securityIpArray", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

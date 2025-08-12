@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-customimage
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:04.561Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.133Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.CustomImageProps")
 @software.amazon.jsii.Jsii.Proxy(CustomImageProps.Jsii$Proxy.class)
 public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable {
@@ -57,6 +57,13 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
      * Property diskDeviceMapping:.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDiskDeviceMapping() {
+        return null;
+    }
+
+    /**
+     * Property features: Mirror feature-related properties.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getFeatures() {
         return null;
     }
 
@@ -149,6 +156,7 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object description;
         java.lang.Object detectionStrategy;
         java.lang.Object diskDeviceMapping;
+        java.lang.Object features;
         java.lang.Object imageFamily;
         java.lang.Object imageName;
         java.lang.Object imageVersion;
@@ -278,6 +286,26 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
          */
         public Builder diskDeviceMapping(java.util.List<? extends java.lang.Object> diskDeviceMapping) {
             this.diskDeviceMapping = diskDeviceMapping;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link CustomImageProps#getFeatures}
+         * @param features Property features: Mirror feature-related properties.
+         * @return {@code this}
+         */
+        public Builder features(com.aliyun.ros.cdk.core.IResolvable features) {
+            this.features = features;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link CustomImageProps#getFeatures}
+         * @param features Property features: Mirror feature-related properties.
+         * @return {@code this}
+         */
+        public Builder features(com.aliyun.ros.cdk.ecs.RosCustomImage.FeaturesProperty features) {
+            this.features = features;
             return this;
         }
 
@@ -494,6 +522,7 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object description;
         private final java.lang.Object detectionStrategy;
         private final java.lang.Object diskDeviceMapping;
+        private final java.lang.Object features;
         private final java.lang.Object imageFamily;
         private final java.lang.Object imageName;
         private final java.lang.Object imageVersion;
@@ -515,6 +544,7 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.detectionStrategy = software.amazon.jsii.Kernel.get(this, "detectionStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.diskDeviceMapping = software.amazon.jsii.Kernel.get(this, "diskDeviceMapping", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.features = software.amazon.jsii.Kernel.get(this, "features", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.imageFamily = software.amazon.jsii.Kernel.get(this, "imageFamily", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.imageName = software.amazon.jsii.Kernel.get(this, "imageName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.imageVersion = software.amazon.jsii.Kernel.get(this, "imageVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -536,6 +566,7 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
             this.description = builder.description;
             this.detectionStrategy = builder.detectionStrategy;
             this.diskDeviceMapping = builder.diskDeviceMapping;
+            this.features = builder.features;
             this.imageFamily = builder.imageFamily;
             this.imageName = builder.imageName;
             this.imageVersion = builder.imageVersion;
@@ -570,6 +601,11 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
         @Override
         public final java.lang.Object getDiskDeviceMapping() {
             return this.diskDeviceMapping;
+        }
+
+        @Override
+        public final java.lang.Object getFeatures() {
+            return this.features;
         }
 
         @Override
@@ -638,6 +674,9 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getDiskDeviceMapping() != null) {
                 data.set("diskDeviceMapping", om.valueToTree(this.getDiskDeviceMapping()));
             }
+            if (this.getFeatures() != null) {
+                data.set("features", om.valueToTree(this.getFeatures()));
+            }
             if (this.getImageFamily() != null) {
                 data.set("imageFamily", om.valueToTree(this.getImageFamily()));
             }
@@ -688,6 +727,7 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.detectionStrategy != null ? !this.detectionStrategy.equals(that.detectionStrategy) : that.detectionStrategy != null) return false;
             if (this.diskDeviceMapping != null ? !this.diskDeviceMapping.equals(that.diskDeviceMapping) : that.diskDeviceMapping != null) return false;
+            if (this.features != null ? !this.features.equals(that.features) : that.features != null) return false;
             if (this.imageFamily != null ? !this.imageFamily.equals(that.imageFamily) : that.imageFamily != null) return false;
             if (this.imageName != null ? !this.imageName.equals(that.imageName) : that.imageName != null) return false;
             if (this.imageVersion != null ? !this.imageVersion.equals(that.imageVersion) : that.imageVersion != null) return false;
@@ -706,6 +746,7 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.detectionStrategy != null ? this.detectionStrategy.hashCode() : 0);
             result = 31 * result + (this.diskDeviceMapping != null ? this.diskDeviceMapping.hashCode() : 0);
+            result = 31 * result + (this.features != null ? this.features.hashCode() : 0);
             result = 31 * result + (this.imageFamily != null ? this.imageFamily.hashCode() : 0);
             result = 31 * result + (this.imageName != null ? this.imageName.hashCode() : 0);
             result = 31 * result + (this.imageVersion != null ? this.imageVersion.hashCode() : 0);

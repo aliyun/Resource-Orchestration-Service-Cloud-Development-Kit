@@ -114,7 +114,7 @@ export interface ISecret extends ros.IResource {
     readonly attrSecretName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::KMS::Secret`, which is used to create a secret and store the initial version of the secret.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::KMS::Secret`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecret`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-secret
  */

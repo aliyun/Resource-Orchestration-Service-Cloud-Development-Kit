@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.waf3;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::WAF3::TGW</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:11.992Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:51.783Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.waf3.$Module.class, fqn = "@alicloud/ros-cdk-waf3.RosTGW")
 public class RosTGW extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -147,6 +147,24 @@ public class RosTGW extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setResourceGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getWafInstanceRegion() {
+        return software.amazon.jsii.Kernel.get(this, "wafInstanceRegion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setWafInstanceRegion(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "wafInstanceRegion", value);
+    }
+
+    /**
+     */
+    public void setWafInstanceRegion(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "wafInstanceRegion", value);
     }
     /**
      */
@@ -1557,6 +1575,23 @@ public class RosTGW extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param wafInstanceRegion This parameter is required.
+         */
+        public Builder wafInstanceRegion(final java.lang.String wafInstanceRegion) {
+            this.props.wafInstanceRegion(wafInstanceRegion);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param wafInstanceRegion This parameter is required.
+         */
+        public Builder wafInstanceRegion(final com.aliyun.ros.cdk.core.IResolvable wafInstanceRegion) {
+            this.props.wafInstanceRegion(wafInstanceRegion);
             return this;
         }
 

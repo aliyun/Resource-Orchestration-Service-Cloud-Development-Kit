@@ -47,7 +47,7 @@ export interface IProject extends ros.IResource {
     readonly attrProjectId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::NLS::Project`, which is used to create a project in Intelligent Speech Interaction.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::NLS::Project`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosProject`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nls-project
  */

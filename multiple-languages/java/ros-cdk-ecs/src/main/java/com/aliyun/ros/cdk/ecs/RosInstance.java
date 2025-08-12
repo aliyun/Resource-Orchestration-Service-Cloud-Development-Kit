@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ECS::Instance</code>, which is used to create an Elastic Compute Service (ECS) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:04.935Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.436Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -869,6 +869,24 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setStorageSetPartitionNumber(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "storageSetPartitionNumber", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSubscriptionDeletionForce() {
+        return software.amazon.jsii.Kernel.get(this, "subscriptionDeletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSubscriptionDeletionForce(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "subscriptionDeletionForce", value);
+    }
+
+    /**
+     */
+    public void setSubscriptionDeletionForce(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "subscriptionDeletionForce", value);
     }
 
     /**
@@ -2558,6 +2576,23 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder storageSetPartitionNumber(final com.aliyun.ros.cdk.core.IResolvable storageSetPartitionNumber) {
             this.props.storageSetPartitionNumber(storageSetPartitionNumber);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param subscriptionDeletionForce This parameter is required.
+         */
+        public Builder subscriptionDeletionForce(final java.lang.Boolean subscriptionDeletionForce) {
+            this.props.subscriptionDeletionForce(subscriptionDeletionForce);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param subscriptionDeletionForce This parameter is required.
+         */
+        public Builder subscriptionDeletionForce(final com.aliyun.ros.cdk.core.IResolvable subscriptionDeletionForce) {
+            this.props.subscriptionDeletionForce(subscriptionDeletionForce);
             return this;
         }
 

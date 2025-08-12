@@ -1,0 +1,25 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ifDefined = exports.isArray = exports.isObject = void 0;
+/**
+ * Return whether the given value is an object
+ *
+ * Even though arrays technically are objects, we usually want to treat them differently,
+ * so we return false in those cases.
+ */
+function isObject(x) {
+    return x !== null && typeof x === 'object' && !(0, exports.isArray)(x);
+}
+exports.isObject = isObject;
+/**
+ * Return whether the given value is an array
+ */
+exports.isArray = Array.isArray;
+/**
+ * Return the value of the first argument if it's not undefined, otherwise the default
+ */
+function ifDefined(x, def) {
+    return typeof x !== 'undefined' ? x : def;
+}
+exports.ifDefined = ifDefined;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidHlwZXMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJ0eXBlcy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFXQTs7Ozs7R0FLRztBQUNILFNBQWdCLFFBQVEsQ0FBQyxDQUFNO0lBQzdCLE9BQU8sQ0FBQyxLQUFLLElBQUksSUFBSSxPQUFPLENBQUMsS0FBSyxRQUFRLElBQUksQ0FBQyxJQUFBLGVBQU8sRUFBQyxDQUFDLENBQUMsQ0FBQztBQUM1RCxDQUFDO0FBRkQsNEJBRUM7QUFFRDs7R0FFRztBQUNVLFFBQUEsT0FBTyxHQUFHLEtBQUssQ0FBQyxPQUFPLENBQUM7QUFFckM7O0dBRUc7QUFDSCxTQUFnQixTQUFTLENBQUksQ0FBZ0IsRUFBRSxHQUFNO0lBQ25ELE9BQU8sT0FBTyxDQUFDLEtBQUssV0FBVyxDQUFDLENBQUMsQ0FBQyxDQUFDLENBQUMsQ0FBQyxDQUFDLEdBQUcsQ0FBQztBQUM1QyxDQUFDO0FBRkQsOEJBRUMiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIFR5cGUgb2YgYSBtYXAgbWFwcGluZyBzdHJpbmdzIHRvIHNvbWUgYXJiaXRyYXJ5IHR5cGVcbiAqXG4gKiBOYW1lIGlzIG5vdCBpZGVhbCwgYnV0OlxuICpcbiAqIC0gQ2Fubm90IGNhbGwgaXQgT2JqZWN0LCB0aGF0IGFscmVhZHkgbWVhbnMgc29tZXRoaW5nLlxuICogLSBDYW5ub3QgY2FsbCBpdCBEaWN0IG9yIERpY3Rpb25hcnksIHNpbmNlIGluIG90aGVyIGxhbmd1YWdlc1xuICogICB0aG9zZSBhbHNvIGFsbG93IHNwZWNpZnlpbmcgdGhlIGtleSB0eXBlLlxuICovXG5leHBvcnQgdHlwZSBPYmo8VD4gPSB7IFtrZXk6IHN0cmluZ106IFQgfTtcblxuLyoqXG4gKiBSZXR1cm4gd2hldGhlciB0aGUgZ2l2ZW4gdmFsdWUgaXMgYW4gb2JqZWN0XG4gKlxuICogRXZlbiB0aG91Z2ggYXJyYXlzIHRlY2huaWNhbGx5IGFyZSBvYmplY3RzLCB3ZSB1c3VhbGx5IHdhbnQgdG8gdHJlYXQgdGhlbSBkaWZmZXJlbnRseSxcbiAqIHNvIHdlIHJldHVybiBmYWxzZSBpbiB0aG9zZSBjYXNlcy5cbiAqL1xuZXhwb3J0IGZ1bmN0aW9uIGlzT2JqZWN0KHg6IGFueSk6IHggaXMgT2JqPGFueT4ge1xuICByZXR1cm4geCAhPT0gbnVsbCAmJiB0eXBlb2YgeCA9PT0gJ29iamVjdCcgJiYgIWlzQXJyYXkoeCk7XG59XG5cbi8qKlxuICogUmV0dXJuIHdoZXRoZXIgdGhlIGdpdmVuIHZhbHVlIGlzIGFuIGFycmF5XG4gKi9cbmV4cG9ydCBjb25zdCBpc0FycmF5ID0gQXJyYXkuaXNBcnJheTtcblxuLyoqXG4gKiBSZXR1cm4gdGhlIHZhbHVlIG9mIHRoZSBmaXJzdCBhcmd1bWVudCBpZiBpdCdzIG5vdCB1bmRlZmluZWQsIG90aGVyd2lzZSB0aGUgZGVmYXVsdFxuICovXG5leHBvcnQgZnVuY3Rpb24gaWZEZWZpbmVkPFQ+KHg6IFQgfCB1bmRlZmluZWQsIGRlZjogVCk6IFQge1xuICByZXR1cm4gdHlwZW9mIHggIT09ICd1bmRlZmluZWQnID8geCA6IGRlZjtcbn1cbiJdfQ==

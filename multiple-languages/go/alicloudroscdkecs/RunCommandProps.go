@@ -68,6 +68,10 @@ type RunCommandProps struct {
 	// false: The script is not retained. It is automatically deleted after running, without taking up the quota of Cloud Assistant scripts.
 	// Default value: false.
 	KeepCommand interface{} `field:"optional" json:"keepCommand" yaml:"keepCommand"`
+	// Property launcher: A bootloader for script execution.
+	//
+	// The length cannot exceed 1 KB.
+	Launcher interface{} `field:"optional" json:"launcher" yaml:"launcher"`
 	// Property name: The name of the script, which supports all character sets.
 	//
 	// It can be up to 128 characters in length.

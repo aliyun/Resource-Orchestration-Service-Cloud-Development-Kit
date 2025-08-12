@@ -9,5 +9,6 @@ type RosTGWProps struct {
 	Listen interface{} `field:"required" json:"listen" yaml:"listen"`
 	Redirect interface{} `field:"optional" json:"redirect" yaml:"redirect"`
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
+	WafInstanceRegion interface{} `field:"optional" json:"wafInstanceRegion" yaml:"wafInstanceRegion"`
 }
 

@@ -1,11 +1,9 @@
 package com.aliyun.ros.cdk.mns;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::MNS::Queue</code>, which is used to create a queue to contain messages.
- * <p>
- * Queues can be classified into standard and delayed queues.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::MNS::Queue</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.003Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.552Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.Queue")
 public class Queue extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.mns.IQueue {
 
@@ -193,6 +191,27 @@ public class Queue extends com.aliyun.ros.cdk.core.Resource implements com.aliyu
         }
 
         /**
+         * Property dlqPolicy: Dead-letter queue policy.
+         * <p>
+         * @return {@code this}
+         * @param dlqPolicy Property dlqPolicy: Dead-letter queue policy. This parameter is required.
+         */
+        public Builder dlqPolicy(final com.aliyun.ros.cdk.core.IResolvable dlqPolicy) {
+            this.props.dlqPolicy(dlqPolicy);
+            return this;
+        }
+        /**
+         * Property dlqPolicy: Dead-letter queue policy.
+         * <p>
+         * @return {@code this}
+         * @param dlqPolicy Property dlqPolicy: Dead-letter queue policy. This parameter is required.
+         */
+        public Builder dlqPolicy(final com.aliyun.ros.cdk.mns.RosQueue.DlqPolicyProperty dlqPolicy) {
+            this.props.dlqPolicy(dlqPolicy);
+            return this;
+        }
+
+        /**
          * Property loggingEnabled: Whether to enable log management.
          * <p>
          * "true" indicates that log management is enabled, whereas "false" indicates that log management is disabled.
@@ -295,6 +314,19 @@ public class Queue extends com.aliyun.ros.cdk.core.Resource implements com.aliyu
          */
         public Builder pollingWaitSeconds(final com.aliyun.ros.cdk.core.IResolvable pollingWaitSeconds) {
             this.props.pollingWaitSeconds(pollingWaitSeconds);
+            return this;
+        }
+
+        /**
+         * Property tags: Tags to attach to Queue.
+         * <p>
+         * Max support 20 tags to add during create Queue. Each tag with two properties Key and Value, and Key is required.
+         * <p>
+         * @return {@code this}
+         * @param tags Property tags: Tags to attach to Queue. This parameter is required.
+         */
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.mns.RosQueue.TagsProperty> tags) {
+            this.props.tags(tags);
             return this;
         }
 

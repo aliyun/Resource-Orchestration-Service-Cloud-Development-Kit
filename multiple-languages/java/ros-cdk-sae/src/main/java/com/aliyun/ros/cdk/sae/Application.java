@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sae;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SAE::Application</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:10.276Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:50.380Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.Application")
 public class Application extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.sae.IApplication {
 
@@ -145,24 +145,24 @@ public class Application extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property cpu: Each instance of the CPU required, in units of milli core, can not be zero.
+         * Property cpu: The CPU required for each instance.
          * <p>
-         * Currently only supports fixed specifications instance type.
+         * Valid values: 500, 1000, 2000, 4000, 8000, 16000, 32000.
          * <p>
          * @return {@code this}
-         * @param cpu Property cpu: Each instance of the CPU required, in units of milli core, can not be zero. This parameter is required.
+         * @param cpu Property cpu: The CPU required for each instance. This parameter is required.
          */
         public Builder cpu(final java.lang.Number cpu) {
             this.props.cpu(cpu);
             return this;
         }
         /**
-         * Property cpu: Each instance of the CPU required, in units of milli core, can not be zero.
+         * Property cpu: The CPU required for each instance.
          * <p>
-         * Currently only supports fixed specifications instance type.
+         * Valid values: 500, 1000, 2000, 4000, 8000, 16000, 32000.
          * <p>
          * @return {@code this}
-         * @param cpu Property cpu: Each instance of the CPU required, in units of milli core, can not be zero. This parameter is required.
+         * @param cpu Property cpu: The CPU required for each instance. This parameter is required.
          */
         public Builder cpu(final com.aliyun.ros.cdk.core.IResolvable cpu) {
             this.props.cpu(cpu);
@@ -170,24 +170,24 @@ public class Application extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property memory: Each instance of the required memory, in units of MB, can not be zero.
+         * Property memory: The memory required for each instance, in MB, cannot be 0.
          * <p>
-         * Currently only supports fixed specifications instance type.
+         * One-to-one correspondence with CPU. Valid values: 1024, 2048, 4096, 8192, 12288, 16384, 24576, 32768, 65536, 131072.
          * <p>
          * @return {@code this}
-         * @param memory Property memory: Each instance of the required memory, in units of MB, can not be zero. This parameter is required.
+         * @param memory Property memory: The memory required for each instance, in MB, cannot be 0. This parameter is required.
          */
         public Builder memory(final java.lang.Number memory) {
             this.props.memory(memory);
             return this;
         }
         /**
-         * Property memory: Each instance of the required memory, in units of MB, can not be zero.
+         * Property memory: The memory required for each instance, in MB, cannot be 0.
          * <p>
-         * Currently only supports fixed specifications instance type.
+         * One-to-one correspondence with CPU. Valid values: 1024, 2048, 4096, 8192, 12288, 16384, 24576, 32768, 65536, 131072.
          * <p>
          * @return {@code this}
-         * @param memory Property memory: Each instance of the required memory, in units of MB, can not be zero. This parameter is required.
+         * @param memory Property memory: The memory required for each instance, in MB, cannot be 0. This parameter is required.
          */
         public Builder memory(final com.aliyun.ros.cdk.core.IResolvable memory) {
             this.props.memory(memory);
@@ -628,6 +628,27 @@ public class Application extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
+         * Property enableNewArms: Whether to enable the new ARMS feature.
+         * <p>
+         * @return {@code this}
+         * @param enableNewArms Property enableNewArms: Whether to enable the new ARMS feature. This parameter is required.
+         */
+        public Builder enableNewArms(final java.lang.Boolean enableNewArms) {
+            this.props.enableNewArms(enableNewArms);
+            return this;
+        }
+        /**
+         * Property enableNewArms: Whether to enable the new ARMS feature.
+         * <p>
+         * @return {@code this}
+         * @param enableNewArms Property enableNewArms: Whether to enable the new ARMS feature. This parameter is required.
+         */
+        public Builder enableNewArms(final com.aliyun.ros.cdk.core.IResolvable enableNewArms) {
+            this.props.enableNewArms(enableNewArms);
+            return this;
+        }
+
+        /**
          * Property envs: Container environment variable parameters.
          * <p>
          * For example: [{ "name": "envtmp", "value": "0"}]
@@ -1000,6 +1021,31 @@ public class Application extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
+         * Property newSaeVersion: The new SAE version.
+         * <p>
+         * Supported versions: lite, std, pro.
+         * <p>
+         * @return {@code this}
+         * @param newSaeVersion Property newSaeVersion: The new SAE version. This parameter is required.
+         */
+        public Builder newSaeVersion(final java.lang.String newSaeVersion) {
+            this.props.newSaeVersion(newSaeVersion);
+            return this;
+        }
+        /**
+         * Property newSaeVersion: The new SAE version.
+         * <p>
+         * Supported versions: lite, std, pro.
+         * <p>
+         * @return {@code this}
+         * @param newSaeVersion Property newSaeVersion: The new SAE version. This parameter is required.
+         */
+        public Builder newSaeVersion(final com.aliyun.ros.cdk.core.IResolvable newSaeVersion) {
+            this.props.newSaeVersion(newSaeVersion);
+            return this;
+        }
+
+        /**
          * Property ossAkId: AccessKey ID of the OSS.
          * <p>
          * @return {@code this}
@@ -1278,7 +1324,10 @@ public class Application extends com.aliyun.ros.cdk.core.Resource implements com
          * <ul>
          * <li>java: The Java language</li>
          * <li>php: PHP language.</li>
-         * <li>other: Multiple languages such as Python, C++, Go,.NET, Node.js, etc.</li>
+         * <li>python: Python language.</li>
+         * <li>dotnet: .NET Core language.</li>
+         * <li>golang: GoLang language.</li>
+         * <li>other: Multiple languages such as C++, Node.js, etc.</li>
          * </ul>
          * <p>
          * @return {@code this}
@@ -1296,7 +1345,10 @@ public class Application extends com.aliyun.ros.cdk.core.Resource implements com
          * <ul>
          * <li>java: The Java language</li>
          * <li>php: PHP language.</li>
-         * <li>other: Multiple languages such as Python, C++, Go,.NET, Node.js, etc.</li>
+         * <li>python: Python language.</li>
+         * <li>dotnet: .NET Core language.</li>
+         * <li>golang: GoLang language.</li>
+         * <li>other: Multiple languages such as C++, Node.js, etc.</li>
          * </ul>
          * <p>
          * @return {@code this}

@@ -121,7 +121,7 @@ export class User extends ros.Resource implements IUser, IPrincipal {
     public readonly attrUserName: ros.IResolvable | string;
 
     public readonly grantPrincipal: IPrincipal = this;
-    public readonly principalName: string | ros.IResolvable = this.attrUserName;
+    public readonly principalName: string | ros.IResolvable;
     public readonly principalType: string = 'user';
 
     public addToPolicy(policyDocument: RosManagedPolicy.PolicyDocumentProperty): ManagedPolicy {
@@ -162,5 +162,6 @@ export class User extends ros.Resource implements IUser, IPrincipal {
         this.attrLastLoginDate = rosUser.attrLastLoginDate;
         this.attrUserId = rosUser.attrUserId;
         this.attrUserName = rosUser.attrUserName;
+        this.principalName = this.attrUserName;
     }
 }

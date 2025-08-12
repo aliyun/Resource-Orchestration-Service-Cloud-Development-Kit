@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::RDS::Zones</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:09.798Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.994Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.datasource.Zones")
 public class Zones extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.rds.datasource.IZones {
 
@@ -286,7 +286,7 @@ public class Zones extends com.aliyun.ros.cdk.core.Resource implements com.aliyu
         /**
          * Property zoneId: The ID of the zone in which the instance is located.
          * <p>
-         * If the instance spans more than one zone, the value of this parameter contains an MAZ part,such as cn-hangzhou-MAZ6(b,f) and cn-hangzhou-MAZ5(b,e,f)
+         * If the instance spans more than one zone, the value of this parameter contains an MAZ part, such as cn-hangzhou-MAZ6(b,f) and cn-hangzhou-MAZ5(b,e,f).
          * <p>
          * @return {@code this}
          * @param zoneId Property zoneId: The ID of the zone in which the instance is located. This parameter is required.
@@ -298,7 +298,7 @@ public class Zones extends com.aliyun.ros.cdk.core.Resource implements com.aliyu
         /**
          * Property zoneId: The ID of the zone in which the instance is located.
          * <p>
-         * If the instance spans more than one zone, the value of this parameter contains an MAZ part,such as cn-hangzhou-MAZ6(b,f) and cn-hangzhou-MAZ5(b,e,f)
+         * If the instance spans more than one zone, the value of this parameter contains an MAZ part, such as cn-hangzhou-MAZ6(b,f) and cn-hangzhou-MAZ5(b,e,f).
          * <p>
          * @return {@code this}
          * @param zoneId Property zoneId: The ID of the zone in which the instance is located. This parameter is required.

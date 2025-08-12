@@ -315,7 +315,7 @@ function rosExecutionPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Execution`, which is used to start an execution.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Execution`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Execution` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-execution
  */
@@ -582,7 +582,7 @@ export interface RosParameterProps {
     /**
      * @Property name: The name of the parameter. 
      * The name must be 1 to 200 characters in length,and can contain letters, digits, hyphens (-), and underscores (_). 
-     * It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
+     * It cannot start with ALIYUN, ALIBABA, ALICLOUD, ACS or OOS.
      */
     readonly name: string | ros.IResolvable;
 
@@ -672,7 +672,7 @@ function rosParameterPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Parameter`, which is used to create a common parameter.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Parameter`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Parameter` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-parameter
  */
@@ -698,7 +698,7 @@ export class RosParameter extends ros.RosResource {
     /**
      * @Property name: The name of the parameter. 
      * The name must be 1 to 200 characters in length,and can contain letters, digits, hyphens (-), and underscores (_). 
-     * It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
+     * It cannot start with ALIYUN, ALIBABA, ALICLOUD, ACS or OOS.
      */
     public name: string | ros.IResolvable;
 
@@ -1169,7 +1169,7 @@ function rosPatchBaselineTagsPropertyToRosTemplate(properties: any): any {
 export interface RosSecretParameterProps {
 
     /**
-     * @Property secretParameterName: The name of the encryption parameter. The name must be 1 to 180 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
+     * @Property secretParameterName: The name of the encryption parameter. The name must be 1 to 180 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ALIBABA, ALICLOUD, ACS or OOS.
      */
     readonly secretParameterName: string | ros.IResolvable;
 
@@ -1258,7 +1258,7 @@ function rosSecretParameterPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::SecretParameter`, which is used to create an encryption parameter.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::SecretParameter`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecretParameter` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-secretparameter
  */
@@ -1342,7 +1342,7 @@ export class RosSecretParameter extends ros.RosResource {
 
 
     /**
-     * @Property secretParameterName: The name of the encryption parameter. The name must be 1 to 180 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
+     * @Property secretParameterName: The name of the encryption parameter. The name must be 1 to 180 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ALIBABA, ALICLOUD, ACS or OOS.
      */
     public secretParameterName: string | ros.IResolvable;
 
@@ -1863,7 +1863,7 @@ export interface RosTemplateProps {
     readonly content: string | ros.IResolvable;
 
     /**
-     * @Property templateName: The name of the template. The template name can be up to 200 characters in length. The name can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ACS, ALIBABA, or ALICLOUD.
+     * @Property templateName: The name of the template. The template name can be up to 200 characters in length. The name can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ACS, ALIYUN, ALIBABA, or ALICLOUD.
      */
     readonly templateName: string | ros.IResolvable;
 
@@ -1933,7 +1933,7 @@ function rosTemplatePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Template`, which is used to create a template.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Template`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Template` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-template
  */
@@ -1967,7 +1967,7 @@ export class RosTemplate extends ros.RosResource {
     public content: string | ros.IResolvable;
 
     /**
-     * @Property templateName: The name of the template. The template name can be up to 200 characters in length. The name can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ACS, ALIBABA, or ALICLOUD.
+     * @Property templateName: The name of the template. The template name can be up to 200 characters in length. The name can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ACS, ALIYUN, ALIBABA, or ALICLOUD.
      */
     public templateName: string | ros.IResolvable;
 

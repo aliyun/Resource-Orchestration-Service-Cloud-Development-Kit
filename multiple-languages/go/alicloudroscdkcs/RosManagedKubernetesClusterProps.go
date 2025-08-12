@@ -7,6 +7,7 @@ package alicloudroscdkcs
 type RosManagedKubernetesClusterProps struct {
 	Name interface{} `field:"required" json:"name" yaml:"name"`
 	VpcId interface{} `field:"required" json:"vpcId" yaml:"vpcId"`
+	VSwitchIds interface{} `field:"required" json:"vSwitchIds" yaml:"vSwitchIds"`
 	Addons interface{} `field:"optional" json:"addons" yaml:"addons"`
 	CloudMonitorFlags interface{} `field:"optional" json:"cloudMonitorFlags" yaml:"cloudMonitorFlags"`
 	ClusterSpec interface{} `field:"optional" json:"clusterSpec" yaml:"clusterSpec"`

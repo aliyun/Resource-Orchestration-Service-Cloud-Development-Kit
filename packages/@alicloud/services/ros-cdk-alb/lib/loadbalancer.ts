@@ -30,12 +30,6 @@ export interface LoadBalancerProps {
     readonly loadBalancerEdition: string | ros.IResolvable;
 
     /**
-     * Property loadBalancerName: The name of the ALB instance.
-     * The name must be 2 to 128 characters in length, and can contain letters, digits, periods(.), underscores (_), and hyphens (-). The name must start with a letter.
-     */
-    readonly loadBalancerName: string | ros.IResolvable;
-
-    /**
      * Property vpcId: The ID of the virtual private cloud (VPC) where the ALB instance is deployed.
      */
     readonly vpcId: string | ros.IResolvable;
@@ -73,6 +67,19 @@ export interface LoadBalancerProps {
      * Property deletionProtectionEnabled: Specifies whether to enable deletion protection. Default value: false.
      */
     readonly deletionProtectionEnabled?: boolean | ros.IResolvable;
+
+    /**
+     * Property ipv6AddressType: The type of IPv6 address that the ALB instance uses to provide services. Valid values:
+     * Internet: The ALB instance uses a public IPv6 address. The domain name of the ALB instance is resolved to the public IPv6 address.
+     * Intranet: The ALB instance uses a private IPv6 address. The domain name of the ALB instance is resolved to the private IP address.
+     */
+    readonly ipv6AddressType?: string | ros.IResolvable;
+
+    /**
+     * Property loadBalancerName: The name of the ALB instance.
+     * The name must be 2 to 128 characters in length, and can contain letters, digits, periods(.), underscores (_), and hyphens (-). The name must start with a letter.
+     */
+    readonly loadBalancerName?: string | ros.IResolvable;
 
     /**
      * Property modificationProtectionConfig: The configuration of modification protection.
@@ -202,6 +209,7 @@ export class LoadBalancer extends ros.Resource implements ILoadBalancer {
             zoneMappings: props.zoneMappings,
             modificationProtectionConfig: props.modificationProtectionConfig,
             securityGroupIds: props.securityGroupIds,
+            ipv6AddressType: props.ipv6AddressType,
             loadBalancerName: props.loadBalancerName,
             accessLogConfig: props.accessLogConfig,
             vpcId: props.vpcId,

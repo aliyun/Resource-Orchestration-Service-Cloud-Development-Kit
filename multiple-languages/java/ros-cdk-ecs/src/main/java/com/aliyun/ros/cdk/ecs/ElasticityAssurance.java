@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::ElasticityAssurance</code>, which is used to create an elasticity assurance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:04.588Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.159Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.ElasticityAssurance")
 public class ElasticityAssurance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.IElasticityAssurance {
 
@@ -187,6 +187,48 @@ public class ElasticityAssurance extends com.aliyun.ros.cdk.core.Resource implem
         }
 
         /**
+         * Property autoRenew: Whether to enable automatic renewal.
+         * <p>
+         * @return {@code this}
+         * @param autoRenew Property autoRenew: Whether to enable automatic renewal. This parameter is required.
+         */
+        public Builder autoRenew(final java.lang.Boolean autoRenew) {
+            this.props.autoRenew(autoRenew);
+            return this;
+        }
+        /**
+         * Property autoRenew: Whether to enable automatic renewal.
+         * <p>
+         * @return {@code this}
+         * @param autoRenew Property autoRenew: Whether to enable automatic renewal. This parameter is required.
+         */
+        public Builder autoRenew(final com.aliyun.ros.cdk.core.IResolvable autoRenew) {
+            this.props.autoRenew(autoRenew);
+            return this;
+        }
+
+        /**
+         * Property autoRenewPeriod: The period for automatic renewal.
+         * <p>
+         * @return {@code this}
+         * @param autoRenewPeriod Property autoRenewPeriod: The period for automatic renewal. This parameter is required.
+         */
+        public Builder autoRenewPeriod(final java.lang.Number autoRenewPeriod) {
+            this.props.autoRenewPeriod(autoRenewPeriod);
+            return this;
+        }
+        /**
+         * Property autoRenewPeriod: The period for automatic renewal.
+         * <p>
+         * @return {@code this}
+         * @param autoRenewPeriod Property autoRenewPeriod: The period for automatic renewal. This parameter is required.
+         */
+        public Builder autoRenewPeriod(final com.aliyun.ros.cdk.core.IResolvable autoRenewPeriod) {
+            this.props.autoRenewPeriod(autoRenewPeriod);
+            return this;
+        }
+
+        /**
          * Property description: The description of the elasticity assurance.
          * <p>
          * The description must be 2 to 256 characters in length and cannot start with http:// or https://.
@@ -210,6 +252,27 @@ public class ElasticityAssurance extends com.aliyun.ros.cdk.core.Resource implem
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
+            return this;
+        }
+
+        /**
+         * Property instanceCpuCoreCount: The number of CPU cores for the instance.
+         * <p>
+         * @return {@code this}
+         * @param instanceCpuCoreCount Property instanceCpuCoreCount: The number of CPU cores for the instance. This parameter is required.
+         */
+        public Builder instanceCpuCoreCount(final java.lang.Number instanceCpuCoreCount) {
+            this.props.instanceCpuCoreCount(instanceCpuCoreCount);
+            return this;
+        }
+        /**
+         * Property instanceCpuCoreCount: The number of CPU cores for the instance.
+         * <p>
+         * @return {@code this}
+         * @param instanceCpuCoreCount Property instanceCpuCoreCount: The number of CPU cores for the instance. This parameter is required.
+         */
+        public Builder instanceCpuCoreCount(final com.aliyun.ros.cdk.core.IResolvable instanceCpuCoreCount) {
+            this.props.instanceCpuCoreCount(instanceCpuCoreCount);
             return this;
         }
 
@@ -293,6 +356,27 @@ public class ElasticityAssurance extends com.aliyun.ros.cdk.core.Resource implem
          */
         public Builder privatePoolOptions(final com.aliyun.ros.cdk.ecs.RosElasticityAssurance.PrivatePoolOptionsProperty privatePoolOptions) {
             this.props.privatePoolOptions(privatePoolOptions);
+            return this;
+        }
+
+        /**
+         * Property recurrenceRules: Recurrence rules for the elasticity assurance.
+         * <p>
+         * @return {@code this}
+         * @param recurrenceRules Property recurrenceRules: Recurrence rules for the elasticity assurance. This parameter is required.
+         */
+        public Builder recurrenceRules(final com.aliyun.ros.cdk.core.IResolvable recurrenceRules) {
+            this.props.recurrenceRules(recurrenceRules);
+            return this;
+        }
+        /**
+         * Property recurrenceRules: Recurrence rules for the elasticity assurance.
+         * <p>
+         * @return {@code this}
+         * @param recurrenceRules Property recurrenceRules: Recurrence rules for the elasticity assurance. This parameter is required.
+         */
+        public Builder recurrenceRules(final java.util.List<? extends java.lang.Object> recurrenceRules) {
+            this.props.recurrenceRules(recurrenceRules);
             return this;
         }
 

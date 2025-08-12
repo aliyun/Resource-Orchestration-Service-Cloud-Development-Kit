@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ESS::ScalingConfiguration</code>, which is used to create a scaling configuration for a scaling group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:06.754Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.538Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScalingConfiguration")
 public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ess.IScalingConfiguration {
 
@@ -625,7 +625,7 @@ public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource imple
         /**
          * Property internetMaxBandwidthIn: Maximum incoming bandwidth from the public network, measured in Mbps (Mega bit per second).
          * <p>
-         * The value range is [1,200]. If this parameter value is not specified, AliyunAPI automatically sets the value to 200 Mbps.
+         * The value range is [1,200]. If this parameter value is not specified, API automatically sets the value to 200 Mbps.
          * <p>
          * @return {@code this}
          * @param internetMaxBandwidthIn Property internetMaxBandwidthIn: Maximum incoming bandwidth from the public network, measured in Mbps (Mega bit per second). This parameter is required.
@@ -637,7 +637,7 @@ public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource imple
         /**
          * Property internetMaxBandwidthIn: Maximum incoming bandwidth from the public network, measured in Mbps (Mega bit per second).
          * <p>
-         * The value range is [1,200]. If this parameter value is not specified, AliyunAPI automatically sets the value to 200 Mbps.
+         * The value range is [1,200]. If this parameter value is not specified, API automatically sets the value to 200 Mbps.
          * <p>
          * @return {@code this}
          * @param internetMaxBandwidthIn Property internetMaxBandwidthIn: Maximum incoming bandwidth from the public network, measured in Mbps (Mega bit per second). This parameter is required.
@@ -650,7 +650,7 @@ public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource imple
         /**
          * Property internetMaxBandwidthOut: Maximum outgoing bandwidth from the public network, measured in Mbps (Mega bit per second).
          * <p>
-         * The value range for PayByBandwidth is [0,100]. If this parameter value is not specified, AliyunAPI automatically sets the value to 0 Mbps.
+         * The value range for PayByBandwidth is [0,100]. If this parameter value is not specified, API automatically sets the value to 0 Mbps.
          * The value range for PayByTraffic is [0,100]. If this parameter value is not specified, an error is reported
          * <p>
          * @return {@code this}
@@ -663,7 +663,7 @@ public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource imple
         /**
          * Property internetMaxBandwidthOut: Maximum outgoing bandwidth from the public network, measured in Mbps (Mega bit per second).
          * <p>
-         * The value range for PayByBandwidth is [0,100]. If this parameter value is not specified, AliyunAPI automatically sets the value to 0 Mbps.
+         * The value range for PayByBandwidth is [0,100]. If this parameter value is not specified, API automatically sets the value to 0 Mbps.
          * The value range for PayByTraffic is [0,100]. If this parameter value is not specified, an error is reported
          * <p>
          * @return {@code this}

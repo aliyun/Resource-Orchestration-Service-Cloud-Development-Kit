@@ -15,6 +15,8 @@ type AnycastEIPProps struct {
 	InternetChargeType interface{} `field:"optional" json:"internetChargeType" yaml:"internetChargeType"`
 	// Property name: Anycast EIP instance name.
 	Name interface{} `field:"optional" json:"name" yaml:"name"`
+	// Property resourceGroupId: The ID of the resource group.
+	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 	// Property serviceLocation: Anycast EIP instance access area.
 	ServiceLocation interface{} `field:"optional" json:"serviceLocation" yaml:"serviceLocation"`
 }

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::DirectMail::Ipfilter`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::DirectMail::Ipfilter`, which is used to query the information about an IP filter.
 type Ipfilter interface {
 	alicloudroscdkcore.Resource
 	IIpfilter

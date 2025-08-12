@@ -12,7 +12,7 @@ type IAlarmContact interface {
 	alicloudroscdkcore.IResource
 	// Attribute AlarmContactName: AlarmContactName.
 	AttrAlarmContactName() interface{}
-	// Attribute ChannelsAliIm: ChannelsAliIM.
+	// Attribute ChannelsAliIm: ChannelsAliIm.
 	AttrChannelsAliIm() interface{}
 	// Attribute ChannelsDingWebHook: ChannelsDingWebHook.
 	AttrChannelsDingWebHook() interface{}
@@ -20,7 +20,7 @@ type IAlarmContact interface {
 	AttrChannelsMail() interface{}
 	// Attribute ChannelsSms: ChannelsSMS.
 	AttrChannelsSms() interface{}
-	// Attribute ChannelsStateAliIm: ChannelsStateAliIM.
+	// Attribute ChannelsStateAliIm: ChannelsStateAliIm.
 	AttrChannelsStateAliIm() interface{}
 	// Attribute ChannelsStateDingWebHook: ChannelsStateDingWebHook.
 	AttrChannelsStateDingWebHook() interface{}

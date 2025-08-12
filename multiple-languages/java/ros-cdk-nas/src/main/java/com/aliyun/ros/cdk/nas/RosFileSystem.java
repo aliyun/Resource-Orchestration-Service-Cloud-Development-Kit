@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.nas;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::NAS::FileSystem</code>, which is used to create a file system of File Storage NAS (NAS).
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::NAS::FileSystem</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.241Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.773Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.RosFileSystem")
 public class RosFileSystem extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -237,6 +237,24 @@ public class RosFileSystem extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setFileSystemType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "fileSystemType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
     }
 
     /**
@@ -684,6 +702,23 @@ public class RosFileSystem extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder fileSystemType(final com.aliyun.ros.cdk.core.IResolvable fileSystemType) {
             this.props.fileSystemType(fileSystemType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
             return this;
         }
 

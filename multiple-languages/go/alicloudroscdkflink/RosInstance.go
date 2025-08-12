@@ -14,6 +14,7 @@ type RosInstance interface {
 	alicloudroscdkcore.RosResource
 	AttrInstanceId() alicloudroscdkcore.IResolvable
 	AttrOrderId() alicloudroscdkcore.IResolvable
+	AttrWorkspaceId() alicloudroscdkcore.IResolvable
 	AutoRenew() interface{}
 	SetAutoRenew(val interface{})
 	Bucket() interface{}
@@ -209,6 +210,16 @@ func (j *jsiiProxy_RosInstance) AttrOrderId() alicloudroscdkcore.IResolvable {
 	_jsii_.Get(
 		j,
 		"attrOrderId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosInstance) AttrWorkspaceId() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrWorkspaceId",
 		&returns,
 	)
 	return returns

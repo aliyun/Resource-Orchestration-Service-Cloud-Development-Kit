@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.mns;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-subscription
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.017Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.574Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.SubscriptionProps")
 @software.amazon.jsii.Jsii.Proxy(SubscriptionProps.Jsii$Proxy.class)
 public interface SubscriptionProps extends software.amazon.jsii.JsiiSerializable {
@@ -35,6 +35,13 @@ public interface SubscriptionProps extends software.amazon.jsii.JsiiSerializable
     @org.jetbrains.annotations.NotNull java.lang.Object getTopicName();
 
     /**
+     * Property dlqPolicy: Dead-letter queue policy.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDlqPolicy() {
+        return null;
+    }
+
+    /**
      * Property filterTag: Message filter tag in the created subscription (Only messages with consistent tags are pushed.) The value is a string of no more than 16 characters. The default value is no message filter.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getFilterTag() {
@@ -60,6 +67,13 @@ public interface SubscriptionProps extends software.amazon.jsii.JsiiSerializable
     }
 
     /**
+     * Property pushType: Push type of the created subscription.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPushType() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link SubscriptionProps}
      */
     static Builder builder() {
@@ -72,9 +86,11 @@ public interface SubscriptionProps extends software.amazon.jsii.JsiiSerializable
         java.lang.Object endpoint;
         java.lang.Object subscriptionName;
         java.lang.Object topicName;
+        java.lang.Object dlqPolicy;
         java.lang.Object filterTag;
         java.lang.Object notifyContentFormat;
         java.lang.Object notifyStrategy;
+        java.lang.Object pushType;
 
         /**
          * Sets the value of {@link SubscriptionProps#getEndpoint}
@@ -153,6 +169,26 @@ public interface SubscriptionProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link SubscriptionProps#getDlqPolicy}
+         * @param dlqPolicy Property dlqPolicy: Dead-letter queue policy.
+         * @return {@code this}
+         */
+        public Builder dlqPolicy(com.aliyun.ros.cdk.core.IResolvable dlqPolicy) {
+            this.dlqPolicy = dlqPolicy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SubscriptionProps#getDlqPolicy}
+         * @param dlqPolicy Property dlqPolicy: Dead-letter queue policy.
+         * @return {@code this}
+         */
+        public Builder dlqPolicy(com.aliyun.ros.cdk.mns.RosSubscription.DlqPolicyProperty dlqPolicy) {
+            this.dlqPolicy = dlqPolicy;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SubscriptionProps#getFilterTag}
          * @param filterTag Property filterTag: Message filter tag in the created subscription (Only messages with consistent tags are pushed.) The value is a string of no more than 16 characters. The default value is no message filter.
          * @return {@code this}
@@ -217,6 +253,26 @@ public interface SubscriptionProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link SubscriptionProps#getPushType}
+         * @param pushType Property pushType: Push type of the created subscription.
+         * @return {@code this}
+         */
+        public Builder pushType(java.lang.String pushType) {
+            this.pushType = pushType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SubscriptionProps#getPushType}
+         * @param pushType Property pushType: Push type of the created subscription.
+         * @return {@code this}
+         */
+        public Builder pushType(com.aliyun.ros.cdk.core.IResolvable pushType) {
+            this.pushType = pushType;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link SubscriptionProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -235,9 +291,11 @@ public interface SubscriptionProps extends software.amazon.jsii.JsiiSerializable
         private final java.lang.Object endpoint;
         private final java.lang.Object subscriptionName;
         private final java.lang.Object topicName;
+        private final java.lang.Object dlqPolicy;
         private final java.lang.Object filterTag;
         private final java.lang.Object notifyContentFormat;
         private final java.lang.Object notifyStrategy;
+        private final java.lang.Object pushType;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -248,9 +306,11 @@ public interface SubscriptionProps extends software.amazon.jsii.JsiiSerializable
             this.endpoint = software.amazon.jsii.Kernel.get(this, "endpoint", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.subscriptionName = software.amazon.jsii.Kernel.get(this, "subscriptionName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.topicName = software.amazon.jsii.Kernel.get(this, "topicName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dlqPolicy = software.amazon.jsii.Kernel.get(this, "dlqPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.filterTag = software.amazon.jsii.Kernel.get(this, "filterTag", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.notifyContentFormat = software.amazon.jsii.Kernel.get(this, "notifyContentFormat", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.notifyStrategy = software.amazon.jsii.Kernel.get(this, "notifyStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.pushType = software.amazon.jsii.Kernel.get(this, "pushType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -261,9 +321,11 @@ public interface SubscriptionProps extends software.amazon.jsii.JsiiSerializable
             this.endpoint = java.util.Objects.requireNonNull(builder.endpoint, "endpoint is required");
             this.subscriptionName = java.util.Objects.requireNonNull(builder.subscriptionName, "subscriptionName is required");
             this.topicName = java.util.Objects.requireNonNull(builder.topicName, "topicName is required");
+            this.dlqPolicy = builder.dlqPolicy;
             this.filterTag = builder.filterTag;
             this.notifyContentFormat = builder.notifyContentFormat;
             this.notifyStrategy = builder.notifyStrategy;
+            this.pushType = builder.pushType;
         }
 
         @Override
@@ -282,6 +344,11 @@ public interface SubscriptionProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
+        public final java.lang.Object getDlqPolicy() {
+            return this.dlqPolicy;
+        }
+
+        @Override
         public final java.lang.Object getFilterTag() {
             return this.filterTag;
         }
@@ -297,6 +364,11 @@ public interface SubscriptionProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
+        public final java.lang.Object getPushType() {
+            return this.pushType;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -305,6 +377,9 @@ public interface SubscriptionProps extends software.amazon.jsii.JsiiSerializable
             data.set("endpoint", om.valueToTree(this.getEndpoint()));
             data.set("subscriptionName", om.valueToTree(this.getSubscriptionName()));
             data.set("topicName", om.valueToTree(this.getTopicName()));
+            if (this.getDlqPolicy() != null) {
+                data.set("dlqPolicy", om.valueToTree(this.getDlqPolicy()));
+            }
             if (this.getFilterTag() != null) {
                 data.set("filterTag", om.valueToTree(this.getFilterTag()));
             }
@@ -313,6 +388,9 @@ public interface SubscriptionProps extends software.amazon.jsii.JsiiSerializable
             }
             if (this.getNotifyStrategy() != null) {
                 data.set("notifyStrategy", om.valueToTree(this.getNotifyStrategy()));
+            }
+            if (this.getPushType() != null) {
+                data.set("pushType", om.valueToTree(this.getPushType()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -335,9 +413,11 @@ public interface SubscriptionProps extends software.amazon.jsii.JsiiSerializable
             if (!endpoint.equals(that.endpoint)) return false;
             if (!subscriptionName.equals(that.subscriptionName)) return false;
             if (!topicName.equals(that.topicName)) return false;
+            if (this.dlqPolicy != null ? !this.dlqPolicy.equals(that.dlqPolicy) : that.dlqPolicy != null) return false;
             if (this.filterTag != null ? !this.filterTag.equals(that.filterTag) : that.filterTag != null) return false;
             if (this.notifyContentFormat != null ? !this.notifyContentFormat.equals(that.notifyContentFormat) : that.notifyContentFormat != null) return false;
-            return this.notifyStrategy != null ? this.notifyStrategy.equals(that.notifyStrategy) : that.notifyStrategy == null;
+            if (this.notifyStrategy != null ? !this.notifyStrategy.equals(that.notifyStrategy) : that.notifyStrategy != null) return false;
+            return this.pushType != null ? this.pushType.equals(that.pushType) : that.pushType == null;
         }
 
         @Override
@@ -345,9 +425,11 @@ public interface SubscriptionProps extends software.amazon.jsii.JsiiSerializable
             int result = this.endpoint.hashCode();
             result = 31 * result + (this.subscriptionName.hashCode());
             result = 31 * result + (this.topicName.hashCode());
+            result = 31 * result + (this.dlqPolicy != null ? this.dlqPolicy.hashCode() : 0);
             result = 31 * result + (this.filterTag != null ? this.filterTag.hashCode() : 0);
             result = 31 * result + (this.notifyContentFormat != null ? this.notifyContentFormat.hashCode() : 0);
             result = 31 * result + (this.notifyStrategy != null ? this.notifyStrategy.hashCode() : 0);
+            result = 31 * result + (this.pushType != null ? this.pushType.hashCode() : 0);
             return result;
         }
     }

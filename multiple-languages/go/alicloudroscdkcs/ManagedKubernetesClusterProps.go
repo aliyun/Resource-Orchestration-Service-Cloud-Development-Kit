@@ -11,6 +11,8 @@ type ManagedKubernetesClusterProps struct {
 	Name interface{} `field:"required" json:"name" yaml:"name"`
 	// Property vpcId: VPC ID.
 	VpcId interface{} `field:"required" json:"vpcId" yaml:"vpcId"`
+	// Property vSwitchIds: The virtual switch ID of the worker node.
+	VSwitchIds interface{} `field:"required" json:"vSwitchIds" yaml:"vSwitchIds"`
 	// Property addons: A combination of addon plugins for Kubernetes clusters.
 	//
 	// Network plug-in: including Flannel and Terway network plug-ins

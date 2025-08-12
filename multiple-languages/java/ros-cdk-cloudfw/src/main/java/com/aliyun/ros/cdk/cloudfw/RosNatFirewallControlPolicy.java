@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudfw;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CLOUDFW::NatFirewallControlPolicy</code>, which is used to add an access control policy for a NAT firewall.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:02.724Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:44.571Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.RosNatFirewallControlPolicy")
 public class RosNatFirewallControlPolicy extends com.aliyun.ros.cdk.core.RosResource {
 

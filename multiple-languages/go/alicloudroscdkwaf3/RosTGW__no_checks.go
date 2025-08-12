@@ -104,6 +104,10 @@ func (j *jsiiProxy_RosTGW) validateSetResourceGroupIdParameters(val interface{})
 	return nil
 }
 
+func (j *jsiiProxy_RosTGW) validateSetWafInstanceRegionParameters(val interface{}) error {
+	return nil
+}
+
 func validateNewRosTGWParameters(scope alicloudroscdkcore.Construct, id *string, props *RosTGWProps, enableResourcePropertyConstraint *bool) error {
 	return nil
 }

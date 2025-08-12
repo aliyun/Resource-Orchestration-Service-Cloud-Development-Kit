@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ots;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-searchindex
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.519Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.050Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.SearchIndexProps")
 @software.amazon.jsii.Jsii.Proxy(SearchIndexProps.Jsii$Proxy.class)
 public interface SearchIndexProps extends software.amazon.jsii.JsiiSerializable {

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.config;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-aggregatecompliancepack
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:03.244Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.033Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.RosAggregateCompliancePackProps")
 @software.amazon.jsii.Jsii.Proxy(RosAggregateCompliancePackProps.Jsii$Proxy.class)
 public interface RosAggregateCompliancePackProps extends software.amazon.jsii.JsiiSerializable {

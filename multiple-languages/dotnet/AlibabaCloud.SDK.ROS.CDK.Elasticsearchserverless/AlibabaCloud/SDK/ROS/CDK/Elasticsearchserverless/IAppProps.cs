@@ -57,6 +57,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearchserverless
             }
         }
 
+        /// <summary>Property logProConfiguration: The log pro configuration of the app.</summary>
+        [JsiiProperty(name: "logProConfiguration", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-elasticsearchserverless.RosApp.LogProConfigurationProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? LogProConfiguration
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property network: The public network of the app.</summary>
         [JsiiProperty(name: "network", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-elasticsearchserverless.RosApp.NetworkProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -72,6 +83,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearchserverless
         [JsiiProperty(name: "privateNetwork", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-elasticsearchserverless.RosApp.PrivateNetworkProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? PrivateNetwork
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property scenario: The scenario of the app.</summary>
+        [JsiiProperty(name: "scenario", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Scenario
         {
             get
             {
@@ -130,6 +152,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearchserverless
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property logProConfiguration: The log pro configuration of the app.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "logProConfiguration", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-elasticsearchserverless.RosApp.LogProConfigurationProperty\"}]}}", isOptional: true)]
+            public object? LogProConfiguration
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property network: The public network of the app.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "network", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-elasticsearchserverless.RosApp.NetworkProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -142,6 +172,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearchserverless
             [JsiiOptional]
             [JsiiProperty(name: "privateNetwork", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-elasticsearchserverless.RosApp.PrivateNetworkProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? PrivateNetwork
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property scenario: The scenario of the app.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "scenario", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Scenario
             {
                 get => GetInstanceProperty<object?>();
             }

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.privatelink;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::PrivateLink::VpcEndpointServiceAttachment</code>, which is used to add a service resource to an endpoint service.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::PrivateLink::VpcEndpointServiceAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:09.186Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.538Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.RosVpcEndpointServiceAttachment")
 public class RosVpcEndpointServiceAttachment extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -126,6 +126,24 @@ public class RosVpcEndpointServiceAttachment extends com.aliyun.ros.cdk.core.Ros
     }
 
     /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
+        return software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setZoneId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "zoneId", value);
+    }
+
+    /**
+     */
+    public void setZoneId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "zoneId", value);
+    }
+
+    /**
      * A fluent builder for {@link com.aliyun.ros.cdk.privatelink.RosVpcEndpointServiceAttachment}.
      */
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.privatelink.RosVpcEndpointServiceAttachment> {
@@ -199,6 +217,23 @@ public class RosVpcEndpointServiceAttachment extends com.aliyun.ros.cdk.core.Ros
          */
         public Builder serviceId(final com.aliyun.ros.cdk.core.IResolvable serviceId) {
             this.props.serviceId(serviceId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param zoneId This parameter is required.
+         */
+        public Builder zoneId(final java.lang.String zoneId) {
+            this.props.zoneId(zoneId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param zoneId This parameter is required.
+         */
+        public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
+            this.props.zoneId(zoneId);
             return this;
         }
 

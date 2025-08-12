@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.polardb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbcluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.930Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.368Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBClusterProps")
 @software.amazon.jsii.Jsii.Proxy(DBClusterProps.Jsii$Proxy.class)
 public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -180,9 +180,8 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property dbNodeNum: The number of Standard Edition nodes.
      * <p>
-     * Default value: 1. Valid values:
-     * 1: only one primary node.
-     * 2: one read-only node and one primary node.
+     * Valid values for PolarDB for MySQL Standard Edition: 1 to 8.
+     * Valid values for PolarDB for MySQL Enterprise Edition: 1 to 16.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDbNodeNum() {
         return null;
@@ -1049,9 +1048,8 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link DBClusterProps#getDbNodeNum}
          * @param dbNodeNum Property dbNodeNum: The number of Standard Edition nodes.
-         *                  Default value: 1. Valid values:
-         *                  1: only one primary node.
-         *                  2: one read-only node and one primary node.
+         *                  Valid values for PolarDB for MySQL Standard Edition: 1 to 8.
+         *                  Valid values for PolarDB for MySQL Enterprise Edition: 1 to 16.
          * @return {@code this}
          */
         public Builder dbNodeNum(java.lang.Number dbNodeNum) {
@@ -1062,9 +1060,8 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link DBClusterProps#getDbNodeNum}
          * @param dbNodeNum Property dbNodeNum: The number of Standard Edition nodes.
-         *                  Default value: 1. Valid values:
-         *                  1: only one primary node.
-         *                  2: one read-only node and one primary node.
+         *                  Valid values for PolarDB for MySQL Standard Edition: 1 to 8.
+         *                  Valid values for PolarDB for MySQL Enterprise Edition: 1 to 16.
          * @return {@code this}
          */
         public Builder dbNodeNum(com.aliyun.ros.cdk.core.IResolvable dbNodeNum) {

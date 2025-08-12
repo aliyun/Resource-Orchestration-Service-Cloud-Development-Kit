@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::SaslUser`, which is used to create a Simple Authentication and Security Layer (SASL) user.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::SaslUser`.
 type RosSaslUser interface {
 	alicloudroscdkcore.RosResource
 	AttrInstanceId() alicloudroscdkcore.IResolvable

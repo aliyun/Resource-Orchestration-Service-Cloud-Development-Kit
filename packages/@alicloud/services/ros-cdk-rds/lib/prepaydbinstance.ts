@@ -92,6 +92,13 @@ export interface PrepayDBInstanceProps {
     readonly autoRenew?: boolean | ros.IResolvable;
 
     /**
+     * Property autoUpgradeMinorVersion: How the instance upgrades to a minor version.Valid values:
+     * - Auto (default) : Updates minor versions automatically.
+     * - Manual: No automatic upgrade, only forced when the current version is offline.
+     */
+    readonly autoUpgradeMinorVersion?: string | ros.IResolvable;
+
+    /**
      * Property backUpCategory: Specifies whether to enable the second-level backup function. This function allows a backup 
      * to be completed within seconds. Valid values: 
      * Flash: specifies to enable the second-level backup function. 
@@ -343,9 +350,9 @@ export interface PrepayDBInstanceProps {
     readonly quantity?: number | ros.IResolvable;
 
     /**
-     * Property releasedKeepPolicy: The policy used to retain archived backups if the instance is released. Default value: None. 
+     * Property releasedKeepPolicy: The policy used to retain archived backups if the instance is released. 
      *  Valid values: 
-     * Lastest: Only the last archived backup is retained. 
+     * None: No archived backup files are retained.Lastest: Only the last archived backup is retained. 
      *  All: All of the archived backups are retained.
      */
     readonly releasedKeepPolicy?: string | ros.IResolvable;
@@ -408,6 +415,11 @@ export interface PrepayDBInstanceProps {
      * Property storageUpperBound: The total storage space upper limit for automatic storage space expansion, that is, automatic expansion will not cause the total storage space of the instance to exceed this value.
      */
     readonly storageUpperBound?: number | ros.IResolvable;
+
+    /**
+     * Property subscriptionDeletionForce: This option is only applicable to subscription instances. For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+     */
+    readonly subscriptionDeletionForce?: boolean | ros.IResolvable;
 
     /**
      * Property tags: The tags of an instance.
@@ -577,6 +589,7 @@ export class PrepayDBInstance extends ros.Resource implements IPrepayDBInstance 
             instanceNetworkType: props.instanceNetworkType,
             archiveBackupKeepCount: props.archiveBackupKeepCount,
             logBackupRetentionPeriod: props.logBackupRetentionPeriod,
+            autoUpgradeMinorVersion: props.autoUpgradeMinorVersion,
             dbInstanceStorage: props.dbInstanceStorage,
             dbMappings: props.dbMappings,
             connectionStringPrefix: props.connectionStringPrefix,
@@ -597,8 +610,8 @@ export class PrepayDBInstance extends ros.Resource implements IPrepayDBInstance 
             highSpaceUsageProtection: props.highSpaceUsageProtection,
             roleArn: props.roleArn,
             masterUserPassword: props.masterUserPassword,
-            vpcId: props.vpcId,
             sslSetting: props.sslSetting === undefined || props.sslSetting === null ? 'Disabled' : props.sslSetting,
+            vpcId: props.vpcId,
             masterUsername: props.masterUsername,
             connectionMode: props.connectionMode,
             localLogRetentionSpace: props.localLogRetentionSpace,
@@ -622,6 +635,7 @@ export class PrepayDBInstance extends ros.Resource implements IPrepayDBInstance 
             coldDataEnabled: props.coldDataEnabled,
             zoneId: props.zoneId,
             targetDedicatedHostIdForLog: props.targetDedicatedHostIdForLog,
+            subscriptionDeletionForce: props.subscriptionDeletionForce === undefined || props.subscriptionDeletionForce === null ? false : props.subscriptionDeletionForce,
             allocatePublicConnection: props.allocatePublicConnection,
             securityGroupId: props.securityGroupId,
             preferredBackupTime: props.preferredBackupTime,

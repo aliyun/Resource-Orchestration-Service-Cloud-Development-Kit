@@ -4,10 +4,8 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Mns
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::MNS::Subscription`, which is used to subscribe an endpoint to an Alibaba Cloud Message Service (MNS) topic.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::MNS::Subscription`.</summary>
     /// <remarks>
-    /// For a subscription to be created, the owner of the endpoint must confirm the subscription.
-    ///
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSubscription`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-subscription
     /// </remarks>

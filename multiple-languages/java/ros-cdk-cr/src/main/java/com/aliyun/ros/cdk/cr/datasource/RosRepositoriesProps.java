@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cr.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cr-repositories
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:03.357Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.120Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.datasource.RosRepositoriesProps")
 @software.amazon.jsii.Jsii.Proxy(RosRepositoriesProps.Jsii$Proxy.class)
 public interface RosRepositoriesProps extends software.amazon.jsii.JsiiSerializable {

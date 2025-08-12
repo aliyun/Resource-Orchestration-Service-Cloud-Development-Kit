@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::ManagedEdgeKubernetesCluster</code>, which is used to create a Container Service for Kubernetes (ACK) edge cluster.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::ManagedEdgeKubernetesCluster</code>, which is used to create a Container Service for Kubernetes (ACK) Edge cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:03.441Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.171Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ManagedEdgeKubernetesCluster")
 public class ManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cs.IManagedEdgeKubernetesCluster {
 
@@ -692,6 +692,27 @@ public class ManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Resour
          */
         public Builder vpcId(final com.aliyun.ros.cdk.core.IResolvable vpcId) {
             this.props.vpcId(vpcId);
+            return this;
+        }
+
+        /**
+         * Property vSwitchIds: The virtual switch ID of the worker node.
+         * <p>
+         * @return {@code this}
+         * @param vSwitchIds Property vSwitchIds: The virtual switch ID of the worker node. This parameter is required.
+         */
+        public Builder vSwitchIds(final java.util.List<? extends java.lang.Object> vSwitchIds) {
+            this.props.vSwitchIds(vSwitchIds);
+            return this;
+        }
+        /**
+         * Property vSwitchIds: The virtual switch ID of the worker node.
+         * <p>
+         * @return {@code this}
+         * @param vSwitchIds Property vSwitchIds: The virtual switch ID of the worker node. This parameter is required.
+         */
+        public Builder vSwitchIds(final com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
+            this.props.vSwitchIds(vSwitchIds);
             return this;
         }
 

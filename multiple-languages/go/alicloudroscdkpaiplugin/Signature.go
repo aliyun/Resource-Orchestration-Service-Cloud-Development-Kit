@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::PAIPlugin::Signature`, which is used to register a signature.
+// This class encapsulates and extends the ROS resource type `ALIYUN::PAIPlugin::Signature`.
 type Signature interface {
 	alicloudroscdkcore.Resource
 	ISignature

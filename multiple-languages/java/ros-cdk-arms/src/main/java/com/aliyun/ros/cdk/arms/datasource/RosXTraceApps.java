@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.arms.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::ARMS::XTraceApps</code>, which is used to query all the application monitoring tasks in a region.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:02.093Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:44.064Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.datasource.RosXTraceApps")
 public class RosXTraceApps extends com.aliyun.ros.cdk.core.RosResource {
 

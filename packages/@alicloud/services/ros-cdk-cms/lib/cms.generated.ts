@@ -2757,6 +2757,291 @@ function rosMetricRuleTemplateWarnPropertyToRosTemplate(properties: any): any {
 }
 
 /**
+ * Properties for defining a `RosMetricRuleTemplateDeployment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-metricruletemplatedeployment
+ */
+export interface RosMetricRuleTemplateDeploymentProps {
+
+    /**
+     * @Property groupId: Apply group ID.
+     * For how to get the application group ID, see DescribeMonitorGroups.
+     */
+    readonly groupId: number | ros.IResolvable;
+
+    /**
+     * @Property templateIds: The ID list of the Alarm Template to be applied.
+     * For how to get the alarm template ID, see DescribeMetricRuleTemplateList.
+     */
+    readonly templateIds: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property appendMode: Template application policy.Value:
+     * all: Delete all rules created by the alarm template on the selected group, and then create a new alarm rule by the template (default).
+     * append: Delete the rules created by the alarm template on the selected group, and then create a new alarm rule based on the current template.
+     */
+    readonly appendMode?: string | ros.IResolvable;
+
+    /**
+     * @Property applyMode: How to apply templates.Value:
+     * GROUP_INSTANCE_FIRST: Application grouping instances are preferred.When applying an alarm template, the application grouping instance is preferred. If the instance does not exist in the application grouping, the rules in the template are ignored.
+     * ALARM_TEMPLATE_FIRST: Alarm template instances are preferred.When an alarm template is applied, an alarm rule is created regardless of whether the instance exists in the application group.
+     */
+    readonly applyMode?: string | ros.IResolvable;
+
+    /**
+     * @Property enableEndTime: The end time when the alarm takes effect.Value range: 0~23, indicating 00:59 to 23:59.
+     */
+    readonly enableEndTime?: number | ros.IResolvable;
+
+    /**
+     * @Property enableStartTime: The start time when the alarm takes effect.Value range: 0~23, indicating 00:00 to 23:00.
+     */
+    readonly enableStartTime?: number | ros.IResolvable;
+
+    /**
+     * @Property notifyLevel: Alarm notification method.Value:
+     * 2: Phone + SMS + Email + Wangwang + DingTalk Robot.
+     * 3: SMS + Email + Wangwang + DingTalk Robot.
+     * 4: Wangwang + Dingding Robot.
+     */
+    readonly notifyLevel?: number | ros.IResolvable;
+
+    /**
+     * @Property silenceTime: Channel silence period.Unit: seconds.Default value: 86400.
+     * Note When the monitoring data continues to exceed the alarm rule threshold, only one alarm notification will be sent during each silence cycle.
+     */
+    readonly silenceTime?: number | ros.IResolvable;
+
+    /**
+     * @Property webhook: When an alarm occurs, the specified URL address will be called back and a POST request will be sent.
+     */
+    readonly webhook?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosMetricRuleTemplateDeploymentProps`
+ *
+ * @param properties - the TypeScript properties of a `RosMetricRuleTemplateDeploymentProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosMetricRuleTemplateDeploymentPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.silenceTime && (typeof properties.silenceTime) !== 'object') {
+        errors.collect(ros.propertyValidator('silenceTime', ros.validateRange)({
+            data: properties.silenceTime,
+            min: undefined,
+            max: 9007199254740991,
+          }));
+    }
+    errors.collect(ros.propertyValidator('silenceTime', ros.validateNumber)(properties.silenceTime));
+    if(properties.notifyLevel && (typeof properties.notifyLevel) !== 'object') {
+        errors.collect(ros.propertyValidator('notifyLevel', ros.validateAllowedValues)({
+          data: properties.notifyLevel,
+          allowedValues: [2,3,4],
+        }));
+    }
+    errors.collect(ros.propertyValidator('notifyLevel', ros.validateNumber)(properties.notifyLevel));
+    if(properties.appendMode && (typeof properties.appendMode) !== 'object') {
+        errors.collect(ros.propertyValidator('appendMode', ros.validateAllowedValues)({
+          data: properties.appendMode,
+          allowedValues: ["all","append"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('appendMode', ros.validateString)(properties.appendMode));
+    if(properties.applyMode && (typeof properties.applyMode) !== 'object') {
+        errors.collect(ros.propertyValidator('applyMode', ros.validateAllowedValues)({
+          data: properties.applyMode,
+          allowedValues: ["ALARM_TEMPLATE_FIRST","GROUP_INSTANCE_FIRST"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('applyMode', ros.validateString)(properties.applyMode));
+    if(properties.enableEndTime && (typeof properties.enableEndTime) !== 'object') {
+        errors.collect(ros.propertyValidator('enableEndTime', ros.validateRange)({
+            data: properties.enableEndTime,
+            min: 0,
+            max: 23,
+          }));
+    }
+    errors.collect(ros.propertyValidator('enableEndTime', ros.validateNumber)(properties.enableEndTime));
+    errors.collect(ros.propertyValidator('webhook', ros.validateString)(properties.webhook));
+    errors.collect(ros.propertyValidator('templateIds', ros.requiredValidator)(properties.templateIds));
+    if(properties.templateIds && (Array.isArray(properties.templateIds) || (typeof properties.templateIds) === 'string')) {
+        errors.collect(ros.propertyValidator('templateIds', ros.validateLength)({
+            data: properties.templateIds.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('templateIds', ros.listValidator(ros.validateString))(properties.templateIds));
+    if(properties.enableStartTime && (typeof properties.enableStartTime) !== 'object') {
+        errors.collect(ros.propertyValidator('enableStartTime', ros.validateRange)({
+            data: properties.enableStartTime,
+            min: 0,
+            max: 23,
+          }));
+    }
+    errors.collect(ros.propertyValidator('enableStartTime', ros.validateNumber)(properties.enableStartTime));
+    errors.collect(ros.propertyValidator('groupId', ros.requiredValidator)(properties.groupId));
+    if(properties.groupId && (typeof properties.groupId) !== 'object') {
+        errors.collect(ros.propertyValidator('groupId', ros.validateRange)({
+            data: properties.groupId,
+            min: undefined,
+            max: 9007199254740991,
+          }));
+    }
+    errors.collect(ros.propertyValidator('groupId', ros.validateNumber)(properties.groupId));
+    return errors.wrap('supplied properties not correct for "RosMetricRuleTemplateDeploymentProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CMS::MetricRuleTemplateDeployment` resource
+ *
+ * @param properties - the TypeScript properties of a `RosMetricRuleTemplateDeploymentProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CMS::MetricRuleTemplateDeployment` resource.
+ */
+// @ts-ignore TS6133
+function rosMetricRuleTemplateDeploymentPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosMetricRuleTemplateDeploymentPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'GroupId': ros.numberToRosTemplate(properties.groupId),
+      'TemplateIds': ros.listMapper(ros.stringToRosTemplate)(properties.templateIds),
+      'AppendMode': ros.stringToRosTemplate(properties.appendMode),
+      'ApplyMode': ros.stringToRosTemplate(properties.applyMode),
+      'EnableEndTime': ros.numberToRosTemplate(properties.enableEndTime),
+      'EnableStartTime': ros.numberToRosTemplate(properties.enableStartTime),
+      'NotifyLevel': ros.numberToRosTemplate(properties.notifyLevel),
+      'SilenceTime': ros.numberToRosTemplate(properties.silenceTime),
+      'Webhook': ros.stringToRosTemplate(properties.webhook),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MetricRuleTemplateDeployment`, which is used to apply an alert template to an application group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `MetricRuleTemplateDeployment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-metricruletemplatedeployment
+ */
+export class RosMetricRuleTemplateDeployment extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CMS::MetricRuleTemplateDeployment";
+
+    /**
+     * @Attribute GroupId: The ID of the group that applied the template to.
+     */
+    public readonly attrGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute RuleIds: The IDs of rhe generated rules.
+     */
+    public readonly attrRuleIds: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property groupId: Apply group ID.
+     * For how to get the application group ID, see DescribeMonitorGroups.
+     */
+    public groupId: number | ros.IResolvable;
+
+    /**
+     * @Property templateIds: The ID list of the Alarm Template to be applied.
+     * For how to get the alarm template ID, see DescribeMetricRuleTemplateList.
+     */
+    public templateIds: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property appendMode: Template application policy.Value:
+     * all: Delete all rules created by the alarm template on the selected group, and then create a new alarm rule by the template (default).
+     * append: Delete the rules created by the alarm template on the selected group, and then create a new alarm rule based on the current template.
+     */
+    public appendMode: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property applyMode: How to apply templates.Value:
+     * GROUP_INSTANCE_FIRST: Application grouping instances are preferred.When applying an alarm template, the application grouping instance is preferred. If the instance does not exist in the application grouping, the rules in the template are ignored.
+     * ALARM_TEMPLATE_FIRST: Alarm template instances are preferred.When an alarm template is applied, an alarm rule is created regardless of whether the instance exists in the application group.
+     */
+    public applyMode: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property enableEndTime: The end time when the alarm takes effect.Value range: 0~23, indicating 00:59 to 23:59.
+     */
+    public enableEndTime: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property enableStartTime: The start time when the alarm takes effect.Value range: 0~23, indicating 00:00 to 23:00.
+     */
+    public enableStartTime: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property notifyLevel: Alarm notification method.Value:
+     * 2: Phone + SMS + Email + Wangwang + DingTalk Robot.
+     * 3: SMS + Email + Wangwang + DingTalk Robot.
+     * 4: Wangwang + Dingding Robot.
+     */
+    public notifyLevel: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property silenceTime: Channel silence period.Unit: seconds.Default value: 86400.
+     * Note When the monitoring data continues to exceed the alarm rule threshold, only one alarm notification will be sent during each silence cycle.
+     */
+    public silenceTime: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property webhook: When an alarm occurs, the specified URL address will be called back and a POST request will be sent.
+     */
+    public webhook: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosMetricRuleTemplateDeploymentProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosMetricRuleTemplateDeployment.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrGroupId = this.getAtt('GroupId');
+        this.attrRuleIds = this.getAtt('RuleIds');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.groupId = props.groupId;
+        this.templateIds = props.templateIds;
+        this.appendMode = props.appendMode;
+        this.applyMode = props.applyMode;
+        this.enableEndTime = props.enableEndTime;
+        this.enableStartTime = props.enableStartTime;
+        this.notifyLevel = props.notifyLevel;
+        this.silenceTime = props.silenceTime;
+        this.webhook = props.webhook;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            groupId: this.groupId,
+            templateIds: this.templateIds,
+            appendMode: this.appendMode,
+            applyMode: this.applyMode,
+            enableEndTime: this.enableEndTime,
+            enableStartTime: this.enableStartTime,
+            notifyLevel: this.notifyLevel,
+            silenceTime: this.silenceTime,
+            webhook: this.webhook,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosMetricRuleTemplateDeploymentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosMonitorGroup`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitorgroup
  */

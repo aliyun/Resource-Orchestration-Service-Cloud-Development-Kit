@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::DMS::Instance2`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::DMS::Instance2`, which is used to register a database instance in new Data Management (DMS).
 type RosInstance2 interface {
 	alicloudroscdkcore.RosResource
 	AttrHost() alicloudroscdkcore.IResolvable

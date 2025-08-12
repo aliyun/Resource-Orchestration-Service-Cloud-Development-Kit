@@ -9,18 +9,11 @@ import * as ros from '@alicloud/ros-cdk-core';
 export interface RosInstanceProps {
 
     /**
-     * @Property period: The subscription period of the firewallIf PeriodUnit is month, the valid range is 1, 3, 6
-     * If periodUnit is year, the valid range is 1, 2, 3
+     * @Property payType: The billing method of the firewall instance. Valid values:
+     * PayAsYouGo: pay-as-you-go
+     * Subscription: subscription
      */
-    readonly period: number | ros.IResolvable;
-
-    /**
-     * @Property periodUnit: The unit of the subscription duration. Valid values:
-     * Month
-     * Year
-     *
-     */
-    readonly periodUnit: string | ros.IResolvable;
+    readonly payType: string | ros.IResolvable;
 
     /**
      * @Property antiRansomware: Security Center provides a comprehensive anti-ransomware solution to protect your business. We recommend that you configure a data protection capacity of 50GB for each server.
@@ -72,6 +65,25 @@ export interface RosInstanceProps {
      * @Property maliciousFileDetectionSdk: The configuration assessment feature detects configuration errors and security risks on cloud services from the following dimensions: identity and permission management, security risks in Alibaba Cloud services, and compliance risks. This ensures the security of the running environment of your cloud services.
      */
     readonly maliciousFileDetectionSdk?: boolean | ros.IResolvable;
+
+    /**
+     * @Property period: The subscription period of the firewallIf PeriodUnit is month, the valid range is 1, 3, 6
+     * If periodUnit is year, the valid range is 1, 2, 3
+     */
+    readonly period?: number | ros.IResolvable;
+
+    /**
+     * @Property periodUnit: The unit of the subscription duration. Valid values:
+     * Month
+     * Year
+     *
+     */
+    readonly periodUnit?: string | ros.IResolvable;
+
+    /**
+     * @Property postPayInstanceModule: PayAsYouGo instance module configuration.
+     */
+    readonly postPayInstanceModule?: RosInstance.PostPayInstanceModuleProperty | ros.IResolvable;
 
     /**
      * @Property protectedServers: Authorization is the same as the number of servers you have.
@@ -144,7 +156,6 @@ export interface RosInstanceProps {
 function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('quotaForApplicationProtection', ros.validateNumber)(properties.quotaForApplicationProtection));
     errors.collect(ros.propertyValidator('threatAnalysis', ros.validateBoolean)(properties.threatAnalysis));
     errors.collect(ros.propertyValidator('quotaForMaliciousFileDetectionSdk', ros.validateNumber)(properties.quotaForMaliciousFileDetectionSdk));
     errors.collect(ros.propertyValidator('containerImageScan', ros.validateNumber)(properties.containerImageScan));
@@ -152,7 +163,14 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     errors.collect(ros.propertyValidator('maliciousFileDetectionSdk', ros.validateBoolean)(properties.maliciousFileDetectionSdk));
     errors.collect(ros.propertyValidator('vCore', ros.validateNumber)(properties.vCore));
-    errors.collect(ros.propertyValidator('period', ros.requiredValidator)(properties.period));
+    errors.collect(ros.propertyValidator('vulnerabilityFixing', ros.validateBoolean)(properties.vulnerabilityFixing));
+    errors.collect(ros.propertyValidator('quotaForWebTamperProofing', ros.validateNumber)(properties.quotaForWebTamperProofing));
+    errors.collect(ros.propertyValidator('antiRansomwareManageService', ros.validateBoolean)(properties.antiRansomwareManageService));
+    errors.collect(ros.propertyValidator('configurationAssessment', ros.validateBoolean)(properties.configurationAssessment));
+    errors.collect(ros.propertyValidator('webTamperProtection', ros.validateBoolean)(properties.webTamperProtection));
+    errors.collect(ros.propertyValidator('quotaForConfigurationAssessment', ros.validateNumber)(properties.quotaForConfigurationAssessment));
+    errors.collect(ros.propertyValidator('antiRansomware', ros.validateNumber)(properties.antiRansomware));
+    errors.collect(ros.propertyValidator('quotaForApplicationProtection', ros.validateNumber)(properties.quotaForApplicationProtection));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
           data: properties.period,
@@ -160,11 +178,16 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
-    errors.collect(ros.propertyValidator('vulnerabilityFixing', ros.validateBoolean)(properties.vulnerabilityFixing));
     errors.collect(ros.propertyValidator('quotaForCloudHoneypot', ros.validateNumber)(properties.quotaForCloudHoneypot));
-    errors.collect(ros.propertyValidator('quotaForWebTamperProofing', ros.validateNumber)(properties.quotaForWebTamperProofing));
     errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
-    errors.collect(ros.propertyValidator('antiRansomwareManageService', ros.validateBoolean)(properties.antiRansomwareManageService));
+    errors.collect(ros.propertyValidator('payType', ros.requiredValidator)(properties.payType));
+    if(properties.payType && (typeof properties.payType) !== 'object') {
+        errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
+          data: properties.payType,
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
     if(properties.edition && (typeof properties.edition) !== 'object') {
         errors.collect(ros.propertyValidator('edition', ros.validateAllowedValues)({
           data: properties.edition,
@@ -172,15 +195,11 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('edition', ros.validateString)(properties.edition));
-    errors.collect(ros.propertyValidator('configurationAssessment', ros.validateBoolean)(properties.configurationAssessment));
     errors.collect(ros.propertyValidator('logAnalysis', ros.validateNumber)(properties.logAnalysis));
+    errors.collect(ros.propertyValidator('postPayInstanceModule', RosInstance_PostPayInstanceModulePropertyValidator)(properties.postPayInstanceModule));
     errors.collect(ros.propertyValidator('protectedServers', ros.validateNumber)(properties.protectedServers));
     errors.collect(ros.propertyValidator('cloudHoneypot', ros.validateBoolean)(properties.cloudHoneypot));
-    errors.collect(ros.propertyValidator('webTamperProtection', ros.validateBoolean)(properties.webTamperProtection));
-    errors.collect(ros.propertyValidator('quotaForConfigurationAssessment', ros.validateNumber)(properties.quotaForConfigurationAssessment));
     errors.collect(ros.propertyValidator('quotaForVulnerabilityFixing', ros.validateNumber)(properties.quotaForVulnerabilityFixing));
-    errors.collect(ros.propertyValidator('antiRansomware', ros.validateNumber)(properties.antiRansomware));
-    errors.collect(ros.propertyValidator('periodUnit', ros.requiredValidator)(properties.periodUnit));
     if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
         errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
           data: properties.periodUnit,
@@ -205,8 +224,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      'Period': ros.numberToRosTemplate(properties.period),
-      'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
+      'PayType': ros.stringToRosTemplate(properties.payType),
       'AntiRansomware': ros.numberToRosTemplate(properties.antiRansomware),
       'AntiRansomwareManageService': ros.booleanToRosTemplate(properties.antiRansomwareManageService),
       'AutoPay': ros.booleanToRosTemplate(properties.autoPay),
@@ -217,6 +235,9 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       'Edition': ros.stringToRosTemplate(properties.edition),
       'LogAnalysis': ros.numberToRosTemplate(properties.logAnalysis),
       'MaliciousFileDetectionSDK': ros.booleanToRosTemplate(properties.maliciousFileDetectionSdk),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
+      'PostPayInstanceModule': rosInstancePostPayInstanceModulePropertyToRosTemplate(properties.postPayInstanceModule),
       'ProtectedServers': ros.numberToRosTemplate(properties.protectedServers),
       'QuotaForApplicationProtection': ros.numberToRosTemplate(properties.quotaForApplicationProtection),
       'QuotaForCloudHoneypot': ros.numberToRosTemplate(properties.quotaForCloudHoneypot),
@@ -252,18 +273,11 @@ export class RosInstance extends ros.RosResource {
 
 
     /**
-     * @Property period: The subscription period of the firewallIf PeriodUnit is month, the valid range is 1, 3, 6
-     * If periodUnit is year, the valid range is 1, 2, 3
+     * @Property payType: The billing method of the firewall instance. Valid values:
+     * PayAsYouGo: pay-as-you-go
+     * Subscription: subscription
      */
-    public period: number | ros.IResolvable;
-
-    /**
-     * @Property periodUnit: The unit of the subscription duration. Valid values:
-     * Month
-     * Year
-     *
-     */
-    public periodUnit: string | ros.IResolvable;
+    public payType: string | ros.IResolvable;
 
     /**
      * @Property antiRansomware: Security Center provides a comprehensive anti-ransomware solution to protect your business. We recommend that you configure a data protection capacity of 50GB for each server.
@@ -315,6 +329,25 @@ export class RosInstance extends ros.RosResource {
      * @Property maliciousFileDetectionSdk: The configuration assessment feature detects configuration errors and security risks on cloud services from the following dimensions: identity and permission management, security risks in Alibaba Cloud services, and compliance risks. This ensures the security of the running environment of your cloud services.
      */
     public maliciousFileDetectionSdk: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property period: The subscription period of the firewallIf PeriodUnit is month, the valid range is 1, 3, 6
+     * If periodUnit is year, the valid range is 1, 2, 3
+     */
+    public period: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property periodUnit: The unit of the subscription duration. Valid values:
+     * Month
+     * Year
+     *
+     */
+    public periodUnit: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property postPayInstanceModule: PayAsYouGo instance module configuration.
+     */
+    public postPayInstanceModule: RosInstance.PostPayInstanceModuleProperty | ros.IResolvable | undefined;
 
     /**
      * @Property protectedServers: Authorization is the same as the number of servers you have.
@@ -386,8 +419,7 @@ export class RosInstance extends ros.RosResource {
         this.attrInstanceId = this.getAtt('InstanceId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-        this.period = props.period;
-        this.periodUnit = props.periodUnit;
+        this.payType = props.payType;
         this.antiRansomware = props.antiRansomware;
         this.antiRansomwareManageService = props.antiRansomwareManageService;
         this.autoPay = props.autoPay;
@@ -398,6 +430,9 @@ export class RosInstance extends ros.RosResource {
         this.edition = props.edition;
         this.logAnalysis = props.logAnalysis;
         this.maliciousFileDetectionSdk = props.maliciousFileDetectionSdk;
+        this.period = props.period;
+        this.periodUnit = props.periodUnit;
+        this.postPayInstanceModule = props.postPayInstanceModule;
         this.protectedServers = props.protectedServers;
         this.quotaForApplicationProtection = props.quotaForApplicationProtection;
         this.quotaForCloudHoneypot = props.quotaForCloudHoneypot;
@@ -415,8 +450,7 @@ export class RosInstance extends ros.RosResource {
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
-            period: this.period,
-            periodUnit: this.periodUnit,
+            payType: this.payType,
             antiRansomware: this.antiRansomware,
             antiRansomwareManageService: this.antiRansomwareManageService,
             autoPay: this.autoPay,
@@ -427,6 +461,9 @@ export class RosInstance extends ros.RosResource {
             edition: this.edition,
             logAnalysis: this.logAnalysis,
             maliciousFileDetectionSdk: this.maliciousFileDetectionSdk,
+            period: this.period,
+            periodUnit: this.periodUnit,
+            postPayInstanceModule: this.postPayInstanceModule,
             protectedServers: this.protectedServers,
             quotaForApplicationProtection: this.quotaForApplicationProtection,
             quotaForCloudHoneypot: this.quotaForCloudHoneypot,
@@ -444,4 +481,75 @@ export class RosInstance extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosInstancePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosInstance {
+    /**
+     * @stability external
+     */
+    export interface PostPayInstanceModuleProperty {
+        /**
+         * @Property ctdr: Whether to enable the cloud-native threat detection and response module.
+         */
+        readonly ctdr?: boolean | ros.IResolvable;
+        /**
+         * @Property agentlessDetection: Whether to enable the agentless detection module.
+         */
+        readonly agentlessDetection?: boolean | ros.IResolvable;
+        /**
+         * @Property cloudSecurityPostureManagement: Whether to enable the cloud security posture management module.
+         */
+        readonly cloudSecurityPostureManagement?: boolean | ros.IResolvable;
+        /**
+         * @Property serverlessAssetProtection: Whether to enable the serverless asset protection module.
+         */
+        readonly serverlessAssetProtection?: boolean | ros.IResolvable;
+        /**
+         * @Property vulnerabilityFixing: Whether to enable the vulnerability fixing module.
+         */
+        readonly vulnerabilityFixing?: boolean | ros.IResolvable;
+        /**
+         * @Property hostAndContainerSecurity: Whether to enable the host and container security module.
+         */
+        readonly hostAndContainerSecurity?: boolean | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `PostPayInstanceModuleProperty`
+ *
+ * @param properties - the TypeScript properties of a `PostPayInstanceModuleProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstance_PostPayInstanceModulePropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('ctdr', ros.validateBoolean)(properties.ctdr));
+    errors.collect(ros.propertyValidator('agentlessDetection', ros.validateBoolean)(properties.agentlessDetection));
+    errors.collect(ros.propertyValidator('cloudSecurityPostureManagement', ros.validateBoolean)(properties.cloudSecurityPostureManagement));
+    errors.collect(ros.propertyValidator('serverlessAssetProtection', ros.validateBoolean)(properties.serverlessAssetProtection));
+    errors.collect(ros.propertyValidator('vulnerabilityFixing', ros.validateBoolean)(properties.vulnerabilityFixing));
+    errors.collect(ros.propertyValidator('hostAndContainerSecurity', ros.validateBoolean)(properties.hostAndContainerSecurity));
+    return errors.wrap('supplied properties not correct for "PostPayInstanceModuleProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SAS::Instance.PostPayInstanceModule` resource
+ *
+ * @param properties - the TypeScript properties of a `PostPayInstanceModuleProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SAS::Instance.PostPayInstanceModule` resource.
+ */
+// @ts-ignore TS6133
+function rosInstancePostPayInstanceModulePropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosInstance_PostPayInstanceModulePropertyValidator(properties).assertSuccess();
+    return {
+      'CTDR': ros.booleanToRosTemplate(properties.ctdr),
+      'AgentlessDetection': ros.booleanToRosTemplate(properties.agentlessDetection),
+      'CloudSecurityPostureManagement': ros.booleanToRosTemplate(properties.cloudSecurityPostureManagement),
+      'ServerlessAssetProtection': ros.booleanToRosTemplate(properties.serverlessAssetProtection),
+      'VulnerabilityFixing': ros.booleanToRosTemplate(properties.vulnerabilityFixing),
+      'HostAndContainerSecurity': ros.booleanToRosTemplate(properties.hostAndContainerSecurity),
+    };
 }

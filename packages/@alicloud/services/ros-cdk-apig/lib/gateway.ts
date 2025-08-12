@@ -10,6 +10,16 @@ export { RosGateway as GatewayProperty };
 export interface GatewayProps {
 
     /**
+     * Property gatewayName: The name of the Gateway.
+     */
+    readonly gatewayName: string | ros.IResolvable;
+
+    /**
+     * Property networkAccessConfig: Network Access Configuration.
+     */
+    readonly networkAccessConfig: RosGateway.NetworkAccessConfigProperty | ros.IResolvable;
+
+    /**
      * Property paymentType: The payment type of the gateway. Valid values:
      * * PayAsYouGo
      * * Subscription
@@ -27,9 +37,12 @@ export interface GatewayProps {
     readonly zoneConfig: RosGateway.ZoneConfigProperty | ros.IResolvable;
 
     /**
-     * Property gatewayName: The name of the Gateway.
+     * Property gatewayType: Describes the gateway type, which is categorized into the following two types:
+     * * API: indicates an API gateway
+     * * AI: Indicates an AI gateway.
+     * Default value: API.
      */
-    readonly gatewayName?: string | ros.IResolvable;
+    readonly gatewayType?: string | ros.IResolvable;
 
     /**
      * Property logConfig: Log Configuration.
@@ -37,9 +50,24 @@ export interface GatewayProps {
     readonly logConfig?: RosGateway.LogConfigProperty | ros.IResolvable;
 
     /**
-     * Property networkAccessConfig: Network Access Configuration.
+     * Property period: The purchase time of the gateway. This parameter is only valid when updating PaymentType from PayAsYouGo to Subscription.
      */
-    readonly networkAccessConfig?: RosGateway.NetworkAccessConfigProperty | ros.IResolvable;
+    readonly period?: number | ros.IResolvable;
+
+    /**
+     * Property periodUnit: The unit of the purchase time of the gateway. This parameter is only valid when updating PaymentType from PayAsYouGo to Subscription.
+     */
+    readonly periodUnit?: string | ros.IResolvable;
+
+    /**
+     * Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * Property tags: Tags of The tags of the Gateway..
+     */
+    readonly tags?: RosGateway.TagsProperty[];
 
     /**
      * Property vpc: The VPC associated with the Gateway.
@@ -84,6 +112,11 @@ export interface IGateway extends ros.IResource {
     readonly attrGatewayName: ros.IResolvable | string;
 
     /**
+     * Attribute GatewayType: The type of the gateway.
+     */
+    readonly attrGatewayType: ros.IResolvable | string;
+
+    /**
      * Attribute LoadBalancers: The list of Gateway ingress addresses.
      */
     readonly attrLoadBalancers: ros.IResolvable | string;
@@ -94,6 +127,11 @@ export interface IGateway extends ros.IResource {
     readonly attrPaymentType: ros.IResolvable | string;
 
     /**
+     * Attribute ResourceGroupId: The ID of the resource group.
+     */
+    readonly attrResourceGroupId: ros.IResolvable | string;
+
+    /**
      * Attribute SecurityGroup: The Security Group of the Gateway.
      */
     readonly attrSecurityGroup: ros.IResolvable | string;
@@ -102,6 +140,11 @@ export interface IGateway extends ros.IResource {
      * Attribute Spec: Gateway instance specifications.
      */
     readonly attrSpec: ros.IResolvable | string;
+
+    /**
+     * Attribute Tags: The tags of the Gateway.
+     */
+    readonly attrTags: ros.IResolvable | string;
 
     /**
      * Attribute UpdateTime: Update the timestamp. Unit: milliseconds.
@@ -165,6 +208,11 @@ export class Gateway extends ros.Resource implements IGateway {
     public readonly attrGatewayName: ros.IResolvable | string;
 
     /**
+     * Attribute GatewayType: The type of the gateway.
+     */
+    public readonly attrGatewayType: ros.IResolvable | string;
+
+    /**
      * Attribute LoadBalancers: The list of Gateway ingress addresses.
      */
     public readonly attrLoadBalancers: ros.IResolvable | string;
@@ -175,6 +223,11 @@ export class Gateway extends ros.Resource implements IGateway {
     public readonly attrPaymentType: ros.IResolvable | string;
 
     /**
+     * Attribute ResourceGroupId: The ID of the resource group.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable | string;
+
+    /**
      * Attribute SecurityGroup: The Security Group of the Gateway.
      */
     public readonly attrSecurityGroup: ros.IResolvable | string;
@@ -183,6 +236,11 @@ export class Gateway extends ros.Resource implements IGateway {
      * Attribute Spec: Gateway instance specifications.
      */
     public readonly attrSpec: ros.IResolvable | string;
+
+    /**
+     * Attribute Tags: The tags of the Gateway.
+     */
+    public readonly attrTags: ros.IResolvable | string;
 
     /**
      * Attribute UpdateTime: Update the timestamp. Unit: milliseconds.
@@ -223,12 +281,17 @@ export class Gateway extends ros.Resource implements IGateway {
 
         const rosGateway = new RosGateway(this, id,  {
             networkAccessConfig: props.networkAccessConfig,
+            resourceGroupId: props.resourceGroupId,
+            vpc: props.vpc,
+            period: props.period,
+            gatewayType: props.gatewayType,
             vSwitch: props.vSwitch,
             zoneConfig: props.zoneConfig,
-            vpc: props.vpc,
             paymentType: props.paymentType,
             gatewayName: props.gatewayName,
             spec: props.spec,
+            tags: props.tags,
+            periodUnit: props.periodUnit,
             logConfig: props.logConfig,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosGateway;
@@ -237,10 +300,13 @@ export class Gateway extends ros.Resource implements IGateway {
         this.attrExpireTime = rosGateway.attrExpireTime;
         this.attrGatewayId = rosGateway.attrGatewayId;
         this.attrGatewayName = rosGateway.attrGatewayName;
+        this.attrGatewayType = rosGateway.attrGatewayType;
         this.attrLoadBalancers = rosGateway.attrLoadBalancers;
         this.attrPaymentType = rosGateway.attrPaymentType;
+        this.attrResourceGroupId = rosGateway.attrResourceGroupId;
         this.attrSecurityGroup = rosGateway.attrSecurityGroup;
         this.attrSpec = rosGateway.attrSpec;
+        this.attrTags = rosGateway.attrTags;
         this.attrUpdateTime = rosGateway.attrUpdateTime;
         this.attrVSwitch = rosGateway.attrVSwitch;
         this.attrVersion = rosGateway.attrVersion;

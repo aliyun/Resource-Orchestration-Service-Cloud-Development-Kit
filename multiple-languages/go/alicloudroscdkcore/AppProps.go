@@ -20,8 +20,11 @@ type AppProps struct {
 	Context *map[string]*string `field:"optional" json:"context" yaml:"context"`
 	// The output directory into which to emit synthesized artifacts.
 	//
-	// Default - If this value is _not_ set, considers the environment variable 'CDK_OUTDIR'.
-	//             If 'CDK_OUTDIR' is not defined, uses a temp directory.
+	// You should never need to set this value. By default, the value you pass to
+	// the CLI's `--output` flag will be used, and if you change it to a different
+	// directory the CLI will fail to pick up the generated Cloud Assembly.
+	//
+	// This property is intended for internal and testing use.
 	Outdir *string `field:"optional" json:"outdir" yaml:"outdir"`
 	// Include runtime versioning information.
 	RuntimeInfo *bool `field:"optional" json:"runtimeInfo" yaml:"runtimeInfo"`

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.datahub;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-datahub-topic
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:03.619Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.319Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.datahub.$Module.class, fqn = "@alicloud/ros-cdk-datahub.TopicProps")
 @software.amazon.jsii.Jsii.Proxy(TopicProps.Jsii$Proxy.class)
 public interface TopicProps extends software.amazon.jsii.JsiiSerializable {

@@ -3,6 +3,256 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosLoadBalancer`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nlb-loadbalancer
+ */
+export interface RosLoadBalancerProps {
+
+    /**
+     * @Property loadBalancerId: ID of the LoadBalancer.
+     */
+    readonly loadBalancerId?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosLoadBalancerProps`
+ *
+ * @param properties - the TypeScript properties of a `RosLoadBalancerProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('loadBalancerId', ros.validateString)(properties.loadBalancerId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
+    return errors.wrap('supplied properties not correct for "RosLoadBalancerProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::NLB::LoadBalancer` resource
+ *
+ * @param properties - the TypeScript properties of a `RosLoadBalancerProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::NLB::LoadBalancer` resource.
+ */
+// @ts-ignore TS6133
+function rosLoadBalancerPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosLoadBalancerPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'LoadBalancerId': ros.stringToRosTemplate(properties.loadBalancerId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::NLB::LoadBalancer`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancer` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nlb-loadbalancer
+ */
+export class RosLoadBalancer extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::NLB::LoadBalancer";
+
+    /**
+     * @Attribute AddressIpVersion: The protocol version.
+     */
+    public readonly attrAddressIpVersion: ros.IResolvable;
+
+    /**
+     * @Attribute AddressType: The IPv4 network type of the NLB instance.
+     */
+    public readonly attrAddressType: ros.IResolvable;
+
+    /**
+     * @Attribute BandwidthPackageId: The ID of the EIP bandwidth plan.
+     */
+    public readonly attrBandwidthPackageId: ros.IResolvable;
+
+    /**
+     * @Attribute Cps: The maximum number of new connections per second supported by the NLB instance in each zone (virtual IP address).
+     */
+    public readonly attrCps: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: The time when the NLB instance was created.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute CrossZoneEnabled: Indicates whether the NLB instance is accessible across zones.
+     */
+    public readonly attrCrossZoneEnabled: ros.IResolvable;
+
+    /**
+     * @Attribute DNSName: The domain name of the NLB instance.
+     */
+    public readonly attrDnsName: ros.IResolvable;
+
+    /**
+     * @Attribute DeletionProtectionConfig: The configuration of the deletion protection feature.
+     */
+    public readonly attrDeletionProtectionConfig: ros.IResolvable;
+
+    /**
+     * @Attribute Ipv6AddressType: The IPv6 network type of the NLB instance.
+     */
+    public readonly attrIpv6AddressType: ros.IResolvable;
+
+    /**
+     * @Attribute LoadBalancerBillingConfig: The billing information of the NLB instance.
+     */
+    public readonly attrLoadBalancerBillingConfig: ros.IResolvable;
+
+    /**
+     * @Attribute LoadBalancerBusinessStatus: The status of workloads on the NLB instance.
+     */
+    public readonly attrLoadBalancerBusinessStatus: ros.IResolvable;
+
+    /**
+     * @Attribute LoadBalancerId: ID of the LoadBalancer.
+     */
+    public readonly attrLoadBalancerId: ros.IResolvable;
+
+    /**
+     * @Attribute LoadBalancerName: The NLB instance name.
+     */
+    public readonly attrLoadBalancerName: ros.IResolvable;
+
+    /**
+     * @Attribute LoadBalancerStatus: The NLB instance status.
+     */
+    public readonly attrLoadBalancerStatus: ros.IResolvable;
+
+    /**
+     * @Attribute LoadBalancerType: The type of the Server Load Balancer (SLB) instance. Set the value to network, which specifies NLB.
+     */
+    public readonly attrLoadBalancerType: ros.IResolvable;
+
+    /**
+     * @Attribute ModificationProtectionConfig: The configuration of the configuration read-only mode.
+     */
+    public readonly attrModificationProtectionConfig: ros.IResolvable;
+
+    /**
+     * @Attribute OperationLocks: The information about the locked NLB instance.
+     */
+    public readonly attrOperationLocks: ros.IResolvable;
+
+    /**
+     * @Attribute RegionId: The region ID of the NLB instance.
+     */
+    public readonly attrRegionId: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of the resource group.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute SecurityGroupIds: The ID of the security group associated with the NLB instance.
+     */
+    public readonly attrSecurityGroupIds: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: The tags of the resource.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    /**
+     * @Attribute VpcId: The VPC ID of the NLB instance.
+     */
+    public readonly attrVpcId: ros.IResolvable;
+
+    /**
+     * @Attribute ZoneMappings: The list of zones and vSwitches in the zones.
+     */
+    public readonly attrZoneMappings: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property loadBalancerId: ID of the LoadBalancer.
+     */
+    public loadBalancerId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosLoadBalancerProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosLoadBalancer.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAddressIpVersion = this.getAtt('AddressIpVersion');
+        this.attrAddressType = this.getAtt('AddressType');
+        this.attrBandwidthPackageId = this.getAtt('BandwidthPackageId');
+        this.attrCps = this.getAtt('Cps');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrCrossZoneEnabled = this.getAtt('CrossZoneEnabled');
+        this.attrDnsName = this.getAtt('DNSName');
+        this.attrDeletionProtectionConfig = this.getAtt('DeletionProtectionConfig');
+        this.attrIpv6AddressType = this.getAtt('Ipv6AddressType');
+        this.attrLoadBalancerBillingConfig = this.getAtt('LoadBalancerBillingConfig');
+        this.attrLoadBalancerBusinessStatus = this.getAtt('LoadBalancerBusinessStatus');
+        this.attrLoadBalancerId = this.getAtt('LoadBalancerId');
+        this.attrLoadBalancerName = this.getAtt('LoadBalancerName');
+        this.attrLoadBalancerStatus = this.getAtt('LoadBalancerStatus');
+        this.attrLoadBalancerType = this.getAtt('LoadBalancerType');
+        this.attrModificationProtectionConfig = this.getAtt('ModificationProtectionConfig');
+        this.attrOperationLocks = this.getAtt('OperationLocks');
+        this.attrRegionId = this.getAtt('RegionId');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrSecurityGroupIds = this.getAtt('SecurityGroupIds');
+        this.attrTags = this.getAtt('Tags');
+        this.attrVpcId = this.getAtt('VpcId');
+        this.attrZoneMappings = this.getAtt('ZoneMappings');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.loadBalancerId = props.loadBalancerId;
+        this.refreshOptions = props.refreshOptions;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            loadBalancerId: this.loadBalancerId,
+            refreshOptions: this.refreshOptions,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosLoadBalancerPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosLoadBalancers`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nlb-loadbalancers
  */
@@ -179,7 +429,7 @@ function rosLoadBalancersPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::NLB::LoadBalancers`, which is used to query the basic information about created Network Load Balancer (NLB) instances.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::NLB::LoadBalancers`.
  * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancers` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nlb-loadbalancers
  */

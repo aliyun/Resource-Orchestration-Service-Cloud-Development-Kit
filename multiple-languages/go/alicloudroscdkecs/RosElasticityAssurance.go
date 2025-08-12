@@ -13,6 +13,10 @@ import (
 type RosElasticityAssurance interface {
 	alicloudroscdkcore.RosResource
 	AttrPrivatePoolOptionsId() alicloudroscdkcore.IResolvable
+	AutoRenew() interface{}
+	SetAutoRenew(val interface{})
+	AutoRenewPeriod() interface{}
+	SetAutoRenewPeriod(val interface{})
 	// Returns: the stack trace of the point where this Resource was created from, sourced
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
@@ -23,6 +27,8 @@ type RosElasticityAssurance interface {
 	SetEnableResourcePropertyConstraint(val *bool)
 	InstanceAmount() interface{}
 	SetInstanceAmount(val interface{})
+	InstanceCpuCoreCount() interface{}
+	SetInstanceCpuCoreCount(val interface{})
 	InstanceTypes() interface{}
 	SetInstanceTypes(val interface{})
 	// The logical ID for this stack element.
@@ -43,6 +49,8 @@ type RosElasticityAssurance interface {
 	SetPeriodUnit(val interface{})
 	PrivatePoolOptions() interface{}
 	SetPrivatePoolOptions(val interface{})
+	RecurrenceRules() interface{}
+	SetRecurrenceRules(val interface{})
 	// Return a string that will be resolved to a RosTemplate `{ Ref }` for this element.
 	//
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
@@ -199,6 +207,26 @@ func (j *jsiiProxy_RosElasticityAssurance) AttrPrivatePoolOptionsId() alicloudro
 	return returns
 }
 
+func (j *jsiiProxy_RosElasticityAssurance) AutoRenew() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"autoRenew",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosElasticityAssurance) AutoRenewPeriod() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"autoRenewPeriod",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosElasticityAssurance) CreationStack() *[]*string {
 	var returns *[]*string
 	_jsii_.Get(
@@ -234,6 +262,16 @@ func (j *jsiiProxy_RosElasticityAssurance) InstanceAmount() interface{} {
 	_jsii_.Get(
 		j,
 		"instanceAmount",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosElasticityAssurance) InstanceCpuCoreCount() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"instanceCpuCoreCount",
 		&returns,
 	)
 	return returns
@@ -294,6 +332,16 @@ func (j *jsiiProxy_RosElasticityAssurance) PrivatePoolOptions() interface{} {
 	_jsii_.Get(
 		j,
 		"privatePoolOptions",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosElasticityAssurance) RecurrenceRules() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"recurrenceRules",
 		&returns,
 	)
 	return returns
@@ -427,6 +475,28 @@ func NewRosElasticityAssurance_Override(r RosElasticityAssurance, scope alicloud
 	)
 }
 
+func (j *jsiiProxy_RosElasticityAssurance)SetAutoRenew(val interface{}) {
+	if err := j.validateSetAutoRenewParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"autoRenew",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosElasticityAssurance)SetAutoRenewPeriod(val interface{}) {
+	if err := j.validateSetAutoRenewPeriodParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"autoRenewPeriod",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosElasticityAssurance)SetDescription(val interface{}) {
 	if err := j.validateSetDescriptionParameters(val); err != nil {
 		panic(err)
@@ -456,6 +526,17 @@ func (j *jsiiProxy_RosElasticityAssurance)SetInstanceAmount(val interface{}) {
 	_jsii_.Set(
 		j,
 		"instanceAmount",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosElasticityAssurance)SetInstanceCpuCoreCount(val interface{}) {
+	if err := j.validateSetInstanceCpuCoreCountParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"instanceCpuCoreCount",
 		val,
 	)
 }
@@ -500,6 +581,17 @@ func (j *jsiiProxy_RosElasticityAssurance)SetPrivatePoolOptions(val interface{})
 	_jsii_.Set(
 		j,
 		"privatePoolOptions",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosElasticityAssurance)SetRecurrenceRules(val interface{}) {
+	if err := j.validateSetRecurrenceRulesParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"recurrenceRules",
 		val,
 	)
 }

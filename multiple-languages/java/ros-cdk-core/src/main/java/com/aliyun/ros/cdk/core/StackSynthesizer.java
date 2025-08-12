@@ -8,7 +8,7 @@ package com.aliyun.ros.cdk.core;
  * access to functions that are otherwise &#64;_internal to the framework
  * and could not be accessed by external implementors.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:00.766Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:43.022Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.StackSynthesizer")
 public abstract class StackSynthesizer extends software.amazon.jsii.JsiiObject implements com.aliyun.ros.cdk.core.IStackSynthesizer {
 

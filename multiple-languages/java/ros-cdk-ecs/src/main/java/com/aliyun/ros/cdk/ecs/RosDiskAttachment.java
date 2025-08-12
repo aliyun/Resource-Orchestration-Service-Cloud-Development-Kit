@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ECS::DiskAttachment</code>, which is used to attach a disk to an ECS instance.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ECS::DiskAttachment</code>, which is used to attach a disk to an Elastic Compute Service (ECS) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:04.895Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.411Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosDiskAttachment")
 public class RosDiskAttachment extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -109,6 +109,24 @@ public class RosDiskAttachment extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getBootable() {
+        return software.amazon.jsii.Kernel.get(this, "bootable", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setBootable(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "bootable", value);
+    }
+
+    /**
+     */
+    public void setBootable(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "bootable", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getDeleteAutoSnapshot() {
         return software.amazon.jsii.Kernel.get(this, "deleteAutoSnapshot", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -159,6 +177,78 @@ public class RosDiskAttachment extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setDevice(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "device", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getForce() {
+        return software.amazon.jsii.Kernel.get(this, "force", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setForce(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "force", value);
+    }
+
+    /**
+     */
+    public void setForce(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "force", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInstanceType() {
+        return software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setInstanceType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "instanceType", value);
+    }
+
+    /**
+     */
+    public void setInstanceType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "instanceType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getKeyPairName() {
+        return software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setKeyPairName(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "keyPairName", value);
+    }
+
+    /**
+     */
+    public void setKeyPairName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "keyPairName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPassword() {
+        return software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPassword(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "password", value);
+    }
+
+    /**
+     */
+    public void setPassword(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "password", value);
     }
 
     /**
@@ -223,6 +313,23 @@ public class RosDiskAttachment extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param bootable This parameter is required.
+         */
+        public Builder bootable(final java.lang.Boolean bootable) {
+            this.props.bootable(bootable);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param bootable This parameter is required.
+         */
+        public Builder bootable(final com.aliyun.ros.cdk.core.IResolvable bootable) {
+            this.props.bootable(bootable);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param deleteAutoSnapshot This parameter is required.
          */
         public Builder deleteAutoSnapshot(final java.lang.Boolean deleteAutoSnapshot) {
@@ -269,6 +376,74 @@ public class RosDiskAttachment extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder device(final com.aliyun.ros.cdk.core.IResolvable device) {
             this.props.device(device);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param force This parameter is required.
+         */
+        public Builder force(final java.lang.Boolean force) {
+            this.props.force(force);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param force This parameter is required.
+         */
+        public Builder force(final com.aliyun.ros.cdk.core.IResolvable force) {
+            this.props.force(force);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param instanceType This parameter is required.
+         */
+        public Builder instanceType(final java.lang.String instanceType) {
+            this.props.instanceType(instanceType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param instanceType This parameter is required.
+         */
+        public Builder instanceType(final com.aliyun.ros.cdk.core.IResolvable instanceType) {
+            this.props.instanceType(instanceType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param keyPairName This parameter is required.
+         */
+        public Builder keyPairName(final java.lang.String keyPairName) {
+            this.props.keyPairName(keyPairName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param keyPairName This parameter is required.
+         */
+        public Builder keyPairName(final com.aliyun.ros.cdk.core.IResolvable keyPairName) {
+            this.props.keyPairName(keyPairName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param password This parameter is required.
+         */
+        public Builder password(final java.lang.String password) {
+            this.props.password(password);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param password This parameter is required.
+         */
+        public Builder password(final com.aliyun.ros.cdk.core.IResolvable password) {
+            this.props.password(password);
             return this;
         }
 

@@ -35,7 +35,7 @@ export interface IJobMonitorRules extends ros.IResource {
     readonly attrJobMonitorRules: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::DTS::JobMonitorRules`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::DTS::JobMonitorRules`, which is used to query the alert rules of Data Transmission Service (DTS) tasks.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosJobMonitorRules`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dts-jobmonitorrules
  */

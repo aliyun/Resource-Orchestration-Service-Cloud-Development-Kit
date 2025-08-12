@@ -93,6 +93,8 @@ type RosPrepayInstance interface {
 	SetPeriodUnit(val interface{})
 	ProductType() interface{}
 	SetProductType(val interface{})
+	ReadOnlyCount() interface{}
+	SetReadOnlyCount(val interface{})
 	// Return a string that will be resolved to a RosTemplate `{ Ref }` for this element.
 	//
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
@@ -117,6 +119,8 @@ type RosPrepayInstance interface {
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
 	Stack() alicloudroscdkcore.Stack
+	SubscriptionDeletionForce() interface{}
+	SetSubscriptionDeletionForce(val interface{})
 	Tags() *[]*RosPrepayInstance_TagsProperty
 	SetTags(val *[]*RosPrepayInstance_TagsProperty)
 	TairConfig() interface{}
@@ -763,6 +767,16 @@ func (j *jsiiProxy_RosPrepayInstance) ProductType() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosPrepayInstance) ReadOnlyCount() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"readOnlyCount",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosPrepayInstance) Ref() *string {
 	var returns *string
 	_jsii_.Get(
@@ -858,6 +872,16 @@ func (j *jsiiProxy_RosPrepayInstance) Stack() alicloudroscdkcore.Stack {
 	_jsii_.Get(
 		j,
 		"stack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosPrepayInstance) SubscriptionDeletionForce() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"subscriptionDeletionForce",
 		&returns,
 	)
 	return returns
@@ -1148,6 +1172,17 @@ func (j *jsiiProxy_RosPrepayInstance)SetProductType(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosPrepayInstance)SetReadOnlyCount(val interface{}) {
+	if err := j.validateSetReadOnlyCountParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"readOnlyCount",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosPrepayInstance)SetResourceGroupId(val interface{}) {
 	if err := j.validateSetResourceGroupIdParameters(val); err != nil {
 		panic(err)
@@ -1199,6 +1234,17 @@ func (j *jsiiProxy_RosPrepayInstance)SetSslEnabled(val interface{}) {
 	_jsii_.Set(
 		j,
 		"sslEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosPrepayInstance)SetSubscriptionDeletionForce(val interface{}) {
+	if err := j.validateSetSubscriptionDeletionForceParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"subscriptionDeletionForce",
 		val,
 	)
 }

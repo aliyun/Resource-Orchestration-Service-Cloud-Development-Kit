@@ -84,6 +84,10 @@ func validateRosDiskAttachment_IsRosResourceParameters(construct alicloudroscdkc
 	return nil
 }
 
+func (j *jsiiProxy_RosDiskAttachment) validateSetBootableParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosDiskAttachment) validateSetDeleteAutoSnapshotParameters(val interface{}) error {
 	return nil
 }
@@ -104,7 +108,23 @@ func (j *jsiiProxy_RosDiskAttachment) validateSetEnableResourcePropertyConstrain
 	return nil
 }
 
+func (j *jsiiProxy_RosDiskAttachment) validateSetForceParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosDiskAttachment) validateSetInstanceIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosDiskAttachment) validateSetInstanceTypeParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosDiskAttachment) validateSetKeyPairNameParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosDiskAttachment) validateSetPasswordParameters(val interface{}) error {
 	return nil
 }
 

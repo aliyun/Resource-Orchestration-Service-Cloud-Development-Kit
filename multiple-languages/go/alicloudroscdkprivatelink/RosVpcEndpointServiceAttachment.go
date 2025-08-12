@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::PrivateLink::VpcEndpointServiceAttachment`, which is used to add a service resource to an endpoint service.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::PrivateLink::VpcEndpointServiceAttachment`.
 type RosVpcEndpointServiceAttachment interface {
 	alicloudroscdkcore.RosResource
 	AttrResourceId() alicloudroscdkcore.IResolvable
@@ -58,6 +58,8 @@ type RosVpcEndpointServiceAttachment interface {
 	// Resources that expose mutable properties should override this function to
 	// collect and return the properties object for this resource.
 	UpdatedProperites() *map[string]interface{}
+	ZoneId() interface{}
+	SetZoneId(val interface{})
 	AddCondition(con alicloudroscdkcore.RosCondition)
 	AddCount(count interface{})
 	// Syntactic sugar for `addOverride(path, undefined)`.
@@ -337,6 +339,16 @@ func (j *jsiiProxy_RosVpcEndpointServiceAttachment) UpdatedProperites() *map[str
 	return returns
 }
 
+func (j *jsiiProxy_RosVpcEndpointServiceAttachment) ZoneId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"zoneId",
+		&returns,
+	)
+	return returns
+}
+
 
 func NewRosVpcEndpointServiceAttachment(scope alicloudroscdkcore.Construct, id *string, props *RosVpcEndpointServiceAttachmentProps, enableResourcePropertyConstraint *bool) RosVpcEndpointServiceAttachment {
 	_init_.Initialize()
@@ -405,6 +417,17 @@ func (j *jsiiProxy_RosVpcEndpointServiceAttachment)SetServiceId(val interface{})
 	_jsii_.Set(
 		j,
 		"serviceId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosVpcEndpointServiceAttachment)SetZoneId(val interface{}) {
+	if err := j.validateSetZoneIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"zoneId",
 		val,
 	)
 }

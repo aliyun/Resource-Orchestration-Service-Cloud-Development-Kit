@@ -9,12 +9,14 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::DiskAttachment`, which is used to attach a disk to an ECS instance.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::DiskAttachment`, which is used to attach a disk to an Elastic Compute Service (ECS) instance.
 type RosDiskAttachment interface {
 	alicloudroscdkcore.RosResource
 	AttrDevice() alicloudroscdkcore.IResolvable
 	AttrDiskId() alicloudroscdkcore.IResolvable
 	AttrStatus() alicloudroscdkcore.IResolvable
+	Bootable() interface{}
+	SetBootable(val interface{})
 	// Returns: the stack trace of the point where this Resource was created from, sourced
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
@@ -29,8 +31,14 @@ type RosDiskAttachment interface {
 	SetDiskId(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	Force() interface{}
+	SetForce(val interface{})
 	InstanceId() interface{}
 	SetInstanceId(val interface{})
+	InstanceType() interface{}
+	SetInstanceType(val interface{})
+	KeyPairName() interface{}
+	SetKeyPairName(val interface{})
 	// The logical ID for this stack element.
 	//
 	// The logical ID of the element
@@ -43,6 +51,8 @@ type RosDiskAttachment interface {
 	LogicalId() *string
 	// The construct tree node associated with this construct.
 	Node() alicloudroscdkcore.ConstructNode
+	Password() interface{}
+	SetPassword(val interface{})
 	// Return a string that will be resolved to a RosTemplate `{ Ref }` for this element.
 	//
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
@@ -211,6 +221,16 @@ func (j *jsiiProxy_RosDiskAttachment) AttrStatus() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
+func (j *jsiiProxy_RosDiskAttachment) Bootable() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"bootable",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosDiskAttachment) CreationStack() *[]*string {
 	var returns *[]*string
 	_jsii_.Get(
@@ -271,11 +291,41 @@ func (j *jsiiProxy_RosDiskAttachment) EnableResourcePropertyConstraint() *bool {
 	return returns
 }
 
+func (j *jsiiProxy_RosDiskAttachment) Force() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"force",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosDiskAttachment) InstanceId() interface{} {
 	var returns interface{}
 	_jsii_.Get(
 		j,
 		"instanceId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDiskAttachment) InstanceType() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"instanceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDiskAttachment) KeyPairName() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"keyPairName",
 		&returns,
 	)
 	return returns
@@ -296,6 +346,16 @@ func (j *jsiiProxy_RosDiskAttachment) Node() alicloudroscdkcore.ConstructNode {
 	_jsii_.Get(
 		j,
 		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDiskAttachment) Password() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"password",
 		&returns,
 	)
 	return returns
@@ -389,6 +449,17 @@ func NewRosDiskAttachment_Override(r RosDiskAttachment, scope alicloudroscdkcore
 	)
 }
 
+func (j *jsiiProxy_RosDiskAttachment)SetBootable(val interface{}) {
+	if err := j.validateSetBootableParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"bootable",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosDiskAttachment)SetDeleteAutoSnapshot(val interface{}) {
 	if err := j.validateSetDeleteAutoSnapshotParameters(val); err != nil {
 		panic(err)
@@ -444,6 +515,17 @@ func (j *jsiiProxy_RosDiskAttachment)SetEnableResourcePropertyConstraint(val *bo
 	)
 }
 
+func (j *jsiiProxy_RosDiskAttachment)SetForce(val interface{}) {
+	if err := j.validateSetForceParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"force",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosDiskAttachment)SetInstanceId(val interface{}) {
 	if err := j.validateSetInstanceIdParameters(val); err != nil {
 		panic(err)
@@ -451,6 +533,39 @@ func (j *jsiiProxy_RosDiskAttachment)SetInstanceId(val interface{}) {
 	_jsii_.Set(
 		j,
 		"instanceId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDiskAttachment)SetInstanceType(val interface{}) {
+	if err := j.validateSetInstanceTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"instanceType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDiskAttachment)SetKeyPairName(val interface{}) {
+	if err := j.validateSetKeyPairNameParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"keyPairName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDiskAttachment)SetPassword(val interface{}) {
+	if err := j.validateSetPasswordParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"password",
 		val,
 	)
 }

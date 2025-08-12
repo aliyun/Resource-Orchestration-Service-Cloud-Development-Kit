@@ -64,7 +64,7 @@ function rosJobMonitorRulePropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::DTS::JobMonitorRule`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::DTS::JobMonitorRule`, which type is used to query an alert rule of a Data Transmission Service (DTS) task.
  * @Note This class does not contain additional functions, so it is recommended to use the `JobMonitorRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dts-jobmonitorrule
  */
@@ -211,7 +211,7 @@ function rosJobMonitorRulesPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::DTS::JobMonitorRules`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::DTS::JobMonitorRules`, which is used to query the alert rules of Data Transmission Service (DTS) tasks.
  * @Note This class does not contain additional functions, so it is recommended to use the `JobMonitorRules` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dts-jobmonitorrules
  */
@@ -453,7 +453,7 @@ function rosMigrationJobPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::DTS::MigrationJob`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::DTS::MigrationJob`, which is used to query the execution information about a data migration task in Data Transmission Service (DTS).
  * @Note This class does not contain additional functions, so it is recommended to use the `MigrationJob` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dts-migrationjob
  */
@@ -613,7 +613,7 @@ function rosMigrationJobsPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::DTS::MigrationJobs`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::DTS::MigrationJobs`, which is used to query the information about data migration tasks in Data Transmission Service (DTS).
  * @Note This class does not contain additional functions, so it is recommended to use the `MigrationJobs` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dts-migrationjobs
  */
@@ -738,7 +738,7 @@ function rosSynchronizationJobPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::DTS::SynchronizationJob`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::DTS::SynchronizationJob`, which is used to query the execution information about a data synchronization task in Data Transmission Service (DTS).
  * @Note This class does not contain additional functions, so it is recommended to use the `SynchronizationJob` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dts-synchronizationjob
  */
@@ -898,7 +898,7 @@ function rosSynchronizationJobsPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::DTS::SynchronizationJobs`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::DTS::SynchronizationJobs`, which is used to query the information about data synchronization tasks in Data Transmission Service (DTS).
  * @Note This class does not contain additional functions, so it is recommended to use the `SynchronizationJobs` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dts-synchronizationjobs
  */

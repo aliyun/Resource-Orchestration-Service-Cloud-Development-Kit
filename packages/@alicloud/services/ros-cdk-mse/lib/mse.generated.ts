@@ -93,6 +93,16 @@ export interface RosClusterProps {
     readonly requestPars?: string | ros.IResolvable;
 
     /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosCluster.TagsProperty[];
+
+    /**
      * @Property vpcId: vpc id
      */
     readonly vpcId?: string | ros.IResolvable;
@@ -136,6 +146,7 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('connectionType', ros.validateString)(properties.connectionType));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('aclEntryList', ros.listValidator(ros.validateString))(properties.aclEntryList));
     errors.collect(ros.propertyValidator('clusterSpecification', ros.requiredValidator)(properties.clusterSpecification));
     if(properties.clusterSpecification && (typeof properties.clusterSpecification) !== 'object') {
@@ -219,6 +230,14 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('netType', ros.validateString)(properties.netType));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosCluster_TagsPropertyValidator))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosClusterProps"');
 }
 
@@ -251,13 +270,15 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
       'PubNetworkFlow': ros.stringToRosTemplate(properties.pubNetworkFlow),
       'PubSlbSpecification': ros.stringToRosTemplate(properties.pubSlbSpecification),
       'RequestPars': ros.stringToRosTemplate(properties.requestPars),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.listMapper(rosClusterTagsPropertyToRosTemplate)(properties.tags),
       'VpcId': ros.stringToRosTemplate(properties.vpcId),
       'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
     };
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Cluster`, which is used to create a cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Cluster`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Cluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-cluster
  */
@@ -524,6 +545,16 @@ Optional parameters:
     public requestPars: string | ros.IResolvable | undefined;
 
     /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosCluster.TagsProperty[] | undefined;
+
+    /**
      * @Property vpcId: vpc id
      */
     public vpcId: string | ros.IResolvable | undefined;
@@ -589,6 +620,8 @@ Optional parameters:
         this.pubNetworkFlow = props.pubNetworkFlow;
         this.pubSlbSpecification = props.pubSlbSpecification;
         this.requestPars = props.requestPars;
+        this.resourceGroupId = props.resourceGroupId;
+        this.tags = props.tags;
         this.vpcId = props.vpcId;
         this.vSwitchId = props.vSwitchId;
     }
@@ -611,6 +644,8 @@ Optional parameters:
             pubNetworkFlow: this.pubNetworkFlow,
             pubSlbSpecification: this.pubSlbSpecification,
             requestPars: this.requestPars,
+            resourceGroupId: this.resourceGroupId,
+            tags: this.tags,
             vpcId: this.vpcId,
             vSwitchId: this.vSwitchId,
         };
@@ -618,6 +653,54 @@ Optional parameters:
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosClusterPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosCluster {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosCluster_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MSE::Cluster.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MSE::Cluster.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosCluster_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -688,7 +771,7 @@ function rosEngineNamespacePropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::EngineNamespace`, which is used to create a namespace for an engine.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::EngineNamespace`.
  * @Note This class does not contain additional functions, so it is recommended to use the `EngineNamespace` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-enginenamespace
  */
@@ -867,7 +950,7 @@ function rosGatewayPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Gateway`, which is used to add a gateway.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Gateway`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Gateway` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-gateway
  */
@@ -1007,6 +1090,660 @@ export class RosGateway extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosGateway2`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-gateway2
+ */
+export interface RosGateway2Props {
+
+    /**
+     * @Property vpcId: The ID of the vpc.
+     */
+    readonly vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property acceptLanguage: The language of the response. Valid values:
+     * zh: Chinese
+     * en: English
+     */
+    readonly acceptLanguage?: string | ros.IResolvable;
+
+    /**
+     * @Property chargeType: The billing method you specify when you purchase an normal instance.
+     * Valid values:
+     * PREPAY: subscription
+     * POSTPAY: pay-as-you-go
+     */
+    readonly chargeType?: string | ros.IResolvable;
+
+    /**
+     * @Property clbNetworkType: The network type of the purchased Classic Load Balancer (CLB) instance that is billed based on LCUs.
+     * pubnet: Internet
+     * privatenet: private network
+     * privatepubnet: Internet and private network
+     */
+    readonly clbNetworkType?: string | ros.IResolvable;
+
+    /**
+     * @Property enableHardwareAcceleration: Specifies whether to activate Tracing Analysis.
+     */
+    readonly enableHardwareAcceleration?: boolean | ros.IResolvable;
+
+    /**
+     * @Property enableSls: Specifies whether to activate Log Service.
+     */
+    readonly enableSls?: boolean | ros.IResolvable;
+
+    /**
+     * @Property enableXtrace: Whether to activate Tracing Analysis.
+     */
+    readonly enableXtrace?: boolean | ros.IResolvable;
+
+    /**
+     * @Property enterpriseSecurityGroup: Specifies whether to enable hardware acceleration.
+     */
+    readonly enterpriseSecurityGroup?: boolean | ros.IResolvable;
+
+    /**
+     * @Property internetSlb: Public network SLB specifications (for normal instances).
+     * Simple type (slb.s1.small)
+     * Standard type 1 (slb.s2.smal)
+     * Standard type I(slb.s2.medium)
+     * Advanced Type 1 (slb.s3.small)
+     * Advanced I(slb.s3.medium)
+     * Super strong type I (slb.s3.large)
+     * Description Traditional example: When creating, you can only choose one purchasing agent in NLB, CLB billed by LCU, and CLB specifications. Serverless example: When creating, you can only choose one purchasing agent in NLB, CLB billed by LCU
+     */
+    readonly internetSlb?: string | ros.IResolvable;
+
+    /**
+     * @Property managedEntryNetworkType: Gateway entrance type (applicable to the mse_premium instance)
+     * pubnet: public network
+     * privatenet: privatenet
+     * privatepubnet: public + private network
+     */
+    readonly managedEntryNetworkType?: string | ros.IResolvable;
+
+    /**
+     * @Property mserVersion: The MSE gateway instance type. Valid values:
+     * mse_pro: normal instance
+     * mse_premium: professional normal instancemse_serverless: serverless instance
+     */
+    readonly mserVersion?: string | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the created gateway.
+     */
+    readonly name?: string | ros.IResolvable;
+
+    /**
+     * @Property nlbNetworkType: The network type of the Network Load Balancer (NLB) instance you specify when you purchase a serverless instance.
+     * pubnet: Internet
+     * privatenet: private network
+     * privatepubnet: Internet and private network
+     */
+    readonly nlbNetworkType?: string | ros.IResolvable;
+
+    /**
+     * @Property period: Prepaid time period. While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3. This parameter is Only valid when updating from postpaid instance to prepaid instance.
+     */
+    readonly period?: number | ros.IResolvable;
+
+    /**
+     * @Property periodUnit: Charge period for created instances. This parameter is only valid when updating from postpaid instance to prepaid instance.
+     */
+    readonly periodUnit?: string | ros.IResolvable;
+
+    /**
+     * @Property replica: The number of nodes you specify when you purchase an normal instance. For high availability, the value for this param is recommended to be greater than 2.
+     */
+    readonly replica?: number | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property slbSpec: Private network SLB specifications (for normal instances).
+     * Simple type (slb.s1.small)
+     * Standard type 1 (slb.s2.small)
+     * Standard type I(slb.s2.medium)
+     * Advanced Type 1 (slb.s3.small)
+     * Advanced I(slb.s3.medium)
+     * Super strong type I (slb.s3.large)
+     * Description Traditional example: When creating, you can only choose one purchasing agent in NLB, CLB billed by LCU, and CLB specifications. Serverless example: When creating, you can only choose one purchasing agent in NLB, CLB billed by LCU
+     */
+    readonly slbSpec?: string | ros.IResolvable;
+
+    /**
+     * @Property spec: The node specifications you specify when you purchase an normal instance. Valid values:
+     * MSE_GTW_16_32_200_c(16C32G)
+     * MSE_GTW_2_4_200_c(2C4G)
+     * MSE_GTW_4_8_200_c(4C8G)
+     * MSE_GTW_8_16_200_c(8C16G)
+     */
+    readonly spec?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: The list of tags in the form of key\/value pairs. You can define a maximum of 20 tags.
+     */
+    readonly tags?: RosGateway2.TagsProperty[];
+
+    /**
+     * @Property vSwitchId: The primary VSwitch ID.
+     */
+    readonly vSwitchId?: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchId2: The secondary VSwitch ID.
+     */
+    readonly vSwitchId2?: string | ros.IResolvable;
+
+    /**
+     * @Property xtraceRatio: The sampling rate of Tracing Analysis. Valid values: [1,100]
+     */
+    readonly xtraceRatio?: number | ros.IResolvable;
+
+    /**
+     * @Property zoneInfo: The info details of the available zone.
+     */
+    readonly zoneInfo?: Array<RosGateway2.ZoneInfoProperty | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosGateway2Props`
+ *
+ * @param properties - the TypeScript properties of a `RosGateway2Props`
+ *
+ * @returns the result of the validation.
+ */
+function RosGateway2PropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('vSwitchId2', ros.validateString)(properties.vSwitchId2));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateRange)({
+            data: properties.period,
+            min: 1,
+            max: 9,
+          }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    if(properties.managedEntryNetworkType && (typeof properties.managedEntryNetworkType) !== 'object') {
+        errors.collect(ros.propertyValidator('managedEntryNetworkType', ros.validateAllowedValues)({
+          data: properties.managedEntryNetworkType,
+          allowedValues: ["pubnet","privatenet","privatepubnet"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('managedEntryNetworkType', ros.validateString)(properties.managedEntryNetworkType));
+    if(properties.replica && (typeof properties.replica) !== 'object') {
+        errors.collect(ros.propertyValidator('replica', ros.validateRange)({
+            data: properties.replica,
+            min: 1,
+            max: 30,
+          }));
+    }
+    errors.collect(ros.propertyValidator('replica', ros.validateNumber)(properties.replica));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    errors.collect(ros.propertyValidator('enterpriseSecurityGroup', ros.validateBoolean)(properties.enterpriseSecurityGroup));
+    errors.collect(ros.propertyValidator('enableXtrace', ros.validateBoolean)(properties.enableXtrace));
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
+          data: properties.chargeType,
+          allowedValues: ["PREPAY","POSTPAY"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
+    errors.collect(ros.propertyValidator('internetSlb', ros.validateString)(properties.internetSlb));
+    errors.collect(ros.propertyValidator('slbSpec', ros.validateString)(properties.slbSpec));
+    if(properties.acceptLanguage && (typeof properties.acceptLanguage) !== 'object') {
+        errors.collect(ros.propertyValidator('acceptLanguage', ros.validateAllowedValues)({
+          data: properties.acceptLanguage,
+          allowedValues: ["zh","en"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('acceptLanguage', ros.validateString)(properties.acceptLanguage));
+    if(properties.spec && (typeof properties.spec) !== 'object') {
+        errors.collect(ros.propertyValidator('spec', ros.validateAllowedValues)({
+          data: properties.spec,
+          allowedValues: ["MSE_GTW_16_32_200_c","MSE_GTW_2_4_200_c","MSE_GTW_4_8_200_c","MSE_GTW_8_16_200_c"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('spec', ros.validateString)(properties.spec));
+    errors.collect(ros.propertyValidator('enableSls', ros.validateBoolean)(properties.enableSls));
+    if(properties.xtraceRatio && (typeof properties.xtraceRatio) !== 'object') {
+        errors.collect(ros.propertyValidator('xtraceRatio', ros.validateRange)({
+            data: properties.xtraceRatio,
+            min: 1,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('xtraceRatio', ros.validateNumber)(properties.xtraceRatio));
+    if(properties.nlbNetworkType && (typeof properties.nlbNetworkType) !== 'object') {
+        errors.collect(ros.propertyValidator('nlbNetworkType', ros.validateAllowedValues)({
+          data: properties.nlbNetworkType,
+          allowedValues: ["pubnet","privatenet","privatepubnet"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('nlbNetworkType', ros.validateString)(properties.nlbNetworkType));
+    if(properties.clbNetworkType && (typeof properties.clbNetworkType) !== 'object') {
+        errors.collect(ros.propertyValidator('clbNetworkType', ros.validateAllowedValues)({
+          data: properties.clbNetworkType,
+          allowedValues: ["pubnet","privatenet","privatepubnet"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('clbNetworkType', ros.validateString)(properties.clbNetworkType));
+    if(properties.mserVersion && (typeof properties.mserVersion) !== 'object') {
+        errors.collect(ros.propertyValidator('mserVersion', ros.validateAllowedValues)({
+          data: properties.mserVersion,
+          allowedValues: ["mse_pro","mse_premium","mse_serverless"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('mserVersion', ros.validateString)(properties.mserVersion));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: 1,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosGateway2_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('zoneInfo', ros.listValidator(RosGateway2_ZoneInfoPropertyValidator))(properties.zoneInfo));
+    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
+        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
+          data: properties.periodUnit,
+          allowedValues: ["Month","Year"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
+    errors.collect(ros.propertyValidator('enableHardwareAcceleration', ros.validateBoolean)(properties.enableHardwareAcceleration));
+    return errors.wrap('supplied properties not correct for "RosGateway2Props"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MSE::Gateway2` resource
+ *
+ * @param properties - the TypeScript properties of a `RosGateway2Props`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MSE::Gateway2` resource.
+ */
+// @ts-ignore TS6133
+function rosGateway2PropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosGateway2PropsValidator(properties).assertSuccess();
+    }
+    return {
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'AcceptLanguage': ros.stringToRosTemplate(properties.acceptLanguage),
+      'ChargeType': ros.stringToRosTemplate(properties.chargeType),
+      'ClbNetworkType': ros.stringToRosTemplate(properties.clbNetworkType),
+      'EnableHardwareAcceleration': ros.booleanToRosTemplate(properties.enableHardwareAcceleration),
+      'EnableSls': ros.booleanToRosTemplate(properties.enableSls),
+      'EnableXtrace': ros.booleanToRosTemplate(properties.enableXtrace),
+      'EnterpriseSecurityGroup': ros.booleanToRosTemplate(properties.enterpriseSecurityGroup),
+      'InternetSlb': ros.stringToRosTemplate(properties.internetSlb),
+      'ManagedEntryNetworkType': ros.stringToRosTemplate(properties.managedEntryNetworkType),
+      'MserVersion': ros.stringToRosTemplate(properties.mserVersion),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'NlbNetworkType': ros.stringToRosTemplate(properties.nlbNetworkType),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
+      'Replica': ros.numberToRosTemplate(properties.replica),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'SlbSpec': ros.stringToRosTemplate(properties.slbSpec),
+      'Spec': ros.stringToRosTemplate(properties.spec),
+      'Tags': ros.listMapper(rosGateway2TagsPropertyToRosTemplate)(properties.tags),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'VSwitchId2': ros.stringToRosTemplate(properties.vSwitchId2),
+      'XtraceRatio': ros.numberToRosTemplate(properties.xtraceRatio),
+      'ZoneInfo': ros.listMapper(rosGateway2ZoneInfoPropertyToRosTemplate)(properties.zoneInfo),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Gateway2`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Gateway2` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-gateway2
+ */
+export class RosGateway2 extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::MSE::Gateway2";
+
+    /**
+     * @Attribute GatewayUniqueId: The unique ID of the gateway.
+     */
+    public readonly attrGatewayUniqueId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property vpcId: The ID of the vpc.
+     */
+    public vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property acceptLanguage: The language of the response. Valid values:
+     * zh: Chinese
+     * en: English
+     */
+    public acceptLanguage: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property chargeType: The billing method you specify when you purchase an normal instance.
+     * Valid values:
+     * PREPAY: subscription
+     * POSTPAY: pay-as-you-go
+     */
+    public chargeType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property clbNetworkType: The network type of the purchased Classic Load Balancer (CLB) instance that is billed based on LCUs.
+     * pubnet: Internet
+     * privatenet: private network
+     * privatepubnet: Internet and private network
+     */
+    public clbNetworkType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property enableHardwareAcceleration: Specifies whether to activate Tracing Analysis.
+     */
+    public enableHardwareAcceleration: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property enableSls: Specifies whether to activate Log Service.
+     */
+    public enableSls: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property enableXtrace: Whether to activate Tracing Analysis.
+     */
+    public enableXtrace: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property enterpriseSecurityGroup: Specifies whether to enable hardware acceleration.
+     */
+    public enterpriseSecurityGroup: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property internetSlb: Public network SLB specifications (for normal instances).
+     * Simple type (slb.s1.small)
+     * Standard type 1 (slb.s2.smal)
+     * Standard type I(slb.s2.medium)
+     * Advanced Type 1 (slb.s3.small)
+     * Advanced I(slb.s3.medium)
+     * Super strong type I (slb.s3.large)
+     * Description Traditional example: When creating, you can only choose one purchasing agent in NLB, CLB billed by LCU, and CLB specifications. Serverless example: When creating, you can only choose one purchasing agent in NLB, CLB billed by LCU
+     */
+    public internetSlb: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property managedEntryNetworkType: Gateway entrance type (applicable to the mse_premium instance)
+     * pubnet: public network
+     * privatenet: privatenet
+     * privatepubnet: public + private network
+     */
+    public managedEntryNetworkType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property mserVersion: The MSE gateway instance type. Valid values:
+     * mse_pro: normal instance
+     * mse_premium: professional normal instancemse_serverless: serverless instance
+     */
+    public mserVersion: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property name: The name of the created gateway.
+     */
+    public name: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property nlbNetworkType: The network type of the Network Load Balancer (NLB) instance you specify when you purchase a serverless instance.
+     * pubnet: Internet
+     * privatenet: private network
+     * privatepubnet: Internet and private network
+     */
+    public nlbNetworkType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property period: Prepaid time period. While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3. This parameter is Only valid when updating from postpaid instance to prepaid instance.
+     */
+    public period: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property periodUnit: Charge period for created instances. This parameter is only valid when updating from postpaid instance to prepaid instance.
+     */
+    public periodUnit: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property replica: The number of nodes you specify when you purchase an normal instance. For high availability, the value for this param is recommended to be greater than 2.
+     */
+    public replica: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property slbSpec: Private network SLB specifications (for normal instances).
+     * Simple type (slb.s1.small)
+     * Standard type 1 (slb.s2.small)
+     * Standard type I(slb.s2.medium)
+     * Advanced Type 1 (slb.s3.small)
+     * Advanced I(slb.s3.medium)
+     * Super strong type I (slb.s3.large)
+     * Description Traditional example: When creating, you can only choose one purchasing agent in NLB, CLB billed by LCU, and CLB specifications. Serverless example: When creating, you can only choose one purchasing agent in NLB, CLB billed by LCU
+     */
+    public slbSpec: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property spec: The node specifications you specify when you purchase an normal instance. Valid values:
+     * MSE_GTW_16_32_200_c(16C32G)
+     * MSE_GTW_2_4_200_c(2C4G)
+     * MSE_GTW_4_8_200_c(4C8G)
+     * MSE_GTW_8_16_200_c(8C16G)
+     */
+    public spec: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: The list of tags in the form of key\/value pairs. You can define a maximum of 20 tags.
+     */
+    public tags: RosGateway2.TagsProperty[] | undefined;
+
+    /**
+     * @Property vSwitchId: The primary VSwitch ID.
+     */
+    public vSwitchId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property vSwitchId2: The secondary VSwitch ID.
+     */
+    public vSwitchId2: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property xtraceRatio: The sampling rate of Tracing Analysis. Valid values: [1,100]
+     */
+    public xtraceRatio: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property zoneInfo: The info details of the available zone.
+     */
+    public zoneInfo: Array<RosGateway2.ZoneInfoProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosGateway2Props, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosGateway2.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrGatewayUniqueId = this.getAtt('GatewayUniqueId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.vpcId = props.vpcId;
+        this.acceptLanguage = props.acceptLanguage;
+        this.chargeType = props.chargeType;
+        this.clbNetworkType = props.clbNetworkType;
+        this.enableHardwareAcceleration = props.enableHardwareAcceleration;
+        this.enableSls = props.enableSls;
+        this.enableXtrace = props.enableXtrace;
+        this.enterpriseSecurityGroup = props.enterpriseSecurityGroup;
+        this.internetSlb = props.internetSlb;
+        this.managedEntryNetworkType = props.managedEntryNetworkType;
+        this.mserVersion = props.mserVersion;
+        this.name = props.name;
+        this.nlbNetworkType = props.nlbNetworkType;
+        this.period = props.period;
+        this.periodUnit = props.periodUnit;
+        this.replica = props.replica;
+        this.resourceGroupId = props.resourceGroupId;
+        this.slbSpec = props.slbSpec;
+        this.spec = props.spec;
+        this.tags = props.tags;
+        this.vSwitchId = props.vSwitchId;
+        this.vSwitchId2 = props.vSwitchId2;
+        this.xtraceRatio = props.xtraceRatio;
+        this.zoneInfo = props.zoneInfo;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            vpcId: this.vpcId,
+            acceptLanguage: this.acceptLanguage,
+            chargeType: this.chargeType,
+            clbNetworkType: this.clbNetworkType,
+            enableHardwareAcceleration: this.enableHardwareAcceleration,
+            enableSls: this.enableSls,
+            enableXtrace: this.enableXtrace,
+            enterpriseSecurityGroup: this.enterpriseSecurityGroup,
+            internetSlb: this.internetSlb,
+            managedEntryNetworkType: this.managedEntryNetworkType,
+            mserVersion: this.mserVersion,
+            name: this.name,
+            nlbNetworkType: this.nlbNetworkType,
+            period: this.period,
+            periodUnit: this.periodUnit,
+            replica: this.replica,
+            resourceGroupId: this.resourceGroupId,
+            slbSpec: this.slbSpec,
+            spec: this.spec,
+            tags: this.tags,
+            vSwitchId: this.vSwitchId,
+            vSwitchId2: this.vSwitchId2,
+            xtraceRatio: this.xtraceRatio,
+            zoneInfo: this.zoneInfo,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosGateway2PropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosGateway2 {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: The value of the tag.
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: The keyword of the tag.
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosGateway2_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MSE::Gateway2.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MSE::Gateway2.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosGateway2TagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosGateway2_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
+}
+
+export namespace RosGateway2 {
+    /**
+     * @stability external
+     */
+    export interface ZoneInfoProperty {
+        /**
+         * @Property zoneId: The id of the zone.
+         */
+        readonly zoneId?: string | ros.IResolvable;
+        /**
+         * @Property vSwitchId: The id of the VSwitch.
+         */
+        readonly vSwitchId?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ZoneInfoProperty`
+ *
+ * @param properties - the TypeScript properties of a `ZoneInfoProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosGateway2_ZoneInfoPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    return errors.wrap('supplied properties not correct for "ZoneInfoProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MSE::Gateway2.ZoneInfo` resource
+ *
+ * @param properties - the TypeScript properties of a `ZoneInfoProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MSE::Gateway2.ZoneInfo` resource.
+ */
+// @ts-ignore TS6133
+function rosGateway2ZoneInfoPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosGateway2_ZoneInfoPropertyValidator(properties).assertSuccess();
+    return {
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+    };
+}
+
+/**
  * Properties for defining a `RosNacosConfig`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-nacosconfig
  */
@@ -1117,7 +1854,7 @@ function rosNacosConfigPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::NacosConfig`, which is used to create a Nacos configuration.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::NacosConfig`.
  * @Note This class does not contain additional functions, so it is recommended to use the `NacosConfig` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-nacosconfig
  */
@@ -1305,7 +2042,7 @@ function rosNacosServicePropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::NacosService`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::NacosService`, which is used to create a Nacos service.
  * @Note This class does not contain additional functions, so it is recommended to use the `NacosService` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-nacosservice
  */
@@ -1500,7 +2237,7 @@ function rosServiceSourcePropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::ServiceSource`, which is used to create a Nacos service source.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::ServiceSource`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ServiceSource` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-servicesource
  */

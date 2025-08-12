@@ -338,7 +338,7 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
     if(properties.vncPassword && (typeof properties.vncPassword) !== 'object') {
         errors.collect(ros.propertyValidator('vncPassword', ros.validateAllowedPattern)({
           data: properties.vncPassword,
-          reg: /[a-zA-Z0-9]{6}/
+          reg: /^[a-zA-Z0-9]{6}$/
         }));
     }
     errors.collect(ros.propertyValidator('vncPassword', ros.validateString)(properties.vncPassword));

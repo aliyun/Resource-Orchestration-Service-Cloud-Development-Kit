@@ -586,6 +586,11 @@ export interface RosInstanceProps {
     readonly productType?: string | ros.IResolvable;
 
     /**
+     * @Property readOnlyCount: The number of read replicas in the primary zone. Valid values: 1 to 9.
+     */
+    readonly readOnlyCount?: number | ros.IResolvable;
+
+    /**
      * @Property resourceGroupId: Resource group id.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -616,6 +621,11 @@ export interface RosInstanceProps {
      * Update: updates the SSL certificate.
      */
     readonly sslEnabled?: string | ros.IResolvable;
+
+    /**
+     * @Property subscriptionDeletionForce: This option is only applicable to subscription instances. For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+     */
+    readonly subscriptionDeletionForce?: boolean | ros.IResolvable;
 
     /**
      * @Property tags: Tags to attach to redis. Max support 20 tags to add during create redis. Each tag with two properties Key and Value, and Key is required.
@@ -691,9 +701,18 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('evictionPolicy', ros.validateString)(properties.evictionPolicy));
+    errors.collect(ros.propertyValidator('subscriptionDeletionForce', ros.validateBoolean)(properties.subscriptionDeletionForce));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('productType', ros.validateString)(properties.productType));
+    if(properties.readOnlyCount && (typeof properties.readOnlyCount) !== 'object') {
+        errors.collect(ros.propertyValidator('readOnlyCount', ros.validateRange)({
+            data: properties.readOnlyCount,
+            min: 1,
+            max: 9,
+          }));
+    }
+    errors.collect(ros.propertyValidator('readOnlyCount', ros.validateNumber)(properties.readOnlyCount));
     errors.collect(ros.propertyValidator('instanceMaintainTime', RosInstance_InstanceMaintainTimePropertyValidator)(properties.instanceMaintainTime));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
@@ -764,11 +783,13 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       'Period': ros.numberToRosTemplate(properties.period),
       'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
       'ProductType': ros.stringToRosTemplate(properties.productType),
+      'ReadOnlyCount': ros.numberToRosTemplate(properties.readOnlyCount),
       'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
       'SecondaryZoneId': ros.stringToRosTemplate(properties.secondaryZoneId),
       'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
       'ShardCount': ros.numberToRosTemplate(properties.shardCount),
       'SSLEnabled': ros.stringToRosTemplate(properties.sslEnabled),
+      'SubscriptionDeletionForce': ros.booleanToRosTemplate(properties.subscriptionDeletionForce),
       'Tags': ros.listMapper(rosInstanceTagsPropertyToRosTemplate)(properties.tags),
       'TairConfig': rosInstanceTairConfigPropertyToRosTemplate(properties.tairConfig),
       'VpcId': ros.stringToRosTemplate(properties.vpcId),
@@ -1038,6 +1059,11 @@ export class RosInstance extends ros.RosResource {
     public productType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property readOnlyCount: The number of read replicas in the primary zone. Valid values: 1 to 9.
+     */
+    public readOnlyCount: number | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceGroupId: Resource group id.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
@@ -1068,6 +1094,11 @@ export class RosInstance extends ros.RosResource {
      * Update: updates the SSL certificate.
      */
     public sslEnabled: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property subscriptionDeletionForce: This option is only applicable to subscription instances. For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+     */
+    public subscriptionDeletionForce: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property tags: Tags to attach to redis. Max support 20 tags to add during create redis. Each tag with two properties Key and Value, and Key is required.
@@ -1157,11 +1188,13 @@ export class RosInstance extends ros.RosResource {
         this.period = props.period;
         this.periodUnit = props.periodUnit;
         this.productType = props.productType;
+        this.readOnlyCount = props.readOnlyCount;
         this.resourceGroupId = props.resourceGroupId;
         this.secondaryZoneId = props.secondaryZoneId;
         this.securityGroupId = props.securityGroupId;
         this.shardCount = props.shardCount;
         this.sslEnabled = props.sslEnabled;
+        this.subscriptionDeletionForce = props.subscriptionDeletionForce;
         this.tags = props.tags;
         this.tairConfig = props.tairConfig;
         this.vpcId = props.vpcId;
@@ -1189,11 +1222,13 @@ export class RosInstance extends ros.RosResource {
             period: this.period,
             periodUnit: this.periodUnit,
             productType: this.productType,
+            readOnlyCount: this.readOnlyCount,
             resourceGroupId: this.resourceGroupId,
             secondaryZoneId: this.secondaryZoneId,
             securityGroupId: this.securityGroupId,
             shardCount: this.shardCount,
             sslEnabled: this.sslEnabled,
+            subscriptionDeletionForce: this.subscriptionDeletionForce,
             tags: this.tags,
             tairConfig: this.tairConfig,
             vpcId: this.vpcId,
@@ -1862,6 +1897,11 @@ export interface RosPrepayInstanceProps {
     readonly productType?: string | ros.IResolvable;
 
     /**
+     * @Property readOnlyCount: The number of read replicas in the primary zone. Valid values: 1 to 9.
+     */
+    readonly readOnlyCount?: number | ros.IResolvable;
+
+    /**
      * @Property resourceGroupId: Resource group id.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -1892,6 +1932,11 @@ export interface RosPrepayInstanceProps {
      * Update: updates the SSL certificate.
      */
     readonly sslEnabled?: string | ros.IResolvable;
+
+    /**
+     * @Property subscriptionDeletionForce: This option is only applicable to subscription instances. For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+     */
+    readonly subscriptionDeletionForce?: boolean | ros.IResolvable;
 
     /**
      * @Property tags: Tags to attach to redis. Max support 20 tags to add during create redis. Each tag with two properties Key and Value, and Key is required.
@@ -1967,9 +2012,18 @@ function RosPrepayInstancePropsValidator(properties: any): ros.ValidationResult 
         }));
     }
     errors.collect(ros.propertyValidator('evictionPolicy', ros.validateString)(properties.evictionPolicy));
+    errors.collect(ros.propertyValidator('subscriptionDeletionForce', ros.validateBoolean)(properties.subscriptionDeletionForce));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('productType', ros.validateString)(properties.productType));
+    if(properties.readOnlyCount && (typeof properties.readOnlyCount) !== 'object') {
+        errors.collect(ros.propertyValidator('readOnlyCount', ros.validateRange)({
+            data: properties.readOnlyCount,
+            min: 1,
+            max: 9,
+          }));
+    }
+    errors.collect(ros.propertyValidator('readOnlyCount', ros.validateNumber)(properties.readOnlyCount));
     errors.collect(ros.propertyValidator('instanceMaintainTime', RosPrepayInstance_InstanceMaintainTimePropertyValidator)(properties.instanceMaintainTime));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
@@ -2034,11 +2088,13 @@ function rosPrepayInstancePropsToRosTemplate(properties: any, enableResourceProp
       'Period': ros.numberToRosTemplate(properties.period),
       'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
       'ProductType': ros.stringToRosTemplate(properties.productType),
+      'ReadOnlyCount': ros.numberToRosTemplate(properties.readOnlyCount),
       'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
       'SecondaryZoneId': ros.stringToRosTemplate(properties.secondaryZoneId),
       'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
       'ShardCount': ros.numberToRosTemplate(properties.shardCount),
       'SSLEnabled': ros.stringToRosTemplate(properties.sslEnabled),
+      'SubscriptionDeletionForce': ros.booleanToRosTemplate(properties.subscriptionDeletionForce),
       'Tags': ros.listMapper(rosPrepayInstanceTagsPropertyToRosTemplate)(properties.tags),
       'TairConfig': rosPrepayInstanceTairConfigPropertyToRosTemplate(properties.tairConfig),
       'VpcId': ros.stringToRosTemplate(properties.vpcId),
@@ -2311,6 +2367,11 @@ export class RosPrepayInstance extends ros.RosResource {
     public productType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property readOnlyCount: The number of read replicas in the primary zone. Valid values: 1 to 9.
+     */
+    public readOnlyCount: number | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceGroupId: Resource group id.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
@@ -2341,6 +2402,11 @@ export class RosPrepayInstance extends ros.RosResource {
      * Update: updates the SSL certificate.
      */
     public sslEnabled: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property subscriptionDeletionForce: This option is only applicable to subscription instances. For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+     */
+    public subscriptionDeletionForce: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property tags: Tags to attach to redis. Max support 20 tags to add during create redis. Each tag with two properties Key and Value, and Key is required.
@@ -2430,11 +2496,13 @@ export class RosPrepayInstance extends ros.RosResource {
         this.period = props.period;
         this.periodUnit = props.periodUnit;
         this.productType = props.productType;
+        this.readOnlyCount = props.readOnlyCount;
         this.resourceGroupId = props.resourceGroupId;
         this.secondaryZoneId = props.secondaryZoneId;
         this.securityGroupId = props.securityGroupId;
         this.shardCount = props.shardCount;
         this.sslEnabled = props.sslEnabled;
+        this.subscriptionDeletionForce = props.subscriptionDeletionForce;
         this.tags = props.tags;
         this.tairConfig = props.tairConfig;
         this.vpcId = props.vpcId;
@@ -2462,11 +2530,13 @@ export class RosPrepayInstance extends ros.RosResource {
             period: this.period,
             periodUnit: this.periodUnit,
             productType: this.productType,
+            readOnlyCount: this.readOnlyCount,
             resourceGroupId: this.resourceGroupId,
             secondaryZoneId: this.secondaryZoneId,
             securityGroupId: this.securityGroupId,
             shardCount: this.shardCount,
             sslEnabled: this.sslEnabled,
+            subscriptionDeletionForce: this.subscriptionDeletionForce,
             tags: this.tags,
             tairConfig: this.tairConfig,
             vpcId: this.vpcId,
@@ -3033,6 +3103,167 @@ function rosPrepayInstanceVpcPrivateConnectionPropertyToRosTemplate(properties: 
       'ConnectionPort': ros.numberToRosTemplate(properties.connectionPort),
       'ConnectionString': ros.stringToRosTemplate(properties.connectionString),
     };
+}
+
+/**
+ * Properties for defining a `RosUpgradeVersion`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-upgradeversion
+ */
+export interface RosUpgradeVersionProps {
+
+    /**
+     * @Property instanceId: The id of the instance.
+     */
+    readonly instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property autoUpgradeOpen: Whether to enable automatic upgrade.
+     */
+    readonly autoUpgradeOpen?: boolean | ros.IResolvable;
+
+    /**
+     * @Property effectiveTime: The time when the upgrade is effective. Value: Immediately|MaintainTime, default: Immediately.
+     */
+    readonly effectiveTime?: string | ros.IResolvable;
+
+    /**
+     * @Property majorVersion: Upgrade the major version of the instance.
+     */
+    readonly majorVersion?: string | ros.IResolvable;
+
+    /**
+     * @Property minorVersion: The minor version to be upgraded to, the default value is: latest_version, that is, the latest version.
+     */
+    readonly minorVersion?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosUpgradeVersionProps`
+ *
+ * @param properties - the TypeScript properties of a `RosUpgradeVersionProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosUpgradeVersionPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.majorVersion && (typeof properties.majorVersion) !== 'object') {
+        errors.collect(ros.propertyValidator('majorVersion', ros.validateAllowedValues)({
+          data: properties.majorVersion,
+          allowedValues: ["5.0","6.0","7.0"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('majorVersion', ros.validateString)(properties.majorVersion));
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    if(properties.effectiveTime && (typeof properties.effectiveTime) !== 'object') {
+        errors.collect(ros.propertyValidator('effectiveTime', ros.validateAllowedValues)({
+          data: properties.effectiveTime,
+          allowedValues: ["Immediately","MaintainTime"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('effectiveTime', ros.validateString)(properties.effectiveTime));
+    errors.collect(ros.propertyValidator('autoUpgradeOpen', ros.validateBoolean)(properties.autoUpgradeOpen));
+    if(properties.minorVersion && (typeof properties.minorVersion) !== 'object') {
+        errors.collect(ros.propertyValidator('minorVersion', ros.validateAllowedValues)({
+          data: properties.minorVersion,
+          allowedValues: ["latest_version"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('minorVersion', ros.validateString)(properties.minorVersion));
+    return errors.wrap('supplied properties not correct for "RosUpgradeVersionProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::REDIS::UpgradeVersion` resource
+ *
+ * @param properties - the TypeScript properties of a `RosUpgradeVersionProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::REDIS::UpgradeVersion` resource.
+ */
+// @ts-ignore TS6133
+function rosUpgradeVersionPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosUpgradeVersionPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'AutoUpgradeOpen': ros.booleanToRosTemplate(properties.autoUpgradeOpen),
+      'EffectiveTime': ros.stringToRosTemplate(properties.effectiveTime),
+      'MajorVersion': ros.stringToRosTemplate(properties.majorVersion),
+      'MinorVersion': ros.stringToRosTemplate(properties.minorVersion),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::UpgradeVersion`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `UpgradeVersion` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-upgradeversion
+ */
+export class RosUpgradeVersion extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::REDIS::UpgradeVersion";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property instanceId: The id of the instance.
+     */
+    public instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property autoUpgradeOpen: Whether to enable automatic upgrade.
+     */
+    public autoUpgradeOpen: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property effectiveTime: The time when the upgrade is effective. Value: Immediately|MaintainTime, default: Immediately.
+     */
+    public effectiveTime: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property majorVersion: Upgrade the major version of the instance.
+     */
+    public majorVersion: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property minorVersion: The minor version to be upgraded to, the default value is: latest_version, that is, the latest version.
+     */
+    public minorVersion: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosUpgradeVersionProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosUpgradeVersion.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.instanceId = props.instanceId;
+        this.autoUpgradeOpen = props.autoUpgradeOpen;
+        this.effectiveTime = props.effectiveTime;
+        this.majorVersion = props.majorVersion;
+        this.minorVersion = props.minorVersion;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            instanceId: this.instanceId,
+            autoUpgradeOpen: this.autoUpgradeOpen,
+            effectiveTime: this.effectiveTime,
+            majorVersion: this.majorVersion,
+            minorVersion: this.minorVersion,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosUpgradeVersionPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
 }
 
 /**

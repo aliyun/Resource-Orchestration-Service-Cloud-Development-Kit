@@ -43,6 +43,11 @@ export interface CustomImageProps {
     readonly diskDeviceMapping?: Array<RosCustomImage.DiskDeviceMappingProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * Property features: Mirror feature-related properties.
+     */
+    readonly features?: RosCustomImage.FeaturesProperty | ros.IResolvable;
+
+    /**
      * Property imageFamily: The name of the image family of the image. The name must be 2 to 128 characters in length and can contain letters, digits, colons (:), underscores (_), and hyphens (-). It cannot contain http:\/\/ or https:\/\/. It must start with a letter and cannot start with acs: or aliyun.This parameter is empty by default.
      */
     readonly imageFamily?: string | ros.IResolvable;
@@ -154,6 +159,7 @@ export class CustomImage extends ros.Resource implements ICustomImage {
             sourceRegionId: props.sourceRegionId,
             snapshotId: props.snapshotId,
             imageVersion: props.imageVersion,
+            features: props.features,
             tag: props.tag,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosCustomImage;

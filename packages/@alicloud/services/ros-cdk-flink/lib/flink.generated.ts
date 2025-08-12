@@ -184,6 +184,11 @@ export class RosInstance extends ros.RosResource {
      */
     public readonly attrOrderId: ros.IResolvable;
 
+    /**
+     * @Attribute WorkspaceId: Workspace ID.
+     */
+    public readonly attrWorkspaceId: ros.IResolvable;
+
     public enableResourcePropertyConstraint: boolean;
 
 
@@ -266,6 +271,7 @@ export class RosInstance extends ros.RosResource {
         super(scope, id, { type: RosInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrInstanceId = this.getAtt('InstanceId');
         this.attrOrderId = this.getAtt('OrderId');
+        this.attrWorkspaceId = this.getAtt('WorkspaceId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.bucket = props.bucket;
@@ -350,6 +356,157 @@ function rosInstanceResourceSpecPropertyToRosTemplate(properties: any): any {
       'Cpu': ros.numberToRosTemplate(properties.cpu),
       'MemoryGB': ros.numberToRosTemplate(properties.memoryGb),
     };
+}
+
+/**
+ * Properties for defining a `RosMember`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-member
+ */
+export interface RosMemberProps {
+
+    /**
+     * @Property member: The user ID of the member.
+     */
+    readonly member: string | ros.IResolvable;
+
+    /**
+     * @Property namespace: The project space name.
+     */
+    readonly namespace: string | ros.IResolvable;
+
+    /**
+     * @Property role: The role of the member.
+     */
+    readonly role: string | ros.IResolvable;
+
+    /**
+     * @Property workspace: The work space ID.
+     */
+    readonly workspace: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosMemberProps`
+ *
+ * @param properties - the TypeScript properties of a `RosMemberProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosMemberPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('role', ros.requiredValidator)(properties.role));
+    if(properties.role && (typeof properties.role) !== 'object') {
+        errors.collect(ros.propertyValidator('role', ros.validateAllowedValues)({
+          data: properties.role,
+          allowedValues: ["EDITOR","OWNER","VIEWER"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('role', ros.validateString)(properties.role));
+    errors.collect(ros.propertyValidator('member', ros.requiredValidator)(properties.member));
+    errors.collect(ros.propertyValidator('member', ros.validateString)(properties.member));
+    errors.collect(ros.propertyValidator('namespace', ros.requiredValidator)(properties.namespace));
+    if(properties.namespace && (Array.isArray(properties.namespace) || (typeof properties.namespace) === 'string')) {
+        errors.collect(ros.propertyValidator('namespace', ros.validateLength)({
+            data: properties.namespace.length,
+            min: 1,
+            max: 60,
+          }));
+    }
+    errors.collect(ros.propertyValidator('namespace', ros.validateString)(properties.namespace));
+    errors.collect(ros.propertyValidator('workspace', ros.requiredValidator)(properties.workspace));
+    errors.collect(ros.propertyValidator('workspace', ros.validateString)(properties.workspace));
+    return errors.wrap('supplied properties not correct for "RosMemberProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::Flink::Member` resource
+ *
+ * @param properties - the TypeScript properties of a `RosMemberProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::Flink::Member` resource.
+ */
+// @ts-ignore TS6133
+function rosMemberPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosMemberPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'Member': ros.stringToRosTemplate(properties.member),
+      'Namespace': ros.stringToRosTemplate(properties.namespace),
+      'Role': ros.stringToRosTemplate(properties.role),
+      'Workspace': ros.stringToRosTemplate(properties.workspace),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::Member`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Member` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-member
+ */
+export class RosMember extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::Flink::Member";
+
+    /**
+     * @Attribute MemberInfo: The detailed info of the flink member.
+     */
+    public readonly attrMemberInfo: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property member: The user ID of the member.
+     */
+    public member: string | ros.IResolvable;
+
+    /**
+     * @Property namespace: The project space name.
+     */
+    public namespace: string | ros.IResolvable;
+
+    /**
+     * @Property role: The role of the member.
+     */
+    public role: string | ros.IResolvable;
+
+    /**
+     * @Property workspace: The work space ID.
+     */
+    public workspace: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosMemberProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosMember.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrMemberInfo = this.getAtt('MemberInfo');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.member = props.member;
+        this.namespace = props.namespace;
+        this.role = props.role;
+        this.workspace = props.workspace;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            member: this.member,
+            namespace: this.namespace,
+            role: this.role,
+            workspace: this.workspace,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosMemberPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
 }
 
 /**

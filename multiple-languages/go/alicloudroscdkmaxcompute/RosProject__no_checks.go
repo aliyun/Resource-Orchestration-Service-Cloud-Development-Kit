@@ -112,6 +112,10 @@ func (j *jsiiProxy_RosProject) validateSetPropertiesParameters(val interface{}) 
 	return nil
 }
 
+func (j *jsiiProxy_RosProject) validateSetSupportSchemaLevelsParameters(val interface{}) error {
+	return nil
+}
+
 func validateNewRosProjectParameters(scope alicloudroscdkcore.Construct, id *string, props *RosProjectProps, enableResourcePropertyConstraint *bool) error {
 	return nil
 }

@@ -577,6 +577,7 @@ export interface RosInstanceProps {
      * normal: Normal version
      * professional: Professional Edition (high writing edition)
      * professionalForHighRead: Professional Edition (high reading edition)
+     * basic: Basic Edition (only for serverless)
      */
     readonly specType?: string | ros.IResolvable;
 
@@ -620,7 +621,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if(properties.specType && (typeof properties.specType) !== 'object') {
         errors.collect(ros.propertyValidator('specType', ros.validateAllowedValues)({
           data: properties.specType,
-          allowedValues: ["normal","professional","professionalForHighRead"],
+          allowedValues: ["normal","professional","professionalForHighRead","basic"],
         }));
     }
     errors.collect(ros.propertyValidator('specType', ros.validateString)(properties.specType));
@@ -691,7 +692,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::Instance`, which is used to create an ApsaraMQ for Kafka instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::Instance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-instance
  */
@@ -828,6 +829,7 @@ export class RosInstance extends ros.RosResource {
      * normal: Normal version
      * professional: Professional Edition (high writing edition)
      * professionalForHighRead: Professional Edition (high reading edition)
+     * basic: Basic Edition (only for serverless)
      */
     public specType: string | ros.IResolvable | undefined;
 
@@ -1066,7 +1068,7 @@ function RosInstance_DeployOptionPropertyValidator(properties: any): ros.Validat
     if(properties.username && (typeof properties.username) !== 'object') {
         errors.collect(ros.propertyValidator('username', ros.validateAllowedPattern)({
           data: properties.username,
-          reg: /[a-zA-Z0-9]{8,40}/
+          reg: /^[a-zA-Z0-9]{8,40}$/
         }));
     }
     errors.collect(ros.propertyValidator('username', ros.validateString)(properties.username));
@@ -1346,7 +1348,7 @@ function rosSaslUserPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::SaslUser`, which is used to create a Simple Authentication and Security Layer (SASL) user.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::SaslUser`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SaslUser` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-sasluser
  */

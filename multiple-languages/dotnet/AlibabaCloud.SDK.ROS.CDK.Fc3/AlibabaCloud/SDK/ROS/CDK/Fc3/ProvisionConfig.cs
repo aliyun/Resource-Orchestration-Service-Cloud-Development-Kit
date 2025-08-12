@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Fc3
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::FC3::ProvisionConfig`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::FC3::ProvisionConfig`, which is used to create a provisioned configuration in Function Compute 3.0.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosProvisionConfig`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-provisionconfig

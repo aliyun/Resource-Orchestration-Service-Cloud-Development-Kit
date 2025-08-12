@@ -160,6 +160,10 @@ type InstanceProps struct {
 	//
 	// The value must be greater than or equal to 2.
 	StorageSetPartitionNumber interface{} `field:"optional" json:"storageSetPartitionNumber" yaml:"storageSetPartitionNumber"`
+	// Property subscriptionDeletionForce: This option is only applicable to subscription instances.
+	//
+	// For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+	SubscriptionDeletionForce interface{} `field:"optional" json:"subscriptionDeletionForce" yaml:"subscriptionDeletionForce"`
 	// Property systemDiskCategory: Category of system disk.
 	//
 	// Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto|cloud_essd_entry

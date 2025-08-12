@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ehpc;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::EHPC::Cluster</code>, which is used to create an Elastic High Performance Computing (E-HPC) cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:06.160Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.090Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.RosCluster")
 public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -183,24 +183,6 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "name", java.util.Objects.requireNonNull(value, "name is required"));
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getOsTag() {
-        return software.amazon.jsii.Kernel.get(this, "osTag", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setOsTag(final @org.jetbrains.annotations.NotNull java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "osTag", java.util.Objects.requireNonNull(value, "osTag is required"));
-    }
-
-    /**
-     */
-    public void setOsTag(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "osTag", java.util.Objects.requireNonNull(value, "osTag is required"));
     }
 
     /**
@@ -647,6 +629,24 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setNetworkInterfaceTrafficMode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "networkInterfaceTrafficMode", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getOsTag() {
+        return software.amazon.jsii.Kernel.get(this, "osTag", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setOsTag(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "osTag", value);
+    }
+
+    /**
+     */
+    public void setOsTag(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "osTag", value);
     }
 
     /**
@@ -1940,23 +1940,6 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param osTag This parameter is required.
-         */
-        public Builder osTag(final java.lang.String osTag) {
-            this.props.osTag(osTag);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param osTag This parameter is required.
-         */
-        public Builder osTag(final com.aliyun.ros.cdk.core.IResolvable osTag) {
-            this.props.osTag(osTag);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param vSwitchId This parameter is required.
          */
         public Builder vSwitchId(final java.lang.String vSwitchId) {
@@ -2343,6 +2326,23 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder networkInterfaceTrafficMode(final com.aliyun.ros.cdk.core.IResolvable networkInterfaceTrafficMode) {
             this.props.networkInterfaceTrafficMode(networkInterfaceTrafficMode);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param osTag This parameter is required.
+         */
+        public Builder osTag(final java.lang.String osTag) {
+            this.props.osTag(osTag);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param osTag This parameter is required.
+         */
+        public Builder osTag(final com.aliyun.ros.cdk.core.IResolvable osTag) {
+            this.props.osTag(osTag);
             return this;
         }
 

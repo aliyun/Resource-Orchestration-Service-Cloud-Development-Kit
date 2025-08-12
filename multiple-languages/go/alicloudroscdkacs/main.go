@@ -117,7 +117,9 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "attrTaskId", GoGetter: "AttrTaskId"},
 			_jsii_.MemberProperty{JsiiProperty: "attrWorkerRamRoleName", GoGetter: "AttrWorkerRamRoleName"},
 			_jsii_.MemberProperty{JsiiProperty: "clusterSpec", GoGetter: "ClusterSpec"},
+			_jsii_.MemberProperty{JsiiProperty: "computeClass", GoGetter: "ComputeClass"},
 			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
+			_jsii_.MemberProperty{JsiiProperty: "deleteOptions", GoGetter: "DeleteOptions"},
 			_jsii_.MemberProperty{JsiiProperty: "deletionProtection", GoGetter: "DeletionProtection"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
 			_jsii_.MemberProperty{JsiiProperty: "endpointPublicAccess", GoGetter: "EndpointPublicAccess"},
@@ -137,6 +139,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "onSynthesize", GoMethod: "OnSynthesize"},
 			_jsii_.MemberMethod{JsiiMethod: "onValidate", GoMethod: "OnValidate"},
 			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "podPostpaidSpec", GoGetter: "PodPostpaidSpec"},
 			_jsii_.MemberProperty{JsiiProperty: "podVSwitchIds", GoGetter: "PodVSwitchIds"},
 			_jsii_.MemberMethod{JsiiMethod: "prepare", GoMethod: "Prepare"},
 			_jsii_.MemberProperty{JsiiProperty: "ref", GoGetter: "Ref"},
@@ -172,8 +175,20 @@ func init() {
 		reflect.TypeOf((*RosCluster_AddonsProperty)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-acs.RosCluster.DeleteOptionsProperty",
+		reflect.TypeOf((*RosCluster_DeleteOptionsProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-acs.RosCluster.GpuQuantityConfigsProperty",
+		reflect.TypeOf((*RosCluster_GpuQuantityConfigsProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-acs.RosCluster.MaintenanceWindowProperty",
 		reflect.TypeOf((*RosCluster_MaintenanceWindowProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-acs.RosCluster.PodPostpaidSpecProperty",
+		reflect.TypeOf((*RosCluster_PodPostpaidSpecProperty)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-acs.RosCluster.TagsProperty",

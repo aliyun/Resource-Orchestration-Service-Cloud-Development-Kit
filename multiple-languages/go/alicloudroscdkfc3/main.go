@@ -481,6 +481,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "runtime", GoGetter: "Runtime"},
 			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
 			_jsii_.MemberMethod{JsiiMethod: "synthesize", GoMethod: "Synthesize"},
+			_jsii_.MemberProperty{JsiiProperty: "tags", GoGetter: "Tags"},
 			_jsii_.MemberProperty{JsiiProperty: "timeout", GoGetter: "Timeout"},
 			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
 			_jsii_.MemberProperty{JsiiProperty: "tracingConfig", GoGetter: "TracingConfig"},
@@ -578,6 +579,10 @@ func init() {
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-fc3.RosFunction.RegistryConfigProperty",
 		reflect.TypeOf((*RosFunction_RegistryConfigProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-fc3.RosFunction.TagsProperty",
+		reflect.TypeOf((*RosFunction_TagsProperty)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-fc3.RosFunction.TracingConfigProperty",

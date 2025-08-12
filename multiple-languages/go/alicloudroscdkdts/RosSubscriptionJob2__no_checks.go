@@ -108,6 +108,14 @@ func (j *jsiiProxy_RosSubscriptionJob2) validateSetDelayRuleTimeParameters(val i
 	return nil
 }
 
+func (j *jsiiProxy_RosSubscriptionJob2) validateSetDestPrimaryVswIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosSubscriptionJob2) validateSetDestSecondaryVswIdParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosSubscriptionJob2) validateSetDtsBisLabelParameters(val interface{}) error {
 	return nil
 }
@@ -136,11 +144,31 @@ func (j *jsiiProxy_RosSubscriptionJob2) validateSetErrorPhoneParameters(val inte
 	return nil
 }
 
+func (j *jsiiProxy_RosSubscriptionJob2) validateSetMaxDuParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosSubscriptionJob2) validateSetMinDuParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosSubscriptionJob2) validateSetReserveParameters(val interface{}) error {
 	return nil
 }
 
+func (j *jsiiProxy_RosSubscriptionJob2) validateSetResourceGroupIdParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosSubscriptionJob2) validateSetSourceEndpointParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosSubscriptionJob2) validateSetSrcPrimaryVswIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosSubscriptionJob2) validateSetSrcSecondaryVswIdParameters(val interface{}) error {
 	return nil
 }
 

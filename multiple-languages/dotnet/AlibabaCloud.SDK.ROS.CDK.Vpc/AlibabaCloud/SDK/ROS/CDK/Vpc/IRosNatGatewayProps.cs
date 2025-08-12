@@ -30,19 +30,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: autoPay: Specifies whether to enable automatic payment. Default is true.
-        /// </remarks>
-        [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? AutoPay
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <remarks>
         /// <strong>Property</strong>: deletionForce: Whether force delete the relative snat and dnat entries in the net gateway and unbind eips. Default value is false.
         /// </remarks>
         [JsiiProperty(name: "deletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -75,19 +62,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Description
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <remarks>
-        /// <strong>Property</strong>: duration: The subscription duration. While choose by pay by month, it could be from 1 to 9 or 12, 24, 36. While choose pay by year, it could be from 1 to 3.
-        /// </remarks>
-        [JsiiProperty(name: "duration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? Duration
         {
             get
             {
@@ -197,19 +171,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: pricingCycle: Price cycle of the resource. This property has no default value.
-        /// </remarks>
-        [JsiiProperty(name: "pricingCycle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? PricingCycle
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <remarks>
         /// <strong>Property</strong>: securityProtectionEnabled: Specifies whether to enable the firewall feature. Default: False
         /// </remarks>
         [JsiiProperty(name: "securityProtectionEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -265,16 +226,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: autoPay: Specifies whether to enable automatic payment. Default is true.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? AutoPay
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <remarks>
             /// <strong>Property</strong>: deletionForce: Whether force delete the relative snat and dnat entries in the net gateway and unbind eips. Default value is false.
             /// </remarks>
             [JsiiOptional]
@@ -301,16 +252,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Description
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: duration: The subscription duration. While choose by pay by month, it could be from 1 to 9 or 12, 24, 36. While choose pay by year, it could be from 1 to 3.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "duration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? Duration
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -391,16 +332,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             [JsiiOptional]
             [JsiiProperty(name: "networkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? NetworkType
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: pricingCycle: Price cycle of the resource. This property has no default value.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "pricingCycle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? PricingCycle
             {
                 get => GetInstanceProperty<object?>();
             }

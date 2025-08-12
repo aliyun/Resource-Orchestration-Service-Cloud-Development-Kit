@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc.datasource;
 /**
  * Represents a <code>CustomDomains</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:12.298Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:52.009Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.datasource.ICustomDomains")
 @software.amazon.jsii.Jsii.Proxy(ICustomDomains.Jsii$Proxy.class)
 public interface ICustomDomains extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

@@ -110,55 +110,9 @@ export class BucketDeployment extends ros.Resource {
                             }
                         ],
                     },
-                    policies: [
-                        {
-                            policyName: 'AliyunOSSFullAccess',
-                            policyDocument: {
-                                version: '1',
-                                statement: [
-                                    {
-                                        action: [
-                                            'oss:*'
-                                        ],
-                                        effect: 'Allow',
-                                        resource: ['*']
-                                    }
-                                ]
-                            }
-                        },
-                        {
-                            policyName: 'AliyunLogFullAccess',
-                            policyDocument: {
-                                version: '1',
-                                statement: [
-                                    {
-                                        action: [
-                                            'log:*'
-                                        ],
-                                        effect: 'Allow',
-                                        resource: ['*']
-                                    },
-                                    {
-                                        action: ['ram:CreateServiceLinkedRole'],
-                                        resource: ['*'],
-                                        effect: 'Allow',
-                                        condition: {
-                                            'StringEquals': {
-                                                'ram:ServiceName': [
-                                                    'audit.log.aliyuncs.com',
-                                                    'alert.log.aliyuncs.com',
-                                                    'middlewarelens.log.aliyuncs.com',
-                                                    'storagelens.log.aliyuncs.com',
-                                                    'ai-lens.log.aliyuncs.com',
-                                                    'securitylens.log.aliyuncs.com'
-                                                ]
-                                            }
-                                        }
-                                    }
-                                ]
-                            }
-                        }
-                    ]
+                    policyAttachments: {
+                        system: ['AliyunOSSFullAccess', 'AliyunLogFullAccess']
+                    }
                 });
                 this.handlerRoleArn = role.attrArn;
                 stack.roles = {

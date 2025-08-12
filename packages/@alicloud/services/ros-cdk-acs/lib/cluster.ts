@@ -28,6 +28,16 @@ export interface ClusterProps {
     readonly clusterSpec?: string | ros.IResolvable;
 
     /**
+     * Property computeClass: The compute class of the cluster. This parameter is only used as a parameter query for ZoneIds and is not used in the actual creation.
+     */
+    readonly computeClass?: string | ros.IResolvable;
+
+    /**
+     * Property deleteOptions: Delete options, only work for deleting resource.
+     */
+    readonly deleteOptions?: Array<RosCluster.DeleteOptionsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * Property deletionProtection: Specifies whether to enable deletion protection for the cluster. 
      * After deletion protection is enabled, the cluster cannot be deleted 
      * in the ACK console or by calling API operations. Valid values:true: enables deletion protection for the cluster.
@@ -67,6 +77,11 @@ export interface ClusterProps {
      * Property maintenanceWindow: The maintenance window of the cluster.
      */
     readonly maintenanceWindow?: RosCluster.MaintenanceWindowProperty | ros.IResolvable;
+
+    /**
+     * Property podPostpaidSpec: Postpaid pod spec for inquiry.
+     */
+    readonly podPostpaidSpec?: RosCluster.PodPostpaidSpecProperty | ros.IResolvable;
 
     /**
      * Property podVSwitchIds: The list of pod vSwitches. For each vSwitch that is allocated to nodes, 
@@ -205,7 +220,7 @@ export interface ICluster extends ros.IResource {
     readonly attrWorkerRamRoleName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ACS::Cluster`, which is used to create a Container Compute Service (ACS) cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ACS::Cluster`, which is used to create an Alibaba Cloud Container Service (ACS) cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acs-cluster
  */
@@ -285,24 +300,27 @@ export class Cluster extends ros.Resource implements ICluster {
         const rosCluster = new RosCluster(this, id,  {
             kubernetesVersion: props.kubernetesVersion,
             endpointPublicAccess: props.endpointPublicAccess === undefined || props.endpointPublicAccess === null ? false : props.endpointPublicAccess,
+            podPostpaidSpec: props.podPostpaidSpec,
+            deleteOptions: props.deleteOptions,
             resourceGroupId: props.resourceGroupId,
             vSwitchIds: props.vSwitchIds,
             addons: props.addons,
             podVSwitchIds: props.podVSwitchIds,
-            deletionProtection: props.deletionProtection,
             clusterSpec: props.clusterSpec === undefined || props.clusterSpec === null ? 'ack.pro.small' : props.clusterSpec,
+            deletionProtection: props.deletionProtection,
             loggingType: props.loggingType,
             ipStack: props.ipStack,
-            loadBalancerSpec: props.loadBalancerSpec,
             name: props.name,
+            loadBalancerSpec: props.loadBalancerSpec,
             timeZone: props.timeZone,
             serviceDiscoveryTypes: props.serviceDiscoveryTypes,
             vpcId: props.vpcId,
             slsProjectName: props.slsProjectName,
+            computeClass: props.computeClass,
             serviceCidr: props.serviceCidr === undefined || props.serviceCidr === null ? '172.19.0.0/20' : props.serviceCidr,
             snatEntry: props.snatEntry === undefined || props.snatEntry === null ? true : props.snatEntry,
-            zoneIds: props.zoneIds,
             maintenanceWindow: props.maintenanceWindow,
+            zoneIds: props.zoneIds,
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosCluster;

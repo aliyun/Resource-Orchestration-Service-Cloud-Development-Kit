@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::MSE::NacosService`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::MSE::NacosService`, which is used to create a Nacos service.
 type NacosService interface {
 	alicloudroscdkcore.Resource
 	INacosService

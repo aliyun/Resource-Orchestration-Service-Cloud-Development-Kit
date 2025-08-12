@@ -1,0 +1,5 @@
+@alicloud/ros-cdk-green.IInspectionConfigEnable=com.aliyun.ros.cdk.green.IInspectionConfigEnable
+@alicloud/ros-cdk-green.InspectionConfigEnable=com.aliyun.ros.cdk.green.InspectionConfigEnable
+@alicloud/ros-cdk-green.InspectionConfigEnableProps=com.aliyun.ros.cdk.green.InspectionConfigEnableProps
+@alicloud/ros-cdk-green.RosInspectionConfigEnable=com.aliyun.ros.cdk.green.RosInspectionConfigEnable
+@alicloud/ros-cdk-green.RosInspectionConfigEnableProps=com.aliyun.ros.cdk.green.RosInspectionConfigEnableProps

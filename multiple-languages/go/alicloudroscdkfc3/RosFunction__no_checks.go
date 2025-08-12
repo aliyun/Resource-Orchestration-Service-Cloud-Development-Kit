@@ -172,6 +172,10 @@ func (j *jsiiProxy_RosFunction) validateSetRuntimeParameters(val interface{}) er
 	return nil
 }
 
+func (j *jsiiProxy_RosFunction) validateSetTagsParameters(val *[]*RosFunction_TagsProperty) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosFunction) validateSetTimeoutParameters(val interface{}) error {
 	return nil
 }

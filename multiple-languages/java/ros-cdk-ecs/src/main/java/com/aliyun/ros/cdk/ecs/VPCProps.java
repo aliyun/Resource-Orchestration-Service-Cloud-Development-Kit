@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-vpc
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:05.367Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.641Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.VPCProps")
 @software.amazon.jsii.Jsii.Proxy(VPCProps.Jsii$Proxy.class)
 public interface VPCProps extends software.amazon.jsii.JsiiSerializable {
@@ -92,7 +92,7 @@ public interface VPCProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property vpcName: Display name of the vpc instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
+     * Property vpcName: The value contains 1 to 128 characters and cannot start with http:// or https://.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVpcName() {
         return null;
@@ -317,7 +317,7 @@ public interface VPCProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link VPCProps#getVpcName}
-         * @param vpcName Property vpcName: Display name of the vpc instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
+         * @param vpcName Property vpcName: The value contains 1 to 128 characters and cannot start with http:// or https://.
          * @return {@code this}
          */
         public Builder vpcName(java.lang.String vpcName) {
@@ -327,7 +327,7 @@ public interface VPCProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link VPCProps#getVpcName}
-         * @param vpcName Property vpcName: Display name of the vpc instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
+         * @param vpcName Property vpcName: The value contains 1 to 128 characters and cannot start with http:// or https://.
          * @return {@code this}
          */
         public Builder vpcName(com.aliyun.ros.cdk.core.IResolvable vpcName) {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::FC::Triggers</code>, which is used to query triggers.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:12.315Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:52.020Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.datasource.Triggers")
 public class Triggers extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.fc.datasource.ITriggers {
 

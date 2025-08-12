@@ -124,6 +124,10 @@ func (j *jsiiProxy_RosRunCommand) validateSetKeepCommandParameters(val interface
 	return nil
 }
 
+func (j *jsiiProxy_RosRunCommand) validateSetLauncherParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosRunCommand) validateSetNameParameters(val interface{}) error {
 	return nil
 }

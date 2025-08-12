@@ -25,6 +25,7 @@ type RosManagedEdgeKubernetesClusterProps struct {
 	Tags *[]*RosManagedEdgeKubernetesCluster_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 	TimeoutMins interface{} `field:"optional" json:"timeoutMins" yaml:"timeoutMins"`
 	VpcId interface{} `field:"optional" json:"vpcId" yaml:"vpcId"`
+	VSwitchIds interface{} `field:"optional" json:"vSwitchIds" yaml:"vSwitchIds"`
 	ZoneIds interface{} `field:"optional" json:"zoneIds" yaml:"zoneIds"`
 }
 

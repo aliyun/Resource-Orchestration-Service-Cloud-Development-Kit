@@ -820,6 +820,11 @@ export interface RosCertificateProps {
     readonly aliCloudCertificateName?: string | ros.IResolvable;
 
     /**
+     * @Property aliCloudCertificateRegionId: The ID of the Alibaba Cloud region.
+     */
+    readonly aliCloudCertificateRegionId?: string | ros.IResolvable;
+
+    /**
      * @Property certificate: The content of the certificate public key.
      */
     readonly certificate?: string | ros.IResolvable;
@@ -870,6 +875,7 @@ function RosCertificatePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('aliCloudCertificateName', ros.validateString)(properties.aliCloudCertificateName));
     errors.collect(ros.propertyValidator('privateKey', ros.validateString)(properties.privateKey));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('aliCloudCertificateRegionId', ros.validateString)(properties.aliCloudCertificateRegionId));
     errors.collect(ros.propertyValidator('certificateName', ros.validateString)(properties.certificateName));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
@@ -900,6 +906,7 @@ function rosCertificatePropsToRosTemplate(properties: any, enableResourcePropert
     return {
       'AliCloudCertificateId': ros.stringToRosTemplate(properties.aliCloudCertificateId),
       'AliCloudCertificateName': ros.stringToRosTemplate(properties.aliCloudCertificateName),
+      'AliCloudCertificateRegionId': ros.stringToRosTemplate(properties.aliCloudCertificateRegionId),
       'Certificate': ros.stringToRosTemplate(properties.certificate),
       'CertificateName': ros.stringToRosTemplate(properties.certificateName),
       'CertificateType': ros.stringToRosTemplate(properties.certificateType),
@@ -949,6 +956,11 @@ export class RosCertificate extends ros.RosResource {
     public aliCloudCertificateName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property aliCloudCertificateRegionId: The ID of the Alibaba Cloud region.
+     */
+    public aliCloudCertificateRegionId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property certificate: The content of the certificate public key.
      */
     public certificate: string | ros.IResolvable | undefined;
@@ -992,6 +1004,7 @@ export class RosCertificate extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.aliCloudCertificateId = props.aliCloudCertificateId;
         this.aliCloudCertificateName = props.aliCloudCertificateName;
+        this.aliCloudCertificateRegionId = props.aliCloudCertificateRegionId;
         this.certificate = props.certificate;
         this.certificateName = props.certificateName;
         this.certificateType = props.certificateType;
@@ -1005,6 +1018,7 @@ export class RosCertificate extends ros.RosResource {
         return {
             aliCloudCertificateId: this.aliCloudCertificateId,
             aliCloudCertificateName: this.aliCloudCertificateName,
+            aliCloudCertificateRegionId: this.aliCloudCertificateRegionId,
             certificate: this.certificate,
             certificateName: this.certificateName,
             certificateType: this.certificateType,

@@ -66,7 +66,7 @@ export interface IAppUser extends ros.IResource {
     readonly attrSmartAgId: ros.IResolvable | string;
 
     /**
-     * Attribute UserName: <heat.engine.properties.Schema object at 0x7f2959675f90>
+     * Attribute UserName: The name of the user.
      */
     readonly attrUserName: ros.IResolvable | string;
 }
@@ -87,7 +87,7 @@ export class AppUser extends ros.Resource implements IAppUser {
     public readonly attrSmartAgId: ros.IResolvable | string;
 
     /**
-     * Attribute UserName: <heat.engine.properties.Schema object at 0x7f2959675f90>
+     * Attribute UserName: The name of the user.
      */
     public readonly attrUserName: ros.IResolvable | string;
 

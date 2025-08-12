@@ -16,5 +16,7 @@ type VpcEndpointServiceAttachmentProps struct {
 	ResourceType interface{} `field:"required" json:"resourceType" yaml:"resourceType"`
 	// Property serviceId: The endpoint service that is associated with the endpoint.
 	ServiceId interface{} `field:"required" json:"serviceId" yaml:"serviceId"`
+	// Property zoneId: Zone id of the service resource.
+	ZoneId interface{} `field:"optional" json:"zoneId" yaml:"zoneId"`
 }
 

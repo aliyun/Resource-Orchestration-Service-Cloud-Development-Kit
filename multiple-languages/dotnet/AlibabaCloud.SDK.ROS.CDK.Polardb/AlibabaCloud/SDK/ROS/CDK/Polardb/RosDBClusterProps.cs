@@ -602,9 +602,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         private object? _dbNodeNum;
 
         /// <remarks>
-        /// <strong>Property</strong>: dbNodeNum: The number of Standard Edition nodes. Default value: 1. Valid values:
-        /// 1: only one primary node.
-        /// 2: one read-only node and one primary node.
+        /// <strong>Property</strong>: dbNodeNum: The number of Standard Edition nodes.
+        /// Valid values for PolarDB for MySQL Standard Edition: 1 to 8.
+        /// Valid values for PolarDB for MySQL Enterprise Edition: 1 to 16.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "dbNodeNum", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

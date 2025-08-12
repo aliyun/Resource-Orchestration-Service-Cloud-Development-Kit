@@ -25,6 +25,11 @@ export interface TopicProps {
      * An integer in the range of 1,024 (1 KB) to 65, 536 (64 KB); default value: 65,536 (64 KB).
      */
     readonly maximumMessageSize?: number | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to Topic. Max support 20 tags to add during create Topic. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosTopic.TagsProperty[];
 }
 
 /**
@@ -88,6 +93,7 @@ export class Topic extends ros.Resource implements ITopic {
 
         const rosTopic = new RosTopic(this, id,  {
             maximumMessageSize: props.maximumMessageSize === undefined || props.maximumMessageSize === null ? 65536 : props.maximumMessageSize,
+            tags: props.tags,
             loggingEnabled: props.loggingEnabled === undefined || props.loggingEnabled === null ? false : props.loggingEnabled,
             topicName: props.topicName,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

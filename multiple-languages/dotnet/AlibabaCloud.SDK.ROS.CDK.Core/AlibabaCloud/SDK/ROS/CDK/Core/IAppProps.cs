@@ -47,8 +47,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
 
         /// <summary>The output directory into which to emit synthesized artifacts.</summary>
         /// <remarks>
-        /// Default - If this value is <em>not</em> set, considers the environment variable 'CDK_OUTDIR'.
-        /// If 'CDK_OUTDIR' is not defined, uses a temp directory.
+        /// You should never need to set this value. By default, the value you pass to
+        /// the CLI's <c>--output</c> flag will be used, and if you change it to a different
+        /// directory the CLI will fail to pick up the generated Cloud Assembly.
+        ///
+        /// This property is intended for internal and testing use.
+        ///
+        /// <strong>Default</strong>: - If this value is _not_ set, considers the environment variable `CDK_OUTDIR`.
+        ///   If `CDK_OUTDIR` is not defined, uses a temp directory.
         /// </remarks>
         [JsiiProperty(name: "outdir", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -143,8 +149,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
 
             /// <summary>The output directory into which to emit synthesized artifacts.</summary>
             /// <remarks>
-            /// Default - If this value is <em>not</em> set, considers the environment variable 'CDK_OUTDIR'.
-            /// If 'CDK_OUTDIR' is not defined, uses a temp directory.
+            /// You should never need to set this value. By default, the value you pass to
+            /// the CLI's <c>--output</c> flag will be used, and if you change it to a different
+            /// directory the CLI will fail to pick up the generated Cloud Assembly.
+            ///
+            /// This property is intended for internal and testing use.
+            ///
+            /// <strong>Default</strong>: - If this value is _not_ set, considers the environment variable `CDK_OUTDIR`.
+            ///   If `CDK_OUTDIR` is not defined, uses a temp directory.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "outdir", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]

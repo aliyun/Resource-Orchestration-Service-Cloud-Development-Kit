@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Dbs
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::DBS::RestoreTask`, which is used to create a restore task.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::DBS::RestoreTask`, which is used to create a restoration task of Data Disaster Recovery.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `RestoreTask` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dbs-restoretask

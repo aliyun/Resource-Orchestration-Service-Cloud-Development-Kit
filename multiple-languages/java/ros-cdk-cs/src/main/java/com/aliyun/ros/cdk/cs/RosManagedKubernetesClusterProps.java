@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managedkubernetescluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:03.548Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.258Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosManagedKubernetesClusterProps.Jsii$Proxy.class)
 public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -17,6 +17,10 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
     /**
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getVpcId();
+
+    /**
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchIds();
 
     /**
      */
@@ -258,6 +262,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
     public static final class Builder implements software.amazon.jsii.Builder<RosManagedKubernetesClusterProps> {
         java.lang.Object name;
         java.lang.Object vpcId;
+        java.lang.Object vSwitchIds;
         java.lang.Object addons;
         java.lang.Object cloudMonitorFlags;
         java.lang.Object clusterSpec;
@@ -334,6 +339,26 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
          */
         public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
             this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosManagedKubernetesClusterProps#getVSwitchIds}
+         * @param vSwitchIds the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder vSwitchIds(com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
+            this.vSwitchIds = vSwitchIds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosManagedKubernetesClusterProps#getVSwitchIds}
+         * @param vSwitchIds the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder vSwitchIds(java.util.List<? extends java.lang.Object> vSwitchIds) {
+            this.vSwitchIds = vSwitchIds;
             return this;
         }
 
@@ -1106,6 +1131,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosManagedKubernetesClusterProps {
         private final java.lang.Object name;
         private final java.lang.Object vpcId;
+        private final java.lang.Object vSwitchIds;
         private final java.lang.Object addons;
         private final java.lang.Object cloudMonitorFlags;
         private final java.lang.Object clusterSpec;
@@ -1153,6 +1179,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             super(objRef);
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vSwitchIds = software.amazon.jsii.Kernel.get(this, "vSwitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.addons = software.amazon.jsii.Kernel.get(this, "addons", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.cloudMonitorFlags = software.amazon.jsii.Kernel.get(this, "cloudMonitorFlags", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.clusterSpec = software.amazon.jsii.Kernel.get(this, "clusterSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1201,6 +1228,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
             this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
+            this.vSwitchIds = java.util.Objects.requireNonNull(builder.vSwitchIds, "vSwitchIds is required");
             this.addons = builder.addons;
             this.cloudMonitorFlags = builder.cloudMonitorFlags;
             this.clusterSpec = builder.clusterSpec;
@@ -1249,6 +1277,11 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         @Override
         public final java.lang.Object getVpcId() {
             return this.vpcId;
+        }
+
+        @Override
+        public final java.lang.Object getVSwitchIds() {
+            return this.vSwitchIds;
         }
 
         @Override
@@ -1449,6 +1482,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
 
             data.set("name", om.valueToTree(this.getName()));
             data.set("vpcId", om.valueToTree(this.getVpcId()));
+            data.set("vSwitchIds", om.valueToTree(this.getVSwitchIds()));
             if (this.getAddons() != null) {
                 data.set("addons", om.valueToTree(this.getAddons()));
             }
@@ -1583,6 +1617,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
 
             if (!name.equals(that.name)) return false;
             if (!vpcId.equals(that.vpcId)) return false;
+            if (!vSwitchIds.equals(that.vSwitchIds)) return false;
             if (this.addons != null ? !this.addons.equals(that.addons) : that.addons != null) return false;
             if (this.cloudMonitorFlags != null ? !this.cloudMonitorFlags.equals(that.cloudMonitorFlags) : that.cloudMonitorFlags != null) return false;
             if (this.clusterSpec != null ? !this.clusterSpec.equals(that.clusterSpec) : that.clusterSpec != null) return false;
@@ -1627,6 +1662,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         public final int hashCode() {
             int result = this.name.hashCode();
             result = 31 * result + (this.vpcId.hashCode());
+            result = 31 * result + (this.vSwitchIds.hashCode());
             result = 31 * result + (this.addons != null ? this.addons.hashCode() : 0);
             result = 31 * result + (this.cloudMonitorFlags != null ? this.cloudMonitorFlags.hashCode() : 0);
             result = 31 * result + (this.clusterSpec != null ? this.clusterSpec.hashCode() : 0);

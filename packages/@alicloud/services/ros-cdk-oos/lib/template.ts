@@ -15,7 +15,7 @@ export interface TemplateProps {
     readonly content: string | ros.IResolvable;
 
     /**
-     * Property templateName: The name of the template. The template name can be up to 200 characters in length. The name can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ACS, ALIBABA, or ALICLOUD.
+     * Property templateName: The name of the template. The template name can be up to 200 characters in length. The name can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ACS, ALIYUN, ALIBABA, or ALICLOUD.
      */
     readonly templateName: string | ros.IResolvable;
 
@@ -52,7 +52,7 @@ export interface ITemplate extends ros.IResource {
     readonly attrTemplateName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::Template`, which is used to create a template.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::Template`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTemplate`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-template
  */

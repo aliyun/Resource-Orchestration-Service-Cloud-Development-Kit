@@ -3,6 +3,9 @@
 @alicloud/ros-cdk-acs.ICluster=com.aliyun.ros.cdk.acs.ICluster
 @alicloud/ros-cdk-acs.RosCluster=com.aliyun.ros.cdk.acs.RosCluster
 @alicloud/ros-cdk-acs.RosCluster.AddonsProperty=com.aliyun.ros.cdk.acs.RosCluster$AddonsProperty
+@alicloud/ros-cdk-acs.RosCluster.DeleteOptionsProperty=com.aliyun.ros.cdk.acs.RosCluster$DeleteOptionsProperty
+@alicloud/ros-cdk-acs.RosCluster.GpuQuantityConfigsProperty=com.aliyun.ros.cdk.acs.RosCluster$GpuQuantityConfigsProperty
 @alicloud/ros-cdk-acs.RosCluster.MaintenanceWindowProperty=com.aliyun.ros.cdk.acs.RosCluster$MaintenanceWindowProperty
+@alicloud/ros-cdk-acs.RosCluster.PodPostpaidSpecProperty=com.aliyun.ros.cdk.acs.RosCluster$PodPostpaidSpecProperty
 @alicloud/ros-cdk-acs.RosCluster.TagsProperty=com.aliyun.ros.cdk.acs.RosCluster$TagsProperty
 @alicloud/ros-cdk-acs.RosClusterProps=com.aliyun.ros.cdk.acs.RosClusterProps

@@ -22,10 +22,12 @@ type IServiceInstance interface {
 	AttrIsOperated() interface{}
 	// Attribute LicenseEndTime: License expiration time.
 	AttrLicenseEndTime() interface{}
-	// Attribute Name: The name of the service instance.
-	AttrName() interface{}
+	// Attribute MarketInstanceId: The ID of the cloud marketplace instance.
+	AttrMarketInstanceId() interface{}
 	// Attribute NetworkConfig: Network configuration information.
 	AttrNetworkConfig() interface{}
+	// Attribute Output: Create the output Field returned by the service instance.
+	AttrOutput() interface{}
 	// Attribute Outputs: Create the output Field returned by the service instance.
 	AttrOutputs() interface{}
 	// Attribute Parameters: The parameters entered by the deployment service instance.
@@ -42,6 +44,8 @@ type IServiceInstance interface {
 	AttrService() interface{}
 	// Attribute ServiceInstanceId: The ID of the service instance.
 	AttrServiceInstanceId() interface{}
+	// Attribute ServiceInstanceName: The name of the resource.
+	AttrServiceInstanceName() interface{}
 	// Attribute ServiceType: Service type.
 	AttrServiceType() interface{}
 	// Attribute Source: The source of the service instance.
@@ -126,11 +130,11 @@ func (j *jsiiProxy_IServiceInstance) AttrLicenseEndTime() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_IServiceInstance) AttrName() interface{} {
+func (j *jsiiProxy_IServiceInstance) AttrMarketInstanceId() interface{} {
 	var returns interface{}
 	_jsii_.Get(
 		j,
-		"attrName",
+		"attrMarketInstanceId",
 		&returns,
 	)
 	return returns
@@ -141,6 +145,16 @@ func (j *jsiiProxy_IServiceInstance) AttrNetworkConfig() interface{} {
 	_jsii_.Get(
 		j,
 		"attrNetworkConfig",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IServiceInstance) AttrOutput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrOutput",
 		&returns,
 	)
 	return returns
@@ -211,6 +225,16 @@ func (j *jsiiProxy_IServiceInstance) AttrServiceInstanceId() interface{} {
 	_jsii_.Get(
 		j,
 		"attrServiceInstanceId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IServiceInstance) AttrServiceInstanceName() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrServiceInstanceName",
 		&returns,
 	)
 	return returns

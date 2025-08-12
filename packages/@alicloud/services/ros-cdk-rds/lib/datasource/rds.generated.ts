@@ -1344,7 +1344,7 @@ export interface RosZonesProps {
 
     /**
      * @Property zoneId: The ID of the zone in which the instance is located. 
-     * If the instance spans more than one zone, the value of this parameter contains an MAZ part,such as cn-hangzhou-MAZ6(b,f) and cn-hangzhou-MAZ5(b,e,f)
+     * If the instance spans more than one zone, the value of this parameter contains an MAZ part, such as cn-hangzhou-MAZ6(b,f) and cn-hangzhou-MAZ5(b,e,f).
      */
     readonly zoneId?: string | ros.IResolvable;
 }
@@ -1490,7 +1490,7 @@ export class RosZones extends ros.RosResource {
 
     /**
      * @Property zoneId: The ID of the zone in which the instance is located. 
-     * If the instance spans more than one zone, the value of this parameter contains an MAZ part,such as cn-hangzhou-MAZ6(b,f) and cn-hangzhou-MAZ5(b,e,f)
+     * If the instance spans more than one zone, the value of this parameter contains an MAZ part, such as cn-hangzhou-MAZ6(b,f) and cn-hangzhou-MAZ5(b,e,f).
      */
     public zoneId: string | ros.IResolvable | undefined;
 

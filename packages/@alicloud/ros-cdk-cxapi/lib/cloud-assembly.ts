@@ -48,6 +48,23 @@ export class CloudAssembly {
    */
   constructor(directory: string) {
     this.directory = directory;
+    const manifestPath = path.join(directory, MANIFEST_FILE);
+    try {
+      fs.accessSync(manifestPath, fs.constants.F_OK);
+      this.manifest = cxschema.Manifest.loadAssemblyManifest(manifestPath);
+    } catch (error) {
+      if ((error as any).code === 'ENOENT') {
+        const errorMessage = `Unable to load cloud assembly manifest. File not found: ${manifestPath}\n` +
+            `Assembly directory: ${directory}\n` +
+            `Current working directory: ${process.cwd()}\n` +
+            `Available files in directory: ${fs.existsSync(directory) ? fs.readdirSync(directory).join(', ') : 'Directory does not exist'}\n` +
+            `Call stack:\n${new Error().stack}`;
+        const newError = new Error(errorMessage);
+        newError.stack = newError.message + '\nCaused by:\n' + (error as any).stack;
+        throw newError;
+      }
+      throw error;
+    }
 
     this.manifest = cxschema.Manifest.loadAssemblyManifest(path.join(directory, MANIFEST_FILE));
     this.version = this.manifest.version;

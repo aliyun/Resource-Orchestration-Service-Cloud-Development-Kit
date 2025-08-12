@@ -94,6 +94,16 @@ export interface ClusterProps {
     readonly requestPars?: string | ros.IResolvable;
 
     /**
+     * Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosCluster.TagsProperty[];
+
+    /**
      * Property vpcId: vpc id
      */
     readonly vpcId?: string | ros.IResolvable;
@@ -280,7 +290,7 @@ Optional parameters:
     readonly attrVpcId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::MSE::Cluster`, which is used to create a cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MSE::Cluster`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-cluster
  */
@@ -476,6 +486,7 @@ Optional parameters:
             privateSlbSpecification: props.privateSlbSpecification,
             clusterVersion: props.clusterVersion,
             connectionType: props.connectionType,
+            resourceGroupId: props.resourceGroupId,
             aclEntryList: props.aclEntryList,
             clusterSpecification: props.clusterSpecification,
             vSwitchId: props.vSwitchId,
@@ -489,6 +500,7 @@ Optional parameters:
             pubNetworkFlow: props.pubNetworkFlow,
             acceptLanguage: props.acceptLanguage,
             netType: props.netType,
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosCluster;
         this.attrAclEntryList = rosCluster.attrAclEntryList;

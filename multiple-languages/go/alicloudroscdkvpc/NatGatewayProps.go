@@ -9,10 +9,6 @@ type NatGatewayProps struct {
 	VpcId interface{} `field:"required" json:"vpcId" yaml:"vpcId"`
 	// Property vSwitchId: The VSwitch id to create NAT gateway.
 	VSwitchId interface{} `field:"required" json:"vSwitchId" yaml:"vSwitchId"`
-	// Property autoPay: Specifies whether to enable automatic payment.
-	//
-	// Default is true.
-	AutoPay interface{} `field:"optional" json:"autoPay" yaml:"autoPay"`
 	// Property deletionForce: Whether force delete the relative snat and dnat entries in the net gateway and unbind eips.
 	//
 	// Default value is false.
@@ -25,10 +21,6 @@ type NatGatewayProps struct {
 	//
 	// Do not fill or empty, the default is empty.
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
-	// Property duration: The subscription duration.
-	//
-	// While choose by pay by month, it could be from 1 to 9 or 12, 24, 36. While choose pay by year, it could be from 1 to 3.
-	Duration interface{} `field:"optional" json:"duration" yaml:"duration"`
 	// Property eipBindMode: The mode in which the EIP is associated with the NAT gateway.
 	//
 	// Valid values:MULTI_BINDED (default): the multi-EIP-to-ENI mode.
@@ -64,10 +56,6 @@ type NatGatewayProps struct {
 	// Internet: public network NAT gateway.
 	// Intranet: VPC NAT gateway.
 	NetworkType interface{} `field:"optional" json:"networkType" yaml:"networkType"`
-	// Property pricingCycle: Price cycle of the resource.
-	//
-	// This property has no default value.
-	PricingCycle interface{} `field:"optional" json:"pricingCycle" yaml:"pricingCycle"`
 	// Property securityProtectionEnabled: Specifies whether to enable the firewall feature.
 	//
 	// Default: False.

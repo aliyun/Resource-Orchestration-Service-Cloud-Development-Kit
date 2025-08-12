@@ -17,11 +17,17 @@ type ElasticityAssuranceProps struct {
 	//
 	// Currently, an elasticity assurance can be used to reserve resources within a single zone.
 	ZoneId interface{} `field:"required" json:"zoneId" yaml:"zoneId"`
+	// Property autoRenew: Whether to enable automatic renewal.
+	AutoRenew interface{} `field:"optional" json:"autoRenew" yaml:"autoRenew"`
+	// Property autoRenewPeriod: The period for automatic renewal.
+	AutoRenewPeriod interface{} `field:"optional" json:"autoRenewPeriod" yaml:"autoRenewPeriod"`
 	// Property description: The description of the elasticity assurance.
 	//
 	// The description must be 2 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
 	// This parameter is empty by default.
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
+	// Property instanceCpuCoreCount: The number of CPU cores for the instance.
+	InstanceCpuCoreCount interface{} `field:"optional" json:"instanceCpuCoreCount" yaml:"instanceCpuCoreCount"`
 	// Property period: The effective duration of the elasticity assurance.
 	//
 	// The unit of the effective duration is determined by the PeriodUnit value. Valid values:
@@ -38,6 +44,8 @@ type ElasticityAssuranceProps struct {
 	PeriodUnit interface{} `field:"optional" json:"periodUnit" yaml:"periodUnit"`
 	// Property privatePoolOptions:.
 	PrivatePoolOptions interface{} `field:"optional" json:"privatePoolOptions" yaml:"privatePoolOptions"`
+	// Property recurrenceRules: Recurrence rules for the elasticity assurance.
+	RecurrenceRules interface{} `field:"optional" json:"recurrenceRules" yaml:"recurrenceRules"`
 	// Property resourceGroupId: The ID of the resource group to which to assign the elasticity assurance.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 	// Property startTime: The time when the elasticity assurance takes effect.

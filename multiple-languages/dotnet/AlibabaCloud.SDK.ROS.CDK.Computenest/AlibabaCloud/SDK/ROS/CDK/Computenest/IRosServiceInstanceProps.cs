@@ -21,7 +21,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Computenest
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: commodity: Cloud market commodity purchase parameters.
+        /// <strong>Property</strong>: commodity: The purchase order information of the cloud market does not need to be transmitted if the service is not on the cloud market or charged by volume.
         /// </remarks>
         [JsiiProperty(name: "commodity", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-computenest.RosServiceInstance.CommodityProperty\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -39,6 +39,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Computenest
         [JsiiProperty(name: "contactGroup", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ContactGroup
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: dryRun: Whether to perform PreCheck on the creation request, including permissions and instance status verification. Possible values:
+        /// - **true**: The request is sent without creating a service instance.
+        /// - **false**: Sends the request and creates a service instance after the check is passed.
+        /// </remarks>
+        [JsiiProperty(name: "dryRun", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DryRun
         {
             get
             {
@@ -77,32 +92,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Computenest
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: marketInstanceId: The ID of the cloud marketplace instance.
-        /// </remarks>
-        [JsiiProperty(name: "marketInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? MarketInstanceId
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <remarks>
-        /// <strong>Property</strong>: name: The name of the service instance.
-        /// </remarks>
-        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? Name
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <remarks>
         /// <strong>Property</strong>: operationName: Change operation name.
         /// </remarks>
         [JsiiProperty(name: "operationName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -118,7 +107,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Computenest
         /// <remarks>
         /// <strong>Property</strong>: parameters: The parameters entered by the deployment service instance.
         /// </remarks>
-        [JsiiProperty(name: "parameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+        [JsiiProperty(name: "parameters", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Parameters
         {
@@ -142,11 +131,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Computenest
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: resourceAutoPay: Whether the resource is automatically deducted from the balance. Value:
+        /// - **true**: automatic payment.
+        /// - **false**: Do not pay automatically.
+        /// </remarks>
+        [JsiiProperty(name: "resourceAutoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ResourceAutoPay
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: resourceGroupId: The ID of the resource group.
         /// </remarks>
         [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ResourceGroupId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: serviceInstanceName: The name of the service instance.
+        /// </remarks>
+        [JsiiProperty(name: "serviceInstanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ServiceInstanceName
         {
             get
             {
@@ -214,7 +231,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Computenest
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: commodity: Cloud market commodity purchase parameters.
+            /// <strong>Property</strong>: commodity: The purchase order information of the cloud market does not need to be transmitted if the service is not on the cloud market or charged by volume.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "commodity", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-computenest.RosServiceInstance.CommodityProperty\"}]}}", isOptional: true)]
@@ -229,6 +246,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Computenest
             [JsiiOptional]
             [JsiiProperty(name: "contactGroup", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ContactGroup
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: dryRun: Whether to perform PreCheck on the creation request, including permissions and instance status verification. Possible values:
+            /// - **true**: The request is sent without creating a service instance.
+            /// - **false**: Sends the request and creates a service instance after the check is passed.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "dryRun", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DryRun
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -258,26 +287,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Computenest
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: marketInstanceId: The ID of the cloud marketplace instance.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "marketInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? MarketInstanceId
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: name: The name of the service instance.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? Name
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <remarks>
             /// <strong>Property</strong>: operationName: Change operation name.
             /// </remarks>
             [JsiiOptional]
@@ -291,7 +300,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Computenest
             /// <strong>Property</strong>: parameters: The parameters entered by the deployment service instance.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "parameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+            [JsiiProperty(name: "parameters", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Parameters
             {
                 get => GetInstanceProperty<object?>();
@@ -308,11 +317,33 @@ namespace AlibabaCloud.SDK.ROS.CDK.Computenest
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: resourceAutoPay: Whether the resource is automatically deducted from the balance. Value:
+            /// - **true**: automatic payment.
+            /// - **false**: Do not pay automatically.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "resourceAutoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ResourceAutoPay
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: resourceGroupId: The ID of the resource group.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ResourceGroupId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: serviceInstanceName: The name of the service instance.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "serviceInstanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ServiceInstanceName
             {
                 get => GetInstanceProperty<object?>();
             }

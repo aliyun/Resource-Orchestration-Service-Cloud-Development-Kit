@@ -88,7 +88,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dataworks
 
         /// <summary>Property projectName: The display name of the workspace.</summary>
         /// <remarks>
-        /// If not provided, it is the same as ProjectIdentifier.
+        /// If not provided, it is the same as ProjectIdentifier.The value contains 3 to 28 characters.
         /// </remarks>
         [JsiiProperty(name: "projectName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -201,7 +201,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dataworks
 
             /// <summary>Property projectName: The display name of the workspace.</summary>
             /// <remarks>
-            /// If not provided, it is the same as ProjectIdentifier.
+            /// If not provided, it is the same as ProjectIdentifier.The value contains 3 to 28 characters.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "projectName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

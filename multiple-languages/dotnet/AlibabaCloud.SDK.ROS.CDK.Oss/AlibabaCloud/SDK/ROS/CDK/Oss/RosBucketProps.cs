@@ -78,6 +78,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
             }
         }
 
+        private object? _blockPublicAccess;
+
+        /// <remarks>
+        /// <strong>Property</strong>: blockPublicAccess: Whether to block public access.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "blockPublicAccess", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? BlockPublicAccess
+        {
+            get => _blockPublicAccess;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _blockPublicAccess = value;
+            }
+        }
+
         private object? _corsConfiguration;
 
         /// <remarks>

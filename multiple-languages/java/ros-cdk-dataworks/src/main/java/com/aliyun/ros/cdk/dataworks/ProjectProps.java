@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dataworks;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dataworks-project
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:03.627Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.328Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dataworks.$Module.class, fqn = "@alicloud/ros-cdk-dataworks.ProjectProps")
 @software.amazon.jsii.Jsii.Proxy(ProjectProps.Jsii$Proxy.class)
 public interface ProjectProps extends software.amazon.jsii.JsiiSerializable {
@@ -65,7 +65,7 @@ public interface ProjectProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property projectName: The display name of the workspace.
      * <p>
-     * If not provided, it is the same as ProjectIdentifier.
+     * If not provided, it is the same as ProjectIdentifier.The value contains 3 to 28 characters.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getProjectName() {
         return null;
@@ -237,7 +237,7 @@ public interface ProjectProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link ProjectProps#getProjectName}
          * @param projectName Property projectName: The display name of the workspace.
-         *                    If not provided, it is the same as ProjectIdentifier.
+         *                    If not provided, it is the same as ProjectIdentifier.The value contains 3 to 28 characters.
          * @return {@code this}
          */
         public Builder projectName(java.lang.String projectName) {
@@ -248,7 +248,7 @@ public interface ProjectProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link ProjectProps#getProjectName}
          * @param projectName Property projectName: The display name of the workspace.
-         *                    If not provided, it is the same as ProjectIdentifier.
+         *                    If not provided, it is the same as ProjectIdentifier.The value contains 3 to 28 characters.
          * @return {@code this}
          */
         public Builder projectName(com.aliyun.ros.cdk.core.IResolvable projectName) {

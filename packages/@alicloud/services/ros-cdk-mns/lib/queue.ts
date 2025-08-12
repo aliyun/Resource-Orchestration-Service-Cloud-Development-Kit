@@ -43,6 +43,11 @@ export interface QueueProps {
     readonly delaySeconds?: number | ros.IResolvable;
 
     /**
+     * Property dlqPolicy: Dead-letter queue policy
+     */
+    readonly dlqPolicy?: RosQueue.DlqPolicyProperty | ros.IResolvable;
+
+    /**
      * Property loggingEnabled: Whether to enable log management. "true" indicates that log management is enabled, whereas "false" indicates that log management is disabled. 
      * The default value is false
      */
@@ -65,6 +70,11 @@ export interface QueueProps {
      * An integer between 0 and 30 seconds. The default value is 0 (seconds)
      */
     readonly pollingWaitSeconds?: number | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to Queue. Max support 20 tags to add during create Queue. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosQueue.TagsProperty[];
 
     /**
      * Property visibilityTimeout: Duration in which a message stays in Inactive status after it is consumed from the queue. Measured in seconds.
@@ -95,7 +105,7 @@ export interface IQueue extends ros.IResource {
     readonly attrQueueUrl: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::MNS::Queue`, which is used to create a queue to contain messages. Queues can be classified into standard and delayed queues.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MNS::Queue`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosQueue`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-queue
  */
@@ -164,11 +174,13 @@ export class Queue extends ros.Resource implements IQueue {
 
         const rosQueue = new RosQueue(this, id,  {
             delaySeconds: props.delaySeconds === undefined || props.delaySeconds === null ? 0 : props.delaySeconds,
+            dlqPolicy: props.dlqPolicy,
             pollingWaitSeconds: props.pollingWaitSeconds === undefined || props.pollingWaitSeconds === null ? 0 : props.pollingWaitSeconds,
             messageRetentionPeriod: props.messageRetentionPeriod === undefined || props.messageRetentionPeriod === null ? 345600 : props.messageRetentionPeriod,
             maximumMessageSize: props.maximumMessageSize === undefined || props.maximumMessageSize === null ? 65536 : props.maximumMessageSize,
             visibilityTimeout: props.visibilityTimeout === undefined || props.visibilityTimeout === null ? 30 : props.visibilityTimeout,
             queueName: props.queueName,
+            tags: props.tags,
             loggingEnabled: props.loggingEnabled === undefined || props.loggingEnabled === null ? false : props.loggingEnabled,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosQueue;

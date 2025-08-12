@@ -1,11 +1,9 @@
 package com.aliyun.ros.cdk.mns;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::MNS::Subscription</code>, which is used to subscribe an endpoint to an Alibaba Cloud Message Service (MNS) topic.
- * <p>
- * For a subscription to be created, the owner of the endpoint must confirm the subscription.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::MNS::Subscription</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.011Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.558Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.RosSubscription")
 public class RosSubscription extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -129,6 +127,24 @@ public class RosSubscription extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDlqPolicy() {
+        return software.amazon.jsii.Kernel.get(this, "dlqPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDlqPolicy(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "dlqPolicy", value);
+    }
+
+    /**
+     */
+    public void setDlqPolicy(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.mns.RosSubscription.DlqPolicyProperty value) {
+        software.amazon.jsii.Kernel.set(this, "dlqPolicy", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getFilterTag() {
         return software.amazon.jsii.Kernel.get(this, "filterTag", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -179,6 +195,188 @@ public class RosSubscription extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setNotifyStrategy(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "notifyStrategy", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPushType() {
+        return software.amazon.jsii.Kernel.get(this, "pushType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPushType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "pushType", value);
+    }
+
+    /**
+     */
+    public void setPushType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "pushType", value);
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.RosSubscription.DlqPolicyProperty")
+    @software.amazon.jsii.Jsii.Proxy(DlqPolicyProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface DlqPolicyProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getDeadLetterTargetQueue();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getEnabled();
+
+        /**
+         * @return a {@link Builder} of {@link DlqPolicyProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link DlqPolicyProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<DlqPolicyProperty> {
+            java.lang.Object deadLetterTargetQueue;
+            java.lang.Object enabled;
+
+            /**
+             * Sets the value of {@link DlqPolicyProperty#getDeadLetterTargetQueue}
+             * @param deadLetterTargetQueue the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder deadLetterTargetQueue(java.lang.String deadLetterTargetQueue) {
+                this.deadLetterTargetQueue = deadLetterTargetQueue;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DlqPolicyProperty#getDeadLetterTargetQueue}
+             * @param deadLetterTargetQueue the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder deadLetterTargetQueue(com.aliyun.ros.cdk.core.IResolvable deadLetterTargetQueue) {
+                this.deadLetterTargetQueue = deadLetterTargetQueue;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DlqPolicyProperty#getEnabled}
+             * @param enabled the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enabled(java.lang.Boolean enabled) {
+                this.enabled = enabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DlqPolicyProperty#getEnabled}
+             * @param enabled the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enabled(com.aliyun.ros.cdk.core.IResolvable enabled) {
+                this.enabled = enabled;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link DlqPolicyProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public DlqPolicyProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link DlqPolicyProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DlqPolicyProperty {
+            private final java.lang.Object deadLetterTargetQueue;
+            private final java.lang.Object enabled;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.deadLetterTargetQueue = software.amazon.jsii.Kernel.get(this, "deadLetterTargetQueue", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.enabled = software.amazon.jsii.Kernel.get(this, "enabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.deadLetterTargetQueue = java.util.Objects.requireNonNull(builder.deadLetterTargetQueue, "deadLetterTargetQueue is required");
+                this.enabled = java.util.Objects.requireNonNull(builder.enabled, "enabled is required");
+            }
+
+            @Override
+            public final java.lang.Object getDeadLetterTargetQueue() {
+                return this.deadLetterTargetQueue;
+            }
+
+            @Override
+            public final java.lang.Object getEnabled() {
+                return this.enabled;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("deadLetterTargetQueue", om.valueToTree(this.getDeadLetterTargetQueue()));
+                data.set("enabled", om.valueToTree(this.getEnabled()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-mns.RosSubscription.DlqPolicyProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                DlqPolicyProperty.Jsii$Proxy that = (DlqPolicyProperty.Jsii$Proxy) o;
+
+                if (!deadLetterTargetQueue.equals(that.deadLetterTargetQueue)) return false;
+                return this.enabled.equals(that.enabled);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.deadLetterTargetQueue.hashCode();
+                result = 31 * result + (this.enabled.hashCode());
+                return result;
+            }
+        }
     }
 
     /**
@@ -260,6 +458,23 @@ public class RosSubscription extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param dlqPolicy This parameter is required.
+         */
+        public Builder dlqPolicy(final com.aliyun.ros.cdk.core.IResolvable dlqPolicy) {
+            this.props.dlqPolicy(dlqPolicy);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param dlqPolicy This parameter is required.
+         */
+        public Builder dlqPolicy(final com.aliyun.ros.cdk.mns.RosSubscription.DlqPolicyProperty dlqPolicy) {
+            this.props.dlqPolicy(dlqPolicy);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param filterTag This parameter is required.
          */
         public Builder filterTag(final java.lang.String filterTag) {
@@ -306,6 +521,23 @@ public class RosSubscription extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder notifyStrategy(final com.aliyun.ros.cdk.core.IResolvable notifyStrategy) {
             this.props.notifyStrategy(notifyStrategy);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param pushType This parameter is required.
+         */
+        public Builder pushType(final java.lang.String pushType) {
+            this.props.pushType(pushType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param pushType This parameter is required.
+         */
+        public Builder pushType(final com.aliyun.ros.cdk.core.IResolvable pushType) {
+            this.props.pushType(pushType);
             return this;
         }
 

@@ -195,6 +195,34 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: maxDu: The upper limit of DU.
+        /// > Only Serverless instances are supported.
+        /// </remarks>
+        [JsiiProperty(name: "maxDu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? MaxDu
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: minDu: The lower limit of DU.
+        /// > Only Serverless instances are supported.
+        /// </remarks>
+        [JsiiProperty(name: "minDu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? MinDu
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: period: The unit of the subscription duration. Valid values: **Year** and **Month**.
         /// **Note**: You must specify this parameter only if the **PayType** parameter is set to **PrePaid**.
         /// </remarks>
@@ -463,6 +491,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             [JsiiOptional]
             [JsiiProperty(name: "jobId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? JobId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: maxDu: The upper limit of DU.
+            /// > Only Serverless instances are supported.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "maxDu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MaxDu
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: minDu: The lower limit of DU.
+            /// > Only Serverless instances are supported.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "minDu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MinDu
             {
                 get => GetInstanceProperty<object?>();
             }

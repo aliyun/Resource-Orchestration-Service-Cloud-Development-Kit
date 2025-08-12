@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         /// <remarks>
         /// <strong>Property</strong>: name: The name of the parameter.
         /// The name must be 1 to 200 characters in length,and can contain letters, digits, hyphens (-), and underscores (_).
-        /// It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
+        /// It cannot start with ALIYUN, ALIBABA, ALICLOUD, ACS or OOS.
         /// </remarks>
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object Name
@@ -101,7 +101,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             /// <remarks>
             /// <strong>Property</strong>: name: The name of the parameter.
             /// The name must be 1 to 200 characters in length,and can contain letters, digits, hyphens (-), and underscores (_).
-            /// It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
+            /// It cannot start with ALIYUN, ALIBABA, ALICLOUD, ACS or OOS.
             /// </remarks>
             [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Name

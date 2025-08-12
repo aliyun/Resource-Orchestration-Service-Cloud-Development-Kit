@@ -10,6 +10,7 @@ type RosAnycastEIPProps struct {
 	InstanceChargeType interface{} `field:"optional" json:"instanceChargeType" yaml:"instanceChargeType"`
 	InternetChargeType interface{} `field:"optional" json:"internetChargeType" yaml:"internetChargeType"`
 	Name interface{} `field:"optional" json:"name" yaml:"name"`
+	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 	ServiceLocation interface{} `field:"optional" json:"serviceLocation" yaml:"serviceLocation"`
 }
 

@@ -48,8 +48,7 @@
 @alicloud/ros-cdk-ens.RosNetworkAclProps=com.aliyun.ros.cdk.ens.RosNetworkAclProps
 @alicloud/ros-cdk-ens.RosNetworkProps=com.aliyun.ros.cdk.ens.RosNetworkProps
 @alicloud/ros-cdk-ens.RosSecurityGroup=com.aliyun.ros.cdk.ens.RosSecurityGroup
-@alicloud/ros-cdk-ens.RosSecurityGroup.SecurityGroupEgressProperty=com.aliyun.ros.cdk.ens.RosSecurityGroup$SecurityGroupEgressProperty
-@alicloud/ros-cdk-ens.RosSecurityGroup.SecurityGroupIngressProperty=com.aliyun.ros.cdk.ens.RosSecurityGroup$SecurityGroupIngressProperty
+@alicloud/ros-cdk-ens.RosSecurityGroup.PermissionsProperty=com.aliyun.ros.cdk.ens.RosSecurityGroup$PermissionsProperty
 @alicloud/ros-cdk-ens.RosSecurityGroupProps=com.aliyun.ros.cdk.ens.RosSecurityGroupProps
 @alicloud/ros-cdk-ens.RosSnapshot=com.aliyun.ros.cdk.ens.RosSnapshot
 @alicloud/ros-cdk-ens.RosSnapshotProps=com.aliyun.ros.cdk.ens.RosSnapshotProps

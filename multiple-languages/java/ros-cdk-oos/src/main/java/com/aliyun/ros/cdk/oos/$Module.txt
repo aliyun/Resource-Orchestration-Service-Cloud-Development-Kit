@@ -48,6 +48,8 @@
 @alicloud/ros-cdk-oos.datasource.IPatchBaselines=com.aliyun.ros.cdk.oos.datasource.IPatchBaselines
 @alicloud/ros-cdk-oos.datasource.ISecretParameter=com.aliyun.ros.cdk.oos.datasource.ISecretParameter
 @alicloud/ros-cdk-oos.datasource.ISecretParameters=com.aliyun.ros.cdk.oos.datasource.ISecretParameters
+@alicloud/ros-cdk-oos.datasource.ITemplate=com.aliyun.ros.cdk.oos.datasource.ITemplate
+@alicloud/ros-cdk-oos.datasource.ITemplates=com.aliyun.ros.cdk.oos.datasource.ITemplates
 @alicloud/ros-cdk-oos.datasource.PatchBaseline=com.aliyun.ros.cdk.oos.datasource.PatchBaseline
 @alicloud/ros-cdk-oos.datasource.PatchBaselineProps=com.aliyun.ros.cdk.oos.datasource.PatchBaselineProps
 @alicloud/ros-cdk-oos.datasource.PatchBaselines=com.aliyun.ros.cdk.oos.datasource.PatchBaselines
@@ -62,7 +64,15 @@
 @alicloud/ros-cdk-oos.datasource.RosSecretParameterProps=com.aliyun.ros.cdk.oos.datasource.RosSecretParameterProps
 @alicloud/ros-cdk-oos.datasource.RosSecretParameters=com.aliyun.ros.cdk.oos.datasource.RosSecretParameters
 @alicloud/ros-cdk-oos.datasource.RosSecretParametersProps=com.aliyun.ros.cdk.oos.datasource.RosSecretParametersProps
+@alicloud/ros-cdk-oos.datasource.RosTemplate=com.aliyun.ros.cdk.oos.datasource.RosTemplate
+@alicloud/ros-cdk-oos.datasource.RosTemplateProps=com.aliyun.ros.cdk.oos.datasource.RosTemplateProps
+@alicloud/ros-cdk-oos.datasource.RosTemplates=com.aliyun.ros.cdk.oos.datasource.RosTemplates
+@alicloud/ros-cdk-oos.datasource.RosTemplatesProps=com.aliyun.ros.cdk.oos.datasource.RosTemplatesProps
 @alicloud/ros-cdk-oos.datasource.SecretParameter=com.aliyun.ros.cdk.oos.datasource.SecretParameter
 @alicloud/ros-cdk-oos.datasource.SecretParameterProps=com.aliyun.ros.cdk.oos.datasource.SecretParameterProps
 @alicloud/ros-cdk-oos.datasource.SecretParameters=com.aliyun.ros.cdk.oos.datasource.SecretParameters
 @alicloud/ros-cdk-oos.datasource.SecretParametersProps=com.aliyun.ros.cdk.oos.datasource.SecretParametersProps
+@alicloud/ros-cdk-oos.datasource.Template=com.aliyun.ros.cdk.oos.datasource.Template
+@alicloud/ros-cdk-oos.datasource.TemplateProps=com.aliyun.ros.cdk.oos.datasource.TemplateProps
+@alicloud/ros-cdk-oos.datasource.Templates=com.aliyun.ros.cdk.oos.datasource.Templates
+@alicloud/ros-cdk-oos.datasource.TemplatesProps=com.aliyun.ros.cdk.oos.datasource.TemplatesProps

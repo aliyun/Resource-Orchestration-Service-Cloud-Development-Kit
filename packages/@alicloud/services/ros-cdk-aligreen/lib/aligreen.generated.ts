@@ -100,7 +100,7 @@ function rosAuditCallbackPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::AuditCallback`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::AuditCallback`, which is used to create an audit callback.
  * @Note This class does not contain additional functions, so it is recommended to use the `AuditCallback` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-aligreen-auditcallback
  */
@@ -276,7 +276,7 @@ function rosBizTypePropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::BizType`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::BizType`, which is used to create a business scenario.
  * @Note This class does not contain additional functions, so it is recommended to use the `BizType` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-aligreen-biztype
  */
@@ -468,7 +468,7 @@ function rosCallbackPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::Callback`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::Callback`, which is used to create a callback.
  * @Note This class does not contain additional functions, so it is recommended to use the `Callback` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-aligreen-callback
  */
@@ -669,7 +669,7 @@ function rosImageLibPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::ImageLib`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::ImageLib`, which is used to create a custom image library.
  * @Note This class does not contain additional functions, so it is recommended to use the `ImageLib` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-aligreen-imagelib
  */
@@ -903,7 +903,7 @@ function rosKeywordLibPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::KeywordLib`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::KeywordLib`, which is used to create a custom text library.
  * @Note This class does not contain additional functions, so it is recommended to use the `KeywordLib` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-aligreen-keywordlib
  */
@@ -1418,7 +1418,7 @@ function rosOssStockTaskPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::OssStockTask`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::OssStockTask`, which is used to create a full scan task for Object Storage Service (OSS) buckets.
  * @Note This class does not contain additional functions, so it is recommended to use the `OssStockTask` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-aligreen-ossstocktask
  */

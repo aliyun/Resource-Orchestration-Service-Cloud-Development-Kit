@@ -8,7 +8,7 @@ type ParameterProps struct {
 	// Property name: The name of the parameter.
 	//
 	// The name must be 1 to 200 characters in length,and can contain letters, digits, hyphens (-), and underscores (_).
-	// It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
+	// It cannot start with ALIYUN, ALIBABA, ALICLOUD, ACS or OOS.
 	Name interface{} `field:"required" json:"name" yaml:"name"`
 	// Property type: The data type of the common parameter.
 	//

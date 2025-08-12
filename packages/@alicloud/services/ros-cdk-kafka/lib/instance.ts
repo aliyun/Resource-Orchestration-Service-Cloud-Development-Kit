@@ -88,6 +88,7 @@ export interface InstanceProps {
      * normal: Normal version
      * professional: Professional Edition (high writing edition)
      * professionalForHighRead: Professional Edition (high reading edition)
+     * basic: Basic Edition (only for serverless)
      */
     readonly specType?: string | ros.IResolvable;
 
@@ -161,7 +162,7 @@ export interface IInstance extends ros.IResource {
     readonly attrSslEndpoint: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::KAFKA::Instance`, which is used to create an ApsaraMQ for Kafka instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::KAFKA::Instance`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-instance
  */

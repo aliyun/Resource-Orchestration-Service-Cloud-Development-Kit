@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.sae;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-application
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:10.302Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:50.389Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.ApplicationProps")
 @software.amazon.jsii.Jsii.Proxy(ApplicationProps.Jsii$Proxy.class)
 public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable {
@@ -18,16 +18,16 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
     @org.jetbrains.annotations.NotNull java.lang.Object getAppName();
 
     /**
-     * Property cpu: Each instance of the CPU required, in units of milli core, can not be zero.
+     * Property cpu: The CPU required for each instance.
      * <p>
-     * Currently only supports fixed specifications instance type.
+     * Valid values: 500, 1000, 2000, 4000, 8000, 16000, 32000.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getCpu();
 
     /**
-     * Property memory: Each instance of the required memory, in units of MB, can not be zero.
+     * Property memory: The memory required for each instance, in MB, cannot be 0.
      * <p>
-     * Currently only supports fixed specifications instance type.
+     * One-to-one correspondence with CPU. Valid values: 1024, 2048, 4096, 8192, 12288, 16384, 24576, 32768, 65536, 131072.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getMemory();
 
@@ -183,6 +183,13 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
+     * Property enableNewArms: Whether to enable the new ARMS feature.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEnableNewArms() {
+        return null;
+    }
+
+    /**
      * Property envs: Container environment variable parameters.
      * <p>
      * For example: [{ "name": "envtmp", "value": "0"}]
@@ -320,6 +327,15 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
+     * Property newSaeVersion: The new SAE version.
+     * <p>
+     * Supported versions: lite, std, pro.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNewSaeVersion() {
+        return null;
+    }
+
+    /**
      * Property ossAkId: AccessKey ID of the OSS.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getOssAkId() {
@@ -424,7 +440,10 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
      * <ul>
      * <li>java: The Java language</li>
      * <li>php: PHP language.</li>
-     * <li>other: Multiple languages such as Python, C++, Go,.NET, Node.js, etc.</li>
+     * <li>python: Python language.</li>
+     * <li>dotnet: .NET Core language.</li>
+     * <li>golang: GoLang language.</li>
+     * <li>other: Multiple languages such as C++, Node.js, etc.</li>
      * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getProgrammingLanguage() {
@@ -612,6 +631,7 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object deploy;
         java.lang.Object edasContainerVersion;
         java.lang.Object enableEbpf;
+        java.lang.Object enableNewArms;
         java.lang.Object envs;
         java.lang.Object imagePullSecrets;
         java.lang.Object imageUrl;
@@ -626,6 +646,7 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object mountHost;
         java.lang.Object nasConfigs;
         java.lang.Object nasId;
+        java.lang.Object newSaeVersion;
         java.lang.Object ossAkId;
         java.lang.Object ossAkSecret;
         java.lang.Object ossMountDescs;
@@ -679,8 +700,8 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ApplicationProps#getCpu}
-         * @param cpu Property cpu: Each instance of the CPU required, in units of milli core, can not be zero. This parameter is required.
-         *            Currently only supports fixed specifications instance type.
+         * @param cpu Property cpu: The CPU required for each instance. This parameter is required.
+         *            Valid values: 500, 1000, 2000, 4000, 8000, 16000, 32000.
          * @return {@code this}
          */
         public Builder cpu(java.lang.Number cpu) {
@@ -690,8 +711,8 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ApplicationProps#getCpu}
-         * @param cpu Property cpu: Each instance of the CPU required, in units of milli core, can not be zero. This parameter is required.
-         *            Currently only supports fixed specifications instance type.
+         * @param cpu Property cpu: The CPU required for each instance. This parameter is required.
+         *            Valid values: 500, 1000, 2000, 4000, 8000, 16000, 32000.
          * @return {@code this}
          */
         public Builder cpu(com.aliyun.ros.cdk.core.IResolvable cpu) {
@@ -701,8 +722,8 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ApplicationProps#getMemory}
-         * @param memory Property memory: Each instance of the required memory, in units of MB, can not be zero. This parameter is required.
-         *               Currently only supports fixed specifications instance type.
+         * @param memory Property memory: The memory required for each instance, in MB, cannot be 0. This parameter is required.
+         *               One-to-one correspondence with CPU. Valid values: 1024, 2048, 4096, 8192, 12288, 16384, 24576, 32768, 65536, 131072.
          * @return {@code this}
          */
         public Builder memory(java.lang.Number memory) {
@@ -712,8 +733,8 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ApplicationProps#getMemory}
-         * @param memory Property memory: Each instance of the required memory, in units of MB, can not be zero. This parameter is required.
-         *               Currently only supports fixed specifications instance type.
+         * @param memory Property memory: The memory required for each instance, in MB, cannot be 0. This parameter is required.
+         *               One-to-one correspondence with CPU. Valid values: 1024, 2048, 4096, 8192, 12288, 16384, 24576, 32768, 65536, 131072.
          * @return {@code this}
          */
         public Builder memory(com.aliyun.ros.cdk.core.IResolvable memory) {
@@ -1116,6 +1137,26 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link ApplicationProps#getEnableNewArms}
+         * @param enableNewArms Property enableNewArms: Whether to enable the new ARMS feature.
+         * @return {@code this}
+         */
+        public Builder enableNewArms(java.lang.Boolean enableNewArms) {
+            this.enableNewArms = enableNewArms;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ApplicationProps#getEnableNewArms}
+         * @param enableNewArms Property enableNewArms: Whether to enable the new ARMS feature.
+         * @return {@code this}
+         */
+        public Builder enableNewArms(com.aliyun.ros.cdk.core.IResolvable enableNewArms) {
+            this.enableNewArms = enableNewArms;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ApplicationProps#getEnvs}
          * @param envs Property envs: Container environment variable parameters.
          *             For example: [{ "name": "envtmp", "value": "0"}]
@@ -1454,6 +1495,28 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link ApplicationProps#getNewSaeVersion}
+         * @param newSaeVersion Property newSaeVersion: The new SAE version.
+         *                      Supported versions: lite, std, pro.
+         * @return {@code this}
+         */
+        public Builder newSaeVersion(java.lang.String newSaeVersion) {
+            this.newSaeVersion = newSaeVersion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ApplicationProps#getNewSaeVersion}
+         * @param newSaeVersion Property newSaeVersion: The new SAE version.
+         *                      Supported versions: lite, std, pro.
+         * @return {@code this}
+         */
+        public Builder newSaeVersion(com.aliyun.ros.cdk.core.IResolvable newSaeVersion) {
+            this.newSaeVersion = newSaeVersion;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ApplicationProps#getOssAkId}
          * @param ossAkId Property ossAkId: AccessKey ID of the OSS.
          * @return {@code this}
@@ -1713,7 +1776,10 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
          *                            <ul>
          *                            <li>java: The Java language</li>
          *                            <li>php: PHP language.</li>
-         *                            <li>other: Multiple languages such as Python, C++, Go,.NET, Node.js, etc.</li>
+         *                            <li>python: Python language.</li>
+         *                            <li>dotnet: .NET Core language.</li>
+         *                            <li>golang: GoLang language.</li>
+         *                            <li>other: Multiple languages such as C++, Node.js, etc.</li>
          *                            </ul>
          * @return {@code this}
          */
@@ -1730,7 +1796,10 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
          *                            <ul>
          *                            <li>java: The Java language</li>
          *                            <li>php: PHP language.</li>
-         *                            <li>other: Multiple languages such as Python, C++, Go,.NET, Node.js, etc.</li>
+         *                            <li>python: Python language.</li>
+         *                            <li>dotnet: .NET Core language.</li>
+         *                            <li>golang: GoLang language.</li>
+         *                            <li>other: Multiple languages such as C++, Node.js, etc.</li>
          *                            </ul>
          * @return {@code this}
          */
@@ -2139,6 +2208,7 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object deploy;
         private final java.lang.Object edasContainerVersion;
         private final java.lang.Object enableEbpf;
+        private final java.lang.Object enableNewArms;
         private final java.lang.Object envs;
         private final java.lang.Object imagePullSecrets;
         private final java.lang.Object imageUrl;
@@ -2153,6 +2223,7 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object mountHost;
         private final java.lang.Object nasConfigs;
         private final java.lang.Object nasId;
+        private final java.lang.Object newSaeVersion;
         private final java.lang.Object ossAkId;
         private final java.lang.Object ossAkSecret;
         private final java.lang.Object ossMountDescs;
@@ -2208,6 +2279,7 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
             this.deploy = software.amazon.jsii.Kernel.get(this, "deploy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.edasContainerVersion = software.amazon.jsii.Kernel.get(this, "edasContainerVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableEbpf = software.amazon.jsii.Kernel.get(this, "enableEbpf", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.enableNewArms = software.amazon.jsii.Kernel.get(this, "enableNewArms", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.envs = software.amazon.jsii.Kernel.get(this, "envs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.imagePullSecrets = software.amazon.jsii.Kernel.get(this, "imagePullSecrets", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.imageUrl = software.amazon.jsii.Kernel.get(this, "imageUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -2222,6 +2294,7 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
             this.mountHost = software.amazon.jsii.Kernel.get(this, "mountHost", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.nasConfigs = software.amazon.jsii.Kernel.get(this, "nasConfigs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.nasId = software.amazon.jsii.Kernel.get(this, "nasId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.newSaeVersion = software.amazon.jsii.Kernel.get(this, "newSaeVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ossAkId = software.amazon.jsii.Kernel.get(this, "ossAkId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ossAkSecret = software.amazon.jsii.Kernel.get(this, "ossAkSecret", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ossMountDescs = software.amazon.jsii.Kernel.get(this, "ossMountDescs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -2278,6 +2351,7 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
             this.deploy = builder.deploy;
             this.edasContainerVersion = builder.edasContainerVersion;
             this.enableEbpf = builder.enableEbpf;
+            this.enableNewArms = builder.enableNewArms;
             this.envs = builder.envs;
             this.imagePullSecrets = builder.imagePullSecrets;
             this.imageUrl = builder.imageUrl;
@@ -2292,6 +2366,7 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
             this.mountHost = builder.mountHost;
             this.nasConfigs = builder.nasConfigs;
             this.nasId = builder.nasId;
+            this.newSaeVersion = builder.newSaeVersion;
             this.ossAkId = builder.ossAkId;
             this.ossAkSecret = builder.ossAkSecret;
             this.ossMountDescs = builder.ossMountDescs;
@@ -2423,6 +2498,11 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.lang.Object getEnableNewArms() {
+            return this.enableNewArms;
+        }
+
+        @Override
         public final java.lang.Object getEnvs() {
             return this.envs;
         }
@@ -2490,6 +2570,11 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
         @Override
         public final java.lang.Object getNasId() {
             return this.nasId;
+        }
+
+        @Override
+        public final java.lang.Object getNewSaeVersion() {
+            return this.newSaeVersion;
         }
 
         @Override
@@ -2686,6 +2771,9 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getEnableEbpf() != null) {
                 data.set("enableEbpf", om.valueToTree(this.getEnableEbpf()));
             }
+            if (this.getEnableNewArms() != null) {
+                data.set("enableNewArms", om.valueToTree(this.getEnableNewArms()));
+            }
             if (this.getEnvs() != null) {
                 data.set("envs", om.valueToTree(this.getEnvs()));
             }
@@ -2727,6 +2815,9 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
             }
             if (this.getNasId() != null) {
                 data.set("nasId", om.valueToTree(this.getNasId()));
+            }
+            if (this.getNewSaeVersion() != null) {
+                data.set("newSaeVersion", om.valueToTree(this.getNewSaeVersion()));
             }
             if (this.getOssAkId() != null) {
                 data.set("ossAkId", om.valueToTree(this.getOssAkId()));
@@ -2850,6 +2941,7 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
             if (this.deploy != null ? !this.deploy.equals(that.deploy) : that.deploy != null) return false;
             if (this.edasContainerVersion != null ? !this.edasContainerVersion.equals(that.edasContainerVersion) : that.edasContainerVersion != null) return false;
             if (this.enableEbpf != null ? !this.enableEbpf.equals(that.enableEbpf) : that.enableEbpf != null) return false;
+            if (this.enableNewArms != null ? !this.enableNewArms.equals(that.enableNewArms) : that.enableNewArms != null) return false;
             if (this.envs != null ? !this.envs.equals(that.envs) : that.envs != null) return false;
             if (this.imagePullSecrets != null ? !this.imagePullSecrets.equals(that.imagePullSecrets) : that.imagePullSecrets != null) return false;
             if (this.imageUrl != null ? !this.imageUrl.equals(that.imageUrl) : that.imageUrl != null) return false;
@@ -2864,6 +2956,7 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
             if (this.mountHost != null ? !this.mountHost.equals(that.mountHost) : that.mountHost != null) return false;
             if (this.nasConfigs != null ? !this.nasConfigs.equals(that.nasConfigs) : that.nasConfigs != null) return false;
             if (this.nasId != null ? !this.nasId.equals(that.nasId) : that.nasId != null) return false;
+            if (this.newSaeVersion != null ? !this.newSaeVersion.equals(that.newSaeVersion) : that.newSaeVersion != null) return false;
             if (this.ossAkId != null ? !this.ossAkId.equals(that.ossAkId) : that.ossAkId != null) return false;
             if (this.ossAkSecret != null ? !this.ossAkSecret.equals(that.ossAkSecret) : that.ossAkSecret != null) return false;
             if (this.ossMountDescs != null ? !this.ossMountDescs.equals(that.ossMountDescs) : that.ossMountDescs != null) return false;
@@ -2916,6 +3009,7 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.deploy != null ? this.deploy.hashCode() : 0);
             result = 31 * result + (this.edasContainerVersion != null ? this.edasContainerVersion.hashCode() : 0);
             result = 31 * result + (this.enableEbpf != null ? this.enableEbpf.hashCode() : 0);
+            result = 31 * result + (this.enableNewArms != null ? this.enableNewArms.hashCode() : 0);
             result = 31 * result + (this.envs != null ? this.envs.hashCode() : 0);
             result = 31 * result + (this.imagePullSecrets != null ? this.imagePullSecrets.hashCode() : 0);
             result = 31 * result + (this.imageUrl != null ? this.imageUrl.hashCode() : 0);
@@ -2930,6 +3024,7 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.mountHost != null ? this.mountHost.hashCode() : 0);
             result = 31 * result + (this.nasConfigs != null ? this.nasConfigs.hashCode() : 0);
             result = 31 * result + (this.nasId != null ? this.nasId.hashCode() : 0);
+            result = 31 * result + (this.newSaeVersion != null ? this.newSaeVersion.hashCode() : 0);
             result = 31 * result + (this.ossAkId != null ? this.ossAkId.hashCode() : 0);
             result = 31 * result + (this.ossAkSecret != null ? this.ossAkSecret.hashCode() : 0);
             result = 31 * result + (this.ossMountDescs != null ? this.ossMountDescs.hashCode() : 0);

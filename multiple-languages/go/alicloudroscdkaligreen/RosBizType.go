@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::BizType`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::BizType`, which is used to create a business scenario.
 type RosBizType interface {
 	alicloudroscdkcore.RosResource
 	AttrBizTypeName() alicloudroscdkcore.IResolvable

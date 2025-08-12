@@ -955,6 +955,16 @@ export class RosEnvironment extends ros.RosResource {
 export interface RosGatewayProps {
 
     /**
+     * @Property gatewayName: The name of the Gateway.
+     */
+    readonly gatewayName: string | ros.IResolvable;
+
+    /**
+     * @Property networkAccessConfig: Network Access Configuration.
+     */
+    readonly networkAccessConfig: RosGateway.NetworkAccessConfigProperty | ros.IResolvable;
+
+    /**
      * @Property paymentType: The payment type of the gateway. Valid values:
      * * PayAsYouGo
      * * Subscription
@@ -972,9 +982,12 @@ export interface RosGatewayProps {
     readonly zoneConfig: RosGateway.ZoneConfigProperty | ros.IResolvable;
 
     /**
-     * @Property gatewayName: The name of the Gateway.
+     * @Property gatewayType: Describes the gateway type, which is categorized into the following two types:
+     * * API: indicates an API gateway
+     * * AI: Indicates an AI gateway.
+     * Default value: API.
      */
-    readonly gatewayName?: string | ros.IResolvable;
+    readonly gatewayType?: string | ros.IResolvable;
 
     /**
      * @Property logConfig: Log Configuration.
@@ -982,9 +995,24 @@ export interface RosGatewayProps {
     readonly logConfig?: RosGateway.LogConfigProperty | ros.IResolvable;
 
     /**
-     * @Property networkAccessConfig: Network Access Configuration.
+     * @Property period: The purchase time of the gateway. This parameter is only valid when updating PaymentType from PayAsYouGo to Subscription.
      */
-    readonly networkAccessConfig?: RosGateway.NetworkAccessConfigProperty | ros.IResolvable;
+    readonly period?: number | ros.IResolvable;
+
+    /**
+     * @Property periodUnit: The unit of the purchase time of the gateway. This parameter is only valid when updating PaymentType from PayAsYouGo to Subscription.
+     */
+    readonly periodUnit?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags of The tags of the Gateway..
+     */
+    readonly tags?: RosGateway.TagsProperty[];
 
     /**
      * @Property vpc: The VPC associated with the Gateway.
@@ -1007,11 +1035,27 @@ export interface RosGatewayProps {
 function RosGatewayPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('networkAccessConfig', ros.requiredValidator)(properties.networkAccessConfig));
     errors.collect(ros.propertyValidator('networkAccessConfig', RosGateway_NetworkAccessConfigPropertyValidator)(properties.networkAccessConfig));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('vpc', RosGateway_VpcPropertyValidator)(properties.vpc));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
+          allowedValues: [1,2,3,4,5,6,7,8,9],
+        }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    if(properties.gatewayType && (typeof properties.gatewayType) !== 'object') {
+        errors.collect(ros.propertyValidator('gatewayType', ros.validateAllowedValues)({
+          data: properties.gatewayType,
+          allowedValues: ["API","AI"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('gatewayType', ros.validateString)(properties.gatewayType));
     errors.collect(ros.propertyValidator('vSwitch', RosGateway_VSwitchPropertyValidator)(properties.vSwitch));
     errors.collect(ros.propertyValidator('zoneConfig', ros.requiredValidator)(properties.zoneConfig));
     errors.collect(ros.propertyValidator('zoneConfig', RosGateway_ZoneConfigPropertyValidator)(properties.zoneConfig));
-    errors.collect(ros.propertyValidator('vpc', RosGateway_VpcPropertyValidator)(properties.vpc));
     errors.collect(ros.propertyValidator('paymentType', ros.requiredValidator)(properties.paymentType));
     if(properties.paymentType && (typeof properties.paymentType) !== 'object') {
         errors.collect(ros.propertyValidator('paymentType', ros.validateAllowedValues)({
@@ -1020,9 +1064,25 @@ function RosGatewayPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('paymentType', ros.validateString)(properties.paymentType));
+    errors.collect(ros.propertyValidator('gatewayName', ros.requiredValidator)(properties.gatewayName));
     errors.collect(ros.propertyValidator('gatewayName', ros.validateString)(properties.gatewayName));
     errors.collect(ros.propertyValidator('spec', ros.requiredValidator)(properties.spec));
     errors.collect(ros.propertyValidator('spec', ros.validateString)(properties.spec));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosGateway_TagsPropertyValidator))(properties.tags));
+    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
+        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
+          data: properties.periodUnit,
+          allowedValues: ["Month","Year"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
     errors.collect(ros.propertyValidator('logConfig', RosGateway_LogConfigPropertyValidator)(properties.logConfig));
     return errors.wrap('supplied properties not correct for "RosGatewayProps"');
 }
@@ -1041,12 +1101,17 @@ function rosGatewayPropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosGatewayPropsValidator(properties).assertSuccess();
     }
     return {
+      'GatewayName': ros.stringToRosTemplate(properties.gatewayName),
+      'NetworkAccessConfig': rosGatewayNetworkAccessConfigPropertyToRosTemplate(properties.networkAccessConfig),
       'PaymentType': ros.stringToRosTemplate(properties.paymentType),
       'Spec': ros.stringToRosTemplate(properties.spec),
       'ZoneConfig': rosGatewayZoneConfigPropertyToRosTemplate(properties.zoneConfig),
-      'GatewayName': ros.stringToRosTemplate(properties.gatewayName),
+      'GatewayType': ros.stringToRosTemplate(properties.gatewayType),
       'LogConfig': rosGatewayLogConfigPropertyToRosTemplate(properties.logConfig),
-      'NetworkAccessConfig': rosGatewayNetworkAccessConfigPropertyToRosTemplate(properties.networkAccessConfig),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.listMapper(rosGatewayTagsPropertyToRosTemplate)(properties.tags),
       'Vpc': rosGatewayVpcPropertyToRosTemplate(properties.vpc),
       'VSwitch': rosGatewayVSwitchPropertyToRosTemplate(properties.vSwitch),
     };
@@ -1089,6 +1154,11 @@ export class RosGateway extends ros.RosResource {
     public readonly attrGatewayName: ros.IResolvable;
 
     /**
+     * @Attribute GatewayType: The type of the gateway.
+     */
+    public readonly attrGatewayType: ros.IResolvable;
+
+    /**
      * @Attribute LoadBalancers: The list of Gateway ingress addresses.
      */
     public readonly attrLoadBalancers: ros.IResolvable;
@@ -1099,6 +1169,11 @@ export class RosGateway extends ros.RosResource {
     public readonly attrPaymentType: ros.IResolvable;
 
     /**
+     * @Attribute ResourceGroupId: The ID of the resource group.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
      * @Attribute SecurityGroup: The Security Group of the Gateway.
      */
     public readonly attrSecurityGroup: ros.IResolvable;
@@ -1107,6 +1182,11 @@ export class RosGateway extends ros.RosResource {
      * @Attribute Spec: Gateway instance specifications.
      */
     public readonly attrSpec: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: The tags of the Gateway.
+     */
+    public readonly attrTags: ros.IResolvable;
 
     /**
      * @Attribute UpdateTime: Update the timestamp. Unit: milliseconds.
@@ -1137,6 +1217,16 @@ export class RosGateway extends ros.RosResource {
 
 
     /**
+     * @Property gatewayName: The name of the Gateway.
+     */
+    public gatewayName: string | ros.IResolvable;
+
+    /**
+     * @Property networkAccessConfig: Network Access Configuration.
+     */
+    public networkAccessConfig: RosGateway.NetworkAccessConfigProperty | ros.IResolvable;
+
+    /**
      * @Property paymentType: The payment type of the gateway. Valid values:
      * * PayAsYouGo
      * * Subscription
@@ -1154,9 +1244,12 @@ export class RosGateway extends ros.RosResource {
     public zoneConfig: RosGateway.ZoneConfigProperty | ros.IResolvable;
 
     /**
-     * @Property gatewayName: The name of the Gateway.
+     * @Property gatewayType: Describes the gateway type, which is categorized into the following two types:
+     * * API: indicates an API gateway
+     * * AI: Indicates an AI gateway.
+     * Default value: API.
      */
-    public gatewayName: string | ros.IResolvable | undefined;
+    public gatewayType: string | ros.IResolvable | undefined;
 
     /**
      * @Property logConfig: Log Configuration.
@@ -1164,9 +1257,24 @@ export class RosGateway extends ros.RosResource {
     public logConfig: RosGateway.LogConfigProperty | ros.IResolvable | undefined;
 
     /**
-     * @Property networkAccessConfig: Network Access Configuration.
+     * @Property period: The purchase time of the gateway. This parameter is only valid when updating PaymentType from PayAsYouGo to Subscription.
      */
-    public networkAccessConfig: RosGateway.NetworkAccessConfigProperty | ros.IResolvable | undefined;
+    public period: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property periodUnit: The unit of the purchase time of the gateway. This parameter is only valid when updating PaymentType from PayAsYouGo to Subscription.
+     */
+    public periodUnit: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags of The tags of the Gateway..
+     */
+    public tags: RosGateway.TagsProperty[] | undefined;
 
     /**
      * @Property vpc: The VPC associated with the Gateway.
@@ -1190,10 +1298,13 @@ export class RosGateway extends ros.RosResource {
         this.attrExpireTime = this.getAtt('ExpireTime');
         this.attrGatewayId = this.getAtt('GatewayId');
         this.attrGatewayName = this.getAtt('GatewayName');
+        this.attrGatewayType = this.getAtt('GatewayType');
         this.attrLoadBalancers = this.getAtt('LoadBalancers');
         this.attrPaymentType = this.getAtt('PaymentType');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
         this.attrSecurityGroup = this.getAtt('SecurityGroup');
         this.attrSpec = this.getAtt('Spec');
+        this.attrTags = this.getAtt('Tags');
         this.attrUpdateTime = this.getAtt('UpdateTime');
         this.attrVSwitch = this.getAtt('VSwitch');
         this.attrVersion = this.getAtt('Version');
@@ -1201,12 +1312,17 @@ export class RosGateway extends ros.RosResource {
         this.attrZones = this.getAtt('Zones');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.gatewayName = props.gatewayName;
+        this.networkAccessConfig = props.networkAccessConfig;
         this.paymentType = props.paymentType;
         this.spec = props.spec;
         this.zoneConfig = props.zoneConfig;
-        this.gatewayName = props.gatewayName;
+        this.gatewayType = props.gatewayType;
         this.logConfig = props.logConfig;
-        this.networkAccessConfig = props.networkAccessConfig;
+        this.period = props.period;
+        this.periodUnit = props.periodUnit;
+        this.resourceGroupId = props.resourceGroupId;
+        this.tags = props.tags;
         this.vpc = props.vpc;
         this.vSwitch = props.vSwitch;
     }
@@ -1214,12 +1330,17 @@ export class RosGateway extends ros.RosResource {
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
+            gatewayName: this.gatewayName,
+            networkAccessConfig: this.networkAccessConfig,
             paymentType: this.paymentType,
             spec: this.spec,
             zoneConfig: this.zoneConfig,
-            gatewayName: this.gatewayName,
+            gatewayType: this.gatewayType,
             logConfig: this.logConfig,
-            networkAccessConfig: this.networkAccessConfig,
+            period: this.period,
+            periodUnit: this.periodUnit,
+            resourceGroupId: this.resourceGroupId,
+            tags: this.tags,
             vpc: this.vpc,
             vSwitch: this.vSwitch,
         };
@@ -1359,6 +1480,54 @@ function rosGatewaySlsPropertyToRosTemplate(properties: any): any {
     RosGateway_SlsPropertyValidator(properties).assertSuccess();
     return {
       'Enable': ros.booleanToRosTemplate(properties.enable),
+    };
+}
+
+export namespace RosGateway {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosGateway_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::APIG::Gateway.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::APIG::Gateway.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosGatewayTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosGateway_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 

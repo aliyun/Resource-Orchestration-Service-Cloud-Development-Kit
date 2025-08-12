@@ -1,0 +1,130 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.StackSynthesizer = void 0;
+const fs = require("fs");
+const path = require("path");
+const _shared_1 = require("./_shared");
+const assets_1 = require("../assets");
+const ros_fn_1 = require("../ros-fn");
+const helpers_internal_1 = require("../helpers-internal");
+/**
+ * Base class for implementing an IStackSynthesizer
+ *
+ * This class needs to exist to provide public surface area for external
+ * implementations of stack synthesizers. The protected methods give
+ * access to functions that are otherwise @_internal to the framework
+ * and could not be accessed by external implementors.
+ */
+class StackSynthesizer {
+    /**
+     * Bind to the stack this environment is going to be used on
+     *
+     * Must be called before any of the other methods are called.
+     */
+    bind(stack) {
+        if (this._boundStack !== undefined) {
+            throw new Error('A StackSynthesizer can only be used for one Stack: create a new instance to use with a different Stack');
+        }
+        this._boundStack = stack;
+    }
+    /**
+     * Write the stack template to the given session
+     *
+     * Return a descriptor that represents the stack template as a file asset
+     * source, for adding to an asset manifest (if desired). This can be used to
+     * have the asset manifest system (`cdk-assets`) upload the template to OSS
+     * using the appropriate role, so that afterwards only a ROS
+     * deployment is necessary.
+     *
+     * If the template is uploaded as an asset, the `stackTemplateAssetObjectUrl`
+     * property should be set when calling `emitArtifact.`
+     *
+     * If the template is *NOT* uploaded as an asset first and the template turns
+     * out to be >50KB, it will need to be uploaded to OSS anyway. At that point
+     * the credentials will be the same identity that is doing the `UpdateStack`
+     * call, which may not have the right permissions to write to OSS.
+     */
+    synthesizeTemplate(session) {
+        this.boundStack.synthesize(session);
+        return stackTemplateFileAsset(this.boundStack, session);
+    }
+    /**
+     * Write the ROS stack artifact to the session
+     *
+     * Use default settings to add a ROSStackArtifact artifact to
+     * the given synthesis session. The Stack artifact will control the settings for the
+     * ROS deployment.
+     */
+    emitArtifact(session, options = {}) {
+        (0, _shared_1.addStackArtifactToAssembly)(session, this.boundStack, options ?? {}, options.additionalDependencies ?? []);
+    }
+    /**
+     * Retrieve the bound stack
+     *
+     * Fails if the stack hasn't been bound yet.
+     */
+    get boundStack() {
+        if (!this._boundStack) {
+            throw new Error('The StackSynthesizer must be bound to a Stack first before boundStack() can be called');
+        }
+        return this._boundStack;
+    }
+    /**
+     * Turn a file asset location into a ROS representation of that location
+     *
+     * If any of the fields contain placeholders, the result will be wrapped in a `Fn.sub`.
+     */
+    rosLocationFromFileAsset(location) {
+        const { region } = stackLocationOrInstrinsics(this.boundStack);
+        const httpUrl = `https://${location.bucketName}.oss-${region}.aliyuncs.com/${location.objectKey}`;
+        return {
+            bucketName: rosify(location.bucketName),
+            objectKey: rosify(location.objectKey),
+            httpUrl,
+            region
+        };
+    }
+}
+exports.StackSynthesizer = StackSynthesizer;
+function stackTemplateFileAsset(stack, session) {
+    const templatePath = path.join(session.assembly.outdir, stack.templateFile);
+    if (!fs.existsSync(templatePath)) {
+        throw new Error(`Stack template ${stack.stackName} not written yet: ${templatePath}`);
+    }
+    const template = fs.readFileSync(templatePath, { encoding: 'utf-8' });
+    const sourceHash = (0, _shared_1.contentHash)(template);
+    return {
+        fileName: stack.templateFile,
+        packaging: assets_1.FileAssetPackaging.FILE,
+        sourceHash,
+        deployTime: true,
+    };
+}
+/**
+ * Return the stack locations if they're concrete, or the original ROS intrisics otherwise
+ *
+ * We need to return these instead of the tokenized versions of the strings,
+ * since we must accept those same ${ALIYUN::AccountId}/${ALIYUN::Region} placeholders
+ * in bucket names and role names (in order to allow environment-agnostic stacks).
+ *
+ * We'll wrap a single {Fn::Sub} around the final string in order to replace everything,
+ * but we can't have the token system render part of the string to {Fn::Join} because
+ * the ROS specification doesn't allow the {Fn::Sub} template string to be an arbitrary
+ * expression--it must be a string literal.
+ */
+function stackLocationOrInstrinsics(stack) {
+    return {
+        account: (0, helpers_internal_1.resolvedOr)(stack.account, '${ALIYUN::AccountId}'),
+        region: (0, helpers_internal_1.resolvedOr)(stack.region, '${ALIYUN::Region}'),
+    };
+}
+/**
+ * If the string still contains placeholders, wrap it in a Fn::Sub so they will be substituted at ROS deployment time
+ *
+ * (This happens to work because the placeholders we picked map directly onto ROS
+ * placeholders. If they didn't we'd have to do a transformation here).
+ */
+function rosify(s) {
+    return s.indexOf('${') > -1 ? ros_fn_1.Fn.sub(s) : s;
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3RhY2stc3ludGhlc2l6ZXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJzdGFjay1zeW50aGVzaXplci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFBQSx5QkFBeUI7QUFDekIsNkJBQTZCO0FBQzdCLHVDQUFvRTtBQUlwRSxzQ0FBaUY7QUFDakYsc0NBQStCO0FBQy9CLDBEQUFpRDtBQUdqRDs7Ozs7OztHQU9HO0FBQ0gsTUFBc0IsZ0JBQWdCO0lBSXBDOzs7O09BSUc7SUFDSSxJQUFJLENBQUMsS0FBWTtRQUN0QixJQUFJLElBQUksQ0FBQyxXQUFXLEtBQUssU0FBUyxFQUFFO1lBQ2xDLE1BQU0sSUFBSSxLQUFLLENBQUMsd0dBQXdHLENBQUMsQ0FBQztTQUMzSDtRQUVELElBQUksQ0FBQyxXQUFXLEdBQUcsS0FBSyxDQUFDO0lBQzNCLENBQUM7SUFvQkQ7Ozs7Ozs7Ozs7Ozs7Ozs7T0FnQkc7SUFDTyxrQkFBa0IsQ0FBQyxPQUEwQjtRQUNyRCxJQUFJLENBQUMsVUFBVSxDQUFDLFVBQVUsQ0FBQyxPQUFPLENBQUMsQ0FBQztRQUNwQyxPQUFPLHNCQUFzQixDQUFDLElBQUksQ0FBQyxVQUFVLEVBQUUsT0FBTyxDQUFDLENBQUM7SUFDMUQsQ0FBQztJQUVEOzs7Ozs7T0FNRztJQUNPLFlBQVksQ0FBQyxPQUEwQixFQUFFLFVBQTBDLEVBQUU7UUFDN0YsSUFBQSxvQ0FBMEIsRUFBQyxPQUFPLEVBQUUsSUFBSSxDQUFDLFVBQVUsRUFBRSxPQUFPLElBQUksRUFBRSxFQUFFLE9BQU8sQ0FBQyxzQkFBc0IsSUFBSSxFQUFFLENBQUMsQ0FBQztJQUM1RyxDQUFDO0lBRUQ7Ozs7T0FJRztJQUNILElBQWMsVUFBVTtRQUN0QixJQUFJLENBQUMsSUFBSSxDQUFDLFdBQVcsRUFBRTtZQUNyQixNQUFNLElBQUksS0FBSyxDQUFDLHVGQUF1RixDQUFDLENBQUM7U0FDMUc7UUFDRCxPQUFPLElBQUksQ0FBQyxXQUFXLENBQUM7SUFDMUIsQ0FBQztJQUVEOzs7O09BSUc7SUFDTyx3QkFBd0IsQ0FBQyxRQUFrQztRQUNuRSxNQUFNLEVBQUUsTUFBTSxFQUFFLEdBQUcsMEJBQTBCLENBQUMsSUFBSSxDQUFDLFVBQVUsQ0FBQyxDQUFDO1FBQy9ELE1BQU0sT0FBTyxHQUFHLFdBQVcsUUFBUSxDQUFDLFVBQVUsUUFBUSxNQUFNLGlCQUFpQixRQUFRLENBQUMsU0FBUyxFQUFFLENBQUM7UUFFbEcsT0FBTztZQUNMLFVBQVUsRUFBRSxNQUFNLENBQUMsUUFBUSxDQUFDLFVBQVUsQ0FBQztZQUN2QyxTQUFTLEVBQUUsTUFBTSxDQUFDLFFBQVEsQ0FBQyxTQUFTLENBQUM7WUFDckMsT0FBTztZQUNQLE1BQU07U0FDUCxDQUFDO0lBQ0osQ0FBQztDQUNGO0FBaEdELDRDQWdHQztBQXNCRCxTQUFTLHNCQUFzQixDQUFDLEtBQVksRUFBRSxPQUEwQjtJQUN0RSxNQUFNLFlBQVksR0FBRyxJQUFJLENBQUMsSUFBSSxDQUFDLE9BQU8sQ0FBQyxRQUFRLENBQUMsTUFBTSxFQUFFLEtBQUssQ0FBQyxZQUFZLENBQUMsQ0FBQztJQUU1RSxJQUFJLENBQUMsRUFBRSxDQUFDLFVBQVUsQ0FBQyxZQUFZLENBQUMsRUFBRTtRQUNoQyxNQUFNLElBQUksS0FBSyxDQUFDLGtCQUFrQixLQUFLLENBQUMsU0FBUyxxQkFBcUIsWUFBWSxFQUFFLENBQUMsQ0FBQztLQUN2RjtJQUVELE1BQU0sUUFBUSxHQUFHLEVBQUUsQ0FBQyxZQUFZLENBQUMsWUFBWSxFQUFFLEVBQUUsUUFBUSxFQUFFLE9BQU8sRUFBRSxDQUFDLENBQUM7SUFFdEUsTUFBTSxVQUFVLEdBQUcsSUFBQSxxQkFBVyxFQUFDLFFBQVEsQ0FBQyxDQUFDO0lBRXpDLE9BQU87UUFDTCxRQUFRLEVBQUUsS0FBSyxDQUFDLFlBQVk7UUFDNUIsU0FBUyxFQUFFLDJCQUFrQixDQUFDLElBQUk7UUFDbEMsVUFBVTtRQUNWLFVBQVUsRUFBRSxJQUFJO0tBQ2pCLENBQUM7QUFDSixDQUFDO0FBRUQ7Ozs7Ozs7Ozs7O0dBV0c7QUFDSCxTQUFTLDBCQUEwQixDQUFDLEtBQVk7SUFDOUMsT0FBTztRQUNMLE9BQU8sRUFBRSxJQUFBLDZCQUFVLEVBQUMsS0FBSyxDQUFDLE9BQU8sRUFBRSxzQkFBc0IsQ0FBQztRQUMxRCxNQUFNLEVBQUUsSUFBQSw2QkFBVSxFQUFDLEtBQUssQ0FBQyxNQUFNLEVBQUUsbUJBQW1CLENBQUM7S0FDdEQsQ0FBQztBQUNKLENBQUM7QUFFRDs7Ozs7R0FLRztBQUNILFNBQVMsTUFBTSxDQUFDLENBQVM7SUFDdkIsT0FBTyxDQUFDLENBQUMsT0FBTyxDQUFDLElBQUksQ0FBQyxHQUFHLENBQUMsQ0FBQyxDQUFDLENBQUMsQ0FBQyxXQUFFLENBQUMsR0FBRyxDQUFDLENBQUMsQ0FBQyxDQUFDLENBQUMsQ0FBQyxDQUFDLENBQUM7QUFDOUMsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCAqIGFzIGZzIGZyb20gJ2ZzJztcbmltcG9ydCAqIGFzIHBhdGggZnJvbSAncGF0aCc7XG5pbXBvcnQgeyBhZGRTdGFja0FydGlmYWN0VG9Bc3NlbWJseSwgY29udGVudEhhc2ggfSBmcm9tICcuL19zaGFyZWQnO1xuaW1wb3J0IHsgSVN0YWNrU3ludGhlc2l6ZXIgfSBmcm9tICcuL3R5cGVzJztcbmltcG9ydCB7IElTeW50aGVzaXNTZXNzaW9uIH0gZnJvbSBcIi4uL2NvbnN0cnVjdC1jb21wYXRcIjtcbmltcG9ydCAqIGFzIGN4c2NoZW1hIGZyb20gJ0BhbGljbG91ZC9yb3MtY2RrLWFzc2VtYmx5LXNjaGVtYSc7XG5pbXBvcnQge0ZpbGVBc3NldExvY2F0aW9uLCBGaWxlQXNzZXRTb3VyY2UsIEZpbGVBc3NldFBhY2thZ2luZ30gZnJvbSAnLi4vYXNzZXRzJztcbmltcG9ydCB7IEZuIH0gZnJvbSAnLi4vcm9zLWZuJztcbmltcG9ydCB7IHJlc29sdmVkT3IgfSBmcm9tICcuLi9oZWxwZXJzLWludGVybmFsJztcbmltcG9ydCB7IFN0YWNrIH0gZnJvbSAnLi4vc3RhY2snO1xuXG4vKipcbiAqIEJhc2UgY2xhc3MgZm9yIGltcGxlbWVudGluZyBhbiBJU3RhY2tTeW50aGVzaXplclxuICpcbiAqIFRoaXMgY2xhc3MgbmVlZHMgdG8gZXhpc3QgdG8gcHJvdmlkZSBwdWJsaWMgc3VyZmFjZSBhcmVhIGZvciBleHRlcm5hbFxuICogaW1wbGVtZW50YXRpb25zIG9mIHN0YWNrIHN5bnRoZXNpemVycy4gVGhlIHByb3RlY3RlZCBtZXRob2RzIGdpdmVcbiAqIGFjY2VzcyB0byBmdW5jdGlvbnMgdGhhdCBhcmUgb3RoZXJ3aXNlIEBfaW50ZXJuYWwgdG8gdGhlIGZyYW1ld29ya1xuICogYW5kIGNvdWxkIG5vdCBiZSBhY2Nlc3NlZCBieSBleHRlcm5hbCBpbXBsZW1lbnRvcnMuXG4gKi9cbmV4cG9ydCBhYnN0cmFjdCBjbGFzcyBTdGFja1N5bnRoZXNpemVyIGltcGxlbWVudHMgSVN0YWNrU3ludGhlc2l6ZXIge1xuXG4gIHByaXZhdGUgX2JvdW5kU3RhY2s/OiBTdGFjaztcblxuICAvKipcbiAgICogQmluZCB0byB0aGUgc3RhY2sgdGhpcyBlbnZpcm9ubWVudCBpcyBnb2luZyB0byBiZSB1c2VkIG9uXG4gICAqXG4gICAqIE11c3QgYmUgY2FsbGVkIGJlZm9yZSBhbnkgb2YgdGhlIG90aGVyIG1ldGhvZHMgYXJlIGNhbGxlZC5cbiAgICovXG4gIHB1YmxpYyBiaW5kKHN0YWNrOiBTdGFjayk6IHZvaWQge1xuICAgIGlmICh0aGlzLl9ib3VuZFN0YWNrICE9PSB1bmRlZmluZWQpIHtcbiAgICAgIHRocm93IG5ldyBFcnJvcignQSBTdGFja1N5bnRoZXNpemVyIGNhbiBvbmx5IGJlIHVzZWQgZm9yIG9uZSBTdGFjazogY3JlYXRlIGEgbmV3IGluc3RhbmNlIHRvIHVzZSB3aXRoIGEgZGlmZmVyZW50IFN0YWNrJyk7XG4gICAgfVxuXG4gICAgdGhpcy5fYm91bmRTdGFjayA9IHN0YWNrO1xuICB9XG5cbiAgLyoqXG4gICAqIFJlZ2lzdGVyIGEgRmlsZSBBc3NldFxuICAgKlxuICAgKiBSZXR1cm5zIHRoZSBwYXJhbWV0ZXJzIHRoYXQgY2FuIGJlIHVzZWQgdG8gcmVmZXIgdG8gdGhlIGFzc2V0IGluc2lkZSB0aGUgdGVtcGxhdGUuXG4gICAqXG4gICAqIFRoZSBzeW50aGVzaXplciBtdXN0IHJlbHkgb24gc29tZSBvdXQtb2YtYmFuZCBtZWNoYW5pc20gdG8gbWFrZSBzdXJlIHRoZSBnaXZlbiBmaWxlc1xuICAgKiBhcmUgYWN0dWFsbHkgcGxhY2VkIGluIHRoZSByZXR1cm5lZCBsb2NhdGlvbiBiZWZvcmUgdGhlIGRlcGxveW1lbnQgaGFwcGVucy4gVGhpcyBjYW5cbiAgICogYmUgYnkgd3JpdGluZyB0aGUgaW5zdHJ1Y3Rpb25zIHRvIHRoZSBhc3NldCBtYW5pZmVzdCAoZm9yIHVzZSBieSB0aGUgYGNkay1hc3NldHNgIHRvb2wpLFxuICAgKiBieSByZWx5aW5nIG9uIHRoZSBDTEkgdG8gdXBsb2FkIGZpbGVzIChsZWdhY3kgYmVoYXZpb3IpLCBvciBzb21lIG90aGVyIG9wZXJhdG9yIGNvbnRyb2xsZWRcbiAgICogbWVjaGFuaXNtLlxuICAgKi9cbiAgcHVibGljIGFic3RyYWN0IGFkZEZpbGVBc3NldChhc3NldDogRmlsZUFzc2V0U291cmNlKTogRmlsZUFzc2V0TG9jYXRpb247XG5cbiAgLyoqXG4gICAqIFN5bnRoZXNpemUgdGhlIGFzc29jaWF0ZWQgc3RhY2sgdG8gdGhlIHNlc3Npb25cbiAgICovXG4gIHB1YmxpYyBhYnN0cmFjdCBzeW50aGVzaXplKHNlc3Npb246IElTeW50aGVzaXNTZXNzaW9uKTogdm9pZDtcblxuICAvKipcbiAgICogV3JpdGUgdGhlIHN0YWNrIHRlbXBsYXRlIHRvIHRoZSBnaXZlbiBzZXNzaW9uXG4gICAqXG4gICAqIFJldHVybiBhIGRlc2NyaXB0b3IgdGhhdCByZXByZXNlbnRzIHRoZSBzdGFjayB0ZW1wbGF0ZSBhcyBhIGZpbGUgYXNzZXRcbiAgICogc291cmNlLCBmb3IgYWRkaW5nIHRvIGFuIGFzc2V0IG1hbmlmZXN0IChpZiBkZXNpcmVkKS4gVGhpcyBjYW4gYmUgdXNlZCB0b1xuICAgKiBoYXZlIHRoZSBhc3NldCBtYW5pZmVzdCBzeXN0ZW0gKGBjZGstYXNzZXRzYCkgdXBsb2FkIHRoZSB0ZW1wbGF0ZSB0byBPU1NcbiAgICogdXNpbmcgdGhlIGFwcHJvcHJpYXRlIHJvbGUsIHNvIHRoYXQgYWZ0ZXJ3YXJkcyBvbmx5IGEgUk9TXG4gICAqIGRlcGxveW1lbnQgaXMgbmVjZXNzYXJ5LlxuICAgKlxuICAgKiBJZiB0aGUgdGVtcGxhdGUgaXMgdXBsb2FkZWQgYXMgYW4gYXNzZXQsIHRoZSBgc3RhY2tUZW1wbGF0ZUFzc2V0T2JqZWN0VXJsYFxuICAgKiBwcm9wZXJ0eSBzaG91bGQgYmUgc2V0IHdoZW4gY2FsbGluZyBgZW1pdEFydGlmYWN0LmBcbiAgICpcbiAgICogSWYgdGhlIHRlbXBsYXRlIGlzICpOT1QqIHVwbG9hZGVkIGFzIGFuIGFzc2V0IGZpcnN0IGFuZCB0aGUgdGVtcGxhdGUgdHVybnNcbiAgICogb3V0IHRvIGJlID41MEtCLCBpdCB3aWxsIG5lZWQgdG8gYmUgdXBsb2FkZWQgdG8gT1NTIGFueXdheS4gQXQgdGhhdCBwb2ludFxuICAgKiB0aGUgY3JlZGVudGlhbHMgd2lsbCBiZSB0aGUgc2FtZSBpZGVudGl0eSB0aGF0IGlzIGRvaW5nIHRoZSBgVXBkYXRlU3RhY2tgXG4gICAqIGNhbGwsIHdoaWNoIG1heSBub3QgaGF2ZSB0aGUgcmlnaHQgcGVybWlzc2lvbnMgdG8gd3JpdGUgdG8gT1NTLlxuICAgKi9cbiAgcHJvdGVjdGVkIHN5bnRoZXNpemVUZW1wbGF0ZShzZXNzaW9uOiBJU3ludGhlc2lzU2Vzc2lvbik6IEZpbGVBc3NldFNvdXJjZSB7XG4gICAgdGhpcy5ib3VuZFN0YWNrLnN5bnRoZXNpemUoc2Vzc2lvbik7XG4gICAgcmV0dXJuIHN0YWNrVGVtcGxhdGVGaWxlQXNzZXQodGhpcy5ib3VuZFN0YWNrLCBzZXNzaW9uKTtcbiAgfVxuXG4gIC8qKlxuICAgKiBXcml0ZSB0aGUgUk9TIHN0YWNrIGFydGlmYWN0IHRvIHRoZSBzZXNzaW9uXG4gICAqXG4gICAqIFVzZSBkZWZhdWx0IHNldHRpbmdzIHRvIGFkZCBhIFJPU1N0YWNrQXJ0aWZhY3QgYXJ0aWZhY3QgdG9cbiAgICogdGhlIGdpdmVuIHN5bnRoZXNpcyBzZXNzaW9uLiBUaGUgU3RhY2sgYXJ0aWZhY3Qgd2lsbCBjb250cm9sIHRoZSBzZXR0aW5ncyBmb3IgdGhlXG4gICAqIFJPUyBkZXBsb3ltZW50LlxuICAgKi9cbiAgcHJvdGVjdGVkIGVtaXRBcnRpZmFjdChzZXNzaW9uOiBJU3ludGhlc2lzU2Vzc2lvbiwgb3B0aW9uczogU3ludGhlc2l6ZVN0YWNrQXJ0aWZhY3RPcHRpb25zID0ge30pIHtcbiAgICBhZGRTdGFja0FydGlmYWN0VG9Bc3NlbWJseShzZXNzaW9uLCB0aGlzLmJvdW5kU3RhY2ssIG9wdGlvbnMgPz8ge30sIG9wdGlvbnMuYWRkaXRpb25hbERlcGVuZGVuY2llcyA/PyBbXSk7XG4gIH1cblxuICAvKipcbiAgICogUmV0cmlldmUgdGhlIGJvdW5kIHN0YWNrXG4gICAqXG4gICAqIEZhaWxzIGlmIHRoZSBzdGFjayBoYXNuJ3QgYmVlbiBib3VuZCB5ZXQuXG4gICAqL1xuICBwcm90ZWN0ZWQgZ2V0IGJvdW5kU3RhY2soKTogU3RhY2sge1xuICAgIGlmICghdGhpcy5fYm91bmRTdGFjaykge1xuICAgICAgdGhyb3cgbmV3IEVycm9yKCdUaGUgU3RhY2tTeW50aGVzaXplciBtdXN0IGJlIGJvdW5kIHRvIGEgU3RhY2sgZmlyc3QgYmVmb3JlIGJvdW5kU3RhY2soKSBjYW4gYmUgY2FsbGVkJyk7XG4gICAgfVxuICAgIHJldHVybiB0aGlzLl9ib3VuZFN0YWNrO1xuICB9XG5cbiAgLyoqXG4gICAqIFR1cm4gYSBmaWxlIGFzc2V0IGxvY2F0aW9uIGludG8gYSBST1MgcmVwcmVzZW50YXRpb24gb2YgdGhhdCBsb2NhdGlvblxuICAgKlxuICAgKiBJZiBhbnkgb2YgdGhlIGZpZWxkcyBjb250YWluIHBsYWNlaG9sZGVycywgdGhlIHJlc3VsdCB3aWxsIGJlIHdyYXBwZWQgaW4gYSBgRm4uc3ViYC5cbiAgICovXG4gIHByb3RlY3RlZCByb3NMb2NhdGlvbkZyb21GaWxlQXNzZXQobG9jYXRpb246IGN4c2NoZW1hLkZpbGVEZXN0aW5hdGlvbik6IEZpbGVBc3NldExvY2F0aW9uIHtcbiAgICBjb25zdCB7IHJlZ2lvbiB9ID0gc3RhY2tMb2NhdGlvbk9ySW5zdHJpbnNpY3ModGhpcy5ib3VuZFN0YWNrKTtcbiAgICBjb25zdCBodHRwVXJsID0gYGh0dHBzOi8vJHtsb2NhdGlvbi5idWNrZXROYW1lfS5vc3MtJHtyZWdpb259LmFsaXl1bmNzLmNvbS8ke2xvY2F0aW9uLm9iamVjdEtleX1gO1xuXG4gICAgcmV0dXJuIHtcbiAgICAgIGJ1Y2tldE5hbWU6IHJvc2lmeShsb2NhdGlvbi5idWNrZXROYW1lKSxcbiAgICAgIG9iamVjdEtleTogcm9zaWZ5KGxvY2F0aW9uLm9iamVjdEtleSksXG4gICAgICBodHRwVXJsLFxuICAgICAgcmVnaW9uXG4gICAgfTtcbiAgfVxufVxuXG4vKipcbiAqIFN0YWNrIGFydGlmYWN0IG9wdGlvbnNcbiAqXG4gKi9cbmV4cG9ydCBpbnRlcmZhY2UgU3ludGhlc2l6ZVN0YWNrQXJ0aWZhY3RPcHRpb25zIHtcbiAgLyoqXG4gICAqIElkZW50aWZpZXJzIG9mIGFkZGl0aW9uYWwgZGVwZW5kZW5jaWVzXG4gICAqXG4gICAqIEBkZWZhdWx0IC0gTm8gYWRkaXRpb25hbCBkZXBlbmRlbmNpZXNcbiAgICovXG4gIHJlYWRvbmx5IGFkZGl0aW9uYWxEZXBlbmRlbmNpZXM/OiBzdHJpbmdbXTtcblxuICAvKipcbiAgICogVmFsdWVzIGZvciBST1Mgc3RhY2sgcGFyYW1ldGVycyB0aGF0IHNob3VsZCBiZSBwYXNzZWQgd2hlbiB0aGUgc3RhY2sgaXMgZGVwbG95ZWQuXG4gICAqXG4gICAqIEBkZWZhdWx0IC0gTm8gcGFyYW1ldGVyc1xuICAgKi9cbiAgcmVhZG9ubHkgcGFyYW1ldGVycz86IHsgW2lkOiBzdHJpbmddOiBzdHJpbmcgfTtcbn1cblxuZnVuY3Rpb24gc3RhY2tUZW1wbGF0ZUZpbGVBc3NldChzdGFjazogU3RhY2ssIHNlc3Npb246IElTeW50aGVzaXNTZXNzaW9uKTogRmlsZUFzc2V0U291cmNlIHtcbiAgY29uc3QgdGVtcGxhdGVQYXRoID0gcGF0aC5qb2luKHNlc3Npb24uYXNzZW1ibHkub3V0ZGlyLCBzdGFjay50ZW1wbGF0ZUZpbGUpO1xuXG4gIGlmICghZnMuZXhpc3RzU3luYyh0ZW1wbGF0ZVBhdGgpKSB7XG4gICAgdGhyb3cgbmV3IEVycm9yKGBTdGFjayB0ZW1wbGF0ZSAke3N0YWNrLnN0YWNrTmFtZX0gbm90IHdyaXR0ZW4geWV0OiAke3RlbXBsYXRlUGF0aH1gKTtcbiAgfVxuXG4gIGNvbnN0IHRlbXBsYXRlID0gZnMucmVhZEZpbGVTeW5jKHRlbXBsYXRlUGF0aCwgeyBlbmNvZGluZzogJ3V0Zi04JyB9KTtcblxuICBjb25zdCBzb3VyY2VIYXNoID0gY29udGVudEhhc2godGVtcGxhdGUpO1xuXG4gIHJldHVybiB7XG4gICAgZmlsZU5hbWU6IHN0YWNrLnRlbXBsYXRlRmlsZSxcbiAgICBwYWNrYWdpbmc6IEZpbGVBc3NldFBhY2thZ2luZy5GSUxFLFxuICAgIHNvdXJjZUhhc2gsXG4gICAgZGVwbG95VGltZTogdHJ1ZSxcbiAgfTtcbn1cblxuLyoqXG4gKiBSZXR1cm4gdGhlIHN0YWNrIGxvY2F0aW9ucyBpZiB0aGV5J3JlIGNvbmNyZXRlLCBvciB0aGUgb3JpZ2luYWwgUk9TIGludHJpc2ljcyBvdGhlcndpc2VcbiAqXG4gKiBXZSBuZWVkIHRvIHJldHVybiB0aGVzZSBpbnN0ZWFkIG9mIHRoZSB0b2tlbml6ZWQgdmVyc2lvbnMgb2YgdGhlIHN0cmluZ3MsXG4gKiBzaW5jZSB3ZSBtdXN0IGFjY2VwdCB0aG9zZSBzYW1lICR7QUxJWVVOOjpBY2NvdW50SWR9LyR7QUxJWVVOOjpSZWdpb259IHBsYWNlaG9sZGVyc1xuICogaW4gYnVja2V0IG5hbWVzIGFuZCByb2xlIG5hbWVzIChpbiBvcmRlciB0byBhbGxvdyBlbnZpcm9ubWVudC1hZ25vc3RpYyBzdGFja3MpLlxuICpcbiAqIFdlJ2xsIHdyYXAgYSBzaW5nbGUge0ZuOjpTdWJ9IGFyb3VuZCB0aGUgZmluYWwgc3RyaW5nIGluIG9yZGVyIHRvIHJlcGxhY2UgZXZlcnl0aGluZyxcbiAqIGJ1dCB3ZSBjYW4ndCBoYXZlIHRoZSB0b2tlbiBzeXN0ZW0gcmVuZGVyIHBhcnQgb2YgdGhlIHN0cmluZyB0byB7Rm46OkpvaW59IGJlY2F1c2VcbiAqIHRoZSBST1Mgc3BlY2lmaWNhdGlvbiBkb2Vzbid0IGFsbG93IHRoZSB7Rm46OlN1Yn0gdGVtcGxhdGUgc3RyaW5nIHRvIGJlIGFuIGFyYml0cmFyeVxuICogZXhwcmVzc2lvbi0taXQgbXVzdCBiZSBhIHN0cmluZyBsaXRlcmFsLlxuICovXG5mdW5jdGlvbiBzdGFja0xvY2F0aW9uT3JJbnN0cmluc2ljcyhzdGFjazogU3RhY2spIHtcbiAgcmV0dXJuIHtcbiAgICBhY2NvdW50OiByZXNvbHZlZE9yKHN0YWNrLmFjY291bnQsICcke0FMSVlVTjo6QWNjb3VudElkfScpLFxuICAgIHJlZ2lvbjogcmVzb2x2ZWRPcihzdGFjay5yZWdpb24sICcke0FMSVlVTjo6UmVnaW9ufScpLFxuICB9O1xufVxuXG4vKipcbiAqIElmIHRoZSBzdHJpbmcgc3RpbGwgY29udGFpbnMgcGxhY2Vob2xkZXJzLCB3cmFwIGl0IGluIGEgRm46OlN1YiBzbyB0aGV5IHdpbGwgYmUgc3Vic3RpdHV0ZWQgYXQgUk9TIGRlcGxveW1lbnQgdGltZVxuICpcbiAqIChUaGlzIGhhcHBlbnMgdG8gd29yayBiZWNhdXNlIHRoZSBwbGFjZWhvbGRlcnMgd2UgcGlja2VkIG1hcCBkaXJlY3RseSBvbnRvIFJPU1xuICogcGxhY2Vob2xkZXJzLiBJZiB0aGV5IGRpZG4ndCB3ZSdkIGhhdmUgdG8gZG8gYSB0cmFuc2Zvcm1hdGlvbiBoZXJlKS5cbiAqL1xuZnVuY3Rpb24gcm9zaWZ5KHM6IHN0cmluZyk6IHN0cmluZyB7XG4gIHJldHVybiBzLmluZGV4T2YoJyR7JykgPiAtMSA/IEZuLnN1YihzKSA6IHM7XG59XG4iXX0=

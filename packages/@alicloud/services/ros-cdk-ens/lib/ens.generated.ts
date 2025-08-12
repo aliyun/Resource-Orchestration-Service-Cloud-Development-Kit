@@ -742,7 +742,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Instance`, which is used to create an Edge Node Service (ENS) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Instance`, which is used to create Edge Node Service (ENS) instances.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-instance
  */
@@ -1813,14 +1813,9 @@ export interface RosSecurityGroupProps {
     readonly description?: string | ros.IResolvable;
 
     /**
-     * @Property securityGroupEgress: egress rules for the security group.
+     * @Property permissions: undefined
      */
-    readonly securityGroupEgress?: Array<RosSecurityGroup.SecurityGroupEgressProperty | ros.IResolvable> | ros.IResolvable;
-
-    /**
-     * @Property securityGroupIngress: Ingress rules for the security group.
-     */
-    readonly securityGroupIngress?: Array<RosSecurityGroup.SecurityGroupIngressProperty | ros.IResolvable> | ros.IResolvable;
+    readonly permissions?: Array<RosSecurityGroup.PermissionsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property securityGroupName: The name of the security group. The name must be 2 to 128 characters in length. The name must start with a letter and cannot start with http:\/\/ or https:\/\/. It can contain letters, digits, colons (:), underscores (_), and hyphens (-). By default, this parameter is empty.
@@ -1840,8 +1835,14 @@ function RosSecurityGroupPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('securityGroupName', ros.validateString)(properties.securityGroupName));
-    errors.collect(ros.propertyValidator('securityGroupIngress', ros.listValidator(RosSecurityGroup_SecurityGroupIngressPropertyValidator))(properties.securityGroupIngress));
-    errors.collect(ros.propertyValidator('securityGroupEgress', ros.listValidator(RosSecurityGroup_SecurityGroupEgressPropertyValidator))(properties.securityGroupEgress));
+    if(properties.permissions && (Array.isArray(properties.permissions) || (typeof properties.permissions) === 'string')) {
+        errors.collect(ros.propertyValidator('permissions', ros.validateLength)({
+            data: properties.permissions.length,
+            min: 1,
+            max: 200,
+          }));
+    }
+    errors.collect(ros.propertyValidator('permissions', ros.listValidator(RosSecurityGroup_PermissionsPropertyValidator))(properties.permissions));
     return errors.wrap('supplied properties not correct for "RosSecurityGroupProps"');
 }
 
@@ -1860,8 +1861,7 @@ function rosSecurityGroupPropsToRosTemplate(properties: any, enableResourcePrope
     }
     return {
       'Description': ros.stringToRosTemplate(properties.description),
-      'SecurityGroupEgress': ros.listMapper(rosSecurityGroupSecurityGroupEgressPropertyToRosTemplate)(properties.securityGroupEgress),
-      'SecurityGroupIngress': ros.listMapper(rosSecurityGroupSecurityGroupIngressPropertyToRosTemplate)(properties.securityGroupIngress),
+      'Permissions': ros.listMapper(rosSecurityGroupPermissionsPropertyToRosTemplate)(properties.permissions),
       'SecurityGroupName': ros.stringToRosTemplate(properties.securityGroupName),
     };
 }
@@ -1891,14 +1891,9 @@ export class RosSecurityGroup extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * @Property securityGroupEgress: egress rules for the security group.
+     * @Property permissions: undefined
      */
-    public securityGroupEgress: Array<RosSecurityGroup.SecurityGroupEgressProperty | ros.IResolvable> | ros.IResolvable | undefined;
-
-    /**
-     * @Property securityGroupIngress: Ingress rules for the security group.
-     */
-    public securityGroupIngress: Array<RosSecurityGroup.SecurityGroupIngressProperty | ros.IResolvable> | ros.IResolvable | undefined;
+    public permissions: Array<RosSecurityGroup.PermissionsProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property securityGroupName: The name of the security group. The name must be 2 to 128 characters in length. The name must start with a letter and cannot start with http:\/\/ or https:\/\/. It can contain letters, digits, colons (:), underscores (_), and hyphens (-). By default, this parameter is empty.
@@ -1916,8 +1911,7 @@ export class RosSecurityGroup extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.description = props.description;
-        this.securityGroupEgress = props.securityGroupEgress;
-        this.securityGroupIngress = props.securityGroupIngress;
+        this.permissions = props.permissions;
         this.securityGroupName = props.securityGroupName;
     }
 
@@ -1925,8 +1919,7 @@ export class RosSecurityGroup extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             description: this.description,
-            securityGroupEgress: this.securityGroupEgress,
-            securityGroupIngress: this.securityGroupIngress,
+            permissions: this.permissions,
             securityGroupName: this.securityGroupName,
         };
     }
@@ -1939,145 +1932,82 @@ export namespace RosSecurityGroup {
     /**
      * @stability external
      */
-    export interface SecurityGroupEgressProperty {
+    export interface PermissionsProperty {
         /**
-         * @Property policy: Authorization policies, parameter values can be: accept (accepted access), drop (denied access). Default value is accept.
+         * @Property policy: Access permissions. Range:
+     * - Accept: Accept the visit.
+     * - Drop: To deny access.
          */
-        readonly policy?: string | ros.IResolvable;
+        readonly policy: string | ros.IResolvable;
         /**
-         * @Property portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1\/200'For icmp|gre|all protocel, the port range should be '-1\/-1'
-         */
-        readonly portRange: string | ros.IResolvable;
-        /**
-         * @Property sourcePortRange: The range of the ports enabled by the source security group for the transport layer protocol. Valid values: TCP\/UDP: Value range: 1 to 65535. The start port and the end port are separated by a slash (\/). Correct example: 1\/200. Incorrect example: 200\/1.ICMP: -1\/-1.GRE: -1\/-1.ALL: -1\/-1.
-         */
-        readonly sourcePortRange?: string | ros.IResolvable;
-        /**
-         * @Property priority: Authorization policies priority range[1, 100]
-         */
-        readonly priority?: number | ros.IResolvable;
-        /**
-         * @Property ipProtocol: Ip protocol for in rule.
-         */
-        readonly ipProtocol: string | ros.IResolvable;
-        /**
-         * @Property destCidrIp: Dest CIDR Ip Address range.
-         */
-        readonly destCidrIp?: string | ros.IResolvable;
-    }
-}
-/**
- * Determine whether the given properties match those of a `SecurityGroupEgressProperty`
- *
- * @param properties - the TypeScript properties of a `SecurityGroupEgressProperty`
- *
- * @returns the result of the validation.
- */
-function RosSecurityGroup_SecurityGroupEgressPropertyValidator(properties: any): ros.ValidationResult {
-    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
-    const errors = new ros.ValidationResults();
-    if(properties.policy && (typeof properties.policy) !== 'object') {
-        errors.collect(ros.propertyValidator('policy', ros.validateAllowedValues)({
-          data: properties.policy,
-          allowedValues: ["accept","drop"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('policy', ros.validateString)(properties.policy));
-    errors.collect(ros.propertyValidator('portRange', ros.requiredValidator)(properties.portRange));
-    errors.collect(ros.propertyValidator('portRange', ros.validateString)(properties.portRange));
-    errors.collect(ros.propertyValidator('sourcePortRange', ros.validateString)(properties.sourcePortRange));
-    if(properties.priority && (typeof properties.priority) !== 'object') {
-        errors.collect(ros.propertyValidator('priority', ros.validateRange)({
-            data: properties.priority,
-            min: 1,
-            max: 100,
-          }));
-    }
-    errors.collect(ros.propertyValidator('priority', ros.validateNumber)(properties.priority));
-    errors.collect(ros.propertyValidator('ipProtocol', ros.requiredValidator)(properties.ipProtocol));
-    if(properties.ipProtocol && (typeof properties.ipProtocol) !== 'object') {
-        errors.collect(ros.propertyValidator('ipProtocol', ros.validateAllowedValues)({
-          data: properties.ipProtocol,
-          allowedValues: ["tcp","udp","icmp","gre","all"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('ipProtocol', ros.validateString)(properties.ipProtocol));
-    errors.collect(ros.propertyValidator('destCidrIp', ros.validateString)(properties.destCidrIp));
-    return errors.wrap('supplied properties not correct for "SecurityGroupEgressProperty"');
-}
-
-/**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::ENS::SecurityGroup.SecurityGroupEgress` resource
- *
- * @param properties - the TypeScript properties of a `SecurityGroupEgressProperty`
- *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::ENS::SecurityGroup.SecurityGroupEgress` resource.
- */
-// @ts-ignore TS6133
-function rosSecurityGroupSecurityGroupEgressPropertyToRosTemplate(properties: any): any {
-    if (!ros.canInspect(properties)) { return properties; }
-    RosSecurityGroup_SecurityGroupEgressPropertyValidator(properties).assertSuccess();
-    return {
-      'Policy': ros.stringToRosTemplate(properties.policy),
-      'PortRange': ros.stringToRosTemplate(properties.portRange),
-      'SourcePortRange': ros.stringToRosTemplate(properties.sourcePortRange),
-      'Priority': ros.numberToRosTemplate(properties.priority),
-      'IpProtocol': ros.stringToRosTemplate(properties.ipProtocol),
-      'DestCidrIp': ros.stringToRosTemplate(properties.destCidrIp),
-    };
-}
-
-export namespace RosSecurityGroup {
-    /**
-     * @stability external
-     */
-    export interface SecurityGroupIngressProperty {
-        /**
-         * @Property policy: Authorization policies, parameter values can be: accept (accepted access), drop (denied access). Default value is accept.
-         */
-        readonly policy?: string | ros.IResolvable;
-        /**
-         * @Property portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1\/200'For icmp|gre|all protocel, the port range should be '-1\/-1'
+         * @Property portRange: The range of destination ports that the security group opens for each protocol. Range:
+     * - TCP\/UDP protocol: range from 1 to 65535. Use a forward slash (\/) to separate the start and end ports. For example: 1\/200
+     * - ICMP protocol: -1\/-1.
+     * - ALL: -1\/-1.
          */
         readonly portRange: string | ros.IResolvable;
         /**
-         * @Property sourcePortRange: The range of the ports enabled by the source security group for the transport layer protocol. Valid values: TCP\/UDP: Value range: 1 to 65535. The start port and the end port are separated by a slash (\/). Correct example: 1\/200. Incorrect example: 200\/1.ICMP: -1\/-1.GRE: -1\/-1.ALL: -1\/-1.
+         * @Property description: The description of the security group. The description must be 2 to 256 characters in length. It must start with a letter but cannot start with http:\/\/ or https:\/\/.
+         */
+        readonly description?: string | ros.IResolvable;
+        /**
+         * @Property sourcePortRange: The range of destination ports that the security group opens for each protocol. Range:
+     * - TCP\/UDP protocol: range from 1 to 65535. Use a forward slash (\/) to separate the start and end ports. For example: 1\/200
+     * - ICMP protocol: -1\/-1.
+     * - ALL: -1\/-1.
          */
         readonly sourcePortRange?: string | ros.IResolvable;
         /**
-         * @Property priority: Authorization policies priority range[1, 100]
+         * @Property priority: The priority of the security group rule. Valid values: 1 to 100. A smaller value indicates a higher priority.
          */
-        readonly priority?: number | ros.IResolvable;
+        readonly priority: number | ros.IResolvable;
         /**
          * @Property sourceCidrIp: Source CIDR Ip Address range.
          */
         readonly sourceCidrIp?: string | ros.IResolvable;
         /**
-         * @Property ipProtocol: Ip protocol for in rule.
+         * @Property ipProtocol: Protocol type Range:
+     * - TCP: TCP protocol.
+     * - UDP: The UDP protocol.
+     * - ICMP: The ICMP protocol.
+     * - ALL: All protocols are supported.
          */
         readonly ipProtocol: string | ros.IResolvable;
+        /**
+         * @Property destCidrIp: Destination IPv4 CIDR address segment. CIDR format and IPv4 format IP address range are supported.
+         */
+        readonly destCidrIp?: string | ros.IResolvable;
+        /**
+         * @Property direction: Authorization direction.
+     * - egress: You're going out of your way.
+     * - ingress: The direction of entry.
+         */
+        readonly direction: string | ros.IResolvable;
     }
 }
 /**
- * Determine whether the given properties match those of a `SecurityGroupIngressProperty`
+ * Determine whether the given properties match those of a `PermissionsProperty`
  *
- * @param properties - the TypeScript properties of a `SecurityGroupIngressProperty`
+ * @param properties - the TypeScript properties of a `PermissionsProperty`
  *
  * @returns the result of the validation.
  */
-function RosSecurityGroup_SecurityGroupIngressPropertyValidator(properties: any): ros.ValidationResult {
+function RosSecurityGroup_PermissionsPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('policy', ros.requiredValidator)(properties.policy));
     if(properties.policy && (typeof properties.policy) !== 'object') {
         errors.collect(ros.propertyValidator('policy', ros.validateAllowedValues)({
           data: properties.policy,
-          allowedValues: ["accept","drop"],
+          allowedValues: ["Accept","Drop"],
         }));
     }
     errors.collect(ros.propertyValidator('policy', ros.validateString)(properties.policy));
     errors.collect(ros.propertyValidator('portRange', ros.requiredValidator)(properties.portRange));
     errors.collect(ros.propertyValidator('portRange', ros.validateString)(properties.portRange));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('sourcePortRange', ros.validateString)(properties.sourcePortRange));
+    errors.collect(ros.propertyValidator('priority', ros.requiredValidator)(properties.priority));
     if(properties.priority && (typeof properties.priority) !== 'object') {
         errors.collect(ros.propertyValidator('priority', ros.validateRange)({
             data: properties.priority,
@@ -2091,31 +2021,43 @@ function RosSecurityGroup_SecurityGroupIngressPropertyValidator(properties: any)
     if(properties.ipProtocol && (typeof properties.ipProtocol) !== 'object') {
         errors.collect(ros.propertyValidator('ipProtocol', ros.validateAllowedValues)({
           data: properties.ipProtocol,
-          allowedValues: ["tcp","udp","icmp","gre","all"],
+          allowedValues: ["TCP","UDP","ICMP","ALL"],
         }));
     }
     errors.collect(ros.propertyValidator('ipProtocol', ros.validateString)(properties.ipProtocol));
-    return errors.wrap('supplied properties not correct for "SecurityGroupIngressProperty"');
+    errors.collect(ros.propertyValidator('destCidrIp', ros.validateString)(properties.destCidrIp));
+    errors.collect(ros.propertyValidator('direction', ros.requiredValidator)(properties.direction));
+    if(properties.direction && (typeof properties.direction) !== 'object') {
+        errors.collect(ros.propertyValidator('direction', ros.validateAllowedValues)({
+          data: properties.direction,
+          allowedValues: ["egress","ingress"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('direction', ros.validateString)(properties.direction));
+    return errors.wrap('supplied properties not correct for "PermissionsProperty"');
 }
 
 /**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::ENS::SecurityGroup.SecurityGroupIngress` resource
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ENS::SecurityGroup.Permissions` resource
  *
- * @param properties - the TypeScript properties of a `SecurityGroupIngressProperty`
+ * @param properties - the TypeScript properties of a `PermissionsProperty`
  *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::ENS::SecurityGroup.SecurityGroupIngress` resource.
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ENS::SecurityGroup.Permissions` resource.
  */
 // @ts-ignore TS6133
-function rosSecurityGroupSecurityGroupIngressPropertyToRosTemplate(properties: any): any {
+function rosSecurityGroupPermissionsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
-    RosSecurityGroup_SecurityGroupIngressPropertyValidator(properties).assertSuccess();
+    RosSecurityGroup_PermissionsPropertyValidator(properties).assertSuccess();
     return {
       'Policy': ros.stringToRosTemplate(properties.policy),
       'PortRange': ros.stringToRosTemplate(properties.portRange),
+      'Description': ros.stringToRosTemplate(properties.description),
       'SourcePortRange': ros.stringToRosTemplate(properties.sourcePortRange),
       'Priority': ros.numberToRosTemplate(properties.priority),
       'SourceCidrIp': ros.stringToRosTemplate(properties.sourceCidrIp),
       'IpProtocol': ros.stringToRosTemplate(properties.ipProtocol),
+      'DestCidrIp': ros.stringToRosTemplate(properties.destCidrIp),
+      'Direction': ros.stringToRosTemplate(properties.direction),
     };
 }
 

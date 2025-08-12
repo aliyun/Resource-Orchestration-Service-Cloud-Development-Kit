@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.nas;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-filesystem
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.206Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.734Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.FileSystemProps")
 @software.amazon.jsii.Jsii.Proxy(FileSystemProps.Jsii$Proxy.class)
 public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
@@ -21,7 +21,7 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
      * Property storageType: The storage type of the file System.
      * <p>
      * Valid values:
-     * Performance、Capacity(Available when the file_system_type is standard)
+     * Performance、Capacity、Premium(Available when the file_system_type is standard)
      * standard、advance(Available when the file_system_type is extreme)
      * advance_100、advance_200(Available when the file_system_type is cpfs)
      */
@@ -99,6 +99,13 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property resourceGroupId: Resource group id.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
      * Property snapshotId: Snapshot ID.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSnapshotId() {
@@ -155,6 +162,7 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object duration;
         java.lang.Object encryptType;
         java.lang.Object fileSystemType;
+        java.lang.Object resourceGroupId;
         java.lang.Object snapshotId;
         java.util.List<com.aliyun.ros.cdk.nas.RosFileSystem.TagsProperty> tags;
         java.lang.Object vpcId;
@@ -187,7 +195,7 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
          * Sets the value of {@link FileSystemProps#getStorageType}
          * @param storageType Property storageType: The storage type of the file System. This parameter is required.
          *                    Valid values:
-         *                    Performance、Capacity(Available when the file_system_type is standard)
+         *                    Performance、Capacity、Premium(Available when the file_system_type is standard)
          *                    standard、advance(Available when the file_system_type is extreme)
          *                    advance_100、advance_200(Available when the file_system_type is cpfs)
          * @return {@code this}
@@ -201,7 +209,7 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
          * Sets the value of {@link FileSystemProps#getStorageType}
          * @param storageType Property storageType: The storage type of the file System. This parameter is required.
          *                    Valid values:
-         *                    Performance、Capacity(Available when the file_system_type is standard)
+         *                    Performance、Capacity、Premium(Available when the file_system_type is standard)
          *                    standard、advance(Available when the file_system_type is extreme)
          *                    advance_100、advance_200(Available when the file_system_type is cpfs)
          * @return {@code this}
@@ -390,6 +398,26 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link FileSystemProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: Resource group id.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link FileSystemProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: Resource group id.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link FileSystemProps#getSnapshotId}
          * @param snapshotId Property snapshotId: Snapshot ID.
          * @return {@code this}
@@ -507,6 +535,7 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object duration;
         private final java.lang.Object encryptType;
         private final java.lang.Object fileSystemType;
+        private final java.lang.Object resourceGroupId;
         private final java.lang.Object snapshotId;
         private final java.util.List<com.aliyun.ros.cdk.nas.RosFileSystem.TagsProperty> tags;
         private final java.lang.Object vpcId;
@@ -529,6 +558,7 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
             this.duration = software.amazon.jsii.Kernel.get(this, "duration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.encryptType = software.amazon.jsii.Kernel.get(this, "encryptType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.fileSystemType = software.amazon.jsii.Kernel.get(this, "fileSystemType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.snapshotId = software.amazon.jsii.Kernel.get(this, "snapshotId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.nas.RosFileSystem.TagsProperty.class)));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -552,6 +582,7 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
             this.duration = builder.duration;
             this.encryptType = builder.encryptType;
             this.fileSystemType = builder.fileSystemType;
+            this.resourceGroupId = builder.resourceGroupId;
             this.snapshotId = builder.snapshotId;
             this.tags = (java.util.List<com.aliyun.ros.cdk.nas.RosFileSystem.TagsProperty>)builder.tags;
             this.vpcId = builder.vpcId;
@@ -607,6 +638,11 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getFileSystemType() {
             return this.fileSystemType;
+        }
+
+        @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
         }
 
         @Override
@@ -666,6 +702,9 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getFileSystemType() != null) {
                 data.set("fileSystemType", om.valueToTree(this.getFileSystemType()));
             }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
             if (this.getSnapshotId() != null) {
                 data.set("snapshotId", om.valueToTree(this.getSnapshotId()));
             }
@@ -709,6 +748,7 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
             if (this.duration != null ? !this.duration.equals(that.duration) : that.duration != null) return false;
             if (this.encryptType != null ? !this.encryptType.equals(that.encryptType) : that.encryptType != null) return false;
             if (this.fileSystemType != null ? !this.fileSystemType.equals(that.fileSystemType) : that.fileSystemType != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.snapshotId != null ? !this.snapshotId.equals(that.snapshotId) : that.snapshotId != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.vpcId != null ? !this.vpcId.equals(that.vpcId) : that.vpcId != null) return false;
@@ -728,6 +768,7 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.duration != null ? this.duration.hashCode() : 0);
             result = 31 * result + (this.encryptType != null ? this.encryptType.hashCode() : 0);
             result = 31 * result + (this.fileSystemType != null ? this.fileSystemType.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.snapshotId != null ? this.snapshotId.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.elasticsearch;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-elasticsearch-instance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:06.246Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.134Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.elasticsearch.$Module.class, fqn = "@alicloud/ros-cdk-elasticsearch.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -33,6 +33,20 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
      * Property vSwitchId: The ID of VSwitch.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchId();
+
+    /**
+     * Property deleteType: The release type.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>immediate: The cluster is immediately deleted when it is released. After the cluster is deleted, the data stored in the cluster is deleted, and the system removes the cluster from the Logstash cluster list.</li>
+     * <li>protective (default): The instance is frozen for 24 hours before data is completely cleared. During this period, the instance is still displayed in the instance list. You can select Restore Instance or Release Now.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeleteType() {
+        return null;
+    }
 
     /**
      * Property description: The description of instance.
@@ -192,6 +206,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object password;
         java.lang.Object version;
         java.lang.Object vSwitchId;
+        java.lang.Object deleteType;
         java.lang.Object description;
         java.lang.Object enableKibanaPrivate;
         java.lang.Object enableKibanaPublic;
@@ -292,6 +307,38 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.vSwitchId = vSwitchId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getDeleteType}
+         * @param deleteType Property deleteType: The release type.
+         *                   Valid values:
+         *                   <p>
+         *                   <ul>
+         *                   <li>immediate: The cluster is immediately deleted when it is released. After the cluster is deleted, the data stored in the cluster is deleted, and the system removes the cluster from the Logstash cluster list.</li>
+         *                   <li>protective (default): The instance is frozen for 24 hours before data is completely cleared. During this period, the instance is still displayed in the instance list. You can select Restore Instance or Release Now.</li>
+         *                   </ul>
+         * @return {@code this}
+         */
+        public Builder deleteType(java.lang.String deleteType) {
+            this.deleteType = deleteType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getDeleteType}
+         * @param deleteType Property deleteType: The release type.
+         *                   Valid values:
+         *                   <p>
+         *                   <ul>
+         *                   <li>immediate: The cluster is immediately deleted when it is released. After the cluster is deleted, the data stored in the cluster is deleted, and the system removes the cluster from the Logstash cluster list.</li>
+         *                   <li>protective (default): The instance is frozen for 24 hours before data is completely cleared. During this period, the instance is still displayed in the instance list. You can select Restore Instance or Release Now.</li>
+         *                   </ul>
+         * @return {@code this}
+         */
+        public Builder deleteType(com.aliyun.ros.cdk.core.IResolvable deleteType) {
+            this.deleteType = deleteType;
             return this;
         }
 
@@ -685,6 +732,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object password;
         private final java.lang.Object version;
         private final java.lang.Object vSwitchId;
+        private final java.lang.Object deleteType;
         private final java.lang.Object description;
         private final java.lang.Object enableKibanaPrivate;
         private final java.lang.Object enableKibanaPublic;
@@ -714,6 +762,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.version = software.amazon.jsii.Kernel.get(this, "version", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.deleteType = software.amazon.jsii.Kernel.get(this, "deleteType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableKibanaPrivate = software.amazon.jsii.Kernel.get(this, "enableKibanaPrivate", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableKibanaPublic = software.amazon.jsii.Kernel.get(this, "enableKibanaPublic", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -744,6 +793,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.password = java.util.Objects.requireNonNull(builder.password, "password is required");
             this.version = java.util.Objects.requireNonNull(builder.version, "version is required");
             this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
+            this.deleteType = builder.deleteType;
             this.description = builder.description;
             this.enableKibanaPrivate = builder.enableKibanaPrivate;
             this.enableKibanaPublic = builder.enableKibanaPublic;
@@ -782,6 +832,11 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getVSwitchId() {
             return this.vSwitchId;
+        }
+
+        @Override
+        public final java.lang.Object getDeleteType() {
+            return this.deleteType;
         }
 
         @Override
@@ -884,6 +939,9 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             data.set("password", om.valueToTree(this.getPassword()));
             data.set("version", om.valueToTree(this.getVersion()));
             data.set("vSwitchId", om.valueToTree(this.getVSwitchId()));
+            if (this.getDeleteType() != null) {
+                data.set("deleteType", om.valueToTree(this.getDeleteType()));
+            }
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
             }
@@ -960,6 +1018,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (!password.equals(that.password)) return false;
             if (!version.equals(that.version)) return false;
             if (!vSwitchId.equals(that.vSwitchId)) return false;
+            if (this.deleteType != null ? !this.deleteType.equals(that.deleteType) : that.deleteType != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.enableKibanaPrivate != null ? !this.enableKibanaPrivate.equals(that.enableKibanaPrivate) : that.enableKibanaPrivate != null) return false;
             if (this.enableKibanaPublic != null ? !this.enableKibanaPublic.equals(that.enableKibanaPublic) : that.enableKibanaPublic != null) return false;
@@ -986,6 +1045,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.password.hashCode());
             result = 31 * result + (this.version.hashCode());
             result = 31 * result + (this.vSwitchId.hashCode());
+            result = 31 * result + (this.deleteType != null ? this.deleteType.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.enableKibanaPrivate != null ? this.enableKibanaPrivate.hashCode() : 0);
             result = 31 * result + (this.enableKibanaPublic != null ? this.enableKibanaPublic.hashCode() : 0);

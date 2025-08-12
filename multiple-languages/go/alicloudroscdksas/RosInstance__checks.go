@@ -533,10 +533,27 @@ func (j *jsiiProxy_RosInstance) validateSetMaliciousFileDetectionSdkParameters(v
 	return nil
 }
 
-func (j *jsiiProxy_RosInstance) validateSetPeriodParameters(val interface{}) error {
+func (j *jsiiProxy_RosInstance) validateSetPayTypeParameters(val interface{}) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosInstance) validateSetPeriodParameters(val interface{}) error {
 	switch val.(type) {
 	case *float64:
 		// ok
@@ -594,9 +611,6 @@ func (j *jsiiProxy_RosInstance) validateSetPeriodParameters(val interface{}) err
 }
 
 func (j *jsiiProxy_RosInstance) validateSetPeriodUnitParameters(val interface{}) error {
-	if val == nil {
-		return fmt.Errorf("parameter val is required, but nil was provided")
-	}
 	switch val.(type) {
 	case *string:
 		// ok
@@ -607,6 +621,30 @@ func (j *jsiiProxy_RosInstance) validateSetPeriodUnitParameters(val interface{})
 	default:
 		if !_jsii_.IsAnonymousProxy(val) {
 			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosInstance) validateSetPostPayInstanceModuleParameters(val interface{}) error {
+	switch val.(type) {
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	case *RosInstance_PostPayInstanceModuleProperty:
+		val := val.(*RosInstance_PostPayInstanceModuleProperty)
+		if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
+			return err
+		}
+	case RosInstance_PostPayInstanceModuleProperty:
+		val_ := val.(RosInstance_PostPayInstanceModuleProperty)
+		val := &val_
+		if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
+			return err
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosInstance_PostPayInstanceModuleProperty; received %#v (a %T)", val, val)
 		}
 	}
 

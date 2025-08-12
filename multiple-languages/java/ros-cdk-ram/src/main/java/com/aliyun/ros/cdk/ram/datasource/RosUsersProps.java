@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ram.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-users
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:09.526Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.749Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.datasource.RosUsersProps")
 @software.amazon.jsii.Jsii.Proxy(RosUsersProps.Jsii$Proxy.class)
 public interface RosUsersProps extends software.amazon.jsii.JsiiSerializable {

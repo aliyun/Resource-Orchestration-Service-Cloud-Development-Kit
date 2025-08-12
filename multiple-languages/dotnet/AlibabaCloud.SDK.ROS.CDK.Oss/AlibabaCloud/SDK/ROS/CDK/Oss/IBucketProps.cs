@@ -29,6 +29,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
             }
         }
 
+        /// <summary>Property blockPublicAccess: Whether to block public access.</summary>
+        [JsiiProperty(name: "blockPublicAccess", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? BlockPublicAccess
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property corsConfiguration: Rules that define cross-origin resource sharing of objects in this bucket.</summary>
         [JsiiProperty(name: "corsConfiguration", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-oss.RosBucket.CORSConfigurationProperty\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -219,6 +230,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
             [JsiiOptional]
             [JsiiProperty(name: "accessControl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? AccessControl
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property blockPublicAccess: Whether to block public access.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "blockPublicAccess", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? BlockPublicAccess
             {
                 get => GetInstanceProperty<object?>();
             }

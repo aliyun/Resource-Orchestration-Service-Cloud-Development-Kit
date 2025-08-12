@@ -2463,47 +2463,73 @@ export class RosTransitRouter extends ros.RosResource {
 export interface RosTransitRouterPeerAttachmentProps {
 
     /**
-     * @Property peerTransitRouterId: PeerTransitRouterId
+     * @Property peerTransitRouterId: Peer forwarding router instance ID.
      */
     readonly peerTransitRouterId: string | ros.IResolvable;
 
     /**
-     * @Property autoPublishRouteEnabled: AutoPublishRouteEnabled
+     * @Property autoPublishRouteEnabled: Whether to make the enterprise version forwarding router automatically publish routes across regions to the peer region.
+     * false (default): No.
+     * true: Yes.
      */
     readonly autoPublishRouteEnabled?: boolean | ros.IResolvable;
 
     /**
-     * @Property bandwidth: Bandwidth
+     * @Property bandwidth: The bandwidth value for cross-region connections.Unit: Mbps.
+     * When the BandwidthType value is BandwidthPackage, this parameter represents the bandwidth value that can be used by cross-region connections.
+     * When the BandwidthType value is DataTransfer, this parameter represents the speed limit bandwidth value for cross-region connections.
      */
     readonly bandwidth?: number | ros.IResolvable;
 
     /**
-     * @Property cenBandwidthPackageId: BandwidthPackageId
+     * @Property bandwidthType: The bandwidth allocation method for cross-regional connections.Value:
+     * BandwidthPackage: Allocate bandwidth from bandwidth packets.
+     * DataTransfer: Do not allocate bandwidth for cross-region connections, and is billed based on usage traffic.
+     */
+    readonly bandwidthType?: string | ros.IResolvable;
+
+    /**
+     * @Property cenBandwidthPackageId: The bandwidth packet ID to bind to across regions.
+     * Note When the value of BandwidthType is DataTransfer, this item is not required.
      */
     readonly cenBandwidthPackageId?: string | ros.IResolvable;
 
     /**
-     * @Property cenId: CenId
+     * @Property cenId: Cloud Enterprise Network Instance ID.
      */
     readonly cenId?: string | ros.IResolvable;
 
     /**
-     * @Property peerTransitRouterRegionId: PeerTransitRouterRegionId
+     * @Property defaultLinkType: Default link type.
+     * Optional values are Platinum, Gold, and default to Gold.
+     * And it can only be configured as Platinum (Platinum) when the bandwidth allocation method is billed by traffic.
+     */
+    readonly defaultLinkType?: string | ros.IResolvable;
+
+    /**
+     * @Property peerTransitRouterRegionId: The region ID to which the peer forwarding router instance belongs.
      */
     readonly peerTransitRouterRegionId?: string | ros.IResolvable;
 
     /**
-     * @Property transitRouterAttachmentDescription: TransitRouterAttachmentDescription
+     * @Property tags: The list of tags in the form of key\/value pairs. You can define a maximum of 20 tags.
+     */
+    readonly tags?: RosTransitRouterPeerAttachment.TagsProperty[];
+
+    /**
+     * @Property transitRouterAttachmentDescription: Description information for cross-region connections.
+     * The description can be empty or has a length of 1 to 256 characters and cannot start with http:\/\/ or https:\/\/.
      */
     readonly transitRouterAttachmentDescription?: string | ros.IResolvable;
 
     /**
-     * @Property transitRouterAttachmentName: TransitRouterAttachmentName
+     * @Property transitRouterAttachmentName: The name of the cross-region connection.
+     * The name can be empty or has a length of 1 to 128 characters, and cannot start with http:\/\/ or https:\/\/.
      */
     readonly transitRouterAttachmentName?: string | ros.IResolvable;
 
     /**
-     * @Property transitRouterId: TransitRouterId
+     * @Property transitRouterId: Local Enterprise Edition forwarding router instance ID.
      */
     readonly transitRouterId?: string | ros.IResolvable;
 }
@@ -2519,12 +2545,55 @@ function RosTransitRouterPeerAttachmentPropsValidator(properties: any): ros.Vali
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('autoPublishRouteEnabled', ros.validateBoolean)(properties.autoPublishRouteEnabled));
+    if(properties.bandwidthType && (typeof properties.bandwidthType) !== 'object') {
+        errors.collect(ros.propertyValidator('bandwidthType', ros.validateAllowedValues)({
+          data: properties.bandwidthType,
+          allowedValues: ["BandwidthPackage","DataTransfer"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('bandwidthType', ros.validateString)(properties.bandwidthType));
+    if(properties.bandwidth && (typeof properties.bandwidth) !== 'object') {
+        errors.collect(ros.propertyValidator('bandwidth', ros.validateRange)({
+            data: properties.bandwidth,
+            min: undefined,
+            max: 100000000,
+          }));
+    }
     errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
     errors.collect(ros.propertyValidator('cenId', ros.validateString)(properties.cenId));
+    if(properties.transitRouterAttachmentName && (Array.isArray(properties.transitRouterAttachmentName) || (typeof properties.transitRouterAttachmentName) === 'string')) {
+        errors.collect(ros.propertyValidator('transitRouterAttachmentName', ros.validateLength)({
+            data: properties.transitRouterAttachmentName.length,
+            min: undefined,
+            max: 128,
+          }));
+    }
     errors.collect(ros.propertyValidator('transitRouterAttachmentName', ros.validateString)(properties.transitRouterAttachmentName));
     errors.collect(ros.propertyValidator('peerTransitRouterId', ros.requiredValidator)(properties.peerTransitRouterId));
     errors.collect(ros.propertyValidator('peerTransitRouterId', ros.validateString)(properties.peerTransitRouterId));
+    if(properties.defaultLinkType && (typeof properties.defaultLinkType) !== 'object') {
+        errors.collect(ros.propertyValidator('defaultLinkType', ros.validateAllowedValues)({
+          data: properties.defaultLinkType,
+          allowedValues: ["Platinum","Gold"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('defaultLinkType', ros.validateString)(properties.defaultLinkType));
     errors.collect(ros.propertyValidator('cenBandwidthPackageId', ros.validateString)(properties.cenBandwidthPackageId));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: 1,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosTransitRouterPeerAttachment_TagsPropertyValidator))(properties.tags));
+    if(properties.transitRouterAttachmentDescription && (Array.isArray(properties.transitRouterAttachmentDescription) || (typeof properties.transitRouterAttachmentDescription) === 'string')) {
+        errors.collect(ros.propertyValidator('transitRouterAttachmentDescription', ros.validateLength)({
+            data: properties.transitRouterAttachmentDescription.length,
+            min: undefined,
+            max: 256,
+          }));
+    }
     errors.collect(ros.propertyValidator('transitRouterAttachmentDescription', ros.validateString)(properties.transitRouterAttachmentDescription));
     errors.collect(ros.propertyValidator('transitRouterId', ros.validateString)(properties.transitRouterId));
     errors.collect(ros.propertyValidator('peerTransitRouterRegionId', ros.validateString)(properties.peerTransitRouterRegionId));
@@ -2548,9 +2617,12 @@ function rosTransitRouterPeerAttachmentPropsToRosTemplate(properties: any, enabl
       'PeerTransitRouterId': ros.stringToRosTemplate(properties.peerTransitRouterId),
       'AutoPublishRouteEnabled': ros.booleanToRosTemplate(properties.autoPublishRouteEnabled),
       'Bandwidth': ros.numberToRosTemplate(properties.bandwidth),
+      'BandwidthType': ros.stringToRosTemplate(properties.bandwidthType),
       'CenBandwidthPackageId': ros.stringToRosTemplate(properties.cenBandwidthPackageId),
       'CenId': ros.stringToRosTemplate(properties.cenId),
+      'DefaultLinkType': ros.stringToRosTemplate(properties.defaultLinkType),
       'PeerTransitRouterRegionId': ros.stringToRosTemplate(properties.peerTransitRouterRegionId),
+      'Tags': ros.listMapper(rosTransitRouterPeerAttachmentTagsPropertyToRosTemplate)(properties.tags),
       'TransitRouterAttachmentDescription': ros.stringToRosTemplate(properties.transitRouterAttachmentDescription),
       'TransitRouterAttachmentName': ros.stringToRosTemplate(properties.transitRouterAttachmentName),
       'TransitRouterId': ros.stringToRosTemplate(properties.transitRouterId),
@@ -2569,120 +2641,81 @@ export class RosTransitRouterPeerAttachment extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::TransitRouterPeerAttachment";
 
     /**
-     * @Attribute AutoPublishRouteEnabled: AutoPublishRouteEnabled
-     */
-    public readonly attrAutoPublishRouteEnabled: ros.IResolvable;
-
-    /**
-     * @Attribute Bandwidth: Bandwidth
-     */
-    public readonly attrBandwidth: ros.IResolvable;
-
-    /**
-     * @Attribute CenBandwidthPackageId: BandwidthPackageId
-     */
-    public readonly attrCenBandwidthPackageId: ros.IResolvable;
-
-    /**
-     * @Attribute CenId: CenId
-     */
-    public readonly attrCenId: ros.IResolvable;
-
-    /**
-     * @Attribute ClientToken: ClientToken
-     */
-    public readonly attrClientToken: ros.IResolvable;
-
-    /**
-     * @Attribute GeographicSpanId: GeographicSpanId
-     */
-    public readonly attrGeographicSpanId: ros.IResolvable;
-
-    /**
-     * @Attribute PeerTransitRouterId: PeerTransitRouterId
-     */
-    public readonly attrPeerTransitRouterId: ros.IResolvable;
-
-    /**
-     * @Attribute PeerTransitRouterOwnerId: PeerTransitRouterOwnerId
-     */
-    public readonly attrPeerTransitRouterOwnerId: ros.IResolvable;
-
-    /**
-     * @Attribute PeerTransitRouterRegionId: PeerTransitRouterRegionId
-     */
-    public readonly attrPeerTransitRouterRegionId: ros.IResolvable;
-
-    /**
-     * @Attribute ResourceType: ResourceType
-     */
-    public readonly attrResourceType: ros.IResolvable;
-
-    /**
-     * @Attribute TransitRouterAttachmentDescription: TransitRouterAttachmentDescription
-     */
-    public readonly attrTransitRouterAttachmentDescription: ros.IResolvable;
-
-    /**
-     * @Attribute TransitRouterAttachmentId: The first ID of the resource
+     * @Attribute TransitRouterAttachmentId: Cross-region connection ID.
      */
     public readonly attrTransitRouterAttachmentId: ros.IResolvable;
-
-    /**
-     * @Attribute TransitRouterAttachmentName: TransitRouterAttachmentName
-     */
-    public readonly attrTransitRouterAttachmentName: ros.IResolvable;
-
-    /**
-     * @Attribute TransitRouterId: TransitRouterId
-     */
-    public readonly attrTransitRouterId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
 
     /**
-     * @Property peerTransitRouterId: PeerTransitRouterId
+     * @Property peerTransitRouterId: Peer forwarding router instance ID.
      */
     public peerTransitRouterId: string | ros.IResolvable;
 
     /**
-     * @Property autoPublishRouteEnabled: AutoPublishRouteEnabled
+     * @Property autoPublishRouteEnabled: Whether to make the enterprise version forwarding router automatically publish routes across regions to the peer region.
+     * false (default): No.
+     * true: Yes.
      */
     public autoPublishRouteEnabled: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property bandwidth: Bandwidth
+     * @Property bandwidth: The bandwidth value for cross-region connections.Unit: Mbps.
+     * When the BandwidthType value is BandwidthPackage, this parameter represents the bandwidth value that can be used by cross-region connections.
+     * When the BandwidthType value is DataTransfer, this parameter represents the speed limit bandwidth value for cross-region connections.
      */
     public bandwidth: number | ros.IResolvable | undefined;
 
     /**
-     * @Property cenBandwidthPackageId: BandwidthPackageId
+     * @Property bandwidthType: The bandwidth allocation method for cross-regional connections.Value:
+     * BandwidthPackage: Allocate bandwidth from bandwidth packets.
+     * DataTransfer: Do not allocate bandwidth for cross-region connections, and is billed based on usage traffic.
+     */
+    public bandwidthType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property cenBandwidthPackageId: The bandwidth packet ID to bind to across regions.
+     * Note When the value of BandwidthType is DataTransfer, this item is not required.
      */
     public cenBandwidthPackageId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property cenId: CenId
+     * @Property cenId: Cloud Enterprise Network Instance ID.
      */
     public cenId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property peerTransitRouterRegionId: PeerTransitRouterRegionId
+     * @Property defaultLinkType: Default link type.
+     * Optional values are Platinum, Gold, and default to Gold.
+     * And it can only be configured as Platinum (Platinum) when the bandwidth allocation method is billed by traffic.
+     */
+    public defaultLinkType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property peerTransitRouterRegionId: The region ID to which the peer forwarding router instance belongs.
      */
     public peerTransitRouterRegionId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property transitRouterAttachmentDescription: TransitRouterAttachmentDescription
+     * @Property tags: The list of tags in the form of key\/value pairs. You can define a maximum of 20 tags.
+     */
+    public tags: RosTransitRouterPeerAttachment.TagsProperty[] | undefined;
+
+    /**
+     * @Property transitRouterAttachmentDescription: Description information for cross-region connections.
+     * The description can be empty or has a length of 1 to 256 characters and cannot start with http:\/\/ or https:\/\/.
      */
     public transitRouterAttachmentDescription: string | ros.IResolvable | undefined;
 
     /**
-     * @Property transitRouterAttachmentName: TransitRouterAttachmentName
+     * @Property transitRouterAttachmentName: The name of the cross-region connection.
+     * The name can be empty or has a length of 1 to 128 characters, and cannot start with http:\/\/ or https:\/\/.
      */
     public transitRouterAttachmentName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property transitRouterId: TransitRouterId
+     * @Property transitRouterId: Local Enterprise Edition forwarding router instance ID.
      */
     public transitRouterId: string | ros.IResolvable | undefined;
 
@@ -2693,28 +2726,18 @@ export class RosTransitRouterPeerAttachment extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosTransitRouterPeerAttachmentProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosTransitRouterPeerAttachment.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAutoPublishRouteEnabled = this.getAtt('AutoPublishRouteEnabled');
-        this.attrBandwidth = this.getAtt('Bandwidth');
-        this.attrCenBandwidthPackageId = this.getAtt('CenBandwidthPackageId');
-        this.attrCenId = this.getAtt('CenId');
-        this.attrClientToken = this.getAtt('ClientToken');
-        this.attrGeographicSpanId = this.getAtt('GeographicSpanId');
-        this.attrPeerTransitRouterId = this.getAtt('PeerTransitRouterId');
-        this.attrPeerTransitRouterOwnerId = this.getAtt('PeerTransitRouterOwnerId');
-        this.attrPeerTransitRouterRegionId = this.getAtt('PeerTransitRouterRegionId');
-        this.attrResourceType = this.getAtt('ResourceType');
-        this.attrTransitRouterAttachmentDescription = this.getAtt('TransitRouterAttachmentDescription');
         this.attrTransitRouterAttachmentId = this.getAtt('TransitRouterAttachmentId');
-        this.attrTransitRouterAttachmentName = this.getAtt('TransitRouterAttachmentName');
-        this.attrTransitRouterId = this.getAtt('TransitRouterId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.peerTransitRouterId = props.peerTransitRouterId;
         this.autoPublishRouteEnabled = props.autoPublishRouteEnabled;
         this.bandwidth = props.bandwidth;
+        this.bandwidthType = props.bandwidthType;
         this.cenBandwidthPackageId = props.cenBandwidthPackageId;
         this.cenId = props.cenId;
+        this.defaultLinkType = props.defaultLinkType;
         this.peerTransitRouterRegionId = props.peerTransitRouterRegionId;
+        this.tags = props.tags;
         this.transitRouterAttachmentDescription = props.transitRouterAttachmentDescription;
         this.transitRouterAttachmentName = props.transitRouterAttachmentName;
         this.transitRouterId = props.transitRouterId;
@@ -2726,9 +2749,12 @@ export class RosTransitRouterPeerAttachment extends ros.RosResource {
             peerTransitRouterId: this.peerTransitRouterId,
             autoPublishRouteEnabled: this.autoPublishRouteEnabled,
             bandwidth: this.bandwidth,
+            bandwidthType: this.bandwidthType,
             cenBandwidthPackageId: this.cenBandwidthPackageId,
             cenId: this.cenId,
+            defaultLinkType: this.defaultLinkType,
             peerTransitRouterRegionId: this.peerTransitRouterRegionId,
+            tags: this.tags,
             transitRouterAttachmentDescription: this.transitRouterAttachmentDescription,
             transitRouterAttachmentName: this.transitRouterAttachmentName,
             transitRouterId: this.transitRouterId,
@@ -2737,6 +2763,54 @@ export class RosTransitRouterPeerAttachment extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosTransitRouterPeerAttachmentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosTransitRouterPeerAttachment {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: The value of the tag.
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: The keyword of the tag.
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosTransitRouterPeerAttachment_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CEN::TransitRouterPeerAttachment.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CEN::TransitRouterPeerAttachment.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosTransitRouterPeerAttachmentTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosTransitRouterPeerAttachment_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**

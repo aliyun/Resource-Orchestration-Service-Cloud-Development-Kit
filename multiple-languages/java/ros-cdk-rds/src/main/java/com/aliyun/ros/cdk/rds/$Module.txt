@@ -14,6 +14,8 @@
 @alicloud/ros-cdk-rds.DBInstanceProps=com.aliyun.ros.cdk.rds.DBInstanceProps
 @alicloud/ros-cdk-rds.DBInstanceSecurityIps=com.aliyun.ros.cdk.rds.DBInstanceSecurityIps
 @alicloud/ros-cdk-rds.DBInstanceSecurityIpsProps=com.aliyun.ros.cdk.rds.DBInstanceSecurityIpsProps
+@alicloud/ros-cdk-rds.DBProxy=com.aliyun.ros.cdk.rds.DBProxy
+@alicloud/ros-cdk-rds.DBProxyProps=com.aliyun.ros.cdk.rds.DBProxyProps
 @alicloud/ros-cdk-rds.Database=com.aliyun.ros.cdk.rds.Database
 @alicloud/ros-cdk-rds.DatabaseProps=com.aliyun.ros.cdk.rds.DatabaseProps
 @alicloud/ros-cdk-rds.IADInfo=com.aliyun.ros.cdk.rds.IADInfo
@@ -24,6 +26,7 @@
 @alicloud/ros-cdk-rds.IDBInstanceClone=com.aliyun.ros.cdk.rds.IDBInstanceClone
 @alicloud/ros-cdk-rds.IDBInstanceParameterGroup=com.aliyun.ros.cdk.rds.IDBInstanceParameterGroup
 @alicloud/ros-cdk-rds.IDBInstanceSecurityIps=com.aliyun.ros.cdk.rds.IDBInstanceSecurityIps
+@alicloud/ros-cdk-rds.IDBProxy=com.aliyun.ros.cdk.rds.IDBProxy
 @alicloud/ros-cdk-rds.IDatabase=com.aliyun.ros.cdk.rds.IDatabase
 @alicloud/ros-cdk-rds.IMigrateTask=com.aliyun.ros.cdk.rds.IMigrateTask
 @alicloud/ros-cdk-rds.IPostgresExtensions=com.aliyun.ros.cdk.rds.IPostgresExtensions
@@ -59,6 +62,9 @@
 @alicloud/ros-cdk-rds.RosDBInstanceProps=com.aliyun.ros.cdk.rds.RosDBInstanceProps
 @alicloud/ros-cdk-rds.RosDBInstanceSecurityIps=com.aliyun.ros.cdk.rds.RosDBInstanceSecurityIps
 @alicloud/ros-cdk-rds.RosDBInstanceSecurityIpsProps=com.aliyun.ros.cdk.rds.RosDBInstanceSecurityIpsProps
+@alicloud/ros-cdk-rds.RosDBProxy=com.aliyun.ros.cdk.rds.RosDBProxy
+@alicloud/ros-cdk-rds.RosDBProxy.DBProxyNodesProperty=com.aliyun.ros.cdk.rds.RosDBProxy$DBProxyNodesProperty
+@alicloud/ros-cdk-rds.RosDBProxyProps=com.aliyun.ros.cdk.rds.RosDBProxyProps
 @alicloud/ros-cdk-rds.RosDatabase=com.aliyun.ros.cdk.rds.RosDatabase
 @alicloud/ros-cdk-rds.RosDatabaseProps=com.aliyun.ros.cdk.rds.RosDatabaseProps
 @alicloud/ros-cdk-rds.RosMigrateTask=com.aliyun.ros.cdk.rds.RosMigrateTask

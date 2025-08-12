@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc3;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::FC3::Function</code>, which is used to create a Function Compute 3.0 function.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:06.896Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.657Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc3.$Module.class, fqn = "@alicloud/ros-cdk-fc3.Function")
 public class Function extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.fc3.IFunction {
 
@@ -577,6 +577,19 @@ public class Function extends com.aliyun.ros.cdk.core.Resource implements com.al
          */
         public Builder role(final com.aliyun.ros.cdk.core.IResolvable role) {
             this.props.role(role);
+            return this;
+        }
+
+        /**
+         * Property tags: Tags to attach to function.
+         * <p>
+         * Max support 20 tags to add during create function. Each tag with two properties Key and Value, and Key is required.
+         * <p>
+         * @return {@code this}
+         * @param tags Property tags: Tags to attach to function. This parameter is required.
+         */
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.fc3.RosFunction.TagsProperty> tags) {
+            this.props.tags(tags);
             return this;
         }
 

@@ -109,6 +109,18 @@ export interface InstanceProps {
     readonly jobId?: string | ros.IResolvable;
 
     /**
+     * Property maxDu: The upper limit of DU.
+     * > Only Serverless instances are supported.
+     */
+    readonly maxDu?: number | ros.IResolvable;
+
+    /**
+     * Property minDu: The lower limit of DU.
+     * > Only Serverless instances are supported.
+     */
+    readonly minDu?: number | ros.IResolvable;
+
+    /**
      * Property period: The unit of the subscription duration. Valid values: **Year** and **Month**.
      * **Note**: You must specify this parameter only if the **PayType** parameter is set to **PrePaid**.
      */
@@ -184,7 +196,7 @@ export interface IInstance extends ros.IResource {
     readonly attrJobId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DTS::Instance`, which is a new resource type that is used to create a Data Transmission Service (DTS) instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DTS::Instance`, which is a new resource type used to create a Data Transmission Service (DTS) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-instance
  */
@@ -228,6 +240,7 @@ export class Instance extends ros.Resource implements IInstance {
             autoPay: props.autoPay,
             destinationEndpointEngineName: props.destinationEndpointEngineName,
             sourceRegion: props.sourceRegion,
+            minDu: props.minDu,
             du: props.du,
             type: props.type,
             databaseCount: props.databaseCount,
@@ -235,6 +248,7 @@ export class Instance extends ros.Resource implements IInstance {
             autoStart: props.autoStart,
             jobId: props.jobId,
             syncArchitecture: props.syncArchitecture,
+            maxDu: props.maxDu,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstance;
         this.attrInstanceId = rosInstance.attrInstanceId;

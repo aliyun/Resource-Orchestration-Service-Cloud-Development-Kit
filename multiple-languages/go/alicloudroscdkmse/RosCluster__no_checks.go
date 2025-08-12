@@ -148,6 +148,14 @@ func (j *jsiiProxy_RosCluster) validateSetRequestParsParameters(val interface{})
 	return nil
 }
 
+func (j *jsiiProxy_RosCluster) validateSetResourceGroupIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosCluster) validateSetTagsParameters(val *[]*RosCluster_TagsProperty) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosCluster) validateSetVpcIdParameters(val interface{}) error {
 	return nil
 }

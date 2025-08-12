@@ -901,7 +901,7 @@ function rosEciScalingConfigurationPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::EciScalingConfiguration`, which is used to define a scaling configuration of the Elastic Container Instance type.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::EciScalingConfiguration`, which is used to define a scaling configuration of the Elastic Container Instance type in Auto Scaling.
  * @Note This class does not contain additional functions, so it is recommended to use the `EciScalingConfiguration` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-eciscalingconfiguration
  */
@@ -3098,13 +3098,13 @@ export interface RosScalingConfigurationProps {
     readonly internetChargeType?: string | ros.IResolvable;
 
     /**
-     * @Property internetMaxBandwidthIn: Maximum incoming bandwidth from the public network, measured in Mbps (Mega bit per second). The value range is [1,200]. If this parameter value is not specified, AliyunAPI automatically sets the value to 200 Mbps.
+     * @Property internetMaxBandwidthIn: Maximum incoming bandwidth from the public network, measured in Mbps (Mega bit per second). The value range is [1,200]. If this parameter value is not specified, API automatically sets the value to 200 Mbps.
      */
     readonly internetMaxBandwidthIn?: number | ros.IResolvable;
 
     /**
      * @Property internetMaxBandwidthOut: Maximum outgoing bandwidth from the public network, measured in Mbps (Mega bit per second).
-     * The value range for PayByBandwidth is [0,100]. If this parameter value is not specified, AliyunAPI automatically sets the value to 0 Mbps.
+     * The value range for PayByBandwidth is [0,100]. If this parameter value is not specified, API automatically sets the value to 0 Mbps.
      * The value range for PayByTraffic is [0,100]. If this parameter value is not specified, an error is reported
      */
     readonly internetMaxBandwidthOut?: number | ros.IResolvable;
@@ -3740,13 +3740,13 @@ export class RosScalingConfiguration extends ros.RosResource {
     public internetChargeType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property internetMaxBandwidthIn: Maximum incoming bandwidth from the public network, measured in Mbps (Mega bit per second). The value range is [1,200]. If this parameter value is not specified, AliyunAPI automatically sets the value to 200 Mbps.
+     * @Property internetMaxBandwidthIn: Maximum incoming bandwidth from the public network, measured in Mbps (Mega bit per second). The value range is [1,200]. If this parameter value is not specified, API automatically sets the value to 200 Mbps.
      */
     public internetMaxBandwidthIn: number | ros.IResolvable | undefined;
 
     /**
      * @Property internetMaxBandwidthOut: Maximum outgoing bandwidth from the public network, measured in Mbps (Mega bit per second).
-     * The value range for PayByBandwidth is [0,100]. If this parameter value is not specified, AliyunAPI automatically sets the value to 0 Mbps.
+     * The value range for PayByBandwidth is [0,100]. If this parameter value is not specified, API automatically sets the value to 0 Mbps.
      * The value range for PayByTraffic is [0,100]. If this parameter value is not specified, an error is reported
      */
     public internetMaxBandwidthOut: number | ros.IResolvable | undefined;
@@ -6114,16 +6114,17 @@ export interface RosScalingRuleProps {
     /**
      * @Property metricName: The predefined metric to monitor. This parameter is required and applicable only to target tracking scaling rules and predictive scaling rules.
      * Valid values of a target tracking scaling rule:
-     * - CpuUtilization: the average CPU utilization- ClassicInternetRx: the average public network inbound traffic over the classic network
-     * - ClassicInternetTx: the average public network outbound traffic over the classic network
-     * - VpcInternetRx: the average public network inbound traffic over the VPC
-     * - VpcInternetTx: the average public network outbound traffic over the VPC
-     * - IntranetRx: the average internal network inbound traffic
-     * - IntranetTx: the average internal network outbound traffic
+     * - CpuUtilizationAgent:  (recommended) the CPU utilization.
+     * - MemoryUtilization: (recommended) the memory usage.- CpuUtilization: the average CPU utilization.
+     * - IntranetTx: the outbound traffic over an internal network.
+     * - IntranetRx: the average inbound traffic over an internal network.
+     * - VpcInternetTx: the outbound traffic from a virtual private cloud (VPC) to the Internet.
+     * - VpcInternetRx: the inbound traffic from the Internet to a VPC.
+     * - LoadBalancerRealServerAverageQps: the queries per second (QPS) per Application Load Balancer (ALB) server group.
      * Valid values of a predictive scaling rule:
-     * - CpuUtilization: the average CPU utilization
-     * - IntranetRx: the average internal network inbound traffic
-     * - IntranetTx: the average internal network outbound traffic
+     * - CpuUtilization: the average CPU utilization.
+     * - IntranetRx: the average inbound traffic over an internal network.
+     * - IntranetTx: the average outbound traffic over an internal network.
      */
     readonly metricName?: string | ros.IResolvable;
 
@@ -6244,12 +6245,6 @@ function RosScalingRulePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('adjustmentType', ros.validateString)(properties.adjustmentType));
-    if(properties.metricName && (typeof properties.metricName) !== 'object') {
-        errors.collect(ros.propertyValidator('metricName', ros.validateAllowedValues)({
-          data: properties.metricName,
-          allowedValues: ["CpuUtilization","ClassicInternetRx","ClassicInternetTx","VpcInternetRx","VpcInternetTx","IntranetRx","IntranetTx"],
-        }));
-    }
     errors.collect(ros.propertyValidator('metricName', ros.validateString)(properties.metricName));
     if(properties.scalingRuleName && (typeof properties.scalingRuleName) !== 'object') {
         errors.collect(ros.propertyValidator('scalingRuleName', ros.validateAllowedPattern)({
@@ -6425,16 +6420,17 @@ export class RosScalingRule extends ros.RosResource {
     /**
      * @Property metricName: The predefined metric to monitor. This parameter is required and applicable only to target tracking scaling rules and predictive scaling rules.
      * Valid values of a target tracking scaling rule:
-     * - CpuUtilization: the average CPU utilization- ClassicInternetRx: the average public network inbound traffic over the classic network
-     * - ClassicInternetTx: the average public network outbound traffic over the classic network
-     * - VpcInternetRx: the average public network inbound traffic over the VPC
-     * - VpcInternetTx: the average public network outbound traffic over the VPC
-     * - IntranetRx: the average internal network inbound traffic
-     * - IntranetTx: the average internal network outbound traffic
+     * - CpuUtilizationAgent:  (recommended) the CPU utilization.
+     * - MemoryUtilization: (recommended) the memory usage.- CpuUtilization: the average CPU utilization.
+     * - IntranetTx: the outbound traffic over an internal network.
+     * - IntranetRx: the average inbound traffic over an internal network.
+     * - VpcInternetTx: the outbound traffic from a virtual private cloud (VPC) to the Internet.
+     * - VpcInternetRx: the inbound traffic from the Internet to a VPC.
+     * - LoadBalancerRealServerAverageQps: the queries per second (QPS) per Application Load Balancer (ALB) server group.
      * Valid values of a predictive scaling rule:
-     * - CpuUtilization: the average CPU utilization
-     * - IntranetRx: the average internal network inbound traffic
-     * - IntranetTx: the average internal network outbound traffic
+     * - CpuUtilization: the average CPU utilization.
+     * - IntranetRx: the average inbound traffic over an internal network.
+     * - IntranetTx: the average outbound traffic over an internal network.
      */
     public metricName: string | ros.IResolvable | undefined;
 

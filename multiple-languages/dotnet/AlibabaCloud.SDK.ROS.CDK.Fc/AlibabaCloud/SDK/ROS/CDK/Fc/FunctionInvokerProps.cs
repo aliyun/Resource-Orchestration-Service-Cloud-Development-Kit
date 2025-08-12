@@ -107,6 +107,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             }
         }
 
+        private object? _checkAsyncInvocation;
+
+        /// <summary>Property checkAsyncInvocation: Check async invocation setting.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "checkAsyncInvocation", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc.RosFunctionInvoker.CheckAsyncInvocationProperty\"}]}}", isOptional: true)]
+        public object? CheckAsyncInvocation
+        {
+            get => _checkAsyncInvocation;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Fc.RosFunctionInvoker.ICheckAsyncInvocationProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Fc.RosFunctionInvoker.ICheckAsyncInvocationProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _checkAsyncInvocation = value;
+            }
+        }
+
         private object? _checkError;
 
         /// <summary>Property checkError: Whether check error for function invocation result.</summary>

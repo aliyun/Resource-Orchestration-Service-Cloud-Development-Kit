@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Instance`, which is used to create an Edge Node Service (ENS) instance.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Instance`, which is used to create Edge Node Service (ENS) instances.
 type RosInstance interface {
 	alicloudroscdkcore.RosResource
 	AttrAutoRenew() alicloudroscdkcore.IResolvable

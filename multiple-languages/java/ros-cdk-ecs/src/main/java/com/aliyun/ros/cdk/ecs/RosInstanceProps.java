@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:05.027Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.486Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceProps.Jsii$Proxy.class)
 public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -256,6 +256,12 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSubscriptionDeletionForce() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskCategory() {
         return null;
     }
@@ -383,6 +389,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object spotStrategy;
         java.lang.Object storageSetId;
         java.lang.Object storageSetPartitionNumber;
+        java.lang.Object subscriptionDeletionForce;
         java.lang.Object systemDiskCategory;
         java.lang.Object systemDiskDescription;
         java.lang.Object systemDiskDiskName;
@@ -1218,6 +1225,26 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getSubscriptionDeletionForce}
+         * @param subscriptionDeletionForce the value to be set.
+         * @return {@code this}
+         */
+        public Builder subscriptionDeletionForce(java.lang.Boolean subscriptionDeletionForce) {
+            this.subscriptionDeletionForce = subscriptionDeletionForce;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getSubscriptionDeletionForce}
+         * @param subscriptionDeletionForce the value to be set.
+         * @return {@code this}
+         */
+        public Builder subscriptionDeletionForce(com.aliyun.ros.cdk.core.IResolvable subscriptionDeletionForce) {
+            this.subscriptionDeletionForce = subscriptionDeletionForce;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getSystemDiskCategory}
          * @param systemDiskCategory the value to be set.
          * @return {@code this}
@@ -1525,6 +1552,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object spotStrategy;
         private final java.lang.Object storageSetId;
         private final java.lang.Object storageSetPartitionNumber;
+        private final java.lang.Object subscriptionDeletionForce;
         private final java.lang.Object systemDiskCategory;
         private final java.lang.Object systemDiskDescription;
         private final java.lang.Object systemDiskDiskName;
@@ -1586,6 +1614,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             this.spotStrategy = software.amazon.jsii.Kernel.get(this, "spotStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.storageSetId = software.amazon.jsii.Kernel.get(this, "storageSetId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.storageSetPartitionNumber = software.amazon.jsii.Kernel.get(this, "storageSetPartitionNumber", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.subscriptionDeletionForce = software.amazon.jsii.Kernel.get(this, "subscriptionDeletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskCategory = software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskDescription = software.amazon.jsii.Kernel.get(this, "systemDiskDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskDiskName = software.amazon.jsii.Kernel.get(this, "systemDiskDiskName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1648,6 +1677,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             this.spotStrategy = builder.spotStrategy;
             this.storageSetId = builder.storageSetId;
             this.storageSetPartitionNumber = builder.storageSetPartitionNumber;
+            this.subscriptionDeletionForce = builder.subscriptionDeletionForce;
             this.systemDiskCategory = builder.systemDiskCategory;
             this.systemDiskDescription = builder.systemDiskDescription;
             this.systemDiskDiskName = builder.systemDiskDiskName;
@@ -1869,6 +1899,11 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.lang.Object getSubscriptionDeletionForce() {
+            return this.subscriptionDeletionForce;
+        }
+
+        @Override
         public final java.lang.Object getSystemDiskCategory() {
             return this.systemDiskCategory;
         }
@@ -2060,6 +2095,9 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getStorageSetPartitionNumber() != null) {
                 data.set("storageSetPartitionNumber", om.valueToTree(this.getStorageSetPartitionNumber()));
             }
+            if (this.getSubscriptionDeletionForce() != null) {
+                data.set("subscriptionDeletionForce", om.valueToTree(this.getSubscriptionDeletionForce()));
+            }
             if (this.getSystemDiskCategory() != null) {
                 data.set("systemDiskCategory", om.valueToTree(this.getSystemDiskCategory()));
             }
@@ -2158,6 +2196,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             if (this.spotStrategy != null ? !this.spotStrategy.equals(that.spotStrategy) : that.spotStrategy != null) return false;
             if (this.storageSetId != null ? !this.storageSetId.equals(that.storageSetId) : that.storageSetId != null) return false;
             if (this.storageSetPartitionNumber != null ? !this.storageSetPartitionNumber.equals(that.storageSetPartitionNumber) : that.storageSetPartitionNumber != null) return false;
+            if (this.subscriptionDeletionForce != null ? !this.subscriptionDeletionForce.equals(that.subscriptionDeletionForce) : that.subscriptionDeletionForce != null) return false;
             if (this.systemDiskCategory != null ? !this.systemDiskCategory.equals(that.systemDiskCategory) : that.systemDiskCategory != null) return false;
             if (this.systemDiskDescription != null ? !this.systemDiskDescription.equals(that.systemDiskDescription) : that.systemDiskDescription != null) return false;
             if (this.systemDiskDiskName != null ? !this.systemDiskDiskName.equals(that.systemDiskDiskName) : that.systemDiskDiskName != null) return false;
@@ -2216,6 +2255,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.spotStrategy != null ? this.spotStrategy.hashCode() : 0);
             result = 31 * result + (this.storageSetId != null ? this.storageSetId.hashCode() : 0);
             result = 31 * result + (this.storageSetPartitionNumber != null ? this.storageSetPartitionNumber.hashCode() : 0);
+            result = 31 * result + (this.subscriptionDeletionForce != null ? this.subscriptionDeletionForce.hashCode() : 0);
             result = 31 * result + (this.systemDiskCategory != null ? this.systemDiskCategory.hashCode() : 0);
             result = 31 * result + (this.systemDiskDescription != null ? this.systemDiskDescription.hashCode() : 0);
             result = 31 * result + (this.systemDiskDiskName != null ? this.systemDiskDiskName.hashCode() : 0);

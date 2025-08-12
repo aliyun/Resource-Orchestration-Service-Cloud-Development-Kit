@@ -13,6 +13,8 @@ type FunctionInvokerProps struct {
 	//
 	// Defaults to Sync.
 	Async interface{} `field:"optional" json:"async" yaml:"async"`
+	// Property checkAsyncInvocation: Check async invocation setting.
+	CheckAsyncInvocation interface{} `field:"optional" json:"checkAsyncInvocation" yaml:"checkAsyncInvocation"`
 	// Property checkError: Whether check error for function invocation result.
 	//
 	// If set true and function invocation result has error, the resource creation will be regard as failed.

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.computenest;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-computenest-serviceinstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:03.188Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:44.988Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.computenest.$Module.class, fqn = "@alicloud/ros-cdk-computenest.ServiceInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(ServiceInstanceProps.Jsii$Proxy.class)
 public interface ServiceInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,7 +16,7 @@ public interface ServiceInstanceProps extends software.amazon.jsii.JsiiSerializa
     @org.jetbrains.annotations.NotNull java.lang.Object getService();
 
     /**
-     * Property commodity: Cloud market commodity purchase parameters.
+     * Property commodity: The purchase order information of the cloud market does not need to be transmitted if the service is not on the cloud market or charged by volume.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCommodity() {
         return null;
@@ -26,6 +26,20 @@ public interface ServiceInstanceProps extends software.amazon.jsii.JsiiSerializa
      * Property contactGroup: Alarm Contact Group.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getContactGroup() {
+        return null;
+    }
+
+    /**
+     * Property dryRun: Whether to perform PreCheck on the creation request, including permissions and instance status verification.
+     * <p>
+     * Possible values:
+     * <p>
+     * <ul>
+     * <li><strong>true</strong>: The request is sent without creating a service instance.</li>
+     * <li><strong>false</strong>: Sends the request and creates a service instance after the check is passed.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDryRun() {
         return null;
     }
 
@@ -58,20 +72,6 @@ public interface ServiceInstanceProps extends software.amazon.jsii.JsiiSerializa
     }
 
     /**
-     * Property marketInstanceId: The ID of the cloud marketplace instance.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getMarketInstanceId() {
-        return null;
-    }
-
-    /**
-     * Property name: The name of the service instance.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
-        return null;
-    }
-
-    /**
      * Property operationName: Change operation name.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getOperationName() {
@@ -93,9 +93,30 @@ public interface ServiceInstanceProps extends software.amazon.jsii.JsiiSerializa
     }
 
     /**
+     * Property resourceAutoPay: Whether the resource is automatically deducted from the balance.
+     * <p>
+     * Value:
+     * <p>
+     * <ul>
+     * <li><strong>true</strong>: automatic payment.</li>
+     * <li><strong>false</strong>: Do not pay automatically.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceAutoPay() {
+        return null;
+    }
+
+    /**
      * Property resourceGroupId: The ID of the resource group.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
+     * Property serviceInstanceName: The name of the service instance.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getServiceInstanceName() {
         return null;
     }
 
@@ -133,14 +154,15 @@ public interface ServiceInstanceProps extends software.amazon.jsii.JsiiSerializa
         java.lang.Object service;
         java.lang.Object commodity;
         java.lang.Object contactGroup;
+        java.lang.Object dryRun;
         java.lang.Object enableInstanceOps;
         java.lang.Object enableUserPrometheus;
-        java.lang.Object marketInstanceId;
-        java.lang.Object name;
         java.lang.Object operationName;
         java.lang.Object parameters;
         java.lang.Object predefinedParameterName;
+        java.lang.Object resourceAutoPay;
         java.lang.Object resourceGroupId;
+        java.lang.Object serviceInstanceName;
         java.lang.Object specificationCode;
         java.util.List<com.aliyun.ros.cdk.computenest.RosServiceInstance.TagsProperty> tags;
         java.lang.Object templateName;
@@ -167,7 +189,7 @@ public interface ServiceInstanceProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link ServiceInstanceProps#getCommodity}
-         * @param commodity Property commodity: Cloud market commodity purchase parameters.
+         * @param commodity Property commodity: The purchase order information of the cloud market does not need to be transmitted if the service is not on the cloud market or charged by volume.
          * @return {@code this}
          */
         public Builder commodity(com.aliyun.ros.cdk.core.IResolvable commodity) {
@@ -177,7 +199,7 @@ public interface ServiceInstanceProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link ServiceInstanceProps#getCommodity}
-         * @param commodity Property commodity: Cloud market commodity purchase parameters.
+         * @param commodity Property commodity: The purchase order information of the cloud market does not need to be transmitted if the service is not on the cloud market or charged by volume.
          * @return {@code this}
          */
         public Builder commodity(com.aliyun.ros.cdk.computenest.RosServiceInstance.CommodityProperty commodity) {
@@ -202,6 +224,38 @@ public interface ServiceInstanceProps extends software.amazon.jsii.JsiiSerializa
          */
         public Builder contactGroup(com.aliyun.ros.cdk.core.IResolvable contactGroup) {
             this.contactGroup = contactGroup;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ServiceInstanceProps#getDryRun}
+         * @param dryRun Property dryRun: Whether to perform PreCheck on the creation request, including permissions and instance status verification.
+         *               Possible values:
+         *               <p>
+         *               <ul>
+         *               <li><strong>true</strong>: The request is sent without creating a service instance.</li>
+         *               <li><strong>false</strong>: Sends the request and creates a service instance after the check is passed.</li>
+         *               </ul>
+         * @return {@code this}
+         */
+        public Builder dryRun(java.lang.Boolean dryRun) {
+            this.dryRun = dryRun;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ServiceInstanceProps#getDryRun}
+         * @param dryRun Property dryRun: Whether to perform PreCheck on the creation request, including permissions and instance status verification.
+         *               Possible values:
+         *               <p>
+         *               <ul>
+         *               <li><strong>true</strong>: The request is sent without creating a service instance.</li>
+         *               <li><strong>false</strong>: Sends the request and creates a service instance after the check is passed.</li>
+         *               </ul>
+         * @return {@code this}
+         */
+        public Builder dryRun(com.aliyun.ros.cdk.core.IResolvable dryRun) {
+            this.dryRun = dryRun;
             return this;
         }
 
@@ -270,46 +324,6 @@ public interface ServiceInstanceProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
-         * Sets the value of {@link ServiceInstanceProps#getMarketInstanceId}
-         * @param marketInstanceId Property marketInstanceId: The ID of the cloud marketplace instance.
-         * @return {@code this}
-         */
-        public Builder marketInstanceId(java.lang.String marketInstanceId) {
-            this.marketInstanceId = marketInstanceId;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ServiceInstanceProps#getMarketInstanceId}
-         * @param marketInstanceId Property marketInstanceId: The ID of the cloud marketplace instance.
-         * @return {@code this}
-         */
-        public Builder marketInstanceId(com.aliyun.ros.cdk.core.IResolvable marketInstanceId) {
-            this.marketInstanceId = marketInstanceId;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ServiceInstanceProps#getName}
-         * @param name Property name: The name of the service instance.
-         * @return {@code this}
-         */
-        public Builder name(java.lang.String name) {
-            this.name = name;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ServiceInstanceProps#getName}
-         * @param name Property name: The name of the service instance.
-         * @return {@code this}
-         */
-        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
-            this.name = name;
-            return this;
-        }
-
-        /**
          * Sets the value of {@link ServiceInstanceProps#getOperationName}
          * @param operationName Property operationName: Change operation name.
          * @return {@code this}
@@ -334,7 +348,7 @@ public interface ServiceInstanceProps extends software.amazon.jsii.JsiiSerializa
          * @param parameters Property parameters: The parameters entered by the deployment service instance.
          * @return {@code this}
          */
-        public Builder parameters(com.aliyun.ros.cdk.core.IResolvable parameters) {
+        public Builder parameters(java.lang.String parameters) {
             this.parameters = parameters;
             return this;
         }
@@ -344,7 +358,7 @@ public interface ServiceInstanceProps extends software.amazon.jsii.JsiiSerializa
          * @param parameters Property parameters: The parameters entered by the deployment service instance.
          * @return {@code this}
          */
-        public Builder parameters(java.util.Map<java.lang.String, ? extends java.lang.Object> parameters) {
+        public Builder parameters(com.aliyun.ros.cdk.core.IResolvable parameters) {
             this.parameters = parameters;
             return this;
         }
@@ -370,6 +384,38 @@ public interface ServiceInstanceProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link ServiceInstanceProps#getResourceAutoPay}
+         * @param resourceAutoPay Property resourceAutoPay: Whether the resource is automatically deducted from the balance.
+         *                        Value:
+         *                        <p>
+         *                        <ul>
+         *                        <li><strong>true</strong>: automatic payment.</li>
+         *                        <li><strong>false</strong>: Do not pay automatically.</li>
+         *                        </ul>
+         * @return {@code this}
+         */
+        public Builder resourceAutoPay(java.lang.Boolean resourceAutoPay) {
+            this.resourceAutoPay = resourceAutoPay;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ServiceInstanceProps#getResourceAutoPay}
+         * @param resourceAutoPay Property resourceAutoPay: Whether the resource is automatically deducted from the balance.
+         *                        Value:
+         *                        <p>
+         *                        <ul>
+         *                        <li><strong>true</strong>: automatic payment.</li>
+         *                        <li><strong>false</strong>: Do not pay automatically.</li>
+         *                        </ul>
+         * @return {@code this}
+         */
+        public Builder resourceAutoPay(com.aliyun.ros.cdk.core.IResolvable resourceAutoPay) {
+            this.resourceAutoPay = resourceAutoPay;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ServiceInstanceProps#getResourceGroupId}
          * @param resourceGroupId Property resourceGroupId: The ID of the resource group.
          * @return {@code this}
@@ -386,6 +432,26 @@ public interface ServiceInstanceProps extends software.amazon.jsii.JsiiSerializa
          */
         public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ServiceInstanceProps#getServiceInstanceName}
+         * @param serviceInstanceName Property serviceInstanceName: The name of the service instance.
+         * @return {@code this}
+         */
+        public Builder serviceInstanceName(java.lang.String serviceInstanceName) {
+            this.serviceInstanceName = serviceInstanceName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ServiceInstanceProps#getServiceInstanceName}
+         * @param serviceInstanceName Property serviceInstanceName: The name of the service instance.
+         * @return {@code this}
+         */
+        public Builder serviceInstanceName(com.aliyun.ros.cdk.core.IResolvable serviceInstanceName) {
+            this.serviceInstanceName = serviceInstanceName;
             return this;
         }
 
@@ -459,14 +525,15 @@ public interface ServiceInstanceProps extends software.amazon.jsii.JsiiSerializa
         private final java.lang.Object service;
         private final java.lang.Object commodity;
         private final java.lang.Object contactGroup;
+        private final java.lang.Object dryRun;
         private final java.lang.Object enableInstanceOps;
         private final java.lang.Object enableUserPrometheus;
-        private final java.lang.Object marketInstanceId;
-        private final java.lang.Object name;
         private final java.lang.Object operationName;
         private final java.lang.Object parameters;
         private final java.lang.Object predefinedParameterName;
+        private final java.lang.Object resourceAutoPay;
         private final java.lang.Object resourceGroupId;
+        private final java.lang.Object serviceInstanceName;
         private final java.lang.Object specificationCode;
         private final java.util.List<com.aliyun.ros.cdk.computenest.RosServiceInstance.TagsProperty> tags;
         private final java.lang.Object templateName;
@@ -480,14 +547,15 @@ public interface ServiceInstanceProps extends software.amazon.jsii.JsiiSerializa
             this.service = software.amazon.jsii.Kernel.get(this, "service", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.commodity = software.amazon.jsii.Kernel.get(this, "commodity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.contactGroup = software.amazon.jsii.Kernel.get(this, "contactGroup", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dryRun = software.amazon.jsii.Kernel.get(this, "dryRun", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableInstanceOps = software.amazon.jsii.Kernel.get(this, "enableInstanceOps", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableUserPrometheus = software.amazon.jsii.Kernel.get(this, "enableUserPrometheus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.marketInstanceId = software.amazon.jsii.Kernel.get(this, "marketInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.operationName = software.amazon.jsii.Kernel.get(this, "operationName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.parameters = software.amazon.jsii.Kernel.get(this, "parameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.predefinedParameterName = software.amazon.jsii.Kernel.get(this, "predefinedParameterName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceAutoPay = software.amazon.jsii.Kernel.get(this, "resourceAutoPay", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.serviceInstanceName = software.amazon.jsii.Kernel.get(this, "serviceInstanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.specificationCode = software.amazon.jsii.Kernel.get(this, "specificationCode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.computenest.RosServiceInstance.TagsProperty.class)));
             this.templateName = software.amazon.jsii.Kernel.get(this, "templateName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -502,14 +570,15 @@ public interface ServiceInstanceProps extends software.amazon.jsii.JsiiSerializa
             this.service = java.util.Objects.requireNonNull(builder.service, "service is required");
             this.commodity = builder.commodity;
             this.contactGroup = builder.contactGroup;
+            this.dryRun = builder.dryRun;
             this.enableInstanceOps = builder.enableInstanceOps;
             this.enableUserPrometheus = builder.enableUserPrometheus;
-            this.marketInstanceId = builder.marketInstanceId;
-            this.name = builder.name;
             this.operationName = builder.operationName;
             this.parameters = builder.parameters;
             this.predefinedParameterName = builder.predefinedParameterName;
+            this.resourceAutoPay = builder.resourceAutoPay;
             this.resourceGroupId = builder.resourceGroupId;
+            this.serviceInstanceName = builder.serviceInstanceName;
             this.specificationCode = builder.specificationCode;
             this.tags = (java.util.List<com.aliyun.ros.cdk.computenest.RosServiceInstance.TagsProperty>)builder.tags;
             this.templateName = builder.templateName;
@@ -531,6 +600,11 @@ public interface ServiceInstanceProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
+        public final java.lang.Object getDryRun() {
+            return this.dryRun;
+        }
+
+        @Override
         public final java.lang.Object getEnableInstanceOps() {
             return this.enableInstanceOps;
         }
@@ -538,16 +612,6 @@ public interface ServiceInstanceProps extends software.amazon.jsii.JsiiSerializa
         @Override
         public final java.lang.Object getEnableUserPrometheus() {
             return this.enableUserPrometheus;
-        }
-
-        @Override
-        public final java.lang.Object getMarketInstanceId() {
-            return this.marketInstanceId;
-        }
-
-        @Override
-        public final java.lang.Object getName() {
-            return this.name;
         }
 
         @Override
@@ -566,8 +630,18 @@ public interface ServiceInstanceProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
+        public final java.lang.Object getResourceAutoPay() {
+            return this.resourceAutoPay;
+        }
+
+        @Override
         public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
+        }
+
+        @Override
+        public final java.lang.Object getServiceInstanceName() {
+            return this.serviceInstanceName;
         }
 
         @Override
@@ -598,17 +672,14 @@ public interface ServiceInstanceProps extends software.amazon.jsii.JsiiSerializa
             if (this.getContactGroup() != null) {
                 data.set("contactGroup", om.valueToTree(this.getContactGroup()));
             }
+            if (this.getDryRun() != null) {
+                data.set("dryRun", om.valueToTree(this.getDryRun()));
+            }
             if (this.getEnableInstanceOps() != null) {
                 data.set("enableInstanceOps", om.valueToTree(this.getEnableInstanceOps()));
             }
             if (this.getEnableUserPrometheus() != null) {
                 data.set("enableUserPrometheus", om.valueToTree(this.getEnableUserPrometheus()));
-            }
-            if (this.getMarketInstanceId() != null) {
-                data.set("marketInstanceId", om.valueToTree(this.getMarketInstanceId()));
-            }
-            if (this.getName() != null) {
-                data.set("name", om.valueToTree(this.getName()));
             }
             if (this.getOperationName() != null) {
                 data.set("operationName", om.valueToTree(this.getOperationName()));
@@ -619,8 +690,14 @@ public interface ServiceInstanceProps extends software.amazon.jsii.JsiiSerializa
             if (this.getPredefinedParameterName() != null) {
                 data.set("predefinedParameterName", om.valueToTree(this.getPredefinedParameterName()));
             }
+            if (this.getResourceAutoPay() != null) {
+                data.set("resourceAutoPay", om.valueToTree(this.getResourceAutoPay()));
+            }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
+            if (this.getServiceInstanceName() != null) {
+                data.set("serviceInstanceName", om.valueToTree(this.getServiceInstanceName()));
             }
             if (this.getSpecificationCode() != null) {
                 data.set("specificationCode", om.valueToTree(this.getSpecificationCode()));
@@ -652,14 +729,15 @@ public interface ServiceInstanceProps extends software.amazon.jsii.JsiiSerializa
             if (!service.equals(that.service)) return false;
             if (this.commodity != null ? !this.commodity.equals(that.commodity) : that.commodity != null) return false;
             if (this.contactGroup != null ? !this.contactGroup.equals(that.contactGroup) : that.contactGroup != null) return false;
+            if (this.dryRun != null ? !this.dryRun.equals(that.dryRun) : that.dryRun != null) return false;
             if (this.enableInstanceOps != null ? !this.enableInstanceOps.equals(that.enableInstanceOps) : that.enableInstanceOps != null) return false;
             if (this.enableUserPrometheus != null ? !this.enableUserPrometheus.equals(that.enableUserPrometheus) : that.enableUserPrometheus != null) return false;
-            if (this.marketInstanceId != null ? !this.marketInstanceId.equals(that.marketInstanceId) : that.marketInstanceId != null) return false;
-            if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
             if (this.operationName != null ? !this.operationName.equals(that.operationName) : that.operationName != null) return false;
             if (this.parameters != null ? !this.parameters.equals(that.parameters) : that.parameters != null) return false;
             if (this.predefinedParameterName != null ? !this.predefinedParameterName.equals(that.predefinedParameterName) : that.predefinedParameterName != null) return false;
+            if (this.resourceAutoPay != null ? !this.resourceAutoPay.equals(that.resourceAutoPay) : that.resourceAutoPay != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
+            if (this.serviceInstanceName != null ? !this.serviceInstanceName.equals(that.serviceInstanceName) : that.serviceInstanceName != null) return false;
             if (this.specificationCode != null ? !this.specificationCode.equals(that.specificationCode) : that.specificationCode != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             return this.templateName != null ? this.templateName.equals(that.templateName) : that.templateName == null;
@@ -670,14 +748,15 @@ public interface ServiceInstanceProps extends software.amazon.jsii.JsiiSerializa
             int result = this.service.hashCode();
             result = 31 * result + (this.commodity != null ? this.commodity.hashCode() : 0);
             result = 31 * result + (this.contactGroup != null ? this.contactGroup.hashCode() : 0);
+            result = 31 * result + (this.dryRun != null ? this.dryRun.hashCode() : 0);
             result = 31 * result + (this.enableInstanceOps != null ? this.enableInstanceOps.hashCode() : 0);
             result = 31 * result + (this.enableUserPrometheus != null ? this.enableUserPrometheus.hashCode() : 0);
-            result = 31 * result + (this.marketInstanceId != null ? this.marketInstanceId.hashCode() : 0);
-            result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
             result = 31 * result + (this.operationName != null ? this.operationName.hashCode() : 0);
             result = 31 * result + (this.parameters != null ? this.parameters.hashCode() : 0);
             result = 31 * result + (this.predefinedParameterName != null ? this.predefinedParameterName.hashCode() : 0);
+            result = 31 * result + (this.resourceAutoPay != null ? this.resourceAutoPay.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
+            result = 31 * result + (this.serviceInstanceName != null ? this.serviceInstanceName.hashCode() : 0);
             result = 31 * result + (this.specificationCode != null ? this.specificationCode.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.templateName != null ? this.templateName.hashCode() : 0);

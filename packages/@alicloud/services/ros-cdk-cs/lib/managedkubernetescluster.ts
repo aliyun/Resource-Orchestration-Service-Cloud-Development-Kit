@@ -20,6 +20,11 @@ export interface ManagedKubernetesClusterProps {
     readonly vpcId: string | ros.IResolvable;
 
     /**
+     * Property vSwitchIds: The virtual switch ID of the worker node.
+     */
+    readonly vSwitchIds: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * Property addons: A combination of addon plugins for Kubernetes clusters.
      * Network plug-in: including Flannel and Terway network plug-ins
      * Log service: Optional. If the log service is not enabled, the cluster audit function cannot be used.
@@ -445,6 +450,7 @@ export class ManagedKubernetesCluster extends ros.Resource implements IManagedKu
             deleteOptions: props.deleteOptions,
             keyPair: props.keyPair,
             nodeCidrMask: props.nodeCidrMask,
+            vSwitchIds: props.vSwitchIds,
             timeoutMins: props.timeoutMins === undefined || props.timeoutMins === null ? 60 : props.timeoutMins,
             securityGroupId: props.securityGroupId,
             clusterSpec: props.clusterSpec,

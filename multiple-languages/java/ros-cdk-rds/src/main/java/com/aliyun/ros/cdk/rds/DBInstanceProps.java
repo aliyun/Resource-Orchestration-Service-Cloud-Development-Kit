@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.rds;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:09.577Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.805Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.DBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(DBInstanceProps.Jsii$Proxy.class)
 public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -101,6 +101,13 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
      * Annual subscription: The auto-renewal cycle is one year.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenew() {
+        return null;
+    }
+
+    /**
+     * Property autoUpgradeMinorVersion: How the instance upgrades to a minor version.Valid values: - Auto (default) : Updates minor versions automatically. - Manual: No automatic upgrade, only forced when the current version is offline.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoUpgradeMinorVersion() {
         return null;
     }
 
@@ -485,9 +492,8 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property releasedKeepPolicy: The policy used to retain archived backups if the instance is released.
      * <p>
-     * Default value: None.
      * Valid values:
-     * Lastest: Only the last archived backup is retained.
+     * None: No archived backup files are retained.Lastest: Only the last archived backup is retained.
      * All: All of the archived backups are retained.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getReleasedKeepPolicy() {
@@ -583,6 +589,15 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property subscriptionDeletionForce: This option is only applicable to subscription instances.
+     * <p>
+     * For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSubscriptionDeletionForce() {
+        return null;
+    }
+
+    /**
      * Property tags: The tags of an instance.
      * <p>
      * You should input the information of the tag with the format of the Key-Value, such as {"key1":"value1","key2":"value2", ... "key5":"value5"}.
@@ -670,6 +685,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object archiveBackupKeepPolicy;
         java.lang.Object archiveBackupRetentionPeriod;
         java.lang.Object autoRenew;
+        java.lang.Object autoUpgradeMinorVersion;
         java.lang.Object backUpCategory;
         java.lang.Object backupPolicyMode;
         java.lang.Object backupRetentionPeriod;
@@ -722,6 +738,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object storageAutoScale;
         java.lang.Object storageThreshold;
         java.lang.Object storageUpperBound;
+        java.lang.Object subscriptionDeletionForce;
         java.util.Map<java.lang.String, java.lang.Object> tags;
         java.lang.Object targetDedicatedHostIdForLog;
         java.lang.Object targetDedicatedHostIdForMaster;
@@ -979,6 +996,26 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder autoRenew(com.aliyun.ros.cdk.core.IResolvable autoRenew) {
             this.autoRenew = autoRenew;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBInstanceProps#getAutoUpgradeMinorVersion}
+         * @param autoUpgradeMinorVersion Property autoUpgradeMinorVersion: How the instance upgrades to a minor version.Valid values: - Auto (default) : Updates minor versions automatically. - Manual: No automatic upgrade, only forced when the current version is offline.
+         * @return {@code this}
+         */
+        public Builder autoUpgradeMinorVersion(java.lang.String autoUpgradeMinorVersion) {
+            this.autoUpgradeMinorVersion = autoUpgradeMinorVersion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBInstanceProps#getAutoUpgradeMinorVersion}
+         * @param autoUpgradeMinorVersion Property autoUpgradeMinorVersion: How the instance upgrades to a minor version.Valid values: - Auto (default) : Updates minor versions automatically. - Manual: No automatic upgrade, only forced when the current version is offline.
+         * @return {@code this}
+         */
+        public Builder autoUpgradeMinorVersion(com.aliyun.ros.cdk.core.IResolvable autoUpgradeMinorVersion) {
+            this.autoUpgradeMinorVersion = autoUpgradeMinorVersion;
             return this;
         }
 
@@ -1941,9 +1978,8 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link DBInstanceProps#getReleasedKeepPolicy}
          * @param releasedKeepPolicy Property releasedKeepPolicy: The policy used to retain archived backups if the instance is released.
-         *                           Default value: None.
          *                           Valid values:
-         *                           Lastest: Only the last archived backup is retained.
+         *                           None: No archived backup files are retained.Lastest: Only the last archived backup is retained.
          *                           All: All of the archived backups are retained.
          * @return {@code this}
          */
@@ -1955,9 +1991,8 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link DBInstanceProps#getReleasedKeepPolicy}
          * @param releasedKeepPolicy Property releasedKeepPolicy: The policy used to retain archived backups if the instance is released.
-         *                           Default value: None.
          *                           Valid values:
-         *                           Lastest: Only the last archived backup is retained.
+         *                           None: No archived backup files are retained.Lastest: Only the last archived backup is retained.
          *                           All: All of the archived backups are retained.
          * @return {@code this}
          */
@@ -2191,6 +2226,28 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link DBInstanceProps#getSubscriptionDeletionForce}
+         * @param subscriptionDeletionForce Property subscriptionDeletionForce: This option is only applicable to subscription instances.
+         *                                  For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+         * @return {@code this}
+         */
+        public Builder subscriptionDeletionForce(java.lang.Boolean subscriptionDeletionForce) {
+            this.subscriptionDeletionForce = subscriptionDeletionForce;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBInstanceProps#getSubscriptionDeletionForce}
+         * @param subscriptionDeletionForce Property subscriptionDeletionForce: This option is only applicable to subscription instances.
+         *                                  For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+         * @return {@code this}
+         */
+        public Builder subscriptionDeletionForce(com.aliyun.ros.cdk.core.IResolvable subscriptionDeletionForce) {
+            this.subscriptionDeletionForce = subscriptionDeletionForce;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DBInstanceProps#getTags}
          * @param tags Property tags: The tags of an instance.
          *             You should input the information of the tag with the format of the Key-Value, such as {"key1":"value1","key2":"value2", ... "key5":"value5"}.
@@ -2365,6 +2422,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object archiveBackupKeepPolicy;
         private final java.lang.Object archiveBackupRetentionPeriod;
         private final java.lang.Object autoRenew;
+        private final java.lang.Object autoUpgradeMinorVersion;
         private final java.lang.Object backUpCategory;
         private final java.lang.Object backupPolicyMode;
         private final java.lang.Object backupRetentionPeriod;
@@ -2417,6 +2475,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object storageAutoScale;
         private final java.lang.Object storageThreshold;
         private final java.lang.Object storageUpperBound;
+        private final java.lang.Object subscriptionDeletionForce;
         private final java.util.Map<java.lang.String, java.lang.Object> tags;
         private final java.lang.Object targetDedicatedHostIdForLog;
         private final java.lang.Object targetDedicatedHostIdForMaster;
@@ -2441,6 +2500,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.archiveBackupKeepPolicy = software.amazon.jsii.Kernel.get(this, "archiveBackupKeepPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.archiveBackupRetentionPeriod = software.amazon.jsii.Kernel.get(this, "archiveBackupRetentionPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoUpgradeMinorVersion = software.amazon.jsii.Kernel.get(this, "autoUpgradeMinorVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.backUpCategory = software.amazon.jsii.Kernel.get(this, "backUpCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.backupPolicyMode = software.amazon.jsii.Kernel.get(this, "backupPolicyMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.backupRetentionPeriod = software.amazon.jsii.Kernel.get(this, "backupRetentionPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -2493,6 +2553,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.storageAutoScale = software.amazon.jsii.Kernel.get(this, "storageAutoScale", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.storageThreshold = software.amazon.jsii.Kernel.get(this, "storageThreshold", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.storageUpperBound = software.amazon.jsii.Kernel.get(this, "storageUpperBound", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.subscriptionDeletionForce = software.amazon.jsii.Kernel.get(this, "subscriptionDeletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class)));
             this.targetDedicatedHostIdForLog = software.amazon.jsii.Kernel.get(this, "targetDedicatedHostIdForLog", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.targetDedicatedHostIdForMaster = software.amazon.jsii.Kernel.get(this, "targetDedicatedHostIdForMaster", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -2518,6 +2579,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.archiveBackupKeepPolicy = builder.archiveBackupKeepPolicy;
             this.archiveBackupRetentionPeriod = builder.archiveBackupRetentionPeriod;
             this.autoRenew = builder.autoRenew;
+            this.autoUpgradeMinorVersion = builder.autoUpgradeMinorVersion;
             this.backUpCategory = builder.backUpCategory;
             this.backupPolicyMode = builder.backupPolicyMode;
             this.backupRetentionPeriod = builder.backupRetentionPeriod;
@@ -2570,6 +2632,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.storageAutoScale = builder.storageAutoScale;
             this.storageThreshold = builder.storageThreshold;
             this.storageUpperBound = builder.storageUpperBound;
+            this.subscriptionDeletionForce = builder.subscriptionDeletionForce;
             this.tags = (java.util.Map<java.lang.String, java.lang.Object>)builder.tags;
             this.targetDedicatedHostIdForLog = builder.targetDedicatedHostIdForLog;
             this.targetDedicatedHostIdForMaster = builder.targetDedicatedHostIdForMaster;
@@ -2627,6 +2690,11 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getAutoRenew() {
             return this.autoRenew;
+        }
+
+        @Override
+        public final java.lang.Object getAutoUpgradeMinorVersion() {
+            return this.autoUpgradeMinorVersion;
         }
 
         @Override
@@ -2890,6 +2958,11 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getSubscriptionDeletionForce() {
+            return this.subscriptionDeletionForce;
+        }
+
+        @Override
         public final java.util.Map<java.lang.String, java.lang.Object> getTags() {
             return this.tags;
         }
@@ -2949,6 +3022,9 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getAutoRenew() != null) {
                 data.set("autoRenew", om.valueToTree(this.getAutoRenew()));
+            }
+            if (this.getAutoUpgradeMinorVersion() != null) {
+                data.set("autoUpgradeMinorVersion", om.valueToTree(this.getAutoUpgradeMinorVersion()));
             }
             if (this.getBackUpCategory() != null) {
                 data.set("backUpCategory", om.valueToTree(this.getBackUpCategory()));
@@ -3106,6 +3182,9 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getStorageUpperBound() != null) {
                 data.set("storageUpperBound", om.valueToTree(this.getStorageUpperBound()));
             }
+            if (this.getSubscriptionDeletionForce() != null) {
+                data.set("subscriptionDeletionForce", om.valueToTree(this.getSubscriptionDeletionForce()));
+            }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
             }
@@ -3155,6 +3234,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.archiveBackupKeepPolicy != null ? !this.archiveBackupKeepPolicy.equals(that.archiveBackupKeepPolicy) : that.archiveBackupKeepPolicy != null) return false;
             if (this.archiveBackupRetentionPeriod != null ? !this.archiveBackupRetentionPeriod.equals(that.archiveBackupRetentionPeriod) : that.archiveBackupRetentionPeriod != null) return false;
             if (this.autoRenew != null ? !this.autoRenew.equals(that.autoRenew) : that.autoRenew != null) return false;
+            if (this.autoUpgradeMinorVersion != null ? !this.autoUpgradeMinorVersion.equals(that.autoUpgradeMinorVersion) : that.autoUpgradeMinorVersion != null) return false;
             if (this.backUpCategory != null ? !this.backUpCategory.equals(that.backUpCategory) : that.backUpCategory != null) return false;
             if (this.backupPolicyMode != null ? !this.backupPolicyMode.equals(that.backupPolicyMode) : that.backupPolicyMode != null) return false;
             if (this.backupRetentionPeriod != null ? !this.backupRetentionPeriod.equals(that.backupRetentionPeriod) : that.backupRetentionPeriod != null) return false;
@@ -3207,6 +3287,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.storageAutoScale != null ? !this.storageAutoScale.equals(that.storageAutoScale) : that.storageAutoScale != null) return false;
             if (this.storageThreshold != null ? !this.storageThreshold.equals(that.storageThreshold) : that.storageThreshold != null) return false;
             if (this.storageUpperBound != null ? !this.storageUpperBound.equals(that.storageUpperBound) : that.storageUpperBound != null) return false;
+            if (this.subscriptionDeletionForce != null ? !this.subscriptionDeletionForce.equals(that.subscriptionDeletionForce) : that.subscriptionDeletionForce != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.targetDedicatedHostIdForLog != null ? !this.targetDedicatedHostIdForLog.equals(that.targetDedicatedHostIdForLog) : that.targetDedicatedHostIdForLog != null) return false;
             if (this.targetDedicatedHostIdForMaster != null ? !this.targetDedicatedHostIdForMaster.equals(that.targetDedicatedHostIdForMaster) : that.targetDedicatedHostIdForMaster != null) return false;
@@ -3228,6 +3309,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.archiveBackupKeepPolicy != null ? this.archiveBackupKeepPolicy.hashCode() : 0);
             result = 31 * result + (this.archiveBackupRetentionPeriod != null ? this.archiveBackupRetentionPeriod.hashCode() : 0);
             result = 31 * result + (this.autoRenew != null ? this.autoRenew.hashCode() : 0);
+            result = 31 * result + (this.autoUpgradeMinorVersion != null ? this.autoUpgradeMinorVersion.hashCode() : 0);
             result = 31 * result + (this.backUpCategory != null ? this.backUpCategory.hashCode() : 0);
             result = 31 * result + (this.backupPolicyMode != null ? this.backupPolicyMode.hashCode() : 0);
             result = 31 * result + (this.backupRetentionPeriod != null ? this.backupRetentionPeriod.hashCode() : 0);
@@ -3280,6 +3362,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.storageAutoScale != null ? this.storageAutoScale.hashCode() : 0);
             result = 31 * result + (this.storageThreshold != null ? this.storageThreshold.hashCode() : 0);
             result = 31 * result + (this.storageUpperBound != null ? this.storageUpperBound.hashCode() : 0);
+            result = 31 * result + (this.subscriptionDeletionForce != null ? this.subscriptionDeletionForce.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.targetDedicatedHostIdForLog != null ? this.targetDedicatedHostIdForLog.hashCode() : 0);
             result = 31 * result + (this.targetDedicatedHostIdForMaster != null ? this.targetDedicatedHostIdForMaster.hashCode() : 0);

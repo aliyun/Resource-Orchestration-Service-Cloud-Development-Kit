@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::FC::FunctionInvoker</code>, which is used to invoke a function.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:12.185Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:51.931Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.FunctionInvoker")
 public class FunctionInvoker extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.fc.IFunctionInvoker {
 
@@ -189,6 +189,27 @@ public class FunctionInvoker extends com.aliyun.ros.cdk.core.Resource implements
          */
         public Builder async(final com.aliyun.ros.cdk.core.IResolvable async) {
             this.props.async(async);
+            return this;
+        }
+
+        /**
+         * Property checkAsyncInvocation: Check async invocation setting.
+         * <p>
+         * @return {@code this}
+         * @param checkAsyncInvocation Property checkAsyncInvocation: Check async invocation setting. This parameter is required.
+         */
+        public Builder checkAsyncInvocation(final com.aliyun.ros.cdk.core.IResolvable checkAsyncInvocation) {
+            this.props.checkAsyncInvocation(checkAsyncInvocation);
+            return this;
+        }
+        /**
+         * Property checkAsyncInvocation: Check async invocation setting.
+         * <p>
+         * @return {@code this}
+         * @param checkAsyncInvocation Property checkAsyncInvocation: Check async invocation setting. This parameter is required.
+         */
+        public Builder checkAsyncInvocation(final com.aliyun.ros.cdk.fc.RosFunctionInvoker.CheckAsyncInvocationProperty checkAsyncInvocation) {
+            this.props.checkAsyncInvocation(checkAsyncInvocation);
             return this;
         }
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * Represents a <code>Acl</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:01.269Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:43.230Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.IAcl")
 @software.amazon.jsii.Jsii.Proxy(IAcl.Jsii$Proxy.class)
 public interface IAcl extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

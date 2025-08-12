@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.dts;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::DTS::Instance</code>, which is a new resource type that is used to create a Data Transmission Service (DTS) instance.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::DTS::Instance</code>, which is a new resource type used to create a Data Transmission Service (DTS) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:04.076Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.734Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.dts.IInstance {
 
@@ -528,6 +528,72 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
          */
         public Builder jobId(final com.aliyun.ros.cdk.core.IResolvable jobId) {
             this.props.jobId(jobId);
+            return this;
+        }
+
+        /**
+         * Property maxDu: The upper limit of DU.
+         * <p>
+         * <blockquote>
+         * <p>
+         * Only Serverless instances are supported.
+         * <p>
+         * </blockquote>
+         * <p>
+         * @return {@code this}
+         * @param maxDu Property maxDu: The upper limit of DU. This parameter is required.
+         */
+        public Builder maxDu(final java.lang.Number maxDu) {
+            this.props.maxDu(maxDu);
+            return this;
+        }
+        /**
+         * Property maxDu: The upper limit of DU.
+         * <p>
+         * <blockquote>
+         * <p>
+         * Only Serverless instances are supported.
+         * <p>
+         * </blockquote>
+         * <p>
+         * @return {@code this}
+         * @param maxDu Property maxDu: The upper limit of DU. This parameter is required.
+         */
+        public Builder maxDu(final com.aliyun.ros.cdk.core.IResolvable maxDu) {
+            this.props.maxDu(maxDu);
+            return this;
+        }
+
+        /**
+         * Property minDu: The lower limit of DU.
+         * <p>
+         * <blockquote>
+         * <p>
+         * Only Serverless instances are supported.
+         * <p>
+         * </blockquote>
+         * <p>
+         * @return {@code this}
+         * @param minDu Property minDu: The lower limit of DU. This parameter is required.
+         */
+        public Builder minDu(final java.lang.Number minDu) {
+            this.props.minDu(minDu);
+            return this;
+        }
+        /**
+         * Property minDu: The lower limit of DU.
+         * <p>
+         * <blockquote>
+         * <p>
+         * Only Serverless instances are supported.
+         * <p>
+         * </blockquote>
+         * <p>
+         * @return {@code this}
+         * @param minDu Property minDu: The lower limit of DU. This parameter is required.
+         */
+        public Builder minDu(final com.aliyun.ros.cdk.core.IResolvable minDu) {
+            this.props.minDu(minDu);
             return this;
         }
 

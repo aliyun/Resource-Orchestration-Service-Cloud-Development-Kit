@@ -41,7 +41,7 @@ type VPCProps struct {
 	//
 	// Separate multiple CIDR blocks with commas (,). At most three CIDR blocks are supported.
 	UserCidr interface{} `field:"optional" json:"userCidr" yaml:"userCidr"`
-	// Property vpcName: Display name of the vpc instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
+	// Property vpcName: The value contains 1 to 128 characters and cannot start with http:\/\/ or https:\/\/.
 	VpcName interface{} `field:"optional" json:"vpcName" yaml:"vpcName"`
 }
 

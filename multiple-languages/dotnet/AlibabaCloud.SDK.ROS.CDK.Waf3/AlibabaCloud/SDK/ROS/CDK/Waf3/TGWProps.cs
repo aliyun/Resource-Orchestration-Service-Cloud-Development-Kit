@@ -134,5 +134,36 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf3
                 _resourceGroupId = value;
             }
         }
+
+        private object? _wafInstanceRegion;
+
+        /// <summary>Property wafInstanceRegion: The ID of the resource group.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "wafInstanceRegion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? WafInstanceRegion
+        {
+            get => _wafInstanceRegion;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _wafInstanceRegion = value;
+            }
+        }
     }
 }

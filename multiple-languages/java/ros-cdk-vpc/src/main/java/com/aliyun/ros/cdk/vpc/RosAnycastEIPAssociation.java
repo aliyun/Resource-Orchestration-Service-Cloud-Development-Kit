@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::AnycastEIPAssociation</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:11.360Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:51.275Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosAnycastEIPAssociation")
 public class RosAnycastEIPAssociation extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -150,6 +150,201 @@ public class RosAnycastEIPAssociation extends com.aliyun.ros.cdk.core.RosResourc
     }
 
     /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAssociationMode() {
+        return software.amazon.jsii.Kernel.get(this, "associationMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAssociationMode(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "associationMode", value);
+    }
+
+    /**
+     */
+    public void setAssociationMode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "associationMode", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPopLocations() {
+        return software.amazon.jsii.Kernel.get(this, "popLocations", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPopLocations(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "popLocations", value);
+    }
+
+    /**
+     */
+    public void setPopLocations(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.vpc.RosAnycastEIPAssociation.PopLocationsProperty)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.vpc.RosAnycastEIPAssociation.PopLocationsProperty; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "popLocations", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPrivateIpAddress() {
+        return software.amazon.jsii.Kernel.get(this, "privateIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPrivateIpAddress(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "privateIpAddress", value);
+    }
+
+    /**
+     */
+    public void setPrivateIpAddress(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "privateIpAddress", value);
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosAnycastEIPAssociation.PopLocationsProperty")
+    @software.amazon.jsii.Jsii.Proxy(PopLocationsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface PopLocationsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getPopLocation();
+
+        /**
+         * @return a {@link Builder} of {@link PopLocationsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link PopLocationsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<PopLocationsProperty> {
+            java.lang.Object popLocation;
+
+            /**
+             * Sets the value of {@link PopLocationsProperty#getPopLocation}
+             * @param popLocation the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder popLocation(java.lang.String popLocation) {
+                this.popLocation = popLocation;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PopLocationsProperty#getPopLocation}
+             * @param popLocation the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder popLocation(com.aliyun.ros.cdk.core.IResolvable popLocation) {
+                this.popLocation = popLocation;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link PopLocationsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public PopLocationsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link PopLocationsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements PopLocationsProperty {
+            private final java.lang.Object popLocation;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.popLocation = software.amazon.jsii.Kernel.get(this, "popLocation", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.popLocation = java.util.Objects.requireNonNull(builder.popLocation, "popLocation is required");
+            }
+
+            @Override
+            public final java.lang.Object getPopLocation() {
+                return this.popLocation;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("popLocation", om.valueToTree(this.getPopLocation()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-vpc.RosAnycastEIPAssociation.PopLocationsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                PopLocationsProperty.Jsii$Proxy that = (PopLocationsProperty.Jsii$Proxy) o;
+
+                return this.popLocation.equals(that.popLocation);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.popLocation.hashCode();
+                return result;
+            }
+        }
+    }
+
+    /**
      * A fluent builder for {@link com.aliyun.ros.cdk.vpc.RosAnycastEIPAssociation}.
      */
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.vpc.RosAnycastEIPAssociation> {
@@ -240,6 +435,57 @@ public class RosAnycastEIPAssociation extends com.aliyun.ros.cdk.core.RosResourc
          */
         public Builder bindInstanceType(final com.aliyun.ros.cdk.core.IResolvable bindInstanceType) {
             this.props.bindInstanceType(bindInstanceType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param associationMode This parameter is required.
+         */
+        public Builder associationMode(final java.lang.String associationMode) {
+            this.props.associationMode(associationMode);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param associationMode This parameter is required.
+         */
+        public Builder associationMode(final com.aliyun.ros.cdk.core.IResolvable associationMode) {
+            this.props.associationMode(associationMode);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param popLocations This parameter is required.
+         */
+        public Builder popLocations(final com.aliyun.ros.cdk.core.IResolvable popLocations) {
+            this.props.popLocations(popLocations);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param popLocations This parameter is required.
+         */
+        public Builder popLocations(final java.util.List<? extends java.lang.Object> popLocations) {
+            this.props.popLocations(popLocations);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param privateIpAddress This parameter is required.
+         */
+        public Builder privateIpAddress(final java.lang.String privateIpAddress) {
+            this.props.privateIpAddress(privateIpAddress);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param privateIpAddress This parameter is required.
+         */
+        public Builder privateIpAddress(final com.aliyun.ros.cdk.core.IResolvable privateIpAddress) {
+            this.props.privateIpAddress(privateIpAddress);
             return this;
         }
 

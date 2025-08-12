@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Oos
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Template`, which is used to create a template.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Template`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Template` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-template
@@ -124,7 +124,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: templateName: The name of the template. The template name can be up to 200 characters in length. The name can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ACS, ALIBABA, or ALICLOUD.
+        /// <strong>Property</strong>: templateName: The name of the template. The template name can be up to 200 characters in length. The name can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ACS, ALIYUN, ALIBABA, or ALICLOUD.
         /// </remarks>
         [JsiiProperty(name: "templateName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object TemplateName

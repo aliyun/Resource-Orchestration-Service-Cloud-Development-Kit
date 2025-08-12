@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ehpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-cluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:06.108Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.054Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.ClusterProps")
 @software.amazon.jsii.Jsii.Proxy(ClusterProps.Jsii$Proxy.class)
 public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -41,13 +41,6 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
      * 2-64 characters in length, allowing only include Chinese, letters, numbers, dashes (-) and underscore (_), must begin with a letter or Chinese.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getName();
-
-    /**
-     * Property osTag: Operating system image tag.
-     * <p>
-     * You can call ListImages API to query.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getOsTag();
 
     /**
      * Property vSwitchId: VPC in switch ID.
@@ -250,6 +243,15 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
      * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNetworkInterfaceTrafficMode() {
+        return null;
+    }
+
+    /**
+     * Property osTag: Operating system image tag.
+     * <p>
+     * You can call ListImages API to query.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getOsTag() {
         return null;
     }
 
@@ -492,7 +494,6 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object ecsOrderLoginInstanceType;
         java.lang.Object ecsOrderManagerInstanceType;
         java.lang.Object name;
-        java.lang.Object osTag;
         java.lang.Object vSwitchId;
         java.lang.Object accountType;
         java.lang.Object additionalVolumes;
@@ -516,6 +517,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object jobQueue;
         java.lang.Object keyPairName;
         java.lang.Object networkInterfaceTrafficMode;
+        java.lang.Object osTag;
         java.lang.Object password;
         java.lang.Object period;
         java.lang.Object periodUnit;
@@ -659,28 +661,6 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
             this.name = name;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ClusterProps#getOsTag}
-         * @param osTag Property osTag: Operating system image tag. This parameter is required.
-         *              You can call ListImages API to query.
-         * @return {@code this}
-         */
-        public Builder osTag(java.lang.String osTag) {
-            this.osTag = osTag;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ClusterProps#getOsTag}
-         * @param osTag Property osTag: Operating system image tag. This parameter is required.
-         *              You can call ListImages API to query.
-         * @return {@code this}
-         */
-        public Builder osTag(com.aliyun.ros.cdk.core.IResolvable osTag) {
-            this.osTag = osTag;
             return this;
         }
 
@@ -1209,6 +1189,28 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder networkInterfaceTrafficMode(com.aliyun.ros.cdk.core.IResolvable networkInterfaceTrafficMode) {
             this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ClusterProps#getOsTag}
+         * @param osTag Property osTag: Operating system image tag.
+         *              You can call ListImages API to query.
+         * @return {@code this}
+         */
+        public Builder osTag(java.lang.String osTag) {
+            this.osTag = osTag;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ClusterProps#getOsTag}
+         * @param osTag Property osTag: Operating system image tag.
+         *              You can call ListImages API to query.
+         * @return {@code this}
+         */
+        public Builder osTag(com.aliyun.ros.cdk.core.IResolvable osTag) {
+            this.osTag = osTag;
             return this;
         }
 
@@ -1782,7 +1784,6 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object ecsOrderLoginInstanceType;
         private final java.lang.Object ecsOrderManagerInstanceType;
         private final java.lang.Object name;
-        private final java.lang.Object osTag;
         private final java.lang.Object vSwitchId;
         private final java.lang.Object accountType;
         private final java.lang.Object additionalVolumes;
@@ -1806,6 +1807,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object jobQueue;
         private final java.lang.Object keyPairName;
         private final java.lang.Object networkInterfaceTrafficMode;
+        private final java.lang.Object osTag;
         private final java.lang.Object password;
         private final java.lang.Object period;
         private final java.lang.Object periodUnit;
@@ -1842,7 +1844,6 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.ecsOrderLoginInstanceType = software.amazon.jsii.Kernel.get(this, "ecsOrderLoginInstanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ecsOrderManagerInstanceType = software.amazon.jsii.Kernel.get(this, "ecsOrderManagerInstanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.osTag = software.amazon.jsii.Kernel.get(this, "osTag", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.accountType = software.amazon.jsii.Kernel.get(this, "accountType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.additionalVolumes = software.amazon.jsii.Kernel.get(this, "additionalVolumes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1866,6 +1867,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.jobQueue = software.amazon.jsii.Kernel.get(this, "jobQueue", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.keyPairName = software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.networkInterfaceTrafficMode = software.amazon.jsii.Kernel.get(this, "networkInterfaceTrafficMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.osTag = software.amazon.jsii.Kernel.get(this, "osTag", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1902,7 +1904,6 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.ecsOrderLoginInstanceType = java.util.Objects.requireNonNull(builder.ecsOrderLoginInstanceType, "ecsOrderLoginInstanceType is required");
             this.ecsOrderManagerInstanceType = java.util.Objects.requireNonNull(builder.ecsOrderManagerInstanceType, "ecsOrderManagerInstanceType is required");
             this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
-            this.osTag = java.util.Objects.requireNonNull(builder.osTag, "osTag is required");
             this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
             this.accountType = builder.accountType;
             this.additionalVolumes = builder.additionalVolumes;
@@ -1926,6 +1927,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.jobQueue = builder.jobQueue;
             this.keyPairName = builder.keyPairName;
             this.networkInterfaceTrafficMode = builder.networkInterfaceTrafficMode;
+            this.osTag = builder.osTag;
             this.password = builder.password;
             this.period = builder.period;
             this.periodUnit = builder.periodUnit;
@@ -1979,11 +1981,6 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getName() {
             return this.name;
-        }
-
-        @Override
-        public final java.lang.Object getOsTag() {
-            return this.osTag;
         }
 
         @Override
@@ -2099,6 +2096,11 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getNetworkInterfaceTrafficMode() {
             return this.networkInterfaceTrafficMode;
+        }
+
+        @Override
+        public final java.lang.Object getOsTag() {
+            return this.osTag;
         }
 
         @Override
@@ -2228,7 +2230,6 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             data.set("ecsOrderLoginInstanceType", om.valueToTree(this.getEcsOrderLoginInstanceType()));
             data.set("ecsOrderManagerInstanceType", om.valueToTree(this.getEcsOrderManagerInstanceType()));
             data.set("name", om.valueToTree(this.getName()));
-            data.set("osTag", om.valueToTree(this.getOsTag()));
             data.set("vSwitchId", om.valueToTree(this.getVSwitchId()));
             if (this.getAccountType() != null) {
                 data.set("accountType", om.valueToTree(this.getAccountType()));
@@ -2295,6 +2296,9 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getNetworkInterfaceTrafficMode() != null) {
                 data.set("networkInterfaceTrafficMode", om.valueToTree(this.getNetworkInterfaceTrafficMode()));
+            }
+            if (this.getOsTag() != null) {
+                data.set("osTag", om.valueToTree(this.getOsTag()));
             }
             if (this.getPassword() != null) {
                 data.set("password", om.valueToTree(this.getPassword()));
@@ -2389,7 +2393,6 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (!ecsOrderLoginInstanceType.equals(that.ecsOrderLoginInstanceType)) return false;
             if (!ecsOrderManagerInstanceType.equals(that.ecsOrderManagerInstanceType)) return false;
             if (!name.equals(that.name)) return false;
-            if (!osTag.equals(that.osTag)) return false;
             if (!vSwitchId.equals(that.vSwitchId)) return false;
             if (this.accountType != null ? !this.accountType.equals(that.accountType) : that.accountType != null) return false;
             if (this.additionalVolumes != null ? !this.additionalVolumes.equals(that.additionalVolumes) : that.additionalVolumes != null) return false;
@@ -2413,6 +2416,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.jobQueue != null ? !this.jobQueue.equals(that.jobQueue) : that.jobQueue != null) return false;
             if (this.keyPairName != null ? !this.keyPairName.equals(that.keyPairName) : that.keyPairName != null) return false;
             if (this.networkInterfaceTrafficMode != null ? !this.networkInterfaceTrafficMode.equals(that.networkInterfaceTrafficMode) : that.networkInterfaceTrafficMode != null) return false;
+            if (this.osTag != null ? !this.osTag.equals(that.osTag) : that.osTag != null) return false;
             if (this.password != null ? !this.password.equals(that.password) : that.password != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
             if (this.periodUnit != null ? !this.periodUnit.equals(that.periodUnit) : that.periodUnit != null) return false;
@@ -2446,7 +2450,6 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.ecsOrderLoginInstanceType.hashCode());
             result = 31 * result + (this.ecsOrderManagerInstanceType.hashCode());
             result = 31 * result + (this.name.hashCode());
-            result = 31 * result + (this.osTag.hashCode());
             result = 31 * result + (this.vSwitchId.hashCode());
             result = 31 * result + (this.accountType != null ? this.accountType.hashCode() : 0);
             result = 31 * result + (this.additionalVolumes != null ? this.additionalVolumes.hashCode() : 0);
@@ -2470,6 +2473,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.jobQueue != null ? this.jobQueue.hashCode() : 0);
             result = 31 * result + (this.keyPairName != null ? this.keyPairName.hashCode() : 0);
             result = 31 * result + (this.networkInterfaceTrafficMode != null ? this.networkInterfaceTrafficMode.hashCode() : 0);
+            result = 31 * result + (this.osTag != null ? this.osTag.hashCode() : 0);
             result = 31 * result + (this.password != null ? this.password.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.periodUnit != null ? this.periodUnit.hashCode() : 0);

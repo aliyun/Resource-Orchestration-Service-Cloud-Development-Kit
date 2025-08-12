@@ -17,6 +17,8 @@ type SubscriptionProps struct {
 	SubscriptionName interface{} `field:"required" json:"subscriptionName" yaml:"subscriptionName"`
 	// Property topicName: Topic name.
 	TopicName interface{} `field:"required" json:"topicName" yaml:"topicName"`
+	// Property dlqPolicy: Dead-letter queue policy.
+	DlqPolicy interface{} `field:"optional" json:"dlqPolicy" yaml:"dlqPolicy"`
 	// Property filterTag: Message filter tag in the created subscription (Only messages with consistent tags are pushed.) The value is a string of no more than 16 characters. The default value is no message filter.
 	FilterTag interface{} `field:"optional" json:"filterTag" yaml:"filterTag"`
 	// Property notifyContentFormat: Format of the message content pushed to the endpoint.
@@ -27,5 +29,7 @@ type SubscriptionProps struct {
 	//
 	// BACKOFF_RETRY or EXPONENTIAL_DECAY_RETRY; default value: BACKOFF_RETRY. For details about retry policies, refer to Basic Concepts\/NotifyStrategy.
 	NotifyStrategy interface{} `field:"optional" json:"notifyStrategy" yaml:"notifyStrategy"`
+	// Property pushType: Push type of the created subscription.
+	PushType interface{} `field:"optional" json:"pushType" yaml:"pushType"`
 }
 

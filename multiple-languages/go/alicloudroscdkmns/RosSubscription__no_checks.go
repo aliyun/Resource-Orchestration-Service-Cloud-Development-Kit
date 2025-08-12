@@ -84,6 +84,10 @@ func validateRosSubscription_IsRosResourceParameters(construct alicloudroscdkcor
 	return nil
 }
 
+func (j *jsiiProxy_RosSubscription) validateSetDlqPolicyParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosSubscription) validateSetEnableResourcePropertyConstraintParameters(val *bool) error {
 	return nil
 }
@@ -101,6 +105,10 @@ func (j *jsiiProxy_RosSubscription) validateSetNotifyContentFormatParameters(val
 }
 
 func (j *jsiiProxy_RosSubscription) validateSetNotifyStrategyParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosSubscription) validateSetPushTypeParameters(val interface{}) error {
 	return nil
 }
 

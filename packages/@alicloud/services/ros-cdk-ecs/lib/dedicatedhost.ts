@@ -45,6 +45,16 @@ export interface DedicatedHostProps {
     readonly chargeType?: string | ros.IResolvable;
 
     /**
+     * Property cpuOverCommitRatio: The CPU overcommit ratio of the dedicated host.
+     */
+    readonly cpuOverCommitRatio?: number | ros.IResolvable;
+
+    /**
+     * Property dedicatedHostClusterId: The ID of the dedicated host cluster.
+     */
+    readonly dedicatedHostClusterId?: string | ros.IResolvable;
+
+    /**
      * Property dedicatedHostName: The name of the dedicated host, [2, 128] English or Chinese characters. It must begin with an uppercase\/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:\/\/ or https:\/\/.
      */
     readonly dedicatedHostName?: string | ros.IResolvable;
@@ -53,6 +63,11 @@ export interface DedicatedHostProps {
      * Property description: The description of host.
      */
     readonly description?: string | ros.IResolvable;
+
+    /**
+     * Property minQuantity: The minimum number of dedicated hosts that you want to create.
+     */
+    readonly minQuantity?: number | ros.IResolvable;
 
     /**
      * Property networkAttributesSlbUdpTimeout: The duration of UDP timeout for sessions between Server Load Balancer (SLB) and the dedicated host. Unit: seconds. Valid values: 15 to 310.
@@ -117,7 +132,7 @@ export interface IDedicatedHost extends ros.IResource {
     readonly attrOrderId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::DedicatedHost`, which is used to create a dedicated host.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::DedicatedHost`, which is used to create dedicated hosts.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDedicatedHost`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-dedicatedhost
  */
@@ -166,10 +181,13 @@ export class DedicatedHost extends ros.Resource implements IDedicatedHost {
             period: props.period === undefined || props.period === null ? 1 : props.period,
             quantity: props.quantity === undefined || props.quantity === null ? 1 : props.quantity,
             dedicatedHostType: props.dedicatedHostType,
+            minQuantity: props.minQuantity,
             dedicatedHostName: props.dedicatedHostName,
             chargeType: props.chargeType === undefined || props.chargeType === null ? 'PostPaid' : props.chargeType,
+            cpuOverCommitRatio: props.cpuOverCommitRatio,
             actionOnMaintenance: props.actionOnMaintenance,
             tags: props.tags,
+            dedicatedHostClusterId: props.dedicatedHostClusterId,
             periodUnit: props.periodUnit === undefined || props.periodUnit === null ? 'Month' : props.periodUnit,
             autoReleaseTime: props.autoReleaseTime,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

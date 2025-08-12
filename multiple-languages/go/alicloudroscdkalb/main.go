@@ -1063,6 +1063,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "fetchDesc", GoMethod: "FetchDesc"},
 			_jsii_.MemberMethod{JsiiMethod: "fetchRosDependency", GoMethod: "FetchRosDependency"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
+			_jsii_.MemberProperty{JsiiProperty: "ipv6AddressType", GoGetter: "Ipv6AddressType"},
 			_jsii_.MemberProperty{JsiiProperty: "loadBalancerBillingConfig", GoGetter: "LoadBalancerBillingConfig"},
 			_jsii_.MemberProperty{JsiiProperty: "loadBalancerEdition", GoGetter: "LoadBalancerEdition"},
 			_jsii_.MemberProperty{JsiiProperty: "loadBalancerName", GoGetter: "LoadBalancerName"},

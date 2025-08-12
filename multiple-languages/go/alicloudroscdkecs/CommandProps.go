@@ -24,6 +24,10 @@ type CommandProps struct {
 	//
 	// Default value: false.
 	EnableParameter interface{} `field:"optional" json:"enableParameter" yaml:"enableParameter"`
+	// Property launcher: A bootloader for script execution.
+	//
+	// The length cannot exceed 1 KB.
+	Launcher interface{} `field:"optional" json:"launcher" yaml:"launcher"`
 	// Property name: The name of command.
 	Name interface{} `field:"optional" json:"name" yaml:"name"`
 	// Property resourceGroupId: Resource group id.

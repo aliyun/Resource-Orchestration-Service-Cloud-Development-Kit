@@ -10,7 +10,9 @@ type RosAppProps struct {
 	QuotaInfo interface{} `field:"required" json:"quotaInfo" yaml:"quotaInfo"`
 	AppVersion interface{} `field:"optional" json:"appVersion" yaml:"appVersion"`
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
+	LogProConfiguration interface{} `field:"optional" json:"logProConfiguration" yaml:"logProConfiguration"`
 	Network interface{} `field:"optional" json:"network" yaml:"network"`
 	PrivateNetwork interface{} `field:"optional" json:"privateNetwork" yaml:"privateNetwork"`
+	Scenario interface{} `field:"optional" json:"scenario" yaml:"scenario"`
 }
 

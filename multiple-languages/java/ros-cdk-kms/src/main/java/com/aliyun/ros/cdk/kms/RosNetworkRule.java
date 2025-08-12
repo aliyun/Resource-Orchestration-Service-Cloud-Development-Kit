@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kms;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::KMS::NetworkRule</code>, which is used to create a network access rule.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:07.787Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.379Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.RosNetworkRule")
 public class RosNetworkRule extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -81,6 +81,24 @@ public class RosNetworkRule extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setNetworkRuleName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "networkRuleName", java.util.Objects.requireNonNull(value, "networkRuleName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getType() {
+        return software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setType(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "type", java.util.Objects.requireNonNull(value, "type is required"));
+    }
+
+    /**
+     */
+    public void setType(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "type", java.util.Objects.requireNonNull(value, "type is required"));
     }
 
     /**
@@ -175,6 +193,23 @@ public class RosNetworkRule extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder networkRuleName(final com.aliyun.ros.cdk.core.IResolvable networkRuleName) {
             this.props.networkRuleName(networkRuleName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param type This parameter is required.
+         */
+        public Builder type(final java.lang.String type) {
+            this.props.type(type);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param type This parameter is required.
+         */
+        public Builder type(final com.aliyun.ros.cdk.core.IResolvable type) {
+            this.props.type(type);
             return this;
         }
 

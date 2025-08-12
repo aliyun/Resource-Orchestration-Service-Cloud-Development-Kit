@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.privatelink;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::PrivateLink::VpcEndpointServiceAttachment</code>, which is used to add a service resource to an endpoint service.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::PrivateLink::VpcEndpointServiceAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:09.216Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.548Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.VpcEndpointServiceAttachment")
 public class VpcEndpointServiceAttachment extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.privatelink.IVpcEndpointServiceAttachment {
 
@@ -203,6 +203,27 @@ public class VpcEndpointServiceAttachment extends com.aliyun.ros.cdk.core.Resour
          */
         public Builder serviceId(final com.aliyun.ros.cdk.core.IResolvable serviceId) {
             this.props.serviceId(serviceId);
+            return this;
+        }
+
+        /**
+         * Property zoneId: Zone id of the service resource.
+         * <p>
+         * @return {@code this}
+         * @param zoneId Property zoneId: Zone id of the service resource. This parameter is required.
+         */
+        public Builder zoneId(final java.lang.String zoneId) {
+            this.props.zoneId(zoneId);
+            return this;
+        }
+        /**
+         * Property zoneId: Zone id of the service resource.
+         * <p>
+         * @return {@code this}
+         * @param zoneId Property zoneId: Zone id of the service resource. This parameter is required.
+         */
+        public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
+            this.props.zoneId(zoneId);
             return this;
         }
 

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-anycasteip
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:11.372Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:51.284Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosAnycastEIPProps")
 @software.amazon.jsii.Jsii.Proxy(RosAnycastEIPProps.Jsii$Proxy.class)
 public interface RosAnycastEIPProps extends software.amazon.jsii.JsiiSerializable {
@@ -42,6 +42,12 @@ public interface RosAnycastEIPProps extends software.amazon.jsii.JsiiSerializabl
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getServiceLocation() {
         return null;
     }
@@ -61,6 +67,7 @@ public interface RosAnycastEIPProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object instanceChargeType;
         java.lang.Object internetChargeType;
         java.lang.Object name;
+        java.lang.Object resourceGroupId;
         java.lang.Object serviceLocation;
 
         /**
@@ -164,6 +171,26 @@ public interface RosAnycastEIPProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosAnycastEIPProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAnycastEIPProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosAnycastEIPProps#getServiceLocation}
          * @param serviceLocation the value to be set.
          * @return {@code this}
@@ -204,6 +231,7 @@ public interface RosAnycastEIPProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object instanceChargeType;
         private final java.lang.Object internetChargeType;
         private final java.lang.Object name;
+        private final java.lang.Object resourceGroupId;
         private final java.lang.Object serviceLocation;
 
         /**
@@ -217,6 +245,7 @@ public interface RosAnycastEIPProps extends software.amazon.jsii.JsiiSerializabl
             this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serviceLocation = software.amazon.jsii.Kernel.get(this, "serviceLocation", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -230,6 +259,7 @@ public interface RosAnycastEIPProps extends software.amazon.jsii.JsiiSerializabl
             this.instanceChargeType = builder.instanceChargeType;
             this.internetChargeType = builder.internetChargeType;
             this.name = builder.name;
+            this.resourceGroupId = builder.resourceGroupId;
             this.serviceLocation = builder.serviceLocation;
         }
 
@@ -259,6 +289,11 @@ public interface RosAnycastEIPProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
+        }
+
+        @Override
         public final java.lang.Object getServiceLocation() {
             return this.serviceLocation;
         }
@@ -283,6 +318,9 @@ public interface RosAnycastEIPProps extends software.amazon.jsii.JsiiSerializabl
             }
             if (this.getName() != null) {
                 data.set("name", om.valueToTree(this.getName()));
+            }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
             if (this.getServiceLocation() != null) {
                 data.set("serviceLocation", om.valueToTree(this.getServiceLocation()));
@@ -310,6 +348,7 @@ public interface RosAnycastEIPProps extends software.amazon.jsii.JsiiSerializabl
             if (this.instanceChargeType != null ? !this.instanceChargeType.equals(that.instanceChargeType) : that.instanceChargeType != null) return false;
             if (this.internetChargeType != null ? !this.internetChargeType.equals(that.internetChargeType) : that.internetChargeType != null) return false;
             if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             return this.serviceLocation != null ? this.serviceLocation.equals(that.serviceLocation) : that.serviceLocation == null;
         }
 
@@ -320,6 +359,7 @@ public interface RosAnycastEIPProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.instanceChargeType != null ? this.instanceChargeType.hashCode() : 0);
             result = 31 * result + (this.internetChargeType != null ? this.internetChargeType.hashCode() : 0);
             result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.serviceLocation != null ? this.serviceLocation.hashCode() : 0);
             return result;
         }

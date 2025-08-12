@@ -21,9 +21,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
             get;
         }
 
-        /// <summary>Property cpu: Each instance of the CPU required, in units of milli core, can not be zero.</summary>
+        /// <summary>Property cpu: The CPU required for each instance.</summary>
         /// <remarks>
-        /// Currently only supports fixed specifications instance type.
+        /// Valid values: 500, 1000, 2000, 4000, 8000, 16000, 32000.
         /// </remarks>
         [JsiiProperty(name: "cpu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object Cpu
@@ -31,9 +31,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
             get;
         }
 
-        /// <summary>Property memory: Each instance of the required memory, in units of MB, can not be zero.</summary>
+        /// <summary>Property memory: The memory required for each instance, in MB, cannot be 0.</summary>
         /// <remarks>
-        /// Currently only supports fixed specifications instance type.
+        /// One-to-one correspondence with CPU. Valid values: 1024, 2048, 4096, 8192, 12288, 16384, 24576, 32768, 65536, 131072.
         /// </remarks>
         [JsiiProperty(name: "memory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object Memory
@@ -265,6 +265,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
             }
         }
 
+        /// <summary>Property enableNewArms: Whether to enable the new ARMS feature.</summary>
+        [JsiiProperty(name: "enableNewArms", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? EnableNewArms
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property envs: Container environment variable parameters.</summary>
         /// <remarks>
         /// For example: [{ "name": "envtmp", "value": "0"}]
@@ -468,6 +479,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
             }
         }
 
+        /// <summary>Property newSaeVersion: The new SAE version.</summary>
+        /// <remarks>
+        /// Supported versions: lite, std, pro.
+        /// </remarks>
+        [JsiiProperty(name: "newSaeVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? NewSaeVersion
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property ossAkId: AccessKey ID of the OSS.</summary>
         [JsiiProperty(name: "ossAkId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -620,7 +645,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// <list type="bullet">
         /// <description>java: The Java language</description>
         /// <description>php: PHP language.</description>
-        /// <description>other: Multiple languages such as Python, C++, Go,.NET, Node.js, etc.</description>
+        /// <description>python: Python language.</description>
+        /// <description>dotnet: .NET Core language.</description>
+        /// <description>golang: GoLang language.</description>
+        /// <description>other: Multiple languages such as C++, Node.js, etc.</description>
         /// </list>
         /// </remarks>
         [JsiiProperty(name: "programmingLanguage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -881,9 +909,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property cpu: Each instance of the CPU required, in units of milli core, can not be zero.</summary>
+            /// <summary>Property cpu: The CPU required for each instance.</summary>
             /// <remarks>
-            /// Currently only supports fixed specifications instance type.
+            /// Valid values: 500, 1000, 2000, 4000, 8000, 16000, 32000.
             /// </remarks>
             [JsiiProperty(name: "cpu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Cpu
@@ -891,9 +919,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property memory: Each instance of the required memory, in units of MB, can not be zero.</summary>
+            /// <summary>Property memory: The memory required for each instance, in MB, cannot be 0.</summary>
             /// <remarks>
-            /// Currently only supports fixed specifications instance type.
+            /// One-to-one correspondence with CPU. Valid values: 1024, 2048, 4096, 8192, 12288, 16384, 24576, 32768, 65536, 131072.
             /// </remarks>
             [JsiiProperty(name: "memory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Memory
@@ -1083,6 +1111,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property enableNewArms: Whether to enable the new ARMS feature.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "enableNewArms", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EnableNewArms
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property envs: Container environment variable parameters.</summary>
             /// <remarks>
             /// For example: [{ "name": "envtmp", "value": "0"}]
@@ -1244,6 +1280,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property newSaeVersion: The new SAE version.</summary>
+            /// <remarks>
+            /// Supported versions: lite, std, pro.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "newSaeVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? NewSaeVersion
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property ossAkId: AccessKey ID of the OSS.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "ossAkId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1363,7 +1410,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
             /// <list type="bullet">
             /// <description>java: The Java language</description>
             /// <description>php: PHP language.</description>
-            /// <description>other: Multiple languages such as Python, C++, Go,.NET, Node.js, etc.</description>
+            /// <description>python: Python language.</description>
+            /// <description>dotnet: .NET Core language.</description>
+            /// <description>golang: GoLang language.</description>
+            /// <description>other: Multiple languages such as C++, Node.js, etc.</description>
             /// </list>
             /// </remarks>
             [JsiiOptional]

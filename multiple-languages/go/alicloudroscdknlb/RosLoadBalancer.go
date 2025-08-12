@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::LoadBalancer`, which is used to create a Network Load Balancer (NLB) instance.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::LoadBalancer`.
 type RosLoadBalancer interface {
 	alicloudroscdkcore.RosResource
 	AddressIpVersion() interface{}

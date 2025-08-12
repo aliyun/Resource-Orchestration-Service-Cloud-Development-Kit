@@ -71,7 +71,7 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GraphDatabase::Account`, which is used to create an account.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GraphDatabase::Account`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-graphdatabase-account
  */
@@ -391,7 +391,7 @@ function rosDbInstancePropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GraphDatabase::DbInstance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GraphDatabase::DbInstance`, which is used to create a Graph Database (GDB) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `DbInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-graphdatabase-dbinstance
  */

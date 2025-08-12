@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.redis;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-instance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:09.850Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:50.032Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -152,6 +152,15 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property readOnlyCount: The number of read replicas in the primary zone.
+     * <p>
+     * Valid values: 1 to 9.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getReadOnlyCount() {
+        return null;
+    }
+
+    /**
      * Property resourceGroupId: Resource group id.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
@@ -196,6 +205,15 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
      * Update: updates the SSL certificate.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSslEnabled() {
+        return null;
+    }
+
+    /**
+     * Property subscriptionDeletionForce: This option is only applicable to subscription instances.
+     * <p>
+     * For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSubscriptionDeletionForce() {
         return null;
     }
 
@@ -278,11 +296,13 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object period;
         java.lang.Object periodUnit;
         java.lang.Object productType;
+        java.lang.Object readOnlyCount;
         java.lang.Object resourceGroupId;
         java.lang.Object secondaryZoneId;
         java.lang.Object securityGroupId;
         java.lang.Object shardCount;
         java.lang.Object sslEnabled;
+        java.lang.Object subscriptionDeletionForce;
         java.util.List<com.aliyun.ros.cdk.redis.RosInstance.TagsProperty> tags;
         java.lang.Object tairConfig;
         java.lang.Object vpcId;
@@ -653,6 +673,28 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstanceProps#getReadOnlyCount}
+         * @param readOnlyCount Property readOnlyCount: The number of read replicas in the primary zone.
+         *                      Valid values: 1 to 9.
+         * @return {@code this}
+         */
+        public Builder readOnlyCount(java.lang.Number readOnlyCount) {
+            this.readOnlyCount = readOnlyCount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getReadOnlyCount}
+         * @param readOnlyCount Property readOnlyCount: The number of read replicas in the primary zone.
+         *                      Valid values: 1 to 9.
+         * @return {@code this}
+         */
+        public Builder readOnlyCount(com.aliyun.ros.cdk.core.IResolvable readOnlyCount) {
+            this.readOnlyCount = readOnlyCount;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceProps#getResourceGroupId}
          * @param resourceGroupId Property resourceGroupId: Resource group id.
          * @return {@code this}
@@ -769,6 +811,28 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder sslEnabled(com.aliyun.ros.cdk.core.IResolvable sslEnabled) {
             this.sslEnabled = sslEnabled;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getSubscriptionDeletionForce}
+         * @param subscriptionDeletionForce Property subscriptionDeletionForce: This option is only applicable to subscription instances.
+         *                                  For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+         * @return {@code this}
+         */
+        public Builder subscriptionDeletionForce(java.lang.Boolean subscriptionDeletionForce) {
+            this.subscriptionDeletionForce = subscriptionDeletionForce;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getSubscriptionDeletionForce}
+         * @param subscriptionDeletionForce Property subscriptionDeletionForce: This option is only applicable to subscription instances.
+         *                                  For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+         * @return {@code this}
+         */
+        public Builder subscriptionDeletionForce(com.aliyun.ros.cdk.core.IResolvable subscriptionDeletionForce) {
+            this.subscriptionDeletionForce = subscriptionDeletionForce;
             return this;
         }
 
@@ -930,11 +994,13 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object period;
         private final java.lang.Object periodUnit;
         private final java.lang.Object productType;
+        private final java.lang.Object readOnlyCount;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object secondaryZoneId;
         private final java.lang.Object securityGroupId;
         private final java.lang.Object shardCount;
         private final java.lang.Object sslEnabled;
+        private final java.lang.Object subscriptionDeletionForce;
         private final java.util.List<com.aliyun.ros.cdk.redis.RosInstance.TagsProperty> tags;
         private final java.lang.Object tairConfig;
         private final java.lang.Object vpcId;
@@ -964,11 +1030,13 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.productType = software.amazon.jsii.Kernel.get(this, "productType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.readOnlyCount = software.amazon.jsii.Kernel.get(this, "readOnlyCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.secondaryZoneId = software.amazon.jsii.Kernel.get(this, "secondaryZoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.shardCount = software.amazon.jsii.Kernel.get(this, "shardCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sslEnabled = software.amazon.jsii.Kernel.get(this, "sslEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.subscriptionDeletionForce = software.amazon.jsii.Kernel.get(this, "subscriptionDeletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.redis.RosInstance.TagsProperty.class)));
             this.tairConfig = software.amazon.jsii.Kernel.get(this, "tairConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -999,11 +1067,13 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.period = builder.period;
             this.periodUnit = builder.periodUnit;
             this.productType = builder.productType;
+            this.readOnlyCount = builder.readOnlyCount;
             this.resourceGroupId = builder.resourceGroupId;
             this.secondaryZoneId = builder.secondaryZoneId;
             this.securityGroupId = builder.securityGroupId;
             this.shardCount = builder.shardCount;
             this.sslEnabled = builder.sslEnabled;
+            this.subscriptionDeletionForce = builder.subscriptionDeletionForce;
             this.tags = (java.util.List<com.aliyun.ros.cdk.redis.RosInstance.TagsProperty>)builder.tags;
             this.tairConfig = builder.tairConfig;
             this.vpcId = builder.vpcId;
@@ -1093,6 +1163,11 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getReadOnlyCount() {
+            return this.readOnlyCount;
+        }
+
+        @Override
         public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
         }
@@ -1115,6 +1190,11 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getSslEnabled() {
             return this.sslEnabled;
+        }
+
+        @Override
+        public final java.lang.Object getSubscriptionDeletionForce() {
+            return this.subscriptionDeletionForce;
         }
 
         @Override
@@ -1201,6 +1281,9 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getProductType() != null) {
                 data.set("productType", om.valueToTree(this.getProductType()));
             }
+            if (this.getReadOnlyCount() != null) {
+                data.set("readOnlyCount", om.valueToTree(this.getReadOnlyCount()));
+            }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
@@ -1215,6 +1298,9 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getSslEnabled() != null) {
                 data.set("sslEnabled", om.valueToTree(this.getSslEnabled()));
+            }
+            if (this.getSubscriptionDeletionForce() != null) {
+                data.set("subscriptionDeletionForce", om.valueToTree(this.getSubscriptionDeletionForce()));
             }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
@@ -1268,11 +1354,13 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
             if (this.periodUnit != null ? !this.periodUnit.equals(that.periodUnit) : that.periodUnit != null) return false;
             if (this.productType != null ? !this.productType.equals(that.productType) : that.productType != null) return false;
+            if (this.readOnlyCount != null ? !this.readOnlyCount.equals(that.readOnlyCount) : that.readOnlyCount != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.secondaryZoneId != null ? !this.secondaryZoneId.equals(that.secondaryZoneId) : that.secondaryZoneId != null) return false;
             if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
             if (this.shardCount != null ? !this.shardCount.equals(that.shardCount) : that.shardCount != null) return false;
             if (this.sslEnabled != null ? !this.sslEnabled.equals(that.sslEnabled) : that.sslEnabled != null) return false;
+            if (this.subscriptionDeletionForce != null ? !this.subscriptionDeletionForce.equals(that.subscriptionDeletionForce) : that.subscriptionDeletionForce != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.tairConfig != null ? !this.tairConfig.equals(that.tairConfig) : that.tairConfig != null) return false;
             if (this.vpcId != null ? !this.vpcId.equals(that.vpcId) : that.vpcId != null) return false;
@@ -1299,11 +1387,13 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.periodUnit != null ? this.periodUnit.hashCode() : 0);
             result = 31 * result + (this.productType != null ? this.productType.hashCode() : 0);
+            result = 31 * result + (this.readOnlyCount != null ? this.readOnlyCount.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.secondaryZoneId != null ? this.secondaryZoneId.hashCode() : 0);
             result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
             result = 31 * result + (this.shardCount != null ? this.shardCount.hashCode() : 0);
             result = 31 * result + (this.sslEnabled != null ? this.sslEnabled.hashCode() : 0);
+            result = 31 * result + (this.subscriptionDeletionForce != null ? this.subscriptionDeletionForce.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.tairConfig != null ? this.tairConfig.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);

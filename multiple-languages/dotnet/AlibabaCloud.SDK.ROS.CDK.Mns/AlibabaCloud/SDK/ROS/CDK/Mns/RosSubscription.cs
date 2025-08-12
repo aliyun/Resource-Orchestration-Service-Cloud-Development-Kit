@@ -4,10 +4,8 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Mns
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::MNS::Subscription`, which is used to subscribe an endpoint to an Alibaba Cloud Message Service (MNS) topic.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::MNS::Subscription`.</summary>
     /// <remarks>
-    /// For a subscription to be created, the owner of the endpoint must confirm the subscription.
-    ///
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Subscription` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-subscription
     /// </remarks>
@@ -191,6 +189,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: dlqPolicy: Dead-letter queue policy
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "dlqPolicy", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-mns.RosSubscription.DlqPolicyProperty\"}]}}", isOptional: true)]
+        public virtual object? DlqPolicy
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Mns.RosSubscription.IDlqPolicyProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Mns.RosSubscription.IDlqPolicyProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: filterTag: Message filter tag in the created subscription (Only messages with consistent tags are pushed.)
         /// The value is a string of no more than 16 characters. The default value is no message filter.
         /// </remarks>
@@ -283,6 +312,153 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
                     }
                 }
                 SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: pushType: Push type of the created subscription.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "pushType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? PushType
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IDlqPolicyProperty), fullyQualifiedName: "@alicloud/ros-cdk-mns.RosSubscription.DlqPolicyProperty")]
+        public interface IDlqPolicyProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: deadLetterTargetQueue: Dead-letter queue name
+            /// </remarks>
+            [JsiiProperty(name: "deadLetterTargetQueue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object DeadLetterTargetQueue
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: enabled: Whether to enable dead-letter queue
+            /// </remarks>
+            [JsiiProperty(name: "enabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Enabled
+            {
+                get;
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IDlqPolicyProperty), fullyQualifiedName: "@alicloud/ros-cdk-mns.RosSubscription.DlqPolicyProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Mns.RosSubscription.IDlqPolicyProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: deadLetterTargetQueue: Dead-letter queue name
+                /// </remarks>
+                [JsiiProperty(name: "deadLetterTargetQueue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object DeadLetterTargetQueue
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: enabled: Whether to enable dead-letter queue
+                /// </remarks>
+                [JsiiProperty(name: "enabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Enabled
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-mns.RosSubscription.DlqPolicyProperty")]
+        public class DlqPolicyProperty : AlibabaCloud.SDK.ROS.CDK.Mns.RosSubscription.IDlqPolicyProperty
+        {
+            private object _deadLetterTargetQueue;
+
+            /// <remarks>
+            /// <strong>Property</strong>: deadLetterTargetQueue: Dead-letter queue name
+            /// </remarks>
+            [JsiiProperty(name: "deadLetterTargetQueue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object DeadLetterTargetQueue
+            {
+                get => _deadLetterTargetQueue;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _deadLetterTargetQueue = value;
+                }
+            }
+
+            private object _enabled;
+
+            /// <remarks>
+            /// <strong>Property</strong>: enabled: Whether to enable dead-letter queue
+            /// </remarks>
+            [JsiiProperty(name: "enabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Enabled
+            {
+                get => _enabled;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _enabled = value;
+                }
             }
         }
     }

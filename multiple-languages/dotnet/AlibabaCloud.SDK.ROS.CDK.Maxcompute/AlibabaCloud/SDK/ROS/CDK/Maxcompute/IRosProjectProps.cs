@@ -86,6 +86,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Maxcompute
             }
         }
 
+        /// <remarks>
+        /// <strong>Property</strong>: supportSchemaLevels: Whether to support schema level. Default: False
+        /// </remarks>
+        [JsiiProperty(name: "supportSchemaLevels", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SupportSchemaLevels
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `RosProject`.</summary>
         /// <remarks>
         /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-maxcompute-project
@@ -153,6 +166,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Maxcompute
             [JsiiOptional]
             [JsiiProperty(name: "properties", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-maxcompute.RosProject.PropertiesProperty\"}]}}", isOptional: true)]
             public object? Properties
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: supportSchemaLevels: Whether to support schema level. Default: False
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "supportSchemaLevels", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SupportSchemaLevels
             {
                 get => GetInstanceProperty<object?>();
             }

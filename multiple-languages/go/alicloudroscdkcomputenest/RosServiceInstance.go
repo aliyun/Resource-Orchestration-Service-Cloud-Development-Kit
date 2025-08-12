@@ -18,8 +18,9 @@ type RosServiceInstance interface {
 	AttrEnableUserPrometheus() alicloudroscdkcore.IResolvable
 	AttrIsOperated() alicloudroscdkcore.IResolvable
 	AttrLicenseEndTime() alicloudroscdkcore.IResolvable
-	AttrName() alicloudroscdkcore.IResolvable
+	AttrMarketInstanceId() alicloudroscdkcore.IResolvable
 	AttrNetworkConfig() alicloudroscdkcore.IResolvable
+	AttrOutput() alicloudroscdkcore.IResolvable
 	AttrOutputs() alicloudroscdkcore.IResolvable
 	AttrParameters() alicloudroscdkcore.IResolvable
 	AttrPredefinedParameterName() alicloudroscdkcore.IResolvable
@@ -27,6 +28,7 @@ type RosServiceInstance interface {
 	AttrResourceGroupId() alicloudroscdkcore.IResolvable
 	AttrService() alicloudroscdkcore.IResolvable
 	AttrServiceInstanceId() alicloudroscdkcore.IResolvable
+	AttrServiceInstanceName() alicloudroscdkcore.IResolvable
 	AttrServiceType() alicloudroscdkcore.IResolvable
 	AttrSource() alicloudroscdkcore.IResolvable
 	AttrStatusDetail() alicloudroscdkcore.IResolvable
@@ -43,6 +45,8 @@ type RosServiceInstance interface {
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
 	CreationStack() *[]*string
+	DryRun() interface{}
+	SetDryRun(val interface{})
 	EnableInstanceOps() interface{}
 	SetEnableInstanceOps(val interface{})
 	EnableResourcePropertyConstraint() *bool
@@ -59,10 +63,6 @@ type RosServiceInstance interface {
 	// Returns: the logical ID as a stringified token. This value will only get
 	// resolved during synthesis.
 	LogicalId() *string
-	MarketInstanceId() interface{}
-	SetMarketInstanceId(val interface{})
-	Name() interface{}
-	SetName(val interface{})
 	// The construct tree node associated with this construct.
 	Node() alicloudroscdkcore.ConstructNode
 	OperationName() interface{}
@@ -76,6 +76,8 @@ type RosServiceInstance interface {
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
 	// coerce it to an IResolvable through `Lazy.any({ produce: resource.ref })`.
 	Ref() *string
+	ResourceAutoPay() interface{}
+	SetResourceAutoPay(val interface{})
 	ResourceGroupId() interface{}
 	SetResourceGroupId(val interface{})
 	// Options for this resource, such as condition, update policy etc.
@@ -85,6 +87,8 @@ type RosServiceInstance interface {
 	RosResourceType() *string
 	Service() interface{}
 	SetService(val interface{})
+	ServiceInstanceName() interface{}
+	SetServiceInstanceName(val interface{})
 	SpecificationCode() interface{}
 	SetSpecificationCode(val interface{})
 	// The stack in which this element is defined.
@@ -279,11 +283,11 @@ func (j *jsiiProxy_RosServiceInstance) AttrLicenseEndTime() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_RosServiceInstance) AttrName() alicloudroscdkcore.IResolvable {
+func (j *jsiiProxy_RosServiceInstance) AttrMarketInstanceId() alicloudroscdkcore.IResolvable {
 	var returns alicloudroscdkcore.IResolvable
 	_jsii_.Get(
 		j,
-		"attrName",
+		"attrMarketInstanceId",
 		&returns,
 	)
 	return returns
@@ -294,6 +298,16 @@ func (j *jsiiProxy_RosServiceInstance) AttrNetworkConfig() alicloudroscdkcore.IR
 	_jsii_.Get(
 		j,
 		"attrNetworkConfig",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosServiceInstance) AttrOutput() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrOutput",
 		&returns,
 	)
 	return returns
@@ -364,6 +378,16 @@ func (j *jsiiProxy_RosServiceInstance) AttrServiceInstanceId() alicloudroscdkcor
 	_jsii_.Get(
 		j,
 		"attrServiceInstanceId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosServiceInstance) AttrServiceInstanceName() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrServiceInstanceName",
 		&returns,
 	)
 	return returns
@@ -479,6 +503,16 @@ func (j *jsiiProxy_RosServiceInstance) CreationStack() *[]*string {
 	return returns
 }
 
+func (j *jsiiProxy_RosServiceInstance) DryRun() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"dryRun",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosServiceInstance) EnableInstanceOps() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -514,26 +548,6 @@ func (j *jsiiProxy_RosServiceInstance) LogicalId() *string {
 	_jsii_.Get(
 		j,
 		"logicalId",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosServiceInstance) MarketInstanceId() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"marketInstanceId",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosServiceInstance) Name() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"name",
 		&returns,
 	)
 	return returns
@@ -589,6 +603,16 @@ func (j *jsiiProxy_RosServiceInstance) Ref() *string {
 	return returns
 }
 
+func (j *jsiiProxy_RosServiceInstance) ResourceAutoPay() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"resourceAutoPay",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosServiceInstance) ResourceGroupId() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -634,6 +658,16 @@ func (j *jsiiProxy_RosServiceInstance) Service() interface{} {
 	_jsii_.Get(
 		j,
 		"service",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosServiceInstance) ServiceInstanceName() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"serviceInstanceName",
 		&returns,
 	)
 	return returns
@@ -739,6 +773,17 @@ func (j *jsiiProxy_RosServiceInstance)SetContactGroup(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosServiceInstance)SetDryRun(val interface{}) {
+	if err := j.validateSetDryRunParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"dryRun",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosServiceInstance)SetEnableInstanceOps(val interface{}) {
 	if err := j.validateSetEnableInstanceOpsParameters(val); err != nil {
 		panic(err)
@@ -768,28 +813,6 @@ func (j *jsiiProxy_RosServiceInstance)SetEnableUserPrometheus(val interface{}) {
 	_jsii_.Set(
 		j,
 		"enableUserPrometheus",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosServiceInstance)SetMarketInstanceId(val interface{}) {
-	if err := j.validateSetMarketInstanceIdParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"marketInstanceId",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosServiceInstance)SetName(val interface{}) {
-	if err := j.validateSetNameParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"name",
 		val,
 	)
 }
@@ -827,6 +850,17 @@ func (j *jsiiProxy_RosServiceInstance)SetPredefinedParameterName(val interface{}
 	)
 }
 
+func (j *jsiiProxy_RosServiceInstance)SetResourceAutoPay(val interface{}) {
+	if err := j.validateSetResourceAutoPayParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"resourceAutoPay",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosServiceInstance)SetResourceGroupId(val interface{}) {
 	if err := j.validateSetResourceGroupIdParameters(val); err != nil {
 		panic(err)
@@ -845,6 +879,17 @@ func (j *jsiiProxy_RosServiceInstance)SetService(val interface{}) {
 	_jsii_.Set(
 		j,
 		"service",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosServiceInstance)SetServiceInstanceName(val interface{}) {
+	if err := j.validateSetServiceInstanceNameParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"serviceInstanceName",
 		val,
 	)
 }

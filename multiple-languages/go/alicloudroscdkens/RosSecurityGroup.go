@@ -33,6 +33,8 @@ type RosSecurityGroup interface {
 	LogicalId() *string
 	// The construct tree node associated with this construct.
 	Node() alicloudroscdkcore.ConstructNode
+	Permissions() interface{}
+	SetPermissions(val interface{})
 	// Return a string that will be resolved to a RosTemplate `{ Ref }` for this element.
 	//
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
@@ -43,10 +45,6 @@ type RosSecurityGroup interface {
 	RosProperties() *map[string]interface{}
 	// ROS resource type.
 	RosResourceType() *string
-	SecurityGroupEgress() interface{}
-	SetSecurityGroupEgress(val interface{})
-	SecurityGroupIngress() interface{}
-	SetSecurityGroupIngress(val interface{})
 	SecurityGroupName() interface{}
 	SetSecurityGroupName(val interface{})
 	// The stack in which this element is defined.
@@ -237,6 +235,16 @@ func (j *jsiiProxy_RosSecurityGroup) Node() alicloudroscdkcore.ConstructNode {
 	return returns
 }
 
+func (j *jsiiProxy_RosSecurityGroup) Permissions() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"permissions",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosSecurityGroup) Ref() *string {
 	var returns *string
 	_jsii_.Get(
@@ -272,26 +280,6 @@ func (j *jsiiProxy_RosSecurityGroup) RosResourceType() *string {
 	_jsii_.Get(
 		j,
 		"rosResourceType",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosSecurityGroup) SecurityGroupEgress() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"securityGroupEgress",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosSecurityGroup) SecurityGroupIngress() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"securityGroupIngress",
 		&returns,
 	)
 	return returns
@@ -377,24 +365,13 @@ func (j *jsiiProxy_RosSecurityGroup)SetEnableResourcePropertyConstraint(val *boo
 	)
 }
 
-func (j *jsiiProxy_RosSecurityGroup)SetSecurityGroupEgress(val interface{}) {
-	if err := j.validateSetSecurityGroupEgressParameters(val); err != nil {
+func (j *jsiiProxy_RosSecurityGroup)SetPermissions(val interface{}) {
+	if err := j.validateSetPermissionsParameters(val); err != nil {
 		panic(err)
 	}
 	_jsii_.Set(
 		j,
-		"securityGroupEgress",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosSecurityGroup)SetSecurityGroupIngress(val interface{}) {
-	if err := j.validateSetSecurityGroupIngressParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"securityGroupIngress",
+		"permissions",
 		val,
 	)
 }

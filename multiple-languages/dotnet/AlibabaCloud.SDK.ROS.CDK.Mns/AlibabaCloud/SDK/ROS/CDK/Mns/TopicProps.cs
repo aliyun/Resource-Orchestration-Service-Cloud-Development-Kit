@@ -131,5 +131,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
                 _maximumMessageSize = value;
             }
         }
+
+        /// <summary>Property tags: Tags to attach to Topic.</summary>
+        /// <remarks>
+        /// Max support 20 tags to add during create Topic. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-mns.RosTopic.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        public AlibabaCloud.SDK.ROS.CDK.Mns.RosTopic.ITagsProperty[]? Tags
+        {
+            get;
+            set;
+        }
     }
 }

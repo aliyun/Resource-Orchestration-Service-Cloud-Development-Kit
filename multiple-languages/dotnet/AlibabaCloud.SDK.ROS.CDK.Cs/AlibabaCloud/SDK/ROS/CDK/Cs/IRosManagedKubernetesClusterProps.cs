@@ -30,6 +30,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: vSwitchIds: The virtual switch ID of the worker node.
+        /// </remarks>
+        [JsiiProperty(name: "vSwitchIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
+        object VSwitchIds
+        {
+            get;
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: addons: A combination of addon plugins for Kubernetes clusters.
         /// Network plug-in: including Flannel and Terway network plug-ins
         /// Log service: Optional. If the log service is not enabled, the cluster audit function cannot be used.
@@ -614,6 +623,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// </remarks>
             [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object VpcId
+            {
+                get => GetInstanceProperty<object>()!;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: vSwitchIds: The virtual switch ID of the worker node.
+            /// </remarks>
+            [JsiiProperty(name: "vSwitchIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
+            public object VSwitchIds
             {
                 get => GetInstanceProperty<object>()!;
             }

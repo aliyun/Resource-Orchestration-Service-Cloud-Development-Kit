@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.elasticsearchserverless;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-elasticsearchserverless-app
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:06.297Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.158Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.elasticsearchserverless.$Module.class, fqn = "@alicloud/ros-cdk-elasticsearchserverless.AppProps")
 @software.amazon.jsii.Jsii.Proxy(AppProps.Jsii$Proxy.class)
 public interface AppProps extends software.amazon.jsii.JsiiSerializable {
@@ -42,6 +42,13 @@ public interface AppProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property logProConfiguration: The log pro configuration of the app.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLogProConfiguration() {
+        return null;
+    }
+
+    /**
      * Property network: The public network of the app.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNetwork() {
@@ -52,6 +59,13 @@ public interface AppProps extends software.amazon.jsii.JsiiSerializable {
      * Property privateNetwork: The private network of the app.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPrivateNetwork() {
+        return null;
+    }
+
+    /**
+     * Property scenario: The scenario of the app.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getScenario() {
         return null;
     }
 
@@ -70,8 +84,10 @@ public interface AppProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object quotaInfo;
         java.lang.Object appVersion;
         java.lang.Object description;
+        java.lang.Object logProConfiguration;
         java.lang.Object network;
         java.lang.Object privateNetwork;
+        java.lang.Object scenario;
 
         /**
          * Sets the value of {@link AppProps#getAppName}
@@ -176,6 +192,26 @@ public interface AppProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link AppProps#getLogProConfiguration}
+         * @param logProConfiguration Property logProConfiguration: The log pro configuration of the app.
+         * @return {@code this}
+         */
+        public Builder logProConfiguration(com.aliyun.ros.cdk.core.IResolvable logProConfiguration) {
+            this.logProConfiguration = logProConfiguration;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AppProps#getLogProConfiguration}
+         * @param logProConfiguration Property logProConfiguration: The log pro configuration of the app.
+         * @return {@code this}
+         */
+        public Builder logProConfiguration(com.aliyun.ros.cdk.elasticsearchserverless.RosApp.LogProConfigurationProperty logProConfiguration) {
+            this.logProConfiguration = logProConfiguration;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AppProps#getNetwork}
          * @param network Property network: The public network of the app.
          * @return {@code this}
@@ -216,6 +252,26 @@ public interface AppProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link AppProps#getScenario}
+         * @param scenario Property scenario: The scenario of the app.
+         * @return {@code this}
+         */
+        public Builder scenario(java.lang.String scenario) {
+            this.scenario = scenario;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AppProps#getScenario}
+         * @param scenario Property scenario: The scenario of the app.
+         * @return {@code this}
+         */
+        public Builder scenario(com.aliyun.ros.cdk.core.IResolvable scenario) {
+            this.scenario = scenario;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link AppProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -236,8 +292,10 @@ public interface AppProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object quotaInfo;
         private final java.lang.Object appVersion;
         private final java.lang.Object description;
+        private final java.lang.Object logProConfiguration;
         private final java.lang.Object network;
         private final java.lang.Object privateNetwork;
+        private final java.lang.Object scenario;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -250,8 +308,10 @@ public interface AppProps extends software.amazon.jsii.JsiiSerializable {
             this.quotaInfo = software.amazon.jsii.Kernel.get(this, "quotaInfo", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.appVersion = software.amazon.jsii.Kernel.get(this, "appVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.logProConfiguration = software.amazon.jsii.Kernel.get(this, "logProConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.network = software.amazon.jsii.Kernel.get(this, "network", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.privateNetwork = software.amazon.jsii.Kernel.get(this, "privateNetwork", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.scenario = software.amazon.jsii.Kernel.get(this, "scenario", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -264,8 +324,10 @@ public interface AppProps extends software.amazon.jsii.JsiiSerializable {
             this.quotaInfo = java.util.Objects.requireNonNull(builder.quotaInfo, "quotaInfo is required");
             this.appVersion = builder.appVersion;
             this.description = builder.description;
+            this.logProConfiguration = builder.logProConfiguration;
             this.network = builder.network;
             this.privateNetwork = builder.privateNetwork;
+            this.scenario = builder.scenario;
         }
 
         @Override
@@ -294,6 +356,11 @@ public interface AppProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getLogProConfiguration() {
+            return this.logProConfiguration;
+        }
+
+        @Override
         public final java.lang.Object getNetwork() {
             return this.network;
         }
@@ -301,6 +368,11 @@ public interface AppProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getPrivateNetwork() {
             return this.privateNetwork;
+        }
+
+        @Override
+        public final java.lang.Object getScenario() {
+            return this.scenario;
         }
 
         @Override
@@ -318,11 +390,17 @@ public interface AppProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
             }
+            if (this.getLogProConfiguration() != null) {
+                data.set("logProConfiguration", om.valueToTree(this.getLogProConfiguration()));
+            }
             if (this.getNetwork() != null) {
                 data.set("network", om.valueToTree(this.getNetwork()));
             }
             if (this.getPrivateNetwork() != null) {
                 data.set("privateNetwork", om.valueToTree(this.getPrivateNetwork()));
+            }
+            if (this.getScenario() != null) {
+                data.set("scenario", om.valueToTree(this.getScenario()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -347,8 +425,10 @@ public interface AppProps extends software.amazon.jsii.JsiiSerializable {
             if (!quotaInfo.equals(that.quotaInfo)) return false;
             if (this.appVersion != null ? !this.appVersion.equals(that.appVersion) : that.appVersion != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+            if (this.logProConfiguration != null ? !this.logProConfiguration.equals(that.logProConfiguration) : that.logProConfiguration != null) return false;
             if (this.network != null ? !this.network.equals(that.network) : that.network != null) return false;
-            return this.privateNetwork != null ? this.privateNetwork.equals(that.privateNetwork) : that.privateNetwork == null;
+            if (this.privateNetwork != null ? !this.privateNetwork.equals(that.privateNetwork) : that.privateNetwork != null) return false;
+            return this.scenario != null ? this.scenario.equals(that.scenario) : that.scenario == null;
         }
 
         @Override
@@ -358,8 +438,10 @@ public interface AppProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.quotaInfo.hashCode());
             result = 31 * result + (this.appVersion != null ? this.appVersion.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+            result = 31 * result + (this.logProConfiguration != null ? this.logProConfiguration.hashCode() : 0);
             result = 31 * result + (this.network != null ? this.network.hashCode() : 0);
             result = 31 * result + (this.privateNetwork != null ? this.privateNetwork.hashCode() : 0);
+            result = 31 * result + (this.scenario != null ? this.scenario.hashCode() : 0);
             return result;
         }
     }

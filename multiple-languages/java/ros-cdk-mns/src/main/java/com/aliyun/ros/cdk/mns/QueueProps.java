@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.mns;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-queue
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.006Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.554Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.QueueProps")
 @software.amazon.jsii.Jsii.Proxy(QueueProps.Jsii$Proxy.class)
 public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
@@ -22,6 +22,13 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
      * An integer between 0 and 604800 (7 days). The default value is 0
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDelaySeconds() {
+        return null;
+    }
+
+    /**
+     * Property dlqPolicy: Dead-letter queue policy.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDlqPolicy() {
         return null;
     }
 
@@ -65,6 +72,15 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property tags: Tags to attach to Queue.
+     * <p>
+     * Max support 20 tags to add during create Queue. Each tag with two properties Key and Value, and Key is required.
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.mns.RosQueue.TagsProperty> getTags() {
+        return null;
+    }
+
+    /**
      * Property visibilityTimeout: Duration in which a message stays in Inactive status after it is consumed from the queue.
      * <p>
      * Measured in seconds.
@@ -86,10 +102,12 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
     public static final class Builder implements software.amazon.jsii.Builder<QueueProps> {
         java.lang.Object queueName;
         java.lang.Object delaySeconds;
+        java.lang.Object dlqPolicy;
         java.lang.Object loggingEnabled;
         java.lang.Object maximumMessageSize;
         java.lang.Object messageRetentionPeriod;
         java.lang.Object pollingWaitSeconds;
+        java.util.List<com.aliyun.ros.cdk.mns.RosQueue.TagsProperty> tags;
         java.lang.Object visibilityTimeout;
 
         /**
@@ -133,6 +151,26 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder delaySeconds(com.aliyun.ros.cdk.core.IResolvable delaySeconds) {
             this.delaySeconds = delaySeconds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link QueueProps#getDlqPolicy}
+         * @param dlqPolicy Property dlqPolicy: Dead-letter queue policy.
+         * @return {@code this}
+         */
+        public Builder dlqPolicy(com.aliyun.ros.cdk.core.IResolvable dlqPolicy) {
+            this.dlqPolicy = dlqPolicy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link QueueProps#getDlqPolicy}
+         * @param dlqPolicy Property dlqPolicy: Dead-letter queue policy.
+         * @return {@code this}
+         */
+        public Builder dlqPolicy(com.aliyun.ros.cdk.mns.RosQueue.DlqPolicyProperty dlqPolicy) {
+            this.dlqPolicy = dlqPolicy;
             return this;
         }
 
@@ -231,6 +269,18 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link QueueProps#getTags}
+         * @param tags Property tags: Tags to attach to Queue.
+         *             Max support 20 tags to add during create Queue. Each tag with two properties Key and Value, and Key is required.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.mns.RosQueue.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.mns.RosQueue.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link QueueProps#getVisibilityTimeout}
          * @param visibilityTimeout Property visibilityTimeout: Duration in which a message stays in Inactive status after it is consumed from the queue.
          *                          Measured in seconds.
@@ -272,10 +322,12 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements QueueProps {
         private final java.lang.Object queueName;
         private final java.lang.Object delaySeconds;
+        private final java.lang.Object dlqPolicy;
         private final java.lang.Object loggingEnabled;
         private final java.lang.Object maximumMessageSize;
         private final java.lang.Object messageRetentionPeriod;
         private final java.lang.Object pollingWaitSeconds;
+        private final java.util.List<com.aliyun.ros.cdk.mns.RosQueue.TagsProperty> tags;
         private final java.lang.Object visibilityTimeout;
 
         /**
@@ -286,24 +338,29 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
             super(objRef);
             this.queueName = software.amazon.jsii.Kernel.get(this, "queueName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.delaySeconds = software.amazon.jsii.Kernel.get(this, "delaySeconds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dlqPolicy = software.amazon.jsii.Kernel.get(this, "dlqPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loggingEnabled = software.amazon.jsii.Kernel.get(this, "loggingEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.maximumMessageSize = software.amazon.jsii.Kernel.get(this, "maximumMessageSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.messageRetentionPeriod = software.amazon.jsii.Kernel.get(this, "messageRetentionPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.pollingWaitSeconds = software.amazon.jsii.Kernel.get(this, "pollingWaitSeconds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.mns.RosQueue.TagsProperty.class)));
             this.visibilityTimeout = software.amazon.jsii.Kernel.get(this, "visibilityTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
+        @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.queueName = java.util.Objects.requireNonNull(builder.queueName, "queueName is required");
             this.delaySeconds = builder.delaySeconds;
+            this.dlqPolicy = builder.dlqPolicy;
             this.loggingEnabled = builder.loggingEnabled;
             this.maximumMessageSize = builder.maximumMessageSize;
             this.messageRetentionPeriod = builder.messageRetentionPeriod;
             this.pollingWaitSeconds = builder.pollingWaitSeconds;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.mns.RosQueue.TagsProperty>)builder.tags;
             this.visibilityTimeout = builder.visibilityTimeout;
         }
 
@@ -315,6 +372,11 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getDelaySeconds() {
             return this.delaySeconds;
+        }
+
+        @Override
+        public final java.lang.Object getDlqPolicy() {
+            return this.dlqPolicy;
         }
 
         @Override
@@ -338,6 +400,11 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.util.List<com.aliyun.ros.cdk.mns.RosQueue.TagsProperty> getTags() {
+            return this.tags;
+        }
+
+        @Override
         public final java.lang.Object getVisibilityTimeout() {
             return this.visibilityTimeout;
         }
@@ -352,6 +419,9 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getDelaySeconds() != null) {
                 data.set("delaySeconds", om.valueToTree(this.getDelaySeconds()));
             }
+            if (this.getDlqPolicy() != null) {
+                data.set("dlqPolicy", om.valueToTree(this.getDlqPolicy()));
+            }
             if (this.getLoggingEnabled() != null) {
                 data.set("loggingEnabled", om.valueToTree(this.getLoggingEnabled()));
             }
@@ -363,6 +433,9 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getPollingWaitSeconds() != null) {
                 data.set("pollingWaitSeconds", om.valueToTree(this.getPollingWaitSeconds()));
+            }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
             }
             if (this.getVisibilityTimeout() != null) {
                 data.set("visibilityTimeout", om.valueToTree(this.getVisibilityTimeout()));
@@ -387,10 +460,12 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
 
             if (!queueName.equals(that.queueName)) return false;
             if (this.delaySeconds != null ? !this.delaySeconds.equals(that.delaySeconds) : that.delaySeconds != null) return false;
+            if (this.dlqPolicy != null ? !this.dlqPolicy.equals(that.dlqPolicy) : that.dlqPolicy != null) return false;
             if (this.loggingEnabled != null ? !this.loggingEnabled.equals(that.loggingEnabled) : that.loggingEnabled != null) return false;
             if (this.maximumMessageSize != null ? !this.maximumMessageSize.equals(that.maximumMessageSize) : that.maximumMessageSize != null) return false;
             if (this.messageRetentionPeriod != null ? !this.messageRetentionPeriod.equals(that.messageRetentionPeriod) : that.messageRetentionPeriod != null) return false;
             if (this.pollingWaitSeconds != null ? !this.pollingWaitSeconds.equals(that.pollingWaitSeconds) : that.pollingWaitSeconds != null) return false;
+            if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             return this.visibilityTimeout != null ? this.visibilityTimeout.equals(that.visibilityTimeout) : that.visibilityTimeout == null;
         }
 
@@ -398,10 +473,12 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
         public final int hashCode() {
             int result = this.queueName.hashCode();
             result = 31 * result + (this.delaySeconds != null ? this.delaySeconds.hashCode() : 0);
+            result = 31 * result + (this.dlqPolicy != null ? this.dlqPolicy.hashCode() : 0);
             result = 31 * result + (this.loggingEnabled != null ? this.loggingEnabled.hashCode() : 0);
             result = 31 * result + (this.maximumMessageSize != null ? this.maximumMessageSize.hashCode() : 0);
             result = 31 * result + (this.messageRetentionPeriod != null ? this.messageRetentionPeriod.hashCode() : 0);
             result = 31 * result + (this.pollingWaitSeconds != null ? this.pollingWaitSeconds.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.visibilityTimeout != null ? this.visibilityTimeout.hashCode() : 0);
             return result;
         }

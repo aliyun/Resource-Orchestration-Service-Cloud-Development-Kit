@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-route
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:05.240Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.575Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RouteProps")
 @software.amazon.jsii.Jsii.Proxy(RouteProps.Jsii$Proxy.class)
 public interface RouteProps extends software.amazon.jsii.JsiiSerializable {
@@ -39,9 +39,24 @@ public interface RouteProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property nextHopType: The next hop type.
+     * Property nextHopType: The route entry next hop type.
      * <p>
-     * Now support 'Instance|HaVip|RouterInterface|NetworkInterface|VpnGateway|IPv6Gateway|NatGateway|Attachment'. The default value is Instance.When the NextHopList is specified, the value will be ignored.
+     * Valid values:
+     * Instance (default): Elastic Compute Service (ECS) instance.
+     * HaVip: High Availability Virtual IP (HAVIP).
+     * RouterInterface: Router interface.
+     * NetworkInterface: Elastic Network Interface (ENI).
+     * VpnGateway: VPN gateway.
+     * IPv6Gateway: IPv6 gateway.
+     * NatGateway: NAT gateway.
+     * Attachment: Transit router.
+     * VpcPeer: VPC peering connection.
+     * Ipv4Gateway: IPv4 gateway.
+     * GatewayEndpoint: Gateway endpoint.
+     * Ecr: Express Connect router.
+     * GatewayLoadBalancerEndpoint: Gateway Load Balancer endpoint.
+     * The default value is 'Instance'.
+     * If NextHopList is specified, this field will be ignored.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNextHopType() {
         return null;
@@ -149,8 +164,23 @@ public interface RouteProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RouteProps#getNextHopType}
-         * @param nextHopType Property nextHopType: The next hop type.
-         *                    Now support 'Instance|HaVip|RouterInterface|NetworkInterface|VpnGateway|IPv6Gateway|NatGateway|Attachment'. The default value is Instance.When the NextHopList is specified, the value will be ignored.
+         * @param nextHopType Property nextHopType: The route entry next hop type.
+         *                    Valid values:
+         *                    Instance (default): Elastic Compute Service (ECS) instance.
+         *                    HaVip: High Availability Virtual IP (HAVIP).
+         *                    RouterInterface: Router interface.
+         *                    NetworkInterface: Elastic Network Interface (ENI).
+         *                    VpnGateway: VPN gateway.
+         *                    IPv6Gateway: IPv6 gateway.
+         *                    NatGateway: NAT gateway.
+         *                    Attachment: Transit router.
+         *                    VpcPeer: VPC peering connection.
+         *                    Ipv4Gateway: IPv4 gateway.
+         *                    GatewayEndpoint: Gateway endpoint.
+         *                    Ecr: Express Connect router.
+         *                    GatewayLoadBalancerEndpoint: Gateway Load Balancer endpoint.
+         *                    The default value is 'Instance'.
+         *                    If NextHopList is specified, this field will be ignored.
          * @return {@code this}
          */
         public Builder nextHopType(java.lang.String nextHopType) {
@@ -160,8 +190,23 @@ public interface RouteProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RouteProps#getNextHopType}
-         * @param nextHopType Property nextHopType: The next hop type.
-         *                    Now support 'Instance|HaVip|RouterInterface|NetworkInterface|VpnGateway|IPv6Gateway|NatGateway|Attachment'. The default value is Instance.When the NextHopList is specified, the value will be ignored.
+         * @param nextHopType Property nextHopType: The route entry next hop type.
+         *                    Valid values:
+         *                    Instance (default): Elastic Compute Service (ECS) instance.
+         *                    HaVip: High Availability Virtual IP (HAVIP).
+         *                    RouterInterface: Router interface.
+         *                    NetworkInterface: Elastic Network Interface (ENI).
+         *                    VpnGateway: VPN gateway.
+         *                    IPv6Gateway: IPv6 gateway.
+         *                    NatGateway: NAT gateway.
+         *                    Attachment: Transit router.
+         *                    VpcPeer: VPC peering connection.
+         *                    Ipv4Gateway: IPv4 gateway.
+         *                    GatewayEndpoint: Gateway endpoint.
+         *                    Ecr: Express Connect router.
+         *                    GatewayLoadBalancerEndpoint: Gateway Load Balancer endpoint.
+         *                    The default value is 'Instance'.
+         *                    If NextHopList is specified, this field will be ignored.
          * @return {@code this}
          */
         public Builder nextHopType(com.aliyun.ros.cdk.core.IResolvable nextHopType) {

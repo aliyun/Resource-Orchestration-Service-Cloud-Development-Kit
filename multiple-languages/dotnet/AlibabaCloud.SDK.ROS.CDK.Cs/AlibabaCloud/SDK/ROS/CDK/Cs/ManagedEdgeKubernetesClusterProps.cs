@@ -708,6 +708,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
+        private object? _vSwitchIds;
+
+        /// <summary>Property vSwitchIds: The virtual switch ID of the worker node.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "vSwitchIds", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? VSwitchIds
+        {
+            get => _vSwitchIds;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case object[] cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: object[], {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _vSwitchIds = value;
+            }
+        }
+
         private object? _zoneIds;
 
         /// <summary>Property zoneIds: Zone ids of worker node virtual switches belongs to.</summary>

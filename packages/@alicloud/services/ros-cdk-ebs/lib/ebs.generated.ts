@@ -137,7 +137,7 @@ function rosDedicatedBlockStorageClusterPropsToRosTemplate(properties: any, enab
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::EBS::DedicatedBlockStorageCluster`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EBS::DedicatedBlockStorageCluster`, which is used to create a dedicated block storage cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `DedicatedBlockStorageCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ebs-dedicatedblockstoragecluster
  */

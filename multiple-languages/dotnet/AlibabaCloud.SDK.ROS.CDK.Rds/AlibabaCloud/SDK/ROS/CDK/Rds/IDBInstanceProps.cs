@@ -143,6 +143,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             }
         }
 
+        /// <summary>Property autoUpgradeMinorVersion: How the instance upgrades to a minor version.Valid values: - Auto (default) : Updates minor versions automatically. - Manual: No automatic upgrade, only forced when the current version is offline.</summary>
+        [JsiiProperty(name: "autoUpgradeMinorVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AutoUpgradeMinorVersion
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property backUpCategory: Specifies whether to enable the second-level backup function.</summary>
         /// <remarks>
         /// This function allows a backup
@@ -710,9 +721,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 
         /// <summary>Property releasedKeepPolicy: The policy used to retain archived backups if the instance is released.</summary>
         /// <remarks>
-        /// Default value: None.
         /// Valid values:
-        /// Lastest: Only the last archived backup is retained.
+        /// None: No archived backup files are retained.Lastest: Only the last archived backup is retained.
         /// All: All of the archived backups are retained.
         /// </remarks>
         [JsiiProperty(name: "releasedKeepPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -852,6 +862,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         [JsiiProperty(name: "storageUpperBound", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? StorageUpperBound
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property subscriptionDeletionForce: This option is only applicable to subscription instances.</summary>
+        /// <remarks>
+        /// For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+        /// </remarks>
+        [JsiiProperty(name: "subscriptionDeletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SubscriptionDeletionForce
         {
             get
             {
@@ -1083,6 +1107,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             [JsiiOptional]
             [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? AutoRenew
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property autoUpgradeMinorVersion: How the instance upgrades to a minor version.Valid values: - Auto (default) : Updates minor versions automatically. - Manual: No automatic upgrade, only forced when the current version is offline.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "autoUpgradeMinorVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AutoUpgradeMinorVersion
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -1531,9 +1563,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 
             /// <summary>Property releasedKeepPolicy: The policy used to retain archived backups if the instance is released.</summary>
             /// <remarks>
-            /// Default value: None.
             /// Valid values:
-            /// Lastest: Only the last archived backup is retained.
+            /// None: No archived backup files are retained.Lastest: Only the last archived backup is retained.
             /// All: All of the archived backups are retained.
             /// </remarks>
             [JsiiOptional]
@@ -1643,6 +1674,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             [JsiiOptional]
             [JsiiProperty(name: "storageUpperBound", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? StorageUpperBound
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property subscriptionDeletionForce: This option is only applicable to subscription instances.</summary>
+            /// <remarks>
+            /// For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "subscriptionDeletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SubscriptionDeletionForce
             {
                 get => GetInstanceProperty<object?>();
             }

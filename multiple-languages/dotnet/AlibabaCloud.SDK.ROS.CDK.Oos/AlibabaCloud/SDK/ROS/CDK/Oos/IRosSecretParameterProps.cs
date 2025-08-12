@@ -12,7 +12,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
     public interface IRosSecretParameterProps
     {
         /// <remarks>
-        /// <strong>Property</strong>: secretParameterName: The name of the encryption parameter. The name must be 1 to 180 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
+        /// <strong>Property</strong>: secretParameterName: The name of the encryption parameter. The name must be 1 to 180 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ALIBABA, ALICLOUD, ACS or OOS.
         /// </remarks>
         [JsiiProperty(name: "secretParameterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object SecretParameterName
@@ -106,7 +106,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: secretParameterName: The name of the encryption parameter. The name must be 1 to 180 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
+            /// <strong>Property</strong>: secretParameterName: The name of the encryption parameter. The name must be 1 to 180 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ALIBABA, ALICLOUD, ACS or OOS.
             /// </remarks>
             [JsiiProperty(name: "secretParameterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object SecretParameterName

@@ -12,7 +12,7 @@ export interface ParameterProps {
     /**
      * Property name: The name of the parameter. 
      * The name must be 1 to 200 characters in length,and can contain letters, digits, hyphens (-), and underscores (_). 
-     * It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
+     * It cannot start with ALIYUN, ALIBABA, ALICLOUD, ACS or OOS.
      */
     readonly name: string | ros.IResolvable;
 
@@ -67,7 +67,7 @@ export interface IParameter extends ros.IResource {
     readonly attrValue: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::Parameter`, which is used to create a common parameter.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::Parameter`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosParameter`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-parameter
  */

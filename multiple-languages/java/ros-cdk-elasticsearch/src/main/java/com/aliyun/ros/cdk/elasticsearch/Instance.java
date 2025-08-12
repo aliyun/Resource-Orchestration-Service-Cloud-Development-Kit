@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.elasticsearch;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ElasticSearch::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:06.240Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.130Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.elasticsearch.$Module.class, fqn = "@alicloud/ros-cdk-elasticsearch.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.elasticsearch.IInstance {
 
@@ -282,6 +282,41 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
          */
         public Builder vSwitchId(final com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.props.vSwitchId(vSwitchId);
+            return this;
+        }
+
+        /**
+         * Property deleteType: The release type.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>immediate: The cluster is immediately deleted when it is released. After the cluster is deleted, the data stored in the cluster is deleted, and the system removes the cluster from the Logstash cluster list.</li>
+         * <li>protective (default): The instance is frozen for 24 hours before data is completely cleared. During this period, the instance is still displayed in the instance list. You can select Restore Instance or Release Now.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param deleteType Property deleteType: The release type. This parameter is required.
+         */
+        public Builder deleteType(final java.lang.String deleteType) {
+            this.props.deleteType(deleteType);
+            return this;
+        }
+        /**
+         * Property deleteType: The release type.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>immediate: The cluster is immediately deleted when it is released. After the cluster is deleted, the data stored in the cluster is deleted, and the system removes the cluster from the Logstash cluster list.</li>
+         * <li>protective (default): The instance is frozen for 24 hours before data is completely cleared. During this period, the instance is still displayed in the instance list. You can select Restore Instance or Release Now.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param deleteType Property deleteType: The release type. This parameter is required.
+         */
+        public Builder deleteType(final com.aliyun.ros.cdk.core.IResolvable deleteType) {
+            this.props.deleteType(deleteType);
             return this;
         }
 

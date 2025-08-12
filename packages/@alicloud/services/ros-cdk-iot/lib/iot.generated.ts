@@ -91,7 +91,7 @@ function rosDevicePropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::Device`, which is used to register a Device.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::Device`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Device` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-device
  */
@@ -298,7 +298,7 @@ function rosDeviceGroupPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::DeviceGroup`, which is used to create a group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::DeviceGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DeviceGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-devicegroup
  */
@@ -876,7 +876,7 @@ function rosProductTopicPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::ProductTopic`, which is used to create a topic category for a specified product.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::ProductTopic`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ProductTopic` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-producttopic
  */

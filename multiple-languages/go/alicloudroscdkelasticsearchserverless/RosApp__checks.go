@@ -324,6 +324,30 @@ func (j *jsiiProxy_RosApp) validateSetEnableResourcePropertyConstraintParameters
 	return nil
 }
 
+func (j *jsiiProxy_RosApp) validateSetLogProConfigurationParameters(val interface{}) error {
+	switch val.(type) {
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	case *RosApp_LogProConfigurationProperty:
+		val := val.(*RosApp_LogProConfigurationProperty)
+		if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
+			return err
+		}
+	case RosApp_LogProConfigurationProperty:
+		val_ := val.(RosApp_LogProConfigurationProperty)
+		val := &val_
+		if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
+			return err
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosApp_LogProConfigurationProperty; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosApp) validateSetNetworkParameters(val interface{}) error {
 	switch val.(type) {
 	case alicloudroscdkcore.IResolvable:
@@ -465,6 +489,23 @@ func (j *jsiiProxy_RosApp) validateSetQuotaInfoParameters(val interface{}) error
 	default:
 		if !_jsii_.IsAnonymousProxy(val) {
 			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosApp_QuotaInfoProperty; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosApp) validateSetScenarioParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
 		}
 	}
 

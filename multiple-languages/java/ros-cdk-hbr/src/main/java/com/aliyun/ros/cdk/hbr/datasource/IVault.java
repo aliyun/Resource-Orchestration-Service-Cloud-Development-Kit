@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hbr.datasource;
 /**
  * Represents a <code>Vault</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:07.490Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.142Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.datasource.IVault")
 @software.amazon.jsii.Jsii.Proxy(IVault.Jsii$Proxy.class)
 public interface IVault extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

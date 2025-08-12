@@ -267,6 +267,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "updatedProperites", GoGetter: "UpdatedProperites"},
 			_jsii_.MemberMethod{JsiiMethod: "validate", GoMethod: "Validate"},
 			_jsii_.MemberMethod{JsiiMethod: "validateProperties", GoMethod: "ValidateProperties"},
+			_jsii_.MemberProperty{JsiiProperty: "zoneId", GoGetter: "ZoneId"},
 		},
 		func() interface{} {
 			j := jsiiProxy_RosVpcEndpointServiceAttachment{}

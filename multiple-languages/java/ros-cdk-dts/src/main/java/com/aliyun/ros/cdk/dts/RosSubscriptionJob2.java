@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dts;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DTS::SubscriptionJob2</code>, which is used to configure a change tracking task.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:04.130Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.779Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.RosSubscriptionJob2")
 public class RosSubscriptionJob2 extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -247,6 +247,42 @@ public class RosSubscriptionJob2 extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDestPrimaryVswId() {
+        return software.amazon.jsii.Kernel.get(this, "destPrimaryVswId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDestPrimaryVswId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "destPrimaryVswId", value);
+    }
+
+    /**
+     */
+    public void setDestPrimaryVswId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "destPrimaryVswId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDestSecondaryVswId() {
+        return software.amazon.jsii.Kernel.get(this, "destSecondaryVswId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDestSecondaryVswId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "destSecondaryVswId", value);
+    }
+
+    /**
+     */
+    public void setDestSecondaryVswId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "destSecondaryVswId", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getDtsBisLabel() {
         return software.amazon.jsii.Kernel.get(this, "dtsBisLabel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -337,6 +373,42 @@ public class RosSubscriptionJob2 extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMaxDu() {
+        return software.amazon.jsii.Kernel.get(this, "maxDu", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setMaxDu(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "maxDu", value);
+    }
+
+    /**
+     */
+    public void setMaxDu(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "maxDu", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMinDu() {
+        return software.amazon.jsii.Kernel.get(this, "minDu", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setMinDu(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "minDu", value);
+    }
+
+    /**
+     */
+    public void setMinDu(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "minDu", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getReserve() {
         return software.amazon.jsii.Kernel.get(this, "reserve", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -363,6 +435,60 @@ public class RosSubscriptionJob2 extends com.aliyun.ros.cdk.core.RosResource {
             }
         }
         software.amazon.jsii.Kernel.set(this, "reserve", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSrcPrimaryVswId() {
+        return software.amazon.jsii.Kernel.get(this, "srcPrimaryVswId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSrcPrimaryVswId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "srcPrimaryVswId", value);
+    }
+
+    /**
+     */
+    public void setSrcPrimaryVswId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "srcPrimaryVswId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSrcSecondaryVswId() {
+        return software.amazon.jsii.Kernel.get(this, "srcSecondaryVswId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSrcSecondaryVswId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "srcSecondaryVswId", value);
+    }
+
+    /**
+     */
+    public void setSrcSecondaryVswId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "srcSecondaryVswId", value);
     }
 
     /**
@@ -1610,6 +1736,40 @@ public class RosSubscriptionJob2 extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param destPrimaryVswId This parameter is required.
+         */
+        public Builder destPrimaryVswId(final java.lang.String destPrimaryVswId) {
+            this.props.destPrimaryVswId(destPrimaryVswId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param destPrimaryVswId This parameter is required.
+         */
+        public Builder destPrimaryVswId(final com.aliyun.ros.cdk.core.IResolvable destPrimaryVswId) {
+            this.props.destPrimaryVswId(destPrimaryVswId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param destSecondaryVswId This parameter is required.
+         */
+        public Builder destSecondaryVswId(final java.lang.String destSecondaryVswId) {
+            this.props.destSecondaryVswId(destSecondaryVswId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param destSecondaryVswId This parameter is required.
+         */
+        public Builder destSecondaryVswId(final com.aliyun.ros.cdk.core.IResolvable destSecondaryVswId) {
+            this.props.destSecondaryVswId(destSecondaryVswId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param dtsBisLabel This parameter is required.
          */
         public Builder dtsBisLabel(final java.lang.String dtsBisLabel) {
@@ -1695,6 +1855,40 @@ public class RosSubscriptionJob2 extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param maxDu This parameter is required.
+         */
+        public Builder maxDu(final java.lang.Number maxDu) {
+            this.props.maxDu(maxDu);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param maxDu This parameter is required.
+         */
+        public Builder maxDu(final com.aliyun.ros.cdk.core.IResolvable maxDu) {
+            this.props.maxDu(maxDu);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param minDu This parameter is required.
+         */
+        public Builder minDu(final java.lang.Number minDu) {
+            this.props.minDu(minDu);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param minDu This parameter is required.
+         */
+        public Builder minDu(final com.aliyun.ros.cdk.core.IResolvable minDu) {
+            this.props.minDu(minDu);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param reserve This parameter is required.
          */
         public Builder reserve(final com.aliyun.ros.cdk.core.IResolvable reserve) {
@@ -1707,6 +1901,57 @@ public class RosSubscriptionJob2 extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder reserve(final java.util.Map<java.lang.String, ? extends java.lang.Object> reserve) {
             this.props.reserve(reserve);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param srcPrimaryVswId This parameter is required.
+         */
+        public Builder srcPrimaryVswId(final java.lang.String srcPrimaryVswId) {
+            this.props.srcPrimaryVswId(srcPrimaryVswId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param srcPrimaryVswId This parameter is required.
+         */
+        public Builder srcPrimaryVswId(final com.aliyun.ros.cdk.core.IResolvable srcPrimaryVswId) {
+            this.props.srcPrimaryVswId(srcPrimaryVswId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param srcSecondaryVswId This parameter is required.
+         */
+        public Builder srcSecondaryVswId(final java.lang.String srcSecondaryVswId) {
+            this.props.srcSecondaryVswId(srcSecondaryVswId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param srcSecondaryVswId This parameter is required.
+         */
+        public Builder srcSecondaryVswId(final com.aliyun.ros.cdk.core.IResolvable srcSecondaryVswId) {
+            this.props.srcSecondaryVswId(srcSecondaryVswId);
             return this;
         }
 

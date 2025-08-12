@@ -84,7 +84,7 @@ export interface IBundle extends ros.IResource {
     readonly attrBundleId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECD::Bundle`, which is used to create a custom desktop template.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECD::Bundle`, which is used to create a custom cloud computer template.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBundle`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-bundle
  */

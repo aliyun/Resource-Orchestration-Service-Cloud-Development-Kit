@@ -65,6 +65,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearchserverless
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: logProConfiguration: The log pro configuration of the app.
+        /// </remarks>
+        [JsiiProperty(name: "logProConfiguration", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-elasticsearchserverless.RosApp.LogProConfigurationProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? LogProConfiguration
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: network: The public network of the app.
         /// </remarks>
         [JsiiProperty(name: "network", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-elasticsearchserverless.RosApp.NetworkProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -83,6 +96,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearchserverless
         [JsiiProperty(name: "privateNetwork", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-elasticsearchserverless.RosApp.PrivateNetworkProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? PrivateNetwork
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: scenario: The scenario of the app.
+        /// </remarks>
+        [JsiiProperty(name: "scenario", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Scenario
         {
             get
             {
@@ -149,6 +175,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearchserverless
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: logProConfiguration: The log pro configuration of the app.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "logProConfiguration", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-elasticsearchserverless.RosApp.LogProConfigurationProperty\"}]}}", isOptional: true)]
+            public object? LogProConfiguration
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: network: The public network of the app.
             /// </remarks>
             [JsiiOptional]
@@ -164,6 +200,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearchserverless
             [JsiiOptional]
             [JsiiProperty(name: "privateNetwork", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-elasticsearchserverless.RosApp.PrivateNetworkProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? PrivateNetwork
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: scenario: The scenario of the app.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "scenario", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Scenario
             {
                 get => GetInstanceProperty<object?>();
             }

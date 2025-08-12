@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::ClusterHelmApplication</code>, which is used to deploy an application by using Helm.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:03.394Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.140Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ClusterHelmApplication")
 public class ClusterHelmApplication extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cs.IClusterHelmApplication {
 
@@ -256,6 +256,31 @@ public class ClusterHelmApplication extends com.aliyun.ros.cdk.core.Resource imp
          */
         public Builder namespace(final com.aliyun.ros.cdk.core.IResolvable namespace) {
             this.props.namespace(namespace);
+            return this;
+        }
+
+        /**
+         * Property namespaceDeletion: Whether to delete the namespace specified.
+         * <p>
+         * If Namespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether NamespaceDeletion is true or not, it will not be deleted.
+         * <p>
+         * @return {@code this}
+         * @param namespaceDeletion Property namespaceDeletion: Whether to delete the namespace specified. This parameter is required.
+         */
+        public Builder namespaceDeletion(final java.lang.Boolean namespaceDeletion) {
+            this.props.namespaceDeletion(namespaceDeletion);
+            return this;
+        }
+        /**
+         * Property namespaceDeletion: Whether to delete the namespace specified.
+         * <p>
+         * If Namespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether NamespaceDeletion is true or not, it will not be deleted.
+         * <p>
+         * @return {@code this}
+         * @param namespaceDeletion Property namespaceDeletion: Whether to delete the namespace specified. This parameter is required.
+         */
+        public Builder namespaceDeletion(final com.aliyun.ros.cdk.core.IResolvable namespaceDeletion) {
+            this.props.namespaceDeletion(namespaceDeletion);
             return this;
         }
 

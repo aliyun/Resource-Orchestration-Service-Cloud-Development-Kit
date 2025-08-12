@@ -901,7 +901,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: instanceType: Instance type. Value:e1: flexible instance. Memory size between 128 and 3072c1: performance instance. Memory size allow values are 4096, 8192, 16384 and 32768
+        /// <strong>Property</strong>: instanceType: Instance type. Value:- e1: Elastic Instance.- c1: Performance Instance.- fc.gpu.tesla.1: GPU Tesla Series Instance Type.- fc.gpu.ampere.1: GPU Ampere Series Instance Type.- fc.gpu.ada.1: GPU Ada Series Instance Type.- g1: Same as fc.gpu.tesla.1.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -932,7 +932,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: memorySize: The amount of memory that’s used to run function, in MB. Function Compute uses this value to allocate CPU resources proportionally. Defaults to 128 MB. It can be multiple of 64 MB and between 128 MB and 3072 MB.
+        /// <strong>Property</strong>: memorySize: The amount of memory that’s used to run function, in MB. Function Compute uses this value to allocate CPU resources proportionally. Defaults to 128 MB. It can be multiple of 64 MB and between 128 MB and 32768 MB.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "memorySize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

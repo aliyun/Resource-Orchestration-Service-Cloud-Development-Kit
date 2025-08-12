@@ -964,6 +964,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "addRosDependency", GoMethod: "AddRosDependency"},
 			_jsii_.MemberProperty{JsiiProperty: "aliCloudCertificateId", GoGetter: "AliCloudCertificateId"},
 			_jsii_.MemberProperty{JsiiProperty: "aliCloudCertificateName", GoGetter: "AliCloudCertificateName"},
+			_jsii_.MemberProperty{JsiiProperty: "aliCloudCertificateRegionId", GoGetter: "AliCloudCertificateRegionId"},
 			_jsii_.MemberMethod{JsiiMethod: "applyRemovalPolicy", GoMethod: "ApplyRemovalPolicy"},
 			_jsii_.MemberProperty{JsiiProperty: "attrArn", GoGetter: "AttrArn"},
 			_jsii_.MemberProperty{JsiiProperty: "attrCertificateId", GoGetter: "AttrCertificateId"},

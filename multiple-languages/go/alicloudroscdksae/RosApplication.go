@@ -50,6 +50,8 @@ type RosApplication interface {
 	SetEdasContainerVersion(val interface{})
 	EnableEbpf() interface{}
 	SetEnableEbpf(val interface{})
+	EnableNewArms() interface{}
+	SetEnableNewArms(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
 	Envs() interface{}
@@ -94,6 +96,8 @@ type RosApplication interface {
 	SetNasConfigs(val interface{})
 	NasId() interface{}
 	SetNasId(val interface{})
+	NewSaeVersion() interface{}
+	SetNewSaeVersion(val interface{})
 	// The construct tree node associated with this construct.
 	Node() alicloudroscdkcore.ConstructNode
 	OssAkId() interface{}
@@ -484,6 +488,16 @@ func (j *jsiiProxy_RosApplication) EnableEbpf() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosApplication) EnableNewArms() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enableNewArms",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosApplication) EnableResourcePropertyConstraint() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -659,6 +673,16 @@ func (j *jsiiProxy_RosApplication) NasId() interface{} {
 	_jsii_.Get(
 		j,
 		"nasId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosApplication) NewSaeVersion() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"newSaeVersion",
 		&returns,
 	)
 	return returns
@@ -1238,6 +1262,17 @@ func (j *jsiiProxy_RosApplication)SetEnableEbpf(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosApplication)SetEnableNewArms(val interface{}) {
+	if err := j.validateSetEnableNewArmsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"enableNewArms",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosApplication)SetEnableResourcePropertyConstraint(val *bool) {
 	if err := j.validateSetEnableResourcePropertyConstraintParameters(val); err != nil {
 		panic(err)
@@ -1421,6 +1456,17 @@ func (j *jsiiProxy_RosApplication)SetNasId(val interface{}) {
 	_jsii_.Set(
 		j,
 		"nasId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosApplication)SetNewSaeVersion(val interface{}) {
+	if err := j.validateSetNewSaeVersionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"newSaeVersion",
 		val,
 	)
 }

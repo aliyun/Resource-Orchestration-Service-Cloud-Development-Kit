@@ -99,6 +99,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
+        /// <summary>Property cpuOverCommitRatio: The CPU overcommit ratio of the dedicated host.</summary>
+        [JsiiProperty(name: "cpuOverCommitRatio", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? CpuOverCommitRatio
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property dedicatedHostClusterId: The ID of the dedicated host cluster.</summary>
+        [JsiiProperty(name: "dedicatedHostClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DedicatedHostClusterId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property dedicatedHostName: The name of the dedicated host, [2, 128] English or Chinese characters.</summary>
         /// <remarks>
         /// It must begin with an uppercase/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:// or https://.
@@ -117,6 +139,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Description
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property minQuantity: The minimum number of dedicated hosts that you want to create.</summary>
+        [JsiiProperty(name: "minQuantity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? MinQuantity
         {
             get
             {
@@ -311,6 +344,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property cpuOverCommitRatio: The CPU overcommit ratio of the dedicated host.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "cpuOverCommitRatio", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CpuOverCommitRatio
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property dedicatedHostClusterId: The ID of the dedicated host cluster.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "dedicatedHostClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DedicatedHostClusterId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property dedicatedHostName: The name of the dedicated host, [2, 128] English or Chinese characters.</summary>
             /// <remarks>
             /// It must begin with an uppercase/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:// or https://.
@@ -326,6 +375,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Description
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property minQuantity: The minimum number of dedicated hosts that you want to create.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "minQuantity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MinQuantity
             {
                 get => GetInstanceProperty<object?>();
             }

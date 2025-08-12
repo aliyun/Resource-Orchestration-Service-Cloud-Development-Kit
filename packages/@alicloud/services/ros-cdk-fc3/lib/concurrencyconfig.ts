@@ -27,7 +27,7 @@ export interface IConcurrencyConfig extends ros.IResource {
     readonly props: ConcurrencyConfigProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::FC3::ConcurrencyConfig`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::FC3::ConcurrencyConfig`, which is used to configure reserved concurrency for a function in Function Compute 3.0.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosConcurrencyConfig`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-concurrencyconfig
  */

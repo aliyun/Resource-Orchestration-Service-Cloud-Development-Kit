@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pai.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::PAI::WorkspaceResourceMaxCompute</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.766Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.238Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pai.$Module.class, fqn = "@alicloud/ros-cdk-pai.datasource.WorkspaceResourceMaxCompute")
 public class WorkspaceResourceMaxCompute extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.pai.datasource.IWorkspaceResourceMaxCompute {
 

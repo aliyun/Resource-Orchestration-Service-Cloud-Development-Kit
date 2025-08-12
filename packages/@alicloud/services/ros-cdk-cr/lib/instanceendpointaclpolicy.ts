@@ -20,6 +20,11 @@ export interface InstanceEndpointAclPolicyProps {
     readonly instanceId: string | ros.IResolvable;
 
     /**
+     * Property autoEnableType: Whether to auto enable the type of the endpoint.
+     */
+    readonly autoEnableType?: string | ros.IResolvable;
+
+    /**
      * Property comment: The description of the entry.
      */
     readonly comment?: string | ros.IResolvable;
@@ -96,6 +101,7 @@ export class InstanceEndpointAclPolicy extends ros.Resource implements IInstance
             instanceId: props.instanceId,
             moduleName: props.moduleName === undefined || props.moduleName === null ? 'Registry' : props.moduleName,
             endpointType: props.endpointType === undefined || props.endpointType === null ? 'internet' : props.endpointType,
+            autoEnableType: props.autoEnableType,
             regionId: props.regionId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstanceEndpointAclPolicy;

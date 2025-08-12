@@ -95,7 +95,7 @@ export interface IDataFlow extends ros.IResource {
     readonly attrFileSystemId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::NAS::DataFlow`, which is used to create a data flow between a Cloud Parallel File Storage (CPFS) file system and an Object Storage Service (OSS) bucket.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::NAS::DataFlow`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDataFlow`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-dataflow
  */

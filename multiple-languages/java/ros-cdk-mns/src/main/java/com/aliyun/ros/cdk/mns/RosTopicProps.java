@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.mns;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-topic
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.015Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.572Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.RosTopicProps")
 @software.amazon.jsii.Jsii.Proxy(RosTopicProps.Jsii$Proxy.class)
 public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
@@ -27,6 +27,12 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.mns.RosTopic.TagsProperty> getTags() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosTopicProps}
      */
     static Builder builder() {
@@ -39,6 +45,7 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object topicName;
         java.lang.Object loggingEnabled;
         java.lang.Object maximumMessageSize;
+        java.util.List<com.aliyun.ros.cdk.mns.RosTopic.TagsProperty> tags;
 
         /**
          * Sets the value of {@link RosTopicProps#getTopicName}
@@ -101,6 +108,17 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosTopicProps#getTags}
+         * @param tags the value to be set.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.mns.RosTopic.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.mns.RosTopic.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosTopicProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -119,6 +137,7 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object topicName;
         private final java.lang.Object loggingEnabled;
         private final java.lang.Object maximumMessageSize;
+        private final java.util.List<com.aliyun.ros.cdk.mns.RosTopic.TagsProperty> tags;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -129,16 +148,19 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
             this.topicName = software.amazon.jsii.Kernel.get(this, "topicName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loggingEnabled = software.amazon.jsii.Kernel.get(this, "loggingEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.maximumMessageSize = software.amazon.jsii.Kernel.get(this, "maximumMessageSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.mns.RosTopic.TagsProperty.class)));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
+        @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.topicName = java.util.Objects.requireNonNull(builder.topicName, "topicName is required");
             this.loggingEnabled = builder.loggingEnabled;
             this.maximumMessageSize = builder.maximumMessageSize;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.mns.RosTopic.TagsProperty>)builder.tags;
         }
 
         @Override
@@ -157,6 +179,11 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.util.List<com.aliyun.ros.cdk.mns.RosTopic.TagsProperty> getTags() {
+            return this.tags;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -168,6 +195,9 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getMaximumMessageSize() != null) {
                 data.set("maximumMessageSize", om.valueToTree(this.getMaximumMessageSize()));
+            }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -189,7 +219,8 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
 
             if (!topicName.equals(that.topicName)) return false;
             if (this.loggingEnabled != null ? !this.loggingEnabled.equals(that.loggingEnabled) : that.loggingEnabled != null) return false;
-            return this.maximumMessageSize != null ? this.maximumMessageSize.equals(that.maximumMessageSize) : that.maximumMessageSize == null;
+            if (this.maximumMessageSize != null ? !this.maximumMessageSize.equals(that.maximumMessageSize) : that.maximumMessageSize != null) return false;
+            return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
         @Override
@@ -197,6 +228,7 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
             int result = this.topicName.hashCode();
             result = 31 * result + (this.loggingEnabled != null ? this.loggingEnabled.hashCode() : 0);
             result = 31 * result + (this.maximumMessageSize != null ? this.maximumMessageSize.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }
     }

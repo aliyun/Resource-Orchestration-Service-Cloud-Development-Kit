@@ -8,6 +8,7 @@ type RosFunctionInvokerProps struct {
 	FunctionName interface{} `field:"required" json:"functionName" yaml:"functionName"`
 	ServiceName interface{} `field:"required" json:"serviceName" yaml:"serviceName"`
 	Async interface{} `field:"optional" json:"async" yaml:"async"`
+	CheckAsyncInvocation interface{} `field:"optional" json:"checkAsyncInvocation" yaml:"checkAsyncInvocation"`
 	CheckError interface{} `field:"optional" json:"checkError" yaml:"checkError"`
 	Event interface{} `field:"optional" json:"event" yaml:"event"`
 	ExecuteVersion interface{} `field:"optional" json:"executeVersion" yaml:"executeVersion"`

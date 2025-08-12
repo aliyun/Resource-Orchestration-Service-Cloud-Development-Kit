@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterhelmapplication
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:03.495Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.219Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosClusterHelmApplicationProps")
 @software.amazon.jsii.Jsii.Proxy(RosClusterHelmApplicationProps.Jsii$Proxy.class)
 public interface RosClusterHelmApplicationProps extends software.amazon.jsii.JsiiSerializable {
@@ -37,6 +37,12 @@ public interface RosClusterHelmApplicationProps extends software.amazon.jsii.Jsi
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNamespace() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNamespaceDeletion() {
         return null;
     }
 
@@ -74,6 +80,7 @@ public interface RosClusterHelmApplicationProps extends software.amazon.jsii.Jsi
         java.lang.Object chartValues;
         java.lang.Object credential;
         java.lang.Object namespace;
+        java.lang.Object namespaceDeletion;
         java.lang.Object rolePolicy;
         java.lang.Object validationMode;
         java.lang.Object waitUntil;
@@ -199,6 +206,26 @@ public interface RosClusterHelmApplicationProps extends software.amazon.jsii.Jsi
         }
 
         /**
+         * Sets the value of {@link RosClusterHelmApplicationProps#getNamespaceDeletion}
+         * @param namespaceDeletion the value to be set.
+         * @return {@code this}
+         */
+        public Builder namespaceDeletion(java.lang.Boolean namespaceDeletion) {
+            this.namespaceDeletion = namespaceDeletion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterHelmApplicationProps#getNamespaceDeletion}
+         * @param namespaceDeletion the value to be set.
+         * @return {@code this}
+         */
+        public Builder namespaceDeletion(com.aliyun.ros.cdk.core.IResolvable namespaceDeletion) {
+            this.namespaceDeletion = namespaceDeletion;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosClusterHelmApplicationProps#getRolePolicy}
          * @param rolePolicy the value to be set.
          * @return {@code this}
@@ -280,6 +307,7 @@ public interface RosClusterHelmApplicationProps extends software.amazon.jsii.Jsi
         private final java.lang.Object chartValues;
         private final java.lang.Object credential;
         private final java.lang.Object namespace;
+        private final java.lang.Object namespaceDeletion;
         private final java.lang.Object rolePolicy;
         private final java.lang.Object validationMode;
         private final java.lang.Object waitUntil;
@@ -296,6 +324,7 @@ public interface RosClusterHelmApplicationProps extends software.amazon.jsii.Jsi
             this.chartValues = software.amazon.jsii.Kernel.get(this, "chartValues", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.credential = software.amazon.jsii.Kernel.get(this, "credential", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.namespace = software.amazon.jsii.Kernel.get(this, "namespace", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.namespaceDeletion = software.amazon.jsii.Kernel.get(this, "namespaceDeletion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.rolePolicy = software.amazon.jsii.Kernel.get(this, "rolePolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.validationMode = software.amazon.jsii.Kernel.get(this, "validationMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.waitUntil = software.amazon.jsii.Kernel.get(this, "waitUntil", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -312,6 +341,7 @@ public interface RosClusterHelmApplicationProps extends software.amazon.jsii.Jsi
             this.chartValues = builder.chartValues;
             this.credential = builder.credential;
             this.namespace = builder.namespace;
+            this.namespaceDeletion = builder.namespaceDeletion;
             this.rolePolicy = builder.rolePolicy;
             this.validationMode = builder.validationMode;
             this.waitUntil = builder.waitUntil;
@@ -348,6 +378,11 @@ public interface RosClusterHelmApplicationProps extends software.amazon.jsii.Jsi
         }
 
         @Override
+        public final java.lang.Object getNamespaceDeletion() {
+            return this.namespaceDeletion;
+        }
+
+        @Override
         public final java.lang.Object getRolePolicy() {
             return this.rolePolicy;
         }
@@ -379,6 +414,9 @@ public interface RosClusterHelmApplicationProps extends software.amazon.jsii.Jsi
             }
             if (this.getNamespace() != null) {
                 data.set("namespace", om.valueToTree(this.getNamespace()));
+            }
+            if (this.getNamespaceDeletion() != null) {
+                data.set("namespaceDeletion", om.valueToTree(this.getNamespaceDeletion()));
             }
             if (this.getRolePolicy() != null) {
                 data.set("rolePolicy", om.valueToTree(this.getRolePolicy()));
@@ -413,6 +451,7 @@ public interface RosClusterHelmApplicationProps extends software.amazon.jsii.Jsi
             if (this.chartValues != null ? !this.chartValues.equals(that.chartValues) : that.chartValues != null) return false;
             if (this.credential != null ? !this.credential.equals(that.credential) : that.credential != null) return false;
             if (this.namespace != null ? !this.namespace.equals(that.namespace) : that.namespace != null) return false;
+            if (this.namespaceDeletion != null ? !this.namespaceDeletion.equals(that.namespaceDeletion) : that.namespaceDeletion != null) return false;
             if (this.rolePolicy != null ? !this.rolePolicy.equals(that.rolePolicy) : that.rolePolicy != null) return false;
             if (this.validationMode != null ? !this.validationMode.equals(that.validationMode) : that.validationMode != null) return false;
             return this.waitUntil != null ? this.waitUntil.equals(that.waitUntil) : that.waitUntil == null;
@@ -426,6 +465,7 @@ public interface RosClusterHelmApplicationProps extends software.amazon.jsii.Jsi
             result = 31 * result + (this.chartValues != null ? this.chartValues.hashCode() : 0);
             result = 31 * result + (this.credential != null ? this.credential.hashCode() : 0);
             result = 31 * result + (this.namespace != null ? this.namespace.hashCode() : 0);
+            result = 31 * result + (this.namespaceDeletion != null ? this.namespaceDeletion.hashCode() : 0);
             result = 31 * result + (this.rolePolicy != null ? this.rolePolicy.hashCode() : 0);
             result = 31 * result + (this.validationMode != null ? this.validationMode.hashCode() : 0);
             result = 31 * result + (this.waitUntil != null ? this.waitUntil.hashCode() : 0);

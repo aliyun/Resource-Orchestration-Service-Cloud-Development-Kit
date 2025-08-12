@@ -6,6 +6,7 @@ export * from './eventruletargets';
 export * from './groupmetricrule';
 export * from './metricruletargets';
 export * from './metricruletemplate';
+export * from './metricruletemplatedeployment';
 export * from './monitorgroup';
 export * from './monitorgroupinstances';
 export * from './monitoringagent';

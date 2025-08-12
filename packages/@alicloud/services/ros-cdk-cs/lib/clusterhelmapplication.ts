@@ -41,6 +41,11 @@ export interface ClusterHelmApplicationProps {
     readonly namespace?: string | ros.IResolvable;
 
     /**
+     * Property namespaceDeletion: Whether to delete the namespace specified. If Namespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether NamespaceDeletion is true or not, it will not be deleted.
+     */
+    readonly namespaceDeletion?: boolean | ros.IResolvable;
+
+    /**
      * Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user. Valid values:
      * - EnsureAdminRoleAndBinding: Automatically create a role named "ros:application-admin:${user-id}" with administrator permissions and bind it to the current user.
      * - None: Do nothing.
@@ -115,6 +120,7 @@ export class ClusterHelmApplication extends ros.Resource implements IClusterHelm
             chartValues: props.chartValues,
             credential: props.credential,
             clusterId: props.clusterId,
+            namespaceDeletion: props.namespaceDeletion,
             chartUrl: props.chartUrl,
             validationMode: props.validationMode === undefined || props.validationMode === null ? 'Strict' : props.validationMode,
             waitUntil: props.waitUntil,

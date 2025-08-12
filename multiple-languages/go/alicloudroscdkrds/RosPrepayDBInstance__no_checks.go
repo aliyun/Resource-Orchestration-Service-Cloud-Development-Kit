@@ -108,6 +108,10 @@ func (j *jsiiProxy_RosPrepayDBInstance) validateSetAutoRenewParameters(val inter
 	return nil
 }
 
+func (j *jsiiProxy_RosPrepayDBInstance) validateSetAutoUpgradeMinorVersionParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosPrepayDBInstance) validateSetBackUpCategoryParameters(val interface{}) error {
 	return nil
 }
@@ -341,6 +345,10 @@ func (j *jsiiProxy_RosPrepayDBInstance) validateSetStorageThresholdParameters(va
 }
 
 func (j *jsiiProxy_RosPrepayDBInstance) validateSetStorageUpperBoundParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosPrepayDBInstance) validateSetSubscriptionDeletionForceParameters(val interface{}) error {
 	return nil
 }
 

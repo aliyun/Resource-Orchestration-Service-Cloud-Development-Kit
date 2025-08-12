@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.nlb;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::NLB::LoadBalancer</code>, which is used to create a Network Load Balancer (NLB) instance.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::NLB::LoadBalancer</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:08.311Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.841Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.LoadBalancer")
 public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.nlb.ILoadBalancer {
 

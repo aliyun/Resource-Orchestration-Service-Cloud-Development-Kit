@@ -11,17 +11,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
     [JsiiInterface(nativeType: typeof(IDBClusterProps), fullyQualifiedName: "@alicloud/ros-cdk-adblake.DBClusterProps")]
     public interface IDBClusterProps
     {
-        /// <summary>Property computeResource: The amount of reserved computing resources.</summary>
-        /// <remarks>
-        /// Unit: ACUs. Valid values: 0ACU to 4096ACU. The value must be in increments of 16 ACUs. Each ACU is equivalent to 1 core and 4 GB memory.
-        /// Note This parameter must be specified with a unit.
-        /// </remarks>
-        [JsiiProperty(name: "computeResource", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object ComputeResource
-        {
-            get;
-        }
-
         /// <summary>Property dbClusterVersion: The version of the cluster.</summary>
         /// <remarks>
         /// Set the value to 5.0.
@@ -40,17 +29,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
         /// </remarks>
         [JsiiProperty(name: "payType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object PayType
-        {
-            get;
-        }
-
-        /// <summary>Property storageResource: The amount of reserved storage resources.</summary>
-        /// <remarks>
-        /// Unit: AnalyticDB compute units (ACUs). Valid values: 0ACU to 2064ACU. The value must be in increments of 24 ACUs. Each ACU is equivalent to 1 core and 4 GB memory.
-        /// Note This parameter must be specified with a unit.
-        /// </remarks>
-        [JsiiProperty(name: "storageResource", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object StorageResource
         {
             get;
         }
@@ -97,6 +75,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
         [JsiiProperty(name: "cloneSourceRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? CloneSourceRegionId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property computeResource: The amount of reserved computing resources.</summary>
+        /// <remarks>
+        /// Unit: ACUs. Valid values: 0ACU to 4096ACU. The value must be in increments of 16 ACUs. Each ACU is equivalent to 1 core and 4 GB memory.
+        /// Note This parameter must be specified with a unit.
+        /// </remarks>
+        [JsiiProperty(name: "computeResource", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ComputeResource
         {
             get
             {
@@ -221,6 +214,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
             }
         }
 
+        /// <summary>Property productVersion: The version of the cluster.Note If only ProductForm is set to IntegrationForm, enter this parameter.</summary>
+        [JsiiProperty(name: "productVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ProductVersion
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property reservedNodeCount: The number of reserved nodes.</summary>
         /// <remarks>
         /// Must be 1 for basic version and multiple
@@ -285,6 +289,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
             }
         }
 
+        /// <summary>Property secondaryVSwitchId: The secondary vSwitch ID of the cluster.</summary>
+        [JsiiProperty(name: "secondaryVSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SecondaryVSwitchId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property secondaryZoneId: The secondary zone ID.</summary>
+        [JsiiProperty(name: "secondaryZoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SecondaryZoneId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property sourceDbClusterId: The ID of the source AnalyticDB for MySQL Data Warehouse Edition cluster.</summary>
         /// <remarks>
         /// If you want to restore a Data Lakehouse Edition cluster from a Data Warehouse Edition cluster, you must specify this parameter.
@@ -292,6 +318,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
         [JsiiProperty(name: "sourceDbClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? SourceDbClusterId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property storageResource: The amount of reserved storage resources.</summary>
+        /// <remarks>
+        /// Unit: AnalyticDB compute units (ACUs). Valid values: 0ACU to 2064ACU. The value must be in increments of 24 ACUs. Each ACU is equivalent to 1 core and 4 GB memory.
+        /// Note This parameter must be specified with a unit.
+        /// </remarks>
+        [JsiiProperty(name: "storageResource", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? StorageResource
         {
             get
             {
@@ -324,17 +365,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
             {
             }
 
-            /// <summary>Property computeResource: The amount of reserved computing resources.</summary>
-            /// <remarks>
-            /// Unit: ACUs. Valid values: 0ACU to 4096ACU. The value must be in increments of 16 ACUs. Each ACU is equivalent to 1 core and 4 GB memory.
-            /// Note This parameter must be specified with a unit.
-            /// </remarks>
-            [JsiiProperty(name: "computeResource", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object ComputeResource
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
             /// <summary>Property dbClusterVersion: The version of the cluster.</summary>
             /// <remarks>
             /// Set the value to 5.0.
@@ -353,17 +383,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
             /// </remarks>
             [JsiiProperty(name: "payType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object PayType
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
-            /// <summary>Property storageResource: The amount of reserved storage resources.</summary>
-            /// <remarks>
-            /// Unit: AnalyticDB compute units (ACUs). Valid values: 0ACU to 2064ACU. The value must be in increments of 24 ACUs. Each ACU is equivalent to 1 core and 4 GB memory.
-            /// Note This parameter must be specified with a unit.
-            /// </remarks>
-            [JsiiProperty(name: "storageResource", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object StorageResource
             {
                 get => GetInstanceProperty<object>()!;
             }
@@ -407,6 +426,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
             [JsiiOptional]
             [JsiiProperty(name: "cloneSourceRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? CloneSourceRegionId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property computeResource: The amount of reserved computing resources.</summary>
+            /// <remarks>
+            /// Unit: ACUs. Valid values: 0ACU to 4096ACU. The value must be in increments of 16 ACUs. Each ACU is equivalent to 1 core and 4 GB memory.
+            /// Note This parameter must be specified with a unit.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "computeResource", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ComputeResource
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -504,6 +535,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property productVersion: The version of the cluster.Note If only ProductForm is set to IntegrationForm, enter this parameter.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "productVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ProductVersion
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property reservedNodeCount: The number of reserved nodes.</summary>
             /// <remarks>
             /// Must be 1 for basic version and multiple
@@ -553,6 +592,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property secondaryVSwitchId: The secondary vSwitch ID of the cluster.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "secondaryVSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SecondaryVSwitchId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property secondaryZoneId: The secondary zone ID.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "secondaryZoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SecondaryZoneId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property sourceDbClusterId: The ID of the source AnalyticDB for MySQL Data Warehouse Edition cluster.</summary>
             /// <remarks>
             /// If you want to restore a Data Lakehouse Edition cluster from a Data Warehouse Edition cluster, you must specify this parameter.
@@ -560,6 +615,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
             [JsiiOptional]
             [JsiiProperty(name: "sourceDbClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SourceDbClusterId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property storageResource: The amount of reserved storage resources.</summary>
+            /// <remarks>
+            /// Unit: AnalyticDB compute units (ACUs). Valid values: 0ACU to 2064ACU. The value must be in increments of 24 ACUs. Each ACU is equivalent to 1 core and 4 GB memory.
+            /// Note This parameter must be specified with a unit.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "storageResource", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? StorageResource
             {
                 get => GetInstanceProperty<object?>();
             }

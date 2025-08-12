@@ -39,6 +39,11 @@ export interface ProjectProps {
      * Property properties: Project base attributes.
      */
     readonly properties?: RosProject.PropertiesProperty | ros.IResolvable;
+
+    /**
+     * Property supportSchemaLevels: Whether to support schema level. Default: False
+     */
+    readonly supportSchemaLevels?: boolean | ros.IResolvable;
 }
 
 /**
@@ -85,6 +90,7 @@ export class Project extends ros.Resource implements IProject {
             defaultQuota: props.defaultQuota,
             chargeType: props.chargeType === undefined || props.chargeType === null ? 'PayAsYouGo' : props.chargeType,
             ipWhiteList: props.ipWhiteList,
+            supportSchemaLevels: props.supportSchemaLevels,
             properties: props.properties,
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

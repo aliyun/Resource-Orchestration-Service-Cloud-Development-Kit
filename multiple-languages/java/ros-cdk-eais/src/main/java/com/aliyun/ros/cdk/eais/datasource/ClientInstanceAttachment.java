@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.eais.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::EAIS::ClientInstanceAttachment</code>.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::EAIS::ClientInstanceAttachment</code>, which is used to query the information about an Elastic Accelerated Computing Instances (EAIS) instance attached to an Elastic Compute Service (ECS) instance or elastic container instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:04.233Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.871Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eais.$Module.class, fqn = "@alicloud/ros-cdk-eais.datasource.ClientInstanceAttachment")
 public class ClientInstanceAttachment extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.eais.datasource.IClientInstanceAttachment {
 

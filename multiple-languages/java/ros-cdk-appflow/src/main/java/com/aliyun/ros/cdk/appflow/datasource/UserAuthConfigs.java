@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.appflow.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::AppFlow::UserAuthConfigs</code>.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::AppFlow::UserAuthConfigs</code>, which is used to query the configurations of user credentials.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:01.915Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:43.930Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.appflow.$Module.class, fqn = "@alicloud/ros-cdk-appflow.datasource.UserAuthConfigs")
 public class UserAuthConfigs extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.appflow.datasource.IUserAuthConfigs {
 

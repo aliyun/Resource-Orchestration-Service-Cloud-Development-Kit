@@ -117,6 +117,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "attrVSwitchId", GoGetter: "AttrVSwitchId"},
 			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
 			_jsii_.MemberProperty{JsiiProperty: "dataNode", GoGetter: "DataNode"},
+			_jsii_.MemberProperty{JsiiProperty: "deleteType", GoGetter: "DeleteType"},
 			_jsii_.MemberProperty{JsiiProperty: "description", GoGetter: "Description"},
 			_jsii_.MemberProperty{JsiiProperty: "enableKibanaPrivate", GoGetter: "EnableKibanaPrivate"},
 			_jsii_.MemberProperty{JsiiProperty: "enableKibanaPublic", GoGetter: "EnableKibanaPublic"},

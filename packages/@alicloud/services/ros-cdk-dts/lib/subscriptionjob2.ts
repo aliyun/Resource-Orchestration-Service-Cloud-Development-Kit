@@ -45,8 +45,8 @@ export interface SubscriptionJob2Props {
     readonly delayNotice?: boolean | ros.IResolvable;
 
     /**
-     * Property delayPhone: The mobile numbers that receive latency-related alerts. Separate multiple mobile numbers with commas (,).
-     * **Note**: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+     * Property delayPhone: The mobile numbers that receive latency-related alerts. Separate multiple mobile numbers with commas (,). You can specify up to 10 mobile numbers.
+     * **Note**: You can also configure alert rules for DTS tasks in the CloudMonitor console.This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers.
      */
     readonly delayPhone?: string | ros.IResolvable;
 
@@ -54,6 +54,16 @@ export interface SubscriptionJob2Props {
      * Property delayRuleTime: The threshold for latency alerts. Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
      */
     readonly delayRuleTime?: number | ros.IResolvable;
+
+    /**
+     * Property destPrimaryVswId: The primary VSW ID at the destination end of the VPC NAT.
+     */
+    readonly destPrimaryVswId?: string | ros.IResolvable;
+
+    /**
+     * Property destSecondaryVswId: The secondary VSW ID at the destination end of the VPC NAT.
+     */
+    readonly destSecondaryVswId?: string | ros.IResolvable;
 
     /**
      * Property dtsBisLabel: The environment tag of the DTS instance. Valid values: **normal** and **online**.
@@ -76,15 +86,40 @@ export interface SubscriptionJob2Props {
     readonly errorNotice?: boolean | ros.IResolvable;
 
     /**
-     * Property errorPhone: The mobile numbers that receive status-related alerts. Separate multiple mobile numbers with commas (,).
-     * **Note**: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+     * Property errorPhone: The mobile numbers that receive status-related alerts. Separate multiple mobile numbers with commas (,). You can specify up to 10 mobile numbers.
+     * **Note**: You can also configure alert rules for DTS tasks in the CloudMonitor console.This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers.
      */
     readonly errorPhone?: string | ros.IResolvable;
+
+    /**
+     * Property maxDu: The upper limit of DU. This parameter is supported only for serverless instances.
+     */
+    readonly maxDu?: number | ros.IResolvable;
+
+    /**
+     * Property minDu: The lower limit of DU. This parameter is supported only for serverless instances.
+     */
+    readonly minDu?: number | ros.IResolvable;
 
     /**
      * Property reserve: The reserved parameter of DTS. You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
      */
     readonly reserve?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * Property srcPrimaryVswId: The primary VSW ID at the source end of the VPC NAT.
+     */
+    readonly srcPrimaryVswId?: string | ros.IResolvable;
+
+    /**
+     * Property srcSecondaryVswId: The secondary VSW ID at the source end of the VPC NAT.
+     */
+    readonly srcSecondaryVswId?: string | ros.IResolvable;
 
     /**
      * Property status: The status of the resource. Valid values:
@@ -162,21 +197,28 @@ export class SubscriptionJob2 extends ros.Resource implements ISubscriptionJob2 
         const rosSubscriptionJob2 = new RosSubscriptionJob2(this, id,  {
             status: props.status,
             reserve: props.reserve,
-            delayPhone: props.delayPhone,
+            srcPrimaryVswId: props.srcPrimaryVswId,
+            srcSecondaryVswId: props.srcSecondaryVswId,
+            resourceGroupId: props.resourceGroupId,
             dedicatedClusterId: props.dedicatedClusterId,
+            delayPhone: props.delayPhone,
+            destPrimaryVswId: props.destPrimaryVswId,
             errorNotice: props.errorNotice,
             dtsJobName: props.dtsJobName,
             delayRuleTime: props.delayRuleTime,
+            minDu: props.minDu,
             dtsInstanceId: props.dtsInstanceId,
             dbList: props.dbList,
-            dtsBisLabel: props.dtsBisLabel,
             subscriptionDataType: props.subscriptionDataType,
+            dtsBisLabel: props.dtsBisLabel,
             checkpoint: props.checkpoint,
-            delayNotice: props.delayNotice,
             dtsJobId: props.dtsJobId,
+            delayNotice: props.delayNotice,
             subscriptionInstance: props.subscriptionInstance,
             sourceEndpoint: props.sourceEndpoint,
             errorPhone: props.errorPhone,
+            destSecondaryVswId: props.destSecondaryVswId,
+            maxDu: props.maxDu,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosSubscriptionJob2;
         this.attrDtsInstanceId = rosSubscriptionJob2.attrDtsInstanceId;

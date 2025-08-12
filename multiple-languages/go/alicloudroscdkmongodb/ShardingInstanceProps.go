@@ -45,6 +45,8 @@ type ShardingInstanceProps struct {
 	// When the value of the EngineVersion is 4.4 and later, this parameter is available and required.The value of this parameter cannot be the same as that of ZoneId and HiddenZoneId.
 	SecondaryZoneId interface{} `field:"optional" json:"secondaryZoneId" yaml:"secondaryZoneId"`
 	// Property securityIpArray: Security ips to add or remove.
+	//
+	// Update to this property will cover the current security ips.
 	SecurityIpArray interface{} `field:"optional" json:"securityIpArray" yaml:"securityIpArray"`
 	// Property srcDbInstanceId: Create an instance of the backup set based on an instance.
 	SrcDbInstanceId interface{} `field:"optional" json:"srcDbInstanceId" yaml:"srcDbInstanceId"`

@@ -20,11 +20,6 @@ export interface NatGatewayProps {
     readonly vSwitchId: string | ros.IResolvable;
 
     /**
-     * Property autoPay: Specifies whether to enable automatic payment. Default is true.
-     */
-    readonly autoPay?: boolean | ros.IResolvable;
-
-    /**
      * Property deletionForce: Whether force delete the relative snat and dnat entries in the net gateway and unbind eips. Default value is false.
      */
     readonly deletionForce?: boolean | ros.IResolvable;
@@ -39,11 +34,6 @@ export interface NatGatewayProps {
      * Property description: Description of the NAT gateway, [2, 256] characters. Do not fill or empty, the default is empty.
      */
     readonly description?: string | ros.IResolvable;
-
-    /**
-     * Property duration: The subscription duration. While choose by pay by month, it could be from 1 to 9 or 12, 24, 36. While choose pay by year, it could be from 1 to 3.
-     */
-    readonly duration?: number | ros.IResolvable;
 
     /**
      * Property eipBindMode: The mode in which the EIP is associated with the NAT gateway. Valid values:MULTI_BINDED (default): the multi-EIP-to-ENI mode.
@@ -89,11 +79,6 @@ export interface NatGatewayProps {
      * Intranet: VPC NAT gateway.
      */
     readonly networkType?: string | ros.IResolvable;
-
-    /**
-     * Property pricingCycle: Price cycle of the resource. This property has no default value.
-     */
-    readonly pricingCycle?: string | ros.IResolvable;
 
     /**
      * Property securityProtectionEnabled: Specifies whether to enable the firewall feature. Default: False
@@ -169,13 +154,10 @@ export class NatGateway extends ros.Resource implements INatGateway {
             description: props.description,
             natGatewayName: props.natGatewayName,
             instanceChargeType: props.instanceChargeType === undefined || props.instanceChargeType === null ? 'PostPaid' : props.instanceChargeType,
-            pricingCycle: props.pricingCycle,
             eipBindMode: props.eipBindMode,
             vSwitchId: props.vSwitchId,
             securityProtectionEnabled: props.securityProtectionEnabled,
-            duration: props.duration === undefined || props.duration === null ? 1 : props.duration,
             deletionProtection: props.deletionProtection === undefined || props.deletionProtection === null ? false : props.deletionProtection,
-            autoPay: props.autoPay === undefined || props.autoPay === null ? true : props.autoPay,
             natType: props.natType === undefined || props.natType === null ? 'Enhanced' : props.natType,
             internetChargeType: props.internetChargeType,
             deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,

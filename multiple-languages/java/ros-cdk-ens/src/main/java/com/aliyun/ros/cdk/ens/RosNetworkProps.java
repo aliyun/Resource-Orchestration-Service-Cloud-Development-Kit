@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ens;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-network
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:06.541Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.304Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ens.$Module.class, fqn = "@alicloud/ros-cdk-ens.RosNetworkProps")
 @software.amazon.jsii.Jsii.Proxy(RosNetworkProps.Jsii$Proxy.class)
 public interface RosNetworkProps extends software.amazon.jsii.JsiiSerializable {

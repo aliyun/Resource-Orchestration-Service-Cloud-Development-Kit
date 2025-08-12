@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:04.764Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.291Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceGroupProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceGroupProps.Jsii$Proxy.class)
 public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -555,6 +555,15 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
+     * Property subscriptionDeletionForce: This option is only applicable to subscription instances.
+     * <p>
+     * For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSubscriptionDeletionForce() {
+        return null;
+    }
+
+    /**
      * Property systemDiskAutoSnapshotPolicyId: Auto snapshot policy ID.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskAutoSnapshotPolicyId() {
@@ -829,6 +838,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object spotStrategy;
         java.lang.Object storageSetId;
         java.lang.Object storageSetPartitionNumber;
+        java.lang.Object subscriptionDeletionForce;
         java.lang.Object systemDiskAutoSnapshotPolicyId;
         java.lang.Object systemDiskBurstingEnabled;
         java.lang.Object systemDiskCategory;
@@ -2217,6 +2227,28 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link InstanceGroupProps#getSubscriptionDeletionForce}
+         * @param subscriptionDeletionForce Property subscriptionDeletionForce: This option is only applicable to subscription instances.
+         *                                  For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+         * @return {@code this}
+         */
+        public Builder subscriptionDeletionForce(java.lang.Boolean subscriptionDeletionForce) {
+            this.subscriptionDeletionForce = subscriptionDeletionForce;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupProps#getSubscriptionDeletionForce}
+         * @param subscriptionDeletionForce Property subscriptionDeletionForce: This option is only applicable to subscription instances.
+         *                                  For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.
+         * @return {@code this}
+         */
+        public Builder subscriptionDeletionForce(com.aliyun.ros.cdk.core.IResolvable subscriptionDeletionForce) {
+            this.subscriptionDeletionForce = subscriptionDeletionForce;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceGroupProps#getSystemDiskAutoSnapshotPolicyId}
          * @param systemDiskAutoSnapshotPolicyId Property systemDiskAutoSnapshotPolicyId: Auto snapshot policy ID.
          * @return {@code this}
@@ -2802,6 +2834,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object spotStrategy;
         private final java.lang.Object storageSetId;
         private final java.lang.Object storageSetPartitionNumber;
+        private final java.lang.Object subscriptionDeletionForce;
         private final java.lang.Object systemDiskAutoSnapshotPolicyId;
         private final java.lang.Object systemDiskBurstingEnabled;
         private final java.lang.Object systemDiskCategory;
@@ -2889,6 +2922,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             this.spotStrategy = software.amazon.jsii.Kernel.get(this, "spotStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.storageSetId = software.amazon.jsii.Kernel.get(this, "storageSetId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.storageSetPartitionNumber = software.amazon.jsii.Kernel.get(this, "storageSetPartitionNumber", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.subscriptionDeletionForce = software.amazon.jsii.Kernel.get(this, "subscriptionDeletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskAutoSnapshotPolicyId = software.amazon.jsii.Kernel.get(this, "systemDiskAutoSnapshotPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskBurstingEnabled = software.amazon.jsii.Kernel.get(this, "systemDiskBurstingEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskCategory = software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -2977,6 +3011,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             this.spotStrategy = builder.spotStrategy;
             this.storageSetId = builder.storageSetId;
             this.storageSetPartitionNumber = builder.storageSetPartitionNumber;
+            this.subscriptionDeletionForce = builder.subscriptionDeletionForce;
             this.systemDiskAutoSnapshotPolicyId = builder.systemDiskAutoSnapshotPolicyId;
             this.systemDiskBurstingEnabled = builder.systemDiskBurstingEnabled;
             this.systemDiskCategory = builder.systemDiskCategory;
@@ -3292,6 +3327,11 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.lang.Object getSubscriptionDeletionForce() {
+            return this.subscriptionDeletionForce;
+        }
+
+        @Override
         public final java.lang.Object getSystemDiskAutoSnapshotPolicyId() {
             return this.systemDiskAutoSnapshotPolicyId;
         }
@@ -3577,6 +3617,9 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getStorageSetPartitionNumber() != null) {
                 data.set("storageSetPartitionNumber", om.valueToTree(this.getStorageSetPartitionNumber()));
             }
+            if (this.getSubscriptionDeletionForce() != null) {
+                data.set("subscriptionDeletionForce", om.valueToTree(this.getSubscriptionDeletionForce()));
+            }
             if (this.getSystemDiskAutoSnapshotPolicyId() != null) {
                 data.set("systemDiskAutoSnapshotPolicyId", om.valueToTree(this.getSystemDiskAutoSnapshotPolicyId()));
             }
@@ -3719,6 +3762,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             if (this.spotStrategy != null ? !this.spotStrategy.equals(that.spotStrategy) : that.spotStrategy != null) return false;
             if (this.storageSetId != null ? !this.storageSetId.equals(that.storageSetId) : that.storageSetId != null) return false;
             if (this.storageSetPartitionNumber != null ? !this.storageSetPartitionNumber.equals(that.storageSetPartitionNumber) : that.storageSetPartitionNumber != null) return false;
+            if (this.subscriptionDeletionForce != null ? !this.subscriptionDeletionForce.equals(that.subscriptionDeletionForce) : that.subscriptionDeletionForce != null) return false;
             if (this.systemDiskAutoSnapshotPolicyId != null ? !this.systemDiskAutoSnapshotPolicyId.equals(that.systemDiskAutoSnapshotPolicyId) : that.systemDiskAutoSnapshotPolicyId != null) return false;
             if (this.systemDiskBurstingEnabled != null ? !this.systemDiskBurstingEnabled.equals(that.systemDiskBurstingEnabled) : that.systemDiskBurstingEnabled != null) return false;
             if (this.systemDiskCategory != null ? !this.systemDiskCategory.equals(that.systemDiskCategory) : that.systemDiskCategory != null) return false;
@@ -3803,6 +3847,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.spotStrategy != null ? this.spotStrategy.hashCode() : 0);
             result = 31 * result + (this.storageSetId != null ? this.storageSetId.hashCode() : 0);
             result = 31 * result + (this.storageSetPartitionNumber != null ? this.storageSetPartitionNumber.hashCode() : 0);
+            result = 31 * result + (this.subscriptionDeletionForce != null ? this.subscriptionDeletionForce.hashCode() : 0);
             result = 31 * result + (this.systemDiskAutoSnapshotPolicyId != null ? this.systemDiskAutoSnapshotPolicyId.hashCode() : 0);
             result = 31 * result + (this.systemDiskBurstingEnabled != null ? this.systemDiskBurstingEnabled.hashCode() : 0);
             result = 31 * result + (this.systemDiskCategory != null ? this.systemDiskCategory.hashCode() : 0);

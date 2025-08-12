@@ -21,6 +21,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: type: Network type. The value can be Private only, that is, only private IP addresses are supported.
+        /// </remarks>
+        [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Type
+        {
+            get;
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: description: The description of the network rule.
         /// </remarks>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -62,6 +71,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
             /// </remarks>
             [JsiiProperty(name: "networkRuleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object NetworkRuleName
+            {
+                get => GetInstanceProperty<object>()!;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: type: Network type. The value can be Private only, that is, only private IP addresses are supported.
+            /// </remarks>
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Type
             {
                 get => GetInstanceProperty<object>()!;
             }

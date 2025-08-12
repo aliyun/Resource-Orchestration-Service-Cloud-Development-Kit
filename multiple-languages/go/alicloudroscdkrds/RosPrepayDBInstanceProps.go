@@ -18,6 +18,7 @@ type RosPrepayDBInstanceProps struct {
 	ArchiveBackupRetentionPeriod interface{} `field:"optional" json:"archiveBackupRetentionPeriod" yaml:"archiveBackupRetentionPeriod"`
 	AutoPay interface{} `field:"optional" json:"autoPay" yaml:"autoPay"`
 	AutoRenew interface{} `field:"optional" json:"autoRenew" yaml:"autoRenew"`
+	AutoUpgradeMinorVersion interface{} `field:"optional" json:"autoUpgradeMinorVersion" yaml:"autoUpgradeMinorVersion"`
 	BackUpCategory interface{} `field:"optional" json:"backUpCategory" yaml:"backUpCategory"`
 	BackupPolicyMode interface{} `field:"optional" json:"backupPolicyMode" yaml:"backupPolicyMode"`
 	BackupRetentionPeriod interface{} `field:"optional" json:"backupRetentionPeriod" yaml:"backupRetentionPeriod"`
@@ -69,6 +70,7 @@ type RosPrepayDBInstanceProps struct {
 	StorageAutoScale interface{} `field:"optional" json:"storageAutoScale" yaml:"storageAutoScale"`
 	StorageThreshold interface{} `field:"optional" json:"storageThreshold" yaml:"storageThreshold"`
 	StorageUpperBound interface{} `field:"optional" json:"storageUpperBound" yaml:"storageUpperBound"`
+	SubscriptionDeletionForce interface{} `field:"optional" json:"subscriptionDeletionForce" yaml:"subscriptionDeletionForce"`
 	Tags *map[string]interface{} `field:"optional" json:"tags" yaml:"tags"`
 	TargetDedicatedHostIdForLog interface{} `field:"optional" json:"targetDedicatedHostIdForLog" yaml:"targetDedicatedHostIdForLog"`
 	TargetDedicatedHostIdForMaster interface{} `field:"optional" json:"targetDedicatedHostIdForMaster" yaml:"targetDedicatedHostIdForMaster"`

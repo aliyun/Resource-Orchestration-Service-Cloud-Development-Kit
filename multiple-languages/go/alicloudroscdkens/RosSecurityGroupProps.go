@@ -6,8 +6,7 @@ package alicloudroscdkens
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-securitygroup
 type RosSecurityGroupProps struct {
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
-	SecurityGroupEgress interface{} `field:"optional" json:"securityGroupEgress" yaml:"securityGroupEgress"`
-	SecurityGroupIngress interface{} `field:"optional" json:"securityGroupIngress" yaml:"securityGroupIngress"`
+	Permissions interface{} `field:"optional" json:"permissions" yaml:"permissions"`
 	SecurityGroupName interface{} `field:"optional" json:"securityGroupName" yaml:"securityGroupName"`
 }
 

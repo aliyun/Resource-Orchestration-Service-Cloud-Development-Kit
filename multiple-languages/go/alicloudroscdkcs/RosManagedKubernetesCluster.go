@@ -138,6 +138,8 @@ type RosManagedKubernetesCluster interface {
 	SetUserData(val interface{})
 	VpcId() interface{}
 	SetVpcId(val interface{})
+	VSwitchIds() interface{}
+	SetVSwitchIds(val interface{})
 	ZoneIds() interface{}
 	SetZoneIds(val interface{})
 	AddCondition(con alicloudroscdkcore.RosCondition)
@@ -859,6 +861,16 @@ func (j *jsiiProxy_RosManagedKubernetesCluster) VpcId() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosManagedKubernetesCluster) VSwitchIds() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"vSwitchIds",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosManagedKubernetesCluster) ZoneIds() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -1333,6 +1345,17 @@ func (j *jsiiProxy_RosManagedKubernetesCluster)SetVpcId(val interface{}) {
 	_jsii_.Set(
 		j,
 		"vpcId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosManagedKubernetesCluster)SetVSwitchIds(val interface{}) {
+	if err := j.validateSetVSwitchIdsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"vSwitchIds",
 		val,
 	)
 }

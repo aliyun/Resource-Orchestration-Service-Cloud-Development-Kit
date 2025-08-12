@@ -10,6 +10,7 @@ type RosCustomImageProps struct {
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
 	DetectionStrategy interface{} `field:"optional" json:"detectionStrategy" yaml:"detectionStrategy"`
 	DiskDeviceMapping interface{} `field:"optional" json:"diskDeviceMapping" yaml:"diskDeviceMapping"`
+	Features interface{} `field:"optional" json:"features" yaml:"features"`
 	ImageFamily interface{} `field:"optional" json:"imageFamily" yaml:"imageFamily"`
 	ImageName interface{} `field:"optional" json:"imageName" yaml:"imageName"`
 	ImageVersion interface{} `field:"optional" json:"imageVersion" yaml:"imageVersion"`

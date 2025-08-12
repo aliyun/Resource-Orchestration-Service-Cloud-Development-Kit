@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::CEN::CenBandwidthPackages</code>, which is used to query the information about Cloud Enterprise Network (CEN) bandwidth plans within the logon account.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:02.544Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:44.409Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.datasource.CenBandwidthPackages")
 public class CenBandwidthPackages extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cen.datasource.ICenBandwidthPackages {
 

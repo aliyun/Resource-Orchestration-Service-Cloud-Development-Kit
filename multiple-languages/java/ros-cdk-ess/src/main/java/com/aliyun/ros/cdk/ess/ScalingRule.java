@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ESS::ScalingRule</code>, which is used to create a scaling rule.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-03-06T05:59:06.819Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.594Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScalingRule")
 public class ScalingRule extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ess.IScalingRule {
 
@@ -327,16 +327,17 @@ public class ScalingRule extends com.aliyun.ros.cdk.core.Resource implements com
          * Valid values of a target tracking scaling rule:
          * <p>
          * <ul>
-         * <li>CpuUtilization: the average CPU utilization- ClassicInternetRx: the average public network inbound traffic over the classic network</li>
-         * <li>ClassicInternetTx: the average public network outbound traffic over the classic network</li>
-         * <li>VpcInternetRx: the average public network inbound traffic over the VPC</li>
-         * <li>VpcInternetTx: the average public network outbound traffic over the VPC</li>
-         * <li>IntranetRx: the average internal network inbound traffic</li>
-         * <li>IntranetTx: the average internal network outbound traffic
+         * <li>CpuUtilizationAgent:  (recommended) the CPU utilization.</li>
+         * <li>MemoryUtilization: (recommended) the memory usage.- CpuUtilization: the average CPU utilization.</li>
+         * <li>IntranetTx: the outbound traffic over an internal network.</li>
+         * <li>IntranetRx: the average inbound traffic over an internal network.</li>
+         * <li>VpcInternetTx: the outbound traffic from a virtual private cloud (VPC) to the Internet.</li>
+         * <li>VpcInternetRx: the inbound traffic from the Internet to a VPC.</li>
+         * <li>LoadBalancerRealServerAverageQps: the queries per second (QPS) per Application Load Balancer (ALB) server group.
          * Valid values of a predictive scaling rule:</li>
-         * <li>CpuUtilization: the average CPU utilization</li>
-         * <li>IntranetRx: the average internal network inbound traffic</li>
-         * <li>IntranetTx: the average internal network outbound traffic</li>
+         * <li>CpuUtilization: the average CPU utilization.</li>
+         * <li>IntranetRx: the average inbound traffic over an internal network.</li>
+         * <li>IntranetTx: the average outbound traffic over an internal network.</li>
          * </ul>
          * <p>
          * @return {@code this}
@@ -353,16 +354,17 @@ public class ScalingRule extends com.aliyun.ros.cdk.core.Resource implements com
          * Valid values of a target tracking scaling rule:
          * <p>
          * <ul>
-         * <li>CpuUtilization: the average CPU utilization- ClassicInternetRx: the average public network inbound traffic over the classic network</li>
-         * <li>ClassicInternetTx: the average public network outbound traffic over the classic network</li>
-         * <li>VpcInternetRx: the average public network inbound traffic over the VPC</li>
-         * <li>VpcInternetTx: the average public network outbound traffic over the VPC</li>
-         * <li>IntranetRx: the average internal network inbound traffic</li>
-         * <li>IntranetTx: the average internal network outbound traffic
+         * <li>CpuUtilizationAgent:  (recommended) the CPU utilization.</li>
+         * <li>MemoryUtilization: (recommended) the memory usage.- CpuUtilization: the average CPU utilization.</li>
+         * <li>IntranetTx: the outbound traffic over an internal network.</li>
+         * <li>IntranetRx: the average inbound traffic over an internal network.</li>
+         * <li>VpcInternetTx: the outbound traffic from a virtual private cloud (VPC) to the Internet.</li>
+         * <li>VpcInternetRx: the inbound traffic from the Internet to a VPC.</li>
+         * <li>LoadBalancerRealServerAverageQps: the queries per second (QPS) per Application Load Balancer (ALB) server group.
          * Valid values of a predictive scaling rule:</li>
-         * <li>CpuUtilization: the average CPU utilization</li>
-         * <li>IntranetRx: the average internal network inbound traffic</li>
-         * <li>IntranetTx: the average internal network outbound traffic</li>
+         * <li>CpuUtilization: the average CPU utilization.</li>
+         * <li>IntranetRx: the average inbound traffic over an internal network.</li>
+         * <li>IntranetTx: the average outbound traffic over an internal network.</li>
          * </ul>
          * <p>
          * @return {@code this}

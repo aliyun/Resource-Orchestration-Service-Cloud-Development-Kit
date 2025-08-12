@@ -8,5 +8,6 @@ type RosVpcEndpointServiceAttachmentProps struct {
 	ResourceId interface{} `field:"required" json:"resourceId" yaml:"resourceId"`
 	ResourceType interface{} `field:"required" json:"resourceType" yaml:"resourceType"`
 	ServiceId interface{} `field:"required" json:"serviceId" yaml:"serviceId"`
+	ZoneId interface{} `field:"optional" json:"zoneId" yaml:"zoneId"`
 }
 
