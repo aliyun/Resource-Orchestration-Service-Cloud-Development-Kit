@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.hbr;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::HBR::BackupClients</code>, which is used to install backup clients on Elastic Compute Service (ECS) instances.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::HBR::BackupClients</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.114Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:26.440Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.RosBackupClients")
 public class RosBackupClients extends com.aliyun.ros.cdk.core.RosResource {
 

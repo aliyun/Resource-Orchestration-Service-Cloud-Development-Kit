@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::FC::Aliases`, which is used to query the aliases of a Function Compute service.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::FC::Aliases`.
 type RosAliases interface {
 	alicloudroscdkcore.RosResource
 	AttrAliases() alicloudroscdkcore.IResolvable

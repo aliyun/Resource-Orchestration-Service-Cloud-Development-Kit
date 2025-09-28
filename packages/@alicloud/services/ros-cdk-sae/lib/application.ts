@@ -122,6 +122,11 @@ export interface ApplicationProps {
     readonly enableNewArms?: boolean | ros.IResolvable;
 
     /**
+     * Property enableSidecarResourceIsolated: Whether to enable sidecar resource isolation.
+     */
+    readonly enableSidecarResourceIsolated?: boolean | ros.IResolvable;
+
+    /**
      * Property envs: Container environment variable parameters. For example: [{ "name": "envtmp", "value": "0"}]
      */
     readonly envs?: string | ros.IResolvable;
@@ -135,6 +140,11 @@ export interface ApplicationProps {
      * Property imageUrl: Mirroring address. Image only type of application can be configured to mirror address.
      */
     readonly imageUrl?: string | ros.IResolvable;
+
+    /**
+     * Property initContainersConfig: Init container config.
+     */
+    readonly initContainersConfig?: Array<RosApplication.InitContainersConfigProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property jarStartArgs: Jar package startup application parameters. Apply the default startup command: $ JAVA_HOME \/ bin \/ java $ JarStartOptions -jar $ CATALINA_OPTS "$ package_path"
@@ -322,6 +332,11 @@ export interface ApplicationProps {
     readonly serviceTags?: string | ros.IResolvable;
 
     /**
+     * Property sidecarContainersConfig: Sidecar container config.
+     */
+    readonly sidecarContainersConfig?: Array<RosApplication.SidecarContainersConfigProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * Property slsConfigs: Log collection configuration file
      */
     readonly slsConfigs?: string | ros.IResolvable;
@@ -432,6 +447,7 @@ export class Application extends ros.Resource implements IApplication {
             webContainer: props.webContainer,
             cpu: props.cpu,
             nasConfigs: props.nasConfigs,
+            enableSidecarResourceIsolated: props.enableSidecarResourceIsolated,
             jarStartArgs: props.jarStartArgs,
             preStop: props.preStop,
             phpArmsConfigLocation: props.phpArmsConfigLocation,
@@ -456,6 +472,7 @@ export class Application extends ros.Resource implements IApplication {
             nasId: props.nasId,
             pythonModules: props.pythonModules,
             acrInstanceId: props.acrInstanceId,
+            sidecarContainersConfig: props.sidecarContainersConfig,
             kafkaConfigs: props.kafkaConfigs,
             slsConfigs: props.slsConfigs,
             ossAkId: props.ossAkId,
@@ -478,6 +495,7 @@ export class Application extends ros.Resource implements IApplication {
             imagePullSecrets: props.imagePullSecrets,
             mountHost: props.mountHost,
             replicas: props.replicas,
+            initContainersConfig: props.initContainersConfig,
             customHostAlias: props.customHostAlias,
             appSource: props.appSource,
             associateEip: props.associateEip,

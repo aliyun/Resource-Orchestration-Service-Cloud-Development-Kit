@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.edas.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-edas-applications
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.032Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:25.016Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.datasource.RosApplicationsProps")
 @software.amazon.jsii.Jsii.Proxy(RosApplicationsProps.Jsii$Proxy.class)
 public interface RosApplicationsProps extends software.amazon.jsii.JsiiSerializable {

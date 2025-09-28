@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dts.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dts-migrationjob
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.847Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.607Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.datasource.MigrationJobProps")
 @software.amazon.jsii.Jsii.Proxy(MigrationJobProps.Jsii$Proxy.class)
 public interface MigrationJobProps extends software.amazon.jsii.JsiiSerializable {

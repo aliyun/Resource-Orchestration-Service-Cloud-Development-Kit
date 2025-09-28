@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::Flink::Namespace`, which is used to create a project.
+// This class encapsulates and extends the ROS resource type `ALIYUN::Flink::Namespace`.
 type Namespace interface {
 	alicloudroscdkcore.Resource
 	INamespace

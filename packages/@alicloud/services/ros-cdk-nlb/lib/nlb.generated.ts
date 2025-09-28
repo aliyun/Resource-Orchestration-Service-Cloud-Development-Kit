@@ -1525,7 +1525,7 @@ function rosSecurityGroupAttachmentPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::SecurityGroupAttachment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::SecurityGroupAttachment`, which is used to bind a security group to a Network Load Balancer (NLB) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecurityGroupAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-securitygroupattachment
  */
@@ -2000,7 +2000,7 @@ function rosServerGroupPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::ServerGroup`, which is used to create a server group for a Network Load Balancer (NLB) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::ServerGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ServerGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-servergroup
  */
@@ -2178,7 +2178,7 @@ export namespace RosServerGroup {
         /**
          * @Property httpCheckMethod: When the health check protocol is http or https type, the selected health check detection method
          */
-        readonly httpCheckMethod: string | ros.IResolvable;
+        readonly httpCheckMethod?: string | ros.IResolvable;
         /**
          * @Property healthyThreshold: Determine the health check status of the backend server from fail to success.
          */
@@ -2240,7 +2240,6 @@ function RosServerGroup_HealthCheckConfigPropertyValidator(properties: any): ros
           }));
     }
     errors.collect(ros.propertyValidator('unhealthyThreshold', ros.validateNumber)(properties.unhealthyThreshold));
-    errors.collect(ros.propertyValidator('httpCheckMethod', ros.requiredValidator)(properties.httpCheckMethod));
     errors.collect(ros.propertyValidator('httpCheckMethod', ros.validateString)(properties.httpCheckMethod));
     if(properties.healthyThreshold && (typeof properties.healthyThreshold) !== 'object') {
         errors.collect(ros.propertyValidator('healthyThreshold', ros.validateRange)({

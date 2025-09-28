@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterhelmapplication
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.142Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.824Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ClusterHelmApplicationProps")
 @software.amazon.jsii.Jsii.Proxy(ClusterHelmApplicationProps.Jsii$Proxy.class)
 public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSerializable {
@@ -40,6 +40,16 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
      * Only take effects when ChartUrl is the address of ACR repo.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCredential() {
+        return null;
+    }
+
+    /**
+     * Property ignoreExisting: How to ignore existing helm application: Disabled(default): If a helm application with the same name exists, an error will be reported when creating it.
+     * <p>
+     * SkipInstallIfExisting: If there is a helm application with the same name, the helm application creation process will be ignored.
+     * SkipAllOperationsIfExisting: If there is a helm application with the same name, the helm application creation process will be ignored. If the helm application is not created by this resource, it will be ignored during update and delete stage.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIgnoreExisting() {
         return null;
     }
 
@@ -110,6 +120,7 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
         java.lang.Object name;
         java.lang.Object chartValues;
         java.lang.Object credential;
+        java.lang.Object ignoreExisting;
         java.lang.Object namespace;
         java.lang.Object namespaceDeletion;
         java.lang.Object rolePolicy;
@@ -217,6 +228,30 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
          */
         public Builder credential(com.aliyun.ros.cdk.cs.RosClusterHelmApplication.CredentialProperty credential) {
             this.credential = credential;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ClusterHelmApplicationProps#getIgnoreExisting}
+         * @param ignoreExisting Property ignoreExisting: How to ignore existing helm application: Disabled(default): If a helm application with the same name exists, an error will be reported when creating it.
+         *                       SkipInstallIfExisting: If there is a helm application with the same name, the helm application creation process will be ignored.
+         *                       SkipAllOperationsIfExisting: If there is a helm application with the same name, the helm application creation process will be ignored. If the helm application is not created by this resource, it will be ignored during update and delete stage.
+         * @return {@code this}
+         */
+        public Builder ignoreExisting(java.lang.String ignoreExisting) {
+            this.ignoreExisting = ignoreExisting;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ClusterHelmApplicationProps#getIgnoreExisting}
+         * @param ignoreExisting Property ignoreExisting: How to ignore existing helm application: Disabled(default): If a helm application with the same name exists, an error will be reported when creating it.
+         *                       SkipInstallIfExisting: If there is a helm application with the same name, the helm application creation process will be ignored.
+         *                       SkipAllOperationsIfExisting: If there is a helm application with the same name, the helm application creation process will be ignored. If the helm application is not created by this resource, it will be ignored during update and delete stage.
+         * @return {@code this}
+         */
+        public Builder ignoreExisting(com.aliyun.ros.cdk.core.IResolvable ignoreExisting) {
+            this.ignoreExisting = ignoreExisting;
             return this;
         }
 
@@ -367,6 +402,7 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
         private final java.lang.Object name;
         private final java.lang.Object chartValues;
         private final java.lang.Object credential;
+        private final java.lang.Object ignoreExisting;
         private final java.lang.Object namespace;
         private final java.lang.Object namespaceDeletion;
         private final java.lang.Object rolePolicy;
@@ -384,6 +420,7 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.chartValues = software.amazon.jsii.Kernel.get(this, "chartValues", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.credential = software.amazon.jsii.Kernel.get(this, "credential", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ignoreExisting = software.amazon.jsii.Kernel.get(this, "ignoreExisting", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.namespace = software.amazon.jsii.Kernel.get(this, "namespace", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.namespaceDeletion = software.amazon.jsii.Kernel.get(this, "namespaceDeletion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.rolePolicy = software.amazon.jsii.Kernel.get(this, "rolePolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -401,6 +438,7 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
             this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
             this.chartValues = builder.chartValues;
             this.credential = builder.credential;
+            this.ignoreExisting = builder.ignoreExisting;
             this.namespace = builder.namespace;
             this.namespaceDeletion = builder.namespaceDeletion;
             this.rolePolicy = builder.rolePolicy;
@@ -431,6 +469,11 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
         @Override
         public final java.lang.Object getCredential() {
             return this.credential;
+        }
+
+        @Override
+        public final java.lang.Object getIgnoreExisting() {
+            return this.ignoreExisting;
         }
 
         @Override
@@ -473,6 +516,9 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
             if (this.getCredential() != null) {
                 data.set("credential", om.valueToTree(this.getCredential()));
             }
+            if (this.getIgnoreExisting() != null) {
+                data.set("ignoreExisting", om.valueToTree(this.getIgnoreExisting()));
+            }
             if (this.getNamespace() != null) {
                 data.set("namespace", om.valueToTree(this.getNamespace()));
             }
@@ -511,6 +557,7 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
             if (!name.equals(that.name)) return false;
             if (this.chartValues != null ? !this.chartValues.equals(that.chartValues) : that.chartValues != null) return false;
             if (this.credential != null ? !this.credential.equals(that.credential) : that.credential != null) return false;
+            if (this.ignoreExisting != null ? !this.ignoreExisting.equals(that.ignoreExisting) : that.ignoreExisting != null) return false;
             if (this.namespace != null ? !this.namespace.equals(that.namespace) : that.namespace != null) return false;
             if (this.namespaceDeletion != null ? !this.namespaceDeletion.equals(that.namespaceDeletion) : that.namespaceDeletion != null) return false;
             if (this.rolePolicy != null ? !this.rolePolicy.equals(that.rolePolicy) : that.rolePolicy != null) return false;
@@ -525,6 +572,7 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
             result = 31 * result + (this.name.hashCode());
             result = 31 * result + (this.chartValues != null ? this.chartValues.hashCode() : 0);
             result = 31 * result + (this.credential != null ? this.credential.hashCode() : 0);
+            result = 31 * result + (this.ignoreExisting != null ? this.ignoreExisting.hashCode() : 0);
             result = 31 * result + (this.namespace != null ? this.namespace.hashCode() : 0);
             result = 31 * result + (this.namespaceDeletion != null ? this.namespaceDeletion.hashCode() : 0);
             result = 31 * result + (this.rolePolicy != null ? this.rolePolicy.hashCode() : 0);

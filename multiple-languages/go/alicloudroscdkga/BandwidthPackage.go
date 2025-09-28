@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::GA::BandwidthPackage`, which is used to create a bandwidth plan.
+// This class encapsulates and extends the ROS resource type `ALIYUN::GA::BandwidthPackage`.
 type BandwidthPackage interface {
 	alicloudroscdkcore.Resource
 	IBandwidthPackage

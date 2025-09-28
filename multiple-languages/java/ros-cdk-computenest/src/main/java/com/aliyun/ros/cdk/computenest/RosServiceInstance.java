@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.computenest;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ComputeNest::ServiceInstance</code>, which is used to create and deploy a service instance.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ComputeNest::ServiceInstance</code>The , which type is used to create and deploy a service instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:44.979Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.625Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.computenest.$Module.class, fqn = "@alicloud/ros-cdk-computenest.RosServiceInstance")
 public class RosServiceInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -337,13 +337,25 @@ public class RosServiceInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public void setParameters(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+    public void setParameters(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "parameters", value);
     }
 
     /**
      */
-    public void setParameters(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+    public void setParameters(final @org.jetbrains.annotations.Nullable java.util.Map<java.lang.String, java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            if (!(value.keySet().toArray()[0] instanceof String)) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("value").append(".keySet()")
+                        .append(" to contain class String; received ")
+                        .append(value.keySet().toArray()[0].getClass()).toString());
+            }
+            for (final java.util.Map.Entry<String, java.lang.Object> __item_ac66f0: value.entrySet()) {
+                final java.lang.Object __val_ac66f0 = __item_ac66f0.getValue();
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "parameters", value);
     }
 
@@ -2070,7 +2082,7 @@ public class RosServiceInstance extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param parameters This parameter is required.
          */
-        public Builder parameters(final java.lang.String parameters) {
+        public Builder parameters(final com.aliyun.ros.cdk.core.IResolvable parameters) {
             this.props.parameters(parameters);
             return this;
         }
@@ -2078,7 +2090,7 @@ public class RosServiceInstance extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param parameters This parameter is required.
          */
-        public Builder parameters(final com.aliyun.ros.cdk.core.IResolvable parameters) {
+        public Builder parameters(final java.util.Map<java.lang.String, ? extends java.lang.Object> parameters) {
             this.props.parameters(parameters);
             return this;
         }

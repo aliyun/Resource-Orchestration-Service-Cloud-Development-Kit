@@ -415,6 +415,13 @@ function RosMemberPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('namespace', ros.validateString)(properties.namespace));
     errors.collect(ros.propertyValidator('workspace', ros.requiredValidator)(properties.workspace));
+    if(properties.workspace && (Array.isArray(properties.workspace) || (typeof properties.workspace) === 'string')) {
+        errors.collect(ros.propertyValidator('workspace', ros.validateLength)({
+            data: properties.workspace.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
     errors.collect(ros.propertyValidator('workspace', ros.validateString)(properties.workspace));
     return errors.wrap('supplied properties not correct for "RosMemberProps"');
 }
@@ -576,7 +583,7 @@ function rosNamespacePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::Namespace`, which is used to create a project.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::Namespace`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Namespace` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-namespace
  */

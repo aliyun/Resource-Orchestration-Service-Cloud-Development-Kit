@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kafka.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::KAFKA::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.335Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:26.674Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.datasource.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 

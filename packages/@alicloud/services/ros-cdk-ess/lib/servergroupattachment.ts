@@ -41,7 +41,7 @@ Note This parameter is returned only after you set the ForceAttach parameter to 
     readonly attrScalingActivityId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ServerGroupAttachment`, which is used to add one or more Server Load Balancer (SLB) server groups to a scaling group. Supported SLB server groups include Application Load Balancer (ALB) server groups and Network Load Balancer (NLB) server groups.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ServerGroupAttachment`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosServerGroupAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-servergroupattachment
  */

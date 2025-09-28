@@ -625,7 +625,7 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::DBInstance`, which is used to create an AnalyticDB for PostgreSQL instance in reserved storage mode.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::DBInstance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-dbinstance
  */
@@ -1328,7 +1328,7 @@ function rosElasticDBInstancePropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::ElasticDBInstance`, which is used to create an AnalyticDB for PostgreSQL instance in elastic storage mode.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::ElasticDBInstance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ElasticDBInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-elasticdbinstance
  */
@@ -1719,5 +1719,266 @@ export class RosInstancePublicConnection extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosInstancePublicConnectionPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosSupabaseProject`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-supabaseproject
+ */
+export interface RosSupabaseProjectProps {
+
+    /**
+     * @Property accountPassword: The password for the initial account.
+     * It consists of three or more types of capital letters, lowercase letters, numbers, and special characters.
+     * Supported special characters: !@#$%^&*()_+-=
+     * The length is 8~32 characters.
+     */
+    readonly accountPassword: string | ros.IResolvable;
+
+    /**
+     * @Property projectName: Project name.The naming rules are as follows:
+     * The length is 1~128 characters.
+     * Only English letters, numbers, dash (-) and underscore (_).
+     * Must start with English letters or underscores (_).
+     */
+    readonly projectName: string | ros.IResolvable;
+
+    /**
+     * @Property projectSpec: Supabase instance specification, default is 1C1G.
+     */
+    readonly projectSpec: string | ros.IResolvable;
+
+    /**
+     * @Property securityIpList: IP whitelist.
+     * 127.0.0.1 means that any external IP access is prohibited. You can call the ModifySecurityIps interface to modify the IP whitelist after the instance is created.
+     */
+    readonly securityIpList: string | ros.IResolvable;
+
+    /**
+     * @Property vpcId: VPC ID.
+     * illustrate
+     * You can call the DescribeRdsVpcs interface to view the available VPC IDs.
+     * This parameter must be passed in.
+     */
+    readonly vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchId: vSwitch ID.
+     * illustrate
+     * vSwitchId is required.
+     * The Availability Zone where the vSwitch is located must be consistent with the ZoneId.
+     */
+    readonly vSwitchId: string | ros.IResolvable;
+
+    /**
+     * @Property zoneId: Availability Zone ID.
+     * Description You can call the DescribeRegions interface to view the available Availability Zone ID.
+     */
+    readonly zoneId: string | ros.IResolvable;
+
+    /**
+     * @Property diskPerformanceLevel: Cloud disk PL level, default PL0. Selectable value:
+     * PL0
+     * PL1
+     */
+    readonly diskPerformanceLevel?: string | ros.IResolvable;
+
+    /**
+     * @Property storageSize: Storage space size, unit GB, default 1GB.
+     */
+    readonly storageSize?: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSupabaseProjectProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSupabaseProjectProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSupabaseProjectPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('projectSpec', ros.requiredValidator)(properties.projectSpec));
+    errors.collect(ros.propertyValidator('projectSpec', ros.validateString)(properties.projectSpec));
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('projectName', ros.requiredValidator)(properties.projectName));
+    if(properties.projectName && (typeof properties.projectName) !== 'object') {
+        errors.collect(ros.propertyValidator('projectName', ros.validateAllowedPattern)({
+          data: properties.projectName,
+          reg: /^[a-zA-Z_][a-zA-Z0-9_-]{0,127}$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('projectName', ros.validateString)(properties.projectName));
+    errors.collect(ros.propertyValidator('securityIpList', ros.requiredValidator)(properties.securityIpList));
+    errors.collect(ros.propertyValidator('securityIpList', ros.validateString)(properties.securityIpList));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    if(properties.diskPerformanceLevel && (typeof properties.diskPerformanceLevel) !== 'object') {
+        errors.collect(ros.propertyValidator('diskPerformanceLevel', ros.validateAllowedValues)({
+          data: properties.diskPerformanceLevel,
+          allowedValues: ["PL0","PL1"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('diskPerformanceLevel', ros.validateString)(properties.diskPerformanceLevel));
+    errors.collect(ros.propertyValidator('storageSize', ros.validateNumber)(properties.storageSize));
+    errors.collect(ros.propertyValidator('accountPassword', ros.requiredValidator)(properties.accountPassword));
+    if(properties.accountPassword && (typeof properties.accountPassword) !== 'object') {
+        errors.collect(ros.propertyValidator('accountPassword', ros.validateAllowedPattern)({
+          data: properties.accountPassword,
+          reg: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+=-]).{8,32}$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('accountPassword', ros.validateString)(properties.accountPassword));
+    return errors.wrap('supplied properties not correct for "RosSupabaseProjectProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::GPDB::SupabaseProject` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSupabaseProjectProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::GPDB::SupabaseProject` resource.
+ */
+// @ts-ignore TS6133
+function rosSupabaseProjectPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSupabaseProjectPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'AccountPassword': ros.stringToRosTemplate(properties.accountPassword),
+      'ProjectName': ros.stringToRosTemplate(properties.projectName),
+      'ProjectSpec': ros.stringToRosTemplate(properties.projectSpec),
+      'SecurityIPList': ros.stringToRosTemplate(properties.securityIpList),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'DiskPerformanceLevel': ros.stringToRosTemplate(properties.diskPerformanceLevel),
+      'StorageSize': ros.numberToRosTemplate(properties.storageSize),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::SupabaseProject`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SupabaseProject` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-supabaseproject
+ */
+export class RosSupabaseProject extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::GPDB::SupabaseProject";
+
+    /**
+     * @Attribute ProjectId: Supabase instance ID
+     */
+    public readonly attrProjectId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property accountPassword: The password for the initial account.
+     * It consists of three or more types of capital letters, lowercase letters, numbers, and special characters.
+     * Supported special characters: !@#$%^&*()_+-=
+     * The length is 8~32 characters.
+     */
+    public accountPassword: string | ros.IResolvable;
+
+    /**
+     * @Property projectName: Project name.The naming rules are as follows:
+     * The length is 1~128 characters.
+     * Only English letters, numbers, dash (-) and underscore (_).
+     * Must start with English letters or underscores (_).
+     */
+    public projectName: string | ros.IResolvable;
+
+    /**
+     * @Property projectSpec: Supabase instance specification, default is 1C1G.
+     */
+    public projectSpec: string | ros.IResolvable;
+
+    /**
+     * @Property securityIpList: IP whitelist.
+     * 127.0.0.1 means that any external IP access is prohibited. You can call the ModifySecurityIps interface to modify the IP whitelist after the instance is created.
+     */
+    public securityIpList: string | ros.IResolvable;
+
+    /**
+     * @Property vpcId: VPC ID.
+     * illustrate
+     * You can call the DescribeRdsVpcs interface to view the available VPC IDs.
+     * This parameter must be passed in.
+     */
+    public vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchId: vSwitch ID.
+     * illustrate
+     * vSwitchId is required.
+     * The Availability Zone where the vSwitch is located must be consistent with the ZoneId.
+     */
+    public vSwitchId: string | ros.IResolvable;
+
+    /**
+     * @Property zoneId: Availability Zone ID.
+     * Description You can call the DescribeRegions interface to view the available Availability Zone ID.
+     */
+    public zoneId: string | ros.IResolvable;
+
+    /**
+     * @Property diskPerformanceLevel: Cloud disk PL level, default PL0. Selectable value:
+     * PL0
+     * PL1
+     */
+    public diskPerformanceLevel: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property storageSize: Storage space size, unit GB, default 1GB.
+     */
+    public storageSize: number | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSupabaseProjectProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSupabaseProject.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrProjectId = this.getAtt('ProjectId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.accountPassword = props.accountPassword;
+        this.projectName = props.projectName;
+        this.projectSpec = props.projectSpec;
+        this.securityIpList = props.securityIpList;
+        this.vpcId = props.vpcId;
+        this.vSwitchId = props.vSwitchId;
+        this.zoneId = props.zoneId;
+        this.diskPerformanceLevel = props.diskPerformanceLevel;
+        this.storageSize = props.storageSize;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            accountPassword: this.accountPassword,
+            projectName: this.projectName,
+            projectSpec: this.projectSpec,
+            securityIpList: this.securityIpList,
+            vpcId: this.vpcId,
+            vSwitchId: this.vSwitchId,
+            zoneId: this.zoneId,
+            diskPerformanceLevel: this.diskPerformanceLevel,
+            storageSize: this.storageSize,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSupabaseProjectPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }

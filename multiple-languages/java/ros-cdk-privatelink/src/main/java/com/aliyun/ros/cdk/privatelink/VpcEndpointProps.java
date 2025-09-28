@@ -5,17 +5,10 @@ package com.aliyun.ros.cdk.privatelink;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpoint
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.542Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:28.267Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.VpcEndpointProps")
 @software.amazon.jsii.Jsii.Proxy(VpcEndpointProps.Jsii$Proxy.class)
 public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable {
-
-    /**
-     * Property securityGroupId: The security group associated with the endpoint network interface.
-     * <p>
-     * The security group can control the data communication from the VPC to the endpoint network interface.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getSecurityGroupId();
 
     /**
      * Property vpcId: The VPC to which the endpoint belongs.
@@ -56,6 +49,15 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
      * false (default): no
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getProtectedEnabled() {
+        return null;
+    }
+
+    /**
+     * Property securityGroupId: The security group associated with the endpoint network interface.
+     * <p>
+     * The security group can control the data communication from the VPC to the endpoint network interface.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
         return null;
     }
 
@@ -112,39 +114,17 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link VpcEndpointProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<VpcEndpointProps> {
-        java.lang.Object securityGroupId;
         java.lang.Object vpcId;
         java.lang.Object endpointDescription;
         java.lang.Object endpointName;
         java.lang.Object endpointType;
         java.lang.Object protectedEnabled;
+        java.lang.Object securityGroupId;
         java.lang.Object serviceId;
         java.lang.Object serviceName;
         java.util.List<com.aliyun.ros.cdk.privatelink.RosVpcEndpoint.TagsProperty> tags;
         java.lang.Object zone;
         java.lang.Object zonePrivateIpAddressCount;
-
-        /**
-         * Sets the value of {@link VpcEndpointProps#getSecurityGroupId}
-         * @param securityGroupId Property securityGroupId: The security group associated with the endpoint network interface. This parameter is required.
-         *                        The security group can control the data communication from the VPC to the endpoint network interface.
-         * @return {@code this}
-         */
-        public Builder securityGroupId(com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
-            this.securityGroupId = securityGroupId;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link VpcEndpointProps#getSecurityGroupId}
-         * @param securityGroupId Property securityGroupId: The security group associated with the endpoint network interface. This parameter is required.
-         *                        The security group can control the data communication from the VPC to the endpoint network interface.
-         * @return {@code this}
-         */
-        public Builder securityGroupId(java.util.List<? extends java.lang.Object> securityGroupId) {
-            this.securityGroupId = securityGroupId;
-            return this;
-        }
 
         /**
          * Sets the value of {@link VpcEndpointProps#getVpcId}
@@ -255,6 +235,28 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
          */
         public Builder protectedEnabled(com.aliyun.ros.cdk.core.IResolvable protectedEnabled) {
             this.protectedEnabled = protectedEnabled;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link VpcEndpointProps#getSecurityGroupId}
+         * @param securityGroupId Property securityGroupId: The security group associated with the endpoint network interface.
+         *                        The security group can control the data communication from the VPC to the endpoint network interface.
+         * @return {@code this}
+         */
+        public Builder securityGroupId(com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
+            this.securityGroupId = securityGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link VpcEndpointProps#getSecurityGroupId}
+         * @param securityGroupId Property securityGroupId: The security group associated with the endpoint network interface.
+         *                        The security group can control the data communication from the VPC to the endpoint network interface.
+         * @return {@code this}
+         */
+        public Builder securityGroupId(java.util.List<? extends java.lang.Object> securityGroupId) {
+            this.securityGroupId = securityGroupId;
             return this;
         }
 
@@ -372,12 +374,12 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements VpcEndpointProps {
-        private final java.lang.Object securityGroupId;
         private final java.lang.Object vpcId;
         private final java.lang.Object endpointDescription;
         private final java.lang.Object endpointName;
         private final java.lang.Object endpointType;
         private final java.lang.Object protectedEnabled;
+        private final java.lang.Object securityGroupId;
         private final java.lang.Object serviceId;
         private final java.lang.Object serviceName;
         private final java.util.List<com.aliyun.ros.cdk.privatelink.RosVpcEndpoint.TagsProperty> tags;
@@ -390,12 +392,12 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.endpointDescription = software.amazon.jsii.Kernel.get(this, "endpointDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.endpointName = software.amazon.jsii.Kernel.get(this, "endpointName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.endpointType = software.amazon.jsii.Kernel.get(this, "endpointType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.protectedEnabled = software.amazon.jsii.Kernel.get(this, "protectedEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serviceId = software.amazon.jsii.Kernel.get(this, "serviceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serviceName = software.amazon.jsii.Kernel.get(this, "serviceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.privatelink.RosVpcEndpoint.TagsProperty.class)));
@@ -409,22 +411,17 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
         @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.securityGroupId = java.util.Objects.requireNonNull(builder.securityGroupId, "securityGroupId is required");
             this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
             this.endpointDescription = builder.endpointDescription;
             this.endpointName = builder.endpointName;
             this.endpointType = builder.endpointType;
             this.protectedEnabled = builder.protectedEnabled;
+            this.securityGroupId = builder.securityGroupId;
             this.serviceId = builder.serviceId;
             this.serviceName = builder.serviceName;
             this.tags = (java.util.List<com.aliyun.ros.cdk.privatelink.RosVpcEndpoint.TagsProperty>)builder.tags;
             this.zone = builder.zone;
             this.zonePrivateIpAddressCount = builder.zonePrivateIpAddressCount;
-        }
-
-        @Override
-        public final java.lang.Object getSecurityGroupId() {
-            return this.securityGroupId;
         }
 
         @Override
@@ -450,6 +447,11 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
         @Override
         public final java.lang.Object getProtectedEnabled() {
             return this.protectedEnabled;
+        }
+
+        @Override
+        public final java.lang.Object getSecurityGroupId() {
+            return this.securityGroupId;
         }
 
         @Override
@@ -483,7 +485,6 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
-            data.set("securityGroupId", om.valueToTree(this.getSecurityGroupId()));
             data.set("vpcId", om.valueToTree(this.getVpcId()));
             if (this.getEndpointDescription() != null) {
                 data.set("endpointDescription", om.valueToTree(this.getEndpointDescription()));
@@ -496,6 +497,9 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
             }
             if (this.getProtectedEnabled() != null) {
                 data.set("protectedEnabled", om.valueToTree(this.getProtectedEnabled()));
+            }
+            if (this.getSecurityGroupId() != null) {
+                data.set("securityGroupId", om.valueToTree(this.getSecurityGroupId()));
             }
             if (this.getServiceId() != null) {
                 data.set("serviceId", om.valueToTree(this.getServiceId()));
@@ -530,12 +534,12 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
 
             VpcEndpointProps.Jsii$Proxy that = (VpcEndpointProps.Jsii$Proxy) o;
 
-            if (!securityGroupId.equals(that.securityGroupId)) return false;
             if (!vpcId.equals(that.vpcId)) return false;
             if (this.endpointDescription != null ? !this.endpointDescription.equals(that.endpointDescription) : that.endpointDescription != null) return false;
             if (this.endpointName != null ? !this.endpointName.equals(that.endpointName) : that.endpointName != null) return false;
             if (this.endpointType != null ? !this.endpointType.equals(that.endpointType) : that.endpointType != null) return false;
             if (this.protectedEnabled != null ? !this.protectedEnabled.equals(that.protectedEnabled) : that.protectedEnabled != null) return false;
+            if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
             if (this.serviceId != null ? !this.serviceId.equals(that.serviceId) : that.serviceId != null) return false;
             if (this.serviceName != null ? !this.serviceName.equals(that.serviceName) : that.serviceName != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
@@ -545,12 +549,12 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
 
         @Override
         public final int hashCode() {
-            int result = this.securityGroupId.hashCode();
-            result = 31 * result + (this.vpcId.hashCode());
+            int result = this.vpcId.hashCode();
             result = 31 * result + (this.endpointDescription != null ? this.endpointDescription.hashCode() : 0);
             result = 31 * result + (this.endpointName != null ? this.endpointName.hashCode() : 0);
             result = 31 * result + (this.endpointType != null ? this.endpointType.hashCode() : 0);
             result = 31 * result + (this.protectedEnabled != null ? this.protectedEnabled.hashCode() : 0);
+            result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
             result = 31 * result + (this.serviceId != null ? this.serviceId.hashCode() : 0);
             result = 31 * result + (this.serviceName != null ? this.serviceName.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);

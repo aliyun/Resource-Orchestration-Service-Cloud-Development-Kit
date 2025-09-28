@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::ManagedPolicy`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::ManagedPolicy`, which is used to create a Resource Access Management (RAM) policy.
 type RosManagedPolicy interface {
 	alicloudroscdkcore.RosResource
 	AttrPolicyName() alicloudroscdkcore.IResolvable

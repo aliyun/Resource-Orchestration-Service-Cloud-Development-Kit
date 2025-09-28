@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms.datasource;
 /**
  * Represents a <code>AlarmContacts</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:44.929Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.562Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.datasource.IAlarmContacts")
 @software.amazon.jsii.Jsii.Proxy(IAlarmContacts.Jsii$Proxy.class)
 public interface IAlarmContacts extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

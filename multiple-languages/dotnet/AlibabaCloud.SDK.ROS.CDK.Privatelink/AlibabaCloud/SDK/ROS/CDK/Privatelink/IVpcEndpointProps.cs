@@ -11,16 +11,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
     [JsiiInterface(nativeType: typeof(IVpcEndpointProps), fullyQualifiedName: "@alicloud/ros-cdk-privatelink.VpcEndpointProps")]
     public interface IVpcEndpointProps
     {
-        /// <summary>Property securityGroupId: The security group associated with the endpoint network interface.</summary>
-        /// <remarks>
-        /// The security group can control the data communication from the VPC to the endpoint network interface.
-        /// </remarks>
-        [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
-        object SecurityGroupId
-        {
-            get;
-        }
-
         /// <summary>Property vpcId: The VPC to which the endpoint belongs.</summary>
         [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object VpcId
@@ -77,6 +67,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
         [JsiiProperty(name: "protectedEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ProtectedEnabled
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property securityGroupId: The security group associated with the endpoint network interface.</summary>
+        /// <remarks>
+        /// The security group can control the data communication from the VPC to the endpoint network interface.
+        /// </remarks>
+        [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SecurityGroupId
         {
             get
             {
@@ -162,16 +166,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
             {
             }
 
-            /// <summary>Property securityGroupId: The security group associated with the endpoint network interface.</summary>
-            /// <remarks>
-            /// The security group can control the data communication from the VPC to the endpoint network interface.
-            /// </remarks>
-            [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
-            public object SecurityGroupId
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
             /// <summary>Property vpcId: The VPC to which the endpoint belongs.</summary>
             [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object VpcId
@@ -219,6 +213,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
             [JsiiOptional]
             [JsiiProperty(name: "protectedEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ProtectedEnabled
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property securityGroupId: The security group associated with the endpoint network interface.</summary>
+            /// <remarks>
+            /// The security group can control the data communication from the VPC to the endpoint network interface.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? SecurityGroupId
             {
                 get => GetInstanceProperty<object?>();
             }

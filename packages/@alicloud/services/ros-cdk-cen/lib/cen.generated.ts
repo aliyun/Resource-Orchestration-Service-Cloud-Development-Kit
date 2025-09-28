@@ -2132,6 +2132,425 @@ export class RosChildInstanceRouteEntryToAttachment extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosFlowlog`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-flowlog
+ */
+export interface RosFlowlogProps {
+
+    /**
+     * @Property cenId: The ID of the CEN instance.
+     */
+    readonly cenId: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the flow log.
+     * The description is optional. If you enter a description, it must be 1 to 256 characters in length, and cannot start with http:\/\/ or https:\/\/.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property flowLogName: The flow log name.
+     * The name can be empty or 1 to 128 characters in length, and cannot start with http:\/\/ or https:\/\/.
+     */
+    readonly flowLogName?: string | ros.IResolvable;
+
+    /**
+     * @Property interval: The time window for collecting log data. Unit: seconds. Valid values: 60 and 600. Default value: 600.
+     */
+    readonly interval?: number | ros.IResolvable;
+
+    /**
+     * @Property logFormatString: The strings that define the fields in the flow log.
+     * Format: ${Field 1}${Field 2}${Field 3}...{Field n}
+     *     * If you do not configure this parameter, all fields are included in the flow log.
+     *     * If you configure this parameter, start the string with ${srcaddr}${dstaddr}${bytes} because ${srcaddr}${dstaddr}${bytes} are required variables.
+     */
+    readonly logFormatString?: string | ros.IResolvable;
+
+    /**
+     * @Property logStoreName: The Logstore that stores the captured traffic data.
+     * * If a Logstore is already created in the selected region, enter the name of the Logstore.
+     * * If no Logstores are created in the selected region, enter a name and the system automatically creates a Logstore. The name of the Logstore. The name must meet the following requirements:
+     *     ** The name must be unique in a project.
+     *     ** The name can contain only lowercase letters, digits, hyphens (-), and underscores (_).
+     *     ** The name must start and end with a lowercase letter or a digit.
+     *     ** The name must be 3 to 63 characters in length.
+     */
+    readonly logStoreName?: string | ros.IResolvable;
+
+    /**
+     * @Property projectName: The project that stores the captured traffic data. 
+     * * If a project is already created in the selected region, enter the name of the project.
+     * * If no projects are created in the selected region, enter a name and the system automatically creates a project.
+     *     The project name must be unique in a region. You cannot change the name after the project is created. The name must meet the following requirements:
+     *         ** The name must be globally unique.
+     *         ** The name can contain only lowercase letters, digits, and hyphens (-).
+     *         ** The name must start and end with a lowercase letter or a digit.
+     *         ** The name must be 3 to 63 characters in length.
+     */
+    readonly projectName?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags of flow log.
+     */
+    readonly tags?: RosFlowlog.TagsProperty[];
+
+    /**
+     * @Property transitRouterAttachmentId: The ID of the VPC connection, VPN connection, VBR connection, ECR connection, or inter-region connection.
+     * If you create the flow log for a transfer router, skip this parameter.
+     */
+    readonly transitRouterAttachmentId?: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterId: The ID of the transit router.
+     */
+    readonly transitRouterId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosFlowlogProps`
+ *
+ * @param properties - the TypeScript properties of a `RosFlowlogProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosFlowlogPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('transitRouterAttachmentId', ros.validateString)(properties.transitRouterAttachmentId));
+    if(properties.flowLogName && (Array.isArray(properties.flowLogName) || (typeof properties.flowLogName) === 'string')) {
+        errors.collect(ros.propertyValidator('flowLogName', ros.validateLength)({
+            data: properties.flowLogName.length,
+            min: 1,
+            max: 128,
+          }));
+    }
+    errors.collect(ros.propertyValidator('flowLogName', ros.validateString)(properties.flowLogName));
+    if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
+        errors.collect(ros.propertyValidator('description', ros.validateLength)({
+            data: properties.description.length,
+            min: 1,
+            max: 256,
+          }));
+    }
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    if(properties.logStoreName && (Array.isArray(properties.logStoreName) || (typeof properties.logStoreName) === 'string')) {
+        errors.collect(ros.propertyValidator('logStoreName', ros.validateLength)({
+            data: properties.logStoreName.length,
+            min: 3,
+            max: 63,
+          }));
+    }
+    errors.collect(ros.propertyValidator('logStoreName', ros.validateString)(properties.logStoreName));
+    errors.collect(ros.propertyValidator('logFormatString', ros.validateString)(properties.logFormatString));
+    if(properties.projectName && (Array.isArray(properties.projectName) || (typeof properties.projectName) === 'string')) {
+        errors.collect(ros.propertyValidator('projectName', ros.validateLength)({
+            data: properties.projectName.length,
+            min: 3,
+            max: 63,
+          }));
+    }
+    errors.collect(ros.propertyValidator('projectName', ros.validateString)(properties.projectName));
+    errors.collect(ros.propertyValidator('cenId', ros.requiredValidator)(properties.cenId));
+    errors.collect(ros.propertyValidator('cenId', ros.validateString)(properties.cenId));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosFlowlog_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('transitRouterId', ros.validateString)(properties.transitRouterId));
+    if(properties.interval && (typeof properties.interval) !== 'object') {
+        errors.collect(ros.propertyValidator('interval', ros.validateRange)({
+            data: properties.interval,
+            min: 60,
+            max: 600,
+          }));
+    }
+    errors.collect(ros.propertyValidator('interval', ros.validateNumber)(properties.interval));
+    return errors.wrap('supplied properties not correct for "RosFlowlogProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CEN::Flowlog` resource
+ *
+ * @param properties - the TypeScript properties of a `RosFlowlogProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CEN::Flowlog` resource.
+ */
+// @ts-ignore TS6133
+function rosFlowlogPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosFlowlogPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'CenId': ros.stringToRosTemplate(properties.cenId),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'FlowLogName': ros.stringToRosTemplate(properties.flowLogName),
+      'Interval': ros.numberToRosTemplate(properties.interval),
+      'LogFormatString': ros.stringToRosTemplate(properties.logFormatString),
+      'LogStoreName': ros.stringToRosTemplate(properties.logStoreName),
+      'ProjectName': ros.stringToRosTemplate(properties.projectName),
+      'Tags': ros.listMapper(rosFlowlogTagsPropertyToRosTemplate)(properties.tags),
+      'TransitRouterAttachmentId': ros.stringToRosTemplate(properties.transitRouterAttachmentId),
+      'TransitRouterId': ros.stringToRosTemplate(properties.transitRouterId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::Flowlog`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Flowlog` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-flowlog
+ */
+export class RosFlowlog extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::Flowlog";
+
+    /**
+     * @Attribute CenId: The ID of the CEN instance.
+     */
+    public readonly attrCenId: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: The time when the flow log was created.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The description of the flow log.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute FlowLogId: The ID of the flow log.
+     */
+    public readonly attrFlowLogId: ros.IResolvable;
+
+    /**
+     * @Attribute FlowLogName: The flow log name.
+     */
+    public readonly attrFlowLogName: ros.IResolvable;
+
+    /**
+     * @Attribute FlowLogVersion: The flow log version.
+     */
+    public readonly attrFlowLogVersion: ros.IResolvable;
+
+    /**
+     * @Attribute Interval: The time window for collecting log data.
+     */
+    public readonly attrInterval: ros.IResolvable;
+
+    /**
+     * @Attribute LogFormatString: The strings that define the fields in the flow log.
+     */
+    public readonly attrLogFormatString: ros.IResolvable;
+
+    /**
+     * @Attribute LogStoreName: The Logstore that stores the captured traffic data.
+     */
+    public readonly attrLogStoreName: ros.IResolvable;
+
+    /**
+     * @Attribute ProjectName: The project that stores the captured traffic data.
+     */
+    public readonly attrProjectName: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: The tag of the flow log.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterAttachmentId: The ID of the VPC connection, VPN connection, VBR connection, ECR connection, or inter-region connection.
+     */
+    public readonly attrTransitRouterAttachmentId: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterId: The ID of the transit router.
+     */
+    public readonly attrTransitRouterId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property cenId: The ID of the CEN instance.
+     */
+    public cenId: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the flow log.
+     * The description is optional. If you enter a description, it must be 1 to 256 characters in length, and cannot start with http:\/\/ or https:\/\/.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property flowLogName: The flow log name.
+     * The name can be empty or 1 to 128 characters in length, and cannot start with http:\/\/ or https:\/\/.
+     */
+    public flowLogName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property interval: The time window for collecting log data. Unit: seconds. Valid values: 60 and 600. Default value: 600.
+     */
+    public interval: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property logFormatString: The strings that define the fields in the flow log.
+     * Format: ${Field 1}${Field 2}${Field 3}...{Field n}
+     *     * If you do not configure this parameter, all fields are included in the flow log.
+     *     * If you configure this parameter, start the string with ${srcaddr}${dstaddr}${bytes} because ${srcaddr}${dstaddr}${bytes} are required variables.
+     */
+    public logFormatString: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property logStoreName: The Logstore that stores the captured traffic data.
+     * * If a Logstore is already created in the selected region, enter the name of the Logstore.
+     * * If no Logstores are created in the selected region, enter a name and the system automatically creates a Logstore. The name of the Logstore. The name must meet the following requirements:
+     *     ** The name must be unique in a project.
+     *     ** The name can contain only lowercase letters, digits, hyphens (-), and underscores (_).
+     *     ** The name must start and end with a lowercase letter or a digit.
+     *     ** The name must be 3 to 63 characters in length.
+     */
+    public logStoreName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property projectName: The project that stores the captured traffic data. 
+     * * If a project is already created in the selected region, enter the name of the project.
+     * * If no projects are created in the selected region, enter a name and the system automatically creates a project.
+     *     The project name must be unique in a region. You cannot change the name after the project is created. The name must meet the following requirements:
+     *         ** The name must be globally unique.
+     *         ** The name can contain only lowercase letters, digits, and hyphens (-).
+     *         ** The name must start and end with a lowercase letter or a digit.
+     *         ** The name must be 3 to 63 characters in length.
+     */
+    public projectName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags of flow log.
+     */
+    public tags: RosFlowlog.TagsProperty[] | undefined;
+
+    /**
+     * @Property transitRouterAttachmentId: The ID of the VPC connection, VPN connection, VBR connection, ECR connection, or inter-region connection.
+     * If you create the flow log for a transfer router, skip this parameter.
+     */
+    public transitRouterAttachmentId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property transitRouterId: The ID of the transit router.
+     */
+    public transitRouterId: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosFlowlogProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosFlowlog.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCenId = this.getAtt('CenId');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDescription = this.getAtt('Description');
+        this.attrFlowLogId = this.getAtt('FlowLogId');
+        this.attrFlowLogName = this.getAtt('FlowLogName');
+        this.attrFlowLogVersion = this.getAtt('FlowLogVersion');
+        this.attrInterval = this.getAtt('Interval');
+        this.attrLogFormatString = this.getAtt('LogFormatString');
+        this.attrLogStoreName = this.getAtt('LogStoreName');
+        this.attrProjectName = this.getAtt('ProjectName');
+        this.attrTags = this.getAtt('Tags');
+        this.attrTransitRouterAttachmentId = this.getAtt('TransitRouterAttachmentId');
+        this.attrTransitRouterId = this.getAtt('TransitRouterId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.cenId = props.cenId;
+        this.description = props.description;
+        this.flowLogName = props.flowLogName;
+        this.interval = props.interval;
+        this.logFormatString = props.logFormatString;
+        this.logStoreName = props.logStoreName;
+        this.projectName = props.projectName;
+        this.tags = props.tags;
+        this.transitRouterAttachmentId = props.transitRouterAttachmentId;
+        this.transitRouterId = props.transitRouterId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            cenId: this.cenId,
+            description: this.description,
+            flowLogName: this.flowLogName,
+            interval: this.interval,
+            logFormatString: this.logFormatString,
+            logStoreName: this.logStoreName,
+            projectName: this.projectName,
+            tags: this.tags,
+            transitRouterAttachmentId: this.transitRouterAttachmentId,
+            transitRouterId: this.transitRouterId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosFlowlogPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosFlowlog {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosFlowlog_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CEN::Flowlog.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CEN::Flowlog.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosFlowlogTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosFlowlog_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
  * Properties for defining a `RosRouteEntry`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-routeentry
  */
@@ -3681,7 +4100,7 @@ export interface RosTransitRouterVpcAttachmentProps {
     readonly cenId?: string | ros.IResolvable;
 
     /**
-     * @Property chargeType:
+     * @Property chargeType: The charge type of the transit router vpc attachment.
      */
     readonly chargeType?: string | ros.IResolvable;
 
@@ -3736,6 +4155,12 @@ function RosTransitRouterVpcAttachmentPropsValidator(properties: any): ros.Valid
     errors.collect(ros.propertyValidator('autoCreateVpcRoute', ros.validateBoolean)(properties.autoCreateVpcRoute));
     errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
+          data: properties.chargeType,
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST"],
+        }));
+    }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
     errors.collect(ros.propertyValidator('routeTablePropagationEnabled', ros.validateBoolean)(properties.routeTablePropagationEnabled));
     errors.collect(ros.propertyValidator('cenId', ros.validateString)(properties.cenId));
@@ -3864,7 +4289,7 @@ export class RosTransitRouterVpcAttachment extends ros.RosResource {
     public cenId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property chargeType:
+     * @Property chargeType: The charge type of the transit router vpc attachment.
      */
     public chargeType: string | ros.IResolvable | undefined;
 

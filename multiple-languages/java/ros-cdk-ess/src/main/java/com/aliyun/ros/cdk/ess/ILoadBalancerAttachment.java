@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * Represents a <code>LoadBalancerAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.434Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:25.672Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ILoadBalancerAttachment")
 @software.amazon.jsii.Jsii.Proxy(ILoadBalancerAttachment.Jsii$Proxy.class)
 public interface ILoadBalancerAttachment extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

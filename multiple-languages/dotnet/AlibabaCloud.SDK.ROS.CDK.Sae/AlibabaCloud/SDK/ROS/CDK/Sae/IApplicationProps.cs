@@ -276,6 +276,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
             }
         }
 
+        /// <summary>Property enableSidecarResourceIsolated: Whether to enable sidecar resource isolation.</summary>
+        [JsiiProperty(name: "enableSidecarResourceIsolated", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? EnableSidecarResourceIsolated
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property envs: Container environment variable parameters.</summary>
         /// <remarks>
         /// For example: [{ "name": "envtmp", "value": "0"}]
@@ -308,6 +319,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         [JsiiProperty(name: "imageUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ImageUrl
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property initContainersConfig: Init container config.</summary>
+        [JsiiProperty(name: "initContainersConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sae.RosApplication.InitContainersConfigProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? InitContainersConfig
         {
             get
             {
@@ -758,6 +780,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
             }
         }
 
+        /// <summary>Property sidecarContainersConfig: Sidecar container config.</summary>
+        [JsiiProperty(name: "sidecarContainersConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sae.RosApplication.SidecarContainersConfigProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SidecarContainersConfig
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property slsConfigs: Log collection configuration file.</summary>
         [JsiiProperty(name: "slsConfigs", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1119,6 +1152,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property enableSidecarResourceIsolated: Whether to enable sidecar resource isolation.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "enableSidecarResourceIsolated", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EnableSidecarResourceIsolated
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property envs: Container environment variable parameters.</summary>
             /// <remarks>
             /// For example: [{ "name": "envtmp", "value": "0"}]
@@ -1145,6 +1186,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
             [JsiiOptional]
             [JsiiProperty(name: "imageUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ImageUrl
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property initContainersConfig: Init container config.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "initContainersConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sae.RosApplication.InitContainersConfigProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? InitContainersConfig
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -1495,6 +1544,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
             [JsiiOptional]
             [JsiiProperty(name: "serviceTags", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ServiceTags
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property sidecarContainersConfig: Sidecar container config.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "sidecarContainersConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sae.RosApplication.SidecarContainersConfigProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? SidecarContainersConfig
             {
                 get => GetInstanceProperty<object?>();
             }

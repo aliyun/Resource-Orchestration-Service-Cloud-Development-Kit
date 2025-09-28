@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Inspector that maintains an attribute bag.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:43.033Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:20.306Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.TreeInspector")
 public class TreeInspector extends software.amazon.jsii.JsiiObject {
 

@@ -86,7 +86,7 @@ export interface DBClusterProps {
     readonly encryptionType?: string | ros.IResolvable;
 
     /**
-     * Property period: Prepaid time period.If the payment type is Prepaid, this parameter is mandatory. Specify the prepaid cluster as a yearly or monthly type. Valid values:  Year, Month.
+     * Property period: The unit of the subscription duration.
      */
     readonly period?: string | ros.IResolvable;
 

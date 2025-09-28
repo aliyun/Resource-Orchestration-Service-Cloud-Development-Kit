@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::NLB::ServerGroup`, which is used to create a server group for a Network Load Balancer (NLB) instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::NLB::ServerGroup`.
 type ServerGroup interface {
 	alicloudroscdkcore.Resource
 	IServerGroup

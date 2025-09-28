@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ehpc;
 /**
  * Represents a <code>ClusterV2</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.083Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:25.081Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.IClusterV2")
 @software.amazon.jsii.Jsii.Proxy(IClusterV2.Jsii$Proxy.class)
 public interface IClusterV2 extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

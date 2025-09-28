@@ -7,6 +7,7 @@ export * from './cenroutemap';
 export * from './cenrouteservice';
 export * from './cenvbrhealthcheck';
 export * from './childinstancerouteentrytoattachment';
+export * from './flowlog';
 export * from './routeentry';
 export * from './transitrouter';
 export * from './transitrouterpeerattachment';

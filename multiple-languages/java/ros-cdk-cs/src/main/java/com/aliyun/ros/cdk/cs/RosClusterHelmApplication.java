@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cs;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CS::ClusterHelmApplication</code>, which is used to deploy an application by using Helm.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CS::ClusterHelmApplication</code>The , which resource type deploys an application using Helm.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.217Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.894Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosClusterHelmApplication")
 public class RosClusterHelmApplication extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -165,6 +165,24 @@ public class RosClusterHelmApplication extends com.aliyun.ros.cdk.core.RosResour
      */
     public void setCredential(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.cs.RosClusterHelmApplication.CredentialProperty value) {
         software.amazon.jsii.Kernel.set(this, "credential", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIgnoreExisting() {
+        return software.amazon.jsii.Kernel.get(this, "ignoreExisting", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIgnoreExisting(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "ignoreExisting", value);
+    }
+
+    /**
+     */
+    public void setIgnoreExisting(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ignoreExisting", value);
     }
 
     /**
@@ -1092,6 +1110,23 @@ public class RosClusterHelmApplication extends com.aliyun.ros.cdk.core.RosResour
          */
         public Builder credential(final com.aliyun.ros.cdk.cs.RosClusterHelmApplication.CredentialProperty credential) {
             this.props.credential(credential);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param ignoreExisting This parameter is required.
+         */
+        public Builder ignoreExisting(final java.lang.String ignoreExisting) {
+            this.props.ignoreExisting(ignoreExisting);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ignoreExisting This parameter is required.
+         */
+        public Builder ignoreExisting(final com.aliyun.ros.cdk.core.IResolvable ignoreExisting) {
+            this.props.ignoreExisting(ignoreExisting);
             return this;
         }
 

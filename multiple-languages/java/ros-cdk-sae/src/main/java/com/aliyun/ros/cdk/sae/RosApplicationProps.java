@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.sae;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-application
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:50.431Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:29.416Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.RosApplicationProps")
 @software.amazon.jsii.Jsii.Proxy(RosApplicationProps.Jsii$Proxy.class)
 public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializable {
@@ -126,6 +126,12 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEnableSidecarResourceIsolated() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEnvs() {
         return null;
     }
@@ -139,6 +145,12 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getImageUrl() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInitContainersConfig() {
         return null;
     }
 
@@ -330,6 +342,12 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSidecarContainersConfig() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSlsConfigs() {
         return null;
     }
@@ -413,9 +431,11 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         java.lang.Object edasContainerVersion;
         java.lang.Object enableEbpf;
         java.lang.Object enableNewArms;
+        java.lang.Object enableSidecarResourceIsolated;
         java.lang.Object envs;
         java.lang.Object imagePullSecrets;
         java.lang.Object imageUrl;
+        java.lang.Object initContainersConfig;
         java.lang.Object jarStartArgs;
         java.lang.Object jarStartOptions;
         java.lang.Object jdk;
@@ -447,6 +467,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         java.lang.Object saeVersion;
         java.lang.Object securityGroupId;
         java.lang.Object serviceTags;
+        java.lang.Object sidecarContainersConfig;
         java.lang.Object slsConfigs;
         java.util.List<com.aliyun.ros.cdk.sae.RosApplication.TagsProperty> tags;
         java.lang.Object terminationGracePeriodSeconds;
@@ -878,6 +899,26 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosApplicationProps#getEnableSidecarResourceIsolated}
+         * @param enableSidecarResourceIsolated the value to be set.
+         * @return {@code this}
+         */
+        public Builder enableSidecarResourceIsolated(java.lang.Boolean enableSidecarResourceIsolated) {
+            this.enableSidecarResourceIsolated = enableSidecarResourceIsolated;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationProps#getEnableSidecarResourceIsolated}
+         * @param enableSidecarResourceIsolated the value to be set.
+         * @return {@code this}
+         */
+        public Builder enableSidecarResourceIsolated(com.aliyun.ros.cdk.core.IResolvable enableSidecarResourceIsolated) {
+            this.enableSidecarResourceIsolated = enableSidecarResourceIsolated;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosApplicationProps#getEnvs}
          * @param envs the value to be set.
          * @return {@code this}
@@ -934,6 +975,26 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
          */
         public Builder imageUrl(com.aliyun.ros.cdk.core.IResolvable imageUrl) {
             this.imageUrl = imageUrl;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationProps#getInitContainersConfig}
+         * @param initContainersConfig the value to be set.
+         * @return {@code this}
+         */
+        public Builder initContainersConfig(com.aliyun.ros.cdk.core.IResolvable initContainersConfig) {
+            this.initContainersConfig = initContainersConfig;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationProps#getInitContainersConfig}
+         * @param initContainersConfig the value to be set.
+         * @return {@code this}
+         */
+        public Builder initContainersConfig(java.util.List<? extends java.lang.Object> initContainersConfig) {
+            this.initContainersConfig = initContainersConfig;
             return this;
         }
 
@@ -1558,6 +1619,26 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosApplicationProps#getSidecarContainersConfig}
+         * @param sidecarContainersConfig the value to be set.
+         * @return {@code this}
+         */
+        public Builder sidecarContainersConfig(com.aliyun.ros.cdk.core.IResolvable sidecarContainersConfig) {
+            this.sidecarContainersConfig = sidecarContainersConfig;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationProps#getSidecarContainersConfig}
+         * @param sidecarContainersConfig the value to be set.
+         * @return {@code this}
+         */
+        public Builder sidecarContainersConfig(java.util.List<? extends java.lang.Object> sidecarContainersConfig) {
+            this.sidecarContainersConfig = sidecarContainersConfig;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosApplicationProps#getSlsConfigs}
          * @param slsConfigs the value to be set.
          * @return {@code this}
@@ -1765,9 +1846,11 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         private final java.lang.Object edasContainerVersion;
         private final java.lang.Object enableEbpf;
         private final java.lang.Object enableNewArms;
+        private final java.lang.Object enableSidecarResourceIsolated;
         private final java.lang.Object envs;
         private final java.lang.Object imagePullSecrets;
         private final java.lang.Object imageUrl;
+        private final java.lang.Object initContainersConfig;
         private final java.lang.Object jarStartArgs;
         private final java.lang.Object jarStartOptions;
         private final java.lang.Object jdk;
@@ -1799,6 +1882,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         private final java.lang.Object saeVersion;
         private final java.lang.Object securityGroupId;
         private final java.lang.Object serviceTags;
+        private final java.lang.Object sidecarContainersConfig;
         private final java.lang.Object slsConfigs;
         private final java.util.List<com.aliyun.ros.cdk.sae.RosApplication.TagsProperty> tags;
         private final java.lang.Object terminationGracePeriodSeconds;
@@ -1836,9 +1920,11 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             this.edasContainerVersion = software.amazon.jsii.Kernel.get(this, "edasContainerVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableEbpf = software.amazon.jsii.Kernel.get(this, "enableEbpf", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableNewArms = software.amazon.jsii.Kernel.get(this, "enableNewArms", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.enableSidecarResourceIsolated = software.amazon.jsii.Kernel.get(this, "enableSidecarResourceIsolated", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.envs = software.amazon.jsii.Kernel.get(this, "envs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.imagePullSecrets = software.amazon.jsii.Kernel.get(this, "imagePullSecrets", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.imageUrl = software.amazon.jsii.Kernel.get(this, "imageUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.initContainersConfig = software.amazon.jsii.Kernel.get(this, "initContainersConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.jarStartArgs = software.amazon.jsii.Kernel.get(this, "jarStartArgs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.jarStartOptions = software.amazon.jsii.Kernel.get(this, "jarStartOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.jdk = software.amazon.jsii.Kernel.get(this, "jdk", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1870,6 +1956,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             this.saeVersion = software.amazon.jsii.Kernel.get(this, "saeVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serviceTags = software.amazon.jsii.Kernel.get(this, "serviceTags", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.sidecarContainersConfig = software.amazon.jsii.Kernel.get(this, "sidecarContainersConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.slsConfigs = software.amazon.jsii.Kernel.get(this, "slsConfigs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.sae.RosApplication.TagsProperty.class)));
             this.terminationGracePeriodSeconds = software.amazon.jsii.Kernel.get(this, "terminationGracePeriodSeconds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1908,9 +1995,11 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             this.edasContainerVersion = builder.edasContainerVersion;
             this.enableEbpf = builder.enableEbpf;
             this.enableNewArms = builder.enableNewArms;
+            this.enableSidecarResourceIsolated = builder.enableSidecarResourceIsolated;
             this.envs = builder.envs;
             this.imagePullSecrets = builder.imagePullSecrets;
             this.imageUrl = builder.imageUrl;
+            this.initContainersConfig = builder.initContainersConfig;
             this.jarStartArgs = builder.jarStartArgs;
             this.jarStartOptions = builder.jarStartOptions;
             this.jdk = builder.jdk;
@@ -1942,6 +2031,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             this.saeVersion = builder.saeVersion;
             this.securityGroupId = builder.securityGroupId;
             this.serviceTags = builder.serviceTags;
+            this.sidecarContainersConfig = builder.sidecarContainersConfig;
             this.slsConfigs = builder.slsConfigs;
             this.tags = (java.util.List<com.aliyun.ros.cdk.sae.RosApplication.TagsProperty>)builder.tags;
             this.terminationGracePeriodSeconds = builder.terminationGracePeriodSeconds;
@@ -2059,6 +2149,11 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
+        public final java.lang.Object getEnableSidecarResourceIsolated() {
+            return this.enableSidecarResourceIsolated;
+        }
+
+        @Override
         public final java.lang.Object getEnvs() {
             return this.envs;
         }
@@ -2071,6 +2166,11 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         @Override
         public final java.lang.Object getImageUrl() {
             return this.imageUrl;
+        }
+
+        @Override
+        public final java.lang.Object getInitContainersConfig() {
+            return this.initContainersConfig;
         }
 
         @Override
@@ -2229,6 +2329,11 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
+        public final java.lang.Object getSidecarContainersConfig() {
+            return this.sidecarContainersConfig;
+        }
+
+        @Override
         public final java.lang.Object getSlsConfigs() {
             return this.slsConfigs;
         }
@@ -2330,6 +2435,9 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             if (this.getEnableNewArms() != null) {
                 data.set("enableNewArms", om.valueToTree(this.getEnableNewArms()));
             }
+            if (this.getEnableSidecarResourceIsolated() != null) {
+                data.set("enableSidecarResourceIsolated", om.valueToTree(this.getEnableSidecarResourceIsolated()));
+            }
             if (this.getEnvs() != null) {
                 data.set("envs", om.valueToTree(this.getEnvs()));
             }
@@ -2338,6 +2446,9 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             }
             if (this.getImageUrl() != null) {
                 data.set("imageUrl", om.valueToTree(this.getImageUrl()));
+            }
+            if (this.getInitContainersConfig() != null) {
+                data.set("initContainersConfig", om.valueToTree(this.getInitContainersConfig()));
             }
             if (this.getJarStartArgs() != null) {
                 data.set("jarStartArgs", om.valueToTree(this.getJarStartArgs()));
@@ -2432,6 +2543,9 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             if (this.getServiceTags() != null) {
                 data.set("serviceTags", om.valueToTree(this.getServiceTags()));
             }
+            if (this.getSidecarContainersConfig() != null) {
+                data.set("sidecarContainersConfig", om.valueToTree(this.getSidecarContainersConfig()));
+            }
             if (this.getSlsConfigs() != null) {
                 data.set("slsConfigs", om.valueToTree(this.getSlsConfigs()));
             }
@@ -2498,9 +2612,11 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             if (this.edasContainerVersion != null ? !this.edasContainerVersion.equals(that.edasContainerVersion) : that.edasContainerVersion != null) return false;
             if (this.enableEbpf != null ? !this.enableEbpf.equals(that.enableEbpf) : that.enableEbpf != null) return false;
             if (this.enableNewArms != null ? !this.enableNewArms.equals(that.enableNewArms) : that.enableNewArms != null) return false;
+            if (this.enableSidecarResourceIsolated != null ? !this.enableSidecarResourceIsolated.equals(that.enableSidecarResourceIsolated) : that.enableSidecarResourceIsolated != null) return false;
             if (this.envs != null ? !this.envs.equals(that.envs) : that.envs != null) return false;
             if (this.imagePullSecrets != null ? !this.imagePullSecrets.equals(that.imagePullSecrets) : that.imagePullSecrets != null) return false;
             if (this.imageUrl != null ? !this.imageUrl.equals(that.imageUrl) : that.imageUrl != null) return false;
+            if (this.initContainersConfig != null ? !this.initContainersConfig.equals(that.initContainersConfig) : that.initContainersConfig != null) return false;
             if (this.jarStartArgs != null ? !this.jarStartArgs.equals(that.jarStartArgs) : that.jarStartArgs != null) return false;
             if (this.jarStartOptions != null ? !this.jarStartOptions.equals(that.jarStartOptions) : that.jarStartOptions != null) return false;
             if (this.jdk != null ? !this.jdk.equals(that.jdk) : that.jdk != null) return false;
@@ -2532,6 +2648,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             if (this.saeVersion != null ? !this.saeVersion.equals(that.saeVersion) : that.saeVersion != null) return false;
             if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
             if (this.serviceTags != null ? !this.serviceTags.equals(that.serviceTags) : that.serviceTags != null) return false;
+            if (this.sidecarContainersConfig != null ? !this.sidecarContainersConfig.equals(that.sidecarContainersConfig) : that.sidecarContainersConfig != null) return false;
             if (this.slsConfigs != null ? !this.slsConfigs.equals(that.slsConfigs) : that.slsConfigs != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.terminationGracePeriodSeconds != null ? !this.terminationGracePeriodSeconds.equals(that.terminationGracePeriodSeconds) : that.terminationGracePeriodSeconds != null) return false;
@@ -2566,9 +2683,11 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             result = 31 * result + (this.edasContainerVersion != null ? this.edasContainerVersion.hashCode() : 0);
             result = 31 * result + (this.enableEbpf != null ? this.enableEbpf.hashCode() : 0);
             result = 31 * result + (this.enableNewArms != null ? this.enableNewArms.hashCode() : 0);
+            result = 31 * result + (this.enableSidecarResourceIsolated != null ? this.enableSidecarResourceIsolated.hashCode() : 0);
             result = 31 * result + (this.envs != null ? this.envs.hashCode() : 0);
             result = 31 * result + (this.imagePullSecrets != null ? this.imagePullSecrets.hashCode() : 0);
             result = 31 * result + (this.imageUrl != null ? this.imageUrl.hashCode() : 0);
+            result = 31 * result + (this.initContainersConfig != null ? this.initContainersConfig.hashCode() : 0);
             result = 31 * result + (this.jarStartArgs != null ? this.jarStartArgs.hashCode() : 0);
             result = 31 * result + (this.jarStartOptions != null ? this.jarStartOptions.hashCode() : 0);
             result = 31 * result + (this.jdk != null ? this.jdk.hashCode() : 0);
@@ -2600,6 +2719,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             result = 31 * result + (this.saeVersion != null ? this.saeVersion.hashCode() : 0);
             result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
             result = 31 * result + (this.serviceTags != null ? this.serviceTags.hashCode() : 0);
+            result = 31 * result + (this.sidecarContainersConfig != null ? this.sidecarContainersConfig.hashCode() : 0);
             result = 31 * result + (this.slsConfigs != null ? this.slsConfigs.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.terminationGracePeriodSeconds != null ? this.terminationGracePeriodSeconds.hashCode() : 0);

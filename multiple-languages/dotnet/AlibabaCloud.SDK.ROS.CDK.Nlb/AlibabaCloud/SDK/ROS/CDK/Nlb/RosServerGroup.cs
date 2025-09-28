@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Nlb
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::ServerGroup`, which is used to create a server group for a Network Load Balancer (NLB) instance.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::ServerGroup`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `ServerGroup` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-servergroup
@@ -611,15 +611,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
         public interface IHealthCheckConfigProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: httpCheckMethod: When the health check protocol is http or https type, the selected health check detection method
-            /// </remarks>
-            [JsiiProperty(name: "httpCheckMethod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            object HttpCheckMethod
-            {
-                get;
-            }
-
-            /// <remarks>
             /// <strong>Property</strong>: healthCheckConnectPort: Port of health check
             /// </remarks>
             [JsiiProperty(name: "healthCheckConnectPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -737,6 +728,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: httpCheckMethod: When the health check protocol is http or https type, the selected health check detection method
+            /// </remarks>
+            [JsiiProperty(name: "httpCheckMethod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? HttpCheckMethod
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: unhealthyThreshold: Determine the health check status of the backend server from success to fail.
             /// </remarks>
             [JsiiProperty(name: "unhealthyThreshold", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -754,15 +758,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             {
                 private _Proxy(ByRefValue reference): base(reference)
                 {
-                }
-
-                /// <remarks>
-                /// <strong>Property</strong>: httpCheckMethod: When the health check protocol is http or https type, the selected health check detection method
-                /// </remarks>
-                [JsiiProperty(name: "httpCheckMethod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-                public object HttpCheckMethod
-                {
-                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
@@ -856,6 +851,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
                 }
 
                 /// <remarks>
+                /// <strong>Property</strong>: httpCheckMethod: When the health check protocol is http or https type, the selected health check detection method
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "httpCheckMethod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? HttpCheckMethod
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
                 /// <strong>Property</strong>: unhealthyThreshold: Determine the health check status of the backend server from success to fail.
                 /// </remarks>
                 [JsiiOptional]
@@ -866,43 +871,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
                 }
             }
         }
-        #pragma warning disable CS8618
-
         [JsiiByValue(fqn: "@alicloud/ros-cdk-nlb.RosServerGroup.HealthCheckConfigProperty")]
         public class HealthCheckConfigProperty : AlibabaCloud.SDK.ROS.CDK.Nlb.RosServerGroup.IHealthCheckConfigProperty
         {
-            private object _httpCheckMethod;
-
-            /// <remarks>
-            /// <strong>Property</strong>: httpCheckMethod: When the health check protocol is http or https type, the selected health check detection method
-            /// </remarks>
-            [JsiiProperty(name: "httpCheckMethod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object HttpCheckMethod
-            {
-                get => _httpCheckMethod;
-                set
-                {
-                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                    {
-                        switch (value)
-                        {
-                            case string cast_cd4240:
-                                break;
-                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                                break;
-                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                                // Not enough information to type-check...
-                                break;
-                            case null:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
-                            default:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                        }
-                    }
-                    _httpCheckMethod = value;
-                }
-            }
-
             private object? _healthCheckConnectPort;
 
             /// <remarks>
@@ -1294,6 +1265,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
                         }
                     }
                     _healthyThreshold = value;
+                }
+            }
+
+            private object? _httpCheckMethod;
+
+            /// <remarks>
+            /// <strong>Property</strong>: httpCheckMethod: When the health check protocol is http or https type, the selected health check detection method
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "httpCheckMethod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? HttpCheckMethod
+            {
+                get => _httpCheckMethod;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _httpCheckMethod = value;
                 }
             }
 

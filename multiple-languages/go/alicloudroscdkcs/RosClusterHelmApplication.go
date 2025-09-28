@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterHelmApplication`, which is used to deploy an application by using Helm.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterHelmApplication`The , which resource type deploys an application using Helm.
 type RosClusterHelmApplication interface {
 	alicloudroscdkcore.RosResource
 	AttrClusterId() alicloudroscdkcore.IResolvable
@@ -28,6 +28,8 @@ type RosClusterHelmApplication interface {
 	SetCredential(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	IgnoreExisting() interface{}
+	SetIgnoreExisting(val interface{})
 	// The logical ID for this stack element.
 	//
 	// The logical ID of the element
@@ -270,6 +272,16 @@ func (j *jsiiProxy_RosClusterHelmApplication) EnableResourcePropertyConstraint()
 	return returns
 }
 
+func (j *jsiiProxy_RosClusterHelmApplication) IgnoreExisting() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"ignoreExisting",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosClusterHelmApplication) LogicalId() *string {
 	var returns *string
 	_jsii_.Get(
@@ -489,6 +501,17 @@ func (j *jsiiProxy_RosClusterHelmApplication)SetEnableResourcePropertyConstraint
 	_jsii_.Set(
 		j,
 		"enableResourcePropertyConstraint",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosClusterHelmApplication)SetIgnoreExisting(val interface{}) {
+	if err := j.validateSetIgnoreExistingParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"ignoreExisting",
 		val,
 	)
 }

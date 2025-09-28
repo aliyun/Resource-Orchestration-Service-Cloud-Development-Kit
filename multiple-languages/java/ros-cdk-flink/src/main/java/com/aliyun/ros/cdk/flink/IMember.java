@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.flink;
 /**
  * Represents a <code>Member</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.704Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:25.975Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.flink.$Module.class, fqn = "@alicloud/ros-cdk-flink.IMember")
 @software.amazon.jsii.Jsii.Proxy(IMember.Jsii$Proxy.class)
 public interface IMember extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

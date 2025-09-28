@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mse;
 /**
  * Represents a <code>ServiceSource</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.666Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:27.053Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.IServiceSource")
 @software.amazon.jsii.Jsii.Proxy(IServiceSource.Jsii$Proxy.class)
 public interface IServiceSource extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

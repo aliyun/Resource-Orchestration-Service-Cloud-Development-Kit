@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::MONGODB::ShardingInstance`, which is used to create or clone an ApsaraDB for MongoDB sharded cluster instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::MONGODB::ShardingInstance`.
 type ShardingInstance interface {
 	alicloudroscdkcore.Resource
 	IShardingInstance

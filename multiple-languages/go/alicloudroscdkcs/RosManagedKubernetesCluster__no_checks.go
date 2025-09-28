@@ -236,6 +236,10 @@ func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetTimeoutMinsParameters
 	return nil
 }
 
+func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetTimeZoneParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetUserDataParameters(val interface{}) error {
 	return nil
 }

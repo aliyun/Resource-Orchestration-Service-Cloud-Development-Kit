@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cen;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervpcattachment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:44.405Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:21.950Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.TransitRouterVpcAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(TransitRouterVpcAttachmentProps.Jsii$Proxy.class)
 public interface TransitRouterVpcAttachmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -35,7 +35,7 @@ public interface TransitRouterVpcAttachmentProps extends software.amazon.jsii.Js
     }
 
     /**
-     * Property chargeType:.
+     * Property chargeType: The charge type of the transit router vpc attachment.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getChargeType() {
         return null;
@@ -195,7 +195,7 @@ public interface TransitRouterVpcAttachmentProps extends software.amazon.jsii.Js
 
         /**
          * Sets the value of {@link TransitRouterVpcAttachmentProps#getChargeType}
-         * @param chargeType Property chargeType:.
+         * @param chargeType Property chargeType: The charge type of the transit router vpc attachment.
          * @return {@code this}
          */
         public Builder chargeType(java.lang.String chargeType) {
@@ -205,7 +205,7 @@ public interface TransitRouterVpcAttachmentProps extends software.amazon.jsii.Js
 
         /**
          * Sets the value of {@link TransitRouterVpcAttachmentProps#getChargeType}
-         * @param chargeType Property chargeType:.
+         * @param chargeType Property chargeType: The charge type of the transit router vpc attachment.
          * @return {@code this}
          */
         public Builder chargeType(com.aliyun.ros.cdk.core.IResolvable chargeType) {

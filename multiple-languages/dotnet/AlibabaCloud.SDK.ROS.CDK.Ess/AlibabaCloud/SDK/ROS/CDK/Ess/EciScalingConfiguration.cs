@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ess
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ESS::EciScalingConfiguration`, which is used to define a scaling configuration of the Elastic Container Instance type in Auto Scaling.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ESS::EciScalingConfiguration`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEciScalingConfiguration`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-eciscalingconfiguration

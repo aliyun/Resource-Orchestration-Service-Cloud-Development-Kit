@@ -94,7 +94,7 @@ export class ClusterNodePool extends ros.Resource implements IClusterNodePool {
             clusterId: props.clusterId,
             nodePoolInfo: props.nodePoolInfo,
             kubernetesConfig: props.kubernetesConfig,
-            count: props.count,
+            count: props.count === undefined || props.count === null ? 0 : props.count,
             management: props.management,
             autoScaling: props.autoScaling,
             scalingGroup: props.scalingGroup,

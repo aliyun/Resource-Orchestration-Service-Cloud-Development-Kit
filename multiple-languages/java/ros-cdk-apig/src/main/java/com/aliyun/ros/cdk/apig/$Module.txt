@@ -2,15 +2,12 @@
 @alicloud/ros-cdk-apig.ApiAttachmentProps=com.aliyun.ros.cdk.apig.ApiAttachmentProps
 @alicloud/ros-cdk-apig.Domain=com.aliyun.ros.cdk.apig.Domain
 @alicloud/ros-cdk-apig.DomainProps=com.aliyun.ros.cdk.apig.DomainProps
-@alicloud/ros-cdk-apig.Environment=com.aliyun.ros.cdk.apig.Environment
-@alicloud/ros-cdk-apig.EnvironmentProps=com.aliyun.ros.cdk.apig.EnvironmentProps
 @alicloud/ros-cdk-apig.Gateway=com.aliyun.ros.cdk.apig.Gateway
 @alicloud/ros-cdk-apig.GatewayProps=com.aliyun.ros.cdk.apig.GatewayProps
 @alicloud/ros-cdk-apig.HttpApi=com.aliyun.ros.cdk.apig.HttpApi
 @alicloud/ros-cdk-apig.HttpApiProps=com.aliyun.ros.cdk.apig.HttpApiProps
 @alicloud/ros-cdk-apig.IApiAttachment=com.aliyun.ros.cdk.apig.IApiAttachment
 @alicloud/ros-cdk-apig.IDomain=com.aliyun.ros.cdk.apig.IDomain
-@alicloud/ros-cdk-apig.IEnvironment=com.aliyun.ros.cdk.apig.IEnvironment
 @alicloud/ros-cdk-apig.IGateway=com.aliyun.ros.cdk.apig.IGateway
 @alicloud/ros-cdk-apig.IHttpApi=com.aliyun.ros.cdk.apig.IHttpApi
 @alicloud/ros-cdk-apig.IOperation=com.aliyun.ros.cdk.apig.IOperation
@@ -39,8 +36,6 @@
 @alicloud/ros-cdk-apig.RosDomain.TlsCipherSuiteProperty=com.aliyun.ros.cdk.apig.RosDomain$TlsCipherSuiteProperty
 @alicloud/ros-cdk-apig.RosDomain.TlsCipherSuitesConfigProperty=com.aliyun.ros.cdk.apig.RosDomain$TlsCipherSuitesConfigProperty
 @alicloud/ros-cdk-apig.RosDomainProps=com.aliyun.ros.cdk.apig.RosDomainProps
-@alicloud/ros-cdk-apig.RosEnvironment=com.aliyun.ros.cdk.apig.RosEnvironment
-@alicloud/ros-cdk-apig.RosEnvironmentProps=com.aliyun.ros.cdk.apig.RosEnvironmentProps
 @alicloud/ros-cdk-apig.RosGateway=com.aliyun.ros.cdk.apig.RosGateway
 @alicloud/ros-cdk-apig.RosGateway.LogConfigProperty=com.aliyun.ros.cdk.apig.RosGateway$LogConfigProperty
 @alicloud/ros-cdk-apig.RosGateway.NetworkAccessConfigProperty=com.aliyun.ros.cdk.apig.RosGateway$NetworkAccessConfigProperty

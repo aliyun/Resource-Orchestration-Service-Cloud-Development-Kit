@@ -529,11 +529,6 @@ export interface IInstanceGroup extends ros.IResource {
     readonly attrPublicIps: ros.IResolvable | string;
 
     /**
-     * Attribute RelatedOrderIds: The related order id list of created ecs instances
-     */
-    readonly attrRelatedOrderIds: ros.IResolvable | string;
-
-    /**
      * Attribute ZoneIds: Zone id of created instances.
      */
     readonly attrZoneIds: ros.IResolvable | string;
@@ -588,11 +583,6 @@ export class InstanceGroup extends ros.Resource implements IInstanceGroup {
      * Attribute PublicIps: Public IP address list of created ecs instances.
      */
     public readonly attrPublicIps: ros.IResolvable | string;
-
-    /**
-     * Attribute RelatedOrderIds: The related order id list of created ecs instances
-     */
-    public readonly attrRelatedOrderIds: ros.IResolvable | string;
 
     /**
      * Attribute ZoneIds: Zone id of created instances.
@@ -703,7 +693,6 @@ export class InstanceGroup extends ros.Resource implements IInstanceGroup {
         this.attrOrderId = rosInstanceGroup.attrOrderId;
         this.attrPrivateIps = rosInstanceGroup.attrPrivateIps;
         this.attrPublicIps = rosInstanceGroup.attrPublicIps;
-        this.attrRelatedOrderIds = rosInstanceGroup.attrRelatedOrderIds;
         this.attrZoneIds = rosInstanceGroup.attrZoneIds;
     }
 }

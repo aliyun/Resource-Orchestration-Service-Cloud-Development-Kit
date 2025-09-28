@@ -42,6 +42,11 @@ export interface ASKClusterProps {
     readonly deletionProtection?: boolean | ros.IResolvable;
 
     /**
+     * Property encryptionProviderKey: The ID of the key that is managed by Key Management Service (KMS). This key is used to encrypt data disks.You can use KMS in only professional managed Kubernetes clusters.
+     */
+    readonly encryptionProviderKey?: string | ros.IResolvable;
+
+    /**
      * Property endpointPublicAccess: Whether to enable the public network API Server:
      * true: which means that the public network API Server is open.
      * false: If set to false, the API server on the public network will not be created, only the API server on the private network will be created.Default value: true.
@@ -275,12 +280,13 @@ export class ASKCluster extends ros.Resource implements IASKCluster {
             vSwitchIds: props.vSwitchIds,
             securityGroupId: props.securityGroupId,
             addons: props.addons,
-            deletionProtection: props.deletionProtection,
             clusterSpec: props.clusterSpec === undefined || props.clusterSpec === null ? 'ack.pro.small' : props.clusterSpec,
+            deletionProtection: props.deletionProtection,
             name: props.name,
             timeZone: props.timeZone,
             serviceDiscoveryTypes: props.serviceDiscoveryTypes,
             vpcId: props.vpcId,
+            encryptionProviderKey: props.encryptionProviderKey,
             serviceCidr: props.serviceCidr === undefined || props.serviceCidr === null ? '172.19.0.0/20' : props.serviceCidr,
             snatEntry: props.snatEntry === undefined || props.snatEntry === null ? false : props.snatEntry,
             maintenanceWindow: props.maintenanceWindow,

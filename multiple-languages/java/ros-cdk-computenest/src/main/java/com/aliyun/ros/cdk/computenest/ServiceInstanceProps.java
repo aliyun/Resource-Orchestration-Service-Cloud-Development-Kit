@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.computenest;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-computenest-serviceinstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:44.988Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.645Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.computenest.$Module.class, fqn = "@alicloud/ros-cdk-computenest.ServiceInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(ServiceInstanceProps.Jsii$Proxy.class)
 public interface ServiceInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -348,7 +348,7 @@ public interface ServiceInstanceProps extends software.amazon.jsii.JsiiSerializa
          * @param parameters Property parameters: The parameters entered by the deployment service instance.
          * @return {@code this}
          */
-        public Builder parameters(java.lang.String parameters) {
+        public Builder parameters(com.aliyun.ros.cdk.core.IResolvable parameters) {
             this.parameters = parameters;
             return this;
         }
@@ -358,7 +358,7 @@ public interface ServiceInstanceProps extends software.amazon.jsii.JsiiSerializa
          * @param parameters Property parameters: The parameters entered by the deployment service instance.
          * @return {@code this}
          */
-        public Builder parameters(com.aliyun.ros.cdk.core.IResolvable parameters) {
+        public Builder parameters(java.util.Map<java.lang.String, ? extends java.lang.Object> parameters) {
             this.parameters = parameters;
             return this;
         }

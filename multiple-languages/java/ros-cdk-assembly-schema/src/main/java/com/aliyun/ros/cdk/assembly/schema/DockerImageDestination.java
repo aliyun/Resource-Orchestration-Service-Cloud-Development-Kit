@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.assembly.schema;
 /**
  * Where to publish docker images.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:42.836Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:20.098Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.assembly.schema.$Module.class, fqn = "@alicloud/ros-cdk-assembly-schema.DockerImageDestination")
 @software.amazon.jsii.Jsii.Proxy(DockerImageDestination.Jsii$Proxy.class)
 public interface DockerImageDestination extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.assembly.schema.AliCloudDestination {

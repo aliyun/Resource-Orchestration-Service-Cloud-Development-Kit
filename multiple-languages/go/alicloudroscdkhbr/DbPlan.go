@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::HBR::DbPlan`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::HBR::DbPlan`, which is used to create a backup plan.
 type DbPlan interface {
 	alicloudroscdkcore.Resource
 	IDbPlan

@@ -108,6 +108,10 @@ func (j *jsiiProxy_RosFunction) validateSetDescriptionParameters(val interface{}
 	return nil
 }
 
+func (j *jsiiProxy_RosFunction) validateSetDisableOndemandParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosFunction) validateSetDiskSizeParameters(val interface{}) error {
 	return nil
 }
@@ -133,6 +137,10 @@ func (j *jsiiProxy_RosFunction) validateSetHandlerParameters(val interface{}) er
 }
 
 func (j *jsiiProxy_RosFunction) validateSetInstanceConcurrencyParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosFunction) validateSetInstanceIsolationModeParameters(val interface{}) error {
 	return nil
 }
 
@@ -169,6 +177,14 @@ func (j *jsiiProxy_RosFunction) validateSetRoleParameters(val interface{}) error
 }
 
 func (j *jsiiProxy_RosFunction) validateSetRuntimeParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosFunction) validateSetSessionAffinityParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosFunction) validateSetSessionAffinityConfigParameters(val interface{}) error {
 	return nil
 }
 

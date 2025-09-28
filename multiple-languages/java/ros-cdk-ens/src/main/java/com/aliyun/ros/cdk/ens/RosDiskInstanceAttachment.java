@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ens;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ENS::DiskInstanceAttachment</code>, which is used to attach a data disk to an Edge Node Service (ENS) instance.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ENS::DiskInstanceAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.291Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:25.320Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ens.$Module.class, fqn = "@alicloud/ros-cdk-ens.RosDiskInstanceAttachment")
 public class RosDiskInstanceAttachment extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -14,10 +14,12 @@ type RosFunctionProps struct {
 	CustomDns interface{} `field:"optional" json:"customDns" yaml:"customDns"`
 	CustomRuntimeConfig interface{} `field:"optional" json:"customRuntimeConfig" yaml:"customRuntimeConfig"`
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
+	DisableOndemand interface{} `field:"optional" json:"disableOndemand" yaml:"disableOndemand"`
 	DiskSize interface{} `field:"optional" json:"diskSize" yaml:"diskSize"`
 	EnvironmentVariables interface{} `field:"optional" json:"environmentVariables" yaml:"environmentVariables"`
 	GpuConfig interface{} `field:"optional" json:"gpuConfig" yaml:"gpuConfig"`
 	InstanceConcurrency interface{} `field:"optional" json:"instanceConcurrency" yaml:"instanceConcurrency"`
+	InstanceIsolationMode interface{} `field:"optional" json:"instanceIsolationMode" yaml:"instanceIsolationMode"`
 	InstanceLifecycleConfig interface{} `field:"optional" json:"instanceLifecycleConfig" yaml:"instanceLifecycleConfig"`
 	InternetAccess interface{} `field:"optional" json:"internetAccess" yaml:"internetAccess"`
 	Layers interface{} `field:"optional" json:"layers" yaml:"layers"`
@@ -26,6 +28,8 @@ type RosFunctionProps struct {
 	NasConfig interface{} `field:"optional" json:"nasConfig" yaml:"nasConfig"`
 	OssMountConfig interface{} `field:"optional" json:"ossMountConfig" yaml:"ossMountConfig"`
 	Role interface{} `field:"optional" json:"role" yaml:"role"`
+	SessionAffinity interface{} `field:"optional" json:"sessionAffinity" yaml:"sessionAffinity"`
+	SessionAffinityConfig interface{} `field:"optional" json:"sessionAffinityConfig" yaml:"sessionAffinityConfig"`
 	Tags *[]*RosFunction_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 	Timeout interface{} `field:"optional" json:"timeout" yaml:"timeout"`
 	TracingConfig interface{} `field:"optional" json:"tracingConfig" yaml:"tracingConfig"`

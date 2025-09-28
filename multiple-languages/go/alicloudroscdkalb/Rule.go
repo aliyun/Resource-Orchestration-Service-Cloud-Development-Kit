@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ALB::Rule`ALIYUN::Config::Rule is used to create a forwarding rule.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ALB::Rule`Use , which to create a forwarding rule.
 type Rule interface {
 	alicloudroscdkcore.Resource
 	IRule

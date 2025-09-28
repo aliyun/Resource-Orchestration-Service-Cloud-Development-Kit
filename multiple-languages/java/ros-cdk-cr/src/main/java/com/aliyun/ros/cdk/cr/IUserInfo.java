@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cr;
 /**
  * Represents a <code>UserInfo</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.063Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.722Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.IUserInfo")
 @software.amazon.jsii.Jsii.Proxy(IUserInfo.Jsii$Proxy.class)
 public interface IUserInfo extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

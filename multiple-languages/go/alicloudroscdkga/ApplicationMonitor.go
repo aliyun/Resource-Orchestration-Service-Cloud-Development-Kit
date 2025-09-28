@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::GA::ApplicationMonitor`, which is used to create an origin probing task.
+// This class encapsulates and extends the ROS resource type `ALIYUN::GA::ApplicationMonitor`.
 type ApplicationMonitor interface {
 	alicloudroscdkcore.Resource
 	IApplicationMonitor

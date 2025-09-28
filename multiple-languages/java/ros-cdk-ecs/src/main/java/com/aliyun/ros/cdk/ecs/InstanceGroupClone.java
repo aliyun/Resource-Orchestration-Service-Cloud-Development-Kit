@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::InstanceGroupClone</code>, which is used to create clones of an Elastic Compute Service (ECS) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.266Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:24.150Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceGroupClone")
 public class InstanceGroupClone extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.IInstanceGroupClone {
 
@@ -110,14 +110,6 @@ public class InstanceGroupClone extends com.aliyun.ros.cdk.core.Resource impleme
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPublicIps() {
         return software.amazon.jsii.Kernel.get(this, "attrPublicIps", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     * Attribute RelatedOrderIds: The related order id list of created ecs instances.
-     */
-    @Override
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrRelatedOrderIds() {
-        return software.amazon.jsii.Kernel.get(this, "attrRelatedOrderIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**

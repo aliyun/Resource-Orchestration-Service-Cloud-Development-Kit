@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.arms;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ARMS::ManagedPrometheus</code>, which is used to install a Prometheus instance to monitor a serverless Kubernetes (ASK) cluster or an Elastic Compute Service (ECS) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:43.993Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:21.444Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.RosManagedPrometheus")
 public class RosManagedPrometheus extends com.aliyun.ros.cdk.core.RosResource {
 

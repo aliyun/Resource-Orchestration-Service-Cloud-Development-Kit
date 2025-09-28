@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ICE::Category`, which is used to create a media asset category.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ICE::Category`.
 type Category interface {
 	alicloudroscdkcore.Resource
 	ICategory

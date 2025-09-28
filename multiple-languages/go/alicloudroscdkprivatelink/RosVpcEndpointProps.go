@@ -5,12 +5,12 @@ package alicloudroscdkprivatelink
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpoint
 type RosVpcEndpointProps struct {
-	SecurityGroupId interface{} `field:"required" json:"securityGroupId" yaml:"securityGroupId"`
 	VpcId interface{} `field:"required" json:"vpcId" yaml:"vpcId"`
 	EndpointDescription interface{} `field:"optional" json:"endpointDescription" yaml:"endpointDescription"`
 	EndpointName interface{} `field:"optional" json:"endpointName" yaml:"endpointName"`
 	EndpointType interface{} `field:"optional" json:"endpointType" yaml:"endpointType"`
 	ProtectedEnabled interface{} `field:"optional" json:"protectedEnabled" yaml:"protectedEnabled"`
+	SecurityGroupId interface{} `field:"optional" json:"securityGroupId" yaml:"securityGroupId"`
 	ServiceId interface{} `field:"optional" json:"serviceId" yaml:"serviceId"`
 	ServiceName interface{} `field:"optional" json:"serviceName" yaml:"serviceName"`
 	Tags *[]*RosVpcEndpoint_TagsProperty `field:"optional" json:"tags" yaml:"tags"`

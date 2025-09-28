@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.elasticsearchserverless;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-elasticsearchserverless-endpoint
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.160Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:25.151Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.elasticsearchserverless.$Module.class, fqn = "@alicloud/ros-cdk-elasticsearchserverless.EndpointProps")
 @software.amazon.jsii.Jsii.Proxy(EndpointProps.Jsii$Proxy.class)
 public interface EndpointProps extends software.amazon.jsii.JsiiSerializable {
@@ -19,6 +19,13 @@ public interface EndpointProps extends software.amazon.jsii.JsiiSerializable {
      * Property name: The name of the endpoint.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
+        return null;
+    }
+
+    /**
+     * Property securityGroupIds: A list of security groups.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupIds() {
         return null;
     }
 
@@ -48,6 +55,7 @@ public interface EndpointProps extends software.amazon.jsii.JsiiSerializable {
     public static final class Builder implements software.amazon.jsii.Builder<EndpointProps> {
         java.lang.Object endpointZones;
         java.lang.Object name;
+        java.lang.Object securityGroupIds;
         java.lang.Object type;
         java.lang.Object vpcId;
 
@@ -88,6 +96,26 @@ public interface EndpointProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
             this.name = name;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link EndpointProps#getSecurityGroupIds}
+         * @param securityGroupIds Property securityGroupIds: A list of security groups.
+         * @return {@code this}
+         */
+        public Builder securityGroupIds(com.aliyun.ros.cdk.core.IResolvable securityGroupIds) {
+            this.securityGroupIds = securityGroupIds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link EndpointProps#getSecurityGroupIds}
+         * @param securityGroupIds Property securityGroupIds: A list of security groups.
+         * @return {@code this}
+         */
+        public Builder securityGroupIds(java.util.List<? extends java.lang.Object> securityGroupIds) {
+            this.securityGroupIds = securityGroupIds;
             return this;
         }
 
@@ -149,6 +177,7 @@ public interface EndpointProps extends software.amazon.jsii.JsiiSerializable {
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements EndpointProps {
         private final java.lang.Object endpointZones;
         private final java.lang.Object name;
+        private final java.lang.Object securityGroupIds;
         private final java.lang.Object type;
         private final java.lang.Object vpcId;
 
@@ -160,6 +189,7 @@ public interface EndpointProps extends software.amazon.jsii.JsiiSerializable {
             super(objRef);
             this.endpointZones = software.amazon.jsii.Kernel.get(this, "endpointZones", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityGroupIds = software.amazon.jsii.Kernel.get(this, "securityGroupIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -171,6 +201,7 @@ public interface EndpointProps extends software.amazon.jsii.JsiiSerializable {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.endpointZones = java.util.Objects.requireNonNull(builder.endpointZones, "endpointZones is required");
             this.name = builder.name;
+            this.securityGroupIds = builder.securityGroupIds;
             this.type = builder.type;
             this.vpcId = builder.vpcId;
         }
@@ -183,6 +214,11 @@ public interface EndpointProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getName() {
             return this.name;
+        }
+
+        @Override
+        public final java.lang.Object getSecurityGroupIds() {
+            return this.securityGroupIds;
         }
 
         @Override
@@ -204,6 +240,9 @@ public interface EndpointProps extends software.amazon.jsii.JsiiSerializable {
             data.set("endpointZones", om.valueToTree(this.getEndpointZones()));
             if (this.getName() != null) {
                 data.set("name", om.valueToTree(this.getName()));
+            }
+            if (this.getSecurityGroupIds() != null) {
+                data.set("securityGroupIds", om.valueToTree(this.getSecurityGroupIds()));
             }
             if (this.getType() != null) {
                 data.set("type", om.valueToTree(this.getType()));
@@ -231,6 +270,7 @@ public interface EndpointProps extends software.amazon.jsii.JsiiSerializable {
 
             if (!endpointZones.equals(that.endpointZones)) return false;
             if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
+            if (this.securityGroupIds != null ? !this.securityGroupIds.equals(that.securityGroupIds) : that.securityGroupIds != null) return false;
             if (this.type != null ? !this.type.equals(that.type) : that.type != null) return false;
             return this.vpcId != null ? this.vpcId.equals(that.vpcId) : that.vpcId == null;
         }
@@ -239,6 +279,7 @@ public interface EndpointProps extends software.amazon.jsii.JsiiSerializable {
         public final int hashCode() {
             int result = this.endpointZones.hashCode();
             result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
+            result = 31 * result + (this.securityGroupIds != null ? this.securityGroupIds.hashCode() : 0);
             result = 31 * result + (this.type != null ? this.type.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
             return result;

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.nlb;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::NLB::ServerGroup</code>, which is used to create a server group for a Network Load Balancer (NLB) instance.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::NLB::ServerGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.858Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:27.237Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.RosServerGroup")
 public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -366,11 +366,6 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getHttpCheckMethod();
-
-        /**
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckConnectPort() {
             return null;
         }
@@ -434,6 +429,13 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getHttpCheckMethod() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getUnhealthyThreshold() {
             return null;
         }
@@ -450,7 +452,6 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<HealthCheckConfigProperty> {
-            java.lang.Object httpCheckMethod;
             java.lang.Object healthCheckConnectPort;
             java.lang.Object healthCheckConnectTimeout;
             java.lang.Object healthCheckDomain;
@@ -460,29 +461,8 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object healthCheckType;
             java.lang.Object healthCheckUrl;
             java.lang.Object healthyThreshold;
+            java.lang.Object httpCheckMethod;
             java.lang.Object unhealthyThreshold;
-
-            /**
-             * Sets the value of {@link HealthCheckConfigProperty#getHttpCheckMethod}
-             * @param httpCheckMethod the value to be set. This parameter is required.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder httpCheckMethod(java.lang.String httpCheckMethod) {
-                this.httpCheckMethod = httpCheckMethod;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link HealthCheckConfigProperty#getHttpCheckMethod}
-             * @param httpCheckMethod the value to be set. This parameter is required.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder httpCheckMethod(com.aliyun.ros.cdk.core.IResolvable httpCheckMethod) {
-                this.httpCheckMethod = httpCheckMethod;
-                return this;
-            }
 
             /**
              * Sets the value of {@link HealthCheckConfigProperty#getHealthCheckConnectPort}
@@ -683,6 +663,28 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link HealthCheckConfigProperty#getHttpCheckMethod}
+             * @param httpCheckMethod the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder httpCheckMethod(java.lang.String httpCheckMethod) {
+                this.httpCheckMethod = httpCheckMethod;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link HealthCheckConfigProperty#getHttpCheckMethod}
+             * @param httpCheckMethod the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder httpCheckMethod(com.aliyun.ros.cdk.core.IResolvable httpCheckMethod) {
+                this.httpCheckMethod = httpCheckMethod;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link HealthCheckConfigProperty#getUnhealthyThreshold}
              * @param unhealthyThreshold the value to be set.
              * @return {@code this}
@@ -722,7 +724,6 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements HealthCheckConfigProperty {
-            private final java.lang.Object httpCheckMethod;
             private final java.lang.Object healthCheckConnectPort;
             private final java.lang.Object healthCheckConnectTimeout;
             private final java.lang.Object healthCheckDomain;
@@ -732,6 +733,7 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object healthCheckType;
             private final java.lang.Object healthCheckUrl;
             private final java.lang.Object healthyThreshold;
+            private final java.lang.Object httpCheckMethod;
             private final java.lang.Object unhealthyThreshold;
 
             /**
@@ -740,7 +742,6 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.httpCheckMethod = software.amazon.jsii.Kernel.get(this, "httpCheckMethod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.healthCheckConnectPort = software.amazon.jsii.Kernel.get(this, "healthCheckConnectPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.healthCheckConnectTimeout = software.amazon.jsii.Kernel.get(this, "healthCheckConnectTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.healthCheckDomain = software.amazon.jsii.Kernel.get(this, "healthCheckDomain", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -750,6 +751,7 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
                 this.healthCheckType = software.amazon.jsii.Kernel.get(this, "healthCheckType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.healthCheckUrl = software.amazon.jsii.Kernel.get(this, "healthCheckUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.healthyThreshold = software.amazon.jsii.Kernel.get(this, "healthyThreshold", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.httpCheckMethod = software.amazon.jsii.Kernel.get(this, "httpCheckMethod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.unhealthyThreshold = software.amazon.jsii.Kernel.get(this, "unhealthyThreshold", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
@@ -758,7 +760,6 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.httpCheckMethod = java.util.Objects.requireNonNull(builder.httpCheckMethod, "httpCheckMethod is required");
                 this.healthCheckConnectPort = builder.healthCheckConnectPort;
                 this.healthCheckConnectTimeout = builder.healthCheckConnectTimeout;
                 this.healthCheckDomain = builder.healthCheckDomain;
@@ -768,12 +769,8 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
                 this.healthCheckType = builder.healthCheckType;
                 this.healthCheckUrl = builder.healthCheckUrl;
                 this.healthyThreshold = builder.healthyThreshold;
+                this.httpCheckMethod = builder.httpCheckMethod;
                 this.unhealthyThreshold = builder.unhealthyThreshold;
-            }
-
-            @Override
-            public final java.lang.Object getHttpCheckMethod() {
-                return this.httpCheckMethod;
             }
 
             @Override
@@ -822,6 +819,11 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getHttpCheckMethod() {
+                return this.httpCheckMethod;
+            }
+
+            @Override
             public final java.lang.Object getUnhealthyThreshold() {
                 return this.unhealthyThreshold;
             }
@@ -832,7 +834,6 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
-                data.set("httpCheckMethod", om.valueToTree(this.getHttpCheckMethod()));
                 if (this.getHealthCheckConnectPort() != null) {
                     data.set("healthCheckConnectPort", om.valueToTree(this.getHealthCheckConnectPort()));
                 }
@@ -860,6 +861,9 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getHealthyThreshold() != null) {
                     data.set("healthyThreshold", om.valueToTree(this.getHealthyThreshold()));
                 }
+                if (this.getHttpCheckMethod() != null) {
+                    data.set("httpCheckMethod", om.valueToTree(this.getHttpCheckMethod()));
+                }
                 if (this.getUnhealthyThreshold() != null) {
                     data.set("unhealthyThreshold", om.valueToTree(this.getUnhealthyThreshold()));
                 }
@@ -881,7 +885,6 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
 
                 HealthCheckConfigProperty.Jsii$Proxy that = (HealthCheckConfigProperty.Jsii$Proxy) o;
 
-                if (!httpCheckMethod.equals(that.httpCheckMethod)) return false;
                 if (this.healthCheckConnectPort != null ? !this.healthCheckConnectPort.equals(that.healthCheckConnectPort) : that.healthCheckConnectPort != null) return false;
                 if (this.healthCheckConnectTimeout != null ? !this.healthCheckConnectTimeout.equals(that.healthCheckConnectTimeout) : that.healthCheckConnectTimeout != null) return false;
                 if (this.healthCheckDomain != null ? !this.healthCheckDomain.equals(that.healthCheckDomain) : that.healthCheckDomain != null) return false;
@@ -891,13 +894,13 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.healthCheckType != null ? !this.healthCheckType.equals(that.healthCheckType) : that.healthCheckType != null) return false;
                 if (this.healthCheckUrl != null ? !this.healthCheckUrl.equals(that.healthCheckUrl) : that.healthCheckUrl != null) return false;
                 if (this.healthyThreshold != null ? !this.healthyThreshold.equals(that.healthyThreshold) : that.healthyThreshold != null) return false;
+                if (this.httpCheckMethod != null ? !this.httpCheckMethod.equals(that.httpCheckMethod) : that.httpCheckMethod != null) return false;
                 return this.unhealthyThreshold != null ? this.unhealthyThreshold.equals(that.unhealthyThreshold) : that.unhealthyThreshold == null;
             }
 
             @Override
             public final int hashCode() {
-                int result = this.httpCheckMethod.hashCode();
-                result = 31 * result + (this.healthCheckConnectPort != null ? this.healthCheckConnectPort.hashCode() : 0);
+                int result = this.healthCheckConnectPort != null ? this.healthCheckConnectPort.hashCode() : 0;
                 result = 31 * result + (this.healthCheckConnectTimeout != null ? this.healthCheckConnectTimeout.hashCode() : 0);
                 result = 31 * result + (this.healthCheckDomain != null ? this.healthCheckDomain.hashCode() : 0);
                 result = 31 * result + (this.healthCheckEnabled != null ? this.healthCheckEnabled.hashCode() : 0);
@@ -906,6 +909,7 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.healthCheckType != null ? this.healthCheckType.hashCode() : 0);
                 result = 31 * result + (this.healthCheckUrl != null ? this.healthCheckUrl.hashCode() : 0);
                 result = 31 * result + (this.healthyThreshold != null ? this.healthyThreshold.hashCode() : 0);
+                result = 31 * result + (this.httpCheckMethod != null ? this.httpCheckMethod.hashCode() : 0);
                 result = 31 * result + (this.unhealthyThreshold != null ? this.unhealthyThreshold.hashCode() : 0);
                 return result;
             }

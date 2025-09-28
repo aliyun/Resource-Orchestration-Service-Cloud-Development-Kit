@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ENS::SecurityGroup`, which is used to create a security group.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ENS::SecurityGroup`.
 type SecurityGroup interface {
 	alicloudroscdkcore.Resource
 	ISecurityGroup

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nls;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::NLS::Project</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.893Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:27.282Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nls.$Module.class, fqn = "@alicloud/ros-cdk-nls.Project")
 public class Project extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.nls.IProject {
 

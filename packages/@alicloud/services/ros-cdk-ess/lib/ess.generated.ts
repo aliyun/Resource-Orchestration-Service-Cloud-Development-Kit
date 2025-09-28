@@ -901,7 +901,7 @@ function rosEciScalingConfigurationPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::EciScalingConfiguration`, which is used to define a scaling configuration of the Elastic Container Instance type in Auto Scaling.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::EciScalingConfiguration`.
  * @Note This class does not contain additional functions, so it is recommended to use the `EciScalingConfiguration` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-eciscalingconfiguration
  */
@@ -3597,7 +3597,7 @@ function rosScalingConfigurationPropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingConfiguration`, which is used to create a scaling configuration for a scaling group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingConfiguration`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ScalingConfiguration` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalingconfiguration
  */
@@ -7080,7 +7080,7 @@ function rosServerGroupAttachmentPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ServerGroupAttachment`, which is used to add one or more Server Load Balancer (SLB) server groups to a scaling group. Supported SLB server groups include Application Load Balancer (ALB) server groups and Network Load Balancer (NLB) server groups.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ServerGroupAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ServerGroupAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-servergroupattachment
  */
@@ -7305,7 +7305,7 @@ function rosVServerGroupAttachmentPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::VServerGroupAttachment`, which is used to associate vServer groups of a Sever Load Balancer (SLB) instance with a scaling group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::VServerGroupAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `VServerGroupAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-vservergroupattachment
  */

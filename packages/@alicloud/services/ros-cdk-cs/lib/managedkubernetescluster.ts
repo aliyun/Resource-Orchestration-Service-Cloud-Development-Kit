@@ -271,6 +271,11 @@ export interface ManagedKubernetesClusterProps {
     readonly timeoutMins?: number | ros.IResolvable;
 
     /**
+     * Property timeZone: The time zone of the cluster.
+     */
+    readonly timeZone?: string | ros.IResolvable;
+
+    /**
      * Property userData: The user-defined data. [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
      */
     readonly userData?: string | ros.IResolvable;
@@ -456,6 +461,7 @@ export class ManagedKubernetesCluster extends ros.Resource implements IManagedKu
             clusterSpec: props.clusterSpec,
             deletionProtection: props.deletionProtection,
             controlPlaneLogTtl: props.controlPlaneLogTtl,
+            timeZone: props.timeZone,
             vpcId: props.vpcId,
             keepInstanceName: props.keepInstanceName,
             nodePools: props.nodePools,

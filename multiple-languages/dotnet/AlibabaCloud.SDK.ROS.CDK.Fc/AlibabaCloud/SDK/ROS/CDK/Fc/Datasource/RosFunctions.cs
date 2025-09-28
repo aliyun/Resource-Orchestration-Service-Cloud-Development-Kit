@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Fc.Datasource
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `DATASOURCE::FC::Functions`, which is used to query functions.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `DATASOURCE::FC::Functions`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Functions` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-functions

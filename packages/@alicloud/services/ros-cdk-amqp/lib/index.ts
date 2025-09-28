@@ -1,3 +1,4 @@
+export * from './account';
 export * from './binding';
 export * from './exchange';
 export * from './instance';

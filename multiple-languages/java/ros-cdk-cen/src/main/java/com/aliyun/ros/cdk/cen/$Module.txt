@@ -16,6 +16,8 @@
 @alicloud/ros-cdk-cen.CenVbrHealthCheckProps=com.aliyun.ros.cdk.cen.CenVbrHealthCheckProps
 @alicloud/ros-cdk-cen.ChildInstanceRouteEntryToAttachment=com.aliyun.ros.cdk.cen.ChildInstanceRouteEntryToAttachment
 @alicloud/ros-cdk-cen.ChildInstanceRouteEntryToAttachmentProps=com.aliyun.ros.cdk.cen.ChildInstanceRouteEntryToAttachmentProps
+@alicloud/ros-cdk-cen.Flowlog=com.aliyun.ros.cdk.cen.Flowlog
+@alicloud/ros-cdk-cen.FlowlogProps=com.aliyun.ros.cdk.cen.FlowlogProps
 @alicloud/ros-cdk-cen.ICenBandwidthLimit=com.aliyun.ros.cdk.cen.ICenBandwidthLimit
 @alicloud/ros-cdk-cen.ICenBandwidthPackage=com.aliyun.ros.cdk.cen.ICenBandwidthPackage
 @alicloud/ros-cdk-cen.ICenBandwidthPackageAssociation=com.aliyun.ros.cdk.cen.ICenBandwidthPackageAssociation
@@ -25,6 +27,7 @@
 @alicloud/ros-cdk-cen.ICenRouteService=com.aliyun.ros.cdk.cen.ICenRouteService
 @alicloud/ros-cdk-cen.ICenVbrHealthCheck=com.aliyun.ros.cdk.cen.ICenVbrHealthCheck
 @alicloud/ros-cdk-cen.IChildInstanceRouteEntryToAttachment=com.aliyun.ros.cdk.cen.IChildInstanceRouteEntryToAttachment
+@alicloud/ros-cdk-cen.IFlowlog=com.aliyun.ros.cdk.cen.IFlowlog
 @alicloud/ros-cdk-cen.IRouteEntry=com.aliyun.ros.cdk.cen.IRouteEntry
 @alicloud/ros-cdk-cen.ITransitRouter=com.aliyun.ros.cdk.cen.ITransitRouter
 @alicloud/ros-cdk-cen.ITransitRouterPeerAttachment=com.aliyun.ros.cdk.cen.ITransitRouterPeerAttachment
@@ -55,6 +58,9 @@
 @alicloud/ros-cdk-cen.RosCenVbrHealthCheckProps=com.aliyun.ros.cdk.cen.RosCenVbrHealthCheckProps
 @alicloud/ros-cdk-cen.RosChildInstanceRouteEntryToAttachment=com.aliyun.ros.cdk.cen.RosChildInstanceRouteEntryToAttachment
 @alicloud/ros-cdk-cen.RosChildInstanceRouteEntryToAttachmentProps=com.aliyun.ros.cdk.cen.RosChildInstanceRouteEntryToAttachmentProps
+@alicloud/ros-cdk-cen.RosFlowlog=com.aliyun.ros.cdk.cen.RosFlowlog
+@alicloud/ros-cdk-cen.RosFlowlog.TagsProperty=com.aliyun.ros.cdk.cen.RosFlowlog$TagsProperty
+@alicloud/ros-cdk-cen.RosFlowlogProps=com.aliyun.ros.cdk.cen.RosFlowlogProps
 @alicloud/ros-cdk-cen.RosRouteEntry=com.aliyun.ros.cdk.cen.RosRouteEntry
 @alicloud/ros-cdk-cen.RosRouteEntryProps=com.aliyun.ros.cdk.cen.RosRouteEntryProps
 @alicloud/ros-cdk-cen.RosTransitRouter=com.aliyun.ros.cdk.cen.RosTransitRouter

@@ -104,6 +104,10 @@ func (j *jsiiProxy_RosClusterHelmApplication) validateSetEnableResourcePropertyC
 	return nil
 }
 
+func (j *jsiiProxy_RosClusterHelmApplication) validateSetIgnoreExistingParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosClusterHelmApplication) validateSetNameParameters(val interface{}) error {
 	return nil
 }

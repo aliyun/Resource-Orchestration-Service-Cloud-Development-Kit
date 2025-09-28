@@ -384,7 +384,7 @@ export interface IScalingConfiguration extends ros.IResource {
     readonly attrScalingGroupId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScalingConfiguration`, which is used to create a scaling configuration for a scaling group.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScalingConfiguration`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosScalingConfiguration`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalingconfiguration
  */

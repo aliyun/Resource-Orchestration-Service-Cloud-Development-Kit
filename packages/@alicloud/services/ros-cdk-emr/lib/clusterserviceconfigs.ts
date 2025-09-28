@@ -32,7 +32,7 @@ export interface IClusterServiceConfigs extends ros.IResource {
     readonly attrClusterId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::EMR::ClusterServiceConfigs`, which is used to create or modify the configurations of a specified service in a cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EMR::ClusterServiceConfigs`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClusterServiceConfigs`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-clusterserviceconfigs
  */

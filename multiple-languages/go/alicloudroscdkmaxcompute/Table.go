@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::MaxCompute::Table`, which is used to create a table.
+// This class encapsulates and extends the ROS resource type `ALIYUN::MaxCompute::Table`.
 type Table interface {
 	alicloudroscdkcore.Resource
 	ITable

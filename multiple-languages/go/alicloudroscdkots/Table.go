@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::OTS::Table`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::OTS::Table`, which is used to create a table based on a specified schema.
 type Table interface {
 	alicloudroscdkcore.Resource
 	ITable

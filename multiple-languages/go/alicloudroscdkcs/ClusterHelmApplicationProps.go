@@ -19,6 +19,11 @@ type ClusterHelmApplicationProps struct {
 	//
 	// Only take effects when ChartUrl is the address of ACR repo.
 	Credential interface{} `field:"optional" json:"credential" yaml:"credential"`
+	// Property ignoreExisting: How to ignore existing helm application: Disabled(default): If a helm application with the same name exists, an error will be reported when creating it.
+	//
+	// SkipInstallIfExisting: If there is a helm application with the same name, the helm application creation process will be ignored.
+	// SkipAllOperationsIfExisting: If there is a helm application with the same name, the helm application creation process will be ignored. If the helm application is not created by this resource, it will be ignored during update and delete stage.
+	IgnoreExisting interface{} `field:"optional" json:"ignoreExisting" yaml:"ignoreExisting"`
 	// Property namespace: Namespace to use with helm.
 	//
 	// Default is default.

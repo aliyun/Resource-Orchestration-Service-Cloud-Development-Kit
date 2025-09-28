@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ElasticSearchServerless::Endpoint`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ElasticSearchServerless::Endpoint`The , which is used to create an endpoint.
 type RosEndpoint interface {
 	alicloudroscdkcore.RosResource
 	AttrDomain() alicloudroscdkcore.IResolvable
@@ -47,6 +47,8 @@ type RosEndpoint interface {
 	RosProperties() *map[string]interface{}
 	// ROS resource type.
 	RosResourceType() *string
+	SecurityGroupIds() interface{}
+	SetSecurityGroupIds(val interface{})
 	// The stack in which this element is defined.
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
@@ -309,6 +311,16 @@ func (j *jsiiProxy_RosEndpoint) RosResourceType() *string {
 	return returns
 }
 
+func (j *jsiiProxy_RosEndpoint) SecurityGroupIds() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"securityGroupIds",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosEndpoint) Stack() alicloudroscdkcore.Stack {
 	var returns alicloudroscdkcore.Stack
 	_jsii_.Get(
@@ -406,6 +418,17 @@ func (j *jsiiProxy_RosEndpoint)SetName(val interface{}) {
 	_jsii_.Set(
 		j,
 		"name",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosEndpoint)SetSecurityGroupIds(val interface{}) {
+	if err := j.validateSetSecurityGroupIdsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"securityGroupIds",
 		val,
 	)
 }

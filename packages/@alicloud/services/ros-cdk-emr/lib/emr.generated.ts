@@ -2588,7 +2588,7 @@ function rosClusterServiceConfigsPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::EMR::ClusterServiceConfigs`, which is used to create or modify the configurations of a specified service in a cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EMR::ClusterServiceConfigs`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ClusterServiceConfigs` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-clusterserviceconfigs
  */
@@ -2883,4 +2883,1113 @@ export class RosFlowProject extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosFlowProjectPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+/**
+ * Properties for defining a `RosStarRocksInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-starrocksinstance
+ */
+export interface RosStarRocksInstanceProps {
+
+    /**
+     * @Property adminPassword: Password of admin user.
+     */
+    readonly adminPassword: string | ros.IResolvable;
+
+    /**
+     * @Property clusterZoneId: Primary ZoneId of StarRocks instance.
+     */
+    readonly clusterZoneId: string | ros.IResolvable;
+
+    /**
+     * @Property instanceName: The name of the StarRocks instance.
+     */
+    readonly instanceName: string | ros.IResolvable;
+
+    /**
+     * @Property packageType: The package type of the instance:
+     * - **trial: Starter Edition
+     * - **official: Standard
+     */
+    readonly packageType: string | ros.IResolvable;
+
+    /**
+     * @Property payType: The pay type of the StarRocks instance:
+     * - **prePaid
+     * - **postPaid
+     *
+     */
+    readonly payType: string | ros.IResolvable;
+
+    /**
+     * @Property runMode: The run mode of the instance:
+     * - **shared_nothing: Storage and calculation.
+     * - **shared_data: Storage and calculation separation.
+     * - **lakehouse: Data lake analysis.
+     */
+    readonly runMode: string | ros.IResolvable;
+
+    /**
+     * @Property version: The version of the StarRocks instance.
+     */
+    readonly version: string | ros.IResolvable;
+
+    /**
+     * @Property vpcId: The VPC ID of the StarRocks instance.
+     */
+    readonly vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property autoRenew: Whether to enable automatic renewal. This is only meaningful when payType is set to PrePaid. Disabled by default.
+     */
+    readonly autoRenew?: boolean | ros.IResolvable;
+
+    /**
+     * @Property backendNodeGroups: List of BE or CN compute group information.
+     */
+    readonly backendNodeGroups?: Array<RosStarRocksInstance.BackendNodeGroupsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property duration: Duration of purchase. It is only meaningful when PayType is set to PrePaid.
+     */
+    readonly duration?: number | ros.IResolvable;
+
+    /**
+     * @Property encrypted: Whether encrypted.
+     */
+    readonly encrypted?: boolean | ros.IResolvable;
+
+    /**
+     * @Property frontendNodeGroups: List of FE Node Group Information.
+     */
+    readonly frontendNodeGroups?: Array<RosStarRocksInstance.FrontendNodeGroupsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property kmsKeyId: The ID of the Key Management Service (KMS) key.
+     */
+    readonly kmsKeyId?: string | ros.IResolvable;
+
+    /**
+     * @Property observerNodeGroups: list of Observer calculates group information.
+     */
+    readonly observerNodeGroups?: Array<RosStarRocksInstance.ObserverNodeGroupsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property orderId: Order ID.
+     */
+    readonly orderId?: number | ros.IResolvable;
+
+    /**
+     * @Property ossAccessingRoleName: Role name used for password-free access to OSS.
+     */
+    readonly ossAccessingRoleName?: string | ros.IResolvable;
+
+    /**
+     * @Property pricingCycle: The duration unit for purchasing:
+     * - Month
+     * - Year
+     * This is only meaningful when PayType is set to PrePaid.
+     */
+    readonly pricingCycle?: string | ros.IResolvable;
+
+    /**
+     * @Property promotionOptionNo: Promotion ID.
+     */
+    readonly promotionOptionNo?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the StarRocks instance belongs.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceType: Resource type.
+     */
+    readonly resourceType?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags of StarRocks.
+     */
+    readonly tags?: RosStarRocksInstance.TagsProperty[];
+
+    /**
+     * @Property vswitches: The VSwitches info of the StarRocks instance.
+     */
+    readonly vswitches?: Array<RosStarRocksInstance.VswitchesProperty | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosStarRocksInstanceProps`
+ *
+ * @param properties - the TypeScript properties of a `RosStarRocksInstanceProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosStarRocksInstancePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('clusterZoneId', ros.requiredValidator)(properties.clusterZoneId));
+    errors.collect(ros.propertyValidator('clusterZoneId', ros.validateString)(properties.clusterZoneId));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('kmsKeyId', ros.validateString)(properties.kmsKeyId));
+    errors.collect(ros.propertyValidator('promotionOptionNo', ros.validateString)(properties.promotionOptionNo));
+    if(properties.pricingCycle && (typeof properties.pricingCycle) !== 'object') {
+        errors.collect(ros.propertyValidator('pricingCycle', ros.validateAllowedValues)({
+          data: properties.pricingCycle,
+          allowedValues: ["Month","Year"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('pricingCycle', ros.validateString)(properties.pricingCycle));
+    errors.collect(ros.propertyValidator('encrypted', ros.validateBoolean)(properties.encrypted));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
+    errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
+    if(properties.duration && (typeof properties.duration) !== 'object') {
+        errors.collect(ros.propertyValidator('duration', ros.validateAllowedValues)({
+          data: properties.duration,
+          allowedValues: [1,2,3,6,12,24,36,48,60],
+        }));
+    }
+    errors.collect(ros.propertyValidator('duration', ros.validateNumber)(properties.duration));
+    errors.collect(ros.propertyValidator('payType', ros.requiredValidator)(properties.payType));
+    if(properties.payType && (typeof properties.payType) !== 'object') {
+        errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
+          data: properties.payType,
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","postPaid","Subscription","PrePaid","PrePay","Prepaid","PREPAY","prePaid"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
+    errors.collect(ros.propertyValidator('orderId', ros.validateNumber)(properties.orderId));
+    if(properties.frontendNodeGroups && (Array.isArray(properties.frontendNodeGroups) || (typeof properties.frontendNodeGroups) === 'string')) {
+        errors.collect(ros.propertyValidator('frontendNodeGroups', ros.validateLength)({
+            data: properties.frontendNodeGroups.length,
+            min: 0,
+            max: 50,
+          }));
+    }
+    errors.collect(ros.propertyValidator('frontendNodeGroups', ros.listValidator(RosStarRocksInstance_FrontendNodeGroupsPropertyValidator))(properties.frontendNodeGroups));
+    if(properties.vswitches && (Array.isArray(properties.vswitches) || (typeof properties.vswitches) === 'string')) {
+        errors.collect(ros.propertyValidator('vswitches', ros.validateLength)({
+            data: properties.vswitches.length,
+            min: 0,
+            max: 3,
+          }));
+    }
+    errors.collect(ros.propertyValidator('vswitches', ros.listValidator(RosStarRocksInstance_VswitchesPropertyValidator))(properties.vswitches));
+    errors.collect(ros.propertyValidator('instanceName', ros.requiredValidator)(properties.instanceName));
+    errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('version', ros.requiredValidator)(properties.version));
+    errors.collect(ros.propertyValidator('version', ros.validateString)(properties.version));
+    errors.collect(ros.propertyValidator('runMode', ros.requiredValidator)(properties.runMode));
+    if(properties.runMode && (typeof properties.runMode) !== 'object') {
+        errors.collect(ros.propertyValidator('runMode', ros.validateAllowedValues)({
+          data: properties.runMode,
+          allowedValues: ["shared_nothing","shared_data","lakehouse"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('runMode', ros.validateString)(properties.runMode));
+    errors.collect(ros.propertyValidator('packageType', ros.requiredValidator)(properties.packageType));
+    if(properties.packageType && (typeof properties.packageType) !== 'object') {
+        errors.collect(ros.propertyValidator('packageType', ros.validateAllowedValues)({
+          data: properties.packageType,
+          allowedValues: ["trial","official"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('packageType', ros.validateString)(properties.packageType));
+    if(properties.observerNodeGroups && (Array.isArray(properties.observerNodeGroups) || (typeof properties.observerNodeGroups) === 'string')) {
+        errors.collect(ros.propertyValidator('observerNodeGroups', ros.validateLength)({
+            data: properties.observerNodeGroups.length,
+            min: 0,
+            max: 50,
+          }));
+    }
+    errors.collect(ros.propertyValidator('observerNodeGroups', ros.listValidator(RosStarRocksInstance_ObserverNodeGroupsPropertyValidator))(properties.observerNodeGroups));
+    errors.collect(ros.propertyValidator('ossAccessingRoleName', ros.validateString)(properties.ossAccessingRoleName));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosStarRocksInstance_TagsPropertyValidator))(properties.tags));
+    if(properties.backendNodeGroups && (Array.isArray(properties.backendNodeGroups) || (typeof properties.backendNodeGroups) === 'string')) {
+        errors.collect(ros.propertyValidator('backendNodeGroups', ros.validateLength)({
+            data: properties.backendNodeGroups.length,
+            min: 0,
+            max: 50,
+          }));
+    }
+    errors.collect(ros.propertyValidator('backendNodeGroups', ros.listValidator(RosStarRocksInstance_BackendNodeGroupsPropertyValidator))(properties.backendNodeGroups));
+    errors.collect(ros.propertyValidator('adminPassword', ros.requiredValidator)(properties.adminPassword));
+    errors.collect(ros.propertyValidator('adminPassword', ros.validateString)(properties.adminPassword));
+    return errors.wrap('supplied properties not correct for "RosStarRocksInstanceProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EMR::StarRocksInstance` resource
+ *
+ * @param properties - the TypeScript properties of a `RosStarRocksInstanceProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EMR::StarRocksInstance` resource.
+ */
+// @ts-ignore TS6133
+function rosStarRocksInstancePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosStarRocksInstancePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'AdminPassword': ros.stringToRosTemplate(properties.adminPassword),
+      'ClusterZoneId': ros.stringToRosTemplate(properties.clusterZoneId),
+      'InstanceName': ros.stringToRosTemplate(properties.instanceName),
+      'PackageType': ros.stringToRosTemplate(properties.packageType),
+      'PayType': ros.stringToRosTemplate(properties.payType),
+      'RunMode': ros.stringToRosTemplate(properties.runMode),
+      'Version': ros.stringToRosTemplate(properties.version),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
+      'BackendNodeGroups': ros.listMapper(rosStarRocksInstanceBackendNodeGroupsPropertyToRosTemplate)(properties.backendNodeGroups),
+      'Duration': ros.numberToRosTemplate(properties.duration),
+      'Encrypted': ros.booleanToRosTemplate(properties.encrypted),
+      'FrontendNodeGroups': ros.listMapper(rosStarRocksInstanceFrontendNodeGroupsPropertyToRosTemplate)(properties.frontendNodeGroups),
+      'KmsKeyId': ros.stringToRosTemplate(properties.kmsKeyId),
+      'ObserverNodeGroups': ros.listMapper(rosStarRocksInstanceObserverNodeGroupsPropertyToRosTemplate)(properties.observerNodeGroups),
+      'OrderId': ros.numberToRosTemplate(properties.orderId),
+      'OssAccessingRoleName': ros.stringToRosTemplate(properties.ossAccessingRoleName),
+      'PricingCycle': ros.stringToRosTemplate(properties.pricingCycle),
+      'PromotionOptionNo': ros.stringToRosTemplate(properties.promotionOptionNo),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'ResourceType': ros.stringToRosTemplate(properties.resourceType),
+      'Tags': ros.listMapper(rosStarRocksInstanceTagsPropertyToRosTemplate)(properties.tags),
+      'Vswitches': ros.listMapper(rosStarRocksInstanceVswitchesPropertyToRosTemplate)(properties.vswitches),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EMR::StarRocksInstance`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `StarRocksInstance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-starrocksinstance
+ */
+export class RosStarRocksInstance extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EMR::StarRocksInstance";
+
+    /**
+     * @Attribute AclId: Access control ID.
+     */
+    public readonly attrAclId: ros.IResolvable;
+
+    /**
+     * @Attribute Architecture: Architecture of StarRocks instance.
+     */
+    public readonly attrArchitecture: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: The creation time of the StarRocks instance.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute EnableAutoMinorVersionUpgrade: Whether minor version automatic upgrades are supported.
+     */
+    public readonly attrEnableAutoMinorVersionUpgrade: ros.IResolvable;
+
+    /**
+     * @Attribute EnableSsl: Enable SSL.
+     */
+    public readonly attrEnableSsl: ros.IResolvable;
+
+    /**
+     * @Attribute EnabledAuditLoader: Whether enable audit loader.
+     */
+    public readonly attrEnabledAuditLoader: ros.IResolvable;
+
+    /**
+     * @Attribute Encrypted: Whether encrypted.
+     */
+    public readonly attrEncrypted: ros.IResolvable;
+
+    /**
+     * @Attribute ExpireTime: StarRocks Instance expire time.
+     */
+    public readonly attrExpireTime: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceId: The ID of the StarRocks instance.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceName: The name of the StarRocks instance.
+     */
+    public readonly attrInstanceName: ros.IResolvable;
+
+    /**
+     * @Attribute IsolateLeader: Whether leader FE is isolated.
+     */
+    public readonly attrIsolateLeader: ros.IResolvable;
+
+    /**
+     * @Attribute KmsKeyId: The ID of the Key Management Service (KMS) key.
+     */
+    public readonly attrKmsKeyId: ros.IResolvable;
+
+    /**
+     * @Attribute MaintainablePeriod: StarRocks Instance maintainable period.
+     */
+    public readonly attrMaintainablePeriod: ros.IResolvable;
+
+    /**
+     * @Attribute MinorVersion: StarRocks Instance minor version.
+     */
+    public readonly attrMinorVersion: ros.IResolvable;
+
+    /**
+     * @Attribute MonitorType: Monitor Type.
+     */
+    public readonly attrMonitorType: ros.IResolvable;
+
+    /**
+     * @Attribute OssLocation: OSS Location.
+     */
+    public readonly attrOssLocation: ros.IResolvable;
+
+    /**
+     * @Attribute PackageType: The package type of the StarRocks instance.
+     */
+    public readonly attrPackageType: ros.IResolvable;
+
+    /**
+     * @Attribute PayType: The pay type of the StarRocks instance.
+     */
+    public readonly attrPayType: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of the resource group to which the StarRocks instance belongs..
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute RunMode: The run mode of the StarRocks instance.
+     */
+    public readonly attrRunMode: ros.IResolvable;
+
+    /**
+     * @Attribute RunningTime: StarRocks Instance running time.
+     */
+    public readonly attrRunningTime: ros.IResolvable;
+
+    /**
+     * @Attribute SecurityGroupManaged: Whether security group is managed.
+     */
+    public readonly attrSecurityGroupManaged: ros.IResolvable;
+
+    /**
+     * @Attribute SgId: Security Group ID of StarRocks instance.
+     */
+    public readonly attrSgId: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: Tag list of the StarRocks instance.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    /**
+     * @Attribute Version: The version of the StarRocks instance.
+     */
+    public readonly attrVersion: ros.IResolvable;
+
+    /**
+     * @Attribute VpcId: The VPC ID of the StarRocks instance.
+     */
+    public readonly attrVpcId: ros.IResolvable;
+
+    /**
+     * @Attribute Vswitches: The VSwitches info of the StarRocks instance.
+     */
+    public readonly attrVswitches: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property adminPassword: Password of admin user.
+     */
+    public adminPassword: string | ros.IResolvable;
+
+    /**
+     * @Property clusterZoneId: Primary ZoneId of StarRocks instance.
+     */
+    public clusterZoneId: string | ros.IResolvable;
+
+    /**
+     * @Property instanceName: The name of the StarRocks instance.
+     */
+    public instanceName: string | ros.IResolvable;
+
+    /**
+     * @Property packageType: The package type of the instance:
+     * - **trial: Starter Edition
+     * - **official: Standard
+     */
+    public packageType: string | ros.IResolvable;
+
+    /**
+     * @Property payType: The pay type of the StarRocks instance:
+     * - **prePaid
+     * - **postPaid
+     *
+     */
+    public payType: string | ros.IResolvable;
+
+    /**
+     * @Property runMode: The run mode of the instance:
+     * - **shared_nothing: Storage and calculation.
+     * - **shared_data: Storage and calculation separation.
+     * - **lakehouse: Data lake analysis.
+     */
+    public runMode: string | ros.IResolvable;
+
+    /**
+     * @Property version: The version of the StarRocks instance.
+     */
+    public version: string | ros.IResolvable;
+
+    /**
+     * @Property vpcId: The VPC ID of the StarRocks instance.
+     */
+    public vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property autoRenew: Whether to enable automatic renewal. This is only meaningful when payType is set to PrePaid. Disabled by default.
+     */
+    public autoRenew: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property backendNodeGroups: List of BE or CN compute group information.
+     */
+    public backendNodeGroups: Array<RosStarRocksInstance.BackendNodeGroupsProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property duration: Duration of purchase. It is only meaningful when PayType is set to PrePaid.
+     */
+    public duration: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property encrypted: Whether encrypted.
+     */
+    public encrypted: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property frontendNodeGroups: List of FE Node Group Information.
+     */
+    public frontendNodeGroups: Array<RosStarRocksInstance.FrontendNodeGroupsProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property kmsKeyId: The ID of the Key Management Service (KMS) key.
+     */
+    public kmsKeyId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property observerNodeGroups: list of Observer calculates group information.
+     */
+    public observerNodeGroups: Array<RosStarRocksInstance.ObserverNodeGroupsProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property orderId: Order ID.
+     */
+    public orderId: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property ossAccessingRoleName: Role name used for password-free access to OSS.
+     */
+    public ossAccessingRoleName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property pricingCycle: The duration unit for purchasing:
+     * - Month
+     * - Year
+     * This is only meaningful when PayType is set to PrePaid.
+     */
+    public pricingCycle: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property promotionOptionNo: Promotion ID.
+     */
+    public promotionOptionNo: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the StarRocks instance belongs.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceType: Resource type.
+     */
+    public resourceType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags of StarRocks.
+     */
+    public tags: RosStarRocksInstance.TagsProperty[] | undefined;
+
+    /**
+     * @Property vswitches: The VSwitches info of the StarRocks instance.
+     */
+    public vswitches: Array<RosStarRocksInstance.VswitchesProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosStarRocksInstanceProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosStarRocksInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAclId = this.getAtt('AclId');
+        this.attrArchitecture = this.getAtt('Architecture');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrEnableAutoMinorVersionUpgrade = this.getAtt('EnableAutoMinorVersionUpgrade');
+        this.attrEnableSsl = this.getAtt('EnableSsl');
+        this.attrEnabledAuditLoader = this.getAtt('EnabledAuditLoader');
+        this.attrEncrypted = this.getAtt('Encrypted');
+        this.attrExpireTime = this.getAtt('ExpireTime');
+        this.attrInstanceId = this.getAtt('InstanceId');
+        this.attrInstanceName = this.getAtt('InstanceName');
+        this.attrIsolateLeader = this.getAtt('IsolateLeader');
+        this.attrKmsKeyId = this.getAtt('KmsKeyId');
+        this.attrMaintainablePeriod = this.getAtt('MaintainablePeriod');
+        this.attrMinorVersion = this.getAtt('MinorVersion');
+        this.attrMonitorType = this.getAtt('MonitorType');
+        this.attrOssLocation = this.getAtt('OssLocation');
+        this.attrPackageType = this.getAtt('PackageType');
+        this.attrPayType = this.getAtt('PayType');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrRunMode = this.getAtt('RunMode');
+        this.attrRunningTime = this.getAtt('RunningTime');
+        this.attrSecurityGroupManaged = this.getAtt('SecurityGroupManaged');
+        this.attrSgId = this.getAtt('SgId');
+        this.attrTags = this.getAtt('Tags');
+        this.attrVersion = this.getAtt('Version');
+        this.attrVpcId = this.getAtt('VpcId');
+        this.attrVswitches = this.getAtt('Vswitches');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.adminPassword = props.adminPassword;
+        this.clusterZoneId = props.clusterZoneId;
+        this.instanceName = props.instanceName;
+        this.packageType = props.packageType;
+        this.payType = props.payType;
+        this.runMode = props.runMode;
+        this.version = props.version;
+        this.vpcId = props.vpcId;
+        this.autoRenew = props.autoRenew;
+        this.backendNodeGroups = props.backendNodeGroups;
+        this.duration = props.duration;
+        this.encrypted = props.encrypted;
+        this.frontendNodeGroups = props.frontendNodeGroups;
+        this.kmsKeyId = props.kmsKeyId;
+        this.observerNodeGroups = props.observerNodeGroups;
+        this.orderId = props.orderId;
+        this.ossAccessingRoleName = props.ossAccessingRoleName;
+        this.pricingCycle = props.pricingCycle;
+        this.promotionOptionNo = props.promotionOptionNo;
+        this.resourceGroupId = props.resourceGroupId;
+        this.resourceType = props.resourceType;
+        this.tags = props.tags;
+        this.vswitches = props.vswitches;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            adminPassword: this.adminPassword,
+            clusterZoneId: this.clusterZoneId,
+            instanceName: this.instanceName,
+            packageType: this.packageType,
+            payType: this.payType,
+            runMode: this.runMode,
+            version: this.version,
+            vpcId: this.vpcId,
+            autoRenew: this.autoRenew,
+            backendNodeGroups: this.backendNodeGroups,
+            duration: this.duration,
+            encrypted: this.encrypted,
+            frontendNodeGroups: this.frontendNodeGroups,
+            kmsKeyId: this.kmsKeyId,
+            observerNodeGroups: this.observerNodeGroups,
+            orderId: this.orderId,
+            ossAccessingRoleName: this.ossAccessingRoleName,
+            pricingCycle: this.pricingCycle,
+            promotionOptionNo: this.promotionOptionNo,
+            resourceGroupId: this.resourceGroupId,
+            resourceType: this.resourceType,
+            tags: this.tags,
+            vswitches: this.vswitches,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosStarRocksInstancePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosStarRocksInstance {
+    /**
+     * @stability external
+     */
+    export interface BackendNodeGroupsProperty {
+        /**
+         * @Property cu: Number of CUs. CU (Compute Unit) is the basic measurement unit of the service, where 1 CU = 1 CPU core + 4 GiB memory.
+         */
+        readonly cu?: number | ros.IResolvable;
+        /**
+         * @Property zoneId: Zone ID.
+         */
+        readonly zoneId?: string | ros.IResolvable;
+        /**
+         * @Property diskNumber: The number of disks.
+         */
+        readonly diskNumber?: number | ros.IResolvable;
+        /**
+         * @Property specType: Compute group specification types include the following:
+     * - **standard
+     * - **localSSD
+     * - **bigData
+     * - **ramEnhanced
+     * - **networkEnhanced.
+         */
+        readonly specType?: string | ros.IResolvable;
+        /**
+         * @Property storagePerformanceLevel: Performance levels of cloud disks include the following values:
+     * - **pl0: Maximum random read\/write IOPS per disk is 10,000.
+     * - **pl1: Maximum random read\/write IOPS per disk is 50,000.
+     * - **pl2: Maximum random read\/write IOPS per disk is 100,000.
+     * - **pl3: Maximum random read\/write IOPS per disk is 1,000,000.
+         */
+        readonly storagePerformanceLevel?: string | ros.IResolvable;
+        /**
+         * @Property residentNodeNumber: Resident node number of node group.
+         */
+        readonly residentNodeNumber?: number | ros.IResolvable;
+        /**
+         * @Property storageSize: Storage size, measured in GiB.
+         */
+        readonly storageSize?: number | ros.IResolvable;
+        /**
+         * @Property localStorageInstanceType: Local SSD instance specifications.
+         */
+        readonly localStorageInstanceType?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `BackendNodeGroupsProperty`
+ *
+ * @param properties - the TypeScript properties of a `BackendNodeGroupsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosStarRocksInstance_BackendNodeGroupsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('cu', ros.validateNumber)(properties.cu));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    if(properties.diskNumber && (typeof properties.diskNumber) !== 'object') {
+        errors.collect(ros.propertyValidator('diskNumber', ros.validateRange)({
+            data: properties.diskNumber,
+            min: 1,
+            max: 8,
+          }));
+    }
+    errors.collect(ros.propertyValidator('diskNumber', ros.validateNumber)(properties.diskNumber));
+    if(properties.specType && (typeof properties.specType) !== 'object') {
+        errors.collect(ros.propertyValidator('specType', ros.validateAllowedValues)({
+          data: properties.specType,
+          allowedValues: ["standard","localSSD","bigData","ramEnhanced","networkEnhanced"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('specType', ros.validateString)(properties.specType));
+    if(properties.storagePerformanceLevel && (typeof properties.storagePerformanceLevel) !== 'object') {
+        errors.collect(ros.propertyValidator('storagePerformanceLevel', ros.validateAllowedValues)({
+          data: properties.storagePerformanceLevel,
+          allowedValues: ["pl0","pl1","pl2","pl3"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('storagePerformanceLevel', ros.validateString)(properties.storagePerformanceLevel));
+    if(properties.residentNodeNumber && (typeof properties.residentNodeNumber) !== 'object') {
+        errors.collect(ros.propertyValidator('residentNodeNumber', ros.validateRange)({
+            data: properties.residentNodeNumber,
+            min: 1,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('residentNodeNumber', ros.validateNumber)(properties.residentNodeNumber));
+    if(properties.storageSize && (typeof properties.storageSize) !== 'object') {
+        errors.collect(ros.propertyValidator('storageSize', ros.validateRange)({
+            data: properties.storageSize,
+            min: 100,
+            max: 65000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('storageSize', ros.validateNumber)(properties.storageSize));
+    errors.collect(ros.propertyValidator('localStorageInstanceType', ros.validateString)(properties.localStorageInstanceType));
+    return errors.wrap('supplied properties not correct for "BackendNodeGroupsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EMR::StarRocksInstance.BackendNodeGroups` resource
+ *
+ * @param properties - the TypeScript properties of a `BackendNodeGroupsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EMR::StarRocksInstance.BackendNodeGroups` resource.
+ */
+// @ts-ignore TS6133
+function rosStarRocksInstanceBackendNodeGroupsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosStarRocksInstance_BackendNodeGroupsPropertyValidator(properties).assertSuccess();
+    return {
+      'Cu': ros.numberToRosTemplate(properties.cu),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'DiskNumber': ros.numberToRosTemplate(properties.diskNumber),
+      'SpecType': ros.stringToRosTemplate(properties.specType),
+      'StoragePerformanceLevel': ros.stringToRosTemplate(properties.storagePerformanceLevel),
+      'ResidentNodeNumber': ros.numberToRosTemplate(properties.residentNodeNumber),
+      'StorageSize': ros.numberToRosTemplate(properties.storageSize),
+      'LocalStorageInstanceType': ros.stringToRosTemplate(properties.localStorageInstanceType),
+    };
+}
+
+export namespace RosStarRocksInstance {
+    /**
+     * @stability external
+     */
+    export interface FrontendNodeGroupsProperty {
+        /**
+         * @Property cu: Number of CUs. CU (Compute Unit) is the basic measurement unit of the service, where 1 CU = 1 CPU core + 4 GiB memory.
+         */
+        readonly cu?: number | ros.IResolvable;
+        /**
+         * @Property zoneId: Zone ID.
+         */
+        readonly zoneId?: string | ros.IResolvable;
+        /**
+         * @Property diskNumber: The number of disks.
+         */
+        readonly diskNumber?: number | ros.IResolvable;
+        /**
+         * @Property specType: Compute group specification types include the following:
+     * - **standard
+     * - **ramEnhanced.
+         */
+        readonly specType?: string | ros.IResolvable;
+        /**
+         * @Property storagePerformanceLevel: Performance levels of cloud disks include the following values:
+     * - **pl0: Maximum random read\/write IOPS per disk is 10,000.
+     * - **pl1: Maximum random read\/write IOPS per disk is 50,000.
+     * - **pl2: Maximum random read\/write IOPS per disk is 100,000.
+     * - **pl3: Maximum random read\/write IOPS per disk is 1,000,000.
+         */
+        readonly storagePerformanceLevel?: string | ros.IResolvable;
+        /**
+         * @Property residentNodeNumber: Resident node number of node group.
+         */
+        readonly residentNodeNumber?: number | ros.IResolvable;
+        /**
+         * @Property storageSize: Storage size, measured in GiB.
+         */
+        readonly storageSize?: number | ros.IResolvable;
+        /**
+         * @Property localStorageInstanceType: Local SSD instance specifications.
+         */
+        readonly localStorageInstanceType?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `FrontendNodeGroupsProperty`
+ *
+ * @param properties - the TypeScript properties of a `FrontendNodeGroupsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosStarRocksInstance_FrontendNodeGroupsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('cu', ros.validateNumber)(properties.cu));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    if(properties.diskNumber && (typeof properties.diskNumber) !== 'object') {
+        errors.collect(ros.propertyValidator('diskNumber', ros.validateRange)({
+            data: properties.diskNumber,
+            min: 0,
+            max: 1,
+          }));
+    }
+    errors.collect(ros.propertyValidator('diskNumber', ros.validateNumber)(properties.diskNumber));
+    if(properties.specType && (typeof properties.specType) !== 'object') {
+        errors.collect(ros.propertyValidator('specType', ros.validateAllowedValues)({
+          data: properties.specType,
+          allowedValues: ["standard","ramEnhanced"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('specType', ros.validateString)(properties.specType));
+    errors.collect(ros.propertyValidator('storagePerformanceLevel', ros.validateString)(properties.storagePerformanceLevel));
+    if(properties.residentNodeNumber && (typeof properties.residentNodeNumber) !== 'object') {
+        errors.collect(ros.propertyValidator('residentNodeNumber', ros.validateRange)({
+            data: properties.residentNodeNumber,
+            min: 1,
+            max: 11,
+          }));
+    }
+    errors.collect(ros.propertyValidator('residentNodeNumber', ros.validateNumber)(properties.residentNodeNumber));
+    if(properties.storageSize && (typeof properties.storageSize) !== 'object') {
+        errors.collect(ros.propertyValidator('storageSize', ros.validateRange)({
+            data: properties.storageSize,
+            min: 100,
+            max: 65000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('storageSize', ros.validateNumber)(properties.storageSize));
+    errors.collect(ros.propertyValidator('localStorageInstanceType', ros.validateString)(properties.localStorageInstanceType));
+    return errors.wrap('supplied properties not correct for "FrontendNodeGroupsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EMR::StarRocksInstance.FrontendNodeGroups` resource
+ *
+ * @param properties - the TypeScript properties of a `FrontendNodeGroupsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EMR::StarRocksInstance.FrontendNodeGroups` resource.
+ */
+// @ts-ignore TS6133
+function rosStarRocksInstanceFrontendNodeGroupsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosStarRocksInstance_FrontendNodeGroupsPropertyValidator(properties).assertSuccess();
+    return {
+      'Cu': ros.numberToRosTemplate(properties.cu),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'DiskNumber': ros.numberToRosTemplate(properties.diskNumber),
+      'SpecType': ros.stringToRosTemplate(properties.specType),
+      'StoragePerformanceLevel': ros.stringToRosTemplate(properties.storagePerformanceLevel),
+      'ResidentNodeNumber': ros.numberToRosTemplate(properties.residentNodeNumber),
+      'StorageSize': ros.numberToRosTemplate(properties.storageSize),
+      'LocalStorageInstanceType': ros.stringToRosTemplate(properties.localStorageInstanceType),
+    };
+}
+
+export namespace RosStarRocksInstance {
+    /**
+     * @stability external
+     */
+    export interface ObserverNodeGroupsProperty {
+        /**
+         * @Property cu: Number of CUs. CU (Compute Unit) is the basic measurement unit of the service, where 1 CU = 1 CPU core + 4 GiB memory.
+         */
+        readonly cu?: number | ros.IResolvable;
+        /**
+         * @Property zoneId: Zone ID.
+         */
+        readonly zoneId?: string | ros.IResolvable;
+        /**
+         * @Property diskNumber: Number of disks.
+         */
+        readonly diskNumber?: number | ros.IResolvable;
+        /**
+         * @Property specType: Compute group specification types include the following:
+     * - **standard.
+         */
+        readonly specType?: string | ros.IResolvable;
+        /**
+         * @Property storagePerformanceLevel: Performance levels of cloud disks include the following values:
+     * - **pl0: Maximum random read\/write IOPS per disk is 10,000.
+     * - **pl1: Maximum random read\/write IOPS per disk is 50,000.
+     * - **pl2: Maximum random read\/write IOPS per disk is 100,000.
+     * - **pl3: Maximum random read\/write IOPS per disk is 1,000,000.
+         */
+        readonly storagePerformanceLevel?: string | ros.IResolvable;
+        /**
+         * @Property residentNodeNumber: Resident node number of node group.
+         */
+        readonly residentNodeNumber?: number | ros.IResolvable;
+        /**
+         * @Property storageSize: Storage size, measured in GiB.
+         */
+        readonly storageSize?: number | ros.IResolvable;
+        /**
+         * @Property localStorageInstanceType: Local SSD instance specifications.
+         */
+        readonly localStorageInstanceType?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ObserverNodeGroupsProperty`
+ *
+ * @param properties - the TypeScript properties of a `ObserverNodeGroupsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosStarRocksInstance_ObserverNodeGroupsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('cu', ros.validateNumber)(properties.cu));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    if(properties.diskNumber && (typeof properties.diskNumber) !== 'object') {
+        errors.collect(ros.propertyValidator('diskNumber', ros.validateRange)({
+            data: properties.diskNumber,
+            min: 0,
+            max: 1,
+          }));
+    }
+    errors.collect(ros.propertyValidator('diskNumber', ros.validateNumber)(properties.diskNumber));
+    if(properties.specType && (typeof properties.specType) !== 'object') {
+        errors.collect(ros.propertyValidator('specType', ros.validateAllowedValues)({
+          data: properties.specType,
+          allowedValues: ["standard"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('specType', ros.validateString)(properties.specType));
+    if(properties.storagePerformanceLevel && (typeof properties.storagePerformanceLevel) !== 'object') {
+        errors.collect(ros.propertyValidator('storagePerformanceLevel', ros.validateAllowedValues)({
+          data: properties.storagePerformanceLevel,
+          allowedValues: ["pl0","pl1","pl2","pl3"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('storagePerformanceLevel', ros.validateString)(properties.storagePerformanceLevel));
+    if(properties.residentNodeNumber && (typeof properties.residentNodeNumber) !== 'object') {
+        errors.collect(ros.propertyValidator('residentNodeNumber', ros.validateRange)({
+            data: properties.residentNodeNumber,
+            min: 1,
+            max: 11,
+          }));
+    }
+    errors.collect(ros.propertyValidator('residentNodeNumber', ros.validateNumber)(properties.residentNodeNumber));
+    if(properties.storageSize && (typeof properties.storageSize) !== 'object') {
+        errors.collect(ros.propertyValidator('storageSize', ros.validateRange)({
+            data: properties.storageSize,
+            min: 100,
+            max: 65000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('storageSize', ros.validateNumber)(properties.storageSize));
+    errors.collect(ros.propertyValidator('localStorageInstanceType', ros.validateString)(properties.localStorageInstanceType));
+    return errors.wrap('supplied properties not correct for "ObserverNodeGroupsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EMR::StarRocksInstance.ObserverNodeGroups` resource
+ *
+ * @param properties - the TypeScript properties of a `ObserverNodeGroupsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EMR::StarRocksInstance.ObserverNodeGroups` resource.
+ */
+// @ts-ignore TS6133
+function rosStarRocksInstanceObserverNodeGroupsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosStarRocksInstance_ObserverNodeGroupsPropertyValidator(properties).assertSuccess();
+    return {
+      'Cu': ros.numberToRosTemplate(properties.cu),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'DiskNumber': ros.numberToRosTemplate(properties.diskNumber),
+      'SpecType': ros.stringToRosTemplate(properties.specType),
+      'StoragePerformanceLevel': ros.stringToRosTemplate(properties.storagePerformanceLevel),
+      'ResidentNodeNumber': ros.numberToRosTemplate(properties.residentNodeNumber),
+      'StorageSize': ros.numberToRosTemplate(properties.storageSize),
+      'LocalStorageInstanceType': ros.stringToRosTemplate(properties.localStorageInstanceType),
+    };
+}
+
+export namespace RosStarRocksInstance {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosStarRocksInstance_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EMR::StarRocksInstance.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EMR::StarRocksInstance.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosStarRocksInstanceTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosStarRocksInstance_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
+}
+
+export namespace RosStarRocksInstance {
+    /**
+     * @stability external
+     */
+    export interface VswitchesProperty {
+        /**
+         * @Property zoneId: Zone ID of VSwitch.
+         */
+        readonly zoneId?: string | ros.IResolvable;
+        /**
+         * @Property vSwitchId: ID of VSwitch.
+         */
+        readonly vSwitchId: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `VswitchesProperty`
+ *
+ * @param properties - the TypeScript properties of a `VswitchesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosStarRocksInstance_VswitchesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    return errors.wrap('supplied properties not correct for "VswitchesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EMR::StarRocksInstance.Vswitches` resource
+ *
+ * @param properties - the TypeScript properties of a `VswitchesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EMR::StarRocksInstance.Vswitches` resource.
+ */
+// @ts-ignore TS6133
+function rosStarRocksInstanceVswitchesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosStarRocksInstance_VswitchesPropertyValidator(properties).assertSuccess();
+    return {
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+    };
 }

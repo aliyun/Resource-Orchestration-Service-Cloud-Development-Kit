@@ -108,6 +108,10 @@ func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetEnableResourcePro
 	return nil
 }
 
+func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetEncryptionProviderKeyParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetEndpointPublicAccessParameters(val interface{}) error {
 	return nil
 }
@@ -117,6 +121,10 @@ func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetIsEnterpriseSecur
 }
 
 func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetKeyPairParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetKubernetesVersionParameters(val interface{}) error {
 	return nil
 }
 
@@ -133,6 +141,10 @@ func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetNameParameters(va
 }
 
 func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetNodeCidrMaskParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetNodePoolsParameters(val interface{}) error {
 	return nil
 }
 

@@ -91,7 +91,7 @@ function rosDevicePropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::Device`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::Device`, which is used to register a Device.
  * @Note This class does not contain additional functions, so it is recommended to use the `Device` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-device
  */
@@ -587,7 +587,7 @@ function rosProductPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::Product`, which is used to create a product.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::Product`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Product` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-product
  */
@@ -1135,7 +1135,7 @@ function rosRulePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::Rule`, which is used to create a rule for a specific topic.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::Rule`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Rule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-rule
  */

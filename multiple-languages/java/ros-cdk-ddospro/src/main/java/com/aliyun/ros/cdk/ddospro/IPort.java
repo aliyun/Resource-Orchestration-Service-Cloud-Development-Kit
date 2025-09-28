@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ddospro;
 /**
  * Represents a <code>Port</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.414Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.154Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ddospro.$Module.class, fqn = "@alicloud/ros-cdk-ddospro.IPort")
 @software.amazon.jsii.Jsii.Proxy(IPort.Jsii$Proxy.class)
 public interface IPort extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

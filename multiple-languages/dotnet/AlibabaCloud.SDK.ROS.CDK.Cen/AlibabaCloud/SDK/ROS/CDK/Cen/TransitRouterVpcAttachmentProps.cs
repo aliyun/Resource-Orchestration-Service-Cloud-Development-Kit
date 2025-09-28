@@ -154,7 +154,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
 
         private object? _chargeType;
 
-        /// <summary>Property chargeType:.</summary>
+        /// <summary>Property chargeType: The charge type of the transit router vpc attachment.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? ChargeType

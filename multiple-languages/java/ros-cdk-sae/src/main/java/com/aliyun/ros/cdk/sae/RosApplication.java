@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sae;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SAE::Application</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:50.427Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:29.408Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.RosApplication")
 public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -445,6 +445,24 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEnableSidecarResourceIsolated() {
+        return software.amazon.jsii.Kernel.get(this, "enableSidecarResourceIsolated", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setEnableSidecarResourceIsolated(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "enableSidecarResourceIsolated", value);
+    }
+
+    /**
+     */
+    public void setEnableSidecarResourceIsolated(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "enableSidecarResourceIsolated", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getEnvs() {
         return software.amazon.jsii.Kernel.get(this, "envs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -495,6 +513,40 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setImageUrl(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "imageUrl", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInitContainersConfig() {
+        return software.amazon.jsii.Kernel.get(this, "initContainersConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setInitContainersConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "initContainersConfig", value);
+    }
+
+    /**
+     */
+    public void setInitContainersConfig(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.sae.RosApplication.InitContainersConfigProperty)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.sae.RosApplication.InitContainersConfigProperty; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "initContainersConfig", value);
     }
 
     /**
@@ -1062,6 +1114,40 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSidecarContainersConfig() {
+        return software.amazon.jsii.Kernel.get(this, "sidecarContainersConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSidecarContainersConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "sidecarContainersConfig", value);
+    }
+
+    /**
+     */
+    public void setSidecarContainersConfig(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.sae.RosApplication.SidecarContainersConfigProperty)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.sae.RosApplication.SidecarContainersConfigProperty; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "sidecarContainersConfig", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getSlsConfigs() {
         return software.amazon.jsii.Kernel.get(this, "slsConfigs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -1214,6 +1300,850 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setWebContainer(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "webContainer", value);
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.RosApplication.InitContainersConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(InitContainersConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface InitContainersConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getName();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCommand() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCommandArgs() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getConfigMapMountDesc() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEnvs() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getImageUrl() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link InitContainersConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link InitContainersConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<InitContainersConfigProperty> {
+            java.lang.Object name;
+            java.lang.Object command;
+            java.lang.Object commandArgs;
+            java.lang.Object configMapMountDesc;
+            java.lang.Object envs;
+            java.lang.Object imageUrl;
+
+            /**
+             * Sets the value of {@link InitContainersConfigProperty#getName}
+             * @param name the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder name(java.lang.String name) {
+                this.name = name;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InitContainersConfigProperty#getName}
+             * @param name the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+                this.name = name;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InitContainersConfigProperty#getCommand}
+             * @param command the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder command(java.lang.String command) {
+                this.command = command;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InitContainersConfigProperty#getCommand}
+             * @param command the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder command(com.aliyun.ros.cdk.core.IResolvable command) {
+                this.command = command;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InitContainersConfigProperty#getCommandArgs}
+             * @param commandArgs the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder commandArgs(java.lang.String commandArgs) {
+                this.commandArgs = commandArgs;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InitContainersConfigProperty#getCommandArgs}
+             * @param commandArgs the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder commandArgs(com.aliyun.ros.cdk.core.IResolvable commandArgs) {
+                this.commandArgs = commandArgs;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InitContainersConfigProperty#getConfigMapMountDesc}
+             * @param configMapMountDesc the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder configMapMountDesc(java.lang.String configMapMountDesc) {
+                this.configMapMountDesc = configMapMountDesc;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InitContainersConfigProperty#getConfigMapMountDesc}
+             * @param configMapMountDesc the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder configMapMountDesc(com.aliyun.ros.cdk.core.IResolvable configMapMountDesc) {
+                this.configMapMountDesc = configMapMountDesc;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InitContainersConfigProperty#getEnvs}
+             * @param envs the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder envs(java.lang.String envs) {
+                this.envs = envs;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InitContainersConfigProperty#getEnvs}
+             * @param envs the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder envs(com.aliyun.ros.cdk.core.IResolvable envs) {
+                this.envs = envs;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InitContainersConfigProperty#getImageUrl}
+             * @param imageUrl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder imageUrl(java.lang.String imageUrl) {
+                this.imageUrl = imageUrl;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InitContainersConfigProperty#getImageUrl}
+             * @param imageUrl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder imageUrl(com.aliyun.ros.cdk.core.IResolvable imageUrl) {
+                this.imageUrl = imageUrl;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link InitContainersConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public InitContainersConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link InitContainersConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements InitContainersConfigProperty {
+            private final java.lang.Object name;
+            private final java.lang.Object command;
+            private final java.lang.Object commandArgs;
+            private final java.lang.Object configMapMountDesc;
+            private final java.lang.Object envs;
+            private final java.lang.Object imageUrl;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.command = software.amazon.jsii.Kernel.get(this, "command", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.commandArgs = software.amazon.jsii.Kernel.get(this, "commandArgs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.configMapMountDesc = software.amazon.jsii.Kernel.get(this, "configMapMountDesc", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.envs = software.amazon.jsii.Kernel.get(this, "envs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.imageUrl = software.amazon.jsii.Kernel.get(this, "imageUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+                this.command = builder.command;
+                this.commandArgs = builder.commandArgs;
+                this.configMapMountDesc = builder.configMapMountDesc;
+                this.envs = builder.envs;
+                this.imageUrl = builder.imageUrl;
+            }
+
+            @Override
+            public final java.lang.Object getName() {
+                return this.name;
+            }
+
+            @Override
+            public final java.lang.Object getCommand() {
+                return this.command;
+            }
+
+            @Override
+            public final java.lang.Object getCommandArgs() {
+                return this.commandArgs;
+            }
+
+            @Override
+            public final java.lang.Object getConfigMapMountDesc() {
+                return this.configMapMountDesc;
+            }
+
+            @Override
+            public final java.lang.Object getEnvs() {
+                return this.envs;
+            }
+
+            @Override
+            public final java.lang.Object getImageUrl() {
+                return this.imageUrl;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("name", om.valueToTree(this.getName()));
+                if (this.getCommand() != null) {
+                    data.set("command", om.valueToTree(this.getCommand()));
+                }
+                if (this.getCommandArgs() != null) {
+                    data.set("commandArgs", om.valueToTree(this.getCommandArgs()));
+                }
+                if (this.getConfigMapMountDesc() != null) {
+                    data.set("configMapMountDesc", om.valueToTree(this.getConfigMapMountDesc()));
+                }
+                if (this.getEnvs() != null) {
+                    data.set("envs", om.valueToTree(this.getEnvs()));
+                }
+                if (this.getImageUrl() != null) {
+                    data.set("imageUrl", om.valueToTree(this.getImageUrl()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-sae.RosApplication.InitContainersConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                InitContainersConfigProperty.Jsii$Proxy that = (InitContainersConfigProperty.Jsii$Proxy) o;
+
+                if (!name.equals(that.name)) return false;
+                if (this.command != null ? !this.command.equals(that.command) : that.command != null) return false;
+                if (this.commandArgs != null ? !this.commandArgs.equals(that.commandArgs) : that.commandArgs != null) return false;
+                if (this.configMapMountDesc != null ? !this.configMapMountDesc.equals(that.configMapMountDesc) : that.configMapMountDesc != null) return false;
+                if (this.envs != null ? !this.envs.equals(that.envs) : that.envs != null) return false;
+                return this.imageUrl != null ? this.imageUrl.equals(that.imageUrl) : that.imageUrl == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.name.hashCode();
+                result = 31 * result + (this.command != null ? this.command.hashCode() : 0);
+                result = 31 * result + (this.commandArgs != null ? this.commandArgs.hashCode() : 0);
+                result = 31 * result + (this.configMapMountDesc != null ? this.configMapMountDesc.hashCode() : 0);
+                result = 31 * result + (this.envs != null ? this.envs.hashCode() : 0);
+                result = 31 * result + (this.imageUrl != null ? this.imageUrl.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.RosApplication.SidecarContainersConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(SidecarContainersConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface SidecarContainersConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getCpu();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getMemory();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getName();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAcrInstanceId() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCommand() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCommandArgs() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getConfigMapMountDesc() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEmptyDirDesc() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEnvs() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getImageUrl() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link SidecarContainersConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link SidecarContainersConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<SidecarContainersConfigProperty> {
+            java.lang.Object cpu;
+            java.lang.Object memory;
+            java.lang.Object name;
+            java.lang.Object acrInstanceId;
+            java.lang.Object command;
+            java.lang.Object commandArgs;
+            java.lang.Object configMapMountDesc;
+            java.lang.Object emptyDirDesc;
+            java.lang.Object envs;
+            java.lang.Object imageUrl;
+
+            /**
+             * Sets the value of {@link SidecarContainersConfigProperty#getCpu}
+             * @param cpu the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder cpu(java.lang.Number cpu) {
+                this.cpu = cpu;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SidecarContainersConfigProperty#getCpu}
+             * @param cpu the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder cpu(com.aliyun.ros.cdk.core.IResolvable cpu) {
+                this.cpu = cpu;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SidecarContainersConfigProperty#getMemory}
+             * @param memory the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder memory(java.lang.Number memory) {
+                this.memory = memory;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SidecarContainersConfigProperty#getMemory}
+             * @param memory the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder memory(com.aliyun.ros.cdk.core.IResolvable memory) {
+                this.memory = memory;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SidecarContainersConfigProperty#getName}
+             * @param name the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder name(java.lang.String name) {
+                this.name = name;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SidecarContainersConfigProperty#getName}
+             * @param name the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+                this.name = name;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SidecarContainersConfigProperty#getAcrInstanceId}
+             * @param acrInstanceId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder acrInstanceId(java.lang.String acrInstanceId) {
+                this.acrInstanceId = acrInstanceId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SidecarContainersConfigProperty#getAcrInstanceId}
+             * @param acrInstanceId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder acrInstanceId(com.aliyun.ros.cdk.core.IResolvable acrInstanceId) {
+                this.acrInstanceId = acrInstanceId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SidecarContainersConfigProperty#getCommand}
+             * @param command the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder command(java.lang.String command) {
+                this.command = command;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SidecarContainersConfigProperty#getCommand}
+             * @param command the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder command(com.aliyun.ros.cdk.core.IResolvable command) {
+                this.command = command;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SidecarContainersConfigProperty#getCommandArgs}
+             * @param commandArgs the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder commandArgs(java.lang.String commandArgs) {
+                this.commandArgs = commandArgs;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SidecarContainersConfigProperty#getCommandArgs}
+             * @param commandArgs the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder commandArgs(com.aliyun.ros.cdk.core.IResolvable commandArgs) {
+                this.commandArgs = commandArgs;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SidecarContainersConfigProperty#getConfigMapMountDesc}
+             * @param configMapMountDesc the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder configMapMountDesc(java.lang.String configMapMountDesc) {
+                this.configMapMountDesc = configMapMountDesc;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SidecarContainersConfigProperty#getConfigMapMountDesc}
+             * @param configMapMountDesc the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder configMapMountDesc(com.aliyun.ros.cdk.core.IResolvable configMapMountDesc) {
+                this.configMapMountDesc = configMapMountDesc;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SidecarContainersConfigProperty#getEmptyDirDesc}
+             * @param emptyDirDesc the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder emptyDirDesc(java.lang.String emptyDirDesc) {
+                this.emptyDirDesc = emptyDirDesc;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SidecarContainersConfigProperty#getEmptyDirDesc}
+             * @param emptyDirDesc the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder emptyDirDesc(com.aliyun.ros.cdk.core.IResolvable emptyDirDesc) {
+                this.emptyDirDesc = emptyDirDesc;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SidecarContainersConfigProperty#getEnvs}
+             * @param envs the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder envs(java.lang.String envs) {
+                this.envs = envs;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SidecarContainersConfigProperty#getEnvs}
+             * @param envs the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder envs(com.aliyun.ros.cdk.core.IResolvable envs) {
+                this.envs = envs;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SidecarContainersConfigProperty#getImageUrl}
+             * @param imageUrl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder imageUrl(java.lang.String imageUrl) {
+                this.imageUrl = imageUrl;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SidecarContainersConfigProperty#getImageUrl}
+             * @param imageUrl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder imageUrl(com.aliyun.ros.cdk.core.IResolvable imageUrl) {
+                this.imageUrl = imageUrl;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link SidecarContainersConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public SidecarContainersConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link SidecarContainersConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements SidecarContainersConfigProperty {
+            private final java.lang.Object cpu;
+            private final java.lang.Object memory;
+            private final java.lang.Object name;
+            private final java.lang.Object acrInstanceId;
+            private final java.lang.Object command;
+            private final java.lang.Object commandArgs;
+            private final java.lang.Object configMapMountDesc;
+            private final java.lang.Object emptyDirDesc;
+            private final java.lang.Object envs;
+            private final java.lang.Object imageUrl;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.cpu = software.amazon.jsii.Kernel.get(this, "cpu", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.memory = software.amazon.jsii.Kernel.get(this, "memory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.acrInstanceId = software.amazon.jsii.Kernel.get(this, "acrInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.command = software.amazon.jsii.Kernel.get(this, "command", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.commandArgs = software.amazon.jsii.Kernel.get(this, "commandArgs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.configMapMountDesc = software.amazon.jsii.Kernel.get(this, "configMapMountDesc", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.emptyDirDesc = software.amazon.jsii.Kernel.get(this, "emptyDirDesc", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.envs = software.amazon.jsii.Kernel.get(this, "envs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.imageUrl = software.amazon.jsii.Kernel.get(this, "imageUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.cpu = java.util.Objects.requireNonNull(builder.cpu, "cpu is required");
+                this.memory = java.util.Objects.requireNonNull(builder.memory, "memory is required");
+                this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+                this.acrInstanceId = builder.acrInstanceId;
+                this.command = builder.command;
+                this.commandArgs = builder.commandArgs;
+                this.configMapMountDesc = builder.configMapMountDesc;
+                this.emptyDirDesc = builder.emptyDirDesc;
+                this.envs = builder.envs;
+                this.imageUrl = builder.imageUrl;
+            }
+
+            @Override
+            public final java.lang.Object getCpu() {
+                return this.cpu;
+            }
+
+            @Override
+            public final java.lang.Object getMemory() {
+                return this.memory;
+            }
+
+            @Override
+            public final java.lang.Object getName() {
+                return this.name;
+            }
+
+            @Override
+            public final java.lang.Object getAcrInstanceId() {
+                return this.acrInstanceId;
+            }
+
+            @Override
+            public final java.lang.Object getCommand() {
+                return this.command;
+            }
+
+            @Override
+            public final java.lang.Object getCommandArgs() {
+                return this.commandArgs;
+            }
+
+            @Override
+            public final java.lang.Object getConfigMapMountDesc() {
+                return this.configMapMountDesc;
+            }
+
+            @Override
+            public final java.lang.Object getEmptyDirDesc() {
+                return this.emptyDirDesc;
+            }
+
+            @Override
+            public final java.lang.Object getEnvs() {
+                return this.envs;
+            }
+
+            @Override
+            public final java.lang.Object getImageUrl() {
+                return this.imageUrl;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("cpu", om.valueToTree(this.getCpu()));
+                data.set("memory", om.valueToTree(this.getMemory()));
+                data.set("name", om.valueToTree(this.getName()));
+                if (this.getAcrInstanceId() != null) {
+                    data.set("acrInstanceId", om.valueToTree(this.getAcrInstanceId()));
+                }
+                if (this.getCommand() != null) {
+                    data.set("command", om.valueToTree(this.getCommand()));
+                }
+                if (this.getCommandArgs() != null) {
+                    data.set("commandArgs", om.valueToTree(this.getCommandArgs()));
+                }
+                if (this.getConfigMapMountDesc() != null) {
+                    data.set("configMapMountDesc", om.valueToTree(this.getConfigMapMountDesc()));
+                }
+                if (this.getEmptyDirDesc() != null) {
+                    data.set("emptyDirDesc", om.valueToTree(this.getEmptyDirDesc()));
+                }
+                if (this.getEnvs() != null) {
+                    data.set("envs", om.valueToTree(this.getEnvs()));
+                }
+                if (this.getImageUrl() != null) {
+                    data.set("imageUrl", om.valueToTree(this.getImageUrl()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-sae.RosApplication.SidecarContainersConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                SidecarContainersConfigProperty.Jsii$Proxy that = (SidecarContainersConfigProperty.Jsii$Proxy) o;
+
+                if (!cpu.equals(that.cpu)) return false;
+                if (!memory.equals(that.memory)) return false;
+                if (!name.equals(that.name)) return false;
+                if (this.acrInstanceId != null ? !this.acrInstanceId.equals(that.acrInstanceId) : that.acrInstanceId != null) return false;
+                if (this.command != null ? !this.command.equals(that.command) : that.command != null) return false;
+                if (this.commandArgs != null ? !this.commandArgs.equals(that.commandArgs) : that.commandArgs != null) return false;
+                if (this.configMapMountDesc != null ? !this.configMapMountDesc.equals(that.configMapMountDesc) : that.configMapMountDesc != null) return false;
+                if (this.emptyDirDesc != null ? !this.emptyDirDesc.equals(that.emptyDirDesc) : that.emptyDirDesc != null) return false;
+                if (this.envs != null ? !this.envs.equals(that.envs) : that.envs != null) return false;
+                return this.imageUrl != null ? this.imageUrl.equals(that.imageUrl) : that.imageUrl == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.cpu.hashCode();
+                result = 31 * result + (this.memory.hashCode());
+                result = 31 * result + (this.name.hashCode());
+                result = 31 * result + (this.acrInstanceId != null ? this.acrInstanceId.hashCode() : 0);
+                result = 31 * result + (this.command != null ? this.command.hashCode() : 0);
+                result = 31 * result + (this.commandArgs != null ? this.commandArgs.hashCode() : 0);
+                result = 31 * result + (this.configMapMountDesc != null ? this.configMapMountDesc.hashCode() : 0);
+                result = 31 * result + (this.emptyDirDesc != null ? this.emptyDirDesc.hashCode() : 0);
+                result = 31 * result + (this.envs != null ? this.envs.hashCode() : 0);
+                result = 31 * result + (this.imageUrl != null ? this.imageUrl.hashCode() : 0);
+                return result;
+            }
+        }
     }
     /**
      */
@@ -1769,6 +2699,23 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param enableSidecarResourceIsolated This parameter is required.
+         */
+        public Builder enableSidecarResourceIsolated(final java.lang.Boolean enableSidecarResourceIsolated) {
+            this.props.enableSidecarResourceIsolated(enableSidecarResourceIsolated);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param enableSidecarResourceIsolated This parameter is required.
+         */
+        public Builder enableSidecarResourceIsolated(final com.aliyun.ros.cdk.core.IResolvable enableSidecarResourceIsolated) {
+            this.props.enableSidecarResourceIsolated(enableSidecarResourceIsolated);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param envs This parameter is required.
          */
         public Builder envs(final java.lang.String envs) {
@@ -1815,6 +2762,23 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder imageUrl(final com.aliyun.ros.cdk.core.IResolvable imageUrl) {
             this.props.imageUrl(imageUrl);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param initContainersConfig This parameter is required.
+         */
+        public Builder initContainersConfig(final com.aliyun.ros.cdk.core.IResolvable initContainersConfig) {
+            this.props.initContainersConfig(initContainersConfig);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param initContainersConfig This parameter is required.
+         */
+        public Builder initContainersConfig(final java.util.List<? extends java.lang.Object> initContainersConfig) {
+            this.props.initContainersConfig(initContainersConfig);
             return this;
         }
 
@@ -2342,6 +3306,23 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder serviceTags(final com.aliyun.ros.cdk.core.IResolvable serviceTags) {
             this.props.serviceTags(serviceTags);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param sidecarContainersConfig This parameter is required.
+         */
+        public Builder sidecarContainersConfig(final com.aliyun.ros.cdk.core.IResolvable sidecarContainersConfig) {
+            this.props.sidecarContainersConfig(sidecarContainersConfig);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param sidecarContainersConfig This parameter is required.
+         */
+        public Builder sidecarContainersConfig(final java.util.List<? extends java.lang.Object> sidecarContainersConfig) {
+            this.props.sidecarContainersConfig(sidecarContainersConfig);
             return this;
         }
 

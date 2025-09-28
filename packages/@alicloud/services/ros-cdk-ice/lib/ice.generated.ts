@@ -72,7 +72,7 @@ function rosCategoryPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ICE::Category`, which is used to create a media asset category.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ICE::Category`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Category` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ice-category
  */
@@ -540,7 +540,7 @@ function rosMediaInfoPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ICE::MediaInfo`, which is used to register a media asset in Intelligent Media Services (IMS).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ICE::MediaInfo`.
  * @Note This class does not contain additional functions, so it is recommended to use the `MediaInfo` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ice-mediainfo
  */
@@ -913,7 +913,7 @@ function rosUploadMediaPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ICE::UploadMedia`, which is used to query the upload address and credential of a media asset.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ICE::UploadMedia`.
  * @Note This class does not contain additional functions, so it is recommended to use the `UploadMedia` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ice-uploadmedia
  */

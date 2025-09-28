@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-snatentry
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:51.427Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:30.666Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.SnatEntryProps")
 @software.amazon.jsii.Jsii.Proxy(SnatEntryProps.Jsii$Proxy.class)
 public interface SnatEntryProps extends software.amazon.jsii.JsiiSerializable {
@@ -52,6 +52,8 @@ public interface SnatEntryProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      * Property sourceVSwitchIds: The ID of the VSwitch to access the Internet.
+     * <p>
+     * When updating this list parameter, a new item will lead to a creation of new Snat Entry with latest properties, a removed item will lead to a deletion of the attached SnatEntry
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSourceVSwitchIds() {
         return null;
@@ -189,6 +191,7 @@ public interface SnatEntryProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link SnatEntryProps#getSourceVSwitchIds}
          * @param sourceVSwitchIds Property sourceVSwitchIds: The ID of the VSwitch to access the Internet.
+         *                         When updating this list parameter, a new item will lead to a creation of new Snat Entry with latest properties, a removed item will lead to a deletion of the attached SnatEntry
          * @return {@code this}
          */
         public Builder sourceVSwitchIds(com.aliyun.ros.cdk.core.IResolvable sourceVSwitchIds) {
@@ -199,6 +202,7 @@ public interface SnatEntryProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link SnatEntryProps#getSourceVSwitchIds}
          * @param sourceVSwitchIds Property sourceVSwitchIds: The ID of the VSwitch to access the Internet.
+         *                         When updating this list parameter, a new item will lead to a creation of new Snat Entry with latest properties, a removed item will lead to a deletion of the attached SnatEntry
          * @return {@code this}
          */
         public Builder sourceVSwitchIds(java.util.List<? extends java.lang.Object> sourceVSwitchIds) {

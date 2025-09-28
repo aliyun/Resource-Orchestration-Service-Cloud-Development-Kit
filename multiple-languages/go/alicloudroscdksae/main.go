@@ -387,6 +387,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "enableEbpf", GoGetter: "EnableEbpf"},
 			_jsii_.MemberProperty{JsiiProperty: "enableNewArms", GoGetter: "EnableNewArms"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberProperty{JsiiProperty: "enableSidecarResourceIsolated", GoGetter: "EnableSidecarResourceIsolated"},
 			_jsii_.MemberProperty{JsiiProperty: "envs", GoGetter: "Envs"},
 			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
 			_jsii_.MemberMethod{JsiiMethod: "fetchDesc", GoMethod: "FetchDesc"},
@@ -394,6 +395,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "imagePullSecrets", GoGetter: "ImagePullSecrets"},
 			_jsii_.MemberProperty{JsiiProperty: "imageUrl", GoGetter: "ImageUrl"},
+			_jsii_.MemberProperty{JsiiProperty: "initContainersConfig", GoGetter: "InitContainersConfig"},
 			_jsii_.MemberProperty{JsiiProperty: "jarStartArgs", GoGetter: "JarStartArgs"},
 			_jsii_.MemberProperty{JsiiProperty: "jarStartOptions", GoGetter: "JarStartOptions"},
 			_jsii_.MemberProperty{JsiiProperty: "jdk", GoGetter: "Jdk"},
@@ -441,6 +443,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "saeVersion", GoGetter: "SaeVersion"},
 			_jsii_.MemberProperty{JsiiProperty: "securityGroupId", GoGetter: "SecurityGroupId"},
 			_jsii_.MemberProperty{JsiiProperty: "serviceTags", GoGetter: "ServiceTags"},
+			_jsii_.MemberProperty{JsiiProperty: "sidecarContainersConfig", GoGetter: "SidecarContainersConfig"},
 			_jsii_.MemberProperty{JsiiProperty: "slsConfigs", GoGetter: "SlsConfigs"},
 			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
 			_jsii_.MemberMethod{JsiiMethod: "synthesize", GoMethod: "Synthesize"},
@@ -462,6 +465,14 @@ func init() {
 			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreRosResource)
 			return &j
 		},
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-sae.RosApplication.InitContainersConfigProperty",
+		reflect.TypeOf((*RosApplication_InitContainersConfigProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-sae.RosApplication.SidecarContainersConfigProperty",
+		reflect.TypeOf((*RosApplication_SidecarContainersConfigProperty)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-sae.RosApplication.TagsProperty",

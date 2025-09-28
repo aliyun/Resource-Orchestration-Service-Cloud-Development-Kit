@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sae;
 /**
  * Represents a <code>Secret</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:50.422Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:29.401Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.ISecret")
 @software.amazon.jsii.Jsii.Proxy(ISecret.Jsii$Proxy.class)
 public interface ISecret extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

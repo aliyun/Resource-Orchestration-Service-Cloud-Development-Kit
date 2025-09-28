@@ -30,7 +30,7 @@ export interface TransitRouterVpcAttachmentProps {
     readonly cenId?: string | ros.IResolvable;
 
     /**
-     * Property chargeType:
+     * Property chargeType: The charge type of the transit router vpc attachment.
      */
     readonly chargeType?: string | ros.IResolvable;
 
@@ -194,7 +194,7 @@ export class TransitRouterVpcAttachment extends ros.Resource implements ITransit
             deletionForce: props.deletionForce,
             autoCreateVpcRoute: props.autoCreateVpcRoute,
             vpcId: props.vpcId,
-            chargeType: props.chargeType,
+            chargeType: props.chargeType === undefined || props.chargeType === null ? 'POSTPAY' : props.chargeType,
             routeTablePropagationEnabled: props.routeTablePropagationEnabled,
             cenId: props.cenId,
             transitRouterAttachmentName: props.transitRouterAttachmentName,

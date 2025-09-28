@@ -3,6 +3,149 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosAccount`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-account
+ */
+export interface RosAccountProps {
+
+    /**
+     * @Property accountAccessKey: Your Alibaba Cloud account or RAM user's AccessKey ID. For obtaining it, visit RAM console.
+     * If you use the static username and password created by the AccessKey of the RAM user to access the RabbitMQ version of the message queue and send and receive messages, make sure that the RAM user has been granted the permission of sending and receiving messages. For more information, see RAM permissions policy.
+     */
+    readonly accountAccessKey: string | ros.IResolvable;
+
+    /**
+     * @Property accountAccessKeySecret: Your Alibaba Cloud account or RAM user's AccessKeySecret.
+     */
+    readonly accountAccessKeySecret: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: Message Queue The ID of the RabbitMQ version instance, indicating which instance you need to create a static username and password.
+     */
+    readonly instanceId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAccountProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAccountProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAccountPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('accountAccessKey', ros.requiredValidator)(properties.accountAccessKey));
+    errors.collect(ros.propertyValidator('accountAccessKey', ros.validateString)(properties.accountAccessKey));
+    errors.collect(ros.propertyValidator('accountAccessKeySecret', ros.requiredValidator)(properties.accountAccessKeySecret));
+    errors.collect(ros.propertyValidator('accountAccessKeySecret', ros.validateString)(properties.accountAccessKeySecret));
+    return errors.wrap('supplied properties not correct for "RosAccountProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::AMQP::Account` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAccountProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::AMQP::Account` resource.
+ */
+// @ts-ignore TS6133
+function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAccountPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'AccountAccessKey': ros.stringToRosTemplate(properties.accountAccessKey),
+      'AccountAccessKeySecret': ros.stringToRosTemplate(properties.accountAccessKeySecret),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Account`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-account
+ */
+export class RosAccount extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::AMQP::Account";
+
+    /**
+     * @Attribute AccountAccessKey: The AccessKey ID used to create the username and password.
+     */
+    public readonly attrAccountAccessKey: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTimestamp: The timestamp when the account was created.
+     */
+    public readonly attrCreateTimestamp: ros.IResolvable;
+
+    /**
+     * @Attribute Password: The created static user password.
+     */
+    public readonly attrPassword: ros.IResolvable;
+
+    /**
+     * @Attribute UserName: The created account user name.
+     */
+    public readonly attrUserName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property accountAccessKey: Your Alibaba Cloud account or RAM user's AccessKey ID. For obtaining it, visit RAM console.
+     * If you use the static username and password created by the AccessKey of the RAM user to access the RabbitMQ version of the message queue and send and receive messages, make sure that the RAM user has been granted the permission of sending and receiving messages. For more information, see RAM permissions policy.
+     */
+    public accountAccessKey: string | ros.IResolvable;
+
+    /**
+     * @Property accountAccessKeySecret: Your Alibaba Cloud account or RAM user's AccessKeySecret.
+     */
+    public accountAccessKeySecret: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: Message Queue The ID of the RabbitMQ version instance, indicating which instance you need to create a static username and password.
+     */
+    public instanceId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAccountProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAccount.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAccountAccessKey = this.getAtt('AccountAccessKey');
+        this.attrCreateTimestamp = this.getAtt('CreateTimestamp');
+        this.attrPassword = this.getAtt('Password');
+        this.attrUserName = this.getAtt('UserName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.accountAccessKey = props.accountAccessKey;
+        this.accountAccessKeySecret = props.accountAccessKeySecret;
+        this.instanceId = props.instanceId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            accountAccessKey: this.accountAccessKey,
+            accountAccessKeySecret: this.accountAccessKeySecret,
+            instanceId: this.instanceId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAccountPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosBinding`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-binding
  */

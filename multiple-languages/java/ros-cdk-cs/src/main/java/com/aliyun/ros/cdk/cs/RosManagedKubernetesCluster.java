@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CS::ManagedKubernetesCluster</code>, which is used to create a Container Service for Kubernetes (ACK) managed cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.235Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.938Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedKubernetesCluster")
 public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -928,6 +928,24 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTimeZone() {
+        return software.amazon.jsii.Kernel.get(this, "timeZone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setTimeZone(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "timeZone", value);
+    }
+
+    /**
+     */
+    public void setTimeZone(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "timeZone", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getUserData() {
         return software.amazon.jsii.Kernel.get(this, "userData", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -1700,6 +1718,565 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
             public final int hashCode() {
                 int result = this.deleteMode != null ? this.deleteMode.hashCode() : 0;
                 result = 31 * result + (this.resourceType != null ? this.resourceType.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.InstancePatternsProperty")
+    @software.amazon.jsii.Jsii.Proxy(InstancePatternsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface InstancePatternsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCores() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCpuArchitectures() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getExcludedInstanceTypes() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceCategories() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceFamilyLevel() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceTypeFamilies() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getMaxCpuCores() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getMaxMemorySize() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getMemory() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getMinCpuCores() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getMinMemorySize() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link InstancePatternsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link InstancePatternsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<InstancePatternsProperty> {
+            java.lang.Object cores;
+            java.lang.Object cpuArchitectures;
+            java.lang.Object excludedInstanceTypes;
+            java.lang.Object instanceCategories;
+            java.lang.Object instanceFamilyLevel;
+            java.lang.Object instanceTypeFamilies;
+            java.lang.Object maxCpuCores;
+            java.lang.Object maxMemorySize;
+            java.lang.Object memory;
+            java.lang.Object minCpuCores;
+            java.lang.Object minMemorySize;
+
+            /**
+             * Sets the value of {@link InstancePatternsProperty#getCores}
+             * @param cores the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder cores(java.lang.Number cores) {
+                this.cores = cores;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InstancePatternsProperty#getCores}
+             * @param cores the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder cores(com.aliyun.ros.cdk.core.IResolvable cores) {
+                this.cores = cores;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InstancePatternsProperty#getCpuArchitectures}
+             * @param cpuArchitectures the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder cpuArchitectures(com.aliyun.ros.cdk.core.IResolvable cpuArchitectures) {
+                this.cpuArchitectures = cpuArchitectures;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InstancePatternsProperty#getCpuArchitectures}
+             * @param cpuArchitectures the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder cpuArchitectures(java.util.List<? extends java.lang.Object> cpuArchitectures) {
+                this.cpuArchitectures = cpuArchitectures;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InstancePatternsProperty#getExcludedInstanceTypes}
+             * @param excludedInstanceTypes the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder excludedInstanceTypes(com.aliyun.ros.cdk.core.IResolvable excludedInstanceTypes) {
+                this.excludedInstanceTypes = excludedInstanceTypes;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InstancePatternsProperty#getExcludedInstanceTypes}
+             * @param excludedInstanceTypes the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder excludedInstanceTypes(java.util.List<? extends java.lang.Object> excludedInstanceTypes) {
+                this.excludedInstanceTypes = excludedInstanceTypes;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InstancePatternsProperty#getInstanceCategories}
+             * @param instanceCategories the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder instanceCategories(com.aliyun.ros.cdk.core.IResolvable instanceCategories) {
+                this.instanceCategories = instanceCategories;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InstancePatternsProperty#getInstanceCategories}
+             * @param instanceCategories the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder instanceCategories(java.util.List<? extends java.lang.Object> instanceCategories) {
+                this.instanceCategories = instanceCategories;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InstancePatternsProperty#getInstanceFamilyLevel}
+             * @param instanceFamilyLevel the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder instanceFamilyLevel(java.lang.String instanceFamilyLevel) {
+                this.instanceFamilyLevel = instanceFamilyLevel;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InstancePatternsProperty#getInstanceFamilyLevel}
+             * @param instanceFamilyLevel the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder instanceFamilyLevel(com.aliyun.ros.cdk.core.IResolvable instanceFamilyLevel) {
+                this.instanceFamilyLevel = instanceFamilyLevel;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InstancePatternsProperty#getInstanceTypeFamilies}
+             * @param instanceTypeFamilies the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder instanceTypeFamilies(com.aliyun.ros.cdk.core.IResolvable instanceTypeFamilies) {
+                this.instanceTypeFamilies = instanceTypeFamilies;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InstancePatternsProperty#getInstanceTypeFamilies}
+             * @param instanceTypeFamilies the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder instanceTypeFamilies(java.util.List<? extends java.lang.Object> instanceTypeFamilies) {
+                this.instanceTypeFamilies = instanceTypeFamilies;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InstancePatternsProperty#getMaxCpuCores}
+             * @param maxCpuCores the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder maxCpuCores(java.lang.Number maxCpuCores) {
+                this.maxCpuCores = maxCpuCores;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InstancePatternsProperty#getMaxCpuCores}
+             * @param maxCpuCores the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder maxCpuCores(com.aliyun.ros.cdk.core.IResolvable maxCpuCores) {
+                this.maxCpuCores = maxCpuCores;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InstancePatternsProperty#getMaxMemorySize}
+             * @param maxMemorySize the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder maxMemorySize(java.lang.Number maxMemorySize) {
+                this.maxMemorySize = maxMemorySize;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InstancePatternsProperty#getMaxMemorySize}
+             * @param maxMemorySize the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder maxMemorySize(com.aliyun.ros.cdk.core.IResolvable maxMemorySize) {
+                this.maxMemorySize = maxMemorySize;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InstancePatternsProperty#getMemory}
+             * @param memory the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder memory(java.lang.Number memory) {
+                this.memory = memory;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InstancePatternsProperty#getMemory}
+             * @param memory the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder memory(com.aliyun.ros.cdk.core.IResolvable memory) {
+                this.memory = memory;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InstancePatternsProperty#getMinCpuCores}
+             * @param minCpuCores the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder minCpuCores(java.lang.Number minCpuCores) {
+                this.minCpuCores = minCpuCores;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InstancePatternsProperty#getMinCpuCores}
+             * @param minCpuCores the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder minCpuCores(com.aliyun.ros.cdk.core.IResolvable minCpuCores) {
+                this.minCpuCores = minCpuCores;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InstancePatternsProperty#getMinMemorySize}
+             * @param minMemorySize the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder minMemorySize(java.lang.Number minMemorySize) {
+                this.minMemorySize = minMemorySize;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InstancePatternsProperty#getMinMemorySize}
+             * @param minMemorySize the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder minMemorySize(com.aliyun.ros.cdk.core.IResolvable minMemorySize) {
+                this.minMemorySize = minMemorySize;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link InstancePatternsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public InstancePatternsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link InstancePatternsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements InstancePatternsProperty {
+            private final java.lang.Object cores;
+            private final java.lang.Object cpuArchitectures;
+            private final java.lang.Object excludedInstanceTypes;
+            private final java.lang.Object instanceCategories;
+            private final java.lang.Object instanceFamilyLevel;
+            private final java.lang.Object instanceTypeFamilies;
+            private final java.lang.Object maxCpuCores;
+            private final java.lang.Object maxMemorySize;
+            private final java.lang.Object memory;
+            private final java.lang.Object minCpuCores;
+            private final java.lang.Object minMemorySize;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.cores = software.amazon.jsii.Kernel.get(this, "cores", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.cpuArchitectures = software.amazon.jsii.Kernel.get(this, "cpuArchitectures", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.excludedInstanceTypes = software.amazon.jsii.Kernel.get(this, "excludedInstanceTypes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.instanceCategories = software.amazon.jsii.Kernel.get(this, "instanceCategories", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.instanceFamilyLevel = software.amazon.jsii.Kernel.get(this, "instanceFamilyLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.instanceTypeFamilies = software.amazon.jsii.Kernel.get(this, "instanceTypeFamilies", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.maxCpuCores = software.amazon.jsii.Kernel.get(this, "maxCpuCores", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.maxMemorySize = software.amazon.jsii.Kernel.get(this, "maxMemorySize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.memory = software.amazon.jsii.Kernel.get(this, "memory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.minCpuCores = software.amazon.jsii.Kernel.get(this, "minCpuCores", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.minMemorySize = software.amazon.jsii.Kernel.get(this, "minMemorySize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.cores = builder.cores;
+                this.cpuArchitectures = builder.cpuArchitectures;
+                this.excludedInstanceTypes = builder.excludedInstanceTypes;
+                this.instanceCategories = builder.instanceCategories;
+                this.instanceFamilyLevel = builder.instanceFamilyLevel;
+                this.instanceTypeFamilies = builder.instanceTypeFamilies;
+                this.maxCpuCores = builder.maxCpuCores;
+                this.maxMemorySize = builder.maxMemorySize;
+                this.memory = builder.memory;
+                this.minCpuCores = builder.minCpuCores;
+                this.minMemorySize = builder.minMemorySize;
+            }
+
+            @Override
+            public final java.lang.Object getCores() {
+                return this.cores;
+            }
+
+            @Override
+            public final java.lang.Object getCpuArchitectures() {
+                return this.cpuArchitectures;
+            }
+
+            @Override
+            public final java.lang.Object getExcludedInstanceTypes() {
+                return this.excludedInstanceTypes;
+            }
+
+            @Override
+            public final java.lang.Object getInstanceCategories() {
+                return this.instanceCategories;
+            }
+
+            @Override
+            public final java.lang.Object getInstanceFamilyLevel() {
+                return this.instanceFamilyLevel;
+            }
+
+            @Override
+            public final java.lang.Object getInstanceTypeFamilies() {
+                return this.instanceTypeFamilies;
+            }
+
+            @Override
+            public final java.lang.Object getMaxCpuCores() {
+                return this.maxCpuCores;
+            }
+
+            @Override
+            public final java.lang.Object getMaxMemorySize() {
+                return this.maxMemorySize;
+            }
+
+            @Override
+            public final java.lang.Object getMemory() {
+                return this.memory;
+            }
+
+            @Override
+            public final java.lang.Object getMinCpuCores() {
+                return this.minCpuCores;
+            }
+
+            @Override
+            public final java.lang.Object getMinMemorySize() {
+                return this.minMemorySize;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getCores() != null) {
+                    data.set("cores", om.valueToTree(this.getCores()));
+                }
+                if (this.getCpuArchitectures() != null) {
+                    data.set("cpuArchitectures", om.valueToTree(this.getCpuArchitectures()));
+                }
+                if (this.getExcludedInstanceTypes() != null) {
+                    data.set("excludedInstanceTypes", om.valueToTree(this.getExcludedInstanceTypes()));
+                }
+                if (this.getInstanceCategories() != null) {
+                    data.set("instanceCategories", om.valueToTree(this.getInstanceCategories()));
+                }
+                if (this.getInstanceFamilyLevel() != null) {
+                    data.set("instanceFamilyLevel", om.valueToTree(this.getInstanceFamilyLevel()));
+                }
+                if (this.getInstanceTypeFamilies() != null) {
+                    data.set("instanceTypeFamilies", om.valueToTree(this.getInstanceTypeFamilies()));
+                }
+                if (this.getMaxCpuCores() != null) {
+                    data.set("maxCpuCores", om.valueToTree(this.getMaxCpuCores()));
+                }
+                if (this.getMaxMemorySize() != null) {
+                    data.set("maxMemorySize", om.valueToTree(this.getMaxMemorySize()));
+                }
+                if (this.getMemory() != null) {
+                    data.set("memory", om.valueToTree(this.getMemory()));
+                }
+                if (this.getMinCpuCores() != null) {
+                    data.set("minCpuCores", om.valueToTree(this.getMinCpuCores()));
+                }
+                if (this.getMinMemorySize() != null) {
+                    data.set("minMemorySize", om.valueToTree(this.getMinMemorySize()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.InstancePatternsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                InstancePatternsProperty.Jsii$Proxy that = (InstancePatternsProperty.Jsii$Proxy) o;
+
+                if (this.cores != null ? !this.cores.equals(that.cores) : that.cores != null) return false;
+                if (this.cpuArchitectures != null ? !this.cpuArchitectures.equals(that.cpuArchitectures) : that.cpuArchitectures != null) return false;
+                if (this.excludedInstanceTypes != null ? !this.excludedInstanceTypes.equals(that.excludedInstanceTypes) : that.excludedInstanceTypes != null) return false;
+                if (this.instanceCategories != null ? !this.instanceCategories.equals(that.instanceCategories) : that.instanceCategories != null) return false;
+                if (this.instanceFamilyLevel != null ? !this.instanceFamilyLevel.equals(that.instanceFamilyLevel) : that.instanceFamilyLevel != null) return false;
+                if (this.instanceTypeFamilies != null ? !this.instanceTypeFamilies.equals(that.instanceTypeFamilies) : that.instanceTypeFamilies != null) return false;
+                if (this.maxCpuCores != null ? !this.maxCpuCores.equals(that.maxCpuCores) : that.maxCpuCores != null) return false;
+                if (this.maxMemorySize != null ? !this.maxMemorySize.equals(that.maxMemorySize) : that.maxMemorySize != null) return false;
+                if (this.memory != null ? !this.memory.equals(that.memory) : that.memory != null) return false;
+                if (this.minCpuCores != null ? !this.minCpuCores.equals(that.minCpuCores) : that.minCpuCores != null) return false;
+                return this.minMemorySize != null ? this.minMemorySize.equals(that.minMemorySize) : that.minMemorySize == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.cores != null ? this.cores.hashCode() : 0;
+                result = 31 * result + (this.cpuArchitectures != null ? this.cpuArchitectures.hashCode() : 0);
+                result = 31 * result + (this.excludedInstanceTypes != null ? this.excludedInstanceTypes.hashCode() : 0);
+                result = 31 * result + (this.instanceCategories != null ? this.instanceCategories.hashCode() : 0);
+                result = 31 * result + (this.instanceFamilyLevel != null ? this.instanceFamilyLevel.hashCode() : 0);
+                result = 31 * result + (this.instanceTypeFamilies != null ? this.instanceTypeFamilies.hashCode() : 0);
+                result = 31 * result + (this.maxCpuCores != null ? this.maxCpuCores.hashCode() : 0);
+                result = 31 * result + (this.maxMemorySize != null ? this.maxMemorySize.hashCode() : 0);
+                result = 31 * result + (this.memory != null ? this.memory.hashCode() : 0);
+                result = 31 * result + (this.minCpuCores != null ? this.minCpuCores.hashCode() : 0);
+                result = 31 * result + (this.minMemorySize != null ? this.minMemorySize.hashCode() : 0);
                 return result;
             }
         }
@@ -3105,17 +3682,7 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getInstanceTypes();
-
-        /**
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @org.jetbrains.annotations.NotNull java.lang.Object getSystemDiskSize();
-
-        /**
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchIds();
 
         /**
          */
@@ -3141,7 +3708,28 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getImageType() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceChargeType() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getInstancePatterns() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceTypes() {
             return null;
         }
 
@@ -3204,6 +3792,20 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityHardeningOs() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSocEnabled() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskCategory() {
             return null;
         }
@@ -3219,6 +3821,13 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.ScalingGroupTagsProperty> getTags() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchIds() {
             return null;
         }
 
@@ -3241,13 +3850,14 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ScalingGroupProperty> {
-            java.lang.Object instanceTypes;
             java.lang.Object systemDiskSize;
-            java.lang.Object vSwitchIds;
             java.lang.Object dataDisks;
             java.lang.Object desiredSize;
             java.lang.Object imageId;
+            java.lang.Object imageType;
             java.lang.Object instanceChargeType;
+            java.lang.Object instancePatterns;
+            java.lang.Object instanceTypes;
             java.lang.Object internetChargeType;
             java.lang.Object internetMaxBandwidthOut;
             java.lang.Object isEnterpriseSecurityGroup;
@@ -3256,32 +3866,13 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
             java.lang.Object period;
             java.lang.Object periodUnit;
             java.lang.Object rdsInstances;
+            java.lang.Object securityHardeningOs;
+            java.lang.Object socEnabled;
             java.lang.Object systemDiskCategory;
             java.lang.Object systemDiskPerformanceLevel;
             java.util.List<com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.ScalingGroupTagsProperty> tags;
+            java.lang.Object vSwitchIds;
             java.lang.Object zoneIds;
-
-            /**
-             * Sets the value of {@link ScalingGroupProperty#getInstanceTypes}
-             * @param instanceTypes the value to be set. This parameter is required.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder instanceTypes(com.aliyun.ros.cdk.core.IResolvable instanceTypes) {
-                this.instanceTypes = instanceTypes;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link ScalingGroupProperty#getInstanceTypes}
-             * @param instanceTypes the value to be set. This parameter is required.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder instanceTypes(java.util.List<? extends java.lang.Object> instanceTypes) {
-                this.instanceTypes = instanceTypes;
-                return this;
-            }
 
             /**
              * Sets the value of {@link ScalingGroupProperty#getSystemDiskSize}
@@ -3302,28 +3893,6 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder systemDiskSize(com.aliyun.ros.cdk.core.IResolvable systemDiskSize) {
                 this.systemDiskSize = systemDiskSize;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link ScalingGroupProperty#getVSwitchIds}
-             * @param vSwitchIds the value to be set. This parameter is required.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder vSwitchIds(com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
-                this.vSwitchIds = vSwitchIds;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link ScalingGroupProperty#getVSwitchIds}
-             * @param vSwitchIds the value to be set. This parameter is required.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder vSwitchIds(java.util.List<? extends java.lang.Object> vSwitchIds) {
-                this.vSwitchIds = vSwitchIds;
                 return this;
             }
 
@@ -3394,6 +3963,28 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
             }
 
             /**
+             * Sets the value of {@link ScalingGroupProperty#getImageType}
+             * @param imageType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder imageType(java.lang.String imageType) {
+                this.imageType = imageType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getImageType}
+             * @param imageType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder imageType(com.aliyun.ros.cdk.core.IResolvable imageType) {
+                this.imageType = imageType;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link ScalingGroupProperty#getInstanceChargeType}
              * @param instanceChargeType the value to be set.
              * @return {@code this}
@@ -3412,6 +4003,50 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder instanceChargeType(com.aliyun.ros.cdk.core.IResolvable instanceChargeType) {
                 this.instanceChargeType = instanceChargeType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getInstancePatterns}
+             * @param instancePatterns the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder instancePatterns(com.aliyun.ros.cdk.core.IResolvable instancePatterns) {
+                this.instancePatterns = instancePatterns;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getInstancePatterns}
+             * @param instancePatterns the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder instancePatterns(java.util.List<? extends java.lang.Object> instancePatterns) {
+                this.instancePatterns = instancePatterns;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getInstanceTypes}
+             * @param instanceTypes the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder instanceTypes(com.aliyun.ros.cdk.core.IResolvable instanceTypes) {
+                this.instanceTypes = instanceTypes;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getInstanceTypes}
+             * @param instanceTypes the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder instanceTypes(java.util.List<? extends java.lang.Object> instanceTypes) {
+                this.instanceTypes = instanceTypes;
                 return this;
             }
 
@@ -3592,6 +4227,50 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
             }
 
             /**
+             * Sets the value of {@link ScalingGroupProperty#getSecurityHardeningOs}
+             * @param securityHardeningOs the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder securityHardeningOs(java.lang.Boolean securityHardeningOs) {
+                this.securityHardeningOs = securityHardeningOs;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getSecurityHardeningOs}
+             * @param securityHardeningOs the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder securityHardeningOs(com.aliyun.ros.cdk.core.IResolvable securityHardeningOs) {
+                this.securityHardeningOs = securityHardeningOs;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getSocEnabled}
+             * @param socEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder socEnabled(java.lang.Boolean socEnabled) {
+                this.socEnabled = socEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getSocEnabled}
+             * @param socEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder socEnabled(com.aliyun.ros.cdk.core.IResolvable socEnabled) {
+                this.socEnabled = socEnabled;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link ScalingGroupProperty#getSystemDiskCategory}
              * @param systemDiskCategory the value to be set.
              * @return {@code this}
@@ -3648,6 +4327,28 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
             }
 
             /**
+             * Sets the value of {@link ScalingGroupProperty#getVSwitchIds}
+             * @param vSwitchIds the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder vSwitchIds(com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
+                this.vSwitchIds = vSwitchIds;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getVSwitchIds}
+             * @param vSwitchIds the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder vSwitchIds(java.util.List<? extends java.lang.Object> vSwitchIds) {
+                this.vSwitchIds = vSwitchIds;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link ScalingGroupProperty#getZoneIds}
              * @param zoneIds the value to be set.
              * @return {@code this}
@@ -3687,13 +4388,14 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ScalingGroupProperty {
-            private final java.lang.Object instanceTypes;
             private final java.lang.Object systemDiskSize;
-            private final java.lang.Object vSwitchIds;
             private final java.lang.Object dataDisks;
             private final java.lang.Object desiredSize;
             private final java.lang.Object imageId;
+            private final java.lang.Object imageType;
             private final java.lang.Object instanceChargeType;
+            private final java.lang.Object instancePatterns;
+            private final java.lang.Object instanceTypes;
             private final java.lang.Object internetChargeType;
             private final java.lang.Object internetMaxBandwidthOut;
             private final java.lang.Object isEnterpriseSecurityGroup;
@@ -3702,9 +4404,12 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
             private final java.lang.Object period;
             private final java.lang.Object periodUnit;
             private final java.lang.Object rdsInstances;
+            private final java.lang.Object securityHardeningOs;
+            private final java.lang.Object socEnabled;
             private final java.lang.Object systemDiskCategory;
             private final java.lang.Object systemDiskPerformanceLevel;
             private final java.util.List<com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.ScalingGroupTagsProperty> tags;
+            private final java.lang.Object vSwitchIds;
             private final java.lang.Object zoneIds;
 
             /**
@@ -3713,13 +4418,14 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.instanceTypes = software.amazon.jsii.Kernel.get(this, "instanceTypes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.systemDiskSize = software.amazon.jsii.Kernel.get(this, "systemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.vSwitchIds = software.amazon.jsii.Kernel.get(this, "vSwitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.dataDisks = software.amazon.jsii.Kernel.get(this, "dataDisks", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.desiredSize = software.amazon.jsii.Kernel.get(this, "desiredSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.imageId = software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.imageType = software.amazon.jsii.Kernel.get(this, "imageType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.instancePatterns = software.amazon.jsii.Kernel.get(this, "instancePatterns", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.instanceTypes = software.amazon.jsii.Kernel.get(this, "instanceTypes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.internetMaxBandwidthOut = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthOut", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.isEnterpriseSecurityGroup = software.amazon.jsii.Kernel.get(this, "isEnterpriseSecurityGroup", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -3728,9 +4434,12 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
                 this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.rdsInstances = software.amazon.jsii.Kernel.get(this, "rdsInstances", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.securityHardeningOs = software.amazon.jsii.Kernel.get(this, "securityHardeningOs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.socEnabled = software.amazon.jsii.Kernel.get(this, "socEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.systemDiskCategory = software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.systemDiskPerformanceLevel = software.amazon.jsii.Kernel.get(this, "systemDiskPerformanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.ScalingGroupTagsProperty.class)));
+                this.vSwitchIds = software.amazon.jsii.Kernel.get(this, "vSwitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.zoneIds = software.amazon.jsii.Kernel.get(this, "zoneIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
@@ -3740,13 +4449,14 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
             @SuppressWarnings("unchecked")
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.instanceTypes = java.util.Objects.requireNonNull(builder.instanceTypes, "instanceTypes is required");
                 this.systemDiskSize = java.util.Objects.requireNonNull(builder.systemDiskSize, "systemDiskSize is required");
-                this.vSwitchIds = java.util.Objects.requireNonNull(builder.vSwitchIds, "vSwitchIds is required");
                 this.dataDisks = builder.dataDisks;
                 this.desiredSize = builder.desiredSize;
                 this.imageId = builder.imageId;
+                this.imageType = builder.imageType;
                 this.instanceChargeType = builder.instanceChargeType;
+                this.instancePatterns = builder.instancePatterns;
+                this.instanceTypes = builder.instanceTypes;
                 this.internetChargeType = builder.internetChargeType;
                 this.internetMaxBandwidthOut = builder.internetMaxBandwidthOut;
                 this.isEnterpriseSecurityGroup = builder.isEnterpriseSecurityGroup;
@@ -3755,25 +4465,18 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
                 this.period = builder.period;
                 this.periodUnit = builder.periodUnit;
                 this.rdsInstances = builder.rdsInstances;
+                this.securityHardeningOs = builder.securityHardeningOs;
+                this.socEnabled = builder.socEnabled;
                 this.systemDiskCategory = builder.systemDiskCategory;
                 this.systemDiskPerformanceLevel = builder.systemDiskPerformanceLevel;
                 this.tags = (java.util.List<com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.ScalingGroupTagsProperty>)builder.tags;
+                this.vSwitchIds = builder.vSwitchIds;
                 this.zoneIds = builder.zoneIds;
-            }
-
-            @Override
-            public final java.lang.Object getInstanceTypes() {
-                return this.instanceTypes;
             }
 
             @Override
             public final java.lang.Object getSystemDiskSize() {
                 return this.systemDiskSize;
-            }
-
-            @Override
-            public final java.lang.Object getVSwitchIds() {
-                return this.vSwitchIds;
             }
 
             @Override
@@ -3792,8 +4495,23 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
             }
 
             @Override
+            public final java.lang.Object getImageType() {
+                return this.imageType;
+            }
+
+            @Override
             public final java.lang.Object getInstanceChargeType() {
                 return this.instanceChargeType;
+            }
+
+            @Override
+            public final java.lang.Object getInstancePatterns() {
+                return this.instancePatterns;
+            }
+
+            @Override
+            public final java.lang.Object getInstanceTypes() {
+                return this.instanceTypes;
             }
 
             @Override
@@ -3837,6 +4555,16 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
             }
 
             @Override
+            public final java.lang.Object getSecurityHardeningOs() {
+                return this.securityHardeningOs;
+            }
+
+            @Override
+            public final java.lang.Object getSocEnabled() {
+                return this.socEnabled;
+            }
+
+            @Override
             public final java.lang.Object getSystemDiskCategory() {
                 return this.systemDiskCategory;
             }
@@ -3852,6 +4580,11 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
             }
 
             @Override
+            public final java.lang.Object getVSwitchIds() {
+                return this.vSwitchIds;
+            }
+
+            @Override
             public final java.lang.Object getZoneIds() {
                 return this.zoneIds;
             }
@@ -3862,9 +4595,7 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
-                data.set("instanceTypes", om.valueToTree(this.getInstanceTypes()));
                 data.set("systemDiskSize", om.valueToTree(this.getSystemDiskSize()));
-                data.set("vSwitchIds", om.valueToTree(this.getVSwitchIds()));
                 if (this.getDataDisks() != null) {
                     data.set("dataDisks", om.valueToTree(this.getDataDisks()));
                 }
@@ -3874,8 +4605,17 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
                 if (this.getImageId() != null) {
                     data.set("imageId", om.valueToTree(this.getImageId()));
                 }
+                if (this.getImageType() != null) {
+                    data.set("imageType", om.valueToTree(this.getImageType()));
+                }
                 if (this.getInstanceChargeType() != null) {
                     data.set("instanceChargeType", om.valueToTree(this.getInstanceChargeType()));
+                }
+                if (this.getInstancePatterns() != null) {
+                    data.set("instancePatterns", om.valueToTree(this.getInstancePatterns()));
+                }
+                if (this.getInstanceTypes() != null) {
+                    data.set("instanceTypes", om.valueToTree(this.getInstanceTypes()));
                 }
                 if (this.getInternetChargeType() != null) {
                     data.set("internetChargeType", om.valueToTree(this.getInternetChargeType()));
@@ -3901,6 +4641,12 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
                 if (this.getRdsInstances() != null) {
                     data.set("rdsInstances", om.valueToTree(this.getRdsInstances()));
                 }
+                if (this.getSecurityHardeningOs() != null) {
+                    data.set("securityHardeningOs", om.valueToTree(this.getSecurityHardeningOs()));
+                }
+                if (this.getSocEnabled() != null) {
+                    data.set("socEnabled", om.valueToTree(this.getSocEnabled()));
+                }
                 if (this.getSystemDiskCategory() != null) {
                     data.set("systemDiskCategory", om.valueToTree(this.getSystemDiskCategory()));
                 }
@@ -3909,6 +4655,9 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
                 }
                 if (this.getTags() != null) {
                     data.set("tags", om.valueToTree(this.getTags()));
+                }
+                if (this.getVSwitchIds() != null) {
+                    data.set("vSwitchIds", om.valueToTree(this.getVSwitchIds()));
                 }
                 if (this.getZoneIds() != null) {
                     data.set("zoneIds", om.valueToTree(this.getZoneIds()));
@@ -3931,13 +4680,14 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
 
                 ScalingGroupProperty.Jsii$Proxy that = (ScalingGroupProperty.Jsii$Proxy) o;
 
-                if (!instanceTypes.equals(that.instanceTypes)) return false;
                 if (!systemDiskSize.equals(that.systemDiskSize)) return false;
-                if (!vSwitchIds.equals(that.vSwitchIds)) return false;
                 if (this.dataDisks != null ? !this.dataDisks.equals(that.dataDisks) : that.dataDisks != null) return false;
                 if (this.desiredSize != null ? !this.desiredSize.equals(that.desiredSize) : that.desiredSize != null) return false;
                 if (this.imageId != null ? !this.imageId.equals(that.imageId) : that.imageId != null) return false;
+                if (this.imageType != null ? !this.imageType.equals(that.imageType) : that.imageType != null) return false;
                 if (this.instanceChargeType != null ? !this.instanceChargeType.equals(that.instanceChargeType) : that.instanceChargeType != null) return false;
+                if (this.instancePatterns != null ? !this.instancePatterns.equals(that.instancePatterns) : that.instancePatterns != null) return false;
+                if (this.instanceTypes != null ? !this.instanceTypes.equals(that.instanceTypes) : that.instanceTypes != null) return false;
                 if (this.internetChargeType != null ? !this.internetChargeType.equals(that.internetChargeType) : that.internetChargeType != null) return false;
                 if (this.internetMaxBandwidthOut != null ? !this.internetMaxBandwidthOut.equals(that.internetMaxBandwidthOut) : that.internetMaxBandwidthOut != null) return false;
                 if (this.isEnterpriseSecurityGroup != null ? !this.isEnterpriseSecurityGroup.equals(that.isEnterpriseSecurityGroup) : that.isEnterpriseSecurityGroup != null) return false;
@@ -3946,21 +4696,25 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
                 if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
                 if (this.periodUnit != null ? !this.periodUnit.equals(that.periodUnit) : that.periodUnit != null) return false;
                 if (this.rdsInstances != null ? !this.rdsInstances.equals(that.rdsInstances) : that.rdsInstances != null) return false;
+                if (this.securityHardeningOs != null ? !this.securityHardeningOs.equals(that.securityHardeningOs) : that.securityHardeningOs != null) return false;
+                if (this.socEnabled != null ? !this.socEnabled.equals(that.socEnabled) : that.socEnabled != null) return false;
                 if (this.systemDiskCategory != null ? !this.systemDiskCategory.equals(that.systemDiskCategory) : that.systemDiskCategory != null) return false;
                 if (this.systemDiskPerformanceLevel != null ? !this.systemDiskPerformanceLevel.equals(that.systemDiskPerformanceLevel) : that.systemDiskPerformanceLevel != null) return false;
                 if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
+                if (this.vSwitchIds != null ? !this.vSwitchIds.equals(that.vSwitchIds) : that.vSwitchIds != null) return false;
                 return this.zoneIds != null ? this.zoneIds.equals(that.zoneIds) : that.zoneIds == null;
             }
 
             @Override
             public final int hashCode() {
-                int result = this.instanceTypes.hashCode();
-                result = 31 * result + (this.systemDiskSize.hashCode());
-                result = 31 * result + (this.vSwitchIds.hashCode());
+                int result = this.systemDiskSize.hashCode();
                 result = 31 * result + (this.dataDisks != null ? this.dataDisks.hashCode() : 0);
                 result = 31 * result + (this.desiredSize != null ? this.desiredSize.hashCode() : 0);
                 result = 31 * result + (this.imageId != null ? this.imageId.hashCode() : 0);
+                result = 31 * result + (this.imageType != null ? this.imageType.hashCode() : 0);
                 result = 31 * result + (this.instanceChargeType != null ? this.instanceChargeType.hashCode() : 0);
+                result = 31 * result + (this.instancePatterns != null ? this.instancePatterns.hashCode() : 0);
+                result = 31 * result + (this.instanceTypes != null ? this.instanceTypes.hashCode() : 0);
                 result = 31 * result + (this.internetChargeType != null ? this.internetChargeType.hashCode() : 0);
                 result = 31 * result + (this.internetMaxBandwidthOut != null ? this.internetMaxBandwidthOut.hashCode() : 0);
                 result = 31 * result + (this.isEnterpriseSecurityGroup != null ? this.isEnterpriseSecurityGroup.hashCode() : 0);
@@ -3969,9 +4723,12 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
                 result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
                 result = 31 * result + (this.periodUnit != null ? this.periodUnit.hashCode() : 0);
                 result = 31 * result + (this.rdsInstances != null ? this.rdsInstances.hashCode() : 0);
+                result = 31 * result + (this.securityHardeningOs != null ? this.securityHardeningOs.hashCode() : 0);
+                result = 31 * result + (this.socEnabled != null ? this.socEnabled.hashCode() : 0);
                 result = 31 * result + (this.systemDiskCategory != null ? this.systemDiskCategory.hashCode() : 0);
                 result = 31 * result + (this.systemDiskPerformanceLevel != null ? this.systemDiskPerformanceLevel.hashCode() : 0);
                 result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
+                result = 31 * result + (this.vSwitchIds != null ? this.vSwitchIds.hashCode() : 0);
                 result = 31 * result + (this.zoneIds != null ? this.zoneIds.hashCode() : 0);
                 return result;
             }
@@ -5195,6 +5952,23 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
          */
         public Builder timeoutMins(final com.aliyun.ros.cdk.core.IResolvable timeoutMins) {
             this.props.timeoutMins(timeoutMins);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param timeZone This parameter is required.
+         */
+        public Builder timeZone(final java.lang.String timeZone) {
+            this.props.timeZone(timeZone);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param timeZone This parameter is required.
+         */
+        public Builder timeZone(final com.aliyun.ros.cdk.core.IResolvable timeZone) {
+            this.props.timeZone(timeZone);
             return this;
         }
 

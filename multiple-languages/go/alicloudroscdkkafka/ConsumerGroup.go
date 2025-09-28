@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::KAFKA::ConsumerGroup`, which is used to create a consumer group.
+// This class encapsulates and extends the ROS resource type `ALIYUN::KAFKA::ConsumerGroup`.
 type ConsumerGroup interface {
 	alicloudroscdkcore.Resource
 	IConsumerGroup

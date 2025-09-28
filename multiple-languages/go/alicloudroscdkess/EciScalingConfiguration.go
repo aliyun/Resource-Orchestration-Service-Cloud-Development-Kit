@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ESS::EciScalingConfiguration`, which is used to define a scaling configuration of the Elastic Container Instance type in Auto Scaling.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ESS::EciScalingConfiguration`.
 type EciScalingConfiguration interface {
 	alicloudroscdkcore.Resource
 	IEciScalingConfiguration

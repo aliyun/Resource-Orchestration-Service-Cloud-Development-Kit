@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos.datasource;
 /**
  * Represents a <code>Templates</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.982Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:27.384Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.datasource.ITemplates")
 @software.amazon.jsii.Jsii.Proxy(ITemplates.Jsii$Proxy.class)
 public interface ITemplates extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

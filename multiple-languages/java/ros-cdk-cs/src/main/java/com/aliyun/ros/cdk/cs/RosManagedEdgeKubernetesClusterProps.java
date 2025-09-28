@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managededgekubernetescluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.234Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.936Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedEdgeKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosManagedEdgeKubernetesClusterProps.Jsii$Proxy.class)
 public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -46,6 +46,12 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEncryptionProviderKey() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEndpointPublicAccess() {
         return null;
     }
@@ -64,6 +70,12 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getKubernetesVersion() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getLoginPassword() {
         return null;
     }
@@ -77,6 +89,12 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNodeCidrMask() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNodePools() {
         return null;
     }
 
@@ -156,12 +174,15 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
         java.lang.Object clusterSpec;
         java.lang.Object containerCidr;
         java.lang.Object deletionProtection;
+        java.lang.Object encryptionProviderKey;
         java.lang.Object endpointPublicAccess;
         java.lang.Object isEnterpriseSecurityGroup;
         java.lang.Object keyPair;
+        java.lang.Object kubernetesVersion;
         java.lang.Object loginPassword;
         java.lang.Object maintenanceWindow;
         java.lang.Object nodeCidrMask;
+        java.lang.Object nodePools;
         java.lang.Object profile;
         java.lang.Object proxyMode;
         java.lang.Object resourceGroupId;
@@ -294,6 +315,26 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
         }
 
         /**
+         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getEncryptionProviderKey}
+         * @param encryptionProviderKey the value to be set.
+         * @return {@code this}
+         */
+        public Builder encryptionProviderKey(java.lang.String encryptionProviderKey) {
+            this.encryptionProviderKey = encryptionProviderKey;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getEncryptionProviderKey}
+         * @param encryptionProviderKey the value to be set.
+         * @return {@code this}
+         */
+        public Builder encryptionProviderKey(com.aliyun.ros.cdk.core.IResolvable encryptionProviderKey) {
+            this.encryptionProviderKey = encryptionProviderKey;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getEndpointPublicAccess}
          * @param endpointPublicAccess the value to be set.
          * @return {@code this}
@@ -354,6 +395,26 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
         }
 
         /**
+         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getKubernetesVersion}
+         * @param kubernetesVersion the value to be set.
+         * @return {@code this}
+         */
+        public Builder kubernetesVersion(java.lang.String kubernetesVersion) {
+            this.kubernetesVersion = kubernetesVersion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getKubernetesVersion}
+         * @param kubernetesVersion the value to be set.
+         * @return {@code this}
+         */
+        public Builder kubernetesVersion(com.aliyun.ros.cdk.core.IResolvable kubernetesVersion) {
+            this.kubernetesVersion = kubernetesVersion;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getLoginPassword}
          * @param loginPassword the value to be set.
          * @return {@code this}
@@ -410,6 +471,26 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
          */
         public Builder nodeCidrMask(com.aliyun.ros.cdk.core.IResolvable nodeCidrMask) {
             this.nodeCidrMask = nodeCidrMask;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getNodePools}
+         * @param nodePools the value to be set.
+         * @return {@code this}
+         */
+        public Builder nodePools(com.aliyun.ros.cdk.core.IResolvable nodePools) {
+            this.nodePools = nodePools;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getNodePools}
+         * @param nodePools the value to be set.
+         * @return {@code this}
+         */
+        public Builder nodePools(java.util.List<? extends java.lang.Object> nodePools) {
+            this.nodePools = nodePools;
             return this;
         }
 
@@ -626,12 +707,15 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
         private final java.lang.Object clusterSpec;
         private final java.lang.Object containerCidr;
         private final java.lang.Object deletionProtection;
+        private final java.lang.Object encryptionProviderKey;
         private final java.lang.Object endpointPublicAccess;
         private final java.lang.Object isEnterpriseSecurityGroup;
         private final java.lang.Object keyPair;
+        private final java.lang.Object kubernetesVersion;
         private final java.lang.Object loginPassword;
         private final java.lang.Object maintenanceWindow;
         private final java.lang.Object nodeCidrMask;
+        private final java.lang.Object nodePools;
         private final java.lang.Object profile;
         private final java.lang.Object proxyMode;
         private final java.lang.Object resourceGroupId;
@@ -655,12 +739,15 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             this.clusterSpec = software.amazon.jsii.Kernel.get(this, "clusterSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.containerCidr = software.amazon.jsii.Kernel.get(this, "containerCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.encryptionProviderKey = software.amazon.jsii.Kernel.get(this, "encryptionProviderKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.endpointPublicAccess = software.amazon.jsii.Kernel.get(this, "endpointPublicAccess", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.isEnterpriseSecurityGroup = software.amazon.jsii.Kernel.get(this, "isEnterpriseSecurityGroup", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.keyPair = software.amazon.jsii.Kernel.get(this, "keyPair", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.kubernetesVersion = software.amazon.jsii.Kernel.get(this, "kubernetesVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loginPassword = software.amazon.jsii.Kernel.get(this, "loginPassword", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.maintenanceWindow = software.amazon.jsii.Kernel.get(this, "maintenanceWindow", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.nodeCidrMask = software.amazon.jsii.Kernel.get(this, "nodeCidrMask", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.nodePools = software.amazon.jsii.Kernel.get(this, "nodePools", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.profile = software.amazon.jsii.Kernel.get(this, "profile", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.proxyMode = software.amazon.jsii.Kernel.get(this, "proxyMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -685,12 +772,15 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             this.clusterSpec = builder.clusterSpec;
             this.containerCidr = builder.containerCidr;
             this.deletionProtection = builder.deletionProtection;
+            this.encryptionProviderKey = builder.encryptionProviderKey;
             this.endpointPublicAccess = builder.endpointPublicAccess;
             this.isEnterpriseSecurityGroup = builder.isEnterpriseSecurityGroup;
             this.keyPair = builder.keyPair;
+            this.kubernetesVersion = builder.kubernetesVersion;
             this.loginPassword = builder.loginPassword;
             this.maintenanceWindow = builder.maintenanceWindow;
             this.nodeCidrMask = builder.nodeCidrMask;
+            this.nodePools = builder.nodePools;
             this.profile = builder.profile;
             this.proxyMode = builder.proxyMode;
             this.resourceGroupId = builder.resourceGroupId;
@@ -734,6 +824,11 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
         }
 
         @Override
+        public final java.lang.Object getEncryptionProviderKey() {
+            return this.encryptionProviderKey;
+        }
+
+        @Override
         public final java.lang.Object getEndpointPublicAccess() {
             return this.endpointPublicAccess;
         }
@@ -749,6 +844,11 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
         }
 
         @Override
+        public final java.lang.Object getKubernetesVersion() {
+            return this.kubernetesVersion;
+        }
+
+        @Override
         public final java.lang.Object getLoginPassword() {
             return this.loginPassword;
         }
@@ -761,6 +861,11 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
         @Override
         public final java.lang.Object getNodeCidrMask() {
             return this.nodeCidrMask;
+        }
+
+        @Override
+        public final java.lang.Object getNodePools() {
+            return this.nodePools;
         }
 
         @Override
@@ -835,6 +940,9 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             if (this.getDeletionProtection() != null) {
                 data.set("deletionProtection", om.valueToTree(this.getDeletionProtection()));
             }
+            if (this.getEncryptionProviderKey() != null) {
+                data.set("encryptionProviderKey", om.valueToTree(this.getEncryptionProviderKey()));
+            }
             if (this.getEndpointPublicAccess() != null) {
                 data.set("endpointPublicAccess", om.valueToTree(this.getEndpointPublicAccess()));
             }
@@ -844,6 +952,9 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             if (this.getKeyPair() != null) {
                 data.set("keyPair", om.valueToTree(this.getKeyPair()));
             }
+            if (this.getKubernetesVersion() != null) {
+                data.set("kubernetesVersion", om.valueToTree(this.getKubernetesVersion()));
+            }
             if (this.getLoginPassword() != null) {
                 data.set("loginPassword", om.valueToTree(this.getLoginPassword()));
             }
@@ -852,6 +963,9 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             }
             if (this.getNodeCidrMask() != null) {
                 data.set("nodeCidrMask", om.valueToTree(this.getNodeCidrMask()));
+            }
+            if (this.getNodePools() != null) {
+                data.set("nodePools", om.valueToTree(this.getNodePools()));
             }
             if (this.getProfile() != null) {
                 data.set("profile", om.valueToTree(this.getProfile()));
@@ -907,12 +1021,15 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             if (this.clusterSpec != null ? !this.clusterSpec.equals(that.clusterSpec) : that.clusterSpec != null) return false;
             if (this.containerCidr != null ? !this.containerCidr.equals(that.containerCidr) : that.containerCidr != null) return false;
             if (this.deletionProtection != null ? !this.deletionProtection.equals(that.deletionProtection) : that.deletionProtection != null) return false;
+            if (this.encryptionProviderKey != null ? !this.encryptionProviderKey.equals(that.encryptionProviderKey) : that.encryptionProviderKey != null) return false;
             if (this.endpointPublicAccess != null ? !this.endpointPublicAccess.equals(that.endpointPublicAccess) : that.endpointPublicAccess != null) return false;
             if (this.isEnterpriseSecurityGroup != null ? !this.isEnterpriseSecurityGroup.equals(that.isEnterpriseSecurityGroup) : that.isEnterpriseSecurityGroup != null) return false;
             if (this.keyPair != null ? !this.keyPair.equals(that.keyPair) : that.keyPair != null) return false;
+            if (this.kubernetesVersion != null ? !this.kubernetesVersion.equals(that.kubernetesVersion) : that.kubernetesVersion != null) return false;
             if (this.loginPassword != null ? !this.loginPassword.equals(that.loginPassword) : that.loginPassword != null) return false;
             if (this.maintenanceWindow != null ? !this.maintenanceWindow.equals(that.maintenanceWindow) : that.maintenanceWindow != null) return false;
             if (this.nodeCidrMask != null ? !this.nodeCidrMask.equals(that.nodeCidrMask) : that.nodeCidrMask != null) return false;
+            if (this.nodePools != null ? !this.nodePools.equals(that.nodePools) : that.nodePools != null) return false;
             if (this.profile != null ? !this.profile.equals(that.profile) : that.profile != null) return false;
             if (this.proxyMode != null ? !this.proxyMode.equals(that.proxyMode) : that.proxyMode != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
@@ -933,12 +1050,15 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             result = 31 * result + (this.clusterSpec != null ? this.clusterSpec.hashCode() : 0);
             result = 31 * result + (this.containerCidr != null ? this.containerCidr.hashCode() : 0);
             result = 31 * result + (this.deletionProtection != null ? this.deletionProtection.hashCode() : 0);
+            result = 31 * result + (this.encryptionProviderKey != null ? this.encryptionProviderKey.hashCode() : 0);
             result = 31 * result + (this.endpointPublicAccess != null ? this.endpointPublicAccess.hashCode() : 0);
             result = 31 * result + (this.isEnterpriseSecurityGroup != null ? this.isEnterpriseSecurityGroup.hashCode() : 0);
             result = 31 * result + (this.keyPair != null ? this.keyPair.hashCode() : 0);
+            result = 31 * result + (this.kubernetesVersion != null ? this.kubernetesVersion.hashCode() : 0);
             result = 31 * result + (this.loginPassword != null ? this.loginPassword.hashCode() : 0);
             result = 31 * result + (this.maintenanceWindow != null ? this.maintenanceWindow.hashCode() : 0);
             result = 31 * result + (this.nodeCidrMask != null ? this.nodeCidrMask.hashCode() : 0);
+            result = 31 * result + (this.nodePools != null ? this.nodePools.hashCode() : 0);
             result = 31 * result + (this.profile != null ? this.profile.hashCode() : 0);
             result = 31 * result + (this.proxyMode != null ? this.proxyMode.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);

@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Mns
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::MNS::Topic`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::MNS::Topic`, which is used to create a topic.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTopic`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-topic

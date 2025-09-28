@@ -1,0 +1,319 @@
+package com.aliyun.ros.cdk.fc3;
+
+/**
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::FC3::FunctionInvoker</code>.
+ */
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:25.905Z")
+@software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc3.$Module.class, fqn = "@alicloud/ros-cdk-fc3.FunctionInvoker")
+public class FunctionInvoker extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.fc3.IFunctionInvoker {
+
+    protected FunctionInvoker(final software.amazon.jsii.JsiiObjectRef objRef) {
+        super(objRef);
+    }
+
+    protected FunctionInvoker(final software.amazon.jsii.JsiiObject.InitializationMode initializationMode) {
+        super(initializationMode);
+    }
+
+    /**
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
+     * @param enableResourcePropertyConstraint
+     */
+    public FunctionInvoker(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.fc3.FunctionInvokerProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
+        super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+        software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), java.util.Objects.requireNonNull(props, "props is required"), enableResourcePropertyConstraint });
+    }
+
+    /**
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
+     */
+    public FunctionInvoker(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.fc3.FunctionInvokerProps props) {
+        super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+        software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), java.util.Objects.requireNonNull(props, "props is required") });
+    }
+
+    /**
+     * Attribute Result: Depends on result type: NoResult: Async invoke has no result.
+     * <p>
+     * Success: The response of the function. The response should be utf-8 encoded string, otherwise ROS will report an error. If the response is binary, encode it via base64 before it is returned.
+     * Failure: Error Message.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrResult() {
+        return software.amazon.jsii.Kernel.get(this, "attrResult", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     * Attribute ResultType: Result type: NoResult: Async invoke has no result.
+     * <p>
+     * Success: Sync invoke succeeds.
+     * Failure: Sync invoke fails.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrResultType() {
+        return software.amazon.jsii.Kernel.get(this, "attrResultType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.fc3.FunctionInvokerProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.fc3.FunctionInvokerProps.class));
+    }
+
+    protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
+        return software.amazon.jsii.Kernel.get(this, "enableResourcePropertyConstraint", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
+    }
+
+    protected void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
+    }
+
+    protected @org.jetbrains.annotations.NotNull java.lang.String getId() {
+        return software.amazon.jsii.Kernel.get(this, "id", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    }
+
+    protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
+    }
+
+    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {
+        return software.amazon.jsii.Kernel.get(this, "scope", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.Construct.class));
+    }
+
+    protected void setScope(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct value) {
+        software.amazon.jsii.Kernel.set(this, "scope", java.util.Objects.requireNonNull(value, "scope is required"));
+    }
+
+    /**
+     * A fluent builder for {@link com.aliyun.ros.cdk.fc3.FunctionInvoker}.
+     */
+    public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.fc3.FunctionInvoker> {
+        /**
+         * @return a new instance of {@link Builder}.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
+         * @param enableResourcePropertyConstraint
+         */
+        public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
+            return new Builder(scope, id, enableResourcePropertyConstraint);
+        }
+        /**
+         * @return a new instance of {@link Builder}.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
+         */
+        public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
+            return new Builder(scope, id, null);
+        }
+
+        private final com.aliyun.ros.cdk.core.Construct scope;
+        private final java.lang.String id;
+        private final java.lang.Boolean enableResourcePropertyConstraint;
+        private final com.aliyun.ros.cdk.fc3.FunctionInvokerProps.Builder props;
+
+        private Builder(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
+            this.scope = scope;
+            this.id = id;
+            this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+            this.props = new com.aliyun.ros.cdk.fc3.FunctionInvokerProps.Builder();
+        }
+
+        /**
+         * Property functionName: The name of the function.
+         * <p>
+         * @return {@code this}
+         * @param functionName Property functionName: The name of the function. This parameter is required.
+         */
+        public Builder functionName(final java.lang.String functionName) {
+            this.props.functionName(functionName);
+            return this;
+        }
+        /**
+         * Property functionName: The name of the function.
+         * <p>
+         * @return {@code this}
+         * @param functionName Property functionName: The name of the function. This parameter is required.
+         */
+        public Builder functionName(final com.aliyun.ros.cdk.core.IResolvable functionName) {
+            this.props.functionName(functionName);
+            return this;
+        }
+
+        /**
+         * Property async: Whether to invoke the function asynchronously.
+         * <p>
+         * @return {@code this}
+         * @param async Property async: Whether to invoke the function asynchronously. This parameter is required.
+         */
+        public Builder async(final java.lang.Boolean async) {
+            this.props.async(async);
+            return this;
+        }
+        /**
+         * Property async: Whether to invoke the function asynchronously.
+         * <p>
+         * @return {@code this}
+         * @param async Property async: Whether to invoke the function asynchronously. This parameter is required.
+         */
+        public Builder async(final com.aliyun.ros.cdk.core.IResolvable async) {
+            this.props.async(async);
+            return this;
+        }
+
+        /**
+         * Property checkAsyncInvocation: Check async invocation setting.
+         * <p>
+         * @return {@code this}
+         * @param checkAsyncInvocation Property checkAsyncInvocation: Check async invocation setting. This parameter is required.
+         */
+        public Builder checkAsyncInvocation(final com.aliyun.ros.cdk.core.IResolvable checkAsyncInvocation) {
+            this.props.checkAsyncInvocation(checkAsyncInvocation);
+            return this;
+        }
+        /**
+         * Property checkAsyncInvocation: Check async invocation setting.
+         * <p>
+         * @return {@code this}
+         * @param checkAsyncInvocation Property checkAsyncInvocation: Check async invocation setting. This parameter is required.
+         */
+        public Builder checkAsyncInvocation(final com.aliyun.ros.cdk.fc3.RosFunctionInvoker.CheckAsyncInvocationProperty checkAsyncInvocation) {
+            this.props.checkAsyncInvocation(checkAsyncInvocation);
+            return this;
+        }
+
+        /**
+         * Property checkError: Whether check error for function invocation result.
+         * <p>
+         * If set true and function invocation result has error, the resource creation will be regard as failed.
+         * Default is false
+         * <p>
+         * @return {@code this}
+         * @param checkError Property checkError: Whether check error for function invocation result. This parameter is required.
+         */
+        public Builder checkError(final java.lang.Boolean checkError) {
+            this.props.checkError(checkError);
+            return this;
+        }
+        /**
+         * Property checkError: Whether check error for function invocation result.
+         * <p>
+         * If set true and function invocation result has error, the resource creation will be regard as failed.
+         * Default is false
+         * <p>
+         * @return {@code this}
+         * @param checkError Property checkError: Whether check error for function invocation result. This parameter is required.
+         */
+        public Builder checkError(final com.aliyun.ros.cdk.core.IResolvable checkError) {
+            this.props.checkError(checkError);
+            return this;
+        }
+
+        /**
+         * Property event: This value is passed to function as utf-8 encoded string.It’s function’s responsibility to interpret the value. If the value needs to be binary, encode it via base64 before passing to this property.
+         * <p>
+         * @return {@code this}
+         * @param event Property event: This value is passed to function as utf-8 encoded string.It’s function’s responsibility to interpret the value. If the value needs to be binary, encode it via base64 before passing to this property. This parameter is required.
+         */
+        public Builder event(final java.lang.String event) {
+            this.props.event(event);
+            return this;
+        }
+        /**
+         * Property event: This value is passed to function as utf-8 encoded string.It’s function’s responsibility to interpret the value. If the value needs to be binary, encode it via base64 before passing to this property.
+         * <p>
+         * @return {@code this}
+         * @param event Property event: This value is passed to function as utf-8 encoded string.It’s function’s responsibility to interpret the value. If the value needs to be binary, encode it via base64 before passing to this property. This parameter is required.
+         */
+        public Builder event(final com.aliyun.ros.cdk.core.IResolvable event) {
+            this.props.event(event);
+            return this;
+        }
+
+        /**
+         * Property executeVersion: If the property is not specified for creation and update, the function will not be invoked.
+         * <p>
+         * The change of the property leads to the invoke of the function.
+         * <p>
+         * @return {@code this}
+         * @param executeVersion Property executeVersion: If the property is not specified for creation and update, the function will not be invoked. This parameter is required.
+         */
+        public Builder executeVersion(final java.lang.Number executeVersion) {
+            this.props.executeVersion(executeVersion);
+            return this;
+        }
+        /**
+         * Property executeVersion: If the property is not specified for creation and update, the function will not be invoked.
+         * <p>
+         * The change of the property leads to the invoke of the function.
+         * <p>
+         * @return {@code this}
+         * @param executeVersion Property executeVersion: If the property is not specified for creation and update, the function will not be invoked. This parameter is required.
+         */
+        public Builder executeVersion(final com.aliyun.ros.cdk.core.IResolvable executeVersion) {
+            this.props.executeVersion(executeVersion);
+            return this;
+        }
+
+        /**
+         * Property qualifier: service version, can be versionId or aliasName.
+         * <p>
+         * @return {@code this}
+         * @param qualifier Property qualifier: service version, can be versionId or aliasName. This parameter is required.
+         */
+        public Builder qualifier(final java.lang.String qualifier) {
+            this.props.qualifier(qualifier);
+            return this;
+        }
+        /**
+         * Property qualifier: service version, can be versionId or aliasName.
+         * <p>
+         * @return {@code this}
+         * @param qualifier Property qualifier: service version, can be versionId or aliasName. This parameter is required.
+         */
+        public Builder qualifier(final com.aliyun.ros.cdk.core.IResolvable qualifier) {
+            this.props.qualifier(qualifier);
+            return this;
+        }
+
+        /**
+         * Property serviceRegionId: Which region service belongs to.
+         * <p>
+         * @return {@code this}
+         * @param serviceRegionId Property serviceRegionId: Which region service belongs to. This parameter is required.
+         */
+        public Builder serviceRegionId(final java.lang.String serviceRegionId) {
+            this.props.serviceRegionId(serviceRegionId);
+            return this;
+        }
+        /**
+         * Property serviceRegionId: Which region service belongs to.
+         * <p>
+         * @return {@code this}
+         * @param serviceRegionId Property serviceRegionId: Which region service belongs to. This parameter is required.
+         */
+        public Builder serviceRegionId(final com.aliyun.ros.cdk.core.IResolvable serviceRegionId) {
+            this.props.serviceRegionId(serviceRegionId);
+            return this;
+        }
+
+        /**
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.fc3.FunctionInvoker}.
+         */
+        @Override
+        public com.aliyun.ros.cdk.fc3.FunctionInvoker build() {
+            return new com.aliyun.ros.cdk.fc3.FunctionInvoker(
+                this.scope,
+                this.id,
+                this.props.build(),
+                this.enableResourcePropertyConstraint
+            );
+        }
+    }
+}

@@ -71,7 +71,7 @@ function rosAliasesPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::FC::Aliases`, which is used to query the aliases of a Function Compute service.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::FC::Aliases`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Aliases` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-aliases
  */
@@ -341,7 +341,7 @@ function rosFunctionsPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::FC::Functions`, which is used to query functions.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::FC::Functions`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Functions` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-functions
  */

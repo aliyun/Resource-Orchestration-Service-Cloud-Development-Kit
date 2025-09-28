@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.privatelink;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::PrivateLink::VpcEndpoint</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::PrivateLink::VpcEndpoint</code>, which is used to create an endpoint.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.533Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:28.258Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.RosVpcEndpoint")
 public class RosVpcEndpoint extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -109,40 +109,6 @@ public class RosVpcEndpoint extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getSecurityGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setSecurityGroupId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "securityGroupId", java.util.Objects.requireNonNull(value, "securityGroupId is required"));
-    }
-
-    /**
-     */
-    public void setSecurityGroupId(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> value) {
-        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
-            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
-                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
-                if (
-                     !(__val_ac66f0 instanceof java.lang.String)
-                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
-                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
-                ) {
-                    throw new IllegalArgumentException(
-                        new java.lang.StringBuilder("Expected ")
-                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
-                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
-                            .append(__val_ac66f0.getClass()).toString());
-                }
-            }
-        }
-        software.amazon.jsii.Kernel.set(this, "securityGroupId", java.util.Objects.requireNonNull(value, "securityGroupId is required"));
-    }
-
-    /**
-     */
     public @org.jetbrains.annotations.NotNull java.lang.Object getVpcId() {
         return software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -229,6 +195,40 @@ public class RosVpcEndpoint extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setProtectedEnabled(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "protectedEnabled", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSecurityGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "securityGroupId", value);
+    }
+
+    /**
+     */
+    public void setSecurityGroupId(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "securityGroupId", value);
     }
 
     /**
@@ -742,23 +742,6 @@ public class RosVpcEndpoint extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param securityGroupId This parameter is required.
-         */
-        public Builder securityGroupId(final com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
-            this.props.securityGroupId(securityGroupId);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param securityGroupId This parameter is required.
-         */
-        public Builder securityGroupId(final java.util.List<? extends java.lang.Object> securityGroupId) {
-            this.props.securityGroupId(securityGroupId);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param vpcId This parameter is required.
          */
         public Builder vpcId(final java.lang.String vpcId) {
@@ -839,6 +822,23 @@ public class RosVpcEndpoint extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder protectedEnabled(final com.aliyun.ros.cdk.core.IResolvable protectedEnabled) {
             this.props.protectedEnabled(protectedEnabled);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param securityGroupId This parameter is required.
+         */
+        public Builder securityGroupId(final com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
+            this.props.securityGroupId(securityGroupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param securityGroupId This parameter is required.
+         */
+        public Builder securityGroupId(final java.util.List<? extends java.lang.Object> securityGroupId) {
+            this.props.securityGroupId(securityGroupId);
             return this;
         }
 

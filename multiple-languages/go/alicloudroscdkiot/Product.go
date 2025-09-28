@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::IOT::Product`, which is used to create a product.
+// This class encapsulates and extends the ROS resource type `ALIYUN::IOT::Product`.
 type Product interface {
 	alicloudroscdkcore.Resource
 	IProduct

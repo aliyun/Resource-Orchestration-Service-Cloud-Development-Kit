@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::ManagedKubernetesCluster</code>, which is used to create a Container Service for Kubernetes (ACK) managed cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.177Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.853Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ManagedKubernetesCluster")
 public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cs.IManagedKubernetesCluster {
 
@@ -1225,6 +1225,27 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource i
          */
         public Builder timeoutMins(final com.aliyun.ros.cdk.core.IResolvable timeoutMins) {
             this.props.timeoutMins(timeoutMins);
+            return this;
+        }
+
+        /**
+         * Property timeZone: The time zone of the cluster.
+         * <p>
+         * @return {@code this}
+         * @param timeZone Property timeZone: The time zone of the cluster. This parameter is required.
+         */
+        public Builder timeZone(final java.lang.String timeZone) {
+            this.props.timeZone(timeZone);
+            return this;
+        }
+        /**
+         * Property timeZone: The time zone of the cluster.
+         * <p>
+         * @return {@code this}
+         * @param timeZone Property timeZone: The time zone of the cluster. This parameter is required.
+         */
+        public Builder timeZone(final com.aliyun.ros.cdk.core.IResolvable timeZone) {
+            this.props.timeZone(timeZone);
             return this;
         }
 

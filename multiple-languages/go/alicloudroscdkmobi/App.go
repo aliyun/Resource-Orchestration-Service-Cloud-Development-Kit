@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::MOBI::App`, which is used to create an application.
+// This class encapsulates and extends the ROS resource type `ALIYUN::MOBI::App`.
 type App interface {
 	alicloudroscdkcore.Resource
 	IApp

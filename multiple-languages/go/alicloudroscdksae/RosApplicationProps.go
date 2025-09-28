@@ -26,9 +26,11 @@ type RosApplicationProps struct {
 	EdasContainerVersion interface{} `field:"optional" json:"edasContainerVersion" yaml:"edasContainerVersion"`
 	EnableEbpf interface{} `field:"optional" json:"enableEbpf" yaml:"enableEbpf"`
 	EnableNewArms interface{} `field:"optional" json:"enableNewArms" yaml:"enableNewArms"`
+	EnableSidecarResourceIsolated interface{} `field:"optional" json:"enableSidecarResourceIsolated" yaml:"enableSidecarResourceIsolated"`
 	Envs interface{} `field:"optional" json:"envs" yaml:"envs"`
 	ImagePullSecrets interface{} `field:"optional" json:"imagePullSecrets" yaml:"imagePullSecrets"`
 	ImageUrl interface{} `field:"optional" json:"imageUrl" yaml:"imageUrl"`
+	InitContainersConfig interface{} `field:"optional" json:"initContainersConfig" yaml:"initContainersConfig"`
 	JarStartArgs interface{} `field:"optional" json:"jarStartArgs" yaml:"jarStartArgs"`
 	JarStartOptions interface{} `field:"optional" json:"jarStartOptions" yaml:"jarStartOptions"`
 	Jdk interface{} `field:"optional" json:"jdk" yaml:"jdk"`
@@ -60,6 +62,7 @@ type RosApplicationProps struct {
 	SaeVersion interface{} `field:"optional" json:"saeVersion" yaml:"saeVersion"`
 	SecurityGroupId interface{} `field:"optional" json:"securityGroupId" yaml:"securityGroupId"`
 	ServiceTags interface{} `field:"optional" json:"serviceTags" yaml:"serviceTags"`
+	SidecarContainersConfig interface{} `field:"optional" json:"sidecarContainersConfig" yaml:"sidecarContainersConfig"`
 	SlsConfigs interface{} `field:"optional" json:"slsConfigs" yaml:"slsConfigs"`
 	Tags *[]*RosApplication_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 	TerminationGracePeriodSeconds interface{} `field:"optional" json:"terminationGracePeriodSeconds" yaml:"terminationGracePeriodSeconds"`

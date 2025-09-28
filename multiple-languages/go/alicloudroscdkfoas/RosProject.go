@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::FOAS::Project`, which is used to create a project in a Realtime Compute cluster.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::FOAS::Project`.
 type RosProject interface {
 	alicloudroscdkcore.RosResource
 	AttrState() alicloudroscdkcore.IResolvable

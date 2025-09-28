@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::Memcache::Instance`ALIYUN::MEMCACHE::Instance is used to create an ApsaraDB for Memcache (OCS) instance.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::Memcache::Instance`.
 type RosInstance interface {
 	alicloudroscdkcore.RosResource
 	AttrConnectionDomain() alicloudroscdkcore.IResolvable

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mongodb.datasource;
 /**
  * Represents a <code>InstanceClasses</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:51.839Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:31.105Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.datasource.IInstanceClasses")
 @software.amazon.jsii.Jsii.Proxy(IInstanceClasses.Jsii$Proxy.class)
 public interface IInstanceClasses extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

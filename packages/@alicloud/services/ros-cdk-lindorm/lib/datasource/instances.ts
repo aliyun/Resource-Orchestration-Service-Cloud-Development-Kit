@@ -70,7 +70,7 @@ export interface IInstances extends ros.IResource {
     readonly attrInstances: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::Lindorm::Instances`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::Lindorm::Instances`, which is used to query the information about Lindorm instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstances`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-lindorm-instances
  */

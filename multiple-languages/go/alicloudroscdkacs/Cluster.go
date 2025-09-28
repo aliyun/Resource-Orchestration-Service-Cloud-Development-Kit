@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ACS::Cluster`, which is used to create an Alibaba Cloud Container Service (ACS) cluster.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ACS::Cluster`, which is used to create a Container Compute Service (ACS) cluster.
 type Cluster interface {
 	alicloudroscdkcore.Resource
 	ICluster

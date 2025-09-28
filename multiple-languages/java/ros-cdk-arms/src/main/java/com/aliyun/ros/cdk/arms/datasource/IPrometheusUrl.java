@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.arms.datasource;
 /**
  * Represents a <code>PrometheusUrl</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:44.026Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:21.492Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.datasource.IPrometheusUrl")
 @software.amazon.jsii.Jsii.Proxy(IPrometheusUrl.Jsii$Proxy.class)
 public interface IPrometheusUrl extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

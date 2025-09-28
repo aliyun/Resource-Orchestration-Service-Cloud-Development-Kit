@@ -96,6 +96,10 @@ func (j *jsiiProxy_RosEndpoint) validateSetNameParameters(val interface{}) error
 	return nil
 }
 
+func (j *jsiiProxy_RosEndpoint) validateSetSecurityGroupIdsParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosEndpoint) validateSetTypeParameters(val interface{}) error {
 	return nil
 }

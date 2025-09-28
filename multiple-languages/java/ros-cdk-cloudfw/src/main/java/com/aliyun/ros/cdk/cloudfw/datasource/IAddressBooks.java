@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudfw.datasource;
 /**
  * Represents a <code>AddressBooks</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:44.631Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.207Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.datasource.IAddressBooks")
 @software.amazon.jsii.Jsii.Proxy(IAddressBooks.Jsii$Proxy.class)
 public interface IAddressBooks extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

@@ -3,6 +3,770 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosCertificate`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-certificate
+ */
+export interface RosCertificateProps {
+
+    /**
+     * @Property createdType: The certificate type.
+     * - cas (Certificate Center Certificate)
+     * - upload (custom upload certificate)
+     * - free( Free certificate).
+     */
+    readonly createdType: string | ros.IResolvable;
+
+    /**
+     * @Property domains: A list of domain names. Multiple domain names are separated by commas.
+     */
+    readonly domains: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property siteId: The site ID, which can be obtained by calling the ListSites interface.
+     */
+    readonly siteId: number | ros.IResolvable;
+
+    /**
+     * @Property casId: Cloud certificate ID.
+     */
+    readonly casId?: string | ros.IResolvable;
+
+    /**
+     * @Property certId: The certificate Id.
+     */
+    readonly certId?: string | ros.IResolvable;
+
+    /**
+     * @Property certificate: Certificate content.
+     */
+    readonly certificate?: string | ros.IResolvable;
+
+    /**
+     * @Property certName: The certificate name.
+     */
+    readonly certName?: string | ros.IResolvable;
+
+    /**
+     * @Property privateKey: The certificate private key.
+     */
+    readonly privateKey?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosCertificateProps`
+ *
+ * @param properties - the TypeScript properties of a `RosCertificateProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosCertificatePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('domains', ros.requiredValidator)(properties.domains));
+    if(properties.domains && (Array.isArray(properties.domains) || (typeof properties.domains) === 'string')) {
+        errors.collect(ros.propertyValidator('domains', ros.validateLength)({
+            data: properties.domains.length,
+            min: 1,
+            max: 50,
+          }));
+    }
+    errors.collect(ros.propertyValidator('domains', ros.listValidator(ros.validateString))(properties.domains));
+    errors.collect(ros.propertyValidator('siteId', ros.requiredValidator)(properties.siteId));
+    errors.collect(ros.propertyValidator('siteId', ros.validateNumber)(properties.siteId));
+    errors.collect(ros.propertyValidator('privateKey', ros.validateString)(properties.privateKey));
+    errors.collect(ros.propertyValidator('createdType', ros.requiredValidator)(properties.createdType));
+    if(properties.createdType && (typeof properties.createdType) !== 'object') {
+        errors.collect(ros.propertyValidator('createdType', ros.validateAllowedValues)({
+          data: properties.createdType,
+          allowedValues: ["cas","upload","free"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('createdType', ros.validateString)(properties.createdType));
+    errors.collect(ros.propertyValidator('certId', ros.validateString)(properties.certId));
+    errors.collect(ros.propertyValidator('certName', ros.validateString)(properties.certName));
+    errors.collect(ros.propertyValidator('casId', ros.validateString)(properties.casId));
+    errors.collect(ros.propertyValidator('certificate', ros.validateString)(properties.certificate));
+    return errors.wrap('supplied properties not correct for "RosCertificateProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::Certificate` resource
+ *
+ * @param properties - the TypeScript properties of a `RosCertificateProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::Certificate` resource.
+ */
+// @ts-ignore TS6133
+function rosCertificatePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosCertificatePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'CreatedType': ros.stringToRosTemplate(properties.createdType),
+      'Domains': ros.listMapper(ros.stringToRosTemplate)(properties.domains),
+      'SiteId': ros.numberToRosTemplate(properties.siteId),
+      'CasId': ros.stringToRosTemplate(properties.casId),
+      'CertId': ros.stringToRosTemplate(properties.certId),
+      'Certificate': ros.stringToRosTemplate(properties.certificate),
+      'CertName': ros.stringToRosTemplate(properties.certName),
+      'PrivateKey': ros.stringToRosTemplate(properties.privateKey),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::Certificate`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Certificate` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-certificate
+ */
+export class RosCertificate extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESA::Certificate";
+
+    /**
+     * @Attribute ApplyCode: Certificate application error code.
+     */
+    public readonly attrApplyCode: ros.IResolvable;
+
+    /**
+     * @Attribute ApplyMessage: Certificate application error message.
+     */
+    public readonly attrApplyMessage: ros.IResolvable;
+
+    /**
+     * @Attribute CasId: Cloud certificate ID.
+     */
+    public readonly attrCasId: ros.IResolvable;
+
+    /**
+     * @Attribute CertId: The certificate Id.
+     */
+    public readonly attrCertId: ros.IResolvable;
+
+    /**
+     * @Attribute CertName: The certificate name.
+     */
+    public readonly attrCertName: ros.IResolvable;
+
+    /**
+     * @Attribute Certificate: Certificate content.
+     */
+    public readonly attrCertificate: ros.IResolvable;
+
+    /**
+     * @Attribute CommonName: Common Name (CN) field of the certificate.
+     */
+    public readonly attrCommonName: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: Creation time.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute DCV: DCV information.
+     */
+    public readonly attrDcv: ros.IResolvable;
+
+    /**
+     * @Attribute Domains: A list of domain names. Multiple domain names are separated by commas.
+     */
+    public readonly attrDomains: ros.IResolvable;
+
+    /**
+     * @Attribute FingerprintSha256: SHA256 fingerprint of the certificate.
+     */
+    public readonly attrFingerprintSha256: ros.IResolvable;
+
+    /**
+     * @Attribute Issuer: Certificate issuer.
+     */
+    public readonly attrIssuer: ros.IResolvable;
+
+    /**
+     * @Attribute IssuerCN: Common name of the certificate issuer.
+     */
+    public readonly attrIssuerCn: ros.IResolvable;
+
+    /**
+     * @Attribute NotAfter: End time of the certificate validity period.
+     */
+    public readonly attrNotAfter: ros.IResolvable;
+
+    /**
+     * @Attribute NotBefore: Start time of the certificate validity period.
+     */
+    public readonly attrNotBefore: ros.IResolvable;
+
+    /**
+     * @Attribute PubAlg: Certificate public key algorithm.
+     */
+    public readonly attrPubAlg: ros.IResolvable;
+
+    /**
+     * @Attribute SerialNumber: Serial number of the certificate.
+     */
+    public readonly attrSerialNumber: ros.IResolvable;
+
+    /**
+     * @Attribute SigAlg: Certificate signature algorithm.
+     */
+    public readonly attrSigAlg: ros.IResolvable;
+
+    /**
+     * @Attribute SiteId: The site ID, which can be obtained by calling the ListSites interface.
+     */
+    public readonly attrSiteId: ros.IResolvable;
+
+    /**
+     * @Attribute SiteName: Site name.
+     */
+    public readonly attrSiteName: ros.IResolvable;
+
+    /**
+     * @Attribute UpdateTime: Update time.
+     */
+    public readonly attrUpdateTime: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property createdType: The certificate type.
+     * - cas (Certificate Center Certificate)
+     * - upload (custom upload certificate)
+     * - free( Free certificate).
+     */
+    public createdType: string | ros.IResolvable;
+
+    /**
+     * @Property domains: A list of domain names. Multiple domain names are separated by commas.
+     */
+    public domains: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property siteId: The site ID, which can be obtained by calling the ListSites interface.
+     */
+    public siteId: number | ros.IResolvable;
+
+    /**
+     * @Property casId: Cloud certificate ID.
+     */
+    public casId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property certId: The certificate Id.
+     */
+    public certId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property certificate: Certificate content.
+     */
+    public certificate: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property certName: The certificate name.
+     */
+    public certName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property privateKey: The certificate private key.
+     */
+    public privateKey: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosCertificateProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosCertificate.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrApplyCode = this.getAtt('ApplyCode');
+        this.attrApplyMessage = this.getAtt('ApplyMessage');
+        this.attrCasId = this.getAtt('CasId');
+        this.attrCertId = this.getAtt('CertId');
+        this.attrCertName = this.getAtt('CertName');
+        this.attrCertificate = this.getAtt('Certificate');
+        this.attrCommonName = this.getAtt('CommonName');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDcv = this.getAtt('DCV');
+        this.attrDomains = this.getAtt('Domains');
+        this.attrFingerprintSha256 = this.getAtt('FingerprintSha256');
+        this.attrIssuer = this.getAtt('Issuer');
+        this.attrIssuerCn = this.getAtt('IssuerCN');
+        this.attrNotAfter = this.getAtt('NotAfter');
+        this.attrNotBefore = this.getAtt('NotBefore');
+        this.attrPubAlg = this.getAtt('PubAlg');
+        this.attrSerialNumber = this.getAtt('SerialNumber');
+        this.attrSigAlg = this.getAtt('SigAlg');
+        this.attrSiteId = this.getAtt('SiteId');
+        this.attrSiteName = this.getAtt('SiteName');
+        this.attrUpdateTime = this.getAtt('UpdateTime');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.createdType = props.createdType;
+        this.domains = props.domains;
+        this.siteId = props.siteId;
+        this.casId = props.casId;
+        this.certId = props.certId;
+        this.certificate = props.certificate;
+        this.certName = props.certName;
+        this.privateKey = props.privateKey;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            createdType: this.createdType,
+            domains: this.domains,
+            siteId: this.siteId,
+            casId: this.casId,
+            certId: this.certId,
+            certificate: this.certificate,
+            certName: this.certName,
+            privateKey: this.privateKey,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosCertificatePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosClientCaCertificate`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-clientcacertificate
+ */
+export interface RosClientCaCertificateProps {
+
+    /**
+     * @Property certificate: Certificate content.
+     */
+    readonly certificate: string | ros.IResolvable;
+
+    /**
+     * @Property siteId: Site Id.
+     */
+    readonly siteId: number | ros.IResolvable;
+
+    /**
+     * @Property clientCaCertName: The certificate name.
+     */
+    readonly clientCaCertName?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosClientCaCertificateProps`
+ *
+ * @param properties - the TypeScript properties of a `RosClientCaCertificateProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosClientCaCertificatePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('clientCaCertName', ros.validateString)(properties.clientCaCertName));
+    errors.collect(ros.propertyValidator('siteId', ros.requiredValidator)(properties.siteId));
+    errors.collect(ros.propertyValidator('siteId', ros.validateNumber)(properties.siteId));
+    errors.collect(ros.propertyValidator('certificate', ros.requiredValidator)(properties.certificate));
+    errors.collect(ros.propertyValidator('certificate', ros.validateString)(properties.certificate));
+    return errors.wrap('supplied properties not correct for "RosClientCaCertificateProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::ClientCaCertificate` resource
+ *
+ * @param properties - the TypeScript properties of a `RosClientCaCertificateProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::ClientCaCertificate` resource.
+ */
+// @ts-ignore TS6133
+function rosClientCaCertificatePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosClientCaCertificatePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'Certificate': ros.stringToRosTemplate(properties.certificate),
+      'SiteId': ros.numberToRosTemplate(properties.siteId),
+      'ClientCaCertName': ros.stringToRosTemplate(properties.clientCaCertName),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::ClientCaCertificate`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ClientCaCertificate` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-clientcacertificate
+ */
+export class RosClientCaCertificate extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESA::ClientCaCertificate";
+
+    /**
+     * @Attribute Certificate: Certificate content.
+     */
+    public readonly attrCertificate: ros.IResolvable;
+
+    /**
+     * @Attribute ClientCaCertId: ClientCaCertificate Id.
+     */
+    public readonly attrClientCaCertId: ros.IResolvable;
+
+    /**
+     * @Attribute ClientCaCertName: The certificate name.
+     */
+    public readonly attrClientCaCertName: ros.IResolvable;
+
+    /**
+     * @Attribute CommonName: The certificate common name.
+     */
+    public readonly attrCommonName: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: Creation time.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute Issuer: Certificate Authority.
+     */
+    public readonly attrIssuer: ros.IResolvable;
+
+    /**
+     * @Attribute NotAfter: The expiration date of the certificate validity period.
+     */
+    public readonly attrNotAfter: ros.IResolvable;
+
+    /**
+     * @Attribute NotBefore: The start time of the certificate validity period.
+     */
+    public readonly attrNotBefore: ros.IResolvable;
+
+    /**
+     * @Attribute PubkeyAlgorithm: Certificate public key algorithm.
+     */
+    public readonly attrPubkeyAlgorithm: ros.IResolvable;
+
+    /**
+     * @Attribute SAN: Alternate certificate subject name.
+     */
+    public readonly attrSan: ros.IResolvable;
+
+    /**
+     * @Attribute SignatureAlgorithm: Certificate signature algorithm.
+     */
+    public readonly attrSignatureAlgorithm: ros.IResolvable;
+
+    /**
+     * @Attribute SiteId: Site Id.
+     */
+    public readonly attrSiteId: ros.IResolvable;
+
+    /**
+     * @Attribute SiteName: The website name.
+     */
+    public readonly attrSiteName: ros.IResolvable;
+
+    /**
+     * @Attribute Type: The certificate type.
+     */
+    public readonly attrType: ros.IResolvable;
+
+    /**
+     * @Attribute UpdateTime: Update time.
+     */
+    public readonly attrUpdateTime: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property certificate: Certificate content.
+     */
+    public certificate: string | ros.IResolvable;
+
+    /**
+     * @Property siteId: Site Id.
+     */
+    public siteId: number | ros.IResolvable;
+
+    /**
+     * @Property clientCaCertName: The certificate name.
+     */
+    public clientCaCertName: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosClientCaCertificateProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosClientCaCertificate.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCertificate = this.getAtt('Certificate');
+        this.attrClientCaCertId = this.getAtt('ClientCaCertId');
+        this.attrClientCaCertName = this.getAtt('ClientCaCertName');
+        this.attrCommonName = this.getAtt('CommonName');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrIssuer = this.getAtt('Issuer');
+        this.attrNotAfter = this.getAtt('NotAfter');
+        this.attrNotBefore = this.getAtt('NotBefore');
+        this.attrPubkeyAlgorithm = this.getAtt('PubkeyAlgorithm');
+        this.attrSan = this.getAtt('SAN');
+        this.attrSignatureAlgorithm = this.getAtt('SignatureAlgorithm');
+        this.attrSiteId = this.getAtt('SiteId');
+        this.attrSiteName = this.getAtt('SiteName');
+        this.attrType = this.getAtt('Type');
+        this.attrUpdateTime = this.getAtt('UpdateTime');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.certificate = props.certificate;
+        this.siteId = props.siteId;
+        this.clientCaCertName = props.clientCaCertName;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            certificate: this.certificate,
+            siteId: this.siteId,
+            clientCaCertName: this.clientCaCertName,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosClientCaCertificatePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosClientCertificate`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-clientcertificate
+ */
+export interface RosClientCertificateProps {
+
+    /**
+     * @Property siteId: Site Id.
+     */
+    readonly siteId: number | ros.IResolvable;
+
+    /**
+     * @Property validityDays: Certificate validity period.
+     */
+    readonly validityDays: number | ros.IResolvable;
+
+    /**
+     * @Property csr: Certificate signing request content.
+     */
+    readonly csr?: string | ros.IResolvable;
+
+    /**
+     * @Property pkeyType: The private key algorithm type.
+     */
+    readonly pkeyType?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosClientCertificateProps`
+ *
+ * @param properties - the TypeScript properties of a `RosClientCertificateProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosClientCertificatePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('siteId', ros.requiredValidator)(properties.siteId));
+    errors.collect(ros.propertyValidator('siteId', ros.validateNumber)(properties.siteId));
+    errors.collect(ros.propertyValidator('csr', ros.validateString)(properties.csr));
+    errors.collect(ros.propertyValidator('pkeyType', ros.validateString)(properties.pkeyType));
+    errors.collect(ros.propertyValidator('validityDays', ros.requiredValidator)(properties.validityDays));
+    errors.collect(ros.propertyValidator('validityDays', ros.validateNumber)(properties.validityDays));
+    return errors.wrap('supplied properties not correct for "RosClientCertificateProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::ClientCertificate` resource
+ *
+ * @param properties - the TypeScript properties of a `RosClientCertificateProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::ClientCertificate` resource.
+ */
+// @ts-ignore TS6133
+function rosClientCertificatePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosClientCertificatePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'SiteId': ros.numberToRosTemplate(properties.siteId),
+      'ValidityDays': ros.numberToRosTemplate(properties.validityDays),
+      'CSR': ros.stringToRosTemplate(properties.csr),
+      'PkeyType': ros.stringToRosTemplate(properties.pkeyType),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::ClientCertificate`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ClientCertificate` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-clientcertificate
+ */
+export class RosClientCertificate extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESA::ClientCertificate";
+
+    /**
+     * @Attribute CACertificateId: The ID of the CA certificate.
+     */
+    public readonly attrCaCertificateId: ros.IResolvable;
+
+    /**
+     * @Attribute Certificate: Certificate content.
+     */
+    public readonly attrCertificate: ros.IResolvable;
+
+    /**
+     * @Attribute ClientCertId: ClientCertificate Id.
+     */
+    public readonly attrClientCertId: ros.IResolvable;
+
+    /**
+     * @Attribute ClientCertificateName: The certificate name.
+     */
+    public readonly attrClientCertificateName: ros.IResolvable;
+
+    /**
+     * @Attribute CommonName: The Common Name of the certificate.
+     */
+    public readonly attrCommonName: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: The time when the certificate was created.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute Issuer: The certificate authority (CA) that issued the certificate.
+     */
+    public readonly attrIssuer: ros.IResolvable;
+
+    /**
+     * @Attribute NotAfter: The time when the certificate expires.
+     */
+    public readonly attrNotAfter: ros.IResolvable;
+
+    /**
+     * @Attribute NotBefore: The time when the certificate takes effect.
+     */
+    public readonly attrNotBefore: ros.IResolvable;
+
+    /**
+     * @Attribute PubkeyAlgorithm: The public-key algorithm of the certificate.
+     */
+    public readonly attrPubkeyAlgorithm: ros.IResolvable;
+
+    /**
+     * @Attribute SAN: The Subject Alternative Name (SAN) of the certificate.
+     */
+    public readonly attrSan: ros.IResolvable;
+
+    /**
+     * @Attribute SignatureAlgorithm: The signature algorithm of the certificate.
+     */
+    public readonly attrSignatureAlgorithm: ros.IResolvable;
+
+    /**
+     * @Attribute SiteId: Site Id.
+     */
+    public readonly attrSiteId: ros.IResolvable;
+
+    /**
+     * @Attribute SiteName: The website name.
+     */
+    public readonly attrSiteName: ros.IResolvable;
+
+    /**
+     * @Attribute Type: The certificate type.
+     */
+    public readonly attrType: ros.IResolvable;
+
+    /**
+     * @Attribute UpdateTime: The time when the certificate was updated.
+     */
+    public readonly attrUpdateTime: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property siteId: Site Id.
+     */
+    public siteId: number | ros.IResolvable;
+
+    /**
+     * @Property validityDays: Certificate validity period.
+     */
+    public validityDays: number | ros.IResolvable;
+
+    /**
+     * @Property csr: Certificate signing request content.
+     */
+    public csr: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property pkeyType: The private key algorithm type.
+     */
+    public pkeyType: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosClientCertificateProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosClientCertificate.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCaCertificateId = this.getAtt('CACertificateId');
+        this.attrCertificate = this.getAtt('Certificate');
+        this.attrClientCertId = this.getAtt('ClientCertId');
+        this.attrClientCertificateName = this.getAtt('ClientCertificateName');
+        this.attrCommonName = this.getAtt('CommonName');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrIssuer = this.getAtt('Issuer');
+        this.attrNotAfter = this.getAtt('NotAfter');
+        this.attrNotBefore = this.getAtt('NotBefore');
+        this.attrPubkeyAlgorithm = this.getAtt('PubkeyAlgorithm');
+        this.attrSan = this.getAtt('SAN');
+        this.attrSignatureAlgorithm = this.getAtt('SignatureAlgorithm');
+        this.attrSiteId = this.getAtt('SiteId');
+        this.attrSiteName = this.getAtt('SiteName');
+        this.attrType = this.getAtt('Type');
+        this.attrUpdateTime = this.getAtt('UpdateTime');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.siteId = props.siteId;
+        this.validityDays = props.validityDays;
+        this.csr = props.csr;
+        this.pkeyType = props.pkeyType;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            siteId: this.siteId,
+            validityDays: this.validityDays,
+            csr: this.csr,
+            pkeyType: this.pkeyType,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosClientCertificatePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosCompressionRule`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-compressionrule
  */
@@ -979,6 +1743,801 @@ export class RosEdgeContainerApp extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosEdgeContainerAppRecord`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-edgecontainerapprecord
+ */
+export interface RosEdgeContainerAppRecordProps {
+
+    /**
+     * @Property appId: The application ID.
+     */
+    readonly appId: string | ros.IResolvable;
+
+    /**
+     * @Property recordName: The associated domain name.
+     */
+    readonly recordName: string | ros.IResolvable;
+
+    /**
+     * @Property siteId: The website ID.
+     */
+    readonly siteId: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosEdgeContainerAppRecordProps`
+ *
+ * @param properties - the TypeScript properties of a `RosEdgeContainerAppRecordProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosEdgeContainerAppRecordPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('recordName', ros.requiredValidator)(properties.recordName));
+    errors.collect(ros.propertyValidator('recordName', ros.validateString)(properties.recordName));
+    errors.collect(ros.propertyValidator('siteId', ros.requiredValidator)(properties.siteId));
+    errors.collect(ros.propertyValidator('siteId', ros.validateNumber)(properties.siteId));
+    errors.collect(ros.propertyValidator('appId', ros.requiredValidator)(properties.appId));
+    errors.collect(ros.propertyValidator('appId', ros.validateString)(properties.appId));
+    return errors.wrap('supplied properties not correct for "RosEdgeContainerAppRecordProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::EdgeContainerAppRecord` resource
+ *
+ * @param properties - the TypeScript properties of a `RosEdgeContainerAppRecordProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::EdgeContainerAppRecord` resource.
+ */
+// @ts-ignore TS6133
+function rosEdgeContainerAppRecordPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosEdgeContainerAppRecordPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'AppId': ros.stringToRosTemplate(properties.appId),
+      'RecordName': ros.stringToRosTemplate(properties.recordName),
+      'SiteId': ros.numberToRosTemplate(properties.siteId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::EdgeContainerAppRecord`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `EdgeContainerAppRecord` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-edgecontainerapprecord
+ */
+export class RosEdgeContainerAppRecord extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESA::EdgeContainerAppRecord";
+
+    /**
+     * @Attribute AppId: The application ID.
+     */
+    public readonly attrAppId: ros.IResolvable;
+
+    /**
+     * @Attribute Cname: The CNAME of the associated domain name.
+     */
+    public readonly attrCname: ros.IResolvable;
+
+    /**
+     * @Attribute ConfigId: The configuration ID of the associated domain name.
+     */
+    public readonly attrConfigId: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: The time when the domain name was added. The time follows the ISO 8601 standard in the YYYY-MM-DDThh:mm:ss format. The time is displayed in UTC.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute RecordId: The record ID of the associated domain name.
+     */
+    public readonly attrRecordId: ros.IResolvable;
+
+    /**
+     * @Attribute RecordName: The associated domain name.
+     */
+    public readonly attrRecordName: ros.IResolvable;
+
+    /**
+     * @Attribute SchemdId: The scheduling domain ID of the associated domain name.
+     */
+    public readonly attrSchemdId: ros.IResolvable;
+
+    /**
+     * @Attribute SiteId: The website ID.
+     */
+    public readonly attrSiteId: ros.IResolvable;
+
+    /**
+     * @Attribute UpdateTime: The time when the scheduling domain ID or CNAME was last modified. The time follows the ISO 8601 standard in the YYYY-MM-DDThh:mm:ss format. The time is displayed in UTC.
+     */
+    public readonly attrUpdateTime: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property appId: The application ID.
+     */
+    public appId: string | ros.IResolvable;
+
+    /**
+     * @Property recordName: The associated domain name.
+     */
+    public recordName: string | ros.IResolvable;
+
+    /**
+     * @Property siteId: The website ID.
+     */
+    public siteId: number | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosEdgeContainerAppRecordProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosEdgeContainerAppRecord.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAppId = this.getAtt('AppId');
+        this.attrCname = this.getAtt('Cname');
+        this.attrConfigId = this.getAtt('ConfigId');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrRecordId = this.getAtt('RecordId');
+        this.attrRecordName = this.getAtt('RecordName');
+        this.attrSchemdId = this.getAtt('SchemdId');
+        this.attrSiteId = this.getAtt('SiteId');
+        this.attrUpdateTime = this.getAtt('UpdateTime');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.appId = props.appId;
+        this.recordName = props.recordName;
+        this.siteId = props.siteId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            appId: this.appId,
+            recordName: this.recordName,
+            siteId: this.siteId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosEdgeContainerAppRecordPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosHttpRequestHeaderModificationRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-httprequestheadermodificationrule
+ */
+export interface RosHttpRequestHeaderModificationRuleProps {
+
+    /**
+     * @Property requestHeaderModification: The configurations of modifying request headers. You can add, delete, or modify a request header.
+     */
+    readonly requestHeaderModification: Array<RosHttpRequestHeaderModificationRule.RequestHeaderModificationProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property siteId: The site ID.
+     */
+    readonly siteId: number | ros.IResolvable;
+
+    /**
+     * @Property rule: Rule content, using conditional expressions to match user requests. When adding global configuration, this parameter does not need to be set. There are two usage scenarios:
+     * - Match all incoming requests: value set to true
+     * - Match specified request: Set the value to a custom expression, for example: (http.host eq \"video.example.com\").
+     */
+    readonly rule?: string | ros.IResolvable;
+
+    /**
+     * @Property ruleEnable: Rule switch. When adding global configuration, this parameter does not need to be set. Value range:
+     * - on: open.
+     * - off: close.
+     */
+    readonly ruleEnable?: string | ros.IResolvable;
+
+    /**
+     * @Property ruleName: Rule name. When adding global configuration, this parameter does not need to be set.
+     */
+    readonly ruleName?: string | ros.IResolvable;
+
+    /**
+     * @Property sequence: Order of rule execution. The smaller the value, the higher the priority for execution.
+     */
+    readonly sequence?: number | ros.IResolvable;
+
+    /**
+     * @Property siteVersion: The version number of the site configuration. For sites that have enabled configuration version management, this parameter can be used to specify the effective version of the configuration site, which defaults to version 0.
+     */
+    readonly siteVersion?: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosHttpRequestHeaderModificationRuleProps`
+ *
+ * @param properties - the TypeScript properties of a `RosHttpRequestHeaderModificationRuleProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosHttpRequestHeaderModificationRulePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('siteId', ros.requiredValidator)(properties.siteId));
+    errors.collect(ros.propertyValidator('siteId', ros.validateNumber)(properties.siteId));
+    if(properties.ruleEnable && (typeof properties.ruleEnable) !== 'object') {
+        errors.collect(ros.propertyValidator('ruleEnable', ros.validateAllowedValues)({
+          data: properties.ruleEnable,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ruleEnable', ros.validateString)(properties.ruleEnable));
+    errors.collect(ros.propertyValidator('sequence', ros.validateNumber)(properties.sequence));
+    errors.collect(ros.propertyValidator('rule', ros.validateString)(properties.rule));
+    errors.collect(ros.propertyValidator('siteVersion', ros.validateNumber)(properties.siteVersion));
+    errors.collect(ros.propertyValidator('requestHeaderModification', ros.requiredValidator)(properties.requestHeaderModification));
+    errors.collect(ros.propertyValidator('requestHeaderModification', ros.listValidator(RosHttpRequestHeaderModificationRule_RequestHeaderModificationPropertyValidator))(properties.requestHeaderModification));
+    errors.collect(ros.propertyValidator('ruleName', ros.validateString)(properties.ruleName));
+    return errors.wrap('supplied properties not correct for "RosHttpRequestHeaderModificationRuleProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::HttpRequestHeaderModificationRule` resource
+ *
+ * @param properties - the TypeScript properties of a `RosHttpRequestHeaderModificationRuleProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::HttpRequestHeaderModificationRule` resource.
+ */
+// @ts-ignore TS6133
+function rosHttpRequestHeaderModificationRulePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosHttpRequestHeaderModificationRulePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'RequestHeaderModification': ros.listMapper(rosHttpRequestHeaderModificationRuleRequestHeaderModificationPropertyToRosTemplate)(properties.requestHeaderModification),
+      'SiteId': ros.numberToRosTemplate(properties.siteId),
+      'Rule': ros.stringToRosTemplate(properties.rule),
+      'RuleEnable': ros.stringToRosTemplate(properties.ruleEnable),
+      'RuleName': ros.stringToRosTemplate(properties.ruleName),
+      'Sequence': ros.numberToRosTemplate(properties.sequence),
+      'SiteVersion': ros.numberToRosTemplate(properties.siteVersion),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::HttpRequestHeaderModificationRule`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `HttpRequestHeaderModificationRule` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-httprequestheadermodificationrule
+ */
+export class RosHttpRequestHeaderModificationRule extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESA::HttpRequestHeaderModificationRule";
+
+    /**
+     * @Attribute ConfigId: Config Id.
+     */
+    public readonly attrConfigId: ros.IResolvable;
+
+    /**
+     * @Attribute ConfigType: The configuration type. You can use this parameter to check the global configuration or rule configuration.
+     */
+    public readonly attrConfigType: ros.IResolvable;
+
+    /**
+     * @Attribute RequestHeaderModification: The configurations of modifying request headers. You can add, delete, or modify a request header.
+     */
+    public readonly attrRequestHeaderModification: ros.IResolvable;
+
+    /**
+     * @Attribute Rule: Rule content, using conditional expressions to match user requests. When adding global configuration, this parameter does not need to be set.
+     */
+    public readonly attrRule: ros.IResolvable;
+
+    /**
+     * @Attribute RuleEnable: Rule switch. When adding global configuration, this parameter does not need to be set.
+     */
+    public readonly attrRuleEnable: ros.IResolvable;
+
+    /**
+     * @Attribute RuleName: Rule name. When adding global configuration, this parameter does not need to be set.
+     */
+    public readonly attrRuleName: ros.IResolvable;
+
+    /**
+     * @Attribute Sequence: Order of rule execution. The smaller the value, the higher the priority for execution.
+     */
+    public readonly attrSequence: ros.IResolvable;
+
+    /**
+     * @Attribute SiteVersion: The version number of the site configuration. For sites that have enabled configuration version management, this parameter can be used to specify the effective version of the configuration site, which defaults to version 0.
+     */
+    public readonly attrSiteVersion: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property requestHeaderModification: The configurations of modifying request headers. You can add, delete, or modify a request header.
+     */
+    public requestHeaderModification: Array<RosHttpRequestHeaderModificationRule.RequestHeaderModificationProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property siteId: The site ID.
+     */
+    public siteId: number | ros.IResolvable;
+
+    /**
+     * @Property rule: Rule content, using conditional expressions to match user requests. When adding global configuration, this parameter does not need to be set. There are two usage scenarios:
+     * - Match all incoming requests: value set to true
+     * - Match specified request: Set the value to a custom expression, for example: (http.host eq \"video.example.com\").
+     */
+    public rule: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ruleEnable: Rule switch. When adding global configuration, this parameter does not need to be set. Value range:
+     * - on: open.
+     * - off: close.
+     */
+    public ruleEnable: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ruleName: Rule name. When adding global configuration, this parameter does not need to be set.
+     */
+    public ruleName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property sequence: Order of rule execution. The smaller the value, the higher the priority for execution.
+     */
+    public sequence: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property siteVersion: The version number of the site configuration. For sites that have enabled configuration version management, this parameter can be used to specify the effective version of the configuration site, which defaults to version 0.
+     */
+    public siteVersion: number | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosHttpRequestHeaderModificationRuleProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosHttpRequestHeaderModificationRule.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrConfigId = this.getAtt('ConfigId');
+        this.attrConfigType = this.getAtt('ConfigType');
+        this.attrRequestHeaderModification = this.getAtt('RequestHeaderModification');
+        this.attrRule = this.getAtt('Rule');
+        this.attrRuleEnable = this.getAtt('RuleEnable');
+        this.attrRuleName = this.getAtt('RuleName');
+        this.attrSequence = this.getAtt('Sequence');
+        this.attrSiteVersion = this.getAtt('SiteVersion');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.requestHeaderModification = props.requestHeaderModification;
+        this.siteId = props.siteId;
+        this.rule = props.rule;
+        this.ruleEnable = props.ruleEnable;
+        this.ruleName = props.ruleName;
+        this.sequence = props.sequence;
+        this.siteVersion = props.siteVersion;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            requestHeaderModification: this.requestHeaderModification,
+            siteId: this.siteId,
+            rule: this.rule,
+            ruleEnable: this.ruleEnable,
+            ruleName: this.ruleName,
+            sequence: this.sequence,
+            siteVersion: this.siteVersion,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosHttpRequestHeaderModificationRulePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosHttpRequestHeaderModificationRule {
+    /**
+     * @stability external
+     */
+    export interface RequestHeaderModificationProperty {
+        /**
+         * @Property type: Value type. Value range:
+     * - `static`:static mode.
+     * - `dynamic`:dynamic mode.
+         */
+        readonly type?: string | ros.IResolvable;
+        /**
+         * @Property value: Request header value.
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property operation: Mode of operation. Value range:
+     * - `add`: add.
+     * - `del`: delete
+     * - `modify`: change.
+         */
+        readonly operation: string | ros.IResolvable;
+        /**
+         * @Property name: Request Header Name.
+         */
+        readonly name: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `RequestHeaderModificationProperty`
+ *
+ * @param properties - the TypeScript properties of a `RequestHeaderModificationProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosHttpRequestHeaderModificationRule_RequestHeaderModificationPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["static","dynamic"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('operation', ros.requiredValidator)(properties.operation));
+    if(properties.operation && (typeof properties.operation) !== 'object') {
+        errors.collect(ros.propertyValidator('operation', ros.validateAllowedValues)({
+          data: properties.operation,
+          allowedValues: ["add","del","modify"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('operation', ros.validateString)(properties.operation));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "RequestHeaderModificationProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::HttpRequestHeaderModificationRule.RequestHeaderModification` resource
+ *
+ * @param properties - the TypeScript properties of a `RequestHeaderModificationProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::HttpRequestHeaderModificationRule.RequestHeaderModification` resource.
+ */
+// @ts-ignore TS6133
+function rosHttpRequestHeaderModificationRuleRequestHeaderModificationPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosHttpRequestHeaderModificationRule_RequestHeaderModificationPropertyValidator(properties).assertSuccess();
+    return {
+      'Type': ros.stringToRosTemplate(properties.type),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Operation': ros.stringToRosTemplate(properties.operation),
+      'Name': ros.stringToRosTemplate(properties.name),
+    };
+}
+
+/**
+ * Properties for defining a `RosHttpResponseHeaderModificationRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-httpresponseheadermodificationrule
+ */
+export interface RosHttpResponseHeaderModificationRuleProps {
+
+    /**
+     * @Property responseHeaderModification: Modify response headers, supporting add, delete, and modify operations.
+     */
+    readonly responseHeaderModification: Array<RosHttpResponseHeaderModificationRule.ResponseHeaderModificationProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property siteId: The site ID.
+     */
+    readonly siteId: number | ros.IResolvable;
+
+    /**
+     * @Property rule: Rule content, using conditional expressions to match user requests. When adding global configuration, this parameter does not need to be set. There are two usage scenarios:
+     * - Match all incoming requests: value set to true
+     * - Match specified request: Set the value to a custom expression, for example: (http.host eq \"video.example.com\").
+     */
+    readonly rule?: string | ros.IResolvable;
+
+    /**
+     * @Property ruleEnable: Rule switch. When adding global configuration, this parameter does not need to be set. Value range:
+     * - `on`: open.
+     * - `off`: close.
+     */
+    readonly ruleEnable?: string | ros.IResolvable;
+
+    /**
+     * @Property ruleName: Rule name. When adding global configuration, this parameter does not need to be set.
+     */
+    readonly ruleName?: string | ros.IResolvable;
+
+    /**
+     * @Property sequence: Order of rule execution. The smaller the value, the higher the priority for execution.
+     */
+    readonly sequence?: number | ros.IResolvable;
+
+    /**
+     * @Property siteVersion: The version number of the site configuration. For sites that have enabled configuration version management, this parameter can be used to specify the effective version of the configuration site, which defaults to version 0.
+     */
+    readonly siteVersion?: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosHttpResponseHeaderModificationRuleProps`
+ *
+ * @param properties - the TypeScript properties of a `RosHttpResponseHeaderModificationRuleProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosHttpResponseHeaderModificationRulePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('siteId', ros.requiredValidator)(properties.siteId));
+    errors.collect(ros.propertyValidator('siteId', ros.validateNumber)(properties.siteId));
+    if(properties.ruleEnable && (typeof properties.ruleEnable) !== 'object') {
+        errors.collect(ros.propertyValidator('ruleEnable', ros.validateAllowedValues)({
+          data: properties.ruleEnable,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ruleEnable', ros.validateString)(properties.ruleEnable));
+    errors.collect(ros.propertyValidator('responseHeaderModification', ros.requiredValidator)(properties.responseHeaderModification));
+    errors.collect(ros.propertyValidator('responseHeaderModification', ros.listValidator(RosHttpResponseHeaderModificationRule_ResponseHeaderModificationPropertyValidator))(properties.responseHeaderModification));
+    errors.collect(ros.propertyValidator('sequence', ros.validateNumber)(properties.sequence));
+    errors.collect(ros.propertyValidator('rule', ros.validateString)(properties.rule));
+    errors.collect(ros.propertyValidator('siteVersion', ros.validateNumber)(properties.siteVersion));
+    errors.collect(ros.propertyValidator('ruleName', ros.validateString)(properties.ruleName));
+    return errors.wrap('supplied properties not correct for "RosHttpResponseHeaderModificationRuleProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::HttpResponseHeaderModificationRule` resource
+ *
+ * @param properties - the TypeScript properties of a `RosHttpResponseHeaderModificationRuleProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::HttpResponseHeaderModificationRule` resource.
+ */
+// @ts-ignore TS6133
+function rosHttpResponseHeaderModificationRulePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosHttpResponseHeaderModificationRulePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ResponseHeaderModification': ros.listMapper(rosHttpResponseHeaderModificationRuleResponseHeaderModificationPropertyToRosTemplate)(properties.responseHeaderModification),
+      'SiteId': ros.numberToRosTemplate(properties.siteId),
+      'Rule': ros.stringToRosTemplate(properties.rule),
+      'RuleEnable': ros.stringToRosTemplate(properties.ruleEnable),
+      'RuleName': ros.stringToRosTemplate(properties.ruleName),
+      'Sequence': ros.numberToRosTemplate(properties.sequence),
+      'SiteVersion': ros.numberToRosTemplate(properties.siteVersion),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::HttpResponseHeaderModificationRule`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `HttpResponseHeaderModificationRule` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-httpresponseheadermodificationrule
+ */
+export class RosHttpResponseHeaderModificationRule extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESA::HttpResponseHeaderModificationRule";
+
+    /**
+     * @Attribute ConfigId: Config Id.
+     */
+    public readonly attrConfigId: ros.IResolvable;
+
+    /**
+     * @Attribute ConfigType: The configuration type.
+     */
+    public readonly attrConfigType: ros.IResolvable;
+
+    /**
+     * @Attribute ResponseHeaderModification: Modify response headers, supporting add, delete, and modify operations.
+     */
+    public readonly attrResponseHeaderModification: ros.IResolvable;
+
+    /**
+     * @Attribute Rule: Rule content, using conditional expressions to match user requests. When adding global configuration, this parameter does not need to be set.
+     */
+    public readonly attrRule: ros.IResolvable;
+
+    /**
+     * @Attribute RuleEnable: Rule switch. When adding global configuration, this parameter does not need to be set.
+     */
+    public readonly attrRuleEnable: ros.IResolvable;
+
+    /**
+     * @Attribute RuleName: Rule name. When adding global configuration, this parameter does not need to be set.
+     */
+    public readonly attrRuleName: ros.IResolvable;
+
+    /**
+     * @Attribute Sequence: Order of rule execution. The smaller the value, the higher the priority for execution.
+     */
+    public readonly attrSequence: ros.IResolvable;
+
+    /**
+     * @Attribute SiteVersion: The version number of the site configuration. For sites that have enabled configuration version management, this parameter can be used to specify the effective version of the configuration site, which defaults to version 0.
+     */
+    public readonly attrSiteVersion: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property responseHeaderModification: Modify response headers, supporting add, delete, and modify operations.
+     */
+    public responseHeaderModification: Array<RosHttpResponseHeaderModificationRule.ResponseHeaderModificationProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property siteId: The site ID.
+     */
+    public siteId: number | ros.IResolvable;
+
+    /**
+     * @Property rule: Rule content, using conditional expressions to match user requests. When adding global configuration, this parameter does not need to be set. There are two usage scenarios:
+     * - Match all incoming requests: value set to true
+     * - Match specified request: Set the value to a custom expression, for example: (http.host eq \"video.example.com\").
+     */
+    public rule: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ruleEnable: Rule switch. When adding global configuration, this parameter does not need to be set. Value range:
+     * - `on`: open.
+     * - `off`: close.
+     */
+    public ruleEnable: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ruleName: Rule name. When adding global configuration, this parameter does not need to be set.
+     */
+    public ruleName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property sequence: Order of rule execution. The smaller the value, the higher the priority for execution.
+     */
+    public sequence: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property siteVersion: The version number of the site configuration. For sites that have enabled configuration version management, this parameter can be used to specify the effective version of the configuration site, which defaults to version 0.
+     */
+    public siteVersion: number | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosHttpResponseHeaderModificationRuleProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosHttpResponseHeaderModificationRule.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrConfigId = this.getAtt('ConfigId');
+        this.attrConfigType = this.getAtt('ConfigType');
+        this.attrResponseHeaderModification = this.getAtt('ResponseHeaderModification');
+        this.attrRule = this.getAtt('Rule');
+        this.attrRuleEnable = this.getAtt('RuleEnable');
+        this.attrRuleName = this.getAtt('RuleName');
+        this.attrSequence = this.getAtt('Sequence');
+        this.attrSiteVersion = this.getAtt('SiteVersion');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.responseHeaderModification = props.responseHeaderModification;
+        this.siteId = props.siteId;
+        this.rule = props.rule;
+        this.ruleEnable = props.ruleEnable;
+        this.ruleName = props.ruleName;
+        this.sequence = props.sequence;
+        this.siteVersion = props.siteVersion;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            responseHeaderModification: this.responseHeaderModification,
+            siteId: this.siteId,
+            rule: this.rule,
+            ruleEnable: this.ruleEnable,
+            ruleName: this.ruleName,
+            sequence: this.sequence,
+            siteVersion: this.siteVersion,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosHttpResponseHeaderModificationRulePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosHttpResponseHeaderModificationRule {
+    /**
+     * @stability external
+     */
+    export interface ResponseHeaderModificationProperty {
+        /**
+         * @Property type: The value type. Value range:
+     * - `static`: Static mode.
+     * - `dynamic`: Dynamic mode.
+         */
+        readonly type?: string | ros.IResolvable;
+        /**
+         * @Property value: The response header value.
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property operation: Operation method. Possible values:
+     * - `add`: Add
+     * - `del`: Delete
+     * - `modify`: Modify.
+         */
+        readonly operation: string | ros.IResolvable;
+        /**
+         * @Property name: The response header name.
+         */
+        readonly name: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ResponseHeaderModificationProperty`
+ *
+ * @param properties - the TypeScript properties of a `ResponseHeaderModificationProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosHttpResponseHeaderModificationRule_ResponseHeaderModificationPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["static","dynamic"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('operation', ros.requiredValidator)(properties.operation));
+    if(properties.operation && (typeof properties.operation) !== 'object') {
+        errors.collect(ros.propertyValidator('operation', ros.validateAllowedValues)({
+          data: properties.operation,
+          allowedValues: ["add","del","modify"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('operation', ros.validateString)(properties.operation));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "ResponseHeaderModificationProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::HttpResponseHeaderModificationRule.ResponseHeaderModification` resource
+ *
+ * @param properties - the TypeScript properties of a `ResponseHeaderModificationProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::HttpResponseHeaderModificationRule.ResponseHeaderModification` resource.
+ */
+// @ts-ignore TS6133
+function rosHttpResponseHeaderModificationRuleResponseHeaderModificationPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosHttpResponseHeaderModificationRule_ResponseHeaderModificationPropertyValidator(properties).assertSuccess();
+    return {
+      'Type': ros.stringToRosTemplate(properties.type),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Operation': ros.stringToRosTemplate(properties.operation),
+      'Name': ros.stringToRosTemplate(properties.name),
+    };
+}
+
+/**
  * Properties for defining a `RosHttpsApplicationConfiguration`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-httpsapplicationconfiguration
  */
@@ -1570,6 +3129,491 @@ export class RosHttpsApplicationConfiguration extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosHttpsBasicConfiguration`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-httpsbasicconfiguration
+ */
+export interface RosHttpsBasicConfigurationProps {
+
+    /**
+     * @Property siteId: Site ID, which can be obtained by calling the [ListSites](~~ListSites~~) interface.
+     */
+    readonly siteId: number | ros.IResolvable;
+
+    /**
+     * @Property ciphersuite: Custom cipher suite, indicating the specific encryption algorithm selected when CiphersuiteGroup is set to custom.
+     */
+    readonly ciphersuite?: string | ros.IResolvable;
+
+    /**
+     * @Property ciphersuiteGroup: Cipher suite group. Default is all cipher suites. Possible values:
+     * - all: All cipher suites.
+     * - strict: Strong cipher suites.
+     * - custom: Custom cipher suites.
+     */
+    readonly ciphersuiteGroup?: string | ros.IResolvable;
+
+    /**
+     * @Property http2: Indicates whether HTTP2 is enabled. Default is on. Possible values:
+     * - on: Enabled.
+     * - off: Disabled.
+     */
+    readonly http2?: string | ros.IResolvable;
+
+    /**
+     * @Property http3: Whether to enable HTTP3, which is enabled by default. The value can be:
+     * - on: Enabled. 
+     * - off: Disabled.
+     */
+    readonly http3?: string | ros.IResolvable;
+
+    /**
+     * @Property https: Whether to enable HTTPS. Default is enabled. Possible values:
+     * - on: Enable.
+     * - off: Disable.
+     */
+    readonly https?: string | ros.IResolvable;
+
+    /**
+     * @Property ocspStapling: Indicates whether OCSP is enabled. Default is off. Possible values:
+     * - on: Enabled.
+     * - off: Disabled.
+     */
+    readonly ocspStapling?: string | ros.IResolvable;
+
+    /**
+     * @Property rule: Rule content, using conditional expressions to match user requests. When adding global configuration, this parameter does not need to be set. There are two usage scenarios:
+     * -  Match all incoming requests: value set to true
+     * -  Match specified request: Set the value to a custom expression, for example: (http.host eq \"video.example.com\").
+     */
+    readonly rule?: string | ros.IResolvable;
+
+    /**
+     * @Property ruleEnable: Rule switch. When adding global configuration, this parameter does not need to be set. Value range:
+     * - on: open.
+     * - off: close.
+     */
+    readonly ruleEnable?: string | ros.IResolvable;
+
+    /**
+     * @Property ruleName: Rule name. When adding global configuration, this parameter does not need to be set.
+     */
+    readonly ruleName?: string | ros.IResolvable;
+
+    /**
+     * @Property sequence: Order of rule execution. The smaller the value, the higher the priority for execution.
+     */
+    readonly sequence?: number | ros.IResolvable;
+
+    /**
+     * @Property tls10: Whether to enable TLS1.0. Default is disabled. Possible values:
+     * - on: Enable.
+     * - off: Disable.
+     */
+    readonly tls10?: string | ros.IResolvable;
+
+    /**
+     * @Property tls11: Whether to enable TLS1.1. Default is enabled. Possible values:
+     * - on: Enable.
+     * - off: Disable.
+     */
+    readonly tls11?: string | ros.IResolvable;
+
+    /**
+     * @Property tls12: Whether to enable TLS1.2. Default is enabled. Possible values:
+     * - on: Enable.
+     * - off: Disable.
+     */
+    readonly tls12?: string | ros.IResolvable;
+
+    /**
+     * @Property tls13: Whether to enable TLS1.3. Default is enabled. Possible values:
+     * - on: Enable.
+     * - off: Disable.
+     */
+    readonly tls13?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosHttpsBasicConfigurationProps`
+ *
+ * @param properties - the TypeScript properties of a `RosHttpsBasicConfigurationProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosHttpsBasicConfigurationPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('siteId', ros.requiredValidator)(properties.siteId));
+    errors.collect(ros.propertyValidator('siteId', ros.validateNumber)(properties.siteId));
+    errors.collect(ros.propertyValidator('ciphersuite', ros.validateString)(properties.ciphersuite));
+    if(properties.ruleEnable && (typeof properties.ruleEnable) !== 'object') {
+        errors.collect(ros.propertyValidator('ruleEnable', ros.validateAllowedValues)({
+          data: properties.ruleEnable,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ruleEnable', ros.validateString)(properties.ruleEnable));
+    if(properties.https && (typeof properties.https) !== 'object') {
+        errors.collect(ros.propertyValidator('https', ros.validateAllowedValues)({
+          data: properties.https,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('https', ros.validateString)(properties.https));
+    if(properties.http3 && (typeof properties.http3) !== 'object') {
+        errors.collect(ros.propertyValidator('http3', ros.validateAllowedValues)({
+          data: properties.http3,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('http3', ros.validateString)(properties.http3));
+    if(properties.http2 && (typeof properties.http2) !== 'object') {
+        errors.collect(ros.propertyValidator('http2', ros.validateAllowedValues)({
+          data: properties.http2,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('http2', ros.validateString)(properties.http2));
+    if(properties.tls10 && (typeof properties.tls10) !== 'object') {
+        errors.collect(ros.propertyValidator('tls10', ros.validateAllowedValues)({
+          data: properties.tls10,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('tls10', ros.validateString)(properties.tls10));
+    if(properties.tls11 && (typeof properties.tls11) !== 'object') {
+        errors.collect(ros.propertyValidator('tls11', ros.validateAllowedValues)({
+          data: properties.tls11,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('tls11', ros.validateString)(properties.tls11));
+    errors.collect(ros.propertyValidator('sequence', ros.validateNumber)(properties.sequence));
+    if(properties.tls12 && (typeof properties.tls12) !== 'object') {
+        errors.collect(ros.propertyValidator('tls12', ros.validateAllowedValues)({
+          data: properties.tls12,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('tls12', ros.validateString)(properties.tls12));
+    if(properties.tls13 && (typeof properties.tls13) !== 'object') {
+        errors.collect(ros.propertyValidator('tls13', ros.validateAllowedValues)({
+          data: properties.tls13,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('tls13', ros.validateString)(properties.tls13));
+    if(properties.ciphersuiteGroup && (typeof properties.ciphersuiteGroup) !== 'object') {
+        errors.collect(ros.propertyValidator('ciphersuiteGroup', ros.validateAllowedValues)({
+          data: properties.ciphersuiteGroup,
+          allowedValues: ["all","strict","custom"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ciphersuiteGroup', ros.validateString)(properties.ciphersuiteGroup));
+    errors.collect(ros.propertyValidator('rule', ros.validateString)(properties.rule));
+    errors.collect(ros.propertyValidator('ruleName', ros.validateString)(properties.ruleName));
+    if(properties.ocspStapling && (typeof properties.ocspStapling) !== 'object') {
+        errors.collect(ros.propertyValidator('ocspStapling', ros.validateAllowedValues)({
+          data: properties.ocspStapling,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ocspStapling', ros.validateString)(properties.ocspStapling));
+    return errors.wrap('supplied properties not correct for "RosHttpsBasicConfigurationProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::HttpsBasicConfiguration` resource
+ *
+ * @param properties - the TypeScript properties of a `RosHttpsBasicConfigurationProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::HttpsBasicConfiguration` resource.
+ */
+// @ts-ignore TS6133
+function rosHttpsBasicConfigurationPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosHttpsBasicConfigurationPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'SiteId': ros.numberToRosTemplate(properties.siteId),
+      'Ciphersuite': ros.stringToRosTemplate(properties.ciphersuite),
+      'CiphersuiteGroup': ros.stringToRosTemplate(properties.ciphersuiteGroup),
+      'Http2': ros.stringToRosTemplate(properties.http2),
+      'Http3': ros.stringToRosTemplate(properties.http3),
+      'Https': ros.stringToRosTemplate(properties.https),
+      'OcspStapling': ros.stringToRosTemplate(properties.ocspStapling),
+      'Rule': ros.stringToRosTemplate(properties.rule),
+      'RuleEnable': ros.stringToRosTemplate(properties.ruleEnable),
+      'RuleName': ros.stringToRosTemplate(properties.ruleName),
+      'Sequence': ros.numberToRosTemplate(properties.sequence),
+      'Tls10': ros.stringToRosTemplate(properties.tls10),
+      'Tls11': ros.stringToRosTemplate(properties.tls11),
+      'Tls12': ros.stringToRosTemplate(properties.tls12),
+      'Tls13': ros.stringToRosTemplate(properties.tls13),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::HttpsBasicConfiguration`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `HttpsBasicConfiguration` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-httpsbasicconfiguration
+ */
+export class RosHttpsBasicConfiguration extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESA::HttpsBasicConfiguration";
+
+    /**
+     * @Attribute Ciphersuite: Custom cipher suite, indicating the specific encryption algorithm selected when CiphersuiteGroup is set to custom.
+     */
+    public readonly attrCiphersuite: ros.IResolvable;
+
+    /**
+     * @Attribute CiphersuiteGroup: Cipher suite group. Default is all cipher suites.
+     */
+    public readonly attrCiphersuiteGroup: ros.IResolvable;
+
+    /**
+     * @Attribute ConfigId: ConfigId of the configuration.
+     */
+    public readonly attrConfigId: ros.IResolvable;
+
+    /**
+     * @Attribute ConfigType: Configuration type, which can be used to query global or rule configurations.
+     */
+    public readonly attrConfigType: ros.IResolvable;
+
+    /**
+     * @Attribute Http2: Indicates whether HTTP2 is enabled. Default is on.
+     */
+    public readonly attrHttp2: ros.IResolvable;
+
+    /**
+     * @Attribute Http3: Whether to enable HTTP3, which is enabled by default.
+     */
+    public readonly attrHttp3: ros.IResolvable;
+
+    /**
+     * @Attribute Https: Whether to enable HTTPS. Default is enabled.
+     */
+    public readonly attrHttps: ros.IResolvable;
+
+    /**
+     * @Attribute OcspStapling: Indicates whether OCSP is enabled. Default is off.
+     */
+    public readonly attrOcspStapling: ros.IResolvable;
+
+    /**
+     * @Attribute Rule: Rule content, using conditional expressions to match user requests. When adding global configuration, this parameter does not need to be set.
+     */
+    public readonly attrRule: ros.IResolvable;
+
+    /**
+     * @Attribute RuleEnable: Rule switch. When adding global configuration, this parameter does not need to be set.
+     */
+    public readonly attrRuleEnable: ros.IResolvable;
+
+    /**
+     * @Attribute RuleName: Rule name. When adding global configuration, this parameter does not need to be set.
+     */
+    public readonly attrRuleName: ros.IResolvable;
+
+    /**
+     * @Attribute Sequence: Order of rule execution. The smaller the value, the higher the priority for execution.
+     */
+    public readonly attrSequence: ros.IResolvable;
+
+    /**
+     * @Attribute Tls10: Whether to enable TLS1.0. Default is disabled.
+     */
+    public readonly attrTls10: ros.IResolvable;
+
+    /**
+     * @Attribute Tls11: Whether to enable TLS1.1. Default is enabled.
+     */
+    public readonly attrTls11: ros.IResolvable;
+
+    /**
+     * @Attribute Tls12: Whether to enable TLS1.2. Default is enabled.
+     */
+    public readonly attrTls12: ros.IResolvable;
+
+    /**
+     * @Attribute Tls13: Whether to enable TLS1.3. Default is enabled.
+     */
+    public readonly attrTls13: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property siteId: Site ID, which can be obtained by calling the [ListSites](~~ListSites~~) interface.
+     */
+    public siteId: number | ros.IResolvable;
+
+    /**
+     * @Property ciphersuite: Custom cipher suite, indicating the specific encryption algorithm selected when CiphersuiteGroup is set to custom.
+     */
+    public ciphersuite: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ciphersuiteGroup: Cipher suite group. Default is all cipher suites. Possible values:
+     * - all: All cipher suites.
+     * - strict: Strong cipher suites.
+     * - custom: Custom cipher suites.
+     */
+    public ciphersuiteGroup: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property http2: Indicates whether HTTP2 is enabled. Default is on. Possible values:
+     * - on: Enabled.
+     * - off: Disabled.
+     */
+    public http2: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property http3: Whether to enable HTTP3, which is enabled by default. The value can be:
+     * - on: Enabled. 
+     * - off: Disabled.
+     */
+    public http3: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property https: Whether to enable HTTPS. Default is enabled. Possible values:
+     * - on: Enable.
+     * - off: Disable.
+     */
+    public https: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ocspStapling: Indicates whether OCSP is enabled. Default is off. Possible values:
+     * - on: Enabled.
+     * - off: Disabled.
+     */
+    public ocspStapling: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property rule: Rule content, using conditional expressions to match user requests. When adding global configuration, this parameter does not need to be set. There are two usage scenarios:
+     * -  Match all incoming requests: value set to true
+     * -  Match specified request: Set the value to a custom expression, for example: (http.host eq \"video.example.com\").
+     */
+    public rule: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ruleEnable: Rule switch. When adding global configuration, this parameter does not need to be set. Value range:
+     * - on: open.
+     * - off: close.
+     */
+    public ruleEnable: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ruleName: Rule name. When adding global configuration, this parameter does not need to be set.
+     */
+    public ruleName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property sequence: Order of rule execution. The smaller the value, the higher the priority for execution.
+     */
+    public sequence: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property tls10: Whether to enable TLS1.0. Default is disabled. Possible values:
+     * - on: Enable.
+     * - off: Disable.
+     */
+    public tls10: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tls11: Whether to enable TLS1.1. Default is enabled. Possible values:
+     * - on: Enable.
+     * - off: Disable.
+     */
+    public tls11: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tls12: Whether to enable TLS1.2. Default is enabled. Possible values:
+     * - on: Enable.
+     * - off: Disable.
+     */
+    public tls12: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tls13: Whether to enable TLS1.3. Default is enabled. Possible values:
+     * - on: Enable.
+     * - off: Disable.
+     */
+    public tls13: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosHttpsBasicConfigurationProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosHttpsBasicConfiguration.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCiphersuite = this.getAtt('Ciphersuite');
+        this.attrCiphersuiteGroup = this.getAtt('CiphersuiteGroup');
+        this.attrConfigId = this.getAtt('ConfigId');
+        this.attrConfigType = this.getAtt('ConfigType');
+        this.attrHttp2 = this.getAtt('Http2');
+        this.attrHttp3 = this.getAtt('Http3');
+        this.attrHttps = this.getAtt('Https');
+        this.attrOcspStapling = this.getAtt('OcspStapling');
+        this.attrRule = this.getAtt('Rule');
+        this.attrRuleEnable = this.getAtt('RuleEnable');
+        this.attrRuleName = this.getAtt('RuleName');
+        this.attrSequence = this.getAtt('Sequence');
+        this.attrTls10 = this.getAtt('Tls10');
+        this.attrTls11 = this.getAtt('Tls11');
+        this.attrTls12 = this.getAtt('Tls12');
+        this.attrTls13 = this.getAtt('Tls13');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.siteId = props.siteId;
+        this.ciphersuite = props.ciphersuite;
+        this.ciphersuiteGroup = props.ciphersuiteGroup;
+        this.http2 = props.http2;
+        this.http3 = props.http3;
+        this.https = props.https;
+        this.ocspStapling = props.ocspStapling;
+        this.rule = props.rule;
+        this.ruleEnable = props.ruleEnable;
+        this.ruleName = props.ruleName;
+        this.sequence = props.sequence;
+        this.tls10 = props.tls10;
+        this.tls11 = props.tls11;
+        this.tls12 = props.tls12;
+        this.tls13 = props.tls13;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            siteId: this.siteId,
+            ciphersuite: this.ciphersuite,
+            ciphersuiteGroup: this.ciphersuiteGroup,
+            http2: this.http2,
+            http3: this.http3,
+            https: this.https,
+            ocspStapling: this.ocspStapling,
+            rule: this.rule,
+            ruleEnable: this.ruleEnable,
+            ruleName: this.ruleName,
+            sequence: this.sequence,
+            tls10: this.tls10,
+            tls11: this.tls11,
+            tls12: this.tls12,
+            tls13: this.tls13,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosHttpsBasicConfigurationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosImageTransform`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-imagetransform
  */
@@ -1967,4 +4011,3351 @@ export class RosKvNamespace extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosKvNamespacePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+/**
+ * Properties for defining a `RosNetworkOptimization`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-networkoptimization
+ */
+export interface RosNetworkOptimizationProps {
+
+    /**
+     * @Property siteId: Site ID.
+     */
+    readonly siteId: number | ros.IResolvable;
+
+    /**
+     * @Property grpc: Whether to enable GRPC, default is disabled. Value range:
+     * - `on`: Enabled
+     * - `off`: Disabled.
+     */
+    readonly grpc?: string | ros.IResolvable;
+
+    /**
+     * @Property http2Origin: Whether to enable HTTP2 origin, default is disabled. Value range:
+     * - `on`: Enabled
+     * - `off`: Disabled.
+     */
+    readonly http2Origin?: string | ros.IResolvable;
+
+    /**
+     * @Property rule: Rule content, using conditional expressions to match user requests. When adding global configuration, this parameter does not need to be set. There are two usage scenarios:
+     * - Match all incoming requests: value set to true
+     * - Match specified request: Set the value to a custom expression, for example: (http.host eq \"video.example.com\").
+     */
+    readonly rule?: string | ros.IResolvable;
+
+    /**
+     * @Property ruleEnable: Rule switch. When adding global configuration, this parameter does not need to be set. Value range:
+     * - `on`: open.
+     * - `off`: close.
+     */
+    readonly ruleEnable?: string | ros.IResolvable;
+
+    /**
+     * @Property ruleName: Rule name.
+     */
+    readonly ruleName?: string | ros.IResolvable;
+
+    /**
+     * @Property sequence: Order of rule execution. The smaller the value, the higher the priority for execution.
+     */
+    readonly sequence?: number | ros.IResolvable;
+
+    /**
+     * @Property siteVersion: The version number of the site configuration. For sites that have enabled configuration version management, this parameter can be used to specify the effective version of the configuration site, which defaults to version 0.
+     */
+    readonly siteVersion?: number | ros.IResolvable;
+
+    /**
+     * @Property smartRouting: Whether to enable smart routing service, default is disabled. Value range:
+     * - `on`: Enabled
+     * - `off`: Disabled.
+     */
+    readonly smartRouting?: string | ros.IResolvable;
+
+    /**
+     * @Property uploadMaxFilesize: Maximum upload file size, in MB, value range: 100～500.
+     */
+    readonly uploadMaxFilesize?: number | ros.IResolvable;
+
+    /**
+     * @Property websocket: Whether to enable Websocket, default is enabled. Value range:
+     * - `on`: Enabled
+     * - `off`: Disabled.
+     */
+    readonly websocket?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosNetworkOptimizationProps`
+ *
+ * @param properties - the TypeScript properties of a `RosNetworkOptimizationProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosNetworkOptimizationPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('siteId', ros.requiredValidator)(properties.siteId));
+    errors.collect(ros.propertyValidator('siteId', ros.validateNumber)(properties.siteId));
+    if(properties.smartRouting && (typeof properties.smartRouting) !== 'object') {
+        errors.collect(ros.propertyValidator('smartRouting', ros.validateAllowedValues)({
+          data: properties.smartRouting,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('smartRouting', ros.validateString)(properties.smartRouting));
+    if(properties.websocket && (typeof properties.websocket) !== 'object') {
+        errors.collect(ros.propertyValidator('websocket', ros.validateAllowedValues)({
+          data: properties.websocket,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('websocket', ros.validateString)(properties.websocket));
+    if(properties.ruleEnable && (typeof properties.ruleEnable) !== 'object') {
+        errors.collect(ros.propertyValidator('ruleEnable', ros.validateAllowedValues)({
+          data: properties.ruleEnable,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ruleEnable', ros.validateString)(properties.ruleEnable));
+    errors.collect(ros.propertyValidator('sequence', ros.validateNumber)(properties.sequence));
+    errors.collect(ros.propertyValidator('rule', ros.validateString)(properties.rule));
+    if(properties.grpc && (typeof properties.grpc) !== 'object') {
+        errors.collect(ros.propertyValidator('grpc', ros.validateAllowedValues)({
+          data: properties.grpc,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('grpc', ros.validateString)(properties.grpc));
+    if(properties.http2Origin && (typeof properties.http2Origin) !== 'object') {
+        errors.collect(ros.propertyValidator('http2Origin', ros.validateAllowedValues)({
+          data: properties.http2Origin,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('http2Origin', ros.validateString)(properties.http2Origin));
+    errors.collect(ros.propertyValidator('siteVersion', ros.validateNumber)(properties.siteVersion));
+    errors.collect(ros.propertyValidator('ruleName', ros.validateString)(properties.ruleName));
+    if(properties.uploadMaxFilesize && (typeof properties.uploadMaxFilesize) !== 'object') {
+        errors.collect(ros.propertyValidator('uploadMaxFilesize', ros.validateRange)({
+            data: properties.uploadMaxFilesize,
+            min: 100,
+            max: 500,
+          }));
+    }
+    errors.collect(ros.propertyValidator('uploadMaxFilesize', ros.validateNumber)(properties.uploadMaxFilesize));
+    return errors.wrap('supplied properties not correct for "RosNetworkOptimizationProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::NetworkOptimization` resource
+ *
+ * @param properties - the TypeScript properties of a `RosNetworkOptimizationProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::NetworkOptimization` resource.
+ */
+// @ts-ignore TS6133
+function rosNetworkOptimizationPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosNetworkOptimizationPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'SiteId': ros.numberToRosTemplate(properties.siteId),
+      'Grpc': ros.stringToRosTemplate(properties.grpc),
+      'Http2Origin': ros.stringToRosTemplate(properties.http2Origin),
+      'Rule': ros.stringToRosTemplate(properties.rule),
+      'RuleEnable': ros.stringToRosTemplate(properties.ruleEnable),
+      'RuleName': ros.stringToRosTemplate(properties.ruleName),
+      'Sequence': ros.numberToRosTemplate(properties.sequence),
+      'SiteVersion': ros.numberToRosTemplate(properties.siteVersion),
+      'SmartRouting': ros.stringToRosTemplate(properties.smartRouting),
+      'UploadMaxFilesize': ros.numberToRosTemplate(properties.uploadMaxFilesize),
+      'Websocket': ros.stringToRosTemplate(properties.websocket),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::NetworkOptimization`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `NetworkOptimization` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-networkoptimization
+ */
+export class RosNetworkOptimization extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESA::NetworkOptimization";
+
+    /**
+     * @Attribute ConfigId: ConfigId of the configuration, which can be obtained by calling the ListNetworkOptimizations.
+     */
+    public readonly attrConfigId: ros.IResolvable;
+
+    /**
+     * @Attribute ConfigType: Configuration type, which can be used to query global or rule configurations.
+     */
+    public readonly attrConfigType: ros.IResolvable;
+
+    /**
+     * @Attribute Grpc: Whether to enable GRPC, default is disabled.
+     */
+    public readonly attrGrpc: ros.IResolvable;
+
+    /**
+     * @Attribute Http2Origin: Whether to enable HTTP2 origin, default is disabled.
+     */
+    public readonly attrHttp2Origin: ros.IResolvable;
+
+    /**
+     * @Attribute Rule: Rule content, using conditional expressions to match user requests. When adding global configuration, this parameter does not need to be set.
+     */
+    public readonly attrRule: ros.IResolvable;
+
+    /**
+     * @Attribute RuleEnable: Rule switch. When adding global configuration, this parameter does not need to be set.
+     */
+    public readonly attrRuleEnable: ros.IResolvable;
+
+    /**
+     * @Attribute RuleName: Rule name.
+     */
+    public readonly attrRuleName: ros.IResolvable;
+
+    /**
+     * @Attribute Sequence: Order of rule execution. The smaller the value, the higher the priority for execution.
+     */
+    public readonly attrSequence: ros.IResolvable;
+
+    /**
+     * @Attribute SiteVersion: The version number of the site configuration. For sites that have enabled configuration version management, this parameter can be used to specify the effective version of the configuration site, which defaults to version 0.
+     */
+    public readonly attrSiteVersion: ros.IResolvable;
+
+    /**
+     * @Attribute SmartRouting: Whether to enable smart routing service, default is disabled.
+     */
+    public readonly attrSmartRouting: ros.IResolvable;
+
+    /**
+     * @Attribute UploadMaxFilesize: Maximum upload file size, in MB, value range: 100～500.
+     */
+    public readonly attrUploadMaxFilesize: ros.IResolvable;
+
+    /**
+     * @Attribute Websocket: Whether to enable Websocket, default is enabled.
+     */
+    public readonly attrWebsocket: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property siteId: Site ID.
+     */
+    public siteId: number | ros.IResolvable;
+
+    /**
+     * @Property grpc: Whether to enable GRPC, default is disabled. Value range:
+     * - `on`: Enabled
+     * - `off`: Disabled.
+     */
+    public grpc: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property http2Origin: Whether to enable HTTP2 origin, default is disabled. Value range:
+     * - `on`: Enabled
+     * - `off`: Disabled.
+     */
+    public http2Origin: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property rule: Rule content, using conditional expressions to match user requests. When adding global configuration, this parameter does not need to be set. There are two usage scenarios:
+     * - Match all incoming requests: value set to true
+     * - Match specified request: Set the value to a custom expression, for example: (http.host eq \"video.example.com\").
+     */
+    public rule: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ruleEnable: Rule switch. When adding global configuration, this parameter does not need to be set. Value range:
+     * - `on`: open.
+     * - `off`: close.
+     */
+    public ruleEnable: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ruleName: Rule name.
+     */
+    public ruleName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property sequence: Order of rule execution. The smaller the value, the higher the priority for execution.
+     */
+    public sequence: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property siteVersion: The version number of the site configuration. For sites that have enabled configuration version management, this parameter can be used to specify the effective version of the configuration site, which defaults to version 0.
+     */
+    public siteVersion: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property smartRouting: Whether to enable smart routing service, default is disabled. Value range:
+     * - `on`: Enabled
+     * - `off`: Disabled.
+     */
+    public smartRouting: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property uploadMaxFilesize: Maximum upload file size, in MB, value range: 100～500.
+     */
+    public uploadMaxFilesize: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property websocket: Whether to enable Websocket, default is enabled. Value range:
+     * - `on`: Enabled
+     * - `off`: Disabled.
+     */
+    public websocket: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosNetworkOptimizationProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosNetworkOptimization.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrConfigId = this.getAtt('ConfigId');
+        this.attrConfigType = this.getAtt('ConfigType');
+        this.attrGrpc = this.getAtt('Grpc');
+        this.attrHttp2Origin = this.getAtt('Http2Origin');
+        this.attrRule = this.getAtt('Rule');
+        this.attrRuleEnable = this.getAtt('RuleEnable');
+        this.attrRuleName = this.getAtt('RuleName');
+        this.attrSequence = this.getAtt('Sequence');
+        this.attrSiteVersion = this.getAtt('SiteVersion');
+        this.attrSmartRouting = this.getAtt('SmartRouting');
+        this.attrUploadMaxFilesize = this.getAtt('UploadMaxFilesize');
+        this.attrWebsocket = this.getAtt('Websocket');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.siteId = props.siteId;
+        this.grpc = props.grpc;
+        this.http2Origin = props.http2Origin;
+        this.rule = props.rule;
+        this.ruleEnable = props.ruleEnable;
+        this.ruleName = props.ruleName;
+        this.sequence = props.sequence;
+        this.siteVersion = props.siteVersion;
+        this.smartRouting = props.smartRouting;
+        this.uploadMaxFilesize = props.uploadMaxFilesize;
+        this.websocket = props.websocket;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            siteId: this.siteId,
+            grpc: this.grpc,
+            http2Origin: this.http2Origin,
+            rule: this.rule,
+            ruleEnable: this.ruleEnable,
+            ruleName: this.ruleName,
+            sequence: this.sequence,
+            siteVersion: this.siteVersion,
+            smartRouting: this.smartRouting,
+            uploadMaxFilesize: this.uploadMaxFilesize,
+            websocket: this.websocket,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosNetworkOptimizationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosOriginPool`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-originpool
+ */
+export interface RosOriginPoolProps {
+
+    /**
+     * @Property originPoolName: The source address pool name.
+     */
+    readonly originPoolName: string | ros.IResolvable;
+
+    /**
+     * @Property siteId: The site ID.
+     */
+    readonly siteId: number | ros.IResolvable;
+
+    /**
+     * @Property enabled: Whether the source address pool is enabled:
+     * - `true`: Enabled;
+     * - `false`: Not enabled.
+     */
+    readonly enabled?: boolean | ros.IResolvable;
+
+    /**
+     * @Property origins: The Source station information added to the source address pool. Multiple Source stations use arrays to transfer values.
+     */
+    readonly origins?: Array<RosOriginPool.OriginsProperty | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosOriginPoolProps`
+ *
+ * @param properties - the TypeScript properties of a `RosOriginPoolProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosOriginPoolPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('origins', ros.listValidator(RosOriginPool_OriginsPropertyValidator))(properties.origins));
+    errors.collect(ros.propertyValidator('siteId', ros.requiredValidator)(properties.siteId));
+    errors.collect(ros.propertyValidator('siteId', ros.validateNumber)(properties.siteId));
+    errors.collect(ros.propertyValidator('enabled', ros.validateBoolean)(properties.enabled));
+    errors.collect(ros.propertyValidator('originPoolName', ros.requiredValidator)(properties.originPoolName));
+    errors.collect(ros.propertyValidator('originPoolName', ros.validateString)(properties.originPoolName));
+    return errors.wrap('supplied properties not correct for "RosOriginPoolProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::OriginPool` resource
+ *
+ * @param properties - the TypeScript properties of a `RosOriginPoolProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::OriginPool` resource.
+ */
+// @ts-ignore TS6133
+function rosOriginPoolPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosOriginPoolPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'OriginPoolName': ros.stringToRosTemplate(properties.originPoolName),
+      'SiteId': ros.numberToRosTemplate(properties.siteId),
+      'Enabled': ros.booleanToRosTemplate(properties.enabled),
+      'Origins': ros.listMapper(rosOriginPoolOriginsPropertyToRosTemplate)(properties.origins),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::OriginPool`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `OriginPool` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-originpool
+ */
+export class RosOriginPool extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESA::OriginPool";
+
+    /**
+     * @Attribute Enabled: Whether the source address pool is enabled:.
+     */
+    public readonly attrEnabled: ros.IResolvable;
+
+    /**
+     * @Attribute OriginPoolId: OriginPool Id.
+     */
+    public readonly attrOriginPoolId: ros.IResolvable;
+
+    /**
+     * @Attribute OriginPoolName: The source address pool name.
+     */
+    public readonly attrOriginPoolName: ros.IResolvable;
+
+    /**
+     * @Attribute Origins: The Source station information added to the source address pool. Multiple Source stations use arrays to transfer values.
+     */
+    public readonly attrOrigins: ros.IResolvable;
+
+    /**
+     * @Attribute RecordName: The domain name assigned to the source address pool can be used as the source address recorded under the site.
+     */
+    public readonly attrRecordName: ros.IResolvable;
+
+    /**
+     * @Attribute ReferenceLBCount: How many load balancers are referenced.
+     */
+    public readonly attrReferenceLbCount: ros.IResolvable;
+
+    /**
+     * @Attribute References: The source address pool is referred to when the source address pool is configured by the load balancer or recorded as the source station.
+     */
+    public readonly attrReferences: ros.IResolvable;
+
+    /**
+     * @Attribute SiteId: The site ID.
+     */
+    public readonly attrSiteId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property originPoolName: The source address pool name.
+     */
+    public originPoolName: string | ros.IResolvable;
+
+    /**
+     * @Property siteId: The site ID.
+     */
+    public siteId: number | ros.IResolvable;
+
+    /**
+     * @Property enabled: Whether the source address pool is enabled:
+     * - `true`: Enabled;
+     * - `false`: Not enabled.
+     */
+    public enabled: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property origins: The Source station information added to the source address pool. Multiple Source stations use arrays to transfer values.
+     */
+    public origins: Array<RosOriginPool.OriginsProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosOriginPoolProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosOriginPool.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrEnabled = this.getAtt('Enabled');
+        this.attrOriginPoolId = this.getAtt('OriginPoolId');
+        this.attrOriginPoolName = this.getAtt('OriginPoolName');
+        this.attrOrigins = this.getAtt('Origins');
+        this.attrRecordName = this.getAtt('RecordName');
+        this.attrReferenceLbCount = this.getAtt('ReferenceLBCount');
+        this.attrReferences = this.getAtt('References');
+        this.attrSiteId = this.getAtt('SiteId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.originPoolName = props.originPoolName;
+        this.siteId = props.siteId;
+        this.enabled = props.enabled;
+        this.origins = props.origins;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            originPoolName: this.originPoolName,
+            siteId: this.siteId,
+            enabled: this.enabled,
+            origins: this.origins,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosOriginPoolPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosOriginPool {
+    /**
+     * @stability external
+     */
+    export interface AuthConfProperty {
+        /**
+         * @Property secretKey: The SecretKey to be passed when AuthType is set to private_cross_account or private.
+         */
+        readonly secretKey?: string | ros.IResolvable;
+        /**
+         * @Property version: The signature version to be transmitted when the source station is AWS S3.
+         */
+        readonly version?: string | ros.IResolvable;
+        /**
+         * @Property region: The Region of the source station to be transmitted when the source station is AWS S3.
+         */
+        readonly region?: string | ros.IResolvable;
+        /**
+         * @Property accessKey: The AccessKey to be passed when AuthType is set to private_cross_account or private.
+         */
+        readonly accessKey?: string | ros.IResolvable;
+        /**
+         * @Property authType: Authentication type.
+     * - `public`: public read\/write, which is used when the source station is OSS or S3 and is public read\/write;
+     * - `private_same_account`: Used when the same account is private, the source station is OSS, and the authentication type is private authentication of the same account;
+     * - `private_cross_account`: private cross-account, used when the origin station is OSS and the authentication type is cross-account private authentication;
+     * - `private`: Used when the source station is S3 and the authentication type is private.
+         */
+        readonly authType?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AuthConfProperty`
+ *
+ * @param properties - the TypeScript properties of a `AuthConfProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosOriginPool_AuthConfPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('secretKey', ros.validateString)(properties.secretKey));
+    errors.collect(ros.propertyValidator('version', ros.validateString)(properties.version));
+    errors.collect(ros.propertyValidator('region', ros.validateString)(properties.region));
+    errors.collect(ros.propertyValidator('accessKey', ros.validateString)(properties.accessKey));
+    if(properties.authType && (typeof properties.authType) !== 'object') {
+        errors.collect(ros.propertyValidator('authType', ros.validateAllowedValues)({
+          data: properties.authType,
+          allowedValues: ["public","private_same_account","private_cross_account","private"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('authType', ros.validateString)(properties.authType));
+    return errors.wrap('supplied properties not correct for "AuthConfProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::OriginPool.AuthConf` resource
+ *
+ * @param properties - the TypeScript properties of a `AuthConfProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::OriginPool.AuthConf` resource.
+ */
+// @ts-ignore TS6133
+function rosOriginPoolAuthConfPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosOriginPool_AuthConfPropertyValidator(properties).assertSuccess();
+    return {
+      'SecretKey': ros.stringToRosTemplate(properties.secretKey),
+      'Version': ros.stringToRosTemplate(properties.version),
+      'Region': ros.stringToRosTemplate(properties.region),
+      'AccessKey': ros.stringToRosTemplate(properties.accessKey),
+      'AuthType': ros.stringToRosTemplate(properties.authType),
+    };
+}
+
+export namespace RosOriginPool {
+    /**
+     * @stability external
+     */
+    export interface OriginsProperty {
+        /**
+         * @Property type: Source station type:
+     * ip_domain: ip or domain name type origin station;
+     * - `OSS`:OSS address source station;
+     * - `S3`:AWS S3 Source station.
+         */
+        readonly type?: string | ros.IResolvable;
+        /**
+         * @Property header: The request header that is sent when returning to the source. Only Host is supported.
+         */
+        readonly header?: string | ros.IResolvable;
+        /**
+         * @Property address: Origin Address.
+         */
+        readonly address?: string | ros.IResolvable;
+        /**
+         * @Property enabled: Whether the source station is enabled:
+     * - `true`: Enabled;
+     * - `false`: Not enabled.
+         */
+        readonly enabled?: boolean | ros.IResolvable;
+        /**
+         * @Property authConf: The authentication information. When the source Station is an OSS or S3 and other source stations need to be authenticated, the authentication-related configuration information needs to be transmitted.
+         */
+        readonly authConf?: RosOriginPool.AuthConfProperty | ros.IResolvable;
+        /**
+         * @Property originId: Origin ID.
+         */
+        readonly originId?: number | ros.IResolvable;
+        /**
+         * @Property weight: The weight, an integer between 0 and 100.
+         */
+        readonly weight?: number | ros.IResolvable;
+        /**
+         * @Property name: The name of the origin, which must be unique within an origin address.
+         */
+        readonly name?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `OriginsProperty`
+ *
+ * @param properties - the TypeScript properties of a `OriginsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosOriginPool_OriginsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["ip_domain","OSS","S3"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('header', ros.validateString)(properties.header));
+    errors.collect(ros.propertyValidator('address', ros.validateString)(properties.address));
+    errors.collect(ros.propertyValidator('enabled', ros.validateBoolean)(properties.enabled));
+    errors.collect(ros.propertyValidator('authConf', RosOriginPool_AuthConfPropertyValidator)(properties.authConf));
+    errors.collect(ros.propertyValidator('originId', ros.validateNumber)(properties.originId));
+    if(properties.weight && (typeof properties.weight) !== 'object') {
+        errors.collect(ros.propertyValidator('weight', ros.validateRange)({
+            data: properties.weight,
+            min: 0,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('weight', ros.validateNumber)(properties.weight));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "OriginsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::OriginPool.Origins` resource
+ *
+ * @param properties - the TypeScript properties of a `OriginsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::OriginPool.Origins` resource.
+ */
+// @ts-ignore TS6133
+function rosOriginPoolOriginsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosOriginPool_OriginsPropertyValidator(properties).assertSuccess();
+    return {
+      'Type': ros.stringToRosTemplate(properties.type),
+      'Header': ros.stringToRosTemplate(properties.header),
+      'Address': ros.stringToRosTemplate(properties.address),
+      'Enabled': ros.booleanToRosTemplate(properties.enabled),
+      'AuthConf': rosOriginPoolAuthConfPropertyToRosTemplate(properties.authConf),
+      'OriginId': ros.numberToRosTemplate(properties.originId),
+      'Weight': ros.numberToRosTemplate(properties.weight),
+      'Name': ros.stringToRosTemplate(properties.name),
+    };
+}
+
+/**
+ * Properties for defining a `RosOriginRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-originrule
+ */
+export interface RosOriginRuleProps {
+
+    /**
+     * @Property siteId: The site ID.
+     */
+    readonly siteId: number | ros.IResolvable;
+
+    /**
+     * @Property dnsRecord: Overwrite the DNS resolution record of the origin request.
+     */
+    readonly dnsRecord?: string | ros.IResolvable;
+
+    /**
+     * @Property follow302Enable: Return Source 302 follow switch. Value range:
+     * - `on`: ON.
+     * - `off`: closed.
+     */
+    readonly follow302Enable?: string | ros.IResolvable;
+
+    /**
+     * @Property follow302MaxTries: 302 follows the upper limit of the number of times, with a value range of [1-5].
+     */
+    readonly follow302MaxTries?: number | ros.IResolvable;
+
+    /**
+     * @Property follow302RetainArgs: Retain the original request parameter switch. Value range:
+     * - `on`: ON.
+     * - `off`: closed.
+     */
+    readonly follow302RetainArgs?: string | ros.IResolvable;
+
+    /**
+     * @Property follow302RetainHeader: Retain the original request header switch. Value range:
+     * - `on`: ON.
+     * - `off`: closed.
+     */
+    readonly follow302RetainHeader?: string | ros.IResolvable;
+
+    /**
+     * @Property follow302TargetHost: Modify the source host after 302.
+     */
+    readonly follow302TargetHost?: string | ros.IResolvable;
+
+    /**
+     * @Property originHost: The HOST carried in the back-to-origin request.
+     */
+    readonly originHost?: string | ros.IResolvable;
+
+    /**
+     * @Property originHttpPort: The port of the origin station accessed when the HTTP protocol is used to return to the origin.
+     */
+    readonly originHttpPort?: number | ros.IResolvable;
+
+    /**
+     * @Property originHttpsPort: Port of the origin server when using the HTTPS protocol for origin requests.
+     */
+    readonly originHttpsPort?: number | ros.IResolvable;
+
+    /**
+     * @Property originMtls: The mtls switch. Value range:
+     * - `on`: ON.
+     * - `off`: closed.
+     */
+    readonly originMtls?: string | ros.IResolvable;
+
+    /**
+     * @Property originReadTimeout: Read timeout interval of the source station (s).
+     */
+    readonly originReadTimeout?: number | ros.IResolvable;
+
+    /**
+     * @Property originScheme: The protocol used by the back-to-origin request. Value range:
+     * - `http`: uses the http protocol to return to the source.
+     * - `https`: uses the https protocol to return to the source.
+     * - `follow`: follows the Client Protocol back to the source.
+     */
+    readonly originScheme?: string | ros.IResolvable;
+
+    /**
+     * @Property originSni: SNI carried in the back-to-origin request.
+     */
+    readonly originSni?: string | ros.IResolvable;
+
+    /**
+     * @Property originVerify: Source station certificate verification switch. Value range:
+     * - `on`: ON.
+     * - `off`: closed.
+     */
+    readonly originVerify?: string | ros.IResolvable;
+
+    /**
+     * @Property range: Use the range sharding method to download the file from the source. Value range:
+     * - `on`: Open.
+     * - `off`: off.
+     * - `force`: force.
+     */
+    readonly range?: string | ros.IResolvable;
+
+    /**
+     * @Property rangeChunkSize: range shard size.
+     */
+    readonly rangeChunkSize?: string | ros.IResolvable;
+
+    /**
+     * @Property rule: Rule content, using conditional expressions to match user requests. When adding global configuration, this parameter does not need to be set. There are two usage scenarios:
+     * - Match all incoming requests: value set to true
+     * - Match specified request: Set the value to a custom expression, for example: (http.host eq \"video.example.com\").
+     */
+    readonly rule?: string | ros.IResolvable;
+
+    /**
+     * @Property ruleEnable: Rule switch. When adding global configuration, this parameter does not need to be set. Value range:
+     * - `on`: open.
+     * - `off`: close.
+     */
+    readonly ruleEnable?: string | ros.IResolvable;
+
+    /**
+     * @Property ruleName: Rule name. When adding global configuration, this parameter does not need to be set.
+     */
+    readonly ruleName?: string | ros.IResolvable;
+
+    /**
+     * @Property sequence: Order of rule execution. The smaller the value, the higher the priority for execution.
+     */
+    readonly sequence?: number | ros.IResolvable;
+
+    /**
+     * @Property siteVersion: The version number of the site configuration. For sites that have enabled configuration version management, this parameter can be used to specify the effective version of the configuration site, which defaults to version 0.
+     */
+    readonly siteVersion?: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosOriginRuleProps`
+ *
+ * @param properties - the TypeScript properties of a `RosOriginRuleProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosOriginRulePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('siteId', ros.requiredValidator)(properties.siteId));
+    errors.collect(ros.propertyValidator('siteId', ros.validateNumber)(properties.siteId));
+    if(properties.follow302MaxTries && (typeof properties.follow302MaxTries) !== 'object') {
+        errors.collect(ros.propertyValidator('follow302MaxTries', ros.validateRange)({
+            data: properties.follow302MaxTries,
+            min: 1,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('follow302MaxTries', ros.validateNumber)(properties.follow302MaxTries));
+    if(properties.ruleEnable && (typeof properties.ruleEnable) !== 'object') {
+        errors.collect(ros.propertyValidator('ruleEnable', ros.validateAllowedValues)({
+          data: properties.ruleEnable,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ruleEnable', ros.validateString)(properties.ruleEnable));
+    errors.collect(ros.propertyValidator('originHttpsPort', ros.validateNumber)(properties.originHttpsPort));
+    if(properties.follow302RetainArgs && (typeof properties.follow302RetainArgs) !== 'object') {
+        errors.collect(ros.propertyValidator('follow302RetainArgs', ros.validateAllowedValues)({
+          data: properties.follow302RetainArgs,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('follow302RetainArgs', ros.validateString)(properties.follow302RetainArgs));
+    if(properties.follow302RetainHeader && (typeof properties.follow302RetainHeader) !== 'object') {
+        errors.collect(ros.propertyValidator('follow302RetainHeader', ros.validateAllowedValues)({
+          data: properties.follow302RetainHeader,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('follow302RetainHeader', ros.validateString)(properties.follow302RetainHeader));
+    if(properties.originScheme && (typeof properties.originScheme) !== 'object') {
+        errors.collect(ros.propertyValidator('originScheme', ros.validateAllowedValues)({
+          data: properties.originScheme,
+          allowedValues: ["http","https","follow"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('originScheme', ros.validateString)(properties.originScheme));
+    errors.collect(ros.propertyValidator('sequence', ros.validateNumber)(properties.sequence));
+    if(properties.range && (typeof properties.range) !== 'object') {
+        errors.collect(ros.propertyValidator('range', ros.validateAllowedValues)({
+          data: properties.range,
+          allowedValues: ["on","off","force"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('range', ros.validateString)(properties.range));
+    if(properties.rangeChunkSize && (typeof properties.rangeChunkSize) !== 'object') {
+        errors.collect(ros.propertyValidator('rangeChunkSize', ros.validateAllowedValues)({
+          data: properties.rangeChunkSize,
+          allowedValues: ["512KB","1MB","2MB","4MB"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('rangeChunkSize', ros.validateString)(properties.rangeChunkSize));
+    errors.collect(ros.propertyValidator('originReadTimeout', ros.validateNumber)(properties.originReadTimeout));
+    errors.collect(ros.propertyValidator('originHost', ros.validateString)(properties.originHost));
+    errors.collect(ros.propertyValidator('originHttpPort', ros.validateNumber)(properties.originHttpPort));
+    if(properties.originMtls && (typeof properties.originMtls) !== 'object') {
+        errors.collect(ros.propertyValidator('originMtls', ros.validateAllowedValues)({
+          data: properties.originMtls,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('originMtls', ros.validateString)(properties.originMtls));
+    errors.collect(ros.propertyValidator('follow302TargetHost', ros.validateString)(properties.follow302TargetHost));
+    errors.collect(ros.propertyValidator('originSni', ros.validateString)(properties.originSni));
+    errors.collect(ros.propertyValidator('rule', ros.validateString)(properties.rule));
+    if(properties.follow302Enable && (typeof properties.follow302Enable) !== 'object') {
+        errors.collect(ros.propertyValidator('follow302Enable', ros.validateAllowedValues)({
+          data: properties.follow302Enable,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('follow302Enable', ros.validateString)(properties.follow302Enable));
+    errors.collect(ros.propertyValidator('dnsRecord', ros.validateString)(properties.dnsRecord));
+    errors.collect(ros.propertyValidator('siteVersion', ros.validateNumber)(properties.siteVersion));
+    errors.collect(ros.propertyValidator('ruleName', ros.validateString)(properties.ruleName));
+    if(properties.originVerify && (typeof properties.originVerify) !== 'object') {
+        errors.collect(ros.propertyValidator('originVerify', ros.validateAllowedValues)({
+          data: properties.originVerify,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('originVerify', ros.validateString)(properties.originVerify));
+    return errors.wrap('supplied properties not correct for "RosOriginRuleProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::OriginRule` resource
+ *
+ * @param properties - the TypeScript properties of a `RosOriginRuleProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::OriginRule` resource.
+ */
+// @ts-ignore TS6133
+function rosOriginRulePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosOriginRulePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'SiteId': ros.numberToRosTemplate(properties.siteId),
+      'DnsRecord': ros.stringToRosTemplate(properties.dnsRecord),
+      'Follow302Enable': ros.stringToRosTemplate(properties.follow302Enable),
+      'Follow302MaxTries': ros.numberToRosTemplate(properties.follow302MaxTries),
+      'Follow302RetainArgs': ros.stringToRosTemplate(properties.follow302RetainArgs),
+      'Follow302RetainHeader': ros.stringToRosTemplate(properties.follow302RetainHeader),
+      'Follow302TargetHost': ros.stringToRosTemplate(properties.follow302TargetHost),
+      'OriginHost': ros.stringToRosTemplate(properties.originHost),
+      'OriginHttpPort': ros.numberToRosTemplate(properties.originHttpPort),
+      'OriginHttpsPort': ros.numberToRosTemplate(properties.originHttpsPort),
+      'OriginMtls': ros.stringToRosTemplate(properties.originMtls),
+      'OriginReadTimeout': ros.numberToRosTemplate(properties.originReadTimeout),
+      'OriginScheme': ros.stringToRosTemplate(properties.originScheme),
+      'OriginSni': ros.stringToRosTemplate(properties.originSni),
+      'OriginVerify': ros.stringToRosTemplate(properties.originVerify),
+      'Range': ros.stringToRosTemplate(properties.range),
+      'RangeChunkSize': ros.stringToRosTemplate(properties.rangeChunkSize),
+      'Rule': ros.stringToRosTemplate(properties.rule),
+      'RuleEnable': ros.stringToRosTemplate(properties.ruleEnable),
+      'RuleName': ros.stringToRosTemplate(properties.ruleName),
+      'Sequence': ros.numberToRosTemplate(properties.sequence),
+      'SiteVersion': ros.numberToRosTemplate(properties.siteVersion),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::OriginRule`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `OriginRule` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-originrule
+ */
+export class RosOriginRule extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESA::OriginRule";
+
+    /**
+     * @Attribute ConfigId: Back-to-source rule configuration ID.
+     */
+    public readonly attrConfigId: ros.IResolvable;
+
+    /**
+     * @Attribute ConfigType: The configuration type. You can use this parameter to check the global configuration or rule configuration.
+     */
+    public readonly attrConfigType: ros.IResolvable;
+
+    /**
+     * @Attribute DnsRecord: Overwrite the DNS resolution record of the origin request.
+     */
+    public readonly attrDnsRecord: ros.IResolvable;
+
+    /**
+     * @Attribute Follow302Enable: Return Source 302 follow switch.
+     */
+    public readonly attrFollow302Enable: ros.IResolvable;
+
+    /**
+     * @Attribute Follow302MaxTries: 302 follows the upper limit of the number of times, with a value range of [1-5].
+     */
+    public readonly attrFollow302MaxTries: ros.IResolvable;
+
+    /**
+     * @Attribute Follow302RetainArgs: Retain the original request parameter switch.
+     */
+    public readonly attrFollow302RetainArgs: ros.IResolvable;
+
+    /**
+     * @Attribute Follow302RetainHeader: Retain the original request header switch.
+     */
+    public readonly attrFollow302RetainHeader: ros.IResolvable;
+
+    /**
+     * @Attribute Follow302TargetHost: Modify the source host after 302.
+     */
+    public readonly attrFollow302TargetHost: ros.IResolvable;
+
+    /**
+     * @Attribute OriginHost: The HOST carried in the back-to-origin request.
+     */
+    public readonly attrOriginHost: ros.IResolvable;
+
+    /**
+     * @Attribute OriginHttpPort: The port of the origin station accessed when the HTTP protocol is used to return to the origin.
+     */
+    public readonly attrOriginHttpPort: ros.IResolvable;
+
+    /**
+     * @Attribute OriginHttpsPort: The port of the origin station accessed when the HTTPS protocol is used to return to the origin.
+     */
+    public readonly attrOriginHttpsPort: ros.IResolvable;
+
+    /**
+     * @Attribute OriginMtls: The mtls switch.
+     */
+    public readonly attrOriginMtls: ros.IResolvable;
+
+    /**
+     * @Attribute OriginReadTimeout: Read timeout interval of the source station (s).
+     */
+    public readonly attrOriginReadTimeout: ros.IResolvable;
+
+    /**
+     * @Attribute OriginScheme: The protocol used by the back-to-origin request.
+     */
+    public readonly attrOriginScheme: ros.IResolvable;
+
+    /**
+     * @Attribute OriginSni: SNI carried in the back-to-origin request.
+     */
+    public readonly attrOriginSni: ros.IResolvable;
+
+    /**
+     * @Attribute OriginVerify: Source station certificate verification switch.
+     */
+    public readonly attrOriginVerify: ros.IResolvable;
+
+    /**
+     * @Attribute Range: Use the range sharding method to download the file from the source.
+     */
+    public readonly attrRange: ros.IResolvable;
+
+    /**
+     * @Attribute RangeChunkSize: range shard size.
+     */
+    public readonly attrRangeChunkSize: ros.IResolvable;
+
+    /**
+     * @Attribute Rule: Rule content, using conditional expressions to match user requests. When adding global configuration, this parameter does not need to be set.
+     */
+    public readonly attrRule: ros.IResolvable;
+
+    /**
+     * @Attribute RuleEnable: Rule switch. When adding global configuration, this parameter does not need to be set.
+     */
+    public readonly attrRuleEnable: ros.IResolvable;
+
+    /**
+     * @Attribute RuleName: Rule name. When adding global configuration, this parameter does not need to be set.
+     */
+    public readonly attrRuleName: ros.IResolvable;
+
+    /**
+     * @Attribute Sequence: Order of rule execution. The smaller the value, the higher the priority for execution.
+     */
+    public readonly attrSequence: ros.IResolvable;
+
+    /**
+     * @Attribute SiteVersion: The version number of the site configuration. For sites that have enabled configuration version management, this parameter can be used to specify the effective version of the configuration site, which defaults to version 0.
+     */
+    public readonly attrSiteVersion: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property siteId: The site ID.
+     */
+    public siteId: number | ros.IResolvable;
+
+    /**
+     * @Property dnsRecord: Overwrite the DNS resolution record of the origin request.
+     */
+    public dnsRecord: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property follow302Enable: Return Source 302 follow switch. Value range:
+     * - `on`: ON.
+     * - `off`: closed.
+     */
+    public follow302Enable: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property follow302MaxTries: 302 follows the upper limit of the number of times, with a value range of [1-5].
+     */
+    public follow302MaxTries: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property follow302RetainArgs: Retain the original request parameter switch. Value range:
+     * - `on`: ON.
+     * - `off`: closed.
+     */
+    public follow302RetainArgs: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property follow302RetainHeader: Retain the original request header switch. Value range:
+     * - `on`: ON.
+     * - `off`: closed.
+     */
+    public follow302RetainHeader: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property follow302TargetHost: Modify the source host after 302.
+     */
+    public follow302TargetHost: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property originHost: The HOST carried in the back-to-origin request.
+     */
+    public originHost: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property originHttpPort: The port of the origin station accessed when the HTTP protocol is used to return to the origin.
+     */
+    public originHttpPort: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property originHttpsPort: Port of the origin server when using the HTTPS protocol for origin requests.
+     */
+    public originHttpsPort: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property originMtls: The mtls switch. Value range:
+     * - `on`: ON.
+     * - `off`: closed.
+     */
+    public originMtls: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property originReadTimeout: Read timeout interval of the source station (s).
+     */
+    public originReadTimeout: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property originScheme: The protocol used by the back-to-origin request. Value range:
+     * - `http`: uses the http protocol to return to the source.
+     * - `https`: uses the https protocol to return to the source.
+     * - `follow`: follows the Client Protocol back to the source.
+     */
+    public originScheme: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property originSni: SNI carried in the back-to-origin request.
+     */
+    public originSni: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property originVerify: Source station certificate verification switch. Value range:
+     * - `on`: ON.
+     * - `off`: closed.
+     */
+    public originVerify: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property range: Use the range sharding method to download the file from the source. Value range:
+     * - `on`: Open.
+     * - `off`: off.
+     * - `force`: force.
+     */
+    public range: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property rangeChunkSize: range shard size.
+     */
+    public rangeChunkSize: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property rule: Rule content, using conditional expressions to match user requests. When adding global configuration, this parameter does not need to be set. There are two usage scenarios:
+     * - Match all incoming requests: value set to true
+     * - Match specified request: Set the value to a custom expression, for example: (http.host eq \"video.example.com\").
+     */
+    public rule: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ruleEnable: Rule switch. When adding global configuration, this parameter does not need to be set. Value range:
+     * - `on`: open.
+     * - `off`: close.
+     */
+    public ruleEnable: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ruleName: Rule name. When adding global configuration, this parameter does not need to be set.
+     */
+    public ruleName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property sequence: Order of rule execution. The smaller the value, the higher the priority for execution.
+     */
+    public sequence: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property siteVersion: The version number of the site configuration. For sites that have enabled configuration version management, this parameter can be used to specify the effective version of the configuration site, which defaults to version 0.
+     */
+    public siteVersion: number | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosOriginRuleProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosOriginRule.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrConfigId = this.getAtt('ConfigId');
+        this.attrConfigType = this.getAtt('ConfigType');
+        this.attrDnsRecord = this.getAtt('DnsRecord');
+        this.attrFollow302Enable = this.getAtt('Follow302Enable');
+        this.attrFollow302MaxTries = this.getAtt('Follow302MaxTries');
+        this.attrFollow302RetainArgs = this.getAtt('Follow302RetainArgs');
+        this.attrFollow302RetainHeader = this.getAtt('Follow302RetainHeader');
+        this.attrFollow302TargetHost = this.getAtt('Follow302TargetHost');
+        this.attrOriginHost = this.getAtt('OriginHost');
+        this.attrOriginHttpPort = this.getAtt('OriginHttpPort');
+        this.attrOriginHttpsPort = this.getAtt('OriginHttpsPort');
+        this.attrOriginMtls = this.getAtt('OriginMtls');
+        this.attrOriginReadTimeout = this.getAtt('OriginReadTimeout');
+        this.attrOriginScheme = this.getAtt('OriginScheme');
+        this.attrOriginSni = this.getAtt('OriginSni');
+        this.attrOriginVerify = this.getAtt('OriginVerify');
+        this.attrRange = this.getAtt('Range');
+        this.attrRangeChunkSize = this.getAtt('RangeChunkSize');
+        this.attrRule = this.getAtt('Rule');
+        this.attrRuleEnable = this.getAtt('RuleEnable');
+        this.attrRuleName = this.getAtt('RuleName');
+        this.attrSequence = this.getAtt('Sequence');
+        this.attrSiteVersion = this.getAtt('SiteVersion');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.siteId = props.siteId;
+        this.dnsRecord = props.dnsRecord;
+        this.follow302Enable = props.follow302Enable;
+        this.follow302MaxTries = props.follow302MaxTries;
+        this.follow302RetainArgs = props.follow302RetainArgs;
+        this.follow302RetainHeader = props.follow302RetainHeader;
+        this.follow302TargetHost = props.follow302TargetHost;
+        this.originHost = props.originHost;
+        this.originHttpPort = props.originHttpPort;
+        this.originHttpsPort = props.originHttpsPort;
+        this.originMtls = props.originMtls;
+        this.originReadTimeout = props.originReadTimeout;
+        this.originScheme = props.originScheme;
+        this.originSni = props.originSni;
+        this.originVerify = props.originVerify;
+        this.range = props.range;
+        this.rangeChunkSize = props.rangeChunkSize;
+        this.rule = props.rule;
+        this.ruleEnable = props.ruleEnable;
+        this.ruleName = props.ruleName;
+        this.sequence = props.sequence;
+        this.siteVersion = props.siteVersion;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            siteId: this.siteId,
+            dnsRecord: this.dnsRecord,
+            follow302Enable: this.follow302Enable,
+            follow302MaxTries: this.follow302MaxTries,
+            follow302RetainArgs: this.follow302RetainArgs,
+            follow302RetainHeader: this.follow302RetainHeader,
+            follow302TargetHost: this.follow302TargetHost,
+            originHost: this.originHost,
+            originHttpPort: this.originHttpPort,
+            originHttpsPort: this.originHttpsPort,
+            originMtls: this.originMtls,
+            originReadTimeout: this.originReadTimeout,
+            originScheme: this.originScheme,
+            originSni: this.originSni,
+            originVerify: this.originVerify,
+            range: this.range,
+            rangeChunkSize: this.rangeChunkSize,
+            rule: this.rule,
+            ruleEnable: this.ruleEnable,
+            ruleName: this.ruleName,
+            sequence: this.sequence,
+            siteVersion: this.siteVersion,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosOriginRulePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosRedirectRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-redirectrule
+ */
+export interface RosRedirectRuleProps {
+
+    /**
+     * @Property reserveQueryString: Indicates whether the feature of retaining the query string is enabled. Valid values:
+     * on
+     * off.
+     */
+    readonly reserveQueryString: string | ros.IResolvable;
+
+    /**
+     * @Property siteId: The website ID.
+     */
+    readonly siteId: number | ros.IResolvable;
+
+    /**
+     * @Property statusCode: The response code that you want to use to indicate URL redirection. Valid values:
+     * *   301
+     * *   302
+     * *   303
+     * *   307
+     * *   308.
+     */
+    readonly statusCode: number | ros.IResolvable;
+
+    /**
+     * @Property targetUrl: The destination URL to which requests are redirected.
+     */
+    readonly targetUrl: string | ros.IResolvable;
+
+    /**
+     * @Property type: The redirect type. Valid value:
+     * *   static.
+     */
+    readonly type: string | ros.IResolvable;
+
+    /**
+     * @Property rule: Rule content, using conditional expressions to match user requests. When adding global configuration, this parameter does not need to be set. There are two usage scenarios:
+     *  Match all incoming requests: value set to true
+     *  Match specified request: Set the value to a custom expression, for example: (http.host eq \"video.example.com\").
+     */
+    readonly rule?: string | ros.IResolvable;
+
+    /**
+     * @Property ruleEnable: Rule switch. When adding global configuration, this parameter does not need to be set. Value range:
+     * on
+     * off.
+     */
+    readonly ruleEnable?: string | ros.IResolvable;
+
+    /**
+     * @Property ruleName: Rule name. When adding global configuration, this parameter does not need to be set.
+     */
+    readonly ruleName?: string | ros.IResolvable;
+
+    /**
+     * @Property siteVersion: The version number of the site configuration. For sites that have enabled configuration version management, this parameter can be used to specify the effective version of the configuration site, which defaults to version 0.
+     */
+    readonly siteVersion?: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosRedirectRuleProps`
+ *
+ * @param properties - the TypeScript properties of a `RosRedirectRuleProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosRedirectRulePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('siteId', ros.requiredValidator)(properties.siteId));
+    errors.collect(ros.propertyValidator('siteId', ros.validateNumber)(properties.siteId));
+    errors.collect(ros.propertyValidator('type', ros.requiredValidator)(properties.type));
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["static"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    if(properties.ruleEnable && (typeof properties.ruleEnable) !== 'object') {
+        errors.collect(ros.propertyValidator('ruleEnable', ros.validateAllowedValues)({
+          data: properties.ruleEnable,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ruleEnable', ros.validateString)(properties.ruleEnable));
+    errors.collect(ros.propertyValidator('reserveQueryString', ros.requiredValidator)(properties.reserveQueryString));
+    if(properties.reserveQueryString && (typeof properties.reserveQueryString) !== 'object') {
+        errors.collect(ros.propertyValidator('reserveQueryString', ros.validateAllowedValues)({
+          data: properties.reserveQueryString,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('reserveQueryString', ros.validateString)(properties.reserveQueryString));
+    errors.collect(ros.propertyValidator('rule', ros.validateString)(properties.rule));
+    errors.collect(ros.propertyValidator('targetUrl', ros.requiredValidator)(properties.targetUrl));
+    errors.collect(ros.propertyValidator('targetUrl', ros.validateString)(properties.targetUrl));
+    errors.collect(ros.propertyValidator('siteVersion', ros.validateNumber)(properties.siteVersion));
+    errors.collect(ros.propertyValidator('statusCode', ros.requiredValidator)(properties.statusCode));
+    if(properties.statusCode && (typeof properties.statusCode) !== 'object') {
+        errors.collect(ros.propertyValidator('statusCode', ros.validateAllowedValues)({
+          data: properties.statusCode,
+          allowedValues: [301,302,303,307,308],
+        }));
+    }
+    errors.collect(ros.propertyValidator('statusCode', ros.validateNumber)(properties.statusCode));
+    errors.collect(ros.propertyValidator('ruleName', ros.validateString)(properties.ruleName));
+    return errors.wrap('supplied properties not correct for "RosRedirectRuleProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::RedirectRule` resource
+ *
+ * @param properties - the TypeScript properties of a `RosRedirectRuleProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::RedirectRule` resource.
+ */
+// @ts-ignore TS6133
+function rosRedirectRulePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosRedirectRulePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ReserveQueryString': ros.stringToRosTemplate(properties.reserveQueryString),
+      'SiteId': ros.numberToRosTemplate(properties.siteId),
+      'StatusCode': ros.numberToRosTemplate(properties.statusCode),
+      'TargetUrl': ros.stringToRosTemplate(properties.targetUrl),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'Rule': ros.stringToRosTemplate(properties.rule),
+      'RuleEnable': ros.stringToRosTemplate(properties.ruleEnable),
+      'RuleName': ros.stringToRosTemplate(properties.ruleName),
+      'SiteVersion': ros.numberToRosTemplate(properties.siteVersion),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::RedirectRule`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `RedirectRule` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-redirectrule
+ */
+export class RosRedirectRule extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESA::RedirectRule";
+
+    /**
+     * @Attribute ConfigId: Config Id.
+     */
+    public readonly attrConfigId: ros.IResolvable;
+
+    /**
+     * @Attribute ConfigType: The type of the configuration.
+     */
+    public readonly attrConfigType: ros.IResolvable;
+
+    /**
+     * @Attribute ReserveQueryString: Indicates whether the feature of retaining the query string is enabled.
+     */
+    public readonly attrReserveQueryString: ros.IResolvable;
+
+    /**
+     * @Attribute Rule: Rule content, using conditional expressions to match user requests. When adding global configuration, this parameter does not need to be set.
+     */
+    public readonly attrRule: ros.IResolvable;
+
+    /**
+     * @Attribute RuleEnable: Rule switch. When adding global configuration, this parameter does not need to be set.
+     */
+    public readonly attrRuleEnable: ros.IResolvable;
+
+    /**
+     * @Attribute RuleName: Rule name. When adding global configuration, this parameter does not need to be set.
+     */
+    public readonly attrRuleName: ros.IResolvable;
+
+    /**
+     * @Attribute Sequence: Order of rule execution. The smaller the value, the higher the priority for execution.
+     */
+    public readonly attrSequence: ros.IResolvable;
+
+    /**
+     * @Attribute SiteVersion: The version number of the site configuration. For sites that have enabled configuration version management, this parameter can be used to specify the effective version of the configuration site, which defaults to version 0.
+     */
+    public readonly attrSiteVersion: ros.IResolvable;
+
+    /**
+     * @Attribute StatusCode: The response code that you want to use to indicate URL redirection.
+     */
+    public readonly attrStatusCode: ros.IResolvable;
+
+    /**
+     * @Attribute TargetUrl: The destination URL to which requests are redirected.
+     */
+    public readonly attrTargetUrl: ros.IResolvable;
+
+    /**
+     * @Attribute Type: The redirect type.
+     */
+    public readonly attrType: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property reserveQueryString: Indicates whether the feature of retaining the query string is enabled. Valid values:
+     * on
+     * off.
+     */
+    public reserveQueryString: string | ros.IResolvable;
+
+    /**
+     * @Property siteId: The website ID.
+     */
+    public siteId: number | ros.IResolvable;
+
+    /**
+     * @Property statusCode: The response code that you want to use to indicate URL redirection. Valid values:
+     * *   301
+     * *   302
+     * *   303
+     * *   307
+     * *   308.
+     */
+    public statusCode: number | ros.IResolvable;
+
+    /**
+     * @Property targetUrl: The destination URL to which requests are redirected.
+     */
+    public targetUrl: string | ros.IResolvable;
+
+    /**
+     * @Property type: The redirect type. Valid value:
+     * *   static.
+     */
+    public type: string | ros.IResolvable;
+
+    /**
+     * @Property rule: Rule content, using conditional expressions to match user requests. When adding global configuration, this parameter does not need to be set. There are two usage scenarios:
+     *  Match all incoming requests: value set to true
+     *  Match specified request: Set the value to a custom expression, for example: (http.host eq \"video.example.com\").
+     */
+    public rule: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ruleEnable: Rule switch. When adding global configuration, this parameter does not need to be set. Value range:
+     * on
+     * off.
+     */
+    public ruleEnable: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ruleName: Rule name. When adding global configuration, this parameter does not need to be set.
+     */
+    public ruleName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property siteVersion: The version number of the site configuration. For sites that have enabled configuration version management, this parameter can be used to specify the effective version of the configuration site, which defaults to version 0.
+     */
+    public siteVersion: number | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosRedirectRuleProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosRedirectRule.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrConfigId = this.getAtt('ConfigId');
+        this.attrConfigType = this.getAtt('ConfigType');
+        this.attrReserveQueryString = this.getAtt('ReserveQueryString');
+        this.attrRule = this.getAtt('Rule');
+        this.attrRuleEnable = this.getAtt('RuleEnable');
+        this.attrRuleName = this.getAtt('RuleName');
+        this.attrSequence = this.getAtt('Sequence');
+        this.attrSiteVersion = this.getAtt('SiteVersion');
+        this.attrStatusCode = this.getAtt('StatusCode');
+        this.attrTargetUrl = this.getAtt('TargetUrl');
+        this.attrType = this.getAtt('Type');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.reserveQueryString = props.reserveQueryString;
+        this.siteId = props.siteId;
+        this.statusCode = props.statusCode;
+        this.targetUrl = props.targetUrl;
+        this.type = props.type;
+        this.rule = props.rule;
+        this.ruleEnable = props.ruleEnable;
+        this.ruleName = props.ruleName;
+        this.siteVersion = props.siteVersion;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            reserveQueryString: this.reserveQueryString,
+            siteId: this.siteId,
+            statusCode: this.statusCode,
+            targetUrl: this.targetUrl,
+            type: this.type,
+            rule: this.rule,
+            ruleEnable: this.ruleEnable,
+            ruleName: this.ruleName,
+            siteVersion: this.siteVersion,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosRedirectRulePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosScheduledPreloadJob`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-scheduledpreloadjob
+ */
+export interface RosScheduledPreloadJobProps {
+
+    /**
+     * @Property insertWay: The method to submit the URLs to be prefetched.
+     */
+    readonly insertWay: string | ros.IResolvable;
+
+    /**
+     * @Property scheduledPreloadJobName: The name of the scheduled prefetch task.
+     */
+    readonly scheduledPreloadJobName: string | ros.IResolvable;
+
+    /**
+     * @Property siteId: The site ID.
+     */
+    readonly siteId: number | ros.IResolvable;
+
+    /**
+     * @Property ossUrl: Preheat OSS files regularly and fill in the OSS file address. Note: The OSS file contains the URL that you need to warm up.
+     */
+    readonly ossUrl?: string | ros.IResolvable;
+
+    /**
+     * @Property urlList: A list of URLs to be preheated, which is used when uploading a preheated file in the text box mode.
+     */
+    readonly urlList?: Array<string | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosScheduledPreloadJobProps`
+ *
+ * @param properties - the TypeScript properties of a `RosScheduledPreloadJobProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosScheduledPreloadJobPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('insertWay', ros.requiredValidator)(properties.insertWay));
+    if(properties.insertWay && (typeof properties.insertWay) !== 'object') {
+        errors.collect(ros.propertyValidator('insertWay', ros.validateAllowedValues)({
+          data: properties.insertWay,
+          allowedValues: ["oss","textBox"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('insertWay', ros.validateString)(properties.insertWay));
+    errors.collect(ros.propertyValidator('siteId', ros.requiredValidator)(properties.siteId));
+    errors.collect(ros.propertyValidator('siteId', ros.validateNumber)(properties.siteId));
+    errors.collect(ros.propertyValidator('ossUrl', ros.validateString)(properties.ossUrl));
+    errors.collect(ros.propertyValidator('scheduledPreloadJobName', ros.requiredValidator)(properties.scheduledPreloadJobName));
+    errors.collect(ros.propertyValidator('scheduledPreloadJobName', ros.validateString)(properties.scheduledPreloadJobName));
+    if(properties.urlList && (Array.isArray(properties.urlList) || (typeof properties.urlList) === 'string')) {
+        errors.collect(ros.propertyValidator('urlList', ros.validateLength)({
+            data: properties.urlList.length,
+            min: 1,
+            max: 10000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('urlList', ros.listValidator(ros.validateString))(properties.urlList));
+    return errors.wrap('supplied properties not correct for "RosScheduledPreloadJobProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::ScheduledPreloadJob` resource
+ *
+ * @param properties - the TypeScript properties of a `RosScheduledPreloadJobProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::ScheduledPreloadJob` resource.
+ */
+// @ts-ignore TS6133
+function rosScheduledPreloadJobPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosScheduledPreloadJobPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'InsertWay': ros.stringToRosTemplate(properties.insertWay),
+      'ScheduledPreloadJobName': ros.stringToRosTemplate(properties.scheduledPreloadJobName),
+      'SiteId': ros.numberToRosTemplate(properties.siteId),
+      'OssUrl': ros.stringToRosTemplate(properties.ossUrl),
+      'UrlList': ros.listMapper(ros.stringToRosTemplate)(properties.urlList),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::ScheduledPreloadJob`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ScheduledPreloadJob` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-scheduledpreloadjob
+ */
+export class RosScheduledPreloadJob extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESA::ScheduledPreloadJob";
+
+    /**
+     * @Attribute CreateTime: The time when the task was created.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute Domains: The domain names to be prefetched.
+     */
+    public readonly attrDomains: ros.IResolvable;
+
+    /**
+     * @Attribute ErrorInfo: The error message.
+     */
+    public readonly attrErrorInfo: ros.IResolvable;
+
+    /**
+     * @Attribute FailedFileOss: OSS address of failed file.
+     */
+    public readonly attrFailedFileOss: ros.IResolvable;
+
+    /**
+     * @Attribute FileId: The ID of the URL list file, which can be used during downloads.
+     */
+    public readonly attrFileId: ros.IResolvable;
+
+    /**
+     * @Attribute InsertWay: The method to submit the URLs to be prefetched.
+     */
+    public readonly attrInsertWay: ros.IResolvable;
+
+    /**
+     * @Attribute ScheduledPreloadJobId: The ID of the prefetch task.
+     */
+    public readonly attrScheduledPreloadJobId: ros.IResolvable;
+
+    /**
+     * @Attribute ScheduledPreloadJobName: The task name.
+     */
+    public readonly attrScheduledPreloadJobName: ros.IResolvable;
+
+    /**
+     * @Attribute SiteId: The site ID.
+     */
+    public readonly attrSiteId: ros.IResolvable;
+
+    /**
+     * @Attribute TaskSubmitted: The number of submitted prefetch tasks.
+     */
+    public readonly attrTaskSubmitted: ros.IResolvable;
+
+    /**
+     * @Attribute TaskType: The task type. Valid values: refresh and preload.
+     */
+    public readonly attrTaskType: ros.IResolvable;
+
+    /**
+     * @Attribute UrlCount: The total number of URLs.
+     */
+    public readonly attrUrlCount: ros.IResolvable;
+
+    /**
+     * @Attribute UrlSubmitted: The number of submitted URLs.
+     */
+    public readonly attrUrlSubmitted: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property insertWay: The method to submit the URLs to be prefetched.
+     */
+    public insertWay: string | ros.IResolvable;
+
+    /**
+     * @Property scheduledPreloadJobName: The name of the scheduled prefetch task.
+     */
+    public scheduledPreloadJobName: string | ros.IResolvable;
+
+    /**
+     * @Property siteId: The site ID.
+     */
+    public siteId: number | ros.IResolvable;
+
+    /**
+     * @Property ossUrl: Preheat OSS files regularly and fill in the OSS file address. Note: The OSS file contains the URL that you need to warm up.
+     */
+    public ossUrl: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property urlList: A list of URLs to be preheated, which is used when uploading a preheated file in the text box mode.
+     */
+    public urlList: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosScheduledPreloadJobProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosScheduledPreloadJob.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDomains = this.getAtt('Domains');
+        this.attrErrorInfo = this.getAtt('ErrorInfo');
+        this.attrFailedFileOss = this.getAtt('FailedFileOss');
+        this.attrFileId = this.getAtt('FileId');
+        this.attrInsertWay = this.getAtt('InsertWay');
+        this.attrScheduledPreloadJobId = this.getAtt('ScheduledPreloadJobId');
+        this.attrScheduledPreloadJobName = this.getAtt('ScheduledPreloadJobName');
+        this.attrSiteId = this.getAtt('SiteId');
+        this.attrTaskSubmitted = this.getAtt('TaskSubmitted');
+        this.attrTaskType = this.getAtt('TaskType');
+        this.attrUrlCount = this.getAtt('UrlCount');
+        this.attrUrlSubmitted = this.getAtt('UrlSubmitted');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.insertWay = props.insertWay;
+        this.scheduledPreloadJobName = props.scheduledPreloadJobName;
+        this.siteId = props.siteId;
+        this.ossUrl = props.ossUrl;
+        this.urlList = props.urlList;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            insertWay: this.insertWay,
+            scheduledPreloadJobName: this.scheduledPreloadJobName,
+            siteId: this.siteId,
+            ossUrl: this.ossUrl,
+            urlList: this.urlList,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosScheduledPreloadJobPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosSiteDeliveryTask`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-sitedeliverytask
+ */
+export interface RosSiteDeliveryTaskProps {
+
+    /**
+     * @Property businessType: Real-time log type. Valid values:
+     * - `dcdn_log_access_l1 (default)`: access log.
+     * - `dcdn_log_er`: Edge Routine logs.
+     * - `dcdn_log_waf`: firewall logs.
+     * - `dcdn_log_ipa`: TCP\/UDP proxy logs.
+     */
+    readonly businessType: string | ros.IResolvable;
+
+    /**
+     * @Property dataCenter: Data Center. Values:
+     * - `cn`: Mainland China.
+     * - `sg`: Global (excluding Mainland China).
+     */
+    readonly dataCenter: string | ros.IResolvable;
+
+    /**
+     * @Property deliveryType: Delivery Type:
+     * - `sls`: Alibaba Cloud Simple Log Service (SLS).
+     * - `http`: Http service.
+     * - `aws3`: Amazon s3 service.
+     * - `oss`: Alibaba Cloud Object Storage Service.
+     * - `kafka`: Kafka service.
+     * - `aws3cmpt`: Amazon s3 Compatible Service.
+     */
+    readonly deliveryType: string | ros.IResolvable;
+
+    /**
+     * @Property fieldName: The list of delivery fields to be modified, separated by commas.
+     */
+    readonly fieldName: string | ros.IResolvable;
+
+    /**
+     * @Property siteId: The site ID.
+     */
+    readonly siteId: number | ros.IResolvable;
+
+    /**
+     * @Property taskName: The name of the delivery task.
+     */
+    readonly taskName: string | ros.IResolvable;
+
+    /**
+     * @Property discardRate: If the discard rate is not filled, the default value is 0.
+     */
+    readonly discardRate?: number | ros.IResolvable;
+
+    /**
+     * @Property httpDelivery: HTTP delivery configuration parameters.
+     */
+    readonly httpDelivery?: RosSiteDeliveryTask.HttpDeliveryProperty | ros.IResolvable;
+
+    /**
+     * @Property kafkaDelivery: Kafka delivery configuration parameters.
+     */
+    readonly kafkaDelivery?: RosSiteDeliveryTask.KafkaDeliveryProperty | ros.IResolvable;
+
+    /**
+     * @Property ossDelivery: OSS delivery configuration.
+     */
+    readonly ossDelivery?: RosSiteDeliveryTask.OssDeliveryProperty | ros.IResolvable;
+
+    /**
+     * @Property s3Delivery: S3\/S3 compatible delivery configuration parameters.
+     */
+    readonly s3Delivery?: RosSiteDeliveryTask.S3DeliveryProperty | ros.IResolvable;
+
+    /**
+     * @Property slsDelivery: SLS delivery configuration.
+     */
+    readonly slsDelivery?: RosSiteDeliveryTask.SlsDeliveryProperty | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSiteDeliveryTaskProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSiteDeliveryTaskProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSiteDeliveryTaskPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('slsDelivery', RosSiteDeliveryTask_SlsDeliveryPropertyValidator)(properties.slsDelivery));
+    errors.collect(ros.propertyValidator('httpDelivery', RosSiteDeliveryTask_HttpDeliveryPropertyValidator)(properties.httpDelivery));
+    errors.collect(ros.propertyValidator('siteId', ros.requiredValidator)(properties.siteId));
+    errors.collect(ros.propertyValidator('siteId', ros.validateNumber)(properties.siteId));
+    errors.collect(ros.propertyValidator('dataCenter', ros.requiredValidator)(properties.dataCenter));
+    if(properties.dataCenter && (typeof properties.dataCenter) !== 'object') {
+        errors.collect(ros.propertyValidator('dataCenter', ros.validateAllowedValues)({
+          data: properties.dataCenter,
+          allowedValues: ["cn","sg"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('dataCenter', ros.validateString)(properties.dataCenter));
+    errors.collect(ros.propertyValidator('discardRate', ros.validateNumber)(properties.discardRate));
+    errors.collect(ros.propertyValidator('s3Delivery', RosSiteDeliveryTask_S3DeliveryPropertyValidator)(properties.s3Delivery));
+    errors.collect(ros.propertyValidator('taskName', ros.requiredValidator)(properties.taskName));
+    errors.collect(ros.propertyValidator('taskName', ros.validateString)(properties.taskName));
+    errors.collect(ros.propertyValidator('businessType', ros.requiredValidator)(properties.businessType));
+    if(properties.businessType && (typeof properties.businessType) !== 'object') {
+        errors.collect(ros.propertyValidator('businessType', ros.validateAllowedValues)({
+          data: properties.businessType,
+          allowedValues: ["dcdn_log_access_l1","dcdn_log_er","dcdn_log_waf","dcdn_log_ipa"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('businessType', ros.validateString)(properties.businessType));
+    errors.collect(ros.propertyValidator('kafkaDelivery', RosSiteDeliveryTask_KafkaDeliveryPropertyValidator)(properties.kafkaDelivery));
+    errors.collect(ros.propertyValidator('fieldName', ros.requiredValidator)(properties.fieldName));
+    errors.collect(ros.propertyValidator('fieldName', ros.validateString)(properties.fieldName));
+    errors.collect(ros.propertyValidator('ossDelivery', RosSiteDeliveryTask_OssDeliveryPropertyValidator)(properties.ossDelivery));
+    errors.collect(ros.propertyValidator('deliveryType', ros.requiredValidator)(properties.deliveryType));
+    if(properties.deliveryType && (typeof properties.deliveryType) !== 'object') {
+        errors.collect(ros.propertyValidator('deliveryType', ros.validateAllowedValues)({
+          data: properties.deliveryType,
+          allowedValues: ["sls","http","aws3","oss","kafka","aws3cmpt"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('deliveryType', ros.validateString)(properties.deliveryType));
+    return errors.wrap('supplied properties not correct for "RosSiteDeliveryTaskProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::SiteDeliveryTask` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSiteDeliveryTaskProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::SiteDeliveryTask` resource.
+ */
+// @ts-ignore TS6133
+function rosSiteDeliveryTaskPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSiteDeliveryTaskPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'BusinessType': ros.stringToRosTemplate(properties.businessType),
+      'DataCenter': ros.stringToRosTemplate(properties.dataCenter),
+      'DeliveryType': ros.stringToRosTemplate(properties.deliveryType),
+      'FieldName': ros.stringToRosTemplate(properties.fieldName),
+      'SiteId': ros.numberToRosTemplate(properties.siteId),
+      'TaskName': ros.stringToRosTemplate(properties.taskName),
+      'DiscardRate': ros.numberToRosTemplate(properties.discardRate),
+      'HttpDelivery': rosSiteDeliveryTaskHttpDeliveryPropertyToRosTemplate(properties.httpDelivery),
+      'KafkaDelivery': rosSiteDeliveryTaskKafkaDeliveryPropertyToRosTemplate(properties.kafkaDelivery),
+      'OssDelivery': rosSiteDeliveryTaskOssDeliveryPropertyToRosTemplate(properties.ossDelivery),
+      'S3Delivery': rosSiteDeliveryTaskS3DeliveryPropertyToRosTemplate(properties.s3Delivery),
+      'SlsDelivery': rosSiteDeliveryTaskSlsDeliveryPropertyToRosTemplate(properties.slsDelivery),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::SiteDeliveryTask`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SiteDeliveryTask` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-sitedeliverytask
+ */
+export class RosSiteDeliveryTask extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESA::SiteDeliveryTask";
+
+    /**
+     * @Attribute BusinessType: Real-time log type.
+     */
+    public readonly attrBusinessType: ros.IResolvable;
+
+    /**
+     * @Attribute DataCenter: Data Center.
+     */
+    public readonly attrDataCenter: ros.IResolvable;
+
+    /**
+     * @Attribute DeliveryType: Delivery Type:.
+     */
+    public readonly attrDeliveryType: ros.IResolvable;
+
+    /**
+     * @Attribute DiscardRate: If the discard rate is not filled, the default value is 0.
+     */
+    public readonly attrDiscardRate: ros.IResolvable;
+
+    /**
+     * @Attribute FieldName: The list of delivery fields to be modified, separated by commas.
+     */
+    public readonly attrFieldName: ros.IResolvable;
+
+    /**
+     * @Attribute FilterRules: The filtering rules.
+     */
+    public readonly attrFilterRules: ros.IResolvable;
+
+    /**
+     * @Attribute SinkConfig: The delivery configuration.
+     */
+    public readonly attrSinkConfig: ros.IResolvable;
+
+    /**
+     * @Attribute SiteId: The site ID.
+     */
+    public readonly attrSiteId: ros.IResolvable;
+
+    /**
+     * @Attribute SiteName: The website name.
+     */
+    public readonly attrSiteName: ros.IResolvable;
+
+    /**
+     * @Attribute TaskName: The task name.
+     */
+    public readonly attrTaskName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property businessType: Real-time log type. Valid values:
+     * - `dcdn_log_access_l1 (default)`: access log.
+     * - `dcdn_log_er`: Edge Routine logs.
+     * - `dcdn_log_waf`: firewall logs.
+     * - `dcdn_log_ipa`: TCP\/UDP proxy logs.
+     */
+    public businessType: string | ros.IResolvable;
+
+    /**
+     * @Property dataCenter: Data Center. Values:
+     * - `cn`: Mainland China.
+     * - `sg`: Global (excluding Mainland China).
+     */
+    public dataCenter: string | ros.IResolvable;
+
+    /**
+     * @Property deliveryType: Delivery Type:
+     * - `sls`: Alibaba Cloud Simple Log Service (SLS).
+     * - `http`: Http service.
+     * - `aws3`: Amazon s3 service.
+     * - `oss`: Alibaba Cloud Object Storage Service.
+     * - `kafka`: Kafka service.
+     * - `aws3cmpt`: Amazon s3 Compatible Service.
+     */
+    public deliveryType: string | ros.IResolvable;
+
+    /**
+     * @Property fieldName: The list of delivery fields to be modified, separated by commas.
+     */
+    public fieldName: string | ros.IResolvable;
+
+    /**
+     * @Property siteId: The site ID.
+     */
+    public siteId: number | ros.IResolvable;
+
+    /**
+     * @Property taskName: The name of the delivery task.
+     */
+    public taskName: string | ros.IResolvable;
+
+    /**
+     * @Property discardRate: If the discard rate is not filled, the default value is 0.
+     */
+    public discardRate: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property httpDelivery: HTTP delivery configuration parameters.
+     */
+    public httpDelivery: RosSiteDeliveryTask.HttpDeliveryProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property kafkaDelivery: Kafka delivery configuration parameters.
+     */
+    public kafkaDelivery: RosSiteDeliveryTask.KafkaDeliveryProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property ossDelivery: OSS delivery configuration.
+     */
+    public ossDelivery: RosSiteDeliveryTask.OssDeliveryProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property s3Delivery: S3\/S3 compatible delivery configuration parameters.
+     */
+    public s3Delivery: RosSiteDeliveryTask.S3DeliveryProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property slsDelivery: SLS delivery configuration.
+     */
+    public slsDelivery: RosSiteDeliveryTask.SlsDeliveryProperty | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSiteDeliveryTaskProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSiteDeliveryTask.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrBusinessType = this.getAtt('BusinessType');
+        this.attrDataCenter = this.getAtt('DataCenter');
+        this.attrDeliveryType = this.getAtt('DeliveryType');
+        this.attrDiscardRate = this.getAtt('DiscardRate');
+        this.attrFieldName = this.getAtt('FieldName');
+        this.attrFilterRules = this.getAtt('FilterRules');
+        this.attrSinkConfig = this.getAtt('SinkConfig');
+        this.attrSiteId = this.getAtt('SiteId');
+        this.attrSiteName = this.getAtt('SiteName');
+        this.attrTaskName = this.getAtt('TaskName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.businessType = props.businessType;
+        this.dataCenter = props.dataCenter;
+        this.deliveryType = props.deliveryType;
+        this.fieldName = props.fieldName;
+        this.siteId = props.siteId;
+        this.taskName = props.taskName;
+        this.discardRate = props.discardRate;
+        this.httpDelivery = props.httpDelivery;
+        this.kafkaDelivery = props.kafkaDelivery;
+        this.ossDelivery = props.ossDelivery;
+        this.s3Delivery = props.s3Delivery;
+        this.slsDelivery = props.slsDelivery;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            businessType: this.businessType,
+            dataCenter: this.dataCenter,
+            deliveryType: this.deliveryType,
+            fieldName: this.fieldName,
+            siteId: this.siteId,
+            taskName: this.taskName,
+            discardRate: this.discardRate,
+            httpDelivery: this.httpDelivery,
+            kafkaDelivery: this.kafkaDelivery,
+            ossDelivery: this.ossDelivery,
+            s3Delivery: this.s3Delivery,
+            slsDelivery: this.slsDelivery,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSiteDeliveryTaskPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosSiteDeliveryTask {
+    /**
+     * @stability external
+     */
+    export interface HeaderParamProperty {
+        /**
+         * @Property staticValue: The static variable.
+         */
+        readonly staticValue?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `HeaderParamProperty`
+ *
+ * @param properties - the TypeScript properties of a `HeaderParamProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSiteDeliveryTask_HeaderParamPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('staticValue', ros.validateString)(properties.staticValue));
+    return errors.wrap('supplied properties not correct for "HeaderParamProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::SiteDeliveryTask.HeaderParam` resource
+ *
+ * @param properties - the TypeScript properties of a `HeaderParamProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::SiteDeliveryTask.HeaderParam` resource.
+ */
+// @ts-ignore TS6133
+function rosSiteDeliveryTaskHeaderParamPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSiteDeliveryTask_HeaderParamPropertyValidator(properties).assertSuccess();
+    return {
+      'StaticValue': ros.stringToRosTemplate(properties.staticValue),
+    };
+}
+
+export namespace RosSiteDeliveryTask {
+    /**
+     * @stability external
+     */
+    export interface HttpDeliveryProperty {
+        /**
+         * @Property compress: The compression method. By default, data is not compressed.
+         */
+        readonly compress?: string | ros.IResolvable;
+        /**
+         * @Property logBodySuffix: The suffix of the log delivery package.
+         */
+        readonly logBodySuffix?: string | ros.IResolvable;
+        /**
+         * @Property headerParam: The custom headers.
+         */
+        readonly headerParam?: RosSiteDeliveryTask.HeaderParamProperty | ros.IResolvable;
+        /**
+         * @Property standardAuthParam: The authentication configurations.
+         */
+        readonly standardAuthParam?: RosSiteDeliveryTask.StandardAuthParamProperty | ros.IResolvable;
+        /**
+         * @Property standardAuthOn: Specifies whether to use server authentication.
+         */
+        readonly standardAuthOn?: boolean | ros.IResolvable;
+        /**
+         * @Property logBodyPrefix: The prefix of the log delivery package.
+         */
+        readonly logBodyPrefix?: string | ros.IResolvable;
+        /**
+         * @Property queryParam: The custom query parameters.
+         */
+        readonly queryParam?: RosSiteDeliveryTask.QueryParamProperty | ros.IResolvable;
+        /**
+         * @Property destUrl: The address of the HTTP server.
+         */
+        readonly destUrl: string | ros.IResolvable;
+        /**
+         * @Property maxBatchSize: The maximum number of entries for each delivery.Notice The field type is Long, and the precision may be lost during serialization\/deserialization. Please note that the value must not be greater than 9007199254740991.
+         */
+        readonly maxBatchSize?: number | ros.IResolvable;
+        /**
+         * @Property transformTimeout: The timeout period. Unit: seconds.Notice The field type is Long, and the precision may be lost during serialization\/deserialization. Please note that the value must not be greater than 9007199254740991.
+         */
+        readonly transformTimeout?: number | ros.IResolvable;
+        /**
+         * @Property maxRetry: The maximum number of retries.Notice The field type is Long, and the precision may be lost during serialization\/deserialization. Please note that the value must not be greater than 9007199254740991.
+         */
+        readonly maxRetry?: number | ros.IResolvable;
+        /**
+         * @Property maxBatchMb: The maximum size of data for each delivery. Unit: MB.Notice The field type is Long, and the precision may be lost during serialization\/deserialization. Please note that the value must not be greater than 9007199254740991.
+         */
+        readonly maxBatchMb?: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `HttpDeliveryProperty`
+ *
+ * @param properties - the TypeScript properties of a `HttpDeliveryProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSiteDeliveryTask_HttpDeliveryPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.compress && (typeof properties.compress) !== 'object') {
+        errors.collect(ros.propertyValidator('compress', ros.validateAllowedValues)({
+          data: properties.compress,
+          allowedValues: ["gzip","zlib","no","snappy"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('compress', ros.validateString)(properties.compress));
+    errors.collect(ros.propertyValidator('logBodySuffix', ros.validateString)(properties.logBodySuffix));
+    errors.collect(ros.propertyValidator('headerParam', RosSiteDeliveryTask_HeaderParamPropertyValidator)(properties.headerParam));
+    errors.collect(ros.propertyValidator('standardAuthParam', RosSiteDeliveryTask_StandardAuthParamPropertyValidator)(properties.standardAuthParam));
+    errors.collect(ros.propertyValidator('standardAuthOn', ros.validateBoolean)(properties.standardAuthOn));
+    errors.collect(ros.propertyValidator('logBodyPrefix', ros.validateString)(properties.logBodyPrefix));
+    errors.collect(ros.propertyValidator('queryParam', RosSiteDeliveryTask_QueryParamPropertyValidator)(properties.queryParam));
+    errors.collect(ros.propertyValidator('destUrl', ros.requiredValidator)(properties.destUrl));
+    errors.collect(ros.propertyValidator('destUrl', ros.validateString)(properties.destUrl));
+    errors.collect(ros.propertyValidator('maxBatchSize', ros.validateNumber)(properties.maxBatchSize));
+    errors.collect(ros.propertyValidator('transformTimeout', ros.validateNumber)(properties.transformTimeout));
+    errors.collect(ros.propertyValidator('maxRetry', ros.validateNumber)(properties.maxRetry));
+    errors.collect(ros.propertyValidator('maxBatchMb', ros.validateNumber)(properties.maxBatchMb));
+    return errors.wrap('supplied properties not correct for "HttpDeliveryProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::SiteDeliveryTask.HttpDelivery` resource
+ *
+ * @param properties - the TypeScript properties of a `HttpDeliveryProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::SiteDeliveryTask.HttpDelivery` resource.
+ */
+// @ts-ignore TS6133
+function rosSiteDeliveryTaskHttpDeliveryPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSiteDeliveryTask_HttpDeliveryPropertyValidator(properties).assertSuccess();
+    return {
+      'Compress': ros.stringToRosTemplate(properties.compress),
+      'LogBodySuffix': ros.stringToRosTemplate(properties.logBodySuffix),
+      'HeaderParam': rosSiteDeliveryTaskHeaderParamPropertyToRosTemplate(properties.headerParam),
+      'StandardAuthParam': rosSiteDeliveryTaskStandardAuthParamPropertyToRosTemplate(properties.standardAuthParam),
+      'StandardAuthOn': ros.booleanToRosTemplate(properties.standardAuthOn),
+      'LogBodyPrefix': ros.stringToRosTemplate(properties.logBodyPrefix),
+      'QueryParam': rosSiteDeliveryTaskQueryParamPropertyToRosTemplate(properties.queryParam),
+      'DestUrl': ros.stringToRosTemplate(properties.destUrl),
+      'MaxBatchSize': ros.numberToRosTemplate(properties.maxBatchSize),
+      'TransformTimeout': ros.numberToRosTemplate(properties.transformTimeout),
+      'MaxRetry': ros.numberToRosTemplate(properties.maxRetry),
+      'MaxBatchMB': ros.numberToRosTemplate(properties.maxBatchMb),
+    };
+}
+
+export namespace RosSiteDeliveryTask {
+    /**
+     * @stability external
+     */
+    export interface KafkaDeliveryProperty {
+        /**
+         * @Property compress: The compression method. By default, data is not compressed.
+         */
+        readonly compress?: string | ros.IResolvable;
+        /**
+         * @Property userName: The username.
+         */
+        readonly userName?: string | ros.IResolvable;
+        /**
+         * @Property machanismType: The encryption method.
+         */
+        readonly machanismType?: string | ros.IResolvable;
+        /**
+         * @Property brokers: The brokers.
+         */
+        readonly brokers?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property balancer: The load balancing method.
+         */
+        readonly balancer?: string | ros.IResolvable;
+        /**
+         * @Property topic: The topic.
+         */
+        readonly topic?: string | ros.IResolvable;
+        /**
+         * @Property userAuth: Specifies whether to enable authentication.
+         */
+        readonly userAuth?: boolean | ros.IResolvable;
+        /**
+         * @Property password: The password.
+         */
+        readonly password?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `KafkaDeliveryProperty`
+ *
+ * @param properties - the TypeScript properties of a `KafkaDeliveryProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSiteDeliveryTask_KafkaDeliveryPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('compress', ros.validateString)(properties.compress));
+    errors.collect(ros.propertyValidator('userName', ros.validateString)(properties.userName));
+    errors.collect(ros.propertyValidator('machanismType', ros.validateString)(properties.machanismType));
+    errors.collect(ros.propertyValidator('brokers', ros.listValidator(ros.validateString))(properties.brokers));
+    errors.collect(ros.propertyValidator('balancer', ros.validateString)(properties.balancer));
+    errors.collect(ros.propertyValidator('topic', ros.validateString)(properties.topic));
+    errors.collect(ros.propertyValidator('userAuth', ros.validateBoolean)(properties.userAuth));
+    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
+    return errors.wrap('supplied properties not correct for "KafkaDeliveryProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::SiteDeliveryTask.KafkaDelivery` resource
+ *
+ * @param properties - the TypeScript properties of a `KafkaDeliveryProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::SiteDeliveryTask.KafkaDelivery` resource.
+ */
+// @ts-ignore TS6133
+function rosSiteDeliveryTaskKafkaDeliveryPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSiteDeliveryTask_KafkaDeliveryPropertyValidator(properties).assertSuccess();
+    return {
+      'Compress': ros.stringToRosTemplate(properties.compress),
+      'UserName': ros.stringToRosTemplate(properties.userName),
+      'MachanismType': ros.stringToRosTemplate(properties.machanismType),
+      'Brokers': ros.listMapper(ros.stringToRosTemplate)(properties.brokers),
+      'Balancer': ros.stringToRosTemplate(properties.balancer),
+      'Topic': ros.stringToRosTemplate(properties.topic),
+      'UserAuth': ros.booleanToRosTemplate(properties.userAuth),
+      'Password': ros.stringToRosTemplate(properties.password),
+    };
+}
+
+export namespace RosSiteDeliveryTask {
+    /**
+     * @stability external
+     */
+    export interface OssDeliveryProperty {
+        /**
+         * @Property bucketName: The name of the OSS bucket.
+         */
+        readonly bucketName?: string | ros.IResolvable;
+        /**
+         * @Property region: The region in which the bucket is located.
+         */
+        readonly region?: string | ros.IResolvable;
+        /**
+         * @Property prefixPath: The prefix of the path in which you want to store logs.
+         */
+        readonly prefixPath?: string | ros.IResolvable;
+        /**
+         * @Property aliuid: The account ID.
+         */
+        readonly aliuid?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `OssDeliveryProperty`
+ *
+ * @param properties - the TypeScript properties of a `OssDeliveryProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSiteDeliveryTask_OssDeliveryPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('bucketName', ros.validateString)(properties.bucketName));
+    errors.collect(ros.propertyValidator('region', ros.validateString)(properties.region));
+    errors.collect(ros.propertyValidator('prefixPath', ros.validateString)(properties.prefixPath));
+    errors.collect(ros.propertyValidator('aliuid', ros.validateString)(properties.aliuid));
+    return errors.wrap('supplied properties not correct for "OssDeliveryProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::SiteDeliveryTask.OssDelivery` resource
+ *
+ * @param properties - the TypeScript properties of a `OssDeliveryProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::SiteDeliveryTask.OssDelivery` resource.
+ */
+// @ts-ignore TS6133
+function rosSiteDeliveryTaskOssDeliveryPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSiteDeliveryTask_OssDeliveryPropertyValidator(properties).assertSuccess();
+    return {
+      'BucketName': ros.stringToRosTemplate(properties.bucketName),
+      'Region': ros.stringToRosTemplate(properties.region),
+      'PrefixPath': ros.stringToRosTemplate(properties.prefixPath),
+      'Aliuid': ros.stringToRosTemplate(properties.aliuid),
+    };
+}
+
+export namespace RosSiteDeliveryTask {
+    /**
+     * @stability external
+     */
+    export interface QueryParamProperty {
+        /**
+         * @Property staticValue: The static variable.
+         */
+        readonly staticValue?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `QueryParamProperty`
+ *
+ * @param properties - the TypeScript properties of a `QueryParamProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSiteDeliveryTask_QueryParamPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('staticValue', ros.validateString)(properties.staticValue));
+    return errors.wrap('supplied properties not correct for "QueryParamProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::SiteDeliveryTask.QueryParam` resource
+ *
+ * @param properties - the TypeScript properties of a `QueryParamProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::SiteDeliveryTask.QueryParam` resource.
+ */
+// @ts-ignore TS6133
+function rosSiteDeliveryTaskQueryParamPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSiteDeliveryTask_QueryParamPropertyValidator(properties).assertSuccess();
+    return {
+      'StaticValue': ros.stringToRosTemplate(properties.staticValue),
+    };
+}
+
+export namespace RosSiteDeliveryTask {
+    /**
+     * @stability external
+     */
+    export interface S3DeliveryProperty {
+        /**
+         * @Property secretKey: The secret access key of your Amazon S3 account.
+         */
+        readonly secretKey?: string | ros.IResolvable;
+        /**
+         * @Property endpoint: The endpoint. This parameter is required when the S3Cmpt parameter is set to true.
+         */
+        readonly endpoint?: string | ros.IResolvable;
+        /**
+         * @Property vertifyType: Authentication Type.
+         */
+        readonly vertifyType?: string | ros.IResolvable;
+        /**
+         * @Property region: The region ID of the service.
+         */
+        readonly region?: string | ros.IResolvable;
+        /**
+         * @Property serverSideEncryption: Server-side encryption.
+         */
+        readonly serverSideEncryption?: boolean | ros.IResolvable;
+        /**
+         * @Property bucketPath: The directory in the bucket.
+         */
+        readonly bucketPath?: string | ros.IResolvable;
+        /**
+         * @Property prefixPath: The prefix of the path in which you want to store logs.
+         */
+        readonly prefixPath?: string | ros.IResolvable;
+        /**
+         * @Property accessKey: The access key ID of your Amazon S3 account.
+         */
+        readonly accessKey?: string | ros.IResolvable;
+        /**
+         * @Property s3Cmpt: Specifies whether the service is compatible with Amazon S3.
+         */
+        readonly s3Cmpt?: boolean | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `S3DeliveryProperty`
+ *
+ * @param properties - the TypeScript properties of a `S3DeliveryProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSiteDeliveryTask_S3DeliveryPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('secretKey', ros.validateString)(properties.secretKey));
+    errors.collect(ros.propertyValidator('endpoint', ros.validateString)(properties.endpoint));
+    errors.collect(ros.propertyValidator('vertifyType', ros.validateString)(properties.vertifyType));
+    errors.collect(ros.propertyValidator('region', ros.validateString)(properties.region));
+    errors.collect(ros.propertyValidator('serverSideEncryption', ros.validateBoolean)(properties.serverSideEncryption));
+    errors.collect(ros.propertyValidator('bucketPath', ros.validateString)(properties.bucketPath));
+    errors.collect(ros.propertyValidator('prefixPath', ros.validateString)(properties.prefixPath));
+    errors.collect(ros.propertyValidator('accessKey', ros.validateString)(properties.accessKey));
+    errors.collect(ros.propertyValidator('s3Cmpt', ros.validateBoolean)(properties.s3Cmpt));
+    return errors.wrap('supplied properties not correct for "S3DeliveryProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::SiteDeliveryTask.S3Delivery` resource
+ *
+ * @param properties - the TypeScript properties of a `S3DeliveryProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::SiteDeliveryTask.S3Delivery` resource.
+ */
+// @ts-ignore TS6133
+function rosSiteDeliveryTaskS3DeliveryPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSiteDeliveryTask_S3DeliveryPropertyValidator(properties).assertSuccess();
+    return {
+      'SecretKey': ros.stringToRosTemplate(properties.secretKey),
+      'Endpoint': ros.stringToRosTemplate(properties.endpoint),
+      'VertifyType': ros.stringToRosTemplate(properties.vertifyType),
+      'Region': ros.stringToRosTemplate(properties.region),
+      'ServerSideEncryption': ros.booleanToRosTemplate(properties.serverSideEncryption),
+      'BucketPath': ros.stringToRosTemplate(properties.bucketPath),
+      'PrefixPath': ros.stringToRosTemplate(properties.prefixPath),
+      'AccessKey': ros.stringToRosTemplate(properties.accessKey),
+      'S3Cmpt': ros.booleanToRosTemplate(properties.s3Cmpt),
+    };
+}
+
+export namespace RosSiteDeliveryTask {
+    /**
+     * @stability external
+     */
+    export interface SlsDeliveryProperty {
+        /**
+         * @Property slsProject: The name of the SLS project.
+         */
+        readonly slsProject?: string | ros.IResolvable;
+        /**
+         * @Property slsRegion: The region in which the SLS project resides.
+         */
+        readonly slsRegion?: string | ros.IResolvable;
+        /**
+         * @Property slsLogStore: The name of the Logstore.
+         */
+        readonly slsLogStore?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `SlsDeliveryProperty`
+ *
+ * @param properties - the TypeScript properties of a `SlsDeliveryProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSiteDeliveryTask_SlsDeliveryPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('slsProject', ros.validateString)(properties.slsProject));
+    errors.collect(ros.propertyValidator('slsRegion', ros.validateString)(properties.slsRegion));
+    errors.collect(ros.propertyValidator('slsLogStore', ros.validateString)(properties.slsLogStore));
+    return errors.wrap('supplied properties not correct for "SlsDeliveryProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::SiteDeliveryTask.SlsDelivery` resource
+ *
+ * @param properties - the TypeScript properties of a `SlsDeliveryProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::SiteDeliveryTask.SlsDelivery` resource.
+ */
+// @ts-ignore TS6133
+function rosSiteDeliveryTaskSlsDeliveryPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSiteDeliveryTask_SlsDeliveryPropertyValidator(properties).assertSuccess();
+    return {
+      'SLSProject': ros.stringToRosTemplate(properties.slsProject),
+      'SLSRegion': ros.stringToRosTemplate(properties.slsRegion),
+      'SLSLogStore': ros.stringToRosTemplate(properties.slsLogStore),
+    };
+}
+
+export namespace RosSiteDeliveryTask {
+    /**
+     * @stability external
+     */
+    export interface StandardAuthParamProperty {
+        /**
+         * @Property privateKey: The private key.
+         */
+        readonly privateKey?: string | ros.IResolvable;
+        /**
+         * @Property urlPath: The URI path for server authentication.
+         */
+        readonly urlPath?: string | ros.IResolvable;
+        /**
+         * @Property expiredTime: The validity period of the signature.Note The value must be greater than 0. We recommend that you specify a value that is greater than 300.
+         */
+        readonly expiredTime?: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `StandardAuthParamProperty`
+ *
+ * @param properties - the TypeScript properties of a `StandardAuthParamProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSiteDeliveryTask_StandardAuthParamPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('privateKey', ros.validateString)(properties.privateKey));
+    errors.collect(ros.propertyValidator('urlPath', ros.validateString)(properties.urlPath));
+    errors.collect(ros.propertyValidator('expiredTime', ros.validateNumber)(properties.expiredTime));
+    return errors.wrap('supplied properties not correct for "StandardAuthParamProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::SiteDeliveryTask.StandardAuthParam` resource
+ *
+ * @param properties - the TypeScript properties of a `StandardAuthParamProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::SiteDeliveryTask.StandardAuthParam` resource.
+ */
+// @ts-ignore TS6133
+function rosSiteDeliveryTaskStandardAuthParamPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSiteDeliveryTask_StandardAuthParamPropertyValidator(properties).assertSuccess();
+    return {
+      'PrivateKey': ros.stringToRosTemplate(properties.privateKey),
+      'UrlPath': ros.stringToRosTemplate(properties.urlPath),
+      'ExpiredTime': ros.numberToRosTemplate(properties.expiredTime),
+    };
+}
+
+/**
+ * Properties for defining a `RosWaitingRoom`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-waitingroom
+ */
+export interface RosWaitingRoomProps {
+
+    /**
+     * @Property cookieName: The name of the custom cookie.
+     */
+    readonly cookieName: string | ros.IResolvable;
+
+    /**
+     * @Property hostNameAndPath: The hostname and path.
+     */
+    readonly hostNameAndPath: Array<RosWaitingRoom.HostNameAndPathProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property newUsersPerMinute: The maximum number of new users per minute.
+     */
+    readonly newUsersPerMinute: number | ros.IResolvable;
+
+    /**
+     * @Property queuingMethod: The queuing method. Value:
+     * - `random`: Users gain access to the origin randomly, regardless of the arrival time.
+     * - `fifo`: Users gain access to the origin in order of arrival.
+     * - `Passthrough`: Users pass through the waiting room and go straight to the origin.
+     * - `Reject-all`: Users are blocked from reaching the origin.
+     */
+    readonly queuingMethod: string | ros.IResolvable;
+
+    /**
+     * @Property queuingStatusCode: Waiting room status code. Value:
+     * - `200`
+     * - `202`
+     * - `429`.
+     */
+    readonly queuingStatusCode: number | ros.IResolvable;
+
+    /**
+     * @Property sessionDuration: The maximum duration for which a session remains valid after a user leaves the origin. Unit: minutes.
+     */
+    readonly sessionDuration: number | ros.IResolvable;
+
+    /**
+     * @Property siteId: The site ID.
+     */
+    readonly siteId: number | ros.IResolvable;
+
+    /**
+     * @Property status: Waiting room enabled status. Value:
+     * - 'on': Enable waiting room
+     * - 'off': Disabled waiting room
+     */
+    readonly status: string | ros.IResolvable;
+
+    /**
+     * @Property totalActiveUsers: The maximum number of active users.
+     */
+    readonly totalActiveUsers: string | ros.IResolvable;
+
+    /**
+     * @Property waitingRoomName: The name of the waiting room.
+     */
+    readonly waitingRoomName: string | ros.IResolvable;
+
+    /**
+     * @Property waitingRoomType: The type of the waiting room, support:
+     * - `default`: Indicates the default type.
+     * - `custom`: indicates a custom type.
+     */
+    readonly waitingRoomType: string | ros.IResolvable;
+
+    /**
+     * @Property customPageHtml: User-defined waiting room page content, when the waiting room type is custom type, you need to enter. The incoming content needs to be base64 encoded.
+     */
+    readonly customPageHtml?: string | ros.IResolvable;
+
+    /**
+     * @Property description: Waiting room description.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property disableSessionRenewalEnable: Specifies whether to disable session renewal. Value:
+     * - `on`: open.
+     * - `off`: closed.
+     */
+    readonly disableSessionRenewalEnable?: string | ros.IResolvable;
+
+    /**
+     * @Property jsonResponseEnable: The JSON response. If the accept request header contains "application\/json", JSON data is returned. Value:
+     * - `on`: open.
+     * - `off`: closed.
+     */
+    readonly jsonResponseEnable?: string | ros.IResolvable;
+
+    /**
+     * @Property language: The language of the waiting room page. When the waiting room type is the default type, it needs to be passed in. The following types are supported:
+     * - `enus`: English.
+     * - `zhcn`: Simplified Chinese.
+     * - `zhhk`: Traditional Chinese.
+     */
+    readonly language?: string | ros.IResolvable;
+
+    /**
+     * @Property queueAllEnable: Specifies whether to queue all requests. Value:
+     * - `on`: open.
+     * - `off`: closed.
+     */
+    readonly queueAllEnable?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosWaitingRoomProps`
+ *
+ * @param properties - the TypeScript properties of a `RosWaitingRoomProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosWaitingRoomPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('status', ros.requiredValidator)(properties.status));
+    if(properties.status && (typeof properties.status) !== 'object') {
+        errors.collect(ros.propertyValidator('status', ros.validateAllowedValues)({
+          data: properties.status,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('status', ros.validateString)(properties.status));
+    errors.collect(ros.propertyValidator('hostNameAndPath', ros.requiredValidator)(properties.hostNameAndPath));
+    errors.collect(ros.propertyValidator('hostNameAndPath', ros.listValidator(RosWaitingRoom_HostNameAndPathPropertyValidator))(properties.hostNameAndPath));
+    if(properties.jsonResponseEnable && (typeof properties.jsonResponseEnable) !== 'object') {
+        errors.collect(ros.propertyValidator('jsonResponseEnable', ros.validateAllowedValues)({
+          data: properties.jsonResponseEnable,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('jsonResponseEnable', ros.validateString)(properties.jsonResponseEnable));
+    errors.collect(ros.propertyValidator('siteId', ros.requiredValidator)(properties.siteId));
+    errors.collect(ros.propertyValidator('siteId', ros.validateNumber)(properties.siteId));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('waitingRoomType', ros.requiredValidator)(properties.waitingRoomType));
+    if(properties.waitingRoomType && (typeof properties.waitingRoomType) !== 'object') {
+        errors.collect(ros.propertyValidator('waitingRoomType', ros.validateAllowedValues)({
+          data: properties.waitingRoomType,
+          allowedValues: ["default","custom"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('waitingRoomType', ros.validateString)(properties.waitingRoomType));
+    if(properties.disableSessionRenewalEnable && (typeof properties.disableSessionRenewalEnable) !== 'object') {
+        errors.collect(ros.propertyValidator('disableSessionRenewalEnable', ros.validateAllowedValues)({
+          data: properties.disableSessionRenewalEnable,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('disableSessionRenewalEnable', ros.validateString)(properties.disableSessionRenewalEnable));
+    errors.collect(ros.propertyValidator('cookieName', ros.requiredValidator)(properties.cookieName));
+    errors.collect(ros.propertyValidator('cookieName', ros.validateString)(properties.cookieName));
+    errors.collect(ros.propertyValidator('customPageHtml', ros.validateString)(properties.customPageHtml));
+    if(properties.queueAllEnable && (typeof properties.queueAllEnable) !== 'object') {
+        errors.collect(ros.propertyValidator('queueAllEnable', ros.validateAllowedValues)({
+          data: properties.queueAllEnable,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('queueAllEnable', ros.validateString)(properties.queueAllEnable));
+    errors.collect(ros.propertyValidator('waitingRoomName', ros.requiredValidator)(properties.waitingRoomName));
+    errors.collect(ros.propertyValidator('waitingRoomName', ros.validateString)(properties.waitingRoomName));
+    errors.collect(ros.propertyValidator('queuingStatusCode', ros.requiredValidator)(properties.queuingStatusCode));
+    if(properties.queuingStatusCode && (typeof properties.queuingStatusCode) !== 'object') {
+        errors.collect(ros.propertyValidator('queuingStatusCode', ros.validateAllowedValues)({
+          data: properties.queuingStatusCode,
+          allowedValues: [200,202,429],
+        }));
+    }
+    errors.collect(ros.propertyValidator('queuingStatusCode', ros.validateNumber)(properties.queuingStatusCode));
+    errors.collect(ros.propertyValidator('newUsersPerMinute', ros.requiredValidator)(properties.newUsersPerMinute));
+    if(properties.newUsersPerMinute && (typeof properties.newUsersPerMinute) !== 'object') {
+        errors.collect(ros.propertyValidator('newUsersPerMinute', ros.validateRange)({
+            data: properties.newUsersPerMinute,
+            min: 200,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('newUsersPerMinute', ros.validateNumber)(properties.newUsersPerMinute));
+    errors.collect(ros.propertyValidator('sessionDuration', ros.requiredValidator)(properties.sessionDuration));
+    if(properties.sessionDuration && (typeof properties.sessionDuration) !== 'object') {
+        errors.collect(ros.propertyValidator('sessionDuration', ros.validateRange)({
+            data: properties.sessionDuration,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('sessionDuration', ros.validateNumber)(properties.sessionDuration));
+    if(properties.language && (typeof properties.language) !== 'object') {
+        errors.collect(ros.propertyValidator('language', ros.validateAllowedValues)({
+          data: properties.language,
+          allowedValues: ["enus","zhcn","zhhk"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('language', ros.validateString)(properties.language));
+    errors.collect(ros.propertyValidator('totalActiveUsers', ros.requiredValidator)(properties.totalActiveUsers));
+    errors.collect(ros.propertyValidator('totalActiveUsers', ros.validateString)(properties.totalActiveUsers));
+    errors.collect(ros.propertyValidator('queuingMethod', ros.requiredValidator)(properties.queuingMethod));
+    if(properties.queuingMethod && (typeof properties.queuingMethod) !== 'object') {
+        errors.collect(ros.propertyValidator('queuingMethod', ros.validateAllowedValues)({
+          data: properties.queuingMethod,
+          allowedValues: ["random","fifo","Passthrough","Reject-all"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('queuingMethod', ros.validateString)(properties.queuingMethod));
+    return errors.wrap('supplied properties not correct for "RosWaitingRoomProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::WaitingRoom` resource
+ *
+ * @param properties - the TypeScript properties of a `RosWaitingRoomProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::WaitingRoom` resource.
+ */
+// @ts-ignore TS6133
+function rosWaitingRoomPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosWaitingRoomPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'CookieName': ros.stringToRosTemplate(properties.cookieName),
+      'HostNameAndPath': ros.listMapper(rosWaitingRoomHostNameAndPathPropertyToRosTemplate)(properties.hostNameAndPath),
+      'NewUsersPerMinute': ros.numberToRosTemplate(properties.newUsersPerMinute),
+      'QueuingMethod': ros.stringToRosTemplate(properties.queuingMethod),
+      'QueuingStatusCode': ros.numberToRosTemplate(properties.queuingStatusCode),
+      'SessionDuration': ros.numberToRosTemplate(properties.sessionDuration),
+      'SiteId': ros.numberToRosTemplate(properties.siteId),
+      'Status': ros.stringToRosTemplate(properties.status),
+      'TotalActiveUsers': ros.stringToRosTemplate(properties.totalActiveUsers),
+      'WaitingRoomName': ros.stringToRosTemplate(properties.waitingRoomName),
+      'WaitingRoomType': ros.stringToRosTemplate(properties.waitingRoomType),
+      'CustomPageHtml': ros.stringToRosTemplate(properties.customPageHtml),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'DisableSessionRenewalEnable': ros.stringToRosTemplate(properties.disableSessionRenewalEnable),
+      'JsonResponseEnable': ros.stringToRosTemplate(properties.jsonResponseEnable),
+      'Language': ros.stringToRosTemplate(properties.language),
+      'QueueAllEnable': ros.stringToRosTemplate(properties.queueAllEnable),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::WaitingRoom`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `WaitingRoom` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-waitingroom
+ */
+export class RosWaitingRoom extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESA::WaitingRoom";
+
+    /**
+     * @Attribute CookieName: Custom Cookie name.
+     */
+    public readonly attrCookieName: ros.IResolvable;
+
+    /**
+     * @Attribute CustomPageHtml: User-defined waiting room page content, when the waiting room type is custom type, you need to enter. The incoming content needs to be base64 encoded.
+     */
+    public readonly attrCustomPageHtml: ros.IResolvable;
+
+    /**
+     * @Attribute Description: Waiting room description.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute DisableSessionRenewalEnable: Disable session renewal.
+     */
+    public readonly attrDisableSessionRenewalEnable: ros.IResolvable;
+
+    /**
+     * @Attribute HostNameAndPath: Host name and path.
+     */
+    public readonly attrHostNameAndPath: ros.IResolvable;
+
+    /**
+     * @Attribute JsonResponseEnable: The JSON response. If the accept request header contains "application/json", JSON data is returned.
+     */
+    public readonly attrJsonResponseEnable: ros.IResolvable;
+
+    /**
+     * @Attribute Language: The language of the waiting room page. When the waiting room type is the default type, it needs to be passed in.
+     */
+    public readonly attrLanguage: ros.IResolvable;
+
+    /**
+     * @Attribute NewUsersPerMinute: Number of new users per minute.
+     */
+    public readonly attrNewUsersPerMinute: ros.IResolvable;
+
+    /**
+     * @Attribute QueueAllEnable: All in line.
+     */
+    public readonly attrQueueAllEnable: ros.IResolvable;
+
+    /**
+     * @Attribute QueuingMethod: Way of queuing.
+     */
+    public readonly attrQueuingMethod: ros.IResolvable;
+
+    /**
+     * @Attribute QueuingStatusCode: Waiting room status code.
+     */
+    public readonly attrQueuingStatusCode: ros.IResolvable;
+
+    /**
+     * @Attribute SessionDuration: Session duration in minutes.
+     */
+    public readonly attrSessionDuration: ros.IResolvable;
+
+    /**
+     * @Attribute TotalActiveUsers: Total number of active users.
+     */
+    public readonly attrTotalActiveUsers: ros.IResolvable;
+
+    /**
+     * @Attribute WaitingRoomId: The waiting room ID.
+     */
+    public readonly attrWaitingRoomId: ros.IResolvable;
+
+    /**
+     * @Attribute WaitingRoomName: The name of the waiting room.
+     */
+    public readonly attrWaitingRoomName: ros.IResolvable;
+
+    /**
+     * @Attribute WaitingRoomType: Waiting room type, support:.
+     */
+    public readonly attrWaitingRoomType: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property cookieName: The name of the custom cookie.
+     */
+    public cookieName: string | ros.IResolvable;
+
+    /**
+     * @Property hostNameAndPath: The hostname and path.
+     */
+    public hostNameAndPath: Array<RosWaitingRoom.HostNameAndPathProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property newUsersPerMinute: The maximum number of new users per minute.
+     */
+    public newUsersPerMinute: number | ros.IResolvable;
+
+    /**
+     * @Property queuingMethod: The queuing method. Value:
+     * - `random`: Users gain access to the origin randomly, regardless of the arrival time.
+     * - `fifo`: Users gain access to the origin in order of arrival.
+     * - `Passthrough`: Users pass through the waiting room and go straight to the origin.
+     * - `Reject-all`: Users are blocked from reaching the origin.
+     */
+    public queuingMethod: string | ros.IResolvable;
+
+    /**
+     * @Property queuingStatusCode: Waiting room status code. Value:
+     * - `200`
+     * - `202`
+     * - `429`.
+     */
+    public queuingStatusCode: number | ros.IResolvable;
+
+    /**
+     * @Property sessionDuration: The maximum duration for which a session remains valid after a user leaves the origin. Unit: minutes.
+     */
+    public sessionDuration: number | ros.IResolvable;
+
+    /**
+     * @Property siteId: The site ID.
+     */
+    public siteId: number | ros.IResolvable;
+
+    /**
+     * @Property status: Waiting room enabled status. Value:
+     * - 'on': Enable waiting room
+     * - 'off': Disabled waiting room
+     */
+    public status: string | ros.IResolvable;
+
+    /**
+     * @Property totalActiveUsers: The maximum number of active users.
+     */
+    public totalActiveUsers: string | ros.IResolvable;
+
+    /**
+     * @Property waitingRoomName: The name of the waiting room.
+     */
+    public waitingRoomName: string | ros.IResolvable;
+
+    /**
+     * @Property waitingRoomType: The type of the waiting room, support:
+     * - `default`: Indicates the default type.
+     * - `custom`: indicates a custom type.
+     */
+    public waitingRoomType: string | ros.IResolvable;
+
+    /**
+     * @Property customPageHtml: User-defined waiting room page content, when the waiting room type is custom type, you need to enter. The incoming content needs to be base64 encoded.
+     */
+    public customPageHtml: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property description: Waiting room description.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property disableSessionRenewalEnable: Specifies whether to disable session renewal. Value:
+     * - `on`: open.
+     * - `off`: closed.
+     */
+    public disableSessionRenewalEnable: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property jsonResponseEnable: The JSON response. If the accept request header contains "application\/json", JSON data is returned. Value:
+     * - `on`: open.
+     * - `off`: closed.
+     */
+    public jsonResponseEnable: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property language: The language of the waiting room page. When the waiting room type is the default type, it needs to be passed in. The following types are supported:
+     * - `enus`: English.
+     * - `zhcn`: Simplified Chinese.
+     * - `zhhk`: Traditional Chinese.
+     */
+    public language: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property queueAllEnable: Specifies whether to queue all requests. Value:
+     * - `on`: open.
+     * - `off`: closed.
+     */
+    public queueAllEnable: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosWaitingRoomProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosWaitingRoom.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCookieName = this.getAtt('CookieName');
+        this.attrCustomPageHtml = this.getAtt('CustomPageHtml');
+        this.attrDescription = this.getAtt('Description');
+        this.attrDisableSessionRenewalEnable = this.getAtt('DisableSessionRenewalEnable');
+        this.attrHostNameAndPath = this.getAtt('HostNameAndPath');
+        this.attrJsonResponseEnable = this.getAtt('JsonResponseEnable');
+        this.attrLanguage = this.getAtt('Language');
+        this.attrNewUsersPerMinute = this.getAtt('NewUsersPerMinute');
+        this.attrQueueAllEnable = this.getAtt('QueueAllEnable');
+        this.attrQueuingMethod = this.getAtt('QueuingMethod');
+        this.attrQueuingStatusCode = this.getAtt('QueuingStatusCode');
+        this.attrSessionDuration = this.getAtt('SessionDuration');
+        this.attrTotalActiveUsers = this.getAtt('TotalActiveUsers');
+        this.attrWaitingRoomId = this.getAtt('WaitingRoomId');
+        this.attrWaitingRoomName = this.getAtt('WaitingRoomName');
+        this.attrWaitingRoomType = this.getAtt('WaitingRoomType');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.cookieName = props.cookieName;
+        this.hostNameAndPath = props.hostNameAndPath;
+        this.newUsersPerMinute = props.newUsersPerMinute;
+        this.queuingMethod = props.queuingMethod;
+        this.queuingStatusCode = props.queuingStatusCode;
+        this.sessionDuration = props.sessionDuration;
+        this.siteId = props.siteId;
+        this.status = props.status;
+        this.totalActiveUsers = props.totalActiveUsers;
+        this.waitingRoomName = props.waitingRoomName;
+        this.waitingRoomType = props.waitingRoomType;
+        this.customPageHtml = props.customPageHtml;
+        this.description = props.description;
+        this.disableSessionRenewalEnable = props.disableSessionRenewalEnable;
+        this.jsonResponseEnable = props.jsonResponseEnable;
+        this.language = props.language;
+        this.queueAllEnable = props.queueAllEnable;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            cookieName: this.cookieName,
+            hostNameAndPath: this.hostNameAndPath,
+            newUsersPerMinute: this.newUsersPerMinute,
+            queuingMethod: this.queuingMethod,
+            queuingStatusCode: this.queuingStatusCode,
+            sessionDuration: this.sessionDuration,
+            siteId: this.siteId,
+            status: this.status,
+            totalActiveUsers: this.totalActiveUsers,
+            waitingRoomName: this.waitingRoomName,
+            waitingRoomType: this.waitingRoomType,
+            customPageHtml: this.customPageHtml,
+            description: this.description,
+            disableSessionRenewalEnable: this.disableSessionRenewalEnable,
+            jsonResponseEnable: this.jsonResponseEnable,
+            language: this.language,
+            queueAllEnable: this.queueAllEnable,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosWaitingRoomPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosWaitingRoom {
+    /**
+     * @stability external
+     */
+    export interface HostNameAndPathProperty {
+        /**
+         * @Property path: The path.
+         */
+        readonly path: string | ros.IResolvable;
+        /**
+         * @Property subdomain: The subdomain.
+         */
+        readonly subdomain: string | ros.IResolvable;
+        /**
+         * @Property domain: The domain name.
+         */
+        readonly domain: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `HostNameAndPathProperty`
+ *
+ * @param properties - the TypeScript properties of a `HostNameAndPathProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosWaitingRoom_HostNameAndPathPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('path', ros.requiredValidator)(properties.path));
+    errors.collect(ros.propertyValidator('path', ros.validateString)(properties.path));
+    errors.collect(ros.propertyValidator('subdomain', ros.requiredValidator)(properties.subdomain));
+    errors.collect(ros.propertyValidator('subdomain', ros.validateString)(properties.subdomain));
+    errors.collect(ros.propertyValidator('domain', ros.requiredValidator)(properties.domain));
+    errors.collect(ros.propertyValidator('domain', ros.validateString)(properties.domain));
+    return errors.wrap('supplied properties not correct for "HostNameAndPathProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::WaitingRoom.HostNameAndPath` resource
+ *
+ * @param properties - the TypeScript properties of a `HostNameAndPathProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::WaitingRoom.HostNameAndPath` resource.
+ */
+// @ts-ignore TS6133
+function rosWaitingRoomHostNameAndPathPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosWaitingRoom_HostNameAndPathPropertyValidator(properties).assertSuccess();
+    return {
+      'Path': ros.stringToRosTemplate(properties.path),
+      'Subdomain': ros.stringToRosTemplate(properties.subdomain),
+      'Domain': ros.stringToRosTemplate(properties.domain),
+    };
 }

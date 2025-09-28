@@ -809,146 +809,6 @@ function rosDomainTlsCipherSuitesConfigPropertyToRosTemplate(properties: any): a
 }
 
 /**
- * Properties for defining a `RosEnvironment`.
- * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-environment
- */
-export interface RosEnvironmentProps {
-
-    /**
-     * @Property environmentName: The name of the environment.
-     */
-    readonly environmentName: string | ros.IResolvable;
-
-    /**
-     * @Property gatewayId: Gateway id.
-     */
-    readonly gatewayId: string | ros.IResolvable;
-
-    /**
-     * @Property description: Description of the environment, which can include information such as the purpose of the environment and its owner.
-     */
-    readonly description?: string | ros.IResolvable;
-}
-
-/**
- * Determine whether the given properties match those of a `RosEnvironmentProps`
- *
- * @param properties - the TypeScript properties of a `RosEnvironmentProps`
- *
- * @returns the result of the validation.
- */
-function RosEnvironmentPropsValidator(properties: any): ros.ValidationResult {
-    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
-    const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    errors.collect(ros.propertyValidator('environmentName', ros.requiredValidator)(properties.environmentName));
-    errors.collect(ros.propertyValidator('environmentName', ros.validateString)(properties.environmentName));
-    errors.collect(ros.propertyValidator('gatewayId', ros.requiredValidator)(properties.gatewayId));
-    errors.collect(ros.propertyValidator('gatewayId', ros.validateString)(properties.gatewayId));
-    return errors.wrap('supplied properties not correct for "RosEnvironmentProps"');
-}
-
-/**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::APIG::Environment` resource
- *
- * @param properties - the TypeScript properties of a `RosEnvironmentProps`
- *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::APIG::Environment` resource.
- */
-// @ts-ignore TS6133
-function rosEnvironmentPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
-    if (!ros.canInspect(properties)) { return properties; }
-    if(enableResourcePropertyConstraint) {
-        RosEnvironmentPropsValidator(properties).assertSuccess();
-    }
-    return {
-      'EnvironmentName': ros.stringToRosTemplate(properties.environmentName),
-      'GatewayId': ros.stringToRosTemplate(properties.gatewayId),
-      'Description': ros.stringToRosTemplate(properties.description),
-    };
-}
-
-/**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Environment`, which is used to create an environment.
- * @Note This class does not contain additional functions, so it is recommended to use the `Environment` class instead of this class for a more convenient development experience.
- * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-environment
- */
-export class RosEnvironment extends ros.RosResource {
-    /**
-     * The resource type name for this resource class.
-     */
-    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::APIG::Environment";
-
-    /**
-     * @Attribute Description: Description of the environment.
-     */
-    public readonly attrDescription: ros.IResolvable;
-
-    /**
-     * @Attribute EnvironmentId: The ID of the environment.
-     */
-    public readonly attrEnvironmentId: ros.IResolvable;
-
-    /**
-     * @Attribute EnvironmentName: The name of the resource.
-     */
-    public readonly attrEnvironmentName: ros.IResolvable;
-
-    /**
-     * @Attribute GatewayId: The ID of the Gateway.
-     */
-    public readonly attrGatewayId: ros.IResolvable;
-
-    public enableResourcePropertyConstraint: boolean;
-
-
-    /**
-     * @Property environmentName: The name of the environment.
-     */
-    public environmentName: string | ros.IResolvable;
-
-    /**
-     * @Property gatewayId: Gateway id.
-     */
-    public gatewayId: string | ros.IResolvable;
-
-    /**
-     * @Property description: Description of the environment, which can include information such as the purpose of the environment and its owner.
-     */
-    public description: string | ros.IResolvable | undefined;
-
-    /**
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
-     */
-    constructor(scope: ros.Construct, id: string, props: RosEnvironmentProps, enableResourcePropertyConstraint: boolean) {
-        super(scope, id, { type: RosEnvironment.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrDescription = this.getAtt('Description');
-        this.attrEnvironmentId = this.getAtt('EnvironmentId');
-        this.attrEnvironmentName = this.getAtt('EnvironmentName');
-        this.attrGatewayId = this.getAtt('GatewayId');
-
-        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-        this.environmentName = props.environmentName;
-        this.gatewayId = props.gatewayId;
-        this.description = props.description;
-    }
-
-
-    protected get rosProperties(): { [key: string]: any }  {
-        return {
-            environmentName: this.environmentName,
-            gatewayId: this.gatewayId,
-            description: this.description,
-        };
-    }
-    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
-        return rosEnvironmentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
-    }
-}
-
-/**
  * Properties for defining a `RosGateway`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-gateway
  */
@@ -1060,7 +920,7 @@ function RosGatewayPropsValidator(properties: any): ros.ValidationResult {
     if(properties.paymentType && (typeof properties.paymentType) !== 'object') {
         errors.collect(ros.propertyValidator('paymentType', ros.validateAllowedValues)({
           data: properties.paymentType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","Subscription","PrePaid","PrePay","Prepaid","PREPAY"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","postPaid","Subscription","PrePaid","PrePay","Prepaid","PREPAY","prePaid"],
         }));
     }
     errors.collect(ros.propertyValidator('paymentType', ros.validateString)(properties.paymentType));
@@ -1118,7 +978,7 @@ function rosGatewayPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Gateway`, which is used to create a Cloud-native API Gateway instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Gateway`, which is used to create a Cloud-native API Gateway.
  * @Note This class does not contain additional functions, so it is recommended to use the `Gateway` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-gateway
  */

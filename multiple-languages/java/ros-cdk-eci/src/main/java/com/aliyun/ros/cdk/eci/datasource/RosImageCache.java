@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.eci.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::ECI::ImageCache</code>, which is used to query the information about an image cache.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.085Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.912Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.datasource.RosImageCache")
 public class RosImageCache extends com.aliyun.ros.cdk.core.RosResource {
 

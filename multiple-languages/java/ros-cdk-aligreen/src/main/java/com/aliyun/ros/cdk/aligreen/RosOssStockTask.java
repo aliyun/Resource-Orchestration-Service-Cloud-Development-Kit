@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.aligreen;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::Aligreen::OssStockTask</code>, which is used to create a full scan task for Object Storage Service (OSS) buckets.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:43.432Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:20.786Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.aligreen.$Module.class, fqn = "@alicloud/ros-cdk-aligreen.RosOssStockTask")
 public class RosOssStockTask extends com.aliyun.ros.cdk.core.RosResource {
 

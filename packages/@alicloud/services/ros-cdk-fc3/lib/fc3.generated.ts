@@ -3,6 +3,308 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosAsyncInvokeConfig`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-asyncinvokeconfig
+ */
+export interface RosAsyncInvokeConfigProps {
+
+    /**
+     * @Property functionName: Function name.
+     */
+    readonly functionName: string | ros.IResolvable;
+
+    /**
+     * @Property asyncTask: Whether to enable asynchronous tasks (optional).
+     */
+    readonly asyncTask?: boolean | ros.IResolvable;
+
+    /**
+     * @Property destinationConfig: Configuration structure of asynchronous invocation target (optional).
+     */
+    readonly destinationConfig?: RosAsyncInvokeConfig.DestinationConfigProperty | ros.IResolvable;
+
+    /**
+     * @Property maxAsyncEventAgeInSeconds: Maximum message survival time (optional), value range [1,604800], default is 86400, unit is seconds.
+     */
+    readonly maxAsyncEventAgeInSeconds?: number | ros.IResolvable;
+
+    /**
+     * @Property maxAsyncRetryAttempts: Maximum number of retries after asynchronous invocation fails, optional. Value range [0,8]. When not configured, the default number of retries is 3.
+     */
+    readonly maxAsyncRetryAttempts?: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAsyncInvokeConfigProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAsyncInvokeConfigProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAsyncInvokeConfigPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.maxAsyncEventAgeInSeconds && (typeof properties.maxAsyncEventAgeInSeconds) !== 'object') {
+        errors.collect(ros.propertyValidator('maxAsyncEventAgeInSeconds', ros.validateRange)({
+            data: properties.maxAsyncEventAgeInSeconds,
+            min: 1,
+            max: 604800,
+          }));
+    }
+    errors.collect(ros.propertyValidator('maxAsyncEventAgeInSeconds', ros.validateNumber)(properties.maxAsyncEventAgeInSeconds));
+    errors.collect(ros.propertyValidator('functionName', ros.requiredValidator)(properties.functionName));
+    errors.collect(ros.propertyValidator('functionName', ros.validateString)(properties.functionName));
+    errors.collect(ros.propertyValidator('destinationConfig', RosAsyncInvokeConfig_DestinationConfigPropertyValidator)(properties.destinationConfig));
+    errors.collect(ros.propertyValidator('asyncTask', ros.validateBoolean)(properties.asyncTask));
+    if(properties.maxAsyncRetryAttempts && (typeof properties.maxAsyncRetryAttempts) !== 'object') {
+        errors.collect(ros.propertyValidator('maxAsyncRetryAttempts', ros.validateRange)({
+            data: properties.maxAsyncRetryAttempts,
+            min: 0,
+            max: 8,
+          }));
+    }
+    errors.collect(ros.propertyValidator('maxAsyncRetryAttempts', ros.validateNumber)(properties.maxAsyncRetryAttempts));
+    return errors.wrap('supplied properties not correct for "RosAsyncInvokeConfigProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC3::AsyncInvokeConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAsyncInvokeConfigProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC3::AsyncInvokeConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosAsyncInvokeConfigPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAsyncInvokeConfigPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'FunctionName': ros.stringToRosTemplate(properties.functionName),
+      'AsyncTask': ros.booleanToRosTemplate(properties.asyncTask),
+      'DestinationConfig': rosAsyncInvokeConfigDestinationConfigPropertyToRosTemplate(properties.destinationConfig),
+      'MaxAsyncEventAgeInSeconds': ros.numberToRosTemplate(properties.maxAsyncEventAgeInSeconds),
+      'MaxAsyncRetryAttempts': ros.numberToRosTemplate(properties.maxAsyncRetryAttempts),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC3::AsyncInvokeConfig`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AsyncInvokeConfig` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-asyncinvokeconfig
+ */
+export class RosAsyncInvokeConfig extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::FC3::AsyncInvokeConfig";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property functionName: Function name.
+     */
+    public functionName: string | ros.IResolvable;
+
+    /**
+     * @Property asyncTask: Whether to enable asynchronous tasks (optional).
+     */
+    public asyncTask: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property destinationConfig: Configuration structure of asynchronous invocation target (optional).
+     */
+    public destinationConfig: RosAsyncInvokeConfig.DestinationConfigProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property maxAsyncEventAgeInSeconds: Maximum message survival time (optional), value range [1,604800], default is 86400, unit is seconds.
+     */
+    public maxAsyncEventAgeInSeconds: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property maxAsyncRetryAttempts: Maximum number of retries after asynchronous invocation fails, optional. Value range [0,8]. When not configured, the default number of retries is 3.
+     */
+    public maxAsyncRetryAttempts: number | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAsyncInvokeConfigProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAsyncInvokeConfig.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.functionName = props.functionName;
+        this.asyncTask = props.asyncTask;
+        this.destinationConfig = props.destinationConfig;
+        this.maxAsyncEventAgeInSeconds = props.maxAsyncEventAgeInSeconds;
+        this.maxAsyncRetryAttempts = props.maxAsyncRetryAttempts;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            functionName: this.functionName,
+            asyncTask: this.asyncTask,
+            destinationConfig: this.destinationConfig,
+            maxAsyncEventAgeInSeconds: this.maxAsyncEventAgeInSeconds,
+            maxAsyncRetryAttempts: this.maxAsyncRetryAttempts,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAsyncInvokeConfigPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosAsyncInvokeConfig {
+    /**
+     * @stability external
+     */
+    export interface DestinationConfigProperty {
+        /**
+         * @Property onSuccess: Successful callback target structure.
+         */
+        readonly onSuccess?: RosAsyncInvokeConfig.OnSuccessProperty | ros.IResolvable;
+        /**
+         * @Property onFailure: Failed callback target structure.
+         */
+        readonly onFailure?: RosAsyncInvokeConfig.OnFailureProperty | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DestinationConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `DestinationConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosAsyncInvokeConfig_DestinationConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('onSuccess', RosAsyncInvokeConfig_OnSuccessPropertyValidator)(properties.onSuccess));
+    errors.collect(ros.propertyValidator('onFailure', RosAsyncInvokeConfig_OnFailurePropertyValidator)(properties.onFailure));
+    return errors.wrap('supplied properties not correct for "DestinationConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC3::AsyncInvokeConfig.DestinationConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `DestinationConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC3::AsyncInvokeConfig.DestinationConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosAsyncInvokeConfigDestinationConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosAsyncInvokeConfig_DestinationConfigPropertyValidator(properties).assertSuccess();
+    return {
+      'OnSuccess': rosAsyncInvokeConfigOnSuccessPropertyToRosTemplate(properties.onSuccess),
+      'OnFailure': rosAsyncInvokeConfigOnFailurePropertyToRosTemplate(properties.onFailure),
+    };
+}
+
+export namespace RosAsyncInvokeConfig {
+    /**
+     * @stability external
+     */
+    export interface OnFailureProperty {
+        /**
+         * @Property destination: Asynchronous invocation target resource descriptor.
+         */
+        readonly destination: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `OnFailureProperty`
+ *
+ * @param properties - the TypeScript properties of a `OnFailureProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosAsyncInvokeConfig_OnFailurePropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('destination', ros.requiredValidator)(properties.destination));
+    if(properties.destination && (Array.isArray(properties.destination) || (typeof properties.destination) === 'string')) {
+        errors.collect(ros.propertyValidator('destination', ros.validateLength)({
+            data: properties.destination.length,
+            min: undefined,
+            max: 512,
+          }));
+    }
+    errors.collect(ros.propertyValidator('destination', ros.validateString)(properties.destination));
+    return errors.wrap('supplied properties not correct for "OnFailureProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC3::AsyncInvokeConfig.OnFailure` resource
+ *
+ * @param properties - the TypeScript properties of a `OnFailureProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC3::AsyncInvokeConfig.OnFailure` resource.
+ */
+// @ts-ignore TS6133
+function rosAsyncInvokeConfigOnFailurePropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosAsyncInvokeConfig_OnFailurePropertyValidator(properties).assertSuccess();
+    return {
+      'Destination': ros.stringToRosTemplate(properties.destination),
+    };
+}
+
+export namespace RosAsyncInvokeConfig {
+    /**
+     * @stability external
+     */
+    export interface OnSuccessProperty {
+        /**
+         * @Property destination: Asynchronous invocation target resource descriptor.
+         */
+        readonly destination: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `OnSuccessProperty`
+ *
+ * @param properties - the TypeScript properties of a `OnSuccessProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosAsyncInvokeConfig_OnSuccessPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('destination', ros.requiredValidator)(properties.destination));
+    if(properties.destination && (Array.isArray(properties.destination) || (typeof properties.destination) === 'string')) {
+        errors.collect(ros.propertyValidator('destination', ros.validateLength)({
+            data: properties.destination.length,
+            min: undefined,
+            max: 512,
+          }));
+    }
+    errors.collect(ros.propertyValidator('destination', ros.validateString)(properties.destination));
+    return errors.wrap('supplied properties not correct for "OnSuccessProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC3::AsyncInvokeConfig.OnSuccess` resource
+ *
+ * @param properties - the TypeScript properties of a `OnSuccessProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC3::AsyncInvokeConfig.OnSuccess` resource.
+ */
+// @ts-ignore TS6133
+function rosAsyncInvokeConfigOnSuccessPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosAsyncInvokeConfig_OnSuccessPropertyValidator(properties).assertSuccess();
+    return {
+      'Destination': ros.stringToRosTemplate(properties.destination),
+    };
+}
+
+/**
  * Properties for defining a `RosConcurrencyConfig`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-concurrencyconfig
  */
@@ -912,6 +1214,11 @@ export interface RosFunctionProps {
     readonly description?: string | ros.IResolvable;
 
     /**
+     * @Property disableOndemand: Whether to disable the creation of on-demand instances. When enabled, on-demand instances will not be created, and only reserved instances can be used.
+     */
+    readonly disableOndemand?: boolean | ros.IResolvable;
+
+    /**
      * @Property diskSize: The disk size of the function, in MB.
      */
     readonly diskSize?: number | ros.IResolvable;
@@ -930,6 +1237,11 @@ export interface RosFunctionProps {
      * @Property instanceConcurrency: The maximum number of concurrent instances of the function.
      */
     readonly instanceConcurrency?: number | ros.IResolvable;
+
+    /**
+     * @Property instanceIsolationMode: Instance isolation mode.
+     */
+    readonly instanceIsolationMode?: string | ros.IResolvable;
 
     /**
      * @Property instanceLifecycleConfig: The instance lifecycle configuration of the function.
@@ -970,6 +1282,16 @@ export interface RosFunctionProps {
      * @Property role: The user is authorized to the RAM role of Function Compute. After setting, Function Compute will assume the role and generate temporary access credentials. The temporary access credentials of this role can be used in functions to access specified Alibaba Cloud services, such as OSS and OTS.
      */
     readonly role?: string | ros.IResolvable;
+
+    /**
+     * @Property sessionAffinity: The session affinity policy for Function Compute requests. Set to MCP_SSE to implement MCP SSE protocol request affinity. Set to GENERATED_COOKIE for cookie-based affinity. Set to HEADER_FIELD for header-based affinity. If not set or set to NONE, there is no affinity effect, and requests are routed according to the default scheduling policy of Function Compute.
+     */
+    readonly sessionAffinity?: string | ros.IResolvable;
+
+    /**
+     * @Property sessionAffinityConfig: Session affinity configuration.
+     */
+    readonly sessionAffinityConfig?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
      * @Property tags: Tags to attach to function. Max support 20 tags to add during create function. Each tag with two properties Key and Value, and Key is required.
@@ -1021,11 +1343,13 @@ function RosFunctionPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('cpu', ros.validateNumber)(properties.cpu));
+    errors.collect(ros.propertyValidator('sessionAffinityConfig', ros.hashValidator(ros.validateAny))(properties.sessionAffinityConfig));
     errors.collect(ros.propertyValidator('functionName', ros.requiredValidator)(properties.functionName));
     errors.collect(ros.propertyValidator('functionName', ros.validateString)(properties.functionName));
     errors.collect(ros.propertyValidator('runtime', ros.requiredValidator)(properties.runtime));
     errors.collect(ros.propertyValidator('runtime', ros.validateString)(properties.runtime));
     errors.collect(ros.propertyValidator('environmentVariables', ros.hashValidator(ros.validateAny))(properties.environmentVariables));
+    errors.collect(ros.propertyValidator('disableOndemand', ros.validateBoolean)(properties.disableOndemand));
     errors.collect(ros.propertyValidator('diskSize', ros.validateNumber)(properties.diskSize));
     errors.collect(ros.propertyValidator('customDns', RosFunction_CustomDnsPropertyValidator)(properties.customDns));
     if(properties.instanceConcurrency && (typeof properties.instanceConcurrency) !== 'object') {
@@ -1053,6 +1377,13 @@ function RosFunctionPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosFunction_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('nasConfig', RosFunction_NasConfigPropertyValidator)(properties.nasConfig));
+    if(properties.instanceIsolationMode && (typeof properties.instanceIsolationMode) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceIsolationMode', ros.validateAllowedValues)({
+          data: properties.instanceIsolationMode,
+          allowedValues: ["SHARE","SESSION_EXCLUSIVE","REQUEST_EXCLUSIVE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('instanceIsolationMode', ros.validateString)(properties.instanceIsolationMode));
     if(properties.memorySize && (typeof properties.memorySize) !== 'object') {
         errors.collect(ros.propertyValidator('memorySize', ros.validateRange)({
             data: properties.memorySize,
@@ -1077,6 +1408,13 @@ function RosFunctionPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('internetAccess', ros.validateBoolean)(properties.internetAccess));
     errors.collect(ros.propertyValidator('customRuntimeConfig', RosFunction_CustomRuntimeConfigPropertyValidator)(properties.customRuntimeConfig));
     errors.collect(ros.propertyValidator('gpuConfig', RosFunction_GpuConfigPropertyValidator)(properties.gpuConfig));
+    if(properties.sessionAffinity && (typeof properties.sessionAffinity) !== 'object') {
+        errors.collect(ros.propertyValidator('sessionAffinity', ros.validateAllowedValues)({
+          data: properties.sessionAffinity,
+          allowedValues: ["MCP_SSE","GENERATED_COOKIE","HEADER_FIELD","NONE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('sessionAffinity', ros.validateString)(properties.sessionAffinity));
     errors.collect(ros.propertyValidator('ossMountConfig', RosFunction_OssMountConfigPropertyValidator)(properties.ossMountConfig));
     errors.collect(ros.propertyValidator('logConfig', RosFunction_LogConfigPropertyValidator)(properties.logConfig));
     return errors.wrap('supplied properties not correct for "RosFunctionProps"');
@@ -1105,10 +1443,12 @@ function rosFunctionPropsToRosTemplate(properties: any, enableResourcePropertyCo
       'CustomDns': rosFunctionCustomDnsPropertyToRosTemplate(properties.customDns),
       'CustomRuntimeConfig': rosFunctionCustomRuntimeConfigPropertyToRosTemplate(properties.customRuntimeConfig),
       'Description': ros.stringToRosTemplate(properties.description),
+      'DisableOndemand': ros.booleanToRosTemplate(properties.disableOndemand),
       'DiskSize': ros.numberToRosTemplate(properties.diskSize),
       'EnvironmentVariables': ros.hashMapper(ros.objectToRosTemplate)(properties.environmentVariables),
       'GpuConfig': rosFunctionGpuConfigPropertyToRosTemplate(properties.gpuConfig),
       'InstanceConcurrency': ros.numberToRosTemplate(properties.instanceConcurrency),
+      'InstanceIsolationMode': ros.stringToRosTemplate(properties.instanceIsolationMode),
       'InstanceLifecycleConfig': rosFunctionInstanceLifecycleConfigPropertyToRosTemplate(properties.instanceLifecycleConfig),
       'InternetAccess': ros.booleanToRosTemplate(properties.internetAccess),
       'Layers': ros.listMapper(ros.stringToRosTemplate)(properties.layers),
@@ -1117,6 +1457,8 @@ function rosFunctionPropsToRosTemplate(properties: any, enableResourcePropertyCo
       'NasConfig': rosFunctionNasConfigPropertyToRosTemplate(properties.nasConfig),
       'OssMountConfig': rosFunctionOssMountConfigPropertyToRosTemplate(properties.ossMountConfig),
       'Role': ros.stringToRosTemplate(properties.role),
+      'SessionAffinity': ros.stringToRosTemplate(properties.sessionAffinity),
+      'SessionAffinityConfig': ros.hashMapper(ros.objectToRosTemplate)(properties.sessionAffinityConfig),
       'Tags': ros.listMapper(rosFunctionTagsPropertyToRosTemplate)(properties.tags),
       'Timeout': ros.numberToRosTemplate(properties.timeout),
       'TracingConfig': rosFunctionTracingConfigPropertyToRosTemplate(properties.tracingConfig),
@@ -1199,6 +1541,11 @@ export class RosFunction extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
+     * @Property disableOndemand: Whether to disable the creation of on-demand instances. When enabled, on-demand instances will not be created, and only reserved instances can be used.
+     */
+    public disableOndemand: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property diskSize: The disk size of the function, in MB.
      */
     public diskSize: number | ros.IResolvable | undefined;
@@ -1217,6 +1564,11 @@ export class RosFunction extends ros.RosResource {
      * @Property instanceConcurrency: The maximum number of concurrent instances of the function.
      */
     public instanceConcurrency: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceIsolationMode: Instance isolation mode.
+     */
+    public instanceIsolationMode: string | ros.IResolvable | undefined;
 
     /**
      * @Property instanceLifecycleConfig: The instance lifecycle configuration of the function.
@@ -1259,6 +1611,16 @@ export class RosFunction extends ros.RosResource {
     public role: string | ros.IResolvable | undefined;
 
     /**
+     * @Property sessionAffinity: The session affinity policy for Function Compute requests. Set to MCP_SSE to implement MCP SSE protocol request affinity. Set to GENERATED_COOKIE for cookie-based affinity. Set to HEADER_FIELD for header-based affinity. If not set or set to NONE, there is no affinity effect, and requests are routed according to the default scheduling policy of Function Compute.
+     */
+    public sessionAffinity: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property sessionAffinityConfig: Session affinity configuration.
+     */
+    public sessionAffinityConfig: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
      * @Property tags: Tags to attach to function. Max support 20 tags to add during create function. Each tag with two properties Key and Value, and Key is required.
      */
     public tags: RosFunction.TagsProperty[] | undefined;
@@ -1299,10 +1661,12 @@ export class RosFunction extends ros.RosResource {
         this.customDns = props.customDns;
         this.customRuntimeConfig = props.customRuntimeConfig;
         this.description = props.description;
+        this.disableOndemand = props.disableOndemand;
         this.diskSize = props.diskSize;
         this.environmentVariables = props.environmentVariables;
         this.gpuConfig = props.gpuConfig;
         this.instanceConcurrency = props.instanceConcurrency;
+        this.instanceIsolationMode = props.instanceIsolationMode;
         this.instanceLifecycleConfig = props.instanceLifecycleConfig;
         this.internetAccess = props.internetAccess;
         this.layers = props.layers;
@@ -1311,6 +1675,8 @@ export class RosFunction extends ros.RosResource {
         this.nasConfig = props.nasConfig;
         this.ossMountConfig = props.ossMountConfig;
         this.role = props.role;
+        this.sessionAffinity = props.sessionAffinity;
+        this.sessionAffinityConfig = props.sessionAffinityConfig;
         this.tags = props.tags;
         this.timeout = props.timeout;
         this.tracingConfig = props.tracingConfig;
@@ -1329,10 +1695,12 @@ export class RosFunction extends ros.RosResource {
             customDns: this.customDns,
             customRuntimeConfig: this.customRuntimeConfig,
             description: this.description,
+            disableOndemand: this.disableOndemand,
             diskSize: this.diskSize,
             environmentVariables: this.environmentVariables,
             gpuConfig: this.gpuConfig,
             instanceConcurrency: this.instanceConcurrency,
+            instanceIsolationMode: this.instanceIsolationMode,
             instanceLifecycleConfig: this.instanceLifecycleConfig,
             internetAccess: this.internetAccess,
             layers: this.layers,
@@ -1341,6 +1709,8 @@ export class RosFunction extends ros.RosResource {
             nasConfig: this.nasConfig,
             ossMountConfig: this.ossMountConfig,
             role: this.role,
+            sessionAffinity: this.sessionAffinity,
+            sessionAffinityConfig: this.sessionAffinityConfig,
             tags: this.tags,
             timeout: this.timeout,
             tracingConfig: this.tracingConfig,
@@ -2834,6 +3204,289 @@ function rosFunctionVpcConfigPropertyToRosTemplate(properties: any): any {
       'VpcId': ros.stringToRosTemplate(properties.vpcId),
       'VSwitchIds': ros.listMapper(ros.stringToRosTemplate)(properties.vSwitchIds),
       'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
+    };
+}
+
+/**
+ * Properties for defining a `RosFunctionInvoker`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-functioninvoker
+ */
+export interface RosFunctionInvokerProps {
+
+    /**
+     * @Property functionName: The name of the function.
+     */
+    readonly functionName: string | ros.IResolvable;
+
+    /**
+     * @Property async: Whether to invoke the function asynchronously.
+     */
+    readonly async?: boolean | ros.IResolvable;
+
+    /**
+     * @Property checkAsyncInvocation: Check async invocation setting.
+     */
+    readonly checkAsyncInvocation?: RosFunctionInvoker.CheckAsyncInvocationProperty | ros.IResolvable;
+
+    /**
+     * @Property checkError: Whether check error for function invocation result.
+     * If set true and function invocation result has error, the resource creation will be regard as failed.
+     * Default is false
+     */
+    readonly checkError?: boolean | ros.IResolvable;
+
+    /**
+     * @Property event: This value is passed to function as utf-8 encoded string.It’s function’s responsibility to interpret the value.
+     * If the value needs to be binary, encode it via base64 before passing to this property.
+     */
+    readonly event?: string | ros.IResolvable;
+
+    /**
+     * @Property executeVersion: If the property is not specified for creation and update, the function will not be invoked. The change of the property leads to the invoke of the function.
+     */
+    readonly executeVersion?: number | ros.IResolvable;
+
+    /**
+     * @Property qualifier: service version, can be versionId or aliasName
+     */
+    readonly qualifier?: string | ros.IResolvable;
+
+    /**
+     * @Property serviceRegionId: Which region service belongs to.
+     */
+    readonly serviceRegionId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosFunctionInvokerProps`
+ *
+ * @param properties - the TypeScript properties of a `RosFunctionInvokerProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosFunctionInvokerPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('functionName', ros.requiredValidator)(properties.functionName));
+    errors.collect(ros.propertyValidator('functionName', ros.validateString)(properties.functionName));
+    errors.collect(ros.propertyValidator('executeVersion', ros.validateNumber)(properties.executeVersion));
+    errors.collect(ros.propertyValidator('serviceRegionId', ros.validateString)(properties.serviceRegionId));
+    errors.collect(ros.propertyValidator('async', ros.validateBoolean)(properties.async));
+    errors.collect(ros.propertyValidator('event', ros.validateString)(properties.event));
+    errors.collect(ros.propertyValidator('qualifier', ros.validateString)(properties.qualifier));
+    errors.collect(ros.propertyValidator('checkError', ros.validateBoolean)(properties.checkError));
+    errors.collect(ros.propertyValidator('checkAsyncInvocation', RosFunctionInvoker_CheckAsyncInvocationPropertyValidator)(properties.checkAsyncInvocation));
+    return errors.wrap('supplied properties not correct for "RosFunctionInvokerProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC3::FunctionInvoker` resource
+ *
+ * @param properties - the TypeScript properties of a `RosFunctionInvokerProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC3::FunctionInvoker` resource.
+ */
+// @ts-ignore TS6133
+function rosFunctionInvokerPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosFunctionInvokerPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'FunctionName': ros.stringToRosTemplate(properties.functionName),
+      'Async': ros.booleanToRosTemplate(properties.async),
+      'CheckAsyncInvocation': rosFunctionInvokerCheckAsyncInvocationPropertyToRosTemplate(properties.checkAsyncInvocation),
+      'CheckError': ros.booleanToRosTemplate(properties.checkError),
+      'Event': ros.stringToRosTemplate(properties.event),
+      'ExecuteVersion': ros.numberToRosTemplate(properties.executeVersion),
+      'Qualifier': ros.stringToRosTemplate(properties.qualifier),
+      'ServiceRegionId': ros.stringToRosTemplate(properties.serviceRegionId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC3::FunctionInvoker`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `FunctionInvoker` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-functioninvoker
+ */
+export class RosFunctionInvoker extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::FC3::FunctionInvoker";
+
+    /**
+     * @Attribute Result: Depends on result type:
+NoResult: Async invoke has no result.
+Success: The response of the function. The response should be utf-8 encoded string, otherwise ROS will report an error. If the response is binary, encode it via base64 before it is returned.
+Failure: Error Message.
+     */
+    public readonly attrResult: ros.IResolvable;
+
+    /**
+     * @Attribute ResultType: Result type:
+NoResult: Async invoke has no result.
+Success: Sync invoke succeeds.
+Failure: Sync invoke fails.
+     */
+    public readonly attrResultType: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property functionName: The name of the function.
+     */
+    public functionName: string | ros.IResolvable;
+
+    /**
+     * @Property async: Whether to invoke the function asynchronously.
+     */
+    public async: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property checkAsyncInvocation: Check async invocation setting.
+     */
+    public checkAsyncInvocation: RosFunctionInvoker.CheckAsyncInvocationProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property checkError: Whether check error for function invocation result.
+     * If set true and function invocation result has error, the resource creation will be regard as failed.
+     * Default is false
+     */
+    public checkError: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property event: This value is passed to function as utf-8 encoded string.It’s function’s responsibility to interpret the value.
+     * If the value needs to be binary, encode it via base64 before passing to this property.
+     */
+    public event: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property executeVersion: If the property is not specified for creation and update, the function will not be invoked. The change of the property leads to the invoke of the function.
+     */
+    public executeVersion: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property qualifier: service version, can be versionId or aliasName
+     */
+    public qualifier: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property serviceRegionId: Which region service belongs to.
+     */
+    public serviceRegionId: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosFunctionInvokerProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosFunctionInvoker.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrResult = this.getAtt('Result');
+        this.attrResultType = this.getAtt('ResultType');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.functionName = props.functionName;
+        this.async = props.async;
+        this.checkAsyncInvocation = props.checkAsyncInvocation;
+        this.checkError = props.checkError;
+        this.event = props.event;
+        this.executeVersion = props.executeVersion;
+        this.qualifier = props.qualifier;
+        this.serviceRegionId = props.serviceRegionId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            functionName: this.functionName,
+            async: this.async,
+            checkAsyncInvocation: this.checkAsyncInvocation,
+            checkError: this.checkError,
+            event: this.event,
+            executeVersion: this.executeVersion,
+            qualifier: this.qualifier,
+            serviceRegionId: this.serviceRegionId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosFunctionInvokerPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosFunctionInvoker {
+    /**
+     * @stability external
+     */
+    export interface CheckAsyncInvocationProperty {
+        /**
+         * @Property checkTimes: Check times for async invocation result.
+     * Default is 10 times.
+         */
+        readonly checkTimes: number | ros.IResolvable;
+        /**
+         * @Property checkInterval: Check interval for async invocation result.
+     * Default is 10 seconds. Unit is second
+         */
+        readonly checkInterval: number | ros.IResolvable;
+        /**
+         * @Property enabled: Whether check async invocation result.
+     * If set true and function invocation type is async, the resource creation will wait until invocation finish and check result.
+     * Default is false
+         */
+        readonly enabled: boolean | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `CheckAsyncInvocationProperty`
+ *
+ * @param properties - the TypeScript properties of a `CheckAsyncInvocationProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosFunctionInvoker_CheckAsyncInvocationPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('checkTimes', ros.requiredValidator)(properties.checkTimes));
+    if(properties.checkTimes && (typeof properties.checkTimes) !== 'object') {
+        errors.collect(ros.propertyValidator('checkTimes', ros.validateRange)({
+            data: properties.checkTimes,
+            min: 1,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('checkTimes', ros.validateNumber)(properties.checkTimes));
+    errors.collect(ros.propertyValidator('checkInterval', ros.requiredValidator)(properties.checkInterval));
+    if(properties.checkInterval && (typeof properties.checkInterval) !== 'object') {
+        errors.collect(ros.propertyValidator('checkInterval', ros.validateRange)({
+            data: properties.checkInterval,
+            min: 10,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('checkInterval', ros.validateNumber)(properties.checkInterval));
+    errors.collect(ros.propertyValidator('enabled', ros.requiredValidator)(properties.enabled));
+    errors.collect(ros.propertyValidator('enabled', ros.validateBoolean)(properties.enabled));
+    return errors.wrap('supplied properties not correct for "CheckAsyncInvocationProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC3::FunctionInvoker.CheckAsyncInvocation` resource
+ *
+ * @param properties - the TypeScript properties of a `CheckAsyncInvocationProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC3::FunctionInvoker.CheckAsyncInvocation` resource.
+ */
+// @ts-ignore TS6133
+function rosFunctionInvokerCheckAsyncInvocationPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosFunctionInvoker_CheckAsyncInvocationPropertyValidator(properties).assertSuccess();
+    return {
+      'CheckTimes': ros.numberToRosTemplate(properties.checkTimes),
+      'CheckInterval': ros.numberToRosTemplate(properties.checkInterval),
+      'Enabled': ros.booleanToRosTemplate(properties.enabled),
     };
 }
 

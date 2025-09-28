@@ -60,7 +60,7 @@ export interface IPluginClass extends ros.IResource {
     readonly attrWasmLanguage: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::APIG::PluginClass`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::APIG::PluginClass`, which is used to query the information about a plug-in class.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPluginClass`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apig-pluginclass
  */

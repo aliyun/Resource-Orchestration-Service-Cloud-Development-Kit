@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.pai;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::PAI::WorkspaceResourceFlink</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::PAI::WorkspaceResourceFlink</code>, which is used to associate Realtime Compute for Apache Flink resources with a workspace.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.162Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:27.596Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pai.$Module.class, fqn = "@alicloud/ros-cdk-pai.WorkspaceResourceFlink")
 public class WorkspaceResourceFlink extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.pai.IWorkspaceResourceFlink {
 

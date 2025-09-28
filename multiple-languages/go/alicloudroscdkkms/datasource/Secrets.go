@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::KMS::Secrets`, which is used to query all secrets that are created within the current account in the current region.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::KMS::Secrets`.
 type Secrets interface {
 	alicloudroscdkcore.Resource
 	ISecrets

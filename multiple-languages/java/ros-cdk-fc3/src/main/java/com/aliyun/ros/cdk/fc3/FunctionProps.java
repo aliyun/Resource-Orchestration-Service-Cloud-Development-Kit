@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.fc3;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-function
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.660Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:25.908Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc3.$Module.class, fqn = "@alicloud/ros-cdk-fc3.FunctionProps")
 @software.amazon.jsii.Jsii.Proxy(FunctionProps.Jsii$Proxy.class)
 public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
@@ -72,6 +72,15 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property disableOndemand: Whether to disable the creation of on-demand instances.
+     * <p>
+     * When enabled, on-demand instances will not be created, and only reserved instances can be used.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDisableOndemand() {
+        return null;
+    }
+
+    /**
      * Property diskSize: The disk size of the function, in MB.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDiskSize() {
@@ -96,6 +105,13 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
      * Property instanceConcurrency: The maximum number of concurrent instances of the function.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceConcurrency() {
+        return null;
+    }
+
+    /**
+     * Property instanceIsolationMode: Instance isolation mode.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceIsolationMode() {
         return null;
     }
 
@@ -158,6 +174,22 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property sessionAffinity: The session affinity policy for Function Compute requests.
+     * <p>
+     * Set to MCP_SSE to implement MCP SSE protocol request affinity. Set to GENERATED_COOKIE for cookie-based affinity. Set to HEADER_FIELD for header-based affinity. If not set or set to NONE, there is no affinity effect, and requests are routed according to the default scheduling policy of Function Compute.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSessionAffinity() {
+        return null;
+    }
+
+    /**
+     * Property sessionAffinityConfig: Session affinity configuration.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSessionAffinityConfig() {
+        return null;
+    }
+
+    /**
      * Property tags: Tags to attach to function.
      * <p>
      * Max support 20 tags to add during create function. Each tag with two properties Key and Value, and Key is required.
@@ -206,10 +238,12 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object customDns;
         java.lang.Object customRuntimeConfig;
         java.lang.Object description;
+        java.lang.Object disableOndemand;
         java.lang.Object diskSize;
         java.lang.Object environmentVariables;
         java.lang.Object gpuConfig;
         java.lang.Object instanceConcurrency;
+        java.lang.Object instanceIsolationMode;
         java.lang.Object instanceLifecycleConfig;
         java.lang.Object internetAccess;
         java.lang.Object layers;
@@ -218,6 +252,8 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object nasConfig;
         java.lang.Object ossMountConfig;
         java.lang.Object role;
+        java.lang.Object sessionAffinity;
+        java.lang.Object sessionAffinityConfig;
         java.util.List<com.aliyun.ros.cdk.fc3.RosFunction.TagsProperty> tags;
         java.lang.Object timeout;
         java.lang.Object tracingConfig;
@@ -408,6 +444,28 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link FunctionProps#getDisableOndemand}
+         * @param disableOndemand Property disableOndemand: Whether to disable the creation of on-demand instances.
+         *                        When enabled, on-demand instances will not be created, and only reserved instances can be used.
+         * @return {@code this}
+         */
+        public Builder disableOndemand(java.lang.Boolean disableOndemand) {
+            this.disableOndemand = disableOndemand;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link FunctionProps#getDisableOndemand}
+         * @param disableOndemand Property disableOndemand: Whether to disable the creation of on-demand instances.
+         *                        When enabled, on-demand instances will not be created, and only reserved instances can be used.
+         * @return {@code this}
+         */
+        public Builder disableOndemand(com.aliyun.ros.cdk.core.IResolvable disableOndemand) {
+            this.disableOndemand = disableOndemand;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link FunctionProps#getDiskSize}
          * @param diskSize Property diskSize: The disk size of the function, in MB.
          * @return {@code this}
@@ -484,6 +542,26 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder instanceConcurrency(com.aliyun.ros.cdk.core.IResolvable instanceConcurrency) {
             this.instanceConcurrency = instanceConcurrency;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link FunctionProps#getInstanceIsolationMode}
+         * @param instanceIsolationMode Property instanceIsolationMode: Instance isolation mode.
+         * @return {@code this}
+         */
+        public Builder instanceIsolationMode(java.lang.String instanceIsolationMode) {
+            this.instanceIsolationMode = instanceIsolationMode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link FunctionProps#getInstanceIsolationMode}
+         * @param instanceIsolationMode Property instanceIsolationMode: Instance isolation mode.
+         * @return {@code this}
+         */
+        public Builder instanceIsolationMode(com.aliyun.ros.cdk.core.IResolvable instanceIsolationMode) {
+            this.instanceIsolationMode = instanceIsolationMode;
             return this;
         }
 
@@ -650,6 +728,48 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link FunctionProps#getSessionAffinity}
+         * @param sessionAffinity Property sessionAffinity: The session affinity policy for Function Compute requests.
+         *                        Set to MCP_SSE to implement MCP SSE protocol request affinity. Set to GENERATED_COOKIE for cookie-based affinity. Set to HEADER_FIELD for header-based affinity. If not set or set to NONE, there is no affinity effect, and requests are routed according to the default scheduling policy of Function Compute.
+         * @return {@code this}
+         */
+        public Builder sessionAffinity(java.lang.String sessionAffinity) {
+            this.sessionAffinity = sessionAffinity;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link FunctionProps#getSessionAffinity}
+         * @param sessionAffinity Property sessionAffinity: The session affinity policy for Function Compute requests.
+         *                        Set to MCP_SSE to implement MCP SSE protocol request affinity. Set to GENERATED_COOKIE for cookie-based affinity. Set to HEADER_FIELD for header-based affinity. If not set or set to NONE, there is no affinity effect, and requests are routed according to the default scheduling policy of Function Compute.
+         * @return {@code this}
+         */
+        public Builder sessionAffinity(com.aliyun.ros.cdk.core.IResolvable sessionAffinity) {
+            this.sessionAffinity = sessionAffinity;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link FunctionProps#getSessionAffinityConfig}
+         * @param sessionAffinityConfig Property sessionAffinityConfig: Session affinity configuration.
+         * @return {@code this}
+         */
+        public Builder sessionAffinityConfig(com.aliyun.ros.cdk.core.IResolvable sessionAffinityConfig) {
+            this.sessionAffinityConfig = sessionAffinityConfig;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link FunctionProps#getSessionAffinityConfig}
+         * @param sessionAffinityConfig Property sessionAffinityConfig: Session affinity configuration.
+         * @return {@code this}
+         */
+        public Builder sessionAffinityConfig(java.util.Map<java.lang.String, ? extends java.lang.Object> sessionAffinityConfig) {
+            this.sessionAffinityConfig = sessionAffinityConfig;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link FunctionProps#getTags}
          * @param tags Property tags: Tags to attach to function.
          *             Max support 20 tags to add during create function. Each tag with two properties Key and Value, and Key is required.
@@ -746,10 +866,12 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object customDns;
         private final java.lang.Object customRuntimeConfig;
         private final java.lang.Object description;
+        private final java.lang.Object disableOndemand;
         private final java.lang.Object diskSize;
         private final java.lang.Object environmentVariables;
         private final java.lang.Object gpuConfig;
         private final java.lang.Object instanceConcurrency;
+        private final java.lang.Object instanceIsolationMode;
         private final java.lang.Object instanceLifecycleConfig;
         private final java.lang.Object internetAccess;
         private final java.lang.Object layers;
@@ -758,6 +880,8 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object nasConfig;
         private final java.lang.Object ossMountConfig;
         private final java.lang.Object role;
+        private final java.lang.Object sessionAffinity;
+        private final java.lang.Object sessionAffinityConfig;
         private final java.util.List<com.aliyun.ros.cdk.fc3.RosFunction.TagsProperty> tags;
         private final java.lang.Object timeout;
         private final java.lang.Object tracingConfig;
@@ -778,10 +902,12 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
             this.customDns = software.amazon.jsii.Kernel.get(this, "customDns", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.customRuntimeConfig = software.amazon.jsii.Kernel.get(this, "customRuntimeConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.disableOndemand = software.amazon.jsii.Kernel.get(this, "disableOndemand", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.diskSize = software.amazon.jsii.Kernel.get(this, "diskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.environmentVariables = software.amazon.jsii.Kernel.get(this, "environmentVariables", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.gpuConfig = software.amazon.jsii.Kernel.get(this, "gpuConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceConcurrency = software.amazon.jsii.Kernel.get(this, "instanceConcurrency", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceIsolationMode = software.amazon.jsii.Kernel.get(this, "instanceIsolationMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceLifecycleConfig = software.amazon.jsii.Kernel.get(this, "instanceLifecycleConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.internetAccess = software.amazon.jsii.Kernel.get(this, "internetAccess", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.layers = software.amazon.jsii.Kernel.get(this, "layers", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -790,6 +916,8 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
             this.nasConfig = software.amazon.jsii.Kernel.get(this, "nasConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ossMountConfig = software.amazon.jsii.Kernel.get(this, "ossMountConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.role = software.amazon.jsii.Kernel.get(this, "role", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.sessionAffinity = software.amazon.jsii.Kernel.get(this, "sessionAffinity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.sessionAffinityConfig = software.amazon.jsii.Kernel.get(this, "sessionAffinityConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.fc3.RosFunction.TagsProperty.class)));
             this.timeout = software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tracingConfig = software.amazon.jsii.Kernel.get(this, "tracingConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -811,10 +939,12 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
             this.customDns = builder.customDns;
             this.customRuntimeConfig = builder.customRuntimeConfig;
             this.description = builder.description;
+            this.disableOndemand = builder.disableOndemand;
             this.diskSize = builder.diskSize;
             this.environmentVariables = builder.environmentVariables;
             this.gpuConfig = builder.gpuConfig;
             this.instanceConcurrency = builder.instanceConcurrency;
+            this.instanceIsolationMode = builder.instanceIsolationMode;
             this.instanceLifecycleConfig = builder.instanceLifecycleConfig;
             this.internetAccess = builder.internetAccess;
             this.layers = builder.layers;
@@ -823,6 +953,8 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
             this.nasConfig = builder.nasConfig;
             this.ossMountConfig = builder.ossMountConfig;
             this.role = builder.role;
+            this.sessionAffinity = builder.sessionAffinity;
+            this.sessionAffinityConfig = builder.sessionAffinityConfig;
             this.tags = (java.util.List<com.aliyun.ros.cdk.fc3.RosFunction.TagsProperty>)builder.tags;
             this.timeout = builder.timeout;
             this.tracingConfig = builder.tracingConfig;
@@ -875,6 +1007,11 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getDisableOndemand() {
+            return this.disableOndemand;
+        }
+
+        @Override
         public final java.lang.Object getDiskSize() {
             return this.diskSize;
         }
@@ -892,6 +1029,11 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getInstanceConcurrency() {
             return this.instanceConcurrency;
+        }
+
+        @Override
+        public final java.lang.Object getInstanceIsolationMode() {
+            return this.instanceIsolationMode;
         }
 
         @Override
@@ -932,6 +1074,16 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getRole() {
             return this.role;
+        }
+
+        @Override
+        public final java.lang.Object getSessionAffinity() {
+            return this.sessionAffinity;
+        }
+
+        @Override
+        public final java.lang.Object getSessionAffinityConfig() {
+            return this.sessionAffinityConfig;
         }
 
         @Override
@@ -981,6 +1133,9 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
             }
+            if (this.getDisableOndemand() != null) {
+                data.set("disableOndemand", om.valueToTree(this.getDisableOndemand()));
+            }
             if (this.getDiskSize() != null) {
                 data.set("diskSize", om.valueToTree(this.getDiskSize()));
             }
@@ -992,6 +1147,9 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getInstanceConcurrency() != null) {
                 data.set("instanceConcurrency", om.valueToTree(this.getInstanceConcurrency()));
+            }
+            if (this.getInstanceIsolationMode() != null) {
+                data.set("instanceIsolationMode", om.valueToTree(this.getInstanceIsolationMode()));
             }
             if (this.getInstanceLifecycleConfig() != null) {
                 data.set("instanceLifecycleConfig", om.valueToTree(this.getInstanceLifecycleConfig()));
@@ -1016,6 +1174,12 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getRole() != null) {
                 data.set("role", om.valueToTree(this.getRole()));
+            }
+            if (this.getSessionAffinity() != null) {
+                data.set("sessionAffinity", om.valueToTree(this.getSessionAffinity()));
+            }
+            if (this.getSessionAffinityConfig() != null) {
+                data.set("sessionAffinityConfig", om.valueToTree(this.getSessionAffinityConfig()));
             }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
@@ -1056,10 +1220,12 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
             if (this.customDns != null ? !this.customDns.equals(that.customDns) : that.customDns != null) return false;
             if (this.customRuntimeConfig != null ? !this.customRuntimeConfig.equals(that.customRuntimeConfig) : that.customRuntimeConfig != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+            if (this.disableOndemand != null ? !this.disableOndemand.equals(that.disableOndemand) : that.disableOndemand != null) return false;
             if (this.diskSize != null ? !this.diskSize.equals(that.diskSize) : that.diskSize != null) return false;
             if (this.environmentVariables != null ? !this.environmentVariables.equals(that.environmentVariables) : that.environmentVariables != null) return false;
             if (this.gpuConfig != null ? !this.gpuConfig.equals(that.gpuConfig) : that.gpuConfig != null) return false;
             if (this.instanceConcurrency != null ? !this.instanceConcurrency.equals(that.instanceConcurrency) : that.instanceConcurrency != null) return false;
+            if (this.instanceIsolationMode != null ? !this.instanceIsolationMode.equals(that.instanceIsolationMode) : that.instanceIsolationMode != null) return false;
             if (this.instanceLifecycleConfig != null ? !this.instanceLifecycleConfig.equals(that.instanceLifecycleConfig) : that.instanceLifecycleConfig != null) return false;
             if (this.internetAccess != null ? !this.internetAccess.equals(that.internetAccess) : that.internetAccess != null) return false;
             if (this.layers != null ? !this.layers.equals(that.layers) : that.layers != null) return false;
@@ -1068,6 +1234,8 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
             if (this.nasConfig != null ? !this.nasConfig.equals(that.nasConfig) : that.nasConfig != null) return false;
             if (this.ossMountConfig != null ? !this.ossMountConfig.equals(that.ossMountConfig) : that.ossMountConfig != null) return false;
             if (this.role != null ? !this.role.equals(that.role) : that.role != null) return false;
+            if (this.sessionAffinity != null ? !this.sessionAffinity.equals(that.sessionAffinity) : that.sessionAffinity != null) return false;
+            if (this.sessionAffinityConfig != null ? !this.sessionAffinityConfig.equals(that.sessionAffinityConfig) : that.sessionAffinityConfig != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.timeout != null ? !this.timeout.equals(that.timeout) : that.timeout != null) return false;
             if (this.tracingConfig != null ? !this.tracingConfig.equals(that.tracingConfig) : that.tracingConfig != null) return false;
@@ -1085,10 +1253,12 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.customDns != null ? this.customDns.hashCode() : 0);
             result = 31 * result + (this.customRuntimeConfig != null ? this.customRuntimeConfig.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+            result = 31 * result + (this.disableOndemand != null ? this.disableOndemand.hashCode() : 0);
             result = 31 * result + (this.diskSize != null ? this.diskSize.hashCode() : 0);
             result = 31 * result + (this.environmentVariables != null ? this.environmentVariables.hashCode() : 0);
             result = 31 * result + (this.gpuConfig != null ? this.gpuConfig.hashCode() : 0);
             result = 31 * result + (this.instanceConcurrency != null ? this.instanceConcurrency.hashCode() : 0);
+            result = 31 * result + (this.instanceIsolationMode != null ? this.instanceIsolationMode.hashCode() : 0);
             result = 31 * result + (this.instanceLifecycleConfig != null ? this.instanceLifecycleConfig.hashCode() : 0);
             result = 31 * result + (this.internetAccess != null ? this.internetAccess.hashCode() : 0);
             result = 31 * result + (this.layers != null ? this.layers.hashCode() : 0);
@@ -1097,6 +1267,8 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.nasConfig != null ? this.nasConfig.hashCode() : 0);
             result = 31 * result + (this.ossMountConfig != null ? this.ossMountConfig.hashCode() : 0);
             result = 31 * result + (this.role != null ? this.role.hashCode() : 0);
+            result = 31 * result + (this.sessionAffinity != null ? this.sessionAffinity.hashCode() : 0);
+            result = 31 * result + (this.sessionAffinityConfig != null ? this.sessionAffinityConfig.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.timeout != null ? this.timeout.hashCode() : 0);
             result = 31 * result + (this.tracingConfig != null ? this.tracingConfig.hashCode() : 0);

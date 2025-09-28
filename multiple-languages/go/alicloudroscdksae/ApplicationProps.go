@@ -82,6 +82,8 @@ type ApplicationProps struct {
 	EnableEbpf interface{} `field:"optional" json:"enableEbpf" yaml:"enableEbpf"`
 	// Property enableNewArms: Whether to enable the new ARMS feature.
 	EnableNewArms interface{} `field:"optional" json:"enableNewArms" yaml:"enableNewArms"`
+	// Property enableSidecarResourceIsolated: Whether to enable sidecar resource isolation.
+	EnableSidecarResourceIsolated interface{} `field:"optional" json:"enableSidecarResourceIsolated" yaml:"enableSidecarResourceIsolated"`
 	// Property envs: Container environment variable parameters.
 	//
 	// For example: [{ "name": "envtmp", "value": "0"}].
@@ -92,6 +94,8 @@ type ApplicationProps struct {
 	//
 	// Image only type of application can be configured to mirror address.
 	ImageUrl interface{} `field:"optional" json:"imageUrl" yaml:"imageUrl"`
+	// Property initContainersConfig: Init container config.
+	InitContainersConfig interface{} `field:"optional" json:"initContainersConfig" yaml:"initContainersConfig"`
 	// Property jarStartArgs: Jar package startup application parameters.
 	//
 	// Apply the default startup command: $ JAVA_HOME \/ bin \/ java $ JarStartOptions -jar $ CATALINA_OPTS "$ package_path"
@@ -218,6 +222,8 @@ type ApplicationProps struct {
 	SecurityGroupId interface{} `field:"optional" json:"securityGroupId" yaml:"securityGroupId"`
 	// Property serviceTags: Service tags.
 	ServiceTags interface{} `field:"optional" json:"serviceTags" yaml:"serviceTags"`
+	// Property sidecarContainersConfig: Sidecar container config.
+	SidecarContainersConfig interface{} `field:"optional" json:"sidecarContainersConfig" yaml:"sidecarContainersConfig"`
 	// Property slsConfigs: Log collection configuration file.
 	SlsConfigs interface{} `field:"optional" json:"slsConfigs" yaml:"slsConfigs"`
 	// Property tags: Tags to attach to application.

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::MaxCompute::Role`, which is used to create a role at the MaxCompute project level.
+// This class encapsulates and extends the ROS resource type `ALIYUN::MaxCompute::Role`.
 type Role interface {
 	alicloudroscdkcore.Resource
 	IRole

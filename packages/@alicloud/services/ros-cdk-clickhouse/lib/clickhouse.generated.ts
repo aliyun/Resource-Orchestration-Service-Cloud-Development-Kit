@@ -85,7 +85,7 @@ export interface RosDBClusterProps {
     readonly encryptionType?: string | ros.IResolvable;
 
     /**
-     * @Property period: Prepaid time period.If the payment type is Prepaid, this parameter is mandatory. Specify the prepaid cluster as a yearly or monthly type. Valid values:  Year, Month.
+     * @Property period: The unit of the subscription duration.
      */
     readonly period?: string | ros.IResolvable;
 
@@ -139,6 +139,12 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('dbClusterDescription', ros.validateString)(properties.dbClusterDescription));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
+          allowedValues: ["Month","Year"],
+        }));
+    }
     errors.collect(ros.propertyValidator('period', ros.validateString)(properties.period));
     errors.collect(ros.propertyValidator('encryptionKey', ros.validateString)(properties.encryptionKey));
     errors.collect(ros.propertyValidator('dbClusterNetworkType', ros.requiredValidator)(properties.dbClusterNetworkType));
@@ -447,7 +453,7 @@ export class RosDBCluster extends ros.RosResource {
     public encryptionType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property period: Prepaid time period.If the payment type is Prepaid, this parameter is mandatory. Specify the prepaid cluster as a yearly or monthly type. Valid values:  Year, Month.
+     * @Property period: The unit of the subscription duration.
      */
     public period: string | ros.IResolvable | undefined;
 

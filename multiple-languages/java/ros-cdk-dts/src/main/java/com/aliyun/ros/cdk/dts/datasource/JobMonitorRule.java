@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dts.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::DTS::JobMonitorRule</code>, which type is used to query an alert rule of a Data Transmission Service (DTS) task.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.831Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.601Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.datasource.JobMonitorRule")
 public class JobMonitorRule extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.dts.datasource.IJobMonitorRule {
 

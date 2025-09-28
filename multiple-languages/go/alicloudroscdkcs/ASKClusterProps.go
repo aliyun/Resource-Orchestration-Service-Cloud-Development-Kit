@@ -27,6 +27,10 @@ type ASKClusterProps struct {
 	// false: disables deletion protection for the cluster.
 	// Default value: false.
 	DeletionProtection interface{} `field:"optional" json:"deletionProtection" yaml:"deletionProtection"`
+	// Property encryptionProviderKey: The ID of the key that is managed by Key Management Service (KMS).
+	//
+	// This key is used to encrypt data disks.You can use KMS in only professional managed Kubernetes clusters.
+	EncryptionProviderKey interface{} `field:"optional" json:"encryptionProviderKey" yaml:"encryptionProviderKey"`
 	// Property endpointPublicAccess: Whether to enable the public network API Server: true: which means that the public network API Server is open.
 	//
 	// false: If set to false, the API server on the public network will not be created, only the API server on the private network will be created.Default value: true.

@@ -35,6 +35,14 @@ export interface ClusterHelmApplicationProps {
     readonly credential?: RosClusterHelmApplication.CredentialProperty | ros.IResolvable;
 
     /**
+     * Property ignoreExisting: How to ignore existing helm application:
+     * Disabled(default): If a helm application with the same name exists, an error will be reported when creating it.
+     * SkipInstallIfExisting: If there is a helm application with the same name, the helm application creation process will be ignored.
+     * SkipAllOperationsIfExisting: If there is a helm application with the same name, the helm application creation process will be ignored. If the helm application is not created by this resource, it will be ignored during update and delete stage.
+     */
+    readonly ignoreExisting?: string | ros.IResolvable;
+
+    /**
      * Property namespace: Namespace to use with helm. Default is default.
      * If the Namespace does not exist, ROS will automatically create it and delete it during the deletion phase.
      */
@@ -83,7 +91,7 @@ export interface IClusterHelmApplication extends ros.IResource {
     readonly attrWaitUntilData: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ClusterHelmApplication`, which is used to deploy an application by using Helm.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ClusterHelmApplication`The , which resource type deploys an application using Helm.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClusterHelmApplication`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterhelmapplication
  */
@@ -116,6 +124,7 @@ export class ClusterHelmApplication extends ros.Resource implements IClusterHelm
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosClusterHelmApplication = new RosClusterHelmApplication(this, id,  {
+            ignoreExisting: props.ignoreExisting === undefined || props.ignoreExisting === null ? 'Disabled' : props.ignoreExisting,
             rolePolicy: props.rolePolicy === undefined || props.rolePolicy === null ? 'EnsureAdminRoleAndBinding' : props.rolePolicy,
             chartValues: props.chartValues,
             credential: props.credential,

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc3;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::FC3::Function</code>, which is used to create a Function Compute 3.0 function.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.682Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:25.932Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc3.$Module.class, fqn = "@alicloud/ros-cdk-fc3.RosFunction")
 public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -235,6 +235,24 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDisableOndemand() {
+        return software.amazon.jsii.Kernel.get(this, "disableOndemand", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDisableOndemand(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "disableOndemand", value);
+    }
+
+    /**
+     */
+    public void setDisableOndemand(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "disableOndemand", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getDiskSize() {
         return software.amazon.jsii.Kernel.get(this, "diskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -315,6 +333,24 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setInstanceConcurrency(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "instanceConcurrency", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInstanceIsolationMode() {
+        return software.amazon.jsii.Kernel.get(this, "instanceIsolationMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setInstanceIsolationMode(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "instanceIsolationMode", value);
+    }
+
+    /**
+     */
+    public void setInstanceIsolationMode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "instanceIsolationMode", value);
     }
 
     /**
@@ -475,6 +511,54 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setRole(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "role", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSessionAffinity() {
+        return software.amazon.jsii.Kernel.get(this, "sessionAffinity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSessionAffinity(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "sessionAffinity", value);
+    }
+
+    /**
+     */
+    public void setSessionAffinity(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "sessionAffinity", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSessionAffinityConfig() {
+        return software.amazon.jsii.Kernel.get(this, "sessionAffinityConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSessionAffinityConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "sessionAffinityConfig", value);
+    }
+
+    /**
+     */
+    public void setSessionAffinityConfig(final @org.jetbrains.annotations.Nullable java.util.Map<java.lang.String, java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            if (!(value.keySet().toArray()[0] instanceof String)) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("value").append(".keySet()")
+                        .append(" to contain class String; received ")
+                        .append(value.keySet().toArray()[0].getClass()).toString());
+            }
+            for (final java.util.Map.Entry<String, java.lang.Object> __item_ac66f0: value.entrySet()) {
+                final java.lang.Object __val_ac66f0 = __item_ac66f0.getValue();
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "sessionAffinityConfig", value);
     }
 
     /**
@@ -6153,6 +6237,23 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param disableOndemand This parameter is required.
+         */
+        public Builder disableOndemand(final java.lang.Boolean disableOndemand) {
+            this.props.disableOndemand(disableOndemand);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param disableOndemand This parameter is required.
+         */
+        public Builder disableOndemand(final com.aliyun.ros.cdk.core.IResolvable disableOndemand) {
+            this.props.disableOndemand(disableOndemand);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param diskSize This parameter is required.
          */
         public Builder diskSize(final java.lang.Number diskSize) {
@@ -6216,6 +6317,23 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder instanceConcurrency(final com.aliyun.ros.cdk.core.IResolvable instanceConcurrency) {
             this.props.instanceConcurrency(instanceConcurrency);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param instanceIsolationMode This parameter is required.
+         */
+        public Builder instanceIsolationMode(final java.lang.String instanceIsolationMode) {
+            this.props.instanceIsolationMode(instanceIsolationMode);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param instanceIsolationMode This parameter is required.
+         */
+        public Builder instanceIsolationMode(final com.aliyun.ros.cdk.core.IResolvable instanceIsolationMode) {
+            this.props.instanceIsolationMode(instanceIsolationMode);
             return this;
         }
 
@@ -6352,6 +6470,40 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder role(final com.aliyun.ros.cdk.core.IResolvable role) {
             this.props.role(role);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param sessionAffinity This parameter is required.
+         */
+        public Builder sessionAffinity(final java.lang.String sessionAffinity) {
+            this.props.sessionAffinity(sessionAffinity);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param sessionAffinity This parameter is required.
+         */
+        public Builder sessionAffinity(final com.aliyun.ros.cdk.core.IResolvable sessionAffinity) {
+            this.props.sessionAffinity(sessionAffinity);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param sessionAffinityConfig This parameter is required.
+         */
+        public Builder sessionAffinityConfig(final com.aliyun.ros.cdk.core.IResolvable sessionAffinityConfig) {
+            this.props.sessionAffinityConfig(sessionAffinityConfig);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param sessionAffinityConfig This parameter is required.
+         */
+        public Builder sessionAffinityConfig(final java.util.Map<java.lang.String, ? extends java.lang.Object> sessionAffinityConfig) {
+            this.props.sessionAffinityConfig(sessionAffinityConfig);
             return this;
         }
 

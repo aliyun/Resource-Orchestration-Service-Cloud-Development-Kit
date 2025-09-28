@@ -42,7 +42,7 @@ export interface IBackend extends ros.IResource {
     readonly attrBackendId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Backend`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Backend`, which is used to create a backend service.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBackend`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-backend
  */

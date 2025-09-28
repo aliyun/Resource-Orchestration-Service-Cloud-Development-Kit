@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.acs;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ACS::Cluster</code>, which is used to create an Alibaba Cloud Container Service (ACS) cluster.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ACS::Cluster</code>, which is used to create a Container Compute Service (ACS) cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:43.095Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:20.360Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acs.$Module.class, fqn = "@alicloud/ros-cdk-acs.RosCluster")
 public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -667,6 +667,13 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
         }
 
         /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getVersion() {
+            return null;
+        }
+
+        /**
          * @return a {@link Builder} of {@link AddonsProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -681,6 +688,7 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object name;
             java.lang.Object config;
             java.lang.Object disabled;
+            java.lang.Object version;
 
             /**
              * Sets the value of {@link AddonsProperty#getName}
@@ -749,6 +757,28 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link AddonsProperty#getVersion}
+             * @param version the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder version(java.lang.String version) {
+                this.version = version;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AddonsProperty#getVersion}
+             * @param version the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder version(com.aliyun.ros.cdk.core.IResolvable version) {
+                this.version = version;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link AddonsProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -769,6 +799,7 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object name;
             private final java.lang.Object config;
             private final java.lang.Object disabled;
+            private final java.lang.Object version;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -779,6 +810,7 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
                 this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.config = software.amazon.jsii.Kernel.get(this, "config", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.disabled = software.amazon.jsii.Kernel.get(this, "disabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.version = software.amazon.jsii.Kernel.get(this, "version", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -789,6 +821,7 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
                 this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
                 this.config = builder.config;
                 this.disabled = builder.disabled;
+                this.version = builder.version;
             }
 
             @Override
@@ -807,6 +840,11 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getVersion() {
+                return this.version;
+            }
+
+            @Override
             @software.amazon.jsii.Internal
             public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -818,6 +856,9 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
                 }
                 if (this.getDisabled() != null) {
                     data.set("disabled", om.valueToTree(this.getDisabled()));
+                }
+                if (this.getVersion() != null) {
+                    data.set("version", om.valueToTree(this.getVersion()));
                 }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -839,7 +880,8 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
                 if (!name.equals(that.name)) return false;
                 if (this.config != null ? !this.config.equals(that.config) : that.config != null) return false;
-                return this.disabled != null ? this.disabled.equals(that.disabled) : that.disabled == null;
+                if (this.disabled != null ? !this.disabled.equals(that.disabled) : that.disabled != null) return false;
+                return this.version != null ? this.version.equals(that.version) : that.version == null;
             }
 
             @Override
@@ -847,6 +889,7 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
                 int result = this.name.hashCode();
                 result = 31 * result + (this.config != null ? this.config.hashCode() : 0);
                 result = 31 * result + (this.disabled != null ? this.disabled.hashCode() : 0);
+                result = 31 * result + (this.version != null ? this.version.hashCode() : 0);
                 return result;
             }
         }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::ASKCluster</code>, which is used to create a Container Service for Kubernetes (ACK) Serverless cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.122Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.782Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ASKCluster")
 public class ASKCluster extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cs.IASKCluster {
 
@@ -319,6 +319,31 @@ public class ASKCluster extends com.aliyun.ros.cdk.core.Resource implements com.
          */
         public Builder deletionProtection(final com.aliyun.ros.cdk.core.IResolvable deletionProtection) {
             this.props.deletionProtection(deletionProtection);
+            return this;
+        }
+
+        /**
+         * Property encryptionProviderKey: The ID of the key that is managed by Key Management Service (KMS).
+         * <p>
+         * This key is used to encrypt data disks.You can use KMS in only professional managed Kubernetes clusters.
+         * <p>
+         * @return {@code this}
+         * @param encryptionProviderKey Property encryptionProviderKey: The ID of the key that is managed by Key Management Service (KMS). This parameter is required.
+         */
+        public Builder encryptionProviderKey(final java.lang.String encryptionProviderKey) {
+            this.props.encryptionProviderKey(encryptionProviderKey);
+            return this;
+        }
+        /**
+         * Property encryptionProviderKey: The ID of the key that is managed by Key Management Service (KMS).
+         * <p>
+         * This key is used to encrypt data disks.You can use KMS in only professional managed Kubernetes clusters.
+         * <p>
+         * @return {@code this}
+         * @param encryptionProviderKey Property encryptionProviderKey: The ID of the key that is managed by Key Management Service (KMS). This parameter is required.
+         */
+        public Builder encryptionProviderKey(final com.aliyun.ros.cdk.core.IResolvable encryptionProviderKey) {
+            this.props.encryptionProviderKey(encryptionProviderKey);
             return this;
         }
 

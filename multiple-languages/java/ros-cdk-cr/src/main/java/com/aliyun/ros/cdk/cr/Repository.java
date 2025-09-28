@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cr;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CR::Repository</code>, which is used to create an image repository.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.081Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.732Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.Repository")
 public class Repository extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cr.IRepository {
 

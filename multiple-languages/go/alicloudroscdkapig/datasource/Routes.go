@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::APIG::Routes`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::APIG::Routes`, which is used to query routes.
 type Routes interface {
 	alicloudroscdkcore.Resource
 	IRoutes

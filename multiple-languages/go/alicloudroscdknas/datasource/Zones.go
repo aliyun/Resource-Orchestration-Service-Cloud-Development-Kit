@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::NAS::Zones`, which is used to query zones.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::NAS::Zones`.
 type Zones interface {
 	alicloudroscdkcore.Resource
 	IZones
