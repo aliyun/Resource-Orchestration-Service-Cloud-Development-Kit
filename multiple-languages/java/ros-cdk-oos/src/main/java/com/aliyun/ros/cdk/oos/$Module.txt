@@ -1,8 +1,11 @@
 @alicloud/ros-cdk-oos.DefaultPatchBaseline=com.aliyun.ros.cdk.oos.DefaultPatchBaseline
 @alicloud/ros-cdk-oos.DefaultPatchBaselineProps=com.aliyun.ros.cdk.oos.DefaultPatchBaselineProps
+@alicloud/ros-cdk-oos.DeployRevision=com.aliyun.ros.cdk.oos.DeployRevision
+@alicloud/ros-cdk-oos.DeployRevisionProps=com.aliyun.ros.cdk.oos.DeployRevisionProps
 @alicloud/ros-cdk-oos.Execution=com.aliyun.ros.cdk.oos.Execution
 @alicloud/ros-cdk-oos.ExecutionProps=com.aliyun.ros.cdk.oos.ExecutionProps
 @alicloud/ros-cdk-oos.IDefaultPatchBaseline=com.aliyun.ros.cdk.oos.IDefaultPatchBaseline
+@alicloud/ros-cdk-oos.IDeployRevision=com.aliyun.ros.cdk.oos.IDeployRevision
 @alicloud/ros-cdk-oos.IExecution=com.aliyun.ros.cdk.oos.IExecution
 @alicloud/ros-cdk-oos.IParameter=com.aliyun.ros.cdk.oos.IParameter
 @alicloud/ros-cdk-oos.IPatchBaseline=com.aliyun.ros.cdk.oos.IPatchBaseline
@@ -16,6 +19,8 @@
 @alicloud/ros-cdk-oos.PatchBaselineProps=com.aliyun.ros.cdk.oos.PatchBaselineProps
 @alicloud/ros-cdk-oos.RosDefaultPatchBaseline=com.aliyun.ros.cdk.oos.RosDefaultPatchBaseline
 @alicloud/ros-cdk-oos.RosDefaultPatchBaselineProps=com.aliyun.ros.cdk.oos.RosDefaultPatchBaselineProps
+@alicloud/ros-cdk-oos.RosDeployRevision=com.aliyun.ros.cdk.oos.RosDeployRevision
+@alicloud/ros-cdk-oos.RosDeployRevisionProps=com.aliyun.ros.cdk.oos.RosDeployRevisionProps
 @alicloud/ros-cdk-oos.RosExecution=com.aliyun.ros.cdk.oos.RosExecution
 @alicloud/ros-cdk-oos.RosExecution.ResourceOptionsProperty=com.aliyun.ros.cdk.oos.RosExecution$ResourceOptionsProperty
 @alicloud/ros-cdk-oos.RosExecutionProps=com.aliyun.ros.cdk.oos.RosExecutionProps

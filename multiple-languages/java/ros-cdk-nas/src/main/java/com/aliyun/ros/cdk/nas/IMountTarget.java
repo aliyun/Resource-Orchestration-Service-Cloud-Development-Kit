@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nas;
 /**
  * Represents a <code>MountTarget</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.744Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:27.122Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.IMountTarget")
 @software.amazon.jsii.Jsii.Proxy(IMountTarget.Jsii$Proxy.class)
 public interface IMountTarget extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

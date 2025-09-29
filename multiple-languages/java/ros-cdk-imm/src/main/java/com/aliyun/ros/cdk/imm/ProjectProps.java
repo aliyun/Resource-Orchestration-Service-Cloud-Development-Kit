@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.imm;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-imm-project
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.228Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:26.561Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.imm.$Module.class, fqn = "@alicloud/ros-cdk-imm.ProjectProps")
 @software.amazon.jsii.Jsii.Proxy(ProjectProps.Jsii$Proxy.class)
 public interface ProjectProps extends software.amazon.jsii.JsiiSerializable {

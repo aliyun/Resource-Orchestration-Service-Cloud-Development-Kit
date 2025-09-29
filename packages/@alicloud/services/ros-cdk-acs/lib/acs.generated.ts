@@ -258,7 +258,7 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ACS::Cluster`, which is used to create an Alibaba Cloud Container Service (ACS) cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ACS::Cluster`, which is used to create a Container Compute Service (ACS) cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `Cluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acs-cluster
  */
@@ -560,6 +560,10 @@ export namespace RosCluster {
      */
     export interface AddonsProperty {
         /**
+         * @Property version: When the value is empty, the latest version is selected by default.
+         */
+        readonly version?: string | ros.IResolvable;
+        /**
          * @Property config: When the value is empty, no configuration is required.
          */
         readonly config?: string | ros.IResolvable;
@@ -583,6 +587,7 @@ export namespace RosCluster {
 function RosCluster_AddonsPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('version', ros.validateString)(properties.version));
     errors.collect(ros.propertyValidator('config', ros.validateString)(properties.config));
     errors.collect(ros.propertyValidator('disabled', ros.validateBoolean)(properties.disabled));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
@@ -602,6 +607,7 @@ function rosClusterAddonsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosCluster_AddonsPropertyValidator(properties).assertSuccess();
     return {
+      'Version': ros.stringToRosTemplate(properties.version),
       'Config': ros.stringToRosTemplate(properties.config),
       'Disabled': ros.booleanToRosTemplate(properties.disabled),
       'Name': ros.stringToRosTemplate(properties.name),
@@ -937,5 +943,243 @@ function rosClusterTagsPropertyToRosTemplate(properties: any): any {
     return {
       'Value': ros.stringToRosTemplate(properties.value),
       'Key': ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
+ * Properties for defining a `RosVirtualCapacityReservation`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acs-virtualcapacityreservation
+ */
+export interface RosVirtualCapacityReservationProps {
+
+    /**
+     * @Property podPostpaidSpec: Postpaid pod spec for inquiry.
+     */
+    readonly podPostpaidSpec?: RosVirtualCapacityReservation.PodPostpaidSpecProperty | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosVirtualCapacityReservationProps`
+ *
+ * @param properties - the TypeScript properties of a `RosVirtualCapacityReservationProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosVirtualCapacityReservationPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('podPostpaidSpec', RosVirtualCapacityReservation_PodPostpaidSpecPropertyValidator)(properties.podPostpaidSpec));
+    return errors.wrap('supplied properties not correct for "RosVirtualCapacityReservationProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ACS::VirtualCapacityReservation` resource
+ *
+ * @param properties - the TypeScript properties of a `RosVirtualCapacityReservationProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ACS::VirtualCapacityReservation` resource.
+ */
+// @ts-ignore TS6133
+function rosVirtualCapacityReservationPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosVirtualCapacityReservationPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'PodPostpaidSpec': rosVirtualCapacityReservationPodPostpaidSpecPropertyToRosTemplate(properties.podPostpaidSpec),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ACS::VirtualCapacityReservation`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `VirtualCapacityReservation` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acs-virtualcapacityreservation
+ */
+export class RosVirtualCapacityReservation extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ACS::VirtualCapacityReservation";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property podPostpaidSpec: Postpaid pod spec for inquiry.
+     */
+    public podPostpaidSpec: RosVirtualCapacityReservation.PodPostpaidSpecProperty | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosVirtualCapacityReservationProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosVirtualCapacityReservation.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.podPostpaidSpec = props.podPostpaidSpec;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            podPostpaidSpec: this.podPostpaidSpec,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosVirtualCapacityReservationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosVirtualCapacityReservation {
+    /**
+     * @stability external
+     */
+    export interface GpuQuantityConfigsProperty {
+        /**
+         * @Property gpuModel: The GPU model type.
+         */
+        readonly gpuModel?: string | ros.IResolvable;
+        /**
+         * @Property computeQos: The QoS of the GPU compute.
+         */
+        readonly computeQos?: string | ros.IResolvable;
+        /**
+         * @Property arch: The architecture of the GPU.
+         */
+        readonly arch?: string | ros.IResolvable;
+        /**
+         * @Property gpuQuantity: The number of GPUs.
+         */
+        readonly gpuQuantity?: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `GpuQuantityConfigsProperty`
+ *
+ * @param properties - the TypeScript properties of a `GpuQuantityConfigsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosVirtualCapacityReservation_GpuQuantityConfigsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('gpuModel', ros.validateString)(properties.gpuModel));
+    if(properties.computeQos && (typeof properties.computeQos) !== 'object') {
+        errors.collect(ros.propertyValidator('computeQos', ros.validateAllowedValues)({
+          data: properties.computeQos,
+          allowedValues: ["default","best-effort"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('computeQos', ros.validateString)(properties.computeQos));
+    errors.collect(ros.propertyValidator('arch', ros.validateString)(properties.arch));
+    if(properties.gpuQuantity && (typeof properties.gpuQuantity) !== 'object') {
+        errors.collect(ros.propertyValidator('gpuQuantity', ros.validateRange)({
+            data: properties.gpuQuantity,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('gpuQuantity', ros.validateNumber)(properties.gpuQuantity));
+    return errors.wrap('supplied properties not correct for "GpuQuantityConfigsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ACS::VirtualCapacityReservation.GpuQuantityConfigs` resource
+ *
+ * @param properties - the TypeScript properties of a `GpuQuantityConfigsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ACS::VirtualCapacityReservation.GpuQuantityConfigs` resource.
+ */
+// @ts-ignore TS6133
+function rosVirtualCapacityReservationGpuQuantityConfigsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosVirtualCapacityReservation_GpuQuantityConfigsPropertyValidator(properties).assertSuccess();
+    return {
+      'GpuModel': ros.stringToRosTemplate(properties.gpuModel),
+      'ComputeQos': ros.stringToRosTemplate(properties.computeQos),
+      'Arch': ros.stringToRosTemplate(properties.arch),
+      'GpuQuantity': ros.numberToRosTemplate(properties.gpuQuantity),
+    };
+}
+
+export namespace RosVirtualCapacityReservation {
+    /**
+     * @stability external
+     */
+    export interface PodPostpaidSpecProperty {
+        /**
+         * @Property gpuQuantityConfigs: The GPU spec module.
+         */
+        readonly gpuQuantityConfigs?: RosVirtualCapacityReservation.GpuQuantityConfigsProperty | ros.IResolvable;
+        /**
+         * @Property cpuCore: The number of CPU cores.
+         */
+        readonly cpuCore?: number | ros.IResolvable;
+        /**
+         * @Property memGib: The memory size of the GPU.
+         */
+        readonly memGib?: number | ros.IResolvable;
+        /**
+         * @Property replicas: The number of the replicas.
+         */
+        readonly replicas?: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `PodPostpaidSpecProperty`
+ *
+ * @param properties - the TypeScript properties of a `PodPostpaidSpecProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosVirtualCapacityReservation_PodPostpaidSpecPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('gpuQuantityConfigs', RosVirtualCapacityReservation_GpuQuantityConfigsPropertyValidator)(properties.gpuQuantityConfigs));
+    if(properties.cpuCore && (typeof properties.cpuCore) !== 'object') {
+        errors.collect(ros.propertyValidator('cpuCore', ros.validateRange)({
+            data: properties.cpuCore,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('cpuCore', ros.validateNumber)(properties.cpuCore));
+    if(properties.memGib && (typeof properties.memGib) !== 'object') {
+        errors.collect(ros.propertyValidator('memGib', ros.validateRange)({
+            data: properties.memGib,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('memGib', ros.validateNumber)(properties.memGib));
+    if(properties.replicas && (typeof properties.replicas) !== 'object') {
+        errors.collect(ros.propertyValidator('replicas', ros.validateRange)({
+            data: properties.replicas,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('replicas', ros.validateNumber)(properties.replicas));
+    return errors.wrap('supplied properties not correct for "PodPostpaidSpecProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ACS::VirtualCapacityReservation.PodPostpaidSpec` resource
+ *
+ * @param properties - the TypeScript properties of a `PodPostpaidSpecProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ACS::VirtualCapacityReservation.PodPostpaidSpec` resource.
+ */
+// @ts-ignore TS6133
+function rosVirtualCapacityReservationPodPostpaidSpecPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosVirtualCapacityReservation_PodPostpaidSpecPropertyValidator(properties).assertSuccess();
+    return {
+      'GpuQuantityConfigs': rosVirtualCapacityReservationGpuQuantityConfigsPropertyToRosTemplate(properties.gpuQuantityConfigs),
+      'CpuCore': ros.numberToRosTemplate(properties.cpuCore),
+      'MemGib': ros.numberToRosTemplate(properties.memGib),
+      'Replicas': ros.numberToRosTemplate(properties.replicas),
     };
 }

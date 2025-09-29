@@ -8,6 +8,7 @@
 @alicloud/ros-cdk-gpdb.IDBInstance=com.aliyun.ros.cdk.gpdb.IDBInstance
 @alicloud/ros-cdk-gpdb.IElasticDBInstance=com.aliyun.ros.cdk.gpdb.IElasticDBInstance
 @alicloud/ros-cdk-gpdb.IInstancePublicConnection=com.aliyun.ros.cdk.gpdb.IInstancePublicConnection
+@alicloud/ros-cdk-gpdb.ISupabaseProject=com.aliyun.ros.cdk.gpdb.ISupabaseProject
 @alicloud/ros-cdk-gpdb.InstancePublicConnection=com.aliyun.ros.cdk.gpdb.InstancePublicConnection
 @alicloud/ros-cdk-gpdb.InstancePublicConnectionProps=com.aliyun.ros.cdk.gpdb.InstancePublicConnectionProps
 @alicloud/ros-cdk-gpdb.RosAccount=com.aliyun.ros.cdk.gpdb.RosAccount
@@ -21,3 +22,7 @@
 @alicloud/ros-cdk-gpdb.RosElasticDBInstanceProps=com.aliyun.ros.cdk.gpdb.RosElasticDBInstanceProps
 @alicloud/ros-cdk-gpdb.RosInstancePublicConnection=com.aliyun.ros.cdk.gpdb.RosInstancePublicConnection
 @alicloud/ros-cdk-gpdb.RosInstancePublicConnectionProps=com.aliyun.ros.cdk.gpdb.RosInstancePublicConnectionProps
+@alicloud/ros-cdk-gpdb.RosSupabaseProject=com.aliyun.ros.cdk.gpdb.RosSupabaseProject
+@alicloud/ros-cdk-gpdb.RosSupabaseProjectProps=com.aliyun.ros.cdk.gpdb.RosSupabaseProjectProps
+@alicloud/ros-cdk-gpdb.SupabaseProject=com.aliyun.ros.cdk.gpdb.SupabaseProject
+@alicloud/ros-cdk-gpdb.SupabaseProjectProps=com.aliyun.ros.cdk.gpdb.SupabaseProjectProps

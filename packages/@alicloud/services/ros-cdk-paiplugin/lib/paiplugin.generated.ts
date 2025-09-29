@@ -499,7 +499,7 @@ function rosInferenceJobPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIPlugin::InferenceJob`, which is used to create a prediction job.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIPlugin::InferenceJob`.
  * @Note This class does not contain additional functions, so it is recommended to use the `InferenceJob` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paiplugin-inferencejob
  */
@@ -1033,7 +1033,7 @@ function rosTrainingJobPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIPlugin::TrainingJob`, which is used to create a training job.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIPlugin::TrainingJob`.
  * @Note This class does not contain additional functions, so it is recommended to use the `TrainingJob` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paiplugin-trainingjob
  */

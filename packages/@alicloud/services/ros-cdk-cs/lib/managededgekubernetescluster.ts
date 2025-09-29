@@ -50,6 +50,11 @@ export interface ManagedEdgeKubernetesClusterProps {
     readonly deletionProtection?: boolean | ros.IResolvable;
 
     /**
+     * Property encryptionProviderKey: The ID of the key that is managed by Key Management Service (KMS). This key is used to encrypt data disks.You can use KMS in only professional managed Kubernetes clusters.
+     */
+    readonly encryptionProviderKey?: string | ros.IResolvable;
+
+    /**
      * Property endpointPublicAccess: Whether to enable the public network API Server:
      * true: which means that the public network API Server is open.
      * false: If set to false, the API server on the public network will not be created, only the API server on the private network will be created.Default to true.
@@ -72,6 +77,11 @@ export interface ManagedEdgeKubernetesClusterProps {
     readonly keyPair?: string | ros.IResolvable;
 
     /**
+     * Property kubernetesVersion: The version of the Kubernetes cluster.
+     */
+    readonly kubernetesVersion?: string | ros.IResolvable;
+
+    /**
      * Property loginPassword: SSH login password. Password rules are 8-30 characters and contain three items (upper and lower case letters, numbers, and special symbols). Specify one of KeyPair or LoginPassword.
      */
     readonly loginPassword?: string | ros.IResolvable;
@@ -87,6 +97,11 @@ export interface ManagedEdgeKubernetesClusterProps {
      * This parameter takes effect only if the cluster uses the Flannel plug-in.Default value: 25.
      */
     readonly nodeCidrMask?: string | ros.IResolvable;
+
+    /**
+     * Property nodePools: The configurations of Node pools.
+     */
+    readonly nodePools?: Array<RosManagedEdgeKubernetesCluster.NodePoolsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property profile: Edge cluster ID. The default value is Edge.
@@ -286,27 +301,30 @@ export class ManagedEdgeKubernetesCluster extends ros.Resource implements IManag
 
         const rosManagedEdgeKubernetesCluster = new RosManagedEdgeKubernetesCluster(this, id,  {
             endpointPublicAccess: props.endpointPublicAccess === undefined || props.endpointPublicAccess === null ? true : props.endpointPublicAccess,
-            containerCidr: props.containerCidr === undefined || props.containerCidr === null ? '172.16.0.0/16' : props.containerCidr,
-            keyPair: props.keyPair,
             resourceGroupId: props.resourceGroupId,
-            nodeCidrMask: props.nodeCidrMask,
-            vSwitchIds: props.vSwitchIds,
-            timeoutMins: props.timeoutMins === undefined || props.timeoutMins === null ? 60 : props.timeoutMins,
             addons: props.addons,
-            clusterSpec: props.clusterSpec,
-            deletionProtection: props.deletionProtection,
             profile: props.profile === undefined || props.profile === null ? 'Edge' : props.profile,
             name: props.name,
             isEnterpriseSecurityGroup: props.isEnterpriseSecurityGroup,
-            vpcId: props.vpcId,
             cloudMonitorFlags: props.cloudMonitorFlags === undefined || props.cloudMonitorFlags === null ? false : props.cloudMonitorFlags,
             serviceCidr: props.serviceCidr === undefined || props.serviceCidr === null ? '172.19.0.0/20' : props.serviceCidr,
-            snatEntry: props.snatEntry === undefined || props.snatEntry === null ? true : props.snatEntry,
-            maintenanceWindow: props.maintenanceWindow,
             zoneIds: props.zoneIds,
             proxyMode: props.proxyMode === undefined || props.proxyMode === null ? 'iptables' : props.proxyMode,
             tags: props.tags,
             loginPassword: props.loginPassword,
+            kubernetesVersion: props.kubernetesVersion,
+            containerCidr: props.containerCidr === undefined || props.containerCidr === null ? '172.16.0.0/16' : props.containerCidr,
+            keyPair: props.keyPair,
+            nodeCidrMask: props.nodeCidrMask,
+            vSwitchIds: props.vSwitchIds,
+            timeoutMins: props.timeoutMins === undefined || props.timeoutMins === null ? 60 : props.timeoutMins,
+            clusterSpec: props.clusterSpec,
+            deletionProtection: props.deletionProtection,
+            vpcId: props.vpcId,
+            nodePools: props.nodePools,
+            encryptionProviderKey: props.encryptionProviderKey,
+            snatEntry: props.snatEntry === undefined || props.snatEntry === null ? true : props.snatEntry,
+            maintenanceWindow: props.maintenanceWindow,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosManagedEdgeKubernetesCluster;
         this.attrApiServerSlbId = rosManagedEdgeKubernetesCluster.attrApiServerSlbId;

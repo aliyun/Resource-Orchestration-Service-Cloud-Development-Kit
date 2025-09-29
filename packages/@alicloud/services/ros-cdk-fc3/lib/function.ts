@@ -55,6 +55,11 @@ export interface FunctionProps {
     readonly description?: string | ros.IResolvable;
 
     /**
+     * Property disableOndemand: Whether to disable the creation of on-demand instances. When enabled, on-demand instances will not be created, and only reserved instances can be used.
+     */
+    readonly disableOndemand?: boolean | ros.IResolvable;
+
+    /**
      * Property diskSize: The disk size of the function, in MB.
      */
     readonly diskSize?: number | ros.IResolvable;
@@ -73,6 +78,11 @@ export interface FunctionProps {
      * Property instanceConcurrency: The maximum number of concurrent instances of the function.
      */
     readonly instanceConcurrency?: number | ros.IResolvable;
+
+    /**
+     * Property instanceIsolationMode: Instance isolation mode.
+     */
+    readonly instanceIsolationMode?: string | ros.IResolvable;
 
     /**
      * Property instanceLifecycleConfig: The instance lifecycle configuration of the function.
@@ -113,6 +123,16 @@ export interface FunctionProps {
      * Property role: The user is authorized to the RAM role of Function Compute. After setting, Function Compute will assume the role and generate temporary access credentials. The temporary access credentials of this role can be used in functions to access specified Alibaba Cloud services, such as OSS and OTS.
      */
     readonly role?: string | ros.IResolvable;
+
+    /**
+     * Property sessionAffinity: The session affinity policy for Function Compute requests. Set to MCP_SSE to implement MCP SSE protocol request affinity. Set to GENERATED_COOKIE for cookie-based affinity. Set to HEADER_FIELD for header-based affinity. If not set or set to NONE, there is no affinity effect, and requests are routed according to the default scheduling policy of Function Compute.
+     */
+    readonly sessionAffinity?: string | ros.IResolvable;
+
+    /**
+     * Property sessionAffinityConfig: Session affinity configuration.
+     */
+    readonly sessionAffinityConfig?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
      * Property tags: Tags to attach to function. Max support 20 tags to add during create function. Each tag with two properties Key and Value, and Key is required.
@@ -200,15 +220,18 @@ export class Function extends ros.Resource implements IFunction {
             vpcConfig: props.vpcConfig,
             instanceLifecycleConfig: props.instanceLifecycleConfig,
             cpu: props.cpu,
+            sessionAffinityConfig: props.sessionAffinityConfig,
             functionName: props.functionName,
             runtime: props.runtime,
             environmentVariables: props.environmentVariables,
+            disableOndemand: props.disableOndemand,
             diskSize: props.diskSize,
             customDns: props.customDns,
             instanceConcurrency: props.instanceConcurrency,
             layers: props.layers,
             tags: props.tags,
             nasConfig: props.nasConfig,
+            instanceIsolationMode: props.instanceIsolationMode,
             memorySize: props.memorySize,
             timeout: props.timeout,
             handler: props.handler,
@@ -218,6 +241,7 @@ export class Function extends ros.Resource implements IFunction {
             internetAccess: props.internetAccess,
             customRuntimeConfig: props.customRuntimeConfig,
             gpuConfig: props.gpuConfig,
+            sessionAffinity: props.sessionAffinity,
             ossMountConfig: props.ossMountConfig,
             logConfig: props.logConfig,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

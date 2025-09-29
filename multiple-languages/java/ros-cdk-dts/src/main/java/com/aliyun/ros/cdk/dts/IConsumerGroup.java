@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dts;
 /**
  * Represents a <code>ConsumerGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.729Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.465Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.IConsumerGroup")
 @software.amazon.jsii.Jsii.Proxy(IConsumerGroup.Jsii$Proxy.class)
 public interface IConsumerGroup extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cloudsso;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-samlidentityprovider
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:44.755Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.369Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudsso.$Module.class, fqn = "@alicloud/ros-cdk-cloudsso.SAMLIdentityProviderProps")
 @software.amazon.jsii.Jsii.Proxy(SAMLIdentityProviderProps.Jsii$Proxy.class)
 public interface SAMLIdentityProviderProps extends software.amazon.jsii.JsiiSerializable {

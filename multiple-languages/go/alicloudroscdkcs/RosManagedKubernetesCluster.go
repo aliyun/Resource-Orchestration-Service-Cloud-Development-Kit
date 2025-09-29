@@ -129,6 +129,8 @@ type RosManagedKubernetesCluster interface {
 	SetTaint(val interface{})
 	TimeoutMins() interface{}
 	SetTimeoutMins(val interface{})
+	TimeZone() interface{}
+	SetTimeZone(val interface{})
 	// Return properties modified after initiation.
 	//
 	// Resources that expose mutable properties should override this function to
@@ -831,6 +833,16 @@ func (j *jsiiProxy_RosManagedKubernetesCluster) TimeoutMins() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosManagedKubernetesCluster) TimeZone() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"timeZone",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosManagedKubernetesCluster) UpdatedProperites() *map[string]interface{} {
 	var returns *map[string]interface{}
 	_jsii_.Get(
@@ -1323,6 +1335,17 @@ func (j *jsiiProxy_RosManagedKubernetesCluster)SetTimeoutMins(val interface{}) {
 	_jsii_.Set(
 		j,
 		"timeoutMins",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosManagedKubernetesCluster)SetTimeZone(val interface{}) {
+	if err := j.validateSetTimeZoneParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"timeZone",
 		val,
 	)
 }

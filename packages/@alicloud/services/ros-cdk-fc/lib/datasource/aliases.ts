@@ -45,7 +45,7 @@ export interface IAliases extends ros.IResource {
     readonly attrAliases: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::FC::Aliases`, which is used to query the aliases of a Function Compute service.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::FC::Aliases`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAliases`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-aliases
  */

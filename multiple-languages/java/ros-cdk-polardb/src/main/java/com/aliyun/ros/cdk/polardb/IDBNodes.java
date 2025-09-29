@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * Represents a <code>DBNodes</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.401Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:28.012Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.IDBNodes")
 @software.amazon.jsii.Jsii.Proxy(IDBNodes.Jsii$Proxy.class)
 public interface IDBNodes extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

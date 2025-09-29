@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.appflow.datasource;
 /**
  * Represents a <code>UserAuthConfigs</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:43.928Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:21.352Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.appflow.$Module.class, fqn = "@alicloud/ros-cdk-appflow.datasource.IUserAuthConfigs")
 @software.amazon.jsii.Jsii.Proxy(IUserAuthConfigs.Jsii$Proxy.class)
 public interface IUserAuthConfigs extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

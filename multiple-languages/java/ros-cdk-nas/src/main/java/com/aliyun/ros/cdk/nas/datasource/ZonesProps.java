@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.nas.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-zones
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.814Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:27.188Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.datasource.ZonesProps")
 @software.amazon.jsii.Jsii.Proxy(ZonesProps.Jsii$Proxy.class)
 public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {

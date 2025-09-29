@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::DBInstance`, which is used to create an AnalyticDB for PostgreSQL instance in reserved storage mode.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::DBInstance`.
 type RosDBInstance interface {
 	alicloudroscdkcore.RosResource
 	AiNodeSpecInfos() interface{}

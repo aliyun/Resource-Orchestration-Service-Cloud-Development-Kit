@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oss;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::OSS::ObjectAcl</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:51.886Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:31.155Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.ObjectAcl")
 public class ObjectAcl extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.oss.IObjectAcl {
 

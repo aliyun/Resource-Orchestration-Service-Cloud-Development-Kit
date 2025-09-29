@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ess;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ESS::EciScalingConfiguration</code>, which is used to define a scaling configuration of the Elastic Container Instance type in Auto Scaling.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ESS::EciScalingConfiguration</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.449Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:25.689Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosEciScalingConfiguration")
 public class RosEciScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource {
 

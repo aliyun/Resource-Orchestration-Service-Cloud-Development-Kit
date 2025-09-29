@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.eais;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::EAIS::Instance</code>, which is used to create an Elastic Accelerated Computing Instances (EAIS) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.866Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.645Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eais.$Module.class, fqn = "@alicloud/ros-cdk-eais.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.eais.IInstance {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.adb;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ADB::DBCluster</code>, which is used to create an AnalyticDB for MySQL cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:43.152Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:20.434Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.adb.$Module.class, fqn = "@alicloud/ros-cdk-adb.RosDBCluster")
 public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 

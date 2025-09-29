@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ens.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::ENS::Image</code>, which is used to query the information about a custom image.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::ENS::Image</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.345Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:25.373Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ens.$Module.class, fqn = "@alicloud/ros-cdk-ens.datasource.RosImage")
 public class RosImage extends com.aliyun.ros.cdk.core.RosResource {
 

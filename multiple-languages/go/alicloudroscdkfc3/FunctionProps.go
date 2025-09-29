@@ -27,6 +27,10 @@ type FunctionProps struct {
 	CustomRuntimeConfig interface{} `field:"optional" json:"customRuntimeConfig" yaml:"customRuntimeConfig"`
 	// Property description: Function description.
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
+	// Property disableOndemand: Whether to disable the creation of on-demand instances.
+	//
+	// When enabled, on-demand instances will not be created, and only reserved instances can be used.
+	DisableOndemand interface{} `field:"optional" json:"disableOndemand" yaml:"disableOndemand"`
 	// Property diskSize: The disk size of the function, in MB.
 	DiskSize interface{} `field:"optional" json:"diskSize" yaml:"diskSize"`
 	// Property environmentVariables: The environment variables of the function.
@@ -35,6 +39,8 @@ type FunctionProps struct {
 	GpuConfig interface{} `field:"optional" json:"gpuConfig" yaml:"gpuConfig"`
 	// Property instanceConcurrency: The maximum number of concurrent instances of the function.
 	InstanceConcurrency interface{} `field:"optional" json:"instanceConcurrency" yaml:"instanceConcurrency"`
+	// Property instanceIsolationMode: Instance isolation mode.
+	InstanceIsolationMode interface{} `field:"optional" json:"instanceIsolationMode" yaml:"instanceIsolationMode"`
 	// Property instanceLifecycleConfig: The instance lifecycle configuration of the function.
 	InstanceLifecycleConfig interface{} `field:"optional" json:"instanceLifecycleConfig" yaml:"instanceLifecycleConfig"`
 	// Property internetAccess: Whether the function can access the Internet.
@@ -53,6 +59,12 @@ type FunctionProps struct {
 	//
 	// After setting, Function Compute will assume the role and generate temporary access credentials. The temporary access credentials of this role can be used in functions to access specified Alibaba Cloud services, such as OSS and OTS.
 	Role interface{} `field:"optional" json:"role" yaml:"role"`
+	// Property sessionAffinity: The session affinity policy for Function Compute requests.
+	//
+	// Set to MCP_SSE to implement MCP SSE protocol request affinity. Set to GENERATED_COOKIE for cookie-based affinity. Set to HEADER_FIELD for header-based affinity. If not set or set to NONE, there is no affinity effect, and requests are routed according to the default scheduling policy of Function Compute.
+	SessionAffinity interface{} `field:"optional" json:"sessionAffinity" yaml:"sessionAffinity"`
+	// Property sessionAffinityConfig: Session affinity configuration.
+	SessionAffinityConfig interface{} `field:"optional" json:"sessionAffinityConfig" yaml:"sessionAffinityConfig"`
 	// Property tags: Tags to attach to function.
 	//
 	// Max support 20 tags to add during create function. Each tag with two properties Key and Value, and Key is required.

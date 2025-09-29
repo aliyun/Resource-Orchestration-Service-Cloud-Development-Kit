@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::APIG::Gateway`.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::APIG::Gateway`The , which type is used to query gateway details.
 type RosGateway interface {
 	alicloudroscdkcore.RosResource
 	AttrCreateTime() alicloudroscdkcore.IResolvable

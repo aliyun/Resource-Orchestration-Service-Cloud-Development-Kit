@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.redis;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-prepayinstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:50.067Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:28.901Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.RosPrepayInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosPrepayInstanceProps.Jsii$Proxy.class)
 public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSerializable {

@@ -1,0 +1,17 @@
+package alicloudroscdkfc3
+
+
+// Properties for defining a `RosFunctionInvoker`.
+//
+// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-functioninvoker
+type RosFunctionInvokerProps struct {
+	FunctionName interface{} `field:"required" json:"functionName" yaml:"functionName"`
+	Async interface{} `field:"optional" json:"async" yaml:"async"`
+	CheckAsyncInvocation interface{} `field:"optional" json:"checkAsyncInvocation" yaml:"checkAsyncInvocation"`
+	CheckError interface{} `field:"optional" json:"checkError" yaml:"checkError"`
+	Event interface{} `field:"optional" json:"event" yaml:"event"`
+	ExecuteVersion interface{} `field:"optional" json:"executeVersion" yaml:"executeVersion"`
+	Qualifier interface{} `field:"optional" json:"qualifier" yaml:"qualifier"`
+	ServiceRegionId interface{} `field:"optional" json:"serviceRegionId" yaml:"serviceRegionId"`
+}
+

@@ -9,11 +9,6 @@ import * as ros from '@alicloud/ros-cdk-core';
 export interface RosVpcEndpointProps {
 
     /**
-     * @Property securityGroupId: The security group associated with the endpoint network interface. The security group can control the data communication from the VPC to the endpoint network interface.
-     */
-    readonly securityGroupId: Array<string | ros.IResolvable> | ros.IResolvable;
-
-    /**
      * @Property vpcId: The VPC to which the endpoint belongs.
      */
     readonly vpcId: string | ros.IResolvable;
@@ -42,6 +37,11 @@ export interface RosVpcEndpointProps {
      * false (default): no
      */
     readonly protectedEnabled?: boolean | ros.IResolvable;
+
+    /**
+     * @Property securityGroupId: The security group associated with the endpoint network interface. The security group can control the data communication from the VPC to the endpoint network interface.
+     */
+    readonly securityGroupId?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property serviceId: The endpoint service that is associated with the endpoint. One of ServiceId and ServiceName is required.
@@ -99,7 +99,6 @@ function RosVpcEndpointPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('zone', ros.listValidator(RosVpcEndpoint_ZonePropertyValidator))(properties.zone));
-    errors.collect(ros.propertyValidator('securityGroupId', ros.requiredValidator)(properties.securityGroupId));
     if(properties.securityGroupId && (Array.isArray(properties.securityGroupId) || (typeof properties.securityGroupId) === 'string')) {
         errors.collect(ros.propertyValidator('securityGroupId', ros.validateLength)({
             data: properties.securityGroupId.length,
@@ -144,12 +143,12 @@ function rosVpcEndpointPropsToRosTemplate(properties: any, enableResourcePropert
         RosVpcEndpointPropsValidator(properties).assertSuccess();
     }
     return {
-      'SecurityGroupId': ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupId),
       'VpcId': ros.stringToRosTemplate(properties.vpcId),
       'EndpointDescription': ros.stringToRosTemplate(properties.endpointDescription),
       'EndpointName': ros.stringToRosTemplate(properties.endpointName),
       'EndpointType': ros.stringToRosTemplate(properties.endpointType),
       'ProtectedEnabled': ros.booleanToRosTemplate(properties.protectedEnabled),
+      'SecurityGroupId': ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupId),
       'ServiceId': ros.stringToRosTemplate(properties.serviceId),
       'ServiceName': ros.stringToRosTemplate(properties.serviceName),
       'Tags': ros.listMapper(rosVpcEndpointTagsPropertyToRosTemplate)(properties.tags),
@@ -159,7 +158,7 @@ function rosVpcEndpointPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PrivateLink::VpcEndpoint`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PrivateLink::VpcEndpoint`, which is used to create an endpoint.
  * @Note This class does not contain additional functions, so it is recommended to use the `VpcEndpoint` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpoint
  */
@@ -218,11 +217,6 @@ export class RosVpcEndpoint extends ros.RosResource {
 
 
     /**
-     * @Property securityGroupId: The security group associated with the endpoint network interface. The security group can control the data communication from the VPC to the endpoint network interface.
-     */
-    public securityGroupId: Array<string | ros.IResolvable> | ros.IResolvable;
-
-    /**
      * @Property vpcId: The VPC to which the endpoint belongs.
      */
     public vpcId: string | ros.IResolvable;
@@ -251,6 +245,11 @@ export class RosVpcEndpoint extends ros.RosResource {
      * false (default): no
      */
     public protectedEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property securityGroupId: The security group associated with the endpoint network interface. The security group can control the data communication from the VPC to the endpoint network interface.
+     */
+    public securityGroupId: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property serviceId: The endpoint service that is associated with the endpoint. One of ServiceId and ServiceName is required.
@@ -295,12 +294,12 @@ export class RosVpcEndpoint extends ros.RosResource {
         this.attrZoneDomains = this.getAtt('ZoneDomains');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-        this.securityGroupId = props.securityGroupId;
         this.vpcId = props.vpcId;
         this.endpointDescription = props.endpointDescription;
         this.endpointName = props.endpointName;
         this.endpointType = props.endpointType;
         this.protectedEnabled = props.protectedEnabled;
+        this.securityGroupId = props.securityGroupId;
         this.serviceId = props.serviceId;
         this.serviceName = props.serviceName;
         this.tags = props.tags;
@@ -311,12 +310,12 @@ export class RosVpcEndpoint extends ros.RosResource {
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
-            securityGroupId: this.securityGroupId,
             vpcId: this.vpcId,
             endpointDescription: this.endpointDescription,
             endpointName: this.endpointName,
             endpointType: this.endpointType,
             protectedEnabled: this.protectedEnabled,
+            securityGroupId: this.securityGroupId,
             serviceId: this.serviceId,
             serviceName: this.serviceName,
             tags: this.tags,

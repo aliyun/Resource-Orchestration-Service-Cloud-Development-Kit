@@ -228,11 +228,52 @@ def write_xml():
     plugin_5_node.appendChild(plugin_5_version_node)
     plugin_5_node.appendChild(plugin_5_configuration_node)
 
+    plugin_6_node = dom_tree.createElement("plugin")
+    plugin_6_group_id_node = dom_tree.createElement("groupId")
+    plugin_6_group_id_node_text_value = dom_tree.createTextNode("org.sonatype.central")
+    plugin_6_group_id_node.appendChild(plugin_6_group_id_node_text_value)
+
+    plugin_6_artifact_id_node = dom_tree.createElement("artifactId")
+    plugin_6_artifact_id_node_text_value = dom_tree.createTextNode("central-publishing-maven-plugin")
+    plugin_6_artifact_id_node.appendChild(plugin_6_artifact_id_node_text_value)
+
+    plugin_6_version_node = dom_tree.createElement("version")
+    plugin_6_version_node_text_value = dom_tree.createTextNode("0.8.0")
+    plugin_6_version_node.appendChild(plugin_6_version_node_text_value)
+
+    plugin_6_extensions_node = dom_tree.createElement("extensions")
+    plugin_6_extensions_node_text_value = dom_tree.createTextNode("true")
+    plugin_6_extensions_node.appendChild(plugin_6_extensions_node_text_value)
+
+    plugin_6_configuration_node = dom_tree.createElement("configuration")
+    plugin_6_publishing_server_id_node = dom_tree.createElement("publishingServerId")
+    plugin_6_publishing_server_id_node_text_value = dom_tree.createTextNode("central")
+    plugin_6_publishing_server_id_node.appendChild(plugin_6_publishing_server_id_node_text_value)
+
+    plugin_6_auto_publish_node = dom_tree.createElement("autoPublish")
+    plugin_6_auto_publish_node_text_value = dom_tree.createTextNode("true")
+    plugin_6_auto_publish_node.appendChild(plugin_6_auto_publish_node_text_value)
+
+    plugin_6_wait_until_node = dom_tree.createElement("waitUntil")
+    plugin_6_wait_until_node_text_value = dom_tree.createTextNode("published")
+    plugin_6_wait_until_node.appendChild(plugin_6_wait_until_node_text_value)
+
+    plugin_6_configuration_node.appendChild(plugin_6_publishing_server_id_node)
+    plugin_6_configuration_node.appendChild(plugin_6_auto_publish_node)
+    plugin_6_configuration_node.appendChild(plugin_6_wait_until_node)
+
+    plugin_6_node.appendChild(plugin_6_group_id_node)
+    plugin_6_node.appendChild(plugin_6_artifact_id_node)
+    plugin_6_node.appendChild(plugin_6_version_node)
+    plugin_6_node.appendChild(plugin_6_extensions_node)
+    plugin_6_node.appendChild(plugin_6_configuration_node)
+
     plugins_node.appendChild(plugin_1_node)
     plugins_node.appendChild(plugin_2_node)
     plugins_node.appendChild(plugin_3_node)
     plugins_node.appendChild(plugin_4_node)
     plugins_node.appendChild(plugin_5_node)
+    plugins_node.appendChild(plugin_6_node)
 
     # write executions and update version
     artifact_id_nodes = root_node.getElementsByTagName("artifactId")
@@ -285,8 +326,10 @@ def write_xml():
         maven_compiler_target_node.appendChild(maven_compiler_target_node_text_value)
         property_node.appendChild(maven_compiler_target_node)
 
-    with open(pom_file_path, 'w') as f:
-        dom_tree.writexml(f, addindent='\t', newl='\n', encoding='utf-8')
+    xml_str = dom_tree.toxml(encoding='utf-8').decode('utf-8')
+    lines = [line for line in xml_str.split('\n') if line.strip()]
+    with open(pom_file_path, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(lines))
 
 
 if __name__ == '__main__':

@@ -44,6 +44,7 @@ type RosManagedKubernetesClusterProps struct {
 	Tags *[]*RosManagedKubernetesCluster_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 	Taint interface{} `field:"optional" json:"taint" yaml:"taint"`
 	TimeoutMins interface{} `field:"optional" json:"timeoutMins" yaml:"timeoutMins"`
+	TimeZone interface{} `field:"optional" json:"timeZone" yaml:"timeZone"`
 	UserData interface{} `field:"optional" json:"userData" yaml:"userData"`
 	ZoneIds interface{} `field:"optional" json:"zoneIds" yaml:"zoneIds"`
 }

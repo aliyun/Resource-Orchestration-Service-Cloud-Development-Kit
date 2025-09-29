@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.kafka.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::KAFKA::Topics</code>.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::KAFKA::Topics</code>, which is used to query the information about topics.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.343Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:26.682Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.datasource.Topics")
 public class Topics extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.kafka.datasource.ITopics {
 

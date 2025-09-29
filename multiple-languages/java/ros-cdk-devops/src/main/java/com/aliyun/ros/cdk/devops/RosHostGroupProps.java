@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.devops;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-hostgroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.491Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.229Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.devops.$Module.class, fqn = "@alicloud/ros-cdk-devops.RosHostGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosHostGroupProps.Jsii$Proxy.class)
 public interface RosHostGroupProps extends software.amazon.jsii.JsiiSerializable {

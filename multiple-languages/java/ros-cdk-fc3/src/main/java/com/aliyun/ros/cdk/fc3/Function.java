@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc3;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::FC3::Function</code>, which is used to create a Function Compute 3.0 function.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.657Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:25.887Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc3.$Module.class, fqn = "@alicloud/ros-cdk-fc3.Function")
 public class Function extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.fc3.IFunction {
 
@@ -325,6 +325,31 @@ public class Function extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
+         * Property disableOndemand: Whether to disable the creation of on-demand instances.
+         * <p>
+         * When enabled, on-demand instances will not be created, and only reserved instances can be used.
+         * <p>
+         * @return {@code this}
+         * @param disableOndemand Property disableOndemand: Whether to disable the creation of on-demand instances. This parameter is required.
+         */
+        public Builder disableOndemand(final java.lang.Boolean disableOndemand) {
+            this.props.disableOndemand(disableOndemand);
+            return this;
+        }
+        /**
+         * Property disableOndemand: Whether to disable the creation of on-demand instances.
+         * <p>
+         * When enabled, on-demand instances will not be created, and only reserved instances can be used.
+         * <p>
+         * @return {@code this}
+         * @param disableOndemand Property disableOndemand: Whether to disable the creation of on-demand instances. This parameter is required.
+         */
+        public Builder disableOndemand(final com.aliyun.ros.cdk.core.IResolvable disableOndemand) {
+            this.props.disableOndemand(disableOndemand);
+            return this;
+        }
+
+        /**
          * Property diskSize: The disk size of the function, in MB.
          * <p>
          * @return {@code this}
@@ -405,6 +430,27 @@ public class Function extends com.aliyun.ros.cdk.core.Resource implements com.al
          */
         public Builder instanceConcurrency(final com.aliyun.ros.cdk.core.IResolvable instanceConcurrency) {
             this.props.instanceConcurrency(instanceConcurrency);
+            return this;
+        }
+
+        /**
+         * Property instanceIsolationMode: Instance isolation mode.
+         * <p>
+         * @return {@code this}
+         * @param instanceIsolationMode Property instanceIsolationMode: Instance isolation mode. This parameter is required.
+         */
+        public Builder instanceIsolationMode(final java.lang.String instanceIsolationMode) {
+            this.props.instanceIsolationMode(instanceIsolationMode);
+            return this;
+        }
+        /**
+         * Property instanceIsolationMode: Instance isolation mode.
+         * <p>
+         * @return {@code this}
+         * @param instanceIsolationMode Property instanceIsolationMode: Instance isolation mode. This parameter is required.
+         */
+        public Builder instanceIsolationMode(final com.aliyun.ros.cdk.core.IResolvable instanceIsolationMode) {
+            this.props.instanceIsolationMode(instanceIsolationMode);
             return this;
         }
 
@@ -577,6 +623,52 @@ public class Function extends com.aliyun.ros.cdk.core.Resource implements com.al
          */
         public Builder role(final com.aliyun.ros.cdk.core.IResolvable role) {
             this.props.role(role);
+            return this;
+        }
+
+        /**
+         * Property sessionAffinity: The session affinity policy for Function Compute requests.
+         * <p>
+         * Set to MCP_SSE to implement MCP SSE protocol request affinity. Set to GENERATED_COOKIE for cookie-based affinity. Set to HEADER_FIELD for header-based affinity. If not set or set to NONE, there is no affinity effect, and requests are routed according to the default scheduling policy of Function Compute.
+         * <p>
+         * @return {@code this}
+         * @param sessionAffinity Property sessionAffinity: The session affinity policy for Function Compute requests. This parameter is required.
+         */
+        public Builder sessionAffinity(final java.lang.String sessionAffinity) {
+            this.props.sessionAffinity(sessionAffinity);
+            return this;
+        }
+        /**
+         * Property sessionAffinity: The session affinity policy for Function Compute requests.
+         * <p>
+         * Set to MCP_SSE to implement MCP SSE protocol request affinity. Set to GENERATED_COOKIE for cookie-based affinity. Set to HEADER_FIELD for header-based affinity. If not set or set to NONE, there is no affinity effect, and requests are routed according to the default scheduling policy of Function Compute.
+         * <p>
+         * @return {@code this}
+         * @param sessionAffinity Property sessionAffinity: The session affinity policy for Function Compute requests. This parameter is required.
+         */
+        public Builder sessionAffinity(final com.aliyun.ros.cdk.core.IResolvable sessionAffinity) {
+            this.props.sessionAffinity(sessionAffinity);
+            return this;
+        }
+
+        /**
+         * Property sessionAffinityConfig: Session affinity configuration.
+         * <p>
+         * @return {@code this}
+         * @param sessionAffinityConfig Property sessionAffinityConfig: Session affinity configuration. This parameter is required.
+         */
+        public Builder sessionAffinityConfig(final com.aliyun.ros.cdk.core.IResolvable sessionAffinityConfig) {
+            this.props.sessionAffinityConfig(sessionAffinityConfig);
+            return this;
+        }
+        /**
+         * Property sessionAffinityConfig: Session affinity configuration.
+         * <p>
+         * @return {@code this}
+         * @param sessionAffinityConfig Property sessionAffinityConfig: Session affinity configuration. This parameter is required.
+         */
+        public Builder sessionAffinityConfig(final java.util.Map<java.lang.String, ? extends java.lang.Object> sessionAffinityConfig) {
+            this.props.sessionAffinityConfig(sessionAffinityConfig);
             return this;
         }
 

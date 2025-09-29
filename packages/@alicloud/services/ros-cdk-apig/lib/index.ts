@@ -1,6 +1,5 @@
 export * from './apiattachment';
 export * from './domain';
-export * from './environment';
 export * from './gateway';
 export * from './httpapi';
 export * from './operation';

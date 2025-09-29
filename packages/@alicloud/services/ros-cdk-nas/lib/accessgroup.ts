@@ -43,7 +43,7 @@ export interface IAccessGroup extends ros.IResource {
     readonly attrAccessGroupName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::NAS::AccessGroup`, which is used to create a permission group.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::NAS::AccessGroup`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccessGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-accessgroup
  */

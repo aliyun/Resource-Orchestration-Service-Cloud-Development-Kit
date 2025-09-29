@@ -570,6 +570,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
+        /// <summary>Property timeZone: The time zone of the cluster.</summary>
+        [JsiiProperty(name: "timeZone", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? TimeZone
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property userData: The user-defined data.</summary>
         /// <remarks>
         /// [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
@@ -1053,6 +1064,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             [JsiiOptional]
             [JsiiProperty(name: "timeoutMins", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? TimeoutMins
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property timeZone: The time zone of the cluster.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "timeZone", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? TimeZone
             {
                 get => GetInstanceProperty<object?>();
             }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ebs.datasource;
 /**
  * Represents a <code>DedicatedBlockStorageCluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.946Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.741Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ebs.$Module.class, fqn = "@alicloud/ros-cdk-ebs.datasource.IDedicatedBlockStorageCluster")
 @software.amazon.jsii.Jsii.Proxy(IDedicatedBlockStorageCluster.Jsii$Proxy.class)
 public interface IDedicatedBlockStorageCluster extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

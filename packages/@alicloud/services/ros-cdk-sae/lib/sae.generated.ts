@@ -121,6 +121,11 @@ export interface RosApplicationProps {
     readonly enableNewArms?: boolean | ros.IResolvable;
 
     /**
+     * @Property enableSidecarResourceIsolated: Whether to enable sidecar resource isolation.
+     */
+    readonly enableSidecarResourceIsolated?: boolean | ros.IResolvable;
+
+    /**
      * @Property envs: Container environment variable parameters. For example: [{ "name": "envtmp", "value": "0"}]
      */
     readonly envs?: string | ros.IResolvable;
@@ -134,6 +139,11 @@ export interface RosApplicationProps {
      * @Property imageUrl: Mirroring address. Image only type of application can be configured to mirror address.
      */
     readonly imageUrl?: string | ros.IResolvable;
+
+    /**
+     * @Property initContainersConfig: Init container config.
+     */
+    readonly initContainersConfig?: Array<RosApplication.InitContainersConfigProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property jarStartArgs: Jar package startup application parameters. Apply the default startup command: $ JAVA_HOME \/ bin \/ java $ JarStartOptions -jar $ CATALINA_OPTS "$ package_path"
@@ -321,6 +331,11 @@ export interface RosApplicationProps {
     readonly serviceTags?: string | ros.IResolvable;
 
     /**
+     * @Property sidecarContainersConfig: Sidecar container config.
+     */
+    readonly sidecarContainersConfig?: Array<RosApplication.SidecarContainersConfigProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * @Property slsConfigs: Log collection configuration file
      */
     readonly slsConfigs?: string | ros.IResolvable;
@@ -405,6 +420,7 @@ function RosApplicationPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('cpu', ros.validateNumber)(properties.cpu));
     errors.collect(ros.propertyValidator('nasConfigs', ros.validateString)(properties.nasConfigs));
+    errors.collect(ros.propertyValidator('enableSidecarResourceIsolated', ros.validateBoolean)(properties.enableSidecarResourceIsolated));
     errors.collect(ros.propertyValidator('jarStartArgs', ros.validateString)(properties.jarStartArgs));
     errors.collect(ros.propertyValidator('preStop', ros.validateString)(properties.preStop));
     errors.collect(ros.propertyValidator('phpArmsConfigLocation', ros.validateString)(properties.phpArmsConfigLocation));
@@ -457,6 +473,7 @@ function RosApplicationPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('nasId', ros.validateString)(properties.nasId));
     errors.collect(ros.propertyValidator('pythonModules', ros.validateString)(properties.pythonModules));
     errors.collect(ros.propertyValidator('acrInstanceId', ros.validateString)(properties.acrInstanceId));
+    errors.collect(ros.propertyValidator('sidecarContainersConfig', ros.listValidator(RosApplication_SidecarContainersConfigPropertyValidator))(properties.sidecarContainersConfig));
     errors.collect(ros.propertyValidator('kafkaConfigs', ros.validateString)(properties.kafkaConfigs));
     errors.collect(ros.propertyValidator('slsConfigs', ros.validateString)(properties.slsConfigs));
     errors.collect(ros.propertyValidator('ossAkId', ros.validateString)(properties.ossAkId));
@@ -500,6 +517,7 @@ function RosApplicationPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('mountHost', ros.validateString)(properties.mountHost));
     errors.collect(ros.propertyValidator('replicas', ros.requiredValidator)(properties.replicas));
     errors.collect(ros.propertyValidator('replicas', ros.validateNumber)(properties.replicas));
+    errors.collect(ros.propertyValidator('initContainersConfig', ros.listValidator(RosApplication_InitContainersConfigPropertyValidator))(properties.initContainersConfig));
     errors.collect(ros.propertyValidator('customHostAlias', ros.validateString)(properties.customHostAlias));
     errors.collect(ros.propertyValidator('appSource', ros.validateString)(properties.appSource));
     errors.collect(ros.propertyValidator('associateEip', ros.validateBoolean)(properties.associateEip));
@@ -552,9 +570,11 @@ function rosApplicationPropsToRosTemplate(properties: any, enableResourcePropert
       'EdasContainerVersion': ros.stringToRosTemplate(properties.edasContainerVersion),
       'EnableEbpf': ros.stringToRosTemplate(properties.enableEbpf),
       'EnableNewArms': ros.booleanToRosTemplate(properties.enableNewArms),
+      'EnableSidecarResourceIsolated': ros.booleanToRosTemplate(properties.enableSidecarResourceIsolated),
       'Envs': ros.stringToRosTemplate(properties.envs),
       'ImagePullSecrets': ros.stringToRosTemplate(properties.imagePullSecrets),
       'ImageUrl': ros.stringToRosTemplate(properties.imageUrl),
+      'InitContainersConfig': ros.listMapper(rosApplicationInitContainersConfigPropertyToRosTemplate)(properties.initContainersConfig),
       'JarStartArgs': ros.stringToRosTemplate(properties.jarStartArgs),
       'JarStartOptions': ros.stringToRosTemplate(properties.jarStartOptions),
       'Jdk': ros.stringToRosTemplate(properties.jdk),
@@ -586,6 +606,7 @@ function rosApplicationPropsToRosTemplate(properties: any, enableResourcePropert
       'SaeVersion': ros.stringToRosTemplate(properties.saeVersion),
       'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
       'ServiceTags': ros.stringToRosTemplate(properties.serviceTags),
+      'SidecarContainersConfig': ros.listMapper(rosApplicationSidecarContainersConfigPropertyToRosTemplate)(properties.sidecarContainersConfig),
       'SlsConfigs': ros.stringToRosTemplate(properties.slsConfigs),
       'Tags': ros.listMapper(rosApplicationTagsPropertyToRosTemplate)(properties.tags),
       'TerminationGracePeriodSeconds': ros.numberToRosTemplate(properties.terminationGracePeriodSeconds),
@@ -735,6 +756,11 @@ export class RosApplication extends ros.RosResource {
     public enableNewArms: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property enableSidecarResourceIsolated: Whether to enable sidecar resource isolation.
+     */
+    public enableSidecarResourceIsolated: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property envs: Container environment variable parameters. For example: [{ "name": "envtmp", "value": "0"}]
      */
     public envs: string | ros.IResolvable | undefined;
@@ -748,6 +774,11 @@ export class RosApplication extends ros.RosResource {
      * @Property imageUrl: Mirroring address. Image only type of application can be configured to mirror address.
      */
     public imageUrl: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property initContainersConfig: Init container config.
+     */
+    public initContainersConfig: Array<RosApplication.InitContainersConfigProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property jarStartArgs: Jar package startup application parameters. Apply the default startup command: $ JAVA_HOME \/ bin \/ java $ JarStartOptions -jar $ CATALINA_OPTS "$ package_path"
@@ -935,6 +966,11 @@ export class RosApplication extends ros.RosResource {
     public serviceTags: string | ros.IResolvable | undefined;
 
     /**
+     * @Property sidecarContainersConfig: Sidecar container config.
+     */
+    public sidecarContainersConfig: Array<RosApplication.SidecarContainersConfigProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * @Property slsConfigs: Log collection configuration file
      */
     public slsConfigs: string | ros.IResolvable | undefined;
@@ -1016,9 +1052,11 @@ export class RosApplication extends ros.RosResource {
         this.edasContainerVersion = props.edasContainerVersion;
         this.enableEbpf = props.enableEbpf;
         this.enableNewArms = props.enableNewArms;
+        this.enableSidecarResourceIsolated = props.enableSidecarResourceIsolated;
         this.envs = props.envs;
         this.imagePullSecrets = props.imagePullSecrets;
         this.imageUrl = props.imageUrl;
+        this.initContainersConfig = props.initContainersConfig;
         this.jarStartArgs = props.jarStartArgs;
         this.jarStartOptions = props.jarStartOptions;
         this.jdk = props.jdk;
@@ -1050,6 +1088,7 @@ export class RosApplication extends ros.RosResource {
         this.saeVersion = props.saeVersion;
         this.securityGroupId = props.securityGroupId;
         this.serviceTags = props.serviceTags;
+        this.sidecarContainersConfig = props.sidecarContainersConfig;
         this.slsConfigs = props.slsConfigs;
         this.tags = props.tags;
         this.terminationGracePeriodSeconds = props.terminationGracePeriodSeconds;
@@ -1085,9 +1124,11 @@ export class RosApplication extends ros.RosResource {
             edasContainerVersion: this.edasContainerVersion,
             enableEbpf: this.enableEbpf,
             enableNewArms: this.enableNewArms,
+            enableSidecarResourceIsolated: this.enableSidecarResourceIsolated,
             envs: this.envs,
             imagePullSecrets: this.imagePullSecrets,
             imageUrl: this.imageUrl,
+            initContainersConfig: this.initContainersConfig,
             jarStartArgs: this.jarStartArgs,
             jarStartOptions: this.jarStartOptions,
             jdk: this.jdk,
@@ -1119,6 +1160,7 @@ export class RosApplication extends ros.RosResource {
             saeVersion: this.saeVersion,
             securityGroupId: this.securityGroupId,
             serviceTags: this.serviceTags,
+            sidecarContainersConfig: this.sidecarContainersConfig,
             slsConfigs: this.slsConfigs,
             tags: this.tags,
             terminationGracePeriodSeconds: this.terminationGracePeriodSeconds,
@@ -1133,6 +1175,176 @@ export class RosApplication extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosApplicationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosApplication {
+    /**
+     * @stability external
+     */
+    export interface InitContainersConfigProperty {
+        /**
+         * @Property commandArgs: The command arguments to run in the init container.
+         */
+        readonly commandArgs?: string | ros.IResolvable;
+        /**
+         * @Property command: The command to run in the init container.
+         */
+        readonly command?: string | ros.IResolvable;
+        /**
+         * @Property envs: Container environment variable parameters. For example: [{ "name": "envtmp", "value": "0"}]
+         */
+        readonly envs?: string | ros.IResolvable;
+        /**
+         * @Property imageUrl: Mirroring address. Image only type of application can be configured to mirror address.
+         */
+        readonly imageUrl?: string | ros.IResolvable;
+        /**
+         * @Property name: The name of the init container.
+         */
+        readonly name: string | ros.IResolvable;
+        /**
+         * @Property configMapMountDesc: ConfigMap mount description. Use the configuration items created on the namespace configuration items page to inject configuration information into the container.
+         */
+        readonly configMapMountDesc?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `InitContainersConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `InitContainersConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosApplication_InitContainersConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('commandArgs', ros.validateString)(properties.commandArgs));
+    errors.collect(ros.propertyValidator('command', ros.validateString)(properties.command));
+    errors.collect(ros.propertyValidator('envs', ros.validateString)(properties.envs));
+    errors.collect(ros.propertyValidator('imageUrl', ros.validateString)(properties.imageUrl));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    errors.collect(ros.propertyValidator('configMapMountDesc', ros.validateString)(properties.configMapMountDesc));
+    return errors.wrap('supplied properties not correct for "InitContainersConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SAE::Application.InitContainersConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `InitContainersConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SAE::Application.InitContainersConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosApplicationInitContainersConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosApplication_InitContainersConfigPropertyValidator(properties).assertSuccess();
+    return {
+      'CommandArgs': ros.stringToRosTemplate(properties.commandArgs),
+      'Command': ros.stringToRosTemplate(properties.command),
+      'Envs': ros.stringToRosTemplate(properties.envs),
+      'ImageUrl': ros.stringToRosTemplate(properties.imageUrl),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'ConfigMapMountDesc': ros.stringToRosTemplate(properties.configMapMountDesc),
+    };
+}
+
+export namespace RosApplication {
+    /**
+     * @stability external
+     */
+    export interface SidecarContainersConfigProperty {
+        /**
+         * @Property commandArgs: The command arguments to run in the init container.
+         */
+        readonly commandArgs?: string | ros.IResolvable;
+        /**
+         * @Property acrInstanceId: The ID of the ACR instance.
+         */
+        readonly acrInstanceId?: string | ros.IResolvable;
+        /**
+         * @Property command: The command to run in the init container.
+         */
+        readonly command?: string | ros.IResolvable;
+        /**
+         * @Property memory: The amount of memory allocated to the sidecar container.
+         */
+        readonly memory: number | ros.IResolvable;
+        /**
+         * @Property envs: Container environment variable parameters. For example: [{ "name": "envtmp", "value": "0"}]
+         */
+        readonly envs?: string | ros.IResolvable;
+        /**
+         * @Property imageUrl: Mirroring address. Image only type of application can be configured to mirror address.
+         */
+        readonly imageUrl?: string | ros.IResolvable;
+        /**
+         * @Property cpu: The number of CPU cores allocated to the sidecar container.
+         */
+        readonly cpu: number | ros.IResolvable;
+        /**
+         * @Property emptyDirDesc: EmptyDir mount description.
+         */
+        readonly emptyDirDesc?: string | ros.IResolvable;
+        /**
+         * @Property name: The name of the sidecar container.
+         */
+        readonly name: string | ros.IResolvable;
+        /**
+         * @Property configMapMountDesc: ConfigMap mount description. Use the configuration items created on the namespace configuration items page to inject configuration information into the container.
+         */
+        readonly configMapMountDesc?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `SidecarContainersConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `SidecarContainersConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosApplication_SidecarContainersConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('commandArgs', ros.validateString)(properties.commandArgs));
+    errors.collect(ros.propertyValidator('acrInstanceId', ros.validateString)(properties.acrInstanceId));
+    errors.collect(ros.propertyValidator('command', ros.validateString)(properties.command));
+    errors.collect(ros.propertyValidator('memory', ros.requiredValidator)(properties.memory));
+    errors.collect(ros.propertyValidator('memory', ros.validateNumber)(properties.memory));
+    errors.collect(ros.propertyValidator('envs', ros.validateString)(properties.envs));
+    errors.collect(ros.propertyValidator('imageUrl', ros.validateString)(properties.imageUrl));
+    errors.collect(ros.propertyValidator('cpu', ros.requiredValidator)(properties.cpu));
+    errors.collect(ros.propertyValidator('cpu', ros.validateNumber)(properties.cpu));
+    errors.collect(ros.propertyValidator('emptyDirDesc', ros.validateString)(properties.emptyDirDesc));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    errors.collect(ros.propertyValidator('configMapMountDesc', ros.validateString)(properties.configMapMountDesc));
+    return errors.wrap('supplied properties not correct for "SidecarContainersConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SAE::Application.SidecarContainersConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `SidecarContainersConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SAE::Application.SidecarContainersConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosApplicationSidecarContainersConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosApplication_SidecarContainersConfigPropertyValidator(properties).assertSuccess();
+    return {
+      'CommandArgs': ros.stringToRosTemplate(properties.commandArgs),
+      'AcrInstanceId': ros.stringToRosTemplate(properties.acrInstanceId),
+      'Command': ros.stringToRosTemplate(properties.command),
+      'Memory': ros.numberToRosTemplate(properties.memory),
+      'Envs': ros.stringToRosTemplate(properties.envs),
+      'ImageUrl': ros.stringToRosTemplate(properties.imageUrl),
+      'Cpu': ros.numberToRosTemplate(properties.cpu),
+      'EmptyDirDesc': ros.stringToRosTemplate(properties.emptyDirDesc),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'ConfigMapMountDesc': ros.stringToRosTemplate(properties.configMapMountDesc),
+    };
 }
 
 export namespace RosApplication {

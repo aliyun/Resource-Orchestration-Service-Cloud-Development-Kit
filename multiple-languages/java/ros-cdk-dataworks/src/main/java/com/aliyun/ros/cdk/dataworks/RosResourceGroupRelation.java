@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dataworks;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DataWorks::ResourceGroupRelation</code>, which is used to associate a resource group with a workspace.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.345Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.078Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dataworks.$Module.class, fqn = "@alicloud/ros-cdk-dataworks.RosResourceGroupRelation")
 public class RosResourceGroupRelation extends com.aliyun.ros.cdk.core.RosResource {
 

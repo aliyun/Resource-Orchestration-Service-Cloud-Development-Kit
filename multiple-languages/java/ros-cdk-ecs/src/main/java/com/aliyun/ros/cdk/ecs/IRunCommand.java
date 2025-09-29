@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Represents a <code>RunCommand</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.206Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:24.070Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.IRunCommand")
 @software.amazon.jsii.Jsii.Proxy(IRunCommand.Jsii$Proxy.class)
 public interface IRunCommand extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

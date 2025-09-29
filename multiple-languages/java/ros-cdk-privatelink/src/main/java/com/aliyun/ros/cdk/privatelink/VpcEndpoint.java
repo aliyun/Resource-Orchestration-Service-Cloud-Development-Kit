@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.privatelink;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::PrivateLink::VpcEndpoint</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::PrivateLink::VpcEndpoint</code>, which is used to create an endpoint.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.540Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:28.265Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.VpcEndpoint")
 public class VpcEndpoint extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.privatelink.IVpcEndpoint {
 
@@ -176,31 +176,6 @@ public class VpcEndpoint extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property securityGroupId: The security group associated with the endpoint network interface.
-         * <p>
-         * The security group can control the data communication from the VPC to the endpoint network interface.
-         * <p>
-         * @return {@code this}
-         * @param securityGroupId Property securityGroupId: The security group associated with the endpoint network interface. This parameter is required.
-         */
-        public Builder securityGroupId(final com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
-            this.props.securityGroupId(securityGroupId);
-            return this;
-        }
-        /**
-         * Property securityGroupId: The security group associated with the endpoint network interface.
-         * <p>
-         * The security group can control the data communication from the VPC to the endpoint network interface.
-         * <p>
-         * @return {@code this}
-         * @param securityGroupId Property securityGroupId: The security group associated with the endpoint network interface. This parameter is required.
-         */
-        public Builder securityGroupId(final java.util.List<? extends java.lang.Object> securityGroupId) {
-            this.props.securityGroupId(securityGroupId);
-            return this;
-        }
-
-        /**
          * Property vpcId: The VPC to which the endpoint belongs.
          * <p>
          * @return {@code this}
@@ -320,6 +295,31 @@ public class VpcEndpoint extends com.aliyun.ros.cdk.core.Resource implements com
          */
         public Builder protectedEnabled(final com.aliyun.ros.cdk.core.IResolvable protectedEnabled) {
             this.props.protectedEnabled(protectedEnabled);
+            return this;
+        }
+
+        /**
+         * Property securityGroupId: The security group associated with the endpoint network interface.
+         * <p>
+         * The security group can control the data communication from the VPC to the endpoint network interface.
+         * <p>
+         * @return {@code this}
+         * @param securityGroupId Property securityGroupId: The security group associated with the endpoint network interface. This parameter is required.
+         */
+        public Builder securityGroupId(final com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
+            this.props.securityGroupId(securityGroupId);
+            return this;
+        }
+        /**
+         * Property securityGroupId: The security group associated with the endpoint network interface.
+         * <p>
+         * The security group can control the data communication from the VPC to the endpoint network interface.
+         * <p>
+         * @return {@code this}
+         * @param securityGroupId Property securityGroupId: The security group associated with the endpoint network interface. This parameter is required.
+         */
+        public Builder securityGroupId(final java.util.List<? extends java.lang.Object> securityGroupId) {
+            this.props.securityGroupId(securityGroupId);
             return this;
         }
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dts;
 /**
  * Represents a <code>MigrationJob2</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.731Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.467Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.IMigrationJob2")
 @software.amazon.jsii.Jsii.Proxy(IMigrationJob2.Jsii$Proxy.class)
 public interface IMigrationJob2 extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

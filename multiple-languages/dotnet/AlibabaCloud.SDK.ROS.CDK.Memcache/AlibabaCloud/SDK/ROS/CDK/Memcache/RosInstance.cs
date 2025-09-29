@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Memcache
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::Memcache::Instance`ALIYUN::MEMCACHE::Instance is used to create an ApsaraDB for Memcache (OCS) instance.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::Memcache::Instance`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-memcache-instance

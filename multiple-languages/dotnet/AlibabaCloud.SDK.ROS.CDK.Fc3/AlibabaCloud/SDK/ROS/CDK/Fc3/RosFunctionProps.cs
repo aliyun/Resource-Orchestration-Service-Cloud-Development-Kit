@@ -327,6 +327,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc3
             }
         }
 
+        private object? _disableOndemand;
+
+        /// <remarks>
+        /// <strong>Property</strong>: disableOndemand: Whether to disable the creation of on-demand instances. When enabled, on-demand instances will not be created, and only reserved instances can be used.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "disableOndemand", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? DisableOndemand
+        {
+            get => _disableOndemand;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _disableOndemand = value;
+            }
+        }
+
         private object? _diskSize;
 
         /// <remarks>
@@ -496,6 +529,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc3
                     }
                 }
                 _instanceConcurrency = value;
+            }
+        }
+
+        private object? _instanceIsolationMode;
+
+        /// <remarks>
+        /// <strong>Property</strong>: instanceIsolationMode: Instance isolation mode.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "instanceIsolationMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? InstanceIsolationMode
+        {
+            get => _instanceIsolationMode;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _instanceIsolationMode = value;
             }
         }
 
@@ -797,6 +863,72 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc3
                     }
                 }
                 _role = value;
+            }
+        }
+
+        private object? _sessionAffinity;
+
+        /// <remarks>
+        /// <strong>Property</strong>: sessionAffinity: The session affinity policy for Function Compute requests. Set to MCP_SSE to implement MCP SSE protocol request affinity. Set to GENERATED_COOKIE for cookie-based affinity. Set to HEADER_FIELD for header-based affinity. If not set or set to NONE, there is no affinity effect, and requests are routed according to the default scheduling policy of Function Compute.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "sessionAffinity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? SessionAffinity
+        {
+            get => _sessionAffinity;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _sessionAffinity = value;
+            }
+        }
+
+        private object? _sessionAffinityConfig;
+
+        /// <remarks>
+        /// <strong>Property</strong>: sessionAffinityConfig: Session affinity configuration.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "sessionAffinityConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+        public object? SessionAffinityConfig
+        {
+            get => _sessionAffinityConfig;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case System.Collections.Generic.IDictionary<string, object> cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, System.Collections.Generic.IDictionary<string, object>; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _sessionAffinityConfig = value;
             }
         }
 

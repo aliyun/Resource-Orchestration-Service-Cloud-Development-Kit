@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudsso;
 /**
  * Represents a <code>UserProvision</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:44.732Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.330Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudsso.$Module.class, fqn = "@alicloud/ros-cdk-cloudsso.IUserProvision")
 @software.amazon.jsii.Jsii.Proxy(IUserProvision.Jsii$Proxy.class)
 public interface IUserProvision extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

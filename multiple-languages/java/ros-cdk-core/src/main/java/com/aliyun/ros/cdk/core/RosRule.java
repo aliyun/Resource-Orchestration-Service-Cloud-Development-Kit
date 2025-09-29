@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Rules are used to verify that the parameter values passed to the template when the resource stack is created or updated are as expected.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:43.012Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:20.275Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RosRule")
 public class RosRule extends com.aliyun.ros.cdk.core.RosElement {
 

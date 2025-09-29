@@ -361,6 +361,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: encryptionProviderKey: The ID of the key that is managed by Key Management Service (KMS). This key is used to encrypt data disks.You can use KMS in only professional managed Kubernetes clusters.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "encryptionProviderKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? EncryptionProviderKey
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: endpointPublicAccess: Whether to enable the public network API Server:
         /// true: which means that the public network API Server is open.
         /// false: If set to false, the API server on the public network will not be created, only the API server on the private network will be created.Default value: true.
@@ -860,6 +891,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                 }
             }
 
+            /// <remarks>
+            /// <strong>Property</strong>: version: When the value is empty, the latest version is selected by default.
+            /// </remarks>
+            [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Version
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
             [JsiiTypeProxy(nativeType: typeof(IAddonsProperty), fullyQualifiedName: "@alicloud/ros-cdk-cs.RosASKCluster.AddonsProperty")]
             internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cs.RosASKCluster.IAddonsProperty
             {
@@ -892,6 +936,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                 [JsiiOptional]
                 [JsiiProperty(name: "disabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? Disabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: version: When the value is empty, the latest version is selected by default.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Version
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -997,6 +1051,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                         }
                     }
                     _disabled = value;
+                }
+            }
+
+            private object? _version;
+
+            /// <remarks>
+            /// <strong>Property</strong>: version: When the value is empty, the latest version is selected by default.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Version
+            {
+                get => _version;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _version = value;
                 }
             }
         }

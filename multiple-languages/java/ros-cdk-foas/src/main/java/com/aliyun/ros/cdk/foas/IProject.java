@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.foas;
 /**
  * Represents a <code>Project</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.771Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:26.035Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.foas.$Module.class, fqn = "@alicloud/ros-cdk-foas.IProject")
 @software.amazon.jsii.Jsii.Proxy(IProject.Jsii$Proxy.class)
 public interface IProject extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

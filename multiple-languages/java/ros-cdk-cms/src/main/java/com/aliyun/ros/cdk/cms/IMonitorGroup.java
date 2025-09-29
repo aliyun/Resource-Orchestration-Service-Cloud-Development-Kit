@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Represents a <code>MonitorGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:44.826Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.447Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.IMonitorGroup")
 @software.amazon.jsii.Jsii.Proxy(IMonitorGroup.Jsii$Proxy.class)
 public interface IMonitorGroup extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

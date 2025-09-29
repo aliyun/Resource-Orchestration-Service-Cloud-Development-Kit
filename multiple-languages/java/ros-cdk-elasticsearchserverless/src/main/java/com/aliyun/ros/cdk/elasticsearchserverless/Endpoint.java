@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.elasticsearchserverless;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ElasticSearchServerless::Endpoint</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ElasticSearchServerless::Endpoint</code>The , which is used to create an endpoint.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.159Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:25.150Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.elasticsearchserverless.$Module.class, fqn = "@alicloud/ros-cdk-elasticsearchserverless.Endpoint")
 public class Endpoint extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.elasticsearchserverless.IEndpoint {
 
@@ -166,6 +166,27 @@ public class Endpoint extends com.aliyun.ros.cdk.core.Resource implements com.al
          */
         public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props.name(name);
+            return this;
+        }
+
+        /**
+         * Property securityGroupIds: A list of security groups.
+         * <p>
+         * @return {@code this}
+         * @param securityGroupIds Property securityGroupIds: A list of security groups. This parameter is required.
+         */
+        public Builder securityGroupIds(final com.aliyun.ros.cdk.core.IResolvable securityGroupIds) {
+            this.props.securityGroupIds(securityGroupIds);
+            return this;
+        }
+        /**
+         * Property securityGroupIds: A list of security groups.
+         * <p>
+         * @return {@code this}
+         * @param securityGroupIds Property securityGroupIds: A list of security groups. This parameter is required.
+         */
+        public Builder securityGroupIds(final java.util.List<? extends java.lang.Object> securityGroupIds) {
+            this.props.securityGroupIds(securityGroupIds);
             return this;
         }
 

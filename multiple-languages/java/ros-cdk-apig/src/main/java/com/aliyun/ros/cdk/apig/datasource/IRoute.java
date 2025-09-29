@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apig.datasource;
 /**
  * Represents a <code>Route</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:43.648Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:21.033Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.datasource.IRoute")
 @software.amazon.jsii.Jsii.Proxy(IRoute.Jsii$Proxy.class)
 public interface IRoute extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

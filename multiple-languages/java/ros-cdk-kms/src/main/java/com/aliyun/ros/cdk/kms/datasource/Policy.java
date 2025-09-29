@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kms.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::KMS::Policy</code>, which is used to query the information about a permission policy.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.416Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:26.764Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.datasource.Policy")
 public class Policy extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.kms.datasource.IPolicy {
 

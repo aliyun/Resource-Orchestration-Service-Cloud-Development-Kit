@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::EMR::ClusterServiceConfigs`, which is used to create or modify the configurations of a specified service in a cluster.
+// This class encapsulates and extends the ROS resource type `ALIYUN::EMR::ClusterServiceConfigs`.
 type ClusterServiceConfigs interface {
 	alicloudroscdkcore.Resource
 	IClusterServiceConfigs

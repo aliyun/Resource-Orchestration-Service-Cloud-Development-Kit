@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos;
 /**
  * Represents a <code>StateConfiguration</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.925Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:27.305Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.IStateConfiguration")
 @software.amazon.jsii.Jsii.Proxy(IStateConfiguration.Jsii$Proxy.class)
 public interface IStateConfiguration extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

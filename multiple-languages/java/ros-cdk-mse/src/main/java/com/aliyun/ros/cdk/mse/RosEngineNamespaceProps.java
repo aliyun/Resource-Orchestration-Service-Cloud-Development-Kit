@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.mse;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-enginenamespace
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.676Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:27.063Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.RosEngineNamespaceProps")
 @software.amazon.jsii.Jsii.Proxy(RosEngineNamespaceProps.Jsii$Proxy.class)
 public interface RosEngineNamespaceProps extends software.amazon.jsii.JsiiSerializable {

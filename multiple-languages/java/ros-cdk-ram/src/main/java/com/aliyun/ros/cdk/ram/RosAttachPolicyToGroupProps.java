@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ram;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-attachpolicytogroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.674Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:28.432Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosAttachPolicyToGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosAttachPolicyToGroupProps.Jsii$Proxy.class)
 public interface RosAttachPolicyToGroupProps extends software.amazon.jsii.JsiiSerializable {

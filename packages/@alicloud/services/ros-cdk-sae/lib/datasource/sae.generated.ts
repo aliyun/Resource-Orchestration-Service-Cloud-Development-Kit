@@ -177,6 +177,246 @@ export class RosApplications extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosNamespace`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sae-namespace
+ */
+export interface RosNamespaceProps {
+
+    /**
+     * @Property namespaceId: The ID of the namespace.
+     */
+    readonly namespaceId?: string | ros.IResolvable;
+
+    /**
+     * @Property nameSpaceShortId: The ID of the short namespace.
+     */
+    readonly nameSpaceShortId?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosNamespaceProps`
+ *
+ * @param properties - the TypeScript properties of a `RosNamespaceProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosNamespacePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('nameSpaceShortId', ros.validateString)(properties.nameSpaceShortId));
+    errors.collect(ros.propertyValidator('namespaceId', ros.validateString)(properties.namespaceId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
+    return errors.wrap('supplied properties not correct for "RosNamespaceProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::SAE::Namespace` resource
+ *
+ * @param properties - the TypeScript properties of a `RosNamespaceProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::SAE::Namespace` resource.
+ */
+// @ts-ignore TS6133
+function rosNamespacePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosNamespacePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'NamespaceId': ros.stringToRosTemplate(properties.namespaceId),
+      'NameSpaceShortId': ros.stringToRosTemplate(properties.nameSpaceShortId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::SAE::Namespace`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Namespace` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sae-namespace
+ */
+export class RosNamespace extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::SAE::Namespace";
+
+    /**
+     * @Attribute AppCount: The number of applications.
+     */
+    public readonly attrAppCount: ros.IResolvable;
+
+    /**
+     * @Attribute BelongRegion: The region to which the namespace belongs.
+     */
+    public readonly attrBelongRegion: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The description of the namespace.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute JumpServerAppId: The ID of the jump server application.
+     */
+    public readonly attrJumpServerAppId: ros.IResolvable;
+
+    /**
+     * @Attribute JumpServerIp: The IP address of the jump server.
+     */
+    public readonly attrJumpServerIp: ros.IResolvable;
+
+    /**
+     * @Attribute LastChangeOrderId: The ID of the change order.
+     */
+    public readonly attrLastChangeOrderId: ros.IResolvable;
+
+    /**
+     * @Attribute LastChangeOrderRunning: Indicates whether a change order is being executed in the namespace.
+     */
+    public readonly attrLastChangeOrderRunning: ros.IResolvable;
+
+    /**
+     * @Attribute LastChangeOrderStatus: The status of the latest change order.
+     */
+    public readonly attrLastChangeOrderStatus: ros.IResolvable;
+
+    /**
+     * @Attribute NameSpaceShortId: The ID of the short namespace.
+     */
+    public readonly attrNameSpaceShortId: ros.IResolvable;
+
+    /**
+     * @Attribute NamespaceId: The ID of the namespace.
+     */
+    public readonly attrNamespaceId: ros.IResolvable;
+
+    /**
+     * @Attribute NamespaceName: The name of the namespace.
+     */
+    public readonly attrNamespaceName: ros.IResolvable;
+
+    /**
+     * @Attribute NotificationExpired: Indicates whether the notification of a change order is expired.
+     */
+    public readonly attrNotificationExpired: ros.IResolvable;
+
+    /**
+     * @Attribute SecurityGroupId: The ID of the security group.
+     */
+    public readonly attrSecurityGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute TenantId: The ID of the tenant in the SAE namespace.
+     */
+    public readonly attrTenantId: ros.IResolvable;
+
+    /**
+     * @Attribute UserId: The ID of the user.
+     */
+    public readonly attrUserId: ros.IResolvable;
+
+    /**
+     * @Attribute VSwitchId: The ID of the vSwitch.
+     */
+    public readonly attrVSwitchId: ros.IResolvable;
+
+    /**
+     * @Attribute VSwitchName: The name of the vSwitch.
+     */
+    public readonly attrVSwitchName: ros.IResolvable;
+
+    /**
+     * @Attribute VpcId: The ID of the virtual private cloud (VPC).
+     */
+    public readonly attrVpcId: ros.IResolvable;
+
+    /**
+     * @Attribute VpcName: The name of the VPC.
+     */
+    public readonly attrVpcName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property namespaceId: The ID of the namespace.
+     */
+    public namespaceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property nameSpaceShortId: The ID of the short namespace.
+     */
+    public nameSpaceShortId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosNamespaceProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosNamespace.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAppCount = this.getAtt('AppCount');
+        this.attrBelongRegion = this.getAtt('BelongRegion');
+        this.attrDescription = this.getAtt('Description');
+        this.attrJumpServerAppId = this.getAtt('JumpServerAppId');
+        this.attrJumpServerIp = this.getAtt('JumpServerIp');
+        this.attrLastChangeOrderId = this.getAtt('LastChangeOrderId');
+        this.attrLastChangeOrderRunning = this.getAtt('LastChangeOrderRunning');
+        this.attrLastChangeOrderStatus = this.getAtt('LastChangeOrderStatus');
+        this.attrNameSpaceShortId = this.getAtt('NameSpaceShortId');
+        this.attrNamespaceId = this.getAtt('NamespaceId');
+        this.attrNamespaceName = this.getAtt('NamespaceName');
+        this.attrNotificationExpired = this.getAtt('NotificationExpired');
+        this.attrSecurityGroupId = this.getAtt('SecurityGroupId');
+        this.attrTenantId = this.getAtt('TenantId');
+        this.attrUserId = this.getAtt('UserId');
+        this.attrVSwitchId = this.getAtt('VSwitchId');
+        this.attrVSwitchName = this.getAtt('VSwitchName');
+        this.attrVpcId = this.getAtt('VpcId');
+        this.attrVpcName = this.getAtt('VpcName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.namespaceId = props.namespaceId;
+        this.nameSpaceShortId = props.nameSpaceShortId;
+        this.refreshOptions = props.refreshOptions;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            namespaceId: this.namespaceId,
+            nameSpaceShortId: this.nameSpaceShortId,
+            refreshOptions: this.refreshOptions,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosNamespacePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosNamespaces`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sae-namespaces
  */

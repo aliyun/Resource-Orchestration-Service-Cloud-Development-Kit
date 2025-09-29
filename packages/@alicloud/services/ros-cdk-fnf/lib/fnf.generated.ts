@@ -97,7 +97,7 @@ function rosFlowPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::FNF::Flow`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FNF::Flow`, which is used to create a flow.
  * @Note This class does not contain additional functions, so it is recommended to use the `Flow` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fnf-flow
  */

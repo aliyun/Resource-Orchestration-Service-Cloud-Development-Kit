@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.aligreen;
 /**
  * Represents a <code>Callback</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:43.377Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:20.717Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.aligreen.$Module.class, fqn = "@alicloud/ros-cdk-aligreen.ICallback")
 @software.amazon.jsii.Jsii.Proxy(ICallback.Jsii$Proxy.class)
 public interface ICallback extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

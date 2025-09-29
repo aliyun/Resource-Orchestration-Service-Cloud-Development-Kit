@@ -312,9 +312,6 @@ func (j *jsiiProxy_RosVpcEndpoint) validateSetProtectedEnabledParameters(val int
 }
 
 func (j *jsiiProxy_RosVpcEndpoint) validateSetSecurityGroupIdParameters(val interface{}) error {
-	if val == nil {
-		return fmt.Errorf("parameter val is required, but nil was provided")
-	}
 	switch val.(type) {
 	case alicloudroscdkcore.IResolvable:
 		// ok

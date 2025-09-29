@@ -37,6 +37,8 @@ type RosASKCluster interface {
 	SetDeletionProtection(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	EncryptionProviderKey() interface{}
+	SetEncryptionProviderKey(val interface{})
 	EndpointPublicAccess() interface{}
 	SetEndpointPublicAccess(val interface{})
 	KubernetesVersion() interface{}
@@ -387,6 +389,16 @@ func (j *jsiiProxy_RosASKCluster) EnableResourcePropertyConstraint() *bool {
 	return returns
 }
 
+func (j *jsiiProxy_RosASKCluster) EncryptionProviderKey() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"encryptionProviderKey",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosASKCluster) EndpointPublicAccess() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -696,6 +708,17 @@ func (j *jsiiProxy_RosASKCluster)SetEnableResourcePropertyConstraint(val *bool) 
 	_jsii_.Set(
 		j,
 		"enableResourcePropertyConstraint",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosASKCluster)SetEncryptionProviderKey(val interface{}) {
+	if err := j.validateSetEncryptionProviderKeyParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"encryptionProviderKey",
 		val,
 	)
 }

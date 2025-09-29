@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.edas;
 /**
  * Represents a <code>K8sCluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.948Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:24.921Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.IK8sCluster")
 @software.amazon.jsii.Jsii.Proxy(IK8sCluster.Jsii$Proxy.class)
 public interface IK8sCluster extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

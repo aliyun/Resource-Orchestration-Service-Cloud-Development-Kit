@@ -1,6 +1,7 @@
 @alicloud/ros-cdk-acs.Cluster=com.aliyun.ros.cdk.acs.Cluster
 @alicloud/ros-cdk-acs.ClusterProps=com.aliyun.ros.cdk.acs.ClusterProps
 @alicloud/ros-cdk-acs.ICluster=com.aliyun.ros.cdk.acs.ICluster
+@alicloud/ros-cdk-acs.IVirtualCapacityReservation=com.aliyun.ros.cdk.acs.IVirtualCapacityReservation
 @alicloud/ros-cdk-acs.RosCluster=com.aliyun.ros.cdk.acs.RosCluster
 @alicloud/ros-cdk-acs.RosCluster.AddonsProperty=com.aliyun.ros.cdk.acs.RosCluster$AddonsProperty
 @alicloud/ros-cdk-acs.RosCluster.DeleteOptionsProperty=com.aliyun.ros.cdk.acs.RosCluster$DeleteOptionsProperty
@@ -9,3 +10,9 @@
 @alicloud/ros-cdk-acs.RosCluster.PodPostpaidSpecProperty=com.aliyun.ros.cdk.acs.RosCluster$PodPostpaidSpecProperty
 @alicloud/ros-cdk-acs.RosCluster.TagsProperty=com.aliyun.ros.cdk.acs.RosCluster$TagsProperty
 @alicloud/ros-cdk-acs.RosClusterProps=com.aliyun.ros.cdk.acs.RosClusterProps
+@alicloud/ros-cdk-acs.RosVirtualCapacityReservation=com.aliyun.ros.cdk.acs.RosVirtualCapacityReservation
+@alicloud/ros-cdk-acs.RosVirtualCapacityReservation.GpuQuantityConfigsProperty=com.aliyun.ros.cdk.acs.RosVirtualCapacityReservation$GpuQuantityConfigsProperty
+@alicloud/ros-cdk-acs.RosVirtualCapacityReservation.PodPostpaidSpecProperty=com.aliyun.ros.cdk.acs.RosVirtualCapacityReservation$PodPostpaidSpecProperty
+@alicloud/ros-cdk-acs.RosVirtualCapacityReservationProps=com.aliyun.ros.cdk.acs.RosVirtualCapacityReservationProps
+@alicloud/ros-cdk-acs.VirtualCapacityReservation=com.aliyun.ros.cdk.acs.VirtualCapacityReservation
+@alicloud/ros-cdk-acs.VirtualCapacityReservationProps=com.aliyun.ros.cdk.acs.VirtualCapacityReservationProps

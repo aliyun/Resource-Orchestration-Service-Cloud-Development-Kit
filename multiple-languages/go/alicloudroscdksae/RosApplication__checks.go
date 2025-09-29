@@ -578,6 +578,23 @@ func (j *jsiiProxy_RosApplication) validateSetEnableResourcePropertyConstraintPa
 	return nil
 }
 
+func (j *jsiiProxy_RosApplication) validateSetEnableSidecarResourceIsolatedParameters(val interface{}) error {
+	switch val.(type) {
+	case *bool:
+		// ok
+	case bool:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *bool, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosApplication) validateSetEnvsParameters(val interface{}) error {
 	switch val.(type) {
 	case *string:
@@ -623,6 +640,66 @@ func (j *jsiiProxy_RosApplication) validateSetImageUrlParameters(val interface{}
 	default:
 		if !_jsii_.IsAnonymousProxy(val) {
 			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosApplication) validateSetInitContainersConfigParameters(val interface{}) error {
+	switch val.(type) {
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	case *[]interface{}:
+		val := val.(*[]interface{})
+		for idx_97dfc6, v := range *val {
+			switch v.(type) {
+			case alicloudroscdkcore.IResolvable:
+				// ok
+			case *RosApplication_InitContainersConfigProperty:
+				v := v.(*RosApplication_InitContainersConfigProperty)
+				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
+					return err
+				}
+			case RosApplication_InitContainersConfigProperty:
+				v_ := v.(RosApplication_InitContainersConfigProperty)
+				v := &v_
+				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
+					return err
+				}
+			default:
+				if !_jsii_.IsAnonymousProxy(v) {
+					return fmt.Errorf("parameter val[%#v] must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosApplication_InitContainersConfigProperty; received %#v (a %T)", idx_97dfc6, v, v)
+				}
+			}
+		}
+	case []interface{}:
+		val_ := val.([]interface{})
+		val := &val_
+		for idx_97dfc6, v := range *val {
+			switch v.(type) {
+			case alicloudroscdkcore.IResolvable:
+				// ok
+			case *RosApplication_InitContainersConfigProperty:
+				v := v.(*RosApplication_InitContainersConfigProperty)
+				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
+					return err
+				}
+			case RosApplication_InitContainersConfigProperty:
+				v_ := v.(RosApplication_InitContainersConfigProperty)
+				v := &v_
+				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
+					return err
+				}
+			default:
+				if !_jsii_.IsAnonymousProxy(v) {
+					return fmt.Errorf("parameter val[%#v] must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosApplication_InitContainersConfigProperty; received %#v (a %T)", idx_97dfc6, v, v)
+				}
+			}
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *[]interface{}; received %#v (a %T)", val, val)
 		}
 	}
 
@@ -1310,6 +1387,66 @@ func (j *jsiiProxy_RosApplication) validateSetServiceTagsParameters(val interfac
 	default:
 		if !_jsii_.IsAnonymousProxy(val) {
 			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosApplication) validateSetSidecarContainersConfigParameters(val interface{}) error {
+	switch val.(type) {
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	case *[]interface{}:
+		val := val.(*[]interface{})
+		for idx_97dfc6, v := range *val {
+			switch v.(type) {
+			case alicloudroscdkcore.IResolvable:
+				// ok
+			case *RosApplication_SidecarContainersConfigProperty:
+				v := v.(*RosApplication_SidecarContainersConfigProperty)
+				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
+					return err
+				}
+			case RosApplication_SidecarContainersConfigProperty:
+				v_ := v.(RosApplication_SidecarContainersConfigProperty)
+				v := &v_
+				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
+					return err
+				}
+			default:
+				if !_jsii_.IsAnonymousProxy(v) {
+					return fmt.Errorf("parameter val[%#v] must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosApplication_SidecarContainersConfigProperty; received %#v (a %T)", idx_97dfc6, v, v)
+				}
+			}
+		}
+	case []interface{}:
+		val_ := val.([]interface{})
+		val := &val_
+		for idx_97dfc6, v := range *val {
+			switch v.(type) {
+			case alicloudroscdkcore.IResolvable:
+				// ok
+			case *RosApplication_SidecarContainersConfigProperty:
+				v := v.(*RosApplication_SidecarContainersConfigProperty)
+				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
+					return err
+				}
+			case RosApplication_SidecarContainersConfigProperty:
+				v_ := v.(RosApplication_SidecarContainersConfigProperty)
+				v := &v_
+				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
+					return err
+				}
+			default:
+				if !_jsii_.IsAnonymousProxy(v) {
+					return fmt.Errorf("parameter val[%#v] must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosApplication_SidecarContainersConfigProperty; received %#v (a %T)", idx_97dfc6, v, v)
+				}
+			}
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *[]interface{}; received %#v (a %T)", val, val)
 		}
 	}
 

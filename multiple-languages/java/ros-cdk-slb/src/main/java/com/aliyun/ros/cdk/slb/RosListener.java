@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SLB::Listener</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:50.674Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:29.782Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosListener")
 public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 

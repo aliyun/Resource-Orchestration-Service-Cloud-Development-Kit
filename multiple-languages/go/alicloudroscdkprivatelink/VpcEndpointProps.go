@@ -5,10 +5,6 @@ package alicloudroscdkprivatelink
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpoint
 type VpcEndpointProps struct {
-	// Property securityGroupId: The security group associated with the endpoint network interface.
-	//
-	// The security group can control the data communication from the VPC to the endpoint network interface.
-	SecurityGroupId interface{} `field:"required" json:"securityGroupId" yaml:"securityGroupId"`
 	// Property vpcId: The VPC to which the endpoint belongs.
 	VpcId interface{} `field:"required" json:"vpcId" yaml:"vpcId"`
 	// Property endpointDescription: The description of the endpoint.
@@ -28,6 +24,10 @@ type VpcEndpointProps struct {
 	// true: yes After user authentication is enabled, only the user who creates the endpoint can modify or delete the endpoint in STS mode.
 	// false (default): no.
 	ProtectedEnabled interface{} `field:"optional" json:"protectedEnabled" yaml:"protectedEnabled"`
+	// Property securityGroupId: The security group associated with the endpoint network interface.
+	//
+	// The security group can control the data communication from the VPC to the endpoint network interface.
+	SecurityGroupId interface{} `field:"optional" json:"securityGroupId" yaml:"securityGroupId"`
 	// Property serviceId: The endpoint service that is associated with the endpoint.
 	//
 	// One of ServiceId and ServiceName is required.

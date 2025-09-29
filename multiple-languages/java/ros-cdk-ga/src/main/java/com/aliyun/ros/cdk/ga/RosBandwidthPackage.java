@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ga;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::GA::BandwidthPackage</code>, which is used to create a bandwidth plan.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::GA::BandwidthPackage</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.870Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:26.132Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.RosBandwidthPackage")
 public class RosBandwidthPackage extends com.aliyun.ros.cdk.core.RosResource {
 

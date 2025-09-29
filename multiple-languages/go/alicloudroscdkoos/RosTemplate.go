@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Template`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Template`, which is used to create a template.
 type RosTemplate interface {
 	alicloudroscdkcore.RosResource
 	AttrExecutionPolicy() alicloudroscdkcore.IResolvable

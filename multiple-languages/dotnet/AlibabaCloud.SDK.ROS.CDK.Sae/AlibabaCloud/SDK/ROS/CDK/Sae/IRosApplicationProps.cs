@@ -268,6 +268,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: enableSidecarResourceIsolated: Whether to enable sidecar resource isolation.
+        /// </remarks>
+        [JsiiProperty(name: "enableSidecarResourceIsolated", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? EnableSidecarResourceIsolated
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: envs: Container environment variable parameters. For example: [{ "name": "envtmp", "value": "0"}]
         /// </remarks>
         [JsiiProperty(name: "envs", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -299,6 +312,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         [JsiiProperty(name: "imageUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ImageUrl
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: initContainersConfig: Init container config.
+        /// </remarks>
+        [JsiiProperty(name: "initContainersConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sae.RosApplication.InitContainersConfigProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? InitContainersConfig
         {
             get
             {
@@ -740,6 +766,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: sidecarContainersConfig: Sidecar container config.
+        /// </remarks>
+        [JsiiProperty(name: "sidecarContainersConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sae.RosApplication.SidecarContainersConfigProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SidecarContainersConfig
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: slsConfigs: Log collection configuration file
         /// </remarks>
         [JsiiProperty(name: "slsConfigs", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1086,6 +1125,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: enableSidecarResourceIsolated: Whether to enable sidecar resource isolation.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "enableSidecarResourceIsolated", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EnableSidecarResourceIsolated
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: envs: Container environment variable parameters. For example: [{ "name": "envtmp", "value": "0"}]
             /// </remarks>
             [JsiiOptional]
@@ -1111,6 +1160,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
             [JsiiOptional]
             [JsiiProperty(name: "imageUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ImageUrl
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: initContainersConfig: Init container config.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "initContainersConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sae.RosApplication.InitContainersConfigProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? InitContainersConfig
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -1451,6 +1510,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
             [JsiiOptional]
             [JsiiProperty(name: "serviceTags", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ServiceTags
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: sidecarContainersConfig: Sidecar container config.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "sidecarContainersConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sae.RosApplication.SidecarContainersConfigProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? SidecarContainersConfig
             {
                 get => GetInstanceProperty<object?>();
             }

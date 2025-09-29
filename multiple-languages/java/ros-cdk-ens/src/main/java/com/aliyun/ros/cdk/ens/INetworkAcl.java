@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ens;
 /**
  * Represents a <code>NetworkAcl</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.260Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:25.287Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ens.$Module.class, fqn = "@alicloud/ros-cdk-ens.INetworkAcl")
 @software.amazon.jsii.Jsii.Proxy(INetworkAcl.Jsii$Proxy.class)
 public interface INetworkAcl extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

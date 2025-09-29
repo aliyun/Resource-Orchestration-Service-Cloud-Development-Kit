@@ -9,6 +9,8 @@ type EndpointProps struct {
 	EndpointZones interface{} `field:"required" json:"endpointZones" yaml:"endpointZones"`
 	// Property name: The name of the endpoint.
 	Name interface{} `field:"optional" json:"name" yaml:"name"`
+	// Property securityGroupIds: A list of security groups.
+	SecurityGroupIds interface{} `field:"optional" json:"securityGroupIds" yaml:"securityGroupIds"`
 	// Property type: Endpoint type, default value: VPC.
 	Type interface{} `field:"optional" json:"type" yaml:"type"`
 	// Property vpcId: The vpc id of the endpoint.

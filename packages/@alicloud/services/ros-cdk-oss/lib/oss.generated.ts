@@ -181,7 +181,7 @@ function rosBucketPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Bucket`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Bucket`, which is used to create a bucket in Object Storage Service (OSS).
  * @Note This class does not contain additional functions, so it is recommended to use the `Bucket` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucket
  */
@@ -1801,7 +1801,7 @@ function RosBucketReplication_DestinationPropertyValidator(properties: any): ros
     if(properties.transferType && (typeof properties.transferType) !== 'object') {
         errors.collect(ros.propertyValidator('transferType', ros.validateAllowedValues)({
           data: properties.transferType,
-          allowedValues: ["internal","accelerate"],
+          allowedValues: ["internal","accelerate","oss_acc"],
         }));
     }
     errors.collect(ros.propertyValidator('transferType', ros.validateString)(properties.transferType));
@@ -2343,7 +2343,7 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Domain`, which is used to bind a custom domain name.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Domain`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Domain` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-domain
  */

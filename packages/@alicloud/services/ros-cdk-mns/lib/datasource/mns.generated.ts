@@ -64,7 +64,7 @@ function rosQueuePropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::MNS::Queue`, which is used to query the information about a created queue.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::MNS::Queue`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Queue` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-queue
  */
@@ -580,7 +580,7 @@ function rosSubscriptionsPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::MNS::Subscriptions`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::MNS::Subscriptions`, which is used to query the information about the subscriptions.
  * @Note This class does not contain additional functions, so it is recommended to use the `Subscriptions` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-subscriptions
  */
@@ -878,7 +878,7 @@ function rosTopicsPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::MNS::Topics`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::MNS::Topics`, which is used to query the information about topics.
  * @Note This class does not contain additional functions, so it is recommended to use the `Topics` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-topics
  */

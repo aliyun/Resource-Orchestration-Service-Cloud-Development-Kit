@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.drds.datasource;
 /**
  * Represents a <code>DrdsDB</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.698Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.446Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.drds.$Module.class, fqn = "@alicloud/ros-cdk-drds.datasource.IDrdsDB")
 @software.amazon.jsii.Jsii.Proxy(IDrdsDB.Jsii$Proxy.class)
 public interface IDrdsDB extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

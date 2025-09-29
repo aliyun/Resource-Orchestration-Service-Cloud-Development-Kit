@@ -47,7 +47,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             }
         }
 
-        /// <summary>Property chargeType:.</summary>
+        /// <summary>Property chargeType: The charge type of the transit router vpc attachment.</summary>
         [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ChargeType
@@ -176,7 +176,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property chargeType:.</summary>
+            /// <summary>Property chargeType: The charge type of the transit router vpc attachment.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ChargeType

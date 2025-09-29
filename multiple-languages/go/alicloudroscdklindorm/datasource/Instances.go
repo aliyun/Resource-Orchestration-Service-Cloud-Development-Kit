@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::Lindorm::Instances`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::Lindorm::Instances`, which is used to query the information about Lindorm instances.
 type Instances interface {
 	alicloudroscdkcore.Resource
 	IInstances

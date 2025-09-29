@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::GA::BandwidthPackages`, which is used to query the information about bandwidth plans.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::GA::BandwidthPackages`.
 type BandwidthPackages interface {
 	alicloudroscdkcore.Resource
 	IBandwidthPackages

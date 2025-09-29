@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pvtz.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::PVTZ::Rules</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.596Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:28.332Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.datasource.RosRules")
 public class RosRules extends com.aliyun.ros.cdk.core.RosResource {
 

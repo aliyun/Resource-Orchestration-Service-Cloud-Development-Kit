@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Hbr
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::HBR::DbVault`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::HBR::DbVault`, which is used to create a mirror vault.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDbVault`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbvault

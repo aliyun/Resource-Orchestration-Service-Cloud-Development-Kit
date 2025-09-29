@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Represents a <code>SSHKeyPair</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.209Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:24.073Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.ISSHKeyPair")
 @software.amazon.jsii.Jsii.Proxy(ISSHKeyPair.Jsii$Proxy.class)
 public interface ISSHKeyPair extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

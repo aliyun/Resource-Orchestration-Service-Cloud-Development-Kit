@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::ECS::AutoSnapshotPolicy</code>, which is used to query an automatic snapshot policy.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.830Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:24.801Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.RosAutoSnapshotPolicy")
 public class RosAutoSnapshotPolicy extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -1,0 +1,475 @@
+package com.aliyun.ros.cdk.cen;
+
+/**
+ * Properties for defining a <code>RosFlowlog</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-flowlog
+ */
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:21.887Z")
+@software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosFlowlogProps")
+@software.amazon.jsii.Jsii.Proxy(RosFlowlogProps.Jsii$Proxy.class)
+public interface RosFlowlogProps extends software.amazon.jsii.JsiiSerializable {
+
+    /**
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getCenId();
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getFlowLogName() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInterval() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLogFormatString() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLogStoreName() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getProjectName() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.cen.RosFlowlog.TagsProperty> getTags() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTransitRouterAttachmentId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTransitRouterId() {
+        return null;
+    }
+
+    /**
+     * @return a {@link Builder} of {@link RosFlowlogProps}
+     */
+    static Builder builder() {
+        return new Builder();
+    }
+    /**
+     * A builder for {@link RosFlowlogProps}
+     */
+    public static final class Builder implements software.amazon.jsii.Builder<RosFlowlogProps> {
+        java.lang.Object cenId;
+        java.lang.Object description;
+        java.lang.Object flowLogName;
+        java.lang.Object interval;
+        java.lang.Object logFormatString;
+        java.lang.Object logStoreName;
+        java.lang.Object projectName;
+        java.util.List<com.aliyun.ros.cdk.cen.RosFlowlog.TagsProperty> tags;
+        java.lang.Object transitRouterAttachmentId;
+        java.lang.Object transitRouterId;
+
+        /**
+         * Sets the value of {@link RosFlowlogProps#getCenId}
+         * @param cenId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder cenId(java.lang.String cenId) {
+            this.cenId = cenId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFlowlogProps#getCenId}
+         * @param cenId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder cenId(com.aliyun.ros.cdk.core.IResolvable cenId) {
+            this.cenId = cenId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFlowlogProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(java.lang.String description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFlowlogProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFlowlogProps#getFlowLogName}
+         * @param flowLogName the value to be set.
+         * @return {@code this}
+         */
+        public Builder flowLogName(java.lang.String flowLogName) {
+            this.flowLogName = flowLogName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFlowlogProps#getFlowLogName}
+         * @param flowLogName the value to be set.
+         * @return {@code this}
+         */
+        public Builder flowLogName(com.aliyun.ros.cdk.core.IResolvable flowLogName) {
+            this.flowLogName = flowLogName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFlowlogProps#getInterval}
+         * @param interval the value to be set.
+         * @return {@code this}
+         */
+        public Builder interval(java.lang.Number interval) {
+            this.interval = interval;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFlowlogProps#getInterval}
+         * @param interval the value to be set.
+         * @return {@code this}
+         */
+        public Builder interval(com.aliyun.ros.cdk.core.IResolvable interval) {
+            this.interval = interval;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFlowlogProps#getLogFormatString}
+         * @param logFormatString the value to be set.
+         * @return {@code this}
+         */
+        public Builder logFormatString(java.lang.String logFormatString) {
+            this.logFormatString = logFormatString;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFlowlogProps#getLogFormatString}
+         * @param logFormatString the value to be set.
+         * @return {@code this}
+         */
+        public Builder logFormatString(com.aliyun.ros.cdk.core.IResolvable logFormatString) {
+            this.logFormatString = logFormatString;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFlowlogProps#getLogStoreName}
+         * @param logStoreName the value to be set.
+         * @return {@code this}
+         */
+        public Builder logStoreName(java.lang.String logStoreName) {
+            this.logStoreName = logStoreName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFlowlogProps#getLogStoreName}
+         * @param logStoreName the value to be set.
+         * @return {@code this}
+         */
+        public Builder logStoreName(com.aliyun.ros.cdk.core.IResolvable logStoreName) {
+            this.logStoreName = logStoreName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFlowlogProps#getProjectName}
+         * @param projectName the value to be set.
+         * @return {@code this}
+         */
+        public Builder projectName(java.lang.String projectName) {
+            this.projectName = projectName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFlowlogProps#getProjectName}
+         * @param projectName the value to be set.
+         * @return {@code this}
+         */
+        public Builder projectName(com.aliyun.ros.cdk.core.IResolvable projectName) {
+            this.projectName = projectName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFlowlogProps#getTags}
+         * @param tags the value to be set.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.cen.RosFlowlog.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.cen.RosFlowlog.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFlowlogProps#getTransitRouterAttachmentId}
+         * @param transitRouterAttachmentId the value to be set.
+         * @return {@code this}
+         */
+        public Builder transitRouterAttachmentId(java.lang.String transitRouterAttachmentId) {
+            this.transitRouterAttachmentId = transitRouterAttachmentId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFlowlogProps#getTransitRouterAttachmentId}
+         * @param transitRouterAttachmentId the value to be set.
+         * @return {@code this}
+         */
+        public Builder transitRouterAttachmentId(com.aliyun.ros.cdk.core.IResolvable transitRouterAttachmentId) {
+            this.transitRouterAttachmentId = transitRouterAttachmentId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFlowlogProps#getTransitRouterId}
+         * @param transitRouterId the value to be set.
+         * @return {@code this}
+         */
+        public Builder transitRouterId(java.lang.String transitRouterId) {
+            this.transitRouterId = transitRouterId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFlowlogProps#getTransitRouterId}
+         * @param transitRouterId the value to be set.
+         * @return {@code this}
+         */
+        public Builder transitRouterId(com.aliyun.ros.cdk.core.IResolvable transitRouterId) {
+            this.transitRouterId = transitRouterId;
+            return this;
+        }
+
+        /**
+         * Builds the configured instance.
+         * @return a new instance of {@link RosFlowlogProps}
+         * @throws NullPointerException if any required attribute was not provided
+         */
+        @Override
+        public RosFlowlogProps build() {
+            return new Jsii$Proxy(this);
+        }
+    }
+
+    /**
+     * An implementation for {@link RosFlowlogProps}
+     */
+    @software.amazon.jsii.Internal
+    final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosFlowlogProps {
+        private final java.lang.Object cenId;
+        private final java.lang.Object description;
+        private final java.lang.Object flowLogName;
+        private final java.lang.Object interval;
+        private final java.lang.Object logFormatString;
+        private final java.lang.Object logStoreName;
+        private final java.lang.Object projectName;
+        private final java.util.List<com.aliyun.ros.cdk.cen.RosFlowlog.TagsProperty> tags;
+        private final java.lang.Object transitRouterAttachmentId;
+        private final java.lang.Object transitRouterId;
+
+        /**
+         * Constructor that initializes the object based on values retrieved from the JsiiObject.
+         * @param objRef Reference to the JSII managed object.
+         */
+        protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+            super(objRef);
+            this.cenId = software.amazon.jsii.Kernel.get(this, "cenId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.flowLogName = software.amazon.jsii.Kernel.get(this, "flowLogName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.interval = software.amazon.jsii.Kernel.get(this, "interval", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.logFormatString = software.amazon.jsii.Kernel.get(this, "logFormatString", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.logStoreName = software.amazon.jsii.Kernel.get(this, "logStoreName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.projectName = software.amazon.jsii.Kernel.get(this, "projectName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cen.RosFlowlog.TagsProperty.class)));
+            this.transitRouterAttachmentId = software.amazon.jsii.Kernel.get(this, "transitRouterAttachmentId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.transitRouterId = software.amazon.jsii.Kernel.get(this, "transitRouterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+         */
+        @SuppressWarnings("unchecked")
+        protected Jsii$Proxy(final Builder builder) {
+            super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+            this.cenId = java.util.Objects.requireNonNull(builder.cenId, "cenId is required");
+            this.description = builder.description;
+            this.flowLogName = builder.flowLogName;
+            this.interval = builder.interval;
+            this.logFormatString = builder.logFormatString;
+            this.logStoreName = builder.logStoreName;
+            this.projectName = builder.projectName;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.cen.RosFlowlog.TagsProperty>)builder.tags;
+            this.transitRouterAttachmentId = builder.transitRouterAttachmentId;
+            this.transitRouterId = builder.transitRouterId;
+        }
+
+        @Override
+        public final java.lang.Object getCenId() {
+            return this.cenId;
+        }
+
+        @Override
+        public final java.lang.Object getDescription() {
+            return this.description;
+        }
+
+        @Override
+        public final java.lang.Object getFlowLogName() {
+            return this.flowLogName;
+        }
+
+        @Override
+        public final java.lang.Object getInterval() {
+            return this.interval;
+        }
+
+        @Override
+        public final java.lang.Object getLogFormatString() {
+            return this.logFormatString;
+        }
+
+        @Override
+        public final java.lang.Object getLogStoreName() {
+            return this.logStoreName;
+        }
+
+        @Override
+        public final java.lang.Object getProjectName() {
+            return this.projectName;
+        }
+
+        @Override
+        public final java.util.List<com.aliyun.ros.cdk.cen.RosFlowlog.TagsProperty> getTags() {
+            return this.tags;
+        }
+
+        @Override
+        public final java.lang.Object getTransitRouterAttachmentId() {
+            return this.transitRouterAttachmentId;
+        }
+
+        @Override
+        public final java.lang.Object getTransitRouterId() {
+            return this.transitRouterId;
+        }
+
+        @Override
+        @software.amazon.jsii.Internal
+        public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+            final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+            final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+            data.set("cenId", om.valueToTree(this.getCenId()));
+            if (this.getDescription() != null) {
+                data.set("description", om.valueToTree(this.getDescription()));
+            }
+            if (this.getFlowLogName() != null) {
+                data.set("flowLogName", om.valueToTree(this.getFlowLogName()));
+            }
+            if (this.getInterval() != null) {
+                data.set("interval", om.valueToTree(this.getInterval()));
+            }
+            if (this.getLogFormatString() != null) {
+                data.set("logFormatString", om.valueToTree(this.getLogFormatString()));
+            }
+            if (this.getLogStoreName() != null) {
+                data.set("logStoreName", om.valueToTree(this.getLogStoreName()));
+            }
+            if (this.getProjectName() != null) {
+                data.set("projectName", om.valueToTree(this.getProjectName()));
+            }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
+            }
+            if (this.getTransitRouterAttachmentId() != null) {
+                data.set("transitRouterAttachmentId", om.valueToTree(this.getTransitRouterAttachmentId()));
+            }
+            if (this.getTransitRouterId() != null) {
+                data.set("transitRouterId", om.valueToTree(this.getTransitRouterId()));
+            }
+
+            final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+            struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-cen.RosFlowlogProps"));
+            struct.set("data", data);
+
+            final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+            obj.set("$jsii.struct", struct);
+
+            return obj;
+        }
+
+        @Override
+        public final boolean equals(final Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+
+            RosFlowlogProps.Jsii$Proxy that = (RosFlowlogProps.Jsii$Proxy) o;
+
+            if (!cenId.equals(that.cenId)) return false;
+            if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+            if (this.flowLogName != null ? !this.flowLogName.equals(that.flowLogName) : that.flowLogName != null) return false;
+            if (this.interval != null ? !this.interval.equals(that.interval) : that.interval != null) return false;
+            if (this.logFormatString != null ? !this.logFormatString.equals(that.logFormatString) : that.logFormatString != null) return false;
+            if (this.logStoreName != null ? !this.logStoreName.equals(that.logStoreName) : that.logStoreName != null) return false;
+            if (this.projectName != null ? !this.projectName.equals(that.projectName) : that.projectName != null) return false;
+            if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
+            if (this.transitRouterAttachmentId != null ? !this.transitRouterAttachmentId.equals(that.transitRouterAttachmentId) : that.transitRouterAttachmentId != null) return false;
+            return this.transitRouterId != null ? this.transitRouterId.equals(that.transitRouterId) : that.transitRouterId == null;
+        }
+
+        @Override
+        public final int hashCode() {
+            int result = this.cenId.hashCode();
+            result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+            result = 31 * result + (this.flowLogName != null ? this.flowLogName.hashCode() : 0);
+            result = 31 * result + (this.interval != null ? this.interval.hashCode() : 0);
+            result = 31 * result + (this.logFormatString != null ? this.logFormatString.hashCode() : 0);
+            result = 31 * result + (this.logStoreName != null ? this.logStoreName.hashCode() : 0);
+            result = 31 * result + (this.projectName != null ? this.projectName.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
+            result = 31 * result + (this.transitRouterAttachmentId != null ? this.transitRouterAttachmentId.hashCode() : 0);
+            result = 31 * result + (this.transitRouterId != null ? this.transitRouterId.hashCode() : 0);
+            return result;
+        }
+    }
+}

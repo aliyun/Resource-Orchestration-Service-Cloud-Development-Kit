@@ -2,7 +2,6 @@ package alicloudroscdkcs
 
 
 type RosClusterNodePool_ScalingGroupProperty struct {
-	InstanceTypes interface{} `field:"required" json:"instanceTypes" yaml:"instanceTypes"`
 	SystemDiskSize interface{} `field:"required" json:"systemDiskSize" yaml:"systemDiskSize"`
 	VSwitchIds interface{} `field:"required" json:"vSwitchIds" yaml:"vSwitchIds"`
 	AutoRenew interface{} `field:"optional" json:"autoRenew" yaml:"autoRenew"`
@@ -10,7 +9,10 @@ type RosClusterNodePool_ScalingGroupProperty struct {
 	CompensateWithOnDemand interface{} `field:"optional" json:"compensateWithOnDemand" yaml:"compensateWithOnDemand"`
 	DataDisks interface{} `field:"optional" json:"dataDisks" yaml:"dataDisks"`
 	ImageId interface{} `field:"optional" json:"imageId" yaml:"imageId"`
+	ImageType interface{} `field:"optional" json:"imageType" yaml:"imageType"`
 	InstanceChargeType interface{} `field:"optional" json:"instanceChargeType" yaml:"instanceChargeType"`
+	InstancePatterns interface{} `field:"optional" json:"instancePatterns" yaml:"instancePatterns"`
+	InstanceTypes interface{} `field:"optional" json:"instanceTypes" yaml:"instanceTypes"`
 	InternetChargeType interface{} `field:"optional" json:"internetChargeType" yaml:"internetChargeType"`
 	InternetMaxBandwidthOut interface{} `field:"optional" json:"internetMaxBandwidthOut" yaml:"internetMaxBandwidthOut"`
 	KeyPair interface{} `field:"optional" json:"keyPair" yaml:"keyPair"`
@@ -24,6 +26,8 @@ type RosClusterNodePool_ScalingGroupProperty struct {
 	RdsInstances interface{} `field:"optional" json:"rdsInstances" yaml:"rdsInstances"`
 	ScalingPolicy interface{} `field:"optional" json:"scalingPolicy" yaml:"scalingPolicy"`
 	SecurityGroupId interface{} `field:"optional" json:"securityGroupId" yaml:"securityGroupId"`
+	SecurityHardeningOs interface{} `field:"optional" json:"securityHardeningOs" yaml:"securityHardeningOs"`
+	SocEnabled interface{} `field:"optional" json:"socEnabled" yaml:"socEnabled"`
 	SpotInstancePools interface{} `field:"optional" json:"spotInstancePools" yaml:"spotInstancePools"`
 	SpotInstanceRemedy interface{} `field:"optional" json:"spotInstanceRemedy" yaml:"spotInstanceRemedy"`
 	SpotPriceLimit interface{} `field:"optional" json:"spotPriceLimit" yaml:"spotPriceLimit"`

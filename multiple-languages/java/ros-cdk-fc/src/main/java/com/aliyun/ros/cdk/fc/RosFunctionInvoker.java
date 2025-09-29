@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::FC::FunctionInvoker</code>, which is used to invoke a function.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:51.973Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:31.248Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosFunctionInvoker")
 public class RosFunctionInvoker extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CEN::TransitRouterVpcAttachment</code>, which is used to create a virtual private cloud (VPC) connection on an Enterprise Edition transit router.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:44.403Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:21.948Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.TransitRouterVpcAttachment")
 public class TransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cen.ITransitRouterVpcAttachment {
 
@@ -260,20 +260,20 @@ public class TransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.Resource
         }
 
         /**
-         * Property chargeType:.
+         * Property chargeType: The charge type of the transit router vpc attachment.
          * <p>
          * @return {@code this}
-         * @param chargeType Property chargeType:. This parameter is required.
+         * @param chargeType Property chargeType: The charge type of the transit router vpc attachment. This parameter is required.
          */
         public Builder chargeType(final java.lang.String chargeType) {
             this.props.chargeType(chargeType);
             return this;
         }
         /**
-         * Property chargeType:.
+         * Property chargeType: The charge type of the transit router vpc attachment.
          * <p>
          * @return {@code this}
-         * @param chargeType Property chargeType:. This parameter is required.
+         * @param chargeType Property chargeType: The charge type of the transit router vpc attachment. This parameter is required.
          */
         public Builder chargeType(final com.aliyun.ros.cdk.core.IResolvable chargeType) {
             this.props.chargeType(chargeType);

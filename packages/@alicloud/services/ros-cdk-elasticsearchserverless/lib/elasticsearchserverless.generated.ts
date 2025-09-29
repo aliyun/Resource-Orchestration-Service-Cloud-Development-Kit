@@ -745,6 +745,11 @@ export interface RosEndpointProps {
     readonly name?: string | ros.IResolvable;
 
     /**
+     * @Property securityGroupIds: A list of security groups.
+     */
+    readonly securityGroupIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * @Property type: Endpoint type, default value: VPC.
      */
     readonly type?: string | ros.IResolvable;
@@ -767,6 +772,14 @@ function RosEndpointPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    if(properties.securityGroupIds && (Array.isArray(properties.securityGroupIds) || (typeof properties.securityGroupIds) === 'string')) {
+        errors.collect(ros.propertyValidator('securityGroupIds', ros.validateLength)({
+            data: properties.securityGroupIds.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('securityGroupIds', ros.listValidator(ros.validateString))(properties.securityGroupIds));
     errors.collect(ros.propertyValidator('endpointZones', ros.requiredValidator)(properties.endpointZones));
     if(properties.endpointZones && (Array.isArray(properties.endpointZones) || (typeof properties.endpointZones) === 'string')) {
         errors.collect(ros.propertyValidator('endpointZones', ros.validateLength)({
@@ -796,13 +809,14 @@ function rosEndpointPropsToRosTemplate(properties: any, enableResourcePropertyCo
     return {
       'EndpointZones': ros.listMapper(rosEndpointEndpointZonesPropertyToRosTemplate)(properties.endpointZones),
       'Name': ros.stringToRosTemplate(properties.name),
+      'SecurityGroupIds': ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupIds),
       'Type': ros.stringToRosTemplate(properties.type),
       'VpcId': ros.stringToRosTemplate(properties.vpcId),
     };
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ElasticSearchServerless::Endpoint`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ElasticSearchServerless::Endpoint`The , which is used to create an endpoint.
  * @Note This class does not contain additional functions, so it is recommended to use the `Endpoint` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-elasticsearchserverless-endpoint
  */
@@ -841,6 +855,11 @@ export class RosEndpoint extends ros.RosResource {
     public name: string | ros.IResolvable | undefined;
 
     /**
+     * @Property securityGroupIds: A list of security groups.
+     */
+    public securityGroupIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * @Property type: Endpoint type, default value: VPC.
      */
     public type: string | ros.IResolvable | undefined;
@@ -864,6 +883,7 @@ export class RosEndpoint extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.endpointZones = props.endpointZones;
         this.name = props.name;
+        this.securityGroupIds = props.securityGroupIds;
         this.type = props.type;
         this.vpcId = props.vpcId;
     }
@@ -873,6 +893,7 @@ export class RosEndpoint extends ros.RosResource {
         return {
             endpointZones: this.endpointZones,
             name: this.name,
+            securityGroupIds: this.securityGroupIds,
             type: this.type,
             vpcId: this.vpcId,
         };

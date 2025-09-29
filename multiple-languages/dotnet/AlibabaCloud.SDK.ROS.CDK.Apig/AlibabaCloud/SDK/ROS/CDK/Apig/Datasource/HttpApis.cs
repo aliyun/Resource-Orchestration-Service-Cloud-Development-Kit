@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Apig.Datasource
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::APIG::HttpApis`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::APIG::HttpApis`, which is used to query HTTP APIs.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosHttpApis`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apig-httpapis

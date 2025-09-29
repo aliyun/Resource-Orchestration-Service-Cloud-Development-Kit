@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::RAM::User</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.749Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:28.521Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.datasource.User")
 public class User extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ram.datasource.IUser {
 

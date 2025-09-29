@@ -216,6 +216,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
+        private object? _encryptionProviderKey;
+
+        /// <summary>Property encryptionProviderKey: The ID of the key that is managed by Key Management Service (KMS).</summary>
+        /// <remarks>
+        /// This key is used to encrypt data disks.You can use KMS in only professional managed Kubernetes clusters.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "encryptionProviderKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? EncryptionProviderKey
+        {
+            get => _encryptionProviderKey;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _encryptionProviderKey = value;
+            }
+        }
+
         private object? _endpointPublicAccess;
 
         /// <summary>Property endpointPublicAccess: Whether to enable the public network API Server: true: which means that the public network API Server is open.</summary>

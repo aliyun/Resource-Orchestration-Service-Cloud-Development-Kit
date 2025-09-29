@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mobi.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::MOBI::Workspaces</code>, which is used to query workspaces.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.620Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:26.987Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mobi.$Module.class, fqn = "@alicloud/ros-cdk-mobi.datasource.RosWorkspaces")
 public class RosWorkspaces extends com.aliyun.ros.cdk.core.RosResource {
 

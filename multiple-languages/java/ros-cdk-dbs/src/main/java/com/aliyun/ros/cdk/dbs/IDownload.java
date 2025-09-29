@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dbs;
 /**
  * Represents a <code>Download</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.351Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.086Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dbs.$Module.class, fqn = "@alicloud/ros-cdk-dbs.IDownload")
 @software.amazon.jsii.Jsii.Proxy(IDownload.Jsii$Proxy.class)
 public interface IDownload extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

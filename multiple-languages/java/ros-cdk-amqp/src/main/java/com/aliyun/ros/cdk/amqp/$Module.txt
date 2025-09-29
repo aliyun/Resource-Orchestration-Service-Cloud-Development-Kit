@@ -1,7 +1,10 @@
+@alicloud/ros-cdk-amqp.Account=com.aliyun.ros.cdk.amqp.Account
+@alicloud/ros-cdk-amqp.AccountProps=com.aliyun.ros.cdk.amqp.AccountProps
 @alicloud/ros-cdk-amqp.Binding=com.aliyun.ros.cdk.amqp.Binding
 @alicloud/ros-cdk-amqp.BindingProps=com.aliyun.ros.cdk.amqp.BindingProps
 @alicloud/ros-cdk-amqp.Exchange=com.aliyun.ros.cdk.amqp.Exchange
 @alicloud/ros-cdk-amqp.ExchangeProps=com.aliyun.ros.cdk.amqp.ExchangeProps
+@alicloud/ros-cdk-amqp.IAccount=com.aliyun.ros.cdk.amqp.IAccount
 @alicloud/ros-cdk-amqp.IBinding=com.aliyun.ros.cdk.amqp.IBinding
 @alicloud/ros-cdk-amqp.IExchange=com.aliyun.ros.cdk.amqp.IExchange
 @alicloud/ros-cdk-amqp.IInstance=com.aliyun.ros.cdk.amqp.IInstance
@@ -11,6 +14,8 @@
 @alicloud/ros-cdk-amqp.InstanceProps=com.aliyun.ros.cdk.amqp.InstanceProps
 @alicloud/ros-cdk-amqp.Queue=com.aliyun.ros.cdk.amqp.Queue
 @alicloud/ros-cdk-amqp.QueueProps=com.aliyun.ros.cdk.amqp.QueueProps
+@alicloud/ros-cdk-amqp.RosAccount=com.aliyun.ros.cdk.amqp.RosAccount
+@alicloud/ros-cdk-amqp.RosAccountProps=com.aliyun.ros.cdk.amqp.RosAccountProps
 @alicloud/ros-cdk-amqp.RosBinding=com.aliyun.ros.cdk.amqp.RosBinding
 @alicloud/ros-cdk-amqp.RosBindingProps=com.aliyun.ros.cdk.amqp.RosBindingProps
 @alicloud/ros-cdk-amqp.RosExchange=com.aliyun.ros.cdk.amqp.RosExchange

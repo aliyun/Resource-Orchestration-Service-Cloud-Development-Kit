@@ -137,7 +137,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
             }
         }
 
-        /// <summary>Property period: Prepaid time period.If the payment type is Prepaid, this parameter is mandatory. Specify the prepaid cluster as a yearly or monthly type. Valid values:  Year, Month.</summary>
+        /// <summary>Property period: The unit of the subscription duration.</summary>
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Period
@@ -325,7 +325,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property period: Prepaid time period.If the payment type is Prepaid, this parameter is mandatory. Specify the prepaid cluster as a yearly or monthly type. Valid values:  Year, Month.</summary>
+            /// <summary>Property period: The unit of the subscription duration.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Period

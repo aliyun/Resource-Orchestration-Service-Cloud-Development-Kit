@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.slb.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-accesscontrols
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:50.776Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:29.903Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.datasource.RosAccessControlsProps")
 @software.amazon.jsii.Jsii.Proxy(RosAccessControlsProps.Jsii$Proxy.class)
 public interface RosAccessControlsProps extends software.amazon.jsii.JsiiSerializable {

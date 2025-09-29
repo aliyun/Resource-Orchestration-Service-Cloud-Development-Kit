@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::InstanceSecurityGroupAttachment`, which is used to add an Edge Node Service (ENS) instance to a security group.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::InstanceSecurityGroupAttachment`.
 type RosInstanceSecurityGroupAttachment interface {
 	alicloudroscdkcore.RosResource
 	AttrInstanceId() alicloudroscdkcore.IResolvable

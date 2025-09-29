@@ -31,6 +31,10 @@ type ManagedEdgeKubernetesClusterProps struct {
 	// false: disables deletion protection for the cluster.
 	// Default value: false.
 	DeletionProtection interface{} `field:"optional" json:"deletionProtection" yaml:"deletionProtection"`
+	// Property encryptionProviderKey: The ID of the key that is managed by Key Management Service (KMS).
+	//
+	// This key is used to encrypt data disks.You can use KMS in only professional managed Kubernetes clusters.
+	EncryptionProviderKey interface{} `field:"optional" json:"encryptionProviderKey" yaml:"encryptionProviderKey"`
 	// Property endpointPublicAccess: Whether to enable the public network API Server: true: which means that the public network API Server is open.
 	//
 	// false: If set to false, the API server on the public network will not be created, only the API server on the private network will be created.Default to true.
@@ -47,6 +51,8 @@ type ManagedEdgeKubernetesClusterProps struct {
 	//
 	// Specify one of KeyPair or LoginPassword.
 	KeyPair interface{} `field:"optional" json:"keyPair" yaml:"keyPair"`
+	// Property kubernetesVersion: The version of the Kubernetes cluster.
+	KubernetesVersion interface{} `field:"optional" json:"kubernetesVersion" yaml:"kubernetesVersion"`
 	// Property loginPassword: SSH login password.
 	//
 	// Password rules are 8-30 characters and contain three items (upper and lower case letters, numbers, and special symbols). Specify one of KeyPair or LoginPassword.
@@ -58,6 +64,8 @@ type ManagedEdgeKubernetesClusterProps struct {
 	// This number is determined by the specified pod CIDR block.
 	// This parameter takes effect only if the cluster uses the Flannel plug-in.Default value: 25.
 	NodeCidrMask interface{} `field:"optional" json:"nodeCidrMask" yaml:"nodeCidrMask"`
+	// Property nodePools: The configurations of Node pools.
+	NodePools interface{} `field:"optional" json:"nodePools" yaml:"nodePools"`
 	// Property profile: Edge cluster ID.
 	//
 	// The default value is Edge.

@@ -277,7 +277,7 @@ function rosDiskInstanceAttachmentPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::DiskInstanceAttachment`, which is used to attach a data disk to an Edge Node Service (ENS) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::DiskInstanceAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DiskInstanceAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-diskinstanceattachment
  */
@@ -742,7 +742,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Instance`, which is used to create Edge Node Service (ENS) instances.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Instance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-instance
  */
@@ -1101,7 +1101,7 @@ function rosInstanceSecurityGroupAttachmentPropsToRosTemplate(properties: any, e
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::InstanceSecurityGroupAttachment`, which is used to add an Edge Node Service (ENS) instance to a security group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::InstanceSecurityGroupAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `InstanceSecurityGroupAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-instancesecuritygroupattachment
  */
@@ -1867,7 +1867,7 @@ function rosSecurityGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::SecurityGroup`, which is used to create a security group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::SecurityGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecurityGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-securitygroup
  */

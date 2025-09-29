@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::RAM::Groups</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.726Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:28.497Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.datasource.Groups")
 public class Groups extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ram.datasource.IGroups {
 

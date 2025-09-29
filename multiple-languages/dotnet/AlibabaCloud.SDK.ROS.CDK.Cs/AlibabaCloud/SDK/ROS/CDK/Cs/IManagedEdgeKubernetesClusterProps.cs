@@ -91,6 +91,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
+        /// <summary>Property encryptionProviderKey: The ID of the key that is managed by Key Management Service (KMS).</summary>
+        /// <remarks>
+        /// This key is used to encrypt data disks.You can use KMS in only professional managed Kubernetes clusters.
+        /// </remarks>
+        [JsiiProperty(name: "encryptionProviderKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? EncryptionProviderKey
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property endpointPublicAccess: Whether to enable the public network API Server: true: which means that the public network API Server is open.</summary>
         /// <remarks>
         /// false: If set to false, the API server on the public network will not be created, only the API server on the private network will be created.Default to true.
@@ -137,6 +151,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
+        /// <summary>Property kubernetesVersion: The version of the Kubernetes cluster.</summary>
+        [JsiiProperty(name: "kubernetesVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? KubernetesVersion
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property loginPassword: SSH login password.</summary>
         /// <remarks>
         /// Password rules are 8-30 characters and contain three items (upper and lower case letters, numbers, and special symbols). Specify one of KeyPair or LoginPassword.
@@ -170,6 +195,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         [JsiiProperty(name: "nodeCidrMask", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? NodeCidrMask
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property nodePools: The configurations of Node pools.</summary>
+        [JsiiProperty(name: "nodePools", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster.NodePoolsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? NodePools
         {
             get
             {
@@ -386,6 +422,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property encryptionProviderKey: The ID of the key that is managed by Key Management Service (KMS).</summary>
+            /// <remarks>
+            /// This key is used to encrypt data disks.You can use KMS in only professional managed Kubernetes clusters.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "encryptionProviderKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EncryptionProviderKey
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property endpointPublicAccess: Whether to enable the public network API Server: true: which means that the public network API Server is open.</summary>
             /// <remarks>
             /// false: If set to false, the API server on the public network will not be created, only the API server on the private network will be created.Default to true.
@@ -423,6 +470,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property kubernetesVersion: The version of the Kubernetes cluster.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "kubernetesVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? KubernetesVersion
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property loginPassword: SSH login password.</summary>
             /// <remarks>
             /// Password rules are 8-30 characters and contain three items (upper and lower case letters, numbers, and special symbols). Specify one of KeyPair or LoginPassword.
@@ -450,6 +505,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             [JsiiOptional]
             [JsiiProperty(name: "nodeCidrMask", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? NodeCidrMask
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property nodePools: The configurations of Node pools.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "nodePools", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster.NodePoolsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? NodePools
             {
                 get => GetInstanceProperty<object?>();
             }

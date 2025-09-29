@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::NAS::AccessGroup`, which is used to create a permission group.
+// This class encapsulates and extends the ROS resource type `ALIYUN::NAS::AccessGroup`.
 type AccessGroup interface {
 	alicloudroscdkcore.Resource
 	IAccessGroup

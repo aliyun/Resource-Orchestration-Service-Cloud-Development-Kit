@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ALB::AScript</code>, which is used to create an AScript rule.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:43.210Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:20.511Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.AScript")
 public class AScript extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.alb.IAScript {
 

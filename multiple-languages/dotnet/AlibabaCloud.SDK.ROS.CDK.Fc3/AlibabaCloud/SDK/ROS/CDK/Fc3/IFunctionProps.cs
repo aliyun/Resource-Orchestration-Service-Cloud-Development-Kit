@@ -104,6 +104,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc3
             }
         }
 
+        /// <summary>Property disableOndemand: Whether to disable the creation of on-demand instances.</summary>
+        /// <remarks>
+        /// When enabled, on-demand instances will not be created, and only reserved instances can be used.
+        /// </remarks>
+        [JsiiProperty(name: "disableOndemand", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DisableOndemand
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property diskSize: The disk size of the function, in MB.</summary>
         [JsiiProperty(name: "diskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -141,6 +155,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc3
         [JsiiProperty(name: "instanceConcurrency", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? InstanceConcurrency
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property instanceIsolationMode: Instance isolation mode.</summary>
+        [JsiiProperty(name: "instanceIsolationMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? InstanceIsolationMode
         {
             get
             {
@@ -232,6 +257,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc3
         [JsiiProperty(name: "role", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Role
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property sessionAffinity: The session affinity policy for Function Compute requests.</summary>
+        /// <remarks>
+        /// Set to MCP_SSE to implement MCP SSE protocol request affinity. Set to GENERATED_COOKIE for cookie-based affinity. Set to HEADER_FIELD for header-based affinity. If not set or set to NONE, there is no affinity effect, and requests are routed according to the default scheduling policy of Function Compute.
+        /// </remarks>
+        [JsiiProperty(name: "sessionAffinity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SessionAffinity
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property sessionAffinityConfig: Session affinity configuration.</summary>
+        [JsiiProperty(name: "sessionAffinityConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SessionAffinityConfig
         {
             get
             {
@@ -372,6 +422,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc3
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property disableOndemand: Whether to disable the creation of on-demand instances.</summary>
+            /// <remarks>
+            /// When enabled, on-demand instances will not be created, and only reserved instances can be used.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "disableOndemand", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DisableOndemand
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property diskSize: The disk size of the function, in MB.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "diskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -400,6 +461,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc3
             [JsiiOptional]
             [JsiiProperty(name: "instanceConcurrency", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? InstanceConcurrency
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property instanceIsolationMode: Instance isolation mode.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "instanceIsolationMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? InstanceIsolationMode
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -467,6 +536,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc3
             [JsiiOptional]
             [JsiiProperty(name: "role", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Role
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property sessionAffinity: The session affinity policy for Function Compute requests.</summary>
+            /// <remarks>
+            /// Set to MCP_SSE to implement MCP SSE protocol request affinity. Set to GENERATED_COOKIE for cookie-based affinity. Set to HEADER_FIELD for header-based affinity. If not set or set to NONE, there is no affinity effect, and requests are routed according to the default scheduling policy of Function Compute.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "sessionAffinity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SessionAffinity
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property sessionAffinityConfig: Session affinity configuration.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "sessionAffinityConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+            public object? SessionAffinityConfig
             {
                 get => GetInstanceProperty<object?>();
             }

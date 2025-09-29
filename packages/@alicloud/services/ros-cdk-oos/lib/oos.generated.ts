@@ -150,6 +150,161 @@ export class RosDefaultPatchBaseline extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosDeployRevision`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-deployrevision
+ */
+export interface RosDeployRevisionProps {
+
+    /**
+     * @Property applicationName: The name of the application.
+     */
+    readonly applicationName: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the revision.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property hooks: The hook of the code to be deployed.
+     */
+    readonly hooks?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property location: The location of the code to be deployed.
+     */
+    readonly location?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property revisionType: The type of the revision.
+     */
+    readonly revisionType?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosDeployRevisionProps`
+ *
+ * @param properties - the TypeScript properties of a `RosDeployRevisionProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosDeployRevisionPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('applicationName', ros.requiredValidator)(properties.applicationName));
+    errors.collect(ros.propertyValidator('applicationName', ros.validateString)(properties.applicationName));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    if(properties.revisionType && (typeof properties.revisionType) !== 'object') {
+        errors.collect(ros.propertyValidator('revisionType', ros.validateAllowedValues)({
+          data: properties.revisionType,
+          allowedValues: ["GitRepo","Oss","EcsImage","DockerImage","Command"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('revisionType', ros.validateString)(properties.revisionType));
+    errors.collect(ros.propertyValidator('hooks', ros.hashValidator(ros.validateAny))(properties.hooks));
+    errors.collect(ros.propertyValidator('location', ros.hashValidator(ros.validateAny))(properties.location));
+    return errors.wrap('supplied properties not correct for "RosDeployRevisionProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OOS::DeployRevision` resource
+ *
+ * @param properties - the TypeScript properties of a `RosDeployRevisionProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OOS::DeployRevision` resource.
+ */
+// @ts-ignore TS6133
+function rosDeployRevisionPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosDeployRevisionPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ApplicationName': ros.stringToRosTemplate(properties.applicationName),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Hooks': ros.hashMapper(ros.objectToRosTemplate)(properties.hooks),
+      'Location': ros.hashMapper(ros.objectToRosTemplate)(properties.location),
+      'RevisionType': ros.stringToRosTemplate(properties.revisionType),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::DeployRevision`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DeployRevision` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-deployrevision
+ */
+export class RosDeployRevision extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OOS::DeployRevision";
+
+    /**
+     * @Attribute RevisionId: The ID of the revision.
+     */
+    public readonly attrRevisionId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property applicationName: The name of the application.
+     */
+    public applicationName: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the revision.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property hooks: The hook of the code to be deployed.
+     */
+    public hooks: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @Property location: The location of the code to be deployed.
+     */
+    public location: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @Property revisionType: The type of the revision.
+     */
+    public revisionType: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosDeployRevisionProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosDeployRevision.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrRevisionId = this.getAtt('RevisionId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.applicationName = props.applicationName;
+        this.description = props.description;
+        this.hooks = props.hooks;
+        this.location = props.location;
+        this.revisionType = props.revisionType;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            applicationName: this.applicationName,
+            description: this.description,
+            hooks: this.hooks,
+            location: this.location,
+            revisionType: this.revisionType,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosDeployRevisionPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosExecution`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-execution
  */
@@ -315,7 +470,7 @@ function rosExecutionPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Execution`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Execution`, which is used to start an execution.
  * @Note This class does not contain additional functions, so it is recommended to use the `Execution` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-execution
  */
@@ -1933,7 +2088,7 @@ function rosTemplatePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Template`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Template`, which is used to create a template.
  * @Note This class does not contain additional functions, so it is recommended to use the `Template` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-template
  */

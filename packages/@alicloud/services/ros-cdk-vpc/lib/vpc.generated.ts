@@ -8780,7 +8780,7 @@ export interface RosSnatEntryProps {
     readonly sourceCidr?: string | ros.IResolvable;
 
     /**
-     * @Property sourceVSwitchIds: The ID of the VSwitch to access the Internet.
+     * @Property sourceVSwitchIds: The ID of the VSwitch to access the Internet. When updating this list parameter, a new item will lead to a creation of new Snat Entry with latest properties, a removed item will lead to a deletion of the attached SnatEntry
      */
     readonly sourceVSwitchIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 }
@@ -8883,7 +8883,7 @@ export class RosSnatEntry extends ros.RosResource {
     public sourceCidr: string | ros.IResolvable | undefined;
 
     /**
-     * @Property sourceVSwitchIds: The ID of the VSwitch to access the Internet.
+     * @Property sourceVSwitchIds: The ID of the VSwitch to access the Internet. When updating this list parameter, a new item will lead to a creation of new Snat Entry with latest properties, a removed item will lead to a deletion of the attached SnatEntry
      */
     public sourceVSwitchIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 

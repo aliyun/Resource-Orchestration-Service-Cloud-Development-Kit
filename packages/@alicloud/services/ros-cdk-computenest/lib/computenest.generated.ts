@@ -264,7 +264,7 @@ export interface RosServiceInstanceProps {
     /**
      * @Property parameters: The parameters entered by the deployment service instance.
      */
-    readonly parameters?: string | ros.IResolvable;
+    readonly parameters?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
      * @Property predefinedParameterName: Package name.
@@ -315,7 +315,7 @@ function RosServiceInstancePropsValidator(properties: any): ros.ValidationResult
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('specificationCode', ros.validateString)(properties.specificationCode));
-    errors.collect(ros.propertyValidator('parameters', ros.validateString)(properties.parameters));
+    errors.collect(ros.propertyValidator('parameters', ros.hashValidator(ros.validateAny))(properties.parameters));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('operationName', ros.validateString)(properties.operationName));
     errors.collect(ros.propertyValidator('serviceInstanceName', ros.validateString)(properties.serviceInstanceName));
@@ -361,7 +361,7 @@ function rosServiceInstancePropsToRosTemplate(properties: any, enableResourcePro
       'EnableInstanceOps': ros.booleanToRosTemplate(properties.enableInstanceOps),
       'EnableUserPrometheus': ros.booleanToRosTemplate(properties.enableUserPrometheus),
       'OperationName': ros.stringToRosTemplate(properties.operationName),
-      'Parameters': ros.stringToRosTemplate(properties.parameters),
+      'Parameters': ros.hashMapper(ros.objectToRosTemplate)(properties.parameters),
       'PredefinedParameterName': ros.stringToRosTemplate(properties.predefinedParameterName),
       'ResourceAutoPay': ros.booleanToRosTemplate(properties.resourceAutoPay),
       'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
@@ -373,7 +373,7 @@ function rosServiceInstancePropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ComputeNest::ServiceInstance`, which is used to create and deploy a service instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ComputeNest::ServiceInstance`The , which type is used to create and deploy a service instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `ServiceInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-computenest-serviceinstance
  */
@@ -555,7 +555,7 @@ export class RosServiceInstance extends ros.RosResource {
     /**
      * @Property parameters: The parameters entered by the deployment service instance.
      */
-    public parameters: string | ros.IResolvable | undefined;
+    public parameters: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
 
     /**
      * @Property predefinedParameterName: Package name.

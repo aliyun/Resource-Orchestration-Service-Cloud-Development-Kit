@@ -58,7 +58,7 @@ type DBClusterProps struct {
 	EncryptionKey interface{} `field:"optional" json:"encryptionKey" yaml:"encryptionKey"`
 	// Property encryptionType: Kms key type, only cloud disk encryption is supported and the value is CloudDisk.
 	EncryptionType interface{} `field:"optional" json:"encryptionType" yaml:"encryptionType"`
-	// Property period: Prepaid time period.If the payment type is Prepaid, this parameter is mandatory. Specify the prepaid cluster as a yearly or monthly type. Valid values:  Year, Month.
+	// Property period: The unit of the subscription duration.
 	Period interface{} `field:"optional" json:"period" yaml:"period"`
 	// Property usedTime: The subscription duration.
 	//

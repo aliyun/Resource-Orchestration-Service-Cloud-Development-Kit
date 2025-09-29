@@ -37,7 +37,7 @@ export interface IDomain extends ros.IResource {
     readonly attrDomainName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::OSS::Domain`, which is used to bind a custom domain name.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::OSS::Domain`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomain`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-domain
  */

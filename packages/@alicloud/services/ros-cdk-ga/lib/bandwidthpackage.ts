@@ -142,7 +142,7 @@ export interface IBandwidthPackage extends ros.IResource {
     readonly attrType: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::GA::BandwidthPackage`, which is used to create a bandwidth plan.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::GA::BandwidthPackage`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBandwidthPackage`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-bandwidthpackage
  */

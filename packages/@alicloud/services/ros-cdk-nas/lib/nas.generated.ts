@@ -89,7 +89,7 @@ function rosAccessGroupPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::AccessGroup`, which is used to create a permission group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::AccessGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AccessGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-accessgroup
  */
@@ -1173,7 +1173,7 @@ function rosFilesetPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::Fileset`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::Fileset`, which is used to create a fileset.
  * @Note This class does not contain additional functions, so it is recommended to use the `Fileset` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-fileset
  */
@@ -1364,7 +1364,7 @@ function rosMountTargetPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::MountTarget`, which is used to create a mount target.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::MountTarget`.
  * @Note This class does not contain additional functions, so it is recommended to use the `MountTarget` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-mounttarget
  */
@@ -1578,7 +1578,7 @@ function rosProtocolMountTargetPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::ProtocolMountTarget`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::ProtocolMountTarget`, which is used to create an export directory for a protocol service.
  * @Note This class does not contain additional functions, so it is recommended to use the `ProtocolMountTarget` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-protocolmounttarget
  */

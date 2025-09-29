@@ -16,6 +16,8 @@
 @alicloud/ros-cdk-sae.Namespace=com.aliyun.ros.cdk.sae.Namespace
 @alicloud/ros-cdk-sae.NamespaceProps=com.aliyun.ros.cdk.sae.NamespaceProps
 @alicloud/ros-cdk-sae.RosApplication=com.aliyun.ros.cdk.sae.RosApplication
+@alicloud/ros-cdk-sae.RosApplication.InitContainersConfigProperty=com.aliyun.ros.cdk.sae.RosApplication$InitContainersConfigProperty
+@alicloud/ros-cdk-sae.RosApplication.SidecarContainersConfigProperty=com.aliyun.ros.cdk.sae.RosApplication$SidecarContainersConfigProperty
 @alicloud/ros-cdk-sae.RosApplication.TagsProperty=com.aliyun.ros.cdk.sae.RosApplication$TagsProperty
 @alicloud/ros-cdk-sae.RosApplicationProps=com.aliyun.ros.cdk.sae.RosApplicationProps
 @alicloud/ros-cdk-sae.RosApplicationScalingRule=com.aliyun.ros.cdk.sae.RosApplicationScalingRule
@@ -45,10 +47,15 @@
 @alicloud/ros-cdk-sae.datasource.Applications=com.aliyun.ros.cdk.sae.datasource.Applications
 @alicloud/ros-cdk-sae.datasource.ApplicationsProps=com.aliyun.ros.cdk.sae.datasource.ApplicationsProps
 @alicloud/ros-cdk-sae.datasource.IApplications=com.aliyun.ros.cdk.sae.datasource.IApplications
+@alicloud/ros-cdk-sae.datasource.INamespace=com.aliyun.ros.cdk.sae.datasource.INamespace
 @alicloud/ros-cdk-sae.datasource.INamespaces=com.aliyun.ros.cdk.sae.datasource.INamespaces
+@alicloud/ros-cdk-sae.datasource.Namespace=com.aliyun.ros.cdk.sae.datasource.Namespace
+@alicloud/ros-cdk-sae.datasource.NamespaceProps=com.aliyun.ros.cdk.sae.datasource.NamespaceProps
 @alicloud/ros-cdk-sae.datasource.Namespaces=com.aliyun.ros.cdk.sae.datasource.Namespaces
 @alicloud/ros-cdk-sae.datasource.NamespacesProps=com.aliyun.ros.cdk.sae.datasource.NamespacesProps
 @alicloud/ros-cdk-sae.datasource.RosApplications=com.aliyun.ros.cdk.sae.datasource.RosApplications
 @alicloud/ros-cdk-sae.datasource.RosApplicationsProps=com.aliyun.ros.cdk.sae.datasource.RosApplicationsProps
+@alicloud/ros-cdk-sae.datasource.RosNamespace=com.aliyun.ros.cdk.sae.datasource.RosNamespace
+@alicloud/ros-cdk-sae.datasource.RosNamespaceProps=com.aliyun.ros.cdk.sae.datasource.RosNamespaceProps
 @alicloud/ros-cdk-sae.datasource.RosNamespaces=com.aliyun.ros.cdk.sae.datasource.RosNamespaces
 @alicloud/ros-cdk-sae.datasource.RosNamespacesProps=com.aliyun.ros.cdk.sae.datasource.RosNamespacesProps

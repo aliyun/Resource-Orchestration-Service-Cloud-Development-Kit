@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::ClusterHelmApplication</code>, which is used to deploy an application by using Helm.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::ClusterHelmApplication</code>The , which resource type deploys an application using Helm.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.140Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.821Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ClusterHelmApplication")
 public class ClusterHelmApplication extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cs.IClusterHelmApplication {
 
@@ -229,6 +229,33 @@ public class ClusterHelmApplication extends com.aliyun.ros.cdk.core.Resource imp
          */
         public Builder credential(final com.aliyun.ros.cdk.cs.RosClusterHelmApplication.CredentialProperty credential) {
             this.props.credential(credential);
+            return this;
+        }
+
+        /**
+         * Property ignoreExisting: How to ignore existing helm application: Disabled(default): If a helm application with the same name exists, an error will be reported when creating it.
+         * <p>
+         * SkipInstallIfExisting: If there is a helm application with the same name, the helm application creation process will be ignored.
+         * SkipAllOperationsIfExisting: If there is a helm application with the same name, the helm application creation process will be ignored. If the helm application is not created by this resource, it will be ignored during update and delete stage.
+         * <p>
+         * @return {@code this}
+         * @param ignoreExisting Property ignoreExisting: How to ignore existing helm application: Disabled(default): If a helm application with the same name exists, an error will be reported when creating it. This parameter is required.
+         */
+        public Builder ignoreExisting(final java.lang.String ignoreExisting) {
+            this.props.ignoreExisting(ignoreExisting);
+            return this;
+        }
+        /**
+         * Property ignoreExisting: How to ignore existing helm application: Disabled(default): If a helm application with the same name exists, an error will be reported when creating it.
+         * <p>
+         * SkipInstallIfExisting: If there is a helm application with the same name, the helm application creation process will be ignored.
+         * SkipAllOperationsIfExisting: If there is a helm application with the same name, the helm application creation process will be ignored. If the helm application is not created by this resource, it will be ignored during update and delete stage.
+         * <p>
+         * @return {@code this}
+         * @param ignoreExisting Property ignoreExisting: How to ignore existing helm application: Disabled(default): If a helm application with the same name exists, an error will be reported when creating it. This parameter is required.
+         */
+        public Builder ignoreExisting(final com.aliyun.ros.cdk.core.IResolvable ignoreExisting) {
+            this.props.ignoreExisting(ignoreExisting);
             return this;
         }
 

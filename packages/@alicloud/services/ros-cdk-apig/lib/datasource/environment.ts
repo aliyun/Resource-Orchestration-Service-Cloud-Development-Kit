@@ -55,7 +55,7 @@ export interface IEnvironment extends ros.IResource {
     readonly attrResourceGroupId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::APIG::Environment`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::APIG::Environment`The , which type is used to query environment.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEnvironment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apig-environment
  */

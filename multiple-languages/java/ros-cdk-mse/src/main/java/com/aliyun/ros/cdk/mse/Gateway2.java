@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.mse;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::MSE::Gateway2</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::MSE::Gateway2</code>The ALIYUN::MSE::Use Gateway2 resource type to create cloud-native gateway.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.643Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:27.028Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.Gateway2")
 public class Gateway2 extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.mse.IGateway2 {
 

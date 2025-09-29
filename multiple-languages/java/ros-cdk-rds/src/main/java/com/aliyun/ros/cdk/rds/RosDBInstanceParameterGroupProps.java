@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.rds;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstanceparametergroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.902Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:28.704Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosDBInstanceParameterGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosDBInstanceParameterGroupProps.Jsii$Proxy.class)
 public interface RosDBInstanceParameterGroupProps extends software.amazon.jsii.JsiiSerializable {

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.pai;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-codesource
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.075Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:27.485Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pai.$Module.class, fqn = "@alicloud/ros-cdk-pai.CodeSourceProps")
 @software.amazon.jsii.Jsii.Proxy(CodeSourceProps.Jsii$Proxy.class)
 public interface CodeSourceProps extends software.amazon.jsii.JsiiSerializable {

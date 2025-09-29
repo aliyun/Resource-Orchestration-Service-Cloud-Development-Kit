@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.apig.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::APIG::Plugins</code>.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::APIG::Plugins</code>, which is used to query plug-ins.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:43.660Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:21.065Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.datasource.Plugins")
 public class Plugins extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.apig.datasource.IPlugins {
 

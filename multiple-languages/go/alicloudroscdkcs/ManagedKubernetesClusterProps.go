@@ -193,6 +193,8 @@ type ManagedKubernetesClusterProps struct {
 	//
 	// The default value is 60.
 	TimeoutMins interface{} `field:"optional" json:"timeoutMins" yaml:"timeoutMins"`
+	// Property timeZone: The time zone of the cluster.
+	TimeZone interface{} `field:"optional" json:"timeZone" yaml:"timeZone"`
 	// Property userData: The user-defined data.
 	//
 	// [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.

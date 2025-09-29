@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Represents a <code>EIPAssociation</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:51.183Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:30.382Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.IEIPAssociation")
 @software.amazon.jsii.Jsii.Proxy(IEIPAssociation.Jsii$Proxy.class)
 public interface IEIPAssociation extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

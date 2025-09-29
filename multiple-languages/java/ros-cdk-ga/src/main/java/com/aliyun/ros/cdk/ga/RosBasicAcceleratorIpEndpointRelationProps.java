@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ga;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicacceleratoripendpointrelation
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.876Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:26.139Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.RosBasicAcceleratorIpEndpointRelationProps")
 @software.amazon.jsii.Jsii.Proxy(RosBasicAcceleratorIpEndpointRelationProps.Jsii$Proxy.class)
 public interface RosBasicAcceleratorIpEndpointRelationProps extends software.amazon.jsii.JsiiSerializable {

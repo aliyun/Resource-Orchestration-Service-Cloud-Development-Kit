@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ddos;
 /**
  * Represents a <code>OriginInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.395Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.136Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ddos.$Module.class, fqn = "@alicloud/ros-cdk-ddos.IOriginInstance")
 @software.amazon.jsii.Jsii.Proxy(IOriginInstance.Jsii$Proxy.class)
 public interface IOriginInstance extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

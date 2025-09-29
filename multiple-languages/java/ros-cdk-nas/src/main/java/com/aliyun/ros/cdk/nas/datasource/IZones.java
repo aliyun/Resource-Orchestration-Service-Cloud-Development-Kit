@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nas.datasource;
 /**
  * Represents a <code>Zones</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.806Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:27.179Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.datasource.IZones")
 @software.amazon.jsii.Jsii.Proxy(IZones.Jsii$Proxy.class)
 public interface IZones extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

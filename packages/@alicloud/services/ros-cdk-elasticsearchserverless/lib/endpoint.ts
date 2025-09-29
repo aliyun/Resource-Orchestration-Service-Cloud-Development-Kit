@@ -20,6 +20,11 @@ export interface EndpointProps {
     readonly name?: string | ros.IResolvable;
 
     /**
+     * Property securityGroupIds: A list of security groups.
+     */
+    readonly securityGroupIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * Property type: Endpoint type, default value: VPC.
      */
     readonly type?: string | ros.IResolvable;
@@ -52,7 +57,7 @@ export interface IEndpoint extends ros.IResource {
     readonly attrPvlEndpointId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ElasticSearchServerless::Endpoint`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ElasticSearchServerless::Endpoint`The , which is used to create an endpoint.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEndpoint`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-elasticsearchserverless-endpoint
  */
@@ -92,6 +97,7 @@ export class Endpoint extends ros.Resource implements IEndpoint {
         const rosEndpoint = new RosEndpoint(this, id,  {
             type: props.type,
             vpcId: props.vpcId,
+            securityGroupIds: props.securityGroupIds,
             endpointZones: props.endpointZones,
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

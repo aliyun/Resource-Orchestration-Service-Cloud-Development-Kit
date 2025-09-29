@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::GraphDatabase::DbInstances`, which is used to query the information about Graph Database (GDB) instances.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::GraphDatabase::DbInstances`.
 type DbInstances interface {
 	alicloudroscdkcore.Resource
 	IDbInstances

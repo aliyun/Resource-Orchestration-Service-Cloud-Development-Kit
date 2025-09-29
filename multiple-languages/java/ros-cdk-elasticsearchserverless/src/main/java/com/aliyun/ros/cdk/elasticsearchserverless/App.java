@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.elasticsearchserverless;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ElasticSearchServerless::App</code>, which is used to create an Elasticsearch serverless application.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.156Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:25.148Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.elasticsearchserverless.$Module.class, fqn = "@alicloud/ros-cdk-elasticsearchserverless.App")
 public class App extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.elasticsearchserverless.IApp {
 

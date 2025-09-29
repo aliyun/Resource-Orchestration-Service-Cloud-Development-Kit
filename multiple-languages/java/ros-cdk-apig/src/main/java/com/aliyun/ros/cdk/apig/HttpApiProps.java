@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.apig;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-httpapi
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:43.513Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:20.885Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.HttpApiProps")
 @software.amazon.jsii.Jsii.Proxy(HttpApiProps.Jsii$Proxy.class)
 public interface HttpApiProps extends software.amazon.jsii.JsiiSerializable {

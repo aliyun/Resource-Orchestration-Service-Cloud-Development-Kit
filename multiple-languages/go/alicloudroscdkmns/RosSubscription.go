@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::MNS::Subscription`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::MNS::Subscription`, which is used to describe a subscription relationship, including the subscribed topic and the endpoint that the subscriber uses to receive messages.
 type RosSubscription interface {
 	alicloudroscdkcore.RosResource
 	AttrSubscriptionName() alicloudroscdkcore.IResolvable

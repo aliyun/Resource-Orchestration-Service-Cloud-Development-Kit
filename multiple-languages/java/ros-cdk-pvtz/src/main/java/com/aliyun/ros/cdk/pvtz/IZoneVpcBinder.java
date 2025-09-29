@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pvtz;
 /**
  * Represents a <code>ZoneVpcBinder</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.558Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:28.296Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.IZoneVpcBinder")
 @software.amazon.jsii.Jsii.Proxy(IZoneVpcBinder.Jsii$Proxy.class)
 public interface IZoneVpcBinder extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

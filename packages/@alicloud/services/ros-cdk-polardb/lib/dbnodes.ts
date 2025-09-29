@@ -67,7 +67,7 @@ export interface IDBNodes extends ros.IResource {
     readonly attrOrderIds: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::DBNodes`, which is used to add nodes to a PolarDB cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::DBNodes`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBNodes`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbnodes
  */

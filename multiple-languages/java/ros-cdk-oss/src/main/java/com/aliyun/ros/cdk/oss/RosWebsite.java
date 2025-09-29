@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oss;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::OSS::Website</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:51.911Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:31.183Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.RosWebsite")
 public class RosWebsite extends com.aliyun.ros.cdk.core.RosResource {
 

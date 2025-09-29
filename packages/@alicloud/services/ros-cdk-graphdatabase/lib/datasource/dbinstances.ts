@@ -50,7 +50,7 @@ export interface IDbInstances extends ros.IResource {
     readonly attrDbInstances: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::GraphDatabase::DbInstances`, which is used to query the information about Graph Database (GDB) instances.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::GraphDatabase::DbInstances`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDbInstances`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-graphdatabase-dbinstances
  */

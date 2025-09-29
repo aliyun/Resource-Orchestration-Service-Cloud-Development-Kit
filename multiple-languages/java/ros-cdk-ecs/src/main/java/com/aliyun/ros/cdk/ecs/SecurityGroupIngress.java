@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::SecurityGroupIngress</code>, which is used to create an inbound rule for a security group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.620Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:24.569Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.SecurityGroupIngress")
 public class SecurityGroupIngress extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.ISecurityGroupIngress {
 

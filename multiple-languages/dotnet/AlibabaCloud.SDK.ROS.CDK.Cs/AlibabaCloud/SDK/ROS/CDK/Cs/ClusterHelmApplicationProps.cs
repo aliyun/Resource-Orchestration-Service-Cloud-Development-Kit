@@ -171,6 +171,41 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
+        private object? _ignoreExisting;
+
+        /// <summary>Property ignoreExisting: How to ignore existing helm application: Disabled(default): If a helm application with the same name exists, an error will be reported when creating it.</summary>
+        /// <remarks>
+        /// SkipInstallIfExisting: If there is a helm application with the same name, the helm application creation process will be ignored.
+        /// SkipAllOperationsIfExisting: If there is a helm application with the same name, the helm application creation process will be ignored. If the helm application is not created by this resource, it will be ignored during update and delete stage.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "ignoreExisting", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? IgnoreExisting
+        {
+            get => _ignoreExisting;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _ignoreExisting = value;
+            }
+        }
+
         private object? _namespace;
 
         /// <summary>Property namespace: Namespace to use with helm.</summary>

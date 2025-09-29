@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::RDS::DBInstanceClone</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.893Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:28.695Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosDBInstanceClone")
 public class RosDBInstanceClone extends com.aliyun.ros.cdk.core.RosResource {
 

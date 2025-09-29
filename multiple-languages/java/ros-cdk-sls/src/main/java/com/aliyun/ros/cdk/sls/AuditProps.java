@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.sls;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-audit
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:50.826Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:29.943Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.AuditProps")
 @software.amazon.jsii.Jsii.Proxy(AuditProps.Jsii$Proxy.class)
 public interface AuditProps extends software.amazon.jsii.JsiiSerializable {

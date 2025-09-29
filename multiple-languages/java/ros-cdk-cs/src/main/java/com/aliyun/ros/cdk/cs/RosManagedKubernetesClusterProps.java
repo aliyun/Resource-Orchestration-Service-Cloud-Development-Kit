@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managedkubernetescluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.258Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.950Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosManagedKubernetesClusterProps.Jsii$Proxy.class)
 public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -240,6 +240,12 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTimeZone() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getUserData() {
         return null;
     }
@@ -299,6 +305,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         java.util.List<com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.TagsProperty> tags;
         java.lang.Object taint;
         java.lang.Object timeoutMins;
+        java.lang.Object timeZone;
         java.lang.Object userData;
         java.lang.Object zoneIds;
 
@@ -1074,6 +1081,26 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         }
 
         /**
+         * Sets the value of {@link RosManagedKubernetesClusterProps#getTimeZone}
+         * @param timeZone the value to be set.
+         * @return {@code this}
+         */
+        public Builder timeZone(java.lang.String timeZone) {
+            this.timeZone = timeZone;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosManagedKubernetesClusterProps#getTimeZone}
+         * @param timeZone the value to be set.
+         * @return {@code this}
+         */
+        public Builder timeZone(com.aliyun.ros.cdk.core.IResolvable timeZone) {
+            this.timeZone = timeZone;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosManagedKubernetesClusterProps#getUserData}
          * @param userData the value to be set.
          * @return {@code this}
@@ -1168,6 +1195,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         private final java.util.List<com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.TagsProperty> tags;
         private final java.lang.Object taint;
         private final java.lang.Object timeoutMins;
+        private final java.lang.Object timeZone;
         private final java.lang.Object userData;
         private final java.lang.Object zoneIds;
 
@@ -1216,6 +1244,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.TagsProperty.class)));
             this.taint = software.amazon.jsii.Kernel.get(this, "taint", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.timeoutMins = software.amazon.jsii.Kernel.get(this, "timeoutMins", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.timeZone = software.amazon.jsii.Kernel.get(this, "timeZone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.userData = software.amazon.jsii.Kernel.get(this, "userData", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneIds = software.amazon.jsii.Kernel.get(this, "zoneIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -1265,6 +1294,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             this.tags = (java.util.List<com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.TagsProperty>)builder.tags;
             this.taint = builder.taint;
             this.timeoutMins = builder.timeoutMins;
+            this.timeZone = builder.timeZone;
             this.userData = builder.userData;
             this.zoneIds = builder.zoneIds;
         }
@@ -1465,6 +1495,11 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         }
 
         @Override
+        public final java.lang.Object getTimeZone() {
+            return this.timeZone;
+        }
+
+        @Override
         public final java.lang.Object getUserData() {
             return this.userData;
         }
@@ -1591,6 +1626,9 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             if (this.getTimeoutMins() != null) {
                 data.set("timeoutMins", om.valueToTree(this.getTimeoutMins()));
             }
+            if (this.getTimeZone() != null) {
+                data.set("timeZone", om.valueToTree(this.getTimeZone()));
+            }
             if (this.getUserData() != null) {
                 data.set("userData", om.valueToTree(this.getUserData()));
             }
@@ -1654,6 +1692,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.taint != null ? !this.taint.equals(that.taint) : that.taint != null) return false;
             if (this.timeoutMins != null ? !this.timeoutMins.equals(that.timeoutMins) : that.timeoutMins != null) return false;
+            if (this.timeZone != null ? !this.timeZone.equals(that.timeZone) : that.timeZone != null) return false;
             if (this.userData != null ? !this.userData.equals(that.userData) : that.userData != null) return false;
             return this.zoneIds != null ? this.zoneIds.equals(that.zoneIds) : that.zoneIds == null;
         }
@@ -1699,6 +1738,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.taint != null ? this.taint.hashCode() : 0);
             result = 31 * result + (this.timeoutMins != null ? this.timeoutMins.hashCode() : 0);
+            result = 31 * result + (this.timeZone != null ? this.timeZone.hashCode() : 0);
             result = 31 * result + (this.userData != null ? this.userData.hashCode() : 0);
             result = 31 * result + (this.zoneIds != null ? this.zoneIds.hashCode() : 0);
             return result;

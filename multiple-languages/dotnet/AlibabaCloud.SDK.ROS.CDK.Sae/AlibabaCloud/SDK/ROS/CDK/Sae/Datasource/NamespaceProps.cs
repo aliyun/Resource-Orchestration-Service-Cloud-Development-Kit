@@ -1,0 +1,116 @@
+using Amazon.JSII.Runtime.Deputy;
+
+#pragma warning disable CS0672,CS0809,CS1591
+
+namespace AlibabaCloud.SDK.ROS.CDK.Sae.Datasource
+{
+    /// <summary>Properties for defining a `Namespace`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sae-namespace
+    /// </remarks>
+    [JsiiByValue(fqn: "@alicloud/ros-cdk-sae.datasource.NamespaceProps")]
+    public class NamespaceProps : AlibabaCloud.SDK.ROS.CDK.Sae.Datasource.INamespaceProps
+    {
+        private object? _namespaceId;
+
+        /// <summary>Property namespaceId: The ID of the namespace.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "namespaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? NamespaceId
+        {
+            get => _namespaceId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _namespaceId = value;
+            }
+        }
+
+        private object? _nameSpaceShortId;
+
+        /// <summary>Property nameSpaceShortId: The ID of the short namespace.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "nameSpaceShortId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? NameSpaceShortId
+        {
+            get => _nameSpaceShortId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _nameSpaceShortId = value;
+            }
+        }
+
+        private object? _refreshOptions;
+
+        /// <summary>Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>Never: Never refresh the datasource resource when the stack is updated.</description>
+        /// <description>Always: Always refresh the datasource resource when the stack is updated.
+        /// Default is Never.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "refreshOptions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? RefreshOptions
+        {
+            get => _refreshOptions;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _refreshOptions = value;
+            }
+        }
+    }
+}

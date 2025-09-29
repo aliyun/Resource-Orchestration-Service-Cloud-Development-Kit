@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Acs
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ACS::Cluster`, which is used to create an Alibaba Cloud Container Service (ACS) cluster.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ACS::Cluster`, which is used to create a Container Compute Service (ACS) cluster.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Cluster` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acs-cluster
@@ -1055,6 +1055,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Acs
                 }
             }
 
+            /// <remarks>
+            /// <strong>Property</strong>: version: When the value is empty, the latest version is selected by default.
+            /// </remarks>
+            [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Version
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
             [JsiiTypeProxy(nativeType: typeof(IAddonsProperty), fullyQualifiedName: "@alicloud/ros-cdk-acs.RosCluster.AddonsProperty")]
             internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Acs.RosCluster.IAddonsProperty
             {
@@ -1087,6 +1100,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Acs
                 [JsiiOptional]
                 [JsiiProperty(name: "disabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? Disabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: version: When the value is empty, the latest version is selected by default.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Version
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -1192,6 +1215,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Acs
                         }
                     }
                     _disabled = value;
+                }
+            }
+
+            private object? _version;
+
+            /// <remarks>
+            /// <strong>Property</strong>: version: When the value is empty, the latest version is selected by default.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Version
+            {
+                get => _version;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _version = value;
                 }
             }
         }

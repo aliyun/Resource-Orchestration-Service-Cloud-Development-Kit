@@ -278,7 +278,7 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Cluster`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Cluster`, which is used to create a cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `Cluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-cluster
  */
@@ -771,7 +771,7 @@ function rosEngineNamespacePropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::EngineNamespace`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::EngineNamespace`, which is used to create a namespace for an engine.
  * @Note This class does not contain additional functions, so it is recommended to use the `EngineNamespace` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-enginenamespace
  */
@@ -1406,7 +1406,7 @@ function rosGateway2PropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Gateway2`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Gateway2`The ALIYUN::MSE::Use Gateway2 resource type to create cloud-native gateway.
  * @Note This class does not contain additional functions, so it is recommended to use the `Gateway2` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-gateway2
  */
@@ -2042,7 +2042,7 @@ function rosNacosServicePropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::NacosService`, which is used to create a Nacos service.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::NacosService`.
  * @Note This class does not contain additional functions, so it is recommended to use the `NacosService` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-nacosservice
  */

@@ -54,12 +54,16 @@ type RosApplication interface {
 	SetEnableNewArms(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	EnableSidecarResourceIsolated() interface{}
+	SetEnableSidecarResourceIsolated(val interface{})
 	Envs() interface{}
 	SetEnvs(val interface{})
 	ImagePullSecrets() interface{}
 	SetImagePullSecrets(val interface{})
 	ImageUrl() interface{}
 	SetImageUrl(val interface{})
+	InitContainersConfig() interface{}
+	SetInitContainersConfig(val interface{})
 	JarStartArgs() interface{}
 	SetJarStartArgs(val interface{})
 	JarStartOptions() interface{}
@@ -152,6 +156,8 @@ type RosApplication interface {
 	SetSecurityGroupId(val interface{})
 	ServiceTags() interface{}
 	SetServiceTags(val interface{})
+	SidecarContainersConfig() interface{}
+	SetSidecarContainersConfig(val interface{})
 	SlsConfigs() interface{}
 	SetSlsConfigs(val interface{})
 	// The stack in which this element is defined.
@@ -508,6 +514,16 @@ func (j *jsiiProxy_RosApplication) EnableResourcePropertyConstraint() *bool {
 	return returns
 }
 
+func (j *jsiiProxy_RosApplication) EnableSidecarResourceIsolated() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enableSidecarResourceIsolated",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosApplication) Envs() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -533,6 +549,16 @@ func (j *jsiiProxy_RosApplication) ImageUrl() interface{} {
 	_jsii_.Get(
 		j,
 		"imageUrl",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosApplication) InitContainersConfig() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"initContainersConfig",
 		&returns,
 	)
 	return returns
@@ -948,6 +974,16 @@ func (j *jsiiProxy_RosApplication) ServiceTags() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosApplication) SidecarContainersConfig() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"sidecarContainersConfig",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosApplication) SlsConfigs() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -1284,6 +1320,17 @@ func (j *jsiiProxy_RosApplication)SetEnableResourcePropertyConstraint(val *bool)
 	)
 }
 
+func (j *jsiiProxy_RosApplication)SetEnableSidecarResourceIsolated(val interface{}) {
+	if err := j.validateSetEnableSidecarResourceIsolatedParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"enableSidecarResourceIsolated",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosApplication)SetEnvs(val interface{}) {
 	if err := j.validateSetEnvsParameters(val); err != nil {
 		panic(err)
@@ -1313,6 +1360,17 @@ func (j *jsiiProxy_RosApplication)SetImageUrl(val interface{}) {
 	_jsii_.Set(
 		j,
 		"imageUrl",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosApplication)SetInitContainersConfig(val interface{}) {
+	if err := j.validateSetInitContainersConfigParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"initContainersConfig",
 		val,
 	)
 }
@@ -1698,6 +1756,17 @@ func (j *jsiiProxy_RosApplication)SetServiceTags(val interface{}) {
 	_jsii_.Set(
 		j,
 		"serviceTags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosApplication)SetSidecarContainersConfig(val interface{}) {
+	if err := j.validateSetSidecarContainersConfigParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"sidecarContainersConfig",
 		val,
 	)
 }

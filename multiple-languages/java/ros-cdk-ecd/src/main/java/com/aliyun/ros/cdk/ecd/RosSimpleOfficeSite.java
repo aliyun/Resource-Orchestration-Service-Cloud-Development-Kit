@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecd;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ECD::SimpleOfficeSite</code>, which is used to create a workspace of the convenience account type.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.016Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.843Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecd.$Module.class, fqn = "@alicloud/ros-cdk-ecd.RosSimpleOfficeSite")
 public class RosSimpleOfficeSite extends com.aliyun.ros.cdk.core.RosResource {
 

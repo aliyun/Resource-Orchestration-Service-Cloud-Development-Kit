@@ -229,7 +229,7 @@ function rosInstancesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::KMS::Instances`, which is used to query Key Management Service (KMS) instances that are created within the current account in the current region.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::KMS::Instances`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instances` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kms-instances
  */
@@ -464,7 +464,7 @@ function rosNetworkRulesPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::KMS::NetworkRules`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::KMS::NetworkRules`, which is used to query the information about network access rules.
  * @Note This class does not contain additional functions, so it is recommended to use the `NetworkRules` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kms-networkrules
  */
@@ -841,7 +841,7 @@ function rosSecretPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::KMS::Secret`, which is used to query the information about a secret.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::KMS::Secret`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Secret` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kms-secret
  */
@@ -1030,7 +1030,7 @@ function rosSecretsPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::KMS::Secrets`, which is used to query all secrets that are created within the current account in the current region.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::KMS::Secrets`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Secrets` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kms-secrets
  */

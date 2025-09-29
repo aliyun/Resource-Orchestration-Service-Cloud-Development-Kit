@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Fnf
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::FNF::Flow`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::FNF::Flow`, which is used to create a flow.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Flow` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fnf-flow

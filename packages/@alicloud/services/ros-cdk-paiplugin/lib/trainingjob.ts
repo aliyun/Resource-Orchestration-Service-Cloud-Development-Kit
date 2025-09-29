@@ -57,7 +57,7 @@ export interface ITrainingJob extends ros.IResource {
     readonly attrTrainingJobId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::PAIPlugin::TrainingJob`, which is used to create a training job.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PAIPlugin::TrainingJob`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTrainingJob`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paiplugin-trainingjob
  */

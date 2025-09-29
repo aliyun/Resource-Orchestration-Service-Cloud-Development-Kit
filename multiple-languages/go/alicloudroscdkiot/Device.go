@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::IOT::Device`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::IOT::Device`, which is used to register a Device.
 type Device interface {
 	alicloudroscdkcore.Resource
 	IDevice

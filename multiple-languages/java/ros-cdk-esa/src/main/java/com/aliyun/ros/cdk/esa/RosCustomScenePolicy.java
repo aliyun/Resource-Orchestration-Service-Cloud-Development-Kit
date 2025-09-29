@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.esa;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ESA::CustomScenePolicy</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.396Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:25.541Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.esa.$Module.class, fqn = "@alicloud/ros-cdk-esa.RosCustomScenePolicy")
 public class RosCustomScenePolicy extends com.aliyun.ros.cdk.core.RosResource {
 

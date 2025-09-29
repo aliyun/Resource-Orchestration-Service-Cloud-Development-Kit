@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::GA::BandwidthPackage</code>, which is used to query the information about a bandwidth plan.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.902Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:26.185Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.datasource.BandwidthPackage")
 public class BandwidthPackage extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ga.datasource.IBandwidthPackage {
 

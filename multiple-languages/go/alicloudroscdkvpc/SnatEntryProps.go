@@ -25,6 +25,8 @@ type SnatEntryProps struct {
 	// For example, 10.0.0.1\/24. This parameter and the SourceVSwtichId parameter are mutually exclusive and cannot appear at the same time.
 	SourceCidr interface{} `field:"optional" json:"sourceCidr" yaml:"sourceCidr"`
 	// Property sourceVSwitchIds: The ID of the VSwitch to access the Internet.
+	//
+	// When updating this list parameter, a new item will lead to a creation of new Snat Entry with latest properties, a removed item will lead to a deletion of the attached SnatEntry.
 	SourceVSwitchIds interface{} `field:"optional" json:"sourceVSwitchIds" yaml:"sourceVSwitchIds"`
 }
 

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusternodepool
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.228Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.922Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosClusterNodePoolProps")
 @software.amazon.jsii.Jsii.Proxy(RosClusterNodePoolProps.Jsii$Proxy.class)
 public interface RosClusterNodePoolProps extends software.amazon.jsii.JsiiSerializable {

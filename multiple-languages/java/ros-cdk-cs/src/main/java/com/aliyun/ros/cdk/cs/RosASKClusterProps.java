@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-askcluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.201Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.884Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosASKClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosASKClusterProps.Jsii$Proxy.class)
 public interface RosASKClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -35,6 +35,12 @@ public interface RosASKClusterProps extends software.amazon.jsii.JsiiSerializabl
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionProtection() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEncryptionProviderKey() {
         return null;
     }
 
@@ -137,6 +143,7 @@ public interface RosASKClusterProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object clusterSpec;
         java.lang.Object deleteOptions;
         java.lang.Object deletionProtection;
+        java.lang.Object encryptionProviderKey;
         java.lang.Object endpointPublicAccess;
         java.lang.Object kubernetesVersion;
         java.lang.Object maintenanceWindow;
@@ -249,6 +256,26 @@ public interface RosASKClusterProps extends software.amazon.jsii.JsiiSerializabl
          */
         public Builder deletionProtection(com.aliyun.ros.cdk.core.IResolvable deletionProtection) {
             this.deletionProtection = deletionProtection;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosASKClusterProps#getEncryptionProviderKey}
+         * @param encryptionProviderKey the value to be set.
+         * @return {@code this}
+         */
+        public Builder encryptionProviderKey(java.lang.String encryptionProviderKey) {
+            this.encryptionProviderKey = encryptionProviderKey;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosASKClusterProps#getEncryptionProviderKey}
+         * @param encryptionProviderKey the value to be set.
+         * @return {@code this}
+         */
+        public Builder encryptionProviderKey(com.aliyun.ros.cdk.core.IResolvable encryptionProviderKey) {
+            this.encryptionProviderKey = encryptionProviderKey;
             return this;
         }
 
@@ -544,6 +571,7 @@ public interface RosASKClusterProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object clusterSpec;
         private final java.lang.Object deleteOptions;
         private final java.lang.Object deletionProtection;
+        private final java.lang.Object encryptionProviderKey;
         private final java.lang.Object endpointPublicAccess;
         private final java.lang.Object kubernetesVersion;
         private final java.lang.Object maintenanceWindow;
@@ -570,6 +598,7 @@ public interface RosASKClusterProps extends software.amazon.jsii.JsiiSerializabl
             this.clusterSpec = software.amazon.jsii.Kernel.get(this, "clusterSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deleteOptions = software.amazon.jsii.Kernel.get(this, "deleteOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.encryptionProviderKey = software.amazon.jsii.Kernel.get(this, "encryptionProviderKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.endpointPublicAccess = software.amazon.jsii.Kernel.get(this, "endpointPublicAccess", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.kubernetesVersion = software.amazon.jsii.Kernel.get(this, "kubernetesVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.maintenanceWindow = software.amazon.jsii.Kernel.get(this, "maintenanceWindow", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -597,6 +626,7 @@ public interface RosASKClusterProps extends software.amazon.jsii.JsiiSerializabl
             this.clusterSpec = builder.clusterSpec;
             this.deleteOptions = builder.deleteOptions;
             this.deletionProtection = builder.deletionProtection;
+            this.encryptionProviderKey = builder.encryptionProviderKey;
             this.endpointPublicAccess = builder.endpointPublicAccess;
             this.kubernetesVersion = builder.kubernetesVersion;
             this.maintenanceWindow = builder.maintenanceWindow;
@@ -636,6 +666,11 @@ public interface RosASKClusterProps extends software.amazon.jsii.JsiiSerializabl
         @Override
         public final java.lang.Object getDeletionProtection() {
             return this.deletionProtection;
+        }
+
+        @Override
+        public final java.lang.Object getEncryptionProviderKey() {
+            return this.encryptionProviderKey;
         }
 
         @Override
@@ -727,6 +762,9 @@ public interface RosASKClusterProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getDeletionProtection() != null) {
                 data.set("deletionProtection", om.valueToTree(this.getDeletionProtection()));
             }
+            if (this.getEncryptionProviderKey() != null) {
+                data.set("encryptionProviderKey", om.valueToTree(this.getEncryptionProviderKey()));
+            }
             if (this.getEndpointPublicAccess() != null) {
                 data.set("endpointPublicAccess", om.valueToTree(this.getEndpointPublicAccess()));
             }
@@ -792,6 +830,7 @@ public interface RosASKClusterProps extends software.amazon.jsii.JsiiSerializabl
             if (this.clusterSpec != null ? !this.clusterSpec.equals(that.clusterSpec) : that.clusterSpec != null) return false;
             if (this.deleteOptions != null ? !this.deleteOptions.equals(that.deleteOptions) : that.deleteOptions != null) return false;
             if (this.deletionProtection != null ? !this.deletionProtection.equals(that.deletionProtection) : that.deletionProtection != null) return false;
+            if (this.encryptionProviderKey != null ? !this.encryptionProviderKey.equals(that.encryptionProviderKey) : that.encryptionProviderKey != null) return false;
             if (this.endpointPublicAccess != null ? !this.endpointPublicAccess.equals(that.endpointPublicAccess) : that.endpointPublicAccess != null) return false;
             if (this.kubernetesVersion != null ? !this.kubernetesVersion.equals(that.kubernetesVersion) : that.kubernetesVersion != null) return false;
             if (this.maintenanceWindow != null ? !this.maintenanceWindow.equals(that.maintenanceWindow) : that.maintenanceWindow != null) return false;
@@ -815,6 +854,7 @@ public interface RosASKClusterProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.clusterSpec != null ? this.clusterSpec.hashCode() : 0);
             result = 31 * result + (this.deleteOptions != null ? this.deleteOptions.hashCode() : 0);
             result = 31 * result + (this.deletionProtection != null ? this.deletionProtection.hashCode() : 0);
+            result = 31 * result + (this.encryptionProviderKey != null ? this.encryptionProviderKey.hashCode() : 0);
             result = 31 * result + (this.endpointPublicAccess != null ? this.endpointPublicAccess.hashCode() : 0);
             result = 31 * result + (this.kubernetesVersion != null ? this.kubernetesVersion.hashCode() : 0);
             result = 31 * result + (this.maintenanceWindow != null ? this.maintenanceWindow.hashCode() : 0);

@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ice
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ICE::MediaInfo`, which is used to register a media asset in Intelligent Media Services (IMS).</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ICE::MediaInfo`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMediaInfo`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ice-mediainfo

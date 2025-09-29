@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.oos.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-gitcoderepo
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:48.988Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:27.392Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.datasource.RosGitCodeRepoProps")
 @software.amazon.jsii.Jsii.Proxy(RosGitCodeRepoProps.Jsii$Proxy.class)
 public interface RosGitCodeRepoProps extends software.amazon.jsii.JsiiSerializable {

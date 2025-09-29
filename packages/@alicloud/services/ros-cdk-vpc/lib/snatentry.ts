@@ -38,7 +38,7 @@ export interface SnatEntryProps {
     readonly sourceCidr?: string | ros.IResolvable;
 
     /**
-     * Property sourceVSwitchIds: The ID of the VSwitch to access the Internet.
+     * Property sourceVSwitchIds: The ID of the VSwitch to access the Internet. When updating this list parameter, a new item will lead to a creation of new Snat Entry with latest properties, a removed item will lead to a deletion of the attached SnatEntry
      */
     readonly sourceVSwitchIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 }

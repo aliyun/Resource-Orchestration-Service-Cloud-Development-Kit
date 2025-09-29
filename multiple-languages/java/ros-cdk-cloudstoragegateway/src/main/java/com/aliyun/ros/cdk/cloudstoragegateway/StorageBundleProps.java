@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cloudstoragegateway;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudstoragegateway-storagebundle
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:44.782Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.408Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudstoragegateway.$Module.class, fqn = "@alicloud/ros-cdk-cloudstoragegateway.StorageBundleProps")
 @software.amazon.jsii.Jsii.Proxy(StorageBundleProps.Jsii$Proxy.class)
 public interface StorageBundleProps extends software.amazon.jsii.JsiiSerializable {

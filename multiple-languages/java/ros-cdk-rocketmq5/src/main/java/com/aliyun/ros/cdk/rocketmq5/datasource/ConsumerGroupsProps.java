@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.rocketmq5.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rocketmq5-consumergroups
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:50.259Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:29.150Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq5.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq5.datasource.ConsumerGroupsProps")
 @software.amazon.jsii.Jsii.Proxy(ConsumerGroupsProps.Jsii$Proxy.class)
 public interface ConsumerGroupsProps extends software.amazon.jsii.JsiiSerializable {

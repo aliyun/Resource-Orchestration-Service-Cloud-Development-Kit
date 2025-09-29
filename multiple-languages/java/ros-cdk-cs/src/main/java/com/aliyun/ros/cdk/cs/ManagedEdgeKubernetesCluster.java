@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::ManagedEdgeKubernetesCluster</code>, which is used to create a Container Service for Kubernetes (ACK) Edge cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:45.171Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.846Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ManagedEdgeKubernetesCluster")
 public class ManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cs.IManagedEdgeKubernetesCluster {
 
@@ -348,6 +348,31 @@ public class ManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Resour
         }
 
         /**
+         * Property encryptionProviderKey: The ID of the key that is managed by Key Management Service (KMS).
+         * <p>
+         * This key is used to encrypt data disks.You can use KMS in only professional managed Kubernetes clusters.
+         * <p>
+         * @return {@code this}
+         * @param encryptionProviderKey Property encryptionProviderKey: The ID of the key that is managed by Key Management Service (KMS). This parameter is required.
+         */
+        public Builder encryptionProviderKey(final java.lang.String encryptionProviderKey) {
+            this.props.encryptionProviderKey(encryptionProviderKey);
+            return this;
+        }
+        /**
+         * Property encryptionProviderKey: The ID of the key that is managed by Key Management Service (KMS).
+         * <p>
+         * This key is used to encrypt data disks.You can use KMS in only professional managed Kubernetes clusters.
+         * <p>
+         * @return {@code this}
+         * @param encryptionProviderKey Property encryptionProviderKey: The ID of the key that is managed by Key Management Service (KMS). This parameter is required.
+         */
+        public Builder encryptionProviderKey(final com.aliyun.ros.cdk.core.IResolvable encryptionProviderKey) {
+            this.props.encryptionProviderKey(encryptionProviderKey);
+            return this;
+        }
+
+        /**
          * Property endpointPublicAccess: Whether to enable the public network API Server: true: which means that the public network API Server is open.
          * <p>
          * false: If set to false, the API server on the public network will not be created, only the API server on the private network will be created.Default to true.
@@ -431,6 +456,27 @@ public class ManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Resour
         }
 
         /**
+         * Property kubernetesVersion: The version of the Kubernetes cluster.
+         * <p>
+         * @return {@code this}
+         * @param kubernetesVersion Property kubernetesVersion: The version of the Kubernetes cluster. This parameter is required.
+         */
+        public Builder kubernetesVersion(final java.lang.String kubernetesVersion) {
+            this.props.kubernetesVersion(kubernetesVersion);
+            return this;
+        }
+        /**
+         * Property kubernetesVersion: The version of the Kubernetes cluster.
+         * <p>
+         * @return {@code this}
+         * @param kubernetesVersion Property kubernetesVersion: The version of the Kubernetes cluster. This parameter is required.
+         */
+        public Builder kubernetesVersion(final com.aliyun.ros.cdk.core.IResolvable kubernetesVersion) {
+            this.props.kubernetesVersion(kubernetesVersion);
+            return this;
+        }
+
+        /**
          * Property loginPassword: SSH login password.
          * <p>
          * Password rules are 8-30 characters and contain three items (upper and lower case letters, numbers, and special symbols). Specify one of KeyPair or LoginPassword.
@@ -500,6 +546,27 @@ public class ManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Resour
          */
         public Builder nodeCidrMask(final com.aliyun.ros.cdk.core.IResolvable nodeCidrMask) {
             this.props.nodeCidrMask(nodeCidrMask);
+            return this;
+        }
+
+        /**
+         * Property nodePools: The configurations of Node pools.
+         * <p>
+         * @return {@code this}
+         * @param nodePools Property nodePools: The configurations of Node pools. This parameter is required.
+         */
+        public Builder nodePools(final com.aliyun.ros.cdk.core.IResolvable nodePools) {
+            this.props.nodePools(nodePools);
+            return this;
+        }
+        /**
+         * Property nodePools: The configurations of Node pools.
+         * <p>
+         * @return {@code this}
+         * @param nodePools Property nodePools: The configurations of Node pools. This parameter is required.
+         */
+        public Builder nodePools(final java.util.List<? extends java.lang.Object> nodePools) {
+            this.props.nodePools(nodePools);
             return this;
         }
 

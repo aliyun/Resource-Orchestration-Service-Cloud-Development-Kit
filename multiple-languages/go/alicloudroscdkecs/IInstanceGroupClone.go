@@ -34,8 +34,6 @@ type IInstanceGroupClone interface {
 	AttrPrivateIps() interface{}
 	// Attribute PublicIps: Public IP address list of created ecs instances.
 	AttrPublicIps() interface{}
-	// Attribute RelatedOrderIds: The related order id list of created ecs instances.
-	AttrRelatedOrderIds() interface{}
 	// Attribute ZoneIds: Zone id of created instances.
 	AttrZoneIds() interface{}
 	Props() *InstanceGroupCloneProps
@@ -121,16 +119,6 @@ func (j *jsiiProxy_IInstanceGroupClone) AttrPublicIps() interface{} {
 	_jsii_.Get(
 		j,
 		"attrPublicIps",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_IInstanceGroupClone) AttrRelatedOrderIds() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"attrRelatedOrderIds",
 		&returns,
 	)
 	return returns

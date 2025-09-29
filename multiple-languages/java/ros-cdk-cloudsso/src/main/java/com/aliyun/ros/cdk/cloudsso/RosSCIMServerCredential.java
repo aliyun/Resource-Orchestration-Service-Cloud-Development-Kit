@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudsso;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CloudSSO::SCIMServerCredential</code>, which is used to create a System for Cross-domain Identity Management (SCIM) credential.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:44.745Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.353Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudsso.$Module.class, fqn = "@alicloud/ros-cdk-cloudsso.RosSCIMServerCredential")
 public class RosSCIMServerCredential extends com.aliyun.ros.cdk.core.RosResource {
 

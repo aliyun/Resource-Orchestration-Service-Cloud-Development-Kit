@@ -83,7 +83,7 @@ function rosChatbotPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::AppFlow::Chatbot`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::AppFlow::Chatbot`The , which resource is used to create a chatbot.
  * @Note This class does not contain additional functions, so it is recommended to use the `Chatbot` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-appflow-chatbot
  */
@@ -409,7 +409,7 @@ function rosChatbotFlowPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::AppFlow::ChatbotFlow`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::AppFlow::ChatbotFlow`The , which type is used to create a chatbot flow.
  * @Note This class does not contain additional functions, so it is recommended to use the `ChatbotFlow` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-appflow-chatbotflow
  */
@@ -564,7 +564,7 @@ function rosChatbotModelPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::AppFlow::ChatbotModel`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::AppFlow::ChatbotModel`The , which is used to create a chatbot model.
  * @Note This class does not contain additional functions, so it is recommended to use the `ChatbotModel` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-appflow-chatbotmodel
  */

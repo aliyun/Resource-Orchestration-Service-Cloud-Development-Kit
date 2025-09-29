@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Options to configure TagManager behavior.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:43.029Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:20.301Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.TagManagerOptions")
 @software.amazon.jsii.Jsii.Proxy(TagManagerOptions.Jsii$Proxy.class)
 public interface TagManagerOptions extends software.amazon.jsii.JsiiSerializable {

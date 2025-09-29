@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.elasticsearchserverless;
 /**
  * Represents a <code>Endpoint</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:47.162Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:25.153Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.elasticsearchserverless.$Module.class, fqn = "@alicloud/ros-cdk-elasticsearchserverless.IEndpoint")
 @software.amazon.jsii.Jsii.Proxy(IEndpoint.Jsii$Proxy.class)
 public interface IEndpoint extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

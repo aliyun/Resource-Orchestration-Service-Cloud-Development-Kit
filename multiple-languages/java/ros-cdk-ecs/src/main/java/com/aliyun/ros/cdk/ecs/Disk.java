@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::Disk</code>, which is used to create a cloud disk in Elastic Compute Service (ECS).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:46.151Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.997Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.Disk")
 public class Disk extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.IDisk {
 
@@ -222,20 +222,20 @@ public class Disk extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
         }
 
         /**
-         * Property diskCategory: The disk category, now support cloud/cloud_ssd/cloud_essd/cloud_efficiency/san_ssd/san_efficiency/cloud_auto, depends the region.
+         * Property diskCategory: The disk category, now support cloud/cloud_ssd/cloud_essd/cloud_efficiency/san_ssd/san_efficiency/cloud_auto/cloud_essd_entry/cloud_regional_disk_auto/elastic_ephemeral_disk_standard/elastic_ephemeral_disk_premium, depends the region.
          * <p>
          * @return {@code this}
-         * @param diskCategory Property diskCategory: The disk category, now support cloud/cloud_ssd/cloud_essd/cloud_efficiency/san_ssd/san_efficiency/cloud_auto, depends the region. This parameter is required.
+         * @param diskCategory Property diskCategory: The disk category, now support cloud/cloud_ssd/cloud_essd/cloud_efficiency/san_ssd/san_efficiency/cloud_auto/cloud_essd_entry/cloud_regional_disk_auto/elastic_ephemeral_disk_standard/elastic_ephemeral_disk_premium, depends the region. This parameter is required.
          */
         public Builder diskCategory(final java.lang.String diskCategory) {
             this.props().diskCategory(diskCategory);
             return this;
         }
         /**
-         * Property diskCategory: The disk category, now support cloud/cloud_ssd/cloud_essd/cloud_efficiency/san_ssd/san_efficiency/cloud_auto, depends the region.
+         * Property diskCategory: The disk category, now support cloud/cloud_ssd/cloud_essd/cloud_efficiency/san_ssd/san_efficiency/cloud_auto/cloud_essd_entry/cloud_regional_disk_auto/elastic_ephemeral_disk_standard/elastic_ephemeral_disk_premium, depends the region.
          * <p>
          * @return {@code this}
-         * @param diskCategory Property diskCategory: The disk category, now support cloud/cloud_ssd/cloud_essd/cloud_efficiency/san_ssd/san_efficiency/cloud_auto, depends the region. This parameter is required.
+         * @param diskCategory Property diskCategory: The disk category, now support cloud/cloud_ssd/cloud_essd/cloud_efficiency/san_ssd/san_efficiency/cloud_auto/cloud_essd_entry/cloud_regional_disk_auto/elastic_ephemeral_disk_standard/elastic_ephemeral_disk_premium, depends the region. This parameter is required.
          */
         public Builder diskCategory(final com.aliyun.ros.cdk.core.IResolvable diskCategory) {
             this.props().diskCategory(diskCategory);

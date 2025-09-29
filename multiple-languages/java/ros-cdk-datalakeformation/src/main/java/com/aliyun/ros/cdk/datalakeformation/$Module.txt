@@ -1,0 +1,16 @@
+@alicloud/ros-cdk-datalakeformation.Catalog=com.aliyun.ros.cdk.datalakeformation.Catalog
+@alicloud/ros-cdk-datalakeformation.CatalogProps=com.aliyun.ros.cdk.datalakeformation.CatalogProps
+@alicloud/ros-cdk-datalakeformation.ICatalog=com.aliyun.ros.cdk.datalakeformation.ICatalog
+@alicloud/ros-cdk-datalakeformation.IPermissions=com.aliyun.ros.cdk.datalakeformation.IPermissions
+@alicloud/ros-cdk-datalakeformation.IVpcConfig=com.aliyun.ros.cdk.datalakeformation.IVpcConfig
+@alicloud/ros-cdk-datalakeformation.Permissions=com.aliyun.ros.cdk.datalakeformation.Permissions
+@alicloud/ros-cdk-datalakeformation.PermissionsProps=com.aliyun.ros.cdk.datalakeformation.PermissionsProps
+@alicloud/ros-cdk-datalakeformation.RosCatalog=com.aliyun.ros.cdk.datalakeformation.RosCatalog
+@alicloud/ros-cdk-datalakeformation.RosCatalogProps=com.aliyun.ros.cdk.datalakeformation.RosCatalogProps
+@alicloud/ros-cdk-datalakeformation.RosPermissions=com.aliyun.ros.cdk.datalakeformation.RosPermissions
+@alicloud/ros-cdk-datalakeformation.RosPermissions.PermissionsProperty=com.aliyun.ros.cdk.datalakeformation.RosPermissions$PermissionsProperty
+@alicloud/ros-cdk-datalakeformation.RosPermissionsProps=com.aliyun.ros.cdk.datalakeformation.RosPermissionsProps
+@alicloud/ros-cdk-datalakeformation.RosVpcConfig=com.aliyun.ros.cdk.datalakeformation.RosVpcConfig
+@alicloud/ros-cdk-datalakeformation.RosVpcConfigProps=com.aliyun.ros.cdk.datalakeformation.RosVpcConfigProps
+@alicloud/ros-cdk-datalakeformation.VpcConfig=com.aliyun.ros.cdk.datalakeformation.VpcConfig
+@alicloud/ros-cdk-datalakeformation.VpcConfigProps=com.aliyun.ros.cdk.datalakeformation.VpcConfigProps

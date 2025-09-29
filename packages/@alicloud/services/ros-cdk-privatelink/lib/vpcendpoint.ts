@@ -10,11 +10,6 @@ export { RosVpcEndpoint as VpcEndpointProperty };
 export interface VpcEndpointProps {
 
     /**
-     * Property securityGroupId: The security group associated with the endpoint network interface. The security group can control the data communication from the VPC to the endpoint network interface.
-     */
-    readonly securityGroupId: Array<string | ros.IResolvable> | ros.IResolvable;
-
-    /**
      * Property vpcId: The VPC to which the endpoint belongs.
      */
     readonly vpcId: string | ros.IResolvable;
@@ -43,6 +38,11 @@ export interface VpcEndpointProps {
      * false (default): no
      */
     readonly protectedEnabled?: boolean | ros.IResolvable;
+
+    /**
+     * Property securityGroupId: The security group associated with the endpoint network interface. The security group can control the data communication from the VPC to the endpoint network interface.
+     */
+    readonly securityGroupId?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property serviceId: The endpoint service that is associated with the endpoint. One of ServiceId and ServiceName is required.
@@ -122,7 +122,7 @@ export interface IVpcEndpoint extends ros.IResource {
     readonly attrZoneDomains: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::PrivateLink::VpcEndpoint`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PrivateLink::VpcEndpoint`, which is used to create an endpoint.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpcEndpoint`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpoint
  */

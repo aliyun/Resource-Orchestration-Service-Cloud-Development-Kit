@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sas;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SAS::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:50.559Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:29.647Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sas.$Module.class, fqn = "@alicloud/ros-cdk-sas.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 

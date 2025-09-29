@@ -113,7 +113,7 @@ function RosLoadBalancersPropsValidator(properties: any): ros.ValidationResult {
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","Subscription","PrePaid","PrePay","Prepaid","PREPAY"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","postPaid","Subscription","PrePaid","PrePay","Prepaid","PREPAY","prePaid"],
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));

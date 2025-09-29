@@ -60,6 +60,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
+        /// <summary>Property ignoreExisting: How to ignore existing helm application: Disabled(default): If a helm application with the same name exists, an error will be reported when creating it.</summary>
+        /// <remarks>
+        /// SkipInstallIfExisting: If there is a helm application with the same name, the helm application creation process will be ignored.
+        /// SkipAllOperationsIfExisting: If there is a helm application with the same name, the helm application creation process will be ignored. If the helm application is not created by this resource, it will be ignored during update and delete stage.
+        /// </remarks>
+        [JsiiProperty(name: "ignoreExisting", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? IgnoreExisting
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property namespace: Namespace to use with helm.</summary>
         /// <remarks>
         /// Default is default.
@@ -186,6 +201,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             [JsiiOptional]
             [JsiiProperty(name: "credential", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosClusterHelmApplication.CredentialProperty\"}]}}", isOptional: true)]
             public object? Credential
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property ignoreExisting: How to ignore existing helm application: Disabled(default): If a helm application with the same name exists, an error will be reported when creating it.</summary>
+            /// <remarks>
+            /// SkipInstallIfExisting: If there is a helm application with the same name, the helm application creation process will be ignored.
+            /// SkipAllOperationsIfExisting: If there is a helm application with the same name, the helm application creation process will be ignored. If the helm application is not created by this resource, it will be ignored during update and delete stage.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ignoreExisting", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IgnoreExisting
             {
                 get => GetInstanceProperty<object?>();
             }

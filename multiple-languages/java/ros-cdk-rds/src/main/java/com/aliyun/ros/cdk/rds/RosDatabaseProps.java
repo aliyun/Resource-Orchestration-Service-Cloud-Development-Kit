@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.rds;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-database
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:49.921Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:28.731Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosDatabaseProps")
 @software.amazon.jsii.Jsii.Proxy(RosDatabaseProps.Jsii$Proxy.class)
 public interface RosDatabaseProps extends software.amazon.jsii.JsiiSerializable {

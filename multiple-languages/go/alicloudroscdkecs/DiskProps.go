@@ -17,7 +17,7 @@ type DiskProps struct {
 	//
 	// Do not fill or empty, the default is empty.
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
-	// Property diskCategory: The disk category, now support cloud\/cloud_ssd\/cloud_essd\/cloud_efficiency\/san_ssd\/san_efficiency\/cloud_auto, depends the region.
+	// Property diskCategory: The disk category, now support cloud\/cloud_ssd\/cloud_essd\/cloud_efficiency\/san_ssd\/san_efficiency\/cloud_auto\/cloud_essd_entry\/cloud_regional_disk_auto\/elastic_ephemeral_disk_standard\/elastic_ephemeral_disk_premium, depends the region.
 	DiskCategory interface{} `field:"optional" json:"diskCategory" yaml:"diskCategory"`
 	// Property diskName: Display name of the disk, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
 	DiskName interface{} `field:"optional" json:"diskName" yaml:"diskName"`

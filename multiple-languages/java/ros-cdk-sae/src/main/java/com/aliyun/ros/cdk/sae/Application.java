@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sae;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SAE::Application</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:50.380Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:29.327Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.Application")
 public class Application extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.sae.IApplication {
 
@@ -649,6 +649,27 @@ public class Application extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
+         * Property enableSidecarResourceIsolated: Whether to enable sidecar resource isolation.
+         * <p>
+         * @return {@code this}
+         * @param enableSidecarResourceIsolated Property enableSidecarResourceIsolated: Whether to enable sidecar resource isolation. This parameter is required.
+         */
+        public Builder enableSidecarResourceIsolated(final java.lang.Boolean enableSidecarResourceIsolated) {
+            this.props.enableSidecarResourceIsolated(enableSidecarResourceIsolated);
+            return this;
+        }
+        /**
+         * Property enableSidecarResourceIsolated: Whether to enable sidecar resource isolation.
+         * <p>
+         * @return {@code this}
+         * @param enableSidecarResourceIsolated Property enableSidecarResourceIsolated: Whether to enable sidecar resource isolation. This parameter is required.
+         */
+        public Builder enableSidecarResourceIsolated(final com.aliyun.ros.cdk.core.IResolvable enableSidecarResourceIsolated) {
+            this.props.enableSidecarResourceIsolated(enableSidecarResourceIsolated);
+            return this;
+        }
+
+        /**
          * Property envs: Container environment variable parameters.
          * <p>
          * For example: [{ "name": "envtmp", "value": "0"}]
@@ -716,6 +737,27 @@ public class Application extends com.aliyun.ros.cdk.core.Resource implements com
          */
         public Builder imageUrl(final com.aliyun.ros.cdk.core.IResolvable imageUrl) {
             this.props.imageUrl(imageUrl);
+            return this;
+        }
+
+        /**
+         * Property initContainersConfig: Init container config.
+         * <p>
+         * @return {@code this}
+         * @param initContainersConfig Property initContainersConfig: Init container config. This parameter is required.
+         */
+        public Builder initContainersConfig(final com.aliyun.ros.cdk.core.IResolvable initContainersConfig) {
+            this.props.initContainersConfig(initContainersConfig);
+            return this;
+        }
+        /**
+         * Property initContainersConfig: Init container config.
+         * <p>
+         * @return {@code this}
+         * @param initContainersConfig Property initContainersConfig: Init container config. This parameter is required.
+         */
+        public Builder initContainersConfig(final java.util.List<? extends java.lang.Object> initContainersConfig) {
+            this.props.initContainersConfig(initContainersConfig);
             return this;
         }
 
@@ -1535,6 +1577,27 @@ public class Application extends com.aliyun.ros.cdk.core.Resource implements com
          */
         public Builder serviceTags(final com.aliyun.ros.cdk.core.IResolvable serviceTags) {
             this.props.serviceTags(serviceTags);
+            return this;
+        }
+
+        /**
+         * Property sidecarContainersConfig: Sidecar container config.
+         * <p>
+         * @return {@code this}
+         * @param sidecarContainersConfig Property sidecarContainersConfig: Sidecar container config. This parameter is required.
+         */
+        public Builder sidecarContainersConfig(final com.aliyun.ros.cdk.core.IResolvable sidecarContainersConfig) {
+            this.props.sidecarContainersConfig(sidecarContainersConfig);
+            return this;
+        }
+        /**
+         * Property sidecarContainersConfig: Sidecar container config.
+         * <p>
+         * @return {@code this}
+         * @param sidecarContainersConfig Property sidecarContainersConfig: Sidecar container config. This parameter is required.
+         */
+        public Builder sidecarContainersConfig(final java.util.List<? extends java.lang.Object> sidecarContainersConfig) {
+            this.props.sidecarContainersConfig(sidecarContainersConfig);
             return this;
         }
 

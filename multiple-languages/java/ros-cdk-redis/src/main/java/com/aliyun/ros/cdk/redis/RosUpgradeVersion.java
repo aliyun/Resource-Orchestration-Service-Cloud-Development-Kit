@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::REDIS::UpgradeVersion</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-08-12T08:28:50.069Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:28.903Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.RosUpgradeVersion")
 public class RosUpgradeVersion extends com.aliyun.ros.cdk.core.RosResource {
 
