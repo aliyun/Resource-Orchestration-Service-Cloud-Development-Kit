@@ -63,7 +63,7 @@ export interface IInstanceVpcEndpointLinkedVpc extends ros.IResource {
     readonly attrVswitchId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CR::InstanceVpcEndpointLinkedVpc`, which is used to associate a virtual private cloud (VPC) with a Container Registry instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CR::InstanceVpcEndpointLinkedVpc`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstanceVpcEndpointLinkedVpc`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instancevpcendpointlinkedvpc
  */

@@ -39,6 +39,10 @@ type ManagedEdgeKubernetesClusterProps struct {
 	//
 	// false: If set to false, the API server on the public network will not be created, only the API server on the private network will be created.Default to true.
 	EndpointPublicAccess interface{} `field:"optional" json:"endpointPublicAccess" yaml:"endpointPublicAccess"`
+	// Property ipStack: The IP stack of the cluster.
+	//
+	// Value: ipv4 (Single stack) or ipv6 (Dual Stack). Default value: ipv4
+	IpStack interface{} `field:"optional" json:"ipStack" yaml:"ipStack"`
 	// Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group.
 	//
 	// This parameter takes effect only if security_group_id is left empty.
@@ -76,6 +80,8 @@ type ManagedEdgeKubernetesClusterProps struct {
 	ProxyMode interface{} `field:"optional" json:"proxyMode" yaml:"proxyMode"`
 	// Property resourceGroupId: The ID of resource group.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
+	// Property rrsaConfig: The configuration of RRSA.
+	RrsaConfig interface{} `field:"optional" json:"rrsaConfig" yaml:"rrsaConfig"`
 	// Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment.
 	//
 	// When the system is selected to automatically create a VPC, the network segment 172.19.0.0\/20 is used by default.

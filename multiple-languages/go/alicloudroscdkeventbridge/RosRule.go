@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::EventBridge::Rule`, which is used to create an event rule for an event bus.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::EventBridge::Rule`.
 type RosRule interface {
 	alicloudroscdkcore.RosResource
 	AttrEventBusName() alicloudroscdkcore.IResolvable

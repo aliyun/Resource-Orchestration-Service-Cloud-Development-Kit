@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Mse
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Cluster`, which is used to create a cluster.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Cluster`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Cluster` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-cluster
@@ -54,7 +54,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Mse.RosCluster))!;
 
         /// <remarks>
-        /// <strong>Attribute</strong>: AclEntryList: The public network whitelist list is used only when the public network is enabled.
+        /// <strong>Attribute</strong>: AclEntryList: The list of ACL entries.
         /// </remarks>
         [JsiiProperty(name: "attrAclEntryList", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAclEntryList
@@ -63,7 +63,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: AclId: acl id
+        /// <strong>Attribute</strong>: AclId: The ID of the ACL.
         /// </remarks>
         [JsiiProperty(name: "attrAclId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAclId
@@ -72,7 +72,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: AppVersion: app version
+        /// <strong>Attribute</strong>: AppVersion: The version of the application.
         /// </remarks>
         [JsiiProperty(name: "attrAppVersion", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAppVersion
@@ -81,7 +81,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: ClusterAliasName: cluster alias name
+        /// <strong>Attribute</strong>: Arn: The Alibaba Cloud Resource Name (ARN).
+        /// </remarks>
+        [JsiiProperty(name: "attrArn", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrArn
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: ClusterAliasName: The alias name of the cluster.
         /// </remarks>
         [JsiiProperty(name: "attrClusterAliasName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClusterAliasName
@@ -90,7 +99,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: ClusterId: cluster id
+        /// <strong>Attribute</strong>: ClusterId: The ID of the cluster.
         /// </remarks>
         [JsiiProperty(name: "attrClusterId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClusterId
@@ -99,7 +108,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: ClusterName: cluster name
+        /// <strong>Attribute</strong>: ClusterName: The name of the cluster.
         /// </remarks>
         [JsiiProperty(name: "attrClusterName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClusterName
@@ -108,13 +117,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: ClusterSpecification: Cluster specifications. Note the msversion requirements of the version parameter,
-        /// Optional parameters:
-        /// "MSE_ SC _1_2_60_c",
-        /// "MSE_ SC _2_4_60_c",
-        /// "MSE_ SC _4_8_60_c",
-        /// "MSE_ SC _8_16_60_c",
-        /// "MSE_ SC _16_32_60_c"
+        /// <strong>Attribute</strong>: ClusterSpecification: The specification of the cluster.
         /// </remarks>
         [JsiiProperty(name: "attrClusterSpecification", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClusterSpecification
@@ -123,7 +126,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: ClusterType: cluster type
+        /// <strong>Attribute</strong>: ClusterType: The type of the cluster.
         /// </remarks>
         [JsiiProperty(name: "attrClusterType", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClusterType
@@ -132,7 +135,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: ClusterVersion: Cluster version, such as ZooKeeper_3_8_0,NACOS_2_0_0
+        /// <strong>Attribute</strong>: ClusterVersion: The version of the cluster.
         /// </remarks>
         [JsiiProperty(name: "attrClusterVersion", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClusterVersion
@@ -141,7 +144,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: ConfigAuthEnabled: Whether the configuration supports it. Valid values: true: false: not supported
+        /// <strong>Attribute</strong>: ConfigAuthEnabled: Whether to enable the configuration authentication.
         /// </remarks>
         [JsiiProperty(name: "attrConfigAuthEnabled", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrConfigAuthEnabled
@@ -150,7 +153,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: ConfigSecretEnabled: Whether the configuration password takes effect. The value is as follows: true: valid false: not valid
+        /// <strong>Attribute</strong>: ConfigSecretEnabled: Whether to enable the configuration secret.
         /// </remarks>
         [JsiiProperty(name: "attrConfigSecretEnabled", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrConfigSecretEnabled
@@ -159,7 +162,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: ConnectionType: network connect type
+        /// <strong>Attribute</strong>: ConnectionType: The connection type.
         /// </remarks>
         [JsiiProperty(name: "attrConnectionType", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrConnectionType
@@ -168,7 +171,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: Cpu: cpu core size
+        /// <strong>Attribute</strong>: Cpu: The number of CPU cores.
         /// </remarks>
         [JsiiProperty(name: "attrCpu", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCpu
@@ -177,7 +180,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: DiskCapacity: disk capacity, unit: G
+        /// <strong>Attribute</strong>: DiskCapacity: The disk capacity.
         /// </remarks>
         [JsiiProperty(name: "attrDiskCapacity", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDiskCapacity
@@ -186,7 +189,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: DiskType: disk type
+        /// <strong>Attribute</strong>: DiskType: The disk type.
         /// </remarks>
         [JsiiProperty(name: "attrDiskType", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDiskType
@@ -195,7 +198,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: HealthStatus: health status
+        /// <strong>Attribute</strong>: HealthStatus: The health status of the cluster.
         /// </remarks>
         [JsiiProperty(name: "attrHealthStatus", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrHealthStatus
@@ -204,7 +207,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: InstanceCount: instance count
+        /// <strong>Attribute</strong>: InstanceCount: The number of instances.
         /// </remarks>
         [JsiiProperty(name: "attrInstanceCount", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstanceCount
@@ -213,7 +216,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: InstanceId: instance id
+        /// <strong>Attribute</strong>: InstanceId: The ID of the cluster instance.
         /// </remarks>
         [JsiiProperty(name: "attrInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstanceId
@@ -222,7 +225,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: InternetAddress: internet address
+        /// <strong>Attribute</strong>: InternetAddress: The public network address of the cluster.
         /// </remarks>
         [JsiiProperty(name: "attrInternetAddress", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInternetAddress
@@ -231,7 +234,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: InternetDomain: internet domain
+        /// <strong>Attribute</strong>: InternetDomain: The public network domain of the cluster.
         /// </remarks>
         [JsiiProperty(name: "attrInternetDomain", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInternetDomain
@@ -240,7 +243,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: InternetPort: internet port
+        /// <strong>Attribute</strong>: InternetPort: The public network port of the cluster.
         /// </remarks>
         [JsiiProperty(name: "attrInternetPort", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInternetPort
@@ -249,7 +252,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: IntranetAddress: intranet address
+        /// <strong>Attribute</strong>: IntranetAddress: The intranet address of the cluster.
         /// </remarks>
         [JsiiProperty(name: "attrIntranetAddress", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrIntranetAddress
@@ -258,7 +261,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: IntranetDomain: intranet domain
+        /// <strong>Attribute</strong>: IntranetDomain: The intranet domain of the cluster.
         /// </remarks>
         [JsiiProperty(name: "attrIntranetDomain", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrIntranetDomain
@@ -267,7 +270,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: IntranetPort: intranet port
+        /// <strong>Attribute</strong>: IntranetPort: The intranet port of the cluster.
         /// </remarks>
         [JsiiProperty(name: "attrIntranetPort", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrIntranetPort
@@ -276,7 +279,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: MCPEnabled: Whether MCP takes effect, the value is as follows: true: valid false: not valid
+        /// <strong>Attribute</strong>: MCPEnabled: Whether to enable the MCP.
         /// </remarks>
         [JsiiProperty(name: "attrMcpEnabled", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrMcpEnabled
@@ -285,7 +288,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: MemoryCapacity: memory capacity
+        /// <strong>Attribute</strong>: MemoryCapacity: The memory capacity.
         /// </remarks>
         [JsiiProperty(name: "attrMemoryCapacity", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrMemoryCapacity
@@ -294,9 +297,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: MseVersion: Required, the value is as follows:
-        /// -'mse_dev': indicates the development version.
-        /// -'Mse_pro': means professional version. When this version is selected, the specification is 2c4g or above, and the specification is 3 nodes or above.
+        /// <strong>Attribute</strong>: MseVersion: The MSE version.
         /// </remarks>
         [JsiiProperty(name: "attrMseVersion", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrMseVersion
@@ -305,7 +306,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: NetType: Network type (whether private network is enabled or not). privatenet indicates that private network is enabled.
+        /// <strong>Attribute</strong>: NetType: The network type.
         /// </remarks>
         [JsiiProperty(name: "attrNetType", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrNetType
@@ -314,7 +315,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: PayInfo: pay info
+        /// <strong>Attribute</strong>: PayInfo: The payment information.
         /// </remarks>
         [JsiiProperty(name: "attrPayInfo", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPayInfo
@@ -323,7 +324,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: PubNetworkFlow: Public network bandwidth. If the bandwidth is greater than 0, the public network is enabled.
+        /// <strong>Attribute</strong>: PubNetworkFlow: The public network flow.
         /// </remarks>
         [JsiiProperty(name: "attrPubNetworkFlow", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPubNetworkFlow
@@ -332,7 +333,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: VpcId: vpc id
+        /// <strong>Attribute</strong>: VpcId: The ID of the VPC.
         /// </remarks>
         [JsiiProperty(name: "attrVpcId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrVpcId
@@ -341,7 +342,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: VSwitchId: switcher Id
+        /// <strong>Attribute</strong>: VSwitchId: The ID of the VSwitch.
         /// </remarks>
         [JsiiProperty(name: "attrVSwitchId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrVSwitchId
@@ -356,13 +357,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: clusterSpecification: Cluster specifications. Note the msversion requirements of the version parameter,
-        /// Optional parameters:
-        /// "MSE_ SC _1_2_60_c",
-        /// "MSE_ SC _2_4_60_c",
-        /// "MSE_ SC _4_8_60_c",
-        /// "MSE_ SC _8_16_60_c",
-        /// "MSE_ SC _16_32_60_c"
+        /// <strong>Property</strong>: clusterSpecification: Engine specification.
+        ///
+        /// [Professional Edition]
+        /// - `MSE_SC_2_4_60_c`: 2 cores 4GB
+        /// - `MSE_SC_1_2_60_c`: 1 core 2GB
+        /// - `MSE_SC_4_8_60_c`: 4 cores 8GB
+        /// - `MSE_SC_8_16_60_c`: 8 cores 16GB
+        /// - `MSE_SC_16_32_60_c`: 16 cores 32GB
+        ///
+        /// [Development Edition]
+        /// - `MSE_SC_1_2_60_c`: 1 core 2GB
+        /// - `MSE_SC_2_4_60_c`: 2 cores 4GB
+        ///
+        /// [Serverless Edition]
+        /// - Ignore this parameter or fill with `MSE_SC_SERVERLESS`.
         /// </remarks>
         [JsiiProperty(name: "clusterSpecification", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object ClusterSpecification
@@ -392,7 +401,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: clusterType: cluster type
+        /// <strong>Property</strong>: clusterType: Cluster type, including ZooKeeper, Nacos-Ans.
         /// </remarks>
         [JsiiProperty(name: "clusterType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object ClusterType
@@ -422,7 +431,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: clusterVersion: Cluster version, such as ZooKeeper_3_8_0,NACOS_2_0_0
+        /// <strong>Property</strong>: clusterVersion: Cluster version.
+        ///
+        /// [Professional Edition]
+        /// - `NACOS_2_0_0`: Nacos 2.x.x version.
+        /// - `ZooKeeper_3_8_0`: ZooKeeper 3.8.x version.
+        ///
+        /// [Development Edition]
+        /// - `NACOS_2_0_0`: Nacos 2.x version.
+        /// - `ZooKeeper_3_8_0`: ZooKeeper 3.8.x version.
+        ///
+        /// [Serverless Edition]
+        /// - `NACOS_2_0_0`: Nacos 2.x version.
+        /// - `ZooKeeper_3_8_0`: ZooKeeper 3.8.x version.
         /// </remarks>
         [JsiiProperty(name: "clusterVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object ClusterVersion
@@ -459,7 +480,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: instanceCount: instance count
+        /// <strong>Property</strong>: instanceCount: Number of instance nodes. Range: 1~15.
+        ///
+        /// [Professional Edition]
+        /// - Must be >=3 and odd number.
+        ///
+        /// [Development Edition]
+        /// - Only 1 allowed.
+        ///
+        /// [Serverless Edition]
+        /// - Ignore this parameter.
         /// </remarks>
         [JsiiProperty(name: "instanceCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object InstanceCount
@@ -509,7 +539,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: netType: Network type (whether private network is enabled or not). privatenet indicates that private network is enabled.
+        /// <strong>Property</strong>: netType: Network type. Valid values:
+        /// - `privatenet`: Private network.
+        /// - `pubnet`: Public network.
         /// </remarks>
         [JsiiProperty(name: "netType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object NetType
@@ -539,38 +571,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: acceptLanguage:
-        /// </remarks>
-        [JsiiOptional]
-        [JsiiProperty(name: "acceptLanguage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        public virtual object? AcceptLanguage
-        {
-            get => GetInstanceProperty<object?>();
-            set
-            {
-                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                {
-                    switch (value)
-                    {
-                        case string cast_cd4240:
-                            break;
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                            break;
-                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                            // Not enough information to type-check...
-                            break;
-                        case null:
-                            break;
-                        default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                    }
-                }
-                SetInstanceProperty(value);
-            }
-        }
-
-        /// <remarks>
-        /// <strong>Property</strong>: aclEntryList: The public network whitelist list is used only when the public network is enabled.
+        /// <strong>Property</strong>: aclEntryList: List of ACL entries.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "aclEntryList", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -618,7 +619,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: clusterAliasName: cluster alias name
+        /// <strong>Property</strong>: chargeType: Billing mode, including PREPAY (annual\/monthly) and POSTPAY (pay-as-you-go).
+        /// Ignored for Serverless Edition.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? ChargeType
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: clusterAliasName: cluster alias name.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "clusterAliasName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -649,7 +682,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: connectionType: network connect type
+        /// <strong>Property</strong>: connectionType: Network access type, `slb` or `single_eni`; some regions only support `single_eni` for Development Edition.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "connectionType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -680,11 +713,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: diskType: disk type
+        /// <strong>Property</strong>: eipEnabled: Effective when ConnectionType is `single_eni`, indicates whether to enable public access (elastic IP).
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "diskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        public virtual object? DiskType
+        [JsiiProperty(name: "eipEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? EipEnabled
         {
             get => GetInstanceProperty<object?>();
             set
@@ -693,7 +726,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
                 {
                     switch (value)
                     {
-                        case string cast_cd4240:
+                        case bool cast_cd4240:
                             break;
                         case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
                             break;
@@ -703,7 +736,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
                         case null:
                             break;
                         default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
                     }
                 }
                 SetInstanceProperty(value);
@@ -711,10 +744,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: mseVersion: Required, the value is as follows:
-        ///
-        /// -'mse_dev': indicates the development version.
-        /// -'Mse_pro': means professional version. When this version is selected, the specification is 2c4g or above, and the specification is 3 nodes or above.
+        /// <strong>Property</strong>: mseVersion: Must be filled unless special circumstances. Valid values:
+        /// - `mse_pro`: Professional Edition.
+        /// - `mse_dev`: Development Edition.
+        /// - `mse_serverless`: Serverless Edition.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "mseVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -745,41 +778,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: privateSlbSpecification:
+        /// <strong>Property</strong>: pubNetworkFlow: Public network flow. Valid when ConnectionType is `slb`. 0 means do not create public SLB; 1 or above indicates fixed bandwidth value in Mbps. Range: 0~5000.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "privateSlbSpecification", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        public virtual object? PrivateSlbSpecification
-        {
-            get => GetInstanceProperty<object?>();
-            set
-            {
-                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                {
-                    switch (value)
-                    {
-                        case string cast_cd4240:
-                            break;
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                            break;
-                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                            // Not enough information to type-check...
-                            break;
-                        case null:
-                            break;
-                        default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                    }
-                }
-                SetInstanceProperty(value);
-            }
-        }
-
-        /// <remarks>
-        /// <strong>Property</strong>: pubNetworkFlow: Public network bandwidth. If the bandwidth is greater than 0, the public network is enabled.
-        /// </remarks>
-        [JsiiOptional]
-        [JsiiProperty(name: "pubNetworkFlow", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [JsiiProperty(name: "pubNetworkFlow", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public virtual object? PubNetworkFlow
         {
             get => GetInstanceProperty<object?>();
@@ -789,7 +791,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
                 {
                     switch (value)
                     {
-                        case string cast_cd4240:
+                        case double cast_cd4240:
+                            break;
+                        case byte cast_cd4240:
+                            break;
+                        case decimal cast_cd4240:
+                            break;
+                        case float cast_cd4240:
+                            break;
+                        case int cast_cd4240:
+                            break;
+                        case long cast_cd4240:
+                            break;
+                        case sbyte cast_cd4240:
+                            break;
+                        case short cast_cd4240:
+                            break;
+                        case uint cast_cd4240:
+                            break;
+                        case ulong cast_cd4240:
+                            break;
+                        case ushort cast_cd4240:
                             break;
                         case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
                             break;
@@ -799,7 +821,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
                         case null:
                             break;
                         default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
                     }
                 }
                 SetInstanceProperty(value);
@@ -807,38 +829,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: pubSlbSpecification:
-        /// </remarks>
-        [JsiiOptional]
-        [JsiiProperty(name: "pubSlbSpecification", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        public virtual object? PubSlbSpecification
-        {
-            get => GetInstanceProperty<object?>();
-            set
-            {
-                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                {
-                    switch (value)
-                    {
-                        case string cast_cd4240:
-                            break;
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                            break;
-                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                            // Not enough information to type-check...
-                            break;
-                        case null:
-                            break;
-                        default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                    }
-                }
-                SetInstanceProperty(value);
-            }
-        }
-
-        /// <remarks>
-        /// <strong>Property</strong>: requestPars:
+        /// <strong>Property</strong>: requestPars: Extended request parameters in JSON format.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "requestPars", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -900,7 +891,38 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+        /// <strong>Property</strong>: securityGroupType: Effective when ConnectionType is `single_eni`, represents the security group type of the instance.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "securityGroupType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? SecurityGroupType
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: tags: Tags to attach to cluster. Max support 20 tags to add during create cluster. Each tag with two properties Key and Value, and Key is required.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-mse.RosCluster.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
@@ -911,7 +933,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: vpcId: vpc id
+        /// <strong>Property</strong>: vpcId: VPC ID.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -942,7 +964,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: vSwitchId: switcher Id
+        /// <strong>Property</strong>: vSwitchId: Switch ID.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

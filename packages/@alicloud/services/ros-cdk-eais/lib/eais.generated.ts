@@ -56,7 +56,7 @@ function rosClientInstanceAttachmentPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::EAIS::ClientInstanceAttachment`, which is used to attach an Elastic Accelerated Computing Instances (EAIS) instance to an Elastic Compute Service (ECS) instance or elastic container instance of a user.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EAIS::ClientInstanceAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ClientInstanceAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eais-clientinstanceattachment
  */
@@ -226,7 +226,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::EAIS::Instance`, which is used to create an Elastic Accelerated Computing Instances (EAIS) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EAIS::Instance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eais-instance
  */

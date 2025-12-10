@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::EMR::FlowProjects`, which is used to query projects.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::EMR::FlowProjects`.
 type RosFlowProjects interface {
 	alicloudroscdkcore.RosResource
 	AttrFlowProjectIds() alicloudroscdkcore.IResolvable

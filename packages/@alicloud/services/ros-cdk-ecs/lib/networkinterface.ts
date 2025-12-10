@@ -157,7 +157,7 @@ export interface INetworkInterface extends ros.IResource {
     readonly attrSecondaryPrivateIpAddresses: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::NetworkInterface`, which is used to create an elastic network interface (ENI).
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::NetworkInterface`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNetworkInterface`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-networkinterface
  */

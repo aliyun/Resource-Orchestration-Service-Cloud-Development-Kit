@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ManagedKubernetesCluster`, which is used to create a Container Service for Kubernetes (ACK) managed cluster.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ManagedKubernetesCluster`.
 type RosManagedKubernetesCluster interface {
 	alicloudroscdkcore.RosResource
 	Addons() interface{}
@@ -53,6 +53,8 @@ type RosManagedKubernetesCluster interface {
 	SetEndpointPublicAccess(val interface{})
 	FormatDisk() interface{}
 	SetFormatDisk(val interface{})
+	IpStack() interface{}
+	SetIpStack(val interface{})
 	IsEnterpriseSecurityGroup() interface{}
 	SetIsEnterpriseSecurityGroup(val interface{})
 	KeepInstanceName() interface{}
@@ -107,6 +109,8 @@ type RosManagedKubernetesCluster interface {
 	RosProperties() *map[string]interface{}
 	// ROS resource type.
 	RosResourceType() *string
+	RrsaConfig() interface{}
+	SetRrsaConfig(val interface{})
 	Runtime() interface{}
 	SetRuntime(val interface{})
 	SecurityGroupId() interface{}
@@ -513,6 +517,16 @@ func (j *jsiiProxy_RosManagedKubernetesCluster) FormatDisk() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosManagedKubernetesCluster) IpStack() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"ipStack",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosManagedKubernetesCluster) IsEnterpriseSecurityGroup() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -728,6 +742,16 @@ func (j *jsiiProxy_RosManagedKubernetesCluster) RosResourceType() *string {
 	_jsii_.Get(
 		j,
 		"rosResourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosManagedKubernetesCluster) RrsaConfig() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rrsaConfig",
 		&returns,
 	)
 	return returns
@@ -1064,6 +1088,17 @@ func (j *jsiiProxy_RosManagedKubernetesCluster)SetFormatDisk(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosManagedKubernetesCluster)SetIpStack(val interface{}) {
+	if err := j.validateSetIpStackParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"ipStack",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosManagedKubernetesCluster)SetIsEnterpriseSecurityGroup(val interface{}) {
 	if err := j.validateSetIsEnterpriseSecurityGroupParameters(val); err != nil {
 		panic(err)
@@ -1236,6 +1271,17 @@ func (j *jsiiProxy_RosManagedKubernetesCluster)SetResourceGroupId(val interface{
 	_jsii_.Set(
 		j,
 		"resourceGroupId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosManagedKubernetesCluster)SetRrsaConfig(val interface{}) {
+	if err := j.validateSetRrsaConfigParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"rrsaConfig",
 		val,
 	)
 }

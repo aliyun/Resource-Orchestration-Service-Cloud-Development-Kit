@@ -37,7 +37,7 @@ export interface IUserSourceLogConfig extends ros.IResource {
     readonly props: UserSourceLogConfigProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CloudSiem::UserSourceLogConfig`, which is used to add logs of a cloud service within an account.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CloudSiem::UserSourceLogConfig`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUserSourceLogConfig`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsiem-usersourcelogconfig
  */

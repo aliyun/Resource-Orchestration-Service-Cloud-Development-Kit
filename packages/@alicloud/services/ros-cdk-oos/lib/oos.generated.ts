@@ -3,6 +3,150 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosApplicationGroupDeployment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-applicationgroupdeployment
+ */
+export interface RosApplicationGroupDeploymentProps {
+
+    /**
+     * @Property applicationName: The name of the application.
+     */
+    readonly applicationName: string | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the application group.
+     */
+    readonly name: string | ros.IResolvable;
+
+    /**
+     * @Property deployParameters: The deploy parameters of the application group to be deployed.
+     */
+    readonly deployParameters?: string | ros.IResolvable;
+
+    /**
+     * @Property revisionId: The ID of the revision.
+     */
+    readonly revisionId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosApplicationGroupDeploymentProps`
+ *
+ * @param properties - the TypeScript properties of a `RosApplicationGroupDeploymentProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosApplicationGroupDeploymentPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('applicationName', ros.requiredValidator)(properties.applicationName));
+    if(properties.applicationName && (Array.isArray(properties.applicationName) || (typeof properties.applicationName) === 'string')) {
+        errors.collect(ros.propertyValidator('applicationName', ros.validateLength)({
+            data: properties.applicationName.length,
+            min: 1,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('applicationName', ros.validateString)(properties.applicationName));
+    errors.collect(ros.propertyValidator('deployParameters', ros.validateString)(properties.deployParameters));
+    errors.collect(ros.propertyValidator('revisionId', ros.validateString)(properties.revisionId));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    if(properties.name && (Array.isArray(properties.name) || (typeof properties.name) === 'string')) {
+        errors.collect(ros.propertyValidator('name', ros.validateLength)({
+            data: properties.name.length,
+            min: 1,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "RosApplicationGroupDeploymentProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OOS::ApplicationGroupDeployment` resource
+ *
+ * @param properties - the TypeScript properties of a `RosApplicationGroupDeploymentProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OOS::ApplicationGroupDeployment` resource.
+ */
+// @ts-ignore TS6133
+function rosApplicationGroupDeploymentPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosApplicationGroupDeploymentPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ApplicationName': ros.stringToRosTemplate(properties.applicationName),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'DeployParameters': ros.stringToRosTemplate(properties.deployParameters),
+      'RevisionId': ros.stringToRosTemplate(properties.revisionId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::ApplicationGroupDeployment`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ApplicationGroupDeployment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-applicationgroupdeployment
+ */
+export class RosApplicationGroupDeployment extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OOS::ApplicationGroupDeployment";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property applicationName: The name of the application.
+     */
+    public applicationName: string | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the application group.
+     */
+    public name: string | ros.IResolvable;
+
+    /**
+     * @Property deployParameters: The deploy parameters of the application group to be deployed.
+     */
+    public deployParameters: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property revisionId: The ID of the revision.
+     */
+    public revisionId: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosApplicationGroupDeploymentProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosApplicationGroupDeployment.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.applicationName = props.applicationName;
+        this.name = props.name;
+        this.deployParameters = props.deployParameters;
+        this.revisionId = props.revisionId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            applicationName: this.applicationName,
+            name: this.name,
+            deployParameters: this.deployParameters,
+            revisionId: this.revisionId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosApplicationGroupDeploymentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosDefaultPatchBaseline`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-defaultpatchbaseline
  */
@@ -192,6 +336,13 @@ function RosDeployRevisionPropsValidator(properties: any): ros.ValidationResult 
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('applicationName', ros.requiredValidator)(properties.applicationName));
+    if(properties.applicationName && (Array.isArray(properties.applicationName) || (typeof properties.applicationName) === 'string')) {
+        errors.collect(ros.propertyValidator('applicationName', ros.validateLength)({
+            data: properties.applicationName.length,
+            min: 1,
+            max: 100,
+          }));
+    }
     errors.collect(ros.propertyValidator('applicationName', ros.validateString)(properties.applicationName));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     if(properties.revisionType && (typeof properties.revisionType) !== 'object') {
@@ -470,7 +621,7 @@ function rosExecutionPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Execution`, which is used to start an execution.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Execution`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Execution` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-execution
  */
@@ -2023,6 +2174,14 @@ export interface RosTemplateProps {
     readonly templateName: string | ros.IResolvable;
 
     /**
+     * @Property ignoreExisting: Whether to ignore existing template
+     * False: ROS will perform a uniqueness check.If a template with the same name exists, an error will be reported when creating it.
+     * True: ROS will not check the uniqueness.If there is a template with the same name, the template creation process will be ignored.
+     * If the template is not created by ROS, it will be ignored during update and delete stage.
+     */
+    readonly ignoreExisting?: boolean | ros.IResolvable;
+
+    /**
      * @Property resourceGroupId: Resource group id.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -2043,6 +2202,7 @@ export interface RosTemplateProps {
 function RosTemplatePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('ignoreExisting', ros.validateBoolean)(properties.ignoreExisting));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('content', ros.requiredValidator)(properties.content));
     if(properties.content && (Array.isArray(properties.content) || (typeof properties.content) === 'string')) {
@@ -2082,13 +2242,14 @@ function rosTemplatePropsToRosTemplate(properties: any, enableResourcePropertyCo
     return {
       'Content': ros.stringToRosTemplate(properties.content),
       'TemplateName': ros.stringToRosTemplate(properties.templateName),
+      'IgnoreExisting': ros.booleanToRosTemplate(properties.ignoreExisting),
       'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
       'Tags': ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
     };
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Template`, which is used to create a template.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Template`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Template` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-template
  */
@@ -2127,6 +2288,14 @@ export class RosTemplate extends ros.RosResource {
     public templateName: string | ros.IResolvable;
 
     /**
+     * @Property ignoreExisting: Whether to ignore existing template
+     * False: ROS will perform a uniqueness check.If a template with the same name exists, an error will be reported when creating it.
+     * True: ROS will not check the uniqueness.If there is a template with the same name, the template creation process will be ignored.
+     * If the template is not created by ROS, it will be ignored during update and delete stage.
+     */
+    public ignoreExisting: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceGroupId: Resource group id.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
@@ -2150,6 +2319,7 @@ export class RosTemplate extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.content = props.content;
         this.templateName = props.templateName;
+        this.ignoreExisting = props.ignoreExisting;
         this.resourceGroupId = props.resourceGroupId;
         this.tags = props.tags;
     }
@@ -2159,6 +2329,7 @@ export class RosTemplate extends ros.RosResource {
         return {
             content: this.content,
             templateName: this.templateName,
+            ignoreExisting: this.ignoreExisting,
             resourceGroupId: this.resourceGroupId,
             tags: this.tags,
         };

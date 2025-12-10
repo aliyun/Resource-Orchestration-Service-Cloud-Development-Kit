@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apig;
 /**
  * Represents a <code>PluginAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:20.898Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:52.323Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.IPluginAttachment")
 @software.amazon.jsii.Jsii.Proxy(IPluginAttachment.Jsii$Proxy.class)
 public interface IPluginAttachment extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cloudsiem;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsiem-importlogtaskssubmission
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.291Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.569Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudsiem.$Module.class, fqn = "@alicloud/ros-cdk-cloudsiem.ImportLogTasksSubmissionProps")
 @software.amazon.jsii.Jsii.Proxy(ImportLogTasksSubmissionProps.Jsii$Proxy.class)
 public interface ImportLogTasksSubmissionProps extends software.amazon.jsii.JsiiSerializable {

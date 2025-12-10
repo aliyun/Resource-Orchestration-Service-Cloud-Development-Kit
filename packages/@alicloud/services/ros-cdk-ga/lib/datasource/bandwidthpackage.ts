@@ -115,7 +115,7 @@ export interface IBandwidthPackage extends ros.IResource {
     readonly attrType: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::GA::BandwidthPackage`, which is used to query the information about a bandwidth plan.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::GA::BandwidthPackage`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBandwidthPackage`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ga-bandwidthpackage
  */

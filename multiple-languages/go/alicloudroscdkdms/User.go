@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::DMS::User`, which is used to add a user to Data Management (DMS).
+// This class encapsulates and extends the ROS resource type `ALIYUN::DMS::User`.
 type User interface {
 	alicloudroscdkcore.Resource
 	IUser

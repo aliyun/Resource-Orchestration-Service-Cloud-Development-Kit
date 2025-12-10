@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::FNF::Flows`, which is used to query multiple flows at a time.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::FNF::Flows`.
 type RosFlows interface {
 	alicloudroscdkcore.RosResource
 	AttrFlowNames() alicloudroscdkcore.IResolvable

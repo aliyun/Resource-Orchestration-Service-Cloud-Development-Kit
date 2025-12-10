@@ -4,10 +4,8 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Devops
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::DEVOPS::Pipeline`, which is used to create a pipeline.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::DEVOPS::Pipeline`.</summary>
     /// <remarks>
-    /// YAML-based pipelines are supported.
-    ///
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Pipeline` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-pipeline
     /// </remarks>

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScheduledTask`, which is used to create a scheduled task by specifying properties.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScheduledTask`.
 type ScheduledTask interface {
 	alicloudroscdkcore.Resource
 	IScheduledTask

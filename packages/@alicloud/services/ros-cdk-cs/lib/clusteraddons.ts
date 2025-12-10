@@ -66,7 +66,7 @@ export interface IClusterAddons extends ros.IResource {
     readonly attrWaitUntilData: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ClusterAddons`, which is used to install components in a cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ClusterAddons`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClusterAddons`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusteraddons
  */

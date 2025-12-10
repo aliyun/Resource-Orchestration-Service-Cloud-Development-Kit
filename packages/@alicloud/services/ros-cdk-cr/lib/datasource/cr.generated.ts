@@ -64,7 +64,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CR::Instance`, which is used to query the information about an instance.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CR::Instance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cr-instance
  */
@@ -219,7 +219,7 @@ function rosInstancesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CR::Instances`, which is used to query Container Registry instances.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CR::Instances`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instances` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cr-instances
  */
@@ -350,7 +350,7 @@ function rosNamespacesPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CR::Namespaces`, which is used to query namespaces.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CR::Namespaces`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Namespaces` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cr-namespaces
  */
@@ -481,7 +481,7 @@ function rosRepositoriesPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CR::Repositories`, which is used to query the information about image repositories.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CR::Repositories`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Repositories` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cr-repositories
  */

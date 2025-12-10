@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::PrivateLink::VpcEndpoint`, which is used to create an endpoint.
+// This class encapsulates and extends the ROS resource type `ALIYUN::PrivateLink::VpcEndpoint`.
 type VpcEndpoint interface {
 	alicloudroscdkcore.Resource
 	IVpcEndpoint

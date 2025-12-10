@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ess;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:25.744Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:56.833Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosScalingGroupProps.Jsii$Proxy.class)
 public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -81,6 +81,12 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckType() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckTypes() {
         return null;
     }
 
@@ -245,6 +251,7 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
         java.lang.Object groupDeletionProtection;
         java.lang.Object groupType;
         java.lang.Object healthCheckType;
+        java.lang.Object healthCheckTypes;
         java.lang.Object instanceId;
         java.lang.Object launchTemplateId;
         java.lang.Object launchTemplateOverrides;
@@ -526,6 +533,26 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
          */
         public Builder healthCheckType(com.aliyun.ros.cdk.core.IResolvable healthCheckType) {
             this.healthCheckType = healthCheckType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingGroupProps#getHealthCheckTypes}
+         * @param healthCheckTypes the value to be set.
+         * @return {@code this}
+         */
+        public Builder healthCheckTypes(com.aliyun.ros.cdk.core.IResolvable healthCheckTypes) {
+            this.healthCheckTypes = healthCheckTypes;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingGroupProps#getHealthCheckTypes}
+         * @param healthCheckTypes the value to be set.
+         * @return {@code this}
+         */
+        public Builder healthCheckTypes(java.util.List<? extends java.lang.Object> healthCheckTypes) {
+            this.healthCheckTypes = healthCheckTypes;
             return this;
         }
 
@@ -1009,6 +1036,7 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
         private final java.lang.Object groupDeletionProtection;
         private final java.lang.Object groupType;
         private final java.lang.Object healthCheckType;
+        private final java.lang.Object healthCheckTypes;
         private final java.lang.Object instanceId;
         private final java.lang.Object launchTemplateId;
         private final java.lang.Object launchTemplateOverrides;
@@ -1052,6 +1080,7 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
             this.groupDeletionProtection = software.amazon.jsii.Kernel.get(this, "groupDeletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.groupType = software.amazon.jsii.Kernel.get(this, "groupType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.healthCheckType = software.amazon.jsii.Kernel.get(this, "healthCheckType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.healthCheckTypes = software.amazon.jsii.Kernel.get(this, "healthCheckTypes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.launchTemplateId = software.amazon.jsii.Kernel.get(this, "launchTemplateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.launchTemplateOverrides = software.amazon.jsii.Kernel.get(this, "launchTemplateOverrides", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1096,6 +1125,7 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
             this.groupDeletionProtection = builder.groupDeletionProtection;
             this.groupType = builder.groupType;
             this.healthCheckType = builder.healthCheckType;
+            this.healthCheckTypes = builder.healthCheckTypes;
             this.instanceId = builder.instanceId;
             this.launchTemplateId = builder.launchTemplateId;
             this.launchTemplateOverrides = builder.launchTemplateOverrides;
@@ -1184,6 +1214,11 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
         @Override
         public final java.lang.Object getHealthCheckType() {
             return this.healthCheckType;
+        }
+
+        @Override
+        public final java.lang.Object getHealthCheckTypes() {
+            return this.healthCheckTypes;
         }
 
         @Override
@@ -1342,6 +1377,9 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
             if (this.getHealthCheckType() != null) {
                 data.set("healthCheckType", om.valueToTree(this.getHealthCheckType()));
             }
+            if (this.getHealthCheckTypes() != null) {
+                data.set("healthCheckTypes", om.valueToTree(this.getHealthCheckTypes()));
+            }
             if (this.getInstanceId() != null) {
                 data.set("instanceId", om.valueToTree(this.getInstanceId()));
             }
@@ -1442,6 +1480,7 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
             if (this.groupDeletionProtection != null ? !this.groupDeletionProtection.equals(that.groupDeletionProtection) : that.groupDeletionProtection != null) return false;
             if (this.groupType != null ? !this.groupType.equals(that.groupType) : that.groupType != null) return false;
             if (this.healthCheckType != null ? !this.healthCheckType.equals(that.healthCheckType) : that.healthCheckType != null) return false;
+            if (this.healthCheckTypes != null ? !this.healthCheckTypes.equals(that.healthCheckTypes) : that.healthCheckTypes != null) return false;
             if (this.instanceId != null ? !this.instanceId.equals(that.instanceId) : that.instanceId != null) return false;
             if (this.launchTemplateId != null ? !this.launchTemplateId.equals(that.launchTemplateId) : that.launchTemplateId != null) return false;
             if (this.launchTemplateOverrides != null ? !this.launchTemplateOverrides.equals(that.launchTemplateOverrides) : that.launchTemplateOverrides != null) return false;
@@ -1482,6 +1521,7 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
             result = 31 * result + (this.groupDeletionProtection != null ? this.groupDeletionProtection.hashCode() : 0);
             result = 31 * result + (this.groupType != null ? this.groupType.hashCode() : 0);
             result = 31 * result + (this.healthCheckType != null ? this.healthCheckType.hashCode() : 0);
+            result = 31 * result + (this.healthCheckTypes != null ? this.healthCheckTypes.hashCode() : 0);
             result = 31 * result + (this.instanceId != null ? this.instanceId.hashCode() : 0);
             result = 31 * result + (this.launchTemplateId != null ? this.launchTemplateId.hashCode() : 0);
             result = 31 * result + (this.launchTemplateOverrides != null ? this.launchTemplateOverrides.hashCode() : 0);

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * Represents a <code>ApplicationDeployment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.835Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.062Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.IApplicationDeployment")
 @software.amazon.jsii.Jsii.Proxy(IApplicationDeployment.Jsii$Proxy.class)
 public interface IApplicationDeployment extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

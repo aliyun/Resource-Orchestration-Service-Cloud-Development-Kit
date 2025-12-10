@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.mse;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::MSE::Cluster</code>, which is used to create a cluster.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::MSE::Cluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:27.058Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.232Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.RosCluster")
 public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -56,6 +56,12 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAppVersion() {
         return software.amazon.jsii.Kernel.get(this, "attrAppVersion", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrArn() {
+        return software.amazon.jsii.Kernel.get(this, "attrArn", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -337,24 +343,6 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getAcceptLanguage() {
-        return software.amazon.jsii.Kernel.get(this, "acceptLanguage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setAcceptLanguage(final @org.jetbrains.annotations.Nullable java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "acceptLanguage", value);
-    }
-
-    /**
-     */
-    public void setAcceptLanguage(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "acceptLanguage", value);
-    }
-
-    /**
-     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getAclEntryList() {
         return software.amazon.jsii.Kernel.get(this, "aclEntryList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -385,6 +373,24 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             }
         }
         software.amazon.jsii.Kernel.set(this, "aclEntryList", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getChargeType() {
+        return software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setChargeType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "chargeType", value);
+    }
+
+    /**
+     */
+    public void setChargeType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "chargeType", value);
     }
 
     /**
@@ -425,20 +431,20 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getDiskType() {
-        return software.amazon.jsii.Kernel.get(this, "diskType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEipEnabled() {
+        return software.amazon.jsii.Kernel.get(this, "eipEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
-    public void setDiskType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "diskType", value);
+    public void setEipEnabled(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "eipEnabled", value);
     }
 
     /**
      */
-    public void setDiskType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "diskType", value);
+    public void setEipEnabled(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "eipEnabled", value);
     }
 
     /**
@@ -461,31 +467,13 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getPrivateSlbSpecification() {
-        return software.amazon.jsii.Kernel.get(this, "privateSlbSpecification", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setPrivateSlbSpecification(final @org.jetbrains.annotations.Nullable java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "privateSlbSpecification", value);
-    }
-
-    /**
-     */
-    public void setPrivateSlbSpecification(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "privateSlbSpecification", value);
-    }
-
-    /**
-     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getPubNetworkFlow() {
         return software.amazon.jsii.Kernel.get(this, "pubNetworkFlow", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
-    public void setPubNetworkFlow(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+    public void setPubNetworkFlow(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
         software.amazon.jsii.Kernel.set(this, "pubNetworkFlow", value);
     }
 
@@ -493,24 +481,6 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setPubNetworkFlow(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "pubNetworkFlow", value);
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getPubSlbSpecification() {
-        return software.amazon.jsii.Kernel.get(this, "pubSlbSpecification", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setPubSlbSpecification(final @org.jetbrains.annotations.Nullable java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "pubSlbSpecification", value);
-    }
-
-    /**
-     */
-    public void setPubSlbSpecification(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "pubSlbSpecification", value);
     }
 
     /**
@@ -547,6 +517,24 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setResourceGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupType() {
+        return software.amazon.jsii.Kernel.get(this, "securityGroupType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSecurityGroupType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "securityGroupType", value);
+    }
+
+    /**
+     */
+    public void setSecurityGroupType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "securityGroupType", value);
     }
 
     /**
@@ -878,23 +866,6 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param acceptLanguage This parameter is required.
-         */
-        public Builder acceptLanguage(final java.lang.String acceptLanguage) {
-            this.props.acceptLanguage(acceptLanguage);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param acceptLanguage This parameter is required.
-         */
-        public Builder acceptLanguage(final com.aliyun.ros.cdk.core.IResolvable acceptLanguage) {
-            this.props.acceptLanguage(acceptLanguage);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param aclEntryList This parameter is required.
          */
         public Builder aclEntryList(final com.aliyun.ros.cdk.core.IResolvable aclEntryList) {
@@ -907,6 +878,23 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder aclEntryList(final java.util.List<? extends java.lang.Object> aclEntryList) {
             this.props.aclEntryList(aclEntryList);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param chargeType This parameter is required.
+         */
+        public Builder chargeType(final java.lang.String chargeType) {
+            this.props.chargeType(chargeType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param chargeType This parameter is required.
+         */
+        public Builder chargeType(final com.aliyun.ros.cdk.core.IResolvable chargeType) {
+            this.props.chargeType(chargeType);
             return this;
         }
 
@@ -946,18 +934,18 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param diskType This parameter is required.
+         * @param eipEnabled This parameter is required.
          */
-        public Builder diskType(final java.lang.String diskType) {
-            this.props.diskType(diskType);
+        public Builder eipEnabled(final java.lang.Boolean eipEnabled) {
+            this.props.eipEnabled(eipEnabled);
             return this;
         }
         /**
          * @return {@code this}
-         * @param diskType This parameter is required.
+         * @param eipEnabled This parameter is required.
          */
-        public Builder diskType(final com.aliyun.ros.cdk.core.IResolvable diskType) {
-            this.props.diskType(diskType);
+        public Builder eipEnabled(final com.aliyun.ros.cdk.core.IResolvable eipEnabled) {
+            this.props.eipEnabled(eipEnabled);
             return this;
         }
 
@@ -980,26 +968,9 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param privateSlbSpecification This parameter is required.
-         */
-        public Builder privateSlbSpecification(final java.lang.String privateSlbSpecification) {
-            this.props.privateSlbSpecification(privateSlbSpecification);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param privateSlbSpecification This parameter is required.
-         */
-        public Builder privateSlbSpecification(final com.aliyun.ros.cdk.core.IResolvable privateSlbSpecification) {
-            this.props.privateSlbSpecification(privateSlbSpecification);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param pubNetworkFlow This parameter is required.
          */
-        public Builder pubNetworkFlow(final java.lang.String pubNetworkFlow) {
+        public Builder pubNetworkFlow(final java.lang.Number pubNetworkFlow) {
             this.props.pubNetworkFlow(pubNetworkFlow);
             return this;
         }
@@ -1009,23 +980,6 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder pubNetworkFlow(final com.aliyun.ros.cdk.core.IResolvable pubNetworkFlow) {
             this.props.pubNetworkFlow(pubNetworkFlow);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param pubSlbSpecification This parameter is required.
-         */
-        public Builder pubSlbSpecification(final java.lang.String pubSlbSpecification) {
-            this.props.pubSlbSpecification(pubSlbSpecification);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param pubSlbSpecification This parameter is required.
-         */
-        public Builder pubSlbSpecification(final com.aliyun.ros.cdk.core.IResolvable pubSlbSpecification) {
-            this.props.pubSlbSpecification(pubSlbSpecification);
             return this;
         }
 
@@ -1060,6 +1014,23 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param securityGroupType This parameter is required.
+         */
+        public Builder securityGroupType(final java.lang.String securityGroupType) {
+            this.props.securityGroupType(securityGroupType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param securityGroupType This parameter is required.
+         */
+        public Builder securityGroupType(final com.aliyun.ros.cdk.core.IResolvable securityGroupType) {
+            this.props.securityGroupType(securityGroupType);
             return this;
         }
 

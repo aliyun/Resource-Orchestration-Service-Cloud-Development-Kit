@@ -20,7 +20,6 @@ export interface FileSystemProps {
      * Performance、Capacity、Premium(Available when the file_system_type is standard)
      * standard、advance(Available when the file_system_type is extreme)
      * advance_100、advance_200(Available when the file_system_type is cpfs)
-     *
      */
     readonly storageType: string | ros.IResolvable;
 

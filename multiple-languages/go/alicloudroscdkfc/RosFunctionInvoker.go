@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::FC::FunctionInvoker`, which is used to invoke a function.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::FC::FunctionInvoker`.
 type RosFunctionInvoker interface {
 	alicloudroscdkcore.RosResource
 	Async() interface{}

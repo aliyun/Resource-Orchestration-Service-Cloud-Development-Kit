@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::EdsUser::User`, which is used to create a convenience user.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::EdsUser::User`.
 type RosUser interface {
 	alicloudroscdkcore.RosResource
 	AttrEndUserId() alicloudroscdkcore.IResolvable

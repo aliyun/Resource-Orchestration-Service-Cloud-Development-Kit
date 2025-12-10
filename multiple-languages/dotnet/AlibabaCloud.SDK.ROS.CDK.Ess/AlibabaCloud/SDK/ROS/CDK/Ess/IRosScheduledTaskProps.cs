@@ -112,6 +112,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// - Daily: Recurrence interval by day for a scheduled task.
         /// - Weekly: Recurrence interval by week for a scheduled task.
         /// - Monthly: Recurrence interval by month for a scheduled task.
+        /// - Cron: The scheduled task is executed based on the specified cron expression.
         /// RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.
         /// </remarks>
         [JsiiProperty(name: "recurrenceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -129,6 +130,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// - Daily: Only one value in the range [1,31] can be filled.
         /// - Weekly: Multiple values can be filled. The values of Sunday to Saturday are 0 to 6 in sequence. Multiple values shall be separated by a comma ",".
         /// - Monthly: In the format of A-B. The value range of A and B is 1 to 31, and the B value must be greater than the A value.
+        /// - Cron: A cron expression is written in UTC time and consists of the following fields: minute, hour, day, month, and week. The expression can contain the letters L and W and the following wildcard characters: commas (,), question marks (?), hyphens (-), asterisks (*), number signs (#), and forward slashes (\/).
         /// RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.
         /// </remarks>
         [JsiiProperty(name: "recurrenceValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -294,6 +296,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             /// - Daily: Recurrence interval by day for a scheduled task.
             /// - Weekly: Recurrence interval by week for a scheduled task.
             /// - Monthly: Recurrence interval by month for a scheduled task.
+            /// - Cron: The scheduled task is executed based on the specified cron expression.
             /// RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.
             /// </remarks>
             [JsiiOptional]
@@ -308,6 +311,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             /// - Daily: Only one value in the range [1,31] can be filled.
             /// - Weekly: Multiple values can be filled. The values of Sunday to Saturday are 0 to 6 in sequence. Multiple values shall be separated by a comma ",".
             /// - Monthly: In the format of A-B. The value range of A and B is 1 to 31, and the B value must be greater than the A value.
+            /// - Cron: A cron expression is written in UTC time and consists of the following fields: minute, hour, day, month, and week. The expression can contain the letters L and W and the following wildcard characters: commas (,), question marks (?), hyphens (-), asterisks (*), number signs (#), and forward slashes (\/).
             /// RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.
             /// </remarks>
             [JsiiOptional]

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.waf;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-wafswitch
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:31.011Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.583Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.waf.$Module.class, fqn = "@alicloud/ros-cdk-waf.RosWafSwitchProps")
 @software.amazon.jsii.Jsii.Proxy(RosWafSwitchProps.Jsii$Proxy.class)
 public interface RosWafSwitchProps extends software.amazon.jsii.JsiiSerializable {

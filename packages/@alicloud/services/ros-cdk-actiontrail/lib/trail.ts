@@ -57,7 +57,7 @@ export interface ITrail extends ros.IResource {
     readonly attrName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ACTIONTRAIL::Trail`, which is used to create a trail to deliver events to Simple Log Service or Object Storage Service (OSS).
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ACTIONTRAIL::Trail`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTrail`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-actiontrail-trail
  */

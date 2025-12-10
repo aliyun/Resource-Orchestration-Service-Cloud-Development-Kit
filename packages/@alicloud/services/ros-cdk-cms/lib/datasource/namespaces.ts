@@ -35,7 +35,7 @@ export interface INamespaces extends ros.IResource {
     readonly attrNamespaces: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::CMS::Namespaces`, which is used to query the information about namespaces.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CMS::Namespaces`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNamespaces`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-namespaces
  */

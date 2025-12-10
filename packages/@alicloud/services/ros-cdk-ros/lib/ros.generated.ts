@@ -183,7 +183,6 @@ export interface RosAutoEnableServiceProps {
      * BrainIndustrial: Brain Industrial
      * CloudStorageGateway: Cloud Storage Gateway
      * CMS: Cloud Monitor Service
-     * CR: Container Registry
      * CS: Container Service
      * DataHub: Data Hub
      * DataWorks: DataWorks
@@ -290,7 +289,6 @@ export class RosAutoEnableService extends ros.RosResource {
      * BrainIndustrial: Brain Industrial
      * CloudStorageGateway: Cloud Storage Gateway
      * CMS: Cloud Monitor Service
-     * CR: Container Registry
      * CS: Container Service
      * DataHub: Data Hub
      * DataWorks: DataWorks

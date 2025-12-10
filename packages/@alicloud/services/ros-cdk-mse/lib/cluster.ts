@@ -10,86 +10,108 @@ export { RosCluster as ClusterProperty };
 export interface ClusterProps {
 
     /**
-     * Property clusterSpecification: Cluster specifications. Note the msversion requirements of the version parameter,
-     * Optional parameters:
-     * "MSE_ SC _1_2_60_c",
-     * "MSE_ SC _2_4_60_c",
-     * "MSE_ SC _4_8_60_c",
-     * "MSE_ SC _8_16_60_c",
-     * "MSE_ SC _16_32_60_c"
+     * Property clusterSpecification: Engine specification.
+     * 
+     * [Professional Edition]
+     * - `MSE_SC_2_4_60_c`: 2 cores 4GB
+     * - `MSE_SC_1_2_60_c`: 1 core 2GB
+     * - `MSE_SC_4_8_60_c`: 4 cores 8GB
+     * - `MSE_SC_8_16_60_c`: 8 cores 16GB
+     * - `MSE_SC_16_32_60_c`: 16 cores 32GB
+     * 
+     * [Development Edition]
+     * - `MSE_SC_1_2_60_c`: 1 core 2GB
+     * - `MSE_SC_2_4_60_c`: 2 cores 4GB
+     * 
+     * [Serverless Edition]
+     * - Ignore this parameter or fill with `MSE_SC_SERVERLESS`.
      */
     readonly clusterSpecification: string | ros.IResolvable;
 
     /**
-     * Property clusterType: cluster type
+     * Property clusterType: Cluster type, including ZooKeeper, Nacos-Ans.
      */
     readonly clusterType: string | ros.IResolvable;
 
     /**
-     * Property clusterVersion: Cluster version, such as ZooKeeper_3_8_0,NACOS_2_0_0
+     * Property clusterVersion: Cluster version.
+     * 
+     * [Professional Edition]
+     * - `NACOS_2_0_0`: Nacos 2.x.x version.
+     * - `ZooKeeper_3_8_0`: ZooKeeper 3.8.x version.
+     * 
+     * [Development Edition]
+     * - `NACOS_2_0_0`: Nacos 2.x version.
+     * - `ZooKeeper_3_8_0`: ZooKeeper 3.8.x version.
+     * 
+     * [Serverless Edition]
+     * - `NACOS_2_0_0`: Nacos 2.x version.
+     * - `ZooKeeper_3_8_0`: ZooKeeper 3.8.x version.
      */
     readonly clusterVersion: string | ros.IResolvable;
 
     /**
-     * Property instanceCount: instance count
+     * Property instanceCount: Number of instance nodes. Range: 1~15.
+     * 
+     * [Professional Edition]
+     * - Must be >=3 and odd number.
+     * 
+     * [Development Edition]
+     * - Only 1 allowed.
+     * 
+     * [Serverless Edition]
+     * - Ignore this parameter.
      */
     readonly instanceCount: number | ros.IResolvable;
 
     /**
-     * Property netType: Network type (whether private network is enabled or not). privatenet indicates that private network is enabled.
+     * Property netType: Network type. Valid values:
+     * - `privatenet`: Private network.
+     * - `pubnet`: Public network.
      */
     readonly netType: string | ros.IResolvable;
 
     /**
-     * Property acceptLanguage:
-     */
-    readonly acceptLanguage?: string | ros.IResolvable;
-
-    /**
-     * Property aclEntryList: The public network whitelist list is used only when the public network is enabled.
+     * Property aclEntryList: List of ACL entries.
      */
     readonly aclEntryList?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property clusterAliasName: cluster alias name
+     * Property chargeType: Billing mode, including PREPAY (annual\/monthly) and POSTPAY (pay-as-you-go).
+     * Ignored for Serverless Edition.
+     */
+    readonly chargeType?: string | ros.IResolvable;
+
+    /**
+     * Property clusterAliasName: cluster alias name.
      */
     readonly clusterAliasName?: string | ros.IResolvable;
 
     /**
-     * Property connectionType: network connect type
+     * Property connectionType: Network access type, `slb` or `single_eni`; some regions only support `single_eni` for Development Edition.
      */
     readonly connectionType?: string | ros.IResolvable;
 
     /**
-     * Property diskType: disk type
+     * Property eipEnabled: Effective when ConnectionType is `single_eni`, indicates whether to enable public access (elastic IP).
      */
-    readonly diskType?: string | ros.IResolvable;
+    readonly eipEnabled?: boolean | ros.IResolvable;
 
     /**
-     * Property mseVersion: Required, the value is as follows:
-     * 
-     * -'mse_dev': indicates the development version.
-     * -'Mse_pro': means professional version. When this version is selected, the specification is 2c4g or above, and the specification is 3 nodes or above.
+     * Property mseVersion: Must be filled unless special circumstances. Valid values:
+     * - `mse_pro`: Professional Edition.
+     * - `mse_dev`: Development Edition.
+     * - `mse_serverless`: Serverless Edition.
      */
     readonly mseVersion?: string | ros.IResolvable;
 
     /**
-     * Property privateSlbSpecification:
+     * Property pubNetworkFlow: Public network flow. Valid when ConnectionType is `slb`. 0 means do not create public SLB; 1 or above indicates fixed bandwidth value in Mbps. Range: 0~5000.
      */
-    readonly privateSlbSpecification?: string | ros.IResolvable;
+    readonly pubNetworkFlow?: number | ros.IResolvable;
 
     /**
-     * Property pubNetworkFlow: Public network bandwidth. If the bandwidth is greater than 0, the public network is enabled.
-     */
-    readonly pubNetworkFlow?: string | ros.IResolvable;
-
-    /**
-     * Property pubSlbSpecification:
-     */
-    readonly pubSlbSpecification?: string | ros.IResolvable;
-
-    /**
-     * Property requestPars:
+     * Property requestPars: Extended request parameters in JSON format.
      */
     readonly requestPars?: string | ros.IResolvable;
 
@@ -99,17 +121,22 @@ export interface ClusterProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     * Property securityGroupType: Effective when ConnectionType is `single_eni`, represents the security group type of the instance.
+     */
+    readonly securityGroupType?: string | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to cluster. Max support 20 tags to add during create cluster. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosCluster.TagsProperty[];
 
     /**
-     * Property vpcId: vpc id
+     * Property vpcId: VPC ID.
      */
     readonly vpcId?: string | ros.IResolvable;
 
     /**
-     * Property vSwitchId: switcher Id
+     * Property vSwitchId: Switch ID.
      */
     readonly vSwitchId?: string | ros.IResolvable;
 }
@@ -121,176 +148,172 @@ export interface ICluster extends ros.IResource {
     readonly props: ClusterProps;
 
     /**
-     * Attribute AclEntryList: The public network whitelist list is used only when the public network is enabled.
+     * Attribute AclEntryList: The list of ACL entries.
      */
     readonly attrAclEntryList: ros.IResolvable | string;
 
     /**
-     * Attribute AclId: acl id
+     * Attribute AclId: The ID of the ACL.
      */
     readonly attrAclId: ros.IResolvable | string;
 
     /**
-     * Attribute AppVersion: app version
+     * Attribute AppVersion: The version of the application.
      */
     readonly attrAppVersion: ros.IResolvable | string;
 
     /**
-     * Attribute ClusterAliasName: cluster alias name
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
+     * Attribute ClusterAliasName: The alias name of the cluster.
      */
     readonly attrClusterAliasName: ros.IResolvable | string;
 
     /**
-     * Attribute ClusterId: cluster id
+     * Attribute ClusterId: The ID of the cluster.
      */
     readonly attrClusterId: ros.IResolvable | string;
 
     /**
-     * Attribute ClusterName: cluster name
+     * Attribute ClusterName: The name of the cluster.
      */
     readonly attrClusterName: ros.IResolvable | string;
 
     /**
-     * Attribute ClusterSpecification: Cluster specifications. Note the msversion requirements of the version parameter,
-Optional parameters:
-"MSE_ SC _1_2_60_c",
-"MSE_ SC _2_4_60_c",
-"MSE_ SC _4_8_60_c",
-"MSE_ SC _8_16_60_c",
-"MSE_ SC _16_32_60_c"
+     * Attribute ClusterSpecification: The specification of the cluster.
      */
     readonly attrClusterSpecification: ros.IResolvable | string;
 
     /**
-     * Attribute ClusterType: cluster type
+     * Attribute ClusterType: The type of the cluster.
      */
     readonly attrClusterType: ros.IResolvable | string;
 
     /**
-     * Attribute ClusterVersion: Cluster version, such as ZooKeeper_3_8_0,NACOS_2_0_0
+     * Attribute ClusterVersion: The version of the cluster.
      */
     readonly attrClusterVersion: ros.IResolvable | string;
 
     /**
-     * Attribute ConfigAuthEnabled: Whether the configuration supports it. Valid values: true: false: not supported
+     * Attribute ConfigAuthEnabled: Whether to enable the configuration authentication.
      */
     readonly attrConfigAuthEnabled: ros.IResolvable | string;
 
     /**
-     * Attribute ConfigSecretEnabled: Whether the configuration password takes effect. The value is as follows: true: valid false: not valid
+     * Attribute ConfigSecretEnabled: Whether to enable the configuration secret.
      */
     readonly attrConfigSecretEnabled: ros.IResolvable | string;
 
     /**
-     * Attribute ConnectionType: network connect type
+     * Attribute ConnectionType: The connection type.
      */
     readonly attrConnectionType: ros.IResolvable | string;
 
     /**
-     * Attribute Cpu: cpu core size
+     * Attribute Cpu: The number of CPU cores.
      */
     readonly attrCpu: ros.IResolvable | string;
 
     /**
-     * Attribute DiskCapacity: disk capacity, unit: G
+     * Attribute DiskCapacity: The disk capacity.
      */
     readonly attrDiskCapacity: ros.IResolvable | string;
 
     /**
-     * Attribute DiskType: disk type
+     * Attribute DiskType: The disk type.
      */
     readonly attrDiskType: ros.IResolvable | string;
 
     /**
-     * Attribute HealthStatus: health status
+     * Attribute HealthStatus: The health status of the cluster.
      */
     readonly attrHealthStatus: ros.IResolvable | string;
 
     /**
-     * Attribute InstanceCount: instance count
+     * Attribute InstanceCount: The number of instances.
      */
     readonly attrInstanceCount: ros.IResolvable | string;
 
     /**
-     * Attribute InstanceId: instance id
+     * Attribute InstanceId: The ID of the cluster instance.
      */
     readonly attrInstanceId: ros.IResolvable | string;
 
     /**
-     * Attribute InternetAddress: internet address
+     * Attribute InternetAddress: The public network address of the cluster.
      */
     readonly attrInternetAddress: ros.IResolvable | string;
 
     /**
-     * Attribute InternetDomain: internet domain
+     * Attribute InternetDomain: The public network domain of the cluster.
      */
     readonly attrInternetDomain: ros.IResolvable | string;
 
     /**
-     * Attribute InternetPort: internet port
+     * Attribute InternetPort: The public network port of the cluster.
      */
     readonly attrInternetPort: ros.IResolvable | string;
 
     /**
-     * Attribute IntranetAddress: intranet address
+     * Attribute IntranetAddress: The intranet address of the cluster.
      */
     readonly attrIntranetAddress: ros.IResolvable | string;
 
     /**
-     * Attribute IntranetDomain: intranet domain
+     * Attribute IntranetDomain: The intranet domain of the cluster.
      */
     readonly attrIntranetDomain: ros.IResolvable | string;
 
     /**
-     * Attribute IntranetPort: intranet port
+     * Attribute IntranetPort: The intranet port of the cluster.
      */
     readonly attrIntranetPort: ros.IResolvable | string;
 
     /**
-     * Attribute MCPEnabled: Whether MCP takes effect, the value is as follows: true: valid false: not valid
+     * Attribute MCPEnabled: Whether to enable the MCP.
      */
     readonly attrMcpEnabled: ros.IResolvable | string;
 
     /**
-     * Attribute MemoryCapacity: memory capacity
+     * Attribute MemoryCapacity: The memory capacity.
      */
     readonly attrMemoryCapacity: ros.IResolvable | string;
 
     /**
-     * Attribute MseVersion: Required, the value is as follows:
-
--'mse_dev': indicates the development version.
--'Mse_pro': means professional version. When this version is selected, the specification is 2c4g or above, and the specification is 3 nodes or above.
+     * Attribute MseVersion: The MSE version.
      */
     readonly attrMseVersion: ros.IResolvable | string;
 
     /**
-     * Attribute NetType: Network type (whether private network is enabled or not). privatenet indicates that private network is enabled.
+     * Attribute NetType: The network type.
      */
     readonly attrNetType: ros.IResolvable | string;
 
     /**
-     * Attribute PayInfo: pay info
+     * Attribute PayInfo: The payment information.
      */
     readonly attrPayInfo: ros.IResolvable | string;
 
     /**
-     * Attribute PubNetworkFlow: Public network bandwidth. If the bandwidth is greater than 0, the public network is enabled.
+     * Attribute PubNetworkFlow: The public network flow.
      */
     readonly attrPubNetworkFlow: ros.IResolvable | string;
 
     /**
-     * Attribute VSwitchId: switcher Id
+     * Attribute VSwitchId: The ID of the VSwitch.
      */
     readonly attrVSwitchId: ros.IResolvable | string;
 
     /**
-     * Attribute VpcId: vpc id
+     * Attribute VpcId: The ID of the VPC.
      */
     readonly attrVpcId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::MSE::Cluster`, which is used to create a cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MSE::Cluster`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-cluster
  */
@@ -301,171 +324,167 @@ export class Cluster extends ros.Resource implements ICluster {
     protected enableResourcePropertyConstraint: boolean;
 
     /**
-     * Attribute AclEntryList: The public network whitelist list is used only when the public network is enabled.
+     * Attribute AclEntryList: The list of ACL entries.
      */
     public readonly attrAclEntryList: ros.IResolvable | string;
 
     /**
-     * Attribute AclId: acl id
+     * Attribute AclId: The ID of the ACL.
      */
     public readonly attrAclId: ros.IResolvable | string;
 
     /**
-     * Attribute AppVersion: app version
+     * Attribute AppVersion: The version of the application.
      */
     public readonly attrAppVersion: ros.IResolvable | string;
 
     /**
-     * Attribute ClusterAliasName: cluster alias name
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
+
+    /**
+     * Attribute ClusterAliasName: The alias name of the cluster.
      */
     public readonly attrClusterAliasName: ros.IResolvable | string;
 
     /**
-     * Attribute ClusterId: cluster id
+     * Attribute ClusterId: The ID of the cluster.
      */
     public readonly attrClusterId: ros.IResolvable | string;
 
     /**
-     * Attribute ClusterName: cluster name
+     * Attribute ClusterName: The name of the cluster.
      */
     public readonly attrClusterName: ros.IResolvable | string;
 
     /**
-     * Attribute ClusterSpecification: Cluster specifications. Note the msversion requirements of the version parameter,
-Optional parameters:
-"MSE_ SC _1_2_60_c",
-"MSE_ SC _2_4_60_c",
-"MSE_ SC _4_8_60_c",
-"MSE_ SC _8_16_60_c",
-"MSE_ SC _16_32_60_c"
+     * Attribute ClusterSpecification: The specification of the cluster.
      */
     public readonly attrClusterSpecification: ros.IResolvable | string;
 
     /**
-     * Attribute ClusterType: cluster type
+     * Attribute ClusterType: The type of the cluster.
      */
     public readonly attrClusterType: ros.IResolvable | string;
 
     /**
-     * Attribute ClusterVersion: Cluster version, such as ZooKeeper_3_8_0,NACOS_2_0_0
+     * Attribute ClusterVersion: The version of the cluster.
      */
     public readonly attrClusterVersion: ros.IResolvable | string;
 
     /**
-     * Attribute ConfigAuthEnabled: Whether the configuration supports it. Valid values: true: false: not supported
+     * Attribute ConfigAuthEnabled: Whether to enable the configuration authentication.
      */
     public readonly attrConfigAuthEnabled: ros.IResolvable | string;
 
     /**
-     * Attribute ConfigSecretEnabled: Whether the configuration password takes effect. The value is as follows: true: valid false: not valid
+     * Attribute ConfigSecretEnabled: Whether to enable the configuration secret.
      */
     public readonly attrConfigSecretEnabled: ros.IResolvable | string;
 
     /**
-     * Attribute ConnectionType: network connect type
+     * Attribute ConnectionType: The connection type.
      */
     public readonly attrConnectionType: ros.IResolvable | string;
 
     /**
-     * Attribute Cpu: cpu core size
+     * Attribute Cpu: The number of CPU cores.
      */
     public readonly attrCpu: ros.IResolvable | string;
 
     /**
-     * Attribute DiskCapacity: disk capacity, unit: G
+     * Attribute DiskCapacity: The disk capacity.
      */
     public readonly attrDiskCapacity: ros.IResolvable | string;
 
     /**
-     * Attribute DiskType: disk type
+     * Attribute DiskType: The disk type.
      */
     public readonly attrDiskType: ros.IResolvable | string;
 
     /**
-     * Attribute HealthStatus: health status
+     * Attribute HealthStatus: The health status of the cluster.
      */
     public readonly attrHealthStatus: ros.IResolvable | string;
 
     /**
-     * Attribute InstanceCount: instance count
+     * Attribute InstanceCount: The number of instances.
      */
     public readonly attrInstanceCount: ros.IResolvable | string;
 
     /**
-     * Attribute InstanceId: instance id
+     * Attribute InstanceId: The ID of the cluster instance.
      */
     public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
-     * Attribute InternetAddress: internet address
+     * Attribute InternetAddress: The public network address of the cluster.
      */
     public readonly attrInternetAddress: ros.IResolvable | string;
 
     /**
-     * Attribute InternetDomain: internet domain
+     * Attribute InternetDomain: The public network domain of the cluster.
      */
     public readonly attrInternetDomain: ros.IResolvable | string;
 
     /**
-     * Attribute InternetPort: internet port
+     * Attribute InternetPort: The public network port of the cluster.
      */
     public readonly attrInternetPort: ros.IResolvable | string;
 
     /**
-     * Attribute IntranetAddress: intranet address
+     * Attribute IntranetAddress: The intranet address of the cluster.
      */
     public readonly attrIntranetAddress: ros.IResolvable | string;
 
     /**
-     * Attribute IntranetDomain: intranet domain
+     * Attribute IntranetDomain: The intranet domain of the cluster.
      */
     public readonly attrIntranetDomain: ros.IResolvable | string;
 
     /**
-     * Attribute IntranetPort: intranet port
+     * Attribute IntranetPort: The intranet port of the cluster.
      */
     public readonly attrIntranetPort: ros.IResolvable | string;
 
     /**
-     * Attribute MCPEnabled: Whether MCP takes effect, the value is as follows: true: valid false: not valid
+     * Attribute MCPEnabled: Whether to enable the MCP.
      */
     public readonly attrMcpEnabled: ros.IResolvable | string;
 
     /**
-     * Attribute MemoryCapacity: memory capacity
+     * Attribute MemoryCapacity: The memory capacity.
      */
     public readonly attrMemoryCapacity: ros.IResolvable | string;
 
     /**
-     * Attribute MseVersion: Required, the value is as follows:
-
--'mse_dev': indicates the development version.
--'Mse_pro': means professional version. When this version is selected, the specification is 2c4g or above, and the specification is 3 nodes or above.
+     * Attribute MseVersion: The MSE version.
      */
     public readonly attrMseVersion: ros.IResolvable | string;
 
     /**
-     * Attribute NetType: Network type (whether private network is enabled or not). privatenet indicates that private network is enabled.
+     * Attribute NetType: The network type.
      */
     public readonly attrNetType: ros.IResolvable | string;
 
     /**
-     * Attribute PayInfo: pay info
+     * Attribute PayInfo: The payment information.
      */
     public readonly attrPayInfo: ros.IResolvable | string;
 
     /**
-     * Attribute PubNetworkFlow: Public network bandwidth. If the bandwidth is greater than 0, the public network is enabled.
+     * Attribute PubNetworkFlow: The public network flow.
      */
     public readonly attrPubNetworkFlow: ros.IResolvable | string;
 
     /**
-     * Attribute VSwitchId: switcher Id
+     * Attribute VSwitchId: The ID of the VSwitch.
      */
     public readonly attrVSwitchId: ros.IResolvable | string;
 
     /**
-     * Attribute VpcId: vpc id
+     * Attribute VpcId: The ID of the VPC.
      */
     public readonly attrVpcId: ros.IResolvable | string;
 
@@ -483,29 +502,29 @@ Optional parameters:
 
         const rosCluster = new RosCluster(this, id,  {
             mseVersion: props.mseVersion,
-            privateSlbSpecification: props.privateSlbSpecification,
             clusterVersion: props.clusterVersion,
             connectionType: props.connectionType,
             resourceGroupId: props.resourceGroupId,
             aclEntryList: props.aclEntryList,
             clusterSpecification: props.clusterSpecification,
             vSwitchId: props.vSwitchId,
-            pubSlbSpecification: props.pubSlbSpecification,
+            securityGroupType: props.securityGroupType,
             clusterType: props.clusterType,
-            diskType: props.diskType,
             clusterAliasName: props.clusterAliasName,
             instanceCount: props.instanceCount,
             vpcId: props.vpcId,
             requestPars: props.requestPars,
+            chargeType: props.chargeType,
             pubNetworkFlow: props.pubNetworkFlow,
-            acceptLanguage: props.acceptLanguage,
             netType: props.netType,
+            eipEnabled: props.eipEnabled,
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosCluster;
         this.attrAclEntryList = rosCluster.attrAclEntryList;
         this.attrAclId = rosCluster.attrAclId;
         this.attrAppVersion = rosCluster.attrAppVersion;
+        this.attrArn = rosCluster.attrArn;
         this.attrClusterAliasName = rosCluster.attrClusterAliasName;
         this.attrClusterId = rosCluster.attrClusterId;
         this.attrClusterName = rosCluster.attrClusterName;

@@ -77,7 +77,7 @@ export interface IAnyCluster extends ros.IResource {
     readonly attrWorkerRamRoleName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CS::AnyCluster`, which is used to create a Container Service for Kubernetes (ACK) cluster of a specific type.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CS::AnyCluster`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAnyCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-anycluster
  */

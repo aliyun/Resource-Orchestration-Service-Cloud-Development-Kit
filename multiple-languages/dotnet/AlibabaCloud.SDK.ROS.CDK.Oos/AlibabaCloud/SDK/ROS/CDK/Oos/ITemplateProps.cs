@@ -31,6 +31,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             get;
         }
 
+        /// <summary>Property ignoreExisting: Whether to ignore existing template False: ROS will perform a uniqueness check.If a template with the same name exists, an error will be reported when creating it. True: ROS will not check the uniqueness.If there is a template with the same name, the template creation process will be ignored. If the template is not created by ROS, it will be ignored during update and delete stage.</summary>
+        [JsiiProperty(name: "ignoreExisting", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? IgnoreExisting
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property resourceGroupId: Resource group id.</summary>
         [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -82,6 +93,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             public object TemplateName
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property ignoreExisting: Whether to ignore existing template False: ROS will perform a uniqueness check.If a template with the same name exists, an error will be reported when creating it. True: ROS will not check the uniqueness.If there is a template with the same name, the template creation process will be ignored. If the template is not created by ROS, it will be ignored during update and delete stage.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "ignoreExisting", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IgnoreExisting
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property resourceGroupId: Resource group id.</summary>

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.amqp;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::AMQP::Queue</code>, which is used to create a queue.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::AMQP::Queue</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:20.847Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:52.289Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.amqp.$Module.class, fqn = "@alicloud/ros-cdk-amqp.RosQueue")
 public class RosQueue extends com.aliyun.ros.cdk.core.RosResource {
 

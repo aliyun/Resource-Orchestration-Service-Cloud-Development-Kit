@@ -86,7 +86,7 @@ export interface IApplication extends ros.IResource {
     readonly attrPort: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::Application`, which is used to create an application in an Elastic Compute Service (ECS) cluster in Enterprise Distributed Application Service (EDAS).
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::Application`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApplication`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-application
  */

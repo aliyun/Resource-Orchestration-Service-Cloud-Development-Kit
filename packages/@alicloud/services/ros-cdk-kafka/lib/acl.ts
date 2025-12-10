@@ -89,7 +89,7 @@ export interface IAcl extends ros.IResource {
     readonly attrUsername: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::KAFKA::Acl`, which is used to create an access control list (ACL).
+ * This class encapsulates and extends the ROS resource type `ALIYUN::KAFKA::Acl`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAcl`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-acl
  */

@@ -255,6 +255,23 @@ func (j *jsiiProxy_RosClusterApplication) validateSetClusterIdParameters(val int
 	return nil
 }
 
+func (j *jsiiProxy_RosClusterApplication) validateSetCreationModeParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosClusterApplication) validateSetDefaultNamespaceParameters(val interface{}) error {
 	switch val.(type) {
 	case *string:

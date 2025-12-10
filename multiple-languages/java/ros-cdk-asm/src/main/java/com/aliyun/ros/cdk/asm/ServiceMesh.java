@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.asm;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ASM::ServiceMesh</code>, which is used to create a Service Mesh (ASM) instance.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ASM::ServiceMesh</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:21.570Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:52.898Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.asm.$Module.class, fqn = "@alicloud/ros-cdk-asm.ServiceMesh")
 public class ServiceMesh extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.asm.IServiceMesh {
 

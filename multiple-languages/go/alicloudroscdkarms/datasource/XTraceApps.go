@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::ARMS::XTraceApps`, which is used to query all the application monitoring tasks in a region.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::ARMS::XTraceApps`.
 type XTraceApps interface {
 	alicloudroscdkcore.Resource
 	IXTraceApps

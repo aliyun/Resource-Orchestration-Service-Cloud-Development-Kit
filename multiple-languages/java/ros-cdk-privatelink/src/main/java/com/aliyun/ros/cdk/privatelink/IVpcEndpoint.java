@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.privatelink;
 /**
  * Represents a <code>VpcEndpoint</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:28.254Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:59.180Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.IVpcEndpoint")
 @software.amazon.jsii.Jsii.Proxy(IVpcEndpoint.Jsii$Proxy.class)
 public interface IVpcEndpoint extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

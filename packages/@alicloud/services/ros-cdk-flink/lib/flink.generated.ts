@@ -164,7 +164,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::Instance`, which is used to create a subscription or pay-as-you-go Realtime Compute for Apache Flink instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::Instance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-instance
  */
@@ -355,6 +355,445 @@ function rosInstanceResourceSpecPropertyToRosTemplate(properties: any): any {
     return {
       'Cpu': ros.numberToRosTemplate(properties.cpu),
       'MemoryGB': ros.numberToRosTemplate(properties.memoryGb),
+    };
+}
+
+/**
+ * Properties for defining a `RosInstanceV2`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-instancev2
+ */
+export interface RosInstanceV2Props {
+
+    /**
+     * @Property chargeType: The payment type, the value of the value is as follows:
+     * POST: pay as you go.
+     * PRE: subscription.
+     */
+    readonly chargeType: string | ros.IResolvable;
+
+    /**
+     * @Property instanceName: The name of instance.
+     */
+    readonly instanceName: string | ros.IResolvable;
+
+    /**
+     * @Property storage: Resource specifications.
+     * When ChargeType is configured as PRE, the resource specification parameters must be filled.
+     */
+    readonly storage: RosInstanceV2.StorageProperty | ros.IResolvable;
+
+    /**
+     * @Property vpcId: VPC ID.
+     */
+    readonly vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchIds: Virtual switch ID.
+     */
+    readonly vSwitchIds: Array<any | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property autoRenew: When the payment type is the monthly package, the value of the value is as follows:
+     * true: Automatic renewal.
+     * false: Manual renewal.
+     */
+    readonly autoRenew?: boolean | ros.IResolvable;
+
+    /**
+     * @Property duration: Number of order cycle.
+     * When ChargeType is configured as PRE, the duration parameter must be filled.
+     * If PricingCycle is Month, the valid range is 1, 2, 3, 6, 7, 8, 9, 12, 24, 36
+     * If PricingCycle is year, the valid range is 1 to 3
+     */
+    readonly duration?: number | ros.IResolvable;
+
+    /**
+     * @Property pricingCycle: The ordering cycle only supports ordering in the year and month.
+     */
+    readonly pricingCycle?: string | ros.IResolvable;
+
+    /**
+     * @Property promotionCode: Promo Code.
+     */
+    readonly promotionCode?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceSpec: Resource specifications.
+     * When ChargeType is configured as PRE, the resource specification parameters must be filled.
+     */
+    readonly resourceSpec?: RosInstanceV2.ResourceSpecProperty | ros.IResolvable;
+
+    /**
+     * @Property usePromotionCode: Whether to use coupons.The value is as follows:
+     * true: Use.
+     * false: Not in use.
+     */
+    readonly usePromotionCode?: boolean | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosInstanceV2Props`
+ *
+ * @param properties - the TypeScript properties of a `RosInstanceV2Props`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstanceV2PropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('instanceName', ros.requiredValidator)(properties.instanceName));
+    if(properties.instanceName && (typeof properties.instanceName) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceName', ros.validateAllowedPattern)({
+          data: properties.instanceName,
+          reg: /^[a-z][a-z0-9-]{1,60}/
+        }));
+    }
+    errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    errors.collect(ros.propertyValidator('storage', ros.requiredValidator)(properties.storage));
+    errors.collect(ros.propertyValidator('storage', RosInstanceV2_StoragePropertyValidator)(properties.storage));
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vSwitchIds', ros.requiredValidator)(properties.vSwitchIds));
+    if(properties.vSwitchIds && (Array.isArray(properties.vSwitchIds) || (typeof properties.vSwitchIds) === 'string')) {
+        errors.collect(ros.propertyValidator('vSwitchIds', ros.validateLength)({
+            data: properties.vSwitchIds.length,
+            min: 1,
+            max: 150,
+          }));
+    }
+    errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateAny))(properties.vSwitchIds));
+    if(properties.pricingCycle && (typeof properties.pricingCycle) !== 'object') {
+        errors.collect(ros.propertyValidator('pricingCycle', ros.validateAllowedValues)({
+          data: properties.pricingCycle,
+          allowedValues: ["Month","Year","month","year"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('pricingCycle', ros.validateString)(properties.pricingCycle));
+    errors.collect(ros.propertyValidator('chargeType', ros.requiredValidator)(properties.chargeType));
+    if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
+          data: properties.chargeType,
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
+    errors.collect(ros.propertyValidator('promotionCode', ros.validateString)(properties.promotionCode));
+    errors.collect(ros.propertyValidator('resourceSpec', RosInstanceV2_ResourceSpecPropertyValidator)(properties.resourceSpec));
+    if(properties.duration && (typeof properties.duration) !== 'object') {
+        errors.collect(ros.propertyValidator('duration', ros.validateAllowedValues)({
+          data: properties.duration,
+          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36],
+        }));
+    }
+    errors.collect(ros.propertyValidator('duration', ros.validateNumber)(properties.duration));
+    errors.collect(ros.propertyValidator('usePromotionCode', ros.validateBoolean)(properties.usePromotionCode));
+    return errors.wrap('supplied properties not correct for "RosInstanceV2Props"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::Flink::InstanceV2` resource
+ *
+ * @param properties - the TypeScript properties of a `RosInstanceV2Props`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::Flink::InstanceV2` resource.
+ */
+// @ts-ignore TS6133
+function rosInstanceV2PropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosInstanceV2PropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ChargeType': ros.stringToRosTemplate(properties.chargeType),
+      'InstanceName': ros.stringToRosTemplate(properties.instanceName),
+      'Storage': rosInstanceV2StoragePropertyToRosTemplate(properties.storage),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchIds': ros.listMapper(ros.objectToRosTemplate)(properties.vSwitchIds),
+      'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
+      'Duration': ros.numberToRosTemplate(properties.duration),
+      'PricingCycle': ros.stringToRosTemplate(properties.pricingCycle),
+      'PromotionCode': ros.stringToRosTemplate(properties.promotionCode),
+      'ResourceSpec': rosInstanceV2ResourceSpecPropertyToRosTemplate(properties.resourceSpec),
+      'UsePromotionCode': ros.booleanToRosTemplate(properties.usePromotionCode),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::InstanceV2`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `InstanceV2` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-instancev2
+ */
+export class RosInstanceV2 extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::Flink::InstanceV2";
+
+    /**
+     * @Attribute InstanceId: Instance ID.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute OrderId: Order information.
+     */
+    public readonly attrOrderId: ros.IResolvable;
+
+    /**
+     * @Attribute WorkspaceId: Workspace ID.
+     */
+    public readonly attrWorkspaceId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property chargeType: The payment type, the value of the value is as follows:
+     * POST: pay as you go.
+     * PRE: subscription.
+     */
+    public chargeType: string | ros.IResolvable;
+
+    /**
+     * @Property instanceName: The name of instance.
+     */
+    public instanceName: string | ros.IResolvable;
+
+    /**
+     * @Property storage: Resource specifications.
+     * When ChargeType is configured as PRE, the resource specification parameters must be filled.
+     */
+    public storage: RosInstanceV2.StorageProperty | ros.IResolvable;
+
+    /**
+     * @Property vpcId: VPC ID.
+     */
+    public vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchIds: Virtual switch ID.
+     */
+    public vSwitchIds: Array<any | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property autoRenew: When the payment type is the monthly package, the value of the value is as follows:
+     * true: Automatic renewal.
+     * false: Manual renewal.
+     */
+    public autoRenew: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property duration: Number of order cycle.
+     * When ChargeType is configured as PRE, the duration parameter must be filled.
+     * If PricingCycle is Month, the valid range is 1, 2, 3, 6, 7, 8, 9, 12, 24, 36
+     * If PricingCycle is year, the valid range is 1 to 3
+     */
+    public duration: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property pricingCycle: The ordering cycle only supports ordering in the year and month.
+     */
+    public pricingCycle: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property promotionCode: Promo Code.
+     */
+    public promotionCode: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceSpec: Resource specifications.
+     * When ChargeType is configured as PRE, the resource specification parameters must be filled.
+     */
+    public resourceSpec: RosInstanceV2.ResourceSpecProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property usePromotionCode: Whether to use coupons.The value is as follows:
+     * true: Use.
+     * false: Not in use.
+     */
+    public usePromotionCode: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosInstanceV2Props, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosInstanceV2.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrInstanceId = this.getAtt('InstanceId');
+        this.attrOrderId = this.getAtt('OrderId');
+        this.attrWorkspaceId = this.getAtt('WorkspaceId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.chargeType = props.chargeType;
+        this.instanceName = props.instanceName;
+        this.storage = props.storage;
+        this.vpcId = props.vpcId;
+        this.vSwitchIds = props.vSwitchIds;
+        this.autoRenew = props.autoRenew;
+        this.duration = props.duration;
+        this.pricingCycle = props.pricingCycle;
+        this.promotionCode = props.promotionCode;
+        this.resourceSpec = props.resourceSpec;
+        this.usePromotionCode = props.usePromotionCode;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            chargeType: this.chargeType,
+            instanceName: this.instanceName,
+            storage: this.storage,
+            vpcId: this.vpcId,
+            vSwitchIds: this.vSwitchIds,
+            autoRenew: this.autoRenew,
+            duration: this.duration,
+            pricingCycle: this.pricingCycle,
+            promotionCode: this.promotionCode,
+            resourceSpec: this.resourceSpec,
+            usePromotionCode: this.usePromotionCode,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosInstanceV2PropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosInstanceV2 {
+    /**
+     * @stability external
+     */
+    export interface OssProperty {
+        /**
+         * @Property bucket: OSS bucket name.
+         */
+        readonly bucket: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `OssProperty`
+ *
+ * @param properties - the TypeScript properties of a `OssProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstanceV2_OssPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('bucket', ros.requiredValidator)(properties.bucket));
+    errors.collect(ros.propertyValidator('bucket', ros.validateString)(properties.bucket));
+    return errors.wrap('supplied properties not correct for "OssProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::Flink::InstanceV2.Oss` resource
+ *
+ * @param properties - the TypeScript properties of a `OssProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::Flink::InstanceV2.Oss` resource.
+ */
+// @ts-ignore TS6133
+function rosInstanceV2OssPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosInstanceV2_OssPropertyValidator(properties).assertSuccess();
+    return {
+      'Bucket': ros.stringToRosTemplate(properties.bucket),
+    };
+}
+
+export namespace RosInstanceV2 {
+    /**
+     * @stability external
+     */
+    export interface ResourceSpecProperty {
+        /**
+         * @Property cpu: CPU number.
+         */
+        readonly cpu?: number | ros.IResolvable;
+        /**
+         * @Property memoryGb: memory size.The unit is GB.
+     * It shows that the amount of memory must be 4 times the number of CPUs.
+         */
+        readonly memoryGb?: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ResourceSpecProperty`
+ *
+ * @param properties - the TypeScript properties of a `ResourceSpecProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstanceV2_ResourceSpecPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('cpu', ros.validateNumber)(properties.cpu));
+    errors.collect(ros.propertyValidator('memoryGb', ros.validateNumber)(properties.memoryGb));
+    return errors.wrap('supplied properties not correct for "ResourceSpecProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::Flink::InstanceV2.ResourceSpec` resource
+ *
+ * @param properties - the TypeScript properties of a `ResourceSpecProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::Flink::InstanceV2.ResourceSpec` resource.
+ */
+// @ts-ignore TS6133
+function rosInstanceV2ResourceSpecPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosInstanceV2_ResourceSpecPropertyValidator(properties).assertSuccess();
+    return {
+      'Cpu': ros.numberToRosTemplate(properties.cpu),
+      'MemoryGB': ros.numberToRosTemplate(properties.memoryGb),
+    };
+}
+
+export namespace RosInstanceV2 {
+    /**
+     * @stability external
+     */
+    export interface StorageProperty {
+        /**
+         * @Property fullyManaged: Whether the storage is fully managed.
+         */
+        readonly fullyManaged?: boolean | ros.IResolvable;
+        /**
+         * @Property oss: The OSS storage config
+         */
+        readonly oss?: RosInstanceV2.OssProperty | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `StorageProperty`
+ *
+ * @param properties - the TypeScript properties of a `StorageProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstanceV2_StoragePropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('fullyManaged', ros.validateBoolean)(properties.fullyManaged));
+    errors.collect(ros.propertyValidator('oss', RosInstanceV2_OssPropertyValidator)(properties.oss));
+    return errors.wrap('supplied properties not correct for "StorageProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::Flink::InstanceV2.Storage` resource
+ *
+ * @param properties - the TypeScript properties of a `StorageProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::Flink::InstanceV2.Storage` resource.
+ */
+// @ts-ignore TS6133
+function rosInstanceV2StoragePropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosInstanceV2_StoragePropertyValidator(properties).assertSuccess();
+    return {
+      'FullyManaged': ros.booleanToRosTemplate(properties.fullyManaged),
+      'Oss': rosInstanceV2OssPropertyToRosTemplate(properties.oss),
     };
 }
 
@@ -695,6 +1134,191 @@ function RosNamespace_ResourceSpecPropertyValidator(properties: any): ros.Valida
 function rosNamespaceResourceSpecPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosNamespace_ResourceSpecPropertyValidator(properties).assertSuccess();
+    return {
+      'Cpu': ros.numberToRosTemplate(properties.cpu),
+      'MemoryGB': ros.numberToRosTemplate(properties.memoryGb),
+    };
+}
+
+/**
+ * Properties for defining a `RosNamespaceV2`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-namespacev2
+ */
+export interface RosNamespaceV2Props {
+
+    /**
+     * @Property instanceId: Instance ID.
+     */
+    readonly instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property namespace: Project space name.
+     */
+    readonly namespace: string | ros.IResolvable;
+
+    /**
+     * @Property resourceSpec: Resource specifications.
+     */
+    readonly resourceSpec?: RosNamespaceV2.ResourceSpecProperty | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosNamespaceV2Props`
+ *
+ * @param properties - the TypeScript properties of a `RosNamespaceV2Props`
+ *
+ * @returns the result of the validation.
+ */
+function RosNamespaceV2PropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('resourceSpec', RosNamespaceV2_ResourceSpecPropertyValidator)(properties.resourceSpec));
+    errors.collect(ros.propertyValidator('namespace', ros.requiredValidator)(properties.namespace));
+    if(properties.namespace && (typeof properties.namespace) !== 'object') {
+        errors.collect(ros.propertyValidator('namespace', ros.validateAllowedPattern)({
+          data: properties.namespace,
+          reg: /^[a-z][a-z0-9-]{1,60}/
+        }));
+    }
+    errors.collect(ros.propertyValidator('namespace', ros.validateString)(properties.namespace));
+    return errors.wrap('supplied properties not correct for "RosNamespaceV2Props"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::Flink::NamespaceV2` resource
+ *
+ * @param properties - the TypeScript properties of a `RosNamespaceV2Props`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::Flink::NamespaceV2` resource.
+ */
+// @ts-ignore TS6133
+function rosNamespaceV2PropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosNamespaceV2PropsValidator(properties).assertSuccess();
+    }
+    return {
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'Namespace': ros.stringToRosTemplate(properties.namespace),
+      'ResourceSpec': rosNamespaceV2ResourceSpecPropertyToRosTemplate(properties.resourceSpec),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::NamespaceV2`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `NamespaceV2` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-namespacev2
+ */
+export class RosNamespaceV2 extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::Flink::NamespaceV2";
+
+    /**
+     * @Attribute InstanceId: Instance ID.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute Namespace: Project space name.
+     */
+    public readonly attrNamespace: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property instanceId: Instance ID.
+     */
+    public instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property namespace: Project space name.
+     */
+    public namespace: string | ros.IResolvable;
+
+    /**
+     * @Property resourceSpec: Resource specifications.
+     */
+    public resourceSpec: RosNamespaceV2.ResourceSpecProperty | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosNamespaceV2Props, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosNamespaceV2.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrInstanceId = this.getAtt('InstanceId');
+        this.attrNamespace = this.getAtt('Namespace');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.instanceId = props.instanceId;
+        this.namespace = props.namespace;
+        this.resourceSpec = props.resourceSpec;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            instanceId: this.instanceId,
+            namespace: this.namespace,
+            resourceSpec: this.resourceSpec,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosNamespaceV2PropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosNamespaceV2 {
+    /**
+     * @stability external
+     */
+    export interface ResourceSpecProperty {
+        /**
+         * @Property cpu: CPU number.
+     * In the working space of the annual package, the number of CPUs must be filled.Under the working space of paying in volume, you can not fill in the number of CPUs.
+     * The number of CPUs created by the target project space is less than the number of CPU remaining in the working space (the total number of CPU purchased by the work space minus the number of other project spaces that has been assigned the number of CPUs), otherwise an error will be reported.
+         */
+        readonly cpu?: number | ros.IResolvable;
+        /**
+         * @Property memoryGb: Memory.
+     * In the working space of the annual package, the amount of memory must be filled, and the amount of memory must be 4 times.Under the working space of paying in volume, you can fill in the amount of memory without filling in the amount of memory.
+     * The amount of memory in the target project space is less than the remaining memory of the working space (the total amount of memory purchased by the work space minus the number of other project spaces that have been assigned the amount of memory), otherwise an error will be reported.
+         */
+        readonly memoryGb?: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ResourceSpecProperty`
+ *
+ * @param properties - the TypeScript properties of a `ResourceSpecProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosNamespaceV2_ResourceSpecPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('cpu', ros.validateNumber)(properties.cpu));
+    errors.collect(ros.propertyValidator('memoryGb', ros.validateNumber)(properties.memoryGb));
+    return errors.wrap('supplied properties not correct for "ResourceSpecProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::Flink::NamespaceV2.ResourceSpec` resource
+ *
+ * @param properties - the TypeScript properties of a `ResourceSpecProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::Flink::NamespaceV2.ResourceSpec` resource.
+ */
+// @ts-ignore TS6133
+function rosNamespaceV2ResourceSpecPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosNamespaceV2_ResourceSpecPropertyValidator(properties).assertSuccess();
     return {
       'Cpu': ros.numberToRosTemplate(properties.cpu),
       'MemoryGB': ros.numberToRosTemplate(properties.memoryGb),

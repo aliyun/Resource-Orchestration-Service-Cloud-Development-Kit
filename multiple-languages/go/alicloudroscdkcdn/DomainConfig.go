@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CDN::DomainConfig`, which is used to configure multiple domain names at a time.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CDN::DomainConfig`.
 type DomainConfig interface {
 	alicloudroscdkcore.Resource
 	IDomainConfig

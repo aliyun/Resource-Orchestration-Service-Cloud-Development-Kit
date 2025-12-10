@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::GroupMetricRule`, which is used to create an alert rule for an application group.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::GroupMetricRule`.
 type RosGroupMetricRule interface {
 	alicloudroscdkcore.RosResource
 	AttrRuleId() alicloudroscdkcore.IResolvable

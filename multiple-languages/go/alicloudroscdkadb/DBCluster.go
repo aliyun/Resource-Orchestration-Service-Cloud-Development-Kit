@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ADB::DBCluster`, which is used to create an AnalyticDB for MySQL cluster.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ADB::DBCluster`.
 type DBCluster interface {
 	alicloudroscdkcore.Resource
 	IDBCluster

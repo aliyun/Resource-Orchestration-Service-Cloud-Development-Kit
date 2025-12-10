@@ -110,7 +110,7 @@ export interface IGateway extends ros.IResource {
     readonly attrZones: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::APIG::Gateway`The , which type is used to query gateway details.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::APIG::Gateway`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGateway`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apig-gateway
  */

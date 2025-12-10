@@ -82,7 +82,7 @@ export interface ITrigger extends ros.IResource {
     readonly attrUrlIntranet: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::FC3::Trigger`, which is used to create a Function Compute 3.0 trigger.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::FC3::Trigger`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTrigger`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-trigger
  */

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterRouteTable`, which is used to create a custom route table for an Enterprise Edition transit router.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterRouteTable`.
 type TransitRouterRouteTable interface {
 	alicloudroscdkcore.Resource
 	ITransitRouterRouteTable

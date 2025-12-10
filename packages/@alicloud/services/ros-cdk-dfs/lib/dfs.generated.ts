@@ -84,7 +84,7 @@ function rosAccessGroupPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DFS::AccessGroup`, which is used to create a permission group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DFS::AccessGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AccessGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-accessgroup
  */
@@ -249,7 +249,7 @@ function rosAccessRulePropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DFS::AccessRule`, which is used to create a rule for a permission group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DFS::AccessRule`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AccessRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-accessrule
  */
@@ -514,7 +514,7 @@ function rosFileSystemPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DFS::FileSystem`, which is used to create a file system.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DFS::FileSystem`.
  * @Note This class does not contain additional functions, so it is recommended to use the `FileSystem` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-filesystem
  */
@@ -750,7 +750,7 @@ function rosMountPointPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DFS::MountPoint`, which is used to create a mount target.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DFS::MountPoint`.
  * @Note This class does not contain additional functions, so it is recommended to use the `MountPoint` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-mountpoint
  */

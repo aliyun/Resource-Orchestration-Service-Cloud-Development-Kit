@@ -102,7 +102,7 @@ export interface ITransitRouterVbrAttachment extends ros.IResource {
     readonly attrVbrOwnerId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterVbrAttachment`, which is used to create a virtual border router (VBR) connection on an Enterprise Edition transit router.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterVbrAttachment`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTransitRouterVbrAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervbrattachment
  */

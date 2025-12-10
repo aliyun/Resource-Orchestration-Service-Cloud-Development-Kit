@@ -149,7 +149,7 @@ function rosBundlePropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::Bundle`, which is used to create a custom cloud computer template.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::Bundle`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Bundle` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-bundle
  */
@@ -586,7 +586,7 @@ function rosDesktopGroupPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::DesktopGroup`, which is used to create a cloud computer pool.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::DesktopGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DesktopGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-desktopgroup
  */
@@ -1097,7 +1097,7 @@ function rosDesktopsPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::Desktops`, which is used to create one or more cloud desktops.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::Desktops`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Desktops` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-desktops
  */
@@ -1535,7 +1535,7 @@ function rosNetworkPackagePropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::NetworkPackage`, which is used to create a premium bandwidth plan for an office network.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::NetworkPackage`.
  * @Note This class does not contain additional functions, so it is recommended to use the `NetworkPackage` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-networkpackage
  */
@@ -1700,7 +1700,7 @@ function rosNetworkPackageAssociationPropsToRosTemplate(properties: any, enableR
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::NetworkPackageAssociation`, which is used to associate a premium bandwidth plan with an office network.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::NetworkPackageAssociation`.
  * @Note This class does not contain additional functions, so it is recommended to use the `NetworkPackageAssociation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-networkpackageassociation
  */
@@ -1920,7 +1920,7 @@ function rosSimpleOfficeSitePropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::SimpleOfficeSite`, which is used to create a workspace of the convenience account type.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::SimpleOfficeSite`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SimpleOfficeSite` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-simpleofficesite
  */
@@ -2131,7 +2131,7 @@ function rosUserDesktopGroupAdditionPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::UserDesktopGroupAddition`, which is used grant the permissions on a cloud computer pool to users.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::UserDesktopGroupAddition`.
  * @Note This class does not contain additional functions, so it is recommended to use the `UserDesktopGroupAddition` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-userdesktopgroupaddition
  */

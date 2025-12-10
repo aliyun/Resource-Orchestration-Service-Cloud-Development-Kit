@@ -193,7 +193,7 @@ export interface IRunCommand extends ros.IResource {
     readonly attrInvokeResults: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::RunCommand`, which is used to run a shell, PowerShell, or batch command on Elastic Compute Service (ECS) instances.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::RunCommand`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRunCommand`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-runcommand
  */

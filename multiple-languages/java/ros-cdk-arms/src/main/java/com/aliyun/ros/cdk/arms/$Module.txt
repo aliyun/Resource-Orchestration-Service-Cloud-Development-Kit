@@ -1,9 +1,5 @@
 @alicloud/ros-cdk-arms.AddonRelease=com.aliyun.ros.cdk.arms.AddonRelease
 @alicloud/ros-cdk-arms.AddonReleaseProps=com.aliyun.ros.cdk.arms.AddonReleaseProps
-@alicloud/ros-cdk-arms.AlertContact=com.aliyun.ros.cdk.arms.AlertContact
-@alicloud/ros-cdk-arms.AlertContactGroup=com.aliyun.ros.cdk.arms.AlertContactGroup
-@alicloud/ros-cdk-arms.AlertContactGroupProps=com.aliyun.ros.cdk.arms.AlertContactGroupProps
-@alicloud/ros-cdk-arms.AlertContactProps=com.aliyun.ros.cdk.arms.AlertContactProps
 @alicloud/ros-cdk-arms.ApplyAlertRuleTemplate=com.aliyun.ros.cdk.arms.ApplyAlertRuleTemplate
 @alicloud/ros-cdk-arms.ApplyAlertRuleTemplateProps=com.aliyun.ros.cdk.arms.ApplyAlertRuleTemplateProps
 @alicloud/ros-cdk-arms.DeliverTask=com.aliyun.ros.cdk.arms.DeliverTask
@@ -13,8 +9,6 @@
 @alicloud/ros-cdk-arms.EnvironmentFeatureProps=com.aliyun.ros.cdk.arms.EnvironmentFeatureProps
 @alicloud/ros-cdk-arms.EnvironmentProps=com.aliyun.ros.cdk.arms.EnvironmentProps
 @alicloud/ros-cdk-arms.IAddonRelease=com.aliyun.ros.cdk.arms.IAddonRelease
-@alicloud/ros-cdk-arms.IAlertContact=com.aliyun.ros.cdk.arms.IAlertContact
-@alicloud/ros-cdk-arms.IAlertContactGroup=com.aliyun.ros.cdk.arms.IAlertContactGroup
 @alicloud/ros-cdk-arms.IApplyAlertRuleTemplate=com.aliyun.ros.cdk.arms.IApplyAlertRuleTemplate
 @alicloud/ros-cdk-arms.IDeliverTask=com.aliyun.ros.cdk.arms.IDeliverTask
 @alicloud/ros-cdk-arms.IEnvironment=com.aliyun.ros.cdk.arms.IEnvironment
@@ -31,10 +25,6 @@
 @alicloud/ros-cdk-arms.RetcodeAppProps=com.aliyun.ros.cdk.arms.RetcodeAppProps
 @alicloud/ros-cdk-arms.RosAddonRelease=com.aliyun.ros.cdk.arms.RosAddonRelease
 @alicloud/ros-cdk-arms.RosAddonReleaseProps=com.aliyun.ros.cdk.arms.RosAddonReleaseProps
-@alicloud/ros-cdk-arms.RosAlertContact=com.aliyun.ros.cdk.arms.RosAlertContact
-@alicloud/ros-cdk-arms.RosAlertContactGroup=com.aliyun.ros.cdk.arms.RosAlertContactGroup
-@alicloud/ros-cdk-arms.RosAlertContactGroupProps=com.aliyun.ros.cdk.arms.RosAlertContactGroupProps
-@alicloud/ros-cdk-arms.RosAlertContactProps=com.aliyun.ros.cdk.arms.RosAlertContactProps
 @alicloud/ros-cdk-arms.RosApplyAlertRuleTemplate=com.aliyun.ros.cdk.arms.RosApplyAlertRuleTemplate
 @alicloud/ros-cdk-arms.RosApplyAlertRuleTemplateProps=com.aliyun.ros.cdk.arms.RosApplyAlertRuleTemplateProps
 @alicloud/ros-cdk-arms.RosDeliverTask=com.aliyun.ros.cdk.arms.RosDeliverTask

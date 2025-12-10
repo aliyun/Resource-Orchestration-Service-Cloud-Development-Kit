@@ -67,7 +67,7 @@ export interface IPlugin extends ros.IResource {
     readonly attrPluginType: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Plugin`, which is used to create an API Gateway plug-in.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Plugin`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPlugin`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-plugin
  */

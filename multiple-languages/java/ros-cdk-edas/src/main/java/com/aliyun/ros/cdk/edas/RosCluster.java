@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.edas;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::EDAS::Cluster</code>, which is used to create a cluster.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::EDAS::Cluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:24.959Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:56.027Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.RosCluster")
 public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 

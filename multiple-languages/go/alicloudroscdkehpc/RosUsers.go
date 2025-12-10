@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::EHPC::Users`, which is used to add one or more users to a specified cluster.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::EHPC::Users`.
 type RosUsers interface {
 	alicloudroscdkcore.RosResource
 	ClusterId() interface{}

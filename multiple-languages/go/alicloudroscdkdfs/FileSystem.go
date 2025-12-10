@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::DFS::FileSystem`, which is used to create a file system.
+// This class encapsulates and extends the ROS resource type `ALIYUN::DFS::FileSystem`.
 type FileSystem interface {
 	alicloudroscdkcore.Resource
 	IFileSystem

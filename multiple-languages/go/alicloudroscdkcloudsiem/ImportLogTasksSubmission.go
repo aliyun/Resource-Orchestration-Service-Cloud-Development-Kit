@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CloudSiem::ImportLogTasksSubmission`, which is used to import and submit a log collection task.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CloudSiem::ImportLogTasksSubmission`.
 type ImportLogTasksSubmission interface {
 	alicloudroscdkcore.Resource
 	IImportLogTasksSubmission

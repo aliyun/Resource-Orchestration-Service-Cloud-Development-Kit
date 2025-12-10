@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cloudphone;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CloudPhone::RunCommand</code>, which is used to run a command on cloud phones.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CloudPhone::RunCommand</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.241Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.543Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudphone.$Module.class, fqn = "@alicloud/ros-cdk-cloudphone.RunCommand")
 public class RunCommand extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cloudphone.IRunCommand {
 

@@ -686,7 +686,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         private object? _masterUsername;
 
         /// <remarks>
-        /// <strong>Property</strong>: masterUsername: The master user name for the database instance.
+        /// <strong>Property</strong>: masterUsername: The master user name for the database instance. If specified, this user will have read and write permissions for all databases defined in DBMappings. Reserved keywords (which can be queried via DescribeInstanceKeywords), such as root, admin, administrator, etc., cannot be used.
+        /// This parameter must be specified together with MasterUserPassword.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "masterUsername", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -720,6 +721,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 
         /// <remarks>
         /// <strong>Property</strong>: masterUserPassword: The master password for the database instance.
+        /// This parameter must be specified together with MasterUsername.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "masterUserPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

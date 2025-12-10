@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ebs.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::EBS::DiskReplicaGroup</code>, which is used to query the information about a replication pair-consistent group.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::EBS::DiskReplicaGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.730Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.934Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ebs.$Module.class, fqn = "@alicloud/ros-cdk-ebs.datasource.DiskReplicaGroup")
 public class DiskReplicaGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ebs.datasource.IDiskReplicaGroup {
 

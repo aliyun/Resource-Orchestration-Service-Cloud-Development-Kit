@@ -116,6 +116,10 @@ func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetEndpointPublicAcc
 	return nil
 }
 
+func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetIpStackParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetIsEnterpriseSecurityGroupParameters(val interface{}) error {
 	return nil
 }
@@ -157,6 +161,10 @@ func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetProxyModeParamete
 }
 
 func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetResourceGroupIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetRrsaConfigParameters(val interface{}) error {
 	return nil
 }
 

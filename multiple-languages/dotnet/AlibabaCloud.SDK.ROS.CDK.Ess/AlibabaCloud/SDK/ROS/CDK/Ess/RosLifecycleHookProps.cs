@@ -207,13 +207,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         private object? _notificationArn;
 
         /// <remarks>
-        /// <strong>Property</strong>: notificationArn: The Alibaba Cloud Resource Name (ARN) of the notification target that Auto Scaling will use to notify you when an instance is in the transition state for the lifecycle hook. This target can be either an MNS queue or an MNS topic. The format of the parameter value is acs:ess:{region}:{account-id}:{resource-relative-id}.
-        /// region: the region to which the scaling group locates
-        /// account-id: Alibaba Cloud ID
-        /// For example:
-        /// MNS queue: acs:ess:{region}:{account-id}:queue\/{queuename}
-        /// MNS topic: acs:ess:{region}:{account-id}:topic\/{topicname}
-        /// OOS template: acs:ess:{region}:{account-id}:oos\/{templatename}
+        /// <strong>Property</strong>: notificationArn: The Alibaba Cloud Resource Name (ARN) of the notification recipient. If you do not specify this parameter, no notification is sent when the lifecycle hook takes effect. If you specify this parameter, the value must be in one of the following formats:
+        /// - If you specify a Simple Message Queue (SMQ, formerly MNS) as the notification recipient, specify the value in the acs:mns:{region-id}:{account-id}:queue\/{queuename} format.
+        /// - If you specify an SMQ topic as the notification recipient, specify the value in the acs:mns:{region-id}:{account-id}:topic\/{topicname} format.
+        /// - If you specify a CloudOps Orchestration Service (OOS) template as the notification recipient, specify the value in the acs:oos:{region-id}:{account-id}:template\/{templatename} format.
+        /// - If you specify an event bus as the notification recipient, specify the value in the acs:eventbridge:{region-id}:{account-id}:eventbus\/default format.
+        ///
+        /// The variables in the preceding value formats have the following meanings:
+        /// - region-id: the region ID of your scaling group.
+        /// - account-id: the ID of the Alibaba Cloud account. IDs of Resource Access Management (RAM) users are not supported.
+        /// - queuename: the name of the SMQ queue.
+        /// - topicname: the name of the SMQ topic.
+        /// - templatename: the name of the OOS template.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "notificationArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

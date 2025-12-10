@@ -72,7 +72,7 @@ export interface IAddressBook extends ros.IResource {
     readonly attrGroupUuid: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::AddressBook`, which is used to create an address book that is used for access control. Address books include IP address books, Elastic Compute Service (ECS) tag-based address books, port address books, and domain address books.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::AddressBook`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAddressBook`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-addressbook
  */

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ESS::LifecycleHook`, which is used to create a lifecycle hook for a scaling group.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ESS::LifecycleHook`.
 type LifecycleHook interface {
 	alicloudroscdkcore.Resource
 	ILifecycleHook

@@ -216,6 +216,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
+        /// <summary>Property ipStack: The IP stack of the cluster.</summary>
+        /// <remarks>
+        /// Value: ipv4 (Single stack) or ipv6 (Dual Stack). Default value: ipv4
+        /// </remarks>
+        [JsiiProperty(name: "ipStack", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? IpStack
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group.</summary>
         /// <remarks>
         /// This parameter takes effect only if security_group_id is left empty.
@@ -435,6 +449,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ResourceGroupId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property rrsaConfig: The configuration of RRSA.</summary>
+        [JsiiProperty(name: "rrsaConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.RrsaConfigProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? RrsaConfig
         {
             get
             {
@@ -786,6 +811,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property ipStack: The IP stack of the cluster.</summary>
+            /// <remarks>
+            /// Value: ipv4 (Single stack) or ipv6 (Dual Stack). Default value: ipv4
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ipStack", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IpStack
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group.</summary>
             /// <remarks>
             /// This parameter takes effect only if security_group_id is left empty.
@@ -963,6 +999,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             [JsiiOptional]
             [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ResourceGroupId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property rrsaConfig: The configuration of RRSA.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "rrsaConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.RrsaConfigProperty\"}]}}", isOptional: true)]
+            public object? RrsaConfig
             {
                 get => GetInstanceProperty<object?>();
             }

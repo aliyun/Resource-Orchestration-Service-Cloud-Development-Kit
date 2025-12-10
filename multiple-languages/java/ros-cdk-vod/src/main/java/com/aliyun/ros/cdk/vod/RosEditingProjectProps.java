@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vod;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vod-editingproject
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:30.247Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:00.810Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vod.$Module.class, fqn = "@alicloud/ros-cdk-vod.RosEditingProjectProps")
 @software.amazon.jsii.Jsii.Proxy(RosEditingProjectProps.Jsii$Proxy.class)
 public interface RosEditingProjectProps extends software.amazon.jsii.JsiiSerializable {

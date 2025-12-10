@@ -97,7 +97,7 @@ export interface ISynDb extends ros.IResource {
     readonly attrSynDbs: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ClickHouse::SynDb`, which is used to create a synchronization task for an ApsaraDB for ClickHouse Community-compatible Edition cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ClickHouse::SynDb`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSynDb`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-clickhouse-syndb
  */

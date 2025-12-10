@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenInstance`, which is used to create a Cloud Enterprise Network (CEN) instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenInstance`.
 type CenInstance interface {
 	alicloudroscdkcore.Resource
 	ICenInstance

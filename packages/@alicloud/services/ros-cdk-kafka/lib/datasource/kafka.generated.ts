@@ -345,7 +345,7 @@ function rosInstancesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::KAFKA::Instances`, which is used to query the information about ApsaraMQ for Kafka instances.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::KAFKA::Instances`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instances` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kafka-instances
  */
@@ -485,7 +485,7 @@ function rosTopicPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::KAFKA::Topic`, which is used to query the information about a topic.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::KAFKA::Topic`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Topic` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kafka-topic
  */
@@ -673,7 +673,7 @@ function rosTopicsPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::KAFKA::Topics`, which is used to query the information about topics.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::KAFKA::Topics`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Topics` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kafka-topics
  */

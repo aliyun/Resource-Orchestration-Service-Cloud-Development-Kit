@@ -123,8 +123,7 @@ type ClusterProps struct {
 	SecurityIpList interface{} `field:"optional" json:"securityIpList" yaml:"securityIpList"`
 	// Property vpcId: The ID of the virtual private cloud (VPC).
 	//
-	// If you leave this parameter and the VSwitchId
-	// parameter empty, the classic network type is used. The VPC network type is preferred.
+	// If you leave this parameter and the VSwitchId parameter empty, the classic network type is used. The VPC network type is preferred.
 	VpcId interface{} `field:"optional" json:"vpcId" yaml:"vpcId"`
 	// Property vSwitchId: The ID of the vSwitch.
 	VSwitchId interface{} `field:"optional" json:"vSwitchId" yaml:"vSwitchId"`

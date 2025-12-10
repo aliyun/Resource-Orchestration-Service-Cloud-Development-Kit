@@ -91,7 +91,7 @@ export interface IClusterHelmApplication extends ros.IResource {
     readonly attrWaitUntilData: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ClusterHelmApplication`The , which resource type deploys an application using Helm.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ClusterHelmApplication`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClusterHelmApplication`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterhelmapplication
  */

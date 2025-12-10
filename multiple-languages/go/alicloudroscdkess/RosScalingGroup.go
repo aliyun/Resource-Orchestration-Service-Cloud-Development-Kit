@@ -9,9 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingGroup`, which is used to create a scaling group.
-//
-// A scaling group can be a group of Elastic Compute Service (ECS) instances that are dynamically scaled based on the configured scenario. A scaling group does not immediately take effect after it is created. You must use ALIYUN::ESS::ScalingGroupEnable to enable the scaling group to trigger scaling activities based on scaling rules.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingGroup`.
 type RosScalingGroup interface {
 	alicloudroscdkcore.RosResource
 	AllocationStrategy() interface{}
@@ -45,6 +43,8 @@ type RosScalingGroup interface {
 	SetGroupType(val interface{})
 	HealthCheckType() interface{}
 	SetHealthCheckType(val interface{})
+	HealthCheckTypes() interface{}
+	SetHealthCheckTypes(val interface{})
 	InstanceId() interface{}
 	SetInstanceId(val interface{})
 	LaunchTemplateId() interface{}
@@ -400,6 +400,16 @@ func (j *jsiiProxy_RosScalingGroup) HealthCheckType() interface{} {
 	_jsii_.Get(
 		j,
 		"healthCheckType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosScalingGroup) HealthCheckTypes() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"healthCheckTypes",
 		&returns,
 	)
 	return returns
@@ -891,6 +901,17 @@ func (j *jsiiProxy_RosScalingGroup)SetHealthCheckType(val interface{}) {
 	_jsii_.Set(
 		j,
 		"healthCheckType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosScalingGroup)SetHealthCheckTypes(val interface{}) {
+	if err := j.validateSetHealthCheckTypesParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"healthCheckTypes",
 		val,
 	)
 }

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.alb.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::ALB::LoadBalancers</code>, which is used to query the basic information about created Application Load Balancer (ALB) instances.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::ALB::LoadBalancers</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:20.690Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:52.144Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.datasource.LoadBalancers")
 public class LoadBalancers extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.alb.datasource.ILoadBalancers {
 

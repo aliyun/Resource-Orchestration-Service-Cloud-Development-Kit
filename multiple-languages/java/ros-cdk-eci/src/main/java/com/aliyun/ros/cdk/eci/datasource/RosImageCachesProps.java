@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.eci.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eci-imagecaches
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.914Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:55.100Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.datasource.RosImageCachesProps")
 @software.amazon.jsii.Jsii.Proxy(RosImageCachesProps.Jsii$Proxy.class)
 public interface RosImageCachesProps extends software.amazon.jsii.JsiiSerializable {

@@ -37,7 +37,7 @@ export interface IIpfilter extends ros.IResource {
     readonly attrIpfilterId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DirectMail::Ipfilter`, which is used to add an IP filter.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DirectMail::Ipfilter`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosIpfilter`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-directmail-ipfilter
  */

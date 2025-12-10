@@ -37,7 +37,7 @@ export interface INetworkInterfacePermission extends ros.IResource {
     readonly attrNetworkInterfacePermissionId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::NetworkInterfacePermission`, which is used to grant an account the permission to attach an elastic network interface (ENI) to an instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::NetworkInterfacePermission`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNetworkInterfacePermission`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-networkinterfacepermission
  */

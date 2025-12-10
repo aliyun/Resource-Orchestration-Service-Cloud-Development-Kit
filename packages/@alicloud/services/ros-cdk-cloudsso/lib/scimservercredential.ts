@@ -40,7 +40,7 @@ export interface ISCIMServerCredential extends ros.IResource {
     readonly attrCredentialSecret: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::SCIMServerCredential`, which is used to create a System for Cross-domain Identity Management (SCIM) credential.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::SCIMServerCredential`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSCIMServerCredential`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-scimservercredential
  */

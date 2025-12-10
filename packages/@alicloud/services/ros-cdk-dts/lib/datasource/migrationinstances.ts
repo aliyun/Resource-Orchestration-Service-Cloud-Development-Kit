@@ -40,7 +40,7 @@ export interface IMigrationInstances extends ros.IResource {
     readonly attrMigrationInstances: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::DTS::MigrationInstances`, which is used to query information about Data Transmission Service (DTS) tasks.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::DTS::MigrationInstances`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMigrationInstances`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dts-migrationinstances
  */

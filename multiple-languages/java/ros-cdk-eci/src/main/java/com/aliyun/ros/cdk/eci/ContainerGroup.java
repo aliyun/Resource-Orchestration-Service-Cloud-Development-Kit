@@ -1,11 +1,9 @@
 package com.aliyun.ros.cdk.eci;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECI::ContainerGroup</code>, which is used to create a container group.
- * <p>
- * A container group is an elastic container instance.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECI::ContainerGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.855Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:55.039Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.ContainerGroup")
 public class ContainerGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.eci.IContainerGroup {
 

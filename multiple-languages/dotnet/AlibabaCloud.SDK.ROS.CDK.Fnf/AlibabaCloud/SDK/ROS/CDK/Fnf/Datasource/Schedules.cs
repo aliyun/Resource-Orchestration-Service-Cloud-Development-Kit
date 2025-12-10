@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Fnf.Datasource
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::FNF::Schedules`, which is used to query time-based schedules.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::FNF::Schedules`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSchedules`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fnf-schedules

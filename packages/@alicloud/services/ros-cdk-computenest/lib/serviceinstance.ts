@@ -225,7 +225,7 @@ export interface IServiceInstance extends ros.IResource {
     readonly attrUserId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ComputeNest::ServiceInstance`The , which type is used to create and deploy a service instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ComputeNest::ServiceInstance`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosServiceInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-computenest-serviceinstance
  */

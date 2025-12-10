@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::SLS::Project</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:30.128Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:00.705Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.datasource.RosProject")
 public class RosProject extends com.aliyun.ros.cdk.core.RosResource {
 

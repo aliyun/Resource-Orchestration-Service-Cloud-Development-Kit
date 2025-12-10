@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mongodb.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::MONGODB::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:31.133Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.691Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.datasource.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 

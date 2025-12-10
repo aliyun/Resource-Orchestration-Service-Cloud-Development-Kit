@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Bss
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::BSS::ResourcePackage`, which is used to create a resource plan.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::BSS::ResourcePackage`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `ResourcePackage` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bss-resourcepackage

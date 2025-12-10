@@ -82,7 +82,7 @@ export interface ISnapshot extends ros.IResource {
     readonly attrSnapshotId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Snapshot`, which is used to create a snapshot for a disk.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Snapshot`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSnapshot`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-snapshot
  */

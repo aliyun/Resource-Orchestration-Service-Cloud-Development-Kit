@@ -112,7 +112,7 @@ export interface IDrdsInstance extends ros.IResource {
     readonly attrOrderId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DRDS::DrdsInstance`, which is used to create a PolarDB-X 1.0 instance of specified instance specifications.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DRDS::DrdsInstance`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDrdsInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-drds-drdsinstance
  */

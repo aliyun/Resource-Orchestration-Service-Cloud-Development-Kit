@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Mse
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::MSE::Cluster`, which is used to create a cluster.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::MSE::Cluster`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-cluster
@@ -37,249 +37,231 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         {
         }
 
-        /// <summary>Attribute AclEntryList: The public network whitelist list is used only when the public network is enabled.</summary>
+        /// <summary>Attribute AclEntryList: The list of ACL entries.</summary>
         [JsiiProperty(name: "attrAclEntryList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrAclEntryList
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute AclId: acl id.</summary>
+        /// <summary>Attribute AclId: The ID of the ACL.</summary>
         [JsiiProperty(name: "attrAclId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrAclId
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute AppVersion: app version.</summary>
+        /// <summary>Attribute AppVersion: The version of the application.</summary>
         [JsiiProperty(name: "attrAppVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrAppVersion
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute ClusterAliasName: cluster alias name.</summary>
+        /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+        [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrArn
+        {
+            get => GetInstanceProperty<object>()!;
+        }
+
+        /// <summary>Attribute ClusterAliasName: The alias name of the cluster.</summary>
         [JsiiProperty(name: "attrClusterAliasName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrClusterAliasName
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute ClusterId: cluster id.</summary>
+        /// <summary>Attribute ClusterId: The ID of the cluster.</summary>
         [JsiiProperty(name: "attrClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrClusterId
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute ClusterName: cluster name.</summary>
+        /// <summary>Attribute ClusterName: The name of the cluster.</summary>
         [JsiiProperty(name: "attrClusterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrClusterName
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute ClusterSpecification: Cluster specifications.</summary>
-        /// <remarks>
-        /// Note the msversion requirements of the version parameter,
-        /// Optional parameters:
-        /// "MSE_ SC <em>1_2_60_c",
-        /// "MSE</em> SC <em>2_4_60_c",
-        /// "MSE</em> SC <em>4_8_60_c",
-        /// "MSE</em> SC <em>8_16_60_c",
-        /// "MSE</em> SC _16_32_60_c"
-        /// </remarks>
+        /// <summary>Attribute ClusterSpecification: The specification of the cluster.</summary>
         [JsiiProperty(name: "attrClusterSpecification", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrClusterSpecification
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute ClusterType: cluster type.</summary>
+        /// <summary>Attribute ClusterType: The type of the cluster.</summary>
         [JsiiProperty(name: "attrClusterType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrClusterType
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute ClusterVersion: Cluster version, such as ZooKeeper_3_8_0,NACOS_2_0_0.</summary>
+        /// <summary>Attribute ClusterVersion: The version of the cluster.</summary>
         [JsiiProperty(name: "attrClusterVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrClusterVersion
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute ConfigAuthEnabled: Whether the configuration supports it.</summary>
-        /// <remarks>
-        /// Valid values: true: false: not supported
-        /// </remarks>
+        /// <summary>Attribute ConfigAuthEnabled: Whether to enable the configuration authentication.</summary>
         [JsiiProperty(name: "attrConfigAuthEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrConfigAuthEnabled
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute ConfigSecretEnabled: Whether the configuration password takes effect.</summary>
-        /// <remarks>
-        /// The value is as follows: true: valid false: not valid
-        /// </remarks>
+        /// <summary>Attribute ConfigSecretEnabled: Whether to enable the configuration secret.</summary>
         [JsiiProperty(name: "attrConfigSecretEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrConfigSecretEnabled
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute ConnectionType: network connect type.</summary>
+        /// <summary>Attribute ConnectionType: The connection type.</summary>
         [JsiiProperty(name: "attrConnectionType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrConnectionType
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute Cpu: cpu core size.</summary>
+        /// <summary>Attribute Cpu: The number of CPU cores.</summary>
         [JsiiProperty(name: "attrCpu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrCpu
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute DiskCapacity: disk capacity, unit: G.</summary>
+        /// <summary>Attribute DiskCapacity: The disk capacity.</summary>
         [JsiiProperty(name: "attrDiskCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrDiskCapacity
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute DiskType: disk type.</summary>
+        /// <summary>Attribute DiskType: The disk type.</summary>
         [JsiiProperty(name: "attrDiskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrDiskType
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute HealthStatus: health status.</summary>
+        /// <summary>Attribute HealthStatus: The health status of the cluster.</summary>
         [JsiiProperty(name: "attrHealthStatus", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrHealthStatus
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute InstanceCount: instance count.</summary>
+        /// <summary>Attribute InstanceCount: The number of instances.</summary>
         [JsiiProperty(name: "attrInstanceCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrInstanceCount
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute InstanceId: instance id.</summary>
+        /// <summary>Attribute InstanceId: The ID of the cluster instance.</summary>
         [JsiiProperty(name: "attrInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrInstanceId
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute InternetAddress: internet address.</summary>
+        /// <summary>Attribute InternetAddress: The public network address of the cluster.</summary>
         [JsiiProperty(name: "attrInternetAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrInternetAddress
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute InternetDomain: internet domain.</summary>
+        /// <summary>Attribute InternetDomain: The public network domain of the cluster.</summary>
         [JsiiProperty(name: "attrInternetDomain", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrInternetDomain
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute InternetPort: internet port.</summary>
+        /// <summary>Attribute InternetPort: The public network port of the cluster.</summary>
         [JsiiProperty(name: "attrInternetPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrInternetPort
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute IntranetAddress: intranet address.</summary>
+        /// <summary>Attribute IntranetAddress: The intranet address of the cluster.</summary>
         [JsiiProperty(name: "attrIntranetAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrIntranetAddress
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute IntranetDomain: intranet domain.</summary>
+        /// <summary>Attribute IntranetDomain: The intranet domain of the cluster.</summary>
         [JsiiProperty(name: "attrIntranetDomain", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrIntranetDomain
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute IntranetPort: intranet port.</summary>
+        /// <summary>Attribute IntranetPort: The intranet port of the cluster.</summary>
         [JsiiProperty(name: "attrIntranetPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrIntranetPort
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute MCPEnabled: Whether MCP takes effect, the value is as follows: true: valid false: not valid.</summary>
+        /// <summary>Attribute MCPEnabled: Whether to enable the MCP.</summary>
         [JsiiProperty(name: "attrMcpEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrMcpEnabled
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute MemoryCapacity: memory capacity.</summary>
+        /// <summary>Attribute MemoryCapacity: The memory capacity.</summary>
         [JsiiProperty(name: "attrMemoryCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrMemoryCapacity
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute MseVersion: Required, the value is as follows:.</summary>
-        /// <remarks>
-        /// -'mse_dev': indicates the development version.
-        /// -'Mse_pro': means professional version. When this version is selected, the specification is 2c4g or above, and the specification is 3 nodes or above.
-        /// </remarks>
+        /// <summary>Attribute MseVersion: The MSE version.</summary>
         [JsiiProperty(name: "attrMseVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrMseVersion
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute NetType: Network type (whether private network is enabled or not).</summary>
-        /// <remarks>
-        /// privatenet indicates that private network is enabled.
-        /// </remarks>
+        /// <summary>Attribute NetType: The network type.</summary>
         [JsiiProperty(name: "attrNetType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrNetType
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute PayInfo: pay info.</summary>
+        /// <summary>Attribute PayInfo: The payment information.</summary>
         [JsiiProperty(name: "attrPayInfo", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrPayInfo
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute PubNetworkFlow: Public network bandwidth.</summary>
-        /// <remarks>
-        /// If the bandwidth is greater than 0, the public network is enabled.
-        /// </remarks>
+        /// <summary>Attribute PubNetworkFlow: The public network flow.</summary>
         [JsiiProperty(name: "attrPubNetworkFlow", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrPubNetworkFlow
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute VpcId: vpc id.</summary>
+        /// <summary>Attribute VpcId: The ID of the VPC.</summary>
         [JsiiProperty(name: "attrVpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrVpcId
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute VSwitchId: switcher Id.</summary>
+        /// <summary>Attribute VSwitchId: The ID of the VSwitch.</summary>
         [JsiiProperty(name: "attrVSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrVSwitchId
         {

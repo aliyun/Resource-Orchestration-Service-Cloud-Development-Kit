@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::DiskAttachment`, which is used to attach a disk to an Elastic Compute Service (ECS) instance.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::DiskAttachment`.
 type RosDiskAttachment interface {
 	alicloudroscdkcore.RosResource
 	AttrDevice() alicloudroscdkcore.IResolvable

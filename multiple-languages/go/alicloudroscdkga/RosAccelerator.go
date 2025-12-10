@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Accelerator`, which is used to create a Global Accelerator (GA) instance.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Accelerator`.
 type RosAccelerator interface {
 	alicloudroscdkcore.RosResource
 	AcceleratorName() interface{}

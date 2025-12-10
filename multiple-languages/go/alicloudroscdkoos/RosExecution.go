@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Execution`, which is used to start an execution.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Execution`.
 type RosExecution interface {
 	alicloudroscdkcore.RosResource
 	AttrCounters() alicloudroscdkcore.IResolvable

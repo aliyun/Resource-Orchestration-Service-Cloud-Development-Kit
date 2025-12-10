@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::ApiGateway::Groups`, which is used to query the information about existing API groups.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::ApiGateway::Groups`.
 type Groups interface {
 	alicloudroscdkcore.Resource
 	IGroups

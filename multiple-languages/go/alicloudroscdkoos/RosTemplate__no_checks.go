@@ -92,6 +92,10 @@ func (j *jsiiProxy_RosTemplate) validateSetEnableResourcePropertyConstraintParam
 	return nil
 }
 
+func (j *jsiiProxy_RosTemplate) validateSetIgnoreExistingParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosTemplate) validateSetResourceGroupIdParameters(val interface{}) error {
 	return nil
 }

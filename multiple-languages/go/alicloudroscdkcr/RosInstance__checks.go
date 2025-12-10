@@ -244,9 +244,6 @@ func (j *jsiiProxy_RosInstance) validateSetEnableResourcePropertyConstraintParam
 }
 
 func (j *jsiiProxy_RosInstance) validateSetImageScannerParameters(val interface{}) error {
-	if val == nil {
-		return fmt.Errorf("parameter val is required, but nil was provided")
-	}
 	switch val.(type) {
 	case *string:
 		// ok
@@ -321,9 +318,6 @@ func (j *jsiiProxy_RosInstance) validateSetInstanceTypeParameters(val interface{
 }
 
 func (j *jsiiProxy_RosInstance) validateSetPeriodParameters(val interface{}) error {
-	if val == nil {
-		return fmt.Errorf("parameter val is required, but nil was provided")
-	}
 	switch val.(type) {
 	case *float64:
 		// ok

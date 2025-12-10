@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cr;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CR::Instance</code>, which is used to create a Container Registry Enterprise Edition instance.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CR::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.735Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.975Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -91,24 +91,6 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getImageScanner() {
-        return software.amazon.jsii.Kernel.get(this, "imageScanner", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setImageScanner(final @org.jetbrains.annotations.NotNull java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "imageScanner", java.util.Objects.requireNonNull(value, "imageScanner is required"));
-    }
-
-    /**
-     */
-    public void setImageScanner(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "imageScanner", java.util.Objects.requireNonNull(value, "imageScanner is required"));
-    }
-
-    /**
-     */
     public @org.jetbrains.annotations.NotNull java.lang.Object getInstanceName() {
         return software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -145,20 +127,20 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getPeriod() {
-        return software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getImageScanner() {
+        return software.amazon.jsii.Kernel.get(this, "imageScanner", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
-    public void setPeriod(final @org.jetbrains.annotations.NotNull java.lang.Number value) {
-        software.amazon.jsii.Kernel.set(this, "period", java.util.Objects.requireNonNull(value, "period is required"));
+    public void setImageScanner(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "imageScanner", value);
     }
 
     /**
      */
-    public void setPeriod(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "period", java.util.Objects.requireNonNull(value, "period is required"));
+    public void setImageScanner(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "imageScanner", value);
     }
 
     /**
@@ -177,6 +159,24 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setInstanceStorageName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "instanceStorageName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
+        return software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPeriod(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "period", value);
+    }
+
+    /**
+     */
+    public void setPeriod(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "period", value);
     }
 
     /**
@@ -261,23 +261,6 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param imageScanner This parameter is required.
-         */
-        public Builder imageScanner(final java.lang.String imageScanner) {
-            this.props.imageScanner(imageScanner);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param imageScanner This parameter is required.
-         */
-        public Builder imageScanner(final com.aliyun.ros.cdk.core.IResolvable imageScanner) {
-            this.props.imageScanner(imageScanner);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param instanceName This parameter is required.
          */
         public Builder instanceName(final java.lang.String instanceName) {
@@ -312,18 +295,18 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param period This parameter is required.
+         * @param imageScanner This parameter is required.
          */
-        public Builder period(final java.lang.Number period) {
-            this.props.period(period);
+        public Builder imageScanner(final java.lang.String imageScanner) {
+            this.props.imageScanner(imageScanner);
             return this;
         }
         /**
          * @return {@code this}
-         * @param period This parameter is required.
+         * @param imageScanner This parameter is required.
          */
-        public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
-            this.props.period(period);
+        public Builder imageScanner(final com.aliyun.ros.cdk.core.IResolvable imageScanner) {
+            this.props.imageScanner(imageScanner);
             return this;
         }
 
@@ -341,6 +324,23 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder instanceStorageName(final com.aliyun.ros.cdk.core.IResolvable instanceStorageName) {
             this.props.instanceStorageName(instanceStorageName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param period This parameter is required.
+         */
+        public Builder period(final java.lang.Number period) {
+            this.props.period(period);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param period This parameter is required.
+         */
+        public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
+            this.props.period(period);
             return this;
         }
 

@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Alb
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::HealthCheckTemplate`, which is used to create a health check template.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::HealthCheckTemplate`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `HealthCheckTemplate` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-healthchecktemplate

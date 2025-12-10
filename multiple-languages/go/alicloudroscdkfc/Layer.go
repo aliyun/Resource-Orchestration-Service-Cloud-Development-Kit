@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::FC::Layer`, which is used to release a layer version.
+// This class encapsulates and extends the ROS resource type `ALIYUN::FC::Layer`.
 type Layer interface {
 	alicloudroscdkcore.Resource
 	ILayer

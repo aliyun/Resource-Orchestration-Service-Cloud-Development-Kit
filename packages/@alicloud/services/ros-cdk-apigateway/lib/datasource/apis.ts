@@ -65,7 +65,7 @@ export interface IApis extends ros.IResource {
     readonly attrApis: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ApiGateway::Apis`, which is used to query APIs in API Gateway.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ApiGateway::Apis`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApis`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-apis
  */

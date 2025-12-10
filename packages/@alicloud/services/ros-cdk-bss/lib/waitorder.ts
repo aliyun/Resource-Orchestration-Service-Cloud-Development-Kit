@@ -33,7 +33,7 @@ export interface IWaitOrder extends ros.IResource {
     readonly props: WaitOrderProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::BSS::WaitOrder`, which is used to wait for orders to be completed.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::BSS::WaitOrder`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosWaitOrder`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bss-waitorder
  */

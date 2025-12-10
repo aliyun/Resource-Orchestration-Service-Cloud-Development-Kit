@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::RamRoleAttachment`, which is used to attach an instance Resource Access Management (RAM) role to Elastic Compute Service (ECS) instances.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::RamRoleAttachment`.
 type RamRoleAttachment interface {
 	alicloudroscdkcore.Resource
 	IRamRoleAttachment

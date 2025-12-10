@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mse;
 /**
  * Represents a <code>EngineNamespace</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:27.041Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.218Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.IEngineNamespace")
 @software.amazon.jsii.Jsii.Proxy(IEngineNamespace.Jsii$Proxy.class)
 public interface IEngineNamespace extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

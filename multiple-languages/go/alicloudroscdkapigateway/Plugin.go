@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Plugin`, which is used to create an API Gateway plug-in.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Plugin`.
 type Plugin interface {
 	alicloudroscdkcore.Resource
 	IPlugin

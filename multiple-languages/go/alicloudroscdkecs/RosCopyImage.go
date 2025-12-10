@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::CopyImage`, which is used to copy a custom image from one region to another region.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::CopyImage`.
 type RosCopyImage interface {
 	alicloudroscdkcore.RosResource
 	AllowCopyInSameRegion() interface{}

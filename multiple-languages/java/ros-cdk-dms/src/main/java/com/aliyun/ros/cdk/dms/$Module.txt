@@ -1,5 +1,6 @@
 @alicloud/ros-cdk-dms.IInstance=com.aliyun.ros.cdk.dms.IInstance
 @alicloud/ros-cdk-dms.IInstance2=com.aliyun.ros.cdk.dms.IInstance2
+@alicloud/ros-cdk-dms.IScriptExecution=com.aliyun.ros.cdk.dms.IScriptExecution
 @alicloud/ros-cdk-dms.IUser=com.aliyun.ros.cdk.dms.IUser
 @alicloud/ros-cdk-dms.Instance=com.aliyun.ros.cdk.dms.Instance
 @alicloud/ros-cdk-dms.Instance2=com.aliyun.ros.cdk.dms.Instance2
@@ -9,7 +10,16 @@
 @alicloud/ros-cdk-dms.RosInstance2=com.aliyun.ros.cdk.dms.RosInstance2
 @alicloud/ros-cdk-dms.RosInstance2Props=com.aliyun.ros.cdk.dms.RosInstance2Props
 @alicloud/ros-cdk-dms.RosInstanceProps=com.aliyun.ros.cdk.dms.RosInstanceProps
+@alicloud/ros-cdk-dms.RosScriptExecution=com.aliyun.ros.cdk.dms.RosScriptExecution
+@alicloud/ros-cdk-dms.RosScriptExecutionProps=com.aliyun.ros.cdk.dms.RosScriptExecutionProps
 @alicloud/ros-cdk-dms.RosUser=com.aliyun.ros.cdk.dms.RosUser
 @alicloud/ros-cdk-dms.RosUserProps=com.aliyun.ros.cdk.dms.RosUserProps
+@alicloud/ros-cdk-dms.ScriptExecution=com.aliyun.ros.cdk.dms.ScriptExecution
+@alicloud/ros-cdk-dms.ScriptExecutionProps=com.aliyun.ros.cdk.dms.ScriptExecutionProps
 @alicloud/ros-cdk-dms.User=com.aliyun.ros.cdk.dms.User
 @alicloud/ros-cdk-dms.UserProps=com.aliyun.ros.cdk.dms.UserProps
+@alicloud/ros-cdk-dms.datasource.Database=com.aliyun.ros.cdk.dms.datasource.Database
+@alicloud/ros-cdk-dms.datasource.DatabaseProps=com.aliyun.ros.cdk.dms.datasource.DatabaseProps
+@alicloud/ros-cdk-dms.datasource.IDatabase=com.aliyun.ros.cdk.dms.datasource.IDatabase
+@alicloud/ros-cdk-dms.datasource.RosDatabase=com.aliyun.ros.cdk.dms.datasource.RosDatabase
+@alicloud/ros-cdk-dms.datasource.RosDatabaseProps=com.aliyun.ros.cdk.dms.datasource.RosDatabaseProps

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.alb;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ALB::Rule</code>Use , which to create a forwarding rule.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ALB::Rule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:20.608Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:52.072Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosRule")
 public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -4924,12 +4924,14 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getQps();
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPerIpQps() {
+            return null;
+        }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Object getPerIpQps() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getQps() {
             return null;
         }
 
@@ -4945,30 +4947,8 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TrafficLimitConfigProperty> {
-            java.lang.Object qps;
             java.lang.Object perIpQps;
-
-            /**
-             * Sets the value of {@link TrafficLimitConfigProperty#getQps}
-             * @param qps the value to be set. This parameter is required.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder qps(java.lang.Number qps) {
-                this.qps = qps;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link TrafficLimitConfigProperty#getQps}
-             * @param qps the value to be set. This parameter is required.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder qps(com.aliyun.ros.cdk.core.IResolvable qps) {
-                this.qps = qps;
-                return this;
-            }
+            java.lang.Object qps;
 
             /**
              * Sets the value of {@link TrafficLimitConfigProperty#getPerIpQps}
@@ -4993,6 +4973,28 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link TrafficLimitConfigProperty#getQps}
+             * @param qps the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder qps(java.lang.Number qps) {
+                this.qps = qps;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TrafficLimitConfigProperty#getQps}
+             * @param qps the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder qps(com.aliyun.ros.cdk.core.IResolvable qps) {
+                this.qps = qps;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link TrafficLimitConfigProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -5010,8 +5012,8 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TrafficLimitConfigProperty {
-            private final java.lang.Object qps;
             private final java.lang.Object perIpQps;
+            private final java.lang.Object qps;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -5019,8 +5021,8 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.qps = software.amazon.jsii.Kernel.get(this, "qps", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.perIpQps = software.amazon.jsii.Kernel.get(this, "perIpQps", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.qps = software.amazon.jsii.Kernel.get(this, "qps", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -5028,13 +5030,8 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.qps = java.util.Objects.requireNonNull(builder.qps, "qps is required");
                 this.perIpQps = builder.perIpQps;
-            }
-
-            @Override
-            public final java.lang.Object getQps() {
-                return this.qps;
+                this.qps = builder.qps;
             }
 
             @Override
@@ -5043,14 +5040,21 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getQps() {
+                return this.qps;
+            }
+
+            @Override
             @software.amazon.jsii.Internal
             public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
-                data.set("qps", om.valueToTree(this.getQps()));
                 if (this.getPerIpQps() != null) {
                     data.set("perIpQps", om.valueToTree(this.getPerIpQps()));
+                }
+                if (this.getQps() != null) {
+                    data.set("qps", om.valueToTree(this.getQps()));
                 }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -5070,14 +5074,14 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
 
                 TrafficLimitConfigProperty.Jsii$Proxy that = (TrafficLimitConfigProperty.Jsii$Proxy) o;
 
-                if (!qps.equals(that.qps)) return false;
-                return this.perIpQps != null ? this.perIpQps.equals(that.perIpQps) : that.perIpQps == null;
+                if (this.perIpQps != null ? !this.perIpQps.equals(that.perIpQps) : that.perIpQps != null) return false;
+                return this.qps != null ? this.qps.equals(that.qps) : that.qps == null;
             }
 
             @Override
             public final int hashCode() {
-                int result = this.qps.hashCode();
-                result = 31 * result + (this.perIpQps != null ? this.perIpQps.hashCode() : 0);
+                int result = this.perIpQps != null ? this.perIpQps.hashCode() : 0;
+                result = 31 * result + (this.qps != null ? this.qps.hashCode() : 0);
                 return result;
             }
         }
@@ -5092,12 +5096,16 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getMirrorGroupConfig();
+        default @org.jetbrains.annotations.Nullable java.lang.Object getMirrorGroupConfig() {
+            return null;
+        }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getTargetType();
+        default @org.jetbrains.annotations.Nullable java.lang.Object getTargetType() {
+            return null;
+        }
 
         /**
          * @return a {@link Builder} of {@link TrafficMirrorConfigProperty}
@@ -5116,7 +5124,7 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
 
             /**
              * Sets the value of {@link TrafficMirrorConfigProperty#getMirrorGroupConfig}
-             * @param mirrorGroupConfig the value to be set. This parameter is required.
+             * @param mirrorGroupConfig the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -5127,7 +5135,7 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
 
             /**
              * Sets the value of {@link TrafficMirrorConfigProperty#getMirrorGroupConfig}
-             * @param mirrorGroupConfig the value to be set. This parameter is required.
+             * @param mirrorGroupConfig the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -5138,7 +5146,7 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
 
             /**
              * Sets the value of {@link TrafficMirrorConfigProperty#getTargetType}
-             * @param targetType the value to be set. This parameter is required.
+             * @param targetType the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -5149,7 +5157,7 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
 
             /**
              * Sets the value of {@link TrafficMirrorConfigProperty#getTargetType}
-             * @param targetType the value to be set. This parameter is required.
+             * @param targetType the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -5194,8 +5202,8 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.mirrorGroupConfig = java.util.Objects.requireNonNull(builder.mirrorGroupConfig, "mirrorGroupConfig is required");
-                this.targetType = java.util.Objects.requireNonNull(builder.targetType, "targetType is required");
+                this.mirrorGroupConfig = builder.mirrorGroupConfig;
+                this.targetType = builder.targetType;
             }
 
             @Override
@@ -5214,8 +5222,12 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
-                data.set("mirrorGroupConfig", om.valueToTree(this.getMirrorGroupConfig()));
-                data.set("targetType", om.valueToTree(this.getTargetType()));
+                if (this.getMirrorGroupConfig() != null) {
+                    data.set("mirrorGroupConfig", om.valueToTree(this.getMirrorGroupConfig()));
+                }
+                if (this.getTargetType() != null) {
+                    data.set("targetType", om.valueToTree(this.getTargetType()));
+                }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
                 struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-alb.RosRule.TrafficMirrorConfigProperty"));
@@ -5234,14 +5246,14 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
 
                 TrafficMirrorConfigProperty.Jsii$Proxy that = (TrafficMirrorConfigProperty.Jsii$Proxy) o;
 
-                if (!mirrorGroupConfig.equals(that.mirrorGroupConfig)) return false;
-                return this.targetType.equals(that.targetType);
+                if (this.mirrorGroupConfig != null ? !this.mirrorGroupConfig.equals(that.mirrorGroupConfig) : that.mirrorGroupConfig != null) return false;
+                return this.targetType != null ? this.targetType.equals(that.targetType) : that.targetType == null;
             }
 
             @Override
             public final int hashCode() {
-                int result = this.mirrorGroupConfig.hashCode();
-                result = 31 * result + (this.targetType.hashCode());
+                int result = this.mirrorGroupConfig != null ? this.mirrorGroupConfig.hashCode() : 0;
+                result = 31 * result + (this.targetType != null ? this.targetType.hashCode() : 0);
                 return result;
             }
         }

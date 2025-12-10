@@ -962,12 +962,14 @@ export interface RosDBInstanceProps {
     readonly maintainTime?: string | ros.IResolvable;
 
     /**
-     * @Property masterUsername: The master user name for the database instance.
+     * @Property masterUsername: The master user name for the database instance. If specified, this user will have read and write permissions for all databases defined in DBMappings. Reserved keywords (which can be queried via DescribeInstanceKeywords), such as root, admin, administrator, etc., cannot be used.
+     * This parameter must be specified together with MasterUserPassword.
      */
     readonly masterUsername?: string | ros.IResolvable;
 
     /**
      * @Property masterUserPassword: The master password for the database instance.
+     * This parameter must be specified together with MasterUsername.
      */
     readonly masterUserPassword?: string | ros.IResolvable;
 
@@ -1833,12 +1835,14 @@ export class RosDBInstance extends ros.RosResource {
     public maintainTime: string | ros.IResolvable | undefined;
 
     /**
-     * @Property masterUsername: The master user name for the database instance.
+     * @Property masterUsername: The master user name for the database instance. If specified, this user will have read and write permissions for all databases defined in DBMappings. Reserved keywords (which can be queried via DescribeInstanceKeywords), such as root, admin, administrator, etc., cannot be used.
+     * This parameter must be specified together with MasterUserPassword.
      */
     public masterUsername: string | ros.IResolvable | undefined;
 
     /**
      * @Property masterUserPassword: The master password for the database instance.
+     * This parameter must be specified together with MasterUsername.
      */
     public masterUserPassword: string | ros.IResolvable | undefined;
 
@@ -2196,7 +2200,7 @@ export namespace RosDBInstance {
          */
         readonly dbDescription?: string | ros.IResolvable;
         /**
-         * @Property dbName: Consists of [2, 64] lower case letters, numbers, underscores, lines, letters. Must start with a letter, end with letters or numbers
+         * @Property dbName: Consists of [2, 64] lower case letters, numbers, underscores, lines, letters. Must start with a letter, end with letters or numbers. Reserved keywords (which can be queried via DescribeInstanceKeywords), such as root, admin, administrator, etc., cannot be used.
          */
         readonly dbName: string | ros.IResolvable;
     }
@@ -2441,12 +2445,14 @@ export interface RosDBInstanceCloneProps {
     readonly maintainTime?: string | ros.IResolvable;
 
     /**
-     * @Property masterUsername: The master user name for the database instance.
+     * @Property masterUsername: The master user name for the database instance. If specified, this user will have read and write permissions for all databases defined in DBMappings. Reserved keywords (which can be queried via DescribeInstanceKeywords), such as root, admin, administrator, etc., cannot be used.
+     * This parameter must be specified together with MasterUserPassword.
      */
     readonly masterUsername?: string | ros.IResolvable;
 
     /**
      * @Property masterUserPassword: The master password for the database instance.
+     * This parameter must be specified together with MasterUsername.
      */
     readonly masterUserPassword?: string | ros.IResolvable;
 
@@ -2944,12 +2950,14 @@ export class RosDBInstanceClone extends ros.RosResource {
     public maintainTime: string | ros.IResolvable | undefined;
 
     /**
-     * @Property masterUsername: The master user name for the database instance.
+     * @Property masterUsername: The master user name for the database instance. If specified, this user will have read and write permissions for all databases defined in DBMappings. Reserved keywords (which can be queried via DescribeInstanceKeywords), such as root, admin, administrator, etc., cannot be used.
+     * This parameter must be specified together with MasterUserPassword.
      */
     public masterUsername: string | ros.IResolvable | undefined;
 
     /**
      * @Property masterUserPassword: The master password for the database instance.
+     * This parameter must be specified together with MasterUsername.
      */
     public masterUserPassword: string | ros.IResolvable | undefined;
 
@@ -3207,7 +3215,7 @@ export namespace RosDBInstanceClone {
          */
         readonly dbDescription?: string | ros.IResolvable;
         /**
-         * @Property dbName: Consists of [2, 64] lower case letters, numbers, underscores, lines, letters. Must start with a letter, end with letters or numbers
+         * @Property dbName: Consists of [2, 64] lower case letters, numbers, underscores, lines, letters. Must start with a letter, end with letters or numbers. Reserved keywords (which can be queried via DescribeInstanceKeywords), such as root, admin, administrator, etc., cannot be used.
          */
         readonly dbName: string | ros.IResolvable;
     }
@@ -4872,12 +4880,14 @@ export interface RosPrepayDBInstanceProps {
     readonly maintainTime?: string | ros.IResolvable;
 
     /**
-     * @Property masterUsername: The master user name for the database instance.
+     * @Property masterUsername: The master user name for the database instance. If specified, this user will have read and write permissions for all databases defined in DBMappings. Reserved keywords (which can be queried via DescribeInstanceKeywords), such as root, admin, administrator, etc., cannot be used.
+     * This parameter must be specified together with MasterUserPassword.
      */
     readonly masterUsername?: string | ros.IResolvable;
 
     /**
      * @Property masterUserPassword: The master password for the database instance.
+     * This parameter must be specified together with MasterUsername.
      */
     readonly masterUserPassword?: string | ros.IResolvable;
 
@@ -5768,12 +5778,14 @@ export class RosPrepayDBInstance extends ros.RosResource {
     public maintainTime: string | ros.IResolvable | undefined;
 
     /**
-     * @Property masterUsername: The master user name for the database instance.
+     * @Property masterUsername: The master user name for the database instance. If specified, this user will have read and write permissions for all databases defined in DBMappings. Reserved keywords (which can be queried via DescribeInstanceKeywords), such as root, admin, administrator, etc., cannot be used.
+     * This parameter must be specified together with MasterUserPassword.
      */
     public masterUsername: string | ros.IResolvable | undefined;
 
     /**
      * @Property masterUserPassword: The master password for the database instance.
+     * This parameter must be specified together with MasterUsername.
      */
     public masterUserPassword: string | ros.IResolvable | undefined;
 
@@ -6124,7 +6136,7 @@ export namespace RosPrepayDBInstance {
          */
         readonly dbDescription?: string | ros.IResolvable;
         /**
-         * @Property dbName: Consists of [2, 64] lower case letters, numbers, underscores, lines, letters. Must start with a letter, end with letters or numbers
+         * @Property dbName: Consists of [2, 64] lower case letters, numbers, underscores, lines, letters. Must start with a letter, end with letters or numbers. Reserved keywords (which can be queried via DescribeInstanceKeywords), such as root, admin, administrator, etc., cannot be used.
          */
         readonly dbName: string | ros.IResolvable;
     }

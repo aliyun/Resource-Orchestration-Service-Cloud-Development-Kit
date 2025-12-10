@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.maxcompute;
 /**
  * Represents a <code>Quota</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:26.851Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.009Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.maxcompute.$Module.class, fqn = "@alicloud/ros-cdk-maxcompute.IQuota")
 @software.amazon.jsii.Jsii.Proxy(IQuota.Jsii$Proxy.class)
 public interface IQuota extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

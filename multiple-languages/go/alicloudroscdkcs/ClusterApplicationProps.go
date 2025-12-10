@@ -9,6 +9,10 @@ type ClusterApplicationProps struct {
 	ClusterId interface{} `field:"required" json:"clusterId" yaml:"clusterId"`
 	// Property yamlContent: The yaml content of application.
 	YamlContent interface{} `field:"required" json:"yamlContent" yaml:"yamlContent"`
+	// Property creationMode: Creation modes include: - Normal: create new resources, will report error if already exists.
+	//
+	// - Apply: similar to kubectl apply, create if not exists, update if exists. During the deletion phase, ROS will delete newly created application, but updated existing application will not be deleted.
+	CreationMode interface{} `field:"optional" json:"creationMode" yaml:"creationMode"`
 	// Property defaultNamespace: The default namespace for the application, default value is default.
 	//
 	// If a namespace is defined in yaml metadata, its priority is higher than DefaultNamespace.

@@ -42,7 +42,7 @@ export interface IInstancePublicConnection extends ros.IResource {
     readonly attrDbInstanceId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::InstancePublicConnection`, which is used to allocate a public connection string to an instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::InstancePublicConnection`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstancePublicConnection`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-instancepublicconnection
  */

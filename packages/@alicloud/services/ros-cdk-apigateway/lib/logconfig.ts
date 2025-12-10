@@ -37,7 +37,7 @@ export interface ILogConfig extends ros.IResource {
     readonly attrSlsProject: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::LogConfig`, which is used to create a log configuration.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::LogConfig`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLogConfig`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-logconfig
  */

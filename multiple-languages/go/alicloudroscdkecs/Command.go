@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Command`, which is used to create a Cloud Assistant command.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Command`.
 type Command interface {
 	alicloudroscdkcore.Resource
 	ICommand

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::DFS::AccessGroup`, which is used to create a permission group.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::DFS::AccessGroup`.
 type RosAccessGroup interface {
 	alicloudroscdkcore.RosResource
 	AccessGroupName() interface{}

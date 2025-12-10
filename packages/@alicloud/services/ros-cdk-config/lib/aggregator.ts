@@ -50,7 +50,7 @@ export interface IAggregator extends ros.IResource {
     readonly attrAggregatorId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::Config::Aggregator`, which is used to create an account group.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::Config::Aggregator`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAggregator`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-aggregator
  */

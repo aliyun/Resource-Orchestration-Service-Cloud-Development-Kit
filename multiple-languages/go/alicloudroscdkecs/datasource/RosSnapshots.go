@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Snapshots`, which is used to query all snapshots of an Elastic Compute Service (ECS) instance or a disk.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Snapshots`.
 type RosSnapshots interface {
 	alicloudroscdkcore.RosResource
 	AttrSnapshotIds() alicloudroscdkcore.IResolvable

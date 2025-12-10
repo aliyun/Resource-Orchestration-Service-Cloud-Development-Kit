@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.pai;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::PAI::Workspace</code>, which is used to create a workspace.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::PAI::Workspace</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:27.588Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.764Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pai.$Module.class, fqn = "@alicloud/ros-cdk-pai.Workspace")
 public class Workspace extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.pai.IWorkspace {
 

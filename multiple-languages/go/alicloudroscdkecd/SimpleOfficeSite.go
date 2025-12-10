@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ECD::SimpleOfficeSite`, which is used to create a workspace of the convenience account type.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ECD::SimpleOfficeSite`.
 type SimpleOfficeSite interface {
 	alicloudroscdkcore.Resource
 	ISimpleOfficeSite

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.hbase;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbase-multizonecluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:26.389Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.562Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbase.$Module.class, fqn = "@alicloud/ros-cdk-hbase.MultiZoneClusterProps")
 @software.amazon.jsii.Jsii.Proxy(MultiZoneClusterProps.Jsii$Proxy.class)
 public interface MultiZoneClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -226,8 +226,7 @@ public interface MultiZoneClusterProps extends software.amazon.jsii.JsiiSerializ
     /**
      * Property vpcId: The ID of the virtual private cloud (VPC).
      * <p>
-     * If you leave this parameter and the VSwitchId
-     * parameter empty, the classic network type is used. The VPC network type is preferred.
+     * If you leave this parameter and the VSwitchId parameter empty, the classic network type is used. The VPC network type is preferred.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
         return null;
@@ -901,8 +900,7 @@ public interface MultiZoneClusterProps extends software.amazon.jsii.JsiiSerializ
         /**
          * Sets the value of {@link MultiZoneClusterProps#getVpcId}
          * @param vpcId Property vpcId: The ID of the virtual private cloud (VPC).
-         *              If you leave this parameter and the VSwitchId
-         *              parameter empty, the classic network type is used. The VPC network type is preferred.
+         *              If you leave this parameter and the VSwitchId parameter empty, the classic network type is used. The VPC network type is preferred.
          * @return {@code this}
          */
         public Builder vpcId(java.lang.String vpcId) {
@@ -913,8 +911,7 @@ public interface MultiZoneClusterProps extends software.amazon.jsii.JsiiSerializ
         /**
          * Sets the value of {@link MultiZoneClusterProps#getVpcId}
          * @param vpcId Property vpcId: The ID of the virtual private cloud (VPC).
-         *              If you leave this parameter and the VSwitchId
-         *              parameter empty, the classic network type is used. The VPC network type is preferred.
+         *              If you leave this parameter and the VSwitchId parameter empty, the classic network type is used. The VPC network type is preferred.
          * @return {@code this}
          */
         public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {

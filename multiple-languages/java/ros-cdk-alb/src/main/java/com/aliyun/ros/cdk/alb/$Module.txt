@@ -110,8 +110,13 @@
 @alicloud/ros-cdk-alb.ServerGroup=com.aliyun.ros.cdk.alb.ServerGroup
 @alicloud/ros-cdk-alb.ServerGroupProps=com.aliyun.ros.cdk.alb.ServerGroupProps
 @alicloud/ros-cdk-alb.datasource.ILoadBalancers=com.aliyun.ros.cdk.alb.datasource.ILoadBalancers
+@alicloud/ros-cdk-alb.datasource.IZones=com.aliyun.ros.cdk.alb.datasource.IZones
 @alicloud/ros-cdk-alb.datasource.LoadBalancers=com.aliyun.ros.cdk.alb.datasource.LoadBalancers
 @alicloud/ros-cdk-alb.datasource.LoadBalancersProps=com.aliyun.ros.cdk.alb.datasource.LoadBalancersProps
 @alicloud/ros-cdk-alb.datasource.RosLoadBalancers=com.aliyun.ros.cdk.alb.datasource.RosLoadBalancers
 @alicloud/ros-cdk-alb.datasource.RosLoadBalancers.TagsProperty=com.aliyun.ros.cdk.alb.datasource.RosLoadBalancers$TagsProperty
 @alicloud/ros-cdk-alb.datasource.RosLoadBalancersProps=com.aliyun.ros.cdk.alb.datasource.RosLoadBalancersProps
+@alicloud/ros-cdk-alb.datasource.RosZones=com.aliyun.ros.cdk.alb.datasource.RosZones
+@alicloud/ros-cdk-alb.datasource.RosZonesProps=com.aliyun.ros.cdk.alb.datasource.RosZonesProps
+@alicloud/ros-cdk-alb.datasource.Zones=com.aliyun.ros.cdk.alb.datasource.Zones
+@alicloud/ros-cdk-alb.datasource.ZonesProps=com.aliyun.ros.cdk.alb.datasource.ZonesProps

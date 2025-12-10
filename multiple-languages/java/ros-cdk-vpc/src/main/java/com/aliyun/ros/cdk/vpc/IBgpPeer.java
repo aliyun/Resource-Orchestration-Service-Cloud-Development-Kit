@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Represents a <code>BgpPeer</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:30.377Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:00.927Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.IBgpPeer")
 @software.amazon.jsii.Jsii.Proxy(IBgpPeer.Jsii$Proxy.class)
 public interface IBgpPeer extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

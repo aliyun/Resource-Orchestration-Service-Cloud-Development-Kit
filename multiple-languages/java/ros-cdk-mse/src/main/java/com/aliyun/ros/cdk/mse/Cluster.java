@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.mse;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::MSE::Cluster</code>, which is used to create a cluster.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::MSE::Cluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:27.019Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.163Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.Cluster")
 public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.mse.ICluster {
 
@@ -41,7 +41,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute AclEntryList: The public network whitelist list is used only when the public network is enabled.
+     * Attribute AclEntryList: The list of ACL entries.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAclEntryList() {
@@ -49,7 +49,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute AclId: acl id.
+     * Attribute AclId: The ID of the ACL.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAclId() {
@@ -57,7 +57,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute AppVersion: app version.
+     * Attribute AppVersion: The version of the application.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAppVersion() {
@@ -65,7 +65,15 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute ClusterAliasName: cluster alias name.
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrArn() {
+        return software.amazon.jsii.Kernel.get(this, "attrArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     * Attribute ClusterAliasName: The alias name of the cluster.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrClusterAliasName() {
@@ -73,7 +81,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute ClusterId: cluster id.
+     * Attribute ClusterId: The ID of the cluster.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrClusterId() {
@@ -81,7 +89,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute ClusterName: cluster name.
+     * Attribute ClusterName: The name of the cluster.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrClusterName() {
@@ -89,15 +97,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute ClusterSpecification: Cluster specifications.
-     * <p>
-     * Note the msversion requirements of the version parameter,
-     * Optional parameters:
-     * "MSE_ SC <em>1_2_60_c",
-     * "MSE</em> SC <em>2_4_60_c",
-     * "MSE</em> SC <em>4_8_60_c",
-     * "MSE</em> SC <em>8_16_60_c",
-     * "MSE</em> SC _16_32_60_c"
+     * Attribute ClusterSpecification: The specification of the cluster.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrClusterSpecification() {
@@ -105,7 +105,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute ClusterType: cluster type.
+     * Attribute ClusterType: The type of the cluster.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrClusterType() {
@@ -113,7 +113,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute ClusterVersion: Cluster version, such as ZooKeeper_3_8_0,NACOS_2_0_0.
+     * Attribute ClusterVersion: The version of the cluster.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrClusterVersion() {
@@ -121,9 +121,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute ConfigAuthEnabled: Whether the configuration supports it.
-     * <p>
-     * Valid values: true: false: not supported
+     * Attribute ConfigAuthEnabled: Whether to enable the configuration authentication.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrConfigAuthEnabled() {
@@ -131,9 +129,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute ConfigSecretEnabled: Whether the configuration password takes effect.
-     * <p>
-     * The value is as follows: true: valid false: not valid
+     * Attribute ConfigSecretEnabled: Whether to enable the configuration secret.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrConfigSecretEnabled() {
@@ -141,7 +137,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute ConnectionType: network connect type.
+     * Attribute ConnectionType: The connection type.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrConnectionType() {
@@ -149,7 +145,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute Cpu: cpu core size.
+     * Attribute Cpu: The number of CPU cores.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrCpu() {
@@ -157,7 +153,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute DiskCapacity: disk capacity, unit: G.
+     * Attribute DiskCapacity: The disk capacity.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDiskCapacity() {
@@ -165,7 +161,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute DiskType: disk type.
+     * Attribute DiskType: The disk type.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDiskType() {
@@ -173,7 +169,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute HealthStatus: health status.
+     * Attribute HealthStatus: The health status of the cluster.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrHealthStatus() {
@@ -181,7 +177,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute InstanceCount: instance count.
+     * Attribute InstanceCount: The number of instances.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrInstanceCount() {
@@ -189,7 +185,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute InstanceId: instance id.
+     * Attribute InstanceId: The ID of the cluster instance.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrInstanceId() {
@@ -197,7 +193,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute InternetAddress: internet address.
+     * Attribute InternetAddress: The public network address of the cluster.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrInternetAddress() {
@@ -205,7 +201,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute InternetDomain: internet domain.
+     * Attribute InternetDomain: The public network domain of the cluster.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrInternetDomain() {
@@ -213,7 +209,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute InternetPort: internet port.
+     * Attribute InternetPort: The public network port of the cluster.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrInternetPort() {
@@ -221,7 +217,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute IntranetAddress: intranet address.
+     * Attribute IntranetAddress: The intranet address of the cluster.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrIntranetAddress() {
@@ -229,7 +225,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute IntranetDomain: intranet domain.
+     * Attribute IntranetDomain: The intranet domain of the cluster.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrIntranetDomain() {
@@ -237,7 +233,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute IntranetPort: intranet port.
+     * Attribute IntranetPort: The intranet port of the cluster.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrIntranetPort() {
@@ -245,7 +241,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute MCPEnabled: Whether MCP takes effect, the value is as follows: true: valid false: not valid.
+     * Attribute MCPEnabled: Whether to enable the MCP.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrMcpEnabled() {
@@ -253,7 +249,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute MemoryCapacity: memory capacity.
+     * Attribute MemoryCapacity: The memory capacity.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrMemoryCapacity() {
@@ -261,10 +257,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute MseVersion: Required, the value is as follows:.
-     * <p>
-     * -'mse_dev': indicates the development version.
-     * -'Mse_pro': means professional version. When this version is selected, the specification is 2c4g or above, and the specification is 3 nodes or above.
+     * Attribute MseVersion: The MSE version.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrMseVersion() {
@@ -272,9 +265,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute NetType: Network type (whether private network is enabled or not).
-     * <p>
-     * privatenet indicates that private network is enabled.
+     * Attribute NetType: The network type.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrNetType() {
@@ -282,7 +273,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute PayInfo: pay info.
+     * Attribute PayInfo: The payment information.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPayInfo() {
@@ -290,9 +281,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute PubNetworkFlow: Public network bandwidth.
-     * <p>
-     * If the bandwidth is greater than 0, the public network is enabled.
+     * Attribute PubNetworkFlow: The public network flow.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPubNetworkFlow() {
@@ -300,7 +289,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute VpcId: vpc id.
+     * Attribute VpcId: The ID of the VPC.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrVpcId() {
@@ -308,7 +297,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
     }
 
     /**
-     * Attribute VSwitchId: switcher Id.
+     * Attribute VSwitchId: The ID of the VSwitch.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrVSwitchId() {
@@ -379,36 +368,66 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property clusterSpecification: Cluster specifications.
+         * Property clusterSpecification: Engine specification.
          * <p>
-         * Note the msversion requirements of the version parameter,
-         * Optional parameters:
-         * "MSE_ SC <em>1_2_60_c",
-         * "MSE</em> SC <em>2_4_60_c",
-         * "MSE</em> SC <em>4_8_60_c",
-         * "MSE</em> SC <em>8_16_60_c",
-         * "MSE</em> SC _16_32_60_c"
+         * [Professional Edition]
+         * <p>
+         * <ul>
+         * <li><code>MSE_SC_2_4_60_c</code>: 2 cores 4GB</li>
+         * <li><code>MSE_SC_1_2_60_c</code>: 1 core 2GB</li>
+         * <li><code>MSE_SC_4_8_60_c</code>: 4 cores 8GB</li>
+         * <li><code>MSE_SC_8_16_60_c</code>: 8 cores 16GB</li>
+         * <li><code>MSE_SC_16_32_60_c</code>: 16 cores 32GB</li>
+         * </ul>
+         * <p>
+         * [Development Edition]
+         * <p>
+         * <ul>
+         * <li><code>MSE_SC_1_2_60_c</code>: 1 core 2GB</li>
+         * <li><code>MSE_SC_2_4_60_c</code>: 2 cores 4GB</li>
+         * </ul>
+         * <p>
+         * [Serverless Edition]
+         * <p>
+         * <ul>
+         * <li>Ignore this parameter or fill with <code>MSE_SC_SERVERLESS</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param clusterSpecification Property clusterSpecification: Cluster specifications. This parameter is required.
+         * @param clusterSpecification Property clusterSpecification: Engine specification. This parameter is required.
          */
         public Builder clusterSpecification(final java.lang.String clusterSpecification) {
             this.props.clusterSpecification(clusterSpecification);
             return this;
         }
         /**
-         * Property clusterSpecification: Cluster specifications.
+         * Property clusterSpecification: Engine specification.
          * <p>
-         * Note the msversion requirements of the version parameter,
-         * Optional parameters:
-         * "MSE_ SC <em>1_2_60_c",
-         * "MSE</em> SC <em>2_4_60_c",
-         * "MSE</em> SC <em>4_8_60_c",
-         * "MSE</em> SC <em>8_16_60_c",
-         * "MSE</em> SC _16_32_60_c"
+         * [Professional Edition]
+         * <p>
+         * <ul>
+         * <li><code>MSE_SC_2_4_60_c</code>: 2 cores 4GB</li>
+         * <li><code>MSE_SC_1_2_60_c</code>: 1 core 2GB</li>
+         * <li><code>MSE_SC_4_8_60_c</code>: 4 cores 8GB</li>
+         * <li><code>MSE_SC_8_16_60_c</code>: 8 cores 16GB</li>
+         * <li><code>MSE_SC_16_32_60_c</code>: 16 cores 32GB</li>
+         * </ul>
+         * <p>
+         * [Development Edition]
+         * <p>
+         * <ul>
+         * <li><code>MSE_SC_1_2_60_c</code>: 1 core 2GB</li>
+         * <li><code>MSE_SC_2_4_60_c</code>: 2 cores 4GB</li>
+         * </ul>
+         * <p>
+         * [Serverless Edition]
+         * <p>
+         * <ul>
+         * <li>Ignore this parameter or fill with <code>MSE_SC_SERVERLESS</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param clusterSpecification Property clusterSpecification: Cluster specifications. This parameter is required.
+         * @param clusterSpecification Property clusterSpecification: Engine specification. This parameter is required.
          */
         public Builder clusterSpecification(final com.aliyun.ros.cdk.core.IResolvable clusterSpecification) {
             this.props.clusterSpecification(clusterSpecification);
@@ -416,20 +435,20 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property clusterType: cluster type.
+         * Property clusterType: Cluster type, including ZooKeeper, Nacos-Ans.
          * <p>
          * @return {@code this}
-         * @param clusterType Property clusterType: cluster type. This parameter is required.
+         * @param clusterType Property clusterType: Cluster type, including ZooKeeper, Nacos-Ans. This parameter is required.
          */
         public Builder clusterType(final java.lang.String clusterType) {
             this.props.clusterType(clusterType);
             return this;
         }
         /**
-         * Property clusterType: cluster type.
+         * Property clusterType: Cluster type, including ZooKeeper, Nacos-Ans.
          * <p>
          * @return {@code this}
-         * @param clusterType Property clusterType: cluster type. This parameter is required.
+         * @param clusterType Property clusterType: Cluster type, including ZooKeeper, Nacos-Ans. This parameter is required.
          */
         public Builder clusterType(final com.aliyun.ros.cdk.core.IResolvable clusterType) {
             this.props.clusterType(clusterType);
@@ -437,20 +456,62 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property clusterVersion: Cluster version, such as ZooKeeper_3_8_0,NACOS_2_0_0.
+         * Property clusterVersion: Cluster version.
+         * <p>
+         * [Professional Edition]
+         * <p>
+         * <ul>
+         * <li><code>NACOS_2_0_0</code>: Nacos 2.x.x version.</li>
+         * <li><code>ZooKeeper_3_8_0</code>: ZooKeeper 3.8.x version.</li>
+         * </ul>
+         * <p>
+         * [Development Edition]
+         * <p>
+         * <ul>
+         * <li><code>NACOS_2_0_0</code>: Nacos 2.x version.</li>
+         * <li><code>ZooKeeper_3_8_0</code>: ZooKeeper 3.8.x version.</li>
+         * </ul>
+         * <p>
+         * [Serverless Edition]
+         * <p>
+         * <ul>
+         * <li><code>NACOS_2_0_0</code>: Nacos 2.x version.</li>
+         * <li><code>ZooKeeper_3_8_0</code>: ZooKeeper 3.8.x version.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param clusterVersion Property clusterVersion: Cluster version, such as ZooKeeper_3_8_0,NACOS_2_0_0. This parameter is required.
+         * @param clusterVersion Property clusterVersion: Cluster version. This parameter is required.
          */
         public Builder clusterVersion(final java.lang.String clusterVersion) {
             this.props.clusterVersion(clusterVersion);
             return this;
         }
         /**
-         * Property clusterVersion: Cluster version, such as ZooKeeper_3_8_0,NACOS_2_0_0.
+         * Property clusterVersion: Cluster version.
+         * <p>
+         * [Professional Edition]
+         * <p>
+         * <ul>
+         * <li><code>NACOS_2_0_0</code>: Nacos 2.x.x version.</li>
+         * <li><code>ZooKeeper_3_8_0</code>: ZooKeeper 3.8.x version.</li>
+         * </ul>
+         * <p>
+         * [Development Edition]
+         * <p>
+         * <ul>
+         * <li><code>NACOS_2_0_0</code>: Nacos 2.x version.</li>
+         * <li><code>ZooKeeper_3_8_0</code>: ZooKeeper 3.8.x version.</li>
+         * </ul>
+         * <p>
+         * [Serverless Edition]
+         * <p>
+         * <ul>
+         * <li><code>NACOS_2_0_0</code>: Nacos 2.x version.</li>
+         * <li><code>ZooKeeper_3_8_0</code>: ZooKeeper 3.8.x version.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param clusterVersion Property clusterVersion: Cluster version, such as ZooKeeper_3_8_0,NACOS_2_0_0. This parameter is required.
+         * @param clusterVersion Property clusterVersion: Cluster version. This parameter is required.
          */
         public Builder clusterVersion(final com.aliyun.ros.cdk.core.IResolvable clusterVersion) {
             this.props.clusterVersion(clusterVersion);
@@ -458,20 +519,56 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property instanceCount: instance count.
+         * Property instanceCount: Number of instance nodes. Range: 1~15.
+         * <p>
+         * [Professional Edition]
+         * <p>
+         * <ul>
+         * <li>Must be &gt;=3 and odd number.</li>
+         * </ul>
+         * <p>
+         * [Development Edition]
+         * <p>
+         * <ul>
+         * <li>Only 1 allowed.</li>
+         * </ul>
+         * <p>
+         * [Serverless Edition]
+         * <p>
+         * <ul>
+         * <li>Ignore this parameter.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param instanceCount Property instanceCount: instance count. This parameter is required.
+         * @param instanceCount Property instanceCount: Number of instance nodes. Range: 1~15. This parameter is required.
          */
         public Builder instanceCount(final java.lang.Number instanceCount) {
             this.props.instanceCount(instanceCount);
             return this;
         }
         /**
-         * Property instanceCount: instance count.
+         * Property instanceCount: Number of instance nodes. Range: 1~15.
+         * <p>
+         * [Professional Edition]
+         * <p>
+         * <ul>
+         * <li>Must be &gt;=3 and odd number.</li>
+         * </ul>
+         * <p>
+         * [Development Edition]
+         * <p>
+         * <ul>
+         * <li>Only 1 allowed.</li>
+         * </ul>
+         * <p>
+         * [Serverless Edition]
+         * <p>
+         * <ul>
+         * <li>Ignore this parameter.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param instanceCount Property instanceCount: instance count. This parameter is required.
+         * @param instanceCount Property instanceCount: Number of instance nodes. Range: 1~15. This parameter is required.
          */
         public Builder instanceCount(final com.aliyun.ros.cdk.core.IResolvable instanceCount) {
             this.props.instanceCount(instanceCount);
@@ -479,24 +576,34 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property netType: Network type (whether private network is enabled or not).
+         * Property netType: Network type.
          * <p>
-         * privatenet indicates that private network is enabled.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>privatenet</code>: Private network.</li>
+         * <li><code>pubnet</code>: Public network.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param netType Property netType: Network type (whether private network is enabled or not). This parameter is required.
+         * @param netType Property netType: Network type. This parameter is required.
          */
         public Builder netType(final java.lang.String netType) {
             this.props.netType(netType);
             return this;
         }
         /**
-         * Property netType: Network type (whether private network is enabled or not).
+         * Property netType: Network type.
          * <p>
-         * privatenet indicates that private network is enabled.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>privatenet</code>: Private network.</li>
+         * <li><code>pubnet</code>: Public network.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param netType Property netType: Network type (whether private network is enabled or not). This parameter is required.
+         * @param netType Property netType: Network type. This parameter is required.
          */
         public Builder netType(final com.aliyun.ros.cdk.core.IResolvable netType) {
             this.props.netType(netType);
@@ -504,44 +611,48 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property acceptLanguage:.
+         * Property aclEntryList: List of ACL entries.
          * <p>
          * @return {@code this}
-         * @param acceptLanguage Property acceptLanguage:. This parameter is required.
-         */
-        public Builder acceptLanguage(final java.lang.String acceptLanguage) {
-            this.props.acceptLanguage(acceptLanguage);
-            return this;
-        }
-        /**
-         * Property acceptLanguage:.
-         * <p>
-         * @return {@code this}
-         * @param acceptLanguage Property acceptLanguage:. This parameter is required.
-         */
-        public Builder acceptLanguage(final com.aliyun.ros.cdk.core.IResolvable acceptLanguage) {
-            this.props.acceptLanguage(acceptLanguage);
-            return this;
-        }
-
-        /**
-         * Property aclEntryList: The public network whitelist list is used only when the public network is enabled.
-         * <p>
-         * @return {@code this}
-         * @param aclEntryList Property aclEntryList: The public network whitelist list is used only when the public network is enabled. This parameter is required.
+         * @param aclEntryList Property aclEntryList: List of ACL entries. This parameter is required.
          */
         public Builder aclEntryList(final com.aliyun.ros.cdk.core.IResolvable aclEntryList) {
             this.props.aclEntryList(aclEntryList);
             return this;
         }
         /**
-         * Property aclEntryList: The public network whitelist list is used only when the public network is enabled.
+         * Property aclEntryList: List of ACL entries.
          * <p>
          * @return {@code this}
-         * @param aclEntryList Property aclEntryList: The public network whitelist list is used only when the public network is enabled. This parameter is required.
+         * @param aclEntryList Property aclEntryList: List of ACL entries. This parameter is required.
          */
         public Builder aclEntryList(final java.util.List<? extends java.lang.Object> aclEntryList) {
             this.props.aclEntryList(aclEntryList);
+            return this;
+        }
+
+        /**
+         * Property chargeType: Billing mode, including PREPAY (annual/monthly) and POSTPAY (pay-as-you-go).
+         * <p>
+         * Ignored for Serverless Edition.
+         * <p>
+         * @return {@code this}
+         * @param chargeType Property chargeType: Billing mode, including PREPAY (annual/monthly) and POSTPAY (pay-as-you-go). This parameter is required.
+         */
+        public Builder chargeType(final java.lang.String chargeType) {
+            this.props.chargeType(chargeType);
+            return this;
+        }
+        /**
+         * Property chargeType: Billing mode, including PREPAY (annual/monthly) and POSTPAY (pay-as-you-go).
+         * <p>
+         * Ignored for Serverless Edition.
+         * <p>
+         * @return {@code this}
+         * @param chargeType Property chargeType: Billing mode, including PREPAY (annual/monthly) and POSTPAY (pay-as-you-go). This parameter is required.
+         */
+        public Builder chargeType(final com.aliyun.ros.cdk.core.IResolvable chargeType) {
+            this.props.chargeType(chargeType);
             return this;
         }
 
@@ -567,20 +678,24 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property connectionType: network connect type.
+         * Property connectionType: Network access type, <code>slb</code> or <code>single_eni</code>;
+         * <p>
+         * some regions only support <code>single_eni</code> for Development Edition.
          * <p>
          * @return {@code this}
-         * @param connectionType Property connectionType: network connect type. This parameter is required.
+         * @param connectionType Property connectionType: Network access type, <code>slb</code> or <code>single_eni</code>;. This parameter is required.
          */
         public Builder connectionType(final java.lang.String connectionType) {
             this.props.connectionType(connectionType);
             return this;
         }
         /**
-         * Property connectionType: network connect type.
+         * Property connectionType: Network access type, <code>slb</code> or <code>single_eni</code>;
+         * <p>
+         * some regions only support <code>single_eni</code> for Development Edition.
          * <p>
          * @return {@code this}
-         * @param connectionType Property connectionType: network connect type. This parameter is required.
+         * @param connectionType Property connectionType: Network access type, <code>slb</code> or <code>single_eni</code>;. This parameter is required.
          */
         public Builder connectionType(final com.aliyun.ros.cdk.core.IResolvable connectionType) {
             this.props.connectionType(connectionType);
@@ -588,47 +703,57 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property diskType: disk type.
+         * Property eipEnabled: Effective when ConnectionType is <code>single_eni</code>, indicates whether to enable public access (elastic IP).
          * <p>
          * @return {@code this}
-         * @param diskType Property diskType: disk type. This parameter is required.
+         * @param eipEnabled Property eipEnabled: Effective when ConnectionType is <code>single_eni</code>, indicates whether to enable public access (elastic IP). This parameter is required.
          */
-        public Builder diskType(final java.lang.String diskType) {
-            this.props.diskType(diskType);
+        public Builder eipEnabled(final java.lang.Boolean eipEnabled) {
+            this.props.eipEnabled(eipEnabled);
             return this;
         }
         /**
-         * Property diskType: disk type.
+         * Property eipEnabled: Effective when ConnectionType is <code>single_eni</code>, indicates whether to enable public access (elastic IP).
          * <p>
          * @return {@code this}
-         * @param diskType Property diskType: disk type. This parameter is required.
+         * @param eipEnabled Property eipEnabled: Effective when ConnectionType is <code>single_eni</code>, indicates whether to enable public access (elastic IP). This parameter is required.
          */
-        public Builder diskType(final com.aliyun.ros.cdk.core.IResolvable diskType) {
-            this.props.diskType(diskType);
+        public Builder eipEnabled(final com.aliyun.ros.cdk.core.IResolvable eipEnabled) {
+            this.props.eipEnabled(eipEnabled);
             return this;
         }
 
         /**
-         * Property mseVersion: Required, the value is as follows:.
+         * Property mseVersion: Must be filled unless special circumstances.
          * <p>
-         * -'mse_dev': indicates the development version.
-         * -'Mse_pro': means professional version. When this version is selected, the specification is 2c4g or above, and the specification is 3 nodes or above.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>mse_pro</code>: Professional Edition.</li>
+         * <li><code>mse_dev</code>: Development Edition.</li>
+         * <li><code>mse_serverless</code>: Serverless Edition.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param mseVersion Property mseVersion: Required, the value is as follows:. This parameter is required.
+         * @param mseVersion Property mseVersion: Must be filled unless special circumstances. This parameter is required.
          */
         public Builder mseVersion(final java.lang.String mseVersion) {
             this.props.mseVersion(mseVersion);
             return this;
         }
         /**
-         * Property mseVersion: Required, the value is as follows:.
+         * Property mseVersion: Must be filled unless special circumstances.
          * <p>
-         * -'mse_dev': indicates the development version.
-         * -'Mse_pro': means professional version. When this version is selected, the specification is 2c4g or above, and the specification is 3 nodes or above.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>mse_pro</code>: Professional Edition.</li>
+         * <li><code>mse_dev</code>: Development Edition.</li>
+         * <li><code>mse_serverless</code>: Serverless Edition.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param mseVersion Property mseVersion: Required, the value is as follows:. This parameter is required.
+         * @param mseVersion Property mseVersion: Must be filled unless special circumstances. This parameter is required.
          */
         public Builder mseVersion(final com.aliyun.ros.cdk.core.IResolvable mseVersion) {
             this.props.mseVersion(mseVersion);
@@ -636,45 +761,24 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property privateSlbSpecification:.
+         * Property pubNetworkFlow: Public network flow.
+         * <p>
+         * Valid when ConnectionType is <code>slb</code>. 0 means do not create public SLB; 1 or above indicates fixed bandwidth value in Mbps. Range: 0~5000.
          * <p>
          * @return {@code this}
-         * @param privateSlbSpecification Property privateSlbSpecification:. This parameter is required.
+         * @param pubNetworkFlow Property pubNetworkFlow: Public network flow. This parameter is required.
          */
-        public Builder privateSlbSpecification(final java.lang.String privateSlbSpecification) {
-            this.props.privateSlbSpecification(privateSlbSpecification);
-            return this;
-        }
-        /**
-         * Property privateSlbSpecification:.
-         * <p>
-         * @return {@code this}
-         * @param privateSlbSpecification Property privateSlbSpecification:. This parameter is required.
-         */
-        public Builder privateSlbSpecification(final com.aliyun.ros.cdk.core.IResolvable privateSlbSpecification) {
-            this.props.privateSlbSpecification(privateSlbSpecification);
-            return this;
-        }
-
-        /**
-         * Property pubNetworkFlow: Public network bandwidth.
-         * <p>
-         * If the bandwidth is greater than 0, the public network is enabled.
-         * <p>
-         * @return {@code this}
-         * @param pubNetworkFlow Property pubNetworkFlow: Public network bandwidth. This parameter is required.
-         */
-        public Builder pubNetworkFlow(final java.lang.String pubNetworkFlow) {
+        public Builder pubNetworkFlow(final java.lang.Number pubNetworkFlow) {
             this.props.pubNetworkFlow(pubNetworkFlow);
             return this;
         }
         /**
-         * Property pubNetworkFlow: Public network bandwidth.
+         * Property pubNetworkFlow: Public network flow.
          * <p>
-         * If the bandwidth is greater than 0, the public network is enabled.
+         * Valid when ConnectionType is <code>slb</code>. 0 means do not create public SLB; 1 or above indicates fixed bandwidth value in Mbps. Range: 0~5000.
          * <p>
          * @return {@code this}
-         * @param pubNetworkFlow Property pubNetworkFlow: Public network bandwidth. This parameter is required.
+         * @param pubNetworkFlow Property pubNetworkFlow: Public network flow. This parameter is required.
          */
         public Builder pubNetworkFlow(final com.aliyun.ros.cdk.core.IResolvable pubNetworkFlow) {
             this.props.pubNetworkFlow(pubNetworkFlow);
@@ -682,41 +786,20 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property pubSlbSpecification:.
+         * Property requestPars: Extended request parameters in JSON format.
          * <p>
          * @return {@code this}
-         * @param pubSlbSpecification Property pubSlbSpecification:. This parameter is required.
-         */
-        public Builder pubSlbSpecification(final java.lang.String pubSlbSpecification) {
-            this.props.pubSlbSpecification(pubSlbSpecification);
-            return this;
-        }
-        /**
-         * Property pubSlbSpecification:.
-         * <p>
-         * @return {@code this}
-         * @param pubSlbSpecification Property pubSlbSpecification:. This parameter is required.
-         */
-        public Builder pubSlbSpecification(final com.aliyun.ros.cdk.core.IResolvable pubSlbSpecification) {
-            this.props.pubSlbSpecification(pubSlbSpecification);
-            return this;
-        }
-
-        /**
-         * Property requestPars:.
-         * <p>
-         * @return {@code this}
-         * @param requestPars Property requestPars:. This parameter is required.
+         * @param requestPars Property requestPars: Extended request parameters in JSON format. This parameter is required.
          */
         public Builder requestPars(final java.lang.String requestPars) {
             this.props.requestPars(requestPars);
             return this;
         }
         /**
-         * Property requestPars:.
+         * Property requestPars: Extended request parameters in JSON format.
          * <p>
          * @return {@code this}
-         * @param requestPars Property requestPars:. This parameter is required.
+         * @param requestPars Property requestPars: Extended request parameters in JSON format. This parameter is required.
          */
         public Builder requestPars(final com.aliyun.ros.cdk.core.IResolvable requestPars) {
             this.props.requestPars(requestPars);
@@ -745,12 +828,33 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property tags: Tags to attach to instance.
-         * <p>
-         * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+         * Property securityGroupType: Effective when ConnectionType is <code>single_eni</code>, represents the security group type of the instance.
          * <p>
          * @return {@code this}
-         * @param tags Property tags: Tags to attach to instance. This parameter is required.
+         * @param securityGroupType Property securityGroupType: Effective when ConnectionType is <code>single_eni</code>, represents the security group type of the instance. This parameter is required.
+         */
+        public Builder securityGroupType(final java.lang.String securityGroupType) {
+            this.props.securityGroupType(securityGroupType);
+            return this;
+        }
+        /**
+         * Property securityGroupType: Effective when ConnectionType is <code>single_eni</code>, represents the security group type of the instance.
+         * <p>
+         * @return {@code this}
+         * @param securityGroupType Property securityGroupType: Effective when ConnectionType is <code>single_eni</code>, represents the security group type of the instance. This parameter is required.
+         */
+        public Builder securityGroupType(final com.aliyun.ros.cdk.core.IResolvable securityGroupType) {
+            this.props.securityGroupType(securityGroupType);
+            return this;
+        }
+
+        /**
+         * Property tags: Tags to attach to cluster.
+         * <p>
+         * Max support 20 tags to add during create cluster. Each tag with two properties Key and Value, and Key is required.
+         * <p>
+         * @return {@code this}
+         * @param tags Property tags: Tags to attach to cluster. This parameter is required.
          */
         public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.mse.RosCluster.TagsProperty> tags) {
             this.props.tags(tags);
@@ -758,20 +862,20 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property vpcId: vpc id.
+         * Property vpcId: VPC ID.
          * <p>
          * @return {@code this}
-         * @param vpcId Property vpcId: vpc id. This parameter is required.
+         * @param vpcId Property vpcId: VPC ID. This parameter is required.
          */
         public Builder vpcId(final java.lang.String vpcId) {
             this.props.vpcId(vpcId);
             return this;
         }
         /**
-         * Property vpcId: vpc id.
+         * Property vpcId: VPC ID.
          * <p>
          * @return {@code this}
-         * @param vpcId Property vpcId: vpc id. This parameter is required.
+         * @param vpcId Property vpcId: VPC ID. This parameter is required.
          */
         public Builder vpcId(final com.aliyun.ros.cdk.core.IResolvable vpcId) {
             this.props.vpcId(vpcId);
@@ -779,20 +883,20 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property vSwitchId: switcher Id.
+         * Property vSwitchId: Switch ID.
          * <p>
          * @return {@code this}
-         * @param vSwitchId Property vSwitchId: switcher Id. This parameter is required.
+         * @param vSwitchId Property vSwitchId: Switch ID. This parameter is required.
          */
         public Builder vSwitchId(final java.lang.String vSwitchId) {
             this.props.vSwitchId(vSwitchId);
             return this;
         }
         /**
-         * Property vSwitchId: switcher Id.
+         * Property vSwitchId: Switch ID.
          * <p>
          * @return {@code this}
-         * @param vSwitchId Property vSwitchId: switcher Id. This parameter is required.
+         * @param vSwitchId Property vSwitchId: Switch ID. This parameter is required.
          */
         public Builder vSwitchId(final com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.props.vSwitchId(vSwitchId);

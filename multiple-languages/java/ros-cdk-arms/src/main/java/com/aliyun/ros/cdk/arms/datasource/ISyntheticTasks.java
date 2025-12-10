@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.arms.datasource;
 /**
  * Represents a <code>SyntheticTasks</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:21.498Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:52.835Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.datasource.ISyntheticTasks")
 @software.amazon.jsii.Jsii.Proxy(ISyntheticTasks.Jsii$Proxy.class)
 public interface ISyntheticTasks extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

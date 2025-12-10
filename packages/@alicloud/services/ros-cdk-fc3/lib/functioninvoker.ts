@@ -60,6 +60,11 @@ export interface IFunctionInvoker extends ros.IResource {
     readonly props: FunctionInvokerProps;
 
     /**
+     * Attribute Events: Events for async invocation.
+     */
+    readonly attrEvents: ros.IResolvable | string;
+
+    /**
      * Attribute Result: Depends on result type:
 NoResult: Async invoke has no result.
 Success: The response of the function. The response should be utf-8 encoded string, otherwise ROS will report an error. If the response is binary, encode it via base64 before it is returned.
@@ -74,6 +79,11 @@ Success: Sync invoke succeeds.
 Failure: Sync invoke fails.
      */
     readonly attrResultType: ros.IResolvable | string;
+
+    /**
+     * Attribute TaskId: Task id for async invocation.
+     */
+    readonly attrTaskId: ros.IResolvable | string;
 }
 /**
  * This class encapsulates and extends the ROS resource type `ALIYUN::FC3::FunctionInvoker`.
@@ -85,6 +95,11 @@ export class FunctionInvoker extends ros.Resource implements IFunctionInvoker {
     protected id: string;
     public readonly props: FunctionInvokerProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Events: Events for async invocation.
+     */
+    public readonly attrEvents: ros.IResolvable | string;
 
     /**
      * Attribute Result: Depends on result type:
@@ -101,6 +116,11 @@ Success: Sync invoke succeeds.
 Failure: Sync invoke fails.
      */
     public readonly attrResultType: ros.IResolvable | string;
+
+    /**
+     * Attribute TaskId: Task id for async invocation.
+     */
+    public readonly attrTaskId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -125,7 +145,9 @@ Failure: Sync invoke fails.
             checkAsyncInvocation: props.checkAsyncInvocation,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosFunctionInvoker;
+        this.attrEvents = rosFunctionInvoker.attrEvents;
         this.attrResult = rosFunctionInvoker.attrResult;
         this.attrResultType = rosFunctionInvoker.attrResultType;
+        this.attrTaskId = rosFunctionInvoker.attrTaskId;
     }
 }

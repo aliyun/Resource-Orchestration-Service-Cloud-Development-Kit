@@ -96,7 +96,7 @@ export interface IVpc extends ros.IResource {
     readonly attrVpcName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::VPC`, which is used to create a virtual private cloud (VPC).
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::VPC`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVPC`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-vpc
  */

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.kms;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::KMS::NetworkRule</code>, which is used to create a network access rule.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::KMS::NetworkRule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:26.714Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.877Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.NetworkRule")
 public class NetworkRule extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.kms.INetworkRule {
 

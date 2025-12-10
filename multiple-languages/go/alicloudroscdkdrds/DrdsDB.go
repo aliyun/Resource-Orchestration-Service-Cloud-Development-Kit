@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::DRDS::DrdsDB`, which is used to create a Distributed Relational Database Service (DRDS) instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::DRDS::DrdsDB`.
 type DrdsDB interface {
 	alicloudroscdkcore.Resource
 	IDrdsDB

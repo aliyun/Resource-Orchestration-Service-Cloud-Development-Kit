@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudsiem;
 /**
  * Represents a <code>ImportLogTasksSubmission</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.288Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.566Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudsiem.$Module.class, fqn = "@alicloud/ros-cdk-cloudsiem.IImportLogTasksSubmission")
 @software.amazon.jsii.Jsii.Proxy(IImportLogTasksSubmission.Jsii$Proxy.class)
 public interface IImportLogTasksSubmission extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

@@ -720,7 +720,6 @@ export interface RosFileSystemProps {
      * Performance、Capacity、Premium(Available when the file_system_type is standard)
      * standard、advance(Available when the file_system_type is extreme)
      * advance_100、advance_200(Available when the file_system_type is cpfs)
-     *
      */
     readonly storageType: string | ros.IResolvable;
 
@@ -925,7 +924,6 @@ export class RosFileSystem extends ros.RosResource {
      * Performance、Capacity、Premium(Available when the file_system_type is standard)
      * standard、advance(Available when the file_system_type is extreme)
      * advance_100、advance_200(Available when the file_system_type is cpfs)
-     *
      */
     public storageType: string | ros.IResolvable;
 
@@ -1173,7 +1171,7 @@ function rosFilesetPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::Fileset`, which is used to create a fileset.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::Fileset`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Fileset` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-fileset
  */
@@ -1578,7 +1576,7 @@ function rosProtocolMountTargetPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::ProtocolMountTarget`, which is used to create an export directory for a protocol service.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::ProtocolMountTarget`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ProtocolMountTarget` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-protocolmounttarget
  */

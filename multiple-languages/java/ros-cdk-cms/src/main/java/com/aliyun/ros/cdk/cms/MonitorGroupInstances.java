@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cms;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::MonitorGroupInstances</code>, which is used to add instances to an application group.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::MonitorGroupInstances</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.472Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.718Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.MonitorGroupInstances")
 public class MonitorGroupInstances extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cms.IMonitorGroupInstances {
 

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::Lindorm::Instance`, which is used to create a Lindorm instance.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::Lindorm::Instance`.
 type RosInstance interface {
 	alicloudroscdkcore.RosResource
 	AttrAuthInfos() alicloudroscdkcore.IResolvable

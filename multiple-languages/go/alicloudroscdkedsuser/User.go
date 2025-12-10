@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::EdsUser::User`, which is used to create a convenience user.
+// This class encapsulates and extends the ROS resource type `ALIYUN::EdsUser::User`.
 type User interface {
 	alicloudroscdkcore.Resource
 	IUser

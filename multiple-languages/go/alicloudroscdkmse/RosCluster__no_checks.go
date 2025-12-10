@@ -84,11 +84,11 @@ func validateRosCluster_IsRosResourceParameters(construct alicloudroscdkcore.ICo
 	return nil
 }
 
-func (j *jsiiProxy_RosCluster) validateSetAcceptLanguageParameters(val interface{}) error {
+func (j *jsiiProxy_RosCluster) validateSetAclEntryListParameters(val interface{}) error {
 	return nil
 }
 
-func (j *jsiiProxy_RosCluster) validateSetAclEntryListParameters(val interface{}) error {
+func (j *jsiiProxy_RosCluster) validateSetChargeTypeParameters(val interface{}) error {
 	return nil
 }
 
@@ -112,7 +112,7 @@ func (j *jsiiProxy_RosCluster) validateSetConnectionTypeParameters(val interface
 	return nil
 }
 
-func (j *jsiiProxy_RosCluster) validateSetDiskTypeParameters(val interface{}) error {
+func (j *jsiiProxy_RosCluster) validateSetEipEnabledParameters(val interface{}) error {
 	return nil
 }
 
@@ -132,15 +132,7 @@ func (j *jsiiProxy_RosCluster) validateSetNetTypeParameters(val interface{}) err
 	return nil
 }
 
-func (j *jsiiProxy_RosCluster) validateSetPrivateSlbSpecificationParameters(val interface{}) error {
-	return nil
-}
-
 func (j *jsiiProxy_RosCluster) validateSetPubNetworkFlowParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosCluster) validateSetPubSlbSpecificationParameters(val interface{}) error {
 	return nil
 }
 
@@ -149,6 +141,10 @@ func (j *jsiiProxy_RosCluster) validateSetRequestParsParameters(val interface{})
 }
 
 func (j *jsiiProxy_RosCluster) validateSetResourceGroupIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosCluster) validateSetSecurityGroupTypeParameters(val interface{}) error {
 	return nil
 }
 

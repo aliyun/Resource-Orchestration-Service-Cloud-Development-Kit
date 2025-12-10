@@ -18,6 +18,7 @@ type RosScalingGroupProps struct {
 	GroupDeletionProtection interface{} `field:"optional" json:"groupDeletionProtection" yaml:"groupDeletionProtection"`
 	GroupType interface{} `field:"optional" json:"groupType" yaml:"groupType"`
 	HealthCheckType interface{} `field:"optional" json:"healthCheckType" yaml:"healthCheckType"`
+	HealthCheckTypes interface{} `field:"optional" json:"healthCheckTypes" yaml:"healthCheckTypes"`
 	InstanceId interface{} `field:"optional" json:"instanceId" yaml:"instanceId"`
 	LaunchTemplateId interface{} `field:"optional" json:"launchTemplateId" yaml:"launchTemplateId"`
 	LaunchTemplateOverrides interface{} `field:"optional" json:"launchTemplateOverrides" yaml:"launchTemplateOverrides"`

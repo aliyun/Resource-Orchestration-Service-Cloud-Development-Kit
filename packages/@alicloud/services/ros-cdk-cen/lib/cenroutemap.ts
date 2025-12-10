@@ -203,7 +203,7 @@ export interface ICenRouteMap extends ros.IResource {
     readonly attrRouteMapId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenRouteMap`, which is used to create a routing policy.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenRouteMap`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCenRouteMap`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenroutemap
  */

@@ -137,7 +137,7 @@ export interface IClusterV2 extends ros.IResource {
     readonly attrClusterId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::EHPC::ClusterV2`, which is used to create a cluster in Elastic High Performance Computing (E-HPC) of the new version.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EHPC::ClusterV2`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClusterV2`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-clusterv2
  */

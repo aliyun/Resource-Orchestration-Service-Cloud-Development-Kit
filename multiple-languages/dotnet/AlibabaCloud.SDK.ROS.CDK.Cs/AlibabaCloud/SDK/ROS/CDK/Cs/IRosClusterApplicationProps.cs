@@ -30,6 +30,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: creationMode: Creation modes include:
+        /// - Normal: create new resources, will report error if already exists.
+        /// - Apply: similar to kubectl apply, create if not exists, update if exists. During the deletion phase, ROS will delete newly created application, but updated existing application will not be deleted.
+        /// </remarks>
+        [JsiiProperty(name: "creationMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? CreationMode
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: defaultNamespace: The default namespace for the application, default value is default.
         /// If a namespace is defined in yaml metadata, its priority is higher than DefaultNamespace.
         /// If the DefaultNamespace does not exist, ROS will create it automatically and keep it by default during the delete phase.
@@ -144,6 +159,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             public object YamlContent
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: creationMode: Creation modes include:
+            /// - Normal: create new resources, will report error if already exists.
+            /// - Apply: similar to kubectl apply, create if not exists, update if exists. During the deletion phase, ROS will delete newly created application, but updated existing application will not be deleted.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "creationMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CreationMode
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>

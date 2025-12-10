@@ -132,7 +132,7 @@ export interface IServerGroup extends ros.IResource {
     readonly attrServerGroupId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::ServerGroup`, which is used to create a server group.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::ServerGroup`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosServerGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-servergroup
  */

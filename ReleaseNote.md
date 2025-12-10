@@ -1,4 +1,8 @@
 # Aliyun ROS Cloud Development Toolkit Changelog
+## [ros-cdk-cli 1.11.0] (2025-12-18)
+### Features
+- Update ROS resource sdk packages(Added the ALIYUN::CDT::ResourcePackage、ALIYUN::MSE::PluginConfig、ALIYUN::MSE::GatewayService、ALIYUN::MSE::GatewayDomain、ALIYUN::DMS::ScriptExecution、DATASOURCE::DMS::Database、ALIYUN::CEN::TransitRouterRouteTableAssociationReplacemen、ALIYUN::OTS::VCUInstance、ALIYUN::OOS::ApplicationGroupDeployment、DATASOURCE::ALB::Zones、ALIYUN::ESA::CacheRule、ALIYUN::ESA::CustomList、ALIYUN::ESA::Kv、ALIYUN::ESA::Page、ALIYUN::ESA::Record、ALIYUN::ESA::Site)
+
 ## [ros-cdk-cli 1.10.0] (2025-09-28)
 ### Features
 - Update ROS resource sdk packages(Added the ALIYUN::GWLB::ServerGroup、ALIYUN::GWLB::LoadBalancer、ALIYUN::GWLB::Listener、ALIYUN::DataLakeFormation::Catalog、ALIYUN::DataLakeFormation::Permissions、ALIYUN::DataLakeFormation::VpcConfig、ALIYUN::FC3::FunctionInvoker、DATASOURCE::SAE::Namespace、ALIYUN::StarRocks::Instance、ALIYUN::FC3::AsyncInvokeConfig、ALIYUN::OOS::DeployRevision、ALIYUN::CEN::Flowlog、ALIYUN::ESA::NetworkOptimization、ALIYUN::ESA::OriginPool、ALIYUN::ESA::OriginRule、ALIYUN::ESA::RedirectRule、ALIYUN::ESA::ScheduledPreloadJob、ALIYUN::ESA::SiteDeliveryTask、ALIYUN::ESA::WaitingRoom.)

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::CMS::AlarmContact`, which is used to query the information about an alert contact.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::CMS::AlarmContact`.
 type AlarmContact interface {
 	alicloudroscdkcore.Resource
 	IAlarmContact

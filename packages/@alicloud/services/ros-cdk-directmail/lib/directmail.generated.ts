@@ -48,7 +48,7 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DirectMail::Domain`, which is used to create a domain name in Direct Mail.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DirectMail::Domain`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Domain` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-directmail-domain
  */
@@ -243,7 +243,7 @@ function rosIpfilterPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DirectMail::Ipfilter`, which is used to add an IP filter.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DirectMail::Ipfilter`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Ipfilter` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-directmail-ipfilter
  */

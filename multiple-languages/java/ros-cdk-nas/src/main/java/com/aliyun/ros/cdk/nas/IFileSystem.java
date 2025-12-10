@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nas;
 /**
  * Represents a <code>FileSystem</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:27.121Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.331Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.IFileSystem")
 @software.amazon.jsii.Jsii.Proxy(IFileSystem.Jsii$Proxy.class)
 public interface IFileSystem extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

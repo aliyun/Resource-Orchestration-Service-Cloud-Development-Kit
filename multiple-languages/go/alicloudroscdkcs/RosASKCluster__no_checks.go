@@ -112,6 +112,10 @@ func (j *jsiiProxy_RosASKCluster) validateSetEndpointPublicAccessParameters(val 
 	return nil
 }
 
+func (j *jsiiProxy_RosASKCluster) validateSetIpStackParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosASKCluster) validateSetKubernetesVersionParameters(val interface{}) error {
 	return nil
 }

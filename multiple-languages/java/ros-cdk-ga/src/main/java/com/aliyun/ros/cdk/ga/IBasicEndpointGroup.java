@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * Represents a <code>BasicEndpointGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:26.112Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.287Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.IBasicEndpointGroup")
 @software.amazon.jsii.Jsii.Proxy(IBasicEndpointGroup.Jsii$Proxy.class)
 public interface IBasicEndpointGroup extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

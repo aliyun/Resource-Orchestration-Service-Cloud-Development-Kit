@@ -90,7 +90,7 @@ export interface ISyntheticTask extends ros.IResource {
     readonly attrTaskType: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ARMS::SyntheticTask`, which is used to query the information about a scheduled synthetic monitoring task.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ARMS::SyntheticTask`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSyntheticTask`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-synthetictask
  */

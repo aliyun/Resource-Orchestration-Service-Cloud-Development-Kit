@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::UserProvision`, which is used to create a Resource Access Management (RAM) user provisioning.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::UserProvision`.
 type RosUserProvision interface {
 	alicloudroscdkcore.RosResource
 	AttrUserProvisionId() alicloudroscdkcore.IResolvable

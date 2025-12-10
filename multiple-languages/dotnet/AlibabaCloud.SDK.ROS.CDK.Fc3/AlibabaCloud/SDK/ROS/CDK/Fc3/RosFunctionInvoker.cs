@@ -54,6 +54,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc3
         = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Fc3.RosFunctionInvoker))!;
 
         /// <remarks>
+        /// <strong>Attribute</strong>: Events: Events for async invocation.
+        /// </remarks>
+        [JsiiProperty(name: "attrEvents", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrEvents
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
         /// <strong>Attribute</strong>: Result: Depends on result type:
         /// NoResult: Async invoke has no result.
         /// Success: The response of the function. The response should be utf-8 encoded string, otherwise ROS will report an error. If the response is binary, encode it via base64 before it is returned.
@@ -73,6 +82,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc3
         /// </remarks>
         [JsiiProperty(name: "attrResultType", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrResultType
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: TaskId: Task id for async invocation.
+        /// </remarks>
+        [JsiiProperty(name: "attrTaskId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrTaskId
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }

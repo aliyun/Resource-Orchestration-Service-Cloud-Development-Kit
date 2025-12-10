@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.acs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acs-virtualcapacityreservation
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:20.391Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:51.885Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acs.$Module.class, fqn = "@alicloud/ros-cdk-acs.RosVirtualCapacityReservationProps")
 @software.amazon.jsii.Jsii.Proxy(RosVirtualCapacityReservationProps.Jsii$Proxy.class)
 public interface RosVirtualCapacityReservationProps extends software.amazon.jsii.JsiiSerializable {

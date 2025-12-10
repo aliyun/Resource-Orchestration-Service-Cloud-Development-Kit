@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::Config::CompliancePack`, which is used to create a compliance package.
+// This class encapsulates and extends the ROS resource type `ALIYUN::Config::CompliancePack`.
 type CompliancePack interface {
 	alicloudroscdkcore.Resource
 	ICompliancePack

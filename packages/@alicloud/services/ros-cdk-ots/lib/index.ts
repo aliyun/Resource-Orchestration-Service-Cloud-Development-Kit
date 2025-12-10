@@ -2,6 +2,7 @@ export * from './instance';
 export * from './instancev2';
 export * from './searchindex';
 export * from './table';
+export * from './vcuinstance';
 export * from './vpcbinder';
 
 // ALIYUN::OTS Resources:

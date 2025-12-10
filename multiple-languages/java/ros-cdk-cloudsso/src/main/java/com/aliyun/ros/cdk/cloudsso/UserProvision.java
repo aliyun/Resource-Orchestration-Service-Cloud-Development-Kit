@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cloudsso;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CloudSSO::UserProvision</code>, which is used to create a Resource Access Management (RAM) user provisioning.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CloudSSO::UserProvision</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.378Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.634Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudsso.$Module.class, fqn = "@alicloud/ros-cdk-cloudsso.UserProvision")
 public class UserProvision extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cloudsso.IUserProvision {
 

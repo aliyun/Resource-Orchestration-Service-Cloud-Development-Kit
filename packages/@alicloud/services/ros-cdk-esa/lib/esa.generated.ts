@@ -1084,6 +1084,186 @@ export class RosCompressionRule extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosCustomList`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-customlist
+ */
+export interface RosCustomListProps {
+
+    /**
+     * @Property items: The items in the custom list, which are displayed as an array.
+     */
+    readonly items: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property kind: The type of the custom list.
+     */
+    readonly kind: string | ros.IResolvable;
+
+    /**
+     * @Property listName: The name of the custom list.
+     */
+    readonly listName: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the custom list.
+     */
+    readonly description?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosCustomListProps`
+ *
+ * @param properties - the TypeScript properties of a `RosCustomListProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosCustomListPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('listName', ros.requiredValidator)(properties.listName));
+    errors.collect(ros.propertyValidator('listName', ros.validateString)(properties.listName));
+    errors.collect(ros.propertyValidator('kind', ros.requiredValidator)(properties.kind));
+    if(properties.kind && (typeof properties.kind) !== 'object') {
+        errors.collect(ros.propertyValidator('kind', ros.validateAllowedValues)({
+          data: properties.kind,
+          allowedValues: ["host","ip","asn"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('kind', ros.validateString)(properties.kind));
+    errors.collect(ros.propertyValidator('items', ros.requiredValidator)(properties.items));
+    if(properties.items && (Array.isArray(properties.items) || (typeof properties.items) === 'string')) {
+        errors.collect(ros.propertyValidator('items', ros.validateLength)({
+            data: properties.items.length,
+            min: 0,
+            max: 500,
+          }));
+    }
+    errors.collect(ros.propertyValidator('items', ros.listValidator(ros.validateString))(properties.items));
+    return errors.wrap('supplied properties not correct for "RosCustomListProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::CustomList` resource
+ *
+ * @param properties - the TypeScript properties of a `RosCustomListProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::CustomList` resource.
+ */
+// @ts-ignore TS6133
+function rosCustomListPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosCustomListPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'Items': ros.listMapper(ros.stringToRosTemplate)(properties.items),
+      'Kind': ros.stringToRosTemplate(properties.kind),
+      'ListName': ros.stringToRosTemplate(properties.listName),
+      'Description': ros.stringToRosTemplate(properties.description),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::CustomList`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `CustomList` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-customlist
+ */
+export class RosCustomList extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESA::CustomList";
+
+    /**
+     * @Attribute Description: The description of the custom list.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute Items: The items in the custom list, which are displayed as an array.
+     */
+    public readonly attrItems: ros.IResolvable;
+
+    /**
+     * @Attribute Kind: The type of the custom list.
+     */
+    public readonly attrKind: ros.IResolvable;
+
+    /**
+     * @Attribute ListId: The id of the custom list .
+     */
+    public readonly attrListId: ros.IResolvable;
+
+    /**
+     * @Attribute ListName: The name of the custom list.
+     */
+    public readonly attrListName: ros.IResolvable;
+
+    /**
+     * @Attribute UpdateTime: The time when the custom list was last modified.
+     */
+    public readonly attrUpdateTime: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property items: The items in the custom list, which are displayed as an array.
+     */
+    public items: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property kind: The type of the custom list.
+     */
+    public kind: string | ros.IResolvable;
+
+    /**
+     * @Property listName: The name of the custom list.
+     */
+    public listName: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the custom list.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosCustomListProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosCustomList.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDescription = this.getAtt('Description');
+        this.attrItems = this.getAtt('Items');
+        this.attrKind = this.getAtt('Kind');
+        this.attrListId = this.getAtt('ListId');
+        this.attrListName = this.getAtt('ListName');
+        this.attrUpdateTime = this.getAtt('UpdateTime');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.items = props.items;
+        this.kind = props.kind;
+        this.listName = props.listName;
+        this.description = props.description;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            items: this.items,
+            kind: this.kind,
+            listName: this.listName,
+            description: this.description,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosCustomListPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosCustomScenePolicy`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-customscenepolicy
  */
@@ -3871,6 +4051,157 @@ export class RosImageTransform extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosKv`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-kv
+ */
+export interface RosKvProps {
+
+    /**
+     * @Property key: The key name. The name can be up to 512 characters in length and cannot contain spaces or backslashes (\).
+     */
+    readonly key: string | ros.IResolvable;
+
+    /**
+     * @Property namespace: The name specified when calling [CreatevNamespace] https:\/\/help.aliyun.com\/document_detail\/2850317.html.
+     */
+    readonly namespace: string | ros.IResolvable;
+
+    /**
+     * @Property value: The content of the key. If the content has more than 256 characters in length, the system displays the first 100 and the last 100 characters, and omits the middle part.
+     */
+    readonly value: string | ros.IResolvable;
+
+    /**
+     * @Property expiration: The content of the key, which can be up to 2 MB (2 × 1000 × 1000). If the content is larger than 2 MB, call [PutKvWithHighCapacity] https:\/\/www.alibabacloud.com\/help\/en\/doc-detail\/2850486.html.
+     */
+    readonly expiration?: number | ros.IResolvable;
+
+    /**
+     * @Property expirationTtl: The time when the key-value pair expires, which cannot be earlier than the current time. The value is a timestamp in seconds. If you specify both Expiration and ExpirationTtl, only ExpirationTtl takes effect.
+     */
+    readonly expirationTtl?: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosKvProps`
+ *
+ * @param properties - the TypeScript properties of a `RosKvProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosKvPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('expirationTtl', ros.validateNumber)(properties.expirationTtl));
+    errors.collect(ros.propertyValidator('expiration', ros.validateNumber)(properties.expiration));
+    errors.collect(ros.propertyValidator('value', ros.requiredValidator)(properties.value));
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('namespace', ros.requiredValidator)(properties.namespace));
+    errors.collect(ros.propertyValidator('namespace', ros.validateString)(properties.namespace));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "RosKvProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::Kv` resource
+ *
+ * @param properties - the TypeScript properties of a `RosKvProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::Kv` resource.
+ */
+// @ts-ignore TS6133
+function rosKvPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosKvPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'Key': ros.stringToRosTemplate(properties.key),
+      'Namespace': ros.stringToRosTemplate(properties.namespace),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Expiration': ros.numberToRosTemplate(properties.expiration),
+      'ExpirationTtl': ros.numberToRosTemplate(properties.expirationTtl),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::Kv`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Kv` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-kv
+ */
+export class RosKv extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESA::Kv";
+
+    /**
+     * @Attribute Value: The content of the key. If the content has more than 256 characters in length, the system displays the first 100 and the last 100 characters, and omits the middle part.
+     */
+    public readonly attrValue: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property key: The key name. The name can be up to 512 characters in length and cannot contain spaces or backslashes (\).
+     */
+    public key: string | ros.IResolvable;
+
+    /**
+     * @Property namespace: The name specified when calling [CreatevNamespace] https:\/\/help.aliyun.com\/document_detail\/2850317.html.
+     */
+    public namespace: string | ros.IResolvable;
+
+    /**
+     * @Property value: The content of the key. If the content has more than 256 characters in length, the system displays the first 100 and the last 100 characters, and omits the middle part.
+     */
+    public value: string | ros.IResolvable;
+
+    /**
+     * @Property expiration: The content of the key, which can be up to 2 MB (2 × 1000 × 1000). If the content is larger than 2 MB, call [PutKvWithHighCapacity] https:\/\/www.alibabacloud.com\/help\/en\/doc-detail\/2850486.html.
+     */
+    public expiration: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property expirationTtl: The time when the key-value pair expires, which cannot be earlier than the current time. The value is a timestamp in seconds. If you specify both Expiration and ExpirationTtl, only ExpirationTtl takes effect.
+     */
+    public expirationTtl: number | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosKvProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosKv.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrValue = this.getAtt('Value');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.key = props.key;
+        this.namespace = props.namespace;
+        this.value = props.value;
+        this.expiration = props.expiration;
+        this.expirationTtl = props.expirationTtl;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            key: this.key,
+            namespace: this.namespace,
+            value: this.value,
+            expiration: this.expiration,
+            expirationTtl: this.expirationTtl,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosKvPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosKvNamespace`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-kvnamespace
  */
@@ -5352,6 +5683,853 @@ export class RosOriginRule extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosPage`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-page
+ */
+export interface RosPageProps {
+
+    /**
+     * @Property contentType: The Content-Type field in the HTTP header. Valid values:
+     * text\/html
+     * application\/json
+     */
+    readonly contentType: string | ros.IResolvable;
+
+    /**
+     * @Property pageName: The name of the custom response page.
+     */
+    readonly pageName: string | ros.IResolvable;
+
+    /**
+     * @Property content: The Base64-encoded page content. Example: "PGh0bWw+aGVsbG8gcGFnZTwvaHRtbD4=", which indicates "hello page".
+     */
+    readonly content?: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the page.
+     */
+    readonly description?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosPageProps`
+ *
+ * @param properties - the TypeScript properties of a `RosPageProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosPagePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('contentType', ros.requiredValidator)(properties.contentType));
+    if(properties.contentType && (typeof properties.contentType) !== 'object') {
+        errors.collect(ros.propertyValidator('contentType', ros.validateAllowedValues)({
+          data: properties.contentType,
+          allowedValues: ["text/html","application/json"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('contentType', ros.validateString)(properties.contentType));
+    errors.collect(ros.propertyValidator('content', ros.validateString)(properties.content));
+    errors.collect(ros.propertyValidator('pageName', ros.requiredValidator)(properties.pageName));
+    errors.collect(ros.propertyValidator('pageName', ros.validateString)(properties.pageName));
+    return errors.wrap('supplied properties not correct for "RosPageProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::Page` resource
+ *
+ * @param properties - the TypeScript properties of a `RosPageProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::Page` resource.
+ */
+// @ts-ignore TS6133
+function rosPagePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosPagePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ContentType': ros.stringToRosTemplate(properties.contentType),
+      'PageName': ros.stringToRosTemplate(properties.pageName),
+      'Content': ros.stringToRosTemplate(properties.content),
+      'Description': ros.stringToRosTemplate(properties.description),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::Page`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Page` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-page
+ */
+export class RosPage extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESA::Page";
+
+    /**
+     * @Attribute Content: The Base64-encoded content of the error page. The content type is specified by the Content-Type field.
+     */
+    public readonly attrContent: ros.IResolvable;
+
+    /**
+     * @Attribute ContentType: The Content-Type field in the HTTP header.
+     */
+    public readonly attrContentType: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The description of the custom error page.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute Kind: The type of the custom response page.
+     */
+    public readonly attrKind: ros.IResolvable;
+
+    /**
+     * @Attribute PageId: The ID of the custom error page.
+     */
+    public readonly attrPageId: ros.IResolvable;
+
+    /**
+     * @Attribute PageName: The name of the custom response page.
+     */
+    public readonly attrPageName: ros.IResolvable;
+
+    /**
+     * @Attribute UpdateTime: The time when the custom error page was last modified.
+     */
+    public readonly attrUpdateTime: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property contentType: The Content-Type field in the HTTP header. Valid values:
+     * text\/html
+     * application\/json
+     */
+    public contentType: string | ros.IResolvable;
+
+    /**
+     * @Property pageName: The name of the custom response page.
+     */
+    public pageName: string | ros.IResolvable;
+
+    /**
+     * @Property content: The Base64-encoded page content. Example: "PGh0bWw+aGVsbG8gcGFnZTwvaHRtbD4=", which indicates "hello page".
+     */
+    public content: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property description: The description of the page.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosPageProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosPage.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrContent = this.getAtt('Content');
+        this.attrContentType = this.getAtt('ContentType');
+        this.attrDescription = this.getAtt('Description');
+        this.attrKind = this.getAtt('Kind');
+        this.attrPageId = this.getAtt('PageId');
+        this.attrPageName = this.getAtt('PageName');
+        this.attrUpdateTime = this.getAtt('UpdateTime');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.contentType = props.contentType;
+        this.pageName = props.pageName;
+        this.content = props.content;
+        this.description = props.description;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            contentType: this.contentType,
+            pageName: this.pageName,
+            content: this.content,
+            description: this.description,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosPagePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosRecord`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-record
+ */
+export interface RosRecordProps {
+
+    /**
+     * @Property data: The DNS record information. The format of this field varies based on the record type. For more information, see [References] https:\/\/www.alibabacloud.com\/help\/doc-detail\/2708761.html?spm=openapi-amp.newDocPublishment.0.0.6a0f281feoeVWr.
+     */
+    readonly data: RosRecord.DataProperty | ros.IResolvable;
+
+    /**
+     * @Property recordName: The record name. This parameter specifies a filter condition for the query.
+     */
+    readonly recordName: string | ros.IResolvable;
+
+    /**
+     * @Property recordType: The type of the DNS record, such as A\/AAAA, CNAME, and TXT.
+     */
+    readonly recordType: string | ros.IResolvable;
+
+    /**
+     * @Property siteId: The website ID.
+     */
+    readonly siteId: number | ros.IResolvable;
+
+    /**
+     * @Property authConf: The origin authentication information of the CNAME record.
+     */
+    readonly authConf?: RosRecord.AuthConfProperty | ros.IResolvable;
+
+    /**
+     * @Property bizName: The business scenario of the record for acceleration. Leave the parameter empty if your record is not proxied. Valid values:
+     * image_video: video and image.
+     * api: API.
+     * web: web page.
+     */
+    readonly bizName?: string | ros.IResolvable;
+
+    /**
+     * @Property comment: The comment of the record. The maximum length is 100 characters.
+     */
+    readonly comment?: string | ros.IResolvable;
+
+    /**
+     * @Property hostPolicy: The origin host policy. This policy takes effect when the record type is CNAME. You can set the policy in two modes:
+     * follow_hostname: Follow the host record.
+     * follow_origin_domain: match the origin's domain name.
+     */
+    readonly hostPolicy?: string | ros.IResolvable;
+
+    /**
+     * @Property proxied: Specifies whether to proxy the record. Only CNAME and A\/AAAA records can be proxied. Valid values:
+     * true
+     * false.
+     */
+    readonly proxied?: boolean | ros.IResolvable;
+
+    /**
+     * @Property sourceType: The origin type for the CNAME record. This parameter is required when you add a CNAME record. Valid values:
+     * OSS: OSS bucket.
+     * S3: S3 bucket.
+     * LB: load balancer.
+     * OP: origin pool.
+     * Domain: domain name.
+     * If you do not pass this parameter or if you leave its value empty, Domain is used by default.
+     */
+    readonly sourceType?: string | ros.IResolvable;
+
+    /**
+     * @Property ttl: The TTL of the record. Unit: seconds. If the value is 1, the TTL of the record is determined by the system.
+     */
+    readonly ttl?: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosRecordProps`
+ *
+ * @param properties - the TypeScript properties of a `RosRecordProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosRecordPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('recordName', ros.requiredValidator)(properties.recordName));
+    errors.collect(ros.propertyValidator('recordName', ros.validateString)(properties.recordName));
+    errors.collect(ros.propertyValidator('comment', ros.validateString)(properties.comment));
+    errors.collect(ros.propertyValidator('proxied', ros.validateBoolean)(properties.proxied));
+    errors.collect(ros.propertyValidator('siteId', ros.requiredValidator)(properties.siteId));
+    errors.collect(ros.propertyValidator('siteId', ros.validateNumber)(properties.siteId));
+    errors.collect(ros.propertyValidator('recordType', ros.requiredValidator)(properties.recordType));
+    if(properties.recordType && (typeof properties.recordType) !== 'object') {
+        errors.collect(ros.propertyValidator('recordType', ros.validateAllowedValues)({
+          data: properties.recordType,
+          allowedValues: ["A/AAAA","CNAME","NS","MX","TXT","CAA","SRV","URI","CAA","CERT","SMIMEA","SSHFP","TLSA"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('recordType', ros.validateString)(properties.recordType));
+    if(properties.sourceType && (typeof properties.sourceType) !== 'object') {
+        errors.collect(ros.propertyValidator('sourceType', ros.validateAllowedValues)({
+          data: properties.sourceType,
+          allowedValues: ["OSS","S3","LB","OP","Domain"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('sourceType', ros.validateString)(properties.sourceType));
+    if(properties.bizName && (typeof properties.bizName) !== 'object') {
+        errors.collect(ros.propertyValidator('bizName', ros.validateAllowedValues)({
+          data: properties.bizName,
+          allowedValues: ["image_video","api","web"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('bizName', ros.validateString)(properties.bizName));
+    if(properties.hostPolicy && (typeof properties.hostPolicy) !== 'object') {
+        errors.collect(ros.propertyValidator('hostPolicy', ros.validateAllowedValues)({
+          data: properties.hostPolicy,
+          allowedValues: ["follow_hostname","follow_origin_domain"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('hostPolicy', ros.validateString)(properties.hostPolicy));
+    errors.collect(ros.propertyValidator('data', ros.requiredValidator)(properties.data));
+    errors.collect(ros.propertyValidator('data', RosRecord_DataPropertyValidator)(properties.data));
+    errors.collect(ros.propertyValidator('authConf', RosRecord_AuthConfPropertyValidator)(properties.authConf));
+    errors.collect(ros.propertyValidator('ttl', ros.validateNumber)(properties.ttl));
+    return errors.wrap('supplied properties not correct for "RosRecordProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::Record` resource
+ *
+ * @param properties - the TypeScript properties of a `RosRecordProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::Record` resource.
+ */
+// @ts-ignore TS6133
+function rosRecordPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosRecordPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'Data': rosRecordDataPropertyToRosTemplate(properties.data),
+      'RecordName': ros.stringToRosTemplate(properties.recordName),
+      'RecordType': ros.stringToRosTemplate(properties.recordType),
+      'SiteId': ros.numberToRosTemplate(properties.siteId),
+      'AuthConf': rosRecordAuthConfPropertyToRosTemplate(properties.authConf),
+      'BizName': ros.stringToRosTemplate(properties.bizName),
+      'Comment': ros.stringToRosTemplate(properties.comment),
+      'HostPolicy': ros.stringToRosTemplate(properties.hostPolicy),
+      'Proxied': ros.booleanToRosTemplate(properties.proxied),
+      'SourceType': ros.stringToRosTemplate(properties.sourceType),
+      'Ttl': ros.numberToRosTemplate(properties.ttl),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::Record`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Record` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-record
+ */
+export class RosRecord extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESA::Record";
+
+    /**
+     * @Attribute AuthConf: The origin authentication information of the CNAME record.
+     */
+    public readonly attrAuthConf: ros.IResolvable;
+
+    /**
+     * @Attribute BizName: The business scenario of the record for acceleration. Leave the parameter empty if your record is not proxied.
+     */
+    public readonly attrBizName: ros.IResolvable;
+
+    /**
+     * @Attribute Comment: The comment of the record. The maximum length is 100 characters.
+     */
+    public readonly attrComment: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: The time when the record was created. The time follows the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. The time is displayed in UTC.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute Data: The DNS record information. The format of this field varies based on the record type. For more information, see [References]https://www.alibabacloud.com/help/doc-detail/2708761.html?spm=openapi-amp.newDocPublishment.0.0.6a0f281feoeVWr.
+     */
+    public readonly attrData: ros.IResolvable;
+
+    /**
+     * @Attribute HostPolicy: The origin host policy. This policy takes effect when the record type is CNAME.
+     */
+    public readonly attrHostPolicy: ros.IResolvable;
+
+    /**
+     * @Attribute ModifyTime: The time when the record was updated. The time follows the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. The time is displayed in UTC.
+     */
+    public readonly attrModifyTime: ros.IResolvable;
+
+    /**
+     * @Attribute Proxied: Specifies whether to proxy the record. Only CNAME and A/AAAA records can be proxied.
+     */
+    public readonly attrProxied: ros.IResolvable;
+
+    /**
+     * @Attribute RecordCname: The CNAME. If you use CNAME setup when you add your website to ESA, the value is the CNAME that you configured then.
+     */
+    public readonly attrRecordCname: ros.IResolvable;
+
+    /**
+     * @Attribute RecordId: Record Id.
+     */
+    public readonly attrRecordId: ros.IResolvable;
+
+    /**
+     * @Attribute RecordName: The record name. This parameter specifies a filter condition for the query.
+     */
+    public readonly attrRecordName: ros.IResolvable;
+
+    /**
+     * @Attribute RecordType: The type of the DNS record, such as A/AAAA, CNAME, and TXT.
+     */
+    public readonly attrRecordType: ros.IResolvable;
+
+    /**
+     * @Attribute SiteId: The website ID.
+     */
+    public readonly attrSiteId: ros.IResolvable;
+
+    /**
+     * @Attribute SiteName: The website name.
+     */
+    public readonly attrSiteName: ros.IResolvable;
+
+    /**
+     * @Attribute SourceType: The origin type for the CNAME record. This parameter is required when you add a CNAME record.
+     */
+    public readonly attrSourceType: ros.IResolvable;
+
+    /**
+     * @Attribute Ttl: The TTL of the record. Unit: seconds. If the value is 1, the TTL of the record is determined by the system.
+     */
+    public readonly attrTtl: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property data: The DNS record information. The format of this field varies based on the record type. For more information, see [References] https:\/\/www.alibabacloud.com\/help\/doc-detail\/2708761.html?spm=openapi-amp.newDocPublishment.0.0.6a0f281feoeVWr.
+     */
+    public data: RosRecord.DataProperty | ros.IResolvable;
+
+    /**
+     * @Property recordName: The record name. This parameter specifies a filter condition for the query.
+     */
+    public recordName: string | ros.IResolvable;
+
+    /**
+     * @Property recordType: The type of the DNS record, such as A\/AAAA, CNAME, and TXT.
+     */
+    public recordType: string | ros.IResolvable;
+
+    /**
+     * @Property siteId: The website ID.
+     */
+    public siteId: number | ros.IResolvable;
+
+    /**
+     * @Property authConf: The origin authentication information of the CNAME record.
+     */
+    public authConf: RosRecord.AuthConfProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property bizName: The business scenario of the record for acceleration. Leave the parameter empty if your record is not proxied. Valid values:
+     * image_video: video and image.
+     * api: API.
+     * web: web page.
+     */
+    public bizName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property comment: The comment of the record. The maximum length is 100 characters.
+     */
+    public comment: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property hostPolicy: The origin host policy. This policy takes effect when the record type is CNAME. You can set the policy in two modes:
+     * follow_hostname: Follow the host record.
+     * follow_origin_domain: match the origin's domain name.
+     */
+    public hostPolicy: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property proxied: Specifies whether to proxy the record. Only CNAME and A\/AAAA records can be proxied. Valid values:
+     * true
+     * false.
+     */
+    public proxied: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property sourceType: The origin type for the CNAME record. This parameter is required when you add a CNAME record. Valid values:
+     * OSS: OSS bucket.
+     * S3: S3 bucket.
+     * LB: load balancer.
+     * OP: origin pool.
+     * Domain: domain name.
+     * If you do not pass this parameter or if you leave its value empty, Domain is used by default.
+     */
+    public sourceType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ttl: The TTL of the record. Unit: seconds. If the value is 1, the TTL of the record is determined by the system.
+     */
+    public ttl: number | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosRecordProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosRecord.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAuthConf = this.getAtt('AuthConf');
+        this.attrBizName = this.getAtt('BizName');
+        this.attrComment = this.getAtt('Comment');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrData = this.getAtt('Data');
+        this.attrHostPolicy = this.getAtt('HostPolicy');
+        this.attrModifyTime = this.getAtt('ModifyTime');
+        this.attrProxied = this.getAtt('Proxied');
+        this.attrRecordCname = this.getAtt('RecordCname');
+        this.attrRecordId = this.getAtt('RecordId');
+        this.attrRecordName = this.getAtt('RecordName');
+        this.attrRecordType = this.getAtt('RecordType');
+        this.attrSiteId = this.getAtt('SiteId');
+        this.attrSiteName = this.getAtt('SiteName');
+        this.attrSourceType = this.getAtt('SourceType');
+        this.attrTtl = this.getAtt('Ttl');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.data = props.data;
+        this.recordName = props.recordName;
+        this.recordType = props.recordType;
+        this.siteId = props.siteId;
+        this.authConf = props.authConf;
+        this.bizName = props.bizName;
+        this.comment = props.comment;
+        this.hostPolicy = props.hostPolicy;
+        this.proxied = props.proxied;
+        this.sourceType = props.sourceType;
+        this.ttl = props.ttl;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            data: this.data,
+            recordName: this.recordName,
+            recordType: this.recordType,
+            siteId: this.siteId,
+            authConf: this.authConf,
+            bizName: this.bizName,
+            comment: this.comment,
+            hostPolicy: this.hostPolicy,
+            proxied: this.proxied,
+            sourceType: this.sourceType,
+            ttl: this.ttl,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosRecordPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosRecord {
+    /**
+     * @stability external
+     */
+    export interface AuthConfProperty {
+        /**
+         * @Property secretKey: The secret access key of the account to which the origin server belongs. This parameter is required when the SourceType is OSS, and AuthType is private_same_account, or when the SourceType is S3 and AuthType is private.
+         */
+        readonly secretKey?: string | ros.IResolvable;
+        /**
+         * @Property version: The version of the signature algorithm. This parameter is required when the origin type is S3 and AuthType is private. The following two types are supported:
+     * v2
+     * v4
+     * - If you leave this parameter empty, the default value v4 is used.
+         */
+        readonly version?: string | ros.IResolvable;
+        /**
+         * @Property region: The region of the origin. If the origin type is S3, you must specify this value. You can get the region information from the official website of S3.
+         */
+        readonly region?: string | ros.IResolvable;
+        /**
+         * @Property accessKey: The access key of the account to which the origin server belongs. This parameter is required when the SourceType is OSS, and AuthType is private_cross_account, or when the SourceType is S3 and AuthType is private.
+         */
+        readonly accessKey?: string | ros.IResolvable;
+        /**
+         * @Property authType: The authentication type of the origin server. Different origins support different authentication types. The type of origin refers to the SourceType parameter in this operation. If the type of origin is OSS or S3, you must specify the authentication type of the origin. Valid values:
+     * public: public read. Select this value when the origin type is OSS or S3 and the origin access is public read.
+     * private: private read. Select this value when the origin type is S3 and the origin access is private read.
+     * private_same_account: private read under the same account. Select this value when the origin type is OSS, the origins belong to the same Alibaba Cloud account, and the origins have private read access.
+     * private_cross_account: private read cross accounts. Select this value when the origin type is OSS, the origins belong to different Alibaba Cloud accounts, and the origins have private read access.
+         */
+        readonly authType?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AuthConfProperty`
+ *
+ * @param properties - the TypeScript properties of a `AuthConfProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosRecord_AuthConfPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('secretKey', ros.validateString)(properties.secretKey));
+    if(properties.version && (typeof properties.version) !== 'object') {
+        errors.collect(ros.propertyValidator('version', ros.validateAllowedValues)({
+          data: properties.version,
+          allowedValues: ["v2","v4"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('version', ros.validateString)(properties.version));
+    errors.collect(ros.propertyValidator('region', ros.validateString)(properties.region));
+    errors.collect(ros.propertyValidator('accessKey', ros.validateString)(properties.accessKey));
+    if(properties.authType && (typeof properties.authType) !== 'object') {
+        errors.collect(ros.propertyValidator('authType', ros.validateAllowedValues)({
+          data: properties.authType,
+          allowedValues: ["public","private","private_same_account","private_cross_account"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('authType', ros.validateString)(properties.authType));
+    return errors.wrap('supplied properties not correct for "AuthConfProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::Record.AuthConf` resource
+ *
+ * @param properties - the TypeScript properties of a `AuthConfProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::Record.AuthConf` resource.
+ */
+// @ts-ignore TS6133
+function rosRecordAuthConfPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosRecord_AuthConfPropertyValidator(properties).assertSuccess();
+    return {
+      'SecretKey': ros.stringToRosTemplate(properties.secretKey),
+      'Version': ros.stringToRosTemplate(properties.version),
+      'Region': ros.stringToRosTemplate(properties.region),
+      'AccessKey': ros.stringToRosTemplate(properties.accessKey),
+      'AuthType': ros.stringToRosTemplate(properties.authType),
+    };
+}
+
+export namespace RosRecord {
+    /**
+     * @stability external
+     */
+    export interface DataProperty {
+        /**
+         * @Property fingerprint: The public key fingerprint of the record. This parameter is required when you add a SSHFP record.
+         */
+        readonly fingerprint?: string | ros.IResolvable;
+        /**
+         * @Property usage: The usage identifier of the record, specified within the range of 0 to 255. This parameter is required when you add SMIMEA or TLSA records.
+         */
+        readonly usage?: number | ros.IResolvable;
+        /**
+         * @Property priority: The priority of the record, specified within the range of 0 to 65,535. A smaller value indicates a higher priority. This parameter is required when you add MX, SRV, and URI records.
+         */
+        readonly priority?: number | ros.IResolvable;
+        /**
+         * @Property port: The port of the record, specified within the range of 0 to 65,535. This parameter is required when you add an SRV record.
+         */
+        readonly port?: number | ros.IResolvable;
+        /**
+         * @Property algorithm: The encryption algorithm used for the record, specified within the range from 0 to 255. This parameter is required when you add CERT or SSHFP records.
+         */
+        readonly algorithm?: number | ros.IResolvable;
+        /**
+         * @Property flag: The flag bit of the record. The Flag for a CAA record indicates its priority and how it is processed, specified within the range of 0 to 255. This parameter is required when you add a CAA record.
+         */
+        readonly flag?: number | ros.IResolvable;
+        /**
+         * @Property weight: The weight of the record, specified within the range of 0 to 65,535. This parameter is required when you add SRV or URI records.
+         */
+        readonly weight?: number | ros.IResolvable;
+        /**
+         * @Property matchingType: The algorithm policy used to match or validate the certificate, specified within the range 0 to 255. This parameter is required when you add SMIMEA or TLSA records.
+         */
+        readonly matchingType?: number | ros.IResolvable;
+        /**
+         * @Property type: The certificate type of the record (in CERT records), or the public key type (in SSHFP records). This parameter is required when you add CERT or SSHFP records.
+         */
+        readonly type?: number | ros.IResolvable;
+        /**
+         * @Property keyTag: The public key identification for the record, specified within the range of 0 to 65,535. This parameter is required when you add a CAA record.
+         */
+        readonly keyTag?: number | ros.IResolvable;
+        /**
+         * @Property value: Record value or part of the record content. This parameter is required when you add A\/AAAA, CNAME, NS, MX, TXT, CAA, SRV, and URI records. It has different meanings based on types of records:
+     * A\/AAAA: the IP address(es). Separate IP addresses with commas (,). You must have at least one IPv4 address.
+     * CNAME: the target domain name.
+     * NS: the name servers for the domain name.
+     * MX: a valid domain name of the target mail server.
+     * TXT: a valid text string.
+     * CAA: a valid domain name of the certificate authority.
+     * SRV: a valid domain name of the target host.
+     * URI: a valid URI string.
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property tag: The label of the record. The Tag of a CAA record indicate its specific type and usage. This parameter is required when you add a CAA record. Valid values:
+     * issue: indicates that a CA is authorized to issue a certificate for the domain name. This is usually followed by the domain name of the CA.
+     * issuewild: indicates that a CA is authorized to issue a wildcard certificate (such as *.example.com) for the domain name.
+     * iodef: specifies a URI to receive reports about CAA record violations.
+         */
+        readonly tag?: string | ros.IResolvable;
+        /**
+         * @Property certificate: The public key of the certificate. This parameter is required when you add CERT, SMIMEA, or TLSA records.
+         */
+        readonly certificate?: string | ros.IResolvable;
+        /**
+         * @Property selector: The type of certificate or public key, specified within the range of 0 to 255. This parameter is required when you add SMIMEA or TLSA records.
+         */
+        readonly selector?: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DataProperty`
+ *
+ * @param properties - the TypeScript properties of a `DataProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosRecord_DataPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('fingerprint', ros.validateString)(properties.fingerprint));
+    if(properties.usage && (typeof properties.usage) !== 'object') {
+        errors.collect(ros.propertyValidator('usage', ros.validateRange)({
+            data: properties.usage,
+            min: 0,
+            max: 255,
+          }));
+    }
+    errors.collect(ros.propertyValidator('usage', ros.validateNumber)(properties.usage));
+    if(properties.priority && (typeof properties.priority) !== 'object') {
+        errors.collect(ros.propertyValidator('priority', ros.validateRange)({
+            data: properties.priority,
+            min: 0,
+            max: 65535,
+          }));
+    }
+    errors.collect(ros.propertyValidator('priority', ros.validateNumber)(properties.priority));
+    if(properties.port && (typeof properties.port) !== 'object') {
+        errors.collect(ros.propertyValidator('port', ros.validateRange)({
+            data: properties.port,
+            min: 0,
+            max: 65535,
+          }));
+    }
+    errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
+    if(properties.algorithm && (typeof properties.algorithm) !== 'object') {
+        errors.collect(ros.propertyValidator('algorithm', ros.validateRange)({
+            data: properties.algorithm,
+            min: 0,
+            max: 255,
+          }));
+    }
+    errors.collect(ros.propertyValidator('algorithm', ros.validateNumber)(properties.algorithm));
+    if(properties.flag && (typeof properties.flag) !== 'object') {
+        errors.collect(ros.propertyValidator('flag', ros.validateRange)({
+            data: properties.flag,
+            min: 0,
+            max: 255,
+          }));
+    }
+    errors.collect(ros.propertyValidator('flag', ros.validateNumber)(properties.flag));
+    if(properties.weight && (typeof properties.weight) !== 'object') {
+        errors.collect(ros.propertyValidator('weight', ros.validateRange)({
+            data: properties.weight,
+            min: 0,
+            max: 65535,
+          }));
+    }
+    errors.collect(ros.propertyValidator('weight', ros.validateNumber)(properties.weight));
+    if(properties.matchingType && (typeof properties.matchingType) !== 'object') {
+        errors.collect(ros.propertyValidator('matchingType', ros.validateRange)({
+            data: properties.matchingType,
+            min: 0,
+            max: 255,
+          }));
+    }
+    errors.collect(ros.propertyValidator('matchingType', ros.validateNumber)(properties.matchingType));
+    errors.collect(ros.propertyValidator('type', ros.validateNumber)(properties.type));
+    if(properties.keyTag && (typeof properties.keyTag) !== 'object') {
+        errors.collect(ros.propertyValidator('keyTag', ros.validateRange)({
+            data: properties.keyTag,
+            min: 0,
+            max: 65535,
+          }));
+    }
+    errors.collect(ros.propertyValidator('keyTag', ros.validateNumber)(properties.keyTag));
+    if(properties.value && (typeof properties.value) !== 'object') {
+        errors.collect(ros.propertyValidator('value', ros.validateAllowedValues)({
+          data: properties.value,
+          allowedValues: ["A/AAAA","CNAME","NS","MX","TXT","CAA","SRV","URI"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    if(properties.tag && (typeof properties.tag) !== 'object') {
+        errors.collect(ros.propertyValidator('tag', ros.validateAllowedValues)({
+          data: properties.tag,
+          allowedValues: ["issue","issuewild","iodef"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('tag', ros.validateString)(properties.tag));
+    errors.collect(ros.propertyValidator('certificate', ros.validateString)(properties.certificate));
+    if(properties.selector && (typeof properties.selector) !== 'object') {
+        errors.collect(ros.propertyValidator('selector', ros.validateRange)({
+            data: properties.selector,
+            min: 0,
+            max: 255,
+          }));
+    }
+    errors.collect(ros.propertyValidator('selector', ros.validateNumber)(properties.selector));
+    return errors.wrap('supplied properties not correct for "DataProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::Record.Data` resource
+ *
+ * @param properties - the TypeScript properties of a `DataProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::Record.Data` resource.
+ */
+// @ts-ignore TS6133
+function rosRecordDataPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosRecord_DataPropertyValidator(properties).assertSuccess();
+    return {
+      'Fingerprint': ros.stringToRosTemplate(properties.fingerprint),
+      'Usage': ros.numberToRosTemplate(properties.usage),
+      'Priority': ros.numberToRosTemplate(properties.priority),
+      'Port': ros.numberToRosTemplate(properties.port),
+      'Algorithm': ros.numberToRosTemplate(properties.algorithm),
+      'Flag': ros.numberToRosTemplate(properties.flag),
+      'Weight': ros.numberToRosTemplate(properties.weight),
+      'MatchingType': ros.numberToRosTemplate(properties.matchingType),
+      'Type': ros.numberToRosTemplate(properties.type),
+      'KeyTag': ros.numberToRosTemplate(properties.keyTag),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Tag': ros.stringToRosTemplate(properties.tag),
+      'Certificate': ros.stringToRosTemplate(properties.certificate),
+      'Selector': ros.numberToRosTemplate(properties.selector),
+    };
+}
+
+/**
  * Properties for defining a `RosRedirectRule`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-redirectrule
  */
@@ -5902,6 +7080,299 @@ export class RosScheduledPreloadJob extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosScheduledPreloadJobPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+/**
+ * Properties for defining a `RosSite`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-site
+ */
+export interface RosSiteProps {
+
+    /**
+     * @Property instanceId: The ID of the associated package instance.
+     */
+    readonly instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property siteName: The name of the Site.
+     */
+    readonly siteName: string | ros.IResolvable;
+
+    /**
+     * @Property accessType: The Access Type of the Site.
+     */
+    readonly accessType?: string | ros.IResolvable;
+
+    /**
+     * @Property coverage: Acceleration area.
+     */
+    readonly coverage?: string | ros.IResolvable;
+
+    /**
+     * @Property paymentType: Payment type.
+     */
+    readonly paymentType?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags of the site.
+     */
+    readonly tags?: RosSite.TagsProperty[];
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSiteProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSiteProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSitePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('siteName', ros.requiredValidator)(properties.siteName));
+    errors.collect(ros.propertyValidator('siteName', ros.validateString)(properties.siteName));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('paymentType', ros.validateString)(properties.paymentType));
+    errors.collect(ros.propertyValidator('coverage', ros.validateString)(properties.coverage));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosSite_TagsPropertyValidator))(properties.tags));
+    if(properties.accessType && (typeof properties.accessType) !== 'object') {
+        errors.collect(ros.propertyValidator('accessType', ros.validateAllowedValues)({
+          data: properties.accessType,
+          allowedValues: ["CNAME","NS"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('accessType', ros.validateString)(properties.accessType));
+    return errors.wrap('supplied properties not correct for "RosSiteProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::Site` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSiteProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::Site` resource.
+ */
+// @ts-ignore TS6133
+function rosSitePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSitePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'SiteName': ros.stringToRosTemplate(properties.siteName),
+      'AccessType': ros.stringToRosTemplate(properties.accessType),
+      'Coverage': ros.stringToRosTemplate(properties.coverage),
+      'PaymentType': ros.stringToRosTemplate(properties.paymentType),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.listMapper(rosSiteTagsPropertyToRosTemplate)(properties.tags),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::Site`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Site` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-site
+ */
+export class RosSite extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESA::Site";
+
+    /**
+     * @Attribute AccessType: Site Access Type.
+     */
+    public readonly attrAccessType: ros.IResolvable;
+
+    /**
+     * @Attribute Coverage: Acceleration area.
+     */
+    public readonly attrCoverage: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: Creation time.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceId: The ID of the associated package instance.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute ModifyTime: Modification time.
+     */
+    public readonly attrModifyTime: ros.IResolvable;
+
+    /**
+     * @Attribute NameServerList: Site Resolution Name Server List.
+     */
+    public readonly attrNameServerList: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of the resource group.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute SiteId: The ID of the Site.
+     */
+    public readonly attrSiteId: ros.IResolvable;
+
+    /**
+     * @Attribute SiteName: The name of the Site.
+     */
+    public readonly attrSiteName: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: The tags of the Site.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property instanceId: The ID of the associated package instance.
+     */
+    public instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property siteName: The name of the Site.
+     */
+    public siteName: string | ros.IResolvable;
+
+    /**
+     * @Property accessType: The Access Type of the Site.
+     */
+    public accessType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property coverage: Acceleration area.
+     */
+    public coverage: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property paymentType: Payment type.
+     */
+    public paymentType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags of the site.
+     */
+    public tags: RosSite.TagsProperty[] | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSiteProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSite.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAccessType = this.getAtt('AccessType');
+        this.attrCoverage = this.getAtt('Coverage');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrInstanceId = this.getAtt('InstanceId');
+        this.attrModifyTime = this.getAtt('ModifyTime');
+        this.attrNameServerList = this.getAtt('NameServerList');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrSiteId = this.getAtt('SiteId');
+        this.attrSiteName = this.getAtt('SiteName');
+        this.attrTags = this.getAtt('Tags');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.instanceId = props.instanceId;
+        this.siteName = props.siteName;
+        this.accessType = props.accessType;
+        this.coverage = props.coverage;
+        this.paymentType = props.paymentType;
+        this.resourceGroupId = props.resourceGroupId;
+        this.tags = props.tags;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            instanceId: this.instanceId,
+            siteName: this.siteName,
+            accessType: this.accessType,
+            coverage: this.coverage,
+            paymentType: this.paymentType,
+            resourceGroupId: this.resourceGroupId,
+            tags: this.tags,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSitePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosSite {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSite_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESA::Site.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESA::Site.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosSiteTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSite_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**

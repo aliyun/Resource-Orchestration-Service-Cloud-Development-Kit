@@ -40,7 +40,7 @@ export interface ILoadBalancerAttachment extends ros.IResource {
     readonly props: LoadBalancerAttachmentProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::LoadBalancerAttachment`, which is used to add one or more Server Load Balancer (SLB) instances.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::LoadBalancerAttachment`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLoadBalancerAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-loadbalancerattachment
  */

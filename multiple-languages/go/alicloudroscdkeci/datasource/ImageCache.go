@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::ECI::ImageCache`, which is used to query the information about an image cache.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::ECI::ImageCache`.
 type ImageCache interface {
 	alicloudroscdkcore.Resource
 	IImageCache

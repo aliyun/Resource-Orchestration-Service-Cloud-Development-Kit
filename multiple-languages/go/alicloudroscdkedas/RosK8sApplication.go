@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::K8sApplication`, which is used to create an application in a Kubernetes cluster.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::K8sApplication`.
 type RosK8sApplication interface {
 	alicloudroscdkcore.RosResource
 	ApplicationDescription() interface{}

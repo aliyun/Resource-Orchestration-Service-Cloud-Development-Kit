@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.edas;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::EDAS::DeployGroup</code>, which is used to create an instance group for an application.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::EDAS::DeployGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:24.963Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:56.030Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.RosDeployGroup")
 public class RosDeployGroup extends com.aliyun.ros.cdk.core.RosResource {
 

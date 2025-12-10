@@ -30,6 +30,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: ignoreExisting: Whether to ignore existing template
+        /// False: ROS will perform a uniqueness check.If a template with the same name exists, an error will be reported when creating it.
+        /// True: ROS will not check the uniqueness.If there is a template with the same name, the template creation process will be ignored.
+        /// If the template is not created by ROS, it will be ignored during update and delete stage.
+        /// </remarks>
+        [JsiiProperty(name: "ignoreExisting", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? IgnoreExisting
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: resourceGroupId: Resource group id.
         /// </remarks>
         [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -82,6 +98,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             public object TemplateName
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ignoreExisting: Whether to ignore existing template
+            /// False: ROS will perform a uniqueness check.If a template with the same name exists, an error will be reported when creating it.
+            /// True: ROS will not check the uniqueness.If there is a template with the same name, the template creation process will be ignored.
+            /// If the template is not created by ROS, it will be ignored during update and delete stage.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ignoreExisting", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IgnoreExisting
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>

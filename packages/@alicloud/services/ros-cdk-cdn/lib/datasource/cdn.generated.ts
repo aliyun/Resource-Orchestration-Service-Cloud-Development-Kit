@@ -64,7 +64,7 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CDN::Domain`, which is used to query the information about an accelerated domain name.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CDN::Domain`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Domain` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cdn-domain
  */
@@ -225,7 +225,7 @@ function rosDomainsPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CDN::Domains`, which is used to query the basic information about created accelerated domain names.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CDN::Domains`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Domains` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cdn-domains
  */

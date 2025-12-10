@@ -3,187 +3,173 @@ package com.aliyun.ros.cdk.mse;
 /**
  * Represents a <code>Cluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:27.035Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.214Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.ICluster")
 @software.amazon.jsii.Jsii.Proxy(ICluster.Jsii$Proxy.class)
 public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
 
     /**
-     * Attribute AclEntryList: The public network whitelist list is used only when the public network is enabled.
+     * Attribute AclEntryList: The list of ACL entries.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrAclEntryList();
 
     /**
-     * Attribute AclId: acl id.
+     * Attribute AclId: The ID of the ACL.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrAclId();
 
     /**
-     * Attribute AppVersion: app version.
+     * Attribute AppVersion: The version of the application.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrAppVersion();
 
     /**
-     * Attribute ClusterAliasName: cluster alias name.
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrArn();
+
+    /**
+     * Attribute ClusterAliasName: The alias name of the cluster.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrClusterAliasName();
 
     /**
-     * Attribute ClusterId: cluster id.
+     * Attribute ClusterId: The ID of the cluster.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrClusterId();
 
     /**
-     * Attribute ClusterName: cluster name.
+     * Attribute ClusterName: The name of the cluster.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrClusterName();
 
     /**
-     * Attribute ClusterSpecification: Cluster specifications.
-     * <p>
-     * Note the msversion requirements of the version parameter,
-     * Optional parameters:
-     * "MSE_ SC <em>1_2_60_c",
-     * "MSE</em> SC <em>2_4_60_c",
-     * "MSE</em> SC <em>4_8_60_c",
-     * "MSE</em> SC <em>8_16_60_c",
-     * "MSE</em> SC _16_32_60_c"
+     * Attribute ClusterSpecification: The specification of the cluster.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrClusterSpecification();
 
     /**
-     * Attribute ClusterType: cluster type.
+     * Attribute ClusterType: The type of the cluster.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrClusterType();
 
     /**
-     * Attribute ClusterVersion: Cluster version, such as ZooKeeper_3_8_0,NACOS_2_0_0.
+     * Attribute ClusterVersion: The version of the cluster.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrClusterVersion();
 
     /**
-     * Attribute ConfigAuthEnabled: Whether the configuration supports it.
-     * <p>
-     * Valid values: true: false: not supported
+     * Attribute ConfigAuthEnabled: Whether to enable the configuration authentication.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrConfigAuthEnabled();
 
     /**
-     * Attribute ConfigSecretEnabled: Whether the configuration password takes effect.
-     * <p>
-     * The value is as follows: true: valid false: not valid
+     * Attribute ConfigSecretEnabled: Whether to enable the configuration secret.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrConfigSecretEnabled();
 
     /**
-     * Attribute ConnectionType: network connect type.
+     * Attribute ConnectionType: The connection type.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrConnectionType();
 
     /**
-     * Attribute Cpu: cpu core size.
+     * Attribute Cpu: The number of CPU cores.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrCpu();
 
     /**
-     * Attribute DiskCapacity: disk capacity, unit: G.
+     * Attribute DiskCapacity: The disk capacity.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrDiskCapacity();
 
     /**
-     * Attribute DiskType: disk type.
+     * Attribute DiskType: The disk type.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrDiskType();
 
     /**
-     * Attribute HealthStatus: health status.
+     * Attribute HealthStatus: The health status of the cluster.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrHealthStatus();
 
     /**
-     * Attribute InstanceCount: instance count.
+     * Attribute InstanceCount: The number of instances.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrInstanceCount();
 
     /**
-     * Attribute InstanceId: instance id.
+     * Attribute InstanceId: The ID of the cluster instance.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrInstanceId();
 
     /**
-     * Attribute InternetAddress: internet address.
+     * Attribute InternetAddress: The public network address of the cluster.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrInternetAddress();
 
     /**
-     * Attribute InternetDomain: internet domain.
+     * Attribute InternetDomain: The public network domain of the cluster.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrInternetDomain();
 
     /**
-     * Attribute InternetPort: internet port.
+     * Attribute InternetPort: The public network port of the cluster.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrInternetPort();
 
     /**
-     * Attribute IntranetAddress: intranet address.
+     * Attribute IntranetAddress: The intranet address of the cluster.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrIntranetAddress();
 
     /**
-     * Attribute IntranetDomain: intranet domain.
+     * Attribute IntranetDomain: The intranet domain of the cluster.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrIntranetDomain();
 
     /**
-     * Attribute IntranetPort: intranet port.
+     * Attribute IntranetPort: The intranet port of the cluster.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrIntranetPort();
 
     /**
-     * Attribute MCPEnabled: Whether MCP takes effect, the value is as follows: true: valid false: not valid.
+     * Attribute MCPEnabled: Whether to enable the MCP.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrMcpEnabled();
 
     /**
-     * Attribute MemoryCapacity: memory capacity.
+     * Attribute MemoryCapacity: The memory capacity.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrMemoryCapacity();
 
     /**
-     * Attribute MseVersion: Required, the value is as follows:.
-     * <p>
-     * -'mse_dev': indicates the development version.
-     * -'Mse_pro': means professional version. When this version is selected, the specification is 2c4g or above, and the specification is 3 nodes or above.
+     * Attribute MseVersion: The MSE version.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrMseVersion();
 
     /**
-     * Attribute NetType: Network type (whether private network is enabled or not).
-     * <p>
-     * privatenet indicates that private network is enabled.
+     * Attribute NetType: The network type.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrNetType();
 
     /**
-     * Attribute PayInfo: pay info.
+     * Attribute PayInfo: The payment information.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrPayInfo();
 
     /**
-     * Attribute PubNetworkFlow: Public network bandwidth.
-     * <p>
-     * If the bandwidth is greater than 0, the public network is enabled.
+     * Attribute PubNetworkFlow: The public network flow.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrPubNetworkFlow();
 
     /**
-     * Attribute VpcId: vpc id.
+     * Attribute VpcId: The ID of the VPC.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrVpcId();
 
     /**
-     * Attribute VSwitchId: switcher Id.
+     * Attribute VSwitchId: The ID of the VSwitch.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrVSwitchId();
 
@@ -230,7 +216,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute AclEntryList: The public network whitelist list is used only when the public network is enabled.
+         * Attribute AclEntryList: The list of ACL entries.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrAclEntryList() {
@@ -238,7 +224,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute AclId: acl id.
+         * Attribute AclId: The ID of the ACL.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrAclId() {
@@ -246,7 +232,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute AppVersion: app version.
+         * Attribute AppVersion: The version of the application.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrAppVersion() {
@@ -254,7 +240,15 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute ClusterAliasName: cluster alias name.
+         * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrArn() {
+            return software.amazon.jsii.Kernel.get(this, "attrArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute ClusterAliasName: The alias name of the cluster.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrClusterAliasName() {
@@ -262,7 +256,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute ClusterId: cluster id.
+         * Attribute ClusterId: The ID of the cluster.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrClusterId() {
@@ -270,7 +264,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute ClusterName: cluster name.
+         * Attribute ClusterName: The name of the cluster.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrClusterName() {
@@ -278,15 +272,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute ClusterSpecification: Cluster specifications.
-         * <p>
-         * Note the msversion requirements of the version parameter,
-         * Optional parameters:
-         * "MSE_ SC <em>1_2_60_c",
-         * "MSE</em> SC <em>2_4_60_c",
-         * "MSE</em> SC <em>4_8_60_c",
-         * "MSE</em> SC <em>8_16_60_c",
-         * "MSE</em> SC _16_32_60_c"
+         * Attribute ClusterSpecification: The specification of the cluster.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrClusterSpecification() {
@@ -294,7 +280,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute ClusterType: cluster type.
+         * Attribute ClusterType: The type of the cluster.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrClusterType() {
@@ -302,7 +288,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute ClusterVersion: Cluster version, such as ZooKeeper_3_8_0,NACOS_2_0_0.
+         * Attribute ClusterVersion: The version of the cluster.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrClusterVersion() {
@@ -310,9 +296,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute ConfigAuthEnabled: Whether the configuration supports it.
-         * <p>
-         * Valid values: true: false: not supported
+         * Attribute ConfigAuthEnabled: Whether to enable the configuration authentication.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrConfigAuthEnabled() {
@@ -320,9 +304,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute ConfigSecretEnabled: Whether the configuration password takes effect.
-         * <p>
-         * The value is as follows: true: valid false: not valid
+         * Attribute ConfigSecretEnabled: Whether to enable the configuration secret.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrConfigSecretEnabled() {
@@ -330,7 +312,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute ConnectionType: network connect type.
+         * Attribute ConnectionType: The connection type.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrConnectionType() {
@@ -338,7 +320,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute Cpu: cpu core size.
+         * Attribute Cpu: The number of CPU cores.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrCpu() {
@@ -346,7 +328,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute DiskCapacity: disk capacity, unit: G.
+         * Attribute DiskCapacity: The disk capacity.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrDiskCapacity() {
@@ -354,7 +336,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute DiskType: disk type.
+         * Attribute DiskType: The disk type.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrDiskType() {
@@ -362,7 +344,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute HealthStatus: health status.
+         * Attribute HealthStatus: The health status of the cluster.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrHealthStatus() {
@@ -370,7 +352,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute InstanceCount: instance count.
+         * Attribute InstanceCount: The number of instances.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrInstanceCount() {
@@ -378,7 +360,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute InstanceId: instance id.
+         * Attribute InstanceId: The ID of the cluster instance.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrInstanceId() {
@@ -386,7 +368,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute InternetAddress: internet address.
+         * Attribute InternetAddress: The public network address of the cluster.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrInternetAddress() {
@@ -394,7 +376,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute InternetDomain: internet domain.
+         * Attribute InternetDomain: The public network domain of the cluster.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrInternetDomain() {
@@ -402,7 +384,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute InternetPort: internet port.
+         * Attribute InternetPort: The public network port of the cluster.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrInternetPort() {
@@ -410,7 +392,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute IntranetAddress: intranet address.
+         * Attribute IntranetAddress: The intranet address of the cluster.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrIntranetAddress() {
@@ -418,7 +400,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute IntranetDomain: intranet domain.
+         * Attribute IntranetDomain: The intranet domain of the cluster.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrIntranetDomain() {
@@ -426,7 +408,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute IntranetPort: intranet port.
+         * Attribute IntranetPort: The intranet port of the cluster.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrIntranetPort() {
@@ -434,7 +416,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute MCPEnabled: Whether MCP takes effect, the value is as follows: true: valid false: not valid.
+         * Attribute MCPEnabled: Whether to enable the MCP.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrMcpEnabled() {
@@ -442,7 +424,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute MemoryCapacity: memory capacity.
+         * Attribute MemoryCapacity: The memory capacity.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrMemoryCapacity() {
@@ -450,10 +432,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute MseVersion: Required, the value is as follows:.
-         * <p>
-         * -'mse_dev': indicates the development version.
-         * -'Mse_pro': means professional version. When this version is selected, the specification is 2c4g or above, and the specification is 3 nodes or above.
+         * Attribute MseVersion: The MSE version.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrMseVersion() {
@@ -461,9 +440,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute NetType: Network type (whether private network is enabled or not).
-         * <p>
-         * privatenet indicates that private network is enabled.
+         * Attribute NetType: The network type.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrNetType() {
@@ -471,7 +448,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute PayInfo: pay info.
+         * Attribute PayInfo: The payment information.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrPayInfo() {
@@ -479,9 +456,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute PubNetworkFlow: Public network bandwidth.
-         * <p>
-         * If the bandwidth is greater than 0, the public network is enabled.
+         * Attribute PubNetworkFlow: The public network flow.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrPubNetworkFlow() {
@@ -489,7 +464,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute VpcId: vpc id.
+         * Attribute VpcId: The ID of the VPC.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrVpcId() {
@@ -497,7 +472,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute VSwitchId: switcher Id.
+         * Attribute VSwitchId: The ID of the VSwitch.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrVSwitchId() {
@@ -548,7 +523,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute AclEntryList: The public network whitelist list is used only when the public network is enabled.
+         * Attribute AclEntryList: The list of ACL entries.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrAclEntryList() {
@@ -556,7 +531,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute AclId: acl id.
+         * Attribute AclId: The ID of the ACL.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrAclId() {
@@ -564,7 +539,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute AppVersion: app version.
+         * Attribute AppVersion: The version of the application.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrAppVersion() {
@@ -572,7 +547,15 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute ClusterAliasName: cluster alias name.
+         * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrArn() {
+            return software.amazon.jsii.Kernel.get(this, "attrArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute ClusterAliasName: The alias name of the cluster.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrClusterAliasName() {
@@ -580,7 +563,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute ClusterId: cluster id.
+         * Attribute ClusterId: The ID of the cluster.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrClusterId() {
@@ -588,7 +571,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute ClusterName: cluster name.
+         * Attribute ClusterName: The name of the cluster.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrClusterName() {
@@ -596,15 +579,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute ClusterSpecification: Cluster specifications.
-         * <p>
-         * Note the msversion requirements of the version parameter,
-         * Optional parameters:
-         * "MSE_ SC <em>1_2_60_c",
-         * "MSE</em> SC <em>2_4_60_c",
-         * "MSE</em> SC <em>4_8_60_c",
-         * "MSE</em> SC <em>8_16_60_c",
-         * "MSE</em> SC _16_32_60_c"
+         * Attribute ClusterSpecification: The specification of the cluster.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrClusterSpecification() {
@@ -612,7 +587,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute ClusterType: cluster type.
+         * Attribute ClusterType: The type of the cluster.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrClusterType() {
@@ -620,7 +595,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute ClusterVersion: Cluster version, such as ZooKeeper_3_8_0,NACOS_2_0_0.
+         * Attribute ClusterVersion: The version of the cluster.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrClusterVersion() {
@@ -628,9 +603,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute ConfigAuthEnabled: Whether the configuration supports it.
-         * <p>
-         * Valid values: true: false: not supported
+         * Attribute ConfigAuthEnabled: Whether to enable the configuration authentication.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrConfigAuthEnabled() {
@@ -638,9 +611,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute ConfigSecretEnabled: Whether the configuration password takes effect.
-         * <p>
-         * The value is as follows: true: valid false: not valid
+         * Attribute ConfigSecretEnabled: Whether to enable the configuration secret.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrConfigSecretEnabled() {
@@ -648,7 +619,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute ConnectionType: network connect type.
+         * Attribute ConnectionType: The connection type.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrConnectionType() {
@@ -656,7 +627,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute Cpu: cpu core size.
+         * Attribute Cpu: The number of CPU cores.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrCpu() {
@@ -664,7 +635,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute DiskCapacity: disk capacity, unit: G.
+         * Attribute DiskCapacity: The disk capacity.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrDiskCapacity() {
@@ -672,7 +643,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute DiskType: disk type.
+         * Attribute DiskType: The disk type.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrDiskType() {
@@ -680,7 +651,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute HealthStatus: health status.
+         * Attribute HealthStatus: The health status of the cluster.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrHealthStatus() {
@@ -688,7 +659,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute InstanceCount: instance count.
+         * Attribute InstanceCount: The number of instances.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrInstanceCount() {
@@ -696,7 +667,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute InstanceId: instance id.
+         * Attribute InstanceId: The ID of the cluster instance.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrInstanceId() {
@@ -704,7 +675,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute InternetAddress: internet address.
+         * Attribute InternetAddress: The public network address of the cluster.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrInternetAddress() {
@@ -712,7 +683,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute InternetDomain: internet domain.
+         * Attribute InternetDomain: The public network domain of the cluster.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrInternetDomain() {
@@ -720,7 +691,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute InternetPort: internet port.
+         * Attribute InternetPort: The public network port of the cluster.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrInternetPort() {
@@ -728,7 +699,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute IntranetAddress: intranet address.
+         * Attribute IntranetAddress: The intranet address of the cluster.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrIntranetAddress() {
@@ -736,7 +707,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute IntranetDomain: intranet domain.
+         * Attribute IntranetDomain: The intranet domain of the cluster.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrIntranetDomain() {
@@ -744,7 +715,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute IntranetPort: intranet port.
+         * Attribute IntranetPort: The intranet port of the cluster.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrIntranetPort() {
@@ -752,7 +723,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute MCPEnabled: Whether MCP takes effect, the value is as follows: true: valid false: not valid.
+         * Attribute MCPEnabled: Whether to enable the MCP.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrMcpEnabled() {
@@ -760,7 +731,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute MemoryCapacity: memory capacity.
+         * Attribute MemoryCapacity: The memory capacity.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrMemoryCapacity() {
@@ -768,10 +739,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute MseVersion: Required, the value is as follows:.
-         * <p>
-         * -'mse_dev': indicates the development version.
-         * -'Mse_pro': means professional version. When this version is selected, the specification is 2c4g or above, and the specification is 3 nodes or above.
+         * Attribute MseVersion: The MSE version.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrMseVersion() {
@@ -779,9 +747,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute NetType: Network type (whether private network is enabled or not).
-         * <p>
-         * privatenet indicates that private network is enabled.
+         * Attribute NetType: The network type.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrNetType() {
@@ -789,7 +755,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute PayInfo: pay info.
+         * Attribute PayInfo: The payment information.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrPayInfo() {
@@ -797,9 +763,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute PubNetworkFlow: Public network bandwidth.
-         * <p>
-         * If the bandwidth is greater than 0, the public network is enabled.
+         * Attribute PubNetworkFlow: The public network flow.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrPubNetworkFlow() {
@@ -807,7 +771,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute VpcId: vpc id.
+         * Attribute VpcId: The ID of the VPC.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrVpcId() {
@@ -815,7 +779,7 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute VSwitchId: switcher Id.
+         * Attribute VSwitchId: The ID of the VSwitch.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrVSwitchId() {

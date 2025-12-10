@@ -60,7 +60,7 @@ export interface ICenRouteService extends ros.IResource {
     readonly attrId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenRouteService`, which is used to access an Alibaba Cloud service.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenRouteService`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCenRouteService`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenrouteservice
  */

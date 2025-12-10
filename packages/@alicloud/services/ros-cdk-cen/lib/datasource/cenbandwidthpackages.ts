@@ -50,7 +50,7 @@ export interface ICenBandwidthPackages extends ros.IResource {
     readonly attrCenBandwidthPackages: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::CEN::CenBandwidthPackages`, which is used to query the information about Cloud Enterprise Network (CEN) bandwidth plans within the logon account.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CEN::CenBandwidthPackages`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCenBandwidthPackages`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-cenbandwidthpackages
  */

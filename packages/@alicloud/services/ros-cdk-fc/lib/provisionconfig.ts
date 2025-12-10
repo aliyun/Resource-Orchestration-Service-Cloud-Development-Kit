@@ -63,7 +63,7 @@ export interface IProvisionConfig extends ros.IResource {
     readonly attrTarget: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::FC::ProvisionConfig`, which is used to create provisioned instances in Function Compute.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::FC::ProvisionConfig`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosProvisionConfig`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-provisionconfig
  */

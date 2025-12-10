@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallConfigure`, which is used to create a virtual private cloud (VPC) firewall.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallConfigure`.
 type VpcFirewallConfigure interface {
 	alicloudroscdkcore.Resource
 	IVpcFirewallConfigure

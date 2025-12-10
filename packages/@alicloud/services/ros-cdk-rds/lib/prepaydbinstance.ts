@@ -301,12 +301,14 @@ export interface PrepayDBInstanceProps {
     readonly maintainTime?: string | ros.IResolvable;
 
     /**
-     * Property masterUsername: The master user name for the database instance.
+     * Property masterUsername: The master user name for the database instance. If specified, this user will have read and write permissions for all databases defined in DBMappings. Reserved keywords (which can be queried via DescribeInstanceKeywords), such as root, admin, administrator, etc., cannot be used.
+     * This parameter must be specified together with MasterUserPassword.
      */
     readonly masterUsername?: string | ros.IResolvable;
 
     /**
      * Property masterUserPassword: The master password for the database instance.
+     * This parameter must be specified together with MasterUsername.
      */
     readonly masterUserPassword?: string | ros.IResolvable;
 

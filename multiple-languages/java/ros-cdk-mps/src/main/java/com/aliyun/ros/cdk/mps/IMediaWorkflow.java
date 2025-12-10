@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mps;
 /**
  * Represents a <code>MediaWorkflow</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:26.991Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.153Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mps.$Module.class, fqn = "@alicloud/ros-cdk-mps.IMediaWorkflow")
 @software.amazon.jsii.Jsii.Proxy(IMediaWorkflow.Jsii$Proxy.class)
 public interface IMediaWorkflow extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

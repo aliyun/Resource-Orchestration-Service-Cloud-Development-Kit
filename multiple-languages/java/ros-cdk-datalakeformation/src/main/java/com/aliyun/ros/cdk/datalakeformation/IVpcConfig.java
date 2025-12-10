@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.datalakeformation;
 /**
  * Represents a <code>VpcConfig</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.038Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.247Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.datalakeformation.$Module.class, fqn = "@alicloud/ros-cdk-datalakeformation.IVpcConfig")
 @software.amazon.jsii.Jsii.Proxy(IVpcConfig.Jsii$Proxy.class)
 public interface IVpcConfig extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

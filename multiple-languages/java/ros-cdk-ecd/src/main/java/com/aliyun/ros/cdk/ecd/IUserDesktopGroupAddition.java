@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecd;
 /**
  * Represents a <code>UserDesktopGroupAddition</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.807Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:55.012Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecd.$Module.class, fqn = "@alicloud/ros-cdk-ecd.IUserDesktopGroupAddition")
 @software.amazon.jsii.Jsii.Proxy(IUserDesktopGroupAddition.Jsii$Proxy.class)
 public interface IUserDesktopGroupAddition extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

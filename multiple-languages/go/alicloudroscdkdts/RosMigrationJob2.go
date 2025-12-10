@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::MigrationJob2`, which is used to purchase a data migration instance and configure a data migration task of the new version.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::MigrationJob2`.
 type RosMigrationJob2 interface {
 	alicloudroscdkcore.RosResource
 	AttrDtsInstanceId() alicloudroscdkcore.IResolvable

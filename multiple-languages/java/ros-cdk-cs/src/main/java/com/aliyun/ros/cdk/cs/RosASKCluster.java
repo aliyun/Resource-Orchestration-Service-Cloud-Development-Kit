@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cs;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CS::ASKCluster</code>, which is used to create a Container Service for Kubernetes (ACK) Serverless cluster.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CS::ASKCluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.879Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.103Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosASKCluster")
 public class RosASKCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -275,6 +275,24 @@ public class RosASKCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setEndpointPublicAccess(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "endpointPublicAccess", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIpStack() {
+        return software.amazon.jsii.Kernel.get(this, "ipStack", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIpStack(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "ipStack", value);
+    }
+
+    /**
+     */
+    public void setIpStack(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ipStack", value);
     }
 
     /**
@@ -1574,6 +1592,23 @@ public class RosASKCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder endpointPublicAccess(final com.aliyun.ros.cdk.core.IResolvable endpointPublicAccess) {
             this.props.endpointPublicAccess(endpointPublicAccess);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param ipStack This parameter is required.
+         */
+        public Builder ipStack(final java.lang.String ipStack) {
+            this.props.ipStack(ipStack);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ipStack This parameter is required.
+         */
+        public Builder ipStack(final com.aliyun.ros.cdk.core.IResolvable ipStack) {
+            this.props.ipStack(ipStack);
             return this;
         }
 

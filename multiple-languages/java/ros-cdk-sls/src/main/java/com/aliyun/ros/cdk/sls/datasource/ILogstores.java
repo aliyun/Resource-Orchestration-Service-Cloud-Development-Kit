@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls.datasource;
 /**
  * Represents a <code>Logstores</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:30.117Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:00.695Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.datasource.ILogstores")
 @software.amazon.jsii.Jsii.Proxy(ILogstores.Jsii$Proxy.class)
 public interface ILogstores extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

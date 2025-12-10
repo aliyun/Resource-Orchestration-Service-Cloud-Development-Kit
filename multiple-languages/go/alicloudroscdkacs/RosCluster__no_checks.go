@@ -116,6 +116,10 @@ func (j *jsiiProxy_RosCluster) validateSetIpStackParameters(val interface{}) err
 	return nil
 }
 
+func (j *jsiiProxy_RosCluster) validateSetIsEnterpriseSecurityGroupParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosCluster) validateSetKubernetesVersionParameters(val interface{}) error {
 	return nil
 }

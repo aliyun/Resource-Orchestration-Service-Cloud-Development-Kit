@@ -132,6 +132,10 @@ func (j *jsiiProxy_RosScalingGroup) validateSetHealthCheckTypeParameters(val int
 	return nil
 }
 
+func (j *jsiiProxy_RosScalingGroup) validateSetHealthCheckTypesParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosScalingGroup) validateSetInstanceIdParameters(val interface{}) error {
 	return nil
 }

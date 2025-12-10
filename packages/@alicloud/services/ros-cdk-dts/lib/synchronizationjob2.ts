@@ -191,7 +191,7 @@ export interface ISynchronizationJob2 extends ros.IResource {
     readonly attrDtsJobName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DTS::SynchronizationJob2`, which is used to configure a data synchronization task.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DTS::SynchronizationJob2`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSynchronizationJob2`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-synchronizationjob2
  */

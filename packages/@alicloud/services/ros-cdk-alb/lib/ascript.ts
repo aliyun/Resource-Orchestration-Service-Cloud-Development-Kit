@@ -57,7 +57,7 @@ export interface IAScript extends ros.IResource {
     readonly attrAScriptId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::AScript`, which is used to create an AScript rule.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::AScript`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAScript`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-ascript
  */

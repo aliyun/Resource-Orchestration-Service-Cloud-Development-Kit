@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ice;
 /**
  * Represents a <code>SearchLib</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:26.524Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.693Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ice.$Module.class, fqn = "@alicloud/ros-cdk-ice.ISearchLib")
 @software.amazon.jsii.Jsii.Proxy(ISearchLib.Jsii$Proxy.class)
 public interface ISearchLib extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

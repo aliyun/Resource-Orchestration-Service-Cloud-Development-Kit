@@ -43,7 +43,7 @@ export interface IImageSharePermission extends ros.IResource {
     readonly attrImageId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::ImageSharePermission`, which is used to manage the share permissions on a custom image.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::ImageSharePermission`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosImageSharePermission`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-imagesharepermission
  */

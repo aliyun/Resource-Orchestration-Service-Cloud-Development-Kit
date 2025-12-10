@@ -1,0 +1,287 @@
+package com.aliyun.ros.cdk.esa;
+
+/**
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ESA::CustomList</code>.
+ */
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:56.626Z")
+@software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.esa.$Module.class, fqn = "@alicloud/ros-cdk-esa.RosCustomList")
+public class RosCustomList extends com.aliyun.ros.cdk.core.RosResource {
+
+    protected RosCustomList(final software.amazon.jsii.JsiiObjectRef objRef) {
+        super(objRef);
+    }
+
+    protected RosCustomList(final software.amazon.jsii.JsiiObject.InitializationMode initializationMode) {
+        super(initializationMode);
+    }
+
+    static {
+        ROS_RESOURCE_TYPE_NAME = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.esa.RosCustomList.class, "ROS_RESOURCE_TYPE_NAME", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    }
+
+    /**
+     * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
+     * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
+     * @param props <ul><li>resource properties.</li></ul> This parameter is required.
+     * @param enableResourcePropertyConstraint This parameter is required.
+     */
+    public RosCustomList(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.esa.RosCustomListProps props, final @org.jetbrains.annotations.NotNull java.lang.Boolean enableResourcePropertyConstraint) {
+        super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+        software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), java.util.Objects.requireNonNull(props, "props is required"), java.util.Objects.requireNonNull(enableResourcePropertyConstraint, "enableResourcePropertyConstraint is required") });
+    }
+
+    @Override
+    protected @org.jetbrains.annotations.NotNull java.util.Map<java.lang.String, java.lang.Object> renderProperties(final @org.jetbrains.annotations.NotNull java.util.Map<java.lang.String, java.lang.Object> props) {
+        return java.util.Collections.unmodifiableMap(software.amazon.jsii.Kernel.call(this, "renderProperties", software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class)), new Object[] { java.util.Objects.requireNonNull(props, "props is required") }));
+    }
+
+    /**
+     * The resource type name for this resource class.
+     */
+    public final static java.lang.String ROS_RESOURCE_TYPE_NAME;
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDescription() {
+        return software.amazon.jsii.Kernel.get(this, "attrDescription", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrItems() {
+        return software.amazon.jsii.Kernel.get(this, "attrItems", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrKind() {
+        return software.amazon.jsii.Kernel.get(this, "attrKind", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrListId() {
+        return software.amazon.jsii.Kernel.get(this, "attrListId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrListName() {
+        return software.amazon.jsii.Kernel.get(this, "attrListName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrUpdateTime() {
+        return software.amazon.jsii.Kernel.get(this, "attrUpdateTime", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    @Override
+    protected @org.jetbrains.annotations.NotNull java.util.Map<java.lang.String, java.lang.Object> getRosProperties() {
+        return java.util.Collections.unmodifiableMap(software.amazon.jsii.Kernel.get(this, "rosProperties", software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class))));
+    }
+
+    public @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
+        return software.amazon.jsii.Kernel.get(this, "enableResourcePropertyConstraint", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
+    }
+
+    public void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getItems() {
+        return software.amazon.jsii.Kernel.get(this, "items", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setItems(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "items", java.util.Objects.requireNonNull(value, "items is required"));
+    }
+
+    /**
+     */
+    public void setItems(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "items", java.util.Objects.requireNonNull(value, "items is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getKind() {
+        return software.amazon.jsii.Kernel.get(this, "kind", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setKind(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "kind", java.util.Objects.requireNonNull(value, "kind is required"));
+    }
+
+    /**
+     */
+    public void setKind(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "kind", java.util.Objects.requireNonNull(value, "kind is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getListName() {
+        return software.amazon.jsii.Kernel.get(this, "listName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setListName(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "listName", java.util.Objects.requireNonNull(value, "listName is required"));
+    }
+
+    /**
+     */
+    public void setListName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "listName", java.util.Objects.requireNonNull(value, "listName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDescription(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     */
+    public void setDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     * A fluent builder for {@link com.aliyun.ros.cdk.esa.RosCustomList}.
+     */
+    public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.esa.RosCustomList> {
+        /**
+         * @return a new instance of {@link Builder}.
+         * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
+         * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
+         * @param enableResourcePropertyConstraint This parameter is required.
+         */
+        public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
+            return new Builder(scope, id, enableResourcePropertyConstraint);
+        }
+
+        private final com.aliyun.ros.cdk.core.Construct scope;
+        private final java.lang.String id;
+        private final java.lang.Boolean enableResourcePropertyConstraint;
+        private final com.aliyun.ros.cdk.esa.RosCustomListProps.Builder props;
+
+        private Builder(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
+            this.scope = scope;
+            this.id = id;
+            this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+            this.props = new com.aliyun.ros.cdk.esa.RosCustomListProps.Builder();
+        }
+
+        /**
+         * @return {@code this}
+         * @param items This parameter is required.
+         */
+        public Builder items(final com.aliyun.ros.cdk.core.IResolvable items) {
+            this.props.items(items);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param items This parameter is required.
+         */
+        public Builder items(final java.util.List<? extends java.lang.Object> items) {
+            this.props.items(items);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param kind This parameter is required.
+         */
+        public Builder kind(final java.lang.String kind) {
+            this.props.kind(kind);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param kind This parameter is required.
+         */
+        public Builder kind(final com.aliyun.ros.cdk.core.IResolvable kind) {
+            this.props.kind(kind);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param listName This parameter is required.
+         */
+        public Builder listName(final java.lang.String listName) {
+            this.props.listName(listName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param listName This parameter is required.
+         */
+        public Builder listName(final com.aliyun.ros.cdk.core.IResolvable listName) {
+            this.props.listName(listName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param description This parameter is required.
+         */
+        public Builder description(final java.lang.String description) {
+            this.props.description(description);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param description This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
+            return this;
+        }
+
+        /**
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.esa.RosCustomList}.
+         */
+        @Override
+        public com.aliyun.ros.cdk.esa.RosCustomList build() {
+            return new com.aliyun.ros.cdk.esa.RosCustomList(
+                this.scope,
+                this.id,
+                this.props.build(),
+                this.enableResourcePropertyConstraint
+            );
+        }
+    }
+}

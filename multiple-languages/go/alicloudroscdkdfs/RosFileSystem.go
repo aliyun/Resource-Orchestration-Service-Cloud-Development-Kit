@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::DFS::FileSystem`, which is used to create a file system.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::DFS::FileSystem`.
 type RosFileSystem interface {
 	alicloudroscdkcore.RosResource
 	AttrFileSystemId() alicloudroscdkcore.IResolvable

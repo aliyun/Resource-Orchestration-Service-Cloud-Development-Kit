@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dts.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dts-jobmonitorrules
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.603Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.829Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.datasource.JobMonitorRulesProps")
 @software.amazon.jsii.Jsii.Proxy(JobMonitorRulesProps.Jsii$Proxy.class)
 public interface JobMonitorRulesProps extends software.amazon.jsii.JsiiSerializable {

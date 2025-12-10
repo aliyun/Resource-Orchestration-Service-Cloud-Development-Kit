@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cs.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::CS::ClusterNodePools</code>, which is used to query the information about all node pools in a Container Service for Kubernetes (ACK) cluster.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::CS::ClusterNodePools</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.000Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.212Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.datasource.RosClusterNodePools")
 public class RosClusterNodePools extends com.aliyun.ros.cdk.core.RosResource {
 

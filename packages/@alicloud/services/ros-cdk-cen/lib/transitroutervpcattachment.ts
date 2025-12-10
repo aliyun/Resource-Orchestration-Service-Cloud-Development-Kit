@@ -122,7 +122,7 @@ export interface ITransitRouterVpcAttachment extends ros.IResource {
     readonly attrVpcOwnerId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterVpcAttachment`, which is used to create a virtual private cloud (VPC) connection on an Enterprise Edition transit router.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterVpcAttachment`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTransitRouterVpcAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervpcattachment
  */

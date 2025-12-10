@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.paidlc;
 /**
  * Represents a <code>Job</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:27.760Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.886Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.paidlc.$Module.class, fqn = "@alicloud/ros-cdk-paidlc.IJob")
 @software.amazon.jsii.Jsii.Proxy(IJob.Jsii$Proxy.class)
 public interface IJob extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::ImagePipeline`, which is used to create an image template.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::ImagePipeline`.
 type ImagePipeline interface {
 	alicloudroscdkcore.Resource
 	IImagePipeline

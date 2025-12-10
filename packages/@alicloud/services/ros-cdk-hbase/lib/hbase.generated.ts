@@ -152,8 +152,7 @@ export interface RosClusterProps {
     readonly securityIpList?: string | ros.IResolvable;
 
     /**
-     * @Property vpcId: The ID of the virtual private cloud (VPC). If you leave this parameter and the VSwitchId
-     * parameter empty, the classic network type is used. The VPC network type is preferred.
+     * @Property vpcId: The ID of the virtual private cloud (VPC). If you leave this parameter and the VSwitchId parameter empty, the classic network type is used. The VPC network type is preferred.
      */
     readonly vpcId?: string | ros.IResolvable;
 
@@ -276,7 +275,7 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::HBase::Cluster`, which is used to create an ApsaraDB for HBase cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::HBase::Cluster`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Cluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbase-cluster
  */
@@ -463,8 +462,7 @@ export class RosCluster extends ros.RosResource {
     public securityIpList: string | ros.IResolvable | undefined;
 
     /**
-     * @Property vpcId: The ID of the virtual private cloud (VPC). If you leave this parameter and the VSwitchId
-     * parameter empty, the classic network type is used. The VPC network type is preferred.
+     * @Property vpcId: The ID of the virtual private cloud (VPC). If you leave this parameter and the VSwitchId parameter empty, the classic network type is used. The VPC network type is preferred.
      */
     public vpcId: string | ros.IResolvable | undefined;
 
@@ -709,8 +707,7 @@ export interface RosMultiZoneClusterProps {
     readonly securityIpList?: string | ros.IResolvable;
 
     /**
-     * @Property vpcId: The ID of the virtual private cloud (VPC). If you leave this parameter and the VSwitchId
-     * parameter empty, the classic network type is used. The VPC network type is preferred.
+     * @Property vpcId: The ID of the virtual private cloud (VPC). If you leave this parameter and the VSwitchId parameter empty, the classic network type is used. The VPC network type is preferred.
      */
     readonly vpcId?: string | ros.IResolvable;
 }
@@ -1063,8 +1060,7 @@ export class RosMultiZoneCluster extends ros.RosResource {
     public securityIpList: string | ros.IResolvable | undefined;
 
     /**
-     * @Property vpcId: The ID of the virtual private cloud (VPC). If you leave this parameter and the VSwitchId
-     * parameter empty, the classic network type is used. The VPC network type is preferred.
+     * @Property vpcId: The ID of the virtual private cloud (VPC). If you leave this parameter and the VSwitchId parameter empty, the classic network type is used. The VPC network type is preferred.
      */
     public vpcId: string | ros.IResolvable | undefined;
 

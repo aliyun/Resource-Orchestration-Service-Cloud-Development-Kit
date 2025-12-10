@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CS::ASKCluster`, which is used to create a Container Service for Kubernetes (ACK) Serverless cluster.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CS::ASKCluster`.
 type ASKCluster interface {
 	alicloudroscdkcore.Resource
 	IASKCluster

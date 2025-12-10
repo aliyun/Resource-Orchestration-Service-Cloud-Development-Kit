@@ -32,7 +32,7 @@ export interface IUserToGroupAddition extends ros.IResource {
     readonly props: UserToGroupAdditionProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::UserToGroupAddition`, which is used to add a user to a group.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::UserToGroupAddition`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUserToGroupAddition`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-usertogroupaddition
  */

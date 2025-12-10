@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::RDS::DBInstanceClone</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:28.564Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:59.440Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.DBInstanceClone")
 public class DBInstanceClone extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.rds.IDBInstanceClone {
 
@@ -630,6 +630,9 @@ public class DBInstanceClone extends com.aliyun.ros.cdk.core.Resource implements
         /**
          * Property masterUsername: The master user name for the database instance.
          * <p>
+         * If specified, this user will have read and write permissions for all databases defined in DBMappings. Reserved keywords (which can be queried via DescribeInstanceKeywords), such as root, admin, administrator, etc., cannot be used.
+         * This parameter must be specified together with MasterUserPassword.
+         * <p>
          * @return {@code this}
          * @param masterUsername Property masterUsername: The master user name for the database instance. This parameter is required.
          */
@@ -639,6 +642,9 @@ public class DBInstanceClone extends com.aliyun.ros.cdk.core.Resource implements
         }
         /**
          * Property masterUsername: The master user name for the database instance.
+         * <p>
+         * If specified, this user will have read and write permissions for all databases defined in DBMappings. Reserved keywords (which can be queried via DescribeInstanceKeywords), such as root, admin, administrator, etc., cannot be used.
+         * This parameter must be specified together with MasterUserPassword.
          * <p>
          * @return {@code this}
          * @param masterUsername Property masterUsername: The master user name for the database instance. This parameter is required.
@@ -651,6 +657,8 @@ public class DBInstanceClone extends com.aliyun.ros.cdk.core.Resource implements
         /**
          * Property masterUserPassword: The master password for the database instance.
          * <p>
+         * This parameter must be specified together with MasterUsername.
+         * <p>
          * @return {@code this}
          * @param masterUserPassword Property masterUserPassword: The master password for the database instance. This parameter is required.
          */
@@ -660,6 +668,8 @@ public class DBInstanceClone extends com.aliyun.ros.cdk.core.Resource implements
         }
         /**
          * Property masterUserPassword: The master password for the database instance.
+         * <p>
+         * This parameter must be specified together with MasterUsername.
          * <p>
          * @return {@code this}
          * @param masterUserPassword Property masterUserPassword: The master password for the database instance. This parameter is required.

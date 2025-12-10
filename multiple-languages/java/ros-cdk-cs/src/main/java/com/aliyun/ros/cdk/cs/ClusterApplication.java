@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::ClusterApplication</code>, which is used to deploy an application in a Container Service for Kubernetes (ACK) cluster.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::ClusterApplication</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.814Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.047Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ClusterApplication")
 public class ClusterApplication extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cs.IClusterApplication {
 
@@ -158,6 +158,35 @@ public class ClusterApplication extends com.aliyun.ros.cdk.core.Resource impleme
          */
         public Builder yamlContent(final com.aliyun.ros.cdk.core.IResolvable yamlContent) {
             this.props.yamlContent(yamlContent);
+            return this;
+        }
+
+        /**
+         * Property creationMode: Creation modes include: - Normal: create new resources, will report error if already exists.
+         * <p>
+         * <ul>
+         * <li>Apply: similar to kubectl apply, create if not exists, update if exists. During the deletion phase, ROS will delete newly created application, but updated existing application will not be deleted.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param creationMode Property creationMode: Creation modes include: - Normal: create new resources, will report error if already exists. This parameter is required.
+         */
+        public Builder creationMode(final java.lang.String creationMode) {
+            this.props.creationMode(creationMode);
+            return this;
+        }
+        /**
+         * Property creationMode: Creation modes include: - Normal: create new resources, will report error if already exists.
+         * <p>
+         * <ul>
+         * <li>Apply: similar to kubectl apply, create if not exists, update if exists. During the deletion phase, ROS will delete newly created application, but updated existing application will not be deleted.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param creationMode Property creationMode: Creation modes include: - Normal: create new resources, will report error if already exists. This parameter is required.
+         */
+        public Builder creationMode(final com.aliyun.ros.cdk.core.IResolvable creationMode) {
+            this.props.creationMode(creationMode);
             return this;
         }
 

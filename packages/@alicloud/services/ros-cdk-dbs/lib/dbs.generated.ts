@@ -150,7 +150,7 @@ function rosDownloadPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DBS::Download`, which is used to create an advanced download task.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DBS::Download`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Download` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dbs-download
  */
@@ -513,7 +513,7 @@ function rosRestoreTaskPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DBS::RestoreTask`, which is used to create a restoration task of Data Disaster Recovery.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DBS::RestoreTask`.
  * @Note This class does not contain additional functions, so it is recommended to use the `RestoreTask` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dbs-restoretask
  */

@@ -53,6 +53,11 @@ export interface RosASKClusterProps {
     readonly endpointPublicAccess?: boolean | ros.IResolvable;
 
     /**
+     * @Property ipStack: The IP stack of the cluster. Value: ipv4 (Single stack) or ipv6 (Dual Stack). Default value: ipv4
+     */
+    readonly ipStack?: string | ros.IResolvable;
+
+    /**
      * @Property kubernetesVersion: The version of the Kubernetes cluster.
      */
     readonly kubernetesVersion?: string | ros.IResolvable;
@@ -156,8 +161,9 @@ function RosASKClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateString))(properties.vSwitchIds));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('addons', ros.listValidator(RosASKCluster_AddonsPropertyValidator))(properties.addons));
-    errors.collect(ros.propertyValidator('clusterSpec', ros.validateString)(properties.clusterSpec));
     errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
+    errors.collect(ros.propertyValidator('clusterSpec', ros.validateString)(properties.clusterSpec));
+    errors.collect(ros.propertyValidator('ipStack', ros.validateString)(properties.ipStack));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     errors.collect(ros.propertyValidator('timeZone', ros.validateString)(properties.timeZone));
@@ -200,6 +206,7 @@ function rosASKClusterPropsToRosTemplate(properties: any, enableResourceProperty
       'DeletionProtection': ros.booleanToRosTemplate(properties.deletionProtection),
       'EncryptionProviderKey': ros.stringToRosTemplate(properties.encryptionProviderKey),
       'EndpointPublicAccess': ros.booleanToRosTemplate(properties.endpointPublicAccess),
+      'IpStack': ros.stringToRosTemplate(properties.ipStack),
       'KubernetesVersion': ros.stringToRosTemplate(properties.kubernetesVersion),
       'MaintenanceWindow': rosASKClusterMaintenanceWindowPropertyToRosTemplate(properties.maintenanceWindow),
       'PrivateZone': ros.booleanToRosTemplate(properties.privateZone),
@@ -217,7 +224,7 @@ function rosASKClusterPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ASKCluster`, which is used to create a Container Service for Kubernetes (ACK) Serverless cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ASKCluster`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ASKCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-askcluster
  */
@@ -330,6 +337,11 @@ export class RosASKCluster extends ros.RosResource {
     public endpointPublicAccess: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property ipStack: The IP stack of the cluster. Value: ipv4 (Single stack) or ipv6 (Dual Stack). Default value: ipv4
+     */
+    public ipStack: string | ros.IResolvable | undefined;
+
+    /**
      * @Property kubernetesVersion: The version of the Kubernetes cluster.
      */
     public kubernetesVersion: string | ros.IResolvable | undefined;
@@ -434,6 +446,7 @@ export class RosASKCluster extends ros.RosResource {
         this.deletionProtection = props.deletionProtection;
         this.encryptionProviderKey = props.encryptionProviderKey;
         this.endpointPublicAccess = props.endpointPublicAccess;
+        this.ipStack = props.ipStack;
         this.kubernetesVersion = props.kubernetesVersion;
         this.maintenanceWindow = props.maintenanceWindow;
         this.privateZone = props.privateZone;
@@ -459,6 +472,7 @@ export class RosASKCluster extends ros.RosResource {
             deletionProtection: this.deletionProtection,
             encryptionProviderKey: this.encryptionProviderKey,
             endpointPublicAccess: this.endpointPublicAccess,
+            ipStack: this.ipStack,
             kubernetesVersion: this.kubernetesVersion,
             maintenanceWindow: this.maintenanceWindow,
             privateZone: this.privateZone,
@@ -769,7 +783,7 @@ function rosAnyClusterPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::AnyCluster`, which is used to create a Container Service for Kubernetes (ACK) cluster of a specific type.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::AnyCluster`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AnyCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-anycluster
  */
@@ -981,7 +995,7 @@ function rosApplicationDeploymentPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ApplicationDeployment`, which is used to deploy an application.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ApplicationDeployment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ApplicationDeployment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-applicationdeployment
  */
@@ -1180,7 +1194,7 @@ function rosClusterAddonsPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterAddons`, which is used to install components in a cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterAddons`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ClusterAddons` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusteraddons
  */
@@ -1480,6 +1494,13 @@ export interface RosClusterApplicationProps {
     readonly yamlContent: string | ros.IResolvable;
 
     /**
+     * @Property creationMode: Creation modes include:
+     * - Normal: create new resources, will report error if already exists.
+     * - Apply: similar to kubectl apply, create if not exists, update if exists. During the deletion phase, ROS will delete newly created application, but updated existing application will not be deleted.
+     */
+    readonly creationMode?: string | ros.IResolvable;
+
+    /**
      * @Property defaultNamespace: The default namespace for the application, default value is default.
      * If a namespace is defined in yaml metadata, its priority is higher than DefaultNamespace.
      * If the DefaultNamespace does not exist, ROS will create it automatically and keep it by default during the delete phase.
@@ -1537,6 +1558,13 @@ function RosClusterApplicationPropsValidator(properties: any): ros.ValidationRes
         }));
     }
     errors.collect(ros.propertyValidator('rolePolicy', ros.validateString)(properties.rolePolicy));
+    if(properties.creationMode && (typeof properties.creationMode) !== 'object') {
+        errors.collect(ros.propertyValidator('creationMode', ros.validateAllowedValues)({
+          data: properties.creationMode,
+          allowedValues: ["Normal","Apply"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('creationMode', ros.validateString)(properties.creationMode));
     errors.collect(ros.propertyValidator('yamlContent', ros.requiredValidator)(properties.yamlContent));
     if(properties.yamlContent && (Array.isArray(properties.yamlContent) || (typeof properties.yamlContent) === 'string')) {
         errors.collect(ros.propertyValidator('yamlContent', ros.validateLength)({
@@ -1591,6 +1619,7 @@ function rosClusterApplicationPropsToRosTemplate(properties: any, enableResource
     return {
       'ClusterId': ros.stringToRosTemplate(properties.clusterId),
       'YamlContent': ros.stringToRosTemplate(properties.yamlContent),
+      'CreationMode': ros.stringToRosTemplate(properties.creationMode),
       'DefaultNamespace': ros.stringToRosTemplate(properties.defaultNamespace),
       'DefaultNamespaceDeletion': ros.booleanToRosTemplate(properties.defaultNamespaceDeletion),
       'RolePolicy': ros.stringToRosTemplate(properties.rolePolicy),
@@ -1601,7 +1630,7 @@ function rosClusterApplicationPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterApplication`, which is used to deploy an application in a Container Service for Kubernetes (ACK) cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterApplication`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ClusterApplication` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterapplication
  */
@@ -1633,6 +1662,13 @@ export class RosClusterApplication extends ros.RosResource {
      * @Property yamlContent: The yaml content of application.
      */
     public yamlContent: string | ros.IResolvable;
+
+    /**
+     * @Property creationMode: Creation modes include:
+     * - Normal: create new resources, will report error if already exists.
+     * - Apply: similar to kubectl apply, create if not exists, update if exists. During the deletion phase, ROS will delete newly created application, but updated existing application will not be deleted.
+     */
+    public creationMode: string | ros.IResolvable | undefined;
 
     /**
      * @Property defaultNamespace: The default namespace for the application, default value is default.
@@ -1687,6 +1723,7 @@ export class RosClusterApplication extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.clusterId = props.clusterId;
         this.yamlContent = props.yamlContent;
+        this.creationMode = props.creationMode;
         this.defaultNamespace = props.defaultNamespace;
         this.defaultNamespaceDeletion = props.defaultNamespaceDeletion;
         this.rolePolicy = props.rolePolicy;
@@ -1700,6 +1737,7 @@ export class RosClusterApplication extends ros.RosResource {
         return {
             clusterId: this.clusterId,
             yamlContent: this.yamlContent,
+            creationMode: this.creationMode,
             defaultNamespace: this.defaultNamespace,
             defaultNamespaceDeletion: this.defaultNamespaceDeletion,
             rolePolicy: this.rolePolicy,
@@ -2003,7 +2041,7 @@ function rosClusterHelmApplicationPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterHelmApplication`The , which resource type deploys an application using Helm.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterHelmApplication`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ClusterHelmApplication` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterhelmapplication
  */
@@ -2412,7 +2450,7 @@ function rosClusterNodePoolPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterNodePool`, which is used to create a node pool for a Container Service for Kubernetes (ACK) cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterNodePool`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ClusterNodePool` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusternodepool
  */
@@ -2628,6 +2666,10 @@ export namespace RosClusterNodePool {
          */
         readonly category?: string | ros.IResolvable;
         /**
+         * @Property categories: The list of data disk types.
+         */
+        readonly categories?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
          * @Property encrypted: Specifies whether to encrypt a data disk. Valid values:
      * true: encrypts a data disk.
      * false: does not encrypt a data disk.
@@ -2665,6 +2707,14 @@ function RosClusterNodePool_DataDisksPropertyValidator(properties: any): ros.Val
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
+    if(properties.categories && (Array.isArray(properties.categories) || (typeof properties.categories) === 'string')) {
+        errors.collect(ros.propertyValidator('categories', ros.validateLength)({
+            data: properties.categories.length,
+            min: 1,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('categories', ros.listValidator(ros.validateString))(properties.categories));
     errors.collect(ros.propertyValidator('encrypted', ros.validateBoolean)(properties.encrypted));
     errors.collect(ros.propertyValidator('performanceLevel', ros.validateString)(properties.performanceLevel));
     errors.collect(ros.propertyValidator('size', ros.validateNumber)(properties.size));
@@ -2685,6 +2735,7 @@ function rosClusterNodePoolDataDisksPropertyToRosTemplate(properties: any): any 
     RosClusterNodePool_DataDisksPropertyValidator(properties).assertSuccess();
     return {
       'Category': ros.stringToRosTemplate(properties.category),
+      'Categories': ros.listMapper(ros.stringToRosTemplate)(properties.categories),
       'Encrypted': ros.booleanToRosTemplate(properties.encrypted),
       'PerformanceLevel': ros.stringToRosTemplate(properties.performanceLevel),
       'Size': ros.numberToRosTemplate(properties.size),
@@ -3830,7 +3881,7 @@ function rosGrantPermissionsPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::GrantPermissions`, which is used to grant role-based access control (RBAC) permissions to a Resource Access Management (RAM) user or RAM role.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::GrantPermissions`.
  * @Note This class does not contain additional functions, so it is recommended to use the `GrantPermissions` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-grantpermissions
  */
@@ -4025,6 +4076,11 @@ export interface RosManagedEdgeKubernetesClusterProps {
     readonly endpointPublicAccess?: boolean | ros.IResolvable;
 
     /**
+     * @Property ipStack: The IP stack of the cluster. Value: ipv4 (Single stack) or ipv6 (Dual Stack). Default value: ipv4
+     */
+    readonly ipStack?: string | ros.IResolvable;
+
+    /**
      * @Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group. 
      * This parameter takes effect only if security_group_id is left empty.
      * Note You must specify an advanced security group for a cluster that has Terway installed.
@@ -4082,6 +4138,11 @@ export interface RosManagedEdgeKubernetesClusterProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
+     * @Property rrsaConfig: The configuration of RRSA.
+     */
+    readonly rrsaConfig?: RosManagedEdgeKubernetesCluster.RrsaConfigProperty | ros.IResolvable;
+
+    /**
      * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0\/20 is used by default.
      */
     readonly serviceCidr?: string | ros.IResolvable;
@@ -4136,11 +4197,13 @@ function RosManagedEdgeKubernetesClusterPropsValidator(properties: any): ros.Val
     errors.collect(ros.propertyValidator('endpointPublicAccess', ros.validateBoolean)(properties.endpointPublicAccess));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('addons', ros.listValidator(RosManagedEdgeKubernetesCluster_AddonsPropertyValidator))(properties.addons));
+    errors.collect(ros.propertyValidator('ipStack', ros.validateString)(properties.ipStack));
     errors.collect(ros.propertyValidator('profile', ros.validateString)(properties.profile));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     errors.collect(ros.propertyValidator('isEnterpriseSecurityGroup', ros.validateBoolean)(properties.isEnterpriseSecurityGroup));
     errors.collect(ros.propertyValidator('cloudMonitorFlags', ros.validateBoolean)(properties.cloudMonitorFlags));
+    errors.collect(ros.propertyValidator('rrsaConfig', RosManagedEdgeKubernetesCluster_RrsaConfigPropertyValidator)(properties.rrsaConfig));
     errors.collect(ros.propertyValidator('serviceCidr', ros.validateString)(properties.serviceCidr));
     errors.collect(ros.propertyValidator('zoneIds', ros.listValidator(ros.validateString))(properties.zoneIds));
     errors.collect(ros.propertyValidator('proxyMode', ros.validateString)(properties.proxyMode));
@@ -4198,6 +4261,7 @@ function rosManagedEdgeKubernetesClusterPropsToRosTemplate(properties: any, enab
       'DeletionProtection': ros.booleanToRosTemplate(properties.deletionProtection),
       'EncryptionProviderKey': ros.stringToRosTemplate(properties.encryptionProviderKey),
       'EndpointPublicAccess': ros.booleanToRosTemplate(properties.endpointPublicAccess),
+      'IpStack': ros.stringToRosTemplate(properties.ipStack),
       'IsEnterpriseSecurityGroup': ros.booleanToRosTemplate(properties.isEnterpriseSecurityGroup),
       'KeyPair': ros.stringToRosTemplate(properties.keyPair),
       'KubernetesVersion': ros.stringToRosTemplate(properties.kubernetesVersion),
@@ -4208,6 +4272,7 @@ function rosManagedEdgeKubernetesClusterPropsToRosTemplate(properties: any, enab
       'Profile': ros.stringToRosTemplate(properties.profile),
       'ProxyMode': ros.stringToRosTemplate(properties.proxyMode),
       'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'RrsaConfig': rosManagedEdgeKubernetesClusterRrsaConfigPropertyToRosTemplate(properties.rrsaConfig),
       'ServiceCidr': ros.stringToRosTemplate(properties.serviceCidr),
       'SnatEntry': ros.booleanToRosTemplate(properties.snatEntry),
       'Tags': ros.listMapper(rosManagedEdgeKubernetesClusterTagsPropertyToRosTemplate)(properties.tags),
@@ -4219,7 +4284,7 @@ function rosManagedEdgeKubernetesClusterPropsToRosTemplate(properties: any, enab
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ManagedEdgeKubernetesCluster`, which is used to create a Container Service for Kubernetes (ACK) Edge cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ManagedEdgeKubernetesCluster`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ManagedEdgeKubernetesCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managededgekubernetescluster
  */
@@ -4340,6 +4405,11 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
     public endpointPublicAccess: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property ipStack: The IP stack of the cluster. Value: ipv4 (Single stack) or ipv6 (Dual Stack). Default value: ipv4
+     */
+    public ipStack: string | ros.IResolvable | undefined;
+
+    /**
      * @Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group. 
      * This parameter takes effect only if security_group_id is left empty.
      * Note You must specify an advanced security group for a cluster that has Terway installed.
@@ -4395,6 +4465,11 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
      * @Property resourceGroupId: The ID of resource group.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property rrsaConfig: The configuration of RRSA.
+     */
+    public rrsaConfig: RosManagedEdgeKubernetesCluster.RrsaConfigProperty | ros.IResolvable | undefined;
 
     /**
      * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0\/20 is used by default.
@@ -4465,6 +4540,7 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
         this.deletionProtection = props.deletionProtection;
         this.encryptionProviderKey = props.encryptionProviderKey;
         this.endpointPublicAccess = props.endpointPublicAccess;
+        this.ipStack = props.ipStack;
         this.isEnterpriseSecurityGroup = props.isEnterpriseSecurityGroup;
         this.keyPair = props.keyPair;
         this.kubernetesVersion = props.kubernetesVersion;
@@ -4475,6 +4551,7 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
         this.profile = props.profile;
         this.proxyMode = props.proxyMode;
         this.resourceGroupId = props.resourceGroupId;
+        this.rrsaConfig = props.rrsaConfig;
         this.serviceCidr = props.serviceCidr;
         this.snatEntry = props.snatEntry;
         this.tags = props.tags;
@@ -4495,6 +4572,7 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
             deletionProtection: this.deletionProtection,
             encryptionProviderKey: this.encryptionProviderKey,
             endpointPublicAccess: this.endpointPublicAccess,
+            ipStack: this.ipStack,
             isEnterpriseSecurityGroup: this.isEnterpriseSecurityGroup,
             keyPair: this.keyPair,
             kubernetesVersion: this.kubernetesVersion,
@@ -4505,6 +4583,7 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
             profile: this.profile,
             proxyMode: this.proxyMode,
             resourceGroupId: this.resourceGroupId,
+            rrsaConfig: this.rrsaConfig,
             serviceCidr: this.serviceCidr,
             snatEntry: this.snatEntry,
             tags: this.tags,
@@ -4594,6 +4673,10 @@ export namespace RosManagedEdgeKubernetesCluster {
          */
         readonly category?: string | ros.IResolvable;
         /**
+         * @Property categories: The list of data disk types.
+         */
+        readonly categories?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
          * @Property encrypted: Specifies whether to encrypt a data disk. Valid values:
      * true: encrypts a data disk.
      * false: does not encrypt a data disk.
@@ -4631,6 +4714,14 @@ function RosManagedEdgeKubernetesCluster_DataDisksPropertyValidator(properties: 
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
+    if(properties.categories && (Array.isArray(properties.categories) || (typeof properties.categories) === 'string')) {
+        errors.collect(ros.propertyValidator('categories', ros.validateLength)({
+            data: properties.categories.length,
+            min: 1,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('categories', ros.listValidator(ros.validateString))(properties.categories));
     errors.collect(ros.propertyValidator('encrypted', ros.validateBoolean)(properties.encrypted));
     errors.collect(ros.propertyValidator('performanceLevel', ros.validateString)(properties.performanceLevel));
     errors.collect(ros.propertyValidator('size', ros.validateNumber)(properties.size));
@@ -4651,6 +4742,7 @@ function rosManagedEdgeKubernetesClusterDataDisksPropertyToRosTemplate(propertie
     RosManagedEdgeKubernetesCluster_DataDisksPropertyValidator(properties).assertSuccess();
     return {
       'Category': ros.stringToRosTemplate(properties.category),
+      'Categories': ros.listMapper(ros.stringToRosTemplate)(properties.categories),
       'Encrypted': ros.booleanToRosTemplate(properties.encrypted),
       'PerformanceLevel': ros.stringToRosTemplate(properties.performanceLevel),
       'Size': ros.numberToRosTemplate(properties.size),
@@ -5152,6 +5244,48 @@ function rosManagedEdgeKubernetesClusterNodePoolsPropertyToRosTemplate(propertie
       'NodePoolInfo': rosManagedEdgeKubernetesClusterNodePoolInfoPropertyToRosTemplate(properties.nodePoolInfo),
       'KubernetesConfig': rosManagedEdgeKubernetesClusterKubernetesConfigPropertyToRosTemplate(properties.kubernetesConfig),
       'ScalingGroup': rosManagedEdgeKubernetesClusterScalingGroupPropertyToRosTemplate(properties.scalingGroup),
+    };
+}
+
+export namespace RosManagedEdgeKubernetesCluster {
+    /**
+     * @stability external
+     */
+    export interface RrsaConfigProperty {
+        /**
+         * @Property enabled: Specifies whether to enable the RAM Roles for Service Accounts (RRSA) feature.
+         */
+        readonly enabled: boolean | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `RrsaConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `RrsaConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosManagedEdgeKubernetesCluster_RrsaConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('enabled', ros.requiredValidator)(properties.enabled));
+    errors.collect(ros.propertyValidator('enabled', ros.validateBoolean)(properties.enabled));
+    return errors.wrap('supplied properties not correct for "RrsaConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedEdgeKubernetesCluster.RrsaConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `RrsaConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedEdgeKubernetesCluster.RrsaConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosManagedEdgeKubernetesClusterRrsaConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosManagedEdgeKubernetesCluster_RrsaConfigPropertyValidator(properties).assertSuccess();
+    return {
+      'Enabled': ros.booleanToRosTemplate(properties.enabled),
     };
 }
 
@@ -5674,6 +5808,11 @@ export interface RosManagedKubernetesClusterProps {
     readonly formatDisk?: boolean | ros.IResolvable;
 
     /**
+     * @Property ipStack: The IP stack of the cluster. Value: ipv4 (Single stack) or ipv6 (Dual Stack). Default value: ipv4
+     */
+    readonly ipStack?: string | ros.IResolvable;
+
+    /**
      * @Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group. 
      * This parameter takes effect only if security_group_id is left empty.
      * Note You must specify an advanced security group for a cluster that has Terway installed.
@@ -5777,6 +5916,11 @@ export interface RosManagedKubernetesClusterProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
+     * @Property rrsaConfig: The configuration of RRSA.
+     */
+    readonly rrsaConfig?: RosManagedKubernetesCluster.RrsaConfigProperty | ros.IResolvable;
+
+    /**
      * @Property runtime: The container runtime of the cluster. The default runtime is Docker.
      */
     readonly runtime?: RosManagedKubernetesCluster.RuntimeProperty | ros.IResolvable;
@@ -5865,6 +6009,7 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('userData', ros.validateString)(properties.userData));
     errors.collect(ros.propertyValidator('addons', ros.listValidator(RosManagedKubernetesCluster_AddonsPropertyValidator))(properties.addons));
+    errors.collect(ros.propertyValidator('ipStack', ros.validateString)(properties.ipStack));
     errors.collect(ros.propertyValidator('loadBalancerSpec', ros.validateString)(properties.loadBalancerSpec));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
@@ -5888,6 +6033,7 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     }
     errors.collect(ros.propertyValidator('osType', ros.validateString)(properties.osType));
     errors.collect(ros.propertyValidator('nodeNameMode', ros.validateString)(properties.nodeNameMode));
+    errors.collect(ros.propertyValidator('rrsaConfig', RosManagedKubernetesCluster_RrsaConfigPropertyValidator)(properties.rrsaConfig));
     errors.collect(ros.propertyValidator('securityHardeningOs', ros.validateBoolean)(properties.securityHardeningOs));
     errors.collect(ros.propertyValidator('serviceCidr', ros.validateString)(properties.serviceCidr));
     errors.collect(ros.propertyValidator('podVswitchIds', ros.listValidator(ros.validateString))(properties.podVswitchIds));
@@ -5982,6 +6128,7 @@ function rosManagedKubernetesClusterPropsToRosTemplate(properties: any, enableRe
       'EncryptionProviderKey': ros.stringToRosTemplate(properties.encryptionProviderKey),
       'EndpointPublicAccess': ros.booleanToRosTemplate(properties.endpointPublicAccess),
       'FormatDisk': ros.booleanToRosTemplate(properties.formatDisk),
+      'IpStack': ros.stringToRosTemplate(properties.ipStack),
       'IsEnterpriseSecurityGroup': ros.booleanToRosTemplate(properties.isEnterpriseSecurityGroup),
       'KeepInstanceName': ros.booleanToRosTemplate(properties.keepInstanceName),
       'KeyPair': ros.stringToRosTemplate(properties.keyPair),
@@ -5997,6 +6144,7 @@ function rosManagedKubernetesClusterPropsToRosTemplate(properties: any, enableRe
       'PodVswitchIds': ros.listMapper(ros.stringToRosTemplate)(properties.podVswitchIds),
       'ProxyMode': ros.stringToRosTemplate(properties.proxyMode),
       'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'RrsaConfig': rosManagedKubernetesClusterRrsaConfigPropertyToRosTemplate(properties.rrsaConfig),
       'Runtime': rosManagedKubernetesClusterRuntimePropertyToRosTemplate(properties.runtime),
       'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
       'SecurityHardeningOs': ros.booleanToRosTemplate(properties.securityHardeningOs),
@@ -6013,7 +6161,7 @@ function rosManagedKubernetesClusterPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ManagedKubernetesCluster`, which is used to create a Container Service for Kubernetes (ACK) managed cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ManagedKubernetesCluster`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ManagedKubernetesCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managedkubernetescluster
  */
@@ -6184,6 +6332,11 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
     public formatDisk: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property ipStack: The IP stack of the cluster. Value: ipv4 (Single stack) or ipv6 (Dual Stack). Default value: ipv4
+     */
+    public ipStack: string | ros.IResolvable | undefined;
+
+    /**
      * @Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group. 
      * This parameter takes effect only if security_group_id is left empty.
      * Note You must specify an advanced security group for a cluster that has Terway installed.
@@ -6285,6 +6438,11 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
      * @Property resourceGroupId: The ID of resource group.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property rrsaConfig: The configuration of RRSA.
+     */
+    public rrsaConfig: RosManagedKubernetesCluster.RrsaConfigProperty | ros.IResolvable | undefined;
 
     /**
      * @Property runtime: The container runtime of the cluster. The default runtime is Docker.
@@ -6392,6 +6550,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
         this.encryptionProviderKey = props.encryptionProviderKey;
         this.endpointPublicAccess = props.endpointPublicAccess;
         this.formatDisk = props.formatDisk;
+        this.ipStack = props.ipStack;
         this.isEnterpriseSecurityGroup = props.isEnterpriseSecurityGroup;
         this.keepInstanceName = props.keepInstanceName;
         this.keyPair = props.keyPair;
@@ -6407,6 +6566,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
         this.podVswitchIds = props.podVswitchIds;
         this.proxyMode = props.proxyMode;
         this.resourceGroupId = props.resourceGroupId;
+        this.rrsaConfig = props.rrsaConfig;
         this.runtime = props.runtime;
         this.securityGroupId = props.securityGroupId;
         this.securityHardeningOs = props.securityHardeningOs;
@@ -6439,6 +6599,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
             encryptionProviderKey: this.encryptionProviderKey,
             endpointPublicAccess: this.endpointPublicAccess,
             formatDisk: this.formatDisk,
+            ipStack: this.ipStack,
             isEnterpriseSecurityGroup: this.isEnterpriseSecurityGroup,
             keepInstanceName: this.keepInstanceName,
             keyPair: this.keyPair,
@@ -6454,6 +6615,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
             podVswitchIds: this.podVswitchIds,
             proxyMode: this.proxyMode,
             resourceGroupId: this.resourceGroupId,
+            rrsaConfig: this.rrsaConfig,
             runtime: this.runtime,
             securityGroupId: this.securityGroupId,
             securityHardeningOs: this.securityHardeningOs,
@@ -6548,6 +6710,10 @@ export namespace RosManagedKubernetesCluster {
          */
         readonly category?: string | ros.IResolvable;
         /**
+         * @Property categories: The list of data disk types.
+         */
+        readonly categories?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
          * @Property encrypted: Specifies whether to encrypt a data disk. Valid values:
      * true: encrypts a data disk.
      * false: does not encrypt a data disk.
@@ -6585,6 +6751,14 @@ function RosManagedKubernetesCluster_DataDisksPropertyValidator(properties: any)
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
+    if(properties.categories && (Array.isArray(properties.categories) || (typeof properties.categories) === 'string')) {
+        errors.collect(ros.propertyValidator('categories', ros.validateLength)({
+            data: properties.categories.length,
+            min: 1,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('categories', ros.listValidator(ros.validateString))(properties.categories));
     errors.collect(ros.propertyValidator('encrypted', ros.validateBoolean)(properties.encrypted));
     errors.collect(ros.propertyValidator('performanceLevel', ros.validateString)(properties.performanceLevel));
     errors.collect(ros.propertyValidator('size', ros.validateNumber)(properties.size));
@@ -6605,6 +6779,7 @@ function rosManagedKubernetesClusterDataDisksPropertyToRosTemplate(properties: a
     RosManagedKubernetesCluster_DataDisksPropertyValidator(properties).assertSuccess();
     return {
       'Category': ros.stringToRosTemplate(properties.category),
+      'Categories': ros.listMapper(ros.stringToRosTemplate)(properties.categories),
       'Encrypted': ros.booleanToRosTemplate(properties.encrypted),
       'PerformanceLevel': ros.stringToRosTemplate(properties.performanceLevel),
       'Size': ros.numberToRosTemplate(properties.size),
@@ -7173,6 +7348,48 @@ function rosManagedKubernetesClusterNodePoolsPropertyToRosTemplate(properties: a
       'NodePoolInfo': rosManagedKubernetesClusterNodePoolInfoPropertyToRosTemplate(properties.nodePoolInfo),
       'KubernetesConfig': rosManagedKubernetesClusterKubernetesConfigPropertyToRosTemplate(properties.kubernetesConfig),
       'ScalingGroup': rosManagedKubernetesClusterScalingGroupPropertyToRosTemplate(properties.scalingGroup),
+    };
+}
+
+export namespace RosManagedKubernetesCluster {
+    /**
+     * @stability external
+     */
+    export interface RrsaConfigProperty {
+        /**
+         * @Property enabled: Specifies whether to enable the RAM Roles for Service Accounts (RRSA) feature.
+         */
+        readonly enabled: boolean | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `RrsaConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `RrsaConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosManagedKubernetesCluster_RrsaConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('enabled', ros.requiredValidator)(properties.enabled));
+    errors.collect(ros.propertyValidator('enabled', ros.validateBoolean)(properties.enabled));
+    return errors.wrap('supplied properties not correct for "RrsaConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedKubernetesCluster.RrsaConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `RrsaConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedKubernetesCluster.RrsaConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosManagedKubernetesClusterRrsaConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosManagedKubernetesCluster_RrsaConfigPropertyValidator(properties).assertSuccess();
+    return {
+      'Enabled': ros.booleanToRosTemplate(properties.enabled),
     };
 }
 

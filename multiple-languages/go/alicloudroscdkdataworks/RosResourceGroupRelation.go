@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::DataWorks::ResourceGroupRelation`, which is used to associate a resource group with a workspace.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::DataWorks::ResourceGroupRelation`.
 type RosResourceGroupRelation interface {
 	alicloudroscdkcore.RosResource
 	// Returns: the stack trace of the point where this Resource was created from, sourced

@@ -1,0 +1,5 @@
+@alicloud/ros-cdk-cdt.IResourcePackage=com.aliyun.ros.cdk.cdt.IResourcePackage
+@alicloud/ros-cdk-cdt.ResourcePackage=com.aliyun.ros.cdk.cdt.ResourcePackage
+@alicloud/ros-cdk-cdt.ResourcePackageProps=com.aliyun.ros.cdk.cdt.ResourcePackageProps
+@alicloud/ros-cdk-cdt.RosResourcePackage=com.aliyun.ros.cdk.cdt.RosResourcePackage
+@alicloud/ros-cdk-cdt.RosResourcePackageProps=com.aliyun.ros.cdk.cdt.RosResourcePackageProps

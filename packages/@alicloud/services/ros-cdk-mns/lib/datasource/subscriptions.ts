@@ -45,7 +45,7 @@ export interface ISubscriptions extends ros.IResource {
     readonly attrSubscriptions: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::MNS::Subscriptions`, which is used to query the information about the subscriptions.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::MNS::Subscriptions`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSubscriptions`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-subscriptions
  */

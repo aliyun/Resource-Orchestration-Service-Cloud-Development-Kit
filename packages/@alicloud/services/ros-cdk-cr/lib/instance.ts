@@ -10,11 +10,6 @@ export { RosInstance as InstanceProperty };
 export interface InstanceProps {
 
     /**
-     * Property imageScanner: Security scan engine.
-     */
-    readonly imageScanner: string | ros.IResolvable;
-
-    /**
      * Property instanceName: Instance name.The value contains 3 to 30 lowercase letters, digits, and delimiters "-"(it can not be first or last).
      */
     readonly instanceName: string | ros.IResolvable;
@@ -28,14 +23,19 @@ export interface InstanceProps {
     readonly instanceType: string | ros.IResolvable;
 
     /**
-     * Property period: Prepaid cycle. The unit is Monthly, please enter an integer multiple of 12 for annual paid products.
+     * Property imageScanner: Security scan engine.
      */
-    readonly period: number | ros.IResolvable;
+    readonly imageScanner?: string | ros.IResolvable;
 
     /**
      * Property instanceStorageName: Custom OSS Bucket name.
      */
     readonly instanceStorageName?: string | ros.IResolvable;
+
+    /**
+     * Property period: Prepaid cycle. The unit is Monthly, please enter an integer multiple of 12 for annual paid products.
+     */
+    readonly period?: number | ros.IResolvable;
 
     /**
      * Property renewalStatus: Automatic renewal status, value:
@@ -94,7 +94,7 @@ export interface IInstance extends ros.IResource {
     readonly attrResourceGroupId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CR::Instance`, which is used to create a Container Registry Enterprise Edition instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CR::Instance`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instance
  */

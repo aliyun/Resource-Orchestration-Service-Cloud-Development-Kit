@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.esa;
 /**
  * Represents a <code>NetworkOptimization</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:25.477Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:56.545Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.esa.$Module.class, fqn = "@alicloud/ros-cdk-esa.INetworkOptimization")
 @software.amazon.jsii.Jsii.Proxy(INetworkOptimization.Jsii$Proxy.class)
 public interface INetworkOptimization extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

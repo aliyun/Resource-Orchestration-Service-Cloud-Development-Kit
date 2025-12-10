@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb.datasource;
 /**
  * Represents a <code>DBClusters</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:28.122Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:59.111Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.datasource.IDBClusters")
 @software.amazon.jsii.Jsii.Proxy(IDBClusters.Jsii$Proxy.class)
 public interface IDBClusters extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

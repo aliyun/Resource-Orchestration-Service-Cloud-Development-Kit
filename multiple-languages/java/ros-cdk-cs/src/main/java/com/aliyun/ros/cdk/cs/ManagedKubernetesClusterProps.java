@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managedkubernetescluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.872Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.096Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ManagedKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(ManagedKubernetesClusterProps.Jsii$Proxy.class)
 public interface ManagedKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -147,6 +147,15 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
      * mounted to the ECS instances.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getFormatDisk() {
+        return null;
+    }
+
+    /**
+     * Property ipStack: The IP stack of the cluster.
+     * <p>
+     * Value: ipv4 (Single stack) or ipv6 (Dual Stack). Default value: ipv4
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIpStack() {
         return null;
     }
 
@@ -306,6 +315,13 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
     }
 
     /**
+     * Property rrsaConfig: The configuration of RRSA.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRrsaConfig() {
+        return null;
+    }
+
+    /**
      * Property runtime: The container runtime of the cluster.
      * <p>
      * The default runtime is Docker.
@@ -438,6 +454,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         java.lang.Object encryptionProviderKey;
         java.lang.Object endpointPublicAccess;
         java.lang.Object formatDisk;
+        java.lang.Object ipStack;
         java.lang.Object isEnterpriseSecurityGroup;
         java.lang.Object keepInstanceName;
         java.lang.Object keyPair;
@@ -453,6 +470,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         java.lang.Object podVswitchIds;
         java.lang.Object proxyMode;
         java.lang.Object resourceGroupId;
+        java.lang.Object rrsaConfig;
         java.lang.Object runtime;
         java.lang.Object securityGroupId;
         java.lang.Object securityHardeningOs;
@@ -823,6 +841,28 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
          */
         public Builder formatDisk(com.aliyun.ros.cdk.core.IResolvable formatDisk) {
             this.formatDisk = formatDisk;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getIpStack}
+         * @param ipStack Property ipStack: The IP stack of the cluster.
+         *                Value: ipv4 (Single stack) or ipv6 (Dual Stack). Default value: ipv4
+         * @return {@code this}
+         */
+        public Builder ipStack(java.lang.String ipStack) {
+            this.ipStack = ipStack;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getIpStack}
+         * @param ipStack Property ipStack: The IP stack of the cluster.
+         *                Value: ipv4 (Single stack) or ipv6 (Dual Stack). Default value: ipv4
+         * @return {@code this}
+         */
+        public Builder ipStack(com.aliyun.ros.cdk.core.IResolvable ipStack) {
+            this.ipStack = ipStack;
             return this;
         }
 
@@ -1205,6 +1245,26 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         }
 
         /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getRrsaConfig}
+         * @param rrsaConfig Property rrsaConfig: The configuration of RRSA.
+         * @return {@code this}
+         */
+        public Builder rrsaConfig(com.aliyun.ros.cdk.core.IResolvable rrsaConfig) {
+            this.rrsaConfig = rrsaConfig;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getRrsaConfig}
+         * @param rrsaConfig Property rrsaConfig: The configuration of RRSA.
+         * @return {@code this}
+         */
+        public Builder rrsaConfig(com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.RrsaConfigProperty rrsaConfig) {
+            this.rrsaConfig = rrsaConfig;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ManagedKubernetesClusterProps#getRuntime}
          * @param runtime Property runtime: The container runtime of the cluster.
          *                The default runtime is Docker.
@@ -1498,6 +1558,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         private final java.lang.Object encryptionProviderKey;
         private final java.lang.Object endpointPublicAccess;
         private final java.lang.Object formatDisk;
+        private final java.lang.Object ipStack;
         private final java.lang.Object isEnterpriseSecurityGroup;
         private final java.lang.Object keepInstanceName;
         private final java.lang.Object keyPair;
@@ -1513,6 +1574,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         private final java.lang.Object podVswitchIds;
         private final java.lang.Object proxyMode;
         private final java.lang.Object resourceGroupId;
+        private final java.lang.Object rrsaConfig;
         private final java.lang.Object runtime;
         private final java.lang.Object securityGroupId;
         private final java.lang.Object securityHardeningOs;
@@ -1547,6 +1609,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             this.encryptionProviderKey = software.amazon.jsii.Kernel.get(this, "encryptionProviderKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.endpointPublicAccess = software.amazon.jsii.Kernel.get(this, "endpointPublicAccess", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.formatDisk = software.amazon.jsii.Kernel.get(this, "formatDisk", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ipStack = software.amazon.jsii.Kernel.get(this, "ipStack", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.isEnterpriseSecurityGroup = software.amazon.jsii.Kernel.get(this, "isEnterpriseSecurityGroup", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.keepInstanceName = software.amazon.jsii.Kernel.get(this, "keepInstanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.keyPair = software.amazon.jsii.Kernel.get(this, "keyPair", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1562,6 +1625,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             this.podVswitchIds = software.amazon.jsii.Kernel.get(this, "podVswitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.proxyMode = software.amazon.jsii.Kernel.get(this, "proxyMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.rrsaConfig = software.amazon.jsii.Kernel.get(this, "rrsaConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.runtime = software.amazon.jsii.Kernel.get(this, "runtime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityHardeningOs = software.amazon.jsii.Kernel.get(this, "securityHardeningOs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1597,6 +1661,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             this.encryptionProviderKey = builder.encryptionProviderKey;
             this.endpointPublicAccess = builder.endpointPublicAccess;
             this.formatDisk = builder.formatDisk;
+            this.ipStack = builder.ipStack;
             this.isEnterpriseSecurityGroup = builder.isEnterpriseSecurityGroup;
             this.keepInstanceName = builder.keepInstanceName;
             this.keyPair = builder.keyPair;
@@ -1612,6 +1677,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             this.podVswitchIds = builder.podVswitchIds;
             this.proxyMode = builder.proxyMode;
             this.resourceGroupId = builder.resourceGroupId;
+            this.rrsaConfig = builder.rrsaConfig;
             this.runtime = builder.runtime;
             this.securityGroupId = builder.securityGroupId;
             this.securityHardeningOs = builder.securityHardeningOs;
@@ -1702,6 +1768,11 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         }
 
         @Override
+        public final java.lang.Object getIpStack() {
+            return this.ipStack;
+        }
+
+        @Override
         public final java.lang.Object getIsEnterpriseSecurityGroup() {
             return this.isEnterpriseSecurityGroup;
         }
@@ -1774,6 +1845,11 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         @Override
         public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
+        }
+
+        @Override
+        public final java.lang.Object getRrsaConfig() {
+            return this.rrsaConfig;
         }
 
         @Override
@@ -1881,6 +1957,9 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             if (this.getFormatDisk() != null) {
                 data.set("formatDisk", om.valueToTree(this.getFormatDisk()));
             }
+            if (this.getIpStack() != null) {
+                data.set("ipStack", om.valueToTree(this.getIpStack()));
+            }
             if (this.getIsEnterpriseSecurityGroup() != null) {
                 data.set("isEnterpriseSecurityGroup", om.valueToTree(this.getIsEnterpriseSecurityGroup()));
             }
@@ -1925,6 +2004,9 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
+            if (this.getRrsaConfig() != null) {
+                data.set("rrsaConfig", om.valueToTree(this.getRrsaConfig()));
             }
             if (this.getRuntime() != null) {
                 data.set("runtime", om.valueToTree(this.getRuntime()));
@@ -1995,6 +2077,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             if (this.encryptionProviderKey != null ? !this.encryptionProviderKey.equals(that.encryptionProviderKey) : that.encryptionProviderKey != null) return false;
             if (this.endpointPublicAccess != null ? !this.endpointPublicAccess.equals(that.endpointPublicAccess) : that.endpointPublicAccess != null) return false;
             if (this.formatDisk != null ? !this.formatDisk.equals(that.formatDisk) : that.formatDisk != null) return false;
+            if (this.ipStack != null ? !this.ipStack.equals(that.ipStack) : that.ipStack != null) return false;
             if (this.isEnterpriseSecurityGroup != null ? !this.isEnterpriseSecurityGroup.equals(that.isEnterpriseSecurityGroup) : that.isEnterpriseSecurityGroup != null) return false;
             if (this.keepInstanceName != null ? !this.keepInstanceName.equals(that.keepInstanceName) : that.keepInstanceName != null) return false;
             if (this.keyPair != null ? !this.keyPair.equals(that.keyPair) : that.keyPair != null) return false;
@@ -2010,6 +2093,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             if (this.podVswitchIds != null ? !this.podVswitchIds.equals(that.podVswitchIds) : that.podVswitchIds != null) return false;
             if (this.proxyMode != null ? !this.proxyMode.equals(that.proxyMode) : that.proxyMode != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
+            if (this.rrsaConfig != null ? !this.rrsaConfig.equals(that.rrsaConfig) : that.rrsaConfig != null) return false;
             if (this.runtime != null ? !this.runtime.equals(that.runtime) : that.runtime != null) return false;
             if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
             if (this.securityHardeningOs != null ? !this.securityHardeningOs.equals(that.securityHardeningOs) : that.securityHardeningOs != null) return false;
@@ -2041,6 +2125,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             result = 31 * result + (this.encryptionProviderKey != null ? this.encryptionProviderKey.hashCode() : 0);
             result = 31 * result + (this.endpointPublicAccess != null ? this.endpointPublicAccess.hashCode() : 0);
             result = 31 * result + (this.formatDisk != null ? this.formatDisk.hashCode() : 0);
+            result = 31 * result + (this.ipStack != null ? this.ipStack.hashCode() : 0);
             result = 31 * result + (this.isEnterpriseSecurityGroup != null ? this.isEnterpriseSecurityGroup.hashCode() : 0);
             result = 31 * result + (this.keepInstanceName != null ? this.keepInstanceName.hashCode() : 0);
             result = 31 * result + (this.keyPair != null ? this.keyPair.hashCode() : 0);
@@ -2056,6 +2141,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             result = 31 * result + (this.podVswitchIds != null ? this.podVswitchIds.hashCode() : 0);
             result = 31 * result + (this.proxyMode != null ? this.proxyMode.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
+            result = 31 * result + (this.rrsaConfig != null ? this.rrsaConfig.hashCode() : 0);
             result = 31 * result + (this.runtime != null ? this.runtime.hashCode() : 0);
             result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
             result = 31 * result + (this.securityHardeningOs != null ? this.securityHardeningOs.hashCode() : 0);

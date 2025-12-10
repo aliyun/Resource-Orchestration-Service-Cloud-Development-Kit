@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.oos;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::OOS::Template</code>, which is used to create a template.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::OOS::Template</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:27.344Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.551Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.RosTemplate")
 public class RosTemplate extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -109,6 +109,24 @@ public class RosTemplate extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIgnoreExisting() {
+        return software.amazon.jsii.Kernel.get(this, "ignoreExisting", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIgnoreExisting(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "ignoreExisting", value);
+    }
+
+    /**
+     */
+    public void setIgnoreExisting(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ignoreExisting", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -194,6 +212,23 @@ public class RosTemplate extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder templateName(final com.aliyun.ros.cdk.core.IResolvable templateName) {
             this.props.templateName(templateName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param ignoreExisting This parameter is required.
+         */
+        public Builder ignoreExisting(final java.lang.Boolean ignoreExisting) {
+            this.props.ignoreExisting(ignoreExisting);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ignoreExisting This parameter is required.
+         */
+        public Builder ignoreExisting(final com.aliyun.ros.cdk.core.IResolvable ignoreExisting) {
+            this.props.ignoreExisting(ignoreExisting);
             return this;
         }
 

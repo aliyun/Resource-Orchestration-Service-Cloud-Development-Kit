@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ga.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ga-acl
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:26.196Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.382Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.datasource.RosAclProps")
 @software.amazon.jsii.Jsii.Proxy(RosAclProps.Jsii$Proxy.class)
 public interface RosAclProps extends software.amazon.jsii.JsiiSerializable {

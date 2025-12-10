@@ -18,6 +18,11 @@ export interface PermissionsProps {
      * Property permissions: The permissions list.
      */
     readonly permissions: Array<RosPermissions.PermissionsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property refreshUserSync: Specifies whether to refresh user synchronization before creating permissions. Newly created RAM users may not be immediately synchronized, requiring a refresh to ensure they are available. Set to true to enable user synchronization refresh, which may cause a 30-second wait. Set to false to skip the refresh and avoid the 30-second wait. Default value: false.
+     */
+    readonly refreshUserSync?: boolean | ros.IResolvable;
 }
 
 /**
@@ -50,6 +55,7 @@ export class Permissions extends ros.Resource implements IPermissions {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosPermissions = new RosPermissions(this, id,  {
+            refreshUserSync: props.refreshUserSync === undefined || props.refreshUserSync === null ? false : props.refreshUserSync,
             permissions: props.permissions,
             catalogId: props.catalogId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

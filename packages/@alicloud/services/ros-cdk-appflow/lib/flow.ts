@@ -69,7 +69,7 @@ export interface IFlow extends ros.IResource {
     readonly attrWebhookAddress: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::AppFlow::Flow`, which is used to create a flow.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::AppFlow::Flow`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFlow`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-appflow-flow
  */

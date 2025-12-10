@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ess;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scheduledtask
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:25.838Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:56.946Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScheduledTaskProps")
 @software.amazon.jsii.Jsii.Proxy(ScheduledTaskProps.Jsii$Proxy.class)
 public interface ScheduledTaskProps extends software.amazon.jsii.JsiiSerializable {
@@ -80,7 +80,8 @@ public interface ScheduledTaskProps extends software.amazon.jsii.JsiiSerializabl
      * <ul>
      * <li>Daily: Recurrence interval by day for a scheduled task.</li>
      * <li>Weekly: Recurrence interval by week for a scheduled task.</li>
-     * <li>Monthly: Recurrence interval by month for a scheduled task.
+     * <li>Monthly: Recurrence interval by month for a scheduled task.</li>
+     * <li>Cron: The scheduled task is executed based on the specified cron expression.
      * RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.</li>
      * </ul>
      */
@@ -94,7 +95,8 @@ public interface ScheduledTaskProps extends software.amazon.jsii.JsiiSerializabl
      * <ul>
      * <li>Daily: Only one value in the range [1,31] can be filled.</li>
      * <li>Weekly: Multiple values can be filled. The values of Sunday to Saturday are 0 to 6 in sequence. Multiple values shall be separated by a comma ",".</li>
-     * <li>Monthly: In the format of A-B. The value range of A and B is 1 to 31, and the B value must be greater than the A value.
+     * <li>Monthly: In the format of A-B. The value range of A and B is 1 to 31, and the B value must be greater than the A value.</li>
+     * <li>Cron: A cron expression is written in UTC time and consists of the following fields: minute, hour, day, month, and week. The expression can contain the letters L and W and the following wildcard characters: commas (,), question marks (?), hyphens (-), asterisks (*), number signs (#), and forward slashes (/).
      * RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.</li>
      * </ul>
      */
@@ -338,7 +340,8 @@ public interface ScheduledTaskProps extends software.amazon.jsii.JsiiSerializabl
          *                       <ul>
          *                       <li>Daily: Recurrence interval by day for a scheduled task.</li>
          *                       <li>Weekly: Recurrence interval by week for a scheduled task.</li>
-         *                       <li>Monthly: Recurrence interval by month for a scheduled task.
+         *                       <li>Monthly: Recurrence interval by month for a scheduled task.</li>
+         *                       <li>Cron: The scheduled task is executed based on the specified cron expression.
          *                       RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.</li>
          *                       </ul>
          * @return {@code this}
@@ -356,7 +359,8 @@ public interface ScheduledTaskProps extends software.amazon.jsii.JsiiSerializabl
          *                       <ul>
          *                       <li>Daily: Recurrence interval by day for a scheduled task.</li>
          *                       <li>Weekly: Recurrence interval by week for a scheduled task.</li>
-         *                       <li>Monthly: Recurrence interval by month for a scheduled task.
+         *                       <li>Monthly: Recurrence interval by month for a scheduled task.</li>
+         *                       <li>Cron: The scheduled task is executed based on the specified cron expression.
          *                       RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.</li>
          *                       </ul>
          * @return {@code this}
@@ -372,7 +376,8 @@ public interface ScheduledTaskProps extends software.amazon.jsii.JsiiSerializabl
          *                        <ul>
          *                        <li>Daily: Only one value in the range [1,31] can be filled.</li>
          *                        <li>Weekly: Multiple values can be filled. The values of Sunday to Saturday are 0 to 6 in sequence. Multiple values shall be separated by a comma ",".</li>
-         *                        <li>Monthly: In the format of A-B. The value range of A and B is 1 to 31, and the B value must be greater than the A value.
+         *                        <li>Monthly: In the format of A-B. The value range of A and B is 1 to 31, and the B value must be greater than the A value.</li>
+         *                        <li>Cron: A cron expression is written in UTC time and consists of the following fields: minute, hour, day, month, and week. The expression can contain the letters L and W and the following wildcard characters: commas (,), question marks (?), hyphens (-), asterisks (*), number signs (#), and forward slashes (/).
          *                        RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.</li>
          *                        </ul>
          * @return {@code this}
@@ -388,7 +393,8 @@ public interface ScheduledTaskProps extends software.amazon.jsii.JsiiSerializabl
          *                        <ul>
          *                        <li>Daily: Only one value in the range [1,31] can be filled.</li>
          *                        <li>Weekly: Multiple values can be filled. The values of Sunday to Saturday are 0 to 6 in sequence. Multiple values shall be separated by a comma ",".</li>
-         *                        <li>Monthly: In the format of A-B. The value range of A and B is 1 to 31, and the B value must be greater than the A value.
+         *                        <li>Monthly: In the format of A-B. The value range of A and B is 1 to 31, and the B value must be greater than the A value.</li>
+         *                        <li>Cron: A cron expression is written in UTC time and consists of the following fields: minute, hour, day, month, and week. The expression can contain the letters L and W and the following wildcard characters: commas (,), question marks (?), hyphens (-), asterisks (*), number signs (#), and forward slashes (/).
          *                        RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.</li>
          *                        </ul>
          * @return {@code this}

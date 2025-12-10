@@ -82,7 +82,7 @@ export interface IDiskAttachment extends ros.IResource {
     readonly attrStatus: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::DiskAttachment`, which is used to attach a disk to an Elastic Compute Service (ECS) instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::DiskAttachment`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDiskAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-diskattachment
  */
@@ -128,8 +128,8 @@ export class DiskAttachment extends ros.Resource implements IDiskAttachment {
             bootable: props.bootable,
             deleteAutoSnapshot: props.deleteAutoSnapshot === undefined || props.deleteAutoSnapshot === null ? true : props.deleteAutoSnapshot,
             instanceType: props.instanceType === undefined || props.instanceType === null ? 'ECS' : props.instanceType,
-            password: props.password,
             diskId: props.diskId,
+            password: props.password,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDiskAttachment;
         this.attrDevice = rosDiskAttachment.attrDevice;

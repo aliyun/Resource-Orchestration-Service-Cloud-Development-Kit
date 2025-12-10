@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::Activation`, which is used to create an activation code.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::Activation`.
 type RosActivation interface {
 	alicloudroscdkcore.RosResource
 	AttrActivationCode() alicloudroscdkcore.IResolvable

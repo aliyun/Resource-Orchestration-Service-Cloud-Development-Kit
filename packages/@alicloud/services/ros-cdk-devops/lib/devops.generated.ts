@@ -127,7 +127,7 @@ function rosHostGroupPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DEVOPS::HostGroup`, which is used to create a host group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DEVOPS::HostGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `HostGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-hostgroup
  */
@@ -366,7 +366,7 @@ function rosPipelinePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DEVOPS::Pipeline`, which is used to create a pipeline. YAML-based pipelines are supported.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DEVOPS::Pipeline`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Pipeline` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-pipeline
  */
@@ -500,7 +500,7 @@ function rosPipelineRelationsPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DEVOPS::PipelineRelations`, which is used to associate resources with a pipeline.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DEVOPS::PipelineRelations`.
  * @Note This class does not contain additional functions, so it is recommended to use the `PipelineRelations` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-pipelinerelations
  */
@@ -652,7 +652,7 @@ function rosPipelineRunPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DEVOPS::PipelineRun`, which is used to run a pipeline.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DEVOPS::PipelineRun`.
  * @Note This class does not contain additional functions, so it is recommended to use the `PipelineRun` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-pipelinerun
  */
@@ -801,7 +801,7 @@ function rosVariableGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DEVOPS::VariableGroup`, which is used to create a variable group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DEVOPS::VariableGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `VariableGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-variablegroup
  */

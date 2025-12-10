@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Computenest
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ComputeNest::ServiceInstance`The , which type is used to create and deploy a service instance.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ComputeNest::ServiceInstance`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `ServiceInstance` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-computenest-serviceinstance

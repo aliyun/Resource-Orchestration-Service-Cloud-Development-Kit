@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::DTS::Instance`, which is a new resource type that is used to create a Data Transmission Service (DTS) instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::DTS::Instance`.
 type Instance interface {
 	alicloudroscdkcore.Resource
 	IInstance

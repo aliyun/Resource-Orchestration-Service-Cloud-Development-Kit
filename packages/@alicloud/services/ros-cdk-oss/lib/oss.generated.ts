@@ -181,7 +181,7 @@ function rosBucketPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Bucket`, which is used to create a bucket in Object Storage Service (OSS).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Bucket`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Bucket` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucket
  */
@@ -1380,6 +1380,11 @@ export namespace RosBucket {
          */
         readonly filter?: RosBucket.FilterProperty | ros.IResolvable;
         /**
+         * @Property transition: The change of the storage class of objects that match the lifecycle rule when the objects expire.
+     * In the child properties, you can only choose one between Days and CreatedBeforeDate.
+         */
+        readonly transition?: Array<RosBucket.TransitionProperty | ros.IResolvable> | ros.IResolvable;
+        /**
          * @Property expiration: undefined
          */
         readonly expiration?: RosBucket.ExpirationProperty | ros.IResolvable;
@@ -1412,6 +1417,14 @@ function RosBucket_RulePropertyValidator(properties: any): ros.ValidationResult 
     errors.collect(ros.propertyValidator('status', ros.validateString)(properties.status));
     errors.collect(ros.propertyValidator('abortMultipartUpload', RosBucket_AbortMultipartUploadPropertyValidator)(properties.abortMultipartUpload));
     errors.collect(ros.propertyValidator('filter', RosBucket_FilterPropertyValidator)(properties.filter));
+    if(properties.transition && (Array.isArray(properties.transition) || (typeof properties.transition) === 'string')) {
+        errors.collect(ros.propertyValidator('transition', ros.validateLength)({
+            data: properties.transition.length,
+            min: 1,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('transition', ros.listValidator(RosBucket_TransitionPropertyValidator))(properties.transition));
     errors.collect(ros.propertyValidator('expiration', RosBucket_ExpirationPropertyValidator)(properties.expiration));
     errors.collect(ros.propertyValidator('prefix', ros.requiredValidator)(properties.prefix));
     errors.collect(ros.propertyValidator('prefix', ros.validateString)(properties.prefix));
@@ -1434,6 +1447,7 @@ function rosBucketRulePropertyToRosTemplate(properties: any): any {
       'Status': ros.stringToRosTemplate(properties.status),
       'AbortMultipartUpload': rosBucketAbortMultipartUploadPropertyToRosTemplate(properties.abortMultipartUpload),
       'Filter': rosBucketFilterPropertyToRosTemplate(properties.filter),
+      'Transition': ros.listMapper(rosBucketTransitionPropertyToRosTemplate)(properties.transition),
       'Expiration': rosBucketExpirationPropertyToRosTemplate(properties.expiration),
       'Prefix': ros.stringToRosTemplate(properties.prefix),
       'ID': ros.stringToRosTemplate(properties.id),
@@ -1553,6 +1567,91 @@ function rosBucketSetsPropertyToRosTemplate(properties: any): any {
     return {
       'Value': ros.stringToRosTemplate(properties.value),
       'Key': ros.stringToRosTemplate(properties.key),
+    };
+}
+
+export namespace RosBucket {
+    /**
+     * @stability external
+     */
+    export interface TransitionProperty {
+        /**
+         * @Property createdBeforeDate: Specify a date; OSS will apply lifecycle rules to data whose last modification time is earlier than this date. The date must conform to the ISO8601 format and must be at midnight UTC.
+     * Example value: 2002-10-11T00:00:00.000Z
+         */
+        readonly createdBeforeDate?: string | ros.IResolvable;
+        /**
+         * @Property returnToStdWhenVisit: Specifies whether to change the storage class of non-Standard objects back to Standard after the objects are accessed. This element takes effect only when the IsAccessTime element is set to true.
+         */
+        readonly returnToStdWhenVisit?: boolean | ros.IResolvable;
+        /**
+         * @Property storageClass: The storage class to which objects are changed.
+         */
+        readonly storageClass?: string | ros.IResolvable;
+        /**
+         * @Property days: Specify the number of days after the object's last update when the lifecycle rule takes effect.
+         */
+        readonly days?: number | ros.IResolvable;
+        /**
+         * @Property allowSmallFile: Specifies whether to change the storage class of objects whose sizes are less than 64 KB to IA, Archive, or Cold Archive based on their last access time.
+         */
+        readonly allowSmallFile?: boolean | ros.IResolvable;
+        /**
+         * @Property isAccessTime: Specifies whether the lifecycle rule applies to objects based on their last access time.
+         */
+        readonly isAccessTime?: boolean | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TransitionProperty`
+ *
+ * @param properties - the TypeScript properties of a `TransitionProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosBucket_TransitionPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('createdBeforeDate', ros.validateString)(properties.createdBeforeDate));
+    errors.collect(ros.propertyValidator('returnToStdWhenVisit', ros.validateBoolean)(properties.returnToStdWhenVisit));
+    if(properties.storageClass && (typeof properties.storageClass) !== 'object') {
+        errors.collect(ros.propertyValidator('storageClass', ros.validateAllowedValues)({
+          data: properties.storageClass,
+          allowedValues: ["IA","Archive","ColdArchive","DeepColdArchive"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('storageClass', ros.validateString)(properties.storageClass));
+    if(properties.days && (typeof properties.days) !== 'object') {
+        errors.collect(ros.propertyValidator('days', ros.validateRange)({
+            data: properties.days,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('days', ros.validateNumber)(properties.days));
+    errors.collect(ros.propertyValidator('allowSmallFile', ros.validateBoolean)(properties.allowSmallFile));
+    errors.collect(ros.propertyValidator('isAccessTime', ros.validateBoolean)(properties.isAccessTime));
+    return errors.wrap('supplied properties not correct for "TransitionProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OSS::Bucket.Transition` resource
+ *
+ * @param properties - the TypeScript properties of a `TransitionProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OSS::Bucket.Transition` resource.
+ */
+// @ts-ignore TS6133
+function rosBucketTransitionPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosBucket_TransitionPropertyValidator(properties).assertSuccess();
+    return {
+      'CreatedBeforeDate': ros.stringToRosTemplate(properties.createdBeforeDate),
+      'ReturnToStdWhenVisit': ros.booleanToRosTemplate(properties.returnToStdWhenVisit),
+      'StorageClass': ros.stringToRosTemplate(properties.storageClass),
+      'Days': ros.numberToRosTemplate(properties.days),
+      'AllowSmallFile': ros.booleanToRosTemplate(properties.allowSmallFile),
+      'IsAccessTime': ros.booleanToRosTemplate(properties.isAccessTime),
     };
 }
 

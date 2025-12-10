@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::Desktops`, which is used to create one or more cloud desktops.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::Desktops`.
 type RosDesktops interface {
 	alicloudroscdkcore.RosResource
 	Amount() interface{}

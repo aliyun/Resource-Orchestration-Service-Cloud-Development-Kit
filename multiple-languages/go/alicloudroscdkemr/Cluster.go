@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::EMR::Cluster`, which is used to create an E-MapReduce (EMR) cluster.
+// This class encapsulates and extends the ROS resource type `ALIYUN::EMR::Cluster`.
 type Cluster interface {
 	alicloudroscdkcore.Resource
 	ICluster

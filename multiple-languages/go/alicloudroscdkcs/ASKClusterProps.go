@@ -35,6 +35,10 @@ type ASKClusterProps struct {
 	//
 	// false: If set to false, the API server on the public network will not be created, only the API server on the private network will be created.Default value: true.
 	EndpointPublicAccess interface{} `field:"optional" json:"endpointPublicAccess" yaml:"endpointPublicAccess"`
+	// Property ipStack: The IP stack of the cluster.
+	//
+	// Value: ipv4 (Single stack) or ipv6 (Dual Stack). Default value: ipv4
+	IpStack interface{} `field:"optional" json:"ipStack" yaml:"ipStack"`
 	// Property kubernetesVersion: The version of the Kubernetes cluster.
 	KubernetesVersion interface{} `field:"optional" json:"kubernetesVersion" yaml:"kubernetesVersion"`
 	// Property maintenanceWindow: Cluster maintenance window.

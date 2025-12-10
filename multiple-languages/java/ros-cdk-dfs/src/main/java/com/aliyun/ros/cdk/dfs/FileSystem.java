@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.dfs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::DFS::FileSystem</code>, which is used to create a file system.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::DFS::FileSystem</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.243Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.457Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dfs.$Module.class, fqn = "@alicloud/ros-cdk-dfs.FileSystem")
 public class FileSystem extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.dfs.IFileSystem {
 

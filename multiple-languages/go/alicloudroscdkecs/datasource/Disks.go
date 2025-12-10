@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Disks`, which is used to query the Elastic Block Storage (EBS) devices that you created, including cloud disks and local disks.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Disks`.
 type Disks interface {
 	alicloudroscdkcore.Resource
 	IDisks

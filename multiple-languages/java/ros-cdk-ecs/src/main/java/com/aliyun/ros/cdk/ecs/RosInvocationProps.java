@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-invocation
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:24.421Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:55.524Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInvocationProps")
 @software.amazon.jsii.Jsii.Proxy(RosInvocationProps.Jsii$Proxy.class)
 public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializable {
@@ -129,7 +129,7 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
          * @param instanceIds the value to be set. This parameter is required.
          * @return {@code this}
          */
-        public Builder instanceIds(java.util.List<? extends java.lang.Object> instanceIds) {
+        public Builder instanceIds(com.aliyun.ros.cdk.core.IResolvable instanceIds) {
             this.instanceIds = instanceIds;
             return this;
         }
@@ -139,7 +139,7 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
          * @param instanceIds the value to be set. This parameter is required.
          * @return {@code this}
          */
-        public Builder instanceIds(com.aliyun.ros.cdk.core.IResolvable instanceIds) {
+        public Builder instanceIds(java.util.List<? extends java.lang.Object> instanceIds) {
             this.instanceIds = instanceIds;
             return this;
         }

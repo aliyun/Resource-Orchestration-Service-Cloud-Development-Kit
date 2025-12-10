@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::HBR::Vaults`, which is used to query the basic information about backup vaults.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::HBR::Vaults`.
 type Vaults interface {
 	alicloudroscdkcore.Resource
 	IVaults

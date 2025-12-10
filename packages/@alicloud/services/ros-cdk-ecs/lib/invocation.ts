@@ -12,7 +12,7 @@ export interface InvocationProps {
     /**
      * Property instanceIds: The instance id list. Instances status must be running.
      */
-    readonly instanceIds: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly instanceIds: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property commandId: The id of command.
@@ -137,7 +137,7 @@ export interface IInvocation extends ros.IResource {
     readonly attrInvokeResults: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Invocation`, which is used to run a Cloud Assistant command on Elastic Compute Service (ECS) instances.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Invocation`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInvocation`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-invocation
  */

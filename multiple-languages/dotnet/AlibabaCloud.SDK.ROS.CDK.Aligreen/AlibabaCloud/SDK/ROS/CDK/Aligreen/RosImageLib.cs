@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Aligreen
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::ImageLib`, which is used to create a custom image library.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::ImageLib`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `ImageLib` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-aligreen-imagelib

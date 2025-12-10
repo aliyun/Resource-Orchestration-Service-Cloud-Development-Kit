@@ -5,60 +5,93 @@ package alicloudroscdkmse
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-cluster
 type ClusterProps struct {
-	// Property clusterSpecification: Cluster specifications.
+	// Property clusterSpecification: Engine specification.
 	//
-	// Note the msversion requirements of the version parameter,
-	// Optional parameters:
-	// "MSE_ SC _1_2_60_c",
-	// "MSE_ SC _2_4_60_c",
-	// "MSE_ SC _4_8_60_c",
-	// "MSE_ SC _8_16_60_c",
-	// "MSE_ SC _16_32_60_c".
+	// [Professional Edition]
+	// - `MSE_SC_2_4_60_c`: 2 cores 4GB
+	// - `MSE_SC_1_2_60_c`: 1 core 2GB
+	// - `MSE_SC_4_8_60_c`: 4 cores 8GB
+	// - `MSE_SC_8_16_60_c`: 8 cores 16GB
+	// - `MSE_SC_16_32_60_c`: 16 cores 32GB
+	//
+	// [Development Edition]
+	// - `MSE_SC_1_2_60_c`: 1 core 2GB
+	// - `MSE_SC_2_4_60_c`: 2 cores 4GB
+	//
+	// [Serverless Edition]
+	// - Ignore this parameter or fill with `MSE_SC_SERVERLESS`.
 	ClusterSpecification interface{} `field:"required" json:"clusterSpecification" yaml:"clusterSpecification"`
-	// Property clusterType: cluster type.
+	// Property clusterType: Cluster type, including ZooKeeper, Nacos-Ans.
 	ClusterType interface{} `field:"required" json:"clusterType" yaml:"clusterType"`
-	// Property clusterVersion: Cluster version, such as ZooKeeper_3_8_0,NACOS_2_0_0.
-	ClusterVersion interface{} `field:"required" json:"clusterVersion" yaml:"clusterVersion"`
-	// Property instanceCount: instance count.
-	InstanceCount interface{} `field:"required" json:"instanceCount" yaml:"instanceCount"`
-	// Property netType: Network type (whether private network is enabled or not).
+	// Property clusterVersion: Cluster version.
 	//
-	// privatenet indicates that private network is enabled.
+	// [Professional Edition]
+	// - `NACOS_2_0_0`: Nacos 2.x.x version.
+	// - `ZooKeeper_3_8_0`: ZooKeeper 3.8.x version.
+	//
+	// [Development Edition]
+	// - `NACOS_2_0_0`: Nacos 2.x version.
+	// - `ZooKeeper_3_8_0`: ZooKeeper 3.8.x version.
+	//
+	// [Serverless Edition]
+	// - `NACOS_2_0_0`: Nacos 2.x version.
+	// - `ZooKeeper_3_8_0`: ZooKeeper 3.8.x version.
+	ClusterVersion interface{} `field:"required" json:"clusterVersion" yaml:"clusterVersion"`
+	// Property instanceCount: Number of instance nodes. Range: 1~15.
+	//
+	// [Professional Edition]
+	// - Must be >=3 and odd number.
+	//
+	// [Development Edition]
+	// - Only 1 allowed.
+	//
+	// [Serverless Edition]
+	// - Ignore this parameter.
+	InstanceCount interface{} `field:"required" json:"instanceCount" yaml:"instanceCount"`
+	// Property netType: Network type.
+	//
+	// Valid values:
+	// - `privatenet`: Private network.
+	// - `pubnet`: Public network.
 	NetType interface{} `field:"required" json:"netType" yaml:"netType"`
-	// Property acceptLanguage:.
-	AcceptLanguage interface{} `field:"optional" json:"acceptLanguage" yaml:"acceptLanguage"`
-	// Property aclEntryList: The public network whitelist list is used only when the public network is enabled.
+	// Property aclEntryList: List of ACL entries.
 	AclEntryList interface{} `field:"optional" json:"aclEntryList" yaml:"aclEntryList"`
+	// Property chargeType: Billing mode, including PREPAY (annual\/monthly) and POSTPAY (pay-as-you-go).
+	//
+	// Ignored for Serverless Edition.
+	ChargeType interface{} `field:"optional" json:"chargeType" yaml:"chargeType"`
 	// Property clusterAliasName: cluster alias name.
 	ClusterAliasName interface{} `field:"optional" json:"clusterAliasName" yaml:"clusterAliasName"`
-	// Property connectionType: network connect type.
+	// Property connectionType: Network access type, `slb` or `single_eni`;
+	//
+	// some regions only support `single_eni` for Development Edition.
 	ConnectionType interface{} `field:"optional" json:"connectionType" yaml:"connectionType"`
-	// Property diskType: disk type.
-	DiskType interface{} `field:"optional" json:"diskType" yaml:"diskType"`
-	// Property mseVersion: Required, the value is as follows:.
+	// Property eipEnabled: Effective when ConnectionType is `single_eni`, indicates whether to enable public access (elastic IP).
+	EipEnabled interface{} `field:"optional" json:"eipEnabled" yaml:"eipEnabled"`
+	// Property mseVersion: Must be filled unless special circumstances.
 	//
-	// -'mse_dev': indicates the development version.
-	// -'Mse_pro': means professional version. When this version is selected, the specification is 2c4g or above, and the specification is 3 nodes or above.
+	// Valid values:
+	// - `mse_pro`: Professional Edition.
+	// - `mse_dev`: Development Edition.
+	// - `mse_serverless`: Serverless Edition.
 	MseVersion interface{} `field:"optional" json:"mseVersion" yaml:"mseVersion"`
-	// Property privateSlbSpecification:.
-	PrivateSlbSpecification interface{} `field:"optional" json:"privateSlbSpecification" yaml:"privateSlbSpecification"`
-	// Property pubNetworkFlow: Public network bandwidth.
+	// Property pubNetworkFlow: Public network flow.
 	//
-	// If the bandwidth is greater than 0, the public network is enabled.
+	// Valid when ConnectionType is `slb`. 0 means do not create public SLB; 1 or above indicates fixed bandwidth value in Mbps. Range: 0~5000.
 	PubNetworkFlow interface{} `field:"optional" json:"pubNetworkFlow" yaml:"pubNetworkFlow"`
-	// Property pubSlbSpecification:.
-	PubSlbSpecification interface{} `field:"optional" json:"pubSlbSpecification" yaml:"pubSlbSpecification"`
-	// Property requestPars:.
+	// Property requestPars: Extended request parameters in JSON format.
 	RequestPars interface{} `field:"optional" json:"requestPars" yaml:"requestPars"`
 	// Property resourceGroupId: Resource group id.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
-	// Property tags: Tags to attach to instance.
+	// Property securityGroupType: Effective when ConnectionType is `single_eni`, represents the security group type of the instance.
+	SecurityGroupType interface{} `field:"optional" json:"securityGroupType" yaml:"securityGroupType"`
+	// Property tags: Tags to attach to cluster.
 	//
-	// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+	// Max support 20 tags to add during create cluster. Each tag with two properties Key and Value, and Key is required.
 	Tags *[]*RosCluster_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
-	// Property vpcId: vpc id.
+	// Property vpcId: VPC ID.
 	VpcId interface{} `field:"optional" json:"vpcId" yaml:"vpcId"`
-	// Property vSwitchId: switcher Id.
+	// Property vSwitchId: Switch ID.
 	VSwitchId interface{} `field:"optional" json:"vSwitchId" yaml:"vSwitchId"`
 }
 

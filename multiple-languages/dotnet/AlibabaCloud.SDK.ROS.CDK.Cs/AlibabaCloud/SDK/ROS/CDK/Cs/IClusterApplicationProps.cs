@@ -25,6 +25,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             get;
         }
 
+        /// <summary>Property creationMode: Creation modes include: - Normal: create new resources, will report error if already exists.</summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <description>Apply: similar to kubectl apply, create if not exists, update if exists. During the deletion phase, ROS will delete newly created application, but updated existing application will not be deleted.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiProperty(name: "creationMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? CreationMode
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property defaultNamespace: The default namespace for the application, default value is default.</summary>
         /// <remarks>
         /// If a namespace is defined in yaml metadata, its priority is higher than DefaultNamespace.
@@ -144,6 +160,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             public object YamlContent
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property creationMode: Creation modes include: - Normal: create new resources, will report error if already exists.</summary>
+            /// <remarks>
+            /// <list type="bullet">
+            /// <description>Apply: similar to kubectl apply, create if not exists, update if exists. During the deletion phase, ROS will delete newly created application, but updated existing application will not be deleted.</description>
+            /// </list>
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "creationMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CreationMode
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property defaultNamespace: The default namespace for the application, default value is default.</summary>

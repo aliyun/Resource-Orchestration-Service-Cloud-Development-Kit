@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::CapacityReservation`, which is used to create a capacity reservation.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::CapacityReservation`.
 type RosCapacityReservation interface {
 	alicloudroscdkcore.RosResource
 	AttrPrivatePoolOptionsId() alicloudroscdkcore.IResolvable

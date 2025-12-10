@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::DirectMail::Ipfilter`, which is used to add an IP filter.
+// This class encapsulates and extends the ROS resource type `ALIYUN::DirectMail::Ipfilter`.
 type Ipfilter interface {
 	alicloudroscdkcore.Resource
 	IIpfilter

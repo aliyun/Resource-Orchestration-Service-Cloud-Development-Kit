@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.acs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ACS::Cluster</code>, which is used to create a Container Compute Service (ACS) cluster.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ACS::Cluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:20.339Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:51.841Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acs.$Module.class, fqn = "@alicloud/ros-cdk-acs.Cluster")
 public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.acs.ICluster {
 
@@ -390,6 +390,39 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
          */
         public Builder ipStack(final com.aliyun.ros.cdk.core.IResolvable ipStack) {
             this.props.ipStack(ipStack);
+            return this;
+        }
+
+        /**
+         * Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group.
+         * <p>
+         * This parameter takes effect only if security_group_id is left empty.
+         * Note You must specify an advanced security group for a cluster that has Terway installed.
+         * true: creates an advanced security group.
+         * false: does not create an advanced security group.
+         * Default value: false.
+         * <p>
+         * @return {@code this}
+         * @param isEnterpriseSecurityGroup Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group. This parameter is required.
+         */
+        public Builder isEnterpriseSecurityGroup(final java.lang.Boolean isEnterpriseSecurityGroup) {
+            this.props.isEnterpriseSecurityGroup(isEnterpriseSecurityGroup);
+            return this;
+        }
+        /**
+         * Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group.
+         * <p>
+         * This parameter takes effect only if security_group_id is left empty.
+         * Note You must specify an advanced security group for a cluster that has Terway installed.
+         * true: creates an advanced security group.
+         * false: does not create an advanced security group.
+         * Default value: false.
+         * <p>
+         * @return {@code this}
+         * @param isEnterpriseSecurityGroup Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group. This parameter is required.
+         */
+        public Builder isEnterpriseSecurityGroup(final com.aliyun.ros.cdk.core.IResolvable isEnterpriseSecurityGroup) {
+            this.props.isEnterpriseSecurityGroup(isEnterpriseSecurityGroup);
             return this;
         }
 

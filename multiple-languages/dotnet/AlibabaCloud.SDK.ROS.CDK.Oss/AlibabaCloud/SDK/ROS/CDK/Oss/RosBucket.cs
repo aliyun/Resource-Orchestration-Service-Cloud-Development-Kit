@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Oss
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Bucket`, which is used to create a bucket in Object Storage Service (OSS).</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Bucket`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Bucket` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucket
@@ -4145,6 +4145,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
                 }
             }
 
+            /// <remarks>
+            /// <strong>Property</strong>: transition: The change of the storage class of objects that match the lifecycle rule when the objects expire.
+            /// In the child properties, you can only choose one between Days and CreatedBeforeDate.
+            /// </remarks>
+            [JsiiProperty(name: "transition", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-oss.RosBucket.TransitionProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Transition
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
             [JsiiTypeProxy(nativeType: typeof(IRuleProperty), fullyQualifiedName: "@alicloud/ros-cdk-oss.RosBucket.RuleProperty")]
             internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Oss.RosBucket.IRuleProperty
             {
@@ -4207,6 +4221,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
                 [JsiiOptional]
                 [JsiiProperty(name: "status", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? Status
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: transition: The change of the storage class of objects that match the lifecycle rule when the objects expire.
+                /// In the child properties, you can only choose one between Days and CreatedBeforeDate.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "transition", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-oss.RosBucket.TransitionProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+                public object? Transition
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -4411,6 +4436,57 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
                         }
                     }
                     _status = value;
+                }
+            }
+
+            private object? _transition;
+
+            /// <remarks>
+            /// <strong>Property</strong>: transition: The change of the storage class of objects that match the lifecycle rule when the objects expire.
+            /// In the child properties, you can only choose one between Days and CreatedBeforeDate.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "transition", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-oss.RosBucket.TransitionProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? Transition
+            {
+                get => _transition;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case object[] cast_cd4240:
+                                for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                                {
+                                    switch (cast_cd4240[__idx_f64a5c])
+                                    {
+                                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                            break;
+                                        case AlibabaCloud.SDK.ROS.CDK.Oss.RosBucket.ITransitionProperty cast_201718:
+                                            break;
+                                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                            // Not enough information to type-check...
+                                            break;
+                                        case null:
+                                            throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Oss.RosBucket.ITransitionProperty).FullName}; received null", nameof(value));
+                                        default:
+                                            throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Oss.RosBucket.ITransitionProperty).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                    }
+                                }
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _transition = value;
                 }
             }
         }
@@ -4649,6 +4725,379 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
                         }
                     }
                     _value = value;
+                }
+            }
+        }
+        [JsiiInterface(nativeType: typeof(ITransitionProperty), fullyQualifiedName: "@alicloud/ros-cdk-oss.RosBucket.TransitionProperty")]
+        public interface ITransitionProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: allowSmallFile: Specifies whether to change the storage class of objects whose sizes are less than 64 KB to IA, Archive, or Cold Archive based on their last access time.
+            /// </remarks>
+            [JsiiProperty(name: "allowSmallFile", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? AllowSmallFile
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: createdBeforeDate: Specify a date; OSS will apply lifecycle rules to data whose last modification time is earlier than this date. The date must conform to the ISO8601 format and must be at midnight UTC.
+            /// Example value: 2002-10-11T00:00:00.000Z
+            /// </remarks>
+            [JsiiProperty(name: "createdBeforeDate", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? CreatedBeforeDate
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: days: Specify the number of days after the object's last update when the lifecycle rule takes effect.
+            /// </remarks>
+            [JsiiProperty(name: "days", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Days
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: isAccessTime: Specifies whether the lifecycle rule applies to objects based on their last access time.
+            /// </remarks>
+            [JsiiProperty(name: "isAccessTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? IsAccessTime
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: returnToStdWhenVisit: Specifies whether to change the storage class of non-Standard objects back to Standard after the objects are accessed. This element takes effect only when the IsAccessTime element is set to true.
+            /// </remarks>
+            [JsiiProperty(name: "returnToStdWhenVisit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ReturnToStdWhenVisit
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: storageClass: The storage class to which objects are changed.
+            /// </remarks>
+            [JsiiProperty(name: "storageClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? StorageClass
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(ITransitionProperty), fullyQualifiedName: "@alicloud/ros-cdk-oss.RosBucket.TransitionProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Oss.RosBucket.ITransitionProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: allowSmallFile: Specifies whether to change the storage class of objects whose sizes are less than 64 KB to IA, Archive, or Cold Archive based on their last access time.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "allowSmallFile", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? AllowSmallFile
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: createdBeforeDate: Specify a date; OSS will apply lifecycle rules to data whose last modification time is earlier than this date. The date must conform to the ISO8601 format and must be at midnight UTC.
+                /// Example value: 2002-10-11T00:00:00.000Z
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "createdBeforeDate", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? CreatedBeforeDate
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: days: Specify the number of days after the object's last update when the lifecycle rule takes effect.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "days", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Days
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: isAccessTime: Specifies whether the lifecycle rule applies to objects based on their last access time.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "isAccessTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? IsAccessTime
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: returnToStdWhenVisit: Specifies whether to change the storage class of non-Standard objects back to Standard after the objects are accessed. This element takes effect only when the IsAccessTime element is set to true.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "returnToStdWhenVisit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ReturnToStdWhenVisit
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: storageClass: The storage class to which objects are changed.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "storageClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? StorageClass
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-oss.RosBucket.TransitionProperty")]
+        public class TransitionProperty : AlibabaCloud.SDK.ROS.CDK.Oss.RosBucket.ITransitionProperty
+        {
+            private object? _allowSmallFile;
+
+            /// <remarks>
+            /// <strong>Property</strong>: allowSmallFile: Specifies whether to change the storage class of objects whose sizes are less than 64 KB to IA, Archive, or Cold Archive based on their last access time.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "allowSmallFile", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AllowSmallFile
+            {
+                get => _allowSmallFile;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _allowSmallFile = value;
+                }
+            }
+
+            private object? _createdBeforeDate;
+
+            /// <remarks>
+            /// <strong>Property</strong>: createdBeforeDate: Specify a date; OSS will apply lifecycle rules to data whose last modification time is earlier than this date. The date must conform to the ISO8601 format and must be at midnight UTC.
+            /// Example value: 2002-10-11T00:00:00.000Z
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "createdBeforeDate", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CreatedBeforeDate
+            {
+                get => _createdBeforeDate;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _createdBeforeDate = value;
+                }
+            }
+
+            private object? _days;
+
+            /// <remarks>
+            /// <strong>Property</strong>: days: Specify the number of days after the object's last update when the lifecycle rule takes effect.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "days", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Days
+            {
+                get => _days;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _days = value;
+                }
+            }
+
+            private object? _isAccessTime;
+
+            /// <remarks>
+            /// <strong>Property</strong>: isAccessTime: Specifies whether the lifecycle rule applies to objects based on their last access time.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "isAccessTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IsAccessTime
+            {
+                get => _isAccessTime;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _isAccessTime = value;
+                }
+            }
+
+            private object? _returnToStdWhenVisit;
+
+            /// <remarks>
+            /// <strong>Property</strong>: returnToStdWhenVisit: Specifies whether to change the storage class of non-Standard objects back to Standard after the objects are accessed. This element takes effect only when the IsAccessTime element is set to true.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "returnToStdWhenVisit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ReturnToStdWhenVisit
+            {
+                get => _returnToStdWhenVisit;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _returnToStdWhenVisit = value;
+                }
+            }
+
+            private object? _storageClass;
+
+            /// <remarks>
+            /// <strong>Property</strong>: storageClass: The storage class to which objects are changed.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "storageClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? StorageClass
+            {
+                get => _storageClass;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _storageClass = value;
                 }
             }
         }

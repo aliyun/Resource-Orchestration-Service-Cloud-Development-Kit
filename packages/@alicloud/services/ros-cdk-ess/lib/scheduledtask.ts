@@ -58,6 +58,7 @@ export interface ScheduledTaskProps {
      * - Daily: Recurrence interval by day for a scheduled task.
      * - Weekly: Recurrence interval by week for a scheduled task.
      * - Monthly: Recurrence interval by month for a scheduled task.
+     * - Cron: The scheduled task is executed based on the specified cron expression.
      * RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.
      */
     readonly recurrenceType?: string | ros.IResolvable;
@@ -67,6 +68,7 @@ export interface ScheduledTaskProps {
      * - Daily: Only one value in the range [1,31] can be filled.
      * - Weekly: Multiple values can be filled. The values of Sunday to Saturday are 0 to 6 in sequence. Multiple values shall be separated by a comma ",".
      * - Monthly: In the format of A-B. The value range of A and B is 1 to 31, and the B value must be greater than the A value.
+     * - Cron: A cron expression is written in UTC time and consists of the following fields: minute, hour, day, month, and week. The expression can contain the letters L and W and the following wildcard characters: commas (,), question marks (?), hyphens (-), asterisks (*), number signs (#), and forward slashes (\/).
      * RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.
      */
     readonly recurrenceValue?: string | ros.IResolvable;
@@ -111,7 +113,7 @@ export interface IScheduledTask extends ros.IResource {
     readonly attrScheduledTaskId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScheduledTask`, which is used to create a scheduled task by specifying properties.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScheduledTask`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosScheduledTask`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scheduledtask
  */

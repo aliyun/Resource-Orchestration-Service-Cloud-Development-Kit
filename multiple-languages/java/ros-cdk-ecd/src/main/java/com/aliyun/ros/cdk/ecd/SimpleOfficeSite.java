@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecd;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECD::SimpleOfficeSite</code>, which is used to create a workspace of the convenience account type.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECD::SimpleOfficeSite</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.847Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:55.032Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecd.$Module.class, fqn = "@alicloud/ros-cdk-ecd.SimpleOfficeSite")
 public class SimpleOfficeSite extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecd.ISimpleOfficeSite {
 

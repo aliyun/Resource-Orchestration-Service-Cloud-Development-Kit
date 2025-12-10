@@ -42,7 +42,7 @@ export interface ICenInstanceAttachment extends ros.IResource {
     readonly props: CenInstanceAttachmentProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenInstanceAttachment`, which is used to attach a network instance to a Cloud Enterprise Network (CEN) instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenInstanceAttachment`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCenInstanceAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-ceninstanceattachment
  */

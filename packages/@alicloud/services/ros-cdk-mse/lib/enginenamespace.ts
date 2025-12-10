@@ -42,7 +42,7 @@ export interface IEngineNamespace extends ros.IResource {
     readonly attrNamespaceId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::MSE::EngineNamespace`, which is used to create a namespace for an engine.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MSE::EngineNamespace`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEngineNamespace`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-enginenamespace
  */

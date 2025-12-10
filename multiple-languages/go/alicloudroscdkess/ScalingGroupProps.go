@@ -66,6 +66,8 @@ type ScalingGroupProps struct {
 	//
 	// Allow values is "ECS" and "NONE", default to "ECS".
 	HealthCheckType interface{} `field:"optional" json:"healthCheckType" yaml:"healthCheckType"`
+	// Property healthCheckTypes: The list of health check type.
+	HealthCheckTypes interface{} `field:"optional" json:"healthCheckTypes" yaml:"healthCheckTypes"`
 	// Property instanceId: The ID of the ECS instance from which the scaling group obtains configuration information of the specified instance.
 	InstanceId interface{} `field:"optional" json:"instanceId" yaml:"instanceId"`
 	// Property launchTemplateId: The ID of the instance launch template from which the scaling group obtains launch configurations.

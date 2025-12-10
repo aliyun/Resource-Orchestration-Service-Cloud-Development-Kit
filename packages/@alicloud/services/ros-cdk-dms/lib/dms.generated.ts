@@ -243,7 +243,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DMS::Instance`, which is used to register a database instance for your enterprise.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DMS::Instance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dms-instance
  */
@@ -789,7 +789,7 @@ function rosInstance2PropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DMS::Instance2`, which is used to register a database instance in new Data Management (DMS).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DMS::Instance2`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance2` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dms-instance2
  */
@@ -1088,6 +1088,141 @@ export class RosInstance2 extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosScriptExecution`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dms-scriptexecution
+ */
+export interface RosScriptExecutionProps {
+
+    /**
+     * @Property dbId: The database ID.
+     * > This parameter corresponds to the DatabaseId parameter in interfaces like SearchDatabase, ListDatabases, GetDatabase, etc. You can call these interfaces to obtain the value.
+     */
+    readonly dbId: number | ros.IResolvable;
+
+    /**
+     * @Property logic: Whether it is a logical database.
+     */
+    readonly logic: boolean | ros.IResolvable;
+
+    /**
+     * @Property script: The specific SQL script to execute. Includes DQL, DDL, and DML. Whether DDL and DML are allowed depends on the security configuration of the instance.
+     */
+    readonly script: string | ros.IResolvable;
+
+    /**
+     * @Property tid: The tenant ID.
+     * > Obtain this from the tenant ID information displayed when hovering over the top-right corner avatar.
+     */
+    readonly tid?: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosScriptExecutionProps`
+ *
+ * @param properties - the TypeScript properties of a `RosScriptExecutionProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosScriptExecutionPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('script', ros.requiredValidator)(properties.script));
+    errors.collect(ros.propertyValidator('script', ros.validateString)(properties.script));
+    errors.collect(ros.propertyValidator('dbId', ros.requiredValidator)(properties.dbId));
+    errors.collect(ros.propertyValidator('dbId', ros.validateNumber)(properties.dbId));
+    errors.collect(ros.propertyValidator('logic', ros.requiredValidator)(properties.logic));
+    errors.collect(ros.propertyValidator('logic', ros.validateBoolean)(properties.logic));
+    errors.collect(ros.propertyValidator('tid', ros.validateNumber)(properties.tid));
+    return errors.wrap('supplied properties not correct for "RosScriptExecutionProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DMS::ScriptExecution` resource
+ *
+ * @param properties - the TypeScript properties of a `RosScriptExecutionProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DMS::ScriptExecution` resource.
+ */
+// @ts-ignore TS6133
+function rosScriptExecutionPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosScriptExecutionPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'DbId': ros.numberToRosTemplate(properties.dbId),
+      'Logic': ros.booleanToRosTemplate(properties.logic),
+      'Script': ros.stringToRosTemplate(properties.script),
+      'Tid': ros.numberToRosTemplate(properties.tid),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DMS::ScriptExecution`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ScriptExecution` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dms-scriptexecution
+ */
+export class RosScriptExecution extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DMS::ScriptExecution";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property dbId: The database ID.
+     * > This parameter corresponds to the DatabaseId parameter in interfaces like SearchDatabase, ListDatabases, GetDatabase, etc. You can call these interfaces to obtain the value.
+     */
+    public dbId: number | ros.IResolvable;
+
+    /**
+     * @Property logic: Whether it is a logical database.
+     */
+    public logic: boolean | ros.IResolvable;
+
+    /**
+     * @Property script: The specific SQL script to execute. Includes DQL, DDL, and DML. Whether DDL and DML are allowed depends on the security configuration of the instance.
+     */
+    public script: string | ros.IResolvable;
+
+    /**
+     * @Property tid: The tenant ID.
+     * > Obtain this from the tenant ID information displayed when hovering over the top-right corner avatar.
+     */
+    public tid: number | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosScriptExecutionProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosScriptExecution.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.dbId = props.dbId;
+        this.logic = props.logic;
+        this.script = props.script;
+        this.tid = props.tid;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            dbId: this.dbId,
+            logic: this.logic,
+            script: this.script,
+            tid: this.tid,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosScriptExecutionPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosUser`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dms-user
  */
@@ -1168,7 +1303,7 @@ function rosUserPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DMS::User`, which is used to add a user to Data Management (DMS).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DMS::User`.
  * @Note This class does not contain additional functions, so it is recommended to use the `User` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dms-user
  */

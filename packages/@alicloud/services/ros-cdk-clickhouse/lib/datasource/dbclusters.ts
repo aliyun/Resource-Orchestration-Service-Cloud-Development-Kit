@@ -45,7 +45,7 @@ export interface IDBClusters extends ros.IResource {
     readonly attrDbClusters: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ClickHouse::DBClusters`, which is used to query the information about ApsaraDB for ClickHouse clusters.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ClickHouse::DBClusters`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBClusters`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-clickhouse-dbclusters
  */

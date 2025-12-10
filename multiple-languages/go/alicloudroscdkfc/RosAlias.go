@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Alias`, which is used to create an Alias.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Alias`.
 type RosAlias interface {
 	alicloudroscdkcore.RosResource
 	AdditionalVersion() interface{}

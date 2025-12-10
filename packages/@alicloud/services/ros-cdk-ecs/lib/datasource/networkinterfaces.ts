@@ -119,7 +119,7 @@ export interface INetworkInterfaces extends ros.IResource {
     readonly attrNetworkInterfaces: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::NetworkInterfaces`, which is used to query the information about elastic network interfaces (ENIs).
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::NetworkInterfaces`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNetworkInterfaces`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-networkinterfaces
  */

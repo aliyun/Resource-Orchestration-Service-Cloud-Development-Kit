@@ -10,6 +10,8 @@ import (
 // Represents a `FunctionInvoker`.
 type IFunctionInvoker interface {
 	alicloudroscdkcore.IResource
+	// Attribute Events: Events for async invocation.
+	AttrEvents() interface{}
 	// Attribute Result: Depends on result type: NoResult: Async invoke has no result.
 	//
 	// Success: The response of the function. The response should be utf-8 encoded string, otherwise ROS will report an error. If the response is binary, encode it via base64 before it is returned.
@@ -20,12 +22,24 @@ type IFunctionInvoker interface {
 	// Success: Sync invoke succeeds.
 	// Failure: Sync invoke fails.
 	AttrResultType() interface{}
+	// Attribute TaskId: Task id for async invocation.
+	AttrTaskId() interface{}
 	Props() *FunctionInvokerProps
 }
 
 // The jsii proxy for IFunctionInvoker
 type jsiiProxy_IFunctionInvoker struct {
 	internal.Type__alicloudroscdkcoreIResource
+}
+
+func (j *jsiiProxy_IFunctionInvoker) AttrEvents() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrEvents",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_IFunctionInvoker) AttrResult() interface{} {
@@ -43,6 +57,16 @@ func (j *jsiiProxy_IFunctionInvoker) AttrResultType() interface{} {
 	_jsii_.Get(
 		j,
 		"attrResultType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IFunctionInvoker) AttrTaskId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrTaskId",
 		&returns,
 	)
 	return returns

@@ -66,7 +66,7 @@ export interface ISiteMonitor extends ros.IResource {
     readonly attrTaskId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::SiteMonitor`, which is used to create a site monitoring task.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::SiteMonitor`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSiteMonitor`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-sitemonitor
  */

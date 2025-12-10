@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.polardbx.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardbx-database
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:28.251Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:59.177Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardbx.$Module.class, fqn = "@alicloud/ros-cdk-polardbx.datasource.RosDatabaseProps")
 @software.amazon.jsii.Jsii.Proxy(RosDatabaseProps.Jsii$Proxy.class)
 public interface RosDatabaseProps extends software.amazon.jsii.JsiiSerializable {

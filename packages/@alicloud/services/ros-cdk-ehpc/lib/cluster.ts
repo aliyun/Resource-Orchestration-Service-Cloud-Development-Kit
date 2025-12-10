@@ -352,7 +352,7 @@ You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2,
     readonly attrSecurityGroupId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::EHPC::Cluster`, which is used to create an Elastic High Performance Computing (E-HPC) cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EHPC::Cluster`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-cluster
  */

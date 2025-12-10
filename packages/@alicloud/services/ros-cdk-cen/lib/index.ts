@@ -14,6 +14,7 @@ export * from './transitrouterpeerattachment';
 export * from './transitrouterrouteentry';
 export * from './transitrouterroutetable';
 export * from './transitrouterroutetableassociation';
+export * from './transitrouterroutetableassociationreplacement';
 export * from './transitrouterroutetablepropagation';
 export * from './transitroutervbrattachment';
 export * from './transitroutervpcattachment';

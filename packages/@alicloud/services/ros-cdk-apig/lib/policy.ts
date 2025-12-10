@@ -84,7 +84,7 @@ export interface IPolicy extends ros.IResource {
     readonly attrPolicyName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::APIG::Policy`, which is used to create a policy.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::APIG::Policy`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-policy
  */

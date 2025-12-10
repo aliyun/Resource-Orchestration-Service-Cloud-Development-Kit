@@ -11,13 +11,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
     [JsiiInterface(nativeType: typeof(IInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-cr.InstanceProps")]
     public interface IInstanceProps
     {
-        /// <summary>Property imageScanner: Security scan engine.</summary>
-        [JsiiProperty(name: "imageScanner", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object ImageScanner
-        {
-            get;
-        }
-
         /// <summary>Property instanceName: Instance name.The value contains 3 to 30 lowercase letters, digits, and delimiters "-"(it can not be first or last).</summary>
         [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object InstanceName
@@ -38,20 +31,35 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
             get;
         }
 
-        /// <summary>Property period: Prepaid cycle.</summary>
-        /// <remarks>
-        /// The unit is Monthly, please enter an integer multiple of 12 for annual paid products.
-        /// </remarks>
-        [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object Period
+        /// <summary>Property imageScanner: Security scan engine.</summary>
+        [JsiiProperty(name: "imageScanner", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ImageScanner
         {
-            get;
+            get
+            {
+                return null;
+            }
         }
 
         /// <summary>Property instanceStorageName: Custom OSS Bucket name.</summary>
         [JsiiProperty(name: "instanceStorageName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? InstanceStorageName
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property period: Prepaid cycle.</summary>
+        /// <remarks>
+        /// The unit is Monthly, please enter an integer multiple of 12 for annual paid products.
+        /// </remarks>
+        [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Period
         {
             get
             {
@@ -112,13 +120,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
             {
             }
 
-            /// <summary>Property imageScanner: Security scan engine.</summary>
-            [JsiiProperty(name: "imageScanner", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object ImageScanner
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
             /// <summary>Property instanceName: Instance name.The value contains 3 to 30 lowercase letters, digits, and delimiters "-"(it can not be first or last).</summary>
             [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object InstanceName
@@ -139,20 +140,29 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property period: Prepaid cycle.</summary>
-            /// <remarks>
-            /// The unit is Monthly, please enter an integer multiple of 12 for annual paid products.
-            /// </remarks>
-            [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object Period
+            /// <summary>Property imageScanner: Security scan engine.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "imageScanner", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ImageScanner
             {
-                get => GetInstanceProperty<object>()!;
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property instanceStorageName: Custom OSS Bucket name.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "instanceStorageName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? InstanceStorageName
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property period: Prepaid cycle.</summary>
+            /// <remarks>
+            /// The unit is Monthly, please enter an integer multiple of 12 for annual paid products.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Period
             {
                 get => GetInstanceProperty<object?>();
             }

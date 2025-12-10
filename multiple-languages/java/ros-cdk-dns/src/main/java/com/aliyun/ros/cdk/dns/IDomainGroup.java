@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dns;
 /**
  * Represents a <code>DomainGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.358Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.583Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dns.$Module.class, fqn = "@alicloud/ros-cdk-dns.IDomainGroup")
 @software.amazon.jsii.Jsii.Proxy(IDomainGroup.Jsii$Proxy.class)
 public interface IDomainGroup extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

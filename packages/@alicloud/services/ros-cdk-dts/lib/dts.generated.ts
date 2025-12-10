@@ -72,7 +72,7 @@ function rosConsumerGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::ConsumerGroup`, which is used to create a consumer group for a change tracking instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::ConsumerGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ConsumerGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-consumergroup
  */
@@ -457,7 +457,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::Instance`, which is a new resource type that is used to create a Data Transmission Service (DTS) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::Instance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-instance
  */
@@ -983,7 +983,7 @@ function rosMigrationJob2PropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::MigrationJob2`, which is used to purchase a data migration instance and configure a data migration task of the new version.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::MigrationJob2`.
  * @Note This class does not contain additional functions, so it is recommended to use the `MigrationJob2` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-migrationjob2
  */
@@ -2064,7 +2064,7 @@ function rosSubscriptionJob2PropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::SubscriptionJob2`, which is used to configure a change tracking task.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::SubscriptionJob2`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SubscriptionJob2` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-subscriptionjob2
  */
@@ -2816,7 +2816,7 @@ function rosSynchronizationJob2PropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::SynchronizationJob2`, which is used to configure a data synchronization task.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::SynchronizationJob2`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SynchronizationJob2` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-synchronizationjob2
  */

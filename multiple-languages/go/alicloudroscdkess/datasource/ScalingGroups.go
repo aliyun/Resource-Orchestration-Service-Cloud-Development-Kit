@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::ESS::ScalingGroups`, which is used to query scaling groups.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::ESS::ScalingGroups`.
 type ScalingGroups interface {
 	alicloudroscdkcore.Resource
 	IScalingGroups

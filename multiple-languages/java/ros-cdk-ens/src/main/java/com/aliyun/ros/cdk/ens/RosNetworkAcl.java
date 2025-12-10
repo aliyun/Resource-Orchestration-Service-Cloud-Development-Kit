@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ens;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ENS::NetworkAcl</code>, which is used to create a network access control list (ACL).
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ENS::NetworkAcl</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:25.330Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:56.377Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ens.$Module.class, fqn = "@alicloud/ros-cdk-ens.RosNetworkAcl")
 public class RosNetworkAcl extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-askcluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.884Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.107Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosASKClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosASKClusterProps.Jsii$Proxy.class)
 public interface RosASKClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -47,6 +47,12 @@ public interface RosASKClusterProps extends software.amazon.jsii.JsiiSerializabl
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEndpointPublicAccess() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIpStack() {
         return null;
     }
 
@@ -145,6 +151,7 @@ public interface RosASKClusterProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object deletionProtection;
         java.lang.Object encryptionProviderKey;
         java.lang.Object endpointPublicAccess;
+        java.lang.Object ipStack;
         java.lang.Object kubernetesVersion;
         java.lang.Object maintenanceWindow;
         java.lang.Object privateZone;
@@ -296,6 +303,26 @@ public interface RosASKClusterProps extends software.amazon.jsii.JsiiSerializabl
          */
         public Builder endpointPublicAccess(com.aliyun.ros.cdk.core.IResolvable endpointPublicAccess) {
             this.endpointPublicAccess = endpointPublicAccess;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosASKClusterProps#getIpStack}
+         * @param ipStack the value to be set.
+         * @return {@code this}
+         */
+        public Builder ipStack(java.lang.String ipStack) {
+            this.ipStack = ipStack;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosASKClusterProps#getIpStack}
+         * @param ipStack the value to be set.
+         * @return {@code this}
+         */
+        public Builder ipStack(com.aliyun.ros.cdk.core.IResolvable ipStack) {
+            this.ipStack = ipStack;
             return this;
         }
 
@@ -573,6 +600,7 @@ public interface RosASKClusterProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object deletionProtection;
         private final java.lang.Object encryptionProviderKey;
         private final java.lang.Object endpointPublicAccess;
+        private final java.lang.Object ipStack;
         private final java.lang.Object kubernetesVersion;
         private final java.lang.Object maintenanceWindow;
         private final java.lang.Object privateZone;
@@ -600,6 +628,7 @@ public interface RosASKClusterProps extends software.amazon.jsii.JsiiSerializabl
             this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.encryptionProviderKey = software.amazon.jsii.Kernel.get(this, "encryptionProviderKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.endpointPublicAccess = software.amazon.jsii.Kernel.get(this, "endpointPublicAccess", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ipStack = software.amazon.jsii.Kernel.get(this, "ipStack", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.kubernetesVersion = software.amazon.jsii.Kernel.get(this, "kubernetesVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.maintenanceWindow = software.amazon.jsii.Kernel.get(this, "maintenanceWindow", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.privateZone = software.amazon.jsii.Kernel.get(this, "privateZone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -628,6 +657,7 @@ public interface RosASKClusterProps extends software.amazon.jsii.JsiiSerializabl
             this.deletionProtection = builder.deletionProtection;
             this.encryptionProviderKey = builder.encryptionProviderKey;
             this.endpointPublicAccess = builder.endpointPublicAccess;
+            this.ipStack = builder.ipStack;
             this.kubernetesVersion = builder.kubernetesVersion;
             this.maintenanceWindow = builder.maintenanceWindow;
             this.privateZone = builder.privateZone;
@@ -676,6 +706,11 @@ public interface RosASKClusterProps extends software.amazon.jsii.JsiiSerializabl
         @Override
         public final java.lang.Object getEndpointPublicAccess() {
             return this.endpointPublicAccess;
+        }
+
+        @Override
+        public final java.lang.Object getIpStack() {
+            return this.ipStack;
         }
 
         @Override
@@ -768,6 +803,9 @@ public interface RosASKClusterProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getEndpointPublicAccess() != null) {
                 data.set("endpointPublicAccess", om.valueToTree(this.getEndpointPublicAccess()));
             }
+            if (this.getIpStack() != null) {
+                data.set("ipStack", om.valueToTree(this.getIpStack()));
+            }
             if (this.getKubernetesVersion() != null) {
                 data.set("kubernetesVersion", om.valueToTree(this.getKubernetesVersion()));
             }
@@ -832,6 +870,7 @@ public interface RosASKClusterProps extends software.amazon.jsii.JsiiSerializabl
             if (this.deletionProtection != null ? !this.deletionProtection.equals(that.deletionProtection) : that.deletionProtection != null) return false;
             if (this.encryptionProviderKey != null ? !this.encryptionProviderKey.equals(that.encryptionProviderKey) : that.encryptionProviderKey != null) return false;
             if (this.endpointPublicAccess != null ? !this.endpointPublicAccess.equals(that.endpointPublicAccess) : that.endpointPublicAccess != null) return false;
+            if (this.ipStack != null ? !this.ipStack.equals(that.ipStack) : that.ipStack != null) return false;
             if (this.kubernetesVersion != null ? !this.kubernetesVersion.equals(that.kubernetesVersion) : that.kubernetesVersion != null) return false;
             if (this.maintenanceWindow != null ? !this.maintenanceWindow.equals(that.maintenanceWindow) : that.maintenanceWindow != null) return false;
             if (this.privateZone != null ? !this.privateZone.equals(that.privateZone) : that.privateZone != null) return false;
@@ -856,6 +895,7 @@ public interface RosASKClusterProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.deletionProtection != null ? this.deletionProtection.hashCode() : 0);
             result = 31 * result + (this.encryptionProviderKey != null ? this.encryptionProviderKey.hashCode() : 0);
             result = 31 * result + (this.endpointPublicAccess != null ? this.endpointPublicAccess.hashCode() : 0);
+            result = 31 * result + (this.ipStack != null ? this.ipStack.hashCode() : 0);
             result = 31 * result + (this.kubernetesVersion != null ? this.kubernetesVersion.hashCode() : 0);
             result = 31 * result + (this.maintenanceWindow != null ? this.maintenanceWindow.hashCode() : 0);
             result = 31 * result + (this.privateZone != null ? this.privateZone.hashCode() : 0);

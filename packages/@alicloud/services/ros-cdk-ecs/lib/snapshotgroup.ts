@@ -62,7 +62,7 @@ export interface ISnapshotGroup extends ros.IResource {
     readonly attrSnapshotGroupId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::SnapshotGroup`, which is used to create a snapshot-consistent group for cloud disks that are attached to an Elastic Compute Service (ECS) instance. A snapshot-consistent group contains snapshots of one or more cloud disks.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::SnapshotGroup`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSnapshotGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-snapshotgroup
  */

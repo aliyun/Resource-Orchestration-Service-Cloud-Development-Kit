@@ -35,6 +35,7 @@
 @alicloud/ros-cdk-oss.RosBucket.RuleProperty=com.aliyun.ros.cdk.oss.RosBucket$RuleProperty
 @alicloud/ros-cdk-oss.RosBucket.ServerSideEncryptionConfigurationProperty=com.aliyun.ros.cdk.oss.RosBucket$ServerSideEncryptionConfigurationProperty
 @alicloud/ros-cdk-oss.RosBucket.SetsProperty=com.aliyun.ros.cdk.oss.RosBucket$SetsProperty
+@alicloud/ros-cdk-oss.RosBucket.TransitionProperty=com.aliyun.ros.cdk.oss.RosBucket$TransitionProperty
 @alicloud/ros-cdk-oss.RosBucket.VersioningConfigurationProperty=com.aliyun.ros.cdk.oss.RosBucket$VersioningConfigurationProperty
 @alicloud/ros-cdk-oss.RosBucket.WebsiteConfigurationV2Property=com.aliyun.ros.cdk.oss.RosBucket$WebsiteConfigurationV2Property
 @alicloud/ros-cdk-oss.RosBucketProps=com.aliyun.ros.cdk.oss.RosBucketProps

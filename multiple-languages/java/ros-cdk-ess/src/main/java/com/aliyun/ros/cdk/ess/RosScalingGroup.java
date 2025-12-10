@@ -1,11 +1,9 @@
 package com.aliyun.ros.cdk.ess;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ESS::ScalingGroup</code>, which is used to create a scaling group.
- * <p>
- * A scaling group can be a group of Elastic Compute Service (ECS) instances that are dynamically scaled based on the configured scenario. A scaling group does not immediately take effect after it is created. You must use ALIYUN::ESS::ScalingGroupEnable to enable the scaling group to trigger scaling activities based on scaling rules.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ESS::ScalingGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:25.735Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:56.824Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingGroup")
 public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -321,6 +319,40 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setHealthCheckType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "healthCheckType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckTypes() {
+        return software.amazon.jsii.Kernel.get(this, "healthCheckTypes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setHealthCheckTypes(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "healthCheckTypes", value);
+    }
+
+    /**
+     */
+    public void setHealthCheckTypes(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "healthCheckTypes", value);
     }
 
     /**
@@ -1892,6 +1924,23 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder healthCheckType(final com.aliyun.ros.cdk.core.IResolvable healthCheckType) {
             this.props.healthCheckType(healthCheckType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param healthCheckTypes This parameter is required.
+         */
+        public Builder healthCheckTypes(final com.aliyun.ros.cdk.core.IResolvable healthCheckTypes) {
+            this.props.healthCheckTypes(healthCheckTypes);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param healthCheckTypes This parameter is required.
+         */
+        public Builder healthCheckTypes(final java.util.List<? extends java.lang.Object> healthCheckTypes) {
+            this.props.healthCheckTypes(healthCheckTypes);
             return this;
         }
 

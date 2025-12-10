@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::RunCommand`, which is used to run a shell, PowerShell, or batch command on Elastic Compute Service (ECS) instances.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::RunCommand`.
 type RosRunCommand interface {
 	alicloudroscdkcore.RosResource
 	AttrCommandId() alicloudroscdkcore.IResolvable

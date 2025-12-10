@@ -76,6 +76,7 @@
 @alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster.MaintenanceWindowProperty=com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster$MaintenanceWindowProperty
 @alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster.NodePoolInfoProperty=com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster$NodePoolInfoProperty
 @alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster.NodePoolsProperty=com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster$NodePoolsProperty
+@alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster.RrsaConfigProperty=com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster$RrsaConfigProperty
 @alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster.ScalingGroupProperty=com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster$ScalingGroupProperty
 @alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster.ScalingGroupTagsProperty=com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster$ScalingGroupTagsProperty
 @alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster.TagsProperty=com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster$TagsProperty
@@ -91,6 +92,7 @@
 @alicloud/ros-cdk-cs.RosManagedKubernetesCluster.MaintenanceWindowProperty=com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster$MaintenanceWindowProperty
 @alicloud/ros-cdk-cs.RosManagedKubernetesCluster.NodePoolInfoProperty=com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster$NodePoolInfoProperty
 @alicloud/ros-cdk-cs.RosManagedKubernetesCluster.NodePoolsProperty=com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster$NodePoolsProperty
+@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.RrsaConfigProperty=com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster$RrsaConfigProperty
 @alicloud/ros-cdk-cs.RosManagedKubernetesCluster.RuntimeProperty=com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster$RuntimeProperty
 @alicloud/ros-cdk-cs.RosManagedKubernetesCluster.ScalingGroupProperty=com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster$ScalingGroupProperty
 @alicloud/ros-cdk-cs.RosManagedKubernetesCluster.ScalingGroupTagsProperty=com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster$ScalingGroupTagsProperty

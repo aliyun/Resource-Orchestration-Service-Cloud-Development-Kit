@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dts.datasource;
 /**
  * Represents a <code>SynchronizationJob</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.598Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.824Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.datasource.ISynchronizationJob")
 @software.amazon.jsii.Jsii.Proxy(ISynchronizationJob.Jsii$Proxy.class)
 public interface ISynchronizationJob extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

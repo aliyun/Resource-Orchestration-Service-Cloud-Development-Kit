@@ -13,7 +13,7 @@ package com.aliyun.ros.cdk.ossdeployment;
  *  Source.jsonData('config.json', { key: value })
  * </pre></blockquote>
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:31.309Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.873Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ossdeployment.$Module.class, fqn = "@alicloud/ros-cdk-ossdeployment.Source")
 public class Source extends software.amazon.jsii.JsiiObject {
 

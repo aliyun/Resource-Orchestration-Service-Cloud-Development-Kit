@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Api`, which is used to create an API.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Api`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApi`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-api

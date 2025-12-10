@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::User`, which is used to create a user.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::User`.
 type RosUser interface {
 	alicloudroscdkcore.RosResource
 	AttrUserId() alicloudroscdkcore.IResolvable

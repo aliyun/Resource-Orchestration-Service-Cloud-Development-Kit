@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::ComputeNest::ServiceInstance`, which type is used to query the information about a service instance.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::ComputeNest::ServiceInstance`.
 type RosServiceInstance interface {
 	alicloudroscdkcore.RosResource
 	AttrComponents() alicloudroscdkcore.IResolvable

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::VPC`, which is used to create a virtual private cloud (VPC).
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::VPC`.
 type RosVPC interface {
 	alicloudroscdkcore.RosResource
 	AttrRouteTableId() alicloudroscdkcore.IResolvable

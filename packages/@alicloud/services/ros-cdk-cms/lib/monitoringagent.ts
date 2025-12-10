@@ -40,7 +40,7 @@ export interface IMonitoringAgent extends ros.IResource {
     readonly props: MonitoringAgentProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::MonitoringAgent`, which is used to install the CloudMonitor agent on Alibaba Cloud hosts.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::MonitoringAgent`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMonitoringAgent`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitoringagent
  */

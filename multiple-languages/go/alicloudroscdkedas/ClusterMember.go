@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::ClusterMember`, which is used to add Elastic Compute Service (ECS) instances to a cluster.
+// This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::ClusterMember`.
 type ClusterMember interface {
 	alicloudroscdkcore.Resource
 	IClusterMember

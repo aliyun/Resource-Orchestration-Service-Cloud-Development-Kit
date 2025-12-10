@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dbs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dbs-download
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.095Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.301Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dbs.$Module.class, fqn = "@alicloud/ros-cdk-dbs.RosDownloadProps")
 @software.amazon.jsii.Jsii.Proxy(RosDownloadProps.Jsii$Proxy.class)
 public interface RosDownloadProps extends software.amazon.jsii.JsiiSerializable {

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::RecommendInstanceTypes`, which is used to query the recommended instance types of Elastic Compute Service (ECS) instances.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::RecommendInstanceTypes`.
 type RecommendInstanceTypes interface {
 	alicloudroscdkcore.Resource
 	IRecommendInstanceTypes

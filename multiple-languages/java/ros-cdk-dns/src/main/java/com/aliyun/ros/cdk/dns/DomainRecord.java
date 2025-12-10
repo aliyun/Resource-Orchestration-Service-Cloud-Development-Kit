@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.dns;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::DNS::DomainRecord</code>, which is used to add a Domain Name System (DNS) record.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::DNS::DomainRecord</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.355Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.579Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dns.$Module.class, fqn = "@alicloud/ros-cdk-dns.DomainRecord")
 public class DomainRecord extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.dns.IDomainRecord {
 

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::NetworkPackageAssociation`, which is used to associate a premium bandwidth plan with an office network.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::NetworkPackageAssociation`.
 type RosNetworkPackageAssociation interface {
 	alicloudroscdkcore.RosResource
 	AttrNetworkPackageId() alicloudroscdkcore.IResolvable

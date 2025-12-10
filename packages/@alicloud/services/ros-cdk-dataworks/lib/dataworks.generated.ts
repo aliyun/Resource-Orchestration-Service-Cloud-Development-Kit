@@ -139,7 +139,7 @@ function rosProjectPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DataWorks::Project`, which is used to create a DataWorks workspace.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DataWorks::Project`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Project` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dataworks-project
  */
@@ -503,7 +503,7 @@ function rosResourceGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DataWorks::ResourceGroup`, which is used to create a serverless resource group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DataWorks::ResourceGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ResourceGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dataworks-resourcegroup
  */
@@ -725,7 +725,7 @@ function rosResourceGroupRelationPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DataWorks::ResourceGroupRelation`, which is used to associate a resource group with a workspace.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DataWorks::ResourceGroupRelation`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ResourceGroupRelation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dataworks-resourcegrouprelation
  */

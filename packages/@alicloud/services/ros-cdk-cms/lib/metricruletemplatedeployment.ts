@@ -82,7 +82,7 @@ export interface IMetricRuleTemplateDeployment extends ros.IResource {
     readonly attrRuleIds: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::MetricRuleTemplateDeployment`, which is used to apply an alert template to an application group.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::MetricRuleTemplateDeployment`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMetricRuleTemplateDeployment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-metricruletemplatedeployment
  */

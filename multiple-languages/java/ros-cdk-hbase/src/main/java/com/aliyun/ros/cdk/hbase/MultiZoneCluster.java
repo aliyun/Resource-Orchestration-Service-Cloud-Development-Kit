@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hbase;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::HBase::MultiZoneCluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:26.385Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.558Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbase.$Module.class, fqn = "@alicloud/ros-cdk-hbase.MultiZoneCluster")
 public class MultiZoneCluster extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.hbase.IMultiZoneCluster {
 
@@ -845,8 +845,7 @@ public class MultiZoneCluster extends com.aliyun.ros.cdk.core.Resource implement
         /**
          * Property vpcId: The ID of the virtual private cloud (VPC).
          * <p>
-         * If you leave this parameter and the VSwitchId
-         * parameter empty, the classic network type is used. The VPC network type is preferred.
+         * If you leave this parameter and the VSwitchId parameter empty, the classic network type is used. The VPC network type is preferred.
          * <p>
          * @return {@code this}
          * @param vpcId Property vpcId: The ID of the virtual private cloud (VPC). This parameter is required.
@@ -858,8 +857,7 @@ public class MultiZoneCluster extends com.aliyun.ros.cdk.core.Resource implement
         /**
          * Property vpcId: The ID of the virtual private cloud (VPC).
          * <p>
-         * If you leave this parameter and the VSwitchId
-         * parameter empty, the classic network type is used. The VPC network type is preferred.
+         * If you leave this parameter and the VSwitchId parameter empty, the classic network type is used. The VPC network type is preferred.
          * <p>
          * @return {@code this}
          * @param vpcId Property vpcId: The ID of the virtual private cloud (VPC). This parameter is required.

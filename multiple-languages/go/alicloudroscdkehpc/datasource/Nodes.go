@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::EHPC::Nodes`, which is used to query nodes in an Elastic High Performance Computing (E-HPC) cluster.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::EHPC::Nodes`.
 type Nodes interface {
 	alicloudroscdkcore.Resource
 	INodes

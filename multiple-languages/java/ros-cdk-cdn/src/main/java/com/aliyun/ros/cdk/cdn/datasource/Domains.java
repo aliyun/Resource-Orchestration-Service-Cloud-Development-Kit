@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cdn.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::CDN::Domains</code>, which is used to query the basic information about created accelerated domain names.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::CDN::Domains</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:21.755Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.053Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cdn.$Module.class, fqn = "@alicloud/ros-cdk-cdn.datasource.Domains")
 public class Domains extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cdn.datasource.IDomains {
 

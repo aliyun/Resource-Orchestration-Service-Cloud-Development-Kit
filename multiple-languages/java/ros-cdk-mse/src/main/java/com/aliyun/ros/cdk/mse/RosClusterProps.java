@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.mse;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-cluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:27.061Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.235Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.RosClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosClusterProps.Jsii$Proxy.class)
 public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -32,13 +32,13 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getAcceptLanguage() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAclEntryList() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getAclEntryList() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getChargeType() {
         return null;
     }
 
@@ -56,7 +56,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getDiskType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEipEnabled() {
         return null;
     }
 
@@ -68,19 +68,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getPrivateSlbSpecification() {
-        return null;
-    }
-
-    /**
-     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPubNetworkFlow() {
-        return null;
-    }
-
-    /**
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getPubSlbSpecification() {
         return null;
     }
 
@@ -93,6 +81,12 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupType() {
         return null;
     }
 
@@ -129,17 +123,16 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object clusterVersion;
         java.lang.Object instanceCount;
         java.lang.Object netType;
-        java.lang.Object acceptLanguage;
         java.lang.Object aclEntryList;
+        java.lang.Object chargeType;
         java.lang.Object clusterAliasName;
         java.lang.Object connectionType;
-        java.lang.Object diskType;
+        java.lang.Object eipEnabled;
         java.lang.Object mseVersion;
-        java.lang.Object privateSlbSpecification;
         java.lang.Object pubNetworkFlow;
-        java.lang.Object pubSlbSpecification;
         java.lang.Object requestPars;
         java.lang.Object resourceGroupId;
+        java.lang.Object securityGroupType;
         java.util.List<com.aliyun.ros.cdk.mse.RosCluster.TagsProperty> tags;
         java.lang.Object vpcId;
         java.lang.Object vSwitchId;
@@ -245,26 +238,6 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
-         * Sets the value of {@link RosClusterProps#getAcceptLanguage}
-         * @param acceptLanguage the value to be set.
-         * @return {@code this}
-         */
-        public Builder acceptLanguage(java.lang.String acceptLanguage) {
-            this.acceptLanguage = acceptLanguage;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosClusterProps#getAcceptLanguage}
-         * @param acceptLanguage the value to be set.
-         * @return {@code this}
-         */
-        public Builder acceptLanguage(com.aliyun.ros.cdk.core.IResolvable acceptLanguage) {
-            this.acceptLanguage = acceptLanguage;
-            return this;
-        }
-
-        /**
          * Sets the value of {@link RosClusterProps#getAclEntryList}
          * @param aclEntryList the value to be set.
          * @return {@code this}
@@ -281,6 +254,26 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder aclEntryList(java.util.List<? extends java.lang.Object> aclEntryList) {
             this.aclEntryList = aclEntryList;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getChargeType}
+         * @param chargeType the value to be set.
+         * @return {@code this}
+         */
+        public Builder chargeType(java.lang.String chargeType) {
+            this.chargeType = chargeType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getChargeType}
+         * @param chargeType the value to be set.
+         * @return {@code this}
+         */
+        public Builder chargeType(com.aliyun.ros.cdk.core.IResolvable chargeType) {
+            this.chargeType = chargeType;
             return this;
         }
 
@@ -325,22 +318,22 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
-         * Sets the value of {@link RosClusterProps#getDiskType}
-         * @param diskType the value to be set.
+         * Sets the value of {@link RosClusterProps#getEipEnabled}
+         * @param eipEnabled the value to be set.
          * @return {@code this}
          */
-        public Builder diskType(java.lang.String diskType) {
-            this.diskType = diskType;
+        public Builder eipEnabled(java.lang.Boolean eipEnabled) {
+            this.eipEnabled = eipEnabled;
             return this;
         }
 
         /**
-         * Sets the value of {@link RosClusterProps#getDiskType}
-         * @param diskType the value to be set.
+         * Sets the value of {@link RosClusterProps#getEipEnabled}
+         * @param eipEnabled the value to be set.
          * @return {@code this}
          */
-        public Builder diskType(com.aliyun.ros.cdk.core.IResolvable diskType) {
-            this.diskType = diskType;
+        public Builder eipEnabled(com.aliyun.ros.cdk.core.IResolvable eipEnabled) {
+            this.eipEnabled = eipEnabled;
             return this;
         }
 
@@ -365,31 +358,11 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
-         * Sets the value of {@link RosClusterProps#getPrivateSlbSpecification}
-         * @param privateSlbSpecification the value to be set.
-         * @return {@code this}
-         */
-        public Builder privateSlbSpecification(java.lang.String privateSlbSpecification) {
-            this.privateSlbSpecification = privateSlbSpecification;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosClusterProps#getPrivateSlbSpecification}
-         * @param privateSlbSpecification the value to be set.
-         * @return {@code this}
-         */
-        public Builder privateSlbSpecification(com.aliyun.ros.cdk.core.IResolvable privateSlbSpecification) {
-            this.privateSlbSpecification = privateSlbSpecification;
-            return this;
-        }
-
-        /**
          * Sets the value of {@link RosClusterProps#getPubNetworkFlow}
          * @param pubNetworkFlow the value to be set.
          * @return {@code this}
          */
-        public Builder pubNetworkFlow(java.lang.String pubNetworkFlow) {
+        public Builder pubNetworkFlow(java.lang.Number pubNetworkFlow) {
             this.pubNetworkFlow = pubNetworkFlow;
             return this;
         }
@@ -401,26 +374,6 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder pubNetworkFlow(com.aliyun.ros.cdk.core.IResolvable pubNetworkFlow) {
             this.pubNetworkFlow = pubNetworkFlow;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosClusterProps#getPubSlbSpecification}
-         * @param pubSlbSpecification the value to be set.
-         * @return {@code this}
-         */
-        public Builder pubSlbSpecification(java.lang.String pubSlbSpecification) {
-            this.pubSlbSpecification = pubSlbSpecification;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosClusterProps#getPubSlbSpecification}
-         * @param pubSlbSpecification the value to be set.
-         * @return {@code this}
-         */
-        public Builder pubSlbSpecification(com.aliyun.ros.cdk.core.IResolvable pubSlbSpecification) {
-            this.pubSlbSpecification = pubSlbSpecification;
             return this;
         }
 
@@ -461,6 +414,26 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getSecurityGroupType}
+         * @param securityGroupType the value to be set.
+         * @return {@code this}
+         */
+        public Builder securityGroupType(java.lang.String securityGroupType) {
+            this.securityGroupType = securityGroupType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getSecurityGroupType}
+         * @param securityGroupType the value to be set.
+         * @return {@code this}
+         */
+        public Builder securityGroupType(com.aliyun.ros.cdk.core.IResolvable securityGroupType) {
+            this.securityGroupType = securityGroupType;
             return this;
         }
 
@@ -536,17 +509,16 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object clusterVersion;
         private final java.lang.Object instanceCount;
         private final java.lang.Object netType;
-        private final java.lang.Object acceptLanguage;
         private final java.lang.Object aclEntryList;
+        private final java.lang.Object chargeType;
         private final java.lang.Object clusterAliasName;
         private final java.lang.Object connectionType;
-        private final java.lang.Object diskType;
+        private final java.lang.Object eipEnabled;
         private final java.lang.Object mseVersion;
-        private final java.lang.Object privateSlbSpecification;
         private final java.lang.Object pubNetworkFlow;
-        private final java.lang.Object pubSlbSpecification;
         private final java.lang.Object requestPars;
         private final java.lang.Object resourceGroupId;
+        private final java.lang.Object securityGroupType;
         private final java.util.List<com.aliyun.ros.cdk.mse.RosCluster.TagsProperty> tags;
         private final java.lang.Object vpcId;
         private final java.lang.Object vSwitchId;
@@ -562,17 +534,16 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.clusterVersion = software.amazon.jsii.Kernel.get(this, "clusterVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceCount = software.amazon.jsii.Kernel.get(this, "instanceCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.netType = software.amazon.jsii.Kernel.get(this, "netType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.acceptLanguage = software.amazon.jsii.Kernel.get(this, "acceptLanguage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.aclEntryList = software.amazon.jsii.Kernel.get(this, "aclEntryList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.chargeType = software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.clusterAliasName = software.amazon.jsii.Kernel.get(this, "clusterAliasName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.connectionType = software.amazon.jsii.Kernel.get(this, "connectionType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.diskType = software.amazon.jsii.Kernel.get(this, "diskType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.eipEnabled = software.amazon.jsii.Kernel.get(this, "eipEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.mseVersion = software.amazon.jsii.Kernel.get(this, "mseVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.privateSlbSpecification = software.amazon.jsii.Kernel.get(this, "privateSlbSpecification", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.pubNetworkFlow = software.amazon.jsii.Kernel.get(this, "pubNetworkFlow", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.pubSlbSpecification = software.amazon.jsii.Kernel.get(this, "pubSlbSpecification", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.requestPars = software.amazon.jsii.Kernel.get(this, "requestPars", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityGroupType = software.amazon.jsii.Kernel.get(this, "securityGroupType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.mse.RosCluster.TagsProperty.class)));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -589,17 +560,16 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.clusterVersion = java.util.Objects.requireNonNull(builder.clusterVersion, "clusterVersion is required");
             this.instanceCount = java.util.Objects.requireNonNull(builder.instanceCount, "instanceCount is required");
             this.netType = java.util.Objects.requireNonNull(builder.netType, "netType is required");
-            this.acceptLanguage = builder.acceptLanguage;
             this.aclEntryList = builder.aclEntryList;
+            this.chargeType = builder.chargeType;
             this.clusterAliasName = builder.clusterAliasName;
             this.connectionType = builder.connectionType;
-            this.diskType = builder.diskType;
+            this.eipEnabled = builder.eipEnabled;
             this.mseVersion = builder.mseVersion;
-            this.privateSlbSpecification = builder.privateSlbSpecification;
             this.pubNetworkFlow = builder.pubNetworkFlow;
-            this.pubSlbSpecification = builder.pubSlbSpecification;
             this.requestPars = builder.requestPars;
             this.resourceGroupId = builder.resourceGroupId;
+            this.securityGroupType = builder.securityGroupType;
             this.tags = (java.util.List<com.aliyun.ros.cdk.mse.RosCluster.TagsProperty>)builder.tags;
             this.vpcId = builder.vpcId;
             this.vSwitchId = builder.vSwitchId;
@@ -631,13 +601,13 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Object getAcceptLanguage() {
-            return this.acceptLanguage;
+        public final java.lang.Object getAclEntryList() {
+            return this.aclEntryList;
         }
 
         @Override
-        public final java.lang.Object getAclEntryList() {
-            return this.aclEntryList;
+        public final java.lang.Object getChargeType() {
+            return this.chargeType;
         }
 
         @Override
@@ -651,8 +621,8 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Object getDiskType() {
-            return this.diskType;
+        public final java.lang.Object getEipEnabled() {
+            return this.eipEnabled;
         }
 
         @Override
@@ -661,18 +631,8 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Object getPrivateSlbSpecification() {
-            return this.privateSlbSpecification;
-        }
-
-        @Override
         public final java.lang.Object getPubNetworkFlow() {
             return this.pubNetworkFlow;
-        }
-
-        @Override
-        public final java.lang.Object getPubSlbSpecification() {
-            return this.pubSlbSpecification;
         }
 
         @Override
@@ -683,6 +643,11 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
+        }
+
+        @Override
+        public final java.lang.Object getSecurityGroupType() {
+            return this.securityGroupType;
         }
 
         @Override
@@ -711,11 +676,11 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             data.set("clusterVersion", om.valueToTree(this.getClusterVersion()));
             data.set("instanceCount", om.valueToTree(this.getInstanceCount()));
             data.set("netType", om.valueToTree(this.getNetType()));
-            if (this.getAcceptLanguage() != null) {
-                data.set("acceptLanguage", om.valueToTree(this.getAcceptLanguage()));
-            }
             if (this.getAclEntryList() != null) {
                 data.set("aclEntryList", om.valueToTree(this.getAclEntryList()));
+            }
+            if (this.getChargeType() != null) {
+                data.set("chargeType", om.valueToTree(this.getChargeType()));
             }
             if (this.getClusterAliasName() != null) {
                 data.set("clusterAliasName", om.valueToTree(this.getClusterAliasName()));
@@ -723,26 +688,23 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getConnectionType() != null) {
                 data.set("connectionType", om.valueToTree(this.getConnectionType()));
             }
-            if (this.getDiskType() != null) {
-                data.set("diskType", om.valueToTree(this.getDiskType()));
+            if (this.getEipEnabled() != null) {
+                data.set("eipEnabled", om.valueToTree(this.getEipEnabled()));
             }
             if (this.getMseVersion() != null) {
                 data.set("mseVersion", om.valueToTree(this.getMseVersion()));
             }
-            if (this.getPrivateSlbSpecification() != null) {
-                data.set("privateSlbSpecification", om.valueToTree(this.getPrivateSlbSpecification()));
-            }
             if (this.getPubNetworkFlow() != null) {
                 data.set("pubNetworkFlow", om.valueToTree(this.getPubNetworkFlow()));
-            }
-            if (this.getPubSlbSpecification() != null) {
-                data.set("pubSlbSpecification", om.valueToTree(this.getPubSlbSpecification()));
             }
             if (this.getRequestPars() != null) {
                 data.set("requestPars", om.valueToTree(this.getRequestPars()));
             }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
+            if (this.getSecurityGroupType() != null) {
+                data.set("securityGroupType", om.valueToTree(this.getSecurityGroupType()));
             }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
@@ -776,17 +738,16 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (!clusterVersion.equals(that.clusterVersion)) return false;
             if (!instanceCount.equals(that.instanceCount)) return false;
             if (!netType.equals(that.netType)) return false;
-            if (this.acceptLanguage != null ? !this.acceptLanguage.equals(that.acceptLanguage) : that.acceptLanguage != null) return false;
             if (this.aclEntryList != null ? !this.aclEntryList.equals(that.aclEntryList) : that.aclEntryList != null) return false;
+            if (this.chargeType != null ? !this.chargeType.equals(that.chargeType) : that.chargeType != null) return false;
             if (this.clusterAliasName != null ? !this.clusterAliasName.equals(that.clusterAliasName) : that.clusterAliasName != null) return false;
             if (this.connectionType != null ? !this.connectionType.equals(that.connectionType) : that.connectionType != null) return false;
-            if (this.diskType != null ? !this.diskType.equals(that.diskType) : that.diskType != null) return false;
+            if (this.eipEnabled != null ? !this.eipEnabled.equals(that.eipEnabled) : that.eipEnabled != null) return false;
             if (this.mseVersion != null ? !this.mseVersion.equals(that.mseVersion) : that.mseVersion != null) return false;
-            if (this.privateSlbSpecification != null ? !this.privateSlbSpecification.equals(that.privateSlbSpecification) : that.privateSlbSpecification != null) return false;
             if (this.pubNetworkFlow != null ? !this.pubNetworkFlow.equals(that.pubNetworkFlow) : that.pubNetworkFlow != null) return false;
-            if (this.pubSlbSpecification != null ? !this.pubSlbSpecification.equals(that.pubSlbSpecification) : that.pubSlbSpecification != null) return false;
             if (this.requestPars != null ? !this.requestPars.equals(that.requestPars) : that.requestPars != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
+            if (this.securityGroupType != null ? !this.securityGroupType.equals(that.securityGroupType) : that.securityGroupType != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.vpcId != null ? !this.vpcId.equals(that.vpcId) : that.vpcId != null) return false;
             return this.vSwitchId != null ? this.vSwitchId.equals(that.vSwitchId) : that.vSwitchId == null;
@@ -799,17 +760,16 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.clusterVersion.hashCode());
             result = 31 * result + (this.instanceCount.hashCode());
             result = 31 * result + (this.netType.hashCode());
-            result = 31 * result + (this.acceptLanguage != null ? this.acceptLanguage.hashCode() : 0);
             result = 31 * result + (this.aclEntryList != null ? this.aclEntryList.hashCode() : 0);
+            result = 31 * result + (this.chargeType != null ? this.chargeType.hashCode() : 0);
             result = 31 * result + (this.clusterAliasName != null ? this.clusterAliasName.hashCode() : 0);
             result = 31 * result + (this.connectionType != null ? this.connectionType.hashCode() : 0);
-            result = 31 * result + (this.diskType != null ? this.diskType.hashCode() : 0);
+            result = 31 * result + (this.eipEnabled != null ? this.eipEnabled.hashCode() : 0);
             result = 31 * result + (this.mseVersion != null ? this.mseVersion.hashCode() : 0);
-            result = 31 * result + (this.privateSlbSpecification != null ? this.privateSlbSpecification.hashCode() : 0);
             result = 31 * result + (this.pubNetworkFlow != null ? this.pubNetworkFlow.hashCode() : 0);
-            result = 31 * result + (this.pubSlbSpecification != null ? this.pubSlbSpecification.hashCode() : 0);
             result = 31 * result + (this.requestPars != null ? this.requestPars.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
+            result = 31 * result + (this.securityGroupType != null ? this.securityGroupType.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
             result = 31 * result + (this.vSwitchId != null ? this.vSwitchId.hashCode() : 0);

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::Listener`, which is used to create an HTTP, HTTPS, or Quick UDP Internet Connections (QUIC) listener.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::Listener`.
 type RosListener interface {
 	alicloudroscdkcore.RosResource
 	AttrListenerId() alicloudroscdkcore.IResolvable

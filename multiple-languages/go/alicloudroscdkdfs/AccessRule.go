@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::DFS::AccessRule`, which is used to create a rule for a permission group.
+// This class encapsulates and extends the ROS resource type `ALIYUN::DFS::AccessRule`.
 type AccessRule interface {
 	alicloudroscdkcore.Resource
 	IAccessRule

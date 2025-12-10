@@ -100,7 +100,7 @@ export interface IAlarmContact extends ros.IResource {
     readonly attrUpdateTime: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::CMS::AlarmContact`, which is used to query the information about an alert contact.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CMS::AlarmContact`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAlarmContact`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-alarmcontact
  */

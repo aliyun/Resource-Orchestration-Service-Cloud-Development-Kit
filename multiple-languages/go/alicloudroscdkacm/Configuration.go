@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ACM::Configuration`, which is used to create a configuration.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ACM::Configuration`.
 type Configuration interface {
 	alicloudroscdkcore.Resource
 	IConfiguration

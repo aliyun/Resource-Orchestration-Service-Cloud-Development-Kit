@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cr.datasource;
 /**
  * Represents a <code>Repositories</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.763Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.001Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.datasource.IRepositories")
 @software.amazon.jsii.Jsii.Proxy(IRepositories.Jsii$Proxy.class)
 public interface IRepositories extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

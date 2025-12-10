@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cms.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::CMS::Namespace</code>, which is used to query the information about a namespace and the metric data of the namespace.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::CMS::Namespace</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.593Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.837Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.datasource.Namespace")
 public class Namespace extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cms.datasource.INamespace {
 

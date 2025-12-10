@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::ForwardEntry`, which is used to configure the Destination Network Address Translation (DNAT) table of a Network Address Translation (NAT) gateway.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::ForwardEntry`.
 type RosForwardEntry interface {
 	alicloudroscdkcore.RosResource
 	AttrForwardEntryId() alicloudroscdkcore.IResolvable

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ECD::Bundle`, which is used to create a custom cloud computer template.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ECD::Bundle`.
 type Bundle interface {
 	alicloudroscdkcore.Resource
 	IBundle

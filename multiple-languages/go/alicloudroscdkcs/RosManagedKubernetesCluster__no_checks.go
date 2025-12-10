@@ -136,6 +136,10 @@ func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetFormatDiskParameters(
 	return nil
 }
 
+func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetIpStackParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetIsEnterpriseSecurityGroupParameters(val interface{}) error {
 	return nil
 }
@@ -197,6 +201,10 @@ func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetProxyModeParameters(v
 }
 
 func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetResourceGroupIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetRrsaConfigParameters(val interface{}) error {
 	return nil
 }
 
