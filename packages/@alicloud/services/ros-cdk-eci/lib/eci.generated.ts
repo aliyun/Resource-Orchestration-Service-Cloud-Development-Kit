@@ -290,7 +290,7 @@ function rosContainerGroupPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECI::ContainerGroup`, which is used to create a container group. A container group is an elastic container instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECI::ContainerGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ContainerGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eci-containergroup
  */
@@ -2338,7 +2338,7 @@ function rosImageCachePropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECI::ImageCache`, which is used to create an image cache.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECI::ImageCache`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ImageCache` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eci-imagecache
  */

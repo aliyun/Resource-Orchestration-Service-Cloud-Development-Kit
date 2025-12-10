@@ -39,6 +39,8 @@ type RosPermissions interface {
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
 	// coerce it to an IResolvable through `Lazy.any({ produce: resource.ref })`.
 	Ref() *string
+	RefreshUserSync() interface{}
+	SetRefreshUserSync(val interface{})
 	// Options for this resource, such as condition, update policy etc.
 	RosOptions() alicloudroscdkcore.IRosResourceOptions
 	RosProperties() *map[string]interface{}
@@ -242,6 +244,16 @@ func (j *jsiiProxy_RosPermissions) Ref() *string {
 	return returns
 }
 
+func (j *jsiiProxy_RosPermissions) RefreshUserSync() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"refreshUserSync",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosPermissions) RosOptions() alicloudroscdkcore.IRosResourceOptions {
 	var returns alicloudroscdkcore.IRosResourceOptions
 	_jsii_.Get(
@@ -349,6 +361,17 @@ func (j *jsiiProxy_RosPermissions)SetPermissions(val interface{}) {
 	_jsii_.Set(
 		j,
 		"permissions",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosPermissions)SetRefreshUserSync(val interface{}) {
+	if err := j.validateSetRefreshUserSyncParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"refreshUserSync",
 		val,
 	)
 }

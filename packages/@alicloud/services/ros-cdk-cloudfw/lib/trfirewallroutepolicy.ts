@@ -60,7 +60,7 @@ export interface ITrFirewallRoutePolicy extends ros.IResource {
     readonly attrTrFirewallRoutePolicyId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::TrFirewallRoutePolicy`, which is used to create a routing policy for a virtual private cloud (VPC) firewall of a transit router.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::TrFirewallRoutePolicy`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTrFirewallRoutePolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-trfirewallroutepolicy
  */

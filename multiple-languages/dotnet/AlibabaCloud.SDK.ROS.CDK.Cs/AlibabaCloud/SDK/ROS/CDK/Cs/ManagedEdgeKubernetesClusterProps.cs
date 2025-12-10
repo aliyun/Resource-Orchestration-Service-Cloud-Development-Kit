@@ -301,6 +301,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
+        private object? _ipStack;
+
+        /// <summary>Property ipStack: The IP stack of the cluster.</summary>
+        /// <remarks>
+        /// Value: ipv4 (Single stack) or ipv6 (Dual Stack). Default value: ipv4
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "ipStack", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? IpStack
+        {
+            get => _ipStack;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _ipStack = value;
+            }
+        }
+
         private object? _isEnterpriseSecurityGroup;
 
         /// <summary>Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group.</summary>
@@ -648,6 +682,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                     }
                 }
                 _resourceGroupId = value;
+            }
+        }
+
+        private object? _rrsaConfig;
+
+        /// <summary>Property rrsaConfig: The configuration of RRSA.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "rrsaConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster.RrsaConfigProperty\"}]}}", isOptional: true)]
+        public object? RrsaConfig
+        {
+            get => _rrsaConfig;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Cs.RosManagedEdgeKubernetesCluster.IRrsaConfigProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Cs.RosManagedEdgeKubernetesCluster.IRrsaConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _rrsaConfig = value;
             }
         }
 

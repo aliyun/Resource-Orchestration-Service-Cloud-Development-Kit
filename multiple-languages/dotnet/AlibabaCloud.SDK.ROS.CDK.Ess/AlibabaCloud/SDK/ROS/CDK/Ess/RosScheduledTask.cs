@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ess
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScheduledTask`, which is used to create a scheduled task by specifying properties.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScheduledTask`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `ScheduledTask` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scheduledtask
@@ -385,6 +385,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// - Daily: Recurrence interval by day for a scheduled task.
         /// - Weekly: Recurrence interval by week for a scheduled task.
         /// - Monthly: Recurrence interval by month for a scheduled task.
+        /// - Cron: The scheduled task is executed based on the specified cron expression.
         /// RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.
         /// </remarks>
         [JsiiOptional]
@@ -420,6 +421,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// - Daily: Only one value in the range [1,31] can be filled.
         /// - Weekly: Multiple values can be filled. The values of Sunday to Saturday are 0 to 6 in sequence. Multiple values shall be separated by a comma ",".
         /// - Monthly: In the format of A-B. The value range of A and B is 1 to 31, and the B value must be greater than the A value.
+        /// - Cron: A cron expression is written in UTC time and consists of the following fields: minute, hour, day, month, and week. The expression can contain the letters L and W and the following wildcard characters: commas (,), question marks (?), hyphens (-), asterisks (*), number signs (#), and forward slashes (\/).
         /// RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.
         /// </remarks>
         [JsiiOptional]

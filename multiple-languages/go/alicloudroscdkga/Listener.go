@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::GA::Listener`, which is used to create a listener for a Global Accelerator (GA) instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::GA::Listener`.
 type Listener interface {
 	alicloudroscdkcore.Resource
 	IListener

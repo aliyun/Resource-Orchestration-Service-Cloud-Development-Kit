@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::K8sCluster`, which is used to create a cluster of Container Service for Kubernetes (ACK).
+// This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::K8sCluster`.
 type K8sCluster interface {
 	alicloudroscdkcore.Resource
 	IK8sCluster

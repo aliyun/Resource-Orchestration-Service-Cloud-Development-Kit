@@ -9,9 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CMS::EventRule`, which is used to create or modify an event-triggered alert rule.
-//
-// If the specified rule name does not exist, an event-triggered alert rule is created. If the specified rule name exists, the specified event-triggered alert rule is modified.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CMS::EventRule`.
 type EventRule interface {
 	alicloudroscdkcore.Resource
 	IEventRule

@@ -40,7 +40,7 @@ export interface ICustomDomains extends ros.IResource {
     readonly attrDomainNames: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::FC::CustomDomains`, which is used to query custom domain names in Function Compute.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::FC::CustomDomains`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCustomDomains`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-customdomains
  */

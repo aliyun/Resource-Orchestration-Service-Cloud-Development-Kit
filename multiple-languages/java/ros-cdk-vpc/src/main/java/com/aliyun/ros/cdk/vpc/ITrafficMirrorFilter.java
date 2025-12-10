@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Represents a <code>TrafficMirrorFilter</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:30.411Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:00.960Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.ITrafficMirrorFilter")
 @software.amazon.jsii.Jsii.Proxy(ITrafficMirrorFilter.Jsii$Proxy.class)
 public interface ITrafficMirrorFilter extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

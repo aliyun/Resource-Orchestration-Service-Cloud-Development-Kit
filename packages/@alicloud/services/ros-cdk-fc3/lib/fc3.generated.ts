@@ -365,7 +365,7 @@ function rosConcurrencyConfigPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::FC3::ConcurrencyConfig`, which is used to configure reserved concurrency for a function in Function Compute 3.0.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC3::ConcurrencyConfig`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ConcurrencyConfig` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-concurrencyconfig
  */
@@ -512,7 +512,7 @@ function rosCustomDomainPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::FC3::CustomDomain`, which is used to create a custom domain name in Function Compute 3.0.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC3::CustomDomain`.
  * @Note This class does not contain additional functions, so it is recommended to use the `CustomDomain` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-customdomain
  */
@@ -1467,7 +1467,7 @@ function rosFunctionPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::FC3::Function`, which is used to create a Function Compute 3.0 function.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC3::Function`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Function` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-function
  */
@@ -3316,6 +3316,11 @@ export class RosFunctionInvoker extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::FC3::FunctionInvoker";
 
     /**
+     * @Attribute Events: Events for async invocation.
+     */
+    public readonly attrEvents: ros.IResolvable;
+
+    /**
      * @Attribute Result: Depends on result type:
 NoResult: Async invoke has no result.
 Success: The response of the function. The response should be utf-8 encoded string, otherwise ROS will report an error. If the response is binary, encode it via base64 before it is returned.
@@ -3330,6 +3335,11 @@ Success: Sync invoke succeeds.
 Failure: Sync invoke fails.
      */
     public readonly attrResultType: ros.IResolvable;
+
+    /**
+     * @Attribute TaskId: Task id for async invocation.
+     */
+    public readonly attrTaskId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -3384,8 +3394,10 @@ Failure: Sync invoke fails.
      */
     constructor(scope: ros.Construct, id: string, props: RosFunctionInvokerProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosFunctionInvoker.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrEvents = this.getAtt('Events');
         this.attrResult = this.getAtt('Result');
         this.attrResultType = this.getAtt('ResultType');
+        this.attrTaskId = this.getAtt('TaskId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.functionName = props.functionName;
@@ -3600,7 +3612,7 @@ function rosProvisionConfigPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::FC3::ProvisionConfig`, which is used to create a provisioned configuration in Function Compute 3.0.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC3::ProvisionConfig`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ProvisionConfig` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-provisionconfig
  */
@@ -3979,7 +3991,7 @@ function rosTriggerPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::FC3::Trigger`, which is used to create a Function Compute 3.0 trigger.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC3::Trigger`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Trigger` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-trigger
  */

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::TrFirewall`, which is used to create a virtual private cloud (VPC) firewall for a transit router.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::TrFirewall`.
 type RosTrFirewall interface {
 	alicloudroscdkcore.RosResource
 	AttrFirewallId() alicloudroscdkcore.IResolvable

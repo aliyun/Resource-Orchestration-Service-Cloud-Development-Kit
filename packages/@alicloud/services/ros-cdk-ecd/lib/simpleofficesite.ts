@@ -106,7 +106,7 @@ export interface ISimpleOfficeSite extends ros.IResource {
     readonly attrOfficeSiteId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECD::SimpleOfficeSite`, which is used to create a workspace of the convenience account type.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECD::SimpleOfficeSite`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSimpleOfficeSite`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-simpleofficesite
  */

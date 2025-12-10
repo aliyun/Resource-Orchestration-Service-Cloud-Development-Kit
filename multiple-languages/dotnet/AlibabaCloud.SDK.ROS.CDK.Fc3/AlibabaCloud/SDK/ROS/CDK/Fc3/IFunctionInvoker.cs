@@ -8,6 +8,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc3
     [JsiiInterface(nativeType: typeof(IFunctionInvoker), fullyQualifiedName: "@alicloud/ros-cdk-fc3.IFunctionInvoker")]
     public interface IFunctionInvoker : AlibabaCloud.SDK.ROS.CDK.Core.IResource
     {
+        /// <summary>Attribute Events: Events for async invocation.</summary>
+        [JsiiProperty(name: "attrEvents", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrEvents
+        {
+            get;
+        }
+
         /// <summary>Attribute Result: Depends on result type: NoResult: Async invoke has no result.</summary>
         /// <remarks>
         /// Success: The response of the function. The response should be utf-8 encoded string, otherwise ROS will report an error. If the response is binary, encode it via base64 before it is returned.
@@ -30,6 +37,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc3
             get;
         }
 
+        /// <summary>Attribute TaskId: Task id for async invocation.</summary>
+        [JsiiProperty(name: "attrTaskId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrTaskId
+        {
+            get;
+        }
+
         [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-fc3.FunctionInvokerProps\"}")]
         AlibabaCloud.SDK.ROS.CDK.Fc3.IFunctionInvokerProps Props
         {
@@ -42,6 +56,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc3
         {
             private _Proxy(ByRefValue reference): base(reference)
             {
+            }
+
+            /// <summary>Attribute Events: Events for async invocation.</summary>
+            [JsiiProperty(name: "attrEvents", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrEvents
+            {
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Attribute Result: Depends on result type: NoResult: Async invoke has no result.</summary>
@@ -62,6 +83,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc3
             /// </remarks>
             [JsiiProperty(name: "attrResultType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AttrResultType
+            {
+                get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Attribute TaskId: Task id for async invocation.</summary>
+            [JsiiProperty(name: "attrTaskId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrTaskId
             {
                 get => GetInstanceProperty<object>()!;
             }

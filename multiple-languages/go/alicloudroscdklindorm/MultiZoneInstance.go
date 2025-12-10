@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::Lindorm::MultiZoneInstance`, which is used to create a multi-zone Lindorm instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::Lindorm::MultiZoneInstance`.
 type MultiZoneInstance interface {
 	alicloudroscdkcore.Resource
 	IMultiZoneInstance

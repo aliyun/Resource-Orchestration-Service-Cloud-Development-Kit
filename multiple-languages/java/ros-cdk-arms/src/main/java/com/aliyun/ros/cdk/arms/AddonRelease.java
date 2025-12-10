@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.arms;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ARMS::AddonRelease</code>, which is used to install an add-on release.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ARMS::AddonRelease</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:21.360Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:52.744Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.AddonRelease")
 public class AddonRelease extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.arms.IAddonRelease {
 

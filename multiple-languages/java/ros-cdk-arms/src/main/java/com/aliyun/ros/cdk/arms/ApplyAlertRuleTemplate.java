@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.arms;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ARMS::ApplyAlertRuleTemplate</code>, which is used to create an alert rule of Alibaba Cloud Managed Service for Prometheus.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ARMS::ApplyAlertRuleTemplate</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:21.367Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:52.745Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.ApplyAlertRuleTemplate")
 public class ApplyAlertRuleTemplate extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.arms.IApplyAlertRuleTemplate {
 

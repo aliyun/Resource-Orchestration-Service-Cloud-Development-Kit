@@ -117,7 +117,7 @@ export interface IImagePipeline extends ros.IResource {
     readonly attrImagePipelineId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::ImagePipeline`, which is used to create an image template.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::ImagePipeline`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosImagePipeline`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-imagepipeline
  */

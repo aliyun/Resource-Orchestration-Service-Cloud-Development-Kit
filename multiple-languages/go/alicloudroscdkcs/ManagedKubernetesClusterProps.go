@@ -76,6 +76,10 @@ type ManagedKubernetesClusterProps struct {
 	// The system does not create or mount a new data disk if no data disk has been
 	// mounted to the ECS instances.
 	FormatDisk interface{} `field:"optional" json:"formatDisk" yaml:"formatDisk"`
+	// Property ipStack: The IP stack of the cluster.
+	//
+	// Value: ipv4 (Single stack) or ipv6 (Dual Stack). Default value: ipv4
+	IpStack interface{} `field:"optional" json:"ipStack" yaml:"ipStack"`
 	// Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group.
 	//
 	// This parameter takes effect only if security_group_id is left empty.
@@ -153,6 +157,8 @@ type ManagedKubernetesClusterProps struct {
 	ProxyMode interface{} `field:"optional" json:"proxyMode" yaml:"proxyMode"`
 	// Property resourceGroupId: The ID of resource group.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
+	// Property rrsaConfig: The configuration of RRSA.
+	RrsaConfig interface{} `field:"optional" json:"rrsaConfig" yaml:"rrsaConfig"`
 	// Property runtime: The container runtime of the cluster.
 	//
 	// The default runtime is Docker.

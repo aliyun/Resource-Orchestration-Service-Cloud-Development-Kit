@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.datalakeformation;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DataLakeFormation::Permissions</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.042Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.250Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.datalakeformation.$Module.class, fqn = "@alicloud/ros-cdk-datalakeformation.RosPermissions")
 public class RosPermissions extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -103,6 +103,24 @@ public class RosPermissions extends com.aliyun.ros.cdk.core.RosResource {
             }
         }
         software.amazon.jsii.Kernel.set(this, "permissions", java.util.Objects.requireNonNull(value, "permissions is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRefreshUserSync() {
+        return software.amazon.jsii.Kernel.get(this, "refreshUserSync", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setRefreshUserSync(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "refreshUserSync", value);
+    }
+
+    /**
+     */
+    public void setRefreshUserSync(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "refreshUserSync", value);
     }
     /**
      */
@@ -365,6 +383,23 @@ public class RosPermissions extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder permissions(final java.util.List<? extends java.lang.Object> permissions) {
             this.props.permissions(permissions);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param refreshUserSync This parameter is required.
+         */
+        public Builder refreshUserSync(final java.lang.Boolean refreshUserSync) {
+            this.props.refreshUserSync(refreshUserSync);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param refreshUserSync This parameter is required.
+         */
+        public Builder refreshUserSync(final com.aliyun.ros.cdk.core.IResolvable refreshUserSync) {
+            this.props.refreshUserSync(refreshUserSync);
             return this;
         }
 

@@ -1,6 +1,4 @@
 export * from './addonrelease';
-export * from './alertcontact';
-export * from './alertcontactgroup';
 export * from './applyalertruletemplate';
 export * from './delivertask';
 export * from './environment';

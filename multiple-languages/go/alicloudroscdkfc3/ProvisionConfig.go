@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::FC3::ProvisionConfig`, which is used to create a provisioned configuration in Function Compute 3.0.
+// This class encapsulates and extends the ROS resource type `ALIYUN::FC3::ProvisionConfig`.
 type ProvisionConfig interface {
 	alicloudroscdkcore.Resource
 	IProvisionConfig

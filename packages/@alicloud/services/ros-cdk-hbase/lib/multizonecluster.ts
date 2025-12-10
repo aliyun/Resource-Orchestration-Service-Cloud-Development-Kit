@@ -172,8 +172,7 @@ export interface MultiZoneClusterProps {
     readonly securityIpList?: string | ros.IResolvable;
 
     /**
-     * Property vpcId: The ID of the virtual private cloud (VPC). If you leave this parameter and the VSwitchId
-     * parameter empty, the classic network type is used. The VPC network type is preferred.
+     * Property vpcId: The ID of the virtual private cloud (VPC). If you leave this parameter and the VSwitchId parameter empty, the classic network type is used. The VPC network type is preferred.
      */
     readonly vpcId?: string | ros.IResolvable;
 }

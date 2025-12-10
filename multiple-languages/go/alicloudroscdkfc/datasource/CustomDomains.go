@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::FC::CustomDomains`, which is used to query custom domain names in Function Compute.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::FC::CustomDomains`.
 type CustomDomains interface {
 	alicloudroscdkcore.Resource
 	ICustomDomains

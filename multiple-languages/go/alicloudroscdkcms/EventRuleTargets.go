@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CMS::EventRuleTargets`, which is used to add or change the recipients to which alert notifications are sent based on an event-triggered alert rule.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CMS::EventRuleTargets`.
 type EventRuleTargets interface {
 	alicloudroscdkcore.Resource
 	IEventRuleTargets

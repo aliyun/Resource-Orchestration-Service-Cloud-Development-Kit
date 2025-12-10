@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Represents a <code>ResourceMetricRule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.452Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.699Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.IResourceMetricRule")
 @software.amazon.jsii.Jsii.Proxy(IResourceMetricRule.Jsii$Proxy.class)
 public interface IResourceMetricRule extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

@@ -87,6 +87,11 @@ export interface ScalingGroupProps {
     readonly healthCheckType?: string | ros.IResolvable;
 
     /**
+     * Property healthCheckTypes: The list of health check type.
+     */
+    readonly healthCheckTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * Property instanceId: The ID of the ECS instance from which the scaling group obtains configuration information of the specified instance.
      */
     readonly instanceId?: string | ros.IResolvable;
@@ -259,7 +264,7 @@ export interface IScalingGroup extends ros.IResource {
     readonly attrScalingGroupName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScalingGroup`, which is used to create a scaling group. A scaling group can be a group of Elastic Compute Service (ECS) instances that are dynamically scaled based on the configured scenario. A scaling group does not immediately take effect after it is created. You must use ALIYUN::ESS::ScalingGroupEnable to enable the scaling group to trigger scaling activities based on scaling rules.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScalingGroup`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosScalingGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroup
  */
@@ -304,8 +309,9 @@ export class ScalingGroup extends ros.Resource implements IScalingGroup {
             notificationConfigurations: props.notificationConfigurations,
             onDemandPercentageAboveBaseCapacity: props.onDemandPercentageAboveBaseCapacity,
             desiredCapacity: props.desiredCapacity,
-            allocationStrategy: props.allocationStrategy,
+            healthCheckTypes: props.healthCheckTypes,
             onDemandBaseCapacity: props.onDemandBaseCapacity,
+            allocationStrategy: props.allocationStrategy,
             standbyInstances: props.standbyInstances,
             launchTemplateOverrides: props.launchTemplateOverrides,
             removalPolicys: props.removalPolicys,

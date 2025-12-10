@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cs;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CS::ManagedKubernetesCluster</code>, which is used to create a Container Service for Kubernetes (ACK) managed cluster.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CS::ManagedKubernetesCluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.938Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.158Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedKubernetesCluster")
 public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -455,6 +455,24 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIpStack() {
+        return software.amazon.jsii.Kernel.get(this, "ipStack", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIpStack(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "ipStack", value);
+    }
+
+    /**
+     */
+    public void setIpStack(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ipStack", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getIsEnterpriseSecurityGroup() {
         return software.amazon.jsii.Kernel.get(this, "isEnterpriseSecurityGroup", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -753,6 +771,24 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
      */
     public void setResourceGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRrsaConfig() {
+        return software.amazon.jsii.Kernel.get(this, "rrsaConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setRrsaConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "rrsaConfig", value);
+    }
+
+    /**
+     */
+    public void setRrsaConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.RrsaConfigProperty value) {
+        software.amazon.jsii.Kernel.set(this, "rrsaConfig", value);
     }
 
     /**
@@ -1266,6 +1302,13 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCategories() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getCategory() {
             return null;
         }
@@ -1304,6 +1347,7 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<DataDisksProperty> {
             java.lang.Object autoSnapshotPolicyId;
+            java.lang.Object categories;
             java.lang.Object category;
             java.lang.Object encrypted;
             java.lang.Object performanceLevel;
@@ -1328,6 +1372,28 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder autoSnapshotPolicyId(com.aliyun.ros.cdk.core.IResolvable autoSnapshotPolicyId) {
                 this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DataDisksProperty#getCategories}
+             * @param categories the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder categories(com.aliyun.ros.cdk.core.IResolvable categories) {
+                this.categories = categories;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DataDisksProperty#getCategories}
+             * @param categories the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder categories(java.util.List<? extends java.lang.Object> categories) {
+                this.categories = categories;
                 return this;
             }
 
@@ -1438,6 +1504,7 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DataDisksProperty {
             private final java.lang.Object autoSnapshotPolicyId;
+            private final java.lang.Object categories;
             private final java.lang.Object category;
             private final java.lang.Object encrypted;
             private final java.lang.Object performanceLevel;
@@ -1450,6 +1517,7 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
                 this.autoSnapshotPolicyId = software.amazon.jsii.Kernel.get(this, "autoSnapshotPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.categories = software.amazon.jsii.Kernel.get(this, "categories", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.category = software.amazon.jsii.Kernel.get(this, "category", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.encrypted = software.amazon.jsii.Kernel.get(this, "encrypted", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.performanceLevel = software.amazon.jsii.Kernel.get(this, "performanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1462,6 +1530,7 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.autoSnapshotPolicyId = builder.autoSnapshotPolicyId;
+                this.categories = builder.categories;
                 this.category = builder.category;
                 this.encrypted = builder.encrypted;
                 this.performanceLevel = builder.performanceLevel;
@@ -1471,6 +1540,11 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
             @Override
             public final java.lang.Object getAutoSnapshotPolicyId() {
                 return this.autoSnapshotPolicyId;
+            }
+
+            @Override
+            public final java.lang.Object getCategories() {
+                return this.categories;
             }
 
             @Override
@@ -1501,6 +1575,9 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
 
                 if (this.getAutoSnapshotPolicyId() != null) {
                     data.set("autoSnapshotPolicyId", om.valueToTree(this.getAutoSnapshotPolicyId()));
+                }
+                if (this.getCategories() != null) {
+                    data.set("categories", om.valueToTree(this.getCategories()));
                 }
                 if (this.getCategory() != null) {
                     data.set("category", om.valueToTree(this.getCategory()));
@@ -1533,6 +1610,7 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
                 DataDisksProperty.Jsii$Proxy that = (DataDisksProperty.Jsii$Proxy) o;
 
                 if (this.autoSnapshotPolicyId != null ? !this.autoSnapshotPolicyId.equals(that.autoSnapshotPolicyId) : that.autoSnapshotPolicyId != null) return false;
+                if (this.categories != null ? !this.categories.equals(that.categories) : that.categories != null) return false;
                 if (this.category != null ? !this.category.equals(that.category) : that.category != null) return false;
                 if (this.encrypted != null ? !this.encrypted.equals(that.encrypted) : that.encrypted != null) return false;
                 if (this.performanceLevel != null ? !this.performanceLevel.equals(that.performanceLevel) : that.performanceLevel != null) return false;
@@ -1542,6 +1620,7 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
             @Override
             public final int hashCode() {
                 int result = this.autoSnapshotPolicyId != null ? this.autoSnapshotPolicyId.hashCode() : 0;
+                result = 31 * result + (this.categories != null ? this.categories.hashCode() : 0);
                 result = 31 * result + (this.category != null ? this.category.hashCode() : 0);
                 result = 31 * result + (this.encrypted != null ? this.encrypted.hashCode() : 0);
                 result = 31 * result + (this.performanceLevel != null ? this.performanceLevel.hashCode() : 0);
@@ -3500,6 +3579,131 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
                 int result = this.scalingGroup.hashCode();
                 result = 31 * result + (this.kubernetesConfig != null ? this.kubernetesConfig.hashCode() : 0);
                 result = 31 * result + (this.nodePoolInfo != null ? this.nodePoolInfo.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.RrsaConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(RrsaConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface RrsaConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getEnabled();
+
+        /**
+         * @return a {@link Builder} of {@link RrsaConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link RrsaConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<RrsaConfigProperty> {
+            java.lang.Object enabled;
+
+            /**
+             * Sets the value of {@link RrsaConfigProperty#getEnabled}
+             * @param enabled the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enabled(java.lang.Boolean enabled) {
+                this.enabled = enabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link RrsaConfigProperty#getEnabled}
+             * @param enabled the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enabled(com.aliyun.ros.cdk.core.IResolvable enabled) {
+                this.enabled = enabled;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link RrsaConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public RrsaConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link RrsaConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RrsaConfigProperty {
+            private final java.lang.Object enabled;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.enabled = software.amazon.jsii.Kernel.get(this, "enabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.enabled = java.util.Objects.requireNonNull(builder.enabled, "enabled is required");
+            }
+
+            @Override
+            public final java.lang.Object getEnabled() {
+                return this.enabled;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("enabled", om.valueToTree(this.getEnabled()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.RrsaConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                RrsaConfigProperty.Jsii$Proxy that = (RrsaConfigProperty.Jsii$Proxy) o;
+
+                return this.enabled.equals(that.enabled);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.enabled.hashCode();
                 return result;
             }
         }
@@ -5557,6 +5761,23 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
 
         /**
          * @return {@code this}
+         * @param ipStack This parameter is required.
+         */
+        public Builder ipStack(final java.lang.String ipStack) {
+            this.props.ipStack(ipStack);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ipStack This parameter is required.
+         */
+        public Builder ipStack(final com.aliyun.ros.cdk.core.IResolvable ipStack) {
+            this.props.ipStack(ipStack);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param isEnterpriseSecurityGroup This parameter is required.
          */
         public Builder isEnterpriseSecurityGroup(final java.lang.Boolean isEnterpriseSecurityGroup) {
@@ -5807,6 +6028,23 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
          */
         public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param rrsaConfig This parameter is required.
+         */
+        public Builder rrsaConfig(final com.aliyun.ros.cdk.core.IResolvable rrsaConfig) {
+            this.props.rrsaConfig(rrsaConfig);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param rrsaConfig This parameter is required.
+         */
+        public Builder rrsaConfig(final com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.RrsaConfigProperty rrsaConfig) {
+            this.props.rrsaConfig(rrsaConfig);
             return this;
         }
 

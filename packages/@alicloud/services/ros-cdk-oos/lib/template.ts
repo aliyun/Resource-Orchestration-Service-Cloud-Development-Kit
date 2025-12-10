@@ -20,6 +20,14 @@ export interface TemplateProps {
     readonly templateName: string | ros.IResolvable;
 
     /**
+     * Property ignoreExisting: Whether to ignore existing template
+     * False: ROS will perform a uniqueness check.If a template with the same name exists, an error will be reported when creating it.
+     * True: ROS will not check the uniqueness.If there is a template with the same name, the template creation process will be ignored.
+     * If the template is not created by ROS, it will be ignored during update and delete stage.
+     */
+    readonly ignoreExisting?: boolean | ros.IResolvable;
+
+    /**
      * Property resourceGroupId: Resource group id.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -52,7 +60,7 @@ export interface ITemplate extends ros.IResource {
     readonly attrTemplateName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::Template`, which is used to create a template.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::Template`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTemplate`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-template
  */
@@ -90,6 +98,7 @@ export class Template extends ros.Resource implements ITemplate {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosTemplate = new RosTemplate(this, id,  {
+            ignoreExisting: props.ignoreExisting === undefined || props.ignoreExisting === null ? false : props.ignoreExisting,
             resourceGroupId: props.resourceGroupId,
             content: props.content,
             templateName: props.templateName,

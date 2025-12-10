@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudsso;
 /**
  * Represents a <code>SCIMSynchronization</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.328Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.604Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudsso.$Module.class, fqn = "@alicloud/ros-cdk-cloudsso.ISCIMSynchronization")
 @software.amazon.jsii.Jsii.Proxy(ISCIMSynchronization.Jsii$Proxy.class)
 public interface ISCIMSynchronization extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

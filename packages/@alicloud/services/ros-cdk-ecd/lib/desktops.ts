@@ -191,7 +191,7 @@ Note This parameter is returned only when the ChargeType parameter is set to Pre
     readonly attrOrderId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECD::Desktops`, which is used to create one or more cloud desktops.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECD::Desktops`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDesktops`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-desktops
  */

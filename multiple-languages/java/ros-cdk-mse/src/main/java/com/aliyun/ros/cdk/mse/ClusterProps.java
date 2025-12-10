@@ -5,57 +5,118 @@ package com.aliyun.ros.cdk.mse;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-cluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:27.023Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.168Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.ClusterProps")
 @software.amazon.jsii.Jsii.Proxy(ClusterProps.Jsii$Proxy.class)
 public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property clusterSpecification: Cluster specifications.
+     * Property clusterSpecification: Engine specification.
      * <p>
-     * Note the msversion requirements of the version parameter,
-     * Optional parameters:
-     * "MSE_ SC <em>1_2_60_c",
-     * "MSE</em> SC <em>2_4_60_c",
-     * "MSE</em> SC <em>4_8_60_c",
-     * "MSE</em> SC <em>8_16_60_c",
-     * "MSE</em> SC _16_32_60_c"
+     * [Professional Edition]
+     * <p>
+     * <ul>
+     * <li><code>MSE_SC_2_4_60_c</code>: 2 cores 4GB</li>
+     * <li><code>MSE_SC_1_2_60_c</code>: 1 core 2GB</li>
+     * <li><code>MSE_SC_4_8_60_c</code>: 4 cores 8GB</li>
+     * <li><code>MSE_SC_8_16_60_c</code>: 8 cores 16GB</li>
+     * <li><code>MSE_SC_16_32_60_c</code>: 16 cores 32GB</li>
+     * </ul>
+     * <p>
+     * [Development Edition]
+     * <p>
+     * <ul>
+     * <li><code>MSE_SC_1_2_60_c</code>: 1 core 2GB</li>
+     * <li><code>MSE_SC_2_4_60_c</code>: 2 cores 4GB</li>
+     * </ul>
+     * <p>
+     * [Serverless Edition]
+     * <p>
+     * <ul>
+     * <li>Ignore this parameter or fill with <code>MSE_SC_SERVERLESS</code>.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getClusterSpecification();
 
     /**
-     * Property clusterType: cluster type.
+     * Property clusterType: Cluster type, including ZooKeeper, Nacos-Ans.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getClusterType();
 
     /**
-     * Property clusterVersion: Cluster version, such as ZooKeeper_3_8_0,NACOS_2_0_0.
+     * Property clusterVersion: Cluster version.
+     * <p>
+     * [Professional Edition]
+     * <p>
+     * <ul>
+     * <li><code>NACOS_2_0_0</code>: Nacos 2.x.x version.</li>
+     * <li><code>ZooKeeper_3_8_0</code>: ZooKeeper 3.8.x version.</li>
+     * </ul>
+     * <p>
+     * [Development Edition]
+     * <p>
+     * <ul>
+     * <li><code>NACOS_2_0_0</code>: Nacos 2.x version.</li>
+     * <li><code>ZooKeeper_3_8_0</code>: ZooKeeper 3.8.x version.</li>
+     * </ul>
+     * <p>
+     * [Serverless Edition]
+     * <p>
+     * <ul>
+     * <li><code>NACOS_2_0_0</code>: Nacos 2.x version.</li>
+     * <li><code>ZooKeeper_3_8_0</code>: ZooKeeper 3.8.x version.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getClusterVersion();
 
     /**
-     * Property instanceCount: instance count.
+     * Property instanceCount: Number of instance nodes. Range: 1~15.
+     * <p>
+     * [Professional Edition]
+     * <p>
+     * <ul>
+     * <li>Must be &gt;=3 and odd number.</li>
+     * </ul>
+     * <p>
+     * [Development Edition]
+     * <p>
+     * <ul>
+     * <li>Only 1 allowed.</li>
+     * </ul>
+     * <p>
+     * [Serverless Edition]
+     * <p>
+     * <ul>
+     * <li>Ignore this parameter.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getInstanceCount();
 
     /**
-     * Property netType: Network type (whether private network is enabled or not).
+     * Property netType: Network type.
      * <p>
-     * privatenet indicates that private network is enabled.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li><code>privatenet</code>: Private network.</li>
+     * <li><code>pubnet</code>: Public network.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getNetType();
 
     /**
-     * Property acceptLanguage:.
+     * Property aclEntryList: List of ACL entries.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getAcceptLanguage() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAclEntryList() {
         return null;
     }
 
     /**
-     * Property aclEntryList: The public network whitelist list is used only when the public network is enabled.
+     * Property chargeType: Billing mode, including PREPAY (annual/monthly) and POSTPAY (pay-as-you-go).
+     * <p>
+     * Ignored for Serverless Edition.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getAclEntryList() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getChargeType() {
         return null;
     }
 
@@ -67,54 +128,47 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property connectionType: network connect type.
+     * Property connectionType: Network access type, <code>slb</code> or <code>single_eni</code>;
+     * <p>
+     * some regions only support <code>single_eni</code> for Development Edition.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getConnectionType() {
         return null;
     }
 
     /**
-     * Property diskType: disk type.
+     * Property eipEnabled: Effective when ConnectionType is <code>single_eni</code>, indicates whether to enable public access (elastic IP).
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getDiskType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEipEnabled() {
         return null;
     }
 
     /**
-     * Property mseVersion: Required, the value is as follows:.
+     * Property mseVersion: Must be filled unless special circumstances.
      * <p>
-     * -'mse_dev': indicates the development version.
-     * -'Mse_pro': means professional version. When this version is selected, the specification is 2c4g or above, and the specification is 3 nodes or above.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li><code>mse_pro</code>: Professional Edition.</li>
+     * <li><code>mse_dev</code>: Development Edition.</li>
+     * <li><code>mse_serverless</code>: Serverless Edition.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMseVersion() {
         return null;
     }
 
     /**
-     * Property privateSlbSpecification:.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getPrivateSlbSpecification() {
-        return null;
-    }
-
-    /**
-     * Property pubNetworkFlow: Public network bandwidth.
+     * Property pubNetworkFlow: Public network flow.
      * <p>
-     * If the bandwidth is greater than 0, the public network is enabled.
+     * Valid when ConnectionType is <code>slb</code>. 0 means do not create public SLB; 1 or above indicates fixed bandwidth value in Mbps. Range: 0~5000.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPubNetworkFlow() {
         return null;
     }
 
     /**
-     * Property pubSlbSpecification:.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getPubSlbSpecification() {
-        return null;
-    }
-
-    /**
-     * Property requestPars:.
+     * Property requestPars: Extended request parameters in JSON format.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRequestPars() {
         return null;
@@ -128,23 +182,30 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property tags: Tags to attach to instance.
+     * Property securityGroupType: Effective when ConnectionType is <code>single_eni</code>, represents the security group type of the instance.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupType() {
+        return null;
+    }
+
+    /**
+     * Property tags: Tags to attach to cluster.
      * <p>
-     * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     * Max support 20 tags to add during create cluster. Each tag with two properties Key and Value, and Key is required.
      */
     default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.mse.RosCluster.TagsProperty> getTags() {
         return null;
     }
 
     /**
-     * Property vpcId: vpc id.
+     * Property vpcId: VPC ID.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
         return null;
     }
 
     /**
-     * Property vSwitchId: switcher Id.
+     * Property vSwitchId: Switch ID.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
         return null;
@@ -165,31 +226,45 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object clusterVersion;
         java.lang.Object instanceCount;
         java.lang.Object netType;
-        java.lang.Object acceptLanguage;
         java.lang.Object aclEntryList;
+        java.lang.Object chargeType;
         java.lang.Object clusterAliasName;
         java.lang.Object connectionType;
-        java.lang.Object diskType;
+        java.lang.Object eipEnabled;
         java.lang.Object mseVersion;
-        java.lang.Object privateSlbSpecification;
         java.lang.Object pubNetworkFlow;
-        java.lang.Object pubSlbSpecification;
         java.lang.Object requestPars;
         java.lang.Object resourceGroupId;
+        java.lang.Object securityGroupType;
         java.util.List<com.aliyun.ros.cdk.mse.RosCluster.TagsProperty> tags;
         java.lang.Object vpcId;
         java.lang.Object vSwitchId;
 
         /**
          * Sets the value of {@link ClusterProps#getClusterSpecification}
-         * @param clusterSpecification Property clusterSpecification: Cluster specifications. This parameter is required.
-         *                             Note the msversion requirements of the version parameter,
-         *                             Optional parameters:
-         *                             "MSE_ SC <em>1_2_60_c",
-         *                             "MSE</em> SC <em>2_4_60_c",
-         *                             "MSE</em> SC <em>4_8_60_c",
-         *                             "MSE</em> SC <em>8_16_60_c",
-         *                             "MSE</em> SC _16_32_60_c"
+         * @param clusterSpecification Property clusterSpecification: Engine specification. This parameter is required.
+         *                             [Professional Edition]
+         *                             <p>
+         *                             <ul>
+         *                             <li><code>MSE_SC_2_4_60_c</code>: 2 cores 4GB</li>
+         *                             <li><code>MSE_SC_1_2_60_c</code>: 1 core 2GB</li>
+         *                             <li><code>MSE_SC_4_8_60_c</code>: 4 cores 8GB</li>
+         *                             <li><code>MSE_SC_8_16_60_c</code>: 8 cores 16GB</li>
+         *                             <li><code>MSE_SC_16_32_60_c</code>: 16 cores 32GB</li>
+         *                             </ul>
+         *                             <p>
+         *                             [Development Edition]
+         *                             <p>
+         *                             <ul>
+         *                             <li><code>MSE_SC_1_2_60_c</code>: 1 core 2GB</li>
+         *                             <li><code>MSE_SC_2_4_60_c</code>: 2 cores 4GB</li>
+         *                             </ul>
+         *                             <p>
+         *                             [Serverless Edition]
+         *                             <p>
+         *                             <ul>
+         *                             <li>Ignore this parameter or fill with <code>MSE_SC_SERVERLESS</code>.</li>
+         *                             </ul>
          * @return {@code this}
          */
         public Builder clusterSpecification(java.lang.String clusterSpecification) {
@@ -199,14 +274,29 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getClusterSpecification}
-         * @param clusterSpecification Property clusterSpecification: Cluster specifications. This parameter is required.
-         *                             Note the msversion requirements of the version parameter,
-         *                             Optional parameters:
-         *                             "MSE_ SC <em>1_2_60_c",
-         *                             "MSE</em> SC <em>2_4_60_c",
-         *                             "MSE</em> SC <em>4_8_60_c",
-         *                             "MSE</em> SC <em>8_16_60_c",
-         *                             "MSE</em> SC _16_32_60_c"
+         * @param clusterSpecification Property clusterSpecification: Engine specification. This parameter is required.
+         *                             [Professional Edition]
+         *                             <p>
+         *                             <ul>
+         *                             <li><code>MSE_SC_2_4_60_c</code>: 2 cores 4GB</li>
+         *                             <li><code>MSE_SC_1_2_60_c</code>: 1 core 2GB</li>
+         *                             <li><code>MSE_SC_4_8_60_c</code>: 4 cores 8GB</li>
+         *                             <li><code>MSE_SC_8_16_60_c</code>: 8 cores 16GB</li>
+         *                             <li><code>MSE_SC_16_32_60_c</code>: 16 cores 32GB</li>
+         *                             </ul>
+         *                             <p>
+         *                             [Development Edition]
+         *                             <p>
+         *                             <ul>
+         *                             <li><code>MSE_SC_1_2_60_c</code>: 1 core 2GB</li>
+         *                             <li><code>MSE_SC_2_4_60_c</code>: 2 cores 4GB</li>
+         *                             </ul>
+         *                             <p>
+         *                             [Serverless Edition]
+         *                             <p>
+         *                             <ul>
+         *                             <li>Ignore this parameter or fill with <code>MSE_SC_SERVERLESS</code>.</li>
+         *                             </ul>
          * @return {@code this}
          */
         public Builder clusterSpecification(com.aliyun.ros.cdk.core.IResolvable clusterSpecification) {
@@ -216,7 +306,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getClusterType}
-         * @param clusterType Property clusterType: cluster type. This parameter is required.
+         * @param clusterType Property clusterType: Cluster type, including ZooKeeper, Nacos-Ans. This parameter is required.
          * @return {@code this}
          */
         public Builder clusterType(java.lang.String clusterType) {
@@ -226,7 +316,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getClusterType}
-         * @param clusterType Property clusterType: cluster type. This parameter is required.
+         * @param clusterType Property clusterType: Cluster type, including ZooKeeper, Nacos-Ans. This parameter is required.
          * @return {@code this}
          */
         public Builder clusterType(com.aliyun.ros.cdk.core.IResolvable clusterType) {
@@ -236,7 +326,27 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getClusterVersion}
-         * @param clusterVersion Property clusterVersion: Cluster version, such as ZooKeeper_3_8_0,NACOS_2_0_0. This parameter is required.
+         * @param clusterVersion Property clusterVersion: Cluster version. This parameter is required.
+         *                       [Professional Edition]
+         *                       <p>
+         *                       <ul>
+         *                       <li><code>NACOS_2_0_0</code>: Nacos 2.x.x version.</li>
+         *                       <li><code>ZooKeeper_3_8_0</code>: ZooKeeper 3.8.x version.</li>
+         *                       </ul>
+         *                       <p>
+         *                       [Development Edition]
+         *                       <p>
+         *                       <ul>
+         *                       <li><code>NACOS_2_0_0</code>: Nacos 2.x version.</li>
+         *                       <li><code>ZooKeeper_3_8_0</code>: ZooKeeper 3.8.x version.</li>
+         *                       </ul>
+         *                       <p>
+         *                       [Serverless Edition]
+         *                       <p>
+         *                       <ul>
+         *                       <li><code>NACOS_2_0_0</code>: Nacos 2.x version.</li>
+         *                       <li><code>ZooKeeper_3_8_0</code>: ZooKeeper 3.8.x version.</li>
+         *                       </ul>
          * @return {@code this}
          */
         public Builder clusterVersion(java.lang.String clusterVersion) {
@@ -246,7 +356,27 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getClusterVersion}
-         * @param clusterVersion Property clusterVersion: Cluster version, such as ZooKeeper_3_8_0,NACOS_2_0_0. This parameter is required.
+         * @param clusterVersion Property clusterVersion: Cluster version. This parameter is required.
+         *                       [Professional Edition]
+         *                       <p>
+         *                       <ul>
+         *                       <li><code>NACOS_2_0_0</code>: Nacos 2.x.x version.</li>
+         *                       <li><code>ZooKeeper_3_8_0</code>: ZooKeeper 3.8.x version.</li>
+         *                       </ul>
+         *                       <p>
+         *                       [Development Edition]
+         *                       <p>
+         *                       <ul>
+         *                       <li><code>NACOS_2_0_0</code>: Nacos 2.x version.</li>
+         *                       <li><code>ZooKeeper_3_8_0</code>: ZooKeeper 3.8.x version.</li>
+         *                       </ul>
+         *                       <p>
+         *                       [Serverless Edition]
+         *                       <p>
+         *                       <ul>
+         *                       <li><code>NACOS_2_0_0</code>: Nacos 2.x version.</li>
+         *                       <li><code>ZooKeeper_3_8_0</code>: ZooKeeper 3.8.x version.</li>
+         *                       </ul>
          * @return {@code this}
          */
         public Builder clusterVersion(com.aliyun.ros.cdk.core.IResolvable clusterVersion) {
@@ -256,7 +386,24 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getInstanceCount}
-         * @param instanceCount Property instanceCount: instance count. This parameter is required.
+         * @param instanceCount Property instanceCount: Number of instance nodes. Range: 1~15. This parameter is required.
+         *                      [Professional Edition]
+         *                      <p>
+         *                      <ul>
+         *                      <li>Must be &gt;=3 and odd number.</li>
+         *                      </ul>
+         *                      <p>
+         *                      [Development Edition]
+         *                      <p>
+         *                      <ul>
+         *                      <li>Only 1 allowed.</li>
+         *                      </ul>
+         *                      <p>
+         *                      [Serverless Edition]
+         *                      <p>
+         *                      <ul>
+         *                      <li>Ignore this parameter.</li>
+         *                      </ul>
          * @return {@code this}
          */
         public Builder instanceCount(java.lang.Number instanceCount) {
@@ -266,7 +413,24 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getInstanceCount}
-         * @param instanceCount Property instanceCount: instance count. This parameter is required.
+         * @param instanceCount Property instanceCount: Number of instance nodes. Range: 1~15. This parameter is required.
+         *                      [Professional Edition]
+         *                      <p>
+         *                      <ul>
+         *                      <li>Must be &gt;=3 and odd number.</li>
+         *                      </ul>
+         *                      <p>
+         *                      [Development Edition]
+         *                      <p>
+         *                      <ul>
+         *                      <li>Only 1 allowed.</li>
+         *                      </ul>
+         *                      <p>
+         *                      [Serverless Edition]
+         *                      <p>
+         *                      <ul>
+         *                      <li>Ignore this parameter.</li>
+         *                      </ul>
          * @return {@code this}
          */
         public Builder instanceCount(com.aliyun.ros.cdk.core.IResolvable instanceCount) {
@@ -276,8 +440,13 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getNetType}
-         * @param netType Property netType: Network type (whether private network is enabled or not). This parameter is required.
-         *                privatenet indicates that private network is enabled.
+         * @param netType Property netType: Network type. This parameter is required.
+         *                Valid values:
+         *                <p>
+         *                <ul>
+         *                <li><code>privatenet</code>: Private network.</li>
+         *                <li><code>pubnet</code>: Public network.</li>
+         *                </ul>
          * @return {@code this}
          */
         public Builder netType(java.lang.String netType) {
@@ -287,8 +456,13 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getNetType}
-         * @param netType Property netType: Network type (whether private network is enabled or not). This parameter is required.
-         *                privatenet indicates that private network is enabled.
+         * @param netType Property netType: Network type. This parameter is required.
+         *                Valid values:
+         *                <p>
+         *                <ul>
+         *                <li><code>privatenet</code>: Private network.</li>
+         *                <li><code>pubnet</code>: Public network.</li>
+         *                </ul>
          * @return {@code this}
          */
         public Builder netType(com.aliyun.ros.cdk.core.IResolvable netType) {
@@ -297,28 +471,8 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
-         * Sets the value of {@link ClusterProps#getAcceptLanguage}
-         * @param acceptLanguage Property acceptLanguage:.
-         * @return {@code this}
-         */
-        public Builder acceptLanguage(java.lang.String acceptLanguage) {
-            this.acceptLanguage = acceptLanguage;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ClusterProps#getAcceptLanguage}
-         * @param acceptLanguage Property acceptLanguage:.
-         * @return {@code this}
-         */
-        public Builder acceptLanguage(com.aliyun.ros.cdk.core.IResolvable acceptLanguage) {
-            this.acceptLanguage = acceptLanguage;
-            return this;
-        }
-
-        /**
          * Sets the value of {@link ClusterProps#getAclEntryList}
-         * @param aclEntryList Property aclEntryList: The public network whitelist list is used only when the public network is enabled.
+         * @param aclEntryList Property aclEntryList: List of ACL entries.
          * @return {@code this}
          */
         public Builder aclEntryList(com.aliyun.ros.cdk.core.IResolvable aclEntryList) {
@@ -328,11 +482,33 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getAclEntryList}
-         * @param aclEntryList Property aclEntryList: The public network whitelist list is used only when the public network is enabled.
+         * @param aclEntryList Property aclEntryList: List of ACL entries.
          * @return {@code this}
          */
         public Builder aclEntryList(java.util.List<? extends java.lang.Object> aclEntryList) {
             this.aclEntryList = aclEntryList;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ClusterProps#getChargeType}
+         * @param chargeType Property chargeType: Billing mode, including PREPAY (annual/monthly) and POSTPAY (pay-as-you-go).
+         *                   Ignored for Serverless Edition.
+         * @return {@code this}
+         */
+        public Builder chargeType(java.lang.String chargeType) {
+            this.chargeType = chargeType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ClusterProps#getChargeType}
+         * @param chargeType Property chargeType: Billing mode, including PREPAY (annual/monthly) and POSTPAY (pay-as-you-go).
+         *                   Ignored for Serverless Edition.
+         * @return {@code this}
+         */
+        public Builder chargeType(com.aliyun.ros.cdk.core.IResolvable chargeType) {
+            this.chargeType = chargeType;
             return this;
         }
 
@@ -358,7 +534,8 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getConnectionType}
-         * @param connectionType Property connectionType: network connect type.
+         * @param connectionType Property connectionType: Network access type, <code>slb</code> or <code>single_eni</code>;.
+         *                       some regions only support <code>single_eni</code> for Development Edition.
          * @return {@code this}
          */
         public Builder connectionType(java.lang.String connectionType) {
@@ -368,7 +545,8 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getConnectionType}
-         * @param connectionType Property connectionType: network connect type.
+         * @param connectionType Property connectionType: Network access type, <code>slb</code> or <code>single_eni</code>;.
+         *                       some regions only support <code>single_eni</code> for Development Edition.
          * @return {@code this}
          */
         public Builder connectionType(com.aliyun.ros.cdk.core.IResolvable connectionType) {
@@ -377,30 +555,35 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
-         * Sets the value of {@link ClusterProps#getDiskType}
-         * @param diskType Property diskType: disk type.
+         * Sets the value of {@link ClusterProps#getEipEnabled}
+         * @param eipEnabled Property eipEnabled: Effective when ConnectionType is <code>single_eni</code>, indicates whether to enable public access (elastic IP).
          * @return {@code this}
          */
-        public Builder diskType(java.lang.String diskType) {
-            this.diskType = diskType;
+        public Builder eipEnabled(java.lang.Boolean eipEnabled) {
+            this.eipEnabled = eipEnabled;
             return this;
         }
 
         /**
-         * Sets the value of {@link ClusterProps#getDiskType}
-         * @param diskType Property diskType: disk type.
+         * Sets the value of {@link ClusterProps#getEipEnabled}
+         * @param eipEnabled Property eipEnabled: Effective when ConnectionType is <code>single_eni</code>, indicates whether to enable public access (elastic IP).
          * @return {@code this}
          */
-        public Builder diskType(com.aliyun.ros.cdk.core.IResolvable diskType) {
-            this.diskType = diskType;
+        public Builder eipEnabled(com.aliyun.ros.cdk.core.IResolvable eipEnabled) {
+            this.eipEnabled = eipEnabled;
             return this;
         }
 
         /**
          * Sets the value of {@link ClusterProps#getMseVersion}
-         * @param mseVersion Property mseVersion: Required, the value is as follows:.
-         *                   -'mse_dev': indicates the development version.
-         *                   -'Mse_pro': means professional version. When this version is selected, the specification is 2c4g or above, and the specification is 3 nodes or above.
+         * @param mseVersion Property mseVersion: Must be filled unless special circumstances.
+         *                   Valid values:
+         *                   <p>
+         *                   <ul>
+         *                   <li><code>mse_pro</code>: Professional Edition.</li>
+         *                   <li><code>mse_dev</code>: Development Edition.</li>
+         *                   <li><code>mse_serverless</code>: Serverless Edition.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder mseVersion(java.lang.String mseVersion) {
@@ -410,9 +593,14 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getMseVersion}
-         * @param mseVersion Property mseVersion: Required, the value is as follows:.
-         *                   -'mse_dev': indicates the development version.
-         *                   -'Mse_pro': means professional version. When this version is selected, the specification is 2c4g or above, and the specification is 3 nodes or above.
+         * @param mseVersion Property mseVersion: Must be filled unless special circumstances.
+         *                   Valid values:
+         *                   <p>
+         *                   <ul>
+         *                   <li><code>mse_pro</code>: Professional Edition.</li>
+         *                   <li><code>mse_dev</code>: Development Edition.</li>
+         *                   <li><code>mse_serverless</code>: Serverless Edition.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder mseVersion(com.aliyun.ros.cdk.core.IResolvable mseVersion) {
@@ -421,40 +609,20 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
-         * Sets the value of {@link ClusterProps#getPrivateSlbSpecification}
-         * @param privateSlbSpecification Property privateSlbSpecification:.
-         * @return {@code this}
-         */
-        public Builder privateSlbSpecification(java.lang.String privateSlbSpecification) {
-            this.privateSlbSpecification = privateSlbSpecification;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ClusterProps#getPrivateSlbSpecification}
-         * @param privateSlbSpecification Property privateSlbSpecification:.
-         * @return {@code this}
-         */
-        public Builder privateSlbSpecification(com.aliyun.ros.cdk.core.IResolvable privateSlbSpecification) {
-            this.privateSlbSpecification = privateSlbSpecification;
-            return this;
-        }
-
-        /**
          * Sets the value of {@link ClusterProps#getPubNetworkFlow}
-         * @param pubNetworkFlow Property pubNetworkFlow: Public network bandwidth.
-         *                       If the bandwidth is greater than 0, the public network is enabled.
+         * @param pubNetworkFlow Property pubNetworkFlow: Public network flow.
+         *                       Valid when ConnectionType is <code>slb</code>. 0 means do not create public SLB; 1 or above indicates fixed bandwidth value in Mbps. Range: 0~5000.
          * @return {@code this}
          */
-        public Builder pubNetworkFlow(java.lang.String pubNetworkFlow) {
+        public Builder pubNetworkFlow(java.lang.Number pubNetworkFlow) {
             this.pubNetworkFlow = pubNetworkFlow;
             return this;
         }
 
         /**
          * Sets the value of {@link ClusterProps#getPubNetworkFlow}
-         * @param pubNetworkFlow Property pubNetworkFlow: Public network bandwidth.
-         *                       If the bandwidth is greater than 0, the public network is enabled.
+         * @param pubNetworkFlow Property pubNetworkFlow: Public network flow.
+         *                       Valid when ConnectionType is <code>slb</code>. 0 means do not create public SLB; 1 or above indicates fixed bandwidth value in Mbps. Range: 0~5000.
          * @return {@code this}
          */
         public Builder pubNetworkFlow(com.aliyun.ros.cdk.core.IResolvable pubNetworkFlow) {
@@ -463,28 +631,8 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
-         * Sets the value of {@link ClusterProps#getPubSlbSpecification}
-         * @param pubSlbSpecification Property pubSlbSpecification:.
-         * @return {@code this}
-         */
-        public Builder pubSlbSpecification(java.lang.String pubSlbSpecification) {
-            this.pubSlbSpecification = pubSlbSpecification;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ClusterProps#getPubSlbSpecification}
-         * @param pubSlbSpecification Property pubSlbSpecification:.
-         * @return {@code this}
-         */
-        public Builder pubSlbSpecification(com.aliyun.ros.cdk.core.IResolvable pubSlbSpecification) {
-            this.pubSlbSpecification = pubSlbSpecification;
-            return this;
-        }
-
-        /**
          * Sets the value of {@link ClusterProps#getRequestPars}
-         * @param requestPars Property requestPars:.
+         * @param requestPars Property requestPars: Extended request parameters in JSON format.
          * @return {@code this}
          */
         public Builder requestPars(java.lang.String requestPars) {
@@ -494,7 +642,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getRequestPars}
-         * @param requestPars Property requestPars:.
+         * @param requestPars Property requestPars: Extended request parameters in JSON format.
          * @return {@code this}
          */
         public Builder requestPars(com.aliyun.ros.cdk.core.IResolvable requestPars) {
@@ -523,9 +671,29 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ClusterProps#getSecurityGroupType}
+         * @param securityGroupType Property securityGroupType: Effective when ConnectionType is <code>single_eni</code>, represents the security group type of the instance.
+         * @return {@code this}
+         */
+        public Builder securityGroupType(java.lang.String securityGroupType) {
+            this.securityGroupType = securityGroupType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ClusterProps#getSecurityGroupType}
+         * @param securityGroupType Property securityGroupType: Effective when ConnectionType is <code>single_eni</code>, represents the security group type of the instance.
+         * @return {@code this}
+         */
+        public Builder securityGroupType(com.aliyun.ros.cdk.core.IResolvable securityGroupType) {
+            this.securityGroupType = securityGroupType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ClusterProps#getTags}
-         * @param tags Property tags: Tags to attach to instance.
-         *             Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+         * @param tags Property tags: Tags to attach to cluster.
+         *             Max support 20 tags to add during create cluster. Each tag with two properties Key and Value, and Key is required.
          * @return {@code this}
          */
         @SuppressWarnings("unchecked")
@@ -536,7 +704,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getVpcId}
-         * @param vpcId Property vpcId: vpc id.
+         * @param vpcId Property vpcId: VPC ID.
          * @return {@code this}
          */
         public Builder vpcId(java.lang.String vpcId) {
@@ -546,7 +714,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getVpcId}
-         * @param vpcId Property vpcId: vpc id.
+         * @param vpcId Property vpcId: VPC ID.
          * @return {@code this}
          */
         public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
@@ -556,7 +724,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getVSwitchId}
-         * @param vSwitchId Property vSwitchId: switcher Id.
+         * @param vSwitchId Property vSwitchId: Switch ID.
          * @return {@code this}
          */
         public Builder vSwitchId(java.lang.String vSwitchId) {
@@ -566,7 +734,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getVSwitchId}
-         * @param vSwitchId Property vSwitchId: switcher Id.
+         * @param vSwitchId Property vSwitchId: Switch ID.
          * @return {@code this}
          */
         public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
@@ -595,17 +763,16 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object clusterVersion;
         private final java.lang.Object instanceCount;
         private final java.lang.Object netType;
-        private final java.lang.Object acceptLanguage;
         private final java.lang.Object aclEntryList;
+        private final java.lang.Object chargeType;
         private final java.lang.Object clusterAliasName;
         private final java.lang.Object connectionType;
-        private final java.lang.Object diskType;
+        private final java.lang.Object eipEnabled;
         private final java.lang.Object mseVersion;
-        private final java.lang.Object privateSlbSpecification;
         private final java.lang.Object pubNetworkFlow;
-        private final java.lang.Object pubSlbSpecification;
         private final java.lang.Object requestPars;
         private final java.lang.Object resourceGroupId;
+        private final java.lang.Object securityGroupType;
         private final java.util.List<com.aliyun.ros.cdk.mse.RosCluster.TagsProperty> tags;
         private final java.lang.Object vpcId;
         private final java.lang.Object vSwitchId;
@@ -621,17 +788,16 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.clusterVersion = software.amazon.jsii.Kernel.get(this, "clusterVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceCount = software.amazon.jsii.Kernel.get(this, "instanceCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.netType = software.amazon.jsii.Kernel.get(this, "netType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.acceptLanguage = software.amazon.jsii.Kernel.get(this, "acceptLanguage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.aclEntryList = software.amazon.jsii.Kernel.get(this, "aclEntryList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.chargeType = software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.clusterAliasName = software.amazon.jsii.Kernel.get(this, "clusterAliasName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.connectionType = software.amazon.jsii.Kernel.get(this, "connectionType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.diskType = software.amazon.jsii.Kernel.get(this, "diskType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.eipEnabled = software.amazon.jsii.Kernel.get(this, "eipEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.mseVersion = software.amazon.jsii.Kernel.get(this, "mseVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.privateSlbSpecification = software.amazon.jsii.Kernel.get(this, "privateSlbSpecification", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.pubNetworkFlow = software.amazon.jsii.Kernel.get(this, "pubNetworkFlow", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.pubSlbSpecification = software.amazon.jsii.Kernel.get(this, "pubSlbSpecification", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.requestPars = software.amazon.jsii.Kernel.get(this, "requestPars", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityGroupType = software.amazon.jsii.Kernel.get(this, "securityGroupType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.mse.RosCluster.TagsProperty.class)));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -648,17 +814,16 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.clusterVersion = java.util.Objects.requireNonNull(builder.clusterVersion, "clusterVersion is required");
             this.instanceCount = java.util.Objects.requireNonNull(builder.instanceCount, "instanceCount is required");
             this.netType = java.util.Objects.requireNonNull(builder.netType, "netType is required");
-            this.acceptLanguage = builder.acceptLanguage;
             this.aclEntryList = builder.aclEntryList;
+            this.chargeType = builder.chargeType;
             this.clusterAliasName = builder.clusterAliasName;
             this.connectionType = builder.connectionType;
-            this.diskType = builder.diskType;
+            this.eipEnabled = builder.eipEnabled;
             this.mseVersion = builder.mseVersion;
-            this.privateSlbSpecification = builder.privateSlbSpecification;
             this.pubNetworkFlow = builder.pubNetworkFlow;
-            this.pubSlbSpecification = builder.pubSlbSpecification;
             this.requestPars = builder.requestPars;
             this.resourceGroupId = builder.resourceGroupId;
+            this.securityGroupType = builder.securityGroupType;
             this.tags = (java.util.List<com.aliyun.ros.cdk.mse.RosCluster.TagsProperty>)builder.tags;
             this.vpcId = builder.vpcId;
             this.vSwitchId = builder.vSwitchId;
@@ -690,13 +855,13 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Object getAcceptLanguage() {
-            return this.acceptLanguage;
+        public final java.lang.Object getAclEntryList() {
+            return this.aclEntryList;
         }
 
         @Override
-        public final java.lang.Object getAclEntryList() {
-            return this.aclEntryList;
+        public final java.lang.Object getChargeType() {
+            return this.chargeType;
         }
 
         @Override
@@ -710,8 +875,8 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Object getDiskType() {
-            return this.diskType;
+        public final java.lang.Object getEipEnabled() {
+            return this.eipEnabled;
         }
 
         @Override
@@ -720,18 +885,8 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Object getPrivateSlbSpecification() {
-            return this.privateSlbSpecification;
-        }
-
-        @Override
         public final java.lang.Object getPubNetworkFlow() {
             return this.pubNetworkFlow;
-        }
-
-        @Override
-        public final java.lang.Object getPubSlbSpecification() {
-            return this.pubSlbSpecification;
         }
 
         @Override
@@ -742,6 +897,11 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
+        }
+
+        @Override
+        public final java.lang.Object getSecurityGroupType() {
+            return this.securityGroupType;
         }
 
         @Override
@@ -770,11 +930,11 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             data.set("clusterVersion", om.valueToTree(this.getClusterVersion()));
             data.set("instanceCount", om.valueToTree(this.getInstanceCount()));
             data.set("netType", om.valueToTree(this.getNetType()));
-            if (this.getAcceptLanguage() != null) {
-                data.set("acceptLanguage", om.valueToTree(this.getAcceptLanguage()));
-            }
             if (this.getAclEntryList() != null) {
                 data.set("aclEntryList", om.valueToTree(this.getAclEntryList()));
+            }
+            if (this.getChargeType() != null) {
+                data.set("chargeType", om.valueToTree(this.getChargeType()));
             }
             if (this.getClusterAliasName() != null) {
                 data.set("clusterAliasName", om.valueToTree(this.getClusterAliasName()));
@@ -782,26 +942,23 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getConnectionType() != null) {
                 data.set("connectionType", om.valueToTree(this.getConnectionType()));
             }
-            if (this.getDiskType() != null) {
-                data.set("diskType", om.valueToTree(this.getDiskType()));
+            if (this.getEipEnabled() != null) {
+                data.set("eipEnabled", om.valueToTree(this.getEipEnabled()));
             }
             if (this.getMseVersion() != null) {
                 data.set("mseVersion", om.valueToTree(this.getMseVersion()));
             }
-            if (this.getPrivateSlbSpecification() != null) {
-                data.set("privateSlbSpecification", om.valueToTree(this.getPrivateSlbSpecification()));
-            }
             if (this.getPubNetworkFlow() != null) {
                 data.set("pubNetworkFlow", om.valueToTree(this.getPubNetworkFlow()));
-            }
-            if (this.getPubSlbSpecification() != null) {
-                data.set("pubSlbSpecification", om.valueToTree(this.getPubSlbSpecification()));
             }
             if (this.getRequestPars() != null) {
                 data.set("requestPars", om.valueToTree(this.getRequestPars()));
             }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
+            if (this.getSecurityGroupType() != null) {
+                data.set("securityGroupType", om.valueToTree(this.getSecurityGroupType()));
             }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
@@ -835,17 +992,16 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (!clusterVersion.equals(that.clusterVersion)) return false;
             if (!instanceCount.equals(that.instanceCount)) return false;
             if (!netType.equals(that.netType)) return false;
-            if (this.acceptLanguage != null ? !this.acceptLanguage.equals(that.acceptLanguage) : that.acceptLanguage != null) return false;
             if (this.aclEntryList != null ? !this.aclEntryList.equals(that.aclEntryList) : that.aclEntryList != null) return false;
+            if (this.chargeType != null ? !this.chargeType.equals(that.chargeType) : that.chargeType != null) return false;
             if (this.clusterAliasName != null ? !this.clusterAliasName.equals(that.clusterAliasName) : that.clusterAliasName != null) return false;
             if (this.connectionType != null ? !this.connectionType.equals(that.connectionType) : that.connectionType != null) return false;
-            if (this.diskType != null ? !this.diskType.equals(that.diskType) : that.diskType != null) return false;
+            if (this.eipEnabled != null ? !this.eipEnabled.equals(that.eipEnabled) : that.eipEnabled != null) return false;
             if (this.mseVersion != null ? !this.mseVersion.equals(that.mseVersion) : that.mseVersion != null) return false;
-            if (this.privateSlbSpecification != null ? !this.privateSlbSpecification.equals(that.privateSlbSpecification) : that.privateSlbSpecification != null) return false;
             if (this.pubNetworkFlow != null ? !this.pubNetworkFlow.equals(that.pubNetworkFlow) : that.pubNetworkFlow != null) return false;
-            if (this.pubSlbSpecification != null ? !this.pubSlbSpecification.equals(that.pubSlbSpecification) : that.pubSlbSpecification != null) return false;
             if (this.requestPars != null ? !this.requestPars.equals(that.requestPars) : that.requestPars != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
+            if (this.securityGroupType != null ? !this.securityGroupType.equals(that.securityGroupType) : that.securityGroupType != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.vpcId != null ? !this.vpcId.equals(that.vpcId) : that.vpcId != null) return false;
             return this.vSwitchId != null ? this.vSwitchId.equals(that.vSwitchId) : that.vSwitchId == null;
@@ -858,17 +1014,16 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.clusterVersion.hashCode());
             result = 31 * result + (this.instanceCount.hashCode());
             result = 31 * result + (this.netType.hashCode());
-            result = 31 * result + (this.acceptLanguage != null ? this.acceptLanguage.hashCode() : 0);
             result = 31 * result + (this.aclEntryList != null ? this.aclEntryList.hashCode() : 0);
+            result = 31 * result + (this.chargeType != null ? this.chargeType.hashCode() : 0);
             result = 31 * result + (this.clusterAliasName != null ? this.clusterAliasName.hashCode() : 0);
             result = 31 * result + (this.connectionType != null ? this.connectionType.hashCode() : 0);
-            result = 31 * result + (this.diskType != null ? this.diskType.hashCode() : 0);
+            result = 31 * result + (this.eipEnabled != null ? this.eipEnabled.hashCode() : 0);
             result = 31 * result + (this.mseVersion != null ? this.mseVersion.hashCode() : 0);
-            result = 31 * result + (this.privateSlbSpecification != null ? this.privateSlbSpecification.hashCode() : 0);
             result = 31 * result + (this.pubNetworkFlow != null ? this.pubNetworkFlow.hashCode() : 0);
-            result = 31 * result + (this.pubSlbSpecification != null ? this.pubSlbSpecification.hashCode() : 0);
             result = 31 * result + (this.requestPars != null ? this.requestPars.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
+            result = 31 * result + (this.securityGroupType != null ? this.securityGroupType.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
             result = 31 * result + (this.vSwitchId != null ? this.vSwitchId.hashCode() : 0);

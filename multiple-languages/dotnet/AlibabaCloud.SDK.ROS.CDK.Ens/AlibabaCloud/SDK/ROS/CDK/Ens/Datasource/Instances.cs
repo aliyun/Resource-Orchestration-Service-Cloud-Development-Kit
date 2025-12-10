@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ens.Datasource
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::ENS::Instances`, which is used to query the information about Edge Node Service (ENS) instances.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::ENS::Instances`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstances`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ens-instances

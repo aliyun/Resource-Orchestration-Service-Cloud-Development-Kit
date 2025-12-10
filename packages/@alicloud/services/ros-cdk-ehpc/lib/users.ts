@@ -27,7 +27,7 @@ export interface IUsers extends ros.IResource {
     readonly props: UsersProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::EHPC::Users`, which is used to add one or more users to a specified cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EHPC::Users`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUsers`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-users
  */

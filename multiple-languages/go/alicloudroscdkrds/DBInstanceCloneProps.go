@@ -81,8 +81,13 @@ type DBInstanceCloneProps struct {
 	// The format is HH:mmZ-HH:mmZ.
 	MaintainTime interface{} `field:"optional" json:"maintainTime" yaml:"maintainTime"`
 	// Property masterUsername: The master user name for the database instance.
+	//
+	// If specified, this user will have read and write permissions for all databases defined in DBMappings. Reserved keywords (which can be queried via DescribeInstanceKeywords), such as root, admin, administrator, etc., cannot be used.
+	// This parameter must be specified together with MasterUserPassword.
 	MasterUsername interface{} `field:"optional" json:"masterUsername" yaml:"masterUsername"`
 	// Property masterUserPassword: The master password for the database instance.
+	//
+	// This parameter must be specified together with MasterUsername.
 	MasterUserPassword interface{} `field:"optional" json:"masterUserPassword" yaml:"masterUserPassword"`
 	// Property masterUserType: Privilege type of account.
 	//

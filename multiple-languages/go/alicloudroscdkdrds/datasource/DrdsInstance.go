@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::DRDS::DrdsInstance`, which is used to query the information about a PolarDB-X 1.0 instance.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::DRDS::DrdsInstance`.
 type DrdsInstance interface {
 	alicloudroscdkcore.Resource
 	IDrdsInstance

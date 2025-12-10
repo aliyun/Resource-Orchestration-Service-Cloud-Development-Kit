@@ -49,7 +49,7 @@ export interface IPort extends ros.IResource {
     readonly attrFrontendPort: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DDoSPro::Port`, which is used to create a port forwarding rule for an Anti-DDoS Proxy instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DDoSPro::Port`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPort`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-port
  */

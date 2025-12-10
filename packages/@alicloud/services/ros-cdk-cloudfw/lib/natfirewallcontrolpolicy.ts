@@ -190,7 +190,7 @@ export interface INatFirewallControlPolicy extends ros.IResource {
     readonly attrNatGatewayId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::NatFirewallControlPolicy`, which is used to add an access control policy for a NAT firewall.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::NatFirewallControlPolicy`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNatFirewallControlPolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-natfirewallcontrolpolicy
  */

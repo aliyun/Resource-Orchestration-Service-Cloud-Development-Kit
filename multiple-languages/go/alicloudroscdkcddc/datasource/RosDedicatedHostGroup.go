@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::CDDC::DedicatedHostGroup`, which is used to query the information about a dedicated cluster.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::CDDC::DedicatedHostGroup`.
 type RosDedicatedHostGroup interface {
 	alicloudroscdkcore.RosResource
 	AttrAllocationPolicy() alicloudroscdkcore.IResolvable

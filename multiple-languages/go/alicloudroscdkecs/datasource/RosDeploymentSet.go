@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::DeploymentSet`, which is used to query the information about a deployment set.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::DeploymentSet`.
 type RosDeploymentSet interface {
 	alicloudroscdkcore.RosResource
 	AttrCreateTime() alicloudroscdkcore.IResolvable

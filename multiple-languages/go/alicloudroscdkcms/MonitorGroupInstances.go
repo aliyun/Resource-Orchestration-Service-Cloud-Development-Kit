@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CMS::MonitorGroupInstances`, which is used to add instances to an application group.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CMS::MonitorGroupInstances`.
 type MonitorGroupInstances interface {
 	alicloudroscdkcore.Resource
 	IMonitorGroupInstances

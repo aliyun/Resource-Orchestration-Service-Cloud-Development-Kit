@@ -7,6 +7,7 @@ package alicloudroscdkcs
 type RosClusterApplicationProps struct {
 	ClusterId interface{} `field:"required" json:"clusterId" yaml:"clusterId"`
 	YamlContent interface{} `field:"required" json:"yamlContent" yaml:"yamlContent"`
+	CreationMode interface{} `field:"optional" json:"creationMode" yaml:"creationMode"`
 	DefaultNamespace interface{} `field:"optional" json:"defaultNamespace" yaml:"defaultNamespace"`
 	DefaultNamespaceDeletion interface{} `field:"optional" json:"defaultNamespaceDeletion" yaml:"defaultNamespaceDeletion"`
 	RolePolicy interface{} `field:"optional" json:"rolePolicy" yaml:"rolePolicy"`

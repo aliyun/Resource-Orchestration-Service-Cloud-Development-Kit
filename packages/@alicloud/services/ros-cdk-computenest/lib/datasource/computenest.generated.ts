@@ -64,7 +64,7 @@ function rosServiceInstancePropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ComputeNest::ServiceInstance`, which type is used to query the information about a service instance.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ComputeNest::ServiceInstance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ServiceInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-computenest-serviceinstance
  */
@@ -320,7 +320,7 @@ function rosServiceInstancesPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ComputeNest::ServiceInstances`, which is used to query the information about service instances.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ComputeNest::ServiceInstances`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ServiceInstances` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-computenest-serviceinstances
  */

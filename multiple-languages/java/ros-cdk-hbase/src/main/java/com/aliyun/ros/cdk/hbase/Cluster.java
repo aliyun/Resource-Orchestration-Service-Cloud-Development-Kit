@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.hbase;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::HBase::Cluster</code>, which is used to create an ApsaraDB for HBase cluster.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::HBase::Cluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:26.357Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.549Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbase.$Module.class, fqn = "@alicloud/ros-cdk-hbase.Cluster")
 public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.hbase.ICluster {
 
@@ -692,8 +692,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         /**
          * Property vpcId: The ID of the virtual private cloud (VPC).
          * <p>
-         * If you leave this parameter and the VSwitchId
-         * parameter empty, the classic network type is used. The VPC network type is preferred.
+         * If you leave this parameter and the VSwitchId parameter empty, the classic network type is used. The VPC network type is preferred.
          * <p>
          * @return {@code this}
          * @param vpcId Property vpcId: The ID of the virtual private cloud (VPC). This parameter is required.
@@ -705,8 +704,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource implements com.ali
         /**
          * Property vpcId: The ID of the virtual private cloud (VPC).
          * <p>
-         * If you leave this parameter and the VSwitchId
-         * parameter empty, the classic network type is used. The VPC network type is preferred.
+         * If you leave this parameter and the VSwitchId parameter empty, the classic network type is used. The VPC network type is preferred.
          * <p>
          * @return {@code this}
          * @param vpcId Property vpcId: The ID of the virtual private cloud (VPC). This parameter is required.

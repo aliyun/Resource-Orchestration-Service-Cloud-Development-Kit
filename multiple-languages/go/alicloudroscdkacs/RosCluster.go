@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ACS::Cluster`, which is used to create a Container Compute Service (ACS) cluster.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ACS::Cluster`.
 type RosCluster interface {
 	alicloudroscdkcore.RosResource
 	Addons() interface{}
@@ -43,6 +43,8 @@ type RosCluster interface {
 	SetEndpointPublicAccess(val interface{})
 	IpStack() interface{}
 	SetIpStack(val interface{})
+	IsEnterpriseSecurityGroup() interface{}
+	SetIsEnterpriseSecurityGroup(val interface{})
 	KubernetesVersion() interface{}
 	SetKubernetesVersion(val interface{})
 	LoadBalancerSpec() interface{}
@@ -427,6 +429,16 @@ func (j *jsiiProxy_RosCluster) IpStack() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosCluster) IsEnterpriseSecurityGroup() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"isEnterpriseSecurityGroup",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosCluster) KubernetesVersion() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -789,6 +801,17 @@ func (j *jsiiProxy_RosCluster)SetIpStack(val interface{}) {
 	_jsii_.Set(
 		j,
 		"ipStack",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosCluster)SetIsEnterpriseSecurityGroup(val interface{}) {
+	if err := j.validateSetIsEnterpriseSecurityGroupParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"isEnterpriseSecurityGroup",
 		val,
 	)
 }

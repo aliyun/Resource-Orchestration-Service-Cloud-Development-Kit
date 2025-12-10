@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::ManagedPrometheus`, which is used to install a Prometheus instance to monitor a serverless Kubernetes (ASK) cluster or an Elastic Compute Service (ECS) instance.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::ManagedPrometheus`.
 type RosManagedPrometheus interface {
 	alicloudroscdkcore.RosResource
 	AttrClusterType() alicloudroscdkcore.IResolvable

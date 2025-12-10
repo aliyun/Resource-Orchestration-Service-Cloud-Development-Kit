@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::InstanceGroup`, which is used to create Elastic Compute Service (ECS) instances that have the same configurations.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::InstanceGroup`.
 type RosInstanceGroup interface {
 	alicloudroscdkcore.RosResource
 	Affinity() interface{}
@@ -24,6 +24,7 @@ type RosInstanceGroup interface {
 	AttrOrderId() alicloudroscdkcore.IResolvable
 	AttrPrivateIps() alicloudroscdkcore.IResolvable
 	AttrPublicIps() alicloudroscdkcore.IResolvable
+	AttrRelatedOrderIds() alicloudroscdkcore.IResolvable
 	AttrZoneIds() alicloudroscdkcore.IResolvable
 	AutoReleaseTime() interface{}
 	SetAutoReleaseTime(val interface{})
@@ -434,6 +435,16 @@ func (j *jsiiProxy_RosInstanceGroup) AttrPublicIps() alicloudroscdkcore.IResolva
 	_jsii_.Get(
 		j,
 		"attrPublicIps",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosInstanceGroup) AttrRelatedOrderIds() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrRelatedOrderIds",
 		&returns,
 	)
 	return returns

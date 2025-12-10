@@ -71,7 +71,7 @@ export interface IUser extends ros.IResource {
     readonly attrUserId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::User`, which is used to create a user.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::User`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUser`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-user
  */

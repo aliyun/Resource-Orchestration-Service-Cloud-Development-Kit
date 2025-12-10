@@ -7,5 +7,6 @@ package alicloudroscdkdatalakeformation
 type RosPermissionsProps struct {
 	CatalogId interface{} `field:"required" json:"catalogId" yaml:"catalogId"`
 	Permissions interface{} `field:"required" json:"permissions" yaml:"permissions"`
+	RefreshUserSync interface{} `field:"optional" json:"refreshUserSync" yaml:"refreshUserSync"`
 }
 

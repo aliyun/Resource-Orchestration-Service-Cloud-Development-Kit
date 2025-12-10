@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.directmail.datasource;
 /**
  * Represents a <code>Ipfilters</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.291Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.506Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.directmail.$Module.class, fqn = "@alicloud/ros-cdk-directmail.datasource.IIpfilters")
 @software.amazon.jsii.Jsii.Proxy(IIpfilters.Jsii$Proxy.class)
 public interface IIpfilters extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

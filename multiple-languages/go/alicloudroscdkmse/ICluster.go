@@ -10,88 +10,71 @@ import (
 // Represents a `Cluster`.
 type ICluster interface {
 	alicloudroscdkcore.IResource
-	// Attribute AclEntryList: The public network whitelist list is used only when the public network is enabled.
+	// Attribute AclEntryList: The list of ACL entries.
 	AttrAclEntryList() interface{}
-	// Attribute AclId: acl id.
+	// Attribute AclId: The ID of the ACL.
 	AttrAclId() interface{}
-	// Attribute AppVersion: app version.
+	// Attribute AppVersion: The version of the application.
 	AttrAppVersion() interface{}
-	// Attribute ClusterAliasName: cluster alias name.
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
+	// Attribute ClusterAliasName: The alias name of the cluster.
 	AttrClusterAliasName() interface{}
-	// Attribute ClusterId: cluster id.
+	// Attribute ClusterId: The ID of the cluster.
 	AttrClusterId() interface{}
-	// Attribute ClusterName: cluster name.
+	// Attribute ClusterName: The name of the cluster.
 	AttrClusterName() interface{}
-	// Attribute ClusterSpecification: Cluster specifications.
-	//
-	// Note the msversion requirements of the version parameter,
-	// Optional parameters:
-	// "MSE_ SC _1_2_60_c",
-	// "MSE_ SC _2_4_60_c",
-	// "MSE_ SC _4_8_60_c",
-	// "MSE_ SC _8_16_60_c",
-	// "MSE_ SC _16_32_60_c".
+	// Attribute ClusterSpecification: The specification of the cluster.
 	AttrClusterSpecification() interface{}
-	// Attribute ClusterType: cluster type.
+	// Attribute ClusterType: The type of the cluster.
 	AttrClusterType() interface{}
-	// Attribute ClusterVersion: Cluster version, such as ZooKeeper_3_8_0,NACOS_2_0_0.
+	// Attribute ClusterVersion: The version of the cluster.
 	AttrClusterVersion() interface{}
-	// Attribute ConfigAuthEnabled: Whether the configuration supports it.
-	//
-	// Valid values: true: false: not supported.
+	// Attribute ConfigAuthEnabled: Whether to enable the configuration authentication.
 	AttrConfigAuthEnabled() interface{}
-	// Attribute ConfigSecretEnabled: Whether the configuration password takes effect.
-	//
-	// The value is as follows: true: valid false: not valid.
+	// Attribute ConfigSecretEnabled: Whether to enable the configuration secret.
 	AttrConfigSecretEnabled() interface{}
-	// Attribute ConnectionType: network connect type.
+	// Attribute ConnectionType: The connection type.
 	AttrConnectionType() interface{}
-	// Attribute Cpu: cpu core size.
+	// Attribute Cpu: The number of CPU cores.
 	AttrCpu() interface{}
-	// Attribute DiskCapacity: disk capacity, unit: G.
+	// Attribute DiskCapacity: The disk capacity.
 	AttrDiskCapacity() interface{}
-	// Attribute DiskType: disk type.
+	// Attribute DiskType: The disk type.
 	AttrDiskType() interface{}
-	// Attribute HealthStatus: health status.
+	// Attribute HealthStatus: The health status of the cluster.
 	AttrHealthStatus() interface{}
-	// Attribute InstanceCount: instance count.
+	// Attribute InstanceCount: The number of instances.
 	AttrInstanceCount() interface{}
-	// Attribute InstanceId: instance id.
+	// Attribute InstanceId: The ID of the cluster instance.
 	AttrInstanceId() interface{}
-	// Attribute InternetAddress: internet address.
+	// Attribute InternetAddress: The public network address of the cluster.
 	AttrInternetAddress() interface{}
-	// Attribute InternetDomain: internet domain.
+	// Attribute InternetDomain: The public network domain of the cluster.
 	AttrInternetDomain() interface{}
-	// Attribute InternetPort: internet port.
+	// Attribute InternetPort: The public network port of the cluster.
 	AttrInternetPort() interface{}
-	// Attribute IntranetAddress: intranet address.
+	// Attribute IntranetAddress: The intranet address of the cluster.
 	AttrIntranetAddress() interface{}
-	// Attribute IntranetDomain: intranet domain.
+	// Attribute IntranetDomain: The intranet domain of the cluster.
 	AttrIntranetDomain() interface{}
-	// Attribute IntranetPort: intranet port.
+	// Attribute IntranetPort: The intranet port of the cluster.
 	AttrIntranetPort() interface{}
-	// Attribute MCPEnabled: Whether MCP takes effect, the value is as follows: true: valid false: not valid.
+	// Attribute MCPEnabled: Whether to enable the MCP.
 	AttrMcpEnabled() interface{}
-	// Attribute MemoryCapacity: memory capacity.
+	// Attribute MemoryCapacity: The memory capacity.
 	AttrMemoryCapacity() interface{}
-	// Attribute MseVersion: Required, the value is as follows:.
-	//
-	// -'mse_dev': indicates the development version.
-	// -'Mse_pro': means professional version. When this version is selected, the specification is 2c4g or above, and the specification is 3 nodes or above.
+	// Attribute MseVersion: The MSE version.
 	AttrMseVersion() interface{}
-	// Attribute NetType: Network type (whether private network is enabled or not).
-	//
-	// privatenet indicates that private network is enabled.
+	// Attribute NetType: The network type.
 	AttrNetType() interface{}
-	// Attribute PayInfo: pay info.
+	// Attribute PayInfo: The payment information.
 	AttrPayInfo() interface{}
-	// Attribute PubNetworkFlow: Public network bandwidth.
-	//
-	// If the bandwidth is greater than 0, the public network is enabled.
+	// Attribute PubNetworkFlow: The public network flow.
 	AttrPubNetworkFlow() interface{}
-	// Attribute VpcId: vpc id.
+	// Attribute VpcId: The ID of the VPC.
 	AttrVpcId() interface{}
-	// Attribute VSwitchId: switcher Id.
+	// Attribute VSwitchId: The ID of the VSwitch.
 	AttrVSwitchId() interface{}
 	Props() *ClusterProps
 }
@@ -126,6 +109,16 @@ func (j *jsiiProxy_ICluster) AttrAppVersion() interface{} {
 	_jsii_.Get(
 		j,
 		"attrAppVersion",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ICluster) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
 		&returns,
 	)
 	return returns

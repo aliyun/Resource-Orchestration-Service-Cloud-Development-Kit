@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::SecurityGroups`, which is used to query the basic information about security groups.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::SecurityGroups`.
 type SecurityGroups interface {
 	alicloudroscdkcore.Resource
 	ISecurityGroups

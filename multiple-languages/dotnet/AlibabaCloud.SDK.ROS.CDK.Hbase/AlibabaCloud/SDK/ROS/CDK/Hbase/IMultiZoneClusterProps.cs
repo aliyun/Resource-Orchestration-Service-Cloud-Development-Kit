@@ -315,8 +315,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbase
 
         /// <summary>Property vpcId: The ID of the virtual private cloud (VPC).</summary>
         /// <remarks>
-        /// If you leave this parameter and the VSwitchId
-        /// parameter empty, the classic network type is used. The VPC network type is preferred.
+        /// If you leave this parameter and the VSwitchId parameter empty, the classic network type is used. The VPC network type is preferred.
         /// </remarks>
         [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -619,8 +618,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbase
 
             /// <summary>Property vpcId: The ID of the virtual private cloud (VPC).</summary>
             /// <remarks>
-            /// If you leave this parameter and the VSwitchId
-            /// parameter empty, the classic network type is used. The VPC network type is preferred.
+            /// If you leave this parameter and the VSwitchId parameter empty, the classic network type is used. The VPC network type is preferred.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

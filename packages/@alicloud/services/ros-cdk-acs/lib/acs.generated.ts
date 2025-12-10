@@ -58,6 +58,16 @@ export interface RosClusterProps {
     readonly ipStack?: string | ros.IResolvable;
 
     /**
+     * @Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group. 
+     * This parameter takes effect only if security_group_id is left empty.
+     * Note You must specify an advanced security group for a cluster that has Terway installed.
+     * true: creates an advanced security group.
+     * false: does not create an advanced security group.
+     * Default value: false.
+     */
+    readonly isEnterpriseSecurityGroup?: boolean | ros.IResolvable;
+
+    /**
      * @Property kubernetesVersion: The version of the Kubernetes cluster.
      */
     readonly kubernetesVersion?: string | ros.IResolvable;
@@ -167,11 +177,30 @@ export interface RosClusterProps {
 function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('kubernetesVersion', ros.validateString)(properties.kubernetesVersion));
     errors.collect(ros.propertyValidator('endpointPublicAccess', ros.validateBoolean)(properties.endpointPublicAccess));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('addons', ros.listValidator(RosCluster_AddonsPropertyValidator))(properties.addons));
+    errors.collect(ros.propertyValidator('podVSwitchIds', ros.listValidator(ros.validateString))(properties.podVSwitchIds));
+    errors.collect(ros.propertyValidator('loggingType', ros.validateString)(properties.loggingType));
+    errors.collect(ros.propertyValidator('ipStack', ros.validateString)(properties.ipStack));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    errors.collect(ros.propertyValidator('loadBalancerSpec', ros.validateString)(properties.loadBalancerSpec));
+    errors.collect(ros.propertyValidator('isEnterpriseSecurityGroup', ros.validateBoolean)(properties.isEnterpriseSecurityGroup));
+    errors.collect(ros.propertyValidator('slsProjectName', ros.validateString)(properties.slsProjectName));
+    errors.collect(ros.propertyValidator('serviceCidr', ros.validateString)(properties.serviceCidr));
+    if(properties.zoneIds && (Array.isArray(properties.zoneIds) || (typeof properties.zoneIds) === 'string')) {
+        errors.collect(ros.propertyValidator('zoneIds', ros.validateLength)({
+            data: properties.zoneIds.length,
+            min: 1,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('zoneIds', ros.listValidator(ros.validateString))(properties.zoneIds));
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosCluster_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('kubernetesVersion', ros.validateString)(properties.kubernetesVersion));
     errors.collect(ros.propertyValidator('podPostpaidSpec', RosCluster_PodPostpaidSpecPropertyValidator)(properties.podPostpaidSpec));
     errors.collect(ros.propertyValidator('deleteOptions', ros.listValidator(RosCluster_DeleteOptionsPropertyValidator))(properties.deleteOptions));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.vSwitchIds && (Array.isArray(properties.vSwitchIds) || (typeof properties.vSwitchIds) === 'string')) {
         errors.collect(ros.propertyValidator('vSwitchIds', ros.validateLength)({
             data: properties.vSwitchIds.length,
@@ -180,15 +209,8 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateString))(properties.vSwitchIds));
-    errors.collect(ros.propertyValidator('addons', ros.listValidator(RosCluster_AddonsPropertyValidator))(properties.addons));
-    errors.collect(ros.propertyValidator('podVSwitchIds', ros.listValidator(ros.validateString))(properties.podVSwitchIds));
     errors.collect(ros.propertyValidator('clusterSpec', ros.validateString)(properties.clusterSpec));
     errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
-    errors.collect(ros.propertyValidator('loggingType', ros.validateString)(properties.loggingType));
-    errors.collect(ros.propertyValidator('ipStack', ros.validateString)(properties.ipStack));
-    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
-    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
-    errors.collect(ros.propertyValidator('loadBalancerSpec', ros.validateString)(properties.loadBalancerSpec));
     errors.collect(ros.propertyValidator('timeZone', ros.validateString)(properties.timeZone));
     if(properties.serviceDiscoveryTypes && (Array.isArray(properties.serviceDiscoveryTypes) || (typeof properties.serviceDiscoveryTypes) === 'string')) {
         errors.collect(ros.propertyValidator('serviceDiscoveryTypes', ros.validateLength)({
@@ -199,20 +221,9 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('serviceDiscoveryTypes', ros.listValidator(ros.validateString))(properties.serviceDiscoveryTypes));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
-    errors.collect(ros.propertyValidator('slsProjectName', ros.validateString)(properties.slsProjectName));
     errors.collect(ros.propertyValidator('computeClass', ros.validateString)(properties.computeClass));
-    errors.collect(ros.propertyValidator('serviceCidr', ros.validateString)(properties.serviceCidr));
     errors.collect(ros.propertyValidator('snatEntry', ros.validateBoolean)(properties.snatEntry));
     errors.collect(ros.propertyValidator('maintenanceWindow', RosCluster_MaintenanceWindowPropertyValidator)(properties.maintenanceWindow));
-    if(properties.zoneIds && (Array.isArray(properties.zoneIds) || (typeof properties.zoneIds) === 'string')) {
-        errors.collect(ros.propertyValidator('zoneIds', ros.validateLength)({
-            data: properties.zoneIds.length,
-            min: 1,
-            max: 5,
-          }));
-    }
-    errors.collect(ros.propertyValidator('zoneIds', ros.listValidator(ros.validateString))(properties.zoneIds));
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosCluster_TagsPropertyValidator))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosClusterProps"');
 }
 
@@ -238,6 +249,7 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
       'DeletionProtection': ros.booleanToRosTemplate(properties.deletionProtection),
       'EndpointPublicAccess': ros.booleanToRosTemplate(properties.endpointPublicAccess),
       'IpStack': ros.stringToRosTemplate(properties.ipStack),
+      'IsEnterpriseSecurityGroup': ros.booleanToRosTemplate(properties.isEnterpriseSecurityGroup),
       'KubernetesVersion': ros.stringToRosTemplate(properties.kubernetesVersion),
       'LoadBalancerSpec': ros.stringToRosTemplate(properties.loadBalancerSpec),
       'LoggingType': ros.stringToRosTemplate(properties.loggingType),
@@ -258,7 +270,7 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ACS::Cluster`, which is used to create a Container Compute Service (ACS) cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ACS::Cluster`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Cluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acs-cluster
  */
@@ -374,6 +386,16 @@ export class RosCluster extends ros.RosResource {
      * @Property ipStack: The IP stack of the cluster.
      */
     public ipStack: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group. 
+     * This parameter takes effect only if security_group_id is left empty.
+     * Note You must specify an advanced security group for a cluster that has Terway installed.
+     * true: creates an advanced security group.
+     * false: does not create an advanced security group.
+     * Default value: false.
+     */
+    public isEnterpriseSecurityGroup: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property kubernetesVersion: The version of the Kubernetes cluster.
@@ -502,6 +524,7 @@ export class RosCluster extends ros.RosResource {
         this.deletionProtection = props.deletionProtection;
         this.endpointPublicAccess = props.endpointPublicAccess;
         this.ipStack = props.ipStack;
+        this.isEnterpriseSecurityGroup = props.isEnterpriseSecurityGroup;
         this.kubernetesVersion = props.kubernetesVersion;
         this.loadBalancerSpec = props.loadBalancerSpec;
         this.loggingType = props.loggingType;
@@ -531,6 +554,7 @@ export class RosCluster extends ros.RosResource {
             deletionProtection: this.deletionProtection,
             endpointPublicAccess: this.endpointPublicAccess,
             ipStack: this.ipStack,
+            isEnterpriseSecurityGroup: this.isEnterpriseSecurityGroup,
             kubernetesVersion: this.kubernetesVersion,
             loadBalancerSpec: this.loadBalancerSpec,
             loggingType: this.loggingType,

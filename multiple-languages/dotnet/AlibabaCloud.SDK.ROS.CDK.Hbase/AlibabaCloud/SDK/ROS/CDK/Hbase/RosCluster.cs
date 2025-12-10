@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Hbase
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::HBase::Cluster`, which is used to create an ApsaraDB for HBase cluster.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::HBase::Cluster`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Cluster` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbase-cluster
@@ -826,8 +826,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbase
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: vpcId: The ID of the virtual private cloud (VPC). If you leave this parameter and the VSwitchId
-        /// parameter empty, the classic network type is used. The VPC network type is preferred.
+        /// <strong>Property</strong>: vpcId: The ID of the virtual private cloud (VPC). If you leave this parameter and the VSwitchId parameter empty, the classic network type is used. The VPC network type is preferred.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

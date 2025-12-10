@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::StageConfig`, which is used to configure the test, staging, or production environment variables for an API group.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::StageConfig`.
 type StageConfig interface {
 	alicloudroscdkcore.Resource
 	IStageConfig

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::ECS::Disk</code>, which is used to query the information about a cloud disk.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::ECS::Disk</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:24.813Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:55.885Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.RosDisk")
 public class RosDisk extends com.aliyun.ros.cdk.core.RosResource {
 

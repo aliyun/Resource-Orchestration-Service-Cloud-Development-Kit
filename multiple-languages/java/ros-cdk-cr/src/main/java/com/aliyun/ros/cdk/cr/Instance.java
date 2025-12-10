@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cr;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CR::Instance</code>, which is used to create a Container Registry Enterprise Edition instance.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CR::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.723Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.963Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cr.IInstance {
 
@@ -152,27 +152,6 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property imageScanner: Security scan engine.
-         * <p>
-         * @return {@code this}
-         * @param imageScanner Property imageScanner: Security scan engine. This parameter is required.
-         */
-        public Builder imageScanner(final java.lang.String imageScanner) {
-            this.props.imageScanner(imageScanner);
-            return this;
-        }
-        /**
-         * Property imageScanner: Security scan engine.
-         * <p>
-         * @return {@code this}
-         * @param imageScanner Property imageScanner: Security scan engine. This parameter is required.
-         */
-        public Builder imageScanner(final com.aliyun.ros.cdk.core.IResolvable imageScanner) {
-            this.props.imageScanner(imageScanner);
-            return this;
-        }
-
-        /**
          * Property instanceName: Instance name.The value contains 3 to 30 lowercase letters, digits, and delimiters "-"(it can not be first or last).
          * <p>
          * @return {@code this}
@@ -225,27 +204,23 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property period: Prepaid cycle.
-         * <p>
-         * The unit is Monthly, please enter an integer multiple of 12 for annual paid products.
+         * Property imageScanner: Security scan engine.
          * <p>
          * @return {@code this}
-         * @param period Property period: Prepaid cycle. This parameter is required.
+         * @param imageScanner Property imageScanner: Security scan engine. This parameter is required.
          */
-        public Builder period(final java.lang.Number period) {
-            this.props.period(period);
+        public Builder imageScanner(final java.lang.String imageScanner) {
+            this.props.imageScanner(imageScanner);
             return this;
         }
         /**
-         * Property period: Prepaid cycle.
-         * <p>
-         * The unit is Monthly, please enter an integer multiple of 12 for annual paid products.
+         * Property imageScanner: Security scan engine.
          * <p>
          * @return {@code this}
-         * @param period Property period: Prepaid cycle. This parameter is required.
+         * @param imageScanner Property imageScanner: Security scan engine. This parameter is required.
          */
-        public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
-            this.props.period(period);
+        public Builder imageScanner(final com.aliyun.ros.cdk.core.IResolvable imageScanner) {
+            this.props.imageScanner(imageScanner);
             return this;
         }
 
@@ -267,6 +242,31 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
          */
         public Builder instanceStorageName(final com.aliyun.ros.cdk.core.IResolvable instanceStorageName) {
             this.props.instanceStorageName(instanceStorageName);
+            return this;
+        }
+
+        /**
+         * Property period: Prepaid cycle.
+         * <p>
+         * The unit is Monthly, please enter an integer multiple of 12 for annual paid products.
+         * <p>
+         * @return {@code this}
+         * @param period Property period: Prepaid cycle. This parameter is required.
+         */
+        public Builder period(final java.lang.Number period) {
+            this.props.period(period);
+            return this;
+        }
+        /**
+         * Property period: Prepaid cycle.
+         * <p>
+         * The unit is Monthly, please enter an integer multiple of 12 for annual paid products.
+         * <p>
+         * @return {@code this}
+         * @param period Property period: Prepaid cycle. This parameter is required.
+         */
+        public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
+            this.props.period(period);
             return this;
         }
 

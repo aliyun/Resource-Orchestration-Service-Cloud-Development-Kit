@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterapplication
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.818Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.049Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ClusterApplicationProps")
 @software.amazon.jsii.Jsii.Proxy(ClusterApplicationProps.Jsii$Proxy.class)
 public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerializable {
@@ -19,6 +19,17 @@ public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerial
      * Property yamlContent: The yaml content of application.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getYamlContent();
+
+    /**
+     * Property creationMode: Creation modes include: - Normal: create new resources, will report error if already exists.
+     * <p>
+     * <ul>
+     * <li>Apply: similar to kubectl apply, create if not exists, update if exists. During the deletion phase, ROS will delete newly created application, but updated existing application will not be deleted.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCreationMode() {
+        return null;
+    }
 
     /**
      * Property defaultNamespace: The default namespace for the application, default value is default.
@@ -99,6 +110,7 @@ public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerial
     public static final class Builder implements software.amazon.jsii.Builder<ClusterApplicationProps> {
         java.lang.Object clusterId;
         java.lang.Object yamlContent;
+        java.lang.Object creationMode;
         java.lang.Object defaultNamespace;
         java.lang.Object defaultNamespaceDeletion;
         java.lang.Object rolePolicy;
@@ -143,6 +155,32 @@ public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerial
          */
         public Builder yamlContent(com.aliyun.ros.cdk.core.IResolvable yamlContent) {
             this.yamlContent = yamlContent;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ClusterApplicationProps#getCreationMode}
+         * @param creationMode Property creationMode: Creation modes include: - Normal: create new resources, will report error if already exists.
+         *                     <ul>
+         *                     <li>Apply: similar to kubectl apply, create if not exists, update if exists. During the deletion phase, ROS will delete newly created application, but updated existing application will not be deleted.</li>
+         *                     </ul>
+         * @return {@code this}
+         */
+        public Builder creationMode(java.lang.String creationMode) {
+            this.creationMode = creationMode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ClusterApplicationProps#getCreationMode}
+         * @param creationMode Property creationMode: Creation modes include: - Normal: create new resources, will report error if already exists.
+         *                     <ul>
+         *                     <li>Apply: similar to kubectl apply, create if not exists, update if exists. During the deletion phase, ROS will delete newly created application, but updated existing application will not be deleted.</li>
+         *                     </ul>
+         * @return {@code this}
+         */
+        public Builder creationMode(com.aliyun.ros.cdk.core.IResolvable creationMode) {
+            this.creationMode = creationMode;
             return this;
         }
 
@@ -324,6 +362,7 @@ public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerial
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ClusterApplicationProps {
         private final java.lang.Object clusterId;
         private final java.lang.Object yamlContent;
+        private final java.lang.Object creationMode;
         private final java.lang.Object defaultNamespace;
         private final java.lang.Object defaultNamespaceDeletion;
         private final java.lang.Object rolePolicy;
@@ -339,6 +378,7 @@ public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerial
             super(objRef);
             this.clusterId = software.amazon.jsii.Kernel.get(this, "clusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.yamlContent = software.amazon.jsii.Kernel.get(this, "yamlContent", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.creationMode = software.amazon.jsii.Kernel.get(this, "creationMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.defaultNamespace = software.amazon.jsii.Kernel.get(this, "defaultNamespace", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.defaultNamespaceDeletion = software.amazon.jsii.Kernel.get(this, "defaultNamespaceDeletion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.rolePolicy = software.amazon.jsii.Kernel.get(this, "rolePolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -354,6 +394,7 @@ public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerial
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.clusterId = java.util.Objects.requireNonNull(builder.clusterId, "clusterId is required");
             this.yamlContent = java.util.Objects.requireNonNull(builder.yamlContent, "yamlContent is required");
+            this.creationMode = builder.creationMode;
             this.defaultNamespace = builder.defaultNamespace;
             this.defaultNamespaceDeletion = builder.defaultNamespaceDeletion;
             this.rolePolicy = builder.rolePolicy;
@@ -370,6 +411,11 @@ public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerial
         @Override
         public final java.lang.Object getYamlContent() {
             return this.yamlContent;
+        }
+
+        @Override
+        public final java.lang.Object getCreationMode() {
+            return this.creationMode;
         }
 
         @Override
@@ -410,6 +456,9 @@ public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerial
 
             data.set("clusterId", om.valueToTree(this.getClusterId()));
             data.set("yamlContent", om.valueToTree(this.getYamlContent()));
+            if (this.getCreationMode() != null) {
+                data.set("creationMode", om.valueToTree(this.getCreationMode()));
+            }
             if (this.getDefaultNamespace() != null) {
                 data.set("defaultNamespace", om.valueToTree(this.getDefaultNamespace()));
             }
@@ -448,6 +497,7 @@ public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerial
 
             if (!clusterId.equals(that.clusterId)) return false;
             if (!yamlContent.equals(that.yamlContent)) return false;
+            if (this.creationMode != null ? !this.creationMode.equals(that.creationMode) : that.creationMode != null) return false;
             if (this.defaultNamespace != null ? !this.defaultNamespace.equals(that.defaultNamespace) : that.defaultNamespace != null) return false;
             if (this.defaultNamespaceDeletion != null ? !this.defaultNamespaceDeletion.equals(that.defaultNamespaceDeletion) : that.defaultNamespaceDeletion != null) return false;
             if (this.rolePolicy != null ? !this.rolePolicy.equals(that.rolePolicy) : that.rolePolicy != null) return false;
@@ -460,6 +510,7 @@ public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerial
         public final int hashCode() {
             int result = this.clusterId.hashCode();
             result = 31 * result + (this.yamlContent.hashCode());
+            result = 31 * result + (this.creationMode != null ? this.creationMode.hashCode() : 0);
             result = 31 * result + (this.defaultNamespace != null ? this.defaultNamespace.hashCode() : 0);
             result = 31 * result + (this.defaultNamespaceDeletion != null ? this.defaultNamespaceDeletion.hashCode() : 0);
             result = 31 * result + (this.rolePolicy != null ? this.rolePolicy.hashCode() : 0);

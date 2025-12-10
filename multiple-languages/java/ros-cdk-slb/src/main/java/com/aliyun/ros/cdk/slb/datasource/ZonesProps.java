@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.slb.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-zones
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:29.935Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:00.528Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.datasource.ZonesProps")
 @software.amazon.jsii.Jsii.Proxy(ZonesProps.Jsii$Proxy.class)
 public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {
@@ -20,7 +20,7 @@ public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property addressType: The type of network.Valid values: vpc, classic_internet, and classic_intranet.. vpc: an internal SLB instance that is deployed in a virtual private cloud (VPC). classic_internet: a public-facing SLB instance. classic_intranet: an internal SLB instance that is deployed in a classic network.
+     * Property addressType: The type of network.Valid values: vpc: an internal SLB instance that is deployed in a virtual private cloud (VPC). classic_internet: a public-facing SLB instance. classic_intranet: an internal SLB instance that is deployed in a classic network.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAddressType() {
         return null;
@@ -79,7 +79,7 @@ public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ZonesProps#getAddressType}
-         * @param addressType Property addressType: The type of network.Valid values: vpc, classic_internet, and classic_intranet.. vpc: an internal SLB instance that is deployed in a virtual private cloud (VPC). classic_internet: a public-facing SLB instance. classic_intranet: an internal SLB instance that is deployed in a classic network.
+         * @param addressType Property addressType: The type of network.Valid values: vpc: an internal SLB instance that is deployed in a virtual private cloud (VPC). classic_internet: a public-facing SLB instance. classic_intranet: an internal SLB instance that is deployed in a classic network.
          * @return {@code this}
          */
         public Builder addressType(java.lang.String addressType) {
@@ -89,7 +89,7 @@ public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ZonesProps#getAddressType}
-         * @param addressType Property addressType: The type of network.Valid values: vpc, classic_internet, and classic_intranet.. vpc: an internal SLB instance that is deployed in a virtual private cloud (VPC). classic_internet: a public-facing SLB instance. classic_intranet: an internal SLB instance that is deployed in a classic network.
+         * @param addressType Property addressType: The type of network.Valid values: vpc: an internal SLB instance that is deployed in a virtual private cloud (VPC). classic_internet: a public-facing SLB instance. classic_intranet: an internal SLB instance that is deployed in a classic network.
          * @return {@code this}
          */
         public Builder addressType(com.aliyun.ros.cdk.core.IResolvable addressType) {

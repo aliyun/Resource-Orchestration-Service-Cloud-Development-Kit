@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ADBLake::ResourceGroupAccountBinding`, which is used to associate a resource group with a database account.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ADBLake::ResourceGroupAccountBinding`.
 type ResourceGroupAccountBinding interface {
 	alicloudroscdkcore.Resource
 	IResourceGroupAccountBinding

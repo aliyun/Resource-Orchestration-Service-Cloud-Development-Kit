@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::Invocation</code>, which is used to run a Cloud Assistant command on Elastic Compute Service (ECS) instances.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::Invocation</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:24.211Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:55.343Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.Invocation")
 public class Invocation extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.IInvocation {
 
@@ -135,7 +135,7 @@ public class Invocation extends com.aliyun.ros.cdk.core.Resource implements com.
          * @return {@code this}
          * @param instanceIds Property instanceIds: The instance id list. This parameter is required.
          */
-        public Builder instanceIds(final java.util.List<? extends java.lang.Object> instanceIds) {
+        public Builder instanceIds(final com.aliyun.ros.cdk.core.IResolvable instanceIds) {
             this.props.instanceIds(instanceIds);
             return this;
         }
@@ -147,7 +147,7 @@ public class Invocation extends com.aliyun.ros.cdk.core.Resource implements com.
          * @return {@code this}
          * @param instanceIds Property instanceIds: The instance id list. This parameter is required.
          */
-        public Builder instanceIds(final com.aliyun.ros.cdk.core.IResolvable instanceIds) {
+        public Builder instanceIds(final java.util.List<? extends java.lang.Object> instanceIds) {
             this.props.instanceIds(instanceIds);
             return this;
         }

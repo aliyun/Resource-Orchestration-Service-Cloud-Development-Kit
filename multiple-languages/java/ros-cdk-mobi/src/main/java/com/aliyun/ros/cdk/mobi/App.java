@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mobi;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::MOBI::App</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:26.980Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.129Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mobi.$Module.class, fqn = "@alicloud/ros-cdk-mobi.App")
 public class App extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.mobi.IApp {
 

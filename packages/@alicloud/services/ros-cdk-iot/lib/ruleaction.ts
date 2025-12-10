@@ -71,7 +71,7 @@ export interface IRuleAction extends ros.IResource {
     readonly attrActionId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::IOT::RuleAction`, which is used to create a rule action for a specified rule.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::IOT::RuleAction`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRuleAction`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-ruleaction
  */

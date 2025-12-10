@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.oos;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-template
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:27.353Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.560Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.TemplateProps")
 @software.amazon.jsii.Jsii.Proxy(TemplateProps.Jsii$Proxy.class)
 public interface TemplateProps extends software.amazon.jsii.JsiiSerializable {
@@ -23,6 +23,13 @@ public interface TemplateProps extends software.amazon.jsii.JsiiSerializable {
      * The template name can be up to 200 characters in length. The name can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ACS, ALIYUN, ALIBABA, or ALICLOUD.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getTemplateName();
+
+    /**
+     * Property ignoreExisting: Whether to ignore existing template False: ROS will perform a uniqueness check.If a template with the same name exists, an error will be reported when creating it. True: ROS will not check the uniqueness.If there is a template with the same name, the template creation process will be ignored. If the template is not created by ROS, it will be ignored during update and delete stage.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIgnoreExisting() {
+        return null;
+    }
 
     /**
      * Property resourceGroupId: Resource group id.
@@ -50,6 +57,7 @@ public interface TemplateProps extends software.amazon.jsii.JsiiSerializable {
     public static final class Builder implements software.amazon.jsii.Builder<TemplateProps> {
         java.lang.Object content;
         java.lang.Object templateName;
+        java.lang.Object ignoreExisting;
         java.lang.Object resourceGroupId;
         java.util.Map<java.lang.String, java.lang.Object> tags;
 
@@ -94,6 +102,26 @@ public interface TemplateProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder templateName(com.aliyun.ros.cdk.core.IResolvable templateName) {
             this.templateName = templateName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TemplateProps#getIgnoreExisting}
+         * @param ignoreExisting Property ignoreExisting: Whether to ignore existing template False: ROS will perform a uniqueness check.If a template with the same name exists, an error will be reported when creating it. True: ROS will not check the uniqueness.If there is a template with the same name, the template creation process will be ignored. If the template is not created by ROS, it will be ignored during update and delete stage.
+         * @return {@code this}
+         */
+        public Builder ignoreExisting(java.lang.Boolean ignoreExisting) {
+            this.ignoreExisting = ignoreExisting;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TemplateProps#getIgnoreExisting}
+         * @param ignoreExisting Property ignoreExisting: Whether to ignore existing template False: ROS will perform a uniqueness check.If a template with the same name exists, an error will be reported when creating it. True: ROS will not check the uniqueness.If there is a template with the same name, the template creation process will be ignored. If the template is not created by ROS, it will be ignored during update and delete stage.
+         * @return {@code this}
+         */
+        public Builder ignoreExisting(com.aliyun.ros.cdk.core.IResolvable ignoreExisting) {
+            this.ignoreExisting = ignoreExisting;
             return this;
         }
 
@@ -146,6 +174,7 @@ public interface TemplateProps extends software.amazon.jsii.JsiiSerializable {
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TemplateProps {
         private final java.lang.Object content;
         private final java.lang.Object templateName;
+        private final java.lang.Object ignoreExisting;
         private final java.lang.Object resourceGroupId;
         private final java.util.Map<java.lang.String, java.lang.Object> tags;
 
@@ -157,6 +186,7 @@ public interface TemplateProps extends software.amazon.jsii.JsiiSerializable {
             super(objRef);
             this.content = software.amazon.jsii.Kernel.get(this, "content", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.templateName = software.amazon.jsii.Kernel.get(this, "templateName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ignoreExisting = software.amazon.jsii.Kernel.get(this, "ignoreExisting", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class)));
         }
@@ -169,6 +199,7 @@ public interface TemplateProps extends software.amazon.jsii.JsiiSerializable {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.content = java.util.Objects.requireNonNull(builder.content, "content is required");
             this.templateName = java.util.Objects.requireNonNull(builder.templateName, "templateName is required");
+            this.ignoreExisting = builder.ignoreExisting;
             this.resourceGroupId = builder.resourceGroupId;
             this.tags = (java.util.Map<java.lang.String, java.lang.Object>)builder.tags;
         }
@@ -181,6 +212,11 @@ public interface TemplateProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getTemplateName() {
             return this.templateName;
+        }
+
+        @Override
+        public final java.lang.Object getIgnoreExisting() {
+            return this.ignoreExisting;
         }
 
         @Override
@@ -201,6 +237,9 @@ public interface TemplateProps extends software.amazon.jsii.JsiiSerializable {
 
             data.set("content", om.valueToTree(this.getContent()));
             data.set("templateName", om.valueToTree(this.getTemplateName()));
+            if (this.getIgnoreExisting() != null) {
+                data.set("ignoreExisting", om.valueToTree(this.getIgnoreExisting()));
+            }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
@@ -227,6 +266,7 @@ public interface TemplateProps extends software.amazon.jsii.JsiiSerializable {
 
             if (!content.equals(that.content)) return false;
             if (!templateName.equals(that.templateName)) return false;
+            if (this.ignoreExisting != null ? !this.ignoreExisting.equals(that.ignoreExisting) : that.ignoreExisting != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
@@ -235,6 +275,7 @@ public interface TemplateProps extends software.amazon.jsii.JsiiSerializable {
         public final int hashCode() {
             int result = this.content.hashCode();
             result = 31 * result + (this.templateName.hashCode());
+            result = 31 * result + (this.ignoreExisting != null ? this.ignoreExisting.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;

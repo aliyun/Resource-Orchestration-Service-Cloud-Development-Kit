@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.apig.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apig-pluginclass
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:21.043Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:52.475Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.datasource.PluginClassProps")
 @software.amazon.jsii.Jsii.Proxy(PluginClassProps.Jsii$Proxy.class)
 public interface PluginClassProps extends software.amazon.jsii.JsiiSerializable {

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cen;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CEN::TransitRouterRouteEntry</code>, which is used to add routes to a route table of an Enterprise Edition transit router.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CEN::TransitRouterRouteEntry</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:21.894Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.183Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosTransitRouterRouteEntry")
 public class RosTransitRouterRouteEntry extends com.aliyun.ros.cdk.core.RosResource {
 

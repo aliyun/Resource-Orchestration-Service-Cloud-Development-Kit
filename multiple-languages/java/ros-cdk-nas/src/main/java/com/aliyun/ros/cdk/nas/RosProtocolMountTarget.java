@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.nas;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::NAS::ProtocolMountTarget</code>, which is used to create an export directory for a protocol service.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::NAS::ProtocolMountTarget</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:27.160Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.370Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.RosProtocolMountTarget")
 public class RosProtocolMountTarget extends com.aliyun.ros.cdk.core.RosResource {
 

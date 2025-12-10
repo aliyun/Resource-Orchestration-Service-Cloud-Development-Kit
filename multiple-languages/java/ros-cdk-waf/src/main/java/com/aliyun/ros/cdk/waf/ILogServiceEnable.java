@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.waf;
 /**
  * Represents a <code>LogServiceEnable</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:30.993Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.555Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.waf.$Module.class, fqn = "@alicloud/ros-cdk-waf.ILogServiceEnable")
 @software.amazon.jsii.Jsii.Proxy(ILogServiceEnable.Jsii$Proxy.class)
 public interface ILogServiceEnable extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

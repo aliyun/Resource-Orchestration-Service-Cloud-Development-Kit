@@ -24,7 +24,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// BrainIndustrial: Brain Industrial
         /// CloudStorageGateway: Cloud Storage Gateway
         /// CMS: Cloud Monitor Service
-        /// CR: Container Registry
         /// CS: Container Service
         /// DataHub: Data Hub
         /// DataWorks: DataWorks
@@ -92,7 +91,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
             /// BrainIndustrial: Brain Industrial
             /// CloudStorageGateway: Cloud Storage Gateway
             /// CMS: Cloud Monitor Service
-            /// CR: Container Registry
             /// CS: Container Service
             /// DataHub: Data Hub
             /// DataWorks: DataWorks

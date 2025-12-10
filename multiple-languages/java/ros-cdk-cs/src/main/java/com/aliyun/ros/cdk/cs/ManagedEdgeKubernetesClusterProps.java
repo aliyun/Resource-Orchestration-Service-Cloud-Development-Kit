@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managededgekubernetescluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.850Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.074Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ManagedEdgeKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(ManagedEdgeKubernetesClusterProps.Jsii$Proxy.class)
 public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -79,6 +79,15 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
      * false: If set to false, the API server on the public network will not be created, only the API server on the private network will be created.Default to true.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEndpointPublicAccess() {
+        return null;
+    }
+
+    /**
+     * Property ipStack: The IP stack of the cluster.
+     * <p>
+     * Value: ipv4 (Single stack) or ipv6 (Dual Stack). Default value: ipv4
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIpStack() {
         return null;
     }
 
@@ -170,6 +179,13 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
     }
 
     /**
+     * Property rrsaConfig: The configuration of RRSA.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRrsaConfig() {
+        return null;
+    }
+
+    /**
      * Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment.
      * <p>
      * When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
@@ -249,6 +265,7 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
         java.lang.Object deletionProtection;
         java.lang.Object encryptionProviderKey;
         java.lang.Object endpointPublicAccess;
+        java.lang.Object ipStack;
         java.lang.Object isEnterpriseSecurityGroup;
         java.lang.Object keyPair;
         java.lang.Object kubernetesVersion;
@@ -259,6 +276,7 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
         java.lang.Object profile;
         java.lang.Object proxyMode;
         java.lang.Object resourceGroupId;
+        java.lang.Object rrsaConfig;
         java.lang.Object serviceCidr;
         java.lang.Object snatEntry;
         java.util.List<com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster.TagsProperty> tags;
@@ -448,6 +466,28 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
          */
         public Builder endpointPublicAccess(com.aliyun.ros.cdk.core.IResolvable endpointPublicAccess) {
             this.endpointPublicAccess = endpointPublicAccess;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getIpStack}
+         * @param ipStack Property ipStack: The IP stack of the cluster.
+         *                Value: ipv4 (Single stack) or ipv6 (Dual Stack). Default value: ipv4
+         * @return {@code this}
+         */
+        public Builder ipStack(java.lang.String ipStack) {
+            this.ipStack = ipStack;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getIpStack}
+         * @param ipStack Property ipStack: The IP stack of the cluster.
+         *                Value: ipv4 (Single stack) or ipv6 (Dual Stack). Default value: ipv4
+         * @return {@code this}
+         */
+        public Builder ipStack(com.aliyun.ros.cdk.core.IResolvable ipStack) {
+            this.ipStack = ipStack;
             return this;
         }
 
@@ -674,6 +714,26 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
         }
 
         /**
+         * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getRrsaConfig}
+         * @param rrsaConfig Property rrsaConfig: The configuration of RRSA.
+         * @return {@code this}
+         */
+        public Builder rrsaConfig(com.aliyun.ros.cdk.core.IResolvable rrsaConfig) {
+            this.rrsaConfig = rrsaConfig;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getRrsaConfig}
+         * @param rrsaConfig Property rrsaConfig: The configuration of RRSA.
+         * @return {@code this}
+         */
+        public Builder rrsaConfig(com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster.RrsaConfigProperty rrsaConfig) {
+            this.rrsaConfig = rrsaConfig;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getServiceCidr}
          * @param serviceCidr Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment.
          *                    When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
@@ -846,6 +906,7 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
         private final java.lang.Object deletionProtection;
         private final java.lang.Object encryptionProviderKey;
         private final java.lang.Object endpointPublicAccess;
+        private final java.lang.Object ipStack;
         private final java.lang.Object isEnterpriseSecurityGroup;
         private final java.lang.Object keyPair;
         private final java.lang.Object kubernetesVersion;
@@ -856,6 +917,7 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
         private final java.lang.Object profile;
         private final java.lang.Object proxyMode;
         private final java.lang.Object resourceGroupId;
+        private final java.lang.Object rrsaConfig;
         private final java.lang.Object serviceCidr;
         private final java.lang.Object snatEntry;
         private final java.util.List<com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster.TagsProperty> tags;
@@ -878,6 +940,7 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
             this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.encryptionProviderKey = software.amazon.jsii.Kernel.get(this, "encryptionProviderKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.endpointPublicAccess = software.amazon.jsii.Kernel.get(this, "endpointPublicAccess", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ipStack = software.amazon.jsii.Kernel.get(this, "ipStack", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.isEnterpriseSecurityGroup = software.amazon.jsii.Kernel.get(this, "isEnterpriseSecurityGroup", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.keyPair = software.amazon.jsii.Kernel.get(this, "keyPair", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.kubernetesVersion = software.amazon.jsii.Kernel.get(this, "kubernetesVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -888,6 +951,7 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
             this.profile = software.amazon.jsii.Kernel.get(this, "profile", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.proxyMode = software.amazon.jsii.Kernel.get(this, "proxyMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.rrsaConfig = software.amazon.jsii.Kernel.get(this, "rrsaConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serviceCidr = software.amazon.jsii.Kernel.get(this, "serviceCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.snatEntry = software.amazon.jsii.Kernel.get(this, "snatEntry", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster.TagsProperty.class)));
@@ -911,6 +975,7 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
             this.deletionProtection = builder.deletionProtection;
             this.encryptionProviderKey = builder.encryptionProviderKey;
             this.endpointPublicAccess = builder.endpointPublicAccess;
+            this.ipStack = builder.ipStack;
             this.isEnterpriseSecurityGroup = builder.isEnterpriseSecurityGroup;
             this.keyPair = builder.keyPair;
             this.kubernetesVersion = builder.kubernetesVersion;
@@ -921,6 +986,7 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
             this.profile = builder.profile;
             this.proxyMode = builder.proxyMode;
             this.resourceGroupId = builder.resourceGroupId;
+            this.rrsaConfig = builder.rrsaConfig;
             this.serviceCidr = builder.serviceCidr;
             this.snatEntry = builder.snatEntry;
             this.tags = (java.util.List<com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster.TagsProperty>)builder.tags;
@@ -971,6 +1037,11 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
         }
 
         @Override
+        public final java.lang.Object getIpStack() {
+            return this.ipStack;
+        }
+
+        @Override
         public final java.lang.Object getIsEnterpriseSecurityGroup() {
             return this.isEnterpriseSecurityGroup;
         }
@@ -1018,6 +1089,11 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
         @Override
         public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
+        }
+
+        @Override
+        public final java.lang.Object getRrsaConfig() {
+            return this.rrsaConfig;
         }
 
         @Override
@@ -1083,6 +1159,9 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
             if (this.getEndpointPublicAccess() != null) {
                 data.set("endpointPublicAccess", om.valueToTree(this.getEndpointPublicAccess()));
             }
+            if (this.getIpStack() != null) {
+                data.set("ipStack", om.valueToTree(this.getIpStack()));
+            }
             if (this.getIsEnterpriseSecurityGroup() != null) {
                 data.set("isEnterpriseSecurityGroup", om.valueToTree(this.getIsEnterpriseSecurityGroup()));
             }
@@ -1112,6 +1191,9 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
             }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
+            if (this.getRrsaConfig() != null) {
+                data.set("rrsaConfig", om.valueToTree(this.getRrsaConfig()));
             }
             if (this.getServiceCidr() != null) {
                 data.set("serviceCidr", om.valueToTree(this.getServiceCidr()));
@@ -1160,6 +1242,7 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
             if (this.deletionProtection != null ? !this.deletionProtection.equals(that.deletionProtection) : that.deletionProtection != null) return false;
             if (this.encryptionProviderKey != null ? !this.encryptionProviderKey.equals(that.encryptionProviderKey) : that.encryptionProviderKey != null) return false;
             if (this.endpointPublicAccess != null ? !this.endpointPublicAccess.equals(that.endpointPublicAccess) : that.endpointPublicAccess != null) return false;
+            if (this.ipStack != null ? !this.ipStack.equals(that.ipStack) : that.ipStack != null) return false;
             if (this.isEnterpriseSecurityGroup != null ? !this.isEnterpriseSecurityGroup.equals(that.isEnterpriseSecurityGroup) : that.isEnterpriseSecurityGroup != null) return false;
             if (this.keyPair != null ? !this.keyPair.equals(that.keyPair) : that.keyPair != null) return false;
             if (this.kubernetesVersion != null ? !this.kubernetesVersion.equals(that.kubernetesVersion) : that.kubernetesVersion != null) return false;
@@ -1170,6 +1253,7 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
             if (this.profile != null ? !this.profile.equals(that.profile) : that.profile != null) return false;
             if (this.proxyMode != null ? !this.proxyMode.equals(that.proxyMode) : that.proxyMode != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
+            if (this.rrsaConfig != null ? !this.rrsaConfig.equals(that.rrsaConfig) : that.rrsaConfig != null) return false;
             if (this.serviceCidr != null ? !this.serviceCidr.equals(that.serviceCidr) : that.serviceCidr != null) return false;
             if (this.snatEntry != null ? !this.snatEntry.equals(that.snatEntry) : that.snatEntry != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
@@ -1189,6 +1273,7 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
             result = 31 * result + (this.deletionProtection != null ? this.deletionProtection.hashCode() : 0);
             result = 31 * result + (this.encryptionProviderKey != null ? this.encryptionProviderKey.hashCode() : 0);
             result = 31 * result + (this.endpointPublicAccess != null ? this.endpointPublicAccess.hashCode() : 0);
+            result = 31 * result + (this.ipStack != null ? this.ipStack.hashCode() : 0);
             result = 31 * result + (this.isEnterpriseSecurityGroup != null ? this.isEnterpriseSecurityGroup.hashCode() : 0);
             result = 31 * result + (this.keyPair != null ? this.keyPair.hashCode() : 0);
             result = 31 * result + (this.kubernetesVersion != null ? this.kubernetesVersion.hashCode() : 0);
@@ -1199,6 +1284,7 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
             result = 31 * result + (this.profile != null ? this.profile.hashCode() : 0);
             result = 31 * result + (this.proxyMode != null ? this.proxyMode.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
+            result = 31 * result + (this.rrsaConfig != null ? this.rrsaConfig.hashCode() : 0);
             result = 31 * result + (this.serviceCidr != null ? this.serviceCidr.hashCode() : 0);
             result = 31 * result + (this.snatEntry != null ? this.snatEntry.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);

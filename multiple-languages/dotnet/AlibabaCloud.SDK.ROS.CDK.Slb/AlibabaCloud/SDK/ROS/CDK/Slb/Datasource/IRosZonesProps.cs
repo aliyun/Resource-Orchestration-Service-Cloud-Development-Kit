@@ -26,7 +26,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb.Datasource
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: addressType: The type of network.Valid values: vpc, classic_internet, and classic_intranet..
+        /// <strong>Property</strong>: addressType: The type of network.Valid values:
         /// vpc: an internal SLB instance that is deployed in a virtual private cloud (VPC).
         /// classic_internet: a public-facing SLB instance.
         /// classic_intranet: an internal SLB instance that is deployed in a classic network.
@@ -80,7 +80,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb.Datasource
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: addressType: The type of network.Valid values: vpc, classic_internet, and classic_intranet..
+            /// <strong>Property</strong>: addressType: The type of network.Valid values:
             /// vpc: an internal SLB instance that is deployed in a virtual private cloud (VPC).
             /// classic_internet: a public-facing SLB instance.
             /// classic_intranet: an internal SLB instance that is deployed in a classic network.

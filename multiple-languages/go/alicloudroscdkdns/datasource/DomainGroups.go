@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::DNS::DomainGroups`, which is used to query domain name groups.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::DNS::DomainGroups`.
 type DomainGroups interface {
 	alicloudroscdkcore.Resource
 	IDomainGroups

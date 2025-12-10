@@ -22,7 +22,6 @@ export interface AutoEnableServiceProps {
      * BrainIndustrial: Brain Industrial
      * CloudStorageGateway: Cloud Storage Gateway
      * CMS: Cloud Monitor Service
-     * CR: Container Registry
      * CS: Container Service
      * DataHub: Data Hub
      * DataWorks: DataWorks

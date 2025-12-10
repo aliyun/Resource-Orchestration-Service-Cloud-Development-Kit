@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CS::GrantPermissions`, which is used to grant role-based access control (RBAC) permissions to a Resource Access Management (RAM) user or RAM role.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CS::GrantPermissions`.
 type GrantPermissions interface {
 	alicloudroscdkcore.Resource
 	IGrantPermissions

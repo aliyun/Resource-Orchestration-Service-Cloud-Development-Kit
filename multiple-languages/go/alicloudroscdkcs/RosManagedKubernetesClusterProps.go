@@ -20,6 +20,7 @@ type RosManagedKubernetesClusterProps struct {
 	EncryptionProviderKey interface{} `field:"optional" json:"encryptionProviderKey" yaml:"encryptionProviderKey"`
 	EndpointPublicAccess interface{} `field:"optional" json:"endpointPublicAccess" yaml:"endpointPublicAccess"`
 	FormatDisk interface{} `field:"optional" json:"formatDisk" yaml:"formatDisk"`
+	IpStack interface{} `field:"optional" json:"ipStack" yaml:"ipStack"`
 	IsEnterpriseSecurityGroup interface{} `field:"optional" json:"isEnterpriseSecurityGroup" yaml:"isEnterpriseSecurityGroup"`
 	KeepInstanceName interface{} `field:"optional" json:"keepInstanceName" yaml:"keepInstanceName"`
 	KeyPair interface{} `field:"optional" json:"keyPair" yaml:"keyPair"`
@@ -35,6 +36,7 @@ type RosManagedKubernetesClusterProps struct {
 	PodVswitchIds interface{} `field:"optional" json:"podVswitchIds" yaml:"podVswitchIds"`
 	ProxyMode interface{} `field:"optional" json:"proxyMode" yaml:"proxyMode"`
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
+	RrsaConfig interface{} `field:"optional" json:"rrsaConfig" yaml:"rrsaConfig"`
 	Runtime interface{} `field:"optional" json:"runtime" yaml:"runtime"`
 	SecurityGroupId interface{} `field:"optional" json:"securityGroupId" yaml:"securityGroupId"`
 	SecurityHardeningOs interface{} `field:"optional" json:"securityHardeningOs" yaml:"securityHardeningOs"`

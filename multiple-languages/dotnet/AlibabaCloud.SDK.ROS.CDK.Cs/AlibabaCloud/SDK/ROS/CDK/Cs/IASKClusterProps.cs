@@ -105,6 +105,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
+        /// <summary>Property ipStack: The IP stack of the cluster.</summary>
+        /// <remarks>
+        /// Value: ipv4 (Single stack) or ipv6 (Dual Stack). Default value: ipv4
+        /// </remarks>
+        [JsiiProperty(name: "ipStack", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? IpStack
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property kubernetesVersion: The version of the Kubernetes cluster.</summary>
         [JsiiProperty(name: "kubernetesVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -353,6 +367,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             [JsiiOptional]
             [JsiiProperty(name: "endpointPublicAccess", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? EndpointPublicAccess
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property ipStack: The IP stack of the cluster.</summary>
+            /// <remarks>
+            /// Value: ipv4 (Single stack) or ipv6 (Dual Stack). Default value: ipv4
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ipStack", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IpStack
             {
                 get => GetInstanceProperty<object?>();
             }

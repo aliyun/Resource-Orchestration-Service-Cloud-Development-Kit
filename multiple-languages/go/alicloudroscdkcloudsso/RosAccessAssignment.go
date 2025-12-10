@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::AccessAssignment`, which is used to assign access permissions on an account in your resource directory to a user or group by using an access configuration.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::AccessAssignment`.
 type RosAccessAssignment interface {
 	alicloudroscdkcore.RosResource
 	AccessConfigurationId() interface{}

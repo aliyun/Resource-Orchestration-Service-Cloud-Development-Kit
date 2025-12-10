@@ -172,7 +172,7 @@ export interface IGateway extends ros.IResource {
     readonly attrZones: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::APIG::Gateway`, which is used to create a Cloud-native API Gateway.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::APIG::Gateway`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGateway`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-gateway
  */

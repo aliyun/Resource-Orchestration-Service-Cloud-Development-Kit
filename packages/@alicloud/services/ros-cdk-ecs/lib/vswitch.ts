@@ -85,7 +85,7 @@ export interface IVSwitch extends ros.IResource {
     readonly attrVSwitchName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::VSwitch`, which is used to create a vSwitch.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::VSwitch`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVSwitch`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-vswitch
  */

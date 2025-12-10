@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.paiplugin;
 /**
  * Represents a <code>TrainingJob</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:27.858Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.948Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.paiplugin.$Module.class, fqn = "@alicloud/ros-cdk-paiplugin.ITrainingJob")
 @software.amazon.jsii.Jsii.Proxy(ITrainingJob.Jsii$Proxy.class)
 public interface ITrainingJob extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

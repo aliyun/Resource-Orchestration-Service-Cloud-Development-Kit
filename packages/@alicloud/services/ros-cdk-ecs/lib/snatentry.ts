@@ -47,7 +47,7 @@ export interface ISNatEntry extends ros.IResource {
     readonly attrSNatEntryId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::SNatEntry`, which is used to configure the Source Network Address Translation (SNAT) table of a NAT gateway.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::SNatEntry`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSNatEntry`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-snatentry
  */

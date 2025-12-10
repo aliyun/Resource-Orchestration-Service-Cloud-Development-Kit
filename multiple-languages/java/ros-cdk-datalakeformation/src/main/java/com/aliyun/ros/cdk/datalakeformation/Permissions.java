@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.datalakeformation;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::DataLakeFormation::Permissions</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.038Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.248Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.datalakeformation.$Module.class, fqn = "@alicloud/ros-cdk-datalakeformation.Permissions")
 public class Permissions extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.datalakeformation.IPermissions {
 
@@ -142,6 +142,31 @@ public class Permissions extends com.aliyun.ros.cdk.core.Resource implements com
          */
         public Builder permissions(final java.util.List<? extends java.lang.Object> permissions) {
             this.props.permissions(permissions);
+            return this;
+        }
+
+        /**
+         * Property refreshUserSync: Specifies whether to refresh user synchronization before creating permissions.
+         * <p>
+         * Newly created RAM users may not be immediately synchronized, requiring a refresh to ensure they are available. Set to true to enable user synchronization refresh, which may cause a 30-second wait. Set to false to skip the refresh and avoid the 30-second wait. Default value: false.
+         * <p>
+         * @return {@code this}
+         * @param refreshUserSync Property refreshUserSync: Specifies whether to refresh user synchronization before creating permissions. This parameter is required.
+         */
+        public Builder refreshUserSync(final java.lang.Boolean refreshUserSync) {
+            this.props.refreshUserSync(refreshUserSync);
+            return this;
+        }
+        /**
+         * Property refreshUserSync: Specifies whether to refresh user synchronization before creating permissions.
+         * <p>
+         * Newly created RAM users may not be immediately synchronized, requiring a refresh to ensure they are available. Set to true to enable user synchronization refresh, which may cause a 30-second wait. Set to false to skip the refresh and avoid the 30-second wait. Default value: false.
+         * <p>
+         * @return {@code this}
+         * @param refreshUserSync Property refreshUserSync: Specifies whether to refresh user synchronization before creating permissions. This parameter is required.
+         */
+        public Builder refreshUserSync(final com.aliyun.ros.cdk.core.IResolvable refreshUserSync) {
+            this.props.refreshUserSync(refreshUserSync);
             return this;
         }
 

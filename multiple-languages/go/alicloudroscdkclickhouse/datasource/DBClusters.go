@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::ClickHouse::DBClusters`, which is used to query the information about ApsaraDB for ClickHouse clusters.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::ClickHouse::DBClusters`.
 type DBClusters interface {
 	alicloudroscdkcore.Resource
 	IDBClusters

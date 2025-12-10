@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Instances`, which is used to query the information about Elastic Compute Service (ECS) instances.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Instances`.
 type Instances interface {
 	alicloudroscdkcore.Resource
 	IInstances

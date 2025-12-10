@@ -112,7 +112,7 @@ function RosAlarmTaskPropsValidator(properties: any): ros.ValidationResult {
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
           data: properties.period,
-          allowedValues: [60,120,300,900],
+          allowedValues: [15,60,120,300,900],
         }));
     }
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
@@ -180,7 +180,7 @@ function rosAlarmTaskPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::AlarmTask`, which is used to create a metric-based alarm task.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::AlarmTask`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AlarmTask` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-alarmtask
  */
@@ -414,7 +414,7 @@ function rosAlarmTaskEnablePropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::AlarmTaskEnable`, which is used to start an alarm task. You can call this operation to enable alarm tasks when the task is stopped.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::AlarmTaskEnable`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AlarmTaskEnable` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-alarmtaskenable
  */
@@ -2558,13 +2558,18 @@ export interface RosLifecycleHookProps {
     readonly lifecycleHookName?: string | ros.IResolvable;
 
     /**
-     * @Property notificationArn: The Alibaba Cloud Resource Name (ARN) of the notification target that Auto Scaling will use to notify you when an instance is in the transition state for the lifecycle hook. This target can be either an MNS queue or an MNS topic. The format of the parameter value is acs:ess:{region}:{account-id}:{resource-relative-id}.
-     * region: the region to which the scaling group locates
-     * account-id: Alibaba Cloud ID
-     * For example:
-     * MNS queue: acs:ess:{region}:{account-id}:queue\/{queuename}
-     * MNS topic: acs:ess:{region}:{account-id}:topic\/{topicname}
-     * OOS template: acs:ess:{region}:{account-id}:oos\/{templatename}
+     * @Property notificationArn: The Alibaba Cloud Resource Name (ARN) of the notification recipient. If you do not specify this parameter, no notification is sent when the lifecycle hook takes effect. If you specify this parameter, the value must be in one of the following formats:
+     * - If you specify a Simple Message Queue (SMQ, formerly MNS) as the notification recipient, specify the value in the acs:mns:{region-id}:{account-id}:queue\/{queuename} format.
+     * - If you specify an SMQ topic as the notification recipient, specify the value in the acs:mns:{region-id}:{account-id}:topic\/{topicname} format.
+     * - If you specify a CloudOps Orchestration Service (OOS) template as the notification recipient, specify the value in the acs:oos:{region-id}:{account-id}:template\/{templatename} format.
+     * - If you specify an event bus as the notification recipient, specify the value in the acs:eventbridge:{region-id}:{account-id}:eventbus\/default format.
+     * 
+     * The variables in the preceding value formats have the following meanings:
+     * - region-id: the region ID of your scaling group.
+     * - account-id: the ID of the Alibaba Cloud account. IDs of Resource Access Management (RAM) users are not supported.
+     * - queuename: the name of the SMQ queue.
+     * - topicname: the name of the SMQ topic.
+     * - templatename: the name of the OOS template.
      */
     readonly notificationArn?: string | ros.IResolvable;
 
@@ -2597,12 +2602,6 @@ function RosLifecycleHookPropsValidator(properties: any): ros.ValidationResult {
             min: undefined,
             max: 300,
           }));
-    }
-    if(properties.notificationArn && (typeof properties.notificationArn) !== 'object') {
-        errors.collect(ros.propertyValidator('notificationArn', ros.validateAllowedPattern)({
-          data: properties.notificationArn,
-          reg: /^acs:ess:([a-zA-Z0-9-]+):(\d+):(queue|topic|oos)\/([a-zA-Z0-9][-_a-zA-Z0-9]{0,255})$/
-        }));
     }
     errors.collect(ros.propertyValidator('notificationArn', ros.validateString)(properties.notificationArn));
     errors.collect(ros.propertyValidator('scalingGroupId', ros.requiredValidator)(properties.scalingGroupId));
@@ -2666,7 +2665,7 @@ function rosLifecycleHookPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::LifecycleHook`, which is used to create a lifecycle hook for a scaling group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::LifecycleHook`.
  * @Note This class does not contain additional functions, so it is recommended to use the `LifecycleHook` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-lifecyclehook
  */
@@ -2723,13 +2722,18 @@ export class RosLifecycleHook extends ros.RosResource {
     public lifecycleHookName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property notificationArn: The Alibaba Cloud Resource Name (ARN) of the notification target that Auto Scaling will use to notify you when an instance is in the transition state for the lifecycle hook. This target can be either an MNS queue or an MNS topic. The format of the parameter value is acs:ess:{region}:{account-id}:{resource-relative-id}.
-     * region: the region to which the scaling group locates
-     * account-id: Alibaba Cloud ID
-     * For example:
-     * MNS queue: acs:ess:{region}:{account-id}:queue\/{queuename}
-     * MNS topic: acs:ess:{region}:{account-id}:topic\/{topicname}
-     * OOS template: acs:ess:{region}:{account-id}:oos\/{templatename}
+     * @Property notificationArn: The Alibaba Cloud Resource Name (ARN) of the notification recipient. If you do not specify this parameter, no notification is sent when the lifecycle hook takes effect. If you specify this parameter, the value must be in one of the following formats:
+     * - If you specify a Simple Message Queue (SMQ, formerly MNS) as the notification recipient, specify the value in the acs:mns:{region-id}:{account-id}:queue\/{queuename} format.
+     * - If you specify an SMQ topic as the notification recipient, specify the value in the acs:mns:{region-id}:{account-id}:topic\/{topicname} format.
+     * - If you specify a CloudOps Orchestration Service (OOS) template as the notification recipient, specify the value in the acs:oos:{region-id}:{account-id}:template\/{templatename} format.
+     * - If you specify an event bus as the notification recipient, specify the value in the acs:eventbridge:{region-id}:{account-id}:eventbus\/default format.
+     * 
+     * The variables in the preceding value formats have the following meanings:
+     * - region-id: the region ID of your scaling group.
+     * - account-id: the ID of the Alibaba Cloud account. IDs of Resource Access Management (RAM) users are not supported.
+     * - queuename: the name of the SMQ queue.
+     * - topicname: the name of the SMQ topic.
+     * - templatename: the name of the OOS template.
      */
     public notificationArn: string | ros.IResolvable | undefined;
 
@@ -2859,7 +2863,7 @@ function rosLoadBalancerAttachmentPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::LoadBalancerAttachment`, which is used to add one or more Server Load Balancer (SLB) instances.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::LoadBalancerAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancerAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-loadbalancerattachment
  */
@@ -4640,6 +4644,11 @@ export interface RosScalingGroupProps {
     readonly healthCheckType?: string | ros.IResolvable;
 
     /**
+     * @Property healthCheckTypes: The list of health check type.
+     */
+    readonly healthCheckTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * @Property instanceId: The ID of the ECS instance from which the scaling group obtains configuration information of the specified instance.
      */
     readonly instanceId?: string | ros.IResolvable;
@@ -4828,13 +4837,14 @@ function RosScalingGroupPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('desiredCapacity', ros.validateNumber)(properties.desiredCapacity));
-    if(properties.allocationStrategy && (typeof properties.allocationStrategy) !== 'object') {
-        errors.collect(ros.propertyValidator('allocationStrategy', ros.validateAllowedValues)({
-          data: properties.allocationStrategy,
-          allowedValues: ["priority","lowestPrice"],
-        }));
+    if(properties.healthCheckTypes && (Array.isArray(properties.healthCheckTypes) || (typeof properties.healthCheckTypes) === 'string')) {
+        errors.collect(ros.propertyValidator('healthCheckTypes', ros.validateLength)({
+            data: properties.healthCheckTypes.length,
+            min: 1,
+            max: 100,
+          }));
     }
-    errors.collect(ros.propertyValidator('allocationStrategy', ros.validateString)(properties.allocationStrategy));
+    errors.collect(ros.propertyValidator('healthCheckTypes', ros.listValidator(ros.validateString))(properties.healthCheckTypes));
     if(properties.onDemandBaseCapacity && (typeof properties.onDemandBaseCapacity) !== 'object') {
         errors.collect(ros.propertyValidator('onDemandBaseCapacity', ros.validateRange)({
             data: properties.onDemandBaseCapacity,
@@ -4843,6 +4853,13 @@ function RosScalingGroupPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('onDemandBaseCapacity', ros.validateNumber)(properties.onDemandBaseCapacity));
+    if(properties.allocationStrategy && (typeof properties.allocationStrategy) !== 'object') {
+        errors.collect(ros.propertyValidator('allocationStrategy', ros.validateAllowedValues)({
+          data: properties.allocationStrategy,
+          allowedValues: ["priority","lowestPrice"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('allocationStrategy', ros.validateString)(properties.allocationStrategy));
     if(properties.standbyInstances && (Array.isArray(properties.standbyInstances) || (typeof properties.standbyInstances) === 'string')) {
         errors.collect(ros.propertyValidator('standbyInstances', ros.validateLength)({
             data: properties.standbyInstances.length,
@@ -4987,7 +5004,7 @@ function RosScalingGroupPropsValidator(properties: any): ros.ValidationResult {
     if(properties.healthCheckType && (typeof properties.healthCheckType) !== 'object') {
         errors.collect(ros.propertyValidator('healthCheckType', ros.validateAllowedValues)({
           data: properties.healthCheckType,
-          allowedValues: ["ECS","NONE"],
+          allowedValues: ["ECS","NONE","LOAD_BALANCER"],
         }));
     }
     errors.collect(ros.propertyValidator('healthCheckType', ros.validateString)(properties.healthCheckType));
@@ -5029,6 +5046,7 @@ function rosScalingGroupPropsToRosTemplate(properties: any, enableResourceProper
       'GroupDeletionProtection': ros.booleanToRosTemplate(properties.groupDeletionProtection),
       'GroupType': ros.stringToRosTemplate(properties.groupType),
       'HealthCheckType': ros.stringToRosTemplate(properties.healthCheckType),
+      'HealthCheckTypes': ros.listMapper(ros.stringToRosTemplate)(properties.healthCheckTypes),
       'InstanceId': ros.stringToRosTemplate(properties.instanceId),
       'LaunchTemplateId': ros.stringToRosTemplate(properties.launchTemplateId),
       'LaunchTemplateOverrides': ros.listMapper(rosScalingGroupLaunchTemplateOverridesPropertyToRosTemplate)(properties.launchTemplateOverrides),
@@ -5056,7 +5074,7 @@ function rosScalingGroupPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingGroup`, which is used to create a scaling group. A scaling group can be a group of Elastic Compute Service (ECS) instances that are dynamically scaled based on the configured scenario. A scaling group does not immediately take effect after it is created. You must use ALIYUN::ESS::ScalingGroupEnable to enable the scaling group to trigger scaling activities based on scaling rules.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ScalingGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroup
  */
@@ -5160,6 +5178,11 @@ export class RosScalingGroup extends ros.RosResource {
      * @Property healthCheckType: The health check type. Allow values is "ECS" and "NONE", default to "ECS".
      */
     public healthCheckType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property healthCheckTypes: The list of health check type.
+     */
+    public healthCheckTypes: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property instanceId: The ID of the ECS instance from which the scaling group obtains configuration information of the specified instance.
@@ -5336,6 +5359,7 @@ export class RosScalingGroup extends ros.RosResource {
         this.groupDeletionProtection = props.groupDeletionProtection;
         this.groupType = props.groupType;
         this.healthCheckType = props.healthCheckType;
+        this.healthCheckTypes = props.healthCheckTypes;
         this.instanceId = props.instanceId;
         this.launchTemplateId = props.launchTemplateId;
         this.launchTemplateOverrides = props.launchTemplateOverrides;
@@ -5377,6 +5401,7 @@ export class RosScalingGroup extends ros.RosResource {
             groupDeletionProtection: this.groupDeletionProtection,
             groupType: this.groupType,
             healthCheckType: this.healthCheckType,
+            healthCheckTypes: this.healthCheckTypes,
             instanceId: this.instanceId,
             launchTemplateId: this.launchTemplateId,
             launchTemplateOverrides: this.launchTemplateOverrides,
@@ -5806,7 +5831,7 @@ function rosScalingGroupEnablePropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingGroupEnable`, which is used to enable a scaling group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingGroupEnable`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ScalingGroupEnable` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroupenable
  */
@@ -6349,7 +6374,7 @@ function rosScalingRulePropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingRule`, which is used to create a scaling rule.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingRule`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ScalingRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalingrule
  */
@@ -6697,6 +6722,7 @@ export interface RosScheduledTaskProps {
      * - Daily: Recurrence interval by day for a scheduled task.
      * - Weekly: Recurrence interval by week for a scheduled task.
      * - Monthly: Recurrence interval by month for a scheduled task.
+     * - Cron: The scheduled task is executed based on the specified cron expression.
      * RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.
      */
     readonly recurrenceType?: string | ros.IResolvable;
@@ -6706,6 +6732,7 @@ export interface RosScheduledTaskProps {
      * - Daily: Only one value in the range [1,31] can be filled.
      * - Weekly: Multiple values can be filled. The values of Sunday to Saturday are 0 to 6 in sequence. Multiple values shall be separated by a comma ",".
      * - Monthly: In the format of A-B. The value range of A and B is 1 to 31, and the B value must be greater than the A value.
+     * - Cron: A cron expression is written in UTC time and consists of the following fields: minute, hour, day, month, and week. The expression can contain the letters L and W and the following wildcard characters: commas (,), question marks (?), hyphens (-), asterisks (*), number signs (#), and forward slashes (\/).
      * RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.
      */
     readonly recurrenceValue?: string | ros.IResolvable;
@@ -6768,7 +6795,7 @@ function RosScheduledTaskPropsValidator(properties: any): ros.ValidationResult {
     if(properties.recurrenceType && (typeof properties.recurrenceType) !== 'object') {
         errors.collect(ros.propertyValidator('recurrenceType', ros.validateAllowedValues)({
           data: properties.recurrenceType,
-          allowedValues: ["Daily","Weekly","Monthly"],
+          allowedValues: ["Daily","Weekly","Monthly","Cron"],
         }));
     }
     errors.collect(ros.propertyValidator('recurrenceType', ros.validateString)(properties.recurrenceType));
@@ -6812,12 +6839,6 @@ function RosScheduledTaskPropsValidator(properties: any): ros.ValidationResult {
             max: 50,
           }));
     }
-    if(properties.recurrenceValue && (typeof properties.recurrenceValue) !== 'object') {
-        errors.collect(ros.propertyValidator('recurrenceValue', ros.validateAllowedPattern)({
-          data: properties.recurrenceValue,
-          reg: /^(\d{1,2})$|^([0-6](,\s*[0-6]){,6})$|^(\d{1,2}[-]\d{1,2})$/
-        }));
-    }
     errors.collect(ros.propertyValidator('recurrenceValue', ros.validateString)(properties.recurrenceValue));
     errors.collect(ros.propertyValidator('taskEnabled', ros.validateBoolean)(properties.taskEnabled));
     return errors.wrap('supplied properties not correct for "RosScheduledTaskProps"');
@@ -6854,7 +6875,7 @@ function rosScheduledTaskPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScheduledTask`, which is used to create a scheduled task by specifying properties.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScheduledTask`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ScheduledTask` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scheduledtask
  */
@@ -6921,6 +6942,7 @@ export class RosScheduledTask extends ros.RosResource {
      * - Daily: Recurrence interval by day for a scheduled task.
      * - Weekly: Recurrence interval by week for a scheduled task.
      * - Monthly: Recurrence interval by month for a scheduled task.
+     * - Cron: The scheduled task is executed based on the specified cron expression.
      * RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.
      */
     public recurrenceType: string | ros.IResolvable | undefined;
@@ -6930,6 +6952,7 @@ export class RosScheduledTask extends ros.RosResource {
      * - Daily: Only one value in the range [1,31] can be filled.
      * - Weekly: Multiple values can be filled. The values of Sunday to Saturday are 0 to 6 in sequence. Multiple values shall be separated by a comma ",".
      * - Monthly: In the format of A-B. The value range of A and B is 1 to 31, and the B value must be greater than the A value.
+     * - Cron: A cron expression is written in UTC time and consists of the following fields: minute, hour, day, month, and week. The expression can contain the letters L and W and the following wildcard characters: commas (,), question marks (?), hyphens (-), asterisks (*), number signs (#), and forward slashes (\/).
      * RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.
      */
     public recurrenceValue: string | ros.IResolvable | undefined;

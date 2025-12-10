@@ -3,10 +3,15 @@ package com.aliyun.ros.cdk.fc3;
 /**
  * Represents a <code>FunctionInvoker</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:25.915Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.037Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc3.$Module.class, fqn = "@alicloud/ros-cdk-fc3.IFunctionInvoker")
 @software.amazon.jsii.Jsii.Proxy(IFunctionInvoker.Jsii$Proxy.class)
 public interface IFunctionInvoker extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
+
+    /**
+     * Attribute Events: Events for async invocation.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrEvents();
 
     /**
      * Attribute Result: Depends on result type: NoResult: Async invoke has no result.
@@ -23,6 +28,11 @@ public interface IFunctionInvoker extends software.amazon.jsii.JsiiSerializable,
      * Failure: Sync invoke fails.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrResultType();
+
+    /**
+     * Attribute TaskId: Task id for async invocation.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrTaskId();
 
     @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.fc3.FunctionInvokerProps getProps();
 
@@ -67,6 +77,14 @@ public interface IFunctionInvoker extends software.amazon.jsii.JsiiSerializable,
         }
 
         /**
+         * Attribute Events: Events for async invocation.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrEvents() {
+            return software.amazon.jsii.Kernel.get(this, "attrEvents", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
          * Attribute Result: Depends on result type: NoResult: Async invoke has no result.
          * <p>
          * Success: The response of the function. The response should be utf-8 encoded string, otherwise ROS will report an error. If the response is binary, encode it via base64 before it is returned.
@@ -86,6 +104,14 @@ public interface IFunctionInvoker extends software.amazon.jsii.JsiiSerializable,
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrResultType() {
             return software.amazon.jsii.Kernel.get(this, "attrResultType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute TaskId: Task id for async invocation.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrTaskId() {
+            return software.amazon.jsii.Kernel.get(this, "attrTaskId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         @Override
@@ -132,6 +158,14 @@ public interface IFunctionInvoker extends software.amazon.jsii.JsiiSerializable,
         }
 
         /**
+         * Attribute Events: Events for async invocation.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrEvents() {
+            return software.amazon.jsii.Kernel.get(this, "attrEvents", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
          * Attribute Result: Depends on result type: NoResult: Async invoke has no result.
          * <p>
          * Success: The response of the function. The response should be utf-8 encoded string, otherwise ROS will report an error. If the response is binary, encode it via base64 before it is returned.
@@ -151,6 +185,14 @@ public interface IFunctionInvoker extends software.amazon.jsii.JsiiSerializable,
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrResultType() {
             return software.amazon.jsii.Kernel.get(this, "attrResultType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute TaskId: Task id for async invocation.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrTaskId() {
+            return software.amazon.jsii.Kernel.get(this, "attrTaskId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         @Override

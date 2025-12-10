@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.acs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acs-cluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:20.345Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:51.847Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acs.$Module.class, fqn = "@alicloud/ros-cdk-acs.ClusterProps")
 @software.amazon.jsii.Jsii.Proxy(ClusterProps.Jsii$Proxy.class)
 public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -77,6 +77,19 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
      * Property ipStack: The IP stack of the cluster.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getIpStack() {
+        return null;
+    }
+
+    /**
+     * Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group.
+     * <p>
+     * This parameter takes effect only if security_group_id is left empty.
+     * Note You must specify an advanced security group for a cluster that has Terway installed.
+     * true: creates an advanced security group.
+     * false: does not create an advanced security group.
+     * Default value: false.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIsEnterpriseSecurityGroup() {
         return null;
     }
 
@@ -242,6 +255,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object deletionProtection;
         java.lang.Object endpointPublicAccess;
         java.lang.Object ipStack;
+        java.lang.Object isEnterpriseSecurityGroup;
         java.lang.Object kubernetesVersion;
         java.lang.Object loadBalancerSpec;
         java.lang.Object loggingType;
@@ -438,6 +452,36 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder ipStack(com.aliyun.ros.cdk.core.IResolvable ipStack) {
             this.ipStack = ipStack;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ClusterProps#getIsEnterpriseSecurityGroup}
+         * @param isEnterpriseSecurityGroup Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group.
+         *                                  This parameter takes effect only if security_group_id is left empty.
+         *                                  Note You must specify an advanced security group for a cluster that has Terway installed.
+         *                                  true: creates an advanced security group.
+         *                                  false: does not create an advanced security group.
+         *                                  Default value: false.
+         * @return {@code this}
+         */
+        public Builder isEnterpriseSecurityGroup(java.lang.Boolean isEnterpriseSecurityGroup) {
+            this.isEnterpriseSecurityGroup = isEnterpriseSecurityGroup;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ClusterProps#getIsEnterpriseSecurityGroup}
+         * @param isEnterpriseSecurityGroup Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group.
+         *                                  This parameter takes effect only if security_group_id is left empty.
+         *                                  Note You must specify an advanced security group for a cluster that has Terway installed.
+         *                                  true: creates an advanced security group.
+         *                                  false: does not create an advanced security group.
+         *                                  Default value: false.
+         * @return {@code this}
+         */
+        public Builder isEnterpriseSecurityGroup(com.aliyun.ros.cdk.core.IResolvable isEnterpriseSecurityGroup) {
+            this.isEnterpriseSecurityGroup = isEnterpriseSecurityGroup;
             return this;
         }
 
@@ -824,6 +868,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object deletionProtection;
         private final java.lang.Object endpointPublicAccess;
         private final java.lang.Object ipStack;
+        private final java.lang.Object isEnterpriseSecurityGroup;
         private final java.lang.Object kubernetesVersion;
         private final java.lang.Object loadBalancerSpec;
         private final java.lang.Object loggingType;
@@ -855,6 +900,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.endpointPublicAccess = software.amazon.jsii.Kernel.get(this, "endpointPublicAccess", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ipStack = software.amazon.jsii.Kernel.get(this, "ipStack", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.isEnterpriseSecurityGroup = software.amazon.jsii.Kernel.get(this, "isEnterpriseSecurityGroup", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.kubernetesVersion = software.amazon.jsii.Kernel.get(this, "kubernetesVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loadBalancerSpec = software.amazon.jsii.Kernel.get(this, "loadBalancerSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loggingType = software.amazon.jsii.Kernel.get(this, "loggingType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -887,6 +933,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.deletionProtection = builder.deletionProtection;
             this.endpointPublicAccess = builder.endpointPublicAccess;
             this.ipStack = builder.ipStack;
+            this.isEnterpriseSecurityGroup = builder.isEnterpriseSecurityGroup;
             this.kubernetesVersion = builder.kubernetesVersion;
             this.loadBalancerSpec = builder.loadBalancerSpec;
             this.loggingType = builder.loggingType;
@@ -943,6 +990,11 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getIpStack() {
             return this.ipStack;
+        }
+
+        @Override
+        public final java.lang.Object getIsEnterpriseSecurityGroup() {
+            return this.isEnterpriseSecurityGroup;
         }
 
         @Override
@@ -1053,6 +1105,9 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getIpStack() != null) {
                 data.set("ipStack", om.valueToTree(this.getIpStack()));
             }
+            if (this.getIsEnterpriseSecurityGroup() != null) {
+                data.set("isEnterpriseSecurityGroup", om.valueToTree(this.getIsEnterpriseSecurityGroup()));
+            }
             if (this.getKubernetesVersion() != null) {
                 data.set("kubernetesVersion", om.valueToTree(this.getKubernetesVersion()));
             }
@@ -1127,6 +1182,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.deletionProtection != null ? !this.deletionProtection.equals(that.deletionProtection) : that.deletionProtection != null) return false;
             if (this.endpointPublicAccess != null ? !this.endpointPublicAccess.equals(that.endpointPublicAccess) : that.endpointPublicAccess != null) return false;
             if (this.ipStack != null ? !this.ipStack.equals(that.ipStack) : that.ipStack != null) return false;
+            if (this.isEnterpriseSecurityGroup != null ? !this.isEnterpriseSecurityGroup.equals(that.isEnterpriseSecurityGroup) : that.isEnterpriseSecurityGroup != null) return false;
             if (this.kubernetesVersion != null ? !this.kubernetesVersion.equals(that.kubernetesVersion) : that.kubernetesVersion != null) return false;
             if (this.loadBalancerSpec != null ? !this.loadBalancerSpec.equals(that.loadBalancerSpec) : that.loadBalancerSpec != null) return false;
             if (this.loggingType != null ? !this.loggingType.equals(that.loggingType) : that.loggingType != null) return false;
@@ -1155,6 +1211,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.deletionProtection != null ? this.deletionProtection.hashCode() : 0);
             result = 31 * result + (this.endpointPublicAccess != null ? this.endpointPublicAccess.hashCode() : 0);
             result = 31 * result + (this.ipStack != null ? this.ipStack.hashCode() : 0);
+            result = 31 * result + (this.isEnterpriseSecurityGroup != null ? this.isEnterpriseSecurityGroup.hashCode() : 0);
             result = 31 * result + (this.kubernetesVersion != null ? this.kubernetesVersion.hashCode() : 0);
             result = 31 * result + (this.loadBalancerSpec != null ? this.loadBalancerSpec.hashCode() : 0);
             result = 31 * result + (this.loggingType != null ? this.loggingType.hashCode() : 0);

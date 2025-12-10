@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cen.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::CEN::CenInstances</code>, which is used to query the information about Cloud Enterprise Network (CEN) instances within the current Alibaba Cloud account.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::CEN::CenInstances</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:21.987Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.284Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.datasource.RosCenInstances")
 public class RosCenInstances extends com.aliyun.ros.cdk.core.RosResource {
 

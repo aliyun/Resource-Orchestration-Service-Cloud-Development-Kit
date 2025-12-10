@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ADBLake::Account`, which is used to create a database account for an AnalyticDB for MySQL Data Lakehouse Edition cluster.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ADBLake::Account`.
 type Account interface {
 	alicloudroscdkcore.Resource
 	IAccount

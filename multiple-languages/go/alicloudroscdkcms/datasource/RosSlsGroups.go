@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::SlsGroups`, which is used to query the information about Logstore groups.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::SlsGroups`.
 type RosSlsGroups interface {
 	alicloudroscdkcore.RosResource
 	AttrSlsGroupNames() alicloudroscdkcore.IResolvable

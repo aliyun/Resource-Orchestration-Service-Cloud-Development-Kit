@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ess;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ESS::LifecycleHook</code>, which is used to create a lifecycle hook for a scaling group.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ESS::LifecycleHook</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:25.680Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:56.766Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.LifecycleHook")
 public class LifecycleHook extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ess.ILifecycleHook {
 
@@ -249,36 +249,58 @@ public class LifecycleHook extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property notificationArn: The Alibaba Cloud Resource Name (ARN) of the notification target that Auto Scaling will use to notify you when an instance is in the transition state for the lifecycle hook.
+         * Property notificationArn: The Alibaba Cloud Resource Name (ARN) of the notification recipient.
          * <p>
-         * This target can be either an MNS queue or an MNS topic. The format of the parameter value is acs:ess:{region}:{account-id}:{resource-relative-id}.
-         * region: the region to which the scaling group locates
-         * account-id: Alibaba Cloud ID
-         * For example:
-         * MNS queue: acs:ess:{region}:{account-id}:queue/{queuename}
-         * MNS topic: acs:ess:{region}:{account-id}:topic/{topicname}
-         * OOS template: acs:ess:{region}:{account-id}:oos/{templatename}
+         * If you do not specify this parameter, no notification is sent when the lifecycle hook takes effect. If you specify this parameter, the value must be in one of the following formats:
+         * <p>
+         * <ul>
+         * <li>If you specify a Simple Message Queue (SMQ, formerly MNS) as the notification recipient, specify the value in the acs:mns:{region-id}:{account-id}:queue/{queuename} format.</li>
+         * <li>If you specify an SMQ topic as the notification recipient, specify the value in the acs:mns:{region-id}:{account-id}:topic/{topicname} format.</li>
+         * <li>If you specify a CloudOps Orchestration Service (OOS) template as the notification recipient, specify the value in the acs:oos:{region-id}:{account-id}:template/{templatename} format.</li>
+         * <li>If you specify an event bus as the notification recipient, specify the value in the acs:eventbridge:{region-id}:{account-id}:eventbus/default format.</li>
+         * </ul>
+         * <p>
+         * The variables in the preceding value formats have the following meanings:
+         * <p>
+         * <ul>
+         * <li>region-id: the region ID of your scaling group.</li>
+         * <li>account-id: the ID of the Alibaba Cloud account. IDs of Resource Access Management (RAM) users are not supported.</li>
+         * <li>queuename: the name of the SMQ queue.</li>
+         * <li>topicname: the name of the SMQ topic.</li>
+         * <li>templatename: the name of the OOS template.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param notificationArn Property notificationArn: The Alibaba Cloud Resource Name (ARN) of the notification target that Auto Scaling will use to notify you when an instance is in the transition state for the lifecycle hook. This parameter is required.
+         * @param notificationArn Property notificationArn: The Alibaba Cloud Resource Name (ARN) of the notification recipient. This parameter is required.
          */
         public Builder notificationArn(final java.lang.String notificationArn) {
             this.props.notificationArn(notificationArn);
             return this;
         }
         /**
-         * Property notificationArn: The Alibaba Cloud Resource Name (ARN) of the notification target that Auto Scaling will use to notify you when an instance is in the transition state for the lifecycle hook.
+         * Property notificationArn: The Alibaba Cloud Resource Name (ARN) of the notification recipient.
          * <p>
-         * This target can be either an MNS queue or an MNS topic. The format of the parameter value is acs:ess:{region}:{account-id}:{resource-relative-id}.
-         * region: the region to which the scaling group locates
-         * account-id: Alibaba Cloud ID
-         * For example:
-         * MNS queue: acs:ess:{region}:{account-id}:queue/{queuename}
-         * MNS topic: acs:ess:{region}:{account-id}:topic/{topicname}
-         * OOS template: acs:ess:{region}:{account-id}:oos/{templatename}
+         * If you do not specify this parameter, no notification is sent when the lifecycle hook takes effect. If you specify this parameter, the value must be in one of the following formats:
+         * <p>
+         * <ul>
+         * <li>If you specify a Simple Message Queue (SMQ, formerly MNS) as the notification recipient, specify the value in the acs:mns:{region-id}:{account-id}:queue/{queuename} format.</li>
+         * <li>If you specify an SMQ topic as the notification recipient, specify the value in the acs:mns:{region-id}:{account-id}:topic/{topicname} format.</li>
+         * <li>If you specify a CloudOps Orchestration Service (OOS) template as the notification recipient, specify the value in the acs:oos:{region-id}:{account-id}:template/{templatename} format.</li>
+         * <li>If you specify an event bus as the notification recipient, specify the value in the acs:eventbridge:{region-id}:{account-id}:eventbus/default format.</li>
+         * </ul>
+         * <p>
+         * The variables in the preceding value formats have the following meanings:
+         * <p>
+         * <ul>
+         * <li>region-id: the region ID of your scaling group.</li>
+         * <li>account-id: the ID of the Alibaba Cloud account. IDs of Resource Access Management (RAM) users are not supported.</li>
+         * <li>queuename: the name of the SMQ queue.</li>
+         * <li>topicname: the name of the SMQ topic.</li>
+         * <li>templatename: the name of the OOS template.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param notificationArn Property notificationArn: The Alibaba Cloud Resource Name (ARN) of the notification target that Auto Scaling will use to notify you when an instance is in the transition state for the lifecycle hook. This parameter is required.
+         * @param notificationArn Property notificationArn: The Alibaba Cloud Resource Name (ARN) of the notification recipient. This parameter is required.
          */
         public Builder notificationArn(final com.aliyun.ros.cdk.core.IResolvable notificationArn) {
             this.props.notificationArn(notificationArn);

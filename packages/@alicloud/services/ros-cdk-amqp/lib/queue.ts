@@ -88,7 +88,7 @@ export interface IQueue extends ros.IResource {
     readonly attrQueueName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::AMQP::Queue`, which is used to create a queue.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::AMQP::Queue`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosQueue`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-queue
  */

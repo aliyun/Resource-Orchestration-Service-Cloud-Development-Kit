@@ -14,8 +14,10 @@ type RosFunctionInvoker interface {
 	alicloudroscdkcore.RosResource
 	Async() interface{}
 	SetAsync(val interface{})
+	AttrEvents() alicloudroscdkcore.IResolvable
 	AttrResult() alicloudroscdkcore.IResolvable
 	AttrResultType() alicloudroscdkcore.IResolvable
+	AttrTaskId() alicloudroscdkcore.IResolvable
 	CheckAsyncInvocation() interface{}
 	SetCheckAsyncInvocation(val interface{})
 	CheckError() interface{}
@@ -196,6 +198,16 @@ func (j *jsiiProxy_RosFunctionInvoker) Async() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosFunctionInvoker) AttrEvents() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrEvents",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosFunctionInvoker) AttrResult() alicloudroscdkcore.IResolvable {
 	var returns alicloudroscdkcore.IResolvable
 	_jsii_.Get(
@@ -211,6 +223,16 @@ func (j *jsiiProxy_RosFunctionInvoker) AttrResultType() alicloudroscdkcore.IReso
 	_jsii_.Get(
 		j,
 		"attrResultType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosFunctionInvoker) AttrTaskId() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrTaskId",
 		&returns,
 	)
 	return returns

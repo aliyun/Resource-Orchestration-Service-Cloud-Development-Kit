@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::Aligreen::OssStockTask`, which is used to create a full scan task for Object Storage Service (OSS) buckets.
+// This class encapsulates and extends the ROS resource type `ALIYUN::Aligreen::OssStockTask`.
 type OssStockTask interface {
 	alicloudroscdkcore.Resource
 	IOssStockTask

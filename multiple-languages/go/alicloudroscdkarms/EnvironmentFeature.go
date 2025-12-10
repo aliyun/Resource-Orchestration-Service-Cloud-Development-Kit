@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::EnvironmentFeature`, which is used to install a feature.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::EnvironmentFeature`.
 type EnvironmentFeature interface {
 	alicloudroscdkcore.Resource
 	IEnvironmentFeature

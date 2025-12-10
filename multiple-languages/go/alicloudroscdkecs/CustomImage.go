@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::CustomImage`, which is used to create a custom image.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::CustomImage`.
 type CustomImage interface {
 	alicloudroscdkcore.Resource
 	ICustomImage

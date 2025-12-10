@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ALB::AScript`, which is used to create an AScript rule.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ALB::AScript`.
 type AScript interface {
 	alicloudroscdkcore.Resource
 	IAScript

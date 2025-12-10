@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::SecurityGroupIngress`, which is used to create an inbound rule for a security group.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::SecurityGroupIngress`.
 type SecurityGroupIngress interface {
 	alicloudroscdkcore.Resource
 	ISecurityGroupIngress

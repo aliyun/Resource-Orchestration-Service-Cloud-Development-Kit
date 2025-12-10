@@ -8,5 +8,6 @@ type RosBucket_RuleProperty struct {
 	Filter interface{} `field:"optional" json:"filter" yaml:"filter"`
 	Id interface{} `field:"optional" json:"id" yaml:"id"`
 	Status interface{} `field:"optional" json:"status" yaml:"status"`
+	Transition interface{} `field:"optional" json:"transition" yaml:"transition"`
 }
 

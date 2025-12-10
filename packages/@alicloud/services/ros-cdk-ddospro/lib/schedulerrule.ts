@@ -59,7 +59,7 @@ export interface ISchedulerRule extends ros.IResource {
     readonly attrRuleName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DDoSPro::SchedulerRule`, which is used to create a scheduling rule for Sec-Traffic Manager.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DDoSPro::SchedulerRule`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSchedulerRule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-schedulerrule
  */

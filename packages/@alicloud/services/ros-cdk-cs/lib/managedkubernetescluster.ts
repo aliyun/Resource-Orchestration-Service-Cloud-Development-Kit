@@ -112,6 +112,11 @@ export interface ManagedKubernetesClusterProps {
     readonly formatDisk?: boolean | ros.IResolvable;
 
     /**
+     * Property ipStack: The IP stack of the cluster. Value: ipv4 (Single stack) or ipv6 (Dual Stack). Default value: ipv4
+     */
+    readonly ipStack?: string | ros.IResolvable;
+
+    /**
      * Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group. 
      * This parameter takes effect only if security_group_id is left empty.
      * Note You must specify an advanced security group for a cluster that has Terway installed.
@@ -213,6 +218,11 @@ export interface ManagedKubernetesClusterProps {
      * Property resourceGroupId: The ID of resource group.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * Property rrsaConfig: The configuration of RRSA.
+     */
+    readonly rrsaConfig?: RosManagedKubernetesCluster.RrsaConfigProperty | ros.IResolvable;
 
     /**
      * Property runtime: The container runtime of the cluster. The default runtime is Docker.
@@ -348,7 +358,7 @@ export interface IManagedKubernetesCluster extends ros.IResource {
     readonly attrWorkerRamRoleName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ManagedKubernetesCluster`, which is used to create a Container Service for Kubernetes (ACK) managed cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ManagedKubernetesCluster`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosManagedKubernetesCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managedkubernetescluster
  */
@@ -433,6 +443,7 @@ export class ManagedKubernetesCluster extends ros.Resource implements IManagedKu
             resourceGroupId: props.resourceGroupId,
             userData: props.userData,
             addons: props.addons,
+            ipStack: props.ipStack,
             loadBalancerSpec: props.loadBalancerSpec,
             name: props.name,
             taint: props.taint,
@@ -442,6 +453,7 @@ export class ManagedKubernetesCluster extends ros.Resource implements IManagedKu
             cloudMonitorFlags: props.cloudMonitorFlags === undefined || props.cloudMonitorFlags === null ? false : props.cloudMonitorFlags,
             osType: props.osType,
             nodeNameMode: props.nodeNameMode,
+            rrsaConfig: props.rrsaConfig,
             securityHardeningOs: props.securityHardeningOs,
             serviceCidr: props.serviceCidr === undefined || props.serviceCidr === null ? '172.19.0.0/20' : props.serviceCidr,
             podVswitchIds: props.podVswitchIds,

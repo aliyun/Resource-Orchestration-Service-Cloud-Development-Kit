@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ebs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ebs-diskreplicapair
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.678Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.909Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ebs.$Module.class, fqn = "@alicloud/ros-cdk-ebs.DiskReplicaPairProps")
 @software.amazon.jsii.Jsii.Proxy(DiskReplicaPairProps.Jsii$Proxy.class)
 public interface DiskReplicaPairProps extends software.amazon.jsii.JsiiSerializable {

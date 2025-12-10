@@ -360,12 +360,17 @@ export interface IInstanceGroupClone extends ros.IResource {
     readonly attrPublicIps: ros.IResolvable | string;
 
     /**
+     * Attribute RelatedOrderIds: The related order id list of created ecs instances
+     */
+    readonly attrRelatedOrderIds: ros.IResolvable | string;
+
+    /**
      * Attribute ZoneIds: Zone id of created instances.
      */
     readonly attrZoneIds: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::InstanceGroupClone`, which is used to create clones of an Elastic Compute Service (ECS) instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::InstanceGroupClone`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstanceGroupClone`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroupclone
  */
@@ -414,6 +419,11 @@ export class InstanceGroupClone extends ros.Resource implements IInstanceGroupCl
      * Attribute PublicIps: Public IP address list of created ecs instances.
      */
     public readonly attrPublicIps: ros.IResolvable | string;
+
+    /**
+     * Attribute RelatedOrderIds: The related order id list of created ecs instances
+     */
+    public readonly attrRelatedOrderIds: ros.IResolvable | string;
 
     /**
      * Attribute ZoneIds: Zone id of created instances.
@@ -496,6 +506,7 @@ export class InstanceGroupClone extends ros.Resource implements IInstanceGroupCl
         this.attrOrderId = rosInstanceGroupClone.attrOrderId;
         this.attrPrivateIps = rosInstanceGroupClone.attrPrivateIps;
         this.attrPublicIps = rosInstanceGroupClone.attrPublicIps;
+        this.attrRelatedOrderIds = rosInstanceGroupClone.attrRelatedOrderIds;
         this.attrZoneIds = rosInstanceGroupClone.attrZoneIds;
     }
 }

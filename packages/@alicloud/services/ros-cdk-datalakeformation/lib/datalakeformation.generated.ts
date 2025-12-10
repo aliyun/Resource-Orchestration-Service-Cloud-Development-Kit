@@ -202,6 +202,11 @@ export interface RosPermissionsProps {
      * @Property permissions: The permissions list.
      */
     readonly permissions: Array<RosPermissions.PermissionsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property refreshUserSync: Specifies whether to refresh user synchronization before creating permissions. Newly created RAM users may not be immediately synchronized, requiring a refresh to ensure they are available. Set to true to enable user synchronization refresh, which may cause a 30-second wait. Set to false to skip the refresh and avoid the 30-second wait. Default value: false.
+     */
+    readonly refreshUserSync?: boolean | ros.IResolvable;
 }
 
 /**
@@ -214,6 +219,7 @@ export interface RosPermissionsProps {
 function RosPermissionsPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('refreshUserSync', ros.validateBoolean)(properties.refreshUserSync));
     errors.collect(ros.propertyValidator('permissions', ros.requiredValidator)(properties.permissions));
     if(properties.permissions && (Array.isArray(properties.permissions) || (typeof properties.permissions) === 'string')) {
         errors.collect(ros.propertyValidator('permissions', ros.validateLength)({
@@ -244,6 +250,7 @@ function rosPermissionsPropsToRosTemplate(properties: any, enableResourcePropert
     return {
       'CatalogId': ros.stringToRosTemplate(properties.catalogId),
       'Permissions': ros.listMapper(rosPermissionsPermissionsPropertyToRosTemplate)(properties.permissions),
+      'RefreshUserSync': ros.booleanToRosTemplate(properties.refreshUserSync),
     };
 }
 
@@ -272,6 +279,11 @@ export class RosPermissions extends ros.RosResource {
     public permissions: Array<RosPermissions.PermissionsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * @Property refreshUserSync: Specifies whether to refresh user synchronization before creating permissions. Newly created RAM users may not be immediately synchronized, requiring a refresh to ensure they are available. Set to true to enable user synchronization refresh, which may cause a 30-second wait. Set to false to skip the refresh and avoid the 30-second wait. Default value: false.
+     */
+    public refreshUserSync: boolean | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -282,6 +294,7 @@ export class RosPermissions extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.catalogId = props.catalogId;
         this.permissions = props.permissions;
+        this.refreshUserSync = props.refreshUserSync;
     }
 
 
@@ -289,6 +302,7 @@ export class RosPermissions extends ros.RosResource {
         return {
             catalogId: this.catalogId,
             permissions: this.permissions,
+            refreshUserSync: this.refreshUserSync,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

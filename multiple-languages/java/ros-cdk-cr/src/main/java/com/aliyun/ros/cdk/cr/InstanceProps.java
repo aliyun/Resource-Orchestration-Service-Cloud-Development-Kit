@@ -5,15 +5,10 @@ package com.aliyun.ros.cdk.cr;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.727Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.967Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
-
-    /**
-     * Property imageScanner: Security scan engine.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getImageScanner();
 
     /**
      * Property instanceName: Instance name.The value contains 3 to 30 lowercase letters, digits, and delimiters "-"(it can not be first or last).
@@ -31,16 +26,25 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getInstanceType();
 
     /**
-     * Property period: Prepaid cycle.
-     * <p>
-     * The unit is Monthly, please enter an integer multiple of 12 for annual paid products.
+     * Property imageScanner: Security scan engine.
      */
-    @org.jetbrains.annotations.NotNull java.lang.Object getPeriod();
+    default @org.jetbrains.annotations.Nullable java.lang.Object getImageScanner() {
+        return null;
+    }
 
     /**
      * Property instanceStorageName: Custom OSS Bucket name.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceStorageName() {
+        return null;
+    }
+
+    /**
+     * Property period: Prepaid cycle.
+     * <p>
+     * The unit is Monthly, please enter an integer multiple of 12 for annual paid products.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
     }
 
@@ -82,34 +86,14 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link InstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<InstanceProps> {
-        java.lang.Object imageScanner;
         java.lang.Object instanceName;
         java.lang.Object instanceType;
-        java.lang.Object period;
+        java.lang.Object imageScanner;
         java.lang.Object instanceStorageName;
+        java.lang.Object period;
         java.lang.Object renewalStatus;
         java.lang.Object renewPeriod;
         java.lang.Object resourceGroupId;
-
-        /**
-         * Sets the value of {@link InstanceProps#getImageScanner}
-         * @param imageScanner Property imageScanner: Security scan engine. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder imageScanner(java.lang.String imageScanner) {
-            this.imageScanner = imageScanner;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link InstanceProps#getImageScanner}
-         * @param imageScanner Property imageScanner: Security scan engine. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder imageScanner(com.aliyun.ros.cdk.core.IResolvable imageScanner) {
-            this.imageScanner = imageScanner;
-            return this;
-        }
 
         /**
          * Sets the value of {@link InstanceProps#getInstanceName}
@@ -160,24 +144,22 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
-         * Sets the value of {@link InstanceProps#getPeriod}
-         * @param period Property period: Prepaid cycle. This parameter is required.
-         *               The unit is Monthly, please enter an integer multiple of 12 for annual paid products.
+         * Sets the value of {@link InstanceProps#getImageScanner}
+         * @param imageScanner Property imageScanner: Security scan engine.
          * @return {@code this}
          */
-        public Builder period(java.lang.Number period) {
-            this.period = period;
+        public Builder imageScanner(java.lang.String imageScanner) {
+            this.imageScanner = imageScanner;
             return this;
         }
 
         /**
-         * Sets the value of {@link InstanceProps#getPeriod}
-         * @param period Property period: Prepaid cycle. This parameter is required.
-         *               The unit is Monthly, please enter an integer multiple of 12 for annual paid products.
+         * Sets the value of {@link InstanceProps#getImageScanner}
+         * @param imageScanner Property imageScanner: Security scan engine.
          * @return {@code this}
          */
-        public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
-            this.period = period;
+        public Builder imageScanner(com.aliyun.ros.cdk.core.IResolvable imageScanner) {
+            this.imageScanner = imageScanner;
             return this;
         }
 
@@ -198,6 +180,28 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder instanceStorageName(com.aliyun.ros.cdk.core.IResolvable instanceStorageName) {
             this.instanceStorageName = instanceStorageName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getPeriod}
+         * @param period Property period: Prepaid cycle.
+         *               The unit is Monthly, please enter an integer multiple of 12 for annual paid products.
+         * @return {@code this}
+         */
+        public Builder period(java.lang.Number period) {
+            this.period = period;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getPeriod}
+         * @param period Property period: Prepaid cycle.
+         *               The unit is Monthly, please enter an integer multiple of 12 for annual paid products.
+         * @return {@code this}
+         */
+        public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
+            this.period = period;
             return this;
         }
 
@@ -287,11 +291,11 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements InstanceProps {
-        private final java.lang.Object imageScanner;
         private final java.lang.Object instanceName;
         private final java.lang.Object instanceType;
-        private final java.lang.Object period;
+        private final java.lang.Object imageScanner;
         private final java.lang.Object instanceStorageName;
+        private final java.lang.Object period;
         private final java.lang.Object renewalStatus;
         private final java.lang.Object renewPeriod;
         private final java.lang.Object resourceGroupId;
@@ -302,11 +306,11 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.imageScanner = software.amazon.jsii.Kernel.get(this, "imageScanner", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceType = software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.imageScanner = software.amazon.jsii.Kernel.get(this, "imageScanner", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceStorageName = software.amazon.jsii.Kernel.get(this, "instanceStorageName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.renewalStatus = software.amazon.jsii.Kernel.get(this, "renewalStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.renewPeriod = software.amazon.jsii.Kernel.get(this, "renewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -317,19 +321,14 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.imageScanner = java.util.Objects.requireNonNull(builder.imageScanner, "imageScanner is required");
             this.instanceName = java.util.Objects.requireNonNull(builder.instanceName, "instanceName is required");
             this.instanceType = java.util.Objects.requireNonNull(builder.instanceType, "instanceType is required");
-            this.period = java.util.Objects.requireNonNull(builder.period, "period is required");
+            this.imageScanner = builder.imageScanner;
             this.instanceStorageName = builder.instanceStorageName;
+            this.period = builder.period;
             this.renewalStatus = builder.renewalStatus;
             this.renewPeriod = builder.renewPeriod;
             this.resourceGroupId = builder.resourceGroupId;
-        }
-
-        @Override
-        public final java.lang.Object getImageScanner() {
-            return this.imageScanner;
         }
 
         @Override
@@ -343,13 +342,18 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Object getPeriod() {
-            return this.period;
+        public final java.lang.Object getImageScanner() {
+            return this.imageScanner;
         }
 
         @Override
         public final java.lang.Object getInstanceStorageName() {
             return this.instanceStorageName;
+        }
+
+        @Override
+        public final java.lang.Object getPeriod() {
+            return this.period;
         }
 
         @Override
@@ -373,12 +377,16 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
-            data.set("imageScanner", om.valueToTree(this.getImageScanner()));
             data.set("instanceName", om.valueToTree(this.getInstanceName()));
             data.set("instanceType", om.valueToTree(this.getInstanceType()));
-            data.set("period", om.valueToTree(this.getPeriod()));
+            if (this.getImageScanner() != null) {
+                data.set("imageScanner", om.valueToTree(this.getImageScanner()));
+            }
             if (this.getInstanceStorageName() != null) {
                 data.set("instanceStorageName", om.valueToTree(this.getInstanceStorageName()));
+            }
+            if (this.getPeriod() != null) {
+                data.set("period", om.valueToTree(this.getPeriod()));
             }
             if (this.getRenewalStatus() != null) {
                 data.set("renewalStatus", om.valueToTree(this.getRenewalStatus()));
@@ -407,11 +415,11 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
             InstanceProps.Jsii$Proxy that = (InstanceProps.Jsii$Proxy) o;
 
-            if (!imageScanner.equals(that.imageScanner)) return false;
             if (!instanceName.equals(that.instanceName)) return false;
             if (!instanceType.equals(that.instanceType)) return false;
-            if (!period.equals(that.period)) return false;
+            if (this.imageScanner != null ? !this.imageScanner.equals(that.imageScanner) : that.imageScanner != null) return false;
             if (this.instanceStorageName != null ? !this.instanceStorageName.equals(that.instanceStorageName) : that.instanceStorageName != null) return false;
+            if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
             if (this.renewalStatus != null ? !this.renewalStatus.equals(that.renewalStatus) : that.renewalStatus != null) return false;
             if (this.renewPeriod != null ? !this.renewPeriod.equals(that.renewPeriod) : that.renewPeriod != null) return false;
             return this.resourceGroupId != null ? this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId == null;
@@ -419,11 +427,11 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         @Override
         public final int hashCode() {
-            int result = this.imageScanner.hashCode();
-            result = 31 * result + (this.instanceName.hashCode());
+            int result = this.instanceName.hashCode();
             result = 31 * result + (this.instanceType.hashCode());
-            result = 31 * result + (this.period.hashCode());
+            result = 31 * result + (this.imageScanner != null ? this.imageScanner.hashCode() : 0);
             result = 31 * result + (this.instanceStorageName != null ? this.instanceStorageName.hashCode() : 0);
+            result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.renewalStatus != null ? this.renewalStatus.hashCode() : 0);
             result = 31 * result + (this.renewPeriod != null ? this.renewPeriod.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);

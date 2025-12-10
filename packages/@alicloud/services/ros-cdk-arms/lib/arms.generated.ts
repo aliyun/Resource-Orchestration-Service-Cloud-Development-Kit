@@ -78,7 +78,7 @@ function rosAddonReleasePropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::AddonRelease`, which is used to install an add-on release.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::AddonRelease`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AddonRelease` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-addonrelease
  */
@@ -172,331 +172,6 @@ export class RosAddonRelease extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `RosAlertContact`.
- * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-alertcontact
- */
-export interface RosAlertContactProps {
-
-    /**
-     * @Property contactName: The name of the alert contact that you want to create.
-     */
-    readonly contactName: string | ros.IResolvable;
-
-    /**
-     * @Property dingRobotWebhookUrl: The DingTalk Chatbot address of the contact.
-     */
-    readonly dingRobotWebhookUrl?: string | ros.IResolvable;
-
-    /**
-     * @Property email: The email address of the contact.
-     */
-    readonly email?: string | ros.IResolvable;
-
-    /**
-     * @Property phoneNum: The phone number of the contact.
-     */
-    readonly phoneNum?: string | ros.IResolvable;
-
-    /**
-     * @Property proxyUserId: Internal parameters
-     */
-    readonly proxyUserId?: string | ros.IResolvable;
-
-    /**
-     * @Property regionId: Region ID. Default to region of stack.
-     */
-    readonly regionId?: string | ros.IResolvable;
-
-    /**
-     * @Property systemNoc: Specifies whether to receive system alerts.
-     */
-    readonly systemNoc?: boolean | ros.IResolvable;
-}
-
-/**
- * Determine whether the given properties match those of a `RosAlertContactProps`
- *
- * @param properties - the TypeScript properties of a `RosAlertContactProps`
- *
- * @returns the result of the validation.
- */
-function RosAlertContactPropsValidator(properties: any): ros.ValidationResult {
-    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
-    const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('proxyUserId', ros.validateString)(properties.proxyUserId));
-    errors.collect(ros.propertyValidator('email', ros.validateString)(properties.email));
-    errors.collect(ros.propertyValidator('dingRobotWebhookUrl', ros.validateString)(properties.dingRobotWebhookUrl));
-    errors.collect(ros.propertyValidator('phoneNum', ros.validateString)(properties.phoneNum));
-    if(properties.regionId && (typeof properties.regionId) !== 'object') {
-        errors.collect(ros.propertyValidator('regionId', ros.validateAllowedValues)({
-          data: properties.regionId,
-          allowedValues: ["cn-qingdao","cn-beijing","cn-shanghai","cn-hangzhou","cn-shenzhen","cn-hongkong","ap-southeast-1"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('regionId', ros.validateString)(properties.regionId));
-    errors.collect(ros.propertyValidator('systemNoc', ros.validateBoolean)(properties.systemNoc));
-    errors.collect(ros.propertyValidator('contactName', ros.requiredValidator)(properties.contactName));
-    errors.collect(ros.propertyValidator('contactName', ros.validateString)(properties.contactName));
-    return errors.wrap('supplied properties not correct for "RosAlertContactProps"');
-}
-
-/**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::ARMS::AlertContact` resource
- *
- * @param properties - the TypeScript properties of a `RosAlertContactProps`
- *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::ARMS::AlertContact` resource.
- */
-// @ts-ignore TS6133
-function rosAlertContactPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
-    if (!ros.canInspect(properties)) { return properties; }
-    if(enableResourcePropertyConstraint) {
-        RosAlertContactPropsValidator(properties).assertSuccess();
-    }
-    return {
-      'ContactName': ros.stringToRosTemplate(properties.contactName),
-      'DingRobotWebhookUrl': ros.stringToRosTemplate(properties.dingRobotWebhookUrl),
-      'Email': ros.stringToRosTemplate(properties.email),
-      'PhoneNum': ros.stringToRosTemplate(properties.phoneNum),
-      'ProxyUserId': ros.stringToRosTemplate(properties.proxyUserId),
-      'RegionId': ros.stringToRosTemplate(properties.regionId),
-      'SystemNoc': ros.booleanToRosTemplate(properties.systemNoc),
-    };
-}
-
-/**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::AlertContact`, which is used to create an alert contact.
- * @Note This class does not contain additional functions, so it is recommended to use the `AlertContact` class instead of this class for a more convenient development experience.
- * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-alertcontact
- */
-export class RosAlertContact extends ros.RosResource {
-    /**
-     * The resource type name for this resource class.
-     */
-    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ARMS::AlertContact";
-
-    /**
-     * @Attribute ContactId: The ID of the alert contact that you created.
-     */
-    public readonly attrContactId: ros.IResolvable;
-
-    public enableResourcePropertyConstraint: boolean;
-
-
-    /**
-     * @Property contactName: The name of the alert contact that you want to create.
-     */
-    public contactName: string | ros.IResolvable;
-
-    /**
-     * @Property dingRobotWebhookUrl: The DingTalk Chatbot address of the contact.
-     */
-    public dingRobotWebhookUrl: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property email: The email address of the contact.
-     */
-    public email: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property phoneNum: The phone number of the contact.
-     */
-    public phoneNum: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property proxyUserId: Internal parameters
-     */
-    public proxyUserId: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property regionId: Region ID. Default to region of stack.
-     */
-    public regionId: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property systemNoc: Specifies whether to receive system alerts.
-     */
-    public systemNoc: boolean | ros.IResolvable | undefined;
-
-    /**
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
-     */
-    constructor(scope: ros.Construct, id: string, props: RosAlertContactProps, enableResourcePropertyConstraint: boolean) {
-        super(scope, id, { type: RosAlertContact.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrContactId = this.getAtt('ContactId');
-
-        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-        this.contactName = props.contactName;
-        this.dingRobotWebhookUrl = props.dingRobotWebhookUrl;
-        this.email = props.email;
-        this.phoneNum = props.phoneNum;
-        this.proxyUserId = props.proxyUserId;
-        this.regionId = props.regionId;
-        this.systemNoc = props.systemNoc;
-    }
-
-
-    protected get rosProperties(): { [key: string]: any }  {
-        return {
-            contactName: this.contactName,
-            dingRobotWebhookUrl: this.dingRobotWebhookUrl,
-            email: this.email,
-            phoneNum: this.phoneNum,
-            proxyUserId: this.proxyUserId,
-            regionId: this.regionId,
-            systemNoc: this.systemNoc,
-        };
-    }
-    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
-        return rosAlertContactPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
-    }
-}
-
-/**
- * Properties for defining a `RosAlertContactGroup`.
- * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-alertcontactgroup
- */
-export interface RosAlertContactGroupProps {
-
-    /**
-     * @Property contactGroupName: The name of the alert contact group that you want to create.
-     */
-    readonly contactGroupName: string | ros.IResolvable;
-
-    /**
-     * @Property contactIds: The list of alert contact ID.
-     */
-    readonly contactIds: Array<number | ros.IResolvable> | ros.IResolvable;
-
-    /**
-     * @Property proxyUserId: Internal parameters
-     */
-    readonly proxyUserId?: string | ros.IResolvable;
-
-    /**
-     * @Property regionId: Region ID. Default to region of stack.
-     */
-    readonly regionId?: string | ros.IResolvable;
-}
-
-/**
- * Determine whether the given properties match those of a `RosAlertContactGroupProps`
- *
- * @param properties - the TypeScript properties of a `RosAlertContactGroupProps`
- *
- * @returns the result of the validation.
- */
-function RosAlertContactGroupPropsValidator(properties: any): ros.ValidationResult {
-    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
-    const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('proxyUserId', ros.validateString)(properties.proxyUserId));
-    errors.collect(ros.propertyValidator('contactGroupName', ros.requiredValidator)(properties.contactGroupName));
-    errors.collect(ros.propertyValidator('contactGroupName', ros.validateString)(properties.contactGroupName));
-    if(properties.regionId && (typeof properties.regionId) !== 'object') {
-        errors.collect(ros.propertyValidator('regionId', ros.validateAllowedValues)({
-          data: properties.regionId,
-          allowedValues: ["cn-qingdao","cn-beijing","cn-shanghai","cn-hangzhou","cn-shenzhen","cn-hongkong","ap-southeast-1"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('regionId', ros.validateString)(properties.regionId));
-    errors.collect(ros.propertyValidator('contactIds', ros.requiredValidator)(properties.contactIds));
-    errors.collect(ros.propertyValidator('contactIds', ros.listValidator(ros.validateNumber))(properties.contactIds));
-    return errors.wrap('supplied properties not correct for "RosAlertContactGroupProps"');
-}
-
-/**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::ARMS::AlertContactGroup` resource
- *
- * @param properties - the TypeScript properties of a `RosAlertContactGroupProps`
- *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::ARMS::AlertContactGroup` resource.
- */
-// @ts-ignore TS6133
-function rosAlertContactGroupPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
-    if (!ros.canInspect(properties)) { return properties; }
-    if(enableResourcePropertyConstraint) {
-        RosAlertContactGroupPropsValidator(properties).assertSuccess();
-    }
-    return {
-      'ContactGroupName': ros.stringToRosTemplate(properties.contactGroupName),
-      'ContactIds': ros.listMapper(ros.numberToRosTemplate)(properties.contactIds),
-      'ProxyUserId': ros.stringToRosTemplate(properties.proxyUserId),
-      'RegionId': ros.stringToRosTemplate(properties.regionId),
-    };
-}
-
-/**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::AlertContactGroup`, which is used to create an alert contact group.
- * @Note This class does not contain additional functions, so it is recommended to use the `AlertContactGroup` class instead of this class for a more convenient development experience.
- * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-alertcontactgroup
- */
-export class RosAlertContactGroup extends ros.RosResource {
-    /**
-     * The resource type name for this resource class.
-     */
-    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ARMS::AlertContactGroup";
-
-    /**
-     * @Attribute ContactGroupId: The ID of the alert contact group that you created.
-     */
-    public readonly attrContactGroupId: ros.IResolvable;
-
-    public enableResourcePropertyConstraint: boolean;
-
-
-    /**
-     * @Property contactGroupName: The name of the alert contact group that you want to create.
-     */
-    public contactGroupName: string | ros.IResolvable;
-
-    /**
-     * @Property contactIds: The list of alert contact ID.
-     */
-    public contactIds: Array<number | ros.IResolvable> | ros.IResolvable;
-
-    /**
-     * @Property proxyUserId: Internal parameters
-     */
-    public proxyUserId: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property regionId: Region ID. Default to region of stack.
-     */
-    public regionId: string | ros.IResolvable | undefined;
-
-    /**
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
-     */
-    constructor(scope: ros.Construct, id: string, props: RosAlertContactGroupProps, enableResourcePropertyConstraint: boolean) {
-        super(scope, id, { type: RosAlertContactGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrContactGroupId = this.getAtt('ContactGroupId');
-
-        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-        this.contactGroupName = props.contactGroupName;
-        this.contactIds = props.contactIds;
-        this.proxyUserId = props.proxyUserId;
-        this.regionId = props.regionId;
-    }
-
-
-    protected get rosProperties(): { [key: string]: any }  {
-        return {
-            contactGroupName: this.contactGroupName,
-            contactIds: this.contactIds,
-            proxyUserId: this.proxyUserId,
-            regionId: this.regionId,
-        };
-    }
-    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
-        return rosAlertContactGroupPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
-    }
-}
-
-/**
  * Properties for defining a `RosApplyAlertRuleTemplate`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-applyalertruletemplate
  */
@@ -569,7 +244,7 @@ function rosApplyAlertRuleTemplatePropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::ApplyAlertRuleTemplate`, which is used to create an alert rule of Alibaba Cloud Managed Service for Prometheus.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::ApplyAlertRuleTemplate`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ApplyAlertRuleTemplate` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-applyalertruletemplate
  */
@@ -726,7 +401,7 @@ function rosDeliverTaskPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::DeliverTask`, which is used to create a delivery task.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::DeliverTask`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DeliverTask` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-delivertask
  */
@@ -1060,7 +735,7 @@ function rosEnvironmentPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::Environment`, which is used to create an environment.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::Environment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Environment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-environment
  */
@@ -1356,7 +1031,7 @@ function rosEnvironmentFeaturePropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::EnvironmentFeature`, which is used to install a feature.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::EnvironmentFeature`.
  * @Note This class does not contain additional functions, so it is recommended to use the `EnvironmentFeature` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-environmentfeature
  */
@@ -1541,7 +1216,7 @@ function rosManagedPrometheusPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::ManagedPrometheus`, which is used to install a Prometheus instance to monitor a serverless Kubernetes (ASK) cluster or an Elastic Compute Service (ECS) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::ManagedPrometheus`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ManagedPrometheus` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-managedprometheus
  */
@@ -1760,7 +1435,7 @@ function rosPrometheusPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::Prometheus`, which is used to create a Prometheus instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::Prometheus`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Prometheus` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-prometheus
  */
@@ -2052,7 +1727,7 @@ function rosRetcodeAppPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::RetcodeApp`, which is used to create a browser monitoring task.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::RetcodeApp`.
  * @Note This class does not contain additional functions, so it is recommended to use the `RetcodeApp` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-retcodeapp
  */
@@ -2186,7 +1861,7 @@ function rosXTraceAppPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::XTraceApp`, which is used to create an application monitoring task.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::XTraceApp`.
  * @Note This class does not contain additional functions, so it is recommended to use the `XTraceApp` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-xtraceapp
  */

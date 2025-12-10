@@ -2,6 +2,7 @@
 @alicloud/ros-cdk-ots.IInstanceV2=com.aliyun.ros.cdk.ots.IInstanceV2
 @alicloud/ros-cdk-ots.ISearchIndex=com.aliyun.ros.cdk.ots.ISearchIndex
 @alicloud/ros-cdk-ots.ITable=com.aliyun.ros.cdk.ots.ITable
+@alicloud/ros-cdk-ots.IVCUInstance=com.aliyun.ros.cdk.ots.IVCUInstance
 @alicloud/ros-cdk-ots.IVpcBinder=com.aliyun.ros.cdk.ots.IVpcBinder
 @alicloud/ros-cdk-ots.Instance=com.aliyun.ros.cdk.ots.Instance
 @alicloud/ros-cdk-ots.InstanceProps=com.aliyun.ros.cdk.ots.InstanceProps
@@ -30,6 +31,9 @@
 @alicloud/ros-cdk-ots.RosTable.ReservedThroughputProperty=com.aliyun.ros.cdk.ots.RosTable$ReservedThroughputProperty
 @alicloud/ros-cdk-ots.RosTable.SecondaryIndicesProperty=com.aliyun.ros.cdk.ots.RosTable$SecondaryIndicesProperty
 @alicloud/ros-cdk-ots.RosTableProps=com.aliyun.ros.cdk.ots.RosTableProps
+@alicloud/ros-cdk-ots.RosVCUInstance=com.aliyun.ros.cdk.ots.RosVCUInstance
+@alicloud/ros-cdk-ots.RosVCUInstance.TagsProperty=com.aliyun.ros.cdk.ots.RosVCUInstance$TagsProperty
+@alicloud/ros-cdk-ots.RosVCUInstanceProps=com.aliyun.ros.cdk.ots.RosVCUInstanceProps
 @alicloud/ros-cdk-ots.RosVpcBinder=com.aliyun.ros.cdk.ots.RosVpcBinder
 @alicloud/ros-cdk-ots.RosVpcBinder.VpcsProperty=com.aliyun.ros.cdk.ots.RosVpcBinder$VpcsProperty
 @alicloud/ros-cdk-ots.RosVpcBinderProps=com.aliyun.ros.cdk.ots.RosVpcBinderProps
@@ -37,6 +41,8 @@
 @alicloud/ros-cdk-ots.SearchIndexProps=com.aliyun.ros.cdk.ots.SearchIndexProps
 @alicloud/ros-cdk-ots.Table=com.aliyun.ros.cdk.ots.Table
 @alicloud/ros-cdk-ots.TableProps=com.aliyun.ros.cdk.ots.TableProps
+@alicloud/ros-cdk-ots.VCUInstance=com.aliyun.ros.cdk.ots.VCUInstance
+@alicloud/ros-cdk-ots.VCUInstanceProps=com.aliyun.ros.cdk.ots.VCUInstanceProps
 @alicloud/ros-cdk-ots.VpcBinder=com.aliyun.ros.cdk.ots.VpcBinder
 @alicloud/ros-cdk-ots.VpcBinderProps=com.aliyun.ros.cdk.ots.VpcBinderProps
 @alicloud/ros-cdk-ots.datasource.IInstances=com.aliyun.ros.cdk.ots.datasource.IInstances

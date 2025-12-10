@@ -4,10 +4,8 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ess
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::AlarmTaskEnable`, which is used to start an alarm task.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::AlarmTaskEnable`.</summary>
     /// <remarks>
-    /// You can call this operation to enable alarm tasks when the task is stopped.
-    ///
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `AlarmTaskEnable` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-alarmtaskenable
     /// </remarks>

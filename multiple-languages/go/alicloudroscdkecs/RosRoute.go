@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::Route`, which is used to create a custom route entry.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::Route`.
 type RosRoute interface {
 	alicloudroscdkcore.RosResource
 	AttrRouteEntryId() alicloudroscdkcore.IResolvable

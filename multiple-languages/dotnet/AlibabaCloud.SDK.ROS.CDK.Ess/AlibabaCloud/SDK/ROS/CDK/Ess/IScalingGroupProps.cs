@@ -199,6 +199,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
         }
 
+        /// <summary>Property healthCheckTypes: The list of health check type.</summary>
+        [JsiiProperty(name: "healthCheckTypes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? HealthCheckTypes
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property instanceId: The ID of the ECS instance from which the scaling group obtains configuration information of the specified instance.</summary>
         [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -695,6 +706,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             [JsiiOptional]
             [JsiiProperty(name: "healthCheckType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? HealthCheckType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property healthCheckTypes: The list of health check type.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "healthCheckTypes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? HealthCheckTypes
             {
                 get => GetInstanceProperty<object?>();
             }

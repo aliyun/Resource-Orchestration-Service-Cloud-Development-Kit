@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::KMS::Policy`, which is used to query the information about a permission policy.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::KMS::Policy`.
 type Policy interface {
 	alicloudroscdkcore.Resource
 	IPolicy

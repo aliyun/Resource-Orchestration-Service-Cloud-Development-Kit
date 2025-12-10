@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ADBLake::ResourceGroup`, which is used to create a resource group for an AnalyticDB for MySQL Data Lakehouse Edition (V3.0) cluster.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ADBLake::ResourceGroup`.
 type ResourceGroup interface {
 	alicloudroscdkcore.Resource
 	IResourceGroup

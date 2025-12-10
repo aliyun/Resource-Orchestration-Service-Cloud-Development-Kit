@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.config;
 /**
  * Represents a <code>CompliancePack</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.676Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.916Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.ICompliancePack")
 @software.amazon.jsii.Jsii.Proxy(ICompliancePack.Jsii$Proxy.class)
 public interface ICompliancePack extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

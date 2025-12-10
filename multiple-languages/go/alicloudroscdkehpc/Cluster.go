@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::EHPC::Cluster`, which is used to create an Elastic High Performance Computing (E-HPC) cluster.
+// This class encapsulates and extends the ROS resource type `ALIYUN::EHPC::Cluster`.
 type Cluster interface {
 	alicloudroscdkcore.Resource
 	ICluster

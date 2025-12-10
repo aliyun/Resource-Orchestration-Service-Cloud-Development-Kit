@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CS::ClusterNodePool`, which is used to create a node pool for a Container Service for Kubernetes (ACK) cluster.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CS::ClusterNodePool`.
 type ClusterNodePool interface {
 	alicloudroscdkcore.Resource
 	IClusterNodePool

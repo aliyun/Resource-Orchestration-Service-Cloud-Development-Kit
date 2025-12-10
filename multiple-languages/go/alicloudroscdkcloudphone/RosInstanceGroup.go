@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CloudPhone::InstanceGroup`, which is used to create and start cloud phones.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CloudPhone::InstanceGroup`.
 type RosInstanceGroup interface {
 	alicloudroscdkcore.RosResource
 	Amount() interface{}

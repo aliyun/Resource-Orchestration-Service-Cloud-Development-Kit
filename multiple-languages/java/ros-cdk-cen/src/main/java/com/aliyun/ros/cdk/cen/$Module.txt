@@ -34,6 +34,7 @@
 @alicloud/ros-cdk-cen.ITransitRouterRouteEntry=com.aliyun.ros.cdk.cen.ITransitRouterRouteEntry
 @alicloud/ros-cdk-cen.ITransitRouterRouteTable=com.aliyun.ros.cdk.cen.ITransitRouterRouteTable
 @alicloud/ros-cdk-cen.ITransitRouterRouteTableAssociation=com.aliyun.ros.cdk.cen.ITransitRouterRouteTableAssociation
+@alicloud/ros-cdk-cen.ITransitRouterRouteTableAssociationReplacement=com.aliyun.ros.cdk.cen.ITransitRouterRouteTableAssociationReplacement
 @alicloud/ros-cdk-cen.ITransitRouterRouteTablePropagation=com.aliyun.ros.cdk.cen.ITransitRouterRouteTablePropagation
 @alicloud/ros-cdk-cen.ITransitRouterVbrAttachment=com.aliyun.ros.cdk.cen.ITransitRouterVbrAttachment
 @alicloud/ros-cdk-cen.ITransitRouterVpcAttachment=com.aliyun.ros.cdk.cen.ITransitRouterVpcAttachment
@@ -73,6 +74,8 @@
 @alicloud/ros-cdk-cen.RosTransitRouterRouteTable=com.aliyun.ros.cdk.cen.RosTransitRouterRouteTable
 @alicloud/ros-cdk-cen.RosTransitRouterRouteTableAssociation=com.aliyun.ros.cdk.cen.RosTransitRouterRouteTableAssociation
 @alicloud/ros-cdk-cen.RosTransitRouterRouteTableAssociationProps=com.aliyun.ros.cdk.cen.RosTransitRouterRouteTableAssociationProps
+@alicloud/ros-cdk-cen.RosTransitRouterRouteTableAssociationReplacement=com.aliyun.ros.cdk.cen.RosTransitRouterRouteTableAssociationReplacement
+@alicloud/ros-cdk-cen.RosTransitRouterRouteTableAssociationReplacementProps=com.aliyun.ros.cdk.cen.RosTransitRouterRouteTableAssociationReplacementProps
 @alicloud/ros-cdk-cen.RosTransitRouterRouteTablePropagation=com.aliyun.ros.cdk.cen.RosTransitRouterRouteTablePropagation
 @alicloud/ros-cdk-cen.RosTransitRouterRouteTablePropagationProps=com.aliyun.ros.cdk.cen.RosTransitRouterRouteTablePropagationProps
 @alicloud/ros-cdk-cen.RosTransitRouterRouteTableProps=com.aliyun.ros.cdk.cen.RosTransitRouterRouteTableProps
@@ -95,6 +98,8 @@
 @alicloud/ros-cdk-cen.TransitRouterRouteTable=com.aliyun.ros.cdk.cen.TransitRouterRouteTable
 @alicloud/ros-cdk-cen.TransitRouterRouteTableAssociation=com.aliyun.ros.cdk.cen.TransitRouterRouteTableAssociation
 @alicloud/ros-cdk-cen.TransitRouterRouteTableAssociationProps=com.aliyun.ros.cdk.cen.TransitRouterRouteTableAssociationProps
+@alicloud/ros-cdk-cen.TransitRouterRouteTableAssociationReplacement=com.aliyun.ros.cdk.cen.TransitRouterRouteTableAssociationReplacement
+@alicloud/ros-cdk-cen.TransitRouterRouteTableAssociationReplacementProps=com.aliyun.ros.cdk.cen.TransitRouterRouteTableAssociationReplacementProps
 @alicloud/ros-cdk-cen.TransitRouterRouteTablePropagation=com.aliyun.ros.cdk.cen.TransitRouterRouteTablePropagation
 @alicloud/ros-cdk-cen.TransitRouterRouteTablePropagationProps=com.aliyun.ros.cdk.cen.TransitRouterRouteTablePropagationProps
 @alicloud/ros-cdk-cen.TransitRouterRouteTableProps=com.aliyun.ros.cdk.cen.TransitRouterRouteTableProps

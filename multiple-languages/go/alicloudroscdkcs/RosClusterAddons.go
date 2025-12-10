@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterAddons`, which is used to install components in a cluster.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterAddons`.
 type RosClusterAddons interface {
 	alicloudroscdkcore.RosResource
 	Addons() interface{}

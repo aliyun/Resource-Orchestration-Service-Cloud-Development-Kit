@@ -62,6 +62,11 @@ export interface ManagedEdgeKubernetesClusterProps {
     readonly endpointPublicAccess?: boolean | ros.IResolvable;
 
     /**
+     * Property ipStack: The IP stack of the cluster. Value: ipv4 (Single stack) or ipv6 (Dual Stack). Default value: ipv4
+     */
+    readonly ipStack?: string | ros.IResolvable;
+
+    /**
      * Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group. 
      * This parameter takes effect only if security_group_id is left empty.
      * Note You must specify an advanced security group for a cluster that has Terway installed.
@@ -117,6 +122,11 @@ export interface ManagedEdgeKubernetesClusterProps {
      * Property resourceGroupId: The ID of resource group.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * Property rrsaConfig: The configuration of RRSA.
+     */
+    readonly rrsaConfig?: RosManagedEdgeKubernetesCluster.RrsaConfigProperty | ros.IResolvable;
 
     /**
      * Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0\/20 is used by default.
@@ -222,7 +232,7 @@ export interface IManagedEdgeKubernetesCluster extends ros.IResource {
     readonly attrWorkerRamRoleName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ManagedEdgeKubernetesCluster`, which is used to create a Container Service for Kubernetes (ACK) Edge cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ManagedEdgeKubernetesCluster`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosManagedEdgeKubernetesCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managededgekubernetescluster
  */
@@ -303,10 +313,12 @@ export class ManagedEdgeKubernetesCluster extends ros.Resource implements IManag
             endpointPublicAccess: props.endpointPublicAccess === undefined || props.endpointPublicAccess === null ? true : props.endpointPublicAccess,
             resourceGroupId: props.resourceGroupId,
             addons: props.addons,
+            ipStack: props.ipStack,
             profile: props.profile === undefined || props.profile === null ? 'Edge' : props.profile,
             name: props.name,
             isEnterpriseSecurityGroup: props.isEnterpriseSecurityGroup,
             cloudMonitorFlags: props.cloudMonitorFlags === undefined || props.cloudMonitorFlags === null ? false : props.cloudMonitorFlags,
+            rrsaConfig: props.rrsaConfig,
             serviceCidr: props.serviceCidr === undefined || props.serviceCidr === null ? '172.19.0.0/20' : props.serviceCidr,
             zoneIds: props.zoneIds,
             proxyMode: props.proxyMode === undefined || props.proxyMode === null ? 'iptables' : props.proxyMode,

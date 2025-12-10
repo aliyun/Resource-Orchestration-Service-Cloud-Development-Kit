@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.oss;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::OSS::Bucket</code>, which is used to create a bucket in Object Storage Service (OSS).
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::OSS::Bucket</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:31.156Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.713Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.RosBucket")
 public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -3973,6 +3973,13 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
         }
 
         /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getTransition() {
+            return null;
+        }
+
+        /**
          * @return a {@link Builder} of {@link RuleProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -3990,6 +3997,7 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object filter;
             java.lang.Object id;
             java.lang.Object status;
+            java.lang.Object transition;
 
             /**
              * Sets the value of {@link RuleProperty#getPrefix}
@@ -4124,6 +4132,28 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link RuleProperty#getTransition}
+             * @param transition the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder transition(com.aliyun.ros.cdk.core.IResolvable transition) {
+                this.transition = transition;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link RuleProperty#getTransition}
+             * @param transition the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder transition(java.util.List<? extends java.lang.Object> transition) {
+                this.transition = transition;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link RuleProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -4147,6 +4177,7 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object filter;
             private final java.lang.Object id;
             private final java.lang.Object status;
+            private final java.lang.Object transition;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -4160,6 +4191,7 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
                 this.filter = software.amazon.jsii.Kernel.get(this, "filter", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.id = software.amazon.jsii.Kernel.get(this, "id", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.status = software.amazon.jsii.Kernel.get(this, "status", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.transition = software.amazon.jsii.Kernel.get(this, "transition", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -4173,6 +4205,7 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
                 this.filter = builder.filter;
                 this.id = builder.id;
                 this.status = builder.status;
+                this.transition = builder.transition;
             }
 
             @Override
@@ -4206,6 +4239,11 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getTransition() {
+                return this.transition;
+            }
+
+            @Override
             @software.amazon.jsii.Internal
             public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -4226,6 +4264,9 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
                 }
                 if (this.getStatus() != null) {
                     data.set("status", om.valueToTree(this.getStatus()));
+                }
+                if (this.getTransition() != null) {
+                    data.set("transition", om.valueToTree(this.getTransition()));
                 }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -4250,7 +4291,8 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.expiration != null ? !this.expiration.equals(that.expiration) : that.expiration != null) return false;
                 if (this.filter != null ? !this.filter.equals(that.filter) : that.filter != null) return false;
                 if (this.id != null ? !this.id.equals(that.id) : that.id != null) return false;
-                return this.status != null ? this.status.equals(that.status) : that.status == null;
+                if (this.status != null ? !this.status.equals(that.status) : that.status != null) return false;
+                return this.transition != null ? this.transition.equals(that.transition) : that.transition == null;
             }
 
             @Override
@@ -4261,6 +4303,7 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.filter != null ? this.filter.hashCode() : 0);
                 result = 31 * result + (this.id != null ? this.id.hashCode() : 0);
                 result = 31 * result + (this.status != null ? this.status.hashCode() : 0);
+                result = 31 * result + (this.transition != null ? this.transition.hashCode() : 0);
                 return result;
             }
         }
@@ -4593,6 +4636,350 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
             public final int hashCode() {
                 int result = this.key.hashCode();
                 result = 31 * result + (this.value.hashCode());
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.RosBucket.TransitionProperty")
+    @software.amazon.jsii.Jsii.Proxy(TransitionProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface TransitionProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAllowSmallFile() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCreatedBeforeDate() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDays() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getIsAccessTime() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getReturnToStdWhenVisit() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getStorageClass() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link TransitionProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link TransitionProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<TransitionProperty> {
+            java.lang.Object allowSmallFile;
+            java.lang.Object createdBeforeDate;
+            java.lang.Object days;
+            java.lang.Object isAccessTime;
+            java.lang.Object returnToStdWhenVisit;
+            java.lang.Object storageClass;
+
+            /**
+             * Sets the value of {@link TransitionProperty#getAllowSmallFile}
+             * @param allowSmallFile the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder allowSmallFile(java.lang.Boolean allowSmallFile) {
+                this.allowSmallFile = allowSmallFile;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TransitionProperty#getAllowSmallFile}
+             * @param allowSmallFile the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder allowSmallFile(com.aliyun.ros.cdk.core.IResolvable allowSmallFile) {
+                this.allowSmallFile = allowSmallFile;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TransitionProperty#getCreatedBeforeDate}
+             * @param createdBeforeDate the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder createdBeforeDate(java.lang.String createdBeforeDate) {
+                this.createdBeforeDate = createdBeforeDate;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TransitionProperty#getCreatedBeforeDate}
+             * @param createdBeforeDate the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder createdBeforeDate(com.aliyun.ros.cdk.core.IResolvable createdBeforeDate) {
+                this.createdBeforeDate = createdBeforeDate;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TransitionProperty#getDays}
+             * @param days the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder days(java.lang.Number days) {
+                this.days = days;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TransitionProperty#getDays}
+             * @param days the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder days(com.aliyun.ros.cdk.core.IResolvable days) {
+                this.days = days;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TransitionProperty#getIsAccessTime}
+             * @param isAccessTime the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder isAccessTime(java.lang.Boolean isAccessTime) {
+                this.isAccessTime = isAccessTime;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TransitionProperty#getIsAccessTime}
+             * @param isAccessTime the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder isAccessTime(com.aliyun.ros.cdk.core.IResolvable isAccessTime) {
+                this.isAccessTime = isAccessTime;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TransitionProperty#getReturnToStdWhenVisit}
+             * @param returnToStdWhenVisit the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder returnToStdWhenVisit(java.lang.Boolean returnToStdWhenVisit) {
+                this.returnToStdWhenVisit = returnToStdWhenVisit;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TransitionProperty#getReturnToStdWhenVisit}
+             * @param returnToStdWhenVisit the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder returnToStdWhenVisit(com.aliyun.ros.cdk.core.IResolvable returnToStdWhenVisit) {
+                this.returnToStdWhenVisit = returnToStdWhenVisit;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TransitionProperty#getStorageClass}
+             * @param storageClass the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder storageClass(java.lang.String storageClass) {
+                this.storageClass = storageClass;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TransitionProperty#getStorageClass}
+             * @param storageClass the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder storageClass(com.aliyun.ros.cdk.core.IResolvable storageClass) {
+                this.storageClass = storageClass;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link TransitionProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public TransitionProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link TransitionProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TransitionProperty {
+            private final java.lang.Object allowSmallFile;
+            private final java.lang.Object createdBeforeDate;
+            private final java.lang.Object days;
+            private final java.lang.Object isAccessTime;
+            private final java.lang.Object returnToStdWhenVisit;
+            private final java.lang.Object storageClass;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.allowSmallFile = software.amazon.jsii.Kernel.get(this, "allowSmallFile", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.createdBeforeDate = software.amazon.jsii.Kernel.get(this, "createdBeforeDate", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.days = software.amazon.jsii.Kernel.get(this, "days", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.isAccessTime = software.amazon.jsii.Kernel.get(this, "isAccessTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.returnToStdWhenVisit = software.amazon.jsii.Kernel.get(this, "returnToStdWhenVisit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.storageClass = software.amazon.jsii.Kernel.get(this, "storageClass", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.allowSmallFile = builder.allowSmallFile;
+                this.createdBeforeDate = builder.createdBeforeDate;
+                this.days = builder.days;
+                this.isAccessTime = builder.isAccessTime;
+                this.returnToStdWhenVisit = builder.returnToStdWhenVisit;
+                this.storageClass = builder.storageClass;
+            }
+
+            @Override
+            public final java.lang.Object getAllowSmallFile() {
+                return this.allowSmallFile;
+            }
+
+            @Override
+            public final java.lang.Object getCreatedBeforeDate() {
+                return this.createdBeforeDate;
+            }
+
+            @Override
+            public final java.lang.Object getDays() {
+                return this.days;
+            }
+
+            @Override
+            public final java.lang.Object getIsAccessTime() {
+                return this.isAccessTime;
+            }
+
+            @Override
+            public final java.lang.Object getReturnToStdWhenVisit() {
+                return this.returnToStdWhenVisit;
+            }
+
+            @Override
+            public final java.lang.Object getStorageClass() {
+                return this.storageClass;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getAllowSmallFile() != null) {
+                    data.set("allowSmallFile", om.valueToTree(this.getAllowSmallFile()));
+                }
+                if (this.getCreatedBeforeDate() != null) {
+                    data.set("createdBeforeDate", om.valueToTree(this.getCreatedBeforeDate()));
+                }
+                if (this.getDays() != null) {
+                    data.set("days", om.valueToTree(this.getDays()));
+                }
+                if (this.getIsAccessTime() != null) {
+                    data.set("isAccessTime", om.valueToTree(this.getIsAccessTime()));
+                }
+                if (this.getReturnToStdWhenVisit() != null) {
+                    data.set("returnToStdWhenVisit", om.valueToTree(this.getReturnToStdWhenVisit()));
+                }
+                if (this.getStorageClass() != null) {
+                    data.set("storageClass", om.valueToTree(this.getStorageClass()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-oss.RosBucket.TransitionProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                TransitionProperty.Jsii$Proxy that = (TransitionProperty.Jsii$Proxy) o;
+
+                if (this.allowSmallFile != null ? !this.allowSmallFile.equals(that.allowSmallFile) : that.allowSmallFile != null) return false;
+                if (this.createdBeforeDate != null ? !this.createdBeforeDate.equals(that.createdBeforeDate) : that.createdBeforeDate != null) return false;
+                if (this.days != null ? !this.days.equals(that.days) : that.days != null) return false;
+                if (this.isAccessTime != null ? !this.isAccessTime.equals(that.isAccessTime) : that.isAccessTime != null) return false;
+                if (this.returnToStdWhenVisit != null ? !this.returnToStdWhenVisit.equals(that.returnToStdWhenVisit) : that.returnToStdWhenVisit != null) return false;
+                return this.storageClass != null ? this.storageClass.equals(that.storageClass) : that.storageClass == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.allowSmallFile != null ? this.allowSmallFile.hashCode() : 0;
+                result = 31 * result + (this.createdBeforeDate != null ? this.createdBeforeDate.hashCode() : 0);
+                result = 31 * result + (this.days != null ? this.days.hashCode() : 0);
+                result = 31 * result + (this.isAccessTime != null ? this.isAccessTime.hashCode() : 0);
+                result = 31 * result + (this.returnToStdWhenVisit != null ? this.returnToStdWhenVisit.hashCode() : 0);
+                result = 31 * result + (this.storageClass != null ? this.storageClass.hashCode() : 0);
                 return result;
             }
         }

@@ -45,7 +45,7 @@ export interface IFlowProjects extends ros.IResource {
     readonly attrFlowProjects: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::EMR::FlowProjects`, which is used to query projects.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::EMR::FlowProjects`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFlowProjects`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-emr-flowprojects
  */

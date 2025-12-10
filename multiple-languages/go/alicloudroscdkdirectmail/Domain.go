@@ -10,7 +10,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::DirectMail::Domain`, which is used to create a domain name in Direct Mail.
+// This class encapsulates and extends the ROS resource type `ALIYUN::DirectMail::Domain`.
 type Domain interface {
 	alicloudroscdkcore.Resource
 	IDomain

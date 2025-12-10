@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::DeliverTask`, which is used to create a delivery task.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::DeliverTask`.
 type DeliverTask interface {
 	alicloudroscdkcore.Resource
 	IDeliverTask

@@ -992,6 +992,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "groupDeletionProtection", GoGetter: "GroupDeletionProtection"},
 			_jsii_.MemberProperty{JsiiProperty: "groupType", GoGetter: "GroupType"},
 			_jsii_.MemberProperty{JsiiProperty: "healthCheckType", GoGetter: "HealthCheckType"},
+			_jsii_.MemberProperty{JsiiProperty: "healthCheckTypes", GoGetter: "HealthCheckTypes"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceId", GoGetter: "InstanceId"},
 			_jsii_.MemberProperty{JsiiProperty: "launchTemplateId", GoGetter: "LaunchTemplateId"},
 			_jsii_.MemberProperty{JsiiProperty: "launchTemplateOverrides", GoGetter: "LaunchTemplateOverrides"},

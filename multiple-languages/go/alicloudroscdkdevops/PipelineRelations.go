@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::DEVOPS::PipelineRelations`, which is used to associate resources with a pipeline.
+// This class encapsulates and extends the ROS resource type `ALIYUN::DEVOPS::PipelineRelations`.
 type PipelineRelations interface {
 	alicloudroscdkcore.Resource
 	IPipelineRelations

@@ -64,7 +64,7 @@ function rosClientInstanceAttachmentPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::EAIS::ClientInstanceAttachment`, which is used to query the information about an Elastic Accelerated Computing Instances (EAIS) instance attached to an Elastic Compute Service (ECS) instance or elastic container instance.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::EAIS::ClientInstanceAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ClientInstanceAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eais-clientinstanceattachment
  */
@@ -201,7 +201,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::EAIS::Instance`, which is used to query the information about a created Elastic Accelerated Computing Instances (EAIS) instance.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::EAIS::Instance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eais-instance
  */
@@ -406,7 +406,7 @@ function rosInstancesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::EAIS::Instances`, which is used to query the information about created Elastic Accelerated Computing Instances (EAIS) instances.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::EAIS::Instances`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instances` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eais-instances
  */

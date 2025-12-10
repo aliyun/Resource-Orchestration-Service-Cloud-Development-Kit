@@ -121,6 +121,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Acs
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: isEnterpriseSecurityGroup: Specifies whether to create an advanced security group.
+        /// This parameter takes effect only if security_group_id is left empty.
+        /// Note You must specify an advanced security group for a cluster that has Terway installed.
+        /// true: creates an advanced security group.
+        /// false: does not create an advanced security group.
+        /// Default value: false.
+        /// </remarks>
+        [JsiiProperty(name: "isEnterpriseSecurityGroup", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? IsEnterpriseSecurityGroup
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: kubernetesVersion: The version of the Kubernetes cluster.
         /// </remarks>
         [JsiiProperty(name: "kubernetesVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -442,6 +460,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Acs
             [JsiiOptional]
             [JsiiProperty(name: "ipStack", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? IpStack
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: isEnterpriseSecurityGroup: Specifies whether to create an advanced security group.
+            /// This parameter takes effect only if security_group_id is left empty.
+            /// Note You must specify an advanced security group for a cluster that has Terway installed.
+            /// true: creates an advanced security group.
+            /// false: does not create an advanced security group.
+            /// Default value: false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "isEnterpriseSecurityGroup", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IsEnterpriseSecurityGroup
             {
                 get => GetInstanceProperty<object?>();
             }

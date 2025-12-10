@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Commands`, which is used to query all available commands that you created.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Commands`.
 type RosCommands interface {
 	alicloudroscdkcore.RosResource
 	AttrCommandIds() alicloudroscdkcore.IResolvable

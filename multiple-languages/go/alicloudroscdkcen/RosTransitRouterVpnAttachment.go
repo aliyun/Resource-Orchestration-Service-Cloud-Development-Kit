@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterVpnAttachment`, which is used to create a VPN connection.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterVpnAttachment`.
 type RosTransitRouterVpnAttachment interface {
 	alicloudroscdkcore.RosResource
 	AttrTransitRouterAttachmentId() alicloudroscdkcore.IResolvable

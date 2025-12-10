@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.rds;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-prepaydbinstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:28.653Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:59.512Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.PrepayDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(PrepayDBInstanceProps.Jsii$Proxy.class)
 public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -427,6 +427,9 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
 
     /**
      * Property masterUsername: The master user name for the database instance.
+     * <p>
+     * If specified, this user will have read and write permissions for all databases defined in DBMappings. Reserved keywords (which can be queried via DescribeInstanceKeywords), such as root, admin, administrator, etc., cannot be used.
+     * This parameter must be specified together with MasterUserPassword.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMasterUsername() {
         return null;
@@ -434,6 +437,8 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
 
     /**
      * Property masterUserPassword: The master password for the database instance.
+     * <p>
+     * This parameter must be specified together with MasterUsername.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMasterUserPassword() {
         return null;
@@ -1830,6 +1835,8 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
         /**
          * Sets the value of {@link PrepayDBInstanceProps#getMasterUsername}
          * @param masterUsername Property masterUsername: The master user name for the database instance.
+         *                       If specified, this user will have read and write permissions for all databases defined in DBMappings. Reserved keywords (which can be queried via DescribeInstanceKeywords), such as root, admin, administrator, etc., cannot be used.
+         *                       This parameter must be specified together with MasterUserPassword.
          * @return {@code this}
          */
         public Builder masterUsername(java.lang.String masterUsername) {
@@ -1840,6 +1847,8 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
         /**
          * Sets the value of {@link PrepayDBInstanceProps#getMasterUsername}
          * @param masterUsername Property masterUsername: The master user name for the database instance.
+         *                       If specified, this user will have read and write permissions for all databases defined in DBMappings. Reserved keywords (which can be queried via DescribeInstanceKeywords), such as root, admin, administrator, etc., cannot be used.
+         *                       This parameter must be specified together with MasterUserPassword.
          * @return {@code this}
          */
         public Builder masterUsername(com.aliyun.ros.cdk.core.IResolvable masterUsername) {
@@ -1850,6 +1859,7 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
         /**
          * Sets the value of {@link PrepayDBInstanceProps#getMasterUserPassword}
          * @param masterUserPassword Property masterUserPassword: The master password for the database instance.
+         *                           This parameter must be specified together with MasterUsername.
          * @return {@code this}
          */
         public Builder masterUserPassword(java.lang.String masterUserPassword) {
@@ -1860,6 +1870,7 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
         /**
          * Sets the value of {@link PrepayDBInstanceProps#getMasterUserPassword}
          * @param masterUserPassword Property masterUserPassword: The master password for the database instance.
+         *                           This parameter must be specified together with MasterUsername.
          * @return {@code this}
          */
         public Builder masterUserPassword(com.aliyun.ros.cdk.core.IResolvable masterUserPassword) {

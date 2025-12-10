@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ComputeNest::ServiceInstance`The , which type is used to create and deploy a service instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ComputeNest::ServiceInstance`.
 type ServiceInstance interface {
 	alicloudroscdkcore.Resource
 	IServiceInstance

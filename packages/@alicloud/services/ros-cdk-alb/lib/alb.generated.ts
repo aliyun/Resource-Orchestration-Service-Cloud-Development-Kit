@@ -103,7 +103,7 @@ function rosAScriptPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::AScript`, which is used to create an AScript rule.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::AScript`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AScript` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-ascript
  */
@@ -319,7 +319,7 @@ function rosAclPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::Acl`, which is used to create an access control list (ACL).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::Acl`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Acl` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-acl
  */
@@ -511,7 +511,7 @@ function rosAclAssociationPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::AclAssociation`, which is used to associate access control lists (ACLs) with a listener.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::AclAssociation`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AclAssociation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-aclassociation
  */
@@ -633,7 +633,7 @@ function rosAdditionalCertificateAssociationPropsToRosTemplate(properties: any, 
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::AdditionalCertificateAssociation`, which is used to add additional certificates to a listener.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::AdditionalCertificateAssociation`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AdditionalCertificateAssociation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-additionalcertificateassociation
  */
@@ -791,7 +791,7 @@ function rosBackendServerAttachmentPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::BackendServerAttachment`, which is used to add backend servers to a server group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::BackendServerAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `BackendServerAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-backendserverattachment
  */
@@ -1126,7 +1126,7 @@ function rosHealthCheckTemplatePropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::HealthCheckTemplate`, which is used to create a health check template.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::HealthCheckTemplate`.
  * @Note This class does not contain additional functions, so it is recommended to use the `HealthCheckTemplate` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-healthchecktemplate
  */
@@ -1510,7 +1510,7 @@ function rosListenerPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::Listener`, which is used to create an HTTP, HTTPS, or Quick UDP Internet Connections (QUIC) listener.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::Listener`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Listener` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-listener
  */
@@ -2512,7 +2512,7 @@ function rosLoadBalancerPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::LoadBalancer`, which is used to create an Application Load Balancer (ALB) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::LoadBalancer`.
  * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancer` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-loadbalancer
  */
@@ -3165,7 +3165,7 @@ function rosRulePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::Rule`Use , which to create a forwarding rule.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::Rule`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Rule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-rule
  */
@@ -4685,7 +4685,7 @@ export namespace RosRule {
         /**
          * @Property qps: Queries per second (QPS).
          */
-        readonly qps: number | ros.IResolvable;
+        readonly qps?: number | ros.IResolvable;
     }
 }
 /**
@@ -4706,7 +4706,6 @@ function RosRule_TrafficLimitConfigPropertyValidator(properties: any): ros.Valid
           }));
     }
     errors.collect(ros.propertyValidator('perIpQps', ros.validateNumber)(properties.perIpQps));
-    errors.collect(ros.propertyValidator('qps', ros.requiredValidator)(properties.qps));
     if(properties.qps && (typeof properties.qps) !== 'object') {
         errors.collect(ros.propertyValidator('qps', ros.validateRange)({
             data: properties.qps,
@@ -4743,13 +4742,13 @@ export namespace RosRule {
         /**
          * @Property mirrorGroupConfig: Traffic mirroring to server groups.
          */
-        readonly mirrorGroupConfig: RosRule.MirrorGroupConfigProperty | ros.IResolvable;
+        readonly mirrorGroupConfig?: RosRule.MirrorGroupConfigProperty | ros.IResolvable;
         /**
          * @Property targetType: The type of destination to which network traffic is mirrored. Valid values:
      * ForwardGroupMirror: a server group
      * SlsMirror: Log Service
          */
-        readonly targetType: string | ros.IResolvable;
+        readonly targetType?: string | ros.IResolvable;
     }
 }
 /**
@@ -4762,9 +4761,7 @@ export namespace RosRule {
 function RosRule_TrafficMirrorConfigPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('mirrorGroupConfig', ros.requiredValidator)(properties.mirrorGroupConfig));
     errors.collect(ros.propertyValidator('mirrorGroupConfig', RosRule_MirrorGroupConfigPropertyValidator)(properties.mirrorGroupConfig));
-    errors.collect(ros.propertyValidator('targetType', ros.requiredValidator)(properties.targetType));
     errors.collect(ros.propertyValidator('targetType', ros.validateString)(properties.targetType));
     return errors.wrap('supplied properties not correct for "TrafficMirrorConfigProperty"');
 }
@@ -4899,7 +4896,7 @@ function rosSecurityGroupAttachmentPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::SecurityGroupAttachment`, which is used to associate created security groups with an Application Load Balancer (ALB) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::SecurityGroupAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecurityGroupAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-securitygroupattachment
  */
@@ -5034,7 +5031,7 @@ function rosSecurityPolicyPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::SecurityPolicy`, which is used to create a custom security policy.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::SecurityPolicy`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecurityPolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-securitypolicy
  */
@@ -5308,7 +5305,7 @@ function rosServerGroupPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::ServerGroup`, which is used to create a server group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::ServerGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ServerGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-servergroup
  */

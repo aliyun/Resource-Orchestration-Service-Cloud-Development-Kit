@@ -54,6 +54,11 @@ export interface ASKClusterProps {
     readonly endpointPublicAccess?: boolean | ros.IResolvable;
 
     /**
+     * Property ipStack: The IP stack of the cluster. Value: ipv4 (Single stack) or ipv6 (Dual Stack). Default value: ipv4
+     */
+    readonly ipStack?: string | ros.IResolvable;
+
+    /**
      * Property kubernetesVersion: The version of the Kubernetes cluster.
      */
     readonly kubernetesVersion?: string | ros.IResolvable;
@@ -194,7 +199,7 @@ export interface IASKCluster extends ros.IResource {
     readonly attrWorkerRamRoleName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ASKCluster`, which is used to create a Container Service for Kubernetes (ACK) Serverless cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ASKCluster`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosASKCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-askcluster
  */
@@ -280,8 +285,9 @@ export class ASKCluster extends ros.Resource implements IASKCluster {
             vSwitchIds: props.vSwitchIds,
             securityGroupId: props.securityGroupId,
             addons: props.addons,
-            clusterSpec: props.clusterSpec === undefined || props.clusterSpec === null ? 'ack.pro.small' : props.clusterSpec,
             deletionProtection: props.deletionProtection,
+            clusterSpec: props.clusterSpec === undefined || props.clusterSpec === null ? 'ack.pro.small' : props.clusterSpec,
+            ipStack: props.ipStack,
             name: props.name,
             timeZone: props.timeZone,
             serviceDiscoveryTypes: props.serviceDiscoveryTypes,

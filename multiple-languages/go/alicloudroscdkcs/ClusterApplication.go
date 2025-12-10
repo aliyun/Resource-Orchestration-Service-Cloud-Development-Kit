@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CS::ClusterApplication`, which is used to deploy an application in a Container Service for Kubernetes (ACK) cluster.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CS::ClusterApplication`.
 type ClusterApplication interface {
 	alicloudroscdkcore.Resource
 	IClusterApplication

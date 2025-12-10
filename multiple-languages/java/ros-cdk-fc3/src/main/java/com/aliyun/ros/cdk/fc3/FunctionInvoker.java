@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc3;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::FC3::FunctionInvoker</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:25.905Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.025Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc3.$Module.class, fqn = "@alicloud/ros-cdk-fc3.FunctionInvoker")
 public class FunctionInvoker extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.fc3.IFunctionInvoker {
 
@@ -41,6 +41,14 @@ public class FunctionInvoker extends com.aliyun.ros.cdk.core.Resource implements
     }
 
     /**
+     * Attribute Events: Events for async invocation.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrEvents() {
+        return software.amazon.jsii.Kernel.get(this, "attrEvents", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
      * Attribute Result: Depends on result type: NoResult: Async invoke has no result.
      * <p>
      * Success: The response of the function. The response should be utf-8 encoded string, otherwise ROS will report an error. If the response is binary, encode it via base64 before it is returned.
@@ -60,6 +68,14 @@ public class FunctionInvoker extends com.aliyun.ros.cdk.core.Resource implements
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrResultType() {
         return software.amazon.jsii.Kernel.get(this, "attrResultType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     * Attribute TaskId: Task id for async invocation.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTaskId() {
+        return software.amazon.jsii.Kernel.get(this, "attrTaskId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     @Override

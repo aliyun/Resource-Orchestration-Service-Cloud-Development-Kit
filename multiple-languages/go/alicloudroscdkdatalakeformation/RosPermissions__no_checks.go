@@ -96,6 +96,10 @@ func (j *jsiiProxy_RosPermissions) validateSetPermissionsParameters(val interfac
 	return nil
 }
 
+func (j *jsiiProxy_RosPermissions) validateSetRefreshUserSyncParameters(val interface{}) error {
+	return nil
+}
+
 func validateNewRosPermissionsParameters(scope alicloudroscdkcore.Construct, id *string, props *RosPermissionsProps, enableResourcePropertyConstraint *bool) error {
 	return nil
 }

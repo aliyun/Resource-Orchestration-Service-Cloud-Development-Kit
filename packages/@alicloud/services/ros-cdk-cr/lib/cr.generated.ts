@@ -9,11 +9,6 @@ import * as ros from '@alicloud/ros-cdk-core';
 export interface RosInstanceProps {
 
     /**
-     * @Property imageScanner: Security scan engine.
-     */
-    readonly imageScanner: string | ros.IResolvable;
-
-    /**
      * @Property instanceName: Instance name.The value contains 3 to 30 lowercase letters, digits, and delimiters "-"(it can not be first or last).
      */
     readonly instanceName: string | ros.IResolvable;
@@ -27,14 +22,19 @@ export interface RosInstanceProps {
     readonly instanceType: string | ros.IResolvable;
 
     /**
-     * @Property period: Prepaid cycle. The unit is Monthly, please enter an integer multiple of 12 for annual paid products.
+     * @Property imageScanner: Security scan engine.
      */
-    readonly period: number | ros.IResolvable;
+    readonly imageScanner?: string | ros.IResolvable;
 
     /**
      * @Property instanceStorageName: Custom OSS Bucket name.
      */
     readonly instanceStorageName?: string | ros.IResolvable;
+
+    /**
+     * @Property period: Prepaid cycle. The unit is Monthly, please enter an integer multiple of 12 for annual paid products.
+     */
+    readonly period?: number | ros.IResolvable;
 
     /**
      * @Property renewalStatus: Automatic renewal status, value:
@@ -76,7 +76,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
-    errors.collect(ros.propertyValidator('imageScanner', ros.requiredValidator)(properties.imageScanner));
     if(properties.imageScanner && (typeof properties.imageScanner) !== 'object') {
         errors.collect(ros.propertyValidator('imageScanner', ros.validateAllowedValues)({
           data: properties.imageScanner,
@@ -92,7 +91,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('renewalStatus', ros.validateString)(properties.renewalStatus));
     errors.collect(ros.propertyValidator('renewPeriod', ros.validateNumber)(properties.renewPeriod));
-    errors.collect(ros.propertyValidator('period', ros.requiredValidator)(properties.period));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
           data: properties.period,
@@ -125,11 +123,11 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      'ImageScanner': ros.stringToRosTemplate(properties.imageScanner),
       'InstanceName': ros.stringToRosTemplate(properties.instanceName),
       'InstanceType': ros.stringToRosTemplate(properties.instanceType),
-      'Period': ros.numberToRosTemplate(properties.period),
+      'ImageScanner': ros.stringToRosTemplate(properties.imageScanner),
       'InstanceStorageName': ros.stringToRosTemplate(properties.instanceStorageName),
+      'Period': ros.numberToRosTemplate(properties.period),
       'RenewalStatus': ros.stringToRosTemplate(properties.renewalStatus),
       'RenewPeriod': ros.numberToRosTemplate(properties.renewPeriod),
       'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
@@ -137,7 +135,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::Instance`, which is used to create a Container Registry Enterprise Edition instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::Instance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instance
  */
@@ -181,11 +179,6 @@ export class RosInstance extends ros.RosResource {
 
 
     /**
-     * @Property imageScanner: Security scan engine.
-     */
-    public imageScanner: string | ros.IResolvable;
-
-    /**
      * @Property instanceName: Instance name.The value contains 3 to 30 lowercase letters, digits, and delimiters "-"(it can not be first or last).
      */
     public instanceName: string | ros.IResolvable;
@@ -199,14 +192,19 @@ export class RosInstance extends ros.RosResource {
     public instanceType: string | ros.IResolvable;
 
     /**
-     * @Property period: Prepaid cycle. The unit is Monthly, please enter an integer multiple of 12 for annual paid products.
+     * @Property imageScanner: Security scan engine.
      */
-    public period: number | ros.IResolvable;
+    public imageScanner: string | ros.IResolvable | undefined;
 
     /**
      * @Property instanceStorageName: Custom OSS Bucket name.
      */
     public instanceStorageName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property period: Prepaid cycle. The unit is Monthly, please enter an integer multiple of 12 for annual paid products.
+     */
+    public period: number | ros.IResolvable | undefined;
 
     /**
      * @Property renewalStatus: Automatic renewal status, value:
@@ -242,11 +240,11 @@ export class RosInstance extends ros.RosResource {
         this.attrResourceGroupId = this.getAtt('ResourceGroupId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-        this.imageScanner = props.imageScanner;
         this.instanceName = props.instanceName;
         this.instanceType = props.instanceType;
-        this.period = props.period;
+        this.imageScanner = props.imageScanner;
         this.instanceStorageName = props.instanceStorageName;
+        this.period = props.period;
         this.renewalStatus = props.renewalStatus;
         this.renewPeriod = props.renewPeriod;
         this.resourceGroupId = props.resourceGroupId;
@@ -255,11 +253,11 @@ export class RosInstance extends ros.RosResource {
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
-            imageScanner: this.imageScanner,
             instanceName: this.instanceName,
             instanceType: this.instanceType,
-            period: this.period,
+            imageScanner: this.imageScanner,
             instanceStorageName: this.instanceStorageName,
+            period: this.period,
             renewalStatus: this.renewalStatus,
             renewPeriod: this.renewPeriod,
             resourceGroupId: this.resourceGroupId,
@@ -366,7 +364,7 @@ function rosInstanceEndpointAclPolicyPropsToRosTemplate(properties: any, enableR
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::InstanceEndpointAclPolicy`, which is used to create a whitelist policy for the public endpoint of an instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::InstanceEndpointAclPolicy`.
  * @Note This class does not contain additional functions, so it is recommended to use the `InstanceEndpointAclPolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instanceendpointaclpolicy
  */
@@ -544,7 +542,7 @@ function rosInstanceVpcEndpointLinkedVpcPropsToRosTemplate(properties: any, enab
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::InstanceVpcEndpointLinkedVpc`, which is used to associate a virtual private cloud (VPC) with a Container Registry instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::InstanceVpcEndpointLinkedVpc`.
  * @Note This class does not contain additional functions, so it is recommended to use the `InstanceVpcEndpointLinkedVpc` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instancevpcendpointlinkedvpc
  */
@@ -717,7 +715,7 @@ function rosNamespacePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::Namespace`, which is used to create a namespace.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::Namespace`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Namespace` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-namespace
  */
@@ -929,7 +927,7 @@ function rosRepositoryPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::Repository`, which is used to create an image repository.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::Repository`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Repository` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-repository
  */
@@ -1186,7 +1184,7 @@ function rosUserInfoPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::UserInfo`, which is used to create the information about a user.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::UserInfo`.
  * @Note This class does not contain additional functions, so it is recommended to use the `UserInfo` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-userinfo
  */

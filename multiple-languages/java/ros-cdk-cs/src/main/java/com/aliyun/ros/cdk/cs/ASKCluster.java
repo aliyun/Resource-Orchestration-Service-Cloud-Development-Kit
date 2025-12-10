@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::ASKCluster</code>, which is used to create a Container Service for Kubernetes (ACK) Serverless cluster.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::ASKCluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.782Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.019Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ASKCluster")
 public class ASKCluster extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cs.IASKCluster {
 
@@ -369,6 +369,31 @@ public class ASKCluster extends com.aliyun.ros.cdk.core.Resource implements com.
          */
         public Builder endpointPublicAccess(final com.aliyun.ros.cdk.core.IResolvable endpointPublicAccess) {
             this.props.endpointPublicAccess(endpointPublicAccess);
+            return this;
+        }
+
+        /**
+         * Property ipStack: The IP stack of the cluster.
+         * <p>
+         * Value: ipv4 (Single stack) or ipv6 (Dual Stack). Default value: ipv4
+         * <p>
+         * @return {@code this}
+         * @param ipStack Property ipStack: The IP stack of the cluster. This parameter is required.
+         */
+        public Builder ipStack(final java.lang.String ipStack) {
+            this.props.ipStack(ipStack);
+            return this;
+        }
+        /**
+         * Property ipStack: The IP stack of the cluster.
+         * <p>
+         * Value: ipv4 (Single stack) or ipv6 (Dual Stack). Default value: ipv4
+         * <p>
+         * @return {@code this}
+         * @param ipStack Property ipStack: The IP stack of the cluster. This parameter is required.
+         */
+        public Builder ipStack(final com.aliyun.ros.cdk.core.IResolvable ipStack) {
+            this.props.ipStack(ipStack);
             return this;
         }
 

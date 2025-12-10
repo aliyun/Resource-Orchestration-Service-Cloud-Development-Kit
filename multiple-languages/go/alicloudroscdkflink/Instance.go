@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::Flink::Instance`, which is used to create a subscription or pay-as-you-go Realtime Compute for Apache Flink instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::Flink::Instance`.
 type Instance interface {
 	alicloudroscdkcore.Resource
 	IInstance

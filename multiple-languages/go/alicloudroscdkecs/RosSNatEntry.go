@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SNatEntry`, which is used to configure the Source Network Address Translation (SNAT) table of a NAT gateway.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SNatEntry`.
 type RosSNatEntry interface {
 	alicloudroscdkcore.RosResource
 	AttrSNatEntryId() alicloudroscdkcore.IResolvable

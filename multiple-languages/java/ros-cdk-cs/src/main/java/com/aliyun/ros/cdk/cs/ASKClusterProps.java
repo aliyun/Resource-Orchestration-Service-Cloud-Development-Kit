@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-askcluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.785Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.022Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ASKClusterProps")
 @software.amazon.jsii.Jsii.Proxy(ASKClusterProps.Jsii$Proxy.class)
 public interface ASKClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -70,6 +70,15 @@ public interface ASKClusterProps extends software.amazon.jsii.JsiiSerializable {
      * false: If set to false, the API server on the public network will not be created, only the API server on the private network will be created.Default value: true.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEndpointPublicAccess() {
+        return null;
+    }
+
+    /**
+     * Property ipStack: The IP stack of the cluster.
+     * <p>
+     * Value: ipv4 (Single stack) or ipv6 (Dual Stack). Default value: ipv4
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIpStack() {
         return null;
     }
 
@@ -199,6 +208,7 @@ public interface ASKClusterProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object deletionProtection;
         java.lang.Object encryptionProviderKey;
         java.lang.Object endpointPublicAccess;
+        java.lang.Object ipStack;
         java.lang.Object kubernetesVersion;
         java.lang.Object maintenanceWindow;
         java.lang.Object privateZone;
@@ -372,6 +382,28 @@ public interface ASKClusterProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder endpointPublicAccess(com.aliyun.ros.cdk.core.IResolvable endpointPublicAccess) {
             this.endpointPublicAccess = endpointPublicAccess;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ASKClusterProps#getIpStack}
+         * @param ipStack Property ipStack: The IP stack of the cluster.
+         *                Value: ipv4 (Single stack) or ipv6 (Dual Stack). Default value: ipv4
+         * @return {@code this}
+         */
+        public Builder ipStack(java.lang.String ipStack) {
+            this.ipStack = ipStack;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ASKClusterProps#getIpStack}
+         * @param ipStack Property ipStack: The IP stack of the cluster.
+         *                Value: ipv4 (Single stack) or ipv6 (Dual Stack). Default value: ipv4
+         * @return {@code this}
+         */
+        public Builder ipStack(com.aliyun.ros.cdk.core.IResolvable ipStack) {
+            this.ipStack = ipStack;
             return this;
         }
 
@@ -677,6 +709,7 @@ public interface ASKClusterProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object deletionProtection;
         private final java.lang.Object encryptionProviderKey;
         private final java.lang.Object endpointPublicAccess;
+        private final java.lang.Object ipStack;
         private final java.lang.Object kubernetesVersion;
         private final java.lang.Object maintenanceWindow;
         private final java.lang.Object privateZone;
@@ -704,6 +737,7 @@ public interface ASKClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.encryptionProviderKey = software.amazon.jsii.Kernel.get(this, "encryptionProviderKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.endpointPublicAccess = software.amazon.jsii.Kernel.get(this, "endpointPublicAccess", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ipStack = software.amazon.jsii.Kernel.get(this, "ipStack", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.kubernetesVersion = software.amazon.jsii.Kernel.get(this, "kubernetesVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.maintenanceWindow = software.amazon.jsii.Kernel.get(this, "maintenanceWindow", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.privateZone = software.amazon.jsii.Kernel.get(this, "privateZone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -732,6 +766,7 @@ public interface ASKClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.deletionProtection = builder.deletionProtection;
             this.encryptionProviderKey = builder.encryptionProviderKey;
             this.endpointPublicAccess = builder.endpointPublicAccess;
+            this.ipStack = builder.ipStack;
             this.kubernetesVersion = builder.kubernetesVersion;
             this.maintenanceWindow = builder.maintenanceWindow;
             this.privateZone = builder.privateZone;
@@ -780,6 +815,11 @@ public interface ASKClusterProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getEndpointPublicAccess() {
             return this.endpointPublicAccess;
+        }
+
+        @Override
+        public final java.lang.Object getIpStack() {
+            return this.ipStack;
         }
 
         @Override
@@ -872,6 +912,9 @@ public interface ASKClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getEndpointPublicAccess() != null) {
                 data.set("endpointPublicAccess", om.valueToTree(this.getEndpointPublicAccess()));
             }
+            if (this.getIpStack() != null) {
+                data.set("ipStack", om.valueToTree(this.getIpStack()));
+            }
             if (this.getKubernetesVersion() != null) {
                 data.set("kubernetesVersion", om.valueToTree(this.getKubernetesVersion()));
             }
@@ -936,6 +979,7 @@ public interface ASKClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.deletionProtection != null ? !this.deletionProtection.equals(that.deletionProtection) : that.deletionProtection != null) return false;
             if (this.encryptionProviderKey != null ? !this.encryptionProviderKey.equals(that.encryptionProviderKey) : that.encryptionProviderKey != null) return false;
             if (this.endpointPublicAccess != null ? !this.endpointPublicAccess.equals(that.endpointPublicAccess) : that.endpointPublicAccess != null) return false;
+            if (this.ipStack != null ? !this.ipStack.equals(that.ipStack) : that.ipStack != null) return false;
             if (this.kubernetesVersion != null ? !this.kubernetesVersion.equals(that.kubernetesVersion) : that.kubernetesVersion != null) return false;
             if (this.maintenanceWindow != null ? !this.maintenanceWindow.equals(that.maintenanceWindow) : that.maintenanceWindow != null) return false;
             if (this.privateZone != null ? !this.privateZone.equals(that.privateZone) : that.privateZone != null) return false;
@@ -960,6 +1004,7 @@ public interface ASKClusterProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.deletionProtection != null ? this.deletionProtection.hashCode() : 0);
             result = 31 * result + (this.encryptionProviderKey != null ? this.encryptionProviderKey.hashCode() : 0);
             result = 31 * result + (this.endpointPublicAccess != null ? this.endpointPublicAccess.hashCode() : 0);
+            result = 31 * result + (this.ipStack != null ? this.ipStack.hashCode() : 0);
             result = 31 * result + (this.kubernetesVersion != null ? this.kubernetesVersion.hashCode() : 0);
             result = 31 * result + (this.maintenanceWindow != null ? this.maintenanceWindow.hashCode() : 0);
             result = 31 * result + (this.privateZone != null ? this.privateZone.hashCode() : 0);

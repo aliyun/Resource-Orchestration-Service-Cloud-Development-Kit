@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.amqp;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::AMQP::Binding</code>, which is used to bind a queue or an exchange to an exchange.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::AMQP::Binding</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:20.840Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:52.271Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.amqp.$Module.class, fqn = "@alicloud/ros-cdk-amqp.RosBinding")
 public class RosBinding extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -62,7 +62,7 @@ export interface IRoute extends ros.IResource {
     readonly attrRouteEntryId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Route`, which is used to create a custom route entry.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Route`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRoute`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-route
  */

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cs;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CS::ClusterNodePool</code>, which is used to create a node pool for a Container Service for Kubernetes (ACK) cluster.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CS::ClusterNodePool</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.898Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.121Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosClusterNodePool")
 public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -602,6 +602,13 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCategories() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getCategory() {
             return null;
         }
@@ -640,6 +647,7 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<DataDisksProperty> {
             java.lang.Object autoSnapshotPolicyId;
+            java.lang.Object categories;
             java.lang.Object category;
             java.lang.Object encrypted;
             java.lang.Object performanceLevel;
@@ -664,6 +672,28 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder autoSnapshotPolicyId(com.aliyun.ros.cdk.core.IResolvable autoSnapshotPolicyId) {
                 this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DataDisksProperty#getCategories}
+             * @param categories the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder categories(com.aliyun.ros.cdk.core.IResolvable categories) {
+                this.categories = categories;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DataDisksProperty#getCategories}
+             * @param categories the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder categories(java.util.List<? extends java.lang.Object> categories) {
+                this.categories = categories;
                 return this;
             }
 
@@ -774,6 +804,7 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DataDisksProperty {
             private final java.lang.Object autoSnapshotPolicyId;
+            private final java.lang.Object categories;
             private final java.lang.Object category;
             private final java.lang.Object encrypted;
             private final java.lang.Object performanceLevel;
@@ -786,6 +817,7 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
                 this.autoSnapshotPolicyId = software.amazon.jsii.Kernel.get(this, "autoSnapshotPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.categories = software.amazon.jsii.Kernel.get(this, "categories", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.category = software.amazon.jsii.Kernel.get(this, "category", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.encrypted = software.amazon.jsii.Kernel.get(this, "encrypted", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.performanceLevel = software.amazon.jsii.Kernel.get(this, "performanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -798,6 +830,7 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.autoSnapshotPolicyId = builder.autoSnapshotPolicyId;
+                this.categories = builder.categories;
                 this.category = builder.category;
                 this.encrypted = builder.encrypted;
                 this.performanceLevel = builder.performanceLevel;
@@ -807,6 +840,11 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final java.lang.Object getAutoSnapshotPolicyId() {
                 return this.autoSnapshotPolicyId;
+            }
+
+            @Override
+            public final java.lang.Object getCategories() {
+                return this.categories;
             }
 
             @Override
@@ -837,6 +875,9 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
 
                 if (this.getAutoSnapshotPolicyId() != null) {
                     data.set("autoSnapshotPolicyId", om.valueToTree(this.getAutoSnapshotPolicyId()));
+                }
+                if (this.getCategories() != null) {
+                    data.set("categories", om.valueToTree(this.getCategories()));
                 }
                 if (this.getCategory() != null) {
                     data.set("category", om.valueToTree(this.getCategory()));
@@ -869,6 +910,7 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
                 DataDisksProperty.Jsii$Proxy that = (DataDisksProperty.Jsii$Proxy) o;
 
                 if (this.autoSnapshotPolicyId != null ? !this.autoSnapshotPolicyId.equals(that.autoSnapshotPolicyId) : that.autoSnapshotPolicyId != null) return false;
+                if (this.categories != null ? !this.categories.equals(that.categories) : that.categories != null) return false;
                 if (this.category != null ? !this.category.equals(that.category) : that.category != null) return false;
                 if (this.encrypted != null ? !this.encrypted.equals(that.encrypted) : that.encrypted != null) return false;
                 if (this.performanceLevel != null ? !this.performanceLevel.equals(that.performanceLevel) : that.performanceLevel != null) return false;
@@ -878,6 +920,7 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final int hashCode() {
                 int result = this.autoSnapshotPolicyId != null ? this.autoSnapshotPolicyId.hashCode() : 0;
+                result = 31 * result + (this.categories != null ? this.categories.hashCode() : 0);
                 result = 31 * result + (this.category != null ? this.category.hashCode() : 0);
                 result = 31 * result + (this.encrypted != null ? this.encrypted.hashCode() : 0);
                 result = 31 * result + (this.performanceLevel != null ? this.performanceLevel.hashCode() : 0);

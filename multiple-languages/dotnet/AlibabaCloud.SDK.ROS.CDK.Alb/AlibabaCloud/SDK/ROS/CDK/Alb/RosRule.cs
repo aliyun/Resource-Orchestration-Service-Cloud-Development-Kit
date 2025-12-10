@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Alb
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::Rule`Use , which to create a forwarding rule.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::Rule`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Rule` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-rule
@@ -4947,21 +4947,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         public interface ITrafficLimitConfigProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: qps: Queries per second (QPS).
-            /// </remarks>
-            [JsiiProperty(name: "qps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            object Qps
-            {
-                get;
-            }
-
-            /// <remarks>
             /// <strong>Property</strong>: perIpQps: QPS per IP address.
             /// Note If both QPS and PerIpQps are set, make sure that the PerIpQps is smaller than the QPS.
             /// </remarks>
             [JsiiProperty(name: "perIpQps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
             object? PerIpQps
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: qps: Queries per second (QPS).
+            /// </remarks>
+            [JsiiProperty(name: "qps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Qps
             {
                 get
                 {
@@ -4977,15 +4981,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: qps: Queries per second (QPS).
-                /// </remarks>
-                [JsiiProperty(name: "qps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-                public object Qps
-                {
-                    get => GetInstanceProperty<object>()!;
-                }
-
-                /// <remarks>
                 /// <strong>Property</strong>: perIpQps: QPS per IP address.
                 /// Note If both QPS and PerIpQps are set, make sure that the PerIpQps is smaller than the QPS.
                 /// </remarks>
@@ -4995,65 +4990,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 {
                     get => GetInstanceProperty<object?>();
                 }
+
+                /// <remarks>
+                /// <strong>Property</strong>: qps: Queries per second (QPS).
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "qps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Qps
+                {
+                    get => GetInstanceProperty<object?>();
+                }
             }
         }
-        #pragma warning disable CS8618
-
         [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.RosRule.TrafficLimitConfigProperty")]
         public class TrafficLimitConfigProperty : AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.ITrafficLimitConfigProperty
         {
-            private object _qps;
-
-            /// <remarks>
-            /// <strong>Property</strong>: qps: Queries per second (QPS).
-            /// </remarks>
-            [JsiiProperty(name: "qps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object Qps
-            {
-                get => _qps;
-                set
-                {
-                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                    {
-                        switch (value)
-                        {
-                            case double cast_cd4240:
-                                break;
-                            case byte cast_cd4240:
-                                break;
-                            case decimal cast_cd4240:
-                                break;
-                            case float cast_cd4240:
-                                break;
-                            case int cast_cd4240:
-                                break;
-                            case long cast_cd4240:
-                                break;
-                            case sbyte cast_cd4240:
-                                break;
-                            case short cast_cd4240:
-                                break;
-                            case uint cast_cd4240:
-                                break;
-                            case ulong cast_cd4240:
-                                break;
-                            case ushort cast_cd4240:
-                                break;
-                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                                break;
-                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                                // Not enough information to type-check...
-                                break;
-                            case null:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
-                            default:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                        }
-                    }
-                    _qps = value;
-                }
-            }
-
             private object? _perIpQps;
 
             /// <remarks>
@@ -5107,6 +5058,59 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                     _perIpQps = value;
                 }
             }
+
+            private object? _qps;
+
+            /// <remarks>
+            /// <strong>Property</strong>: qps: Queries per second (QPS).
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "qps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Qps
+            {
+                get => _qps;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _qps = value;
+                }
+            }
         }
         [JsiiInterface(nativeType: typeof(ITrafficMirrorConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.TrafficMirrorConfigProperty")]
         public interface ITrafficMirrorConfigProperty
@@ -5114,10 +5118,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// <remarks>
             /// <strong>Property</strong>: mirrorGroupConfig: Traffic mirroring to server groups.
             /// </remarks>
-            [JsiiProperty(name: "mirrorGroupConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.MirrorGroupConfigProperty\"}]}}")]
-            object MirrorGroupConfig
+            [JsiiProperty(name: "mirrorGroupConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.MirrorGroupConfigProperty\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? MirrorGroupConfig
             {
-                get;
+                get
+                {
+                    return null;
+                }
             }
 
             /// <remarks>
@@ -5125,10 +5133,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// ForwardGroupMirror: a server group
             /// SlsMirror: Log Service
             /// </remarks>
-            [JsiiProperty(name: "targetType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            object TargetType
+            [JsiiProperty(name: "targetType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? TargetType
             {
-                get;
+                get
+                {
+                    return null;
+                }
             }
 
             [JsiiTypeProxy(nativeType: typeof(ITrafficMirrorConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.TrafficMirrorConfigProperty")]
@@ -5141,10 +5153,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 /// <remarks>
                 /// <strong>Property</strong>: mirrorGroupConfig: Traffic mirroring to server groups.
                 /// </remarks>
-                [JsiiProperty(name: "mirrorGroupConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.MirrorGroupConfigProperty\"}]}}")]
-                public object MirrorGroupConfig
+                [JsiiOptional]
+                [JsiiProperty(name: "mirrorGroupConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.MirrorGroupConfigProperty\"}]}}", isOptional: true)]
+                public object? MirrorGroupConfig
                 {
-                    get => GetInstanceProperty<object>()!;
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
@@ -5152,25 +5165,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 /// ForwardGroupMirror: a server group
                 /// SlsMirror: Log Service
                 /// </remarks>
-                [JsiiProperty(name: "targetType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-                public object TargetType
+                [JsiiOptional]
+                [JsiiProperty(name: "targetType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? TargetType
                 {
-                    get => GetInstanceProperty<object>()!;
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
-        #pragma warning disable CS8618
-
         [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.RosRule.TrafficMirrorConfigProperty")]
         public class TrafficMirrorConfigProperty : AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.ITrafficMirrorConfigProperty
         {
-            private object _mirrorGroupConfig;
+            private object? _mirrorGroupConfig;
 
             /// <remarks>
             /// <strong>Property</strong>: mirrorGroupConfig: Traffic mirroring to server groups.
             /// </remarks>
-            [JsiiProperty(name: "mirrorGroupConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.MirrorGroupConfigProperty\"}]}}")]
-            public object MirrorGroupConfig
+            [JsiiOptional]
+            [JsiiProperty(name: "mirrorGroupConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.MirrorGroupConfigProperty\"}]}}", isOptional: true)]
+            public object? MirrorGroupConfig
             {
                 get => _mirrorGroupConfig;
                 set
@@ -5187,7 +5200,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                                 // Not enough information to type-check...
                                 break;
                             case null:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IMirrorGroupConfigProperty).FullName}; received null", nameof(value));
+                                break;
                             default:
                                 throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IMirrorGroupConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
                         }
@@ -5196,15 +5209,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 }
             }
 
-            private object _targetType;
+            private object? _targetType;
 
             /// <remarks>
             /// <strong>Property</strong>: targetType: The type of destination to which network traffic is mirrored. Valid values:
             /// ForwardGroupMirror: a server group
             /// SlsMirror: Log Service
             /// </remarks>
-            [JsiiProperty(name: "targetType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object TargetType
+            [JsiiOptional]
+            [JsiiProperty(name: "targetType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? TargetType
             {
                 get => _targetType;
                 set
@@ -5221,7 +5235,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                                 // Not enough information to type-check...
                                 break;
                             case null:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                                break;
                             default:
                                 throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
                         }

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::LaunchTemplate`, which is used to query the information about a launch template.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::LaunchTemplate`.
 type LaunchTemplate interface {
 	alicloudroscdkcore.Resource
 	ILaunchTemplate

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::Namespaces`, which is used to query the information about namespaces.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::Namespaces`.
 type RosNamespaces interface {
 	alicloudroscdkcore.RosResource
 	AttrNamespaces() alicloudroscdkcore.IResolvable

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::ManagedEdgeKubernetesCluster</code>, which is used to create a Container Service for Kubernetes (ACK) Edge cluster.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::ManagedEdgeKubernetesCluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.846Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.071Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ManagedEdgeKubernetesCluster")
 public class ManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cs.IManagedEdgeKubernetesCluster {
 
@@ -398,6 +398,31 @@ public class ManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Resour
         }
 
         /**
+         * Property ipStack: The IP stack of the cluster.
+         * <p>
+         * Value: ipv4 (Single stack) or ipv6 (Dual Stack). Default value: ipv4
+         * <p>
+         * @return {@code this}
+         * @param ipStack Property ipStack: The IP stack of the cluster. This parameter is required.
+         */
+        public Builder ipStack(final java.lang.String ipStack) {
+            this.props.ipStack(ipStack);
+            return this;
+        }
+        /**
+         * Property ipStack: The IP stack of the cluster.
+         * <p>
+         * Value: ipv4 (Single stack) or ipv6 (Dual Stack). Default value: ipv4
+         * <p>
+         * @return {@code this}
+         * @param ipStack Property ipStack: The IP stack of the cluster. This parameter is required.
+         */
+        public Builder ipStack(final com.aliyun.ros.cdk.core.IResolvable ipStack) {
+            this.props.ipStack(ipStack);
+            return this;
+        }
+
+        /**
          * Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group.
          * <p>
          * This parameter takes effect only if security_group_id is left empty.
@@ -638,6 +663,27 @@ public class ManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Resour
          */
         public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * Property rrsaConfig: The configuration of RRSA.
+         * <p>
+         * @return {@code this}
+         * @param rrsaConfig Property rrsaConfig: The configuration of RRSA. This parameter is required.
+         */
+        public Builder rrsaConfig(final com.aliyun.ros.cdk.core.IResolvable rrsaConfig) {
+            this.props.rrsaConfig(rrsaConfig);
+            return this;
+        }
+        /**
+         * Property rrsaConfig: The configuration of RRSA.
+         * <p>
+         * @return {@code this}
+         * @param rrsaConfig Property rrsaConfig: The configuration of RRSA. This parameter is required.
+         */
+        public Builder rrsaConfig(final com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster.RrsaConfigProperty rrsaConfig) {
+            this.props.rrsaConfig(rrsaConfig);
             return this;
         }
 

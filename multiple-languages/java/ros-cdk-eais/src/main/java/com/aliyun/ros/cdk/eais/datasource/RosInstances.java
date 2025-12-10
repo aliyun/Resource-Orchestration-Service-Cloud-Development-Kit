@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.eais.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::EAIS::Instances</code>, which is used to query the information about created Elastic Accelerated Computing Instances (EAIS) instances.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::EAIS::Instances</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.666Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.882Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eais.$Module.class, fqn = "@alicloud/ros-cdk-eais.datasource.RosInstances")
 public class RosInstances extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -2626,7 +2626,7 @@ export interface RosZonesProps {
     readonly addressIpVersion?: string | ros.IResolvable;
 
     /**
-     * @Property addressType: The type of network.Valid values: vpc, classic_internet, and classic_intranet..
+     * @Property addressType: The type of network.Valid values:
      * vpc: an internal SLB instance that is deployed in a virtual private cloud (VPC).
      * classic_internet: a public-facing SLB instance.
      * classic_intranet: an internal SLB instance that is deployed in a classic network.
@@ -2715,7 +2715,7 @@ export class RosZones extends ros.RosResource {
     public addressIpVersion: string | ros.IResolvable | undefined;
 
     /**
-     * @Property addressType: The type of network.Valid values: vpc, classic_internet, and classic_intranet..
+     * @Property addressType: The type of network.Valid values:
      * vpc: an internal SLB instance that is deployed in a virtual private cloud (VPC).
      * classic_internet: a public-facing SLB instance.
      * classic_intranet: an internal SLB instance that is deployed in a classic network.

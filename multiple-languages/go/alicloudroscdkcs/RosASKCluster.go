@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ASKCluster`, which is used to create a Container Service for Kubernetes (ACK) Serverless cluster.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ASKCluster`.
 type RosASKCluster interface {
 	alicloudroscdkcore.RosResource
 	Addons() interface{}
@@ -41,6 +41,8 @@ type RosASKCluster interface {
 	SetEncryptionProviderKey(val interface{})
 	EndpointPublicAccess() interface{}
 	SetEndpointPublicAccess(val interface{})
+	IpStack() interface{}
+	SetIpStack(val interface{})
 	KubernetesVersion() interface{}
 	SetKubernetesVersion(val interface{})
 	// The logical ID for this stack element.
@@ -409,6 +411,16 @@ func (j *jsiiProxy_RosASKCluster) EndpointPublicAccess() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosASKCluster) IpStack() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"ipStack",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosASKCluster) KubernetesVersion() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -730,6 +742,17 @@ func (j *jsiiProxy_RosASKCluster)SetEndpointPublicAccess(val interface{}) {
 	_jsii_.Set(
 		j,
 		"endpointPublicAccess",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosASKCluster)SetIpStack(val interface{}) {
+	if err := j.validateSetIpStackParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"ipStack",
 		val,
 	)
 }

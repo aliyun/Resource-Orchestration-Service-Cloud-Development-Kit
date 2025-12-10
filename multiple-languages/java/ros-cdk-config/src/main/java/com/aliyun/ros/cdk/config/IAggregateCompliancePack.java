@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.config;
 /**
  * Represents a <code>AggregateCompliancePack</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.674Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.914Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.IAggregateCompliancePack")
 @software.amazon.jsii.Jsii.Proxy(IAggregateCompliancePack.Jsii$Proxy.class)
 public interface IAggregateCompliancePack extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

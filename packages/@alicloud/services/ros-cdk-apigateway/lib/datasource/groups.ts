@@ -55,7 +55,7 @@ export interface IGroups extends ros.IResource {
     readonly attrApiGroups: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ApiGateway::Groups`, which is used to query the information about existing API groups.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ApiGateway::Groups`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGroups`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-groups
  */

@@ -144,7 +144,7 @@ export interface ILoadBalancer extends ros.IResource {
     readonly attrZoneMappings: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::LoadBalancer`, which is used to create an Application Load Balancer (ALB) instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::LoadBalancer`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLoadBalancer`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-loadbalancer
  */

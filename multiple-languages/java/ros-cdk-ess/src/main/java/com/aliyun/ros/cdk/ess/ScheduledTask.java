@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ess;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ESS::ScheduledTask</code>, which is used to create a scheduled task by specifying properties.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ESS::ScheduledTask</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:25.835Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:56.942Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScheduledTask")
 public class ScheduledTask extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ess.IScheduledTask {
 
@@ -296,7 +296,8 @@ public class ScheduledTask extends com.aliyun.ros.cdk.core.Resource implements c
          * <ul>
          * <li>Daily: Recurrence interval by day for a scheduled task.</li>
          * <li>Weekly: Recurrence interval by week for a scheduled task.</li>
-         * <li>Monthly: Recurrence interval by month for a scheduled task.
+         * <li>Monthly: Recurrence interval by month for a scheduled task.</li>
+         * <li>Cron: The scheduled task is executed based on the specified cron expression.
          * RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.</li>
          * </ul>
          * <p>
@@ -315,7 +316,8 @@ public class ScheduledTask extends com.aliyun.ros.cdk.core.Resource implements c
          * <ul>
          * <li>Daily: Recurrence interval by day for a scheduled task.</li>
          * <li>Weekly: Recurrence interval by week for a scheduled task.</li>
-         * <li>Monthly: Recurrence interval by month for a scheduled task.
+         * <li>Monthly: Recurrence interval by month for a scheduled task.</li>
+         * <li>Cron: The scheduled task is executed based on the specified cron expression.
          * RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.</li>
          * </ul>
          * <p>
@@ -333,7 +335,8 @@ public class ScheduledTask extends com.aliyun.ros.cdk.core.Resource implements c
          * <ul>
          * <li>Daily: Only one value in the range [1,31] can be filled.</li>
          * <li>Weekly: Multiple values can be filled. The values of Sunday to Saturday are 0 to 6 in sequence. Multiple values shall be separated by a comma ",".</li>
-         * <li>Monthly: In the format of A-B. The value range of A and B is 1 to 31, and the B value must be greater than the A value.
+         * <li>Monthly: In the format of A-B. The value range of A and B is 1 to 31, and the B value must be greater than the A value.</li>
+         * <li>Cron: A cron expression is written in UTC time and consists of the following fields: minute, hour, day, month, and week. The expression can contain the letters L and W and the following wildcard characters: commas (,), question marks (?), hyphens (-), asterisks (*), number signs (#), and forward slashes (/).
          * RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.</li>
          * </ul>
          * <p>
@@ -350,7 +353,8 @@ public class ScheduledTask extends com.aliyun.ros.cdk.core.Resource implements c
          * <ul>
          * <li>Daily: Only one value in the range [1,31] can be filled.</li>
          * <li>Weekly: Multiple values can be filled. The values of Sunday to Saturday are 0 to 6 in sequence. Multiple values shall be separated by a comma ",".</li>
-         * <li>Monthly: In the format of A-B. The value range of A and B is 1 to 31, and the B value must be greater than the A value.
+         * <li>Monthly: In the format of A-B. The value range of A and B is 1 to 31, and the B value must be greater than the A value.</li>
+         * <li>Cron: A cron expression is written in UTC time and consists of the following fields: minute, hour, day, month, and week. The expression can contain the letters L and W and the following wildcard characters: commas (,), question marks (?), hyphens (-), asterisks (*), number signs (#), and forward slashes (/).
          * RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.</li>
          * </ul>
          * <p>

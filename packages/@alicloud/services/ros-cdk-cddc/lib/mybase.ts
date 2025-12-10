@@ -156,7 +156,7 @@ export interface IMyBase extends ros.IResource {
     readonly attrOrderIds: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CDDC::MyBase`, which is used to create a host in a Proprietary MyBase dedicated cluster in ApsaraDB for MyBase.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CDDC::MyBase`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMyBase`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cddc-mybase
  */

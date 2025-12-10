@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cs;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CS::ClusterApplication</code>, which is used to deploy an application in a Container Service for Kubernetes (ACK) cluster.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CS::ClusterApplication</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.891Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.115Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosClusterApplication")
 public class RosClusterApplication extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -99,6 +99,24 @@ public class RosClusterApplication extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setYamlContent(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "yamlContent", java.util.Objects.requireNonNull(value, "yamlContent is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCreationMode() {
+        return software.amazon.jsii.Kernel.get(this, "creationMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setCreationMode(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "creationMode", value);
+    }
+
+    /**
+     */
+    public void setCreationMode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "creationMode", value);
     }
 
     /**
@@ -829,6 +847,23 @@ public class RosClusterApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder yamlContent(final com.aliyun.ros.cdk.core.IResolvable yamlContent) {
             this.props.yamlContent(yamlContent);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param creationMode This parameter is required.
+         */
+        public Builder creationMode(final java.lang.String creationMode) {
+            this.props.creationMode(creationMode);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param creationMode This parameter is required.
+         */
+        public Builder creationMode(final com.aliyun.ros.cdk.core.IResolvable creationMode) {
+            this.props.creationMode(creationMode);
             return this;
         }
 

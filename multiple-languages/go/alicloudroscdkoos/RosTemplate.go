@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Template`, which is used to create a template.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Template`.
 type RosTemplate interface {
 	alicloudroscdkcore.RosResource
 	AttrExecutionPolicy() alicloudroscdkcore.IResolvable
@@ -23,6 +23,8 @@ type RosTemplate interface {
 	CreationStack() *[]*string
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	IgnoreExisting() interface{}
+	SetIgnoreExisting(val interface{})
 	// The logical ID for this stack element.
 	//
 	// The logical ID of the element
@@ -239,6 +241,16 @@ func (j *jsiiProxy_RosTemplate) EnableResourcePropertyConstraint() *bool {
 	return returns
 }
 
+func (j *jsiiProxy_RosTemplate) IgnoreExisting() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"ignoreExisting",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosTemplate) LogicalId() *string {
 	var returns *string
 	_jsii_.Get(
@@ -395,6 +407,17 @@ func (j *jsiiProxy_RosTemplate)SetEnableResourcePropertyConstraint(val *bool) {
 	_jsii_.Set(
 		j,
 		"enableResourcePropertyConstraint",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosTemplate)SetIgnoreExisting(val interface{}) {
+	if err := j.validateSetIgnoreExistingParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"ignoreExisting",
 		val,
 	)
 }

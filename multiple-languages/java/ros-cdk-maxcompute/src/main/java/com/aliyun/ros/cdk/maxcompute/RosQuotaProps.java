@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.maxcompute;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-maxcompute-quota
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:26.867Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.024Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.maxcompute.$Module.class, fqn = "@alicloud/ros-cdk-maxcompute.RosQuotaProps")
 @software.amazon.jsii.Jsii.Proxy(RosQuotaProps.Jsii$Proxy.class)
 public interface RosQuotaProps extends software.amazon.jsii.JsiiSerializable {

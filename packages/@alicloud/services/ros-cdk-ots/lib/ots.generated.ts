@@ -1415,7 +1415,7 @@ function rosTablePropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::Table`, which is used to create a table based on a specified schema.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::Table`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Table` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-table
  */
@@ -1768,6 +1768,318 @@ function rosTableSecondaryIndicesPropertyToRosTemplate(properties: any): any {
       'Columns': ros.listMapper(ros.stringToRosTemplate)(properties.columns),
       'PrimaryKeys': ros.listMapper(ros.stringToRosTemplate)(properties.primaryKeys),
       'IndexType': ros.stringToRosTemplate(properties.indexType),
+    };
+}
+
+/**
+ * Properties for defining a `RosVCUInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-vcuinstance
+ */
+export interface RosVCUInstanceProps {
+
+    /**
+     * @Property clusterType: Cluster type (i.e. instance specification).
+     * Enumeration values:
+     * SSD: High performance.
+     * HYBRID: Capacity type.
+     */
+    readonly clusterType: string | ros.IResolvable;
+
+    /**
+     * @Property periodInMonth: Purchase duration. Unit: month. Value range: 1~24.
+     */
+    readonly periodInMonth: number | ros.IResolvable;
+
+    /**
+     * @Property vcu: Number of VCU units. Value range: 0~2000.
+     */
+    readonly vcu: number | ros.IResolvable;
+
+    /**
+     * @Property aliasName: Instance alias name.
+     */
+    readonly aliasName?: string | ros.IResolvable;
+
+    /**
+     * @Property autoRenewPeriodInMonth: Automatic renewal cycle. When automatic renewal is enabled, it is required. Value range: 1~24.
+     */
+    readonly autoRenewPeriodInMonth?: number | ros.IResolvable;
+
+    /**
+     * @Property enableAutoRenew: Whether to enable automatic renewal.
+     */
+    readonly enableAutoRenew?: boolean | ros.IResolvable;
+
+    /**
+     * @Property enableElasticVcu: Whether to enable instance elasticity. If elasticity is enabled, the peak VCU usage of the instance can exceed the purchased VCU amount, but there will be additional charges.
+     */
+    readonly enableElasticVcu?: boolean | ros.IResolvable;
+
+    /**
+     * @Property instanceDescription: Instance description.
+     */
+    readonly instanceDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: Resource Group ID.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: The list of instance tags in the form of key\/value pairs.
+     * You can define a maximum of 20 tags for instance.
+     */
+    readonly tags?: RosVCUInstance.TagsProperty[];
+}
+
+/**
+ * Determine whether the given properties match those of a `RosVCUInstanceProps`
+ *
+ * @param properties - the TypeScript properties of a `RosVCUInstanceProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosVCUInstancePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('enableElasticVcu', ros.validateBoolean)(properties.enableElasticVcu));
+    errors.collect(ros.propertyValidator('periodInMonth', ros.requiredValidator)(properties.periodInMonth));
+    if(properties.periodInMonth && (typeof properties.periodInMonth) !== 'object') {
+        errors.collect(ros.propertyValidator('periodInMonth', ros.validateRange)({
+            data: properties.periodInMonth,
+            min: 1,
+            max: 24,
+          }));
+    }
+    errors.collect(ros.propertyValidator('periodInMonth', ros.validateNumber)(properties.periodInMonth));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('aliasName', ros.validateString)(properties.aliasName));
+    errors.collect(ros.propertyValidator('vcu', ros.requiredValidator)(properties.vcu));
+    if(properties.vcu && (typeof properties.vcu) !== 'object') {
+        errors.collect(ros.propertyValidator('vcu', ros.validateRange)({
+            data: properties.vcu,
+            min: 0,
+            max: 2000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('vcu', ros.validateNumber)(properties.vcu));
+    if(properties.autoRenewPeriodInMonth && (typeof properties.autoRenewPeriodInMonth) !== 'object') {
+        errors.collect(ros.propertyValidator('autoRenewPeriodInMonth', ros.validateRange)({
+            data: properties.autoRenewPeriodInMonth,
+            min: 1,
+            max: 24,
+          }));
+    }
+    errors.collect(ros.propertyValidator('autoRenewPeriodInMonth', ros.validateNumber)(properties.autoRenewPeriodInMonth));
+    errors.collect(ros.propertyValidator('instanceDescription', ros.validateString)(properties.instanceDescription));
+    errors.collect(ros.propertyValidator('clusterType', ros.requiredValidator)(properties.clusterType));
+    if(properties.clusterType && (typeof properties.clusterType) !== 'object') {
+        errors.collect(ros.propertyValidator('clusterType', ros.validateAllowedValues)({
+          data: properties.clusterType,
+          allowedValues: ["SSD","HYBRID"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('clusterType', ros.validateString)(properties.clusterType));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosVCUInstance_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('enableAutoRenew', ros.validateBoolean)(properties.enableAutoRenew));
+    return errors.wrap('supplied properties not correct for "RosVCUInstanceProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OTS::VCUInstance` resource
+ *
+ * @param properties - the TypeScript properties of a `RosVCUInstanceProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OTS::VCUInstance` resource.
+ */
+// @ts-ignore TS6133
+function rosVCUInstancePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosVCUInstancePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ClusterType': ros.stringToRosTemplate(properties.clusterType),
+      'PeriodInMonth': ros.numberToRosTemplate(properties.periodInMonth),
+      'VCU': ros.numberToRosTemplate(properties.vcu),
+      'AliasName': ros.stringToRosTemplate(properties.aliasName),
+      'AutoRenewPeriodInMonth': ros.numberToRosTemplate(properties.autoRenewPeriodInMonth),
+      'EnableAutoRenew': ros.booleanToRosTemplate(properties.enableAutoRenew),
+      'EnableElasticVCU': ros.booleanToRosTemplate(properties.enableElasticVcu),
+      'InstanceDescription': ros.stringToRosTemplate(properties.instanceDescription),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.listMapper(rosVCUInstanceTagsPropertyToRosTemplate)(properties.tags),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::VCUInstance`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `VCUInstance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-vcuinstance
+ */
+export class RosVCUInstance extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OTS::VCUInstance";
+
+    /**
+     * @Attribute InstanceName: Name of the tablestore VCU instance.
+     */
+    public readonly attrInstanceName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property clusterType: Cluster type (i.e. instance specification).
+     * Enumeration values:
+     * SSD: High performance.
+     * HYBRID: Capacity type.
+     */
+    public clusterType: string | ros.IResolvable;
+
+    /**
+     * @Property periodInMonth: Purchase duration. Unit: month. Value range: 1~24.
+     */
+    public periodInMonth: number | ros.IResolvable;
+
+    /**
+     * @Property vcu: Number of VCU units. Value range: 0~2000.
+     */
+    public vcu: number | ros.IResolvable;
+
+    /**
+     * @Property aliasName: Instance alias name.
+     */
+    public aliasName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property autoRenewPeriodInMonth: Automatic renewal cycle. When automatic renewal is enabled, it is required. Value range: 1~24.
+     */
+    public autoRenewPeriodInMonth: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property enableAutoRenew: Whether to enable automatic renewal.
+     */
+    public enableAutoRenew: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property enableElasticVcu: Whether to enable instance elasticity. If elasticity is enabled, the peak VCU usage of the instance can exceed the purchased VCU amount, but there will be additional charges.
+     */
+    public enableElasticVcu: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceDescription: Instance description.
+     */
+    public instanceDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: Resource Group ID.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: The list of instance tags in the form of key\/value pairs.
+     * You can define a maximum of 20 tags for instance.
+     */
+    public tags: RosVCUInstance.TagsProperty[] | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosVCUInstanceProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosVCUInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrInstanceName = this.getAtt('InstanceName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.clusterType = props.clusterType;
+        this.periodInMonth = props.periodInMonth;
+        this.vcu = props.vcu;
+        this.aliasName = props.aliasName;
+        this.autoRenewPeriodInMonth = props.autoRenewPeriodInMonth;
+        this.enableAutoRenew = props.enableAutoRenew;
+        this.enableElasticVcu = props.enableElasticVcu;
+        this.instanceDescription = props.instanceDescription;
+        this.resourceGroupId = props.resourceGroupId;
+        this.tags = props.tags;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            clusterType: this.clusterType,
+            periodInMonth: this.periodInMonth,
+            vcu: this.vcu,
+            aliasName: this.aliasName,
+            autoRenewPeriodInMonth: this.autoRenewPeriodInMonth,
+            enableAutoRenew: this.enableAutoRenew,
+            enableElasticVcu: this.enableElasticVcu,
+            instanceDescription: this.instanceDescription,
+            resourceGroupId: this.resourceGroupId,
+            tags: this.tags,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosVCUInstancePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosVCUInstance {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: The value of the tag.
+         */
+        readonly value: string | ros.IResolvable;
+        /**
+         * @Property key: The keyword of the tag.
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosVCUInstance_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.requiredValidator)(properties.value));
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OTS::VCUInstance.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OTS::VCUInstance.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosVCUInstanceTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosVCUInstance_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 

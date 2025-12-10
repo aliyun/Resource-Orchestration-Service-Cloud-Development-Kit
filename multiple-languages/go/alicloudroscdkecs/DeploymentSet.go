@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::DeploymentSet`, which is used to create a deployment set in a region.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::DeploymentSet`.
 type DeploymentSet interface {
 	alicloudroscdkcore.Resource
 	IDeploymentSet

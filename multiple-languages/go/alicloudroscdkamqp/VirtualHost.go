@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::AMQP::VirtualHost`, which is used to create a vhost.
+// This class encapsulates and extends the ROS resource type `ALIYUN::AMQP::VirtualHost`.
 type VirtualHost interface {
 	alicloudroscdkcore.Resource
 	IVirtualHost

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::FC::Triggers`, which is used to query triggers.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::FC::Triggers`.
 type Triggers interface {
 	alicloudroscdkcore.Resource
 	ITriggers

@@ -9,16 +9,15 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Cluster`, which is used to create a cluster.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Cluster`.
 type RosCluster interface {
 	alicloudroscdkcore.RosResource
-	AcceptLanguage() interface{}
-	SetAcceptLanguage(val interface{})
 	AclEntryList() interface{}
 	SetAclEntryList(val interface{})
 	AttrAclEntryList() alicloudroscdkcore.IResolvable
 	AttrAclId() alicloudroscdkcore.IResolvable
 	AttrAppVersion() alicloudroscdkcore.IResolvable
+	AttrArn() alicloudroscdkcore.IResolvable
 	AttrClusterAliasName() alicloudroscdkcore.IResolvable
 	AttrClusterId() alicloudroscdkcore.IResolvable
 	AttrClusterName() alicloudroscdkcore.IResolvable
@@ -48,6 +47,8 @@ type RosCluster interface {
 	AttrPubNetworkFlow() alicloudroscdkcore.IResolvable
 	AttrVpcId() alicloudroscdkcore.IResolvable
 	AttrVSwitchId() alicloudroscdkcore.IResolvable
+	ChargeType() interface{}
+	SetChargeType(val interface{})
 	ClusterAliasName() interface{}
 	SetClusterAliasName(val interface{})
 	ClusterSpecification() interface{}
@@ -62,8 +63,8 @@ type RosCluster interface {
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
 	CreationStack() *[]*string
-	DiskType() interface{}
-	SetDiskType(val interface{})
+	EipEnabled() interface{}
+	SetEipEnabled(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
 	InstanceCount() interface{}
@@ -84,12 +85,8 @@ type RosCluster interface {
 	SetNetType(val interface{})
 	// The construct tree node associated with this construct.
 	Node() alicloudroscdkcore.ConstructNode
-	PrivateSlbSpecification() interface{}
-	SetPrivateSlbSpecification(val interface{})
 	PubNetworkFlow() interface{}
 	SetPubNetworkFlow(val interface{})
-	PubSlbSpecification() interface{}
-	SetPubSlbSpecification(val interface{})
 	// Return a string that will be resolved to a RosTemplate `{ Ref }` for this element.
 	//
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
@@ -104,6 +101,8 @@ type RosCluster interface {
 	RosProperties() *map[string]interface{}
 	// ROS resource type.
 	RosResourceType() *string
+	SecurityGroupType() interface{}
+	SetSecurityGroupType(val interface{})
 	// The stack in which this element is defined.
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
@@ -238,16 +237,6 @@ type jsiiProxy_RosCluster struct {
 	internal.Type__alicloudroscdkcoreRosResource
 }
 
-func (j *jsiiProxy_RosCluster) AcceptLanguage() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"acceptLanguage",
-		&returns,
-	)
-	return returns
-}
-
 func (j *jsiiProxy_RosCluster) AclEntryList() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -283,6 +272,16 @@ func (j *jsiiProxy_RosCluster) AttrAppVersion() alicloudroscdkcore.IResolvable {
 	_jsii_.Get(
 		j,
 		"attrAppVersion",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosCluster) AttrArn() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrArn",
 		&returns,
 	)
 	return returns
@@ -578,6 +577,16 @@ func (j *jsiiProxy_RosCluster) AttrVSwitchId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
+func (j *jsiiProxy_RosCluster) ChargeType() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"chargeType",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosCluster) ClusterAliasName() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -638,11 +647,11 @@ func (j *jsiiProxy_RosCluster) CreationStack() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_RosCluster) DiskType() interface{} {
+func (j *jsiiProxy_RosCluster) EipEnabled() interface{} {
 	var returns interface{}
 	_jsii_.Get(
 		j,
-		"diskType",
+		"eipEnabled",
 		&returns,
 	)
 	return returns
@@ -708,31 +717,11 @@ func (j *jsiiProxy_RosCluster) Node() alicloudroscdkcore.ConstructNode {
 	return returns
 }
 
-func (j *jsiiProxy_RosCluster) PrivateSlbSpecification() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"privateSlbSpecification",
-		&returns,
-	)
-	return returns
-}
-
 func (j *jsiiProxy_RosCluster) PubNetworkFlow() interface{} {
 	var returns interface{}
 	_jsii_.Get(
 		j,
 		"pubNetworkFlow",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosCluster) PubSlbSpecification() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"pubSlbSpecification",
 		&returns,
 	)
 	return returns
@@ -793,6 +782,16 @@ func (j *jsiiProxy_RosCluster) RosResourceType() *string {
 	_jsii_.Get(
 		j,
 		"rosResourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosCluster) SecurityGroupType() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"securityGroupType",
 		&returns,
 	)
 	return returns
@@ -876,17 +875,6 @@ func NewRosCluster_Override(r RosCluster, scope alicloudroscdkcore.Construct, id
 	)
 }
 
-func (j *jsiiProxy_RosCluster)SetAcceptLanguage(val interface{}) {
-	if err := j.validateSetAcceptLanguageParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"acceptLanguage",
-		val,
-	)
-}
-
 func (j *jsiiProxy_RosCluster)SetAclEntryList(val interface{}) {
 	if err := j.validateSetAclEntryListParameters(val); err != nil {
 		panic(err)
@@ -894,6 +882,17 @@ func (j *jsiiProxy_RosCluster)SetAclEntryList(val interface{}) {
 	_jsii_.Set(
 		j,
 		"aclEntryList",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosCluster)SetChargeType(val interface{}) {
+	if err := j.validateSetChargeTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"chargeType",
 		val,
 	)
 }
@@ -953,13 +952,13 @@ func (j *jsiiProxy_RosCluster)SetConnectionType(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_RosCluster)SetDiskType(val interface{}) {
-	if err := j.validateSetDiskTypeParameters(val); err != nil {
+func (j *jsiiProxy_RosCluster)SetEipEnabled(val interface{}) {
+	if err := j.validateSetEipEnabledParameters(val); err != nil {
 		panic(err)
 	}
 	_jsii_.Set(
 		j,
-		"diskType",
+		"eipEnabled",
 		val,
 	)
 }
@@ -1008,17 +1007,6 @@ func (j *jsiiProxy_RosCluster)SetNetType(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_RosCluster)SetPrivateSlbSpecification(val interface{}) {
-	if err := j.validateSetPrivateSlbSpecificationParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"privateSlbSpecification",
-		val,
-	)
-}
-
 func (j *jsiiProxy_RosCluster)SetPubNetworkFlow(val interface{}) {
 	if err := j.validateSetPubNetworkFlowParameters(val); err != nil {
 		panic(err)
@@ -1026,17 +1014,6 @@ func (j *jsiiProxy_RosCluster)SetPubNetworkFlow(val interface{}) {
 	_jsii_.Set(
 		j,
 		"pubNetworkFlow",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosCluster)SetPubSlbSpecification(val interface{}) {
-	if err := j.validateSetPubSlbSpecificationParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"pubSlbSpecification",
 		val,
 	)
 }
@@ -1059,6 +1036,17 @@ func (j *jsiiProxy_RosCluster)SetResourceGroupId(val interface{}) {
 	_jsii_.Set(
 		j,
 		"resourceGroupId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosCluster)SetSecurityGroupType(val interface{}) {
+	if err := j.validateSetSecurityGroupTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"securityGroupType",
 		val,
 	)
 }

@@ -27,7 +27,7 @@ export interface IResourceGroupRelation extends ros.IResource {
     readonly props: ResourceGroupRelationProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DataWorks::ResourceGroupRelation`, which is used to associate a resource group with a workspace.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DataWorks::ResourceGroupRelation`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosResourceGroupRelation`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dataworks-resourcegrouprelation
  */

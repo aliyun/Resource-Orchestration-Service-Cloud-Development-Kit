@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ice;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ICE::InsertMediaToSearchLib</code>, which is used to add a media asset to a search library.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ICE::InsertMediaToSearchLib</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:26.535Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.703Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ice.$Module.class, fqn = "@alicloud/ros-cdk-ice.RosInsertMediaToSearchLib")
 public class RosInsertMediaToSearchLib extends com.aliyun.ros.cdk.core.RosResource {
 

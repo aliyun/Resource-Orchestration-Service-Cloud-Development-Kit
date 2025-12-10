@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::Account`, which is used to create a database account for an AnalyticDB for PostgreSQL instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::Account`.
 type Account interface {
 	alicloudroscdkcore.Resource
 	IAccount

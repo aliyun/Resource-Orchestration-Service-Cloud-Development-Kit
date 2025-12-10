@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ECS::InstanceGroup`, which is used to create Elastic Compute Service (ECS) instances that have the same configurations.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ECS::InstanceGroup`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstanceGroup`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroup
@@ -101,6 +101,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <summary>Attribute PublicIps: Public IP address list of created ecs instances.</summary>
         [JsiiProperty(name: "attrPublicIps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrPublicIps
+        {
+            get => GetInstanceProperty<object>()!;
+        }
+
+        /// <summary>Attribute RelatedOrderIds: The related order id list of created ecs instances.</summary>
+        [JsiiProperty(name: "attrRelatedOrderIds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrRelatedOrderIds
         {
             get => GetInstanceProperty<object>()!;
         }

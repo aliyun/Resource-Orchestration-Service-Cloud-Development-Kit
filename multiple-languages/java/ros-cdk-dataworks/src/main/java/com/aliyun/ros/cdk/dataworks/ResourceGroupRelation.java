@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.dataworks;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::DataWorks::ResourceGroupRelation</code>, which is used to associate a resource group with a workspace.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::DataWorks::ResourceGroupRelation</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.059Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.265Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dataworks.$Module.class, fqn = "@alicloud/ros-cdk-dataworks.ResourceGroupRelation")
 public class ResourceGroupRelation extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.dataworks.IResourceGroupRelation {
 

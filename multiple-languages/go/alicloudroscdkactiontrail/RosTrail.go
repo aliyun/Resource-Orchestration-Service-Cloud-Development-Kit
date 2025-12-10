@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ACTIONTRAIL::Trail`, which is used to create a trail to deliver events to Simple Log Service or Object Storage Service (OSS).
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ACTIONTRAIL::Trail`.
 type RosTrail interface {
 	alicloudroscdkcore.RosResource
 	AttrName() alicloudroscdkcore.IResolvable

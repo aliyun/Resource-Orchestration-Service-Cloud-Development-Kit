@@ -92,7 +92,7 @@ export interface IRoute extends ros.IResource {
     readonly attrRouteName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::APIG::Route`, which is used to create a route for an HTTP API.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::APIG::Route`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRoute`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-route
  */

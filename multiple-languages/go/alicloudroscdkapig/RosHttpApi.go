@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::HttpApi`, which is used to create an HTTP API.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::HttpApi`.
 type RosHttpApi interface {
 	alicloudroscdkcore.RosResource
 	AttrBasePath() alicloudroscdkcore.IResolvable

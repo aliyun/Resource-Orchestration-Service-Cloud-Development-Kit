@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::CEN::TransitRouters`, which is used to query the information about transit routers of a Cloud Enterprise Network (CEN) instance.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::CEN::TransitRouters`.
 type TransitRouters interface {
 	alicloudroscdkcore.Resource
 	ITransitRouters

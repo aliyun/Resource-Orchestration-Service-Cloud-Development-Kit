@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::DLF::Catalog`, which is used to create a catalog in Data Lake Formation (DLF).
+// This class is a base encapsulation around the ROS resource type `ALIYUN::DLF::Catalog`.
 type RosCatalog interface {
 	alicloudroscdkcore.RosResource
 	AttrCatalogId() alicloudroscdkcore.IResolvable

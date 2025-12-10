@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::DBS::BackupPlans`, which is used to query the information about backup schedules.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::DBS::BackupPlans`.
 type BackupPlans interface {
 	alicloudroscdkcore.Resource
 	IBackupPlans

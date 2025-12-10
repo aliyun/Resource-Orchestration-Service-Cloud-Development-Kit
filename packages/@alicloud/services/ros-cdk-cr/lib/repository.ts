@@ -82,7 +82,7 @@ export interface IRepository extends ros.IResource {
     readonly attrRepoType: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CR::Repository`, which is used to create an image repository.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CR::Repository`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRepository`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-repository
  */

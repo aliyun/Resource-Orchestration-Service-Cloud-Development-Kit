@@ -60,7 +60,7 @@ export interface IUser extends ros.IResource {
     readonly attrEndUserId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::EdsUser::User`, which is used to create a convenience user.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EdsUser::User`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUser`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edsuser-user
  */

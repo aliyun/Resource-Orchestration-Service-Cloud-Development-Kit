@@ -487,6 +487,10 @@ func init() {
 		reflect.TypeOf((*RosBucket_SetsProperty)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-oss.RosBucket.TransitionProperty",
+		reflect.TypeOf((*RosBucket_TransitionProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-oss.RosBucket.VersioningConfigurationProperty",
 		reflect.TypeOf((*RosBucket_VersioningConfigurationProperty)(nil)).Elem(),
 	)

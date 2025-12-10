@@ -44,7 +44,7 @@ export interface IKeyPair extends ros.IResource {
     readonly attrPrivateKeyBody: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ENS::KeyPair`, which is used to import the public key of a Rivest-Shamir-Adleman (RSA)-encrypted key pair.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ENS::KeyPair`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosKeyPair`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-keypair
  */

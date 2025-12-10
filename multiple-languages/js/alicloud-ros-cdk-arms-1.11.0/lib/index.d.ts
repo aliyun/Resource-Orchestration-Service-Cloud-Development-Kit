@@ -1,0 +1,11 @@
+export * from './addonrelease';
+export * from './applyalertruletemplate';
+export * from './delivertask';
+export * from './environment';
+export * from './environmentfeature';
+export * from './managedprometheus';
+export * from './prometheus';
+export * from './retcodeapp';
+export * from './xtraceapp';
+export * from './arms.generated';
+export * as datasource from './datasource';

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::ALB::LoadBalancers`, which is used to query the basic information about created Application Load Balancer (ALB) instances.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::ALB::LoadBalancers`.
 type RosLoadBalancers interface {
 	alicloudroscdkcore.RosResource
 	AddressType() interface{}

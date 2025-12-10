@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::DRDS::DrdsDB`, which is used to query the information about a single database on an instance.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::DRDS::DrdsDB`.
 type DrdsDB interface {
 	alicloudroscdkcore.Resource
 	IDrdsDB

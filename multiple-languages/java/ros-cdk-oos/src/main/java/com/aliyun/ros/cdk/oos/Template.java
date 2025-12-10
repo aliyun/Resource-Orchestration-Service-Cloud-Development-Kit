@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.oos;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::OOS::Template</code>, which is used to create a template.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::OOS::Template</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:27.352Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.559Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.Template")
 public class Template extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.oos.ITemplate {
 
@@ -174,6 +174,27 @@ public class Template extends com.aliyun.ros.cdk.core.Resource implements com.al
          */
         public Builder templateName(final com.aliyun.ros.cdk.core.IResolvable templateName) {
             this.props.templateName(templateName);
+            return this;
+        }
+
+        /**
+         * Property ignoreExisting: Whether to ignore existing template False: ROS will perform a uniqueness check.If a template with the same name exists, an error will be reported when creating it. True: ROS will not check the uniqueness.If there is a template with the same name, the template creation process will be ignored. If the template is not created by ROS, it will be ignored during update and delete stage.
+         * <p>
+         * @return {@code this}
+         * @param ignoreExisting Property ignoreExisting: Whether to ignore existing template False: ROS will perform a uniqueness check.If a template with the same name exists, an error will be reported when creating it. True: ROS will not check the uniqueness.If there is a template with the same name, the template creation process will be ignored. If the template is not created by ROS, it will be ignored during update and delete stage. This parameter is required.
+         */
+        public Builder ignoreExisting(final java.lang.Boolean ignoreExisting) {
+            this.props.ignoreExisting(ignoreExisting);
+            return this;
+        }
+        /**
+         * Property ignoreExisting: Whether to ignore existing template False: ROS will perform a uniqueness check.If a template with the same name exists, an error will be reported when creating it. True: ROS will not check the uniqueness.If there is a template with the same name, the template creation process will be ignored. If the template is not created by ROS, it will be ignored during update and delete stage.
+         * <p>
+         * @return {@code this}
+         * @param ignoreExisting Property ignoreExisting: Whether to ignore existing template False: ROS will perform a uniqueness check.If a template with the same name exists, an error will be reported when creating it. True: ROS will not check the uniqueness.If there is a template with the same name, the template creation process will be ignored. If the template is not created by ROS, it will be ignored during update and delete stage. This parameter is required.
+         */
+        public Builder ignoreExisting(final com.aliyun.ros.cdk.core.IResolvable ignoreExisting) {
+            this.props.ignoreExisting(ignoreExisting);
             return this;
         }
 

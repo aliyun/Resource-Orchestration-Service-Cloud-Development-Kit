@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nlb.datasource;
 /**
  * Represents a <code>LoadBalancers</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:27.253Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.477Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.datasource.ILoadBalancers")
 @software.amazon.jsii.Jsii.Proxy(ILoadBalancers.Jsii$Proxy.class)
 public interface ILoadBalancers extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

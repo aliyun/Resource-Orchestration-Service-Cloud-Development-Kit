@@ -59,6 +59,16 @@ export interface ClusterProps {
     readonly ipStack?: string | ros.IResolvable;
 
     /**
+     * Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group. 
+     * This parameter takes effect only if security_group_id is left empty.
+     * Note You must specify an advanced security group for a cluster that has Terway installed.
+     * true: creates an advanced security group.
+     * false: does not create an advanced security group.
+     * Default value: false.
+     */
+    readonly isEnterpriseSecurityGroup?: boolean | ros.IResolvable;
+
+    /**
      * Property kubernetesVersion: The version of the Kubernetes cluster.
      */
     readonly kubernetesVersion?: string | ros.IResolvable;
@@ -220,7 +230,7 @@ export interface ICluster extends ros.IResource {
     readonly attrWorkerRamRoleName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ACS::Cluster`, which is used to create a Container Compute Service (ACS) cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ACS::Cluster`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acs-cluster
  */
@@ -298,30 +308,31 @@ export class Cluster extends ros.Resource implements ICluster {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCluster = new RosCluster(this, id,  {
-            kubernetesVersion: props.kubernetesVersion,
             endpointPublicAccess: props.endpointPublicAccess === undefined || props.endpointPublicAccess === null ? false : props.endpointPublicAccess,
-            podPostpaidSpec: props.podPostpaidSpec,
-            deleteOptions: props.deleteOptions,
             resourceGroupId: props.resourceGroupId,
-            vSwitchIds: props.vSwitchIds,
             addons: props.addons,
             podVSwitchIds: props.podVSwitchIds,
-            clusterSpec: props.clusterSpec === undefined || props.clusterSpec === null ? 'ack.pro.small' : props.clusterSpec,
-            deletionProtection: props.deletionProtection,
             loggingType: props.loggingType,
             ipStack: props.ipStack,
             name: props.name,
             loadBalancerSpec: props.loadBalancerSpec,
+            isEnterpriseSecurityGroup: props.isEnterpriseSecurityGroup,
+            slsProjectName: props.slsProjectName,
+            serviceCidr: props.serviceCidr === undefined || props.serviceCidr === null ? '172.19.0.0/20' : props.serviceCidr,
+            zoneIds: props.zoneIds,
+            tags: props.tags,
+            kubernetesVersion: props.kubernetesVersion,
+            podPostpaidSpec: props.podPostpaidSpec,
+            deleteOptions: props.deleteOptions,
+            vSwitchIds: props.vSwitchIds,
+            clusterSpec: props.clusterSpec === undefined || props.clusterSpec === null ? 'ack.pro.small' : props.clusterSpec,
+            deletionProtection: props.deletionProtection,
             timeZone: props.timeZone,
             serviceDiscoveryTypes: props.serviceDiscoveryTypes,
             vpcId: props.vpcId,
-            slsProjectName: props.slsProjectName,
             computeClass: props.computeClass,
-            serviceCidr: props.serviceCidr === undefined || props.serviceCidr === null ? '172.19.0.0/20' : props.serviceCidr,
             snatEntry: props.snatEntry === undefined || props.snatEntry === null ? true : props.snatEntry,
             maintenanceWindow: props.maintenanceWindow,
-            zoneIds: props.zoneIds,
-            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosCluster;
         this.attrApiServerSlbId = rosCluster.attrApiServerSlbId;

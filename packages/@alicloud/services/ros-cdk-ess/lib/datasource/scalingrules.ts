@@ -73,7 +73,7 @@ export interface IScalingRules extends ros.IResource {
     readonly attrScalingRules: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ESS::ScalingRules`, which are used to query the information about scaling rules.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ESS::ScalingRules`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosScalingRules`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ess-scalingrules
  */

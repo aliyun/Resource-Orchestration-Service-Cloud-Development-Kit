@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::EMR::Cluster2`, which is used to query E-MapReduce (EMR) clusters.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::EMR::Cluster2`.
 type Cluster2 interface {
 	alicloudroscdkcore.Resource
 	ICluster2

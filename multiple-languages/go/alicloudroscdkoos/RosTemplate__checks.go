@@ -263,6 +263,23 @@ func (j *jsiiProxy_RosTemplate) validateSetEnableResourcePropertyConstraintParam
 	return nil
 }
 
+func (j *jsiiProxy_RosTemplate) validateSetIgnoreExistingParameters(val interface{}) error {
+	switch val.(type) {
+	case *bool:
+		// ok
+	case bool:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *bool, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosTemplate) validateSetResourceGroupIdParameters(val interface{}) error {
 	switch val.(type) {
 	case *string:

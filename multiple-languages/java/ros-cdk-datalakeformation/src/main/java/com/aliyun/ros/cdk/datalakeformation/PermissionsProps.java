@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.datalakeformation;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-datalakeformation-permissions
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:23.039Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.248Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.datalakeformation.$Module.class, fqn = "@alicloud/ros-cdk-datalakeformation.PermissionsProps")
 @software.amazon.jsii.Jsii.Proxy(PermissionsProps.Jsii$Proxy.class)
 public interface PermissionsProps extends software.amazon.jsii.JsiiSerializable {
@@ -21,6 +21,15 @@ public interface PermissionsProps extends software.amazon.jsii.JsiiSerializable 
     @org.jetbrains.annotations.NotNull java.lang.Object getPermissions();
 
     /**
+     * Property refreshUserSync: Specifies whether to refresh user synchronization before creating permissions.
+     * <p>
+     * Newly created RAM users may not be immediately synchronized, requiring a refresh to ensure they are available. Set to true to enable user synchronization refresh, which may cause a 30-second wait. Set to false to skip the refresh and avoid the 30-second wait. Default value: false.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshUserSync() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link PermissionsProps}
      */
     static Builder builder() {
@@ -32,6 +41,7 @@ public interface PermissionsProps extends software.amazon.jsii.JsiiSerializable 
     public static final class Builder implements software.amazon.jsii.Builder<PermissionsProps> {
         java.lang.Object catalogId;
         java.lang.Object permissions;
+        java.lang.Object refreshUserSync;
 
         /**
          * Sets the value of {@link PermissionsProps#getCatalogId}
@@ -74,6 +84,28 @@ public interface PermissionsProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link PermissionsProps#getRefreshUserSync}
+         * @param refreshUserSync Property refreshUserSync: Specifies whether to refresh user synchronization before creating permissions.
+         *                        Newly created RAM users may not be immediately synchronized, requiring a refresh to ensure they are available. Set to true to enable user synchronization refresh, which may cause a 30-second wait. Set to false to skip the refresh and avoid the 30-second wait. Default value: false.
+         * @return {@code this}
+         */
+        public Builder refreshUserSync(java.lang.Boolean refreshUserSync) {
+            this.refreshUserSync = refreshUserSync;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link PermissionsProps#getRefreshUserSync}
+         * @param refreshUserSync Property refreshUserSync: Specifies whether to refresh user synchronization before creating permissions.
+         *                        Newly created RAM users may not be immediately synchronized, requiring a refresh to ensure they are available. Set to true to enable user synchronization refresh, which may cause a 30-second wait. Set to false to skip the refresh and avoid the 30-second wait. Default value: false.
+         * @return {@code this}
+         */
+        public Builder refreshUserSync(com.aliyun.ros.cdk.core.IResolvable refreshUserSync) {
+            this.refreshUserSync = refreshUserSync;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link PermissionsProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -91,6 +123,7 @@ public interface PermissionsProps extends software.amazon.jsii.JsiiSerializable 
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements PermissionsProps {
         private final java.lang.Object catalogId;
         private final java.lang.Object permissions;
+        private final java.lang.Object refreshUserSync;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -100,6 +133,7 @@ public interface PermissionsProps extends software.amazon.jsii.JsiiSerializable 
             super(objRef);
             this.catalogId = software.amazon.jsii.Kernel.get(this, "catalogId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.permissions = software.amazon.jsii.Kernel.get(this, "permissions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshUserSync = software.amazon.jsii.Kernel.get(this, "refreshUserSync", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -109,6 +143,7 @@ public interface PermissionsProps extends software.amazon.jsii.JsiiSerializable 
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.catalogId = java.util.Objects.requireNonNull(builder.catalogId, "catalogId is required");
             this.permissions = java.util.Objects.requireNonNull(builder.permissions, "permissions is required");
+            this.refreshUserSync = builder.refreshUserSync;
         }
 
         @Override
@@ -122,6 +157,11 @@ public interface PermissionsProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.lang.Object getRefreshUserSync() {
+            return this.refreshUserSync;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -129,6 +169,9 @@ public interface PermissionsProps extends software.amazon.jsii.JsiiSerializable 
 
             data.set("catalogId", om.valueToTree(this.getCatalogId()));
             data.set("permissions", om.valueToTree(this.getPermissions()));
+            if (this.getRefreshUserSync() != null) {
+                data.set("refreshUserSync", om.valueToTree(this.getRefreshUserSync()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-datalakeformation.PermissionsProps"));
@@ -148,13 +191,15 @@ public interface PermissionsProps extends software.amazon.jsii.JsiiSerializable 
             PermissionsProps.Jsii$Proxy that = (PermissionsProps.Jsii$Proxy) o;
 
             if (!catalogId.equals(that.catalogId)) return false;
-            return this.permissions.equals(that.permissions);
+            if (!permissions.equals(that.permissions)) return false;
+            return this.refreshUserSync != null ? this.refreshUserSync.equals(that.refreshUserSync) : that.refreshUserSync == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.catalogId.hashCode();
             result = 31 * result + (this.permissions.hashCode());
+            result = 31 * result + (this.refreshUserSync != null ? this.refreshUserSync.hashCode() : 0);
             return result;
         }
     }

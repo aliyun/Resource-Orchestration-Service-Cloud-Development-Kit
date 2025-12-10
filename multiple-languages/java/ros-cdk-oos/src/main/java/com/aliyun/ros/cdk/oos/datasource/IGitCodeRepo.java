@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos.datasource;
 /**
  * Represents a <code>GitCodeRepo</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:27.356Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.563Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.datasource.IGitCodeRepo")
 @software.amazon.jsii.Jsii.Proxy(IGitCodeRepo.Jsii$Proxy.class)
 public interface IGitCodeRepo extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

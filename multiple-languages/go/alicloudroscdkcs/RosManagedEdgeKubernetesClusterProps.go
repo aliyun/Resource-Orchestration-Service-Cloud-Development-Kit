@@ -13,6 +13,7 @@ type RosManagedEdgeKubernetesClusterProps struct {
 	DeletionProtection interface{} `field:"optional" json:"deletionProtection" yaml:"deletionProtection"`
 	EncryptionProviderKey interface{} `field:"optional" json:"encryptionProviderKey" yaml:"encryptionProviderKey"`
 	EndpointPublicAccess interface{} `field:"optional" json:"endpointPublicAccess" yaml:"endpointPublicAccess"`
+	IpStack interface{} `field:"optional" json:"ipStack" yaml:"ipStack"`
 	IsEnterpriseSecurityGroup interface{} `field:"optional" json:"isEnterpriseSecurityGroup" yaml:"isEnterpriseSecurityGroup"`
 	KeyPair interface{} `field:"optional" json:"keyPair" yaml:"keyPair"`
 	KubernetesVersion interface{} `field:"optional" json:"kubernetesVersion" yaml:"kubernetesVersion"`
@@ -23,6 +24,7 @@ type RosManagedEdgeKubernetesClusterProps struct {
 	Profile interface{} `field:"optional" json:"profile" yaml:"profile"`
 	ProxyMode interface{} `field:"optional" json:"proxyMode" yaml:"proxyMode"`
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
+	RrsaConfig interface{} `field:"optional" json:"rrsaConfig" yaml:"rrsaConfig"`
 	ServiceCidr interface{} `field:"optional" json:"serviceCidr" yaml:"serviceCidr"`
 	SnatEntry interface{} `field:"optional" json:"snatEntry" yaml:"snatEntry"`
 	Tags *[]*RosManagedEdgeKubernetesCluster_TagsProperty `field:"optional" json:"tags" yaml:"tags"`

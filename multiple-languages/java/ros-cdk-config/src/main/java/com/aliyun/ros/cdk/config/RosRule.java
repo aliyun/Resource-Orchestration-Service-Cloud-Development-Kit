@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.config;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::Config::Rule</code>, which is used to create or modify a rule.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::Config::Rule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:22.707Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.947Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.RosRule")
 public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
 

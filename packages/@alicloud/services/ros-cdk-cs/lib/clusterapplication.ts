@@ -20,6 +20,13 @@ export interface ClusterApplicationProps {
     readonly yamlContent: string | ros.IResolvable;
 
     /**
+     * Property creationMode: Creation modes include:
+     * - Normal: create new resources, will report error if already exists.
+     * - Apply: similar to kubectl apply, create if not exists, update if exists. During the deletion phase, ROS will delete newly created application, but updated existing application will not be deleted.
+     */
+    readonly creationMode?: string | ros.IResolvable;
+
+    /**
      * Property defaultNamespace: The default namespace for the application, default value is default.
      * If a namespace is defined in yaml metadata, its priority is higher than DefaultNamespace.
      * If the DefaultNamespace does not exist, ROS will create it automatically and keep it by default during the delete phase.
@@ -77,7 +84,7 @@ export interface IClusterApplication extends ros.IResource {
     readonly attrWaitUntilData: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ClusterApplication`, which is used to deploy an application in a Container Service for Kubernetes (ACK) cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ClusterApplication`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClusterApplication`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterapplication
  */
@@ -111,6 +118,7 @@ export class ClusterApplication extends ros.Resource implements IClusterApplicat
 
         const rosClusterApplication = new RosClusterApplication(this, id,  {
             rolePolicy: props.rolePolicy === undefined || props.rolePolicy === null ? 'EnsureAdminRoleAndBinding' : props.rolePolicy,
+            creationMode: props.creationMode === undefined || props.creationMode === null ? 'Normal' : props.creationMode,
             yamlContent: props.yamlContent,
             clusterId: props.clusterId,
             defaultNamespace: props.defaultNamespace === undefined || props.defaultNamespace === null ? 'default' : props.defaultNamespace,

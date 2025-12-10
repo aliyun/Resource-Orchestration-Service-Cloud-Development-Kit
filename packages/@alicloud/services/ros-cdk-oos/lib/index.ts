@@ -1,3 +1,4 @@
+export * from './applicationgroupdeployment';
 export * from './defaultpatchbaseline';
 export * from './deployrevision';
 export * from './execution';

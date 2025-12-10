@@ -9,9 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SnapshotGroup`, which is used to create a snapshot-consistent group for cloud disks that are attached to an Elastic Compute Service (ECS) instance.
-//
-// A snapshot-consistent group contains snapshots of one or more cloud disks.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SnapshotGroup`.
 type RosSnapshotGroup interface {
 	alicloudroscdkcore.RosResource
 	AttrSnapshotGroupId() alicloudroscdkcore.IResolvable

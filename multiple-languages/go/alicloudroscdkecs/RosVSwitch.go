@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::VSwitch`, which is used to create a vSwitch.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::VSwitch`.
 type RosVSwitch interface {
 	alicloudroscdkcore.RosResource
 	AttrCidrBlock() alicloudroscdkcore.IResolvable

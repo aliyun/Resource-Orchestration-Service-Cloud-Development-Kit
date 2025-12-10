@@ -25,6 +25,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Datalakeformation
             get;
         }
 
+        /// <summary>Property refreshUserSync: Specifies whether to refresh user synchronization before creating permissions.</summary>
+        /// <remarks>
+        /// Newly created RAM users may not be immediately synchronized, requiring a refresh to ensure they are available. Set to true to enable user synchronization refresh, which may cause a 30-second wait. Set to false to skip the refresh and avoid the 30-second wait. Default value: false.
+        /// </remarks>
+        [JsiiProperty(name: "refreshUserSync", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? RefreshUserSync
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `Permissions`.</summary>
         /// <remarks>
         /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-datalakeformation-permissions
@@ -48,6 +62,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Datalakeformation
             public object Permissions
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property refreshUserSync: Specifies whether to refresh user synchronization before creating permissions.</summary>
+            /// <remarks>
+            /// Newly created RAM users may not be immediately synchronized, requiring a refresh to ensure they are available. Set to true to enable user synchronization refresh, which may cause a 30-second wait. Set to false to skip the refresh and avoid the 30-second wait. Default value: false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "refreshUserSync", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RefreshUserSync
+            {
+                get => GetInstanceProperty<object?>();
             }
         }
     }

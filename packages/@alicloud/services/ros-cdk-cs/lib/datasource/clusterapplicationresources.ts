@@ -65,7 +65,7 @@ export interface IClusterApplicationResources extends ros.IResource {
     readonly attrResponse: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::CS::ClusterApplicationResources`, which is used to query the information about resources of a specified type in a Container Service for Kubernetes (ACK) cluster.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CS::ClusterApplicationResources`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClusterApplicationResources`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-clusterapplicationresources
  */

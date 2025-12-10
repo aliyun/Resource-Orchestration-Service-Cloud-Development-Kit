@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cas;
 /**
  * Represents a <code>Order</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-09-28T10:11:21.640Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:52.957Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cas.$Module.class, fqn = "@alicloud/ros-cdk-cas.IOrder")
 @software.amazon.jsii.Jsii.Proxy(IOrder.Jsii$Proxy.class)
 public interface IOrder extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

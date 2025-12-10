@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::DMS::Instance2`, which is used to register a database instance in new Data Management (DMS).
+// This class encapsulates and extends the ROS resource type `ALIYUN::DMS::Instance2`.
 type Instance2 interface {
 	alicloudroscdkcore.Resource
 	IInstance2
