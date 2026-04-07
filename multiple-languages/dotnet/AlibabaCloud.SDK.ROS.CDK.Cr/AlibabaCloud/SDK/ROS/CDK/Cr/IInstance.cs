@@ -29,7 +29,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
             get;
         }
 
-        /// <summary>Attribute InstanceSpecification: InstanceSpecification.</summary>
+        /// <summary>Attribute InstanceSpecification: The instance specification.</summary>
         [JsiiProperty(name: "attrInstanceSpecification", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AttrInstanceSpecification
         {
@@ -85,7 +85,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Attribute InstanceSpecification: InstanceSpecification.</summary>
+            /// <summary>Attribute InstanceSpecification: The instance specification.</summary>
             [JsiiProperty(name: "attrInstanceSpecification", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AttrInstanceSpecification
             {

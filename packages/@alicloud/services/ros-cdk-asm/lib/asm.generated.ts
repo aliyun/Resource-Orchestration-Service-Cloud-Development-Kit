@@ -385,8 +385,8 @@ export interface RosServiceMeshProps {
 function RosServiceMeshPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('excludeInboundPorts', ros.validateString)(properties.excludeInboundPorts));
     errors.collect(ros.propertyValidator('opa', RosServiceMesh_OPAPropertyValidator)(properties.opa));
+    errors.collect(ros.propertyValidator('excludeInboundPorts', ros.validateString)(properties.excludeInboundPorts));
     errors.collect(ros.propertyValidator('dubboFilterEnabled', ros.validateBoolean)(properties.dubboFilterEnabled));
     errors.collect(ros.propertyValidator('prometheusUrl', ros.validateString)(properties.prometheusUrl));
     errors.collect(ros.propertyValidator('localityLoadBalancing', ros.validateBoolean)(properties.localityLoadBalancing));
@@ -410,9 +410,9 @@ function RosServiceMeshPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('dnsProxyingEnabled', ros.validateBoolean)(properties.dnsProxyingEnabled));
     errors.collect(ros.propertyValidator('opaEnabled', ros.validateBoolean)(properties.opaEnabled));
     errors.collect(ros.propertyValidator('existingCaType', ros.validateString)(properties.existingCaType));
-    errors.collect(ros.propertyValidator('excludeIpRanges', ros.validateString)(properties.excludeIpRanges));
     errors.collect(ros.propertyValidator('vSwitches', ros.requiredValidator)(properties.vSwitches));
     errors.collect(ros.propertyValidator('vSwitches', ros.listValidator(ros.validateAny))(properties.vSwitches));
+    errors.collect(ros.propertyValidator('excludeIpRanges', ros.validateString)(properties.excludeIpRanges));
     errors.collect(ros.propertyValidator('guestCluster', ros.validateString)(properties.guestCluster));
     errors.collect(ros.propertyValidator('accessLogServiceEnabled', ros.validateBoolean)(properties.accessLogServiceEnabled));
     errors.collect(ros.propertyValidator('localityLbConf', ros.validateString)(properties.localityLbConf));
@@ -428,12 +428,12 @@ function RosServiceMeshPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     errors.collect(ros.propertyValidator('accessLogServiceHost', ros.validateString)(properties.accessLogServiceHost));
     errors.collect(ros.propertyValidator('outboundTrafficPolicy', ros.validateString)(properties.outboundTrafficPolicy));
-    errors.collect(ros.propertyValidator('playgroundScene', ros.validateString)(properties.playgroundScene));
     errors.collect(ros.propertyValidator('edition', ros.validateString)(properties.edition));
+    errors.collect(ros.propertyValidator('playgroundScene', ros.validateString)(properties.playgroundScene));
     errors.collect(ros.propertyValidator('gatewayApiEnabled', ros.validateBoolean)(properties.gatewayApiEnabled));
+    errors.collect(ros.propertyValidator('includeIpRanges', ros.validateString)(properties.includeIpRanges));
     errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
-    errors.collect(ros.propertyValidator('includeIpRanges', ros.validateString)(properties.includeIpRanges));
     errors.collect(ros.propertyValidator('controlPlaneLogEnabled', ros.validateBoolean)(properties.controlPlaneLogEnabled));
     errors.collect(ros.propertyValidator('tracing', ros.validateBoolean)(properties.tracing));
     errors.collect(ros.propertyValidator('configSourceNacosId', ros.validateString)(properties.configSourceNacosId));
@@ -445,8 +445,8 @@ function RosServiceMeshPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('proxy', RosServiceMesh_ProxyPropertyValidator)(properties.proxy));
     errors.collect(ros.propertyValidator('customizedPrometheus', ros.validateBoolean)(properties.customizedPrometheus));
     errors.collect(ros.propertyValidator('multiBufferPollDelay', ros.validateString)(properties.multiBufferPollDelay));
-    errors.collect(ros.propertyValidator('mysqlFilterEnabled', ros.validateBoolean)(properties.mysqlFilterEnabled));
     errors.collect(ros.propertyValidator('enableSdsServer', ros.validateBoolean)(properties.enableSdsServer));
+    errors.collect(ros.propertyValidator('mysqlFilterEnabled', ros.validateBoolean)(properties.mysqlFilterEnabled));
     errors.collect(ros.propertyValidator('enableAmbient', ros.validateBoolean)(properties.enableAmbient));
     errors.collect(ros.propertyValidator('controlPlaneLogProject', ros.validateString)(properties.controlPlaneLogProject));
     if(properties.autoRenewPeriod && (typeof properties.autoRenewPeriod) !== 'object') {
@@ -461,6 +461,7 @@ function RosServiceMeshPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('accessLogProject', ros.validateString)(properties.accessLogProject));
     errors.collect(ros.propertyValidator('accessLogFormat', ros.validateString)(properties.accessLogFormat));
     errors.collect(ros.propertyValidator('filterGatewayClusterConfig', ros.validateBoolean)(properties.filterGatewayClusterConfig));
+    errors.collect(ros.propertyValidator('apiServerPublicEip', ros.validateBoolean)(properties.apiServerPublicEip));
     errors.collect(ros.propertyValidator('accessLogFile', ros.validateString)(properties.accessLogFile));
     if(properties.clusterSpec && (typeof properties.clusterSpec) !== 'object') {
         errors.collect(ros.propertyValidator('clusterSpec', ros.validateAllowedValues)({
@@ -469,15 +470,14 @@ function RosServiceMeshPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('clusterSpec', ros.validateString)(properties.clusterSpec));
-    errors.collect(ros.propertyValidator('apiServerPublicEip', ros.validateBoolean)(properties.apiServerPublicEip));
     errors.collect(ros.propertyValidator('telemetry', ros.validateBoolean)(properties.telemetry));
     errors.collect(ros.propertyValidator('auditProject', ros.validateString)(properties.auditProject));
     errors.collect(ros.propertyValidator('useExistingCa', ros.validateBoolean)(properties.useExistingCa));
     errors.collect(ros.propertyValidator('traceSampling', ros.validateNumber)(properties.traceSampling));
     errors.collect(ros.propertyValidator('enableCrHistory', ros.validateBoolean)(properties.enableCrHistory));
     errors.collect(ros.propertyValidator('kialiEnabled', ros.validateBoolean)(properties.kialiEnabled));
-    errors.collect(ros.propertyValidator('webAssemblyFilterEnabled', ros.validateBoolean)(properties.webAssemblyFilterEnabled));
     errors.collect(ros.propertyValidator('existingRootCaKey', ros.validateString)(properties.existingRootCaKey));
+    errors.collect(ros.propertyValidator('webAssemblyFilterEnabled', ros.validateBoolean)(properties.webAssemblyFilterEnabled));
     errors.collect(ros.propertyValidator('pilotPublicEip', ros.validateBoolean)(properties.pilotPublicEip));
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
@@ -489,9 +489,9 @@ function RosServiceMeshPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('crAggregationEnabled', ros.validateBoolean)(properties.crAggregationEnabled));
     errors.collect(ros.propertyValidator('excludeOutboundPorts', ros.validateString)(properties.excludeOutboundPorts));
     errors.collect(ros.propertyValidator('existingCaKey', ros.validateString)(properties.existingCaKey));
+    errors.collect(ros.propertyValidator('customizedZipkin', ros.validateBoolean)(properties.customizedZipkin));
     errors.collect(ros.propertyValidator('enableAcmg', ros.validateBoolean)(properties.enableAcmg));
     errors.collect(ros.propertyValidator('existingCaCert', ros.validateString)(properties.existingCaCert));
-    errors.collect(ros.propertyValidator('customizedZipkin', ros.validateBoolean)(properties.customizedZipkin));
     return errors.wrap('supplied properties not correct for "RosServiceMeshProps"');
 }
 
@@ -580,7 +580,7 @@ function rosServiceMeshPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ASM::ServiceMesh`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ASM::ServiceMesh`, which is used to create a Service Mesh (ASM) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `ServiceMesh` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-asm-servicemesh
  */

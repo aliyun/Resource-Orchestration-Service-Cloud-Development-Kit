@@ -6,6 +6,8 @@ package alicloudroscdkcloudfw
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-fwswitch
 type RosFwSwitchProps struct {
 	IpaddrList interface{} `field:"optional" json:"ipaddrList" yaml:"ipaddrList"`
+	IpVersion interface{} `field:"optional" json:"ipVersion" yaml:"ipVersion"`
+	MemberUid interface{} `field:"optional" json:"memberUid" yaml:"memberUid"`
 	RegionList interface{} `field:"optional" json:"regionList" yaml:"regionList"`
 	ResourceTypeList interface{} `field:"optional" json:"resourceTypeList" yaml:"resourceTypeList"`
 }

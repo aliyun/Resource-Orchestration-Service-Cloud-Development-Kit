@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::VOD::MessageCallback`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::VOD::MessageCallback`, which is used to configure the callback method, callback URL, and event types for event notifications.
 type MessageCallback interface {
 	alicloudroscdkcore.Resource
 	IMessageCallback

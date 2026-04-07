@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ram;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::RAM::Role</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::RAM::Role</code>The , which resource creates a RAM role.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:59.320Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:28.979Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.Role")
 public class Role extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ram.IRole, com.aliyun.ros.cdk.ram.IPrincipal {
 
@@ -336,6 +336,19 @@ public class Role extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
          */
         public Builder policyAttachments(final com.aliyun.ros.cdk.ram.RosRole.PolicyAttachmentsProperty policyAttachments) {
             this.props.policyAttachments(policyAttachments);
+            return this;
+        }
+
+        /**
+         * Property tags: Tags to attach to role.
+         * <p>
+         * Max support 20 tags to add during create role. Each tag with two properties Key and Value, and Key is required.
+         * <p>
+         * @return {@code this}
+         * @param tags Property tags: Tags to attach to role. This parameter is required.
+         */
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.ram.RosRole.TagsProperty> tags) {
+            this.props.tags(tags);
             return this;
         }
 

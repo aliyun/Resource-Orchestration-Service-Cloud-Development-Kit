@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.datalakeformation;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DataLakeFormation::Permissions</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DataLakeFormation::Permissions</code>The , which resource type is used to grant permissions in a batch.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.250Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:23.602Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.datalakeformation.$Module.class, fqn = "@alicloud/ros-cdk-datalakeformation.RosPermissions")
 public class RosPermissions extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -11,13 +11,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
     [JsiiInterface(nativeType: typeof(IVpnAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.VpnAttachmentProps")]
     public interface IVpnAttachmentProps
     {
-        /// <summary>Property customerGatewayId: The ID of the user gateway.</summary>
-        [JsiiProperty(name: "customerGatewayId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object CustomerGatewayId
-        {
-            get;
-        }
-
         /// <summary>Property localSubnet: A network segment on the VPC side that needs to be interconnected with the local IDC for the second phase negotiation.</summary>
         /// <remarks>
         /// Multiple network segments are separated by commas, for example: 192.168.1.0/24, 192.168.2.0/24.
@@ -71,6 +64,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
+        /// <summary>Property customerGatewayId: The ID of the user gateway.</summary>
+        [JsiiProperty(name: "customerGatewayId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? CustomerGatewayId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property effectImmediately: Whether to delete the currently negotiated IPsec tunnel and re-initiate the negotiation.</summary>
         /// <remarks>
         /// Value:
@@ -112,6 +116,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         [JsiiProperty(name: "enableNatTraversal", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? EnableNatTraversal
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property enableTunnelsBgp: Support configuring this parameter when creating dual-tunnel mode IPsec-VPN connections.</summary>
+        /// <remarks>
+        /// Whether to enable BGP function for the tunnel. Values: <strong>true</strong> or <strong>false</strong> (default value).
+        ///
+        ///     Before adding BGP configuration, it is recommended that you first understand the working mechanism and usage limitations of the BGP dynamic routing function. For more information, please see Configuring BGP Dynamic Routing.
+        /// </remarks>
+        [JsiiProperty(name: "enableTunnelsBgp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? EnableTunnelsBgp
         {
             get
             {
@@ -195,6 +215,51 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
+        /// <summary>Property resourceGroupId: The resource group ID to which the IPsec connection belongs.</summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <description>You can call the ListResourceGroups interface to query the resource group ID.</description>
+        /// <description>If you do not specify a resource group ID, the IPsec connection will belong to the default resource group after creation.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ResourceGroupId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property tunnelBandwidth: Used to indicate the bandwidth specification of a single VPN tunnel, values: Standard (default value): Standard type, default bandwidth 1Gbps Large: Large type, default bandwidth 3Gbps.</summary>
+        [JsiiProperty(name: "tunnelBandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? TunnelBandwidth
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property tunnelOptionsSpecification: Configuration of tunnels.</summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <description>When creating dual-tunnel mode IPsec-VPN connections, you can configure parameters under <strong>TunnelOptionsSpecification</strong> array.</description>
+        /// <description>When creating dual-tunnel mode IPsec-VPN connections, you must add two tunnels for the IPsec-VPN connection simultaneously to ensure the IPsec-VPN connection has link redundancy capability. Only two tunnels are supported under an IPsec-VPN connection.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiProperty(name: "tunnelOptionsSpecification", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-vpc.RosVpnAttachment.TunnelOptionsSpecificationProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? TunnelOptionsSpecification
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `VpnAttachment`.</summary>
         /// <remarks>
         /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnattachment
@@ -204,13 +269,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         {
             private _Proxy(ByRefValue reference): base(reference)
             {
-            }
-
-            /// <summary>Property customerGatewayId: The ID of the user gateway.</summary>
-            [JsiiProperty(name: "customerGatewayId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object CustomerGatewayId
-            {
-                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property localSubnet: A network segment on the VPC side that needs to be interconnected with the local IDC for the second phase negotiation.</summary>
@@ -260,6 +318,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property customerGatewayId: The ID of the user gateway.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "customerGatewayId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CustomerGatewayId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property effectImmediately: Whether to delete the currently negotiated IPsec tunnel and re-initiate the negotiation.</summary>
             /// <remarks>
             /// Value:
@@ -295,6 +361,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             [JsiiOptional]
             [JsiiProperty(name: "enableNatTraversal", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? EnableNatTraversal
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property enableTunnelsBgp: Support configuring this parameter when creating dual-tunnel mode IPsec-VPN connections.</summary>
+            /// <remarks>
+            /// Whether to enable BGP function for the tunnel. Values: <strong>true</strong> or <strong>false</strong> (default value).
+            ///
+            ///     Before adding BGP configuration, it is recommended that you first understand the working mechanism and usage limitations of the BGP dynamic routing function. For more information, please see Configuring BGP Dynamic Routing.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "enableTunnelsBgp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EnableTunnelsBgp
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -353,6 +432,42 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             [JsiiOptional]
             [JsiiProperty(name: "remoteCaCert", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RemoteCaCert
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property resourceGroupId: The resource group ID to which the IPsec connection belongs.</summary>
+            /// <remarks>
+            /// <list type="bullet">
+            /// <description>You can call the ListResourceGroups interface to query the resource group ID.</description>
+            /// <description>If you do not specify a resource group ID, the IPsec connection will belong to the default resource group after creation.</description>
+            /// </list>
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ResourceGroupId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property tunnelBandwidth: Used to indicate the bandwidth specification of a single VPN tunnel, values: Standard (default value): Standard type, default bandwidth 1Gbps Large: Large type, default bandwidth 3Gbps.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "tunnelBandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? TunnelBandwidth
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property tunnelOptionsSpecification: Configuration of tunnels.</summary>
+            /// <remarks>
+            /// <list type="bullet">
+            /// <description>When creating dual-tunnel mode IPsec-VPN connections, you can configure parameters under <strong>TunnelOptionsSpecification</strong> array.</description>
+            /// <description>When creating dual-tunnel mode IPsec-VPN connections, you must add two tunnels for the IPsec-VPN connection simultaneously to ensure the IPsec-VPN connection has link redundancy capability. Only two tunnels are supported under an IPsec-VPN connection.</description>
+            /// </list>
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tunnelOptionsSpecification", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-vpc.RosVpnAttachment.TunnelOptionsSpecificationProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? TunnelOptionsSpecification
             {
                 get => GetInstanceProperty<object?>();
             }

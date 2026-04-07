@@ -1,11 +1,16 @@
 @alicloud/ros-cdk-adb.Account=com.aliyun.ros.cdk.adb.Account
 @alicloud/ros-cdk-adb.AccountProps=com.aliyun.ros.cdk.adb.AccountProps
+@alicloud/ros-cdk-adb.BackupPolicy=com.aliyun.ros.cdk.adb.BackupPolicy
+@alicloud/ros-cdk-adb.BackupPolicyProps=com.aliyun.ros.cdk.adb.BackupPolicyProps
 @alicloud/ros-cdk-adb.DBCluster=com.aliyun.ros.cdk.adb.DBCluster
 @alicloud/ros-cdk-adb.DBClusterProps=com.aliyun.ros.cdk.adb.DBClusterProps
 @alicloud/ros-cdk-adb.IAccount=com.aliyun.ros.cdk.adb.IAccount
+@alicloud/ros-cdk-adb.IBackupPolicy=com.aliyun.ros.cdk.adb.IBackupPolicy
 @alicloud/ros-cdk-adb.IDBCluster=com.aliyun.ros.cdk.adb.IDBCluster
 @alicloud/ros-cdk-adb.RosAccount=com.aliyun.ros.cdk.adb.RosAccount
 @alicloud/ros-cdk-adb.RosAccountProps=com.aliyun.ros.cdk.adb.RosAccountProps
+@alicloud/ros-cdk-adb.RosBackupPolicy=com.aliyun.ros.cdk.adb.RosBackupPolicy
+@alicloud/ros-cdk-adb.RosBackupPolicyProps=com.aliyun.ros.cdk.adb.RosBackupPolicyProps
 @alicloud/ros-cdk-adb.RosDBCluster=com.aliyun.ros.cdk.adb.RosDBCluster
 @alicloud/ros-cdk-adb.RosDBCluster.TagsProperty=com.aliyun.ros.cdk.adb.RosDBCluster$TagsProperty
 @alicloud/ros-cdk-adb.RosDBClusterProps=com.aliyun.ros.cdk.adb.RosDBClusterProps

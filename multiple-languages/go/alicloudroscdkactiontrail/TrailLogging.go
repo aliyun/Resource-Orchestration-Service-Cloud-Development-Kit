@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ACTIONTRAIL::TrailLogging`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ACTIONTRAIL::TrailLogging`, which is used to enable or disable trail logging.
 type TrailLogging interface {
 	alicloudroscdkcore.Resource
 	ITrailLogging

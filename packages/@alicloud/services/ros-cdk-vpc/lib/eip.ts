@@ -36,9 +36,23 @@ export interface EIPProps {
     readonly instanceChargeType?: string | ros.IResolvable;
 
     /**
+     * Property instanceId: The instance ID of the requested EIP.
+     * 
+     * You must specify either IpAddress or InstanceId. If neither is specified, the system randomly allocates an EIP.
+     */
+    readonly instanceId?: string | ros.IResolvable;
+
+    /**
      * Property internetChargeType: The network charge type. Support 'PayByBandwidth' and 'PayByTraffic' only. Default is PayByBandwidth. PayByTraffic will charge by hour, PayByBandwidth will charge by day.
      */
     readonly internetChargeType?: string | ros.IResolvable;
+
+    /**
+     * Property ipAddress: The IP address of the requested EIP.
+     * 
+     * You must specify either IpAddress or InstanceId. If neither is specified, the system randomly allocates an EIP.
+     */
+    readonly ipAddress?: string | ros.IResolvable;
 
     /**
      * Property isp: The line type. You can set this parameter only when you create a pay-as-you-go EIP. Valid values:
@@ -123,7 +137,7 @@ export interface IEip extends ros.IResource {
     readonly attrOrderId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::EIP`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::EIP`The , which resource type requests an Elastic IP Address (EIP).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEIP`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eip
  */
@@ -168,19 +182,21 @@ export class Eip extends ros.Resource implements IEip {
         const rosEIP = new RosEIP(this, id,  {
             description: props.description,
             resourceGroupId: props.resourceGroupId,
-            zone: props.zone,
+            instanceId: props.instanceId,
             instanceChargeType: props.instanceChargeType === undefined || props.instanceChargeType === null ? 'Postpaid' : props.instanceChargeType,
             pricingCycle: props.pricingCycle === undefined || props.pricingCycle === null ? 'Month' : props.pricingCycle,
+            zone: props.zone,
             isp: props.isp,
             period: props.period === undefined || props.period === null ? 1 : props.period,
             publicIpAddressPoolId: props.publicIpAddressPoolId,
-            deletionProtection: props.deletionProtection === undefined || props.deletionProtection === null ? false : props.deletionProtection,
             autoPay: props.autoPay === undefined || props.autoPay === null ? true : props.autoPay,
+            deletionProtection: props.deletionProtection === undefined || props.deletionProtection === null ? false : props.deletionProtection,
             name: props.name,
             internetChargeType: props.internetChargeType === undefined || props.internetChargeType === null ? 'PayByBandwidth' : props.internetChargeType,
             netmode: props.netmode,
             bandwidth: props.bandwidth === undefined || props.bandwidth === null ? 5 : props.bandwidth,
             securityProtectionTypes: props.securityProtectionTypes,
+            ipAddress: props.ipAddress,
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosEIP;

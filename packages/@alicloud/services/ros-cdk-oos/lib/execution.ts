@@ -134,7 +134,7 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
     readonly attrWindowsCurlCli: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::Execution`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::Execution`, which is used to start an execution.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosExecution`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-execution
  */
@@ -207,8 +207,8 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
             parentExecutionId: props.parentExecutionId,
             resourceOptions: props.resourceOptions,
             loopMode: props.loopMode,
-            description: props.description,
             parameters: props.parameters,
+            description: props.description,
             resourceGroupId: props.resourceGroupId,
             templateContent: props.templateContent,
             mode: props.mode === undefined || props.mode === null ? 'Automatic' : props.mode,

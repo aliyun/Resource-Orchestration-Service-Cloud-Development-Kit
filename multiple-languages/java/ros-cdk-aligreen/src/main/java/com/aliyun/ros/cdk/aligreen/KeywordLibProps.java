@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.aligreen;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-aligreen-keywordlib
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:52.197Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:21.363Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.aligreen.$Module.class, fqn = "@alicloud/ros-cdk-aligreen.KeywordLibProps")
 @software.amazon.jsii.Jsii.Proxy(KeywordLibProps.Jsii$Proxy.class)
 public interface KeywordLibProps extends software.amazon.jsii.JsiiSerializable {
@@ -20,7 +20,7 @@ public interface KeywordLibProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property resourceType: The moderation scenario to which the text library applies.
      * <p>
-     * Valid values:TEXT: text anti-spam、IMAGE: ad violation detection、VOICE: audio anti-spam.
+     * Valid values:TEXT: text anti-spamãIMAGE: ad violation detectionãVOICE: audio anti-spam.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getResourceType();
 
@@ -121,7 +121,7 @@ public interface KeywordLibProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link KeywordLibProps#getResourceType}
          * @param resourceType Property resourceType: The moderation scenario to which the text library applies. This parameter is required.
-         *                     Valid values:TEXT: text anti-spam、IMAGE: ad violation detection、VOICE: audio anti-spam.
+         *                     Valid values:TEXT: text anti-spamãIMAGE: ad violation detectionãVOICE: audio anti-spam.
          * @return {@code this}
          */
         public Builder resourceType(java.lang.String resourceType) {
@@ -132,7 +132,7 @@ public interface KeywordLibProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link KeywordLibProps#getResourceType}
          * @param resourceType Property resourceType: The moderation scenario to which the text library applies. This parameter is required.
-         *                     Valid values:TEXT: text anti-spam、IMAGE: ad violation detection、VOICE: audio anti-spam.
+         *                     Valid values:TEXT: text anti-spamãIMAGE: ad violation detectionãVOICE: audio anti-spam.
          * @return {@code this}
          */
         public Builder resourceType(com.aliyun.ros.cdk.core.IResolvable resourceType) {

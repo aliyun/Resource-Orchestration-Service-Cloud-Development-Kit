@@ -65,7 +65,7 @@ export interface NetworkOptimizationProps {
     readonly smartRouting?: string | ros.IResolvable;
 
     /**
-     * Property uploadMaxFilesize: Maximum upload file size, in MB, value range: 100～500.
+     * Property uploadMaxFilesize: Maximum upload file size, in MB, value range: 100ï½500.
      */
     readonly uploadMaxFilesize?: number | ros.IResolvable;
 
@@ -134,7 +134,7 @@ export interface INetworkOptimization extends ros.IResource {
     readonly attrSmartRouting: ros.IResolvable | string;
 
     /**
-     * Attribute UploadMaxFilesize: Maximum upload file size, in MB, value range: 100～500.
+     * Attribute UploadMaxFilesize: Maximum upload file size, in MB, value range: 100ï½500.
      */
     readonly attrUploadMaxFilesize: ros.IResolvable | string;
 
@@ -144,7 +144,7 @@ export interface INetworkOptimization extends ros.IResource {
     readonly attrWebsocket: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ESA::NetworkOptimization`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESA::NetworkOptimization`The , which type is used to add network optimization configurations for a website.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNetworkOptimization`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-networkoptimization
  */
@@ -205,7 +205,7 @@ export class NetworkOptimization extends ros.Resource implements INetworkOptimiz
     public readonly attrSmartRouting: ros.IResolvable | string;
 
     /**
-     * Attribute UploadMaxFilesize: Maximum upload file size, in MB, value range: 100～500.
+     * Attribute UploadMaxFilesize: Maximum upload file size, in MB, value range: 100ï½500.
      */
     public readonly attrUploadMaxFilesize: ros.IResolvable | string;
 
@@ -234,8 +234,8 @@ export class NetworkOptimization extends ros.Resource implements INetworkOptimiz
             sequence: props.sequence,
             rule: props.rule,
             grpc: props.grpc,
-            http2Origin: props.http2Origin,
             siteVersion: props.siteVersion,
+            http2Origin: props.http2Origin,
             ruleName: props.ruleName,
             uploadMaxFilesize: props.uploadMaxFilesize,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

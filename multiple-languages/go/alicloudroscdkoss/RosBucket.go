@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Bucket`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Bucket`The , which resource type creates an OSS bucket.
 type RosBucket interface {
 	alicloudroscdkcore.RosResource
 	AccessControl() interface{}

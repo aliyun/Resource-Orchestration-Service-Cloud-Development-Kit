@@ -63,6 +63,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
+        /// <summary>Property bandwidth: The bandwidth of the VPC peering connection.</summary>
+        /// <remarks>
+        /// If you specify this parameter, make sure that you are creating an inter-region VPC peering connection.
+        /// </remarks>
+        [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Bandwidth
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property deletionForce: Specifies whether to forcefully delete the VPC peering connection.</summary>
         /// <remarks>
         /// Valid values:false (default): notrue: yes If you forcefully delete the VPC peering connection, the system deletes the routes that point to the VPC peering connection from the VPC route table.
@@ -92,6 +106,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
+        /// <summary>Property linkType: The link type.</summary>
+        /// <remarks>
+        /// Valid values: Platinum, Gold.
+        /// If you specify this parameter, make sure that you are creating an inter-region VPC peering connection.
+        /// </remarks>
+        [JsiiProperty(name: "linkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? LinkType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property name: The name of the VPC peering connection.</summary>
         /// <remarks>
         /// The name must be 2 to 128 characters in length and can contain digits, underscores
@@ -100,6 +129,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Name
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property resourceGroupId: The ID of the resource group.</summary>
+        /// <remarks>
+        /// For more information about resource groups, see <a href="~~94475~~">What is Resource Group</a>.
+        /// </remarks>
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ResourceGroupId
         {
             get
             {
@@ -164,6 +207,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property bandwidth: The bandwidth of the VPC peering connection.</summary>
+            /// <remarks>
+            /// If you specify this parameter, make sure that you are creating an inter-region VPC peering connection.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Bandwidth
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property deletionForce: Specifies whether to forcefully delete the VPC peering connection.</summary>
             /// <remarks>
             /// Valid values:false (default): notrue: yes If you forcefully delete the VPC peering connection, the system deletes the routes that point to the VPC peering connection from the VPC route table.
@@ -187,6 +241,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property linkType: The link type.</summary>
+            /// <remarks>
+            /// Valid values: Platinum, Gold.
+            /// If you specify this parameter, make sure that you are creating an inter-region VPC peering connection.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "linkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? LinkType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property name: The name of the VPC peering connection.</summary>
             /// <remarks>
             /// The name must be 2 to 128 characters in length and can contain digits, underscores
@@ -195,6 +261,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             [JsiiOptional]
             [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Name
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property resourceGroupId: The ID of the resource group.</summary>
+            /// <remarks>
+            /// For more information about resource groups, see <a href="~~94475~~">What is Resource Group</a>.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ResourceGroupId
             {
                 get => GetInstanceProperty<object?>();
             }

@@ -10,7 +10,9 @@ type RosEIPProps struct {
 	DeletionProtection interface{} `field:"optional" json:"deletionProtection" yaml:"deletionProtection"`
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
 	InstanceChargeType interface{} `field:"optional" json:"instanceChargeType" yaml:"instanceChargeType"`
+	InstanceId interface{} `field:"optional" json:"instanceId" yaml:"instanceId"`
 	InternetChargeType interface{} `field:"optional" json:"internetChargeType" yaml:"internetChargeType"`
+	IpAddress interface{} `field:"optional" json:"ipAddress" yaml:"ipAddress"`
 	Isp interface{} `field:"optional" json:"isp" yaml:"isp"`
 	Name interface{} `field:"optional" json:"name" yaml:"name"`
 	Netmode interface{} `field:"optional" json:"netmode" yaml:"netmode"`

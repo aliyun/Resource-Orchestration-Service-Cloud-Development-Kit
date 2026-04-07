@@ -164,6 +164,10 @@ func (j *jsiiProxy_RosListener) validateSetServerGroupIdParameters(val interface
 	return nil
 }
 
+func (j *jsiiProxy_RosListener) validateSetServerGroupTuplesParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosListener) validateSetStartPortParameters(val interface{}) error {
 	return nil
 }

@@ -190,7 +190,7 @@ export interface ILoadBalancer extends ros.IResource {
     readonly attrVpcId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::LoadBalancer`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::LoadBalancer`, which is used to query the information about a Classic Load Balancer (CLB) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLoadBalancer`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-loadbalancer
  */

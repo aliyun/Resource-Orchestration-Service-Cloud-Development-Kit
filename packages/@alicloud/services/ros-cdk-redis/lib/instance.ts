@@ -336,7 +336,7 @@ export interface IInstance extends ros.IResource {
     readonly attrZoneId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::Instance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::Instance`The , which type creates Redis instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-instance
  */
@@ -521,17 +521,17 @@ export class Instance extends ros.Resource implements IInstance {
             sslEnabled: props.sslEnabled,
             tairConfig: props.tairConfig,
             tags: props.tags,
-            backupPolicy: props.backupPolicy,
             password: props.password,
+            backupPolicy: props.backupPolicy,
             engineVersion: props.engineVersion,
             zoneId: props.zoneId,
             evictionPolicy: props.evictionPolicy,
             subscriptionDeletionForce: props.subscriptionDeletionForce === undefined || props.subscriptionDeletionForce === null ? false : props.subscriptionDeletionForce,
             vSwitchId: props.vSwitchId,
             securityGroupId: props.securityGroupId,
+            instanceMaintainTime: props.instanceMaintainTime,
             productType: props.productType,
             readOnlyCount: props.readOnlyCount,
-            instanceMaintainTime: props.instanceMaintainTime,
             period: props.period === undefined || props.period === null ? 1 : props.period,
             instanceClass: props.instanceClass,
             vpcPasswordFree: props.vpcPasswordFree,

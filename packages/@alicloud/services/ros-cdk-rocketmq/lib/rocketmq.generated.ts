@@ -53,7 +53,6 @@ function RosGroupPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('groupType', ros.validateString)(properties.groupType));
     errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
-    errors.collect(ros.propertyValidator('remark', ros.validateString)(properties.remark));
     errors.collect(ros.propertyValidator('groupId', ros.requiredValidator)(properties.groupId));
     if(properties.groupId && (Array.isArray(properties.groupId) || (typeof properties.groupId) === 'string')) {
         errors.collect(ros.propertyValidator('groupId', ros.validateLength)({
@@ -63,6 +62,7 @@ function RosGroupPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('groupId', ros.validateString)(properties.groupId));
+    errors.collect(ros.propertyValidator('remark', ros.validateString)(properties.remark));
     return errors.wrap('supplied properties not correct for "RosGroupProps"');
 }
 
@@ -88,7 +88,7 @@ function rosGroupPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ::Group`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ::Group`, which is used to create a Group ID on the ROCKETMQ client. The Group ID that you create is used to publish and subscribe to messages.
  * @Note This class does not contain additional functions, so it is recommended to use the `Group` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq-group
  */
@@ -496,7 +496,7 @@ function rosTopicPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ::Topic`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ::Topic`, which is used to create a topic.
  * @Note This class does not contain additional functions, so it is recommended to use the `Topic` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq-topic
  */

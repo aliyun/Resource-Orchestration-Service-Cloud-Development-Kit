@@ -77,7 +77,7 @@ export interface ICertificate extends ros.IResource {
     readonly attrFingerprint: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::Certificate`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::Certificate`, which is used to upload a certificate to a Server Load Balancer (SLB) instance. Server certificates and certificate authority (CA) certificates are supported.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCertificate`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-certificate
  */
@@ -116,8 +116,8 @@ export class Certificate extends ros.Resource implements ICertificate {
 
         const rosCertificate = new RosCertificate(this, id,  {
             certificateType: props.certificateType === undefined || props.certificateType === null ? 'Server' : props.certificateType,
-            aliCloudCertificateName: props.aliCloudCertificateName,
             privateKey: props.privateKey,
+            aliCloudCertificateName: props.aliCloudCertificateName,
             resourceGroupId: props.resourceGroupId,
             aliCloudCertificateRegionId: props.aliCloudCertificateRegionId,
             certificateName: props.certificateName,

@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::SupabaseProject`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::SupabaseProject`The , which resource creates a Supabase project.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSupabaseProject`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-supabaseproject
@@ -37,9 +37,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         {
         }
 
+        /// <summary>Attribute ApiKeys: API keys.</summary>
+        [JsiiProperty(name: "attrApiKeys", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrApiKeys
+        {
+            get => GetInstanceProperty<object>()!;
+        }
+
+        /// <summary>Attribute PrivateConnectUrl: Private connection URL.</summary>
+        [JsiiProperty(name: "attrPrivateConnectUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrPrivateConnectUrl
+        {
+            get => GetInstanceProperty<object>()!;
+        }
+
         /// <summary>Attribute ProjectId: Supabase instance ID.</summary>
         [JsiiProperty(name: "attrProjectId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrProjectId
+        {
+            get => GetInstanceProperty<object>()!;
+        }
+
+        /// <summary>Attribute PublicConnectUrl: Public connection URL.</summary>
+        [JsiiProperty(name: "attrPublicConnectUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrPublicConnectUrl
         {
             get => GetInstanceProperty<object>()!;
         }

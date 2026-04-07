@@ -38,6 +38,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             get;
         }
 
+        /// <remarks>
+        /// <strong>Property</strong>: enableSubscribed: Whether to enable the subscription feature.
+        /// </remarks>
+        [JsiiProperty(name: "enableSubscribed", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? EnableSubscribed
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `RosContactGroup`.</summary>
         /// <remarks>
         /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-contactgroup
@@ -74,6 +87,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             public object Describe
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: enableSubscribed: Whether to enable the subscription feature.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "enableSubscribed", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EnableSubscribed
+            {
+                get => GetInstanceProperty<object?>();
             }
         }
     }

@@ -283,6 +283,23 @@ func (j *jsiiProxy_RosBgpNetwork) validateSetRouterIdParameters(val interface{})
 	return nil
 }
 
+func (j *jsiiProxy_RosBgpNetwork) validateSetVpcIdParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func validateNewRosBgpNetworkParameters(scope alicloudroscdkcore.Construct, id *string, props *RosBgpNetworkProps, enableResourcePropertyConstraint *bool) error {
 	if scope == nil {
 		return fmt.Errorf("parameter scope is required, but nil was provided")

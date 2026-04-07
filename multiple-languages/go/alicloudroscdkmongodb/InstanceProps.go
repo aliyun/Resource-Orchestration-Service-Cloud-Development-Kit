@@ -13,18 +13,24 @@ type InstanceProps struct {
 	DbInstanceStorage interface{} `field:"required" json:"dbInstanceStorage" yaml:"dbInstanceStorage"`
 	// Property accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit.
 	AccountPassword interface{} `field:"optional" json:"accountPassword" yaml:"accountPassword"`
+	// Property auditPolicyOptions: Audit policy options.
+	AuditPolicyOptions interface{} `field:"optional" json:"auditPolicyOptions" yaml:"auditPolicyOptions"`
 	// Property autoRenew: Indicates whether automatic renewal is enabled for the instance.
 	//
 	// Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
 	AutoRenew interface{} `field:"optional" json:"autoRenew" yaml:"autoRenew"`
 	// Property backupId: Specific backup set Id.
 	BackupId interface{} `field:"optional" json:"backupId" yaml:"backupId"`
+	// Property backupPolicyOptions: Backup policy options.
+	BackupPolicyOptions interface{} `field:"optional" json:"backupPolicyOptions" yaml:"backupPolicyOptions"`
 	// Property businessInfo: The business information.
 	//
 	// It is an additional parameter.
 	BusinessInfo interface{} `field:"optional" json:"businessInfo" yaml:"businessInfo"`
 	// Property chargeType: The billing method of the instance.values:PostPaid: Pay-As-You-Go.PrePaid: Subscription.Default value: PostPaid.
 	ChargeType interface{} `field:"optional" json:"chargeType" yaml:"chargeType"`
+	// Property clusterId: The dedicated cluster ID.
+	ClusterId interface{} `field:"optional" json:"clusterId" yaml:"clusterId"`
 	// Property couponNo: The coupon code.
 	//
 	// Default value:youhuiquan_promotion_option_id_for_blank.
@@ -33,6 +39,16 @@ type InstanceProps struct {
 	DatabaseNames interface{} `field:"optional" json:"databaseNames" yaml:"databaseNames"`
 	// Property dbInstanceDescription: Description of created database instance.
 	DbInstanceDescription interface{} `field:"optional" json:"dbInstanceDescription" yaml:"dbInstanceDescription"`
+	// Property dbInstanceReleaseProtection: Enables instance release protection.
+	//
+	// Values:
+	// - true: Enabled.
+	// - false: Not enabled.
+	DbInstanceReleaseProtection interface{} `field:"optional" json:"dbInstanceReleaseProtection" yaml:"dbInstanceReleaseProtection"`
+	// Property encrypted: Whether to enable cloud disk encryption.
+	Encrypted interface{} `field:"optional" json:"encrypted" yaml:"encrypted"`
+	// Property encryptionKey: Custom key ID.
+	EncryptionKey interface{} `field:"optional" json:"encryptionKey" yaml:"encryptionKey"`
 	// Property engineVersion: Database instance version.
 	EngineVersion interface{} `field:"optional" json:"engineVersion" yaml:"engineVersion"`
 	// Property hiddenZoneId: Configure the zone where the hidden node resides to implement multi-availability zone deployment.
@@ -44,6 +60,10 @@ type InstanceProps struct {
 	Period interface{} `field:"optional" json:"period" yaml:"period"`
 	// Property privateConnections: Connection configs of private connection.
 	PrivateConnections interface{} `field:"optional" json:"privateConnections" yaml:"privateConnections"`
+	// Property provisionedIops: Provisioned IOPS.
+	//
+	// The value range is 0 to 50000.
+	ProvisionedIops interface{} `field:"optional" json:"provisionedIops" yaml:"provisionedIops"`
 	// Property readonlyReplicas: Number of read-only nodes, in the range of 1-5.
 	ReadonlyReplicas interface{} `field:"optional" json:"readonlyReplicas" yaml:"readonlyReplicas"`
 	// Property replicationFactor: The number of nodes in the replica set.
@@ -56,6 +76,13 @@ type InstanceProps struct {
 	//
 	// The format is yyyy-MM-ddTHH:mm:ssZ.This parameter can only be specified when this operation is called to clone instances.You must also specify theSrcDBInstanceIdparameter and theBackupIdparameter.You can clone instances to any restore time in the past seven days.
 	RestoreTime interface{} `field:"optional" json:"restoreTime" yaml:"restoreTime"`
+	// Property restoreType: Backup recovery instance.
+	//
+	// - 0: Restore instance to specified backup set
+	// - 1: Restore instance to specified point in time
+	// - 2: Restore released instance to specified backup set
+	// - 3: Restore instance to specified backup set.
+	RestoreType interface{} `field:"optional" json:"restoreType" yaml:"restoreType"`
 	// Property secondaryZoneId: Configure the zone where the secondary node resides to implement multi-availability zone deployment.
 	//
 	// When the value of the EngineVersion is 4.4 and later, this parameter is available and required.The value of this parameter cannot be the same as that of ZoneId and HiddenZoneId.
@@ -71,6 +98,12 @@ type InstanceProps struct {
 	SecurityIpArray interface{} `field:"optional" json:"securityIpArray" yaml:"securityIpArray"`
 	// Property srcDbInstanceId: Create an instance of the backup set based on an instance.
 	SrcDbInstanceId interface{} `field:"optional" json:"srcDbInstanceId" yaml:"srcDbInstanceId"`
+	// Property srcRegion: The source instance region.
+	//
+	// >- When the backup recovery type is 2 or 3, this parameter is required.
+	SrcRegion interface{} `field:"optional" json:"srcRegion" yaml:"srcRegion"`
+	// Property sslOptions: SSL options.
+	SslOptions interface{} `field:"optional" json:"sslOptions" yaml:"sslOptions"`
 	// Property storageEngine: Database storage engine.Support WiredTiger, RocksDB, TerarkDB.
 	StorageEngine interface{} `field:"optional" json:"storageEngine" yaml:"storageEngine"`
 	// Property storageType: The storage type of the instance.

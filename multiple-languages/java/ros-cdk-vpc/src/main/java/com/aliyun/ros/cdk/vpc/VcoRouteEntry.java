@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::VcoRouteEntry</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.242Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.228Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.VcoRouteEntry")
 public class VcoRouteEntry extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.IVcoRouteEntry {
 
@@ -213,6 +213,31 @@ public class VcoRouteEntry extends com.aliyun.ros.cdk.core.Resource implements c
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
+            return this;
+        }
+
+        /**
+         * Property overlayMode: The tunnel protocol.
+         * <p>
+         * Valid value: <strong>Ipsec</strong> (default), which indicates the IPsec tunnel protocol.
+         * <p>
+         * @return {@code this}
+         * @param overlayMode Property overlayMode: The tunnel protocol. This parameter is required.
+         */
+        public Builder overlayMode(final java.lang.String overlayMode) {
+            this.props.overlayMode(overlayMode);
+            return this;
+        }
+        /**
+         * Property overlayMode: The tunnel protocol.
+         * <p>
+         * Valid value: <strong>Ipsec</strong> (default), which indicates the IPsec tunnel protocol.
+         * <p>
+         * @return {@code this}
+         * @param overlayMode Property overlayMode: The tunnel protocol. This parameter is required.
+         */
+        public Builder overlayMode(final com.aliyun.ros.cdk.core.IResolvable overlayMode) {
+            this.props.overlayMode(overlayMode);
             return this;
         }
 

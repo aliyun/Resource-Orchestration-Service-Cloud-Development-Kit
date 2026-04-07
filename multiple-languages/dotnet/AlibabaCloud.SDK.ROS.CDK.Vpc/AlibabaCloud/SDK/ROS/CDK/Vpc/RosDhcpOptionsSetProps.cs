@@ -162,5 +162,116 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 _domainNameServers = value;
             }
         }
+
+        private object? _ipv6LeaseTime;
+
+        /// <remarks>
+        /// <strong>Property</strong>: ipv6LeaseTime: The lease time of the IPv6 DHCP options set.
+        ///
+        /// - When setting lease time in hours: unit: h. Valid values: **24h~1176h**, **87600h~175200h**. Default value: **24h**.
+        ///
+        /// - When setting lease time in days: unit: d. Valid values: **1d~49d**, **3650d~7300d**. Default value: **1d**.
+        ///
+        /// When specifying parameter values, you must include the unit.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "ipv6LeaseTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? Ipv6LeaseTime
+        {
+            get => _ipv6LeaseTime;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _ipv6LeaseTime = value;
+            }
+        }
+
+        private object? _leaseTime;
+
+        /// <remarks>
+        /// <strong>Property</strong>: leaseTime: The lease time of the IPv4 DHCP options set.
+        ///
+        /// - When setting lease time in hours: unit: h. Valid values: **24h~1176h**, **87600h~175200h**. Default value: **87600h**.
+        ///
+        /// - When setting lease time in days: unit: d. Valid values: **1d~49d**, **3650d~7300d**. Default value: **3650d**.
+        ///
+        /// When specifying parameter values, you must include the unit.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "leaseTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? LeaseTime
+        {
+            get => _leaseTime;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _leaseTime = value;
+            }
+        }
+
+        private object? _resourceGroupId;
+
+        /// <remarks>
+        /// <strong>Property</strong>: resourceGroupId: The ID of the resource group to which the DHCP options set belongs.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ResourceGroupId
+        {
+            get => _resourceGroupId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _resourceGroupId = value;
+            }
+        }
     }
 }

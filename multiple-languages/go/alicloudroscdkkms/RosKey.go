@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Key`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Key`The , which resource creates a master key.
 type RosKey interface {
 	alicloudroscdkcore.RosResource
 	AttrKeyId() alicloudroscdkcore.IResolvable
@@ -67,6 +67,8 @@ type RosKey interface {
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
 	Stack() alicloudroscdkcore.Stack
+	Tags() *[]*RosKey_TagsProperty
+	SetTags(val *[]*RosKey_TagsProperty)
 	// Return properties modified after initiation.
 	//
 	// Resources that expose mutable properties should override this function to
@@ -401,6 +403,16 @@ func (j *jsiiProxy_RosKey) Stack() alicloudroscdkcore.Stack {
 	return returns
 }
 
+func (j *jsiiProxy_RosKey) Tags() *[]*RosKey_TagsProperty {
+	var returns *[]*RosKey_TagsProperty
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosKey) UpdatedProperites() *map[string]interface{} {
 	var returns *map[string]interface{}
 	_jsii_.Get(
@@ -567,6 +579,17 @@ func (j *jsiiProxy_RosKey)SetRotationInterval(val interface{}) {
 	_jsii_.Set(
 		j,
 		"rotationInterval",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosKey)SetTags(val *[]*RosKey_TagsProperty) {
+	if err := j.validateSetTagsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"tags",
 		val,
 	)
 }

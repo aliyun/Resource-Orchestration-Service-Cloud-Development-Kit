@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.oos;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-deployrevision
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.538Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:28.193Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.RosDeployRevisionProps")
 @software.amazon.jsii.Jsii.Proxy(RosDeployRevisionProps.Jsii$Proxy.class)
 public interface RosDeployRevisionProps extends software.amazon.jsii.JsiiSerializable {
@@ -13,6 +13,12 @@ public interface RosDeployRevisionProps extends software.amazon.jsii.JsiiSeriali
     /**
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getApplicationName();
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeployResourceType() {
+        return null;
+    }
 
     /**
      */
@@ -49,6 +55,7 @@ public interface RosDeployRevisionProps extends software.amazon.jsii.JsiiSeriali
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosDeployRevisionProps> {
         java.lang.Object applicationName;
+        java.lang.Object deployResourceType;
         java.lang.Object description;
         java.lang.Object hooks;
         java.lang.Object location;
@@ -71,6 +78,26 @@ public interface RosDeployRevisionProps extends software.amazon.jsii.JsiiSeriali
          */
         public Builder applicationName(com.aliyun.ros.cdk.core.IResolvable applicationName) {
             this.applicationName = applicationName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDeployRevisionProps#getDeployResourceType}
+         * @param deployResourceType the value to be set.
+         * @return {@code this}
+         */
+        public Builder deployResourceType(java.lang.String deployResourceType) {
+            this.deployResourceType = deployResourceType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDeployRevisionProps#getDeployResourceType}
+         * @param deployResourceType the value to be set.
+         * @return {@code this}
+         */
+        public Builder deployResourceType(com.aliyun.ros.cdk.core.IResolvable deployResourceType) {
+            this.deployResourceType = deployResourceType;
             return this;
         }
 
@@ -171,6 +198,7 @@ public interface RosDeployRevisionProps extends software.amazon.jsii.JsiiSeriali
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosDeployRevisionProps {
         private final java.lang.Object applicationName;
+        private final java.lang.Object deployResourceType;
         private final java.lang.Object description;
         private final java.lang.Object hooks;
         private final java.lang.Object location;
@@ -183,6 +211,7 @@ public interface RosDeployRevisionProps extends software.amazon.jsii.JsiiSeriali
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.applicationName = software.amazon.jsii.Kernel.get(this, "applicationName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.deployResourceType = software.amazon.jsii.Kernel.get(this, "deployResourceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.hooks = software.amazon.jsii.Kernel.get(this, "hooks", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.location = software.amazon.jsii.Kernel.get(this, "location", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -195,6 +224,7 @@ public interface RosDeployRevisionProps extends software.amazon.jsii.JsiiSeriali
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.applicationName = java.util.Objects.requireNonNull(builder.applicationName, "applicationName is required");
+            this.deployResourceType = builder.deployResourceType;
             this.description = builder.description;
             this.hooks = builder.hooks;
             this.location = builder.location;
@@ -204,6 +234,11 @@ public interface RosDeployRevisionProps extends software.amazon.jsii.JsiiSeriali
         @Override
         public final java.lang.Object getApplicationName() {
             return this.applicationName;
+        }
+
+        @Override
+        public final java.lang.Object getDeployResourceType() {
+            return this.deployResourceType;
         }
 
         @Override
@@ -233,6 +268,9 @@ public interface RosDeployRevisionProps extends software.amazon.jsii.JsiiSeriali
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
             data.set("applicationName", om.valueToTree(this.getApplicationName()));
+            if (this.getDeployResourceType() != null) {
+                data.set("deployResourceType", om.valueToTree(this.getDeployResourceType()));
+            }
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
             }
@@ -264,6 +302,7 @@ public interface RosDeployRevisionProps extends software.amazon.jsii.JsiiSeriali
             RosDeployRevisionProps.Jsii$Proxy that = (RosDeployRevisionProps.Jsii$Proxy) o;
 
             if (!applicationName.equals(that.applicationName)) return false;
+            if (this.deployResourceType != null ? !this.deployResourceType.equals(that.deployResourceType) : that.deployResourceType != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.hooks != null ? !this.hooks.equals(that.hooks) : that.hooks != null) return false;
             if (this.location != null ? !this.location.equals(that.location) : that.location != null) return false;
@@ -273,6 +312,7 @@ public interface RosDeployRevisionProps extends software.amazon.jsii.JsiiSeriali
         @Override
         public final int hashCode() {
             int result = this.applicationName.hashCode();
+            result = 31 * result + (this.deployResourceType != null ? this.deployResourceType.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.hooks != null ? this.hooks.hashCode() : 0);
             result = 31 * result + (this.location != null ? this.location.hashCode() : 0);

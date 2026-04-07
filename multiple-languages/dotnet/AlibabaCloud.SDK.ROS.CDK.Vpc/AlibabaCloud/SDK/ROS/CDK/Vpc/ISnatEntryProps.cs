@@ -45,6 +45,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
+        /// <summary>Property networkInterfaceId: The ID of the elastic network interface.</summary>
+        /// <remarks>
+        /// The IPv4 addresses of the elastic network interface will be used as the SNAT IP addresses.
+        /// </remarks>
+        [JsiiProperty(name: "networkInterfaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? NetworkInterfaceId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:\/\/ or https:\/\/.</summary>
         [JsiiProperty(name: "snatEntryName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -122,6 +136,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             [JsiiOptional]
             [JsiiProperty(name: "eipAffinity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? EipAffinity
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property networkInterfaceId: The ID of the elastic network interface.</summary>
+            /// <remarks>
+            /// The IPv4 addresses of the elastic network interface will be used as the SNAT IP addresses.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "networkInterfaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? NetworkInterfaceId
             {
                 get => GetInstanceProperty<object?>();
             }

@@ -53,6 +53,8 @@ function RosApplicationsPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('namespaceId', ros.validateString)(properties.namespaceId));
     errors.collect(ros.propertyValidator('fieldValue', ros.validateString)(properties.fieldValue));
+    errors.collect(ros.propertyValidator('appName', ros.validateString)(properties.appName));
+    errors.collect(ros.propertyValidator('fieldType', ros.validateString)(properties.fieldType));
     if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
         errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
           data: properties.refreshOptions,
@@ -60,8 +62,6 @@ function RosApplicationsPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
-    errors.collect(ros.propertyValidator('fieldType', ros.validateString)(properties.fieldType));
-    errors.collect(ros.propertyValidator('appName', ros.validateString)(properties.appName));
     return errors.wrap('supplied properties not correct for "RosApplicationsProps"');
 }
 
@@ -470,7 +470,7 @@ function rosNamespacesPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::SAE::Namespaces`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::SAE::Namespaces`, which is used to query namespaces.
  * @Note This class does not contain additional functions, so it is recommended to use the `Namespaces` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sae-namespaces
  */

@@ -108,7 +108,15 @@ func (j *jsiiProxy_RosEIP) validateSetInstanceChargeTypeParameters(val interface
 	return nil
 }
 
+func (j *jsiiProxy_RosEIP) validateSetInstanceIdParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosEIP) validateSetInternetChargeTypeParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosEIP) validateSetIpAddressParameters(val interface{}) error {
 	return nil
 }
 

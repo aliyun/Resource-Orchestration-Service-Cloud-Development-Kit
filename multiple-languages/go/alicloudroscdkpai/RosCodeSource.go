@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::CodeSource`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::CodeSource`, which is used to create a code build in Platform for AI (PAI).
 type RosCodeSource interface {
 	alicloudroscdkcore.RosResource
 	Accessibility() interface{}

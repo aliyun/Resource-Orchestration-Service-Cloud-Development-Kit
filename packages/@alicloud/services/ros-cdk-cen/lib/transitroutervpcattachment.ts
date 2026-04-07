@@ -10,12 +10,12 @@ export { RosTransitRouterVpcAttachment as TransitRouterVpcAttachmentProperty };
 export interface TransitRouterVpcAttachmentProps {
 
     /**
-     * Property vpcId: VpcId
+     * Property vpcId: The ID of the VPC.
      */
     readonly vpcId: string | ros.IResolvable;
 
     /**
-     * Property zoneMappings: ZoneMappingss
+     * Property zoneMappings: The zone mappings for the VPC.
      */
     readonly zoneMappings: Array<RosTransitRouterVpcAttachment.ZoneMappingsProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -25,7 +25,12 @@ export interface TransitRouterVpcAttachmentProps {
     readonly autoCreateVpcRoute?: boolean | ros.IResolvable;
 
     /**
-     * Property cenId: CenId
+     * Property autoPublishRouteEnabled: Whether to automatically publish routes.
+     */
+    readonly autoPublishRouteEnabled?: boolean | ros.IResolvable;
+
+    /**
+     * Property cenId: The ID of the Cloud Enterprise Network (CEN) instance.
      */
     readonly cenId?: string | ros.IResolvable;
 
@@ -50,22 +55,27 @@ export interface TransitRouterVpcAttachmentProps {
     readonly routeTablePropagationEnabled?: boolean | ros.IResolvable;
 
     /**
-     * Property transitRouterAttachmentDescription: TransitRouterAttachmentDescription
+     * Property transitRouterAttachmentDescription: The description of the transit router VPC attachment.
      */
     readonly transitRouterAttachmentDescription?: string | ros.IResolvable;
 
     /**
-     * Property transitRouterAttachmentName: TransitRouterAttachmentName
+     * Property transitRouterAttachmentName: The name of the transit router VPC attachment.
      */
     readonly transitRouterAttachmentName?: string | ros.IResolvable;
 
     /**
-     * Property transitRouterId: TransitRouterId
+     * Property transitRouterId: The ID of the transit router.
      */
     readonly transitRouterId?: string | ros.IResolvable;
 
     /**
-     * Property vpcOwnerId: VpcOwnerId
+     * Property transitRouterVpcAttachmentOptions: The options for the transit router VPC attachment.
+     */
+    readonly transitRouterVpcAttachmentOptions?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * Property vpcOwnerId: The owner ID of the VPC.
      */
     readonly vpcOwnerId?: number | ros.IResolvable;
 }
@@ -77,52 +87,47 @@ export interface ITransitRouterVpcAttachment extends ros.IResource {
     readonly props: TransitRouterVpcAttachmentProps;
 
     /**
-     * Attribute CenId: CenId
+     * Attribute CenId: CEN ID
      */
     readonly attrCenId: ros.IResolvable | string;
 
     /**
-     * Attribute ClientToken: ClientToken
-     */
-    readonly attrClientToken: ros.IResolvable | string;
-
-    /**
-     * Attribute ResourceType: ResourceType
+     * Attribute ResourceType: Resource Type
      */
     readonly attrResourceType: ros.IResolvable | string;
 
     /**
-     * Attribute TransitRouterAttachmentDescription: TransitRouterAttachmentDescription
+     * Attribute TransitRouterAttachmentDescription: Attachment Description
      */
     readonly attrTransitRouterAttachmentDescription: ros.IResolvable | string;
 
     /**
-     * Attribute TransitRouterAttachmentId: The first ID of the resource
+     * Attribute TransitRouterAttachmentId: The ID of the transit router VPC attachment.
      */
     readonly attrTransitRouterAttachmentId: ros.IResolvable | string;
 
     /**
-     * Attribute TransitRouterAttachmentName: TransitRouterAttachmentName
+     * Attribute TransitRouterAttachmentName: Attachment Name
      */
     readonly attrTransitRouterAttachmentName: ros.IResolvable | string;
 
     /**
-     * Attribute TransitRouterId: TransitRouterId
+     * Attribute TransitRouterId: Transit Router ID
      */
     readonly attrTransitRouterId: ros.IResolvable | string;
 
     /**
-     * Attribute VpcId: VpcId
+     * Attribute VpcId: VPC ID
      */
     readonly attrVpcId: ros.IResolvable | string;
 
     /**
-     * Attribute VpcOwnerId: VpcOwnerId
+     * Attribute VpcOwnerId: VPC Owner ID
      */
     readonly attrVpcOwnerId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterVpcAttachment`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterVpcAttachment`, which is used to create a virtual private cloud (VPC) connection on an Enterprise Edition transit router.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTransitRouterVpcAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervpcattachment
  */
@@ -133,47 +138,42 @@ export class TransitRouterVpcAttachment extends ros.Resource implements ITransit
     protected enableResourcePropertyConstraint: boolean;
 
     /**
-     * Attribute CenId: CenId
+     * Attribute CenId: CEN ID
      */
     public readonly attrCenId: ros.IResolvable | string;
 
     /**
-     * Attribute ClientToken: ClientToken
-     */
-    public readonly attrClientToken: ros.IResolvable | string;
-
-    /**
-     * Attribute ResourceType: ResourceType
+     * Attribute ResourceType: Resource Type
      */
     public readonly attrResourceType: ros.IResolvable | string;
 
     /**
-     * Attribute TransitRouterAttachmentDescription: TransitRouterAttachmentDescription
+     * Attribute TransitRouterAttachmentDescription: Attachment Description
      */
     public readonly attrTransitRouterAttachmentDescription: ros.IResolvable | string;
 
     /**
-     * Attribute TransitRouterAttachmentId: The first ID of the resource
+     * Attribute TransitRouterAttachmentId: The ID of the transit router VPC attachment.
      */
     public readonly attrTransitRouterAttachmentId: ros.IResolvable | string;
 
     /**
-     * Attribute TransitRouterAttachmentName: TransitRouterAttachmentName
+     * Attribute TransitRouterAttachmentName: Attachment Name
      */
     public readonly attrTransitRouterAttachmentName: ros.IResolvable | string;
 
     /**
-     * Attribute TransitRouterId: TransitRouterId
+     * Attribute TransitRouterId: Transit Router ID
      */
     public readonly attrTransitRouterId: ros.IResolvable | string;
 
     /**
-     * Attribute VpcId: VpcId
+     * Attribute VpcId: VPC ID
      */
     public readonly attrVpcId: ros.IResolvable | string;
 
     /**
-     * Attribute VpcOwnerId: VpcOwnerId
+     * Attribute VpcOwnerId: VPC Owner ID
      */
     public readonly attrVpcOwnerId: ros.IResolvable | string;
 
@@ -190,6 +190,11 @@ export class TransitRouterVpcAttachment extends ros.Resource implements ITransit
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosTransitRouterVpcAttachment = new RosTransitRouterVpcAttachment(this, id,  {
+            transitRouterAttachmentName: props.transitRouterAttachmentName,
+            zoneMappings: props.zoneMappings,
+            vpcOwnerId: props.vpcOwnerId,
+            transitRouterVpcAttachmentOptions: props.transitRouterVpcAttachmentOptions,
+            autoPublishRouteEnabled: props.autoPublishRouteEnabled,
             routeTableAssociationEnabled: props.routeTableAssociationEnabled,
             deletionForce: props.deletionForce,
             autoCreateVpcRoute: props.autoCreateVpcRoute,
@@ -197,15 +202,11 @@ export class TransitRouterVpcAttachment extends ros.Resource implements ITransit
             chargeType: props.chargeType === undefined || props.chargeType === null ? 'POSTPAY' : props.chargeType,
             routeTablePropagationEnabled: props.routeTablePropagationEnabled,
             cenId: props.cenId,
-            transitRouterAttachmentName: props.transitRouterAttachmentName,
-            zoneMappings: props.zoneMappings,
-            vpcOwnerId: props.vpcOwnerId,
             transitRouterAttachmentDescription: props.transitRouterAttachmentDescription,
             transitRouterId: props.transitRouterId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosTransitRouterVpcAttachment;
         this.attrCenId = rosTransitRouterVpcAttachment.attrCenId;
-        this.attrClientToken = rosTransitRouterVpcAttachment.attrClientToken;
         this.attrResourceType = rosTransitRouterVpcAttachment.attrResourceType;
         this.attrTransitRouterAttachmentDescription = rosTransitRouterVpcAttachment.attrTransitRouterAttachmentDescription;
         this.attrTransitRouterAttachmentId = rosTransitRouterVpcAttachment.attrTransitRouterAttachmentId;

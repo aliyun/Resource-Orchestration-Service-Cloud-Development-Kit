@@ -72,7 +72,7 @@ export interface IProject2 extends ros.IResource {
     readonly attrProjectName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::IMM::Project2`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::IMM::Project2`, which is used to create a project of the new Intelligent Media Management (IMM) version.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosProject2`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-imm-project2
  */
@@ -100,8 +100,8 @@ export class Project2 extends ros.Resource implements IProject2 {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosProject2 = new RosProject2(this, id,  {
-            description: props.description,
             serviceRole: props.serviceRole,
+            description: props.description,
             projectName: props.projectName,
             datasetMaxBindCount: props.datasetMaxBindCount,
             datasetMaxEntityCount: props.datasetMaxEntityCount,

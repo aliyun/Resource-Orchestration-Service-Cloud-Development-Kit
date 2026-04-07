@@ -129,7 +129,7 @@ export interface IEnvironment extends ros.IResource {
     readonly attrResourceGroupId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::Environment`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::Environment`, which is used to create an environment.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEnvironment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-environment
  */
@@ -197,8 +197,8 @@ export class Environment extends ros.Resource implements IEnvironment {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosEnvironment = new RosEnvironment(this, id,  {
-            managedType: props.managedType === undefined || props.managedType === null ? 'none' : props.managedType,
             environmentSubType: props.environmentSubType,
+            managedType: props.managedType === undefined || props.managedType === null ? 'none' : props.managedType,
             environmentType: props.environmentType,
             resourceGroupId: props.resourceGroupId,
             environmentName: props.environmentName,

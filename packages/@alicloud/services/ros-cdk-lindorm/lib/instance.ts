@@ -206,7 +206,7 @@ export interface IInstance extends ros.IResource {
     readonly attrJdbcUrlList: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::Lindorm::Instance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::Lindorm::Instance`, which is used to create a Lindorm instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-lindorm-instance
  */
@@ -246,27 +246,27 @@ export class Instance extends ros.Resource implements IInstance {
         const rosInstance = new RosInstance(this, id,  {
             streamSpec: props.streamSpec,
             instanceStorage: props.instanceStorage,
-            resourceGroupId: props.resourceGroupId,
             zoneId: props.zoneId,
+            resourceGroupId: props.resourceGroupId,
             instanceChargeType: props.instanceChargeType === undefined || props.instanceChargeType === null ? 'POSTPAY' : props.instanceChargeType,
+            vSwitchId: props.vSwitchId,
             streamNum: props.streamNum,
             coldStorage: props.coldStorage,
-            vSwitchId: props.vSwitchId,
-            diskCategory: props.diskCategory,
             period: props.period,
+            diskCategory: props.diskCategory,
             deletionProtection: props.deletionProtection,
             instanceName: props.instanceName,
             solrNum: props.solrNum,
             solrSpec: props.solrSpec,
-            filestoreNum: props.filestoreNum,
             vpcId: props.vpcId,
+            filestoreNum: props.filestoreNum,
             securityIpList: props.securityIpList,
             lindormSpec: props.lindormSpec,
             tsdbSpec: props.tsdbSpec,
             coreSpec: props.coreSpec,
             lindormNum: props.lindormNum,
-            filestoreSpec: props.filestoreSpec,
             tsdbNum: props.tsdbNum,
+            filestoreSpec: props.filestoreSpec,
             periodUnit: props.periodUnit,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstance;

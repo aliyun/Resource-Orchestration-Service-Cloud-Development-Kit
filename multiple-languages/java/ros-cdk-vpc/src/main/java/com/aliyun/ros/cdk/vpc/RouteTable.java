@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::RouteTable</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::RouteTable</code>, which is used to create a custom route table.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.196Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.171Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RouteTable")
 public class RouteTable extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.IRouteTable {
 
@@ -161,6 +161,27 @@ public class RouteTable extends com.aliyun.ros.cdk.core.Resource implements com.
          */
         public Builder vpcId(final com.aliyun.ros.cdk.core.IResolvable vpcId) {
             this.props.vpcId(vpcId);
+            return this;
+        }
+
+        /**
+         * Property associateType: The type of the route table.
+         * <p>
+         * @return {@code this}
+         * @param associateType Property associateType: The type of the route table. This parameter is required.
+         */
+        public Builder associateType(final java.lang.String associateType) {
+            this.props.associateType(associateType);
+            return this;
+        }
+        /**
+         * Property associateType: The type of the route table.
+         * <p>
+         * @return {@code this}
+         * @param associateType Property associateType: The type of the route table. This parameter is required.
+         */
+        public Builder associateType(final com.aliyun.ros.cdk.core.IResolvable associateType) {
+            this.props.associateType(associateType);
             return this;
         }
 

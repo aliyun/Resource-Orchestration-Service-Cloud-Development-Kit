@@ -265,7 +265,7 @@ export interface DBInstanceProps {
 
     /**
      * Property logBackupLocalRetentionNumber: The number of log backup files that can be retained on the instance. 
-     * Default value: 60. Valid values: 6 to 100.
+     * Default value: 60. Valid values: 6 to 100. If the instance type is MySQL, you can pass in -1, which means there is no limit on the number of reserved local Binlogs.
      */
     readonly logBackupLocalRetentionNumber?: number | ros.IResolvable;
 
@@ -507,7 +507,7 @@ export interface IDBInstance extends ros.IResource {
     readonly attrPublicPort: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::DBInstance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::DBInstance`The , which type is used to create an ApsaraDB RDS database instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstance
  */
@@ -578,37 +578,37 @@ export class DBInstance extends ros.Resource implements IDBInstance {
             autoUpgradeMinorVersion: props.autoUpgradeMinorVersion,
             dbInstanceStorage: props.dbInstanceStorage,
             dbMappings: props.dbMappings,
-            connectionStringPrefix: props.connectionStringPrefix,
             multiAz: props.multiAz === undefined || props.multiAz === null ? false : props.multiAz,
-            tags: props.tags,
+            connectionStringPrefix: props.connectionStringPrefix,
             engine: props.engine,
             dbInstanceDescription: props.dbInstanceDescription,
+            tags: props.tags,
             ioAccelerationEnabled: props.ioAccelerationEnabled,
             targetDedicatedHostIdForMaster: props.targetDedicatedHostIdForMaster,
             engineVersion: props.engineVersion,
             dbInstanceClass: props.dbInstanceClass,
             archiveBackupKeepPolicy: props.archiveBackupKeepPolicy,
-            backupPolicyMode: props.backupPolicyMode,
             vSwitchId: props.vSwitchId,
+            backupPolicyMode: props.backupPolicyMode,
             period: props.period === undefined || props.period === null ? 1 : props.period,
             localLogRetentionHours: props.localLogRetentionHours,
-            deletionProtection: props.deletionProtection,
             payType: props.payType === undefined || props.payType === null ? 'Postpaid' : props.payType,
+            deletionProtection: props.deletionProtection,
             highSpaceUsageProtection: props.highSpaceUsageProtection,
             roleArn: props.roleArn,
             masterUserPassword: props.masterUserPassword,
-            sslSetting: props.sslSetting === undefined || props.sslSetting === null ? 'Disabled' : props.sslSetting,
             vpcId: props.vpcId,
+            sslSetting: props.sslSetting === undefined || props.sslSetting === null ? 'Disabled' : props.sslSetting,
             masterUsername: props.masterUsername,
             connectionMode: props.connectionMode,
             localLogRetentionSpace: props.localLogRetentionSpace,
             storageUpperBound: props.storageUpperBound,
-            category: props.category,
             privateIpAddress: props.privateIpAddress,
+            category: props.category,
             targetDedicatedHostIdForSlave: props.targetDedicatedHostIdForSlave,
             dbInstanceNetType: props.dbInstanceNetType === undefined || props.dbInstanceNetType === null ? 'Intranet' : props.dbInstanceNetType,
-            releasedKeepPolicy: props.releasedKeepPolicy,
             dedicatedHostGroupId: props.dedicatedHostGroupId,
+            releasedKeepPolicy: props.releasedKeepPolicy,
             autoRenew: props.autoRenew,
             encryptionKey: props.encryptionKey,
             preferredBackupPeriod: props.preferredBackupPeriod,
@@ -622,19 +622,19 @@ export class DBInstance extends ros.Resource implements IDBInstance {
             coldDataEnabled: props.coldDataEnabled,
             zoneId: props.zoneId,
             targetDedicatedHostIdForLog: props.targetDedicatedHostIdForLog,
-            subscriptionDeletionForce: props.subscriptionDeletionForce === undefined || props.subscriptionDeletionForce === null ? false : props.subscriptionDeletionForce,
             allocatePublicConnection: props.allocatePublicConnection,
-            securityGroupId: props.securityGroupId,
+            subscriptionDeletionForce: props.subscriptionDeletionForce === undefined || props.subscriptionDeletionForce === null ? false : props.subscriptionDeletionForce,
             preferredBackupTime: props.preferredBackupTime,
+            securityGroupId: props.securityGroupId,
             dbInstanceStorageType: props.dbInstanceStorageType,
             backUpCategory: props.backUpCategory,
             compressType: props.compressType,
-            logBackupFrequency: props.logBackupFrequency,
             connectionStringType: props.connectionStringType === undefined || props.connectionStringType === null ? 'Inner' : props.connectionStringType,
+            logBackupFrequency: props.logBackupFrequency,
             masterUserType: props.masterUserType === undefined || props.masterUserType === null ? 'Normal' : props.masterUserType,
             serverlessConfig: props.serverlessConfig,
-            enableBackupLog: props.enableBackupLog,
             sqlCollectorStatus: props.sqlCollectorStatus,
+            enableBackupLog: props.enableBackupLog,
             backupRetentionPeriod: props.backupRetentionPeriod === undefined || props.backupRetentionPeriod === null ? 7 : props.backupRetentionPeriod,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDBInstance;

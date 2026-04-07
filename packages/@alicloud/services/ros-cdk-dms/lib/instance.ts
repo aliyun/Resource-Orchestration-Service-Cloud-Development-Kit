@@ -168,7 +168,7 @@ export interface IInstance extends ros.IResource {
     readonly attrPort: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DMS::Instance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DMS::Instance`, which is used to register a database instance for your enterprise.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dms-instance
  */
@@ -207,11 +207,11 @@ export class Instance extends ros.Resource implements IInstance {
 
         const rosInstance = new RosInstance(this, id,  {
             instanceSource: props.instanceSource,
-            databasePassword: props.databasePassword,
             port: props.port,
+            databasePassword: props.databasePassword,
             host: props.host,
-            exportTimeout: props.exportTimeout,
             safeRule: props.safeRule,
+            exportTimeout: props.exportTimeout,
             ddlOnline: props.ddlOnline,
             envType: props.envType,
             tid: props.tid,
@@ -219,14 +219,14 @@ export class Instance extends ros.Resource implements IInstance {
             sid: props.sid,
             ecsInstanceId: props.ecsInstanceId,
             vpcId: props.vpcId,
-            instanceAlias: props.instanceAlias,
             dbaUid: props.dbaUid,
-            ecsRegion: props.ecsRegion,
             networkType: props.networkType,
+            instanceAlias: props.instanceAlias,
+            ecsRegion: props.ecsRegion,
             databaseUser: props.databaseUser,
             instanceType: props.instanceType,
-            dataLinkName: props.dataLinkName,
             queryTimeout: props.queryTimeout,
+            dataLinkName: props.dataLinkName,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstance;
         this.attrHost = rosInstance.attrHost;

@@ -63,7 +63,7 @@ export interface IInstanceVpcEndpointLinkedVpc extends ros.IResource {
     readonly attrVswitchId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CR::InstanceVpcEndpointLinkedVpc`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CR::InstanceVpcEndpointLinkedVpc`, which is used to associate a virtual private cloud (VPC) with a Container Registry instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstanceVpcEndpointLinkedVpc`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instancevpcendpointlinkedvpc
  */
@@ -101,8 +101,8 @@ export class InstanceVpcEndpointLinkedVpc extends ros.Resource implements IInsta
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosInstanceVpcEndpointLinkedVpc = new RosInstanceVpcEndpointLinkedVpc(this, id,  {
-            enableCreateDnsRecordInPvzt: props.enableCreateDnsRecordInPvzt === undefined || props.enableCreateDnsRecordInPvzt === null ? false : props.enableCreateDnsRecordInPvzt,
             vpcId: props.vpcId,
+            enableCreateDnsRecordInPvzt: props.enableCreateDnsRecordInPvzt === undefined || props.enableCreateDnsRecordInPvzt === null ? false : props.enableCreateDnsRecordInPvzt,
             instanceId: props.instanceId,
             moduleName: props.moduleName === undefined || props.moduleName === null ? 'Registry' : props.moduleName,
             vswitchId: props.vswitchId,

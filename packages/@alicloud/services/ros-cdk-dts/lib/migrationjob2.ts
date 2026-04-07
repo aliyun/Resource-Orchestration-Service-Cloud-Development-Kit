@@ -182,7 +182,7 @@ export interface IMigrationJob2 extends ros.IResource {
     readonly attrDtsJobName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DTS::MigrationJob2`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DTS::MigrationJob2`, which is used to purchase a data migration instance and configure a data migration task of the new version.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMigrationJob2`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-migrationjob2
  */
@@ -231,8 +231,8 @@ export class MigrationJob2 extends ros.Resource implements IMigrationJob2 {
             minDu: props.minDu,
             dbList: props.dbList,
             fileOssUrl: props.fileOssUrl,
-            dtsJobId: props.dtsJobId,
             dataInitialization: props.dataInitialization,
+            dtsJobId: props.dtsJobId,
             errorPhone: props.errorPhone,
             destSecondaryVswId: props.destSecondaryVswId,
             maxDu: props.maxDu,
@@ -244,8 +244,8 @@ export class MigrationJob2 extends ros.Resource implements IMigrationJob2 {
             dataCheckConfigure: props.dataCheckConfigure,
             dtsBisLabel: props.dtsBisLabel,
             checkpoint: props.checkpoint,
-            disasterRecoveryJob: props.disasterRecoveryJob,
             delayNotice: props.delayNotice,
+            disasterRecoveryJob: props.disasterRecoveryJob,
             destinationEndpoint: props.destinationEndpoint,
             sourceEndpoint: props.sourceEndpoint,
             structureInitialization: props.structureInitialization,

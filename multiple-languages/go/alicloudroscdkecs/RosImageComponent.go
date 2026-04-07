@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::ImageComponent`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::ImageComponent`, which is used to create an image component.
 type RosImageComponent interface {
 	alicloudroscdkcore.RosResource
 	AttrImageComponentId() alicloudroscdkcore.IResolvable

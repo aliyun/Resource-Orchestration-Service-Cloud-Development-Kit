@@ -160,7 +160,7 @@ export interface IInstanceClone extends ros.IResource {
     readonly attrZoneId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::InstanceClone`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::InstanceClone`, which is used to clone an Elastic Compute Service (ECS) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstanceClone`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instanceclone
  */
@@ -226,9 +226,9 @@ export class InstanceClone extends ros.Resource implements IInstanceClone {
             backendServerWeight: props.backendServerWeight === undefined || props.backendServerWeight === null ? 100 : props.backendServerWeight,
             keyPairName: props.keyPairName,
             description: props.description,
+            zoneId: props.zoneId,
             diskMappings: props.diskMappings,
             resourceGroupId: props.resourceGroupId,
-            zoneId: props.zoneId,
             instanceChargeType: props.instanceChargeType === undefined || props.instanceChargeType === null ? 'PostPaid' : props.instanceChargeType,
             securityGroupId: props.securityGroupId,
             period: props.period === undefined || props.period === null ? 1 : props.period,

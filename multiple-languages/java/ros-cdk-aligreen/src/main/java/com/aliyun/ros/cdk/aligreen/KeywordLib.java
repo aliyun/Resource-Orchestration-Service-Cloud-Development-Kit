@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.aligreen;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::Aligreen::KeywordLib</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::Aligreen::KeywordLib</code>, which is used to create a custom text library.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:52.195Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:21.361Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.aligreen.$Module.class, fqn = "@alicloud/ros-cdk-aligreen.KeywordLib")
 public class KeywordLib extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.aligreen.IKeywordLib {
 
@@ -203,7 +203,7 @@ public class KeywordLib extends com.aliyun.ros.cdk.core.Resource implements com.
         /**
          * Property resourceType: The moderation scenario to which the text library applies.
          * <p>
-         * Valid values:TEXT: text anti-spam、IMAGE: ad violation detection、VOICE: audio anti-spam.
+         * Valid values:TEXT: text anti-spamãIMAGE: ad violation detectionãVOICE: audio anti-spam.
          * <p>
          * @return {@code this}
          * @param resourceType Property resourceType: The moderation scenario to which the text library applies. This parameter is required.
@@ -215,7 +215,7 @@ public class KeywordLib extends com.aliyun.ros.cdk.core.Resource implements com.
         /**
          * Property resourceType: The moderation scenario to which the text library applies.
          * <p>
-         * Valid values:TEXT: text anti-spam、IMAGE: ad violation detection、VOICE: audio anti-spam.
+         * Valid values:TEXT: text anti-spamãIMAGE: ad violation detectionãVOICE: audio anti-spam.
          * <p>
          * @return {@code this}
          * @param resourceType Property resourceType: The moderation scenario to which the text library applies. This parameter is required.

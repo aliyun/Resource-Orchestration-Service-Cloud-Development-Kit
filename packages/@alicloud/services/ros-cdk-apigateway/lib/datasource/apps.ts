@@ -45,7 +45,7 @@ export interface IApps extends ros.IResource {
     readonly attrApps: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ApiGateway::Apps`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ApiGateway::Apps`, which is used to query applications.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApps`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-apps
  */
@@ -78,8 +78,8 @@ export class Apps extends ros.Resource implements IApps {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosApps = new RosApps(this, id,  {
-            appOwner: props.appOwner,
             appId: props.appId,
+            appOwner: props.appOwner,
             refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosApps;

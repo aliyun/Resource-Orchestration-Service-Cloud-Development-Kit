@@ -91,8 +91,8 @@ export class ResourceGroups extends ros.Resource implements IResourceGroups {
             includeTags: props.includeTags === undefined || props.includeTags === null ? false : props.includeTags,
             resourceGroupIds: props.resourceGroupIds,
             displayName: props.displayName,
-            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
             name: props.name,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosResourceGroups;
         this.attrResourceGroupIds = rosResourceGroups.attrResourceGroupIds;

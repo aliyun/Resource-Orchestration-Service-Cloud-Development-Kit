@@ -1,7 +1,13 @@
+@alicloud/ros-cdk-acs.ApplicationPod=com.aliyun.ros.cdk.acs.ApplicationPod
+@alicloud/ros-cdk-acs.ApplicationPodProps=com.aliyun.ros.cdk.acs.ApplicationPodProps
 @alicloud/ros-cdk-acs.Cluster=com.aliyun.ros.cdk.acs.Cluster
 @alicloud/ros-cdk-acs.ClusterProps=com.aliyun.ros.cdk.acs.ClusterProps
+@alicloud/ros-cdk-acs.IApplicationPod=com.aliyun.ros.cdk.acs.IApplicationPod
 @alicloud/ros-cdk-acs.ICluster=com.aliyun.ros.cdk.acs.ICluster
 @alicloud/ros-cdk-acs.IVirtualCapacityReservation=com.aliyun.ros.cdk.acs.IVirtualCapacityReservation
+@alicloud/ros-cdk-acs.RosApplicationPod=com.aliyun.ros.cdk.acs.RosApplicationPod
+@alicloud/ros-cdk-acs.RosApplicationPod.DiskConfigProperty=com.aliyun.ros.cdk.acs.RosApplicationPod$DiskConfigProperty
+@alicloud/ros-cdk-acs.RosApplicationPodProps=com.aliyun.ros.cdk.acs.RosApplicationPodProps
 @alicloud/ros-cdk-acs.RosCluster=com.aliyun.ros.cdk.acs.RosCluster
 @alicloud/ros-cdk-acs.RosCluster.AddonsProperty=com.aliyun.ros.cdk.acs.RosCluster$AddonsProperty
 @alicloud/ros-cdk-acs.RosCluster.DeleteOptionsProperty=com.aliyun.ros.cdk.acs.RosCluster$DeleteOptionsProperty

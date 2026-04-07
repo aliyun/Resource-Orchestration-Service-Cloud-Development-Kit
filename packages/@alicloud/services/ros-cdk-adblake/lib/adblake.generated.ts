@@ -126,7 +126,7 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ADBLake::Account`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ADBLake::Account`, which is used to create a database account for an AnalyticDB for MySQL Data Lakehouse Edition cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adblake-account
  */
@@ -391,6 +391,7 @@ export interface RosDBClusterProps {
 function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('storageResource', ros.validateString)(properties.storageResource));
     if(properties.periodType && (typeof properties.periodType) !== 'object') {
         errors.collect(ros.propertyValidator('periodType', ros.validateAllowedValues)({
           data: properties.periodType,
@@ -398,7 +399,6 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('periodType', ros.validateString)(properties.periodType));
-    errors.collect(ros.propertyValidator('storageResource', ros.validateString)(properties.storageResource));
     errors.collect(ros.propertyValidator('restoreToTime', ros.validateString)(properties.restoreToTime));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.productForm && (typeof properties.productForm) !== 'object') {
@@ -457,7 +457,8 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('dbClusterDescription', ros.validateString)(properties.dbClusterDescription));
-    errors.collect(ros.propertyValidator('secondaryVSwitchId', ros.validateString)(properties.secondaryVSwitchId));
+    errors.collect(ros.propertyValidator('computeResource', ros.validateString)(properties.computeResource));
+    errors.collect(ros.propertyValidator('period', ros.validateString)(properties.period));
     if(properties.reservedNodeSize && (typeof properties.reservedNodeSize) !== 'object') {
         errors.collect(ros.propertyValidator('reservedNodeSize', ros.validateAllowedValues)({
           data: properties.reservedNodeSize,
@@ -465,8 +466,7 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('reservedNodeSize', ros.validateNumber)(properties.reservedNodeSize));
-    errors.collect(ros.propertyValidator('computeResource', ros.validateString)(properties.computeResource));
-    errors.collect(ros.propertyValidator('period', ros.validateString)(properties.period));
+    errors.collect(ros.propertyValidator('secondaryVSwitchId', ros.validateString)(properties.secondaryVSwitchId));
     errors.collect(ros.propertyValidator('payType', ros.requiredValidator)(properties.payType));
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
@@ -527,7 +527,7 @@ function rosDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ADBLake::DBCluster`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ADBLake::DBCluster`, which type is used to create an AnalyticDB for MySQL Data Lakehouse Edition cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adblake-dbcluster
  */
@@ -1026,7 +1026,7 @@ function rosResourceGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ADBLake::ResourceGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ADBLake::ResourceGroup`, which is used to create a resource group for an AnalyticDB for MySQL Data Lakehouse Edition (V3.0) cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `ResourceGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adblake-resourcegroup
  */
@@ -1337,7 +1337,7 @@ function rosResourceGroupAccountBindingPropsToRosTemplate(properties: any, enabl
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ADBLake::ResourceGroupAccountBinding`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ADBLake::ResourceGroupAccountBinding`, which is used to associate a resource group with a database account.
  * @Note This class does not contain additional functions, so it is recommended to use the `ResourceGroupAccountBinding` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adblake-resourcegroupaccountbinding
  */

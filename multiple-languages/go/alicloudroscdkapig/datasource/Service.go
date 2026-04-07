@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::APIG::Service`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::APIG::Service`, which is used to query the information about a service.
 type Service interface {
 	alicloudroscdkcore.Resource
 	IService

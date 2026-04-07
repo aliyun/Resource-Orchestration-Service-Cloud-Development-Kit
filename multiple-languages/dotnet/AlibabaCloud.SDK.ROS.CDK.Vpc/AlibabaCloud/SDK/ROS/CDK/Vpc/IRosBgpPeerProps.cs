@@ -21,6 +21,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: bfdMultiHop: The BFD hop count. Valid values: **1** to **255**.
+        /// When enabling BFD, this parameter must be configured.
+        /// It specifies the maximum number of hops that a packet can traverse from source to destination. You can set different hop counts based on actual physical link conditions.
+        /// When using BFD in a multi-cloud environment or direct fiber connection without intermediate bridging devices, change the default BFD hop count from **255** to **1**.
+        /// </remarks>
+        [JsiiProperty(name: "bfdMultiHop", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? BfdMultiHop
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: enableBfd: Specifies whether to enable the Bidirectional Forwarding Detection (BFD) feature.
         /// Valid values:
         /// true: enables BFD.
@@ -29,6 +45,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         [JsiiProperty(name: "enableBfd", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? EnableBfd
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: ipVersion: The IP version. Valid values:
+        /// - **IPv4** (default): IPv4 version.
+        /// - **IPv6**: IPv6 version. IPv6 is supported only when the VBR associated with the BGP group has IPv6 enabled.
+        /// </remarks>
+        [JsiiProperty(name: "ipVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? IpVersion
         {
             get
             {
@@ -70,6 +101,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: bfdMultiHop: The BFD hop count. Valid values: **1** to **255**.
+            /// When enabling BFD, this parameter must be configured.
+            /// It specifies the maximum number of hops that a packet can traverse from source to destination. You can set different hop counts based on actual physical link conditions.
+            /// When using BFD in a multi-cloud environment or direct fiber connection without intermediate bridging devices, change the default BFD hop count from **255** to **1**.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "bfdMultiHop", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? BfdMultiHop
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: enableBfd: Specifies whether to enable the Bidirectional Forwarding Detection (BFD) feature.
             /// Valid values:
             /// true: enables BFD.
@@ -78,6 +122,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             [JsiiOptional]
             [JsiiProperty(name: "enableBfd", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? EnableBfd
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ipVersion: The IP version. Valid values:
+            /// - **IPv4** (default): IPv4 version.
+            /// - **IPv6**: IPv6 version. IPv6 is supported only when the VBR associated with the BGP group has IPv6 enabled.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ipVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IpVersion
             {
                 get => GetInstanceProperty<object?>();
             }

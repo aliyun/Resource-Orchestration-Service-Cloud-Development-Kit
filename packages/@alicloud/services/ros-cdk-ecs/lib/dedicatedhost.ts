@@ -132,7 +132,7 @@ export interface IDedicatedHost extends ros.IResource {
     readonly attrOrderId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::DedicatedHost`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::DedicatedHost`, which is used to create dedicated hosts.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDedicatedHost`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-dedicatedhost
  */
@@ -173,8 +173,8 @@ export class DedicatedHost extends ros.Resource implements IDedicatedHost {
             autoRenewPeriod: props.autoRenewPeriod === undefined || props.autoRenewPeriod === null ? 1 : props.autoRenewPeriod,
             description: props.description,
             networkAttributesSlbUdpTimeout: props.networkAttributesSlbUdpTimeout,
-            resourceGroupId: props.resourceGroupId,
             zoneId: props.zoneId,
+            resourceGroupId: props.resourceGroupId,
             networkAttributesUdpTimeout: props.networkAttributesUdpTimeout,
             autoRenew: props.autoRenew === undefined || props.autoRenew === null ? 'False' : props.autoRenew,
             autoPlacement: props.autoPlacement,

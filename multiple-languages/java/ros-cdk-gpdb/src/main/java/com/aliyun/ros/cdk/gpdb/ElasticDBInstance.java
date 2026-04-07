@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.gpdb;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::GPDB::ElasticDBInstance</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::GPDB::ElasticDBInstance</code>, which is used to create an AnalyticDB for PostgreSQL instance in elastic storage mode.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.404Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:26.991Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.ElasticDBInstance")
 public class ElasticDBInstance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.gpdb.IElasticDBInstance {
 
@@ -319,6 +319,31 @@ public class ElasticDBInstance extends com.aliyun.ros.cdk.core.Resource implemen
         }
 
         /**
+         * Property backupId: Backup set ID.
+         * <p>
+         * You can call DescribeDataBackups to view the backup set IDs of all backup sets under the target instance.
+         * <p>
+         * @return {@code this}
+         * @param backupId Property backupId: Backup set ID. This parameter is required.
+         */
+        public Builder backupId(final java.lang.String backupId) {
+            this.props.backupId(backupId);
+            return this;
+        }
+        /**
+         * Property backupId: Backup set ID.
+         * <p>
+         * You can call DescribeDataBackups to view the backup set IDs of all backup sets under the target instance.
+         * <p>
+         * @return {@code this}
+         * @param backupId Property backupId: Backup set ID. This parameter is required.
+         */
+        public Builder backupId(final com.aliyun.ros.cdk.core.IResolvable backupId) {
+            this.props.backupId(backupId);
+            return this;
+        }
+
+        /**
          * Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
          * <p>
          * This parameter must be passed in to create a storage reservation mode instance.
@@ -598,6 +623,31 @@ public class ElasticDBInstance extends com.aliyun.ros.cdk.core.Resource implemen
          */
         public Builder securityIpList(final com.aliyun.ros.cdk.core.IResolvable securityIpList) {
             this.props.securityIpList(securityIpList);
+            return this;
+        }
+
+        /**
+         * Property srcDbInstanceName: Clone source instance ID.
+         * <p>
+         * You can call the DescribeDBInstances interface to view the details of all AnalyticDB PostgreSQL instances in the target region, including the instance ID.
+         * <p>
+         * @return {@code this}
+         * @param srcDbInstanceName Property srcDbInstanceName: Clone source instance ID. This parameter is required.
+         */
+        public Builder srcDbInstanceName(final java.lang.String srcDbInstanceName) {
+            this.props.srcDbInstanceName(srcDbInstanceName);
+            return this;
+        }
+        /**
+         * Property srcDbInstanceName: Clone source instance ID.
+         * <p>
+         * You can call the DescribeDBInstances interface to view the details of all AnalyticDB PostgreSQL instances in the target region, including the instance ID.
+         * <p>
+         * @return {@code this}
+         * @param srcDbInstanceName Property srcDbInstanceName: Clone source instance ID. This parameter is required.
+         */
+        public Builder srcDbInstanceName(final com.aliyun.ros.cdk.core.IResolvable srcDbInstanceName) {
+            this.props.srcDbInstanceName(srcDbInstanceName);
             return this;
         }
 

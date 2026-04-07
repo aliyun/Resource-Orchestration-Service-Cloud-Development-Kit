@@ -81,7 +81,7 @@ If Type is set to NACOS, this parameter specifies the ID of the Nacos instance.
     readonly attrName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::MSE::ServiceSource`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MSE::ServiceSource`, which is used to create a Nacos service source.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosServiceSource`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-servicesource
  */
@@ -128,8 +128,8 @@ If Type is set to NACOS, this parameter specifies the ID of the Nacos instance.
         const rosServiceSource = new RosServiceSource(this, id,  {
             gatewayUniqueId: props.gatewayUniqueId,
             ingressOptions: props.ingressOptions,
-            groupList: props.groupList,
             address: props.address,
+            groupList: props.groupList,
             pathList: props.pathList,
             source: props.source,
             name: props.name,

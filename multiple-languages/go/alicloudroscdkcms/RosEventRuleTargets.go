@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::EventRuleTargets`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::EventRuleTargets`, which is used to add or change the recipients to which alert notifications are sent based on an event-triggered alert rule.
 type RosEventRuleTargets interface {
 	alicloudroscdkcore.RosResource
 	ContactParameters() interface{}
@@ -36,6 +36,8 @@ type RosEventRuleTargets interface {
 	SetMnsParameters(val interface{})
 	// The construct tree node associated with this construct.
 	Node() alicloudroscdkcore.ConstructNode
+	OpenApiParameters() interface{}
+	SetOpenApiParameters(val interface{})
 	// Return a string that will be resolved to a RosTemplate `{ Ref }` for this element.
 	//
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
@@ -250,6 +252,16 @@ func (j *jsiiProxy_RosEventRuleTargets) Node() alicloudroscdkcore.ConstructNode 
 	return returns
 }
 
+func (j *jsiiProxy_RosEventRuleTargets) OpenApiParameters() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"openApiParameters",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosEventRuleTargets) Ref() *string {
 	var returns *string
 	_jsii_.Get(
@@ -408,6 +420,17 @@ func (j *jsiiProxy_RosEventRuleTargets)SetMnsParameters(val interface{}) {
 	_jsii_.Set(
 		j,
 		"mnsParameters",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosEventRuleTargets)SetOpenApiParameters(val interface{}) {
+	if err := j.validateSetOpenApiParametersParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"openApiParameters",
 		val,
 	)
 }

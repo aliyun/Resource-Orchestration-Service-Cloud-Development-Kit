@@ -33,9 +33,21 @@ export interface RouterInterfaceProps {
     readonly autoPay?: boolean | ros.IResolvable;
 
     /**
+     * Property autoRenew: Specifies whether auto-renewal is enabled.
+     */
+    readonly autoRenew?: boolean | ros.IResolvable;
+
+    /**
      * Property description: Custom description of the RouterInterface, [2, 256] characters. Don't fill or empty, the default is empty.
      */
     readonly description?: string | ros.IResolvable;
+
+    /**
+     * Property fastLinkMode: Specifies whether the VBR-associated router interface is created in fast link mode. Fast link mode allows the router interfaces between VBR and VPC ends to be automatically connected after they are created.
+     * This parameter is valid only when the value of **RouterType** is **VBR** and the value of **OppositeRouterType** is **VRouter**.
+     * - When the value of the **FastLinkMode** parameter is **true**, the value of the **Role** parameter must be **InitiatingSide**, and the **AccessPointId**, **OppositeRouterType**, **OppsiteRouterId**, and **OppositeInterfaceOwnerId** parameters are required.
+     */
+    readonly fastLinkMode?: boolean | ros.IResolvable;
 
     /**
      * Property healthCheckSourceIp: Source IP address of the packet for leased line HealthCheck in leased line disaster tolerance and ECMP scenarios. It is valid only for a VRouter RouterInterface with a peer on a VBR. The source IP address must be in the VPC of the local VRouter and is not used. HealthCheckSourceIp and HealthCheckTargetIp parameters must be both specified or left unspecified.
@@ -98,6 +110,11 @@ export interface RouterInterfaceProps {
     readonly pricingCycle?: string | ros.IResolvable;
 
     /**
+     * Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * Property routerType: Router type. Now support 'VRouter|VBR'
      */
     readonly routerType?: string | ros.IResolvable;
@@ -152,18 +169,21 @@ export class RouterInterface extends ros.Resource implements IRouterInterface {
             oppositeInterfaceOwnerId: props.oppositeInterfaceOwnerId,
             description: props.description,
             oppositeRouterId: props.oppositeRouterId,
+            resourceGroupId: props.resourceGroupId,
             oppositeRegionId: props.oppositeRegionId,
-            pricingCycle: props.pricingCycle,
             instanceChargeType: props.instanceChargeType === undefined || props.instanceChargeType === null ? 'PostPaid' : props.instanceChargeType,
+            pricingCycle: props.pricingCycle,
             healthCheckSourceIp: props.healthCheckSourceIp,
-            period: props.period,
+            autoRenew: props.autoRenew,
             routerId: props.routerId,
+            period: props.period,
             autoPay: props.autoPay === undefined || props.autoPay === null ? true : props.autoPay,
             name: props.name,
             role: props.role,
             oppositeRouterType: props.oppositeRouterType === undefined || props.oppositeRouterType === null ? 'VRouter' : props.oppositeRouterType,
             routerType: props.routerType === undefined || props.routerType === null ? 'VRouter' : props.routerType,
             accessPointId: props.accessPointId,
+            fastLinkMode: props.fastLinkMode,
             oppositeAccessPointId: props.oppositeAccessPointId,
             spec: props.spec,
             healthCheckTargetIp: props.healthCheckTargetIp,

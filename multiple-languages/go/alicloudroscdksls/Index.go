@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Index`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Index`, which is used to create an index for a Simple Log Service (SLS) Logstore.
 type Index interface {
 	alicloudroscdkcore.Resource
 	IIndex

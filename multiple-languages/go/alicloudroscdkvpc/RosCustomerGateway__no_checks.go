@@ -104,6 +104,10 @@ func (j *jsiiProxy_RosCustomerGateway) validateSetNameParameters(val interface{}
 	return nil
 }
 
+func (j *jsiiProxy_RosCustomerGateway) validateSetResourceGroupIdParameters(val interface{}) error {
+	return nil
+}
+
 func validateNewRosCustomerGatewayParameters(scope alicloudroscdkcore.Construct, id *string, props *RosCustomerGatewayProps, enableResourcePropertyConstraint *bool) error {
 	return nil
 }

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::RunCommand`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::RunCommand`The , which resource type executes a Shell, PowerShell, or Batch script on one or more ECS instances.
 type RunCommand interface {
 	alicloudroscdkcore.Resource
 	IRunCommand

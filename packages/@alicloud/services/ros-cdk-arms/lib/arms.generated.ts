@@ -78,7 +78,7 @@ function rosAddonReleasePropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::AddonRelease`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::AddonRelease`, which is used to install an add-on release.
  * @Note This class does not contain additional functions, so it is recommended to use the `AddonRelease` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-addonrelease
  */
@@ -244,7 +244,7 @@ function rosApplyAlertRuleTemplatePropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::ApplyAlertRuleTemplate`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::ApplyAlertRuleTemplate`, which is used to create an alert rule of Alibaba Cloud Managed Service for Prometheus.
  * @Note This class does not contain additional functions, so it is recommended to use the `ApplyAlertRuleTemplate` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-applyalertruletemplate
  */
@@ -360,7 +360,6 @@ function RosDeliverTaskPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('targetList', ros.listValidator(RosDeliverTask_TargetListPropertyValidator))(properties.targetList));
     errors.collect(ros.propertyValidator('filterType', ros.validateBoolean)(properties.filterType));
     errors.collect(ros.propertyValidator('taskDescription', ros.validateString)(properties.taskDescription));
-    errors.collect(ros.propertyValidator('dataSourceName', ros.validateString)(properties.dataSourceName));
     errors.collect(ros.propertyValidator('taskName', ros.requiredValidator)(properties.taskName));
     if(properties.taskName && (typeof properties.taskName) !== 'object') {
         errors.collect(ros.propertyValidator('taskName', ros.validateAllowedPattern)({
@@ -369,6 +368,7 @@ function RosDeliverTaskPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('taskName', ros.validateString)(properties.taskName));
+    errors.collect(ros.propertyValidator('dataSourceName', ros.validateString)(properties.dataSourceName));
     errors.collect(ros.propertyValidator('externalLabel', ros.validateString)(properties.externalLabel));
     errors.collect(ros.propertyValidator('filterList', ros.validateString)(properties.filterList));
     errors.collect(ros.propertyValidator('dataSourceId', ros.validateString)(properties.dataSourceId));
@@ -401,7 +401,7 @@ function rosDeliverTaskPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::DeliverTask`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::DeliverTask`, which is used to create a delivery task.
  * @Note This class does not contain additional functions, so it is recommended to use the `DeliverTask` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-delivertask
  */
@@ -511,15 +511,15 @@ export namespace RosDeliverTask {
          */
         readonly targetType: string | ros.IResolvable;
         /**
+         * @Property targetName: The name of the target.
+         */
+        readonly targetName?: string | ros.IResolvable;
+        /**
          * @Property faultTolerantPolicy: The fault tolerant policy of the target. Valid values:
      * - ALL (default): Exception tolerance is allowed. When an exception occurs, the execution will not be blocked, and the message will be delivered to the dead message queue or dropped directly according to the configuration after exceeding the retry policy.
      * - NONE: Fault tolerance is not allowed and execution is blocked when an exception occurs and exceeds the retry policy configuration.
          */
         readonly faultTolerantPolicy?: string | ros.IResolvable;
-        /**
-         * @Property targetName: The name of the target.
-         */
-        readonly targetName?: string | ros.IResolvable;
         /**
          * @Property retryPolicy: The retry policy of the target. Valid values:
      * - BACKOFF_RETRY: retry three times, with a random interval between 10 and 20 seconds
@@ -541,6 +541,7 @@ function RosDeliverTask_TargetListPropertyValidator(properties: any): ros.Valida
     errors.collect(ros.propertyValidator('targetParam', ros.validateString)(properties.targetParam));
     errors.collect(ros.propertyValidator('targetType', ros.requiredValidator)(properties.targetType));
     errors.collect(ros.propertyValidator('targetType', ros.validateString)(properties.targetType));
+    errors.collect(ros.propertyValidator('targetName', ros.validateString)(properties.targetName));
     if(properties.faultTolerantPolicy && (typeof properties.faultTolerantPolicy) !== 'object') {
         errors.collect(ros.propertyValidator('faultTolerantPolicy', ros.validateAllowedValues)({
           data: properties.faultTolerantPolicy,
@@ -548,7 +549,6 @@ function RosDeliverTask_TargetListPropertyValidator(properties: any): ros.Valida
         }));
     }
     errors.collect(ros.propertyValidator('faultTolerantPolicy', ros.validateString)(properties.faultTolerantPolicy));
-    errors.collect(ros.propertyValidator('targetName', ros.validateString)(properties.targetName));
     if(properties.retryPolicy && (typeof properties.retryPolicy) !== 'object') {
         errors.collect(ros.propertyValidator('retryPolicy', ros.validateAllowedValues)({
           data: properties.retryPolicy,
@@ -573,10 +573,439 @@ function rosDeliverTaskTargetListPropertyToRosTemplate(properties: any): any {
     return {
       'TargetParam': ros.stringToRosTemplate(properties.targetParam),
       'TargetType': ros.stringToRosTemplate(properties.targetType),
-      'FaultTolerantPolicy': ros.stringToRosTemplate(properties.faultTolerantPolicy),
       'TargetName': ros.stringToRosTemplate(properties.targetName),
+      'FaultTolerantPolicy': ros.stringToRosTemplate(properties.faultTolerantPolicy),
       'RetryPolicy': ros.stringToRosTemplate(properties.retryPolicy),
     };
+}
+
+/**
+ * Properties for defining a `RosEnvCustomJob`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-envcustomjob
+ */
+export interface RosEnvCustomJobProps {
+
+    /**
+     * @Property configYaml: The YAML configuration string of the custom job.
+     */
+    readonly configYaml: string | ros.IResolvable;
+
+    /**
+     * @Property envCustomJobName: The name of the custom job.
+     */
+    readonly envCustomJobName: string | ros.IResolvable;
+
+    /**
+     * @Property environmentId: The ID of the environment instance.
+     */
+    readonly environmentId: string | ros.IResolvable;
+
+    /**
+     * @Property aliyunLang: The language. Valid values: zh and en. Default value: zh.
+     */
+    readonly aliyunLang?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosEnvCustomJobProps`
+ *
+ * @param properties - the TypeScript properties of a `RosEnvCustomJobProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosEnvCustomJobPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('environmentId', ros.requiredValidator)(properties.environmentId));
+    errors.collect(ros.propertyValidator('environmentId', ros.validateString)(properties.environmentId));
+    errors.collect(ros.propertyValidator('envCustomJobName', ros.requiredValidator)(properties.envCustomJobName));
+    errors.collect(ros.propertyValidator('envCustomJobName', ros.validateString)(properties.envCustomJobName));
+    errors.collect(ros.propertyValidator('aliyunLang', ros.validateString)(properties.aliyunLang));
+    errors.collect(ros.propertyValidator('configYaml', ros.requiredValidator)(properties.configYaml));
+    errors.collect(ros.propertyValidator('configYaml', ros.validateString)(properties.configYaml));
+    return errors.wrap('supplied properties not correct for "RosEnvCustomJobProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ARMS::EnvCustomJob` resource
+ *
+ * @param properties - the TypeScript properties of a `RosEnvCustomJobProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ARMS::EnvCustomJob` resource.
+ */
+// @ts-ignore TS6133
+function rosEnvCustomJobPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosEnvCustomJobPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ConfigYaml': ros.stringToRosTemplate(properties.configYaml),
+      'EnvCustomJobName': ros.stringToRosTemplate(properties.envCustomJobName),
+      'EnvironmentId': ros.stringToRosTemplate(properties.environmentId),
+      'AliyunLang': ros.stringToRosTemplate(properties.aliyunLang),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::EnvCustomJob`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `EnvCustomJob` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-envcustomjob
+ */
+export class RosEnvCustomJob extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ARMS::EnvCustomJob";
+
+    /**
+     * @Attribute ConfigYaml: The YAML configuration string of the custom job.
+     */
+    public readonly attrConfigYaml: ros.IResolvable;
+
+    /**
+     * @Attribute EnvCustomJobName: The name of the custom job.
+     */
+    public readonly attrEnvCustomJobName: ros.IResolvable;
+
+    /**
+     * @Attribute EnvironmentId: The ID of the environment instance.
+     */
+    public readonly attrEnvironmentId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property configYaml: The YAML configuration string of the custom job.
+     */
+    public configYaml: string | ros.IResolvable;
+
+    /**
+     * @Property envCustomJobName: The name of the custom job.
+     */
+    public envCustomJobName: string | ros.IResolvable;
+
+    /**
+     * @Property environmentId: The ID of the environment instance.
+     */
+    public environmentId: string | ros.IResolvable;
+
+    /**
+     * @Property aliyunLang: The language. Valid values: zh and en. Default value: zh.
+     */
+    public aliyunLang: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosEnvCustomJobProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosEnvCustomJob.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrConfigYaml = this.getAtt('ConfigYaml');
+        this.attrEnvCustomJobName = this.getAtt('EnvCustomJobName');
+        this.attrEnvironmentId = this.getAtt('EnvironmentId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.configYaml = props.configYaml;
+        this.envCustomJobName = props.envCustomJobName;
+        this.environmentId = props.environmentId;
+        this.aliyunLang = props.aliyunLang;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            configYaml: this.configYaml,
+            envCustomJobName: this.envCustomJobName,
+            environmentId: this.environmentId,
+            aliyunLang: this.aliyunLang,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosEnvCustomJobPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosEnvPodMonitor`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-envpodmonitor
+ */
+export interface RosEnvPodMonitorProps {
+
+    /**
+     * @Property configYaml: The YAML configuration string of the PodMonitor.
+     */
+    readonly configYaml: string | ros.IResolvable;
+
+    /**
+     * @Property environmentId: The ID of the environment instance.
+     */
+    readonly environmentId: string | ros.IResolvable;
+
+    /**
+     * @Property aliyunLang: The language. Valid values: zh and en. Default value: zh.
+     */
+    readonly aliyunLang?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosEnvPodMonitorProps`
+ *
+ * @param properties - the TypeScript properties of a `RosEnvPodMonitorProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosEnvPodMonitorPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('environmentId', ros.requiredValidator)(properties.environmentId));
+    errors.collect(ros.propertyValidator('environmentId', ros.validateString)(properties.environmentId));
+    errors.collect(ros.propertyValidator('aliyunLang', ros.validateString)(properties.aliyunLang));
+    errors.collect(ros.propertyValidator('configYaml', ros.requiredValidator)(properties.configYaml));
+    errors.collect(ros.propertyValidator('configYaml', ros.validateString)(properties.configYaml));
+    return errors.wrap('supplied properties not correct for "RosEnvPodMonitorProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ARMS::EnvPodMonitor` resource
+ *
+ * @param properties - the TypeScript properties of a `RosEnvPodMonitorProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ARMS::EnvPodMonitor` resource.
+ */
+// @ts-ignore TS6133
+function rosEnvPodMonitorPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosEnvPodMonitorPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ConfigYaml': ros.stringToRosTemplate(properties.configYaml),
+      'EnvironmentId': ros.stringToRosTemplate(properties.environmentId),
+      'AliyunLang': ros.stringToRosTemplate(properties.aliyunLang),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::EnvPodMonitor`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `EnvPodMonitor` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-envpodmonitor
+ */
+export class RosEnvPodMonitor extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ARMS::EnvPodMonitor";
+
+    /**
+     * @Attribute ConfigYaml: The YAML configuration string of the PodMonitor.
+     */
+    public readonly attrConfigYaml: ros.IResolvable;
+
+    /**
+     * @Attribute EnvPodMonitorName: The name of the PodMonitor.
+     */
+    public readonly attrEnvPodMonitorName: ros.IResolvable;
+
+    /**
+     * @Attribute EnvironmentId: The ID of the environment instance.
+     */
+    public readonly attrEnvironmentId: ros.IResolvable;
+
+    /**
+     * @Attribute Namespace: The namespace of the PodMonitor.
+     */
+    public readonly attrNamespace: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property configYaml: The YAML configuration string of the PodMonitor.
+     */
+    public configYaml: string | ros.IResolvable;
+
+    /**
+     * @Property environmentId: The ID of the environment instance.
+     */
+    public environmentId: string | ros.IResolvable;
+
+    /**
+     * @Property aliyunLang: The language. Valid values: zh and en. Default value: zh.
+     */
+    public aliyunLang: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosEnvPodMonitorProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosEnvPodMonitor.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrConfigYaml = this.getAtt('ConfigYaml');
+        this.attrEnvPodMonitorName = this.getAtt('EnvPodMonitorName');
+        this.attrEnvironmentId = this.getAtt('EnvironmentId');
+        this.attrNamespace = this.getAtt('Namespace');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.configYaml = props.configYaml;
+        this.environmentId = props.environmentId;
+        this.aliyunLang = props.aliyunLang;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            configYaml: this.configYaml,
+            environmentId: this.environmentId,
+            aliyunLang: this.aliyunLang,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosEnvPodMonitorPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosEnvServiceMonitor`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-envservicemonitor
+ */
+export interface RosEnvServiceMonitorProps {
+
+    /**
+     * @Property configYaml: The YAML configuration string of the ServiceMonitor.
+     */
+    readonly configYaml: string | ros.IResolvable;
+
+    /**
+     * @Property environmentId: The ID of the environment instance.
+     */
+    readonly environmentId: string | ros.IResolvable;
+
+    /**
+     * @Property aliyunLang: The language. Valid values: zh and en. Default value: zh.
+     */
+    readonly aliyunLang?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosEnvServiceMonitorProps`
+ *
+ * @param properties - the TypeScript properties of a `RosEnvServiceMonitorProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosEnvServiceMonitorPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('environmentId', ros.requiredValidator)(properties.environmentId));
+    errors.collect(ros.propertyValidator('environmentId', ros.validateString)(properties.environmentId));
+    errors.collect(ros.propertyValidator('aliyunLang', ros.validateString)(properties.aliyunLang));
+    errors.collect(ros.propertyValidator('configYaml', ros.requiredValidator)(properties.configYaml));
+    errors.collect(ros.propertyValidator('configYaml', ros.validateString)(properties.configYaml));
+    return errors.wrap('supplied properties not correct for "RosEnvServiceMonitorProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ARMS::EnvServiceMonitor` resource
+ *
+ * @param properties - the TypeScript properties of a `RosEnvServiceMonitorProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ARMS::EnvServiceMonitor` resource.
+ */
+// @ts-ignore TS6133
+function rosEnvServiceMonitorPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosEnvServiceMonitorPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ConfigYaml': ros.stringToRosTemplate(properties.configYaml),
+      'EnvironmentId': ros.stringToRosTemplate(properties.environmentId),
+      'AliyunLang': ros.stringToRosTemplate(properties.aliyunLang),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::EnvServiceMonitor`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `EnvServiceMonitor` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-envservicemonitor
+ */
+export class RosEnvServiceMonitor extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ARMS::EnvServiceMonitor";
+
+    /**
+     * @Attribute ConfigYaml: The YAML configuration string of the ServiceMonitor.
+     */
+    public readonly attrConfigYaml: ros.IResolvable;
+
+    /**
+     * @Attribute EnvServiceMonitorName: The name of the ServiceMonitor.
+     */
+    public readonly attrEnvServiceMonitorName: ros.IResolvable;
+
+    /**
+     * @Attribute EnvironmentId: The ID of the environment instance.
+     */
+    public readonly attrEnvironmentId: ros.IResolvable;
+
+    /**
+     * @Attribute Namespace: The namespace of the ServiceMonitor.
+     */
+    public readonly attrNamespace: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property configYaml: The YAML configuration string of the ServiceMonitor.
+     */
+    public configYaml: string | ros.IResolvable;
+
+    /**
+     * @Property environmentId: The ID of the environment instance.
+     */
+    public environmentId: string | ros.IResolvable;
+
+    /**
+     * @Property aliyunLang: The language. Valid values: zh and en. Default value: zh.
+     */
+    public aliyunLang: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosEnvServiceMonitorProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosEnvServiceMonitor.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrConfigYaml = this.getAtt('ConfigYaml');
+        this.attrEnvServiceMonitorName = this.getAtt('EnvServiceMonitorName');
+        this.attrEnvironmentId = this.getAtt('EnvironmentId');
+        this.attrNamespace = this.getAtt('Namespace');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.configYaml = props.configYaml;
+        this.environmentId = props.environmentId;
+        this.aliyunLang = props.aliyunLang;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            configYaml: this.configYaml,
+            environmentId: this.environmentId,
+            aliyunLang: this.aliyunLang,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosEnvServiceMonitorPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
 }
 
 /**
@@ -663,13 +1092,6 @@ export interface RosEnvironmentProps {
 function RosEnvironmentPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    if(properties.managedType && (typeof properties.managedType) !== 'object') {
-        errors.collect(ros.propertyValidator('managedType', ros.validateAllowedValues)({
-          data: properties.managedType,
-          allowedValues: ["none","agent","agent-exporter"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('managedType', ros.validateString)(properties.managedType));
     errors.collect(ros.propertyValidator('environmentSubType', ros.requiredValidator)(properties.environmentSubType));
     if(properties.environmentSubType && (typeof properties.environmentSubType) !== 'object') {
         errors.collect(ros.propertyValidator('environmentSubType', ros.validateAllowedValues)({
@@ -678,6 +1100,13 @@ function RosEnvironmentPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('environmentSubType', ros.validateString)(properties.environmentSubType));
+    if(properties.managedType && (typeof properties.managedType) !== 'object') {
+        errors.collect(ros.propertyValidator('managedType', ros.validateAllowedValues)({
+          data: properties.managedType,
+          allowedValues: ["none","agent","agent-exporter"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('managedType', ros.validateString)(properties.managedType));
     errors.collect(ros.propertyValidator('environmentType', ros.requiredValidator)(properties.environmentType));
     if(properties.environmentType && (typeof properties.environmentType) !== 'object') {
         errors.collect(ros.propertyValidator('environmentType', ros.validateAllowedValues)({
@@ -735,7 +1164,7 @@ function rosEnvironmentPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::Environment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::Environment`, which is used to create an environment.
  * @Note This class does not contain additional functions, so it is recommended to use the `Environment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-environment
  */
@@ -1031,7 +1460,7 @@ function rosEnvironmentFeaturePropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::EnvironmentFeature`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::EnvironmentFeature`, which is used to install a feature.
  * @Note This class does not contain additional functions, so it is recommended to use the `EnvironmentFeature` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-environmentfeature
  */
@@ -1174,10 +1603,10 @@ function RosManagedPrometheusPropsValidator(properties: any): ros.ValidationResu
     errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('clusterId', ros.validateString)(properties.clusterId));
-    errors.collect(ros.propertyValidator('securityGroupId', ros.requiredValidator)(properties.securityGroupId));
-    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.requiredValidator)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('clusterName', ros.validateString)(properties.clusterName));
     errors.collect(ros.propertyValidator('clusterType', ros.requiredValidator)(properties.clusterType));
     if(properties.clusterType && (typeof properties.clusterType) !== 'object') {
@@ -1216,7 +1645,7 @@ function rosManagedPrometheusPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::ManagedPrometheus`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::ManagedPrometheus`, which is used to install a Prometheus instance to monitor a serverless Kubernetes (ASK) cluster or an Elastic Compute Service (ECS) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `ManagedPrometheus` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-managedprometheus
  */
@@ -1435,7 +1864,7 @@ function rosPrometheusPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::Prometheus`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::Prometheus`, which is used to create a Prometheus instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Prometheus` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-prometheus
  */
@@ -1727,7 +2156,7 @@ function rosRetcodeAppPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::RetcodeApp`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::RetcodeApp`, which is used to create a browser monitoring task.
  * @Note This class does not contain additional functions, so it is recommended to use the `RetcodeApp` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-retcodeapp
  */
@@ -1792,6 +2221,311 @@ export class RosRetcodeApp extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosRetcodeAppPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+/**
+ * Properties for defining a `RosRum`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-rum
+ */
+export interface RosRumProps {
+
+    /**
+     * @Property appName: The name of the RUM application.
+     * The value can be up to 64 characters in length.
+     */
+    readonly appName: string | ros.IResolvable;
+
+    /**
+     * @Property siteType: The type of the website.
+     */
+    readonly siteType: string | ros.IResolvable;
+
+    /**
+     * @Property appGroup: The group to which the RUM application belongs.
+     */
+    readonly appGroup?: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the RUM application.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property language: The programming language of the RUM application.
+     */
+    readonly language?: string | ros.IResolvable;
+
+    /**
+     * @Property nickName: The nickname of the RUM application.
+     */
+    readonly nickName?: string | ros.IResolvable;
+
+    /**
+     * @Property packageName: The package name of the RUM application.
+     */
+    readonly packageName?: string | ros.IResolvable;
+
+    /**
+     * @Property realRegionId: The actual region ID for internal use.
+     */
+    readonly realRegionId?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the RUM application belongs.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property source: The source of the RUM application.
+     */
+    readonly source?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: A list of tags to attach to the RUM application.
+     * Each tag is a key-value pair.
+     */
+    readonly tags?: RosRum.TagsProperty[];
+}
+
+/**
+ * Determine whether the given properties match those of a `RosRumProps`
+ *
+ * @param properties - the TypeScript properties of a `RosRumProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosRumPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('language', ros.validateString)(properties.language));
+    errors.collect(ros.propertyValidator('packageName', ros.validateString)(properties.packageName));
+    errors.collect(ros.propertyValidator('realRegionId', ros.validateString)(properties.realRegionId));
+    errors.collect(ros.propertyValidator('siteType', ros.requiredValidator)(properties.siteType));
+    errors.collect(ros.propertyValidator('siteType', ros.validateString)(properties.siteType));
+    errors.collect(ros.propertyValidator('nickName', ros.validateString)(properties.nickName));
+    errors.collect(ros.propertyValidator('appGroup', ros.validateString)(properties.appGroup));
+    errors.collect(ros.propertyValidator('source', ros.validateString)(properties.source));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosRum_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('appName', ros.requiredValidator)(properties.appName));
+    errors.collect(ros.propertyValidator('appName', ros.validateString)(properties.appName));
+    return errors.wrap('supplied properties not correct for "RosRumProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ARMS::Rum` resource
+ *
+ * @param properties - the TypeScript properties of a `RosRumProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ARMS::Rum` resource.
+ */
+// @ts-ignore TS6133
+function rosRumPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosRumPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'AppName': ros.stringToRosTemplate(properties.appName),
+      'SiteType': ros.stringToRosTemplate(properties.siteType),
+      'AppGroup': ros.stringToRosTemplate(properties.appGroup),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Language': ros.stringToRosTemplate(properties.language),
+      'NickName': ros.stringToRosTemplate(properties.nickName),
+      'PackageName': ros.stringToRosTemplate(properties.packageName),
+      'RealRegionId': ros.stringToRosTemplate(properties.realRegionId),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Source': ros.stringToRosTemplate(properties.source),
+      'Tags': ros.listMapper(rosRumTagsPropertyToRosTemplate)(properties.tags),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::Rum`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Rum` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-rum
+ */
+export class RosRum extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ARMS::Rum";
+
+    /**
+     * @Attribute CdnDomain: The CDN domain of the RUM application.
+     */
+    public readonly attrCdnDomain: ros.IResolvable;
+
+    /**
+     * @Attribute Endpoint: The endpoint of the RUM application.
+     */
+    public readonly attrEndpoint: ros.IResolvable;
+
+    /**
+     * @Attribute Pid: The PID of the RUM application.
+     */
+    public readonly attrPid: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property appName: The name of the RUM application.
+     * The value can be up to 64 characters in length.
+     */
+    public appName: string | ros.IResolvable;
+
+    /**
+     * @Property siteType: The type of the website.
+     */
+    public siteType: string | ros.IResolvable;
+
+    /**
+     * @Property appGroup: The group to which the RUM application belongs.
+     */
+    public appGroup: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property description: The description of the RUM application.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property language: The programming language of the RUM application.
+     */
+    public language: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property nickName: The nickname of the RUM application.
+     */
+    public nickName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property packageName: The package name of the RUM application.
+     */
+    public packageName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property realRegionId: The actual region ID for internal use.
+     */
+    public realRegionId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the RUM application belongs.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property source: The source of the RUM application.
+     */
+    public source: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: A list of tags to attach to the RUM application.
+     * Each tag is a key-value pair.
+     */
+    public tags: RosRum.TagsProperty[] | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosRumProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosRum.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCdnDomain = this.getAtt('CdnDomain');
+        this.attrEndpoint = this.getAtt('Endpoint');
+        this.attrPid = this.getAtt('Pid');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.appName = props.appName;
+        this.siteType = props.siteType;
+        this.appGroup = props.appGroup;
+        this.description = props.description;
+        this.language = props.language;
+        this.nickName = props.nickName;
+        this.packageName = props.packageName;
+        this.realRegionId = props.realRegionId;
+        this.resourceGroupId = props.resourceGroupId;
+        this.source = props.source;
+        this.tags = props.tags;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            appName: this.appName,
+            siteType: this.siteType,
+            appGroup: this.appGroup,
+            description: this.description,
+            language: this.language,
+            nickName: this.nickName,
+            packageName: this.packageName,
+            realRegionId: this.realRegionId,
+            resourceGroupId: this.resourceGroupId,
+            source: this.source,
+            tags: this.tags,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosRumPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosRum {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: The value of the tag.
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: The key of the tag.
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosRum_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ARMS::Rum.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ARMS::Rum.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosRumTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosRum_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -1861,7 +2595,7 @@ function rosXTraceAppPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::XTraceApp`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::XTraceApp`, which is used to create an application monitoring task.
  * @Note This class does not contain additional functions, so it is recommended to use the `XTraceApp` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-xtraceapp
  */

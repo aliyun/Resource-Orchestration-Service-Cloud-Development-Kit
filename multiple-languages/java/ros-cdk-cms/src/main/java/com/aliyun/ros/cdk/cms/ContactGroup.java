@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cms;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::ContactGroup</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::ContactGroup</code>, which is used to create an alert contact group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.672Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:23.007Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.ContactGroup")
 public class ContactGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cms.IContactGroup {
 
@@ -171,6 +171,27 @@ public class ContactGroup extends com.aliyun.ros.cdk.core.Resource implements co
          */
         public Builder describe(final com.aliyun.ros.cdk.core.IResolvable describe) {
             this.props.describe(describe);
+            return this;
+        }
+
+        /**
+         * Property enableSubscribed: Whether to enable the subscription feature.
+         * <p>
+         * @return {@code this}
+         * @param enableSubscribed Property enableSubscribed: Whether to enable the subscription feature. This parameter is required.
+         */
+        public Builder enableSubscribed(final java.lang.Boolean enableSubscribed) {
+            this.props.enableSubscribed(enableSubscribed);
+            return this;
+        }
+        /**
+         * Property enableSubscribed: Whether to enable the subscription feature.
+         * <p>
+         * @return {@code this}
+         * @param enableSubscribed Property enableSubscribed: Whether to enable the subscription feature. This parameter is required.
+         */
+        public Builder enableSubscribed(final com.aliyun.ros.cdk.core.IResolvable enableSubscribed) {
+            this.props.enableSubscribed(enableSubscribed);
             return this;
         }
 

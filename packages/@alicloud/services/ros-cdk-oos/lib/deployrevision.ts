@@ -15,6 +15,11 @@ export interface DeployRevisionProps {
     readonly applicationName: string | ros.IResolvable;
 
     /**
+     * Property deployResourceType: The type of the deploy resource.
+     */
+    readonly deployResourceType?: string | ros.IResolvable;
+
+    /**
      * Property description: The description of the revision.
      */
     readonly description?: string | ros.IResolvable;
@@ -47,7 +52,7 @@ export interface IDeployRevision extends ros.IResource {
     readonly attrRevisionId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::DeployRevision`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::DeployRevision`The , which type is used to create a deployment.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDeployRevision`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-deployrevision
  */
@@ -79,6 +84,7 @@ export class DeployRevision extends ros.Resource implements IDeployRevision {
             description: props.description,
             revisionType: props.revisionType,
             hooks: props.hooks,
+            deployResourceType: props.deployResourceType,
             location: props.location,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDeployRevision;

@@ -8,6 +8,7 @@ type RosTransitRouterVpcAttachmentProps struct {
 	VpcId interface{} `field:"required" json:"vpcId" yaml:"vpcId"`
 	ZoneMappings interface{} `field:"required" json:"zoneMappings" yaml:"zoneMappings"`
 	AutoCreateVpcRoute interface{} `field:"optional" json:"autoCreateVpcRoute" yaml:"autoCreateVpcRoute"`
+	AutoPublishRouteEnabled interface{} `field:"optional" json:"autoPublishRouteEnabled" yaml:"autoPublishRouteEnabled"`
 	CenId interface{} `field:"optional" json:"cenId" yaml:"cenId"`
 	ChargeType interface{} `field:"optional" json:"chargeType" yaml:"chargeType"`
 	DeletionForce interface{} `field:"optional" json:"deletionForce" yaml:"deletionForce"`
@@ -16,6 +17,7 @@ type RosTransitRouterVpcAttachmentProps struct {
 	TransitRouterAttachmentDescription interface{} `field:"optional" json:"transitRouterAttachmentDescription" yaml:"transitRouterAttachmentDescription"`
 	TransitRouterAttachmentName interface{} `field:"optional" json:"transitRouterAttachmentName" yaml:"transitRouterAttachmentName"`
 	TransitRouterId interface{} `field:"optional" json:"transitRouterId" yaml:"transitRouterId"`
+	TransitRouterVpcAttachmentOptions interface{} `field:"optional" json:"transitRouterVpcAttachmentOptions" yaml:"transitRouterVpcAttachmentOptions"`
 	VpcOwnerId interface{} `field:"optional" json:"vpcOwnerId" yaml:"vpcOwnerId"`
 }
 

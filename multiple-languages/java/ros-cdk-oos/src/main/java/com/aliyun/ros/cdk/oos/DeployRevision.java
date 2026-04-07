@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.oos;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::OOS::DeployRevision</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::OOS::DeployRevision</code>The , which type is used to create a deployment.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.496Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:28.149Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.DeployRevision")
 public class DeployRevision extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.oos.IDeployRevision {
 
@@ -129,6 +129,27 @@ public class DeployRevision extends com.aliyun.ros.cdk.core.Resource implements 
          */
         public Builder applicationName(final com.aliyun.ros.cdk.core.IResolvable applicationName) {
             this.props.applicationName(applicationName);
+            return this;
+        }
+
+        /**
+         * Property deployResourceType: The type of the deploy resource.
+         * <p>
+         * @return {@code this}
+         * @param deployResourceType Property deployResourceType: The type of the deploy resource. This parameter is required.
+         */
+        public Builder deployResourceType(final java.lang.String deployResourceType) {
+            this.props.deployResourceType(deployResourceType);
+            return this;
+        }
+        /**
+         * Property deployResourceType: The type of the deploy resource.
+         * <p>
+         * @return {@code this}
+         * @param deployResourceType Property deployResourceType: The type of the deploy resource. This parameter is required.
+         */
+        public Builder deployResourceType(final com.aliyun.ros.cdk.core.IResolvable deployResourceType) {
+            this.props.deployResourceType(deployResourceType);
             return this;
         }
 

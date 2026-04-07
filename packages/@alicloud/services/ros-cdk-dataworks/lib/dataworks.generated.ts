@@ -101,6 +101,7 @@ function RosProjectPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('projectMode', ros.validateNumber)(properties.projectMode));
+    errors.collect(ros.propertyValidator('disableDevelopment', ros.validateBoolean)(properties.disableDevelopment));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -109,7 +110,6 @@ function RosProjectPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosProject_TagsPropertyValidator))(properties.tags));
-    errors.collect(ros.propertyValidator('disableDevelopment', ros.validateBoolean)(properties.disableDevelopment));
     return errors.wrap('supplied properties not correct for "RosProjectProps"');
 }
 
@@ -139,7 +139,7 @@ function rosProjectPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DataWorks::Project`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DataWorks::Project`, which is used to create a DataWorks workspace.
  * @Note This class does not contain additional functions, so it is recommended to use the `Project` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dataworks-project
  */
@@ -503,7 +503,7 @@ function rosResourceGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DataWorks::ResourceGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DataWorks::ResourceGroup`, which is used to create a serverless resource group.
  * @Note This class does not contain additional functions, so it is recommended to use the `ResourceGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dataworks-resourcegroup
  */
@@ -725,7 +725,7 @@ function rosResourceGroupRelationPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DataWorks::ResourceGroupRelation`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DataWorks::ResourceGroupRelation`, which is used to associate a resource group with a workspace.
  * @Note This class does not contain additional functions, so it is recommended to use the `ResourceGroupRelation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dataworks-resourcegrouprelation
  */
@@ -770,5 +770,157 @@ export class RosResourceGroupRelation extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosResourceGroupRelationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosRoute`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dataworks-route
+ */
+export interface RosRouteProps {
+
+    /**
+     * @Property destinationCidr: The CIDR blocks of the destination-based route.
+     */
+    readonly destinationCidr: string | ros.IResolvable;
+
+    /**
+     * @Property networkId: The ID of the network resource to which the route belongs.
+     */
+    readonly networkId: number | ros.IResolvable;
+
+    /**
+     * @Property dwResourceGroupId: ID of the resource group to which the route belongs.
+     */
+    readonly dwResourceGroupId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosRouteProps`
+ *
+ * @param properties - the TypeScript properties of a `RosRouteProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosRoutePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('networkId', ros.requiredValidator)(properties.networkId));
+    errors.collect(ros.propertyValidator('networkId', ros.validateNumber)(properties.networkId));
+    errors.collect(ros.propertyValidator('dwResourceGroupId', ros.validateString)(properties.dwResourceGroupId));
+    errors.collect(ros.propertyValidator('destinationCidr', ros.requiredValidator)(properties.destinationCidr));
+    errors.collect(ros.propertyValidator('destinationCidr', ros.validateString)(properties.destinationCidr));
+    return errors.wrap('supplied properties not correct for "RosRouteProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DataWorks::Route` resource
+ *
+ * @param properties - the TypeScript properties of a `RosRouteProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DataWorks::Route` resource.
+ */
+// @ts-ignore TS6133
+function rosRoutePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosRoutePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'DestinationCidr': ros.stringToRosTemplate(properties.destinationCidr),
+      'NetworkId': ros.numberToRosTemplate(properties.networkId),
+      'DwResourceGroupId': ros.stringToRosTemplate(properties.dwResourceGroupId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DataWorks::Route`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Route` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dataworks-route
+ */
+export class RosRoute extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DataWorks::Route";
+
+    /**
+     * @Attribute CreateTime: Time when route information was created.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute DestinationCidr: The CIDR blocks of the destination-based route.
+     */
+    public readonly attrDestinationCidr: ros.IResolvable;
+
+    /**
+     * @Attribute DwResourceGroupId: ID of the resource group to which the route belongs.
+     */
+    public readonly attrDwResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute NetworkId: The ID of the network resource to which the route belongs.
+     */
+    public readonly attrNetworkId: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceId: Identifier of the network resource to which the route belongs.
+     */
+    public readonly attrResourceId: ros.IResolvable;
+
+    /**
+     * @Attribute RouteId: The route ID.
+     */
+    public readonly attrRouteId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property destinationCidr: The CIDR blocks of the destination-based route.
+     */
+    public destinationCidr: string | ros.IResolvable;
+
+    /**
+     * @Property networkId: The ID of the network resource to which the route belongs.
+     */
+    public networkId: number | ros.IResolvable;
+
+    /**
+     * @Property dwResourceGroupId: ID of the resource group to which the route belongs.
+     */
+    public dwResourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosRouteProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosRoute.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDestinationCidr = this.getAtt('DestinationCidr');
+        this.attrDwResourceGroupId = this.getAtt('DwResourceGroupId');
+        this.attrNetworkId = this.getAtt('NetworkId');
+        this.attrResourceId = this.getAtt('ResourceId');
+        this.attrRouteId = this.getAtt('RouteId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.destinationCidr = props.destinationCidr;
+        this.networkId = props.networkId;
+        this.dwResourceGroupId = props.dwResourceGroupId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            destinationCidr: this.destinationCidr,
+            networkId: this.networkId,
+            dwResourceGroupId: this.dwResourceGroupId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosRoutePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }

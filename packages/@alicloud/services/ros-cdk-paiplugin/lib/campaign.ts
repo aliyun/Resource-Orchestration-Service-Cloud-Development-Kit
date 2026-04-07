@@ -32,7 +32,7 @@ export interface ICampaign extends ros.IResource {
     readonly attrCampaignId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::PAIPlugin::Campaign`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PAIPlugin::Campaign`, which is used to create an operational activity.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCampaign`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paiplugin-campaign
  */
@@ -60,8 +60,8 @@ export class Campaign extends ros.Resource implements ICampaign {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCampaign = new RosCampaign(this, id,  {
-            remark: props.remark,
             name: props.name,
+            remark: props.remark,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosCampaign;
         this.attrCampaignId = rosCampaign.attrCampaignId;

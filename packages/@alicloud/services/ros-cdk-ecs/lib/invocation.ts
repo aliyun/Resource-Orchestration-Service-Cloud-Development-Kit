@@ -137,7 +137,7 @@ export interface IInvocation extends ros.IResource {
     readonly attrInvokeResults: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Invocation`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Invocation`, which is used to run a Cloud Assistant command on Elastic Compute Service (ECS) instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInvocation`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-invocation
  */
@@ -181,14 +181,14 @@ export class Invocation extends ros.Resource implements IInvocation {
             windowsPasswordName: props.windowsPasswordName,
             repeatMode: props.repeatMode,
             username: props.username,
-            containerName: props.containerName,
             containerId: props.containerId,
-            launcher: props.launcher,
+            containerName: props.containerName,
             frequency: props.frequency,
-            commandName: props.commandName,
+            launcher: props.launcher,
             commandId: props.commandId,
-            sync: props.sync === undefined || props.sync === null ? false : props.sync,
+            commandName: props.commandName,
             instanceIds: props.instanceIds,
+            sync: props.sync === undefined || props.sync === null ? false : props.sync,
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInvocation;

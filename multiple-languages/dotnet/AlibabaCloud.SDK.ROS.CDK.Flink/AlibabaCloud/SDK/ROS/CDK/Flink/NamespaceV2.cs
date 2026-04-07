@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Flink
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::Flink::NamespaceV2`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::Flink::NamespaceV2`The , which resource creates a project.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNamespaceV2`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-namespacev2

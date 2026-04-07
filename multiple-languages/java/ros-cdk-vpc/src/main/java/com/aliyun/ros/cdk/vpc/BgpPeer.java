@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::BgpPeer</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:00.866Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.780Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.BgpPeer")
 public class BgpPeer extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.IBgpPeer {
 
@@ -133,6 +133,37 @@ public class BgpPeer extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
+         * Property bfdMultiHop: The BFD hop count.
+         * <p>
+         * Valid values: <strong>1</strong> to <strong>255</strong>.
+         * When enabling BFD, this parameter must be configured.
+         * It specifies the maximum number of hops that a packet can traverse from source to destination. You can set different hop counts based on actual physical link conditions.
+         * When using BFD in a multi-cloud environment or direct fiber connection without intermediate bridging devices, change the default BFD hop count from <strong>255</strong> to <strong>1</strong>.
+         * <p>
+         * @return {@code this}
+         * @param bfdMultiHop Property bfdMultiHop: The BFD hop count. This parameter is required.
+         */
+        public Builder bfdMultiHop(final java.lang.Number bfdMultiHop) {
+            this.props.bfdMultiHop(bfdMultiHop);
+            return this;
+        }
+        /**
+         * Property bfdMultiHop: The BFD hop count.
+         * <p>
+         * Valid values: <strong>1</strong> to <strong>255</strong>.
+         * When enabling BFD, this parameter must be configured.
+         * It specifies the maximum number of hops that a packet can traverse from source to destination. You can set different hop counts based on actual physical link conditions.
+         * When using BFD in a multi-cloud environment or direct fiber connection without intermediate bridging devices, change the default BFD hop count from <strong>255</strong> to <strong>1</strong>.
+         * <p>
+         * @return {@code this}
+         * @param bfdMultiHop Property bfdMultiHop: The BFD hop count. This parameter is required.
+         */
+        public Builder bfdMultiHop(final com.aliyun.ros.cdk.core.IResolvable bfdMultiHop) {
+            this.props.bfdMultiHop(bfdMultiHop);
+            return this;
+        }
+
+        /**
          * Property enableBfd: Specifies whether to enable the Bidirectional Forwarding Detection (BFD) feature.
          * <p>
          * Valid values:
@@ -158,6 +189,41 @@ public class BgpPeer extends com.aliyun.ros.cdk.core.Resource implements com.ali
          */
         public Builder enableBfd(final com.aliyun.ros.cdk.core.IResolvable enableBfd) {
             this.props.enableBfd(enableBfd);
+            return this;
+        }
+
+        /**
+         * Property ipVersion: The IP version.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>IPv4</strong> (default): IPv4 version.</li>
+         * <li><strong>IPv6</strong>: IPv6 version. IPv6 is supported only when the VBR associated with the BGP group has IPv6 enabled.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param ipVersion Property ipVersion: The IP version. This parameter is required.
+         */
+        public Builder ipVersion(final java.lang.String ipVersion) {
+            this.props.ipVersion(ipVersion);
+            return this;
+        }
+        /**
+         * Property ipVersion: The IP version.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>IPv4</strong> (default): IPv4 version.</li>
+         * <li><strong>IPv6</strong>: IPv6 version. IPv6 is supported only when the VBR associated with the BGP group has IPv6 enabled.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param ipVersion Property ipVersion: The IP version. This parameter is required.
+         */
+        public Builder ipVersion(final com.aliyun.ros.cdk.core.IResolvable ipVersion) {
+            this.props.ipVersion(ipVersion);
             return this;
         }
 

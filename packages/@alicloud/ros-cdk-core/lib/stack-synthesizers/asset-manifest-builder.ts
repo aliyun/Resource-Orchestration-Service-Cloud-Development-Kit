@@ -155,11 +155,8 @@ export class AssetManifestBuilder {
         return artifactId;
     }
 
-    private manifestEnvName(stack: Stack): string {
-        return [
-            resolvedOr(stack.account, 'current_account'),
-            resolvedOr(stack.region, 'current_region'),
-        ].join('-');
+    private manifestEnvName(_stack: Stack): string {
+        return 'current_account-current_region';
     }
 }
 

@@ -79,6 +79,8 @@ function RosAppPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('network', ros.listValidator(RosApp_NetworkPropertyValidator))(properties.network));
     errors.collect(ros.propertyValidator('logProConfiguration', RosApp_LogProConfigurationPropertyValidator)(properties.logProConfiguration));
     errors.collect(ros.propertyValidator('privateNetwork', ros.listValidator(RosApp_PrivateNetworkPropertyValidator))(properties.privateNetwork));
+    errors.collect(ros.propertyValidator('appName', ros.requiredValidator)(properties.appName));
+    errors.collect(ros.propertyValidator('appName', ros.validateString)(properties.appName));
     if(properties.scenario && (typeof properties.scenario) !== 'object') {
         errors.collect(ros.propertyValidator('scenario', ros.validateAllowedValues)({
           data: properties.scenario,
@@ -86,8 +88,6 @@ function RosAppPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('scenario', ros.validateString)(properties.scenario));
-    errors.collect(ros.propertyValidator('appName', ros.requiredValidator)(properties.appName));
-    errors.collect(ros.propertyValidator('appName', ros.validateString)(properties.appName));
     return errors.wrap('supplied properties not correct for "RosAppProps"');
 }
 
@@ -118,7 +118,7 @@ function rosAppPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ElasticSearchServerless::App`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ElasticSearchServerless::App`, which is used to create an Elasticsearch serverless application.
  * @Note This class does not contain additional functions, so it is recommended to use the `App` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-elasticsearchserverless-app
  */
@@ -816,7 +816,7 @@ function rosEndpointPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ElasticSearchServerless::Endpoint`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ElasticSearchServerless::Endpoint`The , which is used to create an endpoint.
  * @Note This class does not contain additional functions, so it is recommended to use the `Endpoint` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-elasticsearchserverless-endpoint
  */

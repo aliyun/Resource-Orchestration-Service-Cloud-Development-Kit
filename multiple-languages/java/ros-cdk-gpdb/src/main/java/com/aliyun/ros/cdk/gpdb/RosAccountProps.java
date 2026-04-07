@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.gpdb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-account
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.428Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:27.031Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.RosAccountProps")
 @software.amazon.jsii.Jsii.Proxy(RosAccountProps.Jsii$Proxy.class)
 public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
@@ -29,6 +29,12 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAccountType() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosAccountProps}
      */
     static Builder builder() {
@@ -42,6 +48,7 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object accountPassword;
         java.lang.Object dbInstanceId;
         java.lang.Object accountDescription;
+        java.lang.Object accountType;
 
         /**
          * Sets the value of {@link RosAccountProps#getAccountName}
@@ -124,6 +131,26 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosAccountProps#getAccountType}
+         * @param accountType the value to be set.
+         * @return {@code this}
+         */
+        public Builder accountType(java.lang.String accountType) {
+            this.accountType = accountType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAccountProps#getAccountType}
+         * @param accountType the value to be set.
+         * @return {@code this}
+         */
+        public Builder accountType(com.aliyun.ros.cdk.core.IResolvable accountType) {
+            this.accountType = accountType;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosAccountProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -143,6 +170,7 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object accountPassword;
         private final java.lang.Object dbInstanceId;
         private final java.lang.Object accountDescription;
+        private final java.lang.Object accountType;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -154,6 +182,7 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
             this.accountPassword = software.amazon.jsii.Kernel.get(this, "accountPassword", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbInstanceId = software.amazon.jsii.Kernel.get(this, "dbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.accountDescription = software.amazon.jsii.Kernel.get(this, "accountDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.accountType = software.amazon.jsii.Kernel.get(this, "accountType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -165,6 +194,7 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
             this.accountPassword = java.util.Objects.requireNonNull(builder.accountPassword, "accountPassword is required");
             this.dbInstanceId = java.util.Objects.requireNonNull(builder.dbInstanceId, "dbInstanceId is required");
             this.accountDescription = builder.accountDescription;
+            this.accountType = builder.accountType;
         }
 
         @Override
@@ -188,6 +218,11 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getAccountType() {
+            return this.accountType;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -198,6 +233,9 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
             data.set("dbInstanceId", om.valueToTree(this.getDbInstanceId()));
             if (this.getAccountDescription() != null) {
                 data.set("accountDescription", om.valueToTree(this.getAccountDescription()));
+            }
+            if (this.getAccountType() != null) {
+                data.set("accountType", om.valueToTree(this.getAccountType()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -220,7 +258,8 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
             if (!accountName.equals(that.accountName)) return false;
             if (!accountPassword.equals(that.accountPassword)) return false;
             if (!dbInstanceId.equals(that.dbInstanceId)) return false;
-            return this.accountDescription != null ? this.accountDescription.equals(that.accountDescription) : that.accountDescription == null;
+            if (this.accountDescription != null ? !this.accountDescription.equals(that.accountDescription) : that.accountDescription != null) return false;
+            return this.accountType != null ? this.accountType.equals(that.accountType) : that.accountType == null;
         }
 
         @Override
@@ -229,6 +268,7 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.accountPassword.hashCode());
             result = 31 * result + (this.dbInstanceId.hashCode());
             result = 31 * result + (this.accountDescription != null ? this.accountDescription.hashCode() : 0);
+            result = 31 * result + (this.accountType != null ? this.accountType.hashCode() : 0);
             return result;
         }
     }

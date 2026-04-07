@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cms;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-groupmetricrule
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.683Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:23.036Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.GroupMetricRuleProps")
 @software.amazon.jsii.Jsii.Proxy(GroupMetricRuleProps.Jsii$Proxy.class)
 public interface GroupMetricRuleProps extends software.amazon.jsii.JsiiSerializable {
@@ -91,6 +91,13 @@ public interface GroupMetricRuleProps extends software.amazon.jsii.JsiiSerializa
     @org.jetbrains.annotations.NotNull java.lang.Object getRuleName();
 
     /**
+     * Property contactGroups: The alert contact groups.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getContactGroups() {
+        return null;
+    }
+
+    /**
      * Property dimensions: The expended resource dimensions.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDimensions() {
@@ -112,6 +119,17 @@ public interface GroupMetricRuleProps extends software.amazon.jsii.JsiiSerializa
     }
 
     /**
+     * Property extraDimensionJson: The secondary or tertiary dimensions of the alert rule in the application group.
+     * <p>
+     * Format: a collection of key:value pairs, for example, <code>port:80</code> or <code>\/dev\/xvda:d-m5e6yphgzn3aprwu****</code>.
+     * <p>
+     * When the first-level dimension of the alert rule is <code>{"instanceId":"i-m5e1qg6uo38rztr4****"}</code>, its secondary dimension is the disk <code>{"\/dev\/xvda":"d-m5e6yphgzn3aprwu****"}</code>.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getExtraDimensionJson() {
+        return null;
+    }
+
+    /**
      * Property interval: The detection period of alerts.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInterval() {
@@ -119,9 +137,33 @@ public interface GroupMetricRuleProps extends software.amazon.jsii.JsiiSerializa
     }
 
     /**
+     * Property noDataPolicy: The handling method when there is no monitoring data.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>KEEP_LAST_STATE (default): No action is taken.</li>
+     * <li>INSUFFICIENT_DATA: Alert content is "No Data".</li>
+     * <li>OK: Normal.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNoDataPolicy() {
+        return null;
+    }
+
+    /**
      * Property noEffectiveInterval: The period when the alert rule is ineffective.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNoEffectiveInterval() {
+        return null;
+    }
+
+    /**
+     * Property options: The advanced settings.
+     * <p>
+     * Format: <code>{"key1":"value1","key2":"value2"}</code>, for example, <code>{"NotSendOK":true}</code>, indicating whether to send alert recovery notifications. The key is <code>NotSendOK</code>, and the value is <code>true</code> (do not send) or <code>false</code> (send by default).
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getOptions() {
         return null;
     }
 
@@ -167,11 +209,15 @@ public interface GroupMetricRuleProps extends software.amazon.jsii.JsiiSerializa
         java.lang.Object namespace;
         java.lang.Object ruleId;
         java.lang.Object ruleName;
+        java.lang.Object contactGroups;
         java.lang.Object dimensions;
         java.lang.Object effectiveInterval;
         java.lang.Object emailSubject;
+        java.lang.Object extraDimensionJson;
         java.lang.Object interval;
+        java.lang.Object noDataPolicy;
         java.lang.Object noEffectiveInterval;
+        java.lang.Object options;
         java.lang.Object period;
         java.lang.Object silenceTime;
         java.lang.Object webhook;
@@ -399,6 +445,26 @@ public interface GroupMetricRuleProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link GroupMetricRuleProps#getContactGroups}
+         * @param contactGroups Property contactGroups: The alert contact groups.
+         * @return {@code this}
+         */
+        public Builder contactGroups(com.aliyun.ros.cdk.core.IResolvable contactGroups) {
+            this.contactGroups = contactGroups;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link GroupMetricRuleProps#getContactGroups}
+         * @param contactGroups Property contactGroups: The alert contact groups.
+         * @return {@code this}
+         */
+        public Builder contactGroups(java.util.List<? extends java.lang.Object> contactGroups) {
+            this.contactGroups = contactGroups;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link GroupMetricRuleProps#getDimensions}
          * @param dimensions Property dimensions: The expended resource dimensions.
          * @return {@code this}
@@ -459,6 +525,32 @@ public interface GroupMetricRuleProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link GroupMetricRuleProps#getExtraDimensionJson}
+         * @param extraDimensionJson Property extraDimensionJson: The secondary or tertiary dimensions of the alert rule in the application group.
+         *                           Format: a collection of key:value pairs, for example, <code>port:80</code> or <code>\/dev\/xvda:d-m5e6yphgzn3aprwu****</code>.
+         *                           <p>
+         *                           When the first-level dimension of the alert rule is <code>{"instanceId":"i-m5e1qg6uo38rztr4****"}</code>, its secondary dimension is the disk <code>{"\/dev\/xvda":"d-m5e6yphgzn3aprwu****"}</code>.
+         * @return {@code this}
+         */
+        public Builder extraDimensionJson(com.aliyun.ros.cdk.core.IResolvable extraDimensionJson) {
+            this.extraDimensionJson = extraDimensionJson;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link GroupMetricRuleProps#getExtraDimensionJson}
+         * @param extraDimensionJson Property extraDimensionJson: The secondary or tertiary dimensions of the alert rule in the application group.
+         *                           Format: a collection of key:value pairs, for example, <code>port:80</code> or <code>\/dev\/xvda:d-m5e6yphgzn3aprwu****</code>.
+         *                           <p>
+         *                           When the first-level dimension of the alert rule is <code>{"instanceId":"i-m5e1qg6uo38rztr4****"}</code>, its secondary dimension is the disk <code>{"\/dev\/xvda":"d-m5e6yphgzn3aprwu****"}</code>.
+         * @return {@code this}
+         */
+        public Builder extraDimensionJson(java.util.Map<java.lang.String, ? extends java.lang.Object> extraDimensionJson) {
+            this.extraDimensionJson = extraDimensionJson;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link GroupMetricRuleProps#getInterval}
          * @param interval Property interval: The detection period of alerts.
          * @return {@code this}
@@ -479,6 +571,40 @@ public interface GroupMetricRuleProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link GroupMetricRuleProps#getNoDataPolicy}
+         * @param noDataPolicy Property noDataPolicy: The handling method when there is no monitoring data.
+         *                     Valid values:
+         *                     <p>
+         *                     <ul>
+         *                     <li>KEEP_LAST_STATE (default): No action is taken.</li>
+         *                     <li>INSUFFICIENT_DATA: Alert content is "No Data".</li>
+         *                     <li>OK: Normal.</li>
+         *                     </ul>
+         * @return {@code this}
+         */
+        public Builder noDataPolicy(java.lang.String noDataPolicy) {
+            this.noDataPolicy = noDataPolicy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link GroupMetricRuleProps#getNoDataPolicy}
+         * @param noDataPolicy Property noDataPolicy: The handling method when there is no monitoring data.
+         *                     Valid values:
+         *                     <p>
+         *                     <ul>
+         *                     <li>KEEP_LAST_STATE (default): No action is taken.</li>
+         *                     <li>INSUFFICIENT_DATA: Alert content is "No Data".</li>
+         *                     <li>OK: Normal.</li>
+         *                     </ul>
+         * @return {@code this}
+         */
+        public Builder noDataPolicy(com.aliyun.ros.cdk.core.IResolvable noDataPolicy) {
+            this.noDataPolicy = noDataPolicy;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link GroupMetricRuleProps#getNoEffectiveInterval}
          * @param noEffectiveInterval Property noEffectiveInterval: The period when the alert rule is ineffective.
          * @return {@code this}
@@ -495,6 +621,28 @@ public interface GroupMetricRuleProps extends software.amazon.jsii.JsiiSerializa
          */
         public Builder noEffectiveInterval(com.aliyun.ros.cdk.core.IResolvable noEffectiveInterval) {
             this.noEffectiveInterval = noEffectiveInterval;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link GroupMetricRuleProps#getOptions}
+         * @param options Property options: The advanced settings.
+         *                Format: <code>{"key1":"value1","key2":"value2"}</code>, for example, <code>{"NotSendOK":true}</code>, indicating whether to send alert recovery notifications. The key is <code>NotSendOK</code>, and the value is <code>true</code> (do not send) or <code>false</code> (send by default).
+         * @return {@code this}
+         */
+        public Builder options(java.lang.String options) {
+            this.options = options;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link GroupMetricRuleProps#getOptions}
+         * @param options Property options: The advanced settings.
+         *                Format: <code>{"key1":"value1","key2":"value2"}</code>, for example, <code>{"NotSendOK":true}</code>, indicating whether to send alert recovery notifications. The key is <code>NotSendOK</code>, and the value is <code>true</code> (do not send) or <code>false</code> (send by default).
+         * @return {@code this}
+         */
+        public Builder options(com.aliyun.ros.cdk.core.IResolvable options) {
+            this.options = options;
             return this;
         }
 
@@ -585,11 +733,15 @@ public interface GroupMetricRuleProps extends software.amazon.jsii.JsiiSerializa
         private final java.lang.Object namespace;
         private final java.lang.Object ruleId;
         private final java.lang.Object ruleName;
+        private final java.lang.Object contactGroups;
         private final java.lang.Object dimensions;
         private final java.lang.Object effectiveInterval;
         private final java.lang.Object emailSubject;
+        private final java.lang.Object extraDimensionJson;
         private final java.lang.Object interval;
+        private final java.lang.Object noDataPolicy;
         private final java.lang.Object noEffectiveInterval;
+        private final java.lang.Object options;
         private final java.lang.Object period;
         private final java.lang.Object silenceTime;
         private final java.lang.Object webhook;
@@ -607,11 +759,15 @@ public interface GroupMetricRuleProps extends software.amazon.jsii.JsiiSerializa
             this.namespace = software.amazon.jsii.Kernel.get(this, "namespace", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ruleId = software.amazon.jsii.Kernel.get(this, "ruleId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ruleName = software.amazon.jsii.Kernel.get(this, "ruleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.contactGroups = software.amazon.jsii.Kernel.get(this, "contactGroups", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dimensions = software.amazon.jsii.Kernel.get(this, "dimensions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.effectiveInterval = software.amazon.jsii.Kernel.get(this, "effectiveInterval", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.emailSubject = software.amazon.jsii.Kernel.get(this, "emailSubject", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.extraDimensionJson = software.amazon.jsii.Kernel.get(this, "extraDimensionJson", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.interval = software.amazon.jsii.Kernel.get(this, "interval", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.noDataPolicy = software.amazon.jsii.Kernel.get(this, "noDataPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.noEffectiveInterval = software.amazon.jsii.Kernel.get(this, "noEffectiveInterval", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.options = software.amazon.jsii.Kernel.get(this, "options", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.silenceTime = software.amazon.jsii.Kernel.get(this, "silenceTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.webhook = software.amazon.jsii.Kernel.get(this, "webhook", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -629,11 +785,15 @@ public interface GroupMetricRuleProps extends software.amazon.jsii.JsiiSerializa
             this.namespace = java.util.Objects.requireNonNull(builder.namespace, "namespace is required");
             this.ruleId = java.util.Objects.requireNonNull(builder.ruleId, "ruleId is required");
             this.ruleName = java.util.Objects.requireNonNull(builder.ruleName, "ruleName is required");
+            this.contactGroups = builder.contactGroups;
             this.dimensions = builder.dimensions;
             this.effectiveInterval = builder.effectiveInterval;
             this.emailSubject = builder.emailSubject;
+            this.extraDimensionJson = builder.extraDimensionJson;
             this.interval = builder.interval;
+            this.noDataPolicy = builder.noDataPolicy;
             this.noEffectiveInterval = builder.noEffectiveInterval;
+            this.options = builder.options;
             this.period = builder.period;
             this.silenceTime = builder.silenceTime;
             this.webhook = builder.webhook;
@@ -675,6 +835,11 @@ public interface GroupMetricRuleProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
+        public final java.lang.Object getContactGroups() {
+            return this.contactGroups;
+        }
+
+        @Override
         public final java.lang.Object getDimensions() {
             return this.dimensions;
         }
@@ -690,13 +855,28 @@ public interface GroupMetricRuleProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
+        public final java.lang.Object getExtraDimensionJson() {
+            return this.extraDimensionJson;
+        }
+
+        @Override
         public final java.lang.Object getInterval() {
             return this.interval;
         }
 
         @Override
+        public final java.lang.Object getNoDataPolicy() {
+            return this.noDataPolicy;
+        }
+
+        @Override
         public final java.lang.Object getNoEffectiveInterval() {
             return this.noEffectiveInterval;
+        }
+
+        @Override
+        public final java.lang.Object getOptions() {
+            return this.options;
         }
 
         @Override
@@ -727,6 +907,9 @@ public interface GroupMetricRuleProps extends software.amazon.jsii.JsiiSerializa
             data.set("namespace", om.valueToTree(this.getNamespace()));
             data.set("ruleId", om.valueToTree(this.getRuleId()));
             data.set("ruleName", om.valueToTree(this.getRuleName()));
+            if (this.getContactGroups() != null) {
+                data.set("contactGroups", om.valueToTree(this.getContactGroups()));
+            }
             if (this.getDimensions() != null) {
                 data.set("dimensions", om.valueToTree(this.getDimensions()));
             }
@@ -736,11 +919,20 @@ public interface GroupMetricRuleProps extends software.amazon.jsii.JsiiSerializa
             if (this.getEmailSubject() != null) {
                 data.set("emailSubject", om.valueToTree(this.getEmailSubject()));
             }
+            if (this.getExtraDimensionJson() != null) {
+                data.set("extraDimensionJson", om.valueToTree(this.getExtraDimensionJson()));
+            }
             if (this.getInterval() != null) {
                 data.set("interval", om.valueToTree(this.getInterval()));
             }
+            if (this.getNoDataPolicy() != null) {
+                data.set("noDataPolicy", om.valueToTree(this.getNoDataPolicy()));
+            }
             if (this.getNoEffectiveInterval() != null) {
                 data.set("noEffectiveInterval", om.valueToTree(this.getNoEffectiveInterval()));
+            }
+            if (this.getOptions() != null) {
+                data.set("options", om.valueToTree(this.getOptions()));
             }
             if (this.getPeriod() != null) {
                 data.set("period", om.valueToTree(this.getPeriod()));
@@ -776,11 +968,15 @@ public interface GroupMetricRuleProps extends software.amazon.jsii.JsiiSerializa
             if (!namespace.equals(that.namespace)) return false;
             if (!ruleId.equals(that.ruleId)) return false;
             if (!ruleName.equals(that.ruleName)) return false;
+            if (this.contactGroups != null ? !this.contactGroups.equals(that.contactGroups) : that.contactGroups != null) return false;
             if (this.dimensions != null ? !this.dimensions.equals(that.dimensions) : that.dimensions != null) return false;
             if (this.effectiveInterval != null ? !this.effectiveInterval.equals(that.effectiveInterval) : that.effectiveInterval != null) return false;
             if (this.emailSubject != null ? !this.emailSubject.equals(that.emailSubject) : that.emailSubject != null) return false;
+            if (this.extraDimensionJson != null ? !this.extraDimensionJson.equals(that.extraDimensionJson) : that.extraDimensionJson != null) return false;
             if (this.interval != null ? !this.interval.equals(that.interval) : that.interval != null) return false;
+            if (this.noDataPolicy != null ? !this.noDataPolicy.equals(that.noDataPolicy) : that.noDataPolicy != null) return false;
             if (this.noEffectiveInterval != null ? !this.noEffectiveInterval.equals(that.noEffectiveInterval) : that.noEffectiveInterval != null) return false;
+            if (this.options != null ? !this.options.equals(that.options) : that.options != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
             if (this.silenceTime != null ? !this.silenceTime.equals(that.silenceTime) : that.silenceTime != null) return false;
             return this.webhook != null ? this.webhook.equals(that.webhook) : that.webhook == null;
@@ -795,11 +991,15 @@ public interface GroupMetricRuleProps extends software.amazon.jsii.JsiiSerializa
             result = 31 * result + (this.namespace.hashCode());
             result = 31 * result + (this.ruleId.hashCode());
             result = 31 * result + (this.ruleName.hashCode());
+            result = 31 * result + (this.contactGroups != null ? this.contactGroups.hashCode() : 0);
             result = 31 * result + (this.dimensions != null ? this.dimensions.hashCode() : 0);
             result = 31 * result + (this.effectiveInterval != null ? this.effectiveInterval.hashCode() : 0);
             result = 31 * result + (this.emailSubject != null ? this.emailSubject.hashCode() : 0);
+            result = 31 * result + (this.extraDimensionJson != null ? this.extraDimensionJson.hashCode() : 0);
             result = 31 * result + (this.interval != null ? this.interval.hashCode() : 0);
+            result = 31 * result + (this.noDataPolicy != null ? this.noDataPolicy.hashCode() : 0);
             result = 31 * result + (this.noEffectiveInterval != null ? this.noEffectiveInterval.hashCode() : 0);
+            result = 31 * result + (this.options != null ? this.options.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.silenceTime != null ? this.silenceTime.hashCode() : 0);
             result = 31 * result + (this.webhook != null ? this.webhook.hashCode() : 0);

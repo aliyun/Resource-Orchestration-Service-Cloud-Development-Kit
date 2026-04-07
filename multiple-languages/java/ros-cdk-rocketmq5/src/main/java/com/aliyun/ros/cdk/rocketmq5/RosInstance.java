@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.rocketmq5;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ROCKETMQ5::Instance</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ROCKETMQ5::Instance</code>The , which resource type creates an ApsaraMQ for RocketMQ 5.0 instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:59.941Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:29.634Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq5.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq5.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -586,7 +586,21 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCapacityType() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getMessageRetentionTime() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getProvisionedCapacity() {
             return null;
         }
 
@@ -611,7 +625,9 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
         public static final class Builder implements software.amazon.jsii.Builder<ProductInfoProperty> {
             java.lang.Object msgProcessSpec;
             java.lang.Object autoScaling;
+            java.lang.Object capacityType;
             java.lang.Object messageRetentionTime;
+            java.lang.Object provisionedCapacity;
             java.lang.Object sendReceiveRatio;
 
             /**
@@ -659,6 +675,28 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link ProductInfoProperty#getCapacityType}
+             * @param capacityType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder capacityType(java.lang.String capacityType) {
+                this.capacityType = capacityType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ProductInfoProperty#getCapacityType}
+             * @param capacityType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder capacityType(com.aliyun.ros.cdk.core.IResolvable capacityType) {
+                this.capacityType = capacityType;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link ProductInfoProperty#getMessageRetentionTime}
              * @param messageRetentionTime the value to be set.
              * @return {@code this}
@@ -677,6 +715,28 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder messageRetentionTime(com.aliyun.ros.cdk.core.IResolvable messageRetentionTime) {
                 this.messageRetentionTime = messageRetentionTime;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ProductInfoProperty#getProvisionedCapacity}
+             * @param provisionedCapacity the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder provisionedCapacity(java.lang.Number provisionedCapacity) {
+                this.provisionedCapacity = provisionedCapacity;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ProductInfoProperty#getProvisionedCapacity}
+             * @param provisionedCapacity the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder provisionedCapacity(com.aliyun.ros.cdk.core.IResolvable provisionedCapacity) {
+                this.provisionedCapacity = provisionedCapacity;
                 return this;
             }
 
@@ -722,7 +782,9 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ProductInfoProperty {
             private final java.lang.Object msgProcessSpec;
             private final java.lang.Object autoScaling;
+            private final java.lang.Object capacityType;
             private final java.lang.Object messageRetentionTime;
+            private final java.lang.Object provisionedCapacity;
             private final java.lang.Object sendReceiveRatio;
 
             /**
@@ -733,7 +795,9 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
                 super(objRef);
                 this.msgProcessSpec = software.amazon.jsii.Kernel.get(this, "msgProcessSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.autoScaling = software.amazon.jsii.Kernel.get(this, "autoScaling", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.capacityType = software.amazon.jsii.Kernel.get(this, "capacityType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.messageRetentionTime = software.amazon.jsii.Kernel.get(this, "messageRetentionTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.provisionedCapacity = software.amazon.jsii.Kernel.get(this, "provisionedCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.sendReceiveRatio = software.amazon.jsii.Kernel.get(this, "sendReceiveRatio", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
@@ -744,7 +808,9 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.msgProcessSpec = java.util.Objects.requireNonNull(builder.msgProcessSpec, "msgProcessSpec is required");
                 this.autoScaling = builder.autoScaling;
+                this.capacityType = builder.capacityType;
                 this.messageRetentionTime = builder.messageRetentionTime;
+                this.provisionedCapacity = builder.provisionedCapacity;
                 this.sendReceiveRatio = builder.sendReceiveRatio;
             }
 
@@ -759,8 +825,18 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getCapacityType() {
+                return this.capacityType;
+            }
+
+            @Override
             public final java.lang.Object getMessageRetentionTime() {
                 return this.messageRetentionTime;
+            }
+
+            @Override
+            public final java.lang.Object getProvisionedCapacity() {
+                return this.provisionedCapacity;
             }
 
             @Override
@@ -778,8 +854,14 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getAutoScaling() != null) {
                     data.set("autoScaling", om.valueToTree(this.getAutoScaling()));
                 }
+                if (this.getCapacityType() != null) {
+                    data.set("capacityType", om.valueToTree(this.getCapacityType()));
+                }
                 if (this.getMessageRetentionTime() != null) {
                     data.set("messageRetentionTime", om.valueToTree(this.getMessageRetentionTime()));
+                }
+                if (this.getProvisionedCapacity() != null) {
+                    data.set("provisionedCapacity", om.valueToTree(this.getProvisionedCapacity()));
                 }
                 if (this.getSendReceiveRatio() != null) {
                     data.set("sendReceiveRatio", om.valueToTree(this.getSendReceiveRatio()));
@@ -804,7 +886,9 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
                 if (!msgProcessSpec.equals(that.msgProcessSpec)) return false;
                 if (this.autoScaling != null ? !this.autoScaling.equals(that.autoScaling) : that.autoScaling != null) return false;
+                if (this.capacityType != null ? !this.capacityType.equals(that.capacityType) : that.capacityType != null) return false;
                 if (this.messageRetentionTime != null ? !this.messageRetentionTime.equals(that.messageRetentionTime) : that.messageRetentionTime != null) return false;
+                if (this.provisionedCapacity != null ? !this.provisionedCapacity.equals(that.provisionedCapacity) : that.provisionedCapacity != null) return false;
                 return this.sendReceiveRatio != null ? this.sendReceiveRatio.equals(that.sendReceiveRatio) : that.sendReceiveRatio == null;
             }
 
@@ -812,7 +896,9 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             public final int hashCode() {
                 int result = this.msgProcessSpec.hashCode();
                 result = 31 * result + (this.autoScaling != null ? this.autoScaling.hashCode() : 0);
+                result = 31 * result + (this.capacityType != null ? this.capacityType.hashCode() : 0);
                 result = 31 * result + (this.messageRetentionTime != null ? this.messageRetentionTime.hashCode() : 0);
+                result = 31 * result + (this.provisionedCapacity != null ? this.provisionedCapacity.hashCode() : 0);
                 result = 31 * result + (this.sendReceiveRatio != null ? this.sendReceiveRatio.hashCode() : 0);
                 return result;
             }

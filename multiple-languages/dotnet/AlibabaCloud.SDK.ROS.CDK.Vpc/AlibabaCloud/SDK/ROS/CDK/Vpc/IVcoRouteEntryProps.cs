@@ -50,6 +50,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
+        /// <summary>Property overlayMode: The tunnel protocol.</summary>
+        /// <remarks>
+        /// Valid value: <strong>Ipsec</strong> (default), which indicates the IPsec tunnel protocol.
+        /// </remarks>
+        [JsiiProperty(name: "overlayMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? OverlayMode
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `VcoRouteEntry`.</summary>
         /// <remarks>
         /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vcorouteentry
@@ -93,6 +107,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Description
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property overlayMode: The tunnel protocol.</summary>
+            /// <remarks>
+            /// Valid value: <strong>Ipsec</strong> (default), which indicates the IPsec tunnel protocol.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "overlayMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? OverlayMode
             {
                 get => GetInstanceProperty<object?>();
             }

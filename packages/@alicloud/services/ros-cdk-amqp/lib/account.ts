@@ -53,7 +53,7 @@ export interface IAccount extends ros.IResource {
     readonly attrUserName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::AMQP::Account`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::AMQP::Account`The , which type creates username and password for ApsaraMQ for RabbitMQ.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccount`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-account
  */

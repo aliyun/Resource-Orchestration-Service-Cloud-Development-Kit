@@ -81,7 +81,7 @@ export interface IPolicy extends ros.IResource {
     readonly attrResources: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::KMS::Policy`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::KMS::Policy`, which is used to create a permission policy to configure the keys and secrets that applications are allowed to access.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-policy
  */

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::PermissionPolicyToAccessConfigurationAddition`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::PermissionPolicyToAccessConfigurationAddition`, which is used to add a policy to an access configuration.
 type PermissionPolicyToAccessConfigurationAddition interface {
 	alicloudroscdkcore.Resource
 	IPermissionPolicyToAccessConfigurationAddition

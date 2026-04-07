@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vcorouteentry
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.244Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.229Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.VcoRouteEntryProps")
 @software.amazon.jsii.Jsii.Proxy(VcoRouteEntryProps.Jsii$Proxy.class)
 public interface VcoRouteEntryProps extends software.amazon.jsii.JsiiSerializable {
@@ -38,6 +38,15 @@ public interface VcoRouteEntryProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
+     * Property overlayMode: The tunnel protocol.
+     * <p>
+     * Valid value: <strong>Ipsec</strong> (default), which indicates the IPsec tunnel protocol.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getOverlayMode() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link VcoRouteEntryProps}
      */
     static Builder builder() {
@@ -52,6 +61,7 @@ public interface VcoRouteEntryProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object vpnConnectionId;
         java.lang.Object weight;
         java.lang.Object description;
+        java.lang.Object overlayMode;
 
         /**
          * Sets the value of {@link VcoRouteEntryProps#getNextHop}
@@ -154,6 +164,28 @@ public interface VcoRouteEntryProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link VcoRouteEntryProps#getOverlayMode}
+         * @param overlayMode Property overlayMode: The tunnel protocol.
+         *                    Valid value: <strong>Ipsec</strong> (default), which indicates the IPsec tunnel protocol.
+         * @return {@code this}
+         */
+        public Builder overlayMode(java.lang.String overlayMode) {
+            this.overlayMode = overlayMode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link VcoRouteEntryProps#getOverlayMode}
+         * @param overlayMode Property overlayMode: The tunnel protocol.
+         *                    Valid value: <strong>Ipsec</strong> (default), which indicates the IPsec tunnel protocol.
+         * @return {@code this}
+         */
+        public Builder overlayMode(com.aliyun.ros.cdk.core.IResolvable overlayMode) {
+            this.overlayMode = overlayMode;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link VcoRouteEntryProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -174,6 +206,7 @@ public interface VcoRouteEntryProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object vpnConnectionId;
         private final java.lang.Object weight;
         private final java.lang.Object description;
+        private final java.lang.Object overlayMode;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -186,6 +219,7 @@ public interface VcoRouteEntryProps extends software.amazon.jsii.JsiiSerializabl
             this.vpnConnectionId = software.amazon.jsii.Kernel.get(this, "vpnConnectionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.weight = software.amazon.jsii.Kernel.get(this, "weight", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.overlayMode = software.amazon.jsii.Kernel.get(this, "overlayMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -198,6 +232,7 @@ public interface VcoRouteEntryProps extends software.amazon.jsii.JsiiSerializabl
             this.vpnConnectionId = java.util.Objects.requireNonNull(builder.vpnConnectionId, "vpnConnectionId is required");
             this.weight = java.util.Objects.requireNonNull(builder.weight, "weight is required");
             this.description = builder.description;
+            this.overlayMode = builder.overlayMode;
         }
 
         @Override
@@ -226,6 +261,11 @@ public interface VcoRouteEntryProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.lang.Object getOverlayMode() {
+            return this.overlayMode;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -237,6 +277,9 @@ public interface VcoRouteEntryProps extends software.amazon.jsii.JsiiSerializabl
             data.set("weight", om.valueToTree(this.getWeight()));
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
+            }
+            if (this.getOverlayMode() != null) {
+                data.set("overlayMode", om.valueToTree(this.getOverlayMode()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -260,7 +303,8 @@ public interface VcoRouteEntryProps extends software.amazon.jsii.JsiiSerializabl
             if (!routeDest.equals(that.routeDest)) return false;
             if (!vpnConnectionId.equals(that.vpnConnectionId)) return false;
             if (!weight.equals(that.weight)) return false;
-            return this.description != null ? this.description.equals(that.description) : that.description == null;
+            if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+            return this.overlayMode != null ? this.overlayMode.equals(that.overlayMode) : that.overlayMode == null;
         }
 
         @Override
@@ -270,6 +314,7 @@ public interface VcoRouteEntryProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.vpnConnectionId.hashCode());
             result = 31 * result + (this.weight.hashCode());
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+            result = 31 * result + (this.overlayMode != null ? this.overlayMode.hashCode() : 0);
             return result;
         }
     }

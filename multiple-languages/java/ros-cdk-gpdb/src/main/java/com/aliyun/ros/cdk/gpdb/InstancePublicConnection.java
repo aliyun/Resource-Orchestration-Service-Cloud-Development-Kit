@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.gpdb;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::GPDB::InstancePublicConnection</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::GPDB::InstancePublicConnection</code>, which is used to allocate a public connection string to an instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.416Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:27.023Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.InstancePublicConnection")
 public class InstancePublicConnection extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.gpdb.IInstancePublicConnection {
 
@@ -179,6 +179,49 @@ public class InstancePublicConnection extends com.aliyun.ros.cdk.core.Resource i
          */
         public Builder port(final com.aliyun.ros.cdk.core.IResolvable port) {
             this.props.port(port);
+            return this;
+        }
+
+        /**
+         * Property addressType: Network type. Valid values:.
+         * <p>
+         * <ul>
+         * <li><strong>primary</strong>: Primary address.</li>
+         * <li><strong>cluster</strong>: Cluster address, only multi-coordination node instances support creating cluster addresses.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * Default is primary address.
+         * <p>
+         * </blockquote>
+         * <p>
+         * @return {@code this}
+         * @param addressType Property addressType: Network type. Valid values:. This parameter is required.
+         */
+        public Builder addressType(final java.lang.String addressType) {
+            this.props.addressType(addressType);
+            return this;
+        }
+        /**
+         * Property addressType: Network type. Valid values:.
+         * <p>
+         * <ul>
+         * <li><strong>primary</strong>: Primary address.</li>
+         * <li><strong>cluster</strong>: Cluster address, only multi-coordination node instances support creating cluster addresses.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * Default is primary address.
+         * <p>
+         * </blockquote>
+         * <p>
+         * @return {@code this}
+         * @param addressType Property addressType: Network type. Valid values:. This parameter is required.
+         */
+        public Builder addressType(final com.aliyun.ros.cdk.core.IResolvable addressType) {
+            this.props.addressType(addressType);
             return this;
         }
 

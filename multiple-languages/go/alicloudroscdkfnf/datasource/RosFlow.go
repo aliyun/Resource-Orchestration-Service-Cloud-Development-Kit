@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::FNF::Flow`.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::FNF::Flow`, which is used to query the information about a flow.
 type RosFlow interface {
 	alicloudroscdkcore.RosResource
 	AttrCreateTime() alicloudroscdkcore.IResolvable

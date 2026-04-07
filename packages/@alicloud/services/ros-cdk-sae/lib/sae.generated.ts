@@ -400,8 +400,8 @@ function RosApplicationPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('phpConfig', ros.validateString)(properties.phpConfig));
     errors.collect(ros.propertyValidator('mountDesc', ros.validateString)(properties.mountDesc));
     errors.collect(ros.propertyValidator('microRegistrationConfig', ros.validateString)(properties.microRegistrationConfig));
-    errors.collect(ros.propertyValidator('warStartOptions', ros.validateString)(properties.warStartOptions));
     errors.collect(ros.propertyValidator('liveness', ros.validateString)(properties.liveness));
+    errors.collect(ros.propertyValidator('warStartOptions', ros.validateString)(properties.warStartOptions));
     errors.collect(ros.propertyValidator('memory', ros.requiredValidator)(properties.memory));
     if(properties.memory && (typeof properties.memory) !== 'object') {
         errors.collect(ros.propertyValidator('memory', ros.validateAllowedValues)({
@@ -435,8 +435,8 @@ function RosApplicationPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosApplication_TagsPropertyValidator))(properties.tags));
-    errors.collect(ros.propertyValidator('python', ros.validateString)(properties.python));
     errors.collect(ros.propertyValidator('ossAkSecret', ros.validateString)(properties.ossAkSecret));
+    errors.collect(ros.propertyValidator('python', ros.validateString)(properties.python));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('imageUrl', ros.validateString)(properties.imageUrl));
     errors.collect(ros.propertyValidator('postStart', ros.validateString)(properties.postStart));
@@ -450,6 +450,7 @@ function RosApplicationPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('newSaeVersion', ros.validateString)(properties.newSaeVersion));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('edasContainerVersion', ros.validateString)(properties.edasContainerVersion));
     if(properties.enableEbpf && (typeof properties.enableEbpf) !== 'object') {
         errors.collect(ros.propertyValidator('enableEbpf', ros.validateAllowedValues)({
           data: properties.enableEbpf,
@@ -457,7 +458,6 @@ function RosApplicationPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('enableEbpf', ros.validateString)(properties.enableEbpf));
-    errors.collect(ros.propertyValidator('edasContainerVersion', ros.validateString)(properties.edasContainerVersion));
     errors.collect(ros.propertyValidator('serviceTags', ros.validateString)(properties.serviceTags));
     errors.collect(ros.propertyValidator('namespaceId', ros.requiredValidator)(properties.namespaceId));
     errors.collect(ros.propertyValidator('namespaceId', ros.validateString)(properties.namespaceId));
@@ -471,14 +471,14 @@ function RosApplicationPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('appDescription', ros.validateString)(properties.appDescription));
     errors.collect(ros.propertyValidator('nasId', ros.validateString)(properties.nasId));
-    errors.collect(ros.propertyValidator('pythonModules', ros.validateString)(properties.pythonModules));
     errors.collect(ros.propertyValidator('acrInstanceId', ros.validateString)(properties.acrInstanceId));
+    errors.collect(ros.propertyValidator('pythonModules', ros.validateString)(properties.pythonModules));
     errors.collect(ros.propertyValidator('sidecarContainersConfig', ros.listValidator(RosApplication_SidecarContainersConfigPropertyValidator))(properties.sidecarContainersConfig));
     errors.collect(ros.propertyValidator('kafkaConfigs', ros.validateString)(properties.kafkaConfigs));
     errors.collect(ros.propertyValidator('slsConfigs', ros.validateString)(properties.slsConfigs));
     errors.collect(ros.propertyValidator('ossAkId', ros.validateString)(properties.ossAkId));
-    errors.collect(ros.propertyValidator('ossMountDescs', ros.listValidator(ros.validateAny))(properties.ossMountDescs));
     errors.collect(ros.propertyValidator('deploy', ros.validateBoolean)(properties.deploy));
+    errors.collect(ros.propertyValidator('ossMountDescs', ros.listValidator(ros.validateAny))(properties.ossMountDescs));
     errors.collect(ros.propertyValidator('packageVersion', ros.validateString)(properties.packageVersion));
     errors.collect(ros.propertyValidator('appName', ros.requiredValidator)(properties.appName));
     if(properties.appName && (typeof properties.appName) !== 'object') {
@@ -513,15 +513,15 @@ function RosApplicationPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('pvtzDiscoverySvc', ros.validateString)(properties.pvtzDiscoverySvc));
     errors.collect(ros.propertyValidator('jarStartOptions', ros.validateString)(properties.jarStartOptions));
-    errors.collect(ros.propertyValidator('imagePullSecrets', ros.validateString)(properties.imagePullSecrets));
     errors.collect(ros.propertyValidator('mountHost', ros.validateString)(properties.mountHost));
+    errors.collect(ros.propertyValidator('imagePullSecrets', ros.validateString)(properties.imagePullSecrets));
     errors.collect(ros.propertyValidator('replicas', ros.requiredValidator)(properties.replicas));
     errors.collect(ros.propertyValidator('replicas', ros.validateNumber)(properties.replicas));
     errors.collect(ros.propertyValidator('initContainersConfig', ros.listValidator(RosApplication_InitContainersConfigPropertyValidator))(properties.initContainersConfig));
     errors.collect(ros.propertyValidator('customHostAlias', ros.validateString)(properties.customHostAlias));
     errors.collect(ros.propertyValidator('appSource', ros.validateString)(properties.appSource));
-    errors.collect(ros.propertyValidator('associateEip', ros.validateBoolean)(properties.associateEip));
     errors.collect(ros.propertyValidator('command', ros.validateString)(properties.command));
+    errors.collect(ros.propertyValidator('associateEip', ros.validateBoolean)(properties.associateEip));
     errors.collect(ros.propertyValidator('packageUrl', ros.validateString)(properties.packageUrl));
     errors.collect(ros.propertyValidator('phpConfigLocation', ros.validateString)(properties.phpConfigLocation));
     errors.collect(ros.propertyValidator('enableNewArms', ros.validateBoolean)(properties.enableNewArms));
@@ -620,7 +620,7 @@ function rosApplicationPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::Application`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::Application`The , which resource type creates a Serverless App Engine (SAE) application.
  * @Note This class does not contain additional functions, so it is recommended to use the `Application` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-application
  */
@@ -1275,13 +1275,13 @@ export namespace RosApplication {
          */
         readonly envs?: string | ros.IResolvable;
         /**
-         * @Property imageUrl: Mirroring address. Image only type of application can be configured to mirror address.
-         */
-        readonly imageUrl?: string | ros.IResolvable;
-        /**
          * @Property cpu: The number of CPU cores allocated to the sidecar container.
          */
         readonly cpu: number | ros.IResolvable;
+        /**
+         * @Property imageUrl: Mirroring address. Image only type of application can be configured to mirror address.
+         */
+        readonly imageUrl?: string | ros.IResolvable;
         /**
          * @Property emptyDirDesc: EmptyDir mount description.
          */
@@ -1312,9 +1312,9 @@ function RosApplication_SidecarContainersConfigPropertyValidator(properties: any
     errors.collect(ros.propertyValidator('memory', ros.requiredValidator)(properties.memory));
     errors.collect(ros.propertyValidator('memory', ros.validateNumber)(properties.memory));
     errors.collect(ros.propertyValidator('envs', ros.validateString)(properties.envs));
-    errors.collect(ros.propertyValidator('imageUrl', ros.validateString)(properties.imageUrl));
     errors.collect(ros.propertyValidator('cpu', ros.requiredValidator)(properties.cpu));
     errors.collect(ros.propertyValidator('cpu', ros.validateNumber)(properties.cpu));
+    errors.collect(ros.propertyValidator('imageUrl', ros.validateString)(properties.imageUrl));
     errors.collect(ros.propertyValidator('emptyDirDesc', ros.validateString)(properties.emptyDirDesc));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
@@ -1339,8 +1339,8 @@ function rosApplicationSidecarContainersConfigPropertyToRosTemplate(properties: 
       'Command': ros.stringToRosTemplate(properties.command),
       'Memory': ros.numberToRosTemplate(properties.memory),
       'Envs': ros.stringToRosTemplate(properties.envs),
-      'ImageUrl': ros.stringToRosTemplate(properties.imageUrl),
       'Cpu': ros.numberToRosTemplate(properties.cpu),
+      'ImageUrl': ros.stringToRosTemplate(properties.imageUrl),
       'EmptyDirDesc': ros.stringToRosTemplate(properties.emptyDirDesc),
       'Name': ros.stringToRosTemplate(properties.name),
       'ConfigMapMountDesc': ros.stringToRosTemplate(properties.configMapMountDesc),
@@ -1452,8 +1452,8 @@ export interface RosApplicationScalingRuleProps {
 function RosApplicationScalingRulePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('scalingRuleMetric', RosApplicationScalingRule_ScalingRuleMetricPropertyValidator)(properties.scalingRuleMetric));
     errors.collect(ros.propertyValidator('scalingRuleTimer', RosApplicationScalingRule_ScalingRuleTimerPropertyValidator)(properties.scalingRuleTimer));
+    errors.collect(ros.propertyValidator('scalingRuleMetric', RosApplicationScalingRule_ScalingRuleMetricPropertyValidator)(properties.scalingRuleMetric));
     errors.collect(ros.propertyValidator('scalingRuleName', ros.requiredValidator)(properties.scalingRuleName));
     if(properties.scalingRuleName && (typeof properties.scalingRuleName) !== 'object') {
         errors.collect(ros.propertyValidator('scalingRuleName', ros.validateAllowedPattern)({
@@ -1462,7 +1462,6 @@ function RosApplicationScalingRulePropsValidator(properties: any): ros.Validatio
         }));
     }
     errors.collect(ros.propertyValidator('scalingRuleName', ros.validateString)(properties.scalingRuleName));
-    errors.collect(ros.propertyValidator('scalingRuleEnable', ros.validateBoolean)(properties.scalingRuleEnable));
     errors.collect(ros.propertyValidator('appId', ros.requiredValidator)(properties.appId));
     errors.collect(ros.propertyValidator('appId', ros.validateString)(properties.appId));
     if(properties.minReadyInstances && (typeof properties.minReadyInstances) !== 'object') {
@@ -1473,6 +1472,7 @@ function RosApplicationScalingRulePropsValidator(properties: any): ros.Validatio
           }));
     }
     errors.collect(ros.propertyValidator('minReadyInstances', ros.validateNumber)(properties.minReadyInstances));
+    errors.collect(ros.propertyValidator('scalingRuleEnable', ros.validateBoolean)(properties.scalingRuleEnable));
     if(properties.minReadyInstanceRatio && (typeof properties.minReadyInstanceRatio) !== 'object') {
         errors.collect(ros.propertyValidator('minReadyInstanceRatio', ros.validateRange)({
             data: properties.minReadyInstanceRatio,
@@ -2215,10 +2215,10 @@ export interface RosIngressProps {
 function RosIngressPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('defaultRule', ros.requiredValidator)(properties.defaultRule));
-    errors.collect(ros.propertyValidator('defaultRule', RosIngress_DefaultRulePropertyValidator)(properties.defaultRule));
     errors.collect(ros.propertyValidator('slbId', ros.requiredValidator)(properties.slbId));
     errors.collect(ros.propertyValidator('slbId', ros.validateString)(properties.slbId));
+    errors.collect(ros.propertyValidator('defaultRule', ros.requiredValidator)(properties.defaultRule));
+    errors.collect(ros.propertyValidator('defaultRule', RosIngress_DefaultRulePropertyValidator)(properties.defaultRule));
     errors.collect(ros.propertyValidator('listenerPort', ros.requiredValidator)(properties.listenerPort));
     if(properties.listenerPort && (typeof properties.listenerPort) !== 'object') {
         errors.collect(ros.propertyValidator('listenerPort', ros.validateRange)({
@@ -2295,7 +2295,7 @@ function rosIngressPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::Ingress`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::Ingress`, which is used to create a routing rule.
  * @Note This class does not contain additional functions, so it is recommended to use the `Ingress` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-ingress
  */
@@ -2623,7 +2623,7 @@ function rosNamespacePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::Namespace`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::Namespace`, which is used to create a Namespace.
  * @Note This class does not contain additional functions, so it is recommended to use the `Namespace` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-namespace
  */
@@ -2682,6 +2682,218 @@ export class RosNamespace extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosNamespacePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+/**
+ * Properties for defining a `RosNlbBinding`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-nlbbinding
+ */
+export interface RosNlbBindingProps {
+
+    /**
+     * @Property appId: The ID of the SAE application.
+     */
+    readonly appId: string | ros.IResolvable;
+
+    /**
+     * @Property listeners: The listeners of the NLB.
+     */
+    readonly listeners: Array<RosNlbBinding.ListenersProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property nlbId: The ID of the Network Load Balancer (NLB).
+     */
+    readonly nlbId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosNlbBindingProps`
+ *
+ * @param properties - the TypeScript properties of a `RosNlbBindingProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosNlbBindingPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('nlbId', ros.requiredValidator)(properties.nlbId));
+    errors.collect(ros.propertyValidator('nlbId', ros.validateString)(properties.nlbId));
+    errors.collect(ros.propertyValidator('listeners', ros.requiredValidator)(properties.listeners));
+    if(properties.listeners && (Array.isArray(properties.listeners) || (typeof properties.listeners) === 'string')) {
+        errors.collect(ros.propertyValidator('listeners', ros.validateLength)({
+            data: properties.listeners.length,
+            min: undefined,
+            max: 1,
+          }));
+    }
+    errors.collect(ros.propertyValidator('listeners', ros.listValidator(RosNlbBinding_ListenersPropertyValidator))(properties.listeners));
+    errors.collect(ros.propertyValidator('appId', ros.requiredValidator)(properties.appId));
+    errors.collect(ros.propertyValidator('appId', ros.validateString)(properties.appId));
+    return errors.wrap('supplied properties not correct for "RosNlbBindingProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SAE::NlbBinding` resource
+ *
+ * @param properties - the TypeScript properties of a `RosNlbBindingProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SAE::NlbBinding` resource.
+ */
+// @ts-ignore TS6133
+function rosNlbBindingPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosNlbBindingPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'AppId': ros.stringToRosTemplate(properties.appId),
+      'Listeners': ros.listMapper(rosNlbBindingListenersPropertyToRosTemplate)(properties.listeners),
+      'NlbId': ros.stringToRosTemplate(properties.nlbId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::NlbBinding`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `NlbBinding` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-nlbbinding
+ */
+export class RosNlbBinding extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SAE::NlbBinding";
+
+    /**
+     * @Attribute NlbId: The ID of the Network Load Balancer (NLB).
+     */
+    public readonly attrNlbId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property appId: The ID of the SAE application.
+     */
+    public appId: string | ros.IResolvable;
+
+    /**
+     * @Property listeners: The listeners of the NLB.
+     */
+    public listeners: Array<RosNlbBinding.ListenersProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property nlbId: The ID of the Network Load Balancer (NLB).
+     */
+    public nlbId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosNlbBindingProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosNlbBinding.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrNlbId = this.getAtt('NlbId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.appId = props.appId;
+        this.listeners = props.listeners;
+        this.nlbId = props.nlbId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            appId: this.appId,
+            listeners: this.listeners,
+            nlbId: this.nlbId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosNlbBindingPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosNlbBinding {
+    /**
+     * @stability external
+     */
+    export interface ListenersProperty {
+        /**
+         * @Property targetPort: The target port of the listener.
+         */
+        readonly targetPort: number | ros.IResolvable;
+        /**
+         * @Property certIds: The certificate ID of the listener.
+         */
+        readonly certIds?: string | ros.IResolvable;
+        /**
+         * @Property port: The port of the listener.
+         */
+        readonly port: number | ros.IResolvable;
+        /**
+         * @Property protocol: The protocol of the listener.
+         */
+        readonly protocol: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ListenersProperty`
+ *
+ * @param properties - the TypeScript properties of a `ListenersProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosNlbBinding_ListenersPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('targetPort', ros.requiredValidator)(properties.targetPort));
+    if(properties.targetPort && (typeof properties.targetPort) !== 'object') {
+        errors.collect(ros.propertyValidator('targetPort', ros.validateRange)({
+            data: properties.targetPort,
+            min: 0,
+            max: 65535,
+          }));
+    }
+    errors.collect(ros.propertyValidator('targetPort', ros.validateNumber)(properties.targetPort));
+    errors.collect(ros.propertyValidator('certIds', ros.validateString)(properties.certIds));
+    errors.collect(ros.propertyValidator('port', ros.requiredValidator)(properties.port));
+    if(properties.port && (typeof properties.port) !== 'object') {
+        errors.collect(ros.propertyValidator('port', ros.validateRange)({
+            data: properties.port,
+            min: 0,
+            max: 65535,
+          }));
+    }
+    errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
+    errors.collect(ros.propertyValidator('protocol', ros.requiredValidator)(properties.protocol));
+    if(properties.protocol && (typeof properties.protocol) !== 'object') {
+        errors.collect(ros.propertyValidator('protocol', ros.validateAllowedValues)({
+          data: properties.protocol,
+          allowedValues: ["TCP","UDP","TCPSSL"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('protocol', ros.validateString)(properties.protocol));
+    return errors.wrap('supplied properties not correct for "ListenersProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SAE::NlbBinding.Listeners` resource
+ *
+ * @param properties - the TypeScript properties of a `ListenersProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SAE::NlbBinding.Listeners` resource.
+ */
+// @ts-ignore TS6133
+function rosNlbBindingListenersPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosNlbBinding_ListenersPropertyValidator(properties).assertSuccess();
+    return {
+      'TargetPort': ros.numberToRosTemplate(properties.targetPort),
+      'CertIds': ros.stringToRosTemplate(properties.certIds),
+      'Port': ros.numberToRosTemplate(properties.port),
+      'Protocol': ros.stringToRosTemplate(properties.protocol),
+    };
 }
 
 /**
@@ -2920,7 +3132,7 @@ function rosSlbBindingPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::SlbBinding`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::SlbBinding`, which is used to bind an SLB instance to an application.
  * @Note This class does not contain additional functions, so it is recommended to use the `SlbBinding` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-slbbinding
  */

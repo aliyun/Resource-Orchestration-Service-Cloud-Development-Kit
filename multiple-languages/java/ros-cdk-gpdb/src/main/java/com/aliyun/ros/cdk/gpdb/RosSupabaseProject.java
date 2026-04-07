@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.gpdb;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::GPDB::SupabaseProject</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::GPDB::SupabaseProject</code>The , which resource creates a Supabase project.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.442Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:27.063Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.RosSupabaseProject")
 public class RosSupabaseProject extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -42,8 +42,26 @@ public class RosSupabaseProject extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrApiKeys() {
+        return software.amazon.jsii.Kernel.get(this, "attrApiKeys", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPrivateConnectUrl() {
+        return software.amazon.jsii.Kernel.get(this, "attrPrivateConnectUrl", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrProjectId() {
         return software.amazon.jsii.Kernel.get(this, "attrProjectId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPublicConnectUrl() {
+        return software.amazon.jsii.Kernel.get(this, "attrPublicConnectUrl", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -205,6 +223,42 @@ public class RosSupabaseProject extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPayType() {
+        return software.amazon.jsii.Kernel.get(this, "payType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPayType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "payType", value);
+    }
+
+    /**
+     */
+    public void setPayType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "payType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
+        return software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPeriod(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "period", value);
+    }
+
+    /**
+     */
+    public void setPeriod(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "period", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getStorageSize() {
         return software.amazon.jsii.Kernel.get(this, "storageSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -219,6 +273,24 @@ public class RosSupabaseProject extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setStorageSize(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "storageSize", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getUsedTime() {
+        return software.amazon.jsii.Kernel.get(this, "usedTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setUsedTime(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "usedTime", value);
+    }
+
+    /**
+     */
+    public void setUsedTime(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "usedTime", value);
     }
 
     /**
@@ -385,6 +457,40 @@ public class RosSupabaseProject extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param payType This parameter is required.
+         */
+        public Builder payType(final java.lang.String payType) {
+            this.props.payType(payType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param payType This parameter is required.
+         */
+        public Builder payType(final com.aliyun.ros.cdk.core.IResolvable payType) {
+            this.props.payType(payType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param period This parameter is required.
+         */
+        public Builder period(final java.lang.String period) {
+            this.props.period(period);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param period This parameter is required.
+         */
+        public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
+            this.props.period(period);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param storageSize This parameter is required.
          */
         public Builder storageSize(final java.lang.Number storageSize) {
@@ -397,6 +503,23 @@ public class RosSupabaseProject extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder storageSize(final com.aliyun.ros.cdk.core.IResolvable storageSize) {
             this.props.storageSize(storageSize);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param usedTime This parameter is required.
+         */
+        public Builder usedTime(final java.lang.Number usedTime) {
+            this.props.usedTime(usedTime);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param usedTime This parameter is required.
+         */
+        public Builder usedTime(final com.aliyun.ros.cdk.core.IResolvable usedTime) {
+            this.props.usedTime(usedTime);
             return this;
         }
 

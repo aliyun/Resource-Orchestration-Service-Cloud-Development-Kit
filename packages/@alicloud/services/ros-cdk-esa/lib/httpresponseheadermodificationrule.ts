@@ -96,7 +96,7 @@ export interface IHttpResponseHeaderModificationRule extends ros.IResource {
     readonly attrSiteVersion: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ESA::HttpResponseHeaderModificationRule`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESA::HttpResponseHeaderModificationRule`The , which resource type is used to create a configuration for modifying HTTP response headers.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosHttpResponseHeaderModificationRule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-httpresponseheadermodificationrule
  */

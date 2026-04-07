@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ESA::KvNamespace`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ESA::KvNamespace`The , which resource is used to create a key-value (KV) namespace.
 type KvNamespace interface {
 	alicloudroscdkcore.Resource
 	IKvNamespace

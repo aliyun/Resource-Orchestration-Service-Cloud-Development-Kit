@@ -110,7 +110,7 @@ export interface IPremiumInstance extends ros.IResource {
     readonly attrInstanceId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DDoSPro::PremiumInstance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DDoSPro::PremiumInstance`, which is used to create an Anti-DDoS Proxy (Outside Chinese Mainland) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPremiumInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-premiuminstance
  */
@@ -145,14 +145,14 @@ export class PremiumInstance extends ros.Resource implements IPremiumInstance {
         const rosPremiumInstance = new RosPremiumInstance(this, id,  {
             normalQps: props.normalQps,
             normalBandwidth: props.normalBandwidth,
-            functionVersion: props.functionVersion,
             productPlan: props.productPlan,
+            functionVersion: props.functionVersion,
             period: props.period,
             portCount: props.portCount,
-            tags: props.tags,
             burstBandwidthMode: props.burstBandwidthMode,
-            periodUnit: props.periodUnit,
+            tags: props.tags,
             domainCount: props.domainCount,
+            periodUnit: props.periodUnit,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosPremiumInstance;
         this.attrArn = rosPremiumInstance.attrArn;

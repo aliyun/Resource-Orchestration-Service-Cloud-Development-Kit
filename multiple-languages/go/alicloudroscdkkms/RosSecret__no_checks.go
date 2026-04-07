@@ -112,6 +112,10 @@ func (j *jsiiProxy_RosSecret) validateSetForceDeleteWithoutRecoveryParameters(va
 	return nil
 }
 
+func (j *jsiiProxy_RosSecret) validateSetPolicyParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosSecret) validateSetRecoveryWindowInDaysParameters(val interface{}) error {
 	return nil
 }
@@ -133,6 +137,10 @@ func (j *jsiiProxy_RosSecret) validateSetSecretNameParameters(val interface{}) e
 }
 
 func (j *jsiiProxy_RosSecret) validateSetSecretTypeParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosSecret) validateSetTagsParameters(val *[]*RosSecret_TagsProperty) error {
 	return nil
 }
 

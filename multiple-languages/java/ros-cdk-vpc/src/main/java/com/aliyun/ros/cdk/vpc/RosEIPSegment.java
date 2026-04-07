@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::EIPSegment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.049Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.999Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosEIPSegment")
 public class RosEIPSegment extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -121,6 +121,24 @@ public class RosEIPSegment extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIsp() {
+        return software.amazon.jsii.Kernel.get(this, "isp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIsp(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "isp", value);
+    }
+
+    /**
+     */
+    public void setIsp(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "isp", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getNetmode() {
         return software.amazon.jsii.Kernel.get(this, "netmode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -153,6 +171,24 @@ public class RosEIPSegment extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setResourceGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getZone() {
+        return software.amazon.jsii.Kernel.get(this, "zone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setZone(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "zone", value);
+    }
+
+    /**
+     */
+    public void setZone(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "zone", value);
     }
 
     /**
@@ -234,6 +270,23 @@ public class RosEIPSegment extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param isp This parameter is required.
+         */
+        public Builder isp(final java.lang.String isp) {
+            this.props.isp(isp);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param isp This parameter is required.
+         */
+        public Builder isp(final com.aliyun.ros.cdk.core.IResolvable isp) {
+            this.props.isp(isp);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param netmode This parameter is required.
          */
         public Builder netmode(final java.lang.String netmode) {
@@ -263,6 +316,23 @@ public class RosEIPSegment extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param zone This parameter is required.
+         */
+        public Builder zone(final java.lang.String zone) {
+            this.props.zone(zone);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param zone This parameter is required.
+         */
+        public Builder zone(final com.aliyun.ros.cdk.core.IResolvable zone) {
+            this.props.zone(zone);
             return this;
         }
 

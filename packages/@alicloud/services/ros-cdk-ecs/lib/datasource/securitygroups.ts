@@ -81,7 +81,7 @@ export interface ISecurityGroups extends ros.IResource {
     readonly attrSecurityGroups: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::SecurityGroups`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::SecurityGroups`, which is used to query the basic information about security groups.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecurityGroups`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-securitygroups
  */
@@ -115,8 +115,8 @@ export class SecurityGroups extends ros.Resource implements ISecurityGroups {
 
         const rosSecurityGroups = new RosSecurityGroups(this, id,  {
             vpcId: props.vpcId,
-            securityGroupName: props.securityGroupName,
             resourceGroupId: props.resourceGroupId,
+            securityGroupName: props.securityGroupName,
             networkType: props.networkType,
             securityGroupId: props.securityGroupId,
             securityGroupType: props.securityGroupType,

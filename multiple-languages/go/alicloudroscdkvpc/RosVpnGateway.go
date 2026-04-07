@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpnGateway`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpnGateway`The , which resource creates a vpn gateway.
 type RosVpnGateway interface {
 	alicloudroscdkcore.RosResource
 	AttrArn() alicloudroscdkcore.IResolvable
@@ -67,6 +67,8 @@ type RosVpnGateway interface {
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
 	// coerce it to an IResolvable through `Lazy.any({ produce: resource.ref })`.
 	Ref() *string
+	ResourceGroupId() interface{}
+	SetResourceGroupId(val interface{})
 	// Options for this resource, such as condition, update policy etc.
 	RosOptions() alicloudroscdkcore.IRosResourceOptions
 	RosProperties() *map[string]interface{}
@@ -480,6 +482,16 @@ func (j *jsiiProxy_RosVpnGateway) Ref() *string {
 	return returns
 }
 
+func (j *jsiiProxy_RosVpnGateway) ResourceGroupId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"resourceGroupId",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosVpnGateway) RosOptions() alicloudroscdkcore.IRosResourceOptions {
 	var returns alicloudroscdkcore.IRosResourceOptions
 	_jsii_.Get(
@@ -725,6 +737,17 @@ func (j *jsiiProxy_RosVpnGateway)SetPeriod(val interface{}) {
 	_jsii_.Set(
 		j,
 		"period",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosVpnGateway)SetResourceGroupId(val interface{}) {
+	if err := j.validateSetResourceGroupIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"resourceGroupId",
 		val,
 	)
 }

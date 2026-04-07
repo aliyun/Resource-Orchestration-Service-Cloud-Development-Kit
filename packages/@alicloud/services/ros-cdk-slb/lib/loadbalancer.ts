@@ -190,7 +190,7 @@ export interface ILoadBalancer extends ros.IResource {
     readonly attrVpcId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::LoadBalancer`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::LoadBalancer`Use the , which resource type to create an SLB instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLoadBalancer`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-loadbalancer
  */
@@ -290,8 +290,8 @@ export class LoadBalancer extends ros.Resource implements ILoadBalancer {
         const rosLoadBalancer = new RosLoadBalancer(this, id,  {
             resourceGroupId: props.resourceGroupId,
             instanceChargeType: props.instanceChargeType,
-            addressIpVersion: props.addressIpVersion,
             vSwitchId: props.vSwitchId,
+            addressIpVersion: props.addressIpVersion,
             deletionProtection: props.deletionProtection === undefined || props.deletionProtection === null ? false : props.deletionProtection,
             slaveZoneId: props.slaveZoneId,
             modificationProtectionStatus: props.modificationProtectionStatus,
@@ -302,8 +302,8 @@ export class LoadBalancer extends ros.Resource implements ILoadBalancer {
             bandwidth: props.bandwidth === undefined || props.bandwidth === null ? 1 : props.bandwidth,
             modificationProtectionReason: props.modificationProtectionReason,
             addressType: props.addressType === undefined || props.addressType === null ? 'internet' : props.addressType,
-            tags: props.tags,
             masterZoneId: props.masterZoneId,
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosLoadBalancer;
         this.attrAddressIpVersion = rosLoadBalancer.attrAddressIpVersion;

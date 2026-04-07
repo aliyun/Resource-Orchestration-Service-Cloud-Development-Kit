@@ -152,7 +152,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Esa
             }
         }
 
-        /// <summary>Property uploadMaxFilesize: Maximum upload file size, in MB, value range: 100～500.</summary>
+        /// <summary>Property uploadMaxFilesize: Maximum upload file size, in MB, value range: 100ï½500.</summary>
         [JsiiProperty(name: "uploadMaxFilesize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? UploadMaxFilesize
@@ -310,7 +310,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Esa
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property uploadMaxFilesize: Maximum upload file size, in MB, value range: 100～500.</summary>
+            /// <summary>Property uploadMaxFilesize: Maximum upload file size, in MB, value range: 100ï½500.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "uploadMaxFilesize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? UploadMaxFilesize

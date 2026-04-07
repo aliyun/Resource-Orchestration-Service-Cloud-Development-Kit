@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::CommonBandwidthPackageIp`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::CommonBandwidthPackageIp`The , which resource adds one or more EIPs to a shared bandwidth instance.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `CommonBandwidthPackageIp` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-commonbandwidthpackageip
@@ -187,6 +187,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 }
             }
 
+            /// <remarks>
+            /// <strong>Property</strong>: ipType: IP type. Value: **EIP**, indicating that the EIP is added to the shared bandwidth.
+            /// </remarks>
+            [JsiiProperty(name: "ipType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? IpType
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
             [JsiiTypeProxy(nativeType: typeof(IEipsProperty), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosCommonBandwidthPackageIp.EipsProperty")]
             internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.RosCommonBandwidthPackageIp.IEipsProperty
             {
@@ -211,6 +224,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 [JsiiOptional]
                 [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? Bandwidth
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: ipType: IP type. Value: **EIP**, indicating that the EIP is added to the shared bandwidth.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "ipType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? IpType
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -305,6 +328,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                         }
                     }
                     _bandwidth = value;
+                }
+            }
+
+            private object? _ipType;
+
+            /// <remarks>
+            /// <strong>Property</strong>: ipType: IP type. Value: **EIP**, indicating that the EIP is added to the shared bandwidth.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ipType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IpType
+            {
+                get => _ipType;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _ipType = value;
                 }
             }
         }

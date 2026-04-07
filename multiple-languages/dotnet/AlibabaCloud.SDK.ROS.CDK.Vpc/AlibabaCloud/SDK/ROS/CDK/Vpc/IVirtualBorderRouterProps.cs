@@ -59,6 +59,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             get;
         }
 
+        /// <summary>Property bandwidth: The bandwidth of the VBR instance, in Mbps.</summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <description>When creating a VBR instance for a dedicated leased line, the values are 50, 100, 200, 300, 400, 500, 1000, 2048, 5120, 8192, 10240, 20480, 40960, 50120, 61440 and 102400.</description>
+        /// <description>When creating a VBR instance for a shared leased line, no configuration is required, and the bandwidth of the VBR is the shared leased line bandwidth set when creating the shared physical connection.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Bandwidth
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property circuitCode: The circuit code provided by the Internet service provider (ISP) for the physical connection.</summary>
         /// <remarks>
         /// Note Only the owner of the physical connection can set this parameter.
@@ -96,6 +113,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Name
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property resourceGroupId: The ID of the resource group.</summary>
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ResourceGroupId
         {
             get
             {
@@ -162,6 +190,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 get => GetInstanceProperty<object>()!;
             }
 
+            /// <summary>Property bandwidth: The bandwidth of the VBR instance, in Mbps.</summary>
+            /// <remarks>
+            /// <list type="bullet">
+            /// <description>When creating a VBR instance for a dedicated leased line, the values are 50, 100, 200, 300, 400, 500, 1000, 2048, 5120, 8192, 10240, 20480, 40960, 50120, 61440 and 102400.</description>
+            /// <description>When creating a VBR instance for a shared leased line, no configuration is required, and the bandwidth of the VBR is the shared leased line bandwidth set when creating the shared physical connection.</description>
+            /// </list>
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Bandwidth
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property circuitCode: The circuit code provided by the Internet service provider (ISP) for the physical connection.</summary>
             /// <remarks>
             /// Note Only the owner of the physical connection can set this parameter.
@@ -193,6 +235,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             [JsiiOptional]
             [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Name
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property resourceGroupId: The ID of the resource group.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ResourceGroupId
             {
                 get => GetInstanceProperty<object?>();
             }

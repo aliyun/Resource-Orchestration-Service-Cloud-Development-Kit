@@ -84,15 +84,36 @@ export interface DBClusterProps {
     readonly dbNodeStorage?: number | ros.IResolvable;
 
     /**
+     * Property diskEncryption: Whether to enable cloud disk encryption. Value:
+     * 
+     * - true: yes.
+     * - false: no.
+     */
+    readonly diskEncryption?: boolean | ros.IResolvable;
+
+    /**
      * Property elasticIoResource: Elastic IO Unit
      * Note the flexible mode cluster will use this parameter.
      */
     readonly elasticIoResource?: number | ros.IResolvable;
 
     /**
+     * Property enableSsl: Whether to enable SSL link encryption function, value:
+     * 
+     * - **true**: open.
+     * - **false**: close.
+     */
+    readonly enableSsl?: boolean | ros.IResolvable;
+
+    /**
      * Property executorCount: ExecutorCount
      */
     readonly executorCount?: number | ros.IResolvable;
+
+    /**
+     * Property kmsId: The kmsId used for cloud disk encryption, effective only when DiskEncryption is true.
+     */
+    readonly kmsId?: string | ros.IResolvable;
 
     /**
      * Property period: Valid values when the Period parameter is set to Month: 1, 2, 3, 4, 5, 6, 7, 8, and 9.
@@ -150,7 +171,7 @@ export interface IDBCluster extends ros.IResource {
     readonly attrOrderId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ADB::DBCluster`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ADB::DBCluster`Use the , which resource type to create an AnalyticDB for MySQL cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adb-dbcluster
  */
@@ -196,8 +217,9 @@ export class DBCluster extends ros.Resource implements IDBCluster {
             dbNodeStorage: props.dbNodeStorage,
             periodType: props.periodType,
             dbClusterCategory: props.dbClusterCategory,
-            zoneId: props.zoneId,
+            enableSsl: props.enableSsl,
             resourceGroupId: props.resourceGroupId,
+            zoneId: props.zoneId,
             vpcId: props.vpcId,
             vSwitchId: props.vSwitchId,
             mode: props.mode,
@@ -206,7 +228,9 @@ export class DBCluster extends ros.Resource implements IDBCluster {
             period: props.period,
             payType: props.payType,
             elasticIoResource: props.elasticIoResource,
+            diskEncryption: props.diskEncryption,
             dbClusterVersion: props.dbClusterVersion === undefined || props.dbClusterVersion === null ? '3.0' : props.dbClusterVersion,
+            kmsId: props.kmsId,
             dbNodeGroupCount: props.dbNodeGroupCount,
             executorCount: props.executorCount,
             dbClusterClass: props.dbClusterClass,

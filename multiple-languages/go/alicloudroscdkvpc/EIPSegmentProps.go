@@ -27,6 +27,27 @@ type EIPSegmentProps struct {
 	// PayByTraffic: Fees are charged based on data transfer.
 	// Note If the Netmode parameter is set to hybrid, InternetChargeType is set to PayByBandwidth.
 	InternetChargeType interface{} `field:"optional" json:"internetChargeType" yaml:"internetChargeType"`
+	// Property isp: The line type.
+	//
+	// Valid values:
+	// - **BGP** (default): BGP (multi-line). All regions support BGP (multi-line) EIPs.
+	// - **BGP_PRO**: BGP (multi-line)_Premium. Currently supported only in China (Hong Kong),
+	//    Singapore, Japan (Tokyo), Malaysia (Kuala Lumpur), Philippines (Manila),
+	//    India (Jakarta), and Thailand (Bangkok).
+	//
+	// For more information about BGP (multi-line) and BGP (multi-line)_Premium,
+	// see [EIP Line Type](~~32321~~).
+	//
+	// If you are a single-bandwidth whitelist user, you can also choose:
+	// - **ChinaTelecom**: China Telecom
+	// - **ChinaUnicom**: China Unicom
+	// - **ChinaMobile**: China Mobile
+	// - **ChinaTelecom_L2**: China Telecom L2
+	// - **ChinaUnicom_L2**: China Unicom L2
+	// - **ChinaMobile_L2**: China Mobile L2
+	//
+	// If you are a Hangzhou Finance Cloud user, this field is required with value: **BGP_FinanceCloud**.
+	Isp interface{} `field:"optional" json:"isp" yaml:"isp"`
 	// Property netmode: The network type.
 	//
 	// Valid values:
@@ -39,5 +60,7 @@ type EIPSegmentProps struct {
 	Netmode interface{} `field:"optional" json:"netmode" yaml:"netmode"`
 	// Property resourceGroupId: The ID of the resource group to which the EIPs belong.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
+	// Property zone: The zone of the contiguous EIP group.
+	Zone interface{} `field:"optional" json:"zone" yaml:"zone"`
 }
 

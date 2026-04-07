@@ -42,7 +42,7 @@ function RosProjectPropsValidator(properties: any): ros.ValidationResult {
     if(properties.sdkType && (typeof properties.sdkType) !== 'object') {
         errors.collect(ros.propertyValidator('sdkType', ros.validateAllowedValues)({
           data: properties.sdkType,
-          allowedValues: ["ProTTSOfflineSDK","DeviceSideSolutionSDK","StandardTTSOfflineSDK"],
+          allowedValues: ["DeviceSideSolutionSDK","StandardTTSOfflineSDK","ProTTSOfflineSDK"],
         }));
     }
     errors.collect(ros.propertyValidator('sdkType', ros.validateString)(properties.sdkType));
@@ -50,7 +50,7 @@ function RosProjectPropsValidator(properties: any): ros.ValidationResult {
     if(properties.projectType && (typeof properties.projectType) !== 'object') {
         errors.collect(ros.propertyValidator('projectType', ros.validateAllowedValues)({
           data: properties.projectType,
-          allowedValues: ["SpeechRecognitionOnly","SpeechRecognitionAndSynthesisAndAnalysis","DeviceSDKSolution","SpeechSynthesisOnly"],
+          allowedValues: ["SpeechRecognitionAndSynthesisAndAnalysis","SpeechRecognitionOnly","SpeechSynthesisOnly","DeviceSDKSolution"],
         }));
     }
     errors.collect(ros.propertyValidator('projectType', ros.validateString)(properties.projectType));
@@ -81,7 +81,7 @@ function rosProjectPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NLS::Project`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NLS::Project`, which is used to create a project in Intelligent Speech Interaction.
  * @Note This class does not contain additional functions, so it is recommended to use the `Project` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nls-project
  */

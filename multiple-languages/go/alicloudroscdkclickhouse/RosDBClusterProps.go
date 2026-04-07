@@ -19,7 +19,11 @@ type RosDBClusterProps struct {
 	Period interface{} `field:"optional" json:"period" yaml:"period"`
 	UsedTime interface{} `field:"optional" json:"usedTime" yaml:"usedTime"`
 	VpcId interface{} `field:"optional" json:"vpcId" yaml:"vpcId"`
+	VSwitchBak interface{} `field:"optional" json:"vSwitchBak" yaml:"vSwitchBak"`
+	VSwitchBak2 interface{} `field:"optional" json:"vSwitchBak2" yaml:"vSwitchBak2"`
 	VSwitchId interface{} `field:"optional" json:"vSwitchId" yaml:"vSwitchId"`
+	ZondIdBak2 interface{} `field:"optional" json:"zondIdBak2" yaml:"zondIdBak2"`
 	ZoneId interface{} `field:"optional" json:"zoneId" yaml:"zoneId"`
+	ZoneIdBak interface{} `field:"optional" json:"zoneIdBak" yaml:"zoneIdBak"`
 }
 

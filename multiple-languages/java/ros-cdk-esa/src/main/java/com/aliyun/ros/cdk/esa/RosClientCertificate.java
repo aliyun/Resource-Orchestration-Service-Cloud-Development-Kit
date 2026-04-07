@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.esa;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ESA::ClientCertificate</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ESA::ClientCertificate</code>The , which type is used to create a client certificate.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:56.623Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:26.167Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.esa.$Module.class, fqn = "@alicloud/ros-cdk-esa.RosClientCertificate")
 public class RosClientCertificate extends com.aliyun.ros.cdk.core.RosResource {
 

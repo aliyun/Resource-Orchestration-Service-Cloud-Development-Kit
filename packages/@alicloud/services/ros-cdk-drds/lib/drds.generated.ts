@@ -350,8 +350,8 @@ function RosDrdsDBPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('instDbName', ros.listValidator(RosDrdsDB_InstDbNamePropertyValidator))(properties.instDbName));
     errors.collect(ros.propertyValidator('dbName', ros.validateString)(properties.dbName));
     errors.collect(ros.propertyValidator('encode', ros.validateString)(properties.encode));
-    errors.collect(ros.propertyValidator('accountName', ros.validateString)(properties.accountName));
     errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
+    errors.collect(ros.propertyValidator('accountName', ros.validateString)(properties.accountName));
     return errors.wrap('supplied properties not correct for "RosDrdsDBProps"');
 }
 
@@ -383,7 +383,7 @@ function rosDrdsDBPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DRDS::DrdsDB`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DRDS::DrdsDB`, which is used to create a Distributed Relational Database Service (DRDS) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `DrdsDB` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-drds-drdsdb
  */
@@ -721,7 +721,7 @@ function rosDrdsInstancePropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DRDS::DrdsInstance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DRDS::DrdsInstance`, which is used to create a PolarDB-X 1.0 instance of specified instance specifications.
  * @Note This class does not contain additional functions, so it is recommended to use the `DrdsInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-drds-drdsinstance
  */

@@ -9,7 +9,9 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::SearchIndex`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::SearchIndex`, which is used to create a search index for a data table.
+//
+// You can create multiple search indexes for a data table.
 type RosSearchIndex interface {
 	alicloudroscdkcore.RosResource
 	AttrIndexName() alicloudroscdkcore.IResolvable

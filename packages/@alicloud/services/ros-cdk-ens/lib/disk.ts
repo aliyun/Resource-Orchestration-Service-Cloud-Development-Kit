@@ -44,6 +44,11 @@ export interface DiskProps {
     readonly encrypted?: boolean | ros.IResolvable;
 
     /**
+     * Property instanceBillingCycle: The billing cycle of the instance.
+     */
+    readonly instanceBillingCycle?: string | ros.IResolvable;
+
+    /**
      * Property kmsKeyId: The ID of the Key Management Service (KMS) key that is used by the cloud disk.
      * Note If you set the Encrypted parameter to true, the default service key is used when the KMSKeyId parameter is empty.
      */
@@ -70,7 +75,7 @@ export interface IDisk extends ros.IResource {
     readonly attrDiskId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ENS::Disk`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ENS::Disk`, which is used to create a pay-as-you-go or subscription data disk.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDisk`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-disk
  */
@@ -104,6 +109,7 @@ export class Disk extends ros.Resource implements IDisk {
             encrypted: props.encrypted,
             instanceChargeType: props.instanceChargeType === undefined || props.instanceChargeType === null ? 'PostPaid' : props.instanceChargeType,
             size: props.size,
+            instanceBillingCycle: props.instanceBillingCycle,
             diskName: props.diskName,
             ensRegionId: props.ensRegionId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

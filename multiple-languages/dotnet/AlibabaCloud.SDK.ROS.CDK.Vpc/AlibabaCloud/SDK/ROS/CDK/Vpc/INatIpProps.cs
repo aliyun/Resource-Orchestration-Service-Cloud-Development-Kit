@@ -48,6 +48,34 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             get;
         }
 
+        /// <summary>Property ipv4Prefix: The IPv4 prefix of the IP address range to be created.</summary>
+        /// <remarks>
+        /// The IPv4 prefix must be within the reserved CIDR block of the switch where the NAT gateway is deployed, and the reserved CIDR block must not be occupied. The prefix length must be /28.
+        /// </remarks>
+        [JsiiProperty(name: "ipv4Prefix", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Ipv4Prefix
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property ipv4PrefixCount: The number of IPv4 prefixes to automatically allocate.</summary>
+        /// <remarks>
+        /// Randomly allocated from the unassigned reserved CIDR blocks of the switch where the NAT gateway is deployed. Valid values: 1 to 10.
+        /// </remarks>
+        [JsiiProperty(name: "ipv4PrefixCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Ipv4PrefixCount
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property natIp: The NAT IP address that you want to create.</summary>
         /// <remarks>
         /// If you do not specify an IP address, the system selects a random IP address from the
@@ -120,6 +148,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             public object NatIpName
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property ipv4Prefix: The IPv4 prefix of the IP address range to be created.</summary>
+            /// <remarks>
+            /// The IPv4 prefix must be within the reserved CIDR block of the switch where the NAT gateway is deployed, and the reserved CIDR block must not be occupied. The prefix length must be /28.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ipv4Prefix", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Ipv4Prefix
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property ipv4PrefixCount: The number of IPv4 prefixes to automatically allocate.</summary>
+            /// <remarks>
+            /// Randomly allocated from the unassigned reserved CIDR blocks of the switch where the NAT gateway is deployed. Valid values: 1 to 10.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ipv4PrefixCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Ipv4PrefixCount
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property natIp: The NAT IP address that you want to create.</summary>

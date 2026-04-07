@@ -199,10 +199,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             }
         }
 
+        /// <summary>Property domainResolveType: The domain resolution method of the access control policy.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>FQDN: Based on FQDN</description>
+        /// <description>DNS: Based on DNS dynamic resolution</description>
+        /// <description>FQDN_AND_DNS: Based on both FQDN and DNS dynamic resolution</description>
+        /// </list>
+        /// </remarks>
+        [JsiiProperty(name: "domainResolveType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DomainResolveType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property endTime: The end time of the policy validity period for an access control policy.</summary>
         /// <remarks>
         /// It is represented in a second-level timestamp format. It must be the whole hour or half hour, and at least half an hour greater than the start time.
-        /// Notes: When RepeatType is Permanent, EndTime is empty. When RepeatType is None, Daily, Weekly, Monthly, EndTime must havea value, and you need to set the end time.
+        /// Notes: When RepeatType is Permanent, EndTime is empty. When RepeatType is None, Daily, Weekly, Monthly, EndTime must have a value, and you need to set the end time.
         /// </remarks>
         [JsiiProperty(name: "endTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -543,10 +563,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property domainResolveType: The domain resolution method of the access control policy.</summary>
+            /// <remarks>
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>FQDN: Based on FQDN</description>
+            /// <description>DNS: Based on DNS dynamic resolution</description>
+            /// <description>FQDN_AND_DNS: Based on both FQDN and DNS dynamic resolution</description>
+            /// </list>
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "domainResolveType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DomainResolveType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property endTime: The end time of the policy validity period for an access control policy.</summary>
             /// <remarks>
             /// It is represented in a second-level timestamp format. It must be the whole hour or half hour, and at least half an hour greater than the start time.
-            /// Notes: When RepeatType is Permanent, EndTime is empty. When RepeatType is None, Daily, Weekly, Monthly, EndTime must havea value, and you need to set the end time.
+            /// Notes: When RepeatType is Permanent, EndTime is empty. When RepeatType is None, Daily, Weekly, Monthly, EndTime must have a value, and you need to set the end time.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "endTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

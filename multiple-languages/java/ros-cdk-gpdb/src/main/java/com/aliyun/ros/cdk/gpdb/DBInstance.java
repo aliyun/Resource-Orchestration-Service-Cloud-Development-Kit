@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.gpdb;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::GPDB::DBInstance</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::GPDB::DBInstance</code>Use the , which resource to create an AnalyticDB for PostgreSQL instance in reserved storage mode.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.393Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:26.962Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.DBInstance")
 public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.gpdb.IDBInstance {
 
@@ -238,6 +238,52 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
+         * Property backupId: Backup set ID.
+         * <p>
+         * You can call DescribeDataBackups to view the backup set IDs of all backup sets under the target instance.
+         * <p>
+         * @return {@code this}
+         * @param backupId Property backupId: Backup set ID. This parameter is required.
+         */
+        public Builder backupId(final java.lang.String backupId) {
+            this.props.backupId(backupId);
+            return this;
+        }
+        /**
+         * Property backupId: Backup set ID.
+         * <p>
+         * You can call DescribeDataBackups to view the backup set IDs of all backup sets under the target instance.
+         * <p>
+         * @return {@code this}
+         * @param backupId Property backupId: Backup set ID. This parameter is required.
+         */
+        public Builder backupId(final com.aliyun.ros.cdk.core.IResolvable backupId) {
+            this.props.backupId(backupId);
+            return this;
+        }
+
+        /**
+         * Property cacheStorageSize: Cache storage size.
+         * <p>
+         * @return {@code this}
+         * @param cacheStorageSize Property cacheStorageSize: Cache storage size. This parameter is required.
+         */
+        public Builder cacheStorageSize(final java.lang.String cacheStorageSize) {
+            this.props.cacheStorageSize(cacheStorageSize);
+            return this;
+        }
+        /**
+         * Property cacheStorageSize: Cache storage size.
+         * <p>
+         * @return {@code this}
+         * @param cacheStorageSize Property cacheStorageSize: Cache storage size. This parameter is required.
+         */
+        public Builder cacheStorageSize(final com.aliyun.ros.cdk.core.IResolvable cacheStorageSize) {
+            this.props.cacheStorageSize(cacheStorageSize);
+            return this;
+        }
+
+        /**
          * Property createSampleData: Whether to load the sample data set after the instance is created.
          * <p>
          * The value can be:
@@ -409,6 +455,31 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
+         * Property enableSsl: Whether to enable SSL encryption.
+         * <p>
+         * Valid values: true: Enable SSL encryption. false (default): Do not enable SSL encryption.
+         * <p>
+         * @return {@code this}
+         * @param enableSsl Property enableSsl: Whether to enable SSL encryption. This parameter is required.
+         */
+        public Builder enableSsl(final java.lang.Boolean enableSsl) {
+            this.props.enableSsl(enableSsl);
+            return this;
+        }
+        /**
+         * Property enableSsl: Whether to enable SSL encryption.
+         * <p>
+         * Valid values: true: Enable SSL encryption. false (default): Do not enable SSL encryption.
+         * <p>
+         * @return {@code this}
+         * @param enableSsl Property enableSsl: Whether to enable SSL encryption. This parameter is required.
+         */
+        public Builder enableSsl(final com.aliyun.ros.cdk.core.IResolvable enableSsl) {
+            this.props.enableSsl(enableSsl);
+            return this;
+        }
+
+        /**
          * Property encryptionKey: If the EncryptionType parameter is set to CloudDisk, you must specify this parameter to the encryption key that is in the same region with the disks that is specified by the EncryptionType parameter.
          * <p>
          * Otherwise, leave this parameter empty.
@@ -521,6 +592,31 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.
          */
         public Builder instanceSpec(final com.aliyun.ros.cdk.core.IResolvable instanceSpec) {
             this.props.instanceSpec(instanceSpec);
+            return this;
+        }
+
+        /**
+         * Property masterAiSpec: If you need to change the Master node to MasterAI node, specify this parameter.
+         * <p>
+         * This parameter cannot be specified at the same time as MasterCU. Only some regions and availability zones support changing the Master node to MasterAI node. Only Basic edition instances of AnalyticDB PostgreSQL 7.0 support MasterAI nodes. You can query all possible values of this parameter on the Master node reconfiguration sales page.
+         * <p>
+         * @return {@code this}
+         * @param masterAiSpec Property masterAiSpec: If you need to change the Master node to MasterAI node, specify this parameter. This parameter is required.
+         */
+        public Builder masterAiSpec(final java.lang.String masterAiSpec) {
+            this.props.masterAiSpec(masterAiSpec);
+            return this;
+        }
+        /**
+         * Property masterAiSpec: If you need to change the Master node to MasterAI node, specify this parameter.
+         * <p>
+         * This parameter cannot be specified at the same time as MasterCU. Only some regions and availability zones support changing the Master node to MasterAI node. Only Basic edition instances of AnalyticDB PostgreSQL 7.0 support MasterAI nodes. You can query all possible values of this parameter on the Master node reconfiguration sales page.
+         * <p>
+         * @return {@code this}
+         * @param masterAiSpec Property masterAiSpec: If you need to change the Master node to MasterAI node, specify this parameter. This parameter is required.
+         */
+        public Builder masterAiSpec(final com.aliyun.ros.cdk.core.IResolvable masterAiSpec) {
+            this.props.masterAiSpec(masterAiSpec);
             return this;
         }
 
@@ -893,6 +989,31 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.
          */
         public Builder serverlessResource(final com.aliyun.ros.cdk.core.IResolvable serverlessResource) {
             this.props.serverlessResource(serverlessResource);
+            return this;
+        }
+
+        /**
+         * Property srcDbInstanceName: Clone source instance ID.
+         * <p>
+         * You can call the DescribeDBInstances interface to view the details of all AnalyticDB PostgreSQL instances in the target region, including the instance ID.
+         * <p>
+         * @return {@code this}
+         * @param srcDbInstanceName Property srcDbInstanceName: Clone source instance ID. This parameter is required.
+         */
+        public Builder srcDbInstanceName(final java.lang.String srcDbInstanceName) {
+            this.props.srcDbInstanceName(srcDbInstanceName);
+            return this;
+        }
+        /**
+         * Property srcDbInstanceName: Clone source instance ID.
+         * <p>
+         * You can call the DescribeDBInstances interface to view the details of all AnalyticDB PostgreSQL instances in the target region, including the instance ID.
+         * <p>
+         * @return {@code this}
+         * @param srcDbInstanceName Property srcDbInstanceName: Clone source instance ID. This parameter is required.
+         */
+        public Builder srcDbInstanceName(final com.aliyun.ros.cdk.core.IResolvable srcDbInstanceName) {
+            this.props.srcDbInstanceName(srcDbInstanceName);
             return this;
         }
 

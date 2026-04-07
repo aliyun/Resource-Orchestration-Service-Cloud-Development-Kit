@@ -73,7 +73,7 @@ function rosAITaskPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::AITask`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::AITask`, which is used to enable the PolarDB for AI feature.
  * @Note This class does not contain additional functions, so it is recommended to use the `AITask` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-aitask
  */
@@ -240,13 +240,6 @@ function RosAccountPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('accountType', ros.validateString)(properties.accountType));
-    if(properties.privForAllDb && (typeof properties.privForAllDb) !== 'object') {
-        errors.collect(ros.propertyValidator('privForAllDb', ros.validateAllowedValues)({
-          data: properties.privForAllDb,
-          allowedValues: ["0","1"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('privForAllDb', ros.validateString)(properties.privForAllDb));
     errors.collect(ros.propertyValidator('accountName', ros.requiredValidator)(properties.accountName));
     if(properties.accountName && (Array.isArray(properties.accountName) || (typeof properties.accountName) === 'string')) {
         errors.collect(ros.propertyValidator('accountName', ros.validateLength)({
@@ -265,6 +258,13 @@ function RosAccountPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('accountPassword', ros.validateString)(properties.accountPassword));
+    if(properties.privForAllDb && (typeof properties.privForAllDb) !== 'object') {
+        errors.collect(ros.propertyValidator('privForAllDb', ros.validateAllowedValues)({
+          data: properties.privForAllDb,
+          allowedValues: ["0","1"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('privForAllDb', ros.validateString)(properties.privForAllDb));
     return errors.wrap('supplied properties not correct for "RosAccountProps"');
 }
 
@@ -294,7 +294,7 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::Account`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::Account`The , which resource type creates accounts for PolarDB databases.
  * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-account
  */
@@ -504,7 +504,7 @@ function rosAccountPrivilegePropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::AccountPrivilege`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::AccountPrivilege`, which is used to grant access permissions on one or more databases in a specified ApsaraDB for POLARDB cluster to a standard account.
  * @Note This class does not contain additional functions, so it is recommended to use the `AccountPrivilege` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-accountprivilege
  */
@@ -575,6 +575,548 @@ export class RosAccountPrivilege extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosApplication`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-application
+ */
+export interface RosApplicationProps {
+
+    /**
+     * @Property applicationType: The type of the application. This parameter is required.
+     */
+    readonly applicationType: string | ros.IResolvable;
+
+    /**
+     * @Property architecture: The architecture of the application. This parameter is required.
+     */
+    readonly architecture: string | ros.IResolvable;
+
+    /**
+     * @Property dbClusterId: The ID of the database cluster.
+     */
+    readonly dbClusterId: string | ros.IResolvable;
+
+    /**
+     * @Property autoCreatePolarFs: Whether to auto create PolarFS.
+     */
+    readonly autoCreatePolarFs?: boolean | ros.IResolvable;
+
+    /**
+     * @Property components: The list of components.
+     */
+    readonly components?: Array<RosApplication.ComponentsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the application.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property payType: The billing method of the cluster. Valid values:
+     * Postpaid: pay-as-you-go
+     * Prepaid: subscription
+     */
+    readonly payType?: string | ros.IResolvable;
+
+    /**
+     * @Property period: The period of the application.
+     */
+    readonly period?: number | ros.IResolvable;
+
+    /**
+     * @Property polarFsInstanceId: The ID of the PolarFS instance.
+     */
+    readonly polarFsInstanceId?: string | ros.IResolvable;
+
+    /**
+     * @Property securityGroupId: The ID of the security group.
+     */
+    readonly securityGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property securityIpList: The security IP list of the component.
+     */
+    readonly securityIpList?: string | ros.IResolvable;
+
+    /**
+     * @Property vpcId: The ID of the VPC.
+     */
+    readonly vpcId?: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchId: The ID of the VSwitch.
+     */
+    readonly vSwitchId?: string | ros.IResolvable;
+
+    /**
+     * @Property zoneId: The ID of the zone.
+     */
+    readonly zoneId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosApplicationProps`
+ *
+ * @param properties - the TypeScript properties of a `RosApplicationProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosApplicationPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('architecture', ros.requiredValidator)(properties.architecture));
+    if(properties.architecture && (typeof properties.architecture) !== 'object') {
+        errors.collect(ros.propertyValidator('architecture', ros.validateAllowedValues)({
+          data: properties.architecture,
+          allowedValues: ["x86"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('architecture', ros.validateString)(properties.architecture));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('dbClusterId', ros.requiredValidator)(properties.dbClusterId));
+    errors.collect(ros.propertyValidator('dbClusterId', ros.validateString)(properties.dbClusterId));
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    if(properties.payType && (typeof properties.payType) !== 'object') {
+        errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
+          data: properties.payType,
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
+    errors.collect(ros.propertyValidator('autoCreatePolarFs', ros.validateBoolean)(properties.autoCreatePolarFs));
+    errors.collect(ros.propertyValidator('polarFsInstanceId', ros.validateString)(properties.polarFsInstanceId));
+    if(properties.components && (Array.isArray(properties.components) || (typeof properties.components) === 'string')) {
+        errors.collect(ros.propertyValidator('components', ros.validateLength)({
+            data: properties.components.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('components', ros.listValidator(RosApplication_ComponentsPropertyValidator))(properties.components));
+    errors.collect(ros.propertyValidator('applicationType', ros.requiredValidator)(properties.applicationType));
+    if(properties.applicationType && (typeof properties.applicationType) !== 'object') {
+        errors.collect(ros.propertyValidator('applicationType', ros.validateAllowedValues)({
+          data: properties.applicationType,
+          allowedValues: ["supabase","raycluster"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('applicationType', ros.validateString)(properties.applicationType));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('securityIpList', ros.validateString)(properties.securityIpList));
+    return errors.wrap('supplied properties not correct for "RosApplicationProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::POLARDB::Application` resource
+ *
+ * @param properties - the TypeScript properties of a `RosApplicationProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::POLARDB::Application` resource.
+ */
+// @ts-ignore TS6133
+function rosApplicationPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosApplicationPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ApplicationType': ros.stringToRosTemplate(properties.applicationType),
+      'Architecture': ros.stringToRosTemplate(properties.architecture),
+      'DBClusterId': ros.stringToRosTemplate(properties.dbClusterId),
+      'AutoCreatePolarFs': ros.booleanToRosTemplate(properties.autoCreatePolarFs),
+      'Components': ros.listMapper(rosApplicationComponentsPropertyToRosTemplate)(properties.components),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'PayType': ros.stringToRosTemplate(properties.payType),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PolarFSInstanceId': ros.stringToRosTemplate(properties.polarFsInstanceId),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
+      'SecurityIPList': ros.stringToRosTemplate(properties.securityIpList),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::Application`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Application` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-application
+ */
+export class RosApplication extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::POLARDB::Application";
+
+    /**
+     * @Attribute ApplicationId: The ID of the application.
+     */
+    public readonly attrApplicationId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property applicationType: The type of the application. This parameter is required.
+     */
+    public applicationType: string | ros.IResolvable;
+
+    /**
+     * @Property architecture: The architecture of the application. This parameter is required.
+     */
+    public architecture: string | ros.IResolvable;
+
+    /**
+     * @Property dbClusterId: The ID of the database cluster.
+     */
+    public dbClusterId: string | ros.IResolvable;
+
+    /**
+     * @Property autoCreatePolarFs: Whether to auto create PolarFS.
+     */
+    public autoCreatePolarFs: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property components: The list of components.
+     */
+    public components: Array<RosApplication.ComponentsProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property description: The description of the application.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property payType: The billing method of the cluster. Valid values:
+     * Postpaid: pay-as-you-go
+     * Prepaid: subscription
+     */
+    public payType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property period: The period of the application.
+     */
+    public period: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property polarFsInstanceId: The ID of the PolarFS instance.
+     */
+    public polarFsInstanceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property securityGroupId: The ID of the security group.
+     */
+    public securityGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property securityIpList: The security IP list of the component.
+     */
+    public securityIpList: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property vpcId: The ID of the VPC.
+     */
+    public vpcId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property vSwitchId: The ID of the VSwitch.
+     */
+    public vSwitchId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property zoneId: The ID of the zone.
+     */
+    public zoneId: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosApplicationProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosApplication.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrApplicationId = this.getAtt('ApplicationId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.applicationType = props.applicationType;
+        this.architecture = props.architecture;
+        this.dbClusterId = props.dbClusterId;
+        this.autoCreatePolarFs = props.autoCreatePolarFs;
+        this.components = props.components;
+        this.description = props.description;
+        this.payType = props.payType;
+        this.period = props.period;
+        this.polarFsInstanceId = props.polarFsInstanceId;
+        this.securityGroupId = props.securityGroupId;
+        this.securityIpList = props.securityIpList;
+        this.vpcId = props.vpcId;
+        this.vSwitchId = props.vSwitchId;
+        this.zoneId = props.zoneId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            applicationType: this.applicationType,
+            architecture: this.architecture,
+            dbClusterId: this.dbClusterId,
+            autoCreatePolarFs: this.autoCreatePolarFs,
+            components: this.components,
+            description: this.description,
+            payType: this.payType,
+            period: this.period,
+            polarFsInstanceId: this.polarFsInstanceId,
+            securityGroupId: this.securityGroupId,
+            securityIpList: this.securityIpList,
+            vpcId: this.vpcId,
+            vSwitchId: this.vSwitchId,
+            zoneId: this.zoneId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosApplicationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosApplication {
+    /**
+     * @stability external
+     */
+    export interface ComponentsProperty {
+        /**
+         * @Property securityGroups: The security groups of the component.
+         */
+        readonly securityGroups?: string | ros.IResolvable;
+        /**
+         * @Property componentType: The type of the component.
+         */
+        readonly componentType?: string | ros.IResolvable;
+        /**
+         * @Property securityIpType: The security IP type of the component.
+         */
+        readonly securityIpType?: string | ros.IResolvable;
+        /**
+         * @Property securityIpList: The security IP list of the component.
+         */
+        readonly securityIpList?: string | ros.IResolvable;
+        /**
+         * @Property componentReplica: The replica of the component.
+         */
+        readonly componentReplica?: string | ros.IResolvable;
+        /**
+         * @Property securityIpArrayName: The security IP array name of the component.
+         */
+        readonly securityIpArrayName?: string | ros.IResolvable;
+        /**
+         * @Property scaleMin: The minimum replica of the component.
+         */
+        readonly scaleMin?: number | ros.IResolvable;
+        /**
+         * @Property scaleMax: The maximum replica of the component.
+         */
+        readonly scaleMax?: number | ros.IResolvable;
+        /**
+         * @Property componentMaxReplica: The maximum replica of the component.
+         */
+        readonly componentMaxReplica?: number | ros.IResolvable;
+        /**
+         * @Property componentClass: The class of the component.
+         */
+        readonly componentClass?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ComponentsProperty`
+ *
+ * @param properties - the TypeScript properties of a `ComponentsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosApplication_ComponentsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('securityGroups', ros.validateString)(properties.securityGroups));
+    if(properties.componentType && (typeof properties.componentType) !== 'object') {
+        errors.collect(ros.propertyValidator('componentType', ros.validateAllowedValues)({
+          data: properties.componentType,
+          allowedValues: ["gateway","backend","head","worker","gpuworker"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('componentType', ros.validateString)(properties.componentType));
+    errors.collect(ros.propertyValidator('securityIpType', ros.validateString)(properties.securityIpType));
+    errors.collect(ros.propertyValidator('securityIpList', ros.validateString)(properties.securityIpList));
+    errors.collect(ros.propertyValidator('componentReplica', ros.validateString)(properties.componentReplica));
+    errors.collect(ros.propertyValidator('securityIpArrayName', ros.validateString)(properties.securityIpArrayName));
+    errors.collect(ros.propertyValidator('scaleMin', ros.validateNumber)(properties.scaleMin));
+    errors.collect(ros.propertyValidator('scaleMax', ros.validateNumber)(properties.scaleMax));
+    errors.collect(ros.propertyValidator('componentMaxReplica', ros.validateNumber)(properties.componentMaxReplica));
+    errors.collect(ros.propertyValidator('componentClass', ros.validateString)(properties.componentClass));
+    return errors.wrap('supplied properties not correct for "ComponentsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::POLARDB::Application.Components` resource
+ *
+ * @param properties - the TypeScript properties of a `ComponentsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::POLARDB::Application.Components` resource.
+ */
+// @ts-ignore TS6133
+function rosApplicationComponentsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosApplication_ComponentsPropertyValidator(properties).assertSuccess();
+    return {
+      'SecurityGroups': ros.stringToRosTemplate(properties.securityGroups),
+      'ComponentType': ros.stringToRosTemplate(properties.componentType),
+      'SecurityIPType': ros.stringToRosTemplate(properties.securityIpType),
+      'SecurityIPList': ros.stringToRosTemplate(properties.securityIpList),
+      'ComponentReplica': ros.stringToRosTemplate(properties.componentReplica),
+      'SecurityIPArrayName': ros.stringToRosTemplate(properties.securityIpArrayName),
+      'ScaleMin': ros.numberToRosTemplate(properties.scaleMin),
+      'ScaleMax': ros.numberToRosTemplate(properties.scaleMax),
+      'ComponentMaxReplica': ros.numberToRosTemplate(properties.componentMaxReplica),
+      'ComponentClass': ros.stringToRosTemplate(properties.componentClass),
+    };
+}
+
+/**
+ * Properties for defining a `RosApplicationEndpointAddress`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-applicationendpointaddress
+ */
+export interface RosApplicationEndpointAddressProps {
+
+    /**
+     * @Property applicationId: The id of the application.
+     */
+    readonly applicationId: string | ros.IResolvable;
+
+    /**
+     * @Property endpointId: The id of the endpoint.
+     */
+    readonly endpointId: string | ros.IResolvable;
+
+    /**
+     * @Property netType: Network type for adding connection address.
+     */
+    readonly netType: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosApplicationEndpointAddressProps`
+ *
+ * @param properties - the TypeScript properties of a `RosApplicationEndpointAddressProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosApplicationEndpointAddressPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('endpointId', ros.requiredValidator)(properties.endpointId));
+    errors.collect(ros.propertyValidator('endpointId', ros.validateString)(properties.endpointId));
+    errors.collect(ros.propertyValidator('applicationId', ros.requiredValidator)(properties.applicationId));
+    errors.collect(ros.propertyValidator('applicationId', ros.validateString)(properties.applicationId));
+    errors.collect(ros.propertyValidator('netType', ros.requiredValidator)(properties.netType));
+    if(properties.netType && (typeof properties.netType) !== 'object') {
+        errors.collect(ros.propertyValidator('netType', ros.validateAllowedValues)({
+          data: properties.netType,
+          allowedValues: ["Public"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('netType', ros.validateString)(properties.netType));
+    return errors.wrap('supplied properties not correct for "RosApplicationEndpointAddressProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::POLARDB::ApplicationEndpointAddress` resource
+ *
+ * @param properties - the TypeScript properties of a `RosApplicationEndpointAddressProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::POLARDB::ApplicationEndpointAddress` resource.
+ */
+// @ts-ignore TS6133
+function rosApplicationEndpointAddressPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosApplicationEndpointAddressPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ApplicationId': ros.stringToRosTemplate(properties.applicationId),
+      'EndpointId': ros.stringToRosTemplate(properties.endpointId),
+      'NetType': ros.stringToRosTemplate(properties.netType),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::ApplicationEndpointAddress`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ApplicationEndpointAddress` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-applicationendpointaddress
+ */
+export class RosApplicationEndpointAddress extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::POLARDB::ApplicationEndpointAddress";
+
+    /**
+     * @Attribute PrivateEndpoint: Private endpoint.
+     */
+    public readonly attrPrivateEndpoint: ros.IResolvable;
+
+    /**
+     * @Attribute PublicEndpoint: Public endpoint.
+     */
+    public readonly attrPublicEndpoint: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property applicationId: The id of the application.
+     */
+    public applicationId: string | ros.IResolvable;
+
+    /**
+     * @Property endpointId: The id of the endpoint.
+     */
+    public endpointId: string | ros.IResolvable;
+
+    /**
+     * @Property netType: Network type for adding connection address.
+     */
+    public netType: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosApplicationEndpointAddressProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosApplicationEndpointAddress.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrPrivateEndpoint = this.getAtt('PrivateEndpoint');
+        this.attrPublicEndpoint = this.getAtt('PublicEndpoint');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.applicationId = props.applicationId;
+        this.endpointId = props.endpointId;
+        this.netType = props.netType;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            applicationId: this.applicationId,
+            endpointId: this.endpointId,
+            netType: this.netType,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosApplicationEndpointAddressPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosBackup`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-backup
  */
@@ -620,7 +1162,7 @@ function rosBackupPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::Backup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::Backup`, which is used to create a full snapshot backup for a PolarDB cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `Backup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-backup
  */
@@ -1085,8 +1627,8 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('defaultTimeZone', ros.validateString)(properties.defaultTimeZone));
-    errors.collect(ros.propertyValidator('gdnId', ros.validateString)(properties.gdnId));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('gdnId', ros.validateString)(properties.gdnId));
     errors.collect(ros.propertyValidator('storagePayType', ros.validateString)(properties.storagePayType));
     if(properties.backupRetentionPolicyOnClusterDeletion && (typeof properties.backupRetentionPolicyOnClusterDeletion) !== 'object') {
         errors.collect(ros.propertyValidator('backupRetentionPolicyOnClusterDeletion', ros.validateAllowedValues)({
@@ -1105,9 +1647,9 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('dbType', ros.validateString)(properties.dbType));
     errors.collect(ros.propertyValidator('storageAutoScale', ros.validateString)(properties.storageAutoScale));
-    errors.collect(ros.propertyValidator('proxyClass', ros.validateString)(properties.proxyClass));
     errors.collect(ros.propertyValidator('dbVersion', ros.requiredValidator)(properties.dbVersion));
     errors.collect(ros.propertyValidator('dbVersion', ros.validateString)(properties.dbVersion));
+    errors.collect(ros.propertyValidator('proxyClass', ros.validateString)(properties.proxyClass));
     if(properties.sslEnabled && (typeof properties.sslEnabled) !== 'object') {
         errors.collect(ros.propertyValidator('sslEnabled', ros.validateAllowedValues)({
           data: properties.sslEnabled,
@@ -1129,13 +1671,6 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('storageType', ros.validateString)(properties.storageType));
     errors.collect(ros.propertyValidator('architecture', ros.validateString)(properties.architecture));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
-    if(properties.renewalStatus && (typeof properties.renewalStatus) !== 'object') {
-        errors.collect(ros.propertyValidator('renewalStatus', ros.validateAllowedValues)({
-          data: properties.renewalStatus,
-          allowedValues: ["AutoRenewal","Normal","NotRenewal"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('renewalStatus', ros.validateString)(properties.renewalStatus));
     if(properties.dbClusterDescription && (Array.isArray(properties.dbClusterDescription) || (typeof properties.dbClusterDescription) === 'string')) {
         errors.collect(ros.propertyValidator('dbClusterDescription', ros.validateLength)({
             data: properties.dbClusterDescription.length,
@@ -1144,6 +1679,13 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('dbClusterDescription', ros.validateString)(properties.dbClusterDescription));
+    if(properties.renewalStatus && (typeof properties.renewalStatus) !== 'object') {
+        errors.collect(ros.propertyValidator('renewalStatus', ros.validateAllowedValues)({
+          data: properties.renewalStatus,
+          allowedValues: ["AutoRenewal","Normal","NotRenewal"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('renewalStatus', ros.validateString)(properties.renewalStatus));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
           data: properties.period,
@@ -1209,7 +1751,6 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('clusterNetworkType', ros.validateString)(properties.clusterNetworkType));
     errors.collect(ros.propertyValidator('securityIpList', ros.validateString)(properties.securityIpList));
     errors.collect(ros.propertyValidator('maintainTime', ros.validateString)(properties.maintainTime));
-    errors.collect(ros.propertyValidator('standbyAz', ros.validateString)(properties.standbyAz));
     if(properties.lowerCaseTableNames && (typeof properties.lowerCaseTableNames) !== 'object') {
         errors.collect(ros.propertyValidator('lowerCaseTableNames', ros.validateAllowedValues)({
           data: properties.lowerCaseTableNames,
@@ -1217,6 +1758,7 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('lowerCaseTableNames', ros.validateNumber)(properties.lowerCaseTableNames));
+    errors.collect(ros.propertyValidator('standbyAz', ros.validateString)(properties.standbyAz));
     if(properties.autoRenewPeriod && (typeof properties.autoRenewPeriod) !== 'object') {
         errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateAllowedValues)({
           data: properties.autoRenewPeriod,
@@ -1225,7 +1767,6 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateNumber)(properties.autoRenewPeriod));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
-    errors.collect(ros.propertyValidator('coldStorageOption', RosDBCluster_ColdStorageOptionPropertyValidator)(properties.coldStorageOption));
     if(properties.scaleRoNumMax && (typeof properties.scaleRoNumMax) !== 'object') {
         errors.collect(ros.propertyValidator('scaleRoNumMax', ros.validateRange)({
             data: properties.scaleRoNumMax,
@@ -1234,6 +1775,7 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('scaleRoNumMax', ros.validateNumber)(properties.scaleRoNumMax));
+    errors.collect(ros.propertyValidator('coldStorageOption', RosDBCluster_ColdStorageOptionPropertyValidator)(properties.coldStorageOption));
     errors.collect(ros.propertyValidator('looseXEngineUseMemoryPct', ros.validateNumber)(properties.looseXEngineUseMemoryPct));
     if(properties.scaleMax && (typeof properties.scaleMax) !== 'object') {
         errors.collect(ros.propertyValidator('scaleMax', ros.validateRange)({
@@ -1245,8 +1787,6 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('scaleMax', ros.validateNumber)(properties.scaleMax));
     errors.collect(ros.propertyValidator('creationCategory', ros.validateString)(properties.creationCategory));
     errors.collect(ros.propertyValidator('strictConsistency', ros.validateString)(properties.strictConsistency));
-    errors.collect(ros.propertyValidator('dbNodeClass', ros.requiredValidator)(properties.dbNodeClass));
-    errors.collect(ros.propertyValidator('dbNodeClass', ros.validateString)(properties.dbNodeClass));
     if(properties.creationOption && (typeof properties.creationOption) !== 'object') {
         errors.collect(ros.propertyValidator('creationOption', ros.validateAllowedValues)({
           data: properties.creationOption,
@@ -1254,6 +1794,8 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('creationOption', ros.validateString)(properties.creationOption));
+    errors.collect(ros.propertyValidator('dbNodeClass', ros.requiredValidator)(properties.dbNodeClass));
+    errors.collect(ros.propertyValidator('dbNodeClass', ros.validateString)(properties.dbNodeClass));
     errors.collect(ros.propertyValidator('parameterGroupId', ros.validateString)(properties.parameterGroupId));
     errors.collect(ros.propertyValidator('storageSpace', ros.validateNumber)(properties.storageSpace));
     if(properties.serverlessType && (typeof properties.serverlessType) !== 'object') {
@@ -1349,7 +1891,7 @@ function rosDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBCluster`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBCluster`The , which resource type creates a PolarDB cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbcluster
  */
@@ -2221,7 +2763,7 @@ function rosDBClusterAccessWhiteListPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBClusterAccessWhiteList`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBClusterAccessWhiteList`, which is used to modify the IP address whitelist that allows access to a PolarDB cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBClusterAccessWhiteList` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusteraccesswhitelist
  */
@@ -2396,7 +2938,7 @@ function rosDBClusterEndpointPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBClusterEndpoint`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBClusterEndpoint`, which is used to create a custom endpoint for a PolarDB cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBClusterEndpoint` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusterendpoint
  */
@@ -2518,18 +3060,18 @@ export namespace RosDBClusterEndpoint {
          */
         readonly consistTimeout?: string | ros.IResolvable;
         /**
+         * @Property loadBalancePolicy: Set load balancing policy. Valid values:
+     * 0: Load balancing based on the number of connections (default)
+     * 1: Load balancing based on the number of active requests
+         */
+        readonly loadBalancePolicy?: string | ros.IResolvable;
+        /**
          * @Property connectionPersist: Set up a connection pool. Valid values: 
      * off: Turn off the connection pool (default value) 
      * Session: Enable session-level connection pooling 
      * Transaction: Enable transaction-level connection pooling.
          */
         readonly connectionPersist?: string | ros.IResolvable;
-        /**
-         * @Property loadBalancePolicy: Set load balancing policy. Valid values:
-     * 0: Load balancing based on the number of connections (default)
-     * 1: Load balancing based on the number of active requests
-         */
-        readonly loadBalancePolicy?: string | ros.IResolvable;
         /**
          * @Property consistLevel: The consistency level of the cluster connection point. Valid values:
      * 0: eventual consistency
@@ -2577,8 +3119,8 @@ function RosDBClusterEndpoint_EndpointConfigPropertyValidator(properties: any): 
     errors.collect(ros.propertyValidator('distributedTransaction', ros.validateString)(properties.distributedTransaction));
     errors.collect(ros.propertyValidator('consistTimeoutAction', ros.validateString)(properties.consistTimeoutAction));
     errors.collect(ros.propertyValidator('consistTimeout', ros.validateString)(properties.consistTimeout));
-    errors.collect(ros.propertyValidator('connectionPersist', ros.validateString)(properties.connectionPersist));
     errors.collect(ros.propertyValidator('loadBalancePolicy', ros.validateString)(properties.loadBalancePolicy));
+    errors.collect(ros.propertyValidator('connectionPersist', ros.validateString)(properties.connectionPersist));
     if(properties.consistLevel && (typeof properties.consistLevel) !== 'object') {
         errors.collect(ros.propertyValidator('consistLevel', ros.validateAllowedValues)({
           data: properties.consistLevel,
@@ -2608,8 +3150,8 @@ function rosDBClusterEndpointEndpointConfigPropertyToRosTemplate(properties: any
       'DistributedTransaction': ros.stringToRosTemplate(properties.distributedTransaction),
       'ConsistTimeoutAction': ros.stringToRosTemplate(properties.consistTimeoutAction),
       'ConsistTimeout': ros.stringToRosTemplate(properties.consistTimeout),
-      'ConnectionPersist': ros.stringToRosTemplate(properties.connectionPersist),
       'LoadBalancePolicy': ros.stringToRosTemplate(properties.loadBalancePolicy),
+      'ConnectionPersist': ros.stringToRosTemplate(properties.connectionPersist),
       'ConsistLevel': ros.stringToRosTemplate(properties.consistLevel),
       'EnableOverloadThrottle': ros.stringToRosTemplate(properties.enableOverloadThrottle),
       'MasterAcceptReads': ros.stringToRosTemplate(properties.masterAcceptReads),
@@ -2703,7 +3245,7 @@ function rosDBClusterEndpointAddressPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBClusterEndpointAddress`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBClusterEndpointAddress`, which is used to create a public endpoint for an Apsara PolarDB cluster. The public endpoint can be a primary endpoint, the default cluster endpoint, or a custom cluster endpoint.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBClusterEndpointAddress` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusterendpointaddress
  */
@@ -2852,6 +3394,13 @@ function RosDBNodesPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('dbClusterId', ros.requiredValidator)(properties.dbClusterId));
     errors.collect(ros.propertyValidator('dbClusterId', ros.validateString)(properties.dbClusterId));
     errors.collect(ros.propertyValidator('plannedStartTime', ros.validateString)(properties.plannedStartTime));
+    if(properties.imciSwitch && (typeof properties.imciSwitch) !== 'object') {
+        errors.collect(ros.propertyValidator('imciSwitch', ros.validateAllowedValues)({
+          data: properties.imciSwitch,
+          allowedValues: ["ON","OFF"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('imciSwitch', ros.validateString)(properties.imciSwitch));
     if(properties.endpointBindList && (Array.isArray(properties.endpointBindList) || (typeof properties.endpointBindList) === 'string')) {
         errors.collect(ros.propertyValidator('endpointBindList', ros.validateLength)({
             data: properties.endpointBindList.length,
@@ -2860,13 +3409,6 @@ function RosDBNodesPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('endpointBindList', ros.listValidator(ros.validateString))(properties.endpointBindList));
-    if(properties.imciSwitch && (typeof properties.imciSwitch) !== 'object') {
-        errors.collect(ros.propertyValidator('imciSwitch', ros.validateAllowedValues)({
-          data: properties.imciSwitch,
-          allowedValues: ["ON","OFF"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('imciSwitch', ros.validateString)(properties.imciSwitch));
     if(properties.dbNodeType && (typeof properties.dbNodeType) !== 'object') {
         errors.collect(ros.propertyValidator('dbNodeType', ros.validateAllowedValues)({
           data: properties.dbNodeType,
@@ -2904,7 +3446,7 @@ function rosDBNodesPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBNodes`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBNodes`, which is used to add nodes to a PolarDB cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBNodes` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbnodes
  */
@@ -3099,7 +3641,6 @@ function RosDatabasePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('dbDescription', ros.validateString)(properties.dbDescription));
     errors.collect(ros.propertyValidator('dbClusterId', ros.requiredValidator)(properties.dbClusterId));
     errors.collect(ros.propertyValidator('dbClusterId', ros.validateString)(properties.dbClusterId));
-    errors.collect(ros.propertyValidator('collate', ros.validateString)(properties.collate));
     errors.collect(ros.propertyValidator('dbName', ros.requiredValidator)(properties.dbName));
     if(properties.dbName && (typeof properties.dbName) !== 'object') {
         errors.collect(ros.propertyValidator('dbName', ros.validateAllowedPattern)({
@@ -3108,6 +3649,7 @@ function RosDatabasePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('dbName', ros.validateString)(properties.dbName));
+    errors.collect(ros.propertyValidator('collate', ros.validateString)(properties.collate));
     errors.collect(ros.propertyValidator('ctype', ros.validateString)(properties.ctype));
     errors.collect(ros.propertyValidator('accountName', ros.validateString)(properties.accountName));
     return errors.wrap('supplied properties not correct for "RosDatabaseProps"');
@@ -3139,7 +3681,7 @@ function rosDatabasePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::Database`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::Database`, which is used to create a database in a PolarDB cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `Database` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-database
  */
@@ -3306,7 +3848,7 @@ function rosGlobalDatabaseNetworkPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::GlobalDatabaseNetwork`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::GlobalDatabaseNetwork`, which is used to create a global database network (GDN).
  * @Note This class does not contain additional functions, so it is recommended to use the `GlobalDatabaseNetwork` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-globaldatabasenetwork
  */
@@ -3488,7 +4030,7 @@ function rosGlobalSecurityIPGroupPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::GlobalSecurityIPGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::GlobalSecurityIPGroup`, which is used to create a global IP whitelist template.
  * @Note This class does not contain additional functions, so it is recommended to use the `GlobalSecurityIPGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-globalsecurityipgroup
  */
@@ -3637,7 +4179,7 @@ function rosParameterGroupPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::ParameterGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::ParameterGroup`, which is used to create a parameter template of PolarDB.
  * @Note This class does not contain additional functions, so it is recommended to use the `ParameterGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-parametergroup
  */

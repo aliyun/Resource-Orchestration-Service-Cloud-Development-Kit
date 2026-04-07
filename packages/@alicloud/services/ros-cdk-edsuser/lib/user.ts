@@ -15,9 +15,24 @@ export interface UserProps {
     readonly endUserId: string | ros.IResolvable;
 
     /**
+     * Property autoLockTime: The date when the account is automatically locked. Format: yyyy-MM-dd HH:mm:ss.
+     */
+    readonly autoLockTime?: string | ros.IResolvable;
+
+    /**
+     * Property businessChannel: The channel.
+     */
+    readonly businessChannel?: string | ros.IResolvable;
+
+    /**
      * Property email: The email address of the end user. The email address is used to receive notifications about events such as desktop assignment. You must specify an email address or a mobile number to receive notifications.
      */
     readonly email?: string | ros.IResolvable;
+
+    /**
+     * Property isLocalAdmin: Whether to set this convenient account as a local administrator.
+     */
+    readonly isLocalAdmin?: boolean | ros.IResolvable;
 
     /**
      * Property orgId: The organization to which the end user belongs.
@@ -38,9 +53,21 @@ export interface UserProps {
     readonly password?: string | ros.IResolvable;
 
     /**
-     * Property phone: Mobile numbers are not supported on the international site (alibabacloud.com).
+     * Property passwordExpireDays: The default password is valid indefinitely. This parameter can be used to set a validity period of 30 to 365 days. When the password expires, the end user must change the password before logging in again.
+     * 
+     * > This feature is currently in invitation-only testing. To try it, submit a ticket to enable it.
+     */
+    readonly passwordExpireDays?: string | ros.IResolvable;
+
+    /**
+     * Property phone: Mobile numbers are not supported on the international site.
      */
     readonly phone?: string | ros.IResolvable;
+
+    /**
+     * Property realNickName: The display name of the user.
+     */
+    readonly realNickName?: string | ros.IResolvable;
 
     /**
      * Property remark: The remarks of the end user.
@@ -60,7 +87,7 @@ export interface IUser extends ros.IResource {
     readonly attrEndUserId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::EdsUser::User`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EdsUser::User`, which is used to create a convenience user.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUser`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edsuser-user
  */
@@ -92,9 +119,14 @@ export class User extends ros.Resource implements IUser {
             ownerType: props.ownerType,
             endUserId: props.endUserId,
             email: props.email,
+            isLocalAdmin: props.isLocalAdmin,
             phone: props.phone,
+            realNickName: props.realNickName,
+            autoLockTime: props.autoLockTime,
+            businessChannel: props.businessChannel,
             remark: props.remark,
             password: props.password,
+            passwordExpireDays: props.passwordExpireDays,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosUser;
         this.attrEndUserId = rosUser.attrEndUserId;

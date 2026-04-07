@@ -104,6 +104,18 @@ func (j *jsiiProxy_RosDhcpOptionsSet) validateSetEnableResourcePropertyConstrain
 	return nil
 }
 
+func (j *jsiiProxy_RosDhcpOptionsSet) validateSetIpv6LeaseTimeParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosDhcpOptionsSet) validateSetLeaseTimeParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosDhcpOptionsSet) validateSetResourceGroupIdParameters(val interface{}) error {
+	return nil
+}
+
 func validateNewRosDhcpOptionsSetParameters(scope alicloudroscdkcore.Construct, id *string, props *RosDhcpOptionsSetProps, enableResourcePropertyConstraint *bool) error {
 	return nil
 }

@@ -181,6 +181,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: insightModule: Whether to enable the insight module.
+        /// </remarks>
+        [JsiiProperty(name: "insightModule", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? InsightModule
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: jobId: The ID of the task.
         /// **Note**: If this parameter is specified, you do not need to specify the SourceRegion, DestinationRegion, SourceEndpointEngineName, or DestinationEndpointEngineName parameter. Even if these parameters are specified, the value of the JobId parameter takes precedence.
         /// </remarks>
@@ -480,6 +493,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             [JsiiOptional]
             [JsiiProperty(name: "feeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? FeeType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: insightModule: Whether to enable the insight module.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "insightModule", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? InsightModule
             {
                 get => GetInstanceProperty<object?>();
             }

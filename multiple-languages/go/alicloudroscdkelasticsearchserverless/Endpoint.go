@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ElasticSearchServerless::Endpoint`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ElasticSearchServerless::Endpoint`The , which is used to create an endpoint.
 type Endpoint interface {
 	alicloudroscdkcore.Resource
 	IEndpoint

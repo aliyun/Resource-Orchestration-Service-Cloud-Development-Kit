@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::OOS::Template`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::OOS::Template`The , which resource type creates a template.
 type Template interface {
 	alicloudroscdkcore.Resource
 	ITemplate

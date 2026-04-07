@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::ResourceGroup`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::ResourceGroup`The , which resource type creates a resource group.
 type ResourceGroup interface {
 	alicloudroscdkcore.Resource
 	IResourceGroup
@@ -23,6 +23,8 @@ type ResourceGroup interface {
 	AttrName() interface{}
 	// Attribute RegionStatuses: The status of the resource group in all regions.
 	AttrRegionStatuses() interface{}
+	// Attribute ResourceGroupId: The ID of the resource group.
+	AttrResourceGroupId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
 	// The environment this resource belongs to.
@@ -163,6 +165,16 @@ func (j *jsiiProxy_ResourceGroup) AttrRegionStatuses() interface{} {
 	_jsii_.Get(
 		j,
 		"attrRegionStatuses",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ResourceGroup) AttrResourceGroupId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrResourceGroupId",
 		&returns,
 	)
 	return returns

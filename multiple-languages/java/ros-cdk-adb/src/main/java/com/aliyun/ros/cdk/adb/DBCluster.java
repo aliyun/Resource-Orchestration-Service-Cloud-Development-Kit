@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.adb;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ADB::DBCluster</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ADB::DBCluster</code>Use the , which resource type to create an AnalyticDB for MySQL cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:51.906Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:21.072Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.adb.$Module.class, fqn = "@alicloud/ros-cdk-adb.DBCluster")
 public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.adb.IDBCluster {
 
@@ -433,6 +433,37 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
+         * Property diskEncryption: Whether to enable cloud disk encryption. Value:.
+         * <p>
+         * <ul>
+         * <li>true: yes.</li>
+         * <li>false: no.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param diskEncryption Property diskEncryption: Whether to enable cloud disk encryption. Value:. This parameter is required.
+         */
+        public Builder diskEncryption(final java.lang.Boolean diskEncryption) {
+            this.props.diskEncryption(diskEncryption);
+            return this;
+        }
+        /**
+         * Property diskEncryption: Whether to enable cloud disk encryption. Value:.
+         * <p>
+         * <ul>
+         * <li>true: yes.</li>
+         * <li>false: no.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param diskEncryption Property diskEncryption: Whether to enable cloud disk encryption. Value:. This parameter is required.
+         */
+        public Builder diskEncryption(final com.aliyun.ros.cdk.core.IResolvable diskEncryption) {
+            this.props.diskEncryption(diskEncryption);
+            return this;
+        }
+
+        /**
          * Property elasticIoResource: Elastic IO Unit Note the flexible mode cluster will use this parameter.
          * <p>
          * @return {@code this}
@@ -454,6 +485,37 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
+         * Property enableSsl: Whether to enable SSL link encryption function, value:.
+         * <p>
+         * <ul>
+         * <li><strong>true</strong>: open.</li>
+         * <li><strong>false</strong>: close.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param enableSsl Property enableSsl: Whether to enable SSL link encryption function, value:. This parameter is required.
+         */
+        public Builder enableSsl(final java.lang.Boolean enableSsl) {
+            this.props.enableSsl(enableSsl);
+            return this;
+        }
+        /**
+         * Property enableSsl: Whether to enable SSL link encryption function, value:.
+         * <p>
+         * <ul>
+         * <li><strong>true</strong>: open.</li>
+         * <li><strong>false</strong>: close.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param enableSsl Property enableSsl: Whether to enable SSL link encryption function, value:. This parameter is required.
+         */
+        public Builder enableSsl(final com.aliyun.ros.cdk.core.IResolvable enableSsl) {
+            this.props.enableSsl(enableSsl);
+            return this;
+        }
+
+        /**
          * Property executorCount: ExecutorCount.
          * <p>
          * @return {@code this}
@@ -471,6 +533,27 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
          */
         public Builder executorCount(final com.aliyun.ros.cdk.core.IResolvable executorCount) {
             this.props.executorCount(executorCount);
+            return this;
+        }
+
+        /**
+         * Property kmsId: The kmsId used for cloud disk encryption, effective only when DiskEncryption is true.
+         * <p>
+         * @return {@code this}
+         * @param kmsId Property kmsId: The kmsId used for cloud disk encryption, effective only when DiskEncryption is true. This parameter is required.
+         */
+        public Builder kmsId(final java.lang.String kmsId) {
+            this.props.kmsId(kmsId);
+            return this;
+        }
+        /**
+         * Property kmsId: The kmsId used for cloud disk encryption, effective only when DiskEncryption is true.
+         * <p>
+         * @return {@code this}
+         * @param kmsId Property kmsId: The kmsId used for cloud disk encryption, effective only when DiskEncryption is true. This parameter is required.
+         */
+        public Builder kmsId(final com.aliyun.ros.cdk.core.IResolvable kmsId) {
+            this.props.kmsId(kmsId);
             return this;
         }
 

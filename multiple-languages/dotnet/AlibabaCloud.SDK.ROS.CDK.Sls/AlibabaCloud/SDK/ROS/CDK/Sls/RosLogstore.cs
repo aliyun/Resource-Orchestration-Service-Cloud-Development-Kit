@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sls
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Logstore`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Logstore`, which is used to create a Logstore in a Simple Log Service (SLS) project.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Logstore` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logstore
@@ -449,7 +449,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
 
         /// <remarks>
         /// <strong>Property</strong>: ttl: The lifecycle of log in the logstore in days.
-        /// Allowed Values: 1-3600, default to 30.
+        /// Allowed Values: 1-3650, default to 30.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "ttl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

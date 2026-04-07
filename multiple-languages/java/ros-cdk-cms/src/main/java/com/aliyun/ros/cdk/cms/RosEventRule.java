@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.cms;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CMS::EventRule</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CMS::EventRule</code>, which is used to create or modify an event-triggered alert rule.
+ * <p>
+ * If the specified rule name does not exist, an event-triggered alert rule is created. If the specified rule name exists, the specified event-triggered alert rule is modified.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.738Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:23.093Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosEventRule")
 public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -167,6 +169,24 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSilenceTime() {
+        return software.amazon.jsii.Kernel.get(this, "silenceTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSilenceTime(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "silenceTime", value);
+    }
+
+    /**
+     */
+    public void setSilenceTime(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "silenceTime", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getState() {
         return software.amazon.jsii.Kernel.get(this, "state", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -200,6 +220,13 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getEventTypeList() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getKeywordFilter() {
             return null;
         }
 
@@ -252,6 +279,7 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
         public static final class Builder implements software.amazon.jsii.Builder<EventPatternProperty> {
             java.lang.Object customFilters;
             java.lang.Object eventTypeList;
+            java.lang.Object keywordFilter;
             java.lang.Object levelList;
             java.lang.Object nameList;
             java.lang.Object product;
@@ -299,6 +327,28 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder eventTypeList(com.aliyun.ros.cdk.core.IResolvable eventTypeList) {
                 this.eventTypeList = eventTypeList;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EventPatternProperty#getKeywordFilter}
+             * @param keywordFilter the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder keywordFilter(com.aliyun.ros.cdk.core.IResolvable keywordFilter) {
+                this.keywordFilter = keywordFilter;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EventPatternProperty#getKeywordFilter}
+             * @param keywordFilter the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder keywordFilter(com.aliyun.ros.cdk.cms.RosEventRule.KeywordFilterProperty keywordFilter) {
+                this.keywordFilter = keywordFilter;
                 return this;
             }
 
@@ -432,6 +482,7 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements EventPatternProperty {
             private final java.lang.Object customFilters;
             private final java.lang.Object eventTypeList;
+            private final java.lang.Object keywordFilter;
             private final java.lang.Object levelList;
             private final java.lang.Object nameList;
             private final java.lang.Object product;
@@ -446,6 +497,7 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
                 super(objRef);
                 this.customFilters = software.amazon.jsii.Kernel.get(this, "customFilters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.eventTypeList = software.amazon.jsii.Kernel.get(this, "eventTypeList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.keywordFilter = software.amazon.jsii.Kernel.get(this, "keywordFilter", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.levelList = software.amazon.jsii.Kernel.get(this, "levelList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.nameList = software.amazon.jsii.Kernel.get(this, "nameList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.product = software.amazon.jsii.Kernel.get(this, "product", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -460,6 +512,7 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.customFilters = builder.customFilters;
                 this.eventTypeList = builder.eventTypeList;
+                this.keywordFilter = builder.keywordFilter;
                 this.levelList = builder.levelList;
                 this.nameList = builder.nameList;
                 this.product = builder.product;
@@ -475,6 +528,11 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final java.lang.Object getEventTypeList() {
                 return this.eventTypeList;
+            }
+
+            @Override
+            public final java.lang.Object getKeywordFilter() {
+                return this.keywordFilter;
             }
 
             @Override
@@ -514,6 +572,9 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getEventTypeList() != null) {
                     data.set("eventTypeList", om.valueToTree(this.getEventTypeList()));
                 }
+                if (this.getKeywordFilter() != null) {
+                    data.set("keywordFilter", om.valueToTree(this.getKeywordFilter()));
+                }
                 if (this.getLevelList() != null) {
                     data.set("levelList", om.valueToTree(this.getLevelList()));
                 }
@@ -549,6 +610,7 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
 
                 if (this.customFilters != null ? !this.customFilters.equals(that.customFilters) : that.customFilters != null) return false;
                 if (this.eventTypeList != null ? !this.eventTypeList.equals(that.eventTypeList) : that.eventTypeList != null) return false;
+                if (this.keywordFilter != null ? !this.keywordFilter.equals(that.keywordFilter) : that.keywordFilter != null) return false;
                 if (this.levelList != null ? !this.levelList.equals(that.levelList) : that.levelList != null) return false;
                 if (this.nameList != null ? !this.nameList.equals(that.nameList) : that.nameList != null) return false;
                 if (this.product != null ? !this.product.equals(that.product) : that.product != null) return false;
@@ -560,11 +622,184 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
             public final int hashCode() {
                 int result = this.customFilters != null ? this.customFilters.hashCode() : 0;
                 result = 31 * result + (this.eventTypeList != null ? this.eventTypeList.hashCode() : 0);
+                result = 31 * result + (this.keywordFilter != null ? this.keywordFilter.hashCode() : 0);
                 result = 31 * result + (this.levelList != null ? this.levelList.hashCode() : 0);
                 result = 31 * result + (this.nameList != null ? this.nameList.hashCode() : 0);
                 result = 31 * result + (this.product != null ? this.product.hashCode() : 0);
                 result = 31 * result + (this.sqlFilter != null ? this.sqlFilter.hashCode() : 0);
                 result = 31 * result + (this.statusList != null ? this.statusList.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosEventRule.KeywordFilterProperty")
+    @software.amazon.jsii.Jsii.Proxy(KeywordFilterProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface KeywordFilterProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getKeywords() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getRelation() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link KeywordFilterProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link KeywordFilterProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<KeywordFilterProperty> {
+            java.lang.Object keywords;
+            java.lang.Object relation;
+
+            /**
+             * Sets the value of {@link KeywordFilterProperty#getKeywords}
+             * @param keywords the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder keywords(com.aliyun.ros.cdk.core.IResolvable keywords) {
+                this.keywords = keywords;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link KeywordFilterProperty#getKeywords}
+             * @param keywords the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder keywords(java.util.List<? extends java.lang.Object> keywords) {
+                this.keywords = keywords;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link KeywordFilterProperty#getRelation}
+             * @param relation the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder relation(java.lang.String relation) {
+                this.relation = relation;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link KeywordFilterProperty#getRelation}
+             * @param relation the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder relation(com.aliyun.ros.cdk.core.IResolvable relation) {
+                this.relation = relation;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link KeywordFilterProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public KeywordFilterProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link KeywordFilterProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements KeywordFilterProperty {
+            private final java.lang.Object keywords;
+            private final java.lang.Object relation;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.keywords = software.amazon.jsii.Kernel.get(this, "keywords", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.relation = software.amazon.jsii.Kernel.get(this, "relation", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.keywords = builder.keywords;
+                this.relation = builder.relation;
+            }
+
+            @Override
+            public final java.lang.Object getKeywords() {
+                return this.keywords;
+            }
+
+            @Override
+            public final java.lang.Object getRelation() {
+                return this.relation;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getKeywords() != null) {
+                    data.set("keywords", om.valueToTree(this.getKeywords()));
+                }
+                if (this.getRelation() != null) {
+                    data.set("relation", om.valueToTree(this.getRelation()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-cms.RosEventRule.KeywordFilterProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                KeywordFilterProperty.Jsii$Proxy that = (KeywordFilterProperty.Jsii$Proxy) o;
+
+                if (this.keywords != null ? !this.keywords.equals(that.keywords) : that.keywords != null) return false;
+                return this.relation != null ? this.relation.equals(that.relation) : that.relation == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.keywords != null ? this.keywords.hashCode() : 0;
+                result = 31 * result + (this.relation != null ? this.relation.hashCode() : 0);
                 return result;
             }
         }
@@ -678,6 +913,23 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder groupId(final com.aliyun.ros.cdk.core.IResolvable groupId) {
             this.props.groupId(groupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param silenceTime This parameter is required.
+         */
+        public Builder silenceTime(final java.lang.Number silenceTime) {
+            this.props.silenceTime(silenceTime);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param silenceTime This parameter is required.
+         */
+        public Builder silenceTime(final com.aliyun.ros.cdk.core.IResolvable silenceTime) {
+            this.props.silenceTime(silenceTime);
             return this;
         }
 

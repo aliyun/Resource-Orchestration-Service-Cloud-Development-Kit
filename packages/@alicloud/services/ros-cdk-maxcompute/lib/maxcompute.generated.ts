@@ -63,7 +63,7 @@ function rosPackagePropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MaxCompute::Package`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MaxCompute::Package`, which is used to create a package.
  * @Note This class does not contain additional functions, so it is recommended to use the `Package` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-maxcompute-package
  */
@@ -428,7 +428,7 @@ function rosProjectPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MaxCompute::Project`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MaxCompute::Project`, which is used to create a MaxCompute project.
  * @Note This class does not contain additional functions, so it is recommended to use the `Project` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-maxcompute-project
  */
@@ -764,8 +764,8 @@ function RosQuotaPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('cu', ros.validateNumber)(properties.cu));
-    errors.collect(ros.propertyValidator('quotaNickname', ros.validateString)(properties.quotaNickname));
     errors.collect(ros.propertyValidator('tunnel', ros.validateNumber)(properties.tunnel));
+    errors.collect(ros.propertyValidator('quotaNickname', ros.validateString)(properties.quotaNickname));
     errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
@@ -827,7 +827,7 @@ function rosQuotaPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MaxCompute::Quota`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MaxCompute::Quota`The , which type is used to create a MaxCompute (previously known as ODPS) quota.
  * @Note This class does not contain additional functions, so it is recommended to use the `Quota` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-maxcompute-quota
  */
@@ -987,6 +987,8 @@ function RosRolePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('policy', ros.hashValidator(ros.validateAny))(properties.policy));
+    errors.collect(ros.propertyValidator('roleName', ros.requiredValidator)(properties.roleName));
+    errors.collect(ros.propertyValidator('roleName', ros.validateString)(properties.roleName));
     errors.collect(ros.propertyValidator('type', ros.requiredValidator)(properties.type));
     if(properties.type && (typeof properties.type) !== 'object') {
         errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
@@ -995,8 +997,6 @@ function RosRolePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
-    errors.collect(ros.propertyValidator('roleName', ros.requiredValidator)(properties.roleName));
-    errors.collect(ros.propertyValidator('roleName', ros.validateString)(properties.roleName));
     errors.collect(ros.propertyValidator('projectName', ros.requiredValidator)(properties.projectName));
     errors.collect(ros.propertyValidator('projectName', ros.validateString)(properties.projectName));
     errors.collect(ros.propertyValidator('acl', RosRole_AclPropertyValidator)(properties.acl));
@@ -1026,7 +1026,7 @@ function rosRolePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MaxCompute::Role`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MaxCompute::Role`, which is used to create a role at the MaxCompute project level.
  * @Note This class does not contain additional functions, so it is recommended to use the `Role` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-maxcompute-role
  */
@@ -1528,12 +1528,12 @@ export interface RosTableProps {
 function RosTablePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('comment', ros.validateString)(properties.comment));
     errors.collect(ros.propertyValidator('project', ros.requiredValidator)(properties.project));
     errors.collect(ros.propertyValidator('project', ros.validateString)(properties.project));
+    errors.collect(ros.propertyValidator('comment', ros.validateString)(properties.comment));
     errors.collect(ros.propertyValidator('ifNotExists', ros.validateBoolean)(properties.ifNotExists));
-    errors.collect(ros.propertyValidator('lifecycle', ros.validateNumber)(properties.lifecycle));
     errors.collect(ros.propertyValidator('schema', RosTable_SchemaPropertyValidator)(properties.schema));
+    errors.collect(ros.propertyValidator('lifecycle', ros.validateNumber)(properties.lifecycle));
     errors.collect(ros.propertyValidator('stringSchema', ros.validateString)(properties.stringSchema));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     if(properties.name && (typeof properties.name) !== 'object') {
@@ -1571,7 +1571,7 @@ function rosTablePropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MaxCompute::Table`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MaxCompute::Table`, which is used to create a table.
  * @Note This class does not contain additional functions, so it is recommended to use the `Table` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-maxcompute-table
  */

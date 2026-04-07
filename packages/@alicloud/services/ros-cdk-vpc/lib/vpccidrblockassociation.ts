@@ -26,6 +26,12 @@ export interface VpcCidrBlockAssociationProps {
     readonly iPv6CidrBlock?: string | ros.IResolvable;
 
     /**
+     * Property ipv6CidrMask: Add an IPv6 network segment to the VPC from the IPAM address pool by specifying a mask.
+     * Note When adding an additional IPv6 network segment to the VPC from the specified IPAM address pool, at least one of Ipv6CidrBlock or Ipv6CidrMask must be specified.
+     */
+    readonly ipv6CidrMask?: number | ros.IResolvable;
+
+    /**
      * Property ipv6Isp: The type of the IPv6 CIDR block. Valid values:
      * BGP (default)
      * ChinaMobile
@@ -104,9 +110,10 @@ export class VpcCidrBlockAssociation extends ros.Resource implements IVpcCidrBlo
             secondaryCidrMask: props.secondaryCidrMask,
             secondaryCidrBlock: props.secondaryCidrBlock,
             vpcId: props.vpcId,
-            ipVersion: props.ipVersion,
             ipamPoolId: props.ipamPoolId,
+            ipVersion: props.ipVersion,
             iPv6CidrBlock: props.iPv6CidrBlock,
+            ipv6CidrMask: props.ipv6CidrMask,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosVpcCidrBlockAssociation;
         this.attrVpcId = rosVpcCidrBlockAssociation.attrVpcId;

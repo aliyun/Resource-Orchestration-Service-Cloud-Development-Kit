@@ -49,13 +49,6 @@ function RosAccessGroupPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('accessGroupType', ros.validateString)(properties.accessGroupType));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    if(properties.fileSystemType && (typeof properties.fileSystemType) !== 'object') {
-        errors.collect(ros.propertyValidator('fileSystemType', ros.validateAllowedValues)({
-          data: properties.fileSystemType,
-          allowedValues: ["standard","extreme"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('fileSystemType', ros.validateString)(properties.fileSystemType));
     errors.collect(ros.propertyValidator('accessGroupName', ros.requiredValidator)(properties.accessGroupName));
     if(properties.accessGroupName && (typeof properties.accessGroupName) !== 'object') {
         errors.collect(ros.propertyValidator('accessGroupName', ros.validateAllowedPattern)({
@@ -64,6 +57,13 @@ function RosAccessGroupPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('accessGroupName', ros.validateString)(properties.accessGroupName));
+    if(properties.fileSystemType && (typeof properties.fileSystemType) !== 'object') {
+        errors.collect(ros.propertyValidator('fileSystemType', ros.validateAllowedValues)({
+          data: properties.fileSystemType,
+          allowedValues: ["standard","extreme"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('fileSystemType', ros.validateString)(properties.fileSystemType));
     return errors.wrap('supplied properties not correct for "RosAccessGroupProps"');
 }
 
@@ -89,7 +89,7 @@ function rosAccessGroupPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::AccessGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::AccessGroup`, which is used to create a permission group.
  * @Note This class does not contain additional functions, so it is recommended to use the `AccessGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-accessgroup
  */
@@ -230,6 +230,9 @@ function RosAccessRulePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('priority', ros.validateNumber)(properties.priority));
+    errors.collect(ros.propertyValidator('accessGroupName', ros.requiredValidator)(properties.accessGroupName));
+    errors.collect(ros.propertyValidator('accessGroupName', ros.validateString)(properties.accessGroupName));
+    errors.collect(ros.propertyValidator('sourceCidrIp', ros.validateString)(properties.sourceCidrIp));
     if(properties.fileSystemType && (typeof properties.fileSystemType) !== 'object') {
         errors.collect(ros.propertyValidator('fileSystemType', ros.validateAllowedValues)({
           data: properties.fileSystemType,
@@ -237,9 +240,6 @@ function RosAccessRulePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('fileSystemType', ros.validateString)(properties.fileSystemType));
-    errors.collect(ros.propertyValidator('sourceCidrIp', ros.validateString)(properties.sourceCidrIp));
-    errors.collect(ros.propertyValidator('accessGroupName', ros.requiredValidator)(properties.accessGroupName));
-    errors.collect(ros.propertyValidator('accessGroupName', ros.validateString)(properties.accessGroupName));
     errors.collect(ros.propertyValidator('ipv6SourceCidrIp', ros.validateString)(properties.ipv6SourceCidrIp));
     if(properties.rwAccessType && (typeof properties.rwAccessType) !== 'object') {
         errors.collect(ros.propertyValidator('rwAccessType', ros.validateAllowedValues)({
@@ -276,7 +276,7 @@ function rosAccessRulePropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::AccessRule`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::AccessRule`, which is used to create a rule for a permission group.
  * @Note This class does not contain additional functions, so it is recommended to use the `AccessRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-accessrule
  */
@@ -523,7 +523,7 @@ function rosDataFlowPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::DataFlow`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::DataFlow`, which is used to create a data flow between a Cloud Parallel File Storage (CPFS) file system and an Object Storage Service (OSS) bucket.
  * @Note This class does not contain additional functions, so it is recommended to use the `DataFlow` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-dataflow
  */
@@ -809,7 +809,6 @@ export interface RosFileSystemProps {
 function RosFileSystemPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('storageType', ros.requiredValidator)(properties.storageType));
     if(properties.storageType && (typeof properties.storageType) !== 'object') {
         errors.collect(ros.propertyValidator('storageType', ros.validateAllowedValues)({
@@ -818,14 +817,15 @@ function RosFileSystemPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('storageType', ros.validateString)(properties.storageType));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('duration', ros.validateNumber)(properties.duration));
     errors.collect(ros.propertyValidator('snapshotId', ros.validateString)(properties.snapshotId));
     errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
-    errors.collect(ros.propertyValidator('encryptType', ros.validateNumber)(properties.encryptType));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('encryptType', ros.validateNumber)(properties.encryptType));
     errors.collect(ros.propertyValidator('capacity', ros.validateNumber)(properties.capacity));
     errors.collect(ros.propertyValidator('protocolType', ros.requiredValidator)(properties.protocolType));
     if(properties.protocolType && (typeof properties.protocolType) !== 'object') {
@@ -895,7 +895,7 @@ function rosFileSystemPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::FileSystem`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::FileSystem`The , which resource type creates a NAS file system.
  * @Note This class does not contain additional functions, so it is recommended to use the `FileSystem` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-filesystem
  */
@@ -1171,7 +1171,7 @@ function rosFilesetPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::Fileset`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::Fileset`, which is used to create a fileset.
  * @Note This class does not contain additional functions, so it is recommended to use the `Fileset` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-fileset
  */
@@ -1326,10 +1326,10 @@ function RosMountTargetPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('networkType', ros.validateString)(properties.networkType));
-    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('accessGroupName', ros.requiredValidator)(properties.accessGroupName));
     errors.collect(ros.propertyValidator('accessGroupName', ros.validateString)(properties.accessGroupName));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('fileSystemId', ros.requiredValidator)(properties.fileSystemId));
     errors.collect(ros.propertyValidator('fileSystemId', ros.validateString)(properties.fileSystemId));
     errors.collect(ros.propertyValidator('enableIpv6', ros.validateBoolean)(properties.enableIpv6));
@@ -1362,7 +1362,7 @@ function rosMountTargetPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::MountTarget`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::MountTarget`You can use the , which resource to create a mount target.
  * @Note This class does not contain additional functions, so it is recommended to use the `MountTarget` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-mounttarget
  */
@@ -1576,7 +1576,7 @@ function rosProtocolMountTargetPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::ProtocolMountTarget`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::ProtocolMountTarget`, which is used to create an export directory for a protocol service.
  * @Note This class does not contain additional functions, so it is recommended to use the `ProtocolMountTarget` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-protocolmounttarget
  */
@@ -1819,7 +1819,7 @@ function rosProtocolServicePropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::ProtocolService`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::ProtocolService`, which is used to create a protocol service for a Cloud Paralleled File System (CPFS) file system.
  * @Note This class does not contain additional functions, so it is recommended to use the `ProtocolService` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-protocolservice
  */

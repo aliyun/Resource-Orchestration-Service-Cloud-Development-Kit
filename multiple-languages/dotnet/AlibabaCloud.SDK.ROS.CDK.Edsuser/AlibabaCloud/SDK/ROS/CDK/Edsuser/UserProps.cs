@@ -46,6 +46,71 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edsuser
             }
         }
 
+        private object? _autoLockTime;
+
+        /// <summary>Property autoLockTime: The date when the account is automatically locked.</summary>
+        /// <remarks>
+        /// Format: yyyy-MM-dd HH:mm:ss.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "autoLockTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? AutoLockTime
+        {
+            get => _autoLockTime;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _autoLockTime = value;
+            }
+        }
+
+        private object? _businessChannel;
+
+        /// <summary>Property businessChannel: The channel.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "businessChannel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? BusinessChannel
+        {
+            get => _businessChannel;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _businessChannel = value;
+            }
+        }
+
         private object? _email;
 
         /// <summary>Property email: The email address of the end user.</summary>
@@ -77,6 +142,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edsuser
                     }
                 }
                 _email = value;
+            }
+        }
+
+        private object? _isLocalAdmin;
+
+        /// <summary>Property isLocalAdmin: Whether to set this convenient account as a local administrator.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "isLocalAdmin", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? IsLocalAdmin
+        {
+            get => _isLocalAdmin;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _isLocalAdmin = value;
             }
         }
 
@@ -181,9 +277,45 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edsuser
             }
         }
 
+        private object? _passwordExpireDays;
+
+        /// <summary>Property passwordExpireDays: The default password is valid indefinitely.</summary>
+        /// <remarks>
+        /// This parameter can be used to set a validity period of 30 to 365 days. When the password expires, the end user must change the password before logging in again.
+        ///
+        ///     This feature is currently in invitation-only testing. To try it, submit a ticket to enable it.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "passwordExpireDays", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? PasswordExpireDays
+        {
+            get => _passwordExpireDays;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _passwordExpireDays = value;
+            }
+        }
+
         private object? _phone;
 
-        /// <summary>Property phone: Mobile numbers are not supported on the international site (alibabacloud.com).</summary>
+        /// <summary>Property phone: Mobile numbers are not supported on the international site.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "phone", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? Phone
@@ -209,6 +341,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edsuser
                     }
                 }
                 _phone = value;
+            }
+        }
+
+        private object? _realNickName;
+
+        /// <summary>Property realNickName: The display name of the user.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "realNickName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? RealNickName
+        {
+            get => _realNickName;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _realNickName = value;
             }
         }
 

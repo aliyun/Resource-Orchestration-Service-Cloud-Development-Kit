@@ -10,8 +10,12 @@ type RosInstanceV2Props struct {
 	Storage interface{} `field:"required" json:"storage" yaml:"storage"`
 	VpcId interface{} `field:"required" json:"vpcId" yaml:"vpcId"`
 	VSwitchIds interface{} `field:"required" json:"vSwitchIds" yaml:"vSwitchIds"`
+	ArchitectureType interface{} `field:"optional" json:"architectureType" yaml:"architectureType"`
 	AutoRenew interface{} `field:"optional" json:"autoRenew" yaml:"autoRenew"`
 	Duration interface{} `field:"optional" json:"duration" yaml:"duration"`
+	HaResourceSpec interface{} `field:"optional" json:"haResourceSpec" yaml:"haResourceSpec"`
+	HaVSwitchIds interface{} `field:"optional" json:"haVSwitchIds" yaml:"haVSwitchIds"`
+	MonitorType interface{} `field:"optional" json:"monitorType" yaml:"monitorType"`
 	PricingCycle interface{} `field:"optional" json:"pricingCycle" yaml:"pricingCycle"`
 	PromotionCode interface{} `field:"optional" json:"promotionCode" yaml:"promotionCode"`
 	ResourceSpec interface{} `field:"optional" json:"resourceSpec" yaml:"resourceSpec"`

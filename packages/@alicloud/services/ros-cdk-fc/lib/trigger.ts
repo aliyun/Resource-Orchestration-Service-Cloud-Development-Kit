@@ -92,7 +92,7 @@ export interface ITrigger extends ros.IResource {
     readonly attrUrlIntranet: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::FC::Trigger`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::FC::Trigger`, which is used to trigger the invocation of a function.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTrigger`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-trigger
  */
@@ -150,8 +150,8 @@ export class Trigger extends ros.Resource implements ITrigger {
             triggerName: props.triggerName,
             sourceArn: props.sourceArn,
             serviceName: props.serviceName,
-            triggerConfig: props.triggerConfig,
             invocationRole: props.invocationRole,
+            triggerConfig: props.triggerConfig,
             qualifier: props.qualifier,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosTrigger;

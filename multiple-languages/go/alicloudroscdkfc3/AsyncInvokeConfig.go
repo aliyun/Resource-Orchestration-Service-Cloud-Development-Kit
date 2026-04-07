@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::FC3::AsyncInvokeConfig`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::FC3::AsyncInvokeConfig`, which type is used to specify the asynchronous invocation configuration for a function.
 type AsyncInvokeConfig interface {
 	alicloudroscdkcore.Resource
 	IAsyncInvokeConfig

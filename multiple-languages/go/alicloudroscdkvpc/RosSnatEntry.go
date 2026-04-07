@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::SnatEntry`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::SnatEntry`The , which resource is used to add an SNAT entry to an SNAT table.
 type RosSnatEntry interface {
 	alicloudroscdkcore.RosResource
 	AttrSnatEntryIds() alicloudroscdkcore.IResolvable
@@ -31,6 +31,8 @@ type RosSnatEntry interface {
 	// Returns: the logical ID as a stringified token. This value will only get
 	// resolved during synthesis.
 	LogicalId() *string
+	NetworkInterfaceId() interface{}
+	SetNetworkInterfaceId(val interface{})
 	// The construct tree node associated with this construct.
 	Node() alicloudroscdkcore.ConstructNode
 	// Return a string that will be resolved to a RosTemplate `{ Ref }` for this element.
@@ -231,6 +233,16 @@ func (j *jsiiProxy_RosSnatEntry) LogicalId() *string {
 	return returns
 }
 
+func (j *jsiiProxy_RosSnatEntry) NetworkInterfaceId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"networkInterfaceId",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosSnatEntry) Node() alicloudroscdkcore.ConstructNode {
 	var returns alicloudroscdkcore.ConstructNode
 	_jsii_.Get(
@@ -397,6 +409,17 @@ func (j *jsiiProxy_RosSnatEntry)SetEnableResourcePropertyConstraint(val *bool) {
 	_jsii_.Set(
 		j,
 		"enableResourcePropertyConstraint",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosSnatEntry)SetNetworkInterfaceId(val interface{}) {
+	if err := j.validateSetNetworkInterfaceIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"networkInterfaceId",
 		val,
 	)
 }

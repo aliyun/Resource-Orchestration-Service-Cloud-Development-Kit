@@ -111,7 +111,7 @@ export interface IService extends ros.IResource {
     readonly attrServiceName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::APIG::Service`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::APIG::Service`, which is used to create a service.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosService`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-service
  */
@@ -179,8 +179,8 @@ export class Service extends ros.Resource implements IService {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosService = new RosService(this, id,  {
-            groupName: props.groupName,
             addresses: props.addresses,
+            groupName: props.groupName,
             resourceGroupId: props.resourceGroupId,
             serviceName: props.serviceName,
             sourceType: props.sourceType,

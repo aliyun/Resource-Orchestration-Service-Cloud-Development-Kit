@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::BackendServerToVServerGroupAddition`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::BackendServerToVServerGroupAddition`, which is used to add backend servers to an existing server group.
 type RosBackendServerToVServerGroupAddition interface {
 	alicloudroscdkcore.RosResource
 	AttrVServerGroupId() alicloudroscdkcore.IResolvable

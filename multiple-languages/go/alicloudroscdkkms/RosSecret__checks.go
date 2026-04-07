@@ -345,6 +345,23 @@ func (j *jsiiProxy_RosSecret) validateSetForceDeleteWithoutRecoveryParameters(va
 	return nil
 }
 
+func (j *jsiiProxy_RosSecret) validateSetPolicyParameters(val interface{}) error {
+	switch val.(type) {
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	case *map[string]interface{}:
+		// ok
+	case map[string]interface{}:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *map[string]interface{}; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosSecret) validateSetRecoveryWindowInDaysParameters(val interface{}) error {
 	switch val.(type) {
 	case *float64:
@@ -487,6 +504,16 @@ func (j *jsiiProxy_RosSecret) validateSetSecretTypeParameters(val interface{}) e
 	default:
 		if !_jsii_.IsAnonymousProxy(val) {
 			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosSecret) validateSetTagsParameters(val *[]*RosSecret_TagsProperty) error {
+	for idx_97dfc6, v := range *val {
+		if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
+			return err
 		}
 	}
 

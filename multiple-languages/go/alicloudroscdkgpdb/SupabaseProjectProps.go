@@ -41,7 +41,15 @@ type SupabaseProjectProps struct {
 	// PL0
 	// PL1.
 	DiskPerformanceLevel interface{} `field:"optional" json:"diskPerformanceLevel" yaml:"diskPerformanceLevel"`
+	// Property payType: The payment type.
+	PayType interface{} `field:"optional" json:"payType" yaml:"payType"`
+	// Property period: The billing period.
+	Period interface{} `field:"optional" json:"period" yaml:"period"`
 	// Property storageSize: Storage space size, unit GB, default 1GB.
 	StorageSize interface{} `field:"optional" json:"storageSize" yaml:"storageSize"`
+	// Property usedTime: The subscription period of the instance.
+	//
+	// Unit: month or year. Note When period is set to year, the supported values of this parameter are 1, 2 and 3.
+	UsedTime interface{} `field:"optional" json:"usedTime" yaml:"usedTime"`
 }
 

@@ -45,7 +45,7 @@ export interface IAccounts extends ros.IResource {
     readonly attrAccounts: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::RDS::Accounts`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::RDS::Accounts`, which is used to query the information about database accounts of an ApsaraDB RDS instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccounts`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-accounts
  */
@@ -79,8 +79,8 @@ export class Accounts extends ros.Resource implements IAccounts {
 
         const rosAccounts = new RosAccounts(this, id,  {
             dbInstanceId: props.dbInstanceId,
-            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
             accountName: props.accountName,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAccounts;
         this.attrAccountNames = rosAccounts.attrAccountNames;

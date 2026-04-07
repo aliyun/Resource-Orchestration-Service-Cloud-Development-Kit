@@ -64,7 +64,7 @@ function rosQueuePropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::MNS::Queue`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::MNS::Queue`, which is used to query the information about a created queue.
  * @Note This class does not contain additional functions, so it is recommended to use the `Queue` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-queue
  */
@@ -260,7 +260,7 @@ function rosQueuesPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::MNS::Queues`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::MNS::Queues`, which is used to query all queues within an Alibaba Cloud account.
  * @Note This class does not contain additional functions, so it is recommended to use the `Queues` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-queues
  */
@@ -360,6 +360,8 @@ function RosSubscriptionPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('subscriptionName', ros.requiredValidator)(properties.subscriptionName));
     errors.collect(ros.propertyValidator('subscriptionName', ros.validateString)(properties.subscriptionName));
+    errors.collect(ros.propertyValidator('topicName', ros.requiredValidator)(properties.topicName));
+    errors.collect(ros.propertyValidator('topicName', ros.validateString)(properties.topicName));
     if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
         errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
           data: properties.refreshOptions,
@@ -367,8 +369,6 @@ function RosSubscriptionPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
-    errors.collect(ros.propertyValidator('topicName', ros.requiredValidator)(properties.topicName));
-    errors.collect(ros.propertyValidator('topicName', ros.validateString)(properties.topicName));
     return errors.wrap('supplied properties not correct for "RosSubscriptionProps"');
 }
 
@@ -393,7 +393,7 @@ function rosSubscriptionPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::MNS::Subscription`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::MNS::Subscription`, which is used to query the information about a subscription.
  * @Note This class does not contain additional functions, so it is recommended to use the `Subscription` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-subscription
  */
@@ -547,6 +547,8 @@ function RosSubscriptionsPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('subscriptionName', ros.validateString)(properties.subscriptionName));
+    errors.collect(ros.propertyValidator('topicName', ros.requiredValidator)(properties.topicName));
+    errors.collect(ros.propertyValidator('topicName', ros.validateString)(properties.topicName));
     if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
         errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
           data: properties.refreshOptions,
@@ -554,8 +556,6 @@ function RosSubscriptionsPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
-    errors.collect(ros.propertyValidator('topicName', ros.requiredValidator)(properties.topicName));
-    errors.collect(ros.propertyValidator('topicName', ros.validateString)(properties.topicName));
     return errors.wrap('supplied properties not correct for "RosSubscriptionsProps"');
 }
 
@@ -580,7 +580,7 @@ function rosSubscriptionsPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::MNS::Subscriptions`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::MNS::Subscriptions`, which is used to query the information about the subscriptions.
  * @Note This class does not contain additional functions, so it is recommended to use the `Subscriptions` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-subscriptions
  */
@@ -680,6 +680,8 @@ export interface RosTopicProps {
 function RosTopicPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('topicName', ros.requiredValidator)(properties.topicName));
+    errors.collect(ros.propertyValidator('topicName', ros.validateString)(properties.topicName));
     if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
         errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
           data: properties.refreshOptions,
@@ -687,8 +689,6 @@ function RosTopicPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
-    errors.collect(ros.propertyValidator('topicName', ros.requiredValidator)(properties.topicName));
-    errors.collect(ros.propertyValidator('topicName', ros.validateString)(properties.topicName));
     return errors.wrap('supplied properties not correct for "RosTopicProps"');
 }
 
@@ -712,7 +712,7 @@ function rosTopicPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::MNS::Topic`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::MNS::Topic`, which is used to query the information about a topic.
  * @Note This class does not contain additional functions, so it is recommended to use the `Topic` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-topic
  */
@@ -847,6 +847,7 @@ export interface RosTopicsProps {
 function RosTopicsPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('topicName', ros.validateString)(properties.topicName));
     if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
         errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
           data: properties.refreshOptions,
@@ -854,7 +855,6 @@ function RosTopicsPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
-    errors.collect(ros.propertyValidator('topicName', ros.validateString)(properties.topicName));
     return errors.wrap('supplied properties not correct for "RosTopicsProps"');
 }
 
@@ -878,7 +878,7 @@ function rosTopicsPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::MNS::Topics`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::MNS::Topics`, which is used to query the information about topics.
  * @Note This class does not contain additional functions, so it is recommended to use the `Topics` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-topics
  */

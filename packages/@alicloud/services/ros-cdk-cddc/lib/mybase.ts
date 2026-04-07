@@ -156,7 +156,7 @@ export interface IMyBase extends ros.IResource {
     readonly attrOrderIds: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CDDC::MyBase`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CDDC::MyBase`, which is used to create a host in a Proprietary MyBase dedicated cluster in ApsaraDB for MyBase.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMyBase`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cddc-mybase
  */
@@ -204,16 +204,16 @@ export class MyBase extends ros.Resource implements IMyBase {
             passwordInherit: props.passwordInherit,
             keyPairName: props.keyPairName,
             zoneId: props.zoneId,
-            vSwitchId: props.vSwitchId,
             securityGroupId: props.securityGroupId,
+            vSwitchId: props.vSwitchId,
             ecsClassList: props.ecsClassList,
             period: props.period,
             payType: props.payType,
             internetChargeType: props.internetChargeType,
             ecsDeploymentSetId: props.ecsDeploymentSetId,
             internetMaxBandwidthOut: props.internetMaxBandwidthOut,
-            vpcId: props.vpcId,
             osPassword: props.osPassword,
+            vpcId: props.vpcId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosMyBase;
         this.attrInstanceIds = rosMyBase.attrInstanceIds;

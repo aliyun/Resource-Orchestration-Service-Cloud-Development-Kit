@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-bgppeer
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.033Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.970Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosBgpPeerProps")
 @software.amazon.jsii.Jsii.Proxy(RosBgpPeerProps.Jsii$Proxy.class)
 public interface RosBgpPeerProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,7 +16,19 @@ public interface RosBgpPeerProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBfdMultiHop() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEnableBfd() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIpVersion() {
         return null;
     }
 
@@ -37,7 +49,9 @@ public interface RosBgpPeerProps extends software.amazon.jsii.JsiiSerializable {
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosBgpPeerProps> {
         java.lang.Object bgpGroupId;
+        java.lang.Object bfdMultiHop;
         java.lang.Object enableBfd;
+        java.lang.Object ipVersion;
         java.lang.Object peerIpAddress;
 
         /**
@@ -61,6 +75,26 @@ public interface RosBgpPeerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosBgpPeerProps#getBfdMultiHop}
+         * @param bfdMultiHop the value to be set.
+         * @return {@code this}
+         */
+        public Builder bfdMultiHop(java.lang.Number bfdMultiHop) {
+            this.bfdMultiHop = bfdMultiHop;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosBgpPeerProps#getBfdMultiHop}
+         * @param bfdMultiHop the value to be set.
+         * @return {@code this}
+         */
+        public Builder bfdMultiHop(com.aliyun.ros.cdk.core.IResolvable bfdMultiHop) {
+            this.bfdMultiHop = bfdMultiHop;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosBgpPeerProps#getEnableBfd}
          * @param enableBfd the value to be set.
          * @return {@code this}
@@ -77,6 +111,26 @@ public interface RosBgpPeerProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder enableBfd(com.aliyun.ros.cdk.core.IResolvable enableBfd) {
             this.enableBfd = enableBfd;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosBgpPeerProps#getIpVersion}
+         * @param ipVersion the value to be set.
+         * @return {@code this}
+         */
+        public Builder ipVersion(java.lang.String ipVersion) {
+            this.ipVersion = ipVersion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosBgpPeerProps#getIpVersion}
+         * @param ipVersion the value to be set.
+         * @return {@code this}
+         */
+        public Builder ipVersion(com.aliyun.ros.cdk.core.IResolvable ipVersion) {
+            this.ipVersion = ipVersion;
             return this;
         }
 
@@ -117,7 +171,9 @@ public interface RosBgpPeerProps extends software.amazon.jsii.JsiiSerializable {
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosBgpPeerProps {
         private final java.lang.Object bgpGroupId;
+        private final java.lang.Object bfdMultiHop;
         private final java.lang.Object enableBfd;
+        private final java.lang.Object ipVersion;
         private final java.lang.Object peerIpAddress;
 
         /**
@@ -127,7 +183,9 @@ public interface RosBgpPeerProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.bgpGroupId = software.amazon.jsii.Kernel.get(this, "bgpGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.bfdMultiHop = software.amazon.jsii.Kernel.get(this, "bfdMultiHop", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableBfd = software.amazon.jsii.Kernel.get(this, "enableBfd", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ipVersion = software.amazon.jsii.Kernel.get(this, "ipVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.peerIpAddress = software.amazon.jsii.Kernel.get(this, "peerIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -137,7 +195,9 @@ public interface RosBgpPeerProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.bgpGroupId = java.util.Objects.requireNonNull(builder.bgpGroupId, "bgpGroupId is required");
+            this.bfdMultiHop = builder.bfdMultiHop;
             this.enableBfd = builder.enableBfd;
+            this.ipVersion = builder.ipVersion;
             this.peerIpAddress = builder.peerIpAddress;
         }
 
@@ -147,8 +207,18 @@ public interface RosBgpPeerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getBfdMultiHop() {
+            return this.bfdMultiHop;
+        }
+
+        @Override
         public final java.lang.Object getEnableBfd() {
             return this.enableBfd;
+        }
+
+        @Override
+        public final java.lang.Object getIpVersion() {
+            return this.ipVersion;
         }
 
         @Override
@@ -163,8 +233,14 @@ public interface RosBgpPeerProps extends software.amazon.jsii.JsiiSerializable {
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
             data.set("bgpGroupId", om.valueToTree(this.getBgpGroupId()));
+            if (this.getBfdMultiHop() != null) {
+                data.set("bfdMultiHop", om.valueToTree(this.getBfdMultiHop()));
+            }
             if (this.getEnableBfd() != null) {
                 data.set("enableBfd", om.valueToTree(this.getEnableBfd()));
+            }
+            if (this.getIpVersion() != null) {
+                data.set("ipVersion", om.valueToTree(this.getIpVersion()));
             }
             if (this.getPeerIpAddress() != null) {
                 data.set("peerIpAddress", om.valueToTree(this.getPeerIpAddress()));
@@ -188,14 +264,18 @@ public interface RosBgpPeerProps extends software.amazon.jsii.JsiiSerializable {
             RosBgpPeerProps.Jsii$Proxy that = (RosBgpPeerProps.Jsii$Proxy) o;
 
             if (!bgpGroupId.equals(that.bgpGroupId)) return false;
+            if (this.bfdMultiHop != null ? !this.bfdMultiHop.equals(that.bfdMultiHop) : that.bfdMultiHop != null) return false;
             if (this.enableBfd != null ? !this.enableBfd.equals(that.enableBfd) : that.enableBfd != null) return false;
+            if (this.ipVersion != null ? !this.ipVersion.equals(that.ipVersion) : that.ipVersion != null) return false;
             return this.peerIpAddress != null ? this.peerIpAddress.equals(that.peerIpAddress) : that.peerIpAddress == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.bgpGroupId.hashCode();
+            result = 31 * result + (this.bfdMultiHop != null ? this.bfdMultiHop.hashCode() : 0);
             result = 31 * result + (this.enableBfd != null ? this.enableBfd.hashCode() : 0);
+            result = 31 * result + (this.ipVersion != null ? this.ipVersion.hashCode() : 0);
             result = 31 * result + (this.peerIpAddress != null ? this.peerIpAddress.hashCode() : 0);
             return result;
         }

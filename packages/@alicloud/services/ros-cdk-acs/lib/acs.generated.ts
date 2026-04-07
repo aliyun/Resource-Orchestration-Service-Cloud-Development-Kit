@@ -3,6 +3,325 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosApplicationPod`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acs-applicationpod
+ */
+export interface RosApplicationPodProps {
+
+    /**
+     * @Property computeClass: Compute class of the application pod.
+     */
+    readonly computeClass: string | ros.IResolvable;
+
+    /**
+     * @Property computeQos: Compute QoS of the application pod.
+     */
+    readonly computeQos: string | ros.IResolvable;
+
+    /**
+     * @Property cpuCoreNumber: CPU core number required by the container.
+     */
+    readonly cpuCoreNumber: string | ros.IResolvable;
+
+    /**
+     * @Property image: Container image for the application pod.
+     */
+    readonly image: string | ros.IResolvable;
+
+    /**
+     * @Property kind: Kind of the application pod (Job, CronJob, Deployment, StatefulSet).
+     */
+    readonly kind: string | ros.IResolvable;
+
+    /**
+     * @Property memory: Memory size (in GB) required by the container.
+     */
+    readonly memory: number | ros.IResolvable;
+
+    /**
+     * @Property diskConfig: Disk configurations for the application pod.
+     */
+    readonly diskConfig?: RosApplicationPod.DiskConfigProperty | ros.IResolvable;
+
+    /**
+     * @Property gpuCoreNumber: GPU core number, if using GPU.
+     */
+    readonly gpuCoreNumber?: number | ros.IResolvable;
+
+    /**
+     * @Property gpuModelSeries: GPU model series, if using GPU.
+     */
+    readonly gpuModelSeries?: string | ros.IResolvable;
+
+    /**
+     * @Property gpuType: GPU type, default is nvidia.com\/gpu.
+     */
+    readonly gpuType?: string | ros.IResolvable;
+
+    /**
+     * @Property replicas: Number of replicas for Deployment or StatefulSet.
+     */
+    readonly replicas?: number | ros.IResolvable;
+
+    /**
+     * @Property zoneId: Zone ID for the application pod.
+     */
+    readonly zoneId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosApplicationPodProps`
+ *
+ * @param properties - the TypeScript properties of a `RosApplicationPodProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosApplicationPodPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('cpuCoreNumber', ros.requiredValidator)(properties.cpuCoreNumber));
+    errors.collect(ros.propertyValidator('cpuCoreNumber', ros.validateString)(properties.cpuCoreNumber));
+    errors.collect(ros.propertyValidator('memory', ros.requiredValidator)(properties.memory));
+    errors.collect(ros.propertyValidator('memory', ros.validateNumber)(properties.memory));
+    errors.collect(ros.propertyValidator('gpuModelSeries', ros.validateString)(properties.gpuModelSeries));
+    errors.collect(ros.propertyValidator('gpuCoreNumber', ros.validateNumber)(properties.gpuCoreNumber));
+    errors.collect(ros.propertyValidator('diskConfig', RosApplicationPod_DiskConfigPropertyValidator)(properties.diskConfig));
+    errors.collect(ros.propertyValidator('kind', ros.requiredValidator)(properties.kind));
+    if(properties.kind && (typeof properties.kind) !== 'object') {
+        errors.collect(ros.propertyValidator('kind', ros.validateAllowedValues)({
+          data: properties.kind,
+          allowedValues: ["Job","CronJob","Deployment","StatefulSet"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('kind', ros.validateString)(properties.kind));
+    errors.collect(ros.propertyValidator('computeClass', ros.requiredValidator)(properties.computeClass));
+    if(properties.computeClass && (typeof properties.computeClass) !== 'object') {
+        errors.collect(ros.propertyValidator('computeClass', ros.validateAllowedValues)({
+          data: properties.computeClass,
+          allowedValues: ["general-purpose","performance","gpu"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('computeClass', ros.validateString)(properties.computeClass));
+    errors.collect(ros.propertyValidator('gpuType', ros.validateString)(properties.gpuType));
+    errors.collect(ros.propertyValidator('computeQos', ros.requiredValidator)(properties.computeQos));
+    if(properties.computeQos && (typeof properties.computeQos) !== 'object') {
+        errors.collect(ros.propertyValidator('computeQos', ros.validateAllowedValues)({
+          data: properties.computeQos,
+          allowedValues: ["default","best-effort"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('computeQos', ros.validateString)(properties.computeQos));
+    errors.collect(ros.propertyValidator('image', ros.requiredValidator)(properties.image));
+    errors.collect(ros.propertyValidator('image', ros.validateString)(properties.image));
+    errors.collect(ros.propertyValidator('replicas', ros.validateNumber)(properties.replicas));
+    return errors.wrap('supplied properties not correct for "RosApplicationPodProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ACS::ApplicationPod` resource
+ *
+ * @param properties - the TypeScript properties of a `RosApplicationPodProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ACS::ApplicationPod` resource.
+ */
+// @ts-ignore TS6133
+function rosApplicationPodPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosApplicationPodPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ComputeClass': ros.stringToRosTemplate(properties.computeClass),
+      'ComputeQos': ros.stringToRosTemplate(properties.computeQos),
+      'CpuCoreNumber': ros.stringToRosTemplate(properties.cpuCoreNumber),
+      'Image': ros.stringToRosTemplate(properties.image),
+      'Kind': ros.stringToRosTemplate(properties.kind),
+      'Memory': ros.numberToRosTemplate(properties.memory),
+      'DiskConfig': rosApplicationPodDiskConfigPropertyToRosTemplate(properties.diskConfig),
+      'GpuCoreNumber': ros.numberToRosTemplate(properties.gpuCoreNumber),
+      'GpuModelSeries': ros.stringToRosTemplate(properties.gpuModelSeries),
+      'GpuType': ros.stringToRosTemplate(properties.gpuType),
+      'Replicas': ros.numberToRosTemplate(properties.replicas),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ACS::ApplicationPod`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ApplicationPod` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acs-applicationpod
+ */
+export class RosApplicationPod extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ACS::ApplicationPod";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property computeClass: Compute class of the application pod.
+     */
+    public computeClass: string | ros.IResolvable;
+
+    /**
+     * @Property computeQos: Compute QoS of the application pod.
+     */
+    public computeQos: string | ros.IResolvable;
+
+    /**
+     * @Property cpuCoreNumber: CPU core number required by the container.
+     */
+    public cpuCoreNumber: string | ros.IResolvable;
+
+    /**
+     * @Property image: Container image for the application pod.
+     */
+    public image: string | ros.IResolvable;
+
+    /**
+     * @Property kind: Kind of the application pod (Job, CronJob, Deployment, StatefulSet).
+     */
+    public kind: string | ros.IResolvable;
+
+    /**
+     * @Property memory: Memory size (in GB) required by the container.
+     */
+    public memory: number | ros.IResolvable;
+
+    /**
+     * @Property diskConfig: Disk configurations for the application pod.
+     */
+    public diskConfig: RosApplicationPod.DiskConfigProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property gpuCoreNumber: GPU core number, if using GPU.
+     */
+    public gpuCoreNumber: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property gpuModelSeries: GPU model series, if using GPU.
+     */
+    public gpuModelSeries: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property gpuType: GPU type, default is nvidia.com\/gpu.
+     */
+    public gpuType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property replicas: Number of replicas for Deployment or StatefulSet.
+     */
+    public replicas: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property zoneId: Zone ID for the application pod.
+     */
+    public zoneId: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosApplicationPodProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosApplicationPod.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.computeClass = props.computeClass;
+        this.computeQos = props.computeQos;
+        this.cpuCoreNumber = props.cpuCoreNumber;
+        this.image = props.image;
+        this.kind = props.kind;
+        this.memory = props.memory;
+        this.diskConfig = props.diskConfig;
+        this.gpuCoreNumber = props.gpuCoreNumber;
+        this.gpuModelSeries = props.gpuModelSeries;
+        this.gpuType = props.gpuType;
+        this.replicas = props.replicas;
+        this.zoneId = props.zoneId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            computeClass: this.computeClass,
+            computeQos: this.computeQos,
+            cpuCoreNumber: this.cpuCoreNumber,
+            image: this.image,
+            kind: this.kind,
+            memory: this.memory,
+            diskConfig: this.diskConfig,
+            gpuCoreNumber: this.gpuCoreNumber,
+            gpuModelSeries: this.gpuModelSeries,
+            gpuType: this.gpuType,
+            replicas: this.replicas,
+            zoneId: this.zoneId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosApplicationPodPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosApplicationPod {
+    /**
+     * @stability external
+     */
+    export interface DiskConfigProperty {
+        /**
+         * @Property size: Disk size in MB.
+         */
+        readonly size: number | ros.IResolvable;
+        /**
+         * @Property performanceLevel: Disk performance level for ESSD, e.g., PL2.
+         */
+        readonly performanceLevel?: string | ros.IResolvable;
+        /**
+         * @Property diskCategory: Disk category, e.g., cloud_essd.
+         */
+        readonly diskCategory: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DiskConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `DiskConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosApplicationPod_DiskConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('size', ros.requiredValidator)(properties.size));
+    errors.collect(ros.propertyValidator('size', ros.validateNumber)(properties.size));
+    errors.collect(ros.propertyValidator('performanceLevel', ros.validateString)(properties.performanceLevel));
+    errors.collect(ros.propertyValidator('diskCategory', ros.requiredValidator)(properties.diskCategory));
+    errors.collect(ros.propertyValidator('diskCategory', ros.validateString)(properties.diskCategory));
+    return errors.wrap('supplied properties not correct for "DiskConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ACS::ApplicationPod.DiskConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `DiskConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ACS::ApplicationPod.DiskConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosApplicationPodDiskConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosApplicationPod_DiskConfigPropertyValidator(properties).assertSuccess();
+    return {
+      'Size': ros.numberToRosTemplate(properties.size),
+      'PerformanceLevel': ros.stringToRosTemplate(properties.performanceLevel),
+      'DiskCategory': ros.stringToRosTemplate(properties.diskCategory),
+    };
+}
+
+/**
  * Properties for defining a `RosCluster`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acs-cluster
  */
@@ -181,8 +500,8 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('addons', ros.listValidator(RosCluster_AddonsPropertyValidator))(properties.addons));
     errors.collect(ros.propertyValidator('podVSwitchIds', ros.listValidator(ros.validateString))(properties.podVSwitchIds));
-    errors.collect(ros.propertyValidator('loggingType', ros.validateString)(properties.loggingType));
     errors.collect(ros.propertyValidator('ipStack', ros.validateString)(properties.ipStack));
+    errors.collect(ros.propertyValidator('loggingType', ros.validateString)(properties.loggingType));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     errors.collect(ros.propertyValidator('loadBalancerSpec', ros.validateString)(properties.loadBalancerSpec));
@@ -270,7 +589,7 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ACS::Cluster`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ACS::Cluster`The , which resource creates a Container Service for Kubernetes (ACK) cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `Cluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acs-cluster
  */
@@ -856,13 +1175,13 @@ export namespace RosCluster {
          */
         readonly cpuCore?: number | ros.IResolvable;
         /**
-         * @Property memGib: The memory size of the GPU.
-         */
-        readonly memGib?: number | ros.IResolvable;
-        /**
          * @Property replicas: The number of the replicas.
          */
         readonly replicas?: number | ros.IResolvable;
+        /**
+         * @Property memGib: The memory size of the GPU.
+         */
+        readonly memGib?: number | ros.IResolvable;
     }
 }
 /**
@@ -884,14 +1203,6 @@ function RosCluster_PodPostpaidSpecPropertyValidator(properties: any): ros.Valid
           }));
     }
     errors.collect(ros.propertyValidator('cpuCore', ros.validateNumber)(properties.cpuCore));
-    if(properties.memGib && (typeof properties.memGib) !== 'object') {
-        errors.collect(ros.propertyValidator('memGib', ros.validateRange)({
-            data: properties.memGib,
-            min: 1,
-            max: undefined,
-          }));
-    }
-    errors.collect(ros.propertyValidator('memGib', ros.validateNumber)(properties.memGib));
     if(properties.replicas && (typeof properties.replicas) !== 'object') {
         errors.collect(ros.propertyValidator('replicas', ros.validateRange)({
             data: properties.replicas,
@@ -900,6 +1211,14 @@ function RosCluster_PodPostpaidSpecPropertyValidator(properties: any): ros.Valid
           }));
     }
     errors.collect(ros.propertyValidator('replicas', ros.validateNumber)(properties.replicas));
+    if(properties.memGib && (typeof properties.memGib) !== 'object') {
+        errors.collect(ros.propertyValidator('memGib', ros.validateRange)({
+            data: properties.memGib,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('memGib', ros.validateNumber)(properties.memGib));
     return errors.wrap('supplied properties not correct for "PodPostpaidSpecProperty"');
 }
 
@@ -917,8 +1236,8 @@ function rosClusterPodPostpaidSpecPropertyToRosTemplate(properties: any): any {
     return {
       'GpuQuantityConfigs': rosClusterGpuQuantityConfigsPropertyToRosTemplate(properties.gpuQuantityConfigs),
       'CpuCore': ros.numberToRosTemplate(properties.cpuCore),
-      'MemGib': ros.numberToRosTemplate(properties.memGib),
       'Replicas': ros.numberToRosTemplate(properties.replicas),
+      'MemGib': ros.numberToRosTemplate(properties.memGib),
     };
 }
 
@@ -1015,7 +1334,7 @@ function rosVirtualCapacityReservationPropsToRosTemplate(properties: any, enable
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ACS::VirtualCapacityReservation`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ACS::VirtualCapacityReservation`The , which resource type creates a capacity reservation task.
  * @Note This class does not contain additional functions, so it is recommended to use the `VirtualCapacityReservation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acs-virtualcapacityreservation
  */
@@ -1142,13 +1461,13 @@ export namespace RosVirtualCapacityReservation {
          */
         readonly cpuCore?: number | ros.IResolvable;
         /**
-         * @Property memGib: The memory size of the GPU.
-         */
-        readonly memGib?: number | ros.IResolvable;
-        /**
          * @Property replicas: The number of the replicas.
          */
         readonly replicas?: number | ros.IResolvable;
+        /**
+         * @Property memGib: The memory size of the GPU.
+         */
+        readonly memGib?: number | ros.IResolvable;
     }
 }
 /**
@@ -1170,14 +1489,6 @@ function RosVirtualCapacityReservation_PodPostpaidSpecPropertyValidator(properti
           }));
     }
     errors.collect(ros.propertyValidator('cpuCore', ros.validateNumber)(properties.cpuCore));
-    if(properties.memGib && (typeof properties.memGib) !== 'object') {
-        errors.collect(ros.propertyValidator('memGib', ros.validateRange)({
-            data: properties.memGib,
-            min: 1,
-            max: undefined,
-          }));
-    }
-    errors.collect(ros.propertyValidator('memGib', ros.validateNumber)(properties.memGib));
     if(properties.replicas && (typeof properties.replicas) !== 'object') {
         errors.collect(ros.propertyValidator('replicas', ros.validateRange)({
             data: properties.replicas,
@@ -1186,6 +1497,14 @@ function RosVirtualCapacityReservation_PodPostpaidSpecPropertyValidator(properti
           }));
     }
     errors.collect(ros.propertyValidator('replicas', ros.validateNumber)(properties.replicas));
+    if(properties.memGib && (typeof properties.memGib) !== 'object') {
+        errors.collect(ros.propertyValidator('memGib', ros.validateRange)({
+            data: properties.memGib,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('memGib', ros.validateNumber)(properties.memGib));
     return errors.wrap('supplied properties not correct for "PodPostpaidSpecProperty"');
 }
 
@@ -1203,7 +1522,7 @@ function rosVirtualCapacityReservationPodPostpaidSpecPropertyToRosTemplate(prope
     return {
       'GpuQuantityConfigs': rosVirtualCapacityReservationGpuQuantityConfigsPropertyToRosTemplate(properties.gpuQuantityConfigs),
       'CpuCore': ros.numberToRosTemplate(properties.cpuCore),
-      'MemGib': ros.numberToRosTemplate(properties.memGib),
       'Replicas': ros.numberToRosTemplate(properties.replicas),
+      'MemGib': ros.numberToRosTemplate(properties.memGib),
     };
 }

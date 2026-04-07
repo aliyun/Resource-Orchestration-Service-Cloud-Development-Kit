@@ -25,6 +25,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             }
         }
 
+        /// <summary>Property ipVersion: The IP version number.</summary>
+        [JsiiProperty(name: "ipVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? IpVersion
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property memberUid: The member unique identifier.</summary>
+        [JsiiProperty(name: "memberUid", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? MemberUid
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property regionList: The region list.</summary>
         /// <remarks>
         /// <strong>Note</strong>: The IpaddrList, RegionList, and ResourceTypeList arguments are not allowed to be empty at the same time. A value must be set for one of the three arguments.
@@ -86,6 +108,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             [JsiiOptional]
             [JsiiProperty(name: "ipaddrList", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? IpaddrList
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property ipVersion: The IP version number.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "ipVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IpVersion
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property memberUid: The member unique identifier.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "memberUid", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MemberUid
             {
                 get => GetInstanceProperty<object?>();
             }

@@ -11,5 +11,6 @@ type RosInstanceProps struct {
 	AutoRenew interface{} `field:"optional" json:"autoRenew" yaml:"autoRenew"`
 	AutoRenewPeriod interface{} `field:"optional" json:"autoRenewPeriod" yaml:"autoRenewPeriod"`
 	DataDiskSize interface{} `field:"optional" json:"dataDiskSize" yaml:"dataDiskSize"`
+	Tags *[]*RosInstance_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 }
 

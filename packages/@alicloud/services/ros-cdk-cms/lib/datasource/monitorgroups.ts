@@ -58,7 +58,7 @@ export interface IMonitorGroups extends ros.IResource {
     readonly attrMonitorGroups: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::CMS::MonitorGroups`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CMS::MonitorGroups`, which is used to query the information about application groups.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMonitorGroups`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-monitorgroups
  */
@@ -94,8 +94,8 @@ export class MonitorGroups extends ros.Resource implements IMonitorGroups {
             type: props.type,
             dynamicTagRuleId: props.dynamicTagRuleId,
             monitorGroupName: props.monitorGroupName,
-            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
             groupId: props.groupId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosMonitorGroups;
         this.attrGroupIds = rosMonitorGroups.attrGroupIds;

@@ -21,6 +21,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: deployResourceType: The type of the deploy resource.
+        /// </remarks>
+        [JsiiProperty(name: "deployResourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DeployResourceType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: description: The description of the revision.
         /// </remarks>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -90,6 +103,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             public object ApplicationName
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: deployResourceType: The type of the deploy resource.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "deployResourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DeployResourceType
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>

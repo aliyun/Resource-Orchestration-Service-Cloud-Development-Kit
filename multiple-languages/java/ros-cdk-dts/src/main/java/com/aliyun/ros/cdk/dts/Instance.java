@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.dts;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::DTS::Instance</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::DTS::Instance</code>Use the , which resource to create a new DTS instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.729Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:24.088Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.dts.IInstance {
 
@@ -503,6 +503,27 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
          */
         public Builder feeType(final com.aliyun.ros.cdk.core.IResolvable feeType) {
             this.props.feeType(feeType);
+            return this;
+        }
+
+        /**
+         * Property insightModule: Whether to enable the insight module.
+         * <p>
+         * @return {@code this}
+         * @param insightModule Property insightModule: Whether to enable the insight module. This parameter is required.
+         */
+        public Builder insightModule(final java.lang.Boolean insightModule) {
+            this.props.insightModule(insightModule);
+            return this;
+        }
+        /**
+         * Property insightModule: Whether to enable the insight module.
+         * <p>
+         * @return {@code this}
+         * @param insightModule Property insightModule: Whether to enable the insight module. This parameter is required.
+         */
+        public Builder insightModule(final com.aliyun.ros.cdk.core.IResolvable insightModule) {
+            this.props.insightModule(insightModule);
             return this;
         }
 

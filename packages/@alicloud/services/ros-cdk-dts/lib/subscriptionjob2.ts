@@ -157,7 +157,7 @@ export interface ISubscriptionJob2 extends ros.IResource {
     readonly attrDtsJobName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DTS::SubscriptionJob2`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DTS::SubscriptionJob2`, which is used to configure a change tracking task.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSubscriptionJob2`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-subscriptionjob2
  */
@@ -195,13 +195,13 @@ export class SubscriptionJob2 extends ros.Resource implements ISubscriptionJob2 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosSubscriptionJob2 = new RosSubscriptionJob2(this, id,  {
-            status: props.status,
             reserve: props.reserve,
+            status: props.status,
             srcPrimaryVswId: props.srcPrimaryVswId,
             srcSecondaryVswId: props.srcSecondaryVswId,
             resourceGroupId: props.resourceGroupId,
-            dedicatedClusterId: props.dedicatedClusterId,
             delayPhone: props.delayPhone,
+            dedicatedClusterId: props.dedicatedClusterId,
             destPrimaryVswId: props.destPrimaryVswId,
             errorNotice: props.errorNotice,
             dtsJobName: props.dtsJobName,
@@ -209,8 +209,8 @@ export class SubscriptionJob2 extends ros.Resource implements ISubscriptionJob2 
             minDu: props.minDu,
             dtsInstanceId: props.dtsInstanceId,
             dbList: props.dbList,
-            subscriptionDataType: props.subscriptionDataType,
             dtsBisLabel: props.dtsBisLabel,
+            subscriptionDataType: props.subscriptionDataType,
             checkpoint: props.checkpoint,
             dtsJobId: props.dtsJobId,
             delayNotice: props.delayNotice,

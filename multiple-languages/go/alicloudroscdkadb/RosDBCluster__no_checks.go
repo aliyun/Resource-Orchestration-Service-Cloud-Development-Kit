@@ -112,6 +112,10 @@ func (j *jsiiProxy_RosDBCluster) validateSetDbNodeStorageParameters(val interfac
 	return nil
 }
 
+func (j *jsiiProxy_RosDBCluster) validateSetDiskEncryptionParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosDBCluster) validateSetElasticIoResourceParameters(val interface{}) error {
 	return nil
 }
@@ -120,7 +124,15 @@ func (j *jsiiProxy_RosDBCluster) validateSetEnableResourcePropertyConstraintPara
 	return nil
 }
 
+func (j *jsiiProxy_RosDBCluster) validateSetEnableSslParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosDBCluster) validateSetExecutorCountParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosDBCluster) validateSetKmsIdParameters(val interface{}) error {
 	return nil
 }
 

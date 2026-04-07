@@ -90,11 +90,11 @@ function RosApplicationPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('applicationName', ros.validateString)(properties.applicationName));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('ecuInfo', ros.validateString)(properties.ecuInfo));
-    errors.collect(ros.propertyValidator('healthCheckUrl', ros.validateString)(properties.healthCheckUrl));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('clusterId', ros.requiredValidator)(properties.clusterId));
     errors.collect(ros.propertyValidator('clusterId', ros.validateString)(properties.clusterId));
+    errors.collect(ros.propertyValidator('healthCheckUrl', ros.validateString)(properties.healthCheckUrl));
     if(properties.packageType && (typeof properties.packageType) !== 'object') {
         errors.collect(ros.propertyValidator('packageType', ros.validateAllowedValues)({
           data: properties.packageType,
@@ -136,7 +136,7 @@ function rosApplicationPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::Application`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::Application`, which is used to create an application in an Elastic Compute Service (ECS) cluster in Enterprise Distributed Application Service (EDAS).
  * @Note This class does not contain additional functions, so it is recommended to use the `Application` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-application
  */
@@ -288,12 +288,6 @@ export namespace RosApplication {
          */
         readonly gray?: boolean | ros.IResolvable;
         /**
-         * @Property appEnv: Deployment environment variables, the format must conform to
-     * {"name":"x","value":"y"},{"name":"x2","value":"y2"}, 
-     * and the key is fixed as name and value.
-         */
-        readonly appEnv?: string | ros.IResolvable;
-        /**
          * @Property batch: Each group of batches.When the GroupId of the specified application group is a specific application group ID,
      * it means to deploy to the specified application group.
      *  At this time, the minimum number of batches that can be specified is 1,
@@ -307,6 +301,12 @@ export namespace RosApplication {
      * ECS instances under the group with the largest number of ECSs in the normal state.
          */
         readonly batch?: number | ros.IResolvable;
+        /**
+         * @Property appEnv: Deployment environment variables, the format must conform to
+     * {"name":"x","value":"y"},{"name":"x2","value":"y2"}, 
+     * and the key is fixed as name and value.
+         */
+        readonly appEnv?: string | ros.IResolvable;
         /**
          * @Property warUrl: The URL address of the application deployment package (WAR or JAR).
      * It is recommended to use the application deployment package path stored in OSS.
@@ -349,8 +349,8 @@ function RosApplication_DeploymentPropertyValidator(properties: any): ros.Valida
     errors.collect(ros.propertyValidator('releaseType', ros.validateNumber)(properties.releaseType));
     errors.collect(ros.propertyValidator('desc', ros.validateString)(properties.desc));
     errors.collect(ros.propertyValidator('gray', ros.validateBoolean)(properties.gray));
-    errors.collect(ros.propertyValidator('appEnv', ros.validateString)(properties.appEnv));
     errors.collect(ros.propertyValidator('batch', ros.validateNumber)(properties.batch));
+    errors.collect(ros.propertyValidator('appEnv', ros.validateString)(properties.appEnv));
     errors.collect(ros.propertyValidator('warUrl', ros.requiredValidator)(properties.warUrl));
     errors.collect(ros.propertyValidator('warUrl', ros.validateString)(properties.warUrl));
     errors.collect(ros.propertyValidator('trafficControlStrategy', ros.validateString)(properties.trafficControlStrategy));
@@ -383,8 +383,8 @@ function rosApplicationDeploymentPropertyToRosTemplate(properties: any): any {
       'ReleaseType': ros.numberToRosTemplate(properties.releaseType),
       'Desc': ros.stringToRosTemplate(properties.desc),
       'Gray': ros.booleanToRosTemplate(properties.gray),
-      'AppEnv': ros.stringToRosTemplate(properties.appEnv),
       'Batch': ros.numberToRosTemplate(properties.batch),
+      'AppEnv': ros.stringToRosTemplate(properties.appEnv),
       'WarUrl': ros.stringToRosTemplate(properties.warUrl),
       'TrafficControlStrategy': ros.stringToRosTemplate(properties.trafficControlStrategy),
       'BatchWaitTime': ros.numberToRosTemplate(properties.batchWaitTime),
@@ -457,10 +457,10 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('clusterName', ros.requiredValidator)(properties.clusterName));
     errors.collect(ros.propertyValidator('clusterName', ros.validateString)(properties.clusterName));
-    errors.collect(ros.propertyValidator('networkMode', ros.requiredValidator)(properties.networkMode));
-    errors.collect(ros.propertyValidator('networkMode', ros.validateNumber)(properties.networkMode));
     errors.collect(ros.propertyValidator('clusterType', ros.requiredValidator)(properties.clusterType));
     errors.collect(ros.propertyValidator('clusterType', ros.validateNumber)(properties.clusterType));
+    errors.collect(ros.propertyValidator('networkMode', ros.requiredValidator)(properties.networkMode));
+    errors.collect(ros.propertyValidator('networkMode', ros.validateNumber)(properties.networkMode));
     return errors.wrap('supplied properties not correct for "RosClusterProps"');
 }
 
@@ -489,7 +489,7 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::Cluster`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::Cluster`, which is used to create a cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `Cluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-cluster
  */
@@ -665,7 +665,7 @@ function rosClusterMemberPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::ClusterMember`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::ClusterMember`, which is used to add Elastic Compute Service (ECS) instances to a cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `ClusterMember` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-clustermember
  */
@@ -805,7 +805,7 @@ function rosDeployGroupPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::DeployGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::DeployGroup`, which is used to create an instance group for an application.
  * @Note This class does not contain additional functions, so it is recommended to use the `DeployGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-deploygroup
  */
@@ -1158,13 +1158,14 @@ function RosK8sApplicationPropsValidator(properties: any): ros.ValidationResult 
         }));
     }
     errors.collect(ros.propertyValidator('intranetSlbProtocol', ros.validateString)(properties.intranetSlbProtocol));
-    errors.collect(ros.propertyValidator('webContainerConfig', RosK8sApplication_WebContainerConfigPropertyValidator)(properties.webContainerConfig));
     errors.collect(ros.propertyValidator('packageVersion', ros.validateString)(properties.packageVersion));
+    errors.collect(ros.propertyValidator('webContainerConfig', RosK8sApplication_WebContainerConfigPropertyValidator)(properties.webContainerConfig));
     errors.collect(ros.propertyValidator('appName', ros.requiredValidator)(properties.appName));
     errors.collect(ros.propertyValidator('appName', ros.validateString)(properties.appName));
     errors.collect(ros.propertyValidator('jdk', ros.validateString)(properties.jdk));
     errors.collect(ros.propertyValidator('internetSlbId', ros.validateString)(properties.internetSlbId));
     errors.collect(ros.propertyValidator('preStop', RosK8sApplication_PreStopPropertyValidator)(properties.preStop));
+    errors.collect(ros.propertyValidator('readiness', RosK8sApplication_ReadinessPropertyValidator)(properties.readiness));
     if(properties.internetSlbPort && (typeof properties.internetSlbPort) !== 'object') {
         errors.collect(ros.propertyValidator('internetSlbPort', ros.validateRange)({
             data: properties.internetSlbPort,
@@ -1173,7 +1174,6 @@ function RosK8sApplicationPropsValidator(properties: any): ros.ValidationResult 
           }));
     }
     errors.collect(ros.propertyValidator('internetSlbPort', ros.validateNumber)(properties.internetSlbPort));
-    errors.collect(ros.propertyValidator('readiness', RosK8sApplication_ReadinessPropertyValidator)(properties.readiness));
     errors.collect(ros.propertyValidator('deployAcrossNodes', ros.validateBoolean)(properties.deployAcrossNodes));
     if(properties.requestsMem && (typeof properties.requestsMem) !== 'object') {
         errors.collect(ros.propertyValidator('requestsMem', ros.validateRange)({
@@ -1208,9 +1208,9 @@ function RosK8sApplicationPropsValidator(properties: any): ros.ValidationResult 
     }
     errors.collect(ros.propertyValidator('timeout', ros.validateNumber)(properties.timeout));
     errors.collect(ros.propertyValidator('envs', ros.listValidator(RosK8sApplication_EnvsPropertyValidator))(properties.envs));
-    errors.collect(ros.propertyValidator('imageUrl', ros.validateString)(properties.imageUrl));
     errors.collect(ros.propertyValidator('deployAcrossZones', ros.validateBoolean)(properties.deployAcrossZones));
     errors.collect(ros.propertyValidator('postStart', RosK8sApplication_PostStartPropertyValidator)(properties.postStart));
+    errors.collect(ros.propertyValidator('imageUrl', ros.validateString)(properties.imageUrl));
     if(properties.internetTargetPort && (typeof properties.internetTargetPort) !== 'object') {
         errors.collect(ros.propertyValidator('internetTargetPort', ros.validateRange)({
             data: properties.internetTargetPort,
@@ -1233,9 +1233,6 @@ function RosK8sApplicationPropsValidator(properties: any): ros.ValidationResult 
     errors.collect(ros.propertyValidator('intranetTargetPort', ros.validateNumber)(properties.intranetTargetPort));
     errors.collect(ros.propertyValidator('mountDescs', ros.listValidator(RosK8sApplication_MountDescsPropertyValidator))(properties.mountDescs));
     errors.collect(ros.propertyValidator('localVolume', ros.listValidator(RosK8sApplication_LocalVolumePropertyValidator))(properties.localVolume));
-    errors.collect(ros.propertyValidator('edasContainerVersion', ros.validateString)(properties.edasContainerVersion));
-    errors.collect(ros.propertyValidator('runtimeClassName', ros.validateString)(properties.runtimeClassName));
-    errors.collect(ros.propertyValidator('command', ros.validateString)(properties.command));
     if(properties.internetSlbProtocol && (typeof properties.internetSlbProtocol) !== 'object') {
         errors.collect(ros.propertyValidator('internetSlbProtocol', ros.validateAllowedValues)({
           data: properties.internetSlbProtocol,
@@ -1243,6 +1240,9 @@ function RosK8sApplicationPropsValidator(properties: any): ros.ValidationResult 
         }));
     }
     errors.collect(ros.propertyValidator('internetSlbProtocol', ros.validateString)(properties.internetSlbProtocol));
+    errors.collect(ros.propertyValidator('edasContainerVersion', ros.validateString)(properties.edasContainerVersion));
+    errors.collect(ros.propertyValidator('runtimeClassName', ros.validateString)(properties.runtimeClassName));
+    errors.collect(ros.propertyValidator('command', ros.validateString)(properties.command));
     errors.collect(ros.propertyValidator('packageUrl', ros.validateString)(properties.packageUrl));
     if(properties.intranetSlbPort && (typeof properties.intranetSlbPort) !== 'object') {
         errors.collect(ros.propertyValidator('intranetSlbPort', ros.validateRange)({
@@ -1331,7 +1331,7 @@ function rosK8sApplicationPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::K8sApplication`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::K8sApplication`, which is used to create an application in a Kubernetes cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `K8sApplication` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8sapplication
  */
@@ -2443,13 +2443,17 @@ export namespace RosK8sApplication {
          */
         readonly initialHeapSize?: RosK8sApplication.InitialHeapSizeProperty | ros.IResolvable;
         /**
+         * @Property threadStackSize: Thread stack size (KB).
+         */
+        readonly threadStackSize?: RosK8sApplication.ThreadStackSizeProperty | ros.IResolvable;
+        /**
          * @Property nacosUseEndpointParsingRule: Whether enable rule parsing.
          */
         readonly nacosUseEndpointParsingRule?: RosK8sApplication.NacosUseEndpointParsingRuleProperty | ros.IResolvable;
         /**
-         * @Property threadStackSize: Thread stack size (KB).
+         * @Property newSize: Initial Young Generation Size (MB).
          */
-        readonly threadStackSize?: RosK8sApplication.ThreadStackSizeProperty | ros.IResolvable;
+        readonly newSize?: RosK8sApplication.NewSizeProperty | ros.IResolvable;
         /**
          * @Property survivorRatio: Eden\/Survivor Memory Size Ratio.
          */
@@ -2459,13 +2463,13 @@ export namespace RosK8sApplication {
          */
         readonly permSize?: RosK8sApplication.PermSizeProperty | ros.IResolvable;
         /**
-         * @Property newSize: Initial Young Generation Size (MB).
-         */
-        readonly newSize?: RosK8sApplication.NewSizeProperty | ros.IResolvable;
-        /**
          * @Property concGcThreads: Number of threads concurrent gc will use.
          */
         readonly concGcThreads?: RosK8sApplication.ConcGCThreadsProperty | ros.IResolvable;
+        /**
+         * @Property maxNewSize: The maximum size of young generation. Unit: MB. The value max_uintx indicates that no upper limit is specified for memory usage.
+         */
+        readonly maxNewSize?: RosK8sApplication.MaxNewSizeProperty | ros.IResolvable;
         /**
          * @Property newRatio: Old\/Young Generation Memory Size Ratio.
          */
@@ -2475,21 +2479,17 @@ export namespace RosK8sApplication {
          */
         readonly gcLogFileSize?: RosK8sApplication.GCLogFileSizeProperty | ros.IResolvable;
         /**
-         * @Property maxNewSize: The maximum size of young generation. Unit: MB. The value max_uintx indicates that no upper limit is specified for memory usage.
-         */
-        readonly maxNewSize?: RosK8sApplication.MaxNewSizeProperty | ros.IResolvable;
-        /**
          * @Property g1HeapRegionSize: Size of the G1 regions.
          */
         readonly g1HeapRegionSize?: RosK8sApplication.G1HeapRegionSizeProperty | ros.IResolvable;
         /**
-         * @Property printGc:
-         */
-        readonly printGc?: RosK8sApplication.PrintGCProperty | ros.IResolvable;
-        /**
          * @Property maxDirectMemorySize: The maximum size of NIO direct memory. Unit: MB.
          */
         readonly maxDirectMemorySize?: RosK8sApplication.MaxDirectMemorySizeProperty | ros.IResolvable;
+        /**
+         * @Property printGc:
+         */
+        readonly printGc?: RosK8sApplication.PrintGCProperty | ros.IResolvable;
         /**
          * @Property maxPermSize: The maximum size of permanent generation. Unit: MB.
          */
@@ -2539,18 +2539,18 @@ function RosK8sApplication_JavaStartUpConfigPropertyValidator(properties: any): 
     errors.collect(ros.propertyValidator('customParams', RosK8sApplication_CustomParamsPropertyValidator)(properties.customParams));
     errors.collect(ros.propertyValidator('parallelGcThreads', RosK8sApplication_ParallelGCThreadsPropertyValidator)(properties.parallelGcThreads));
     errors.collect(ros.propertyValidator('initialHeapSize', RosK8sApplication_InitialHeapSizePropertyValidator)(properties.initialHeapSize));
-    errors.collect(ros.propertyValidator('nacosUseEndpointParsingRule', RosK8sApplication_NacosUseEndpointParsingRulePropertyValidator)(properties.nacosUseEndpointParsingRule));
     errors.collect(ros.propertyValidator('threadStackSize', RosK8sApplication_ThreadStackSizePropertyValidator)(properties.threadStackSize));
+    errors.collect(ros.propertyValidator('nacosUseEndpointParsingRule', RosK8sApplication_NacosUseEndpointParsingRulePropertyValidator)(properties.nacosUseEndpointParsingRule));
+    errors.collect(ros.propertyValidator('newSize', RosK8sApplication_NewSizePropertyValidator)(properties.newSize));
     errors.collect(ros.propertyValidator('survivorRatio', RosK8sApplication_SurvivorRatioPropertyValidator)(properties.survivorRatio));
     errors.collect(ros.propertyValidator('permSize', RosK8sApplication_PermSizePropertyValidator)(properties.permSize));
-    errors.collect(ros.propertyValidator('newSize', RosK8sApplication_NewSizePropertyValidator)(properties.newSize));
     errors.collect(ros.propertyValidator('concGcThreads', RosK8sApplication_ConcGCThreadsPropertyValidator)(properties.concGcThreads));
+    errors.collect(ros.propertyValidator('maxNewSize', RosK8sApplication_MaxNewSizePropertyValidator)(properties.maxNewSize));
     errors.collect(ros.propertyValidator('newRatio', RosK8sApplication_NewRatioPropertyValidator)(properties.newRatio));
     errors.collect(ros.propertyValidator('gcLogFileSize', RosK8sApplication_GCLogFileSizePropertyValidator)(properties.gcLogFileSize));
-    errors.collect(ros.propertyValidator('maxNewSize', RosK8sApplication_MaxNewSizePropertyValidator)(properties.maxNewSize));
     errors.collect(ros.propertyValidator('g1HeapRegionSize', RosK8sApplication_G1HeapRegionSizePropertyValidator)(properties.g1HeapRegionSize));
-    errors.collect(ros.propertyValidator('printGc', RosK8sApplication_PrintGCPropertyValidator)(properties.printGc));
     errors.collect(ros.propertyValidator('maxDirectMemorySize', RosK8sApplication_MaxDirectMemorySizePropertyValidator)(properties.maxDirectMemorySize));
+    errors.collect(ros.propertyValidator('printGc', RosK8sApplication_PrintGCPropertyValidator)(properties.printGc));
     errors.collect(ros.propertyValidator('maxPermSize', RosK8sApplication_MaxPermSizePropertyValidator)(properties.maxPermSize));
     errors.collect(ros.propertyValidator('heapDumpOnOutOfMemoryError', RosK8sApplication_HeapDumpOnOutOfMemoryErrorPropertyValidator)(properties.heapDumpOnOutOfMemoryError));
     errors.collect(ros.propertyValidator('nacosUseCloudNamespaceParsing', RosK8sApplication_NacosUseCloudNamespaceParsingPropertyValidator)(properties.nacosUseCloudNamespaceParsing));
@@ -2579,18 +2579,18 @@ function rosK8sApplicationJavaStartUpConfigPropertyToRosTemplate(properties: any
       'CustomParams': rosK8sApplicationCustomParamsPropertyToRosTemplate(properties.customParams),
       'ParallelGCThreads': rosK8sApplicationParallelGCThreadsPropertyToRosTemplate(properties.parallelGcThreads),
       'InitialHeapSize': rosK8sApplicationInitialHeapSizePropertyToRosTemplate(properties.initialHeapSize),
-      'NacosUseEndpointParsingRule': rosK8sApplicationNacosUseEndpointParsingRulePropertyToRosTemplate(properties.nacosUseEndpointParsingRule),
       'ThreadStackSize': rosK8sApplicationThreadStackSizePropertyToRosTemplate(properties.threadStackSize),
+      'NacosUseEndpointParsingRule': rosK8sApplicationNacosUseEndpointParsingRulePropertyToRosTemplate(properties.nacosUseEndpointParsingRule),
+      'NewSize': rosK8sApplicationNewSizePropertyToRosTemplate(properties.newSize),
       'SurvivorRatio': rosK8sApplicationSurvivorRatioPropertyToRosTemplate(properties.survivorRatio),
       'PermSize': rosK8sApplicationPermSizePropertyToRosTemplate(properties.permSize),
-      'NewSize': rosK8sApplicationNewSizePropertyToRosTemplate(properties.newSize),
       'ConcGCThreads': rosK8sApplicationConcGCThreadsPropertyToRosTemplate(properties.concGcThreads),
+      'MaxNewSize': rosK8sApplicationMaxNewSizePropertyToRosTemplate(properties.maxNewSize),
       'NewRatio': rosK8sApplicationNewRatioPropertyToRosTemplate(properties.newRatio),
       'GCLogFileSize': rosK8sApplicationGCLogFileSizePropertyToRosTemplate(properties.gcLogFileSize),
-      'MaxNewSize': rosK8sApplicationMaxNewSizePropertyToRosTemplate(properties.maxNewSize),
       'G1HeapRegionSize': rosK8sApplicationG1HeapRegionSizePropertyToRosTemplate(properties.g1HeapRegionSize),
-      'PrintGC': rosK8sApplicationPrintGCPropertyToRosTemplate(properties.printGc),
       'MaxDirectMemorySize': rosK8sApplicationMaxDirectMemorySizePropertyToRosTemplate(properties.maxDirectMemorySize),
+      'PrintGC': rosK8sApplicationPrintGCPropertyToRosTemplate(properties.printGc),
       'MaxPermSize': rosK8sApplicationMaxPermSizePropertyToRosTemplate(properties.maxPermSize),
       'HeapDumpOnOutOfMemoryError': rosK8sApplicationHeapDumpOnOutOfMemoryErrorPropertyToRosTemplate(properties.heapDumpOnOutOfMemoryError),
       'NacosUseCloudNamespaceParsing': rosK8sApplicationNacosUseCloudNamespaceParsingPropertyToRosTemplate(properties.nacosUseCloudNamespaceParsing),
@@ -2608,6 +2608,10 @@ export namespace RosK8sApplication {
      */
     export interface LivenessProperty {
         /**
+         * @Property initialDelaySeconds: undefined
+         */
+        readonly initialDelaySeconds?: number | ros.IResolvable;
+        /**
          * @Property timeoutSeconds: undefined
          */
         readonly timeoutSeconds?: number | ros.IResolvable;
@@ -2615,10 +2619,6 @@ export namespace RosK8sApplication {
          * @Property exec: undefined
          */
         readonly exec?: RosK8sApplication.ExecProperty | ros.IResolvable;
-        /**
-         * @Property initialDelaySeconds: undefined
-         */
-        readonly initialDelaySeconds?: number | ros.IResolvable;
         /**
          * @Property httpGet: undefined
          */
@@ -2628,13 +2628,13 @@ export namespace RosK8sApplication {
          */
         readonly periodSeconds?: number | ros.IResolvable;
         /**
-         * @Property tcpSocket: undefined
-         */
-        readonly tcpSocket?: RosK8sApplication.TcpSocketProperty | ros.IResolvable;
-        /**
          * @Property failureThreshold: undefined
          */
         readonly failureThreshold?: number | ros.IResolvable;
+        /**
+         * @Property tcpSocket: undefined
+         */
+        readonly tcpSocket?: RosK8sApplication.TcpSocketProperty | ros.IResolvable;
         /**
          * @Property successThreshold: undefined
          */
@@ -2651,6 +2651,14 @@ export namespace RosK8sApplication {
 function RosK8sApplication_LivenessPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    if(properties.initialDelaySeconds && (typeof properties.initialDelaySeconds) !== 'object') {
+        errors.collect(ros.propertyValidator('initialDelaySeconds', ros.validateRange)({
+            data: properties.initialDelaySeconds,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('initialDelaySeconds', ros.validateNumber)(properties.initialDelaySeconds));
     if(properties.timeoutSeconds && (typeof properties.timeoutSeconds) !== 'object') {
         errors.collect(ros.propertyValidator('timeoutSeconds', ros.validateRange)({
             data: properties.timeoutSeconds,
@@ -2660,14 +2668,6 @@ function RosK8sApplication_LivenessPropertyValidator(properties: any): ros.Valid
     }
     errors.collect(ros.propertyValidator('timeoutSeconds', ros.validateNumber)(properties.timeoutSeconds));
     errors.collect(ros.propertyValidator('exec', RosK8sApplication_ExecPropertyValidator)(properties.exec));
-    if(properties.initialDelaySeconds && (typeof properties.initialDelaySeconds) !== 'object') {
-        errors.collect(ros.propertyValidator('initialDelaySeconds', ros.validateRange)({
-            data: properties.initialDelaySeconds,
-            min: 1,
-            max: undefined,
-          }));
-    }
-    errors.collect(ros.propertyValidator('initialDelaySeconds', ros.validateNumber)(properties.initialDelaySeconds));
     errors.collect(ros.propertyValidator('httpGet', RosK8sApplication_HttpGetPropertyValidator)(properties.httpGet));
     if(properties.periodSeconds && (typeof properties.periodSeconds) !== 'object') {
         errors.collect(ros.propertyValidator('periodSeconds', ros.validateRange)({
@@ -2677,7 +2677,6 @@ function RosK8sApplication_LivenessPropertyValidator(properties: any): ros.Valid
           }));
     }
     errors.collect(ros.propertyValidator('periodSeconds', ros.validateNumber)(properties.periodSeconds));
-    errors.collect(ros.propertyValidator('tcpSocket', RosK8sApplication_TcpSocketPropertyValidator)(properties.tcpSocket));
     if(properties.failureThreshold && (typeof properties.failureThreshold) !== 'object') {
         errors.collect(ros.propertyValidator('failureThreshold', ros.validateRange)({
             data: properties.failureThreshold,
@@ -2686,6 +2685,7 @@ function RosK8sApplication_LivenessPropertyValidator(properties: any): ros.Valid
           }));
     }
     errors.collect(ros.propertyValidator('failureThreshold', ros.validateNumber)(properties.failureThreshold));
+    errors.collect(ros.propertyValidator('tcpSocket', RosK8sApplication_TcpSocketPropertyValidator)(properties.tcpSocket));
     if(properties.successThreshold && (typeof properties.successThreshold) !== 'object') {
         errors.collect(ros.propertyValidator('successThreshold', ros.validateRange)({
             data: properties.successThreshold,
@@ -2709,13 +2709,13 @@ function rosK8sApplicationLivenessPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_LivenessPropertyValidator(properties).assertSuccess();
     return {
+      'InitialDelaySeconds': ros.numberToRosTemplate(properties.initialDelaySeconds),
       'TimeoutSeconds': ros.numberToRosTemplate(properties.timeoutSeconds),
       'Exec': rosK8sApplicationExecPropertyToRosTemplate(properties.exec),
-      'InitialDelaySeconds': ros.numberToRosTemplate(properties.initialDelaySeconds),
       'HttpGet': rosK8sApplicationHttpGetPropertyToRosTemplate(properties.httpGet),
       'PeriodSeconds': ros.numberToRosTemplate(properties.periodSeconds),
-      'TcpSocket': rosK8sApplicationTcpSocketPropertyToRosTemplate(properties.tcpSocket),
       'FailureThreshold': ros.numberToRosTemplate(properties.failureThreshold),
+      'TcpSocket': rosK8sApplicationTcpSocketPropertyToRosTemplate(properties.tcpSocket),
       'SuccessThreshold': ros.numberToRosTemplate(properties.successThreshold),
     };
 }
@@ -3802,6 +3802,10 @@ export namespace RosK8sApplication {
      */
     export interface ReadinessProperty {
         /**
+         * @Property initialDelaySeconds: undefined
+         */
+        readonly initialDelaySeconds?: number | ros.IResolvable;
+        /**
          * @Property timeoutSeconds: undefined
          */
         readonly timeoutSeconds?: number | ros.IResolvable;
@@ -3809,10 +3813,6 @@ export namespace RosK8sApplication {
          * @Property exec: undefined
          */
         readonly exec?: RosK8sApplication.ReadinessExecProperty | ros.IResolvable;
-        /**
-         * @Property initialDelaySeconds: undefined
-         */
-        readonly initialDelaySeconds?: number | ros.IResolvable;
         /**
          * @Property httpGet: undefined
          */
@@ -3822,13 +3822,13 @@ export namespace RosK8sApplication {
          */
         readonly periodSeconds?: number | ros.IResolvable;
         /**
-         * @Property tcpSocket: undefined
-         */
-        readonly tcpSocket?: RosK8sApplication.ReadinessTcpSocketProperty | ros.IResolvable;
-        /**
          * @Property failureThreshold: undefined
          */
         readonly failureThreshold?: number | ros.IResolvable;
+        /**
+         * @Property tcpSocket: undefined
+         */
+        readonly tcpSocket?: RosK8sApplication.ReadinessTcpSocketProperty | ros.IResolvable;
         /**
          * @Property successThreshold: undefined
          */
@@ -3845,6 +3845,14 @@ export namespace RosK8sApplication {
 function RosK8sApplication_ReadinessPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    if(properties.initialDelaySeconds && (typeof properties.initialDelaySeconds) !== 'object') {
+        errors.collect(ros.propertyValidator('initialDelaySeconds', ros.validateRange)({
+            data: properties.initialDelaySeconds,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('initialDelaySeconds', ros.validateNumber)(properties.initialDelaySeconds));
     if(properties.timeoutSeconds && (typeof properties.timeoutSeconds) !== 'object') {
         errors.collect(ros.propertyValidator('timeoutSeconds', ros.validateRange)({
             data: properties.timeoutSeconds,
@@ -3854,14 +3862,6 @@ function RosK8sApplication_ReadinessPropertyValidator(properties: any): ros.Vali
     }
     errors.collect(ros.propertyValidator('timeoutSeconds', ros.validateNumber)(properties.timeoutSeconds));
     errors.collect(ros.propertyValidator('exec', RosK8sApplication_ReadinessExecPropertyValidator)(properties.exec));
-    if(properties.initialDelaySeconds && (typeof properties.initialDelaySeconds) !== 'object') {
-        errors.collect(ros.propertyValidator('initialDelaySeconds', ros.validateRange)({
-            data: properties.initialDelaySeconds,
-            min: 1,
-            max: undefined,
-          }));
-    }
-    errors.collect(ros.propertyValidator('initialDelaySeconds', ros.validateNumber)(properties.initialDelaySeconds));
     errors.collect(ros.propertyValidator('httpGet', RosK8sApplication_ReadinessHttpGetPropertyValidator)(properties.httpGet));
     if(properties.periodSeconds && (typeof properties.periodSeconds) !== 'object') {
         errors.collect(ros.propertyValidator('periodSeconds', ros.validateRange)({
@@ -3871,7 +3871,6 @@ function RosK8sApplication_ReadinessPropertyValidator(properties: any): ros.Vali
           }));
     }
     errors.collect(ros.propertyValidator('periodSeconds', ros.validateNumber)(properties.periodSeconds));
-    errors.collect(ros.propertyValidator('tcpSocket', RosK8sApplication_ReadinessTcpSocketPropertyValidator)(properties.tcpSocket));
     if(properties.failureThreshold && (typeof properties.failureThreshold) !== 'object') {
         errors.collect(ros.propertyValidator('failureThreshold', ros.validateRange)({
             data: properties.failureThreshold,
@@ -3880,6 +3879,7 @@ function RosK8sApplication_ReadinessPropertyValidator(properties: any): ros.Vali
           }));
     }
     errors.collect(ros.propertyValidator('failureThreshold', ros.validateNumber)(properties.failureThreshold));
+    errors.collect(ros.propertyValidator('tcpSocket', RosK8sApplication_ReadinessTcpSocketPropertyValidator)(properties.tcpSocket));
     if(properties.successThreshold && (typeof properties.successThreshold) !== 'object') {
         errors.collect(ros.propertyValidator('successThreshold', ros.validateRange)({
             data: properties.successThreshold,
@@ -3903,13 +3903,13 @@ function rosK8sApplicationReadinessPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_ReadinessPropertyValidator(properties).assertSuccess();
     return {
+      'InitialDelaySeconds': ros.numberToRosTemplate(properties.initialDelaySeconds),
       'TimeoutSeconds': ros.numberToRosTemplate(properties.timeoutSeconds),
       'Exec': rosK8sApplicationReadinessExecPropertyToRosTemplate(properties.exec),
-      'InitialDelaySeconds': ros.numberToRosTemplate(properties.initialDelaySeconds),
       'HttpGet': rosK8sApplicationReadinessHttpGetPropertyToRosTemplate(properties.httpGet),
       'PeriodSeconds': ros.numberToRosTemplate(properties.periodSeconds),
-      'TcpSocket': rosK8sApplicationReadinessTcpSocketPropertyToRosTemplate(properties.tcpSocket),
       'FailureThreshold': ros.numberToRosTemplate(properties.failureThreshold),
+      'TcpSocket': rosK8sApplicationReadinessTcpSocketPropertyToRosTemplate(properties.tcpSocket),
       'SuccessThreshold': ros.numberToRosTemplate(properties.successThreshold),
     };
 }
@@ -4409,13 +4409,13 @@ export namespace RosK8sApplication {
          */
         readonly maxThreads?: number | ros.IResolvable;
         /**
-         * @Property useAdvancedServerXml: Specifies whether to use advanced configurations to customize the server.xml file. When the preceding parameter type and specific parameters cannot meet your requirements, you can use advanced configurations to edit the server.xml file of Tomcat.
-         */
-        readonly useAdvancedServerXml?: boolean | ros.IResolvable;
-        /**
          * @Property useDefaultConfig: Specifies whether to use the custom configuration. The value true indicates that the custom configuration is not used, whereas the value false indicates that the custom configuration is used. If the custom configuration is not used, the following parameters do not take effect.
          */
         readonly useDefaultConfig?: boolean | ros.IResolvable;
+        /**
+         * @Property useAdvancedServerXml: Specifies whether to use advanced configurations to customize the server.xml file. When the preceding parameter type and specific parameters cannot meet your requirements, you can use advanced configurations to edit the server.xml file of Tomcat.
+         */
+        readonly useAdvancedServerXml?: boolean | ros.IResolvable;
     }
 }
 /**
@@ -4442,8 +4442,8 @@ function RosK8sApplication_WebContainerConfigPropertyValidator(properties: any):
     errors.collect(ros.propertyValidator('useBodyEncoding', ros.validateBoolean)(properties.useBodyEncoding));
     errors.collect(ros.propertyValidator('serverXml', ros.validateString)(properties.serverXml));
     errors.collect(ros.propertyValidator('maxThreads', ros.validateNumber)(properties.maxThreads));
-    errors.collect(ros.propertyValidator('useAdvancedServerXml', ros.validateBoolean)(properties.useAdvancedServerXml));
     errors.collect(ros.propertyValidator('useDefaultConfig', ros.validateBoolean)(properties.useDefaultConfig));
+    errors.collect(ros.propertyValidator('useAdvancedServerXml', ros.validateBoolean)(properties.useAdvancedServerXml));
     return errors.wrap('supplied properties not correct for "WebContainerConfigProperty"');
 }
 
@@ -4466,8 +4466,8 @@ function rosK8sApplicationWebContainerConfigPropertyToRosTemplate(properties: an
       'UseBodyEncoding': ros.booleanToRosTemplate(properties.useBodyEncoding),
       'ServerXml': ros.stringToRosTemplate(properties.serverXml),
       'MaxThreads': ros.numberToRosTemplate(properties.maxThreads),
-      'UseAdvancedServerXml': ros.booleanToRosTemplate(properties.useAdvancedServerXml),
       'UseDefaultConfig': ros.booleanToRosTemplate(properties.useDefaultConfig),
+      'UseAdvancedServerXml': ros.booleanToRosTemplate(properties.useAdvancedServerXml),
     };
 }
 
@@ -4578,7 +4578,7 @@ function rosK8sClusterPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::K8sCluster`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::K8sCluster`, which is used to create a cluster of Container Service for Kubernetes (ACK).
  * @Note This class does not contain additional functions, so it is recommended to use the `K8sCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8scluster
  */
@@ -4759,8 +4759,8 @@ function RosK8sSlbBindingPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('clusterId', ros.requiredValidator)(properties.clusterId));
     errors.collect(ros.propertyValidator('clusterId', ros.validateString)(properties.clusterId));
     errors.collect(ros.propertyValidator('scheduler', ros.validateString)(properties.scheduler));
-    errors.collect(ros.propertyValidator('specification', ros.validateString)(properties.specification));
     errors.collect(ros.propertyValidator('loadBalancerId', ros.validateString)(properties.loadBalancerId));
+    errors.collect(ros.propertyValidator('specification', ros.validateString)(properties.specification));
     errors.collect(ros.propertyValidator('servicePortInfos', ros.requiredValidator)(properties.servicePortInfos));
     if(properties.servicePortInfos && (Array.isArray(properties.servicePortInfos) || (typeof properties.servicePortInfos) === 'string')) {
         errors.collect(ros.propertyValidator('servicePortInfos', ros.validateLength)({
@@ -4798,7 +4798,7 @@ function rosK8sSlbBindingPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::K8sSlbBinding`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::K8sSlbBinding`, which is used to bind a Server Load Balancer (SLB) instance to an application in a Container Service for Kubernetes (ACK) cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `K8sSlbBinding` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8sslbbinding
  */
@@ -4997,6 +4997,327 @@ function rosK8sSlbBindingServicePortInfosPropertyToRosTemplate(properties: any):
 }
 
 /**
+ * Properties for defining a `RosSwimmingLane`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-swimminglane
+ */
+export interface RosSwimmingLaneProps {
+
+    /**
+     * @Property entryRules: The entry rules of the swimming lane.
+     */
+    readonly entryRules: Array<{ [key: string]: any }> | ros.IResolvable;
+
+    /**
+     * @Property groupId: The group ID of the swimming lane.
+     */
+    readonly groupId: number | ros.IResolvable;
+
+    /**
+     * @Property logicalRegionId: The RegionId of the logical region. Format: `physicalRegion:customNamespaceIdentifier`.
+     */
+    readonly logicalRegionId: string | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the swimming lane.
+     */
+    readonly name: string | ros.IResolvable;
+
+    /**
+     * @Property tag: The tag of the swimming lane.
+     */
+    readonly tag: string | ros.IResolvable;
+
+    /**
+     * @Property appInfos: Application information involved in the swimming lane.
+     */
+    readonly appInfos?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property enableRules: Whether to enable flow control rules.
+     */
+    readonly enableRules?: boolean | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSwimmingLaneProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSwimmingLaneProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSwimmingLanePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('logicalRegionId', ros.requiredValidator)(properties.logicalRegionId));
+    errors.collect(ros.propertyValidator('logicalRegionId', ros.validateString)(properties.logicalRegionId));
+    errors.collect(ros.propertyValidator('entryRules', ros.requiredValidator)(properties.entryRules));
+    errors.collect(ros.propertyValidator('entryRules', ros.listValidator(ros.validateAnyDict))(properties.entryRules));
+    errors.collect(ros.propertyValidator('appInfos', ros.listValidator(ros.validateString))(properties.appInfos));
+    errors.collect(ros.propertyValidator('tag', ros.requiredValidator)(properties.tag));
+    errors.collect(ros.propertyValidator('tag', ros.validateString)(properties.tag));
+    errors.collect(ros.propertyValidator('enableRules', ros.validateBoolean)(properties.enableRules));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    errors.collect(ros.propertyValidator('groupId', ros.requiredValidator)(properties.groupId));
+    errors.collect(ros.propertyValidator('groupId', ros.validateNumber)(properties.groupId));
+    return errors.wrap('supplied properties not correct for "RosSwimmingLaneProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EDAS::SwimmingLane` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSwimmingLaneProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EDAS::SwimmingLane` resource.
+ */
+// @ts-ignore TS6133
+function rosSwimmingLanePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSwimmingLanePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'EntryRules': ros.listMapper(ros.anyDictToRosTemplate)(properties.entryRules),
+      'GroupId': ros.numberToRosTemplate(properties.groupId),
+      'LogicalRegionId': ros.stringToRosTemplate(properties.logicalRegionId),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'Tag': ros.stringToRosTemplate(properties.tag),
+      'AppInfos': ros.listMapper(ros.stringToRosTemplate)(properties.appInfos),
+      'EnableRules': ros.booleanToRosTemplate(properties.enableRules),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::SwimmingLane`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SwimmingLane` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-swimminglane
+ */
+export class RosSwimmingLane extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EDAS::SwimmingLane";
+
+    /**
+     * @Attribute LaneId: The ID of the swimming lane.
+     */
+    public readonly attrLaneId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property entryRules: The entry rules of the swimming lane.
+     */
+    public entryRules: Array<{ [key: string]: any }> | ros.IResolvable;
+
+    /**
+     * @Property groupId: The group ID of the swimming lane.
+     */
+    public groupId: number | ros.IResolvable;
+
+    /**
+     * @Property logicalRegionId: The RegionId of the logical region. Format: `physicalRegion:customNamespaceIdentifier`.
+     */
+    public logicalRegionId: string | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the swimming lane.
+     */
+    public name: string | ros.IResolvable;
+
+    /**
+     * @Property tag: The tag of the swimming lane.
+     */
+    public tag: string | ros.IResolvable;
+
+    /**
+     * @Property appInfos: Application information involved in the swimming lane.
+     */
+    public appInfos: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property enableRules: Whether to enable flow control rules.
+     */
+    public enableRules: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSwimmingLaneProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSwimmingLane.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrLaneId = this.getAtt('LaneId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.entryRules = props.entryRules;
+        this.groupId = props.groupId;
+        this.logicalRegionId = props.logicalRegionId;
+        this.name = props.name;
+        this.tag = props.tag;
+        this.appInfos = props.appInfos;
+        this.enableRules = props.enableRules;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            entryRules: this.entryRules,
+            groupId: this.groupId,
+            logicalRegionId: this.logicalRegionId,
+            name: this.name,
+            tag: this.tag,
+            appInfos: this.appInfos,
+            enableRules: this.enableRules,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSwimmingLanePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosSwimmingLaneGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-swimminglanegroup
+ */
+export interface RosSwimmingLaneGroupProps {
+
+    /**
+     * @Property appIds: The list of application IDs involved in the swimming lane group.
+     */
+    readonly appIds: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property entryApp: The entry application. Format: EDAS:{application ID}.
+     */
+    readonly entryApp: string | ros.IResolvable;
+
+    /**
+     * @Property logicalRegionId: The RegionId of the custom namespace. Format: `physical Region:custom namespace identifier`.
+     */
+    readonly logicalRegionId: string | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the swimming lane group.
+     * The value can be up to 64 characters in length.
+     */
+    readonly name: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSwimmingLaneGroupProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSwimmingLaneGroupProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSwimmingLaneGroupPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('entryApp', ros.requiredValidator)(properties.entryApp));
+    errors.collect(ros.propertyValidator('entryApp', ros.validateString)(properties.entryApp));
+    errors.collect(ros.propertyValidator('logicalRegionId', ros.requiredValidator)(properties.logicalRegionId));
+    errors.collect(ros.propertyValidator('logicalRegionId', ros.validateString)(properties.logicalRegionId));
+    errors.collect(ros.propertyValidator('appIds', ros.requiredValidator)(properties.appIds));
+    errors.collect(ros.propertyValidator('appIds', ros.listValidator(ros.validateString))(properties.appIds));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "RosSwimmingLaneGroupProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EDAS::SwimmingLaneGroup` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSwimmingLaneGroupProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EDAS::SwimmingLaneGroup` resource.
+ */
+// @ts-ignore TS6133
+function rosSwimmingLaneGroupPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSwimmingLaneGroupPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'AppIds': ros.listMapper(ros.stringToRosTemplate)(properties.appIds),
+      'EntryApp': ros.stringToRosTemplate(properties.entryApp),
+      'LogicalRegionId': ros.stringToRosTemplate(properties.logicalRegionId),
+      'Name': ros.stringToRosTemplate(properties.name),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::SwimmingLaneGroup`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SwimmingLaneGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-swimminglanegroup
+ */
+export class RosSwimmingLaneGroup extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EDAS::SwimmingLaneGroup";
+
+    /**
+     * @Attribute GroupId: The ID of the swimming lane group.
+     */
+    public readonly attrGroupId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property appIds: The list of application IDs involved in the swimming lane group.
+     */
+    public appIds: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property entryApp: The entry application. Format: EDAS:{application ID}.
+     */
+    public entryApp: string | ros.IResolvable;
+
+    /**
+     * @Property logicalRegionId: The RegionId of the custom namespace. Format: `physical Region:custom namespace identifier`.
+     */
+    public logicalRegionId: string | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the swimming lane group.
+     * The value can be up to 64 characters in length.
+     */
+    public name: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSwimmingLaneGroupProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSwimmingLaneGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrGroupId = this.getAtt('GroupId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.appIds = props.appIds;
+        this.entryApp = props.entryApp;
+        this.logicalRegionId = props.logicalRegionId;
+        this.name = props.name;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            appIds: this.appIds,
+            entryApp: this.entryApp,
+            logicalRegionId: this.logicalRegionId,
+            name: this.name,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSwimmingLaneGroupPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosUserDefineRegion`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-userdefineregion
  */
@@ -5064,7 +5385,7 @@ function rosUserDefineRegionPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::UserDefineRegion`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::UserDefineRegion`, which is used to create or edit a custom namespace.
  * @Note This class does not contain additional functions, so it is recommended to use the `UserDefineRegion` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-userdefineregion
  */

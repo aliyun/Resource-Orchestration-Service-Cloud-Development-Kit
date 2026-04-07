@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cms;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-eventruletargets
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.744Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:23.101Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosEventRuleTargetsProps")
 @software.amazon.jsii.Jsii.Proxy(RosEventRuleTargetsProps.Jsii$Proxy.class)
 public interface RosEventRuleTargetsProps extends software.amazon.jsii.JsiiSerializable {
@@ -29,6 +29,12 @@ public interface RosEventRuleTargetsProps extends software.amazon.jsii.JsiiSeria
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMnsParameters() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getOpenApiParameters() {
         return null;
     }
 
@@ -58,6 +64,7 @@ public interface RosEventRuleTargetsProps extends software.amazon.jsii.JsiiSeria
         java.lang.Object contactParameters;
         java.lang.Object fcParameters;
         java.lang.Object mnsParameters;
+        java.lang.Object openApiParameters;
         java.lang.Object slsParameters;
         java.lang.Object webhookParameters;
 
@@ -142,6 +149,26 @@ public interface RosEventRuleTargetsProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosEventRuleTargetsProps#getOpenApiParameters}
+         * @param openApiParameters the value to be set.
+         * @return {@code this}
+         */
+        public Builder openApiParameters(com.aliyun.ros.cdk.core.IResolvable openApiParameters) {
+            this.openApiParameters = openApiParameters;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosEventRuleTargetsProps#getOpenApiParameters}
+         * @param openApiParameters the value to be set.
+         * @return {@code this}
+         */
+        public Builder openApiParameters(java.util.List<? extends java.lang.Object> openApiParameters) {
+            this.openApiParameters = openApiParameters;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosEventRuleTargetsProps#getSlsParameters}
          * @param slsParameters the value to be set.
          * @return {@code this}
@@ -201,6 +228,7 @@ public interface RosEventRuleTargetsProps extends software.amazon.jsii.JsiiSeria
         private final java.lang.Object contactParameters;
         private final java.lang.Object fcParameters;
         private final java.lang.Object mnsParameters;
+        private final java.lang.Object openApiParameters;
         private final java.lang.Object slsParameters;
         private final java.lang.Object webhookParameters;
 
@@ -214,6 +242,7 @@ public interface RosEventRuleTargetsProps extends software.amazon.jsii.JsiiSeria
             this.contactParameters = software.amazon.jsii.Kernel.get(this, "contactParameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.fcParameters = software.amazon.jsii.Kernel.get(this, "fcParameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.mnsParameters = software.amazon.jsii.Kernel.get(this, "mnsParameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.openApiParameters = software.amazon.jsii.Kernel.get(this, "openApiParameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.slsParameters = software.amazon.jsii.Kernel.get(this, "slsParameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.webhookParameters = software.amazon.jsii.Kernel.get(this, "webhookParameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -227,6 +256,7 @@ public interface RosEventRuleTargetsProps extends software.amazon.jsii.JsiiSeria
             this.contactParameters = builder.contactParameters;
             this.fcParameters = builder.fcParameters;
             this.mnsParameters = builder.mnsParameters;
+            this.openApiParameters = builder.openApiParameters;
             this.slsParameters = builder.slsParameters;
             this.webhookParameters = builder.webhookParameters;
         }
@@ -249,6 +279,11 @@ public interface RosEventRuleTargetsProps extends software.amazon.jsii.JsiiSeria
         @Override
         public final java.lang.Object getMnsParameters() {
             return this.mnsParameters;
+        }
+
+        @Override
+        public final java.lang.Object getOpenApiParameters() {
+            return this.openApiParameters;
         }
 
         @Override
@@ -276,6 +311,9 @@ public interface RosEventRuleTargetsProps extends software.amazon.jsii.JsiiSeria
             }
             if (this.getMnsParameters() != null) {
                 data.set("mnsParameters", om.valueToTree(this.getMnsParameters()));
+            }
+            if (this.getOpenApiParameters() != null) {
+                data.set("openApiParameters", om.valueToTree(this.getOpenApiParameters()));
             }
             if (this.getSlsParameters() != null) {
                 data.set("slsParameters", om.valueToTree(this.getSlsParameters()));
@@ -305,6 +343,7 @@ public interface RosEventRuleTargetsProps extends software.amazon.jsii.JsiiSeria
             if (this.contactParameters != null ? !this.contactParameters.equals(that.contactParameters) : that.contactParameters != null) return false;
             if (this.fcParameters != null ? !this.fcParameters.equals(that.fcParameters) : that.fcParameters != null) return false;
             if (this.mnsParameters != null ? !this.mnsParameters.equals(that.mnsParameters) : that.mnsParameters != null) return false;
+            if (this.openApiParameters != null ? !this.openApiParameters.equals(that.openApiParameters) : that.openApiParameters != null) return false;
             if (this.slsParameters != null ? !this.slsParameters.equals(that.slsParameters) : that.slsParameters != null) return false;
             return this.webhookParameters != null ? this.webhookParameters.equals(that.webhookParameters) : that.webhookParameters == null;
         }
@@ -315,6 +354,7 @@ public interface RosEventRuleTargetsProps extends software.amazon.jsii.JsiiSeria
             result = 31 * result + (this.contactParameters != null ? this.contactParameters.hashCode() : 0);
             result = 31 * result + (this.fcParameters != null ? this.fcParameters.hashCode() : 0);
             result = 31 * result + (this.mnsParameters != null ? this.mnsParameters.hashCode() : 0);
+            result = 31 * result + (this.openApiParameters != null ? this.openApiParameters.hashCode() : 0);
             result = 31 * result + (this.slsParameters != null ? this.slsParameters.hashCode() : 0);
             result = 31 * result + (this.webhookParameters != null ? this.webhookParameters.hashCode() : 0);
             return result;

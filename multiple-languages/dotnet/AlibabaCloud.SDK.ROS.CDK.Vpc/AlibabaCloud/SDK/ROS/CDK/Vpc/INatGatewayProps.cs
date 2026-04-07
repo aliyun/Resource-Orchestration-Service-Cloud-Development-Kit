@@ -25,6 +25,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             get;
         }
 
+        /// <summary>Property accessMode: Reverse access mode to the VPC NAT gateway.</summary>
+        [JsiiProperty(name: "accessMode", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-vpc.RosNatGateway.AccessModeProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AccessMode
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property availabilityMode: The availability mode of the NAT gateway.</summary>
+        /// <remarks>
+        /// Valid values: CrossAZ, SingleAZ
+        /// </remarks>
+        [JsiiProperty(name: "availabilityMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AvailabilityMode
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property deletionForce: Whether force delete the relative snat and dnat entries in the net gateway and unbind eips.</summary>
         /// <remarks>
         /// Default value is false.
@@ -130,10 +155,32 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
+        /// <summary>Property ipv4Prefix: The IPv4 prefix.</summary>
+        [JsiiProperty(name: "ipv4Prefix", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Ipv4Prefix
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property natGatewayName: Display name of the NAT gateway, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.</summary>
         [JsiiProperty(name: "natGatewayName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? NatGatewayName
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property natIp: The NAT IP address.</summary>
+        [JsiiProperty(name: "natIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? NatIp
         {
             get
             {
@@ -167,6 +214,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         [JsiiProperty(name: "networkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? NetworkType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property privateLinkEnabled: Whether to support private network connection.</summary>
+        [JsiiProperty(name: "privateLinkEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? PrivateLinkEnabled
         {
             get
             {
@@ -225,6 +283,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             public object VSwitchId
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property accessMode: Reverse access mode to the VPC NAT gateway.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "accessMode", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-vpc.RosNatGateway.AccessModeProperty\"}]}}", isOptional: true)]
+            public object? AccessMode
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property availabilityMode: The availability mode of the NAT gateway.</summary>
+            /// <remarks>
+            /// Valid values: CrossAZ, SingleAZ
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "availabilityMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AvailabilityMode
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property deletionForce: Whether force delete the relative snat and dnat entries in the net gateway and unbind eips.</summary>
@@ -311,10 +388,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property ipv4Prefix: The IPv4 prefix.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "ipv4Prefix", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Ipv4Prefix
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property natGatewayName: Display name of the NAT gateway, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "natGatewayName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? NatGatewayName
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property natIp: The NAT IP address.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "natIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? NatIp
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -342,6 +435,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             [JsiiOptional]
             [JsiiProperty(name: "networkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? NetworkType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property privateLinkEnabled: Whether to support private network connection.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "privateLinkEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PrivateLinkEnabled
             {
                 get => GetInstanceProperty<object?>();
             }

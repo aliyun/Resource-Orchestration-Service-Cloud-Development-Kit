@@ -67,7 +67,7 @@ export interface IApplicationMonitor extends ros.IResource {
     readonly attrTaskId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::GA::ApplicationMonitor`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::GA::ApplicationMonitor`, which is used to create an origin probing task.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApplicationMonitor`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-applicationmonitor
  */
@@ -97,10 +97,10 @@ export class ApplicationMonitor extends ros.Resource implements IApplicationMoni
         const rosApplicationMonitor = new RosApplicationMonitor(this, id,  {
             silenceTime: props.silenceTime,
             detectThreshold: props.detectThreshold,
-            detectEnable: props.detectEnable,
             address: props.address,
-            optionsJson: props.optionsJson,
+            detectEnable: props.detectEnable,
             taskName: props.taskName,
+            optionsJson: props.optionsJson,
             acceleratorId: props.acceleratorId,
             detectTimes: props.detectTimes,
             listenerId: props.listenerId,

@@ -64,7 +64,7 @@ function rosAccessControlPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::AccessControl`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::AccessControl`, which is used to query the configurations of an access control list (ACL).
  * @Note This class does not contain additional functions, so it is recommended to use the `AccessControl` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-accesscontrol
  */
@@ -371,7 +371,7 @@ function rosDomainExtensionPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::DomainExtension`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::DomainExtension`, which is used to query the information about an added additional domain.
  * @Note This class does not contain additional functions, so it is recommended to use the `DomainExtension` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-domainextension
  */
@@ -670,7 +670,7 @@ function rosLoadBalancerPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::LoadBalancer`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::LoadBalancer`, which is used to query the information about a Classic Load Balancer (CLB) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancer` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-loadbalancer
  */
@@ -1277,7 +1277,7 @@ function rosLoadBalancerTCPListenersPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::LoadBalancerTCPListeners`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::LoadBalancerTCPListeners`, which is used to query Classic Load Balancer (CLB) listeners.
  * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancerTCPListeners` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-loadbalancertcplisteners
  */
@@ -1443,8 +1443,8 @@ function RosLoadBalancersPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('status', ros.validateString)(properties.status));
     errors.collect(ros.propertyValidator('addressIpVersion', ros.validateString)(properties.addressIpVersion));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('address', ros.validateString)(properties.address));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('loadBalancerId', ros.validateString)(properties.loadBalancerId));
     errors.collect(ros.propertyValidator('slaveZoneId', ros.validateString)(properties.slaveZoneId));
@@ -1510,7 +1510,7 @@ function rosLoadBalancersPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::LoadBalancers`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::LoadBalancers`, which is used to query created Classic Load Balancer (CLB) instances.
  * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancers` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-loadbalancers
  */
@@ -1986,7 +1986,7 @@ function rosRulesPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::Rules`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::Rules`, which is used to query the forwarding rules that are configured for a listener.
  * @Note This class does not contain additional functions, so it is recommended to use the `Rules` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-rules
  */
@@ -2407,7 +2407,7 @@ function rosVServerGroupPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::VServerGroup`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::VServerGroup`, which is used to query the information about a vServer group.
  * @Note This class does not contain additional functions, so it is recommended to use the `VServerGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-vservergroup
  */
@@ -2550,7 +2550,7 @@ function rosVServerGroupsPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::VServerGroups`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::VServerGroups`, which is used to query the server groups of a Classic Load Balancer (CLB) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `VServerGroups` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-vservergroups
  */

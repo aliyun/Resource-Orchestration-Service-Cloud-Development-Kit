@@ -149,6 +149,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
             }
         }
 
+        /// <summary>Property diskEncryption: Whether to enable cloud disk encryption. Value:.</summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <description>true: yes.</description>
+        /// <description>false: no.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiProperty(name: "diskEncryption", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DiskEncryption
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property elasticIoResource: Elastic IO Unit Note the flexible mode cluster will use this parameter.</summary>
         [JsiiProperty(name: "elasticIoResource", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -160,10 +177,38 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
             }
         }
 
+        /// <summary>Property enableSsl: Whether to enable SSL link encryption function, value:.</summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <description><strong>true</strong>: open.</description>
+        /// <description><strong>false</strong>: close.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiProperty(name: "enableSsl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? EnableSsl
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property executorCount: ExecutorCount.</summary>
         [JsiiProperty(name: "executorCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ExecutorCount
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property kmsId: The kmsId used for cloud disk encryption, effective only when DiskEncryption is true.</summary>
+        [JsiiProperty(name: "kmsId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? KmsId
         {
             get
             {
@@ -374,6 +419,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property diskEncryption: Whether to enable cloud disk encryption. Value:.</summary>
+            /// <remarks>
+            /// <list type="bullet">
+            /// <description>true: yes.</description>
+            /// <description>false: no.</description>
+            /// </list>
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "diskEncryption", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DiskEncryption
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property elasticIoResource: Elastic IO Unit Note the flexible mode cluster will use this parameter.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "elasticIoResource", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -382,10 +441,32 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property enableSsl: Whether to enable SSL link encryption function, value:.</summary>
+            /// <remarks>
+            /// <list type="bullet">
+            /// <description><strong>true</strong>: open.</description>
+            /// <description><strong>false</strong>: close.</description>
+            /// </list>
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "enableSsl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EnableSsl
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property executorCount: ExecutorCount.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "executorCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ExecutorCount
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property kmsId: The kmsId used for cloud disk encryption, effective only when DiskEncryption is true.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "kmsId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? KmsId
             {
                 get => GetInstanceProperty<object?>();
             }

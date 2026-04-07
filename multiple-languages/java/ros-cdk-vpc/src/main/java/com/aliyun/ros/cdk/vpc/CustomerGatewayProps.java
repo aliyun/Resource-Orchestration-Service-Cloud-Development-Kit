@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-customergateway
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:00.883Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.787Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.CustomerGatewayProps")
 @software.amazon.jsii.Jsii.Proxy(CustomerGatewayProps.Jsii$Proxy.class)
 public interface CustomerGatewayProps extends software.amazon.jsii.JsiiSerializable {
@@ -41,6 +41,18 @@ public interface CustomerGatewayProps extends software.amazon.jsii.JsiiSerializa
     }
 
     /**
+     * Property resourceGroupId: The ID of the resource group to which the user gateway belongs.
+     * <p>
+     * <ul>
+     * <li>You can call the ListResourceGroups interface to query the resource group ID.</li>
+     * <li>If you do not specify a resource group, the user gateway will belong to the default resource group after creation.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link CustomerGatewayProps}
      */
     static Builder builder() {
@@ -54,6 +66,7 @@ public interface CustomerGatewayProps extends software.amazon.jsii.JsiiSerializa
         java.lang.Object asn;
         java.lang.Object description;
         java.lang.Object name;
+        java.lang.Object resourceGroupId;
 
         /**
          * Sets the value of {@link CustomerGatewayProps#getIpAddress}
@@ -140,6 +153,34 @@ public interface CustomerGatewayProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link CustomerGatewayProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group to which the user gateway belongs.
+         *                        <ul>
+         *                        <li>You can call the ListResourceGroups interface to query the resource group ID.</li>
+         *                        <li>If you do not specify a resource group, the user gateway will belong to the default resource group after creation.</li>
+         *                        </ul>
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link CustomerGatewayProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group to which the user gateway belongs.
+         *                        <ul>
+         *                        <li>You can call the ListResourceGroups interface to query the resource group ID.</li>
+         *                        <li>If you do not specify a resource group, the user gateway will belong to the default resource group after creation.</li>
+         *                        </ul>
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link CustomerGatewayProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -159,6 +200,7 @@ public interface CustomerGatewayProps extends software.amazon.jsii.JsiiSerializa
         private final java.lang.Object asn;
         private final java.lang.Object description;
         private final java.lang.Object name;
+        private final java.lang.Object resourceGroupId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -170,6 +212,7 @@ public interface CustomerGatewayProps extends software.amazon.jsii.JsiiSerializa
             this.asn = software.amazon.jsii.Kernel.get(this, "asn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -181,6 +224,7 @@ public interface CustomerGatewayProps extends software.amazon.jsii.JsiiSerializa
             this.asn = builder.asn;
             this.description = builder.description;
             this.name = builder.name;
+            this.resourceGroupId = builder.resourceGroupId;
         }
 
         @Override
@@ -204,6 +248,11 @@ public interface CustomerGatewayProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -218,6 +267,9 @@ public interface CustomerGatewayProps extends software.amazon.jsii.JsiiSerializa
             }
             if (this.getName() != null) {
                 data.set("name", om.valueToTree(this.getName()));
+            }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -240,7 +292,8 @@ public interface CustomerGatewayProps extends software.amazon.jsii.JsiiSerializa
             if (!ipAddress.equals(that.ipAddress)) return false;
             if (this.asn != null ? !this.asn.equals(that.asn) : that.asn != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
-            return this.name != null ? this.name.equals(that.name) : that.name == null;
+            if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
+            return this.resourceGroupId != null ? this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId == null;
         }
 
         @Override
@@ -249,6 +302,7 @@ public interface CustomerGatewayProps extends software.amazon.jsii.JsiiSerializa
             result = 31 * result + (this.asn != null ? this.asn.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             return result;
         }
     }

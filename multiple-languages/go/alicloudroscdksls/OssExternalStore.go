@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SLS::OssExternalStore`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::SLS::OssExternalStore`, which is used to create an Object Storage Service (OSS) external store.
 type OssExternalStore interface {
 	alicloudroscdkcore.Resource
 	IOssExternalStore

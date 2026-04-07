@@ -35,7 +35,7 @@ export interface IZones extends ros.IResource {
     readonly attrZones: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ALB::Zones`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ALB::Zones`This data source provides information about the zones that are available for Application Load Balancer (ALB) in a region.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosZones`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-alb-zones
  */

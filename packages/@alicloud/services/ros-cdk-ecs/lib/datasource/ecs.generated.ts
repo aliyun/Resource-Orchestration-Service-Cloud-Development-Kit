@@ -64,7 +64,7 @@ function rosActivationPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Activation`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Activation`, which is used to query the information about an activation code.
  * @Note This class does not contain additional functions, so it is recommended to use the `Activation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-activation
  */
@@ -243,7 +243,7 @@ function rosActivationsPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Activations`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Activations`, which is used to query activation codes.
  * @Note This class does not contain additional functions, so it is recommended to use the `Activations` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-activations
  */
@@ -395,7 +395,7 @@ function rosAutoSnapshotPoliciesPropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::AutoSnapshotPolicies`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::AutoSnapshotPolicies`, which is used to query automatic snapshot policies.
  * @Note This class does not contain additional functions, so it is recommended to use the `AutoSnapshotPolicies` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-autosnapshotpolicies
  */
@@ -582,7 +582,7 @@ function rosAutoSnapshotPolicyPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::AutoSnapshotPolicy`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::AutoSnapshotPolicy`, which is used to query an automatic snapshot policy.
  * @Note This class does not contain additional functions, so it is recommended to use the `AutoSnapshotPolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-autosnapshotpolicy
  */
@@ -751,7 +751,7 @@ function rosCommandPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Command`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Command`, which is used to query an available command that is manually created.
  * @Note This class does not contain additional functions, so it is recommended to use the `Command` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-command
  */
@@ -959,7 +959,7 @@ function rosCommandsPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Commands`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Commands`, which is used to query all available commands that you created.
  * @Note This class does not contain additional functions, so it is recommended to use the `Commands` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-commands
  */
@@ -1108,7 +1108,7 @@ function rosDedicatedHostClusterPropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::DedicatedHostCluster`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::DedicatedHostCluster`, which is used to query the information about a dedicated host cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `DedicatedHostCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-dedicatedhostcluster
  */
@@ -1273,7 +1273,7 @@ function rosDedicatedHostClustersPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::DedicatedHostClusters`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::DedicatedHostClusters`, which is used to query the information about dedicated host clusters.
  * @Note This class does not contain additional functions, so it is recommended to use the `DedicatedHostClusters` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-dedicatedhostclusters
  */
@@ -1435,6 +1435,7 @@ function RosDedicatedHostsPropsValidator(properties: any): ros.ValidationResult 
           }));
     }
     errors.collect(ros.propertyValidator('dedicatedHostIds', ros.listValidator(ros.validateString))(properties.dedicatedHostIds));
+    errors.collect(ros.propertyValidator('dedicatedHostClusterId', ros.validateString)(properties.dedicatedHostClusterId));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -1443,7 +1444,6 @@ function RosDedicatedHostsPropsValidator(properties: any): ros.ValidationResult 
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosDedicatedHosts_TagsPropertyValidator))(properties.tags));
-    errors.collect(ros.propertyValidator('dedicatedHostClusterId', ros.validateString)(properties.dedicatedHostClusterId));
     if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
         errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
           data: properties.refreshOptions,
@@ -1481,7 +1481,7 @@ function rosDedicatedHostsPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::DedicatedHosts`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::DedicatedHosts`, which is used to query the information about dedicated hosts.
  * @Note This class does not contain additional functions, so it is recommended to use the `DedicatedHosts` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-dedicatedhosts
  */
@@ -1707,7 +1707,7 @@ function rosDeploymentSetPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::DeploymentSet`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::DeploymentSet`, which is used to query the information about a deployment set.
  * @Note This class does not contain additional functions, so it is recommended to use the `DeploymentSet` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-deploymentset
  */
@@ -1897,7 +1897,7 @@ function rosDeploymentSetsPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::DeploymentSets`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::DeploymentSets`, which is used to query the information about deployment sets.
  * @Note This class does not contain additional functions, so it is recommended to use the `DeploymentSets` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-deploymentsets
  */
@@ -2013,6 +2013,8 @@ export interface RosDiskProps {
 function RosDiskPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('diskId', ros.requiredValidator)(properties.diskId));
+    errors.collect(ros.propertyValidator('diskId', ros.validateString)(properties.diskId));
     if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
         errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
           data: properties.refreshOptions,
@@ -2020,8 +2022,6 @@ function RosDiskPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
-    errors.collect(ros.propertyValidator('diskId', ros.requiredValidator)(properties.diskId));
-    errors.collect(ros.propertyValidator('diskId', ros.validateString)(properties.diskId));
     return errors.wrap('supplied properties not correct for "RosDiskProps"');
 }
 
@@ -2045,7 +2045,7 @@ function rosDiskPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Disk`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Disk`, which is used to query the information about a cloud disk.
  * @Note This class does not contain additional functions, so it is recommended to use the `Disk` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-disk
  */
@@ -2406,8 +2406,8 @@ function RosDiskCategoriesPropsValidator(properties: any): ros.ValidationResult 
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
     errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
-    errors.collect(ros.propertyValidator('dataDiskCategory', ros.validateString)(properties.dataDiskCategory));
     errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
+    errors.collect(ros.propertyValidator('dataDiskCategory', ros.validateString)(properties.dataDiskCategory));
     errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateString)(properties.systemDiskCategory));
     if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
         errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
@@ -2443,7 +2443,7 @@ function rosDiskCategoriesPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::DiskCategories`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::DiskCategories`, which is used to query the information about disk categories.
  * @Note This class does not contain additional functions, so it is recommended to use the `DiskCategories` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-diskcategories
  */
@@ -2755,8 +2755,8 @@ function RosDisksPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('enableShared', ros.validateString)(properties.enableShared));
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
     errors.collect(ros.propertyValidator('kmsKeyId', ros.validateString)(properties.kmsKeyId));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
     errors.collect(ros.propertyValidator('encrypted', ros.validateBoolean)(properties.encrypted));
     errors.collect(ros.propertyValidator('deleteWithInstance', ros.validateBoolean)(properties.deleteWithInstance));
@@ -2852,7 +2852,7 @@ function rosDisksPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Disks`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Disks`, which is used to query the Elastic Block Storage (EBS) devices that you created, including cloud disks and local disks.
  * @Note This class does not contain additional functions, so it is recommended to use the `Disks` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-disks
  */
@@ -3274,7 +3274,7 @@ function rosHpcClusterPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::HpcCluster`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::HpcCluster`, which is used to query a High Performance Computing (HPC) cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `HpcCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-hpccluster
  */
@@ -3411,7 +3411,7 @@ function rosHpcClustersPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::HpcClusters`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::HpcClusters`, which is used to query available High Performance Computing (HPC) clusters.
  * @Note This class does not contain additional functions, so it is recommended to use the `HpcClusters` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-hpcclusters
  */
@@ -3628,7 +3628,6 @@ function RosImagesPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('actionType', ros.validateString)(properties.actionType));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.architecture && (typeof properties.architecture) !== 'object') {
         errors.collect(ros.propertyValidator('architecture', ros.validateAllowedValues)({
           data: properties.architecture,
@@ -3636,6 +3635,7 @@ function RosImagesPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('architecture', ros.validateString)(properties.architecture));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('imageFamily', ros.validateString)(properties.imageFamily));
     errors.collect(ros.propertyValidator('isSupportIoOptimized', ros.validateBoolean)(properties.isSupportIoOptimized));
     if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
@@ -3646,9 +3646,8 @@ function RosImagesPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     errors.collect(ros.propertyValidator('isSupportCloudinit', ros.validateBoolean)(properties.isSupportCloudinit));
-    errors.collect(ros.propertyValidator('imageName', ros.validateString)(properties.imageName));
     errors.collect(ros.propertyValidator('snapshotId', ros.validateString)(properties.snapshotId));
-    errors.collect(ros.propertyValidator('isPublic', ros.validateBoolean)(properties.isPublic));
+    errors.collect(ros.propertyValidator('imageName', ros.validateString)(properties.imageName));
     if(properties.osType && (typeof properties.osType) !== 'object') {
         errors.collect(ros.propertyValidator('osType', ros.validateAllowedValues)({
           data: properties.osType,
@@ -3656,6 +3655,7 @@ function RosImagesPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('osType', ros.validateString)(properties.osType));
+    errors.collect(ros.propertyValidator('isPublic', ros.validateBoolean)(properties.isPublic));
     errors.collect(ros.propertyValidator('imageId', ros.validateString)(properties.imageId));
     errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
@@ -3704,7 +3704,7 @@ function rosImagesPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Images`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Images`, which is used to query available images.
  * @Note This class does not contain additional functions, so it is recommended to use the `Images` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-images
  */
@@ -4009,7 +4009,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Instance`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Instance`, which is used to query the information about an Elastic Compute Service (ECS) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-instance
  */
@@ -4658,8 +4658,8 @@ function RosInstancesPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('privateIpAddresses', ros.listValidator(ros.validateString))(properties.privateIpAddresses));
-    errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
     errors.collect(ros.propertyValidator('instanceTypeFamily', ros.validateString)(properties.instanceTypeFamily));
+    errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
     errors.collect(ros.propertyValidator('instanceNetworkType', ros.validateString)(properties.instanceNetworkType));
     if(properties.filters && (Array.isArray(properties.filters) || (typeof properties.filters) === 'string')) {
         errors.collect(ros.propertyValidator('filters', ros.validateLength)({
@@ -4669,6 +4669,7 @@ function RosInstancesPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('filters', ros.listValidator(RosInstances_FiltersPropertyValidator))(properties.filters));
+    errors.collect(ros.propertyValidator('imageId', ros.validateString)(properties.imageId));
     if(properties.additionalAttributes && (Array.isArray(properties.additionalAttributes) || (typeof properties.additionalAttributes) === 'string')) {
         errors.collect(ros.propertyValidator('additionalAttributes', ros.validateLength)({
             data: properties.additionalAttributes.length,
@@ -4677,7 +4678,6 @@ function RosInstancesPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('additionalAttributes', ros.listValidator(ros.validateString))(properties.additionalAttributes));
-    errors.collect(ros.propertyValidator('imageId', ros.validateString)(properties.imageId));
     if(properties.publicIpAddresses && (Array.isArray(properties.publicIpAddresses) || (typeof properties.publicIpAddresses) === 'string')) {
         errors.collect(ros.propertyValidator('publicIpAddresses', ros.validateLength)({
             data: properties.publicIpAddresses.length,
@@ -4687,6 +4687,7 @@ function RosInstancesPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('publicIpAddresses', ros.listValidator(ros.validateString))(properties.publicIpAddresses));
     errors.collect(ros.propertyValidator('rdmaIpAddresses', ros.validateString)(properties.rdmaIpAddresses));
+    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
     if(properties.instanceIds && (Array.isArray(properties.instanceIds) || (typeof properties.instanceIds) === 'string')) {
         errors.collect(ros.propertyValidator('instanceIds', ros.validateLength)({
             data: properties.instanceIds.length,
@@ -4695,7 +4696,6 @@ function RosInstancesPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('instanceIds', ros.listValidator(ros.validateString))(properties.instanceIds));
-    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
     if(properties.ipv6Address && (Array.isArray(properties.ipv6Address) || (typeof properties.ipv6Address) === 'string')) {
         errors.collect(ros.propertyValidator('ipv6Address', ros.validateLength)({
             data: properties.ipv6Address.length,
@@ -4729,6 +4729,7 @@ function RosInstancesPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     if(properties.eipAddresses && (Array.isArray(properties.eipAddresses) || (typeof properties.eipAddresses) === 'string')) {
         errors.collect(ros.propertyValidator('eipAddresses', ros.validateLength)({
             data: properties.eipAddresses.length,
@@ -4737,7 +4738,6 @@ function RosInstancesPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('eipAddresses', ros.listValidator(ros.validateString))(properties.eipAddresses));
-    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     return errors.wrap('supplied properties not correct for "RosInstancesProps"');
 }
 
@@ -4787,7 +4787,7 @@ function rosInstancesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Instances`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Instances`, which is used to query the information about Elastic Compute Service (ECS) instances.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instances` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-instances
  */
@@ -5213,7 +5213,7 @@ function rosKeyPairPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::KeyPair`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::KeyPair`, which is used to query the information about a key pair.
  * @Note This class does not contain additional functions, so it is recommended to use the `KeyPair` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-keypair
  */
@@ -5391,7 +5391,7 @@ function rosKeyPairsPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::KeyPairs`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::KeyPairs`, which is used to query key pairs.
  * @Note This class does not contain additional functions, so it is recommended to use the `KeyPairs` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-keypairs
  */
@@ -5589,7 +5589,7 @@ function rosLaunchTemplatePropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::LaunchTemplate`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::LaunchTemplate`, which is used to query the information about a launch template.
  * @Note This class does not contain additional functions, so it is recommended to use the `LaunchTemplate` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-launchtemplate
  */
@@ -5946,6 +5946,7 @@ function RosLaunchTemplatesPropsValidator(properties: any): ros.ValidationResult
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('launchTemplateName', ros.validateString)(properties.launchTemplateName));
     errors.collect(ros.propertyValidator('launchTemplateId', ros.validateString)(properties.launchTemplateId));
+    errors.collect(ros.propertyValidator('templateResourceGroupId', ros.validateString)(properties.templateResourceGroupId));
     if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
         errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
           data: properties.refreshOptions,
@@ -5953,7 +5954,6 @@ function RosLaunchTemplatesPropsValidator(properties: any): ros.ValidationResult
         }));
     }
     errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
-    errors.collect(ros.propertyValidator('templateResourceGroupId', ros.validateString)(properties.templateResourceGroupId));
     return errors.wrap('supplied properties not correct for "RosLaunchTemplatesProps"');
 }
 
@@ -5979,7 +5979,7 @@ function rosLaunchTemplatesPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::LaunchTemplates`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::LaunchTemplates`, which is used to query launch templates.
  * @Note This class does not contain additional functions, so it is recommended to use the `LaunchTemplates` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-launchtemplates
  */
@@ -6114,6 +6114,13 @@ function RosManagedInstancesPropsValidator(properties: any): ros.ValidationResul
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    if(properties.osType && (typeof properties.osType) !== 'object') {
+        errors.collect(ros.propertyValidator('osType', ros.validateAllowedValues)({
+          data: properties.osType,
+          allowedValues: ["windows","linux"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('osType', ros.validateString)(properties.osType));
     if(properties.instanceId && (Array.isArray(properties.instanceId) || (typeof properties.instanceId) === 'string')) {
         errors.collect(ros.propertyValidator('instanceId', ros.validateLength)({
             data: properties.instanceId.length,
@@ -6122,13 +6129,6 @@ function RosManagedInstancesPropsValidator(properties: any): ros.ValidationResul
           }));
     }
     errors.collect(ros.propertyValidator('instanceId', ros.listValidator(ros.validateString))(properties.instanceId));
-    if(properties.osType && (typeof properties.osType) !== 'object') {
-        errors.collect(ros.propertyValidator('osType', ros.validateAllowedValues)({
-          data: properties.osType,
-          allowedValues: ["windows","linux"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('osType', ros.validateString)(properties.osType));
     errors.collect(ros.propertyValidator('activationId', ros.validateString)(properties.activationId));
     errors.collect(ros.propertyValidator('instanceIp', ros.validateString)(properties.instanceIp));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
@@ -6174,7 +6174,7 @@ function rosManagedInstancesPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::ManagedInstances`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::ManagedInstances`, which is used to query managed instances.
  * @Note This class does not contain additional functions, so it is recommended to use the `ManagedInstances` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-managedinstances
  */
@@ -6432,6 +6432,8 @@ function RosNetworkInterfacesPropsValidator(properties: any): ros.ValidationResu
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('status', ros.validateString)(properties.status));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('serviceManaged', ros.validateBoolean)(properties.serviceManaged));
     if(properties.privateIpAddresses && (Array.isArray(properties.privateIpAddresses) || (typeof properties.privateIpAddresses) === 'string')) {
         errors.collect(ros.propertyValidator('privateIpAddresses', ros.validateLength)({
             data: properties.privateIpAddresses.length,
@@ -6440,12 +6442,11 @@ function RosNetworkInterfacesPropsValidator(properties: any): ros.ValidationResu
           }));
     }
     errors.collect(ros.propertyValidator('privateIpAddresses', ros.listValidator(ros.validateString))(properties.privateIpAddresses));
-    errors.collect(ros.propertyValidator('serviceManaged', ros.validateBoolean)(properties.serviceManaged));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
-    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('networkInterfaceName', ros.validateString)(properties.networkInterfaceName));
+    errors.collect(ros.propertyValidator('primaryIpAddress', ros.validateString)(properties.primaryIpAddress));
     if(properties.networkInterfaceIds && (Array.isArray(properties.networkInterfaceIds) || (typeof properties.networkInterfaceIds) === 'string')) {
         errors.collect(ros.propertyValidator('networkInterfaceIds', ros.validateLength)({
             data: properties.networkInterfaceIds.length,
@@ -6454,7 +6455,6 @@ function RosNetworkInterfacesPropsValidator(properties: any): ros.ValidationResu
           }));
     }
     errors.collect(ros.propertyValidator('networkInterfaceIds', ros.listValidator(ros.validateString))(properties.networkInterfaceIds));
-    errors.collect(ros.propertyValidator('primaryIpAddress', ros.validateString)(properties.primaryIpAddress));
     if(properties.ipv6Addresses && (Array.isArray(properties.ipv6Addresses) || (typeof properties.ipv6Addresses) === 'string')) {
         errors.collect(ros.propertyValidator('ipv6Addresses', ros.validateLength)({
             data: properties.ipv6Addresses.length,
@@ -6516,7 +6516,7 @@ function rosNetworkInterfacesPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::NetworkInterfaces`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::NetworkInterfaces`, which is used to query the information about elastic network interfaces (ENIs).
  * @Note This class does not contain additional functions, so it is recommended to use the `NetworkInterfaces` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-networkinterfaces
  */
@@ -6875,6 +6875,7 @@ function RosRecommendInstanceTypesPropsValidator(properties: any): ros.Validatio
     }
     errors.collect(ros.propertyValidator('ioOptimized', ros.validateString)(properties.ioOptimized));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('memory', ros.validateNumber)(properties.memory));
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,
@@ -6882,7 +6883,6 @@ function RosRecommendInstanceTypesPropsValidator(properties: any): ros.Validatio
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
-    errors.collect(ros.propertyValidator('memory', ros.validateNumber)(properties.memory));
     if(properties.scene && (typeof properties.scene) !== 'object') {
         errors.collect(ros.propertyValidator('scene', ros.validateAllowedValues)({
           data: properties.scene,
@@ -6913,6 +6913,7 @@ function RosRecommendInstanceTypesPropsValidator(properties: any): ros.Validatio
         }));
     }
     errors.collect(ros.propertyValidator('instanceFamilyLevel', ros.validateString)(properties.instanceFamilyLevel));
+    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
     if(properties.instanceTypeFamilies && (Array.isArray(properties.instanceTypeFamilies) || (typeof properties.instanceTypeFamilies) === 'string')) {
         errors.collect(ros.propertyValidator('instanceTypeFamilies', ros.validateLength)({
             data: properties.instanceTypeFamilies.length,
@@ -6922,7 +6923,6 @@ function RosRecommendInstanceTypesPropsValidator(properties: any): ros.Validatio
     }
     errors.collect(ros.propertyValidator('instanceTypeFamilies', ros.listValidator(ros.validateString))(properties.instanceTypeFamilies));
     errors.collect(ros.propertyValidator('maxPrice', ros.validateNumber)(properties.maxPrice));
-    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
     if(properties.spotStrategy && (typeof properties.spotStrategy) !== 'object') {
         errors.collect(ros.propertyValidator('spotStrategy', ros.validateAllowedValues)({
           data: properties.spotStrategy,
@@ -6966,7 +6966,7 @@ function rosRecommendInstanceTypesPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::RecommendInstanceTypes`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::RecommendInstanceTypes`, which is used to query the recommended instance types of Elastic Compute Service (ECS) instances.
  * @Note This class does not contain additional functions, so it is recommended to use the `RecommendInstanceTypes` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-recommendinstancetypes
  */
@@ -7215,7 +7215,7 @@ function rosSecurityGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::SecurityGroup`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::SecurityGroup`, which is used to query the information about a security group.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecurityGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-securitygroup
  */
@@ -7416,8 +7416,8 @@ function RosSecurityGroupsPropsValidator(properties: any): ros.ValidationResult 
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
-    errors.collect(ros.propertyValidator('securityGroupName', ros.validateString)(properties.securityGroupName));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('securityGroupName', ros.validateString)(properties.securityGroupName));
     errors.collect(ros.propertyValidator('networkType', ros.validateString)(properties.networkType));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('securityGroupType', ros.validateString)(properties.securityGroupType));
@@ -7474,7 +7474,7 @@ function rosSecurityGroupsPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::SecurityGroups`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::SecurityGroups`, which is used to query the basic information about security groups.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecurityGroups` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-securitygroups
  */
@@ -7702,7 +7702,7 @@ function rosSnapshotPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Snapshot`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Snapshot`, which is used to query the information about a snapshot.
  * @Note This class does not contain additional functions, so it is recommended to use the `Snapshot` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-snapshot
  */
@@ -8103,7 +8103,7 @@ function rosSnapshotsPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Snapshots`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Snapshots`, which is used to query all snapshots of an Elastic Compute Service (ECS) instance or a disk.
  * @Note This class does not contain additional functions, so it is recommended to use the `Snapshots` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-snapshots
  */
@@ -8458,8 +8458,8 @@ function RosZonesPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('ioOptimized', ros.validateString)(properties.ioOptimized));
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
     errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
-    errors.collect(ros.propertyValidator('dataDiskCategory', ros.validateString)(properties.dataDiskCategory));
     errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
+    errors.collect(ros.propertyValidator('dataDiskCategory', ros.validateString)(properties.dataDiskCategory));
     errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateString)(properties.systemDiskCategory));
     if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
         errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
@@ -8496,7 +8496,7 @@ function rosZonesPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Zones`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Zones`, which is used to query zones.
  * @Note This class does not contain additional functions, so it is recommended to use the `Zones` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-zones
  */

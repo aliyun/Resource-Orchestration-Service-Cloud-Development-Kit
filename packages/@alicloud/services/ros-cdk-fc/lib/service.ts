@@ -118,7 +118,7 @@ export interface IService extends ros.IResource {
     readonly attrVpcId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::FC::Service`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::FC::Service`, which is used to create a service in Function Compute.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosService`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-service
  */
@@ -185,13 +185,13 @@ export class Service extends ros.Resource implements IService {
             internetAccess: props.internetAccess,
             description: props.description,
             deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
-            tracingConfig: props.tracingConfig,
-            vpcConfig: props.vpcConfig,
             serviceName: props.serviceName,
+            vpcConfig: props.vpcConfig,
+            tracingConfig: props.tracingConfig,
             ossMountConfig: props.ossMountConfig,
             vpcBindings: props.vpcBindings,
-            tags: props.tags,
             nasConfig: props.nasConfig,
+            tags: props.tags,
             logConfig: props.logConfig,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosService;

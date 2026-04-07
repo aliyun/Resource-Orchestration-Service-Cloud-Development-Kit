@@ -54,7 +54,7 @@ export interface IOrder extends ros.IResource {
     readonly props: OrderProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CAS::Order`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CAS::Order`, which is used to create a certificate order.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosOrder`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cas-order
  */
@@ -79,9 +79,9 @@ export class Order extends ros.Resource implements IOrder {
         const rosOrder = new RosOrder(this, id,  {
             domainCnt: props.domainCnt === undefined || props.domainCnt === null ? 1 : props.domainCnt,
             domainType: props.domainType === undefined || props.domainType === null ? 'one' : props.domainType,
-            service: props.service === undefined || props.service === null ? 'NoNeed' : props.service,
             period: props.period === undefined || props.period === null ? 1 : props.period,
             certType: props.certType,
+            service: props.service === undefined || props.service === null ? 'NoNeed' : props.service,
             certBrand: props.certBrand,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosOrder;

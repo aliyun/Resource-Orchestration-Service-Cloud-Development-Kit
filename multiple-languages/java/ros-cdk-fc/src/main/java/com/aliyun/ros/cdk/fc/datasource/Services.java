@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.fc.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::FC::Services</code>.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::FC::Services</code>, which is used to query services.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.864Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.903Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.datasource.Services")
 public class Services extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.fc.datasource.IServices {
 

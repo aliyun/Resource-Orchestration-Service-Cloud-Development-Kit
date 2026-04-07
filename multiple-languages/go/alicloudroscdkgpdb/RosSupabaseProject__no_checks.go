@@ -96,6 +96,14 @@ func (j *jsiiProxy_RosSupabaseProject) validateSetEnableResourcePropertyConstrai
 	return nil
 }
 
+func (j *jsiiProxy_RosSupabaseProject) validateSetPayTypeParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosSupabaseProject) validateSetPeriodParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosSupabaseProject) validateSetProjectNameParameters(val interface{}) error {
 	return nil
 }
@@ -109,6 +117,10 @@ func (j *jsiiProxy_RosSupabaseProject) validateSetSecurityIpListParameters(val i
 }
 
 func (j *jsiiProxy_RosSupabaseProject) validateSetStorageSizeParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosSupabaseProject) validateSetUsedTimeParameters(val interface{}) error {
 	return nil
 }
 

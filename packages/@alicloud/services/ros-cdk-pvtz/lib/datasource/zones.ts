@@ -21,6 +21,11 @@ export interface ZonesProps {
      * Property resourceGroupId: ResourceGroupId
      */
     readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * Property vpcId: The ID of the VPC that is associated with the zone.
+     */
+    readonly vpcId?: string | ros.IResolvable;
 }
 
 /**
@@ -40,7 +45,7 @@ export interface IZones extends ros.IResource {
     readonly attrZones: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::PVTZ::Zones`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::PVTZ::Zones`, which is used to query built-in authoritative zones.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosZones`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pvtz-zones
  */
@@ -74,6 +79,7 @@ export class Zones extends ros.Resource implements IZones {
 
         const rosZones = new RosZones(this, id,  {
             resourceGroupId: props.resourceGroupId,
+            vpcId: props.vpcId,
             refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosZones;

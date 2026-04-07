@@ -43,6 +43,11 @@ export interface RosDiskProps {
     readonly encrypted?: boolean | ros.IResolvable;
 
     /**
+     * @Property instanceBillingCycle: The billing cycle of the instance.
+     */
+    readonly instanceBillingCycle?: string | ros.IResolvable;
+
+    /**
      * @Property kmsKeyId: The ID of the Key Management Service (KMS) key that is used by the cloud disk.
      * Note If you set the Encrypted parameter to true, the default service key is used when the KMSKeyId parameter is empty.
      */
@@ -76,6 +81,7 @@ function RosDiskPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
     errors.collect(ros.propertyValidator('size', ros.requiredValidator)(properties.size));
     errors.collect(ros.propertyValidator('size', ros.validateString)(properties.size));
+    errors.collect(ros.propertyValidator('instanceBillingCycle', ros.validateString)(properties.instanceBillingCycle));
     errors.collect(ros.propertyValidator('diskName', ros.validateString)(properties.diskName));
     errors.collect(ros.propertyValidator('ensRegionId', ros.requiredValidator)(properties.ensRegionId));
     errors.collect(ros.propertyValidator('ensRegionId', ros.validateString)(properties.ensRegionId));
@@ -102,13 +108,14 @@ function rosDiskPropsToRosTemplate(properties: any, enableResourcePropertyConstr
       'Size': ros.stringToRosTemplate(properties.size),
       'DiskName': ros.stringToRosTemplate(properties.diskName),
       'Encrypted': ros.booleanToRosTemplate(properties.encrypted),
+      'InstanceBillingCycle': ros.stringToRosTemplate(properties.instanceBillingCycle),
       'KMSKeyId': ros.stringToRosTemplate(properties.kmsKeyId),
       'SnapshotId': ros.stringToRosTemplate(properties.snapshotId),
     };
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Disk`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Disk`, which is used to create a pay-as-you-go or subscription data disk.
  * @Note This class does not contain additional functions, so it is recommended to use the `Disk` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-disk
  */
@@ -161,6 +168,11 @@ export class RosDisk extends ros.RosResource {
     public encrypted: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property instanceBillingCycle: The billing cycle of the instance.
+     */
+    public instanceBillingCycle: string | ros.IResolvable | undefined;
+
+    /**
      * @Property kmsKeyId: The ID of the Key Management Service (KMS) key that is used by the cloud disk.
      * Note If you set the Encrypted parameter to true, the default service key is used when the KMSKeyId parameter is empty.
      */
@@ -190,6 +202,7 @@ export class RosDisk extends ros.RosResource {
         this.size = props.size;
         this.diskName = props.diskName;
         this.encrypted = props.encrypted;
+        this.instanceBillingCycle = props.instanceBillingCycle;
         this.kmsKeyId = props.kmsKeyId;
         this.snapshotId = props.snapshotId;
     }
@@ -203,6 +216,7 @@ export class RosDisk extends ros.RosResource {
             size: this.size,
             diskName: this.diskName,
             encrypted: this.encrypted,
+            instanceBillingCycle: this.instanceBillingCycle,
             kmsKeyId: this.kmsKeyId,
             snapshotId: this.snapshotId,
         };
@@ -277,7 +291,7 @@ function rosDiskInstanceAttachmentPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::DiskInstanceAttachment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::DiskInstanceAttachment`, which is used to attach a data disk to an Edge Node Service (ENS) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `DiskInstanceAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-diskinstanceattachment
  */
@@ -415,7 +429,7 @@ function rosImagePropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Image`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Image`, which is used to create an image from an instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Image` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-image
  */
@@ -677,16 +691,16 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateNumber)(properties.autoRenewPeriod));
     errors.collect(ros.propertyValidator('keyPairName', ros.validateString)(properties.keyPairName));
     errors.collect(ros.propertyValidator('privateIpAddress', ros.validateString)(properties.privateIpAddress));
-    errors.collect(ros.propertyValidator('userData', ros.validateString)(properties.userData));
     errors.collect(ros.propertyValidator('ipType', ros.validateString)(properties.ipType));
     errors.collect(ros.propertyValidator('systemDiskSize', ros.requiredValidator)(properties.systemDiskSize));
     errors.collect(ros.propertyValidator('systemDiskSize', ros.validateNumber)(properties.systemDiskSize));
+    errors.collect(ros.propertyValidator('userData', ros.validateString)(properties.userData));
     errors.collect(ros.propertyValidator('autoRenew', ros.validateString)(properties.autoRenew));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
-    errors.collect(ros.propertyValidator('period', ros.requiredValidator)(properties.period));
-    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     errors.collect(ros.propertyValidator('quantity', ros.requiredValidator)(properties.quantity));
     errors.collect(ros.propertyValidator('quantity', ros.validateNumber)(properties.quantity));
+    errors.collect(ros.propertyValidator('period', ros.requiredValidator)(properties.period));
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
     errors.collect(ros.propertyValidator('uniqueSuffix', ros.validateBoolean)(properties.uniqueSuffix));
@@ -695,10 +709,10 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('paymentType', ros.validateString)(properties.paymentType));
     errors.collect(ros.propertyValidator('dataDiskSize', ros.requiredValidator)(properties.dataDiskSize));
     errors.collect(ros.propertyValidator('dataDiskSize', ros.validateNumber)(properties.dataDiskSize));
-    errors.collect(ros.propertyValidator('instanceType', ros.requiredValidator)(properties.instanceType));
-    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
     errors.collect(ros.propertyValidator('ensRegionId', ros.requiredValidator)(properties.ensRegionId));
     errors.collect(ros.propertyValidator('ensRegionId', ros.validateString)(properties.ensRegionId));
+    errors.collect(ros.propertyValidator('instanceType', ros.requiredValidator)(properties.instanceType));
+    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
     errors.collect(ros.propertyValidator('hostName', ros.validateString)(properties.hostName));
     errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
     return errors.wrap('supplied properties not correct for "RosInstanceProps"');
@@ -742,7 +756,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Instance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Instance`, which is used to create Edge Node Service (ENS) instances.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-instance
  */
@@ -1101,7 +1115,7 @@ function rosInstanceSecurityGroupAttachmentPropsToRosTemplate(properties: any, e
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::InstanceSecurityGroupAttachment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::InstanceSecurityGroupAttachment`, which is used to add an Edge Node Service (ENS) instance to a security group.
  * @Note This class does not contain additional functions, so it is recommended to use the `InstanceSecurityGroupAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-instancesecuritygroupattachment
  */
@@ -1216,7 +1230,7 @@ function rosKeyPairPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::KeyPair`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::KeyPair`, which is used to import the public key of a Rivest-Shamir-Adleman (RSA)-encrypted key pair.
  * @Note This class does not contain additional functions, so it is recommended to use the `KeyPair` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-keypair
  */
@@ -1359,7 +1373,7 @@ function rosNetworkPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Network`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Network`, which is used to create a virtual private cloud (VPC).
  * @Note This class does not contain additional functions, so it is recommended to use the `Network` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-network
  */
@@ -1502,7 +1516,7 @@ function rosNetworkAclPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::NetworkAcl`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::NetworkAcl`, which is used to create a network access control list (ACL).
  * @Note This class does not contain additional functions, so it is recommended to use the `NetworkAcl` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-networkacl
  */
@@ -1593,16 +1607,16 @@ export namespace RosNetworkAcl {
          */
         readonly cidrBlock: string | ros.IResolvable;
         /**
+         * @Property networkAclEntryName: The name of the rule. The name must be 1 to 128 characters in length and cannot start with http:\/\/ or https:\/\/.
+         */
+        readonly networkAclEntryName?: string | ros.IResolvable;
+        /**
          * @Property protocol: The protocol. Valid values: icmp: ICMP
      * tcp: TCP
      * udp: UDP
      * all: all protocols
          */
         readonly protocol: string | ros.IResolvable;
-        /**
-         * @Property networkAclEntryName: The name of the rule. The name must be 1 to 128 characters in length and cannot start with http:\/\/ or https:\/\/.
-         */
-        readonly networkAclEntryName?: string | ros.IResolvable;
         /**
          * @Property direction: Specifies whether the ACL rule controls inbound or outbound access requests. Valid values: 
      * ingress
@@ -1643,6 +1657,7 @@ function RosNetworkAcl_AclEntriesPropertyValidator(properties: any): ros.Validat
     errors.collect(ros.propertyValidator('priority', ros.validateNumber)(properties.priority));
     errors.collect(ros.propertyValidator('cidrBlock', ros.requiredValidator)(properties.cidrBlock));
     errors.collect(ros.propertyValidator('cidrBlock', ros.validateString)(properties.cidrBlock));
+    errors.collect(ros.propertyValidator('networkAclEntryName', ros.validateString)(properties.networkAclEntryName));
     errors.collect(ros.propertyValidator('protocol', ros.requiredValidator)(properties.protocol));
     if(properties.protocol && (typeof properties.protocol) !== 'object') {
         errors.collect(ros.propertyValidator('protocol', ros.validateAllowedValues)({
@@ -1651,7 +1666,6 @@ function RosNetworkAcl_AclEntriesPropertyValidator(properties: any): ros.Validat
         }));
     }
     errors.collect(ros.propertyValidator('protocol', ros.validateString)(properties.protocol));
-    errors.collect(ros.propertyValidator('networkAclEntryName', ros.validateString)(properties.networkAclEntryName));
     errors.collect(ros.propertyValidator('direction', ros.requiredValidator)(properties.direction));
     if(properties.direction && (typeof properties.direction) !== 'object') {
         errors.collect(ros.propertyValidator('direction', ros.validateAllowedValues)({
@@ -1680,8 +1694,8 @@ function rosNetworkAclAclEntriesPropertyToRosTemplate(properties: any): any {
       'Description': ros.stringToRosTemplate(properties.description),
       'Priority': ros.numberToRosTemplate(properties.priority),
       'CidrBlock': ros.stringToRosTemplate(properties.cidrBlock),
-      'Protocol': ros.stringToRosTemplate(properties.protocol),
       'NetworkAclEntryName': ros.stringToRosTemplate(properties.networkAclEntryName),
+      'Protocol': ros.stringToRosTemplate(properties.protocol),
       'Direction': ros.stringToRosTemplate(properties.direction),
     };
 }
@@ -1747,7 +1761,7 @@ function rosNetworkAclAssociationPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::NetworkAclAssociation`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::NetworkAclAssociation`, which is used to associate a network access control list (ACL) with networks.
  * @Note This class does not contain additional functions, so it is recommended to use the `NetworkAclAssociation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-networkaclassociation
  */
@@ -1867,7 +1881,7 @@ function rosSecurityGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::SecurityGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::SecurityGroup`, which is used to create a security group.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecurityGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-securitygroup
  */
@@ -2130,7 +2144,7 @@ function rosSnapshotPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Snapshot`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Snapshot`, which is used to create a snapshot.
  * @Note This class does not contain additional functions, so it is recommended to use the `Snapshot` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-snapshot
  */
@@ -2252,10 +2266,10 @@ function RosVSwitchPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('cidrBlock', ros.requiredValidator)(properties.cidrBlock));
     errors.collect(ros.propertyValidator('cidrBlock', ros.validateString)(properties.cidrBlock));
     errors.collect(ros.propertyValidator('vSwitchName', ros.validateString)(properties.vSwitchName));
-    errors.collect(ros.propertyValidator('networkId', ros.requiredValidator)(properties.networkId));
-    errors.collect(ros.propertyValidator('networkId', ros.validateString)(properties.networkId));
     errors.collect(ros.propertyValidator('ensRegionId', ros.requiredValidator)(properties.ensRegionId));
     errors.collect(ros.propertyValidator('ensRegionId', ros.validateString)(properties.ensRegionId));
+    errors.collect(ros.propertyValidator('networkId', ros.requiredValidator)(properties.networkId));
+    errors.collect(ros.propertyValidator('networkId', ros.validateString)(properties.networkId));
     return errors.wrap('supplied properties not correct for "RosVSwitchProps"');
 }
 
@@ -2282,7 +2296,7 @@ function rosVSwitchPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::VSwitch`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::VSwitch`, which is used to create a vSwitch.
  * @Note This class does not contain additional functions, so it is recommended to use the `VSwitch` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-vswitch
  */

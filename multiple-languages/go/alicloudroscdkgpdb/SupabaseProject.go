@@ -9,12 +9,18 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::SupabaseProject`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::SupabaseProject`The , which resource creates a Supabase project.
 type SupabaseProject interface {
 	alicloudroscdkcore.Resource
 	ISupabaseProject
+	// Attribute ApiKeys: API keys.
+	AttrApiKeys() interface{}
+	// Attribute PrivateConnectUrl: Private connection URL.
+	AttrPrivateConnectUrl() interface{}
 	// Attribute ProjectId: Supabase instance ID.
 	AttrProjectId() interface{}
+	// Attribute PublicConnectUrl: Public connection URL.
+	AttrPublicConnectUrl() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
 	// The environment this resource belongs to.
@@ -110,11 +116,41 @@ type jsiiProxy_SupabaseProject struct {
 	jsiiProxy_ISupabaseProject
 }
 
+func (j *jsiiProxy_SupabaseProject) AttrApiKeys() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrApiKeys",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SupabaseProject) AttrPrivateConnectUrl() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrPrivateConnectUrl",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SupabaseProject) AttrProjectId() interface{} {
 	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrProjectId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SupabaseProject) AttrPublicConnectUrl() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrPublicConnectUrl",
 		&returns,
 	)
 	return returns

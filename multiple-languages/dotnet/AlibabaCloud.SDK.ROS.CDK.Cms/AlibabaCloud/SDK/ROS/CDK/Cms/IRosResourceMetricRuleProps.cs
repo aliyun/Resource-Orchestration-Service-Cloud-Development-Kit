@@ -23,15 +23,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: escalations: You must select at least one of the Critical, Warn, and Info alert levels.
-        /// </remarks>
-        [JsiiProperty(name: "escalations", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosResourceMetricRule.EscalationsProperty\"}]}}")]
-        object Escalations
-        {
-            get;
-        }
-
-        /// <remarks>
         /// <strong>Property</strong>: metricName: The name of the metric.
         /// For information about how to query the name of a metric, see Appendix 1: Metrics.
         /// Note: If you create a Prometheus alert rule for Hybrid Cloud Monitoring, you must set this parameter to the name of the namespace. For information about how to obtain the name of a namespace, see DescribeHybridMonitorNamespaceList.
@@ -110,6 +101,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         [JsiiProperty(name: "emailSubject", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? EmailSubject
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: escalations: You must select at least one of the Critical, Warn, and Info alert levels.
+        /// </remarks>
+        [JsiiProperty(name: "escalations", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosResourceMetricRule.EscalationsProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Escalations
         {
             get
             {
@@ -281,15 +285,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: escalations: You must select at least one of the Critical, Warn, and Info alert levels.
-            /// </remarks>
-            [JsiiProperty(name: "escalations", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosResourceMetricRule.EscalationsProperty\"}]}}")]
-            public object Escalations
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
-            /// <remarks>
             /// <strong>Property</strong>: metricName: The name of the metric.
             /// For information about how to query the name of a metric, see Appendix 1: Metrics.
             /// Note: If you create a Prometheus alert rule for Hybrid Cloud Monitoring, you must set this parameter to the name of the namespace. For information about how to obtain the name of a namespace, see DescribeHybridMonitorNamespaceList.
@@ -359,6 +354,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             [JsiiOptional]
             [JsiiProperty(name: "emailSubject", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? EmailSubject
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: escalations: You must select at least one of the Critical, Warn, and Info alert levels.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "escalations", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosResourceMetricRule.EscalationsProperty\"}]}}", isOptional: true)]
+            public object? Escalations
             {
                 get => GetInstanceProperty<object?>();
             }

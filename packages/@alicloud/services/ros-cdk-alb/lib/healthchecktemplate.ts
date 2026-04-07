@@ -47,6 +47,14 @@ export interface HealthCheckTemplateProps {
     readonly healthCheckHost?: string | ros.IResolvable;
 
     /**
+     * Property healthCheckHttpVersion: The HTTP version for health check protocol.
+     * Valid values: HTTP1.0 or HTTP1.1.
+     * Default value: HTTP 1.1.
+     * This parameter is available only when HealthCheckProtocol is set to HTTP or HTTPS.
+     */
+    readonly healthCheckHttpVersion?: string | ros.IResolvable;
+
+    /**
      * Property healthCheckInterval: The interval between two consecutive health checks. Unit: seconds.
      * Valid values: 1 to 50.
      * Default value: 2.
@@ -105,6 +113,11 @@ export interface HealthCheckTemplateProps {
     readonly healthyThreshold?: number | ros.IResolvable;
 
     /**
+     * Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * Property unhealthyThreshold: The number of times that a healthy backend server must consecutively fail health checks
      * before it is declared unhealthy. In this case, the health status is changed from success to fail.
      * Valid values: 2 to 10.
@@ -125,7 +138,7 @@ export interface IHealthCheckTemplate extends ros.IResource {
     readonly attrHealthCheckTemplateId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::HealthCheckTemplate`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::HealthCheckTemplate`The , which resource type creates a health check template.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosHealthCheckTemplate`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-healthchecktemplate
  */
@@ -154,16 +167,18 @@ export class HealthCheckTemplate extends ros.Resource implements IHealthCheckTem
 
         const rosHealthCheckTemplate = new RosHealthCheckTemplate(this, id,  {
             healthCheckInterval: props.healthCheckInterval,
-            healthCheckConnectPort: props.healthCheckConnectPort,
-            healthCheckCodes: props.healthCheckCodes,
+            resourceGroupId: props.resourceGroupId,
             unhealthyThreshold: props.unhealthyThreshold,
-            healthCheckMethod: props.healthCheckMethod,
-            healthCheckPath: props.healthCheckPath,
             healthCheckTemplateName: props.healthCheckTemplateName,
             healthCheckHost: props.healthCheckHost,
+            healthCheckPath: props.healthCheckPath,
+            healthCheckHttpVersion: props.healthCheckHttpVersion,
+            healthCheckTimeout: props.healthCheckTimeout,
+            healthCheckConnectPort: props.healthCheckConnectPort,
+            healthCheckCodes: props.healthCheckCodes,
+            healthCheckMethod: props.healthCheckMethod,
             healthyThreshold: props.healthyThreshold,
             healthCheckProtocol: props.healthCheckProtocol,
-            healthCheckTimeout: props.healthCheckTimeout,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosHealthCheckTemplate;
         this.attrHealthCheckTemplateId = rosHealthCheckTemplate.attrHealthCheckTemplateId;

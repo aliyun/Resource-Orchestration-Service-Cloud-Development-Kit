@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::IpamScope`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::IpamScope`, which is used to create an IP Address Manager (IPAM) scope.
 type IpamScope interface {
 	alicloudroscdkcore.Resource
 	IIpamScope

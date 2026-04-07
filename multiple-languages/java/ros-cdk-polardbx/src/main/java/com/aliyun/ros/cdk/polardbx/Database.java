@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.polardbx;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::PolarDBX::Database</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::PolarDBX::Database</code>, which is used to create a database.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:59.135Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:28.807Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardbx.$Module.class, fqn = "@alicloud/ros-cdk-polardbx.Database")
 public class Database extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.polardbx.IDatabase {
 

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::RAM::Role`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::RAM::Role`The , which resource creates a RAM role.
 type Role interface {
 	alicloudroscdkcore.Resource
 	IPrincipal

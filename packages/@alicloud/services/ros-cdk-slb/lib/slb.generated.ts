@@ -335,7 +335,7 @@ function rosAccessLogsAdditionPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::AccessLogsAddition`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::AccessLogsAddition`, which is used to configure an access log forwarding rule for a Classic Load Balancer (CLB) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `AccessLogsAddition` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-accesslogsaddition
  */
@@ -457,7 +457,7 @@ function rosBackendServerAttachmentPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::BackendServerAttachment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::BackendServerAttachment`The , which resource type adds backend servers to a Server Load Balancer (SLB) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `BackendServerAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-backendserverattachment
  */
@@ -659,7 +659,7 @@ function rosBackendServerToVServerGroupAdditionPropsToRosTemplate(properties: an
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::BackendServerToVServerGroupAddition`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::BackendServerToVServerGroupAddition`, which is used to add backend servers to an existing server group.
  * @Note This class does not contain additional functions, so it is recommended to use the `BackendServerToVServerGroupAddition` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-backendservertovservergroupaddition
  */
@@ -726,21 +726,21 @@ export namespace RosBackendServerToVServerGroupAddition {
          */
         readonly type?: string | ros.IResolvable;
         /**
-         * @Property description: The description of the backend server. The description must be 1 to 80 characters in length, and can contain letters, digits, hyphens (-), forward slashes (\/), periods (.), and underscores (_).
-         */
-        readonly description?: string | ros.IResolvable;
-        /**
          * @Property serverId: The ID of the backend server. You can specify the ID of an Elastic Compute Service (ECS) instance,an elastic network interface (ENI) or elastic container instance (ECI).
          */
         readonly serverId: string | ros.IResolvable;
         /**
-         * @Property serverIp: The IP address of an ECS instance, ENI or ECI
+         * @Property description: The description of the backend server. The description must be 1 to 80 characters in length, and can contain letters, digits, hyphens (-), forward slashes (\/), periods (.), and underscores (_).
          */
-        readonly serverIp?: string | ros.IResolvable;
+        readonly description?: string | ros.IResolvable;
         /**
          * @Property port: The port of backend server. From 1 to 65535.
          */
         readonly port: number | ros.IResolvable;
+        /**
+         * @Property serverIp: The IP address of an ECS instance, ENI or ECI
+         */
+        readonly serverIp?: string | ros.IResolvable;
         /**
          * @Property weight: The weight of backend server of load balancer. From 0 to 100, 0 means offline. Default is 100.
          */
@@ -758,7 +758,6 @@ function RosBackendServerToVServerGroupAddition_BackendServersPropertyValidator(
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
-    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('serverId', ros.requiredValidator)(properties.serverId));
     if(properties.serverId && (Array.isArray(properties.serverId) || (typeof properties.serverId) === 'string')) {
         errors.collect(ros.propertyValidator('serverId', ros.validateLength)({
@@ -768,9 +767,10 @@ function RosBackendServerToVServerGroupAddition_BackendServersPropertyValidator(
           }));
     }
     errors.collect(ros.propertyValidator('serverId', ros.validateString)(properties.serverId));
-    errors.collect(ros.propertyValidator('serverIp', ros.validateString)(properties.serverIp));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('port', ros.requiredValidator)(properties.port));
     errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
+    errors.collect(ros.propertyValidator('serverIp', ros.validateString)(properties.serverIp));
     if(properties.weight && (typeof properties.weight) !== 'object') {
         errors.collect(ros.propertyValidator('weight', ros.validateRange)({
             data: properties.weight,
@@ -795,11 +795,255 @@ function rosBackendServerToVServerGroupAdditionBackendServersPropertyToRosTempla
     RosBackendServerToVServerGroupAddition_BackendServersPropertyValidator(properties).assertSuccess();
     return {
       'Type': ros.stringToRosTemplate(properties.type),
-      'Description': ros.stringToRosTemplate(properties.description),
       'ServerId': ros.stringToRosTemplate(properties.serverId),
-      'ServerIp': ros.stringToRosTemplate(properties.serverIp),
+      'Description': ros.stringToRosTemplate(properties.description),
       'Port': ros.numberToRosTemplate(properties.port),
+      'ServerIp': ros.stringToRosTemplate(properties.serverIp),
       'Weight': ros.numberToRosTemplate(properties.weight),
+    };
+}
+
+/**
+ * Properties for defining a `RosCaCertificate`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-cacertificate
+ */
+export interface RosCaCertificateProps {
+
+    /**
+     * @Property caCertificate: The information about the CA certificate.
+     */
+    readonly caCertificate: string | ros.IResolvable;
+
+    /**
+     * @Property caCertificateName: The CA certificate name.
+     */
+    readonly caCertificateName?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags of ca certificate.
+     */
+    readonly tags?: RosCaCertificate.TagsProperty[];
+}
+
+/**
+ * Determine whether the given properties match those of a `RosCaCertificateProps`
+ *
+ * @param properties - the TypeScript properties of a `RosCaCertificateProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosCaCertificatePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('caCertificate', ros.requiredValidator)(properties.caCertificate));
+    errors.collect(ros.propertyValidator('caCertificate', ros.validateString)(properties.caCertificate));
+    errors.collect(ros.propertyValidator('caCertificateName', ros.validateString)(properties.caCertificateName));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosCaCertificate_TagsPropertyValidator))(properties.tags));
+    return errors.wrap('supplied properties not correct for "RosCaCertificateProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLB::CaCertificate` resource
+ *
+ * @param properties - the TypeScript properties of a `RosCaCertificateProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLB::CaCertificate` resource.
+ */
+// @ts-ignore TS6133
+function rosCaCertificatePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosCaCertificatePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'CaCertificate': ros.stringToRosTemplate(properties.caCertificate),
+      'CaCertificateName': ros.stringToRosTemplate(properties.caCertificateName),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.listMapper(rosCaCertificateTagsPropertyToRosTemplate)(properties.tags),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::CaCertificate`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `CaCertificate` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-cacertificate
+ */
+export class RosCaCertificate extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLB::CaCertificate";
+
+    /**
+     * @Attribute CaCertificateId: The ID of the CA certificate.
+     */
+    public readonly attrCaCertificateId: ros.IResolvable;
+
+    /**
+     * @Attribute CaCertificateName: The CA certificate name.
+     */
+    public readonly attrCaCertificateName: ros.IResolvable;
+
+    /**
+     * @Attribute CommonName: The domain name on the CA certificate.
+     */
+    public readonly attrCommonName: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: The time when the CA certificate was created.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute CreatedTimestamp: The create time stamp of the CA certificate.
+     */
+    public readonly attrCreatedTimestamp: ros.IResolvable;
+
+    /**
+     * @Attribute ExpiredTime: The time when the CA certificate expires.
+     */
+    public readonly attrExpiredTime: ros.IResolvable;
+
+    /**
+     * @Attribute ExpiredTimestamp: The expiration time stamp of the CA certificate.
+     */
+    public readonly attrExpiredTimestamp: ros.IResolvable;
+
+    /**
+     * @Attribute Fingerprint: The fingerprint of the server certificate.
+     */
+    public readonly attrFingerprint: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of the resource group.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: The tags of ca certificate.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property caCertificate: The information about the CA certificate.
+     */
+    public caCertificate: string | ros.IResolvable;
+
+    /**
+     * @Property caCertificateName: The CA certificate name.
+     */
+    public caCertificateName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags of ca certificate.
+     */
+    public tags: RosCaCertificate.TagsProperty[] | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosCaCertificateProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosCaCertificate.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCaCertificateId = this.getAtt('CaCertificateId');
+        this.attrCaCertificateName = this.getAtt('CaCertificateName');
+        this.attrCommonName = this.getAtt('CommonName');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrCreatedTimestamp = this.getAtt('CreatedTimestamp');
+        this.attrExpiredTime = this.getAtt('ExpiredTime');
+        this.attrExpiredTimestamp = this.getAtt('ExpiredTimestamp');
+        this.attrFingerprint = this.getAtt('Fingerprint');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrTags = this.getAtt('Tags');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.caCertificate = props.caCertificate;
+        this.caCertificateName = props.caCertificateName;
+        this.resourceGroupId = props.resourceGroupId;
+        this.tags = props.tags;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            caCertificate: this.caCertificate,
+            caCertificateName: this.caCertificateName,
+            resourceGroupId: this.resourceGroupId,
+            tags: this.tags,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosCaCertificatePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosCaCertificate {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosCaCertificate_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLB::CaCertificate.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLB::CaCertificate.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosCaCertificateTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosCaCertificate_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -872,8 +1116,8 @@ function RosCertificatePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('certificateType', ros.validateString)(properties.certificateType));
-    errors.collect(ros.propertyValidator('aliCloudCertificateName', ros.validateString)(properties.aliCloudCertificateName));
     errors.collect(ros.propertyValidator('privateKey', ros.validateString)(properties.privateKey));
+    errors.collect(ros.propertyValidator('aliCloudCertificateName', ros.validateString)(properties.aliCloudCertificateName));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('aliCloudCertificateRegionId', ros.validateString)(properties.aliCloudCertificateRegionId));
     errors.collect(ros.propertyValidator('certificateName', ros.validateString)(properties.certificateName));
@@ -917,7 +1161,7 @@ function rosCertificatePropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::Certificate`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::Certificate`, which is used to upload a certificate to a Server Load Balancer (SLB) instance. Server certificates and certificate authority (CA) certificates are supported.
  * @Note This class does not contain additional functions, so it is recommended to use the `Certificate` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-certificate
  */
@@ -1158,7 +1402,7 @@ function rosDomainExtensionPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::DomainExtension`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::DomainExtension`, which is used to create a domain extension for an SLB instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `DomainExtension` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-domainextension
  */
@@ -1507,14 +1751,6 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosListener_TagsPropertyValidator))(properties.tags));
-    if(properties.requestTimeout && (typeof properties.requestTimeout) !== 'object') {
-        errors.collect(ros.propertyValidator('requestTimeout', ros.validateRange)({
-            data: properties.requestTimeout,
-            min: 1,
-            max: 180,
-          }));
-    }
-    errors.collect(ros.propertyValidator('requestTimeout', ros.validateNumber)(properties.requestTimeout));
     errors.collect(ros.propertyValidator('listenerPort', ros.requiredValidator)(properties.listenerPort));
     if(properties.listenerPort && (typeof properties.listenerPort) !== 'object') {
         errors.collect(ros.propertyValidator('listenerPort', ros.validateRange)({
@@ -1524,6 +1760,14 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('listenerPort', ros.validateNumber)(properties.listenerPort));
+    if(properties.requestTimeout && (typeof properties.requestTimeout) !== 'object') {
+        errors.collect(ros.propertyValidator('requestTimeout', ros.validateRange)({
+            data: properties.requestTimeout,
+            min: 1,
+            max: 180,
+          }));
+    }
+    errors.collect(ros.propertyValidator('requestTimeout', ros.validateNumber)(properties.requestTimeout));
     errors.collect(ros.propertyValidator('tlsCipherPolicy', ros.validateString)(properties.tlsCipherPolicy));
     errors.collect(ros.propertyValidator('caCertificateId', ros.validateString)(properties.caCertificateId));
     errors.collect(ros.propertyValidator('aclId', ros.validateString)(properties.aclId));
@@ -1559,8 +1803,8 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('aclType', ros.validateString)(properties.aclType));
-    errors.collect(ros.propertyValidator('fullNatEnabled', ros.validateBoolean)(properties.fullNatEnabled));
     errors.collect(ros.propertyValidator('enableHttp2', ros.validateString)(properties.enableHttp2));
+    errors.collect(ros.propertyValidator('fullNatEnabled', ros.validateBoolean)(properties.fullNatEnabled));
     errors.collect(ros.propertyValidator('aclIds', ros.listValidator(ros.validateString))(properties.aclIds));
     return errors.wrap('supplied properties not correct for "RosListenerProps"');
 }
@@ -1613,7 +1857,7 @@ function rosListenerPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::Listener`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::Listener`You can use , which to create a Server Load Balancer (SLB) listener.
  * @Note This class does not contain additional functions, so it is recommended to use the `Listener` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-listener
  */
@@ -1954,13 +2198,13 @@ export namespace RosListener {
          */
         readonly healthCheckType?: string | ros.IResolvable;
         /**
-         * @Property req: The request string for UDP listening health check is limited to letters and numbers, and the maximum length is 64 characters.
-         */
-        readonly req?: string | ros.IResolvable;
-        /**
          * @Property interval: The approximate interval, unit in seconds, between health checks of an backend server.
          */
         readonly interval?: number | ros.IResolvable;
+        /**
+         * @Property req: The request string for UDP listening health check is limited to letters and numbers, and the maximum length is 64 characters.
+         */
+        readonly req?: string | ros.IResolvable;
     }
 }
 /**
@@ -2024,7 +2268,6 @@ function RosListener_HealthCheckPropertyValidator(properties: any): ros.Validati
         }));
     }
     errors.collect(ros.propertyValidator('healthCheckType', ros.validateString)(properties.healthCheckType));
-    errors.collect(ros.propertyValidator('req', ros.validateString)(properties.req));
     if(properties.interval && (typeof properties.interval) !== 'object') {
         errors.collect(ros.propertyValidator('interval', ros.validateRange)({
             data: properties.interval,
@@ -2033,6 +2276,7 @@ function RosListener_HealthCheckPropertyValidator(properties: any): ros.Validati
           }));
     }
     errors.collect(ros.propertyValidator('interval', ros.validateNumber)(properties.interval));
+    errors.collect(ros.propertyValidator('req', ros.validateString)(properties.req));
     return errors.wrap('supplied properties not correct for "HealthCheckProperty"');
 }
 
@@ -2059,8 +2303,8 @@ function rosListenerHealthCheckPropertyToRosTemplate(properties: any): any {
       'Domain': ros.stringToRosTemplate(properties.domain),
       'Exp': ros.stringToRosTemplate(properties.exp),
       'HealthCheckType': ros.stringToRosTemplate(properties.healthCheckType),
-      'Req': ros.stringToRosTemplate(properties.req),
       'Interval': ros.numberToRosTemplate(properties.interval),
+      'Req': ros.stringToRosTemplate(properties.req),
     };
 }
 
@@ -2523,6 +2767,7 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     if(properties.addressIpVersion && (typeof properties.addressIpVersion) !== 'object') {
         errors.collect(ros.propertyValidator('addressIpVersion', ros.validateAllowedValues)({
           data: properties.addressIpVersion,
@@ -2530,7 +2775,6 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('addressIpVersion', ros.validateString)(properties.addressIpVersion));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
     errors.collect(ros.propertyValidator('slaveZoneId', ros.validateString)(properties.slaveZoneId));
     if(properties.modificationProtectionStatus && (typeof properties.modificationProtectionStatus) !== 'object') {
@@ -2573,6 +2817,7 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('addressType', ros.validateString)(properties.addressType));
+    errors.collect(ros.propertyValidator('masterZoneId', ros.validateString)(properties.masterZoneId));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -2581,7 +2826,6 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosLoadBalancer_TagsPropertyValidator))(properties.tags));
-    errors.collect(ros.propertyValidator('masterZoneId', ros.validateString)(properties.masterZoneId));
     return errors.wrap('supplied properties not correct for "RosLoadBalancerProps"');
 }
 
@@ -2619,7 +2863,7 @@ function rosLoadBalancerPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::LoadBalancer`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::LoadBalancer`Use the , which resource type to create an SLB instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancer` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-loadbalancer
  */
@@ -2995,7 +3239,6 @@ function RosLoadBalancerClonePropsValidator(properties: any): ros.ValidationResu
     errors.collect(ros.propertyValidator('loadBalancerName', ros.validateString)(properties.loadBalancerName));
     errors.collect(ros.propertyValidator('sourceLoadBalancerId', ros.requiredValidator)(properties.sourceLoadBalancerId));
     errors.collect(ros.propertyValidator('sourceLoadBalancerId', ros.validateString)(properties.sourceLoadBalancerId));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.tagsPolicy && (typeof properties.tagsPolicy) !== 'object') {
         errors.collect(ros.propertyValidator('tagsPolicy', ros.validateAllowedValues)({
           data: properties.tagsPolicy,
@@ -3003,6 +3246,7 @@ function RosLoadBalancerClonePropsValidator(properties: any): ros.ValidationResu
         }));
     }
     errors.collect(ros.propertyValidator('tagsPolicy', ros.validateString)(properties.tagsPolicy));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,
@@ -3020,7 +3264,6 @@ function RosLoadBalancerClonePropsValidator(properties: any): ros.ValidationResu
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosLoadBalancerClone_TagsPropertyValidator))(properties.tags));
-    errors.collect(ros.propertyValidator('loadBalancerSpec', ros.validateString)(properties.loadBalancerSpec));
     if(properties.backendServersPolicy && (typeof properties.backendServersPolicy) !== 'object') {
         errors.collect(ros.propertyValidator('backendServersPolicy', ros.validateAllowedValues)({
           data: properties.backendServersPolicy,
@@ -3028,6 +3271,7 @@ function RosLoadBalancerClonePropsValidator(properties: any): ros.ValidationResu
         }));
     }
     errors.collect(ros.propertyValidator('backendServersPolicy', ros.validateString)(properties.backendServersPolicy));
+    errors.collect(ros.propertyValidator('loadBalancerSpec', ros.validateString)(properties.loadBalancerSpec));
     return errors.wrap('supplied properties not correct for "RosLoadBalancerCloneProps"');
 }
 
@@ -3059,7 +3303,7 @@ function rosLoadBalancerClonePropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::LoadBalancerClone`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::LoadBalancerClone`, which is used to clone a Server Load Balancer (SLB) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancerClone` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-loadbalancerclone
  */
@@ -3446,13 +3690,13 @@ export namespace RosMasterSlaveServerGroup {
          */
         readonly serverId: string | ros.IResolvable;
         /**
-         * @Property serverIp: The IP of ECS or ENI.
-         */
-        readonly serverIp?: string | ros.IResolvable;
-        /**
          * @Property port: The port used by backend server. From 1 to 65535
          */
         readonly port: number | ros.IResolvable;
+        /**
+         * @Property serverIp: The IP of ECS or ENI.
+         */
+        readonly serverIp?: string | ros.IResolvable;
         /**
          * @Property weight: The weight of backend server of load balancer. From 0 to 100, 0 means offline. Default is 100.
          */
@@ -3479,7 +3723,6 @@ function RosMasterSlaveServerGroup_MasterSlaveBackendServersPropertyValidator(pr
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
     errors.collect(ros.propertyValidator('serverId', ros.requiredValidator)(properties.serverId));
     errors.collect(ros.propertyValidator('serverId', ros.validateString)(properties.serverId));
-    errors.collect(ros.propertyValidator('serverIp', ros.validateString)(properties.serverIp));
     errors.collect(ros.propertyValidator('port', ros.requiredValidator)(properties.port));
     if(properties.port && (typeof properties.port) !== 'object') {
         errors.collect(ros.propertyValidator('port', ros.validateRange)({
@@ -3489,6 +3732,7 @@ function RosMasterSlaveServerGroup_MasterSlaveBackendServersPropertyValidator(pr
           }));
     }
     errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
+    errors.collect(ros.propertyValidator('serverIp', ros.validateString)(properties.serverIp));
     errors.collect(ros.propertyValidator('weight', ros.requiredValidator)(properties.weight));
     if(properties.weight && (typeof properties.weight) !== 'object') {
         errors.collect(ros.propertyValidator('weight', ros.validateRange)({
@@ -3516,8 +3760,8 @@ function rosMasterSlaveServerGroupMasterSlaveBackendServersPropertyToRosTemplate
       'ServerType': ros.stringToRosTemplate(properties.serverType),
       'Type': ros.stringToRosTemplate(properties.type),
       'ServerId': ros.stringToRosTemplate(properties.serverId),
-      'ServerIp': ros.stringToRosTemplate(properties.serverIp),
       'Port': ros.numberToRosTemplate(properties.port),
+      'ServerIp': ros.stringToRosTemplate(properties.serverIp),
       'Weight': ros.numberToRosTemplate(properties.weight),
     };
 }
@@ -3698,15 +3942,15 @@ export namespace RosRule {
          */
         readonly unhealthyThreshold?: number | ros.IResolvable;
         /**
-         * @Property healthCheckUri: The URI that is used for health checks.
-         */
-        readonly healthCheckUri?: string | ros.IResolvable;
-        /**
          * @Property scheduler: The scheduling algorithm. Valid values:
      * wrr: Backend servers with higher weights receive more requests than those with lower weights.
      * rr: Requests are distributed to backend servers in sequence.
          */
         readonly scheduler?: string | ros.IResolvable;
+        /**
+         * @Property healthCheckUri: The URI that is used for health checks.
+         */
+        readonly healthCheckUri?: string | ros.IResolvable;
         /**
          * @Property healthCheck: Specifies whether to enable the health check feature. Valid values:
      * on: yes
@@ -3770,7 +4014,6 @@ function RosRule_AdvancedSettingsPropertyValidator(properties: any): ros.Validat
     errors.collect(ros.propertyValidator('cookie', ros.validateString)(properties.cookie));
     errors.collect(ros.propertyValidator('healthCheckInterval', ros.validateNumber)(properties.healthCheckInterval));
     errors.collect(ros.propertyValidator('unhealthyThreshold', ros.validateNumber)(properties.unhealthyThreshold));
-    errors.collect(ros.propertyValidator('healthCheckUri', ros.validateString)(properties.healthCheckUri));
     if(properties.scheduler && (typeof properties.scheduler) !== 'object') {
         errors.collect(ros.propertyValidator('scheduler', ros.validateAllowedValues)({
           data: properties.scheduler,
@@ -3778,6 +4021,7 @@ function RosRule_AdvancedSettingsPropertyValidator(properties: any): ros.Validat
         }));
     }
     errors.collect(ros.propertyValidator('scheduler', ros.validateString)(properties.scheduler));
+    errors.collect(ros.propertyValidator('healthCheckUri', ros.validateString)(properties.healthCheckUri));
     if(properties.healthCheck && (typeof properties.healthCheck) !== 'object') {
         errors.collect(ros.propertyValidator('healthCheck', ros.validateAllowedValues)({
           data: properties.healthCheck,
@@ -3824,8 +4068,8 @@ function rosRuleAdvancedSettingsPropertyToRosTemplate(properties: any): any {
       'Cookie': ros.stringToRosTemplate(properties.cookie),
       'HealthCheckInterval': ros.numberToRosTemplate(properties.healthCheckInterval),
       'UnhealthyThreshold': ros.numberToRosTemplate(properties.unhealthyThreshold),
-      'HealthCheckURI': ros.stringToRosTemplate(properties.healthCheckUri),
       'Scheduler': ros.stringToRosTemplate(properties.scheduler),
+      'HealthCheckURI': ros.stringToRosTemplate(properties.healthCheckUri),
       'HealthCheck': ros.stringToRosTemplate(properties.healthCheck),
       'HealthCheckTimeout': ros.numberToRosTemplate(properties.healthCheckTimeout),
       'StickySession': ros.stringToRosTemplate(properties.stickySession),
@@ -3856,13 +4100,13 @@ export namespace RosRule {
          */
         readonly domain?: string | ros.IResolvable;
         /**
-         * @Property url: The URL.
-         */
-        readonly url?: string | ros.IResolvable;
-        /**
          * @Property ruleName: The name of the forwarding rule.
          */
         readonly ruleName: string | ros.IResolvable;
+        /**
+         * @Property url: The URL.
+         */
+        readonly url?: string | ros.IResolvable;
     }
 }
 /**
@@ -3879,9 +4123,9 @@ function RosRule_RuleListPropertyValidator(properties: any): ros.ValidationResul
     errors.collect(ros.propertyValidator('vServerGroupId', ros.validateString)(properties.vServerGroupId));
     errors.collect(ros.propertyValidator('advancedSettings', RosRule_AdvancedSettingsPropertyValidator)(properties.advancedSettings));
     errors.collect(ros.propertyValidator('domain', ros.validateString)(properties.domain));
-    errors.collect(ros.propertyValidator('url', ros.validateString)(properties.url));
     errors.collect(ros.propertyValidator('ruleName', ros.requiredValidator)(properties.ruleName));
     errors.collect(ros.propertyValidator('ruleName', ros.validateString)(properties.ruleName));
+    errors.collect(ros.propertyValidator('url', ros.validateString)(properties.url));
     return errors.wrap('supplied properties not correct for "RuleListProperty"');
 }
 
@@ -3900,8 +4144,8 @@ function rosRuleRuleListPropertyToRosTemplate(properties: any): any {
       'VServerGroupId': ros.stringToRosTemplate(properties.vServerGroupId),
       'AdvancedSettings': rosRuleAdvancedSettingsPropertyToRosTemplate(properties.advancedSettings),
       'Domain': ros.stringToRosTemplate(properties.domain),
-      'Url': ros.stringToRosTemplate(properties.url),
       'RuleName': ros.stringToRosTemplate(properties.ruleName),
+      'Url': ros.stringToRosTemplate(properties.url),
     };
 }
 
@@ -4207,7 +4451,7 @@ function rosVServerGroupPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::VServerGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::VServerGroup`, which is used to create a server group and attach backend servers to a Server Load Balancer (SLB) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `VServerGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-vservergroup
  */
@@ -4306,21 +4550,21 @@ export namespace RosVServerGroup {
          */
         readonly type?: string | ros.IResolvable;
         /**
-         * @Property description: The description of the backend server. The description must be 1 to 80 characters in length, and can contain letters, digits, hyphens (-), forward slashes (\/), periods (.), and underscores (_).
-         */
-        readonly description?: string | ros.IResolvable;
-        /**
          * @Property serverId: The ID of the backend server. You can specify the ID of an Elastic Compute Service (ECS) instance,an elastic network interface (ENI) or elastic container instance (ECI).
          */
         readonly serverId: string | ros.IResolvable;
         /**
-         * @Property serverIp: The IP address of an ECS instance, ENI or ECI
+         * @Property description: The description of the backend server. The description must be 1 to 80 characters in length, and can contain letters, digits, hyphens (-), forward slashes (\/), periods (.), and underscores (_).
          */
-        readonly serverIp?: string | ros.IResolvable;
+        readonly description?: string | ros.IResolvable;
         /**
          * @Property port: The port of backend server. From 1 to 65535.
          */
         readonly port: number | ros.IResolvable;
+        /**
+         * @Property serverIp: The IP address of an ECS instance, ENI or ECI
+         */
+        readonly serverIp?: string | ros.IResolvable;
         /**
          * @Property weight: The weight of backend server of load balancer. From 0 to 100, 0 means offline. Default is 100.
          */
@@ -4338,7 +4582,6 @@ function RosVServerGroup_BackendServersPropertyValidator(properties: any): ros.V
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
-    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('serverId', ros.requiredValidator)(properties.serverId));
     if(properties.serverId && (Array.isArray(properties.serverId) || (typeof properties.serverId) === 'string')) {
         errors.collect(ros.propertyValidator('serverId', ros.validateLength)({
@@ -4348,9 +4591,10 @@ function RosVServerGroup_BackendServersPropertyValidator(properties: any): ros.V
           }));
     }
     errors.collect(ros.propertyValidator('serverId', ros.validateString)(properties.serverId));
-    errors.collect(ros.propertyValidator('serverIp', ros.validateString)(properties.serverIp));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('port', ros.requiredValidator)(properties.port));
     errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
+    errors.collect(ros.propertyValidator('serverIp', ros.validateString)(properties.serverIp));
     if(properties.weight && (typeof properties.weight) !== 'object') {
         errors.collect(ros.propertyValidator('weight', ros.validateRange)({
             data: properties.weight,
@@ -4375,10 +4619,10 @@ function rosVServerGroupBackendServersPropertyToRosTemplate(properties: any): an
     RosVServerGroup_BackendServersPropertyValidator(properties).assertSuccess();
     return {
       'Type': ros.stringToRosTemplate(properties.type),
-      'Description': ros.stringToRosTemplate(properties.description),
       'ServerId': ros.stringToRosTemplate(properties.serverId),
-      'ServerIp': ros.stringToRosTemplate(properties.serverIp),
+      'Description': ros.stringToRosTemplate(properties.description),
       'Port': ros.numberToRosTemplate(properties.port),
+      'ServerIp': ros.stringToRosTemplate(properties.serverIp),
       'Weight': ros.numberToRosTemplate(properties.weight),
     };
 }

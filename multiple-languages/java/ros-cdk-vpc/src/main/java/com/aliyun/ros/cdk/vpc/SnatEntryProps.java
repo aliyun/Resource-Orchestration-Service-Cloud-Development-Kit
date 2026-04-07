@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-snatentry
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.207Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.184Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.SnatEntryProps")
 @software.amazon.jsii.Jsii.Proxy(SnatEntryProps.Jsii$Proxy.class)
 public interface SnatEntryProps extends software.amazon.jsii.JsiiSerializable {
@@ -31,6 +31,15 @@ public interface SnatEntryProps extends software.amazon.jsii.JsiiSerializable {
      * If EIP affinity is enabled and the SNAT entry is associated with multiple EIPs, a client uses the same EIP to access the Internet. Otherwise, the client uses an EIP selected from the associated EIPs to access the Internet.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEipAffinity() {
+        return null;
+    }
+
+    /**
+     * Property networkInterfaceId: The ID of the elastic network interface.
+     * <p>
+     * The IPv4 addresses of the elastic network interface will be used as the SNAT IP addresses.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNetworkInterfaceId() {
         return null;
     }
 
@@ -72,6 +81,7 @@ public interface SnatEntryProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object snatIp;
         java.lang.Object snatTableId;
         java.lang.Object eipAffinity;
+        java.lang.Object networkInterfaceId;
         java.lang.Object snatEntryName;
         java.lang.Object sourceCidr;
         java.lang.Object sourceVSwitchIds;
@@ -143,6 +153,28 @@ public interface SnatEntryProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder eipAffinity(com.aliyun.ros.cdk.core.IResolvable eipAffinity) {
             this.eipAffinity = eipAffinity;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SnatEntryProps#getNetworkInterfaceId}
+         * @param networkInterfaceId Property networkInterfaceId: The ID of the elastic network interface.
+         *                           The IPv4 addresses of the elastic network interface will be used as the SNAT IP addresses.
+         * @return {@code this}
+         */
+        public Builder networkInterfaceId(java.lang.String networkInterfaceId) {
+            this.networkInterfaceId = networkInterfaceId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SnatEntryProps#getNetworkInterfaceId}
+         * @param networkInterfaceId Property networkInterfaceId: The ID of the elastic network interface.
+         *                           The IPv4 addresses of the elastic network interface will be used as the SNAT IP addresses.
+         * @return {@code this}
+         */
+        public Builder networkInterfaceId(com.aliyun.ros.cdk.core.IResolvable networkInterfaceId) {
+            this.networkInterfaceId = networkInterfaceId;
             return this;
         }
 
@@ -229,6 +261,7 @@ public interface SnatEntryProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object snatIp;
         private final java.lang.Object snatTableId;
         private final java.lang.Object eipAffinity;
+        private final java.lang.Object networkInterfaceId;
         private final java.lang.Object snatEntryName;
         private final java.lang.Object sourceCidr;
         private final java.lang.Object sourceVSwitchIds;
@@ -242,6 +275,7 @@ public interface SnatEntryProps extends software.amazon.jsii.JsiiSerializable {
             this.snatIp = software.amazon.jsii.Kernel.get(this, "snatIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.snatTableId = software.amazon.jsii.Kernel.get(this, "snatTableId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.eipAffinity = software.amazon.jsii.Kernel.get(this, "eipAffinity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.networkInterfaceId = software.amazon.jsii.Kernel.get(this, "networkInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.snatEntryName = software.amazon.jsii.Kernel.get(this, "snatEntryName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sourceCidr = software.amazon.jsii.Kernel.get(this, "sourceCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sourceVSwitchIds = software.amazon.jsii.Kernel.get(this, "sourceVSwitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -255,6 +289,7 @@ public interface SnatEntryProps extends software.amazon.jsii.JsiiSerializable {
             this.snatIp = java.util.Objects.requireNonNull(builder.snatIp, "snatIp is required");
             this.snatTableId = java.util.Objects.requireNonNull(builder.snatTableId, "snatTableId is required");
             this.eipAffinity = builder.eipAffinity;
+            this.networkInterfaceId = builder.networkInterfaceId;
             this.snatEntryName = builder.snatEntryName;
             this.sourceCidr = builder.sourceCidr;
             this.sourceVSwitchIds = builder.sourceVSwitchIds;
@@ -273,6 +308,11 @@ public interface SnatEntryProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getEipAffinity() {
             return this.eipAffinity;
+        }
+
+        @Override
+        public final java.lang.Object getNetworkInterfaceId() {
+            return this.networkInterfaceId;
         }
 
         @Override
@@ -300,6 +340,9 @@ public interface SnatEntryProps extends software.amazon.jsii.JsiiSerializable {
             data.set("snatTableId", om.valueToTree(this.getSnatTableId()));
             if (this.getEipAffinity() != null) {
                 data.set("eipAffinity", om.valueToTree(this.getEipAffinity()));
+            }
+            if (this.getNetworkInterfaceId() != null) {
+                data.set("networkInterfaceId", om.valueToTree(this.getNetworkInterfaceId()));
             }
             if (this.getSnatEntryName() != null) {
                 data.set("snatEntryName", om.valueToTree(this.getSnatEntryName()));
@@ -331,6 +374,7 @@ public interface SnatEntryProps extends software.amazon.jsii.JsiiSerializable {
             if (!snatIp.equals(that.snatIp)) return false;
             if (!snatTableId.equals(that.snatTableId)) return false;
             if (this.eipAffinity != null ? !this.eipAffinity.equals(that.eipAffinity) : that.eipAffinity != null) return false;
+            if (this.networkInterfaceId != null ? !this.networkInterfaceId.equals(that.networkInterfaceId) : that.networkInterfaceId != null) return false;
             if (this.snatEntryName != null ? !this.snatEntryName.equals(that.snatEntryName) : that.snatEntryName != null) return false;
             if (this.sourceCidr != null ? !this.sourceCidr.equals(that.sourceCidr) : that.sourceCidr != null) return false;
             return this.sourceVSwitchIds != null ? this.sourceVSwitchIds.equals(that.sourceVSwitchIds) : that.sourceVSwitchIds == null;
@@ -341,6 +385,7 @@ public interface SnatEntryProps extends software.amazon.jsii.JsiiSerializable {
             int result = this.snatIp.hashCode();
             result = 31 * result + (this.snatTableId.hashCode());
             result = 31 * result + (this.eipAffinity != null ? this.eipAffinity.hashCode() : 0);
+            result = 31 * result + (this.networkInterfaceId != null ? this.networkInterfaceId.hashCode() : 0);
             result = 31 * result + (this.snatEntryName != null ? this.snatEntryName.hashCode() : 0);
             result = 31 * result + (this.sourceCidr != null ? this.sourceCidr.hashCode() : 0);
             result = 31 * result + (this.sourceVSwitchIds != null ? this.sourceVSwitchIds.hashCode() : 0);

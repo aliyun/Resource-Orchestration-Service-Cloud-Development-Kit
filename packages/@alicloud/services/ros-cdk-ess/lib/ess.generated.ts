@@ -101,6 +101,13 @@ function RosAlarmTaskPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('metricType', ros.validateString)(properties.metricType));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
+          allowedValues: [15,60,120,300,900],
+        }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     if(properties.evaluationCount && (typeof properties.evaluationCount) !== 'object') {
         errors.collect(ros.propertyValidator('evaluationCount', ros.validateRange)({
             data: properties.evaluationCount,
@@ -109,13 +116,6 @@ function RosAlarmTaskPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('evaluationCount', ros.validateNumber)(properties.evaluationCount));
-    if(properties.period && (typeof properties.period) !== 'object') {
-        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
-          data: properties.period,
-          allowedValues: [15,60,120,300,900],
-        }));
-    }
-    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     if(properties.dimensions && (Array.isArray(properties.dimensions) || (typeof properties.dimensions) === 'string')) {
         errors.collect(ros.propertyValidator('dimensions', ros.validateLength)({
             data: properties.dimensions.length,
@@ -180,7 +180,7 @@ function rosAlarmTaskPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::AlarmTask`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::AlarmTask`, which is used to create a metric-based alarm task.
  * @Note This class does not contain additional functions, so it is recommended to use the `AlarmTask` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-alarmtask
  */
@@ -414,7 +414,7 @@ function rosAlarmTaskEnablePropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::AlarmTaskEnable`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::AlarmTaskEnable`, which is used to start an alarm task. You can call this operation to enable alarm tasks when the task is stopped.
  * @Note This class does not contain additional functions, so it is recommended to use the `AlarmTaskEnable` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-alarmtaskenable
  */
@@ -743,8 +743,8 @@ function RosEciScalingConfigurationPropsValidator(properties: any): ros.Validati
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('scalingConfigurationName', ros.requiredValidator)(properties.scalingConfigurationName));
     errors.collect(ros.propertyValidator('scalingConfigurationName', ros.validateString)(properties.scalingConfigurationName));
-    errors.collect(ros.propertyValidator('ntpServers', ros.listValidator(ros.validateString))(properties.ntpServers));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('ntpServers', ros.listValidator(ros.validateString))(properties.ntpServers));
     errors.collect(ros.propertyValidator('memory', ros.validateNumber)(properties.memory));
     errors.collect(ros.propertyValidator('dnsConfigSearches', ros.listValidator(ros.validateString))(properties.dnsConfigSearches));
     errors.collect(ros.propertyValidator('dataCachePl', ros.validateString)(properties.dataCachePl));
@@ -762,9 +762,9 @@ function RosEciScalingConfigurationPropsValidator(properties: any): ros.Validati
     errors.collect(ros.propertyValidator('ingressBandwidth', ros.validateNumber)(properties.ingressBandwidth));
     errors.collect(ros.propertyValidator('imageSnapshotId', ros.validateString)(properties.imageSnapshotId));
     errors.collect(ros.propertyValidator('dataCacheProvisionedIops', ros.validateNumber)(properties.dataCacheProvisionedIops));
-    errors.collect(ros.propertyValidator('egressBandwidth', ros.validateNumber)(properties.egressBandwidth));
-    errors.collect(ros.propertyValidator('volumes', ros.listValidator(RosEciScalingConfiguration_VolumesPropertyValidator))(properties.volumes));
     errors.collect(ros.propertyValidator('ramRoleName', ros.validateString)(properties.ramRoleName));
+    errors.collect(ros.propertyValidator('volumes', ros.listValidator(RosEciScalingConfiguration_VolumesPropertyValidator))(properties.volumes));
+    errors.collect(ros.propertyValidator('egressBandwidth', ros.validateNumber)(properties.egressBandwidth));
     errors.collect(ros.propertyValidator('autoMatchImageCache', ros.validateBoolean)(properties.autoMatchImageCache));
     errors.collect(ros.propertyValidator('dataCacheBucket', ros.validateString)(properties.dataCacheBucket));
     errors.collect(ros.propertyValidator('ipv6AddressCount', ros.validateNumber)(properties.ipv6AddressCount));
@@ -778,6 +778,7 @@ function RosEciScalingConfigurationPropsValidator(properties: any): ros.Validati
           }));
     }
     errors.collect(ros.propertyValidator('instanceTypes', ros.listValidator(ros.validateString))(properties.instanceTypes));
+    errors.collect(ros.propertyValidator('hostName', ros.validateString)(properties.hostName));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -786,7 +787,6 @@ function RosEciScalingConfigurationPropsValidator(properties: any): ros.Validati
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosEciScalingConfiguration_TagsPropertyValidator))(properties.tags));
-    errors.collect(ros.propertyValidator('hostName', ros.validateString)(properties.hostName));
     if(properties.spotStrategy && (typeof properties.spotStrategy) !== 'object') {
         errors.collect(ros.propertyValidator('spotStrategy', ros.validateAllowedValues)({
           data: properties.spotStrategy,
@@ -795,8 +795,8 @@ function RosEciScalingConfigurationPropsValidator(properties: any): ros.Validati
     }
     errors.collect(ros.propertyValidator('spotStrategy', ros.validateString)(properties.spotStrategy));
     errors.collect(ros.propertyValidator('dnsConfigNameServers', ros.listValidator(ros.validateString))(properties.dnsConfigNameServers));
-    errors.collect(ros.propertyValidator('activeDeadlineSeconds', ros.validateNumber)(properties.activeDeadlineSeconds));
     errors.collect(ros.propertyValidator('acrRegistryInfos', ros.listValidator(RosEciScalingConfiguration_AcrRegistryInfosPropertyValidator))(properties.acrRegistryInfos));
+    errors.collect(ros.propertyValidator('activeDeadlineSeconds', ros.validateNumber)(properties.activeDeadlineSeconds));
     errors.collect(ros.propertyValidator('initContainers', ros.listValidator(RosEciScalingConfiguration_InitContainersPropertyValidator))(properties.initContainers));
     errors.collect(ros.propertyValidator('loadBalancerWeight', ros.validateNumber)(properties.loadBalancerWeight));
     errors.collect(ros.propertyValidator('cpuOptionsThreadsPerCore', ros.validateNumber)(properties.cpuOptionsThreadsPerCore));
@@ -901,7 +901,7 @@ function rosEciScalingConfigurationPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::EciScalingConfiguration`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::EciScalingConfiguration`, which is used to define a scaling configuration of the Elastic Container Instance type in Auto Scaling.
  * @Note This class does not contain additional functions, so it is recommended to use the `EciScalingConfiguration` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-eciscalingconfiguration
  */
@@ -1299,13 +1299,13 @@ export namespace RosEciScalingConfiguration {
      */
     export interface AcrRegistryInfosProperty {
         /**
-         * @Property domains: The domain names of the Container Registry Enterprise Edition instance. By default, all domain names of the instance are displayed. You can specify one or more domain names. Separate multiple domain names with commas (,).
-         */
-        readonly domains?: Array<string | ros.IResolvable> | ros.IResolvable;
-        /**
          * @Property instanceName: The name of the Container Registry Enterprise Edition instance.
          */
         readonly instanceName?: string | ros.IResolvable;
+        /**
+         * @Property domains: The domain names of the Container Registry Enterprise Edition instance. By default, all domain names of the instance are displayed. You can specify one or more domain names. Separate multiple domain names with commas (,).
+         */
+        readonly domains?: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property instanceId: The ID of the Container Registry Enterprise Edition instance.
          */
@@ -1326,8 +1326,8 @@ export namespace RosEciScalingConfiguration {
 function RosEciScalingConfiguration_AcrRegistryInfosPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('domains', ros.listValidator(ros.validateString))(properties.domains));
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    errors.collect(ros.propertyValidator('domains', ros.listValidator(ros.validateString))(properties.domains));
     errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
     errors.collect(ros.propertyValidator('regionId', ros.validateString)(properties.regionId));
@@ -1346,8 +1346,8 @@ function rosEciScalingConfigurationAcrRegistryInfosPropertyToRosTemplate(propert
     if (!ros.canInspect(properties)) { return properties; }
     RosEciScalingConfiguration_AcrRegistryInfosPropertyValidator(properties).assertSuccess();
     return {
-      'Domains': ros.listMapper(ros.stringToRosTemplate)(properties.domains),
       'InstanceName': ros.stringToRosTemplate(properties.instanceName),
+      'Domains': ros.listMapper(ros.stringToRosTemplate)(properties.domains),
       'InstanceId': ros.stringToRosTemplate(properties.instanceId),
       'RegionId': ros.stringToRosTemplate(properties.regionId),
     };
@@ -1456,15 +1456,15 @@ export namespace RosEciScalingConfiguration {
          */
         readonly stdinOnce?: boolean | ros.IResolvable;
         /**
-         * @Property name: The image name of the container.
-         */
-        readonly name: string | ros.IResolvable;
-        /**
          * @Property livenessProbeHttpGetScheme: The protocol type of the HTTP GET requests that you use to perform liveness probes. Valid values:
      * HTTP
      * HTTPS
          */
         readonly livenessProbeHttpGetScheme?: string | ros.IResolvable;
+        /**
+         * @Property name: The image name of the container.
+         */
+        readonly name: string | ros.IResolvable;
         /**
          * @Property livenessProbeTimeoutSeconds: The timeout period for a liveness probe. Unit: seconds. Default value: 1. Minimum value: 1.
          */
@@ -1487,14 +1487,6 @@ export namespace RosEciScalingConfiguration {
          */
         readonly livenessProbeInitialDelaySeconds?: number | ros.IResolvable;
         /**
-         * @Property securityContextRunAsUser: The ID of the user that runs the container.
-         */
-        readonly securityContextRunAsUser?: number | ros.IResolvable;
-        /**
-         * @Property livenessProbeTcpSocketPort: The port detected by TCP sockets when you use the TCP sockets to perform liveness probes.
-         */
-        readonly livenessProbeTcpSocketPort?: number | ros.IResolvable;
-        /**
          * @Property commands: The container startup commands. You can specify up to 20 commands. Each command can contain up to 256 characters.
          */
         readonly commands?: Array<string | ros.IResolvable> | ros.IResolvable;
@@ -1507,13 +1499,21 @@ export namespace RosEciScalingConfiguration {
          */
         readonly tty?: boolean | ros.IResolvable;
         /**
-         * @Property readinessProbePeriodSeconds: The interval at which readiness probes are performed. Unit: seconds. Default value: 10. Minimum value: 1.
+         * @Property securityContextRunAsUser: The ID of the user that runs the container.
          */
-        readonly readinessProbePeriodSeconds?: number | ros.IResolvable;
+        readonly securityContextRunAsUser?: number | ros.IResolvable;
+        /**
+         * @Property livenessProbeTcpSocketPort: The port detected by TCP sockets when you use the TCP sockets to perform liveness probes.
+         */
+        readonly livenessProbeTcpSocketPort?: number | ros.IResolvable;
         /**
          * @Property livenessProbePeriodSeconds: The interval at which liveness probes are performed. Unit: seconds. Default value: 10. Minimum value: 1.
          */
         readonly livenessProbePeriodSeconds?: number | ros.IResolvable;
+        /**
+         * @Property readinessProbePeriodSeconds: The interval at which readiness probes are performed. Unit: seconds. Default value: 10. Minimum value: 1.
+         */
+        readonly readinessProbePeriodSeconds?: number | ros.IResolvable;
         /**
          * @Property livenessProbeExecCommands: The command that you want to run by using the CLI in the container to perform liveness probes.
          */
@@ -1605,8 +1605,6 @@ function RosEciScalingConfiguration_ContainersPropertyValidator(properties: any)
     errors.collect(ros.propertyValidator('image', ros.validateString)(properties.image));
     errors.collect(ros.propertyValidator('gpu', ros.validateNumber)(properties.gpu));
     errors.collect(ros.propertyValidator('stdinOnce', ros.validateBoolean)(properties.stdinOnce));
-    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
-    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     if(properties.livenessProbeHttpGetScheme && (typeof properties.livenessProbeHttpGetScheme) !== 'object') {
         errors.collect(ros.propertyValidator('livenessProbeHttpGetScheme', ros.validateAllowedValues)({
           data: properties.livenessProbeHttpGetScheme,
@@ -1614,17 +1612,19 @@ function RosEciScalingConfiguration_ContainersPropertyValidator(properties: any)
         }));
     }
     errors.collect(ros.propertyValidator('livenessProbeHttpGetScheme', ros.validateString)(properties.livenessProbeHttpGetScheme));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     errors.collect(ros.propertyValidator('livenessProbeTimeoutSeconds', ros.validateNumber)(properties.livenessProbeTimeoutSeconds));
     errors.collect(ros.propertyValidator('livenessProbeFailureThreshold', ros.validateNumber)(properties.livenessProbeFailureThreshold));
     errors.collect(ros.propertyValidator('livenessProbeHttpGetPath', ros.validateString)(properties.livenessProbeHttpGetPath));
     errors.collect(ros.propertyValidator('volumeMounts', ros.listValidator(RosEciScalingConfiguration_VolumeMountsPropertyValidator))(properties.volumeMounts));
     errors.collect(ros.propertyValidator('livenessProbeInitialDelaySeconds', ros.validateNumber)(properties.livenessProbeInitialDelaySeconds));
-    errors.collect(ros.propertyValidator('securityContextRunAsUser', ros.validateNumber)(properties.securityContextRunAsUser));
-    errors.collect(ros.propertyValidator('livenessProbeTcpSocketPort', ros.validateNumber)(properties.livenessProbeTcpSocketPort));
     errors.collect(ros.propertyValidator('commands', ros.listValidator(ros.validateString))(properties.commands));
     errors.collect(ros.propertyValidator('tty', ros.validateBoolean)(properties.tty));
-    errors.collect(ros.propertyValidator('readinessProbePeriodSeconds', ros.validateNumber)(properties.readinessProbePeriodSeconds));
+    errors.collect(ros.propertyValidator('securityContextRunAsUser', ros.validateNumber)(properties.securityContextRunAsUser));
+    errors.collect(ros.propertyValidator('livenessProbeTcpSocketPort', ros.validateNumber)(properties.livenessProbeTcpSocketPort));
     errors.collect(ros.propertyValidator('livenessProbePeriodSeconds', ros.validateNumber)(properties.livenessProbePeriodSeconds));
+    errors.collect(ros.propertyValidator('readinessProbePeriodSeconds', ros.validateNumber)(properties.readinessProbePeriodSeconds));
     errors.collect(ros.propertyValidator('livenessProbeExecCommands', ros.listValidator(ros.validateString))(properties.livenessProbeExecCommands));
     errors.collect(ros.propertyValidator('livenessProbeSuccessThreshold', ros.validateNumber)(properties.livenessProbeSuccessThreshold));
     errors.collect(ros.propertyValidator('readinessProbeSuccessThreshold', ros.validateNumber)(properties.readinessProbeSuccessThreshold));
@@ -1670,19 +1670,19 @@ function rosEciScalingConfigurationContainersPropertyToRosTemplate(properties: a
       'Image': ros.stringToRosTemplate(properties.image),
       'Gpu': ros.numberToRosTemplate(properties.gpu),
       'StdinOnce': ros.booleanToRosTemplate(properties.stdinOnce),
-      'Name': ros.stringToRosTemplate(properties.name),
       'LivenessProbeHttpGetScheme': ros.stringToRosTemplate(properties.livenessProbeHttpGetScheme),
+      'Name': ros.stringToRosTemplate(properties.name),
       'LivenessProbeTimeoutSeconds': ros.numberToRosTemplate(properties.livenessProbeTimeoutSeconds),
       'LivenessProbeFailureThreshold': ros.numberToRosTemplate(properties.livenessProbeFailureThreshold),
       'LivenessProbeHttpGetPath': ros.stringToRosTemplate(properties.livenessProbeHttpGetPath),
       'VolumeMounts': ros.listMapper(rosEciScalingConfigurationVolumeMountsPropertyToRosTemplate)(properties.volumeMounts),
       'LivenessProbeInitialDelaySeconds': ros.numberToRosTemplate(properties.livenessProbeInitialDelaySeconds),
-      'SecurityContextRunAsUser': ros.numberToRosTemplate(properties.securityContextRunAsUser),
-      'LivenessProbeTcpSocketPort': ros.numberToRosTemplate(properties.livenessProbeTcpSocketPort),
       'Commands': ros.listMapper(ros.stringToRosTemplate)(properties.commands),
       'Tty': ros.booleanToRosTemplate(properties.tty),
-      'ReadinessProbePeriodSeconds': ros.numberToRosTemplate(properties.readinessProbePeriodSeconds),
+      'SecurityContextRunAsUser': ros.numberToRosTemplate(properties.securityContextRunAsUser),
+      'LivenessProbeTcpSocketPort': ros.numberToRosTemplate(properties.livenessProbeTcpSocketPort),
       'LivenessProbePeriodSeconds': ros.numberToRosTemplate(properties.livenessProbePeriodSeconds),
+      'ReadinessProbePeriodSeconds': ros.numberToRosTemplate(properties.readinessProbePeriodSeconds),
       'LivenessProbeExecCommands': ros.listMapper(ros.stringToRosTemplate)(properties.livenessProbeExecCommands),
       'LivenessProbeSuccessThreshold': ros.numberToRosTemplate(properties.livenessProbeSuccessThreshold),
       'ReadinessProbeSuccessThreshold': ros.numberToRosTemplate(properties.readinessProbeSuccessThreshold),
@@ -2065,13 +2065,13 @@ export namespace RosEciScalingConfiguration {
          */
         readonly imagePullPolicy?: string | ros.IResolvable;
         /**
-         * @Property commands: The container startup commands.
-         */
-        readonly commands?: Array<string | ros.IResolvable> | ros.IResolvable;
-        /**
          * @Property securityContextRunAsUser: The ID of the user that runs the init container.
          */
         readonly securityContextRunAsUser?: number | ros.IResolvable;
+        /**
+         * @Property commands: The container startup commands.
+         */
+        readonly commands?: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property initContainerVolumeMounts:
          */
@@ -2100,8 +2100,8 @@ function RosEciScalingConfiguration_InitContainersPropertyValidator(properties: 
     errors.collect(ros.propertyValidator('initContainerEnvironmentVars', ros.listValidator(RosEciScalingConfiguration_InitContainerEnvironmentVarsPropertyValidator))(properties.initContainerEnvironmentVars));
     errors.collect(ros.propertyValidator('workingDir', ros.validateString)(properties.workingDir));
     errors.collect(ros.propertyValidator('imagePullPolicy', ros.validateString)(properties.imagePullPolicy));
-    errors.collect(ros.propertyValidator('commands', ros.listValidator(ros.validateString))(properties.commands));
     errors.collect(ros.propertyValidator('securityContextRunAsUser', ros.validateNumber)(properties.securityContextRunAsUser));
+    errors.collect(ros.propertyValidator('commands', ros.listValidator(ros.validateString))(properties.commands));
     errors.collect(ros.propertyValidator('initContainerVolumeMounts', ros.listValidator(RosEciScalingConfiguration_InitContainerVolumeMountsPropertyValidator))(properties.initContainerVolumeMounts));
     return errors.wrap('supplied properties not correct for "InitContainersProperty"');
 }
@@ -2128,8 +2128,8 @@ function rosEciScalingConfigurationInitContainersPropertyToRosTemplate(propertie
       'InitContainerEnvironmentVars': ros.listMapper(rosEciScalingConfigurationInitContainerEnvironmentVarsPropertyToRosTemplate)(properties.initContainerEnvironmentVars),
       'WorkingDir': ros.stringToRosTemplate(properties.workingDir),
       'ImagePullPolicy': ros.stringToRosTemplate(properties.imagePullPolicy),
-      'Commands': ros.listMapper(ros.stringToRosTemplate)(properties.commands),
       'SecurityContextRunAsUser': ros.numberToRosTemplate(properties.securityContextRunAsUser),
+      'Commands': ros.listMapper(ros.stringToRosTemplate)(properties.commands),
       'InitContainerVolumeMounts': ros.listMapper(rosEciScalingConfigurationInitContainerVolumeMountsPropertyToRosTemplate)(properties.initContainerVolumeMounts),
     };
 }
@@ -2379,13 +2379,13 @@ export namespace RosEciScalingConfiguration {
          */
         readonly hostPathVolumeType?: string | ros.IResolvable;
         /**
-         * @Property emptyDirVolumeSizeLimit: The storage size of the EmptyDirVolume-typed volume. Unit: GiB or MiB.
-         */
-        readonly emptyDirVolumeSizeLimit?: string | ros.IResolvable;
-        /**
          * @Property flexVolumeFsType: The file system type of the FlexVolume-typed volume. The default value is determined by the script of the FlexVolume plug-in.
          */
         readonly flexVolumeFsType?: string | ros.IResolvable;
+        /**
+         * @Property emptyDirVolumeSizeLimit: The storage size of the EmptyDirVolume-typed volume. Unit: GiB or MiB.
+         */
+        readonly emptyDirVolumeSizeLimit?: string | ros.IResolvable;
         /**
          * @Property nfsVolumeServer: The address of the NFS server.
          */
@@ -2399,6 +2399,10 @@ export namespace RosEciScalingConfiguration {
          */
         readonly configFileVolumeConfigFileToPaths?: Array<RosEciScalingConfiguration.ConfigFileVolumeConfigFileToPathsProperty | ros.IResolvable> | ros.IResolvable;
         /**
+         * @Property hostPathVolumePath: The absolute path on the host.
+         */
+        readonly hostPathVolumePath?: string | ros.IResolvable;
+        /**
          * @Property name: The volume name.
          */
         readonly name: string | ros.IResolvable;
@@ -2409,10 +2413,6 @@ export namespace RosEciScalingConfiguration {
      * Default value: false.
          */
         readonly nfsVolumeReadOnly?: boolean | ros.IResolvable;
-        /**
-         * @Property hostPathVolumePath: The absolute path on the host.
-         */
-        readonly hostPathVolumePath?: string | ros.IResolvable;
         /**
          * @Property nfsVolumePath: The path to the NFSVolume-typed volume.
          */
@@ -2436,14 +2436,14 @@ export namespace RosEciScalingConfiguration {
          */
         readonly diskVolumeDiskId?: string | ros.IResolvable;
         /**
-         * @Property configFileVolumeDefaultMode: The default permissions on the ConfigFileVolume-typed volume.
-         */
-        readonly configFileVolumeDefaultMode?: number | ros.IResolvable;
-        /**
          * @Property flexVolumeOptions: The options of the FlexVolume-typed volume. Each option is a key-value pair contained in a JSON string.
      * When you use the FlexVolume plug-in to mount a disk, specify the options in the {"volumeId":"d-2zehdahrwoa7srg****","performanceLevel": "PL2"} format.
          */
         readonly flexVolumeOptions?: string | ros.IResolvable;
+        /**
+         * @Property configFileVolumeDefaultMode: The default permissions on the ConfigFileVolume-typed volume.
+         */
+        readonly configFileVolumeDefaultMode?: number | ros.IResolvable;
         /**
          * @Property emptyDirVolumeMedium: The storage medium of the EmptyDirVolume-typed volume. If you leave this parameter empty, the file system that backs the node is used as the storage medium. If you set this parameter to memory, the memory is used as the storage medium.
          */
@@ -2461,15 +2461,15 @@ function RosEciScalingConfiguration_VolumesPropertyValidator(properties: any): r
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('hostPathVolumeType', ros.validateString)(properties.hostPathVolumeType));
-    errors.collect(ros.propertyValidator('emptyDirVolumeSizeLimit', ros.validateString)(properties.emptyDirVolumeSizeLimit));
     errors.collect(ros.propertyValidator('flexVolumeFsType', ros.validateString)(properties.flexVolumeFsType));
+    errors.collect(ros.propertyValidator('emptyDirVolumeSizeLimit', ros.validateString)(properties.emptyDirVolumeSizeLimit));
     errors.collect(ros.propertyValidator('nfsVolumeServer', ros.validateString)(properties.nfsVolumeServer));
     errors.collect(ros.propertyValidator('diskVolumeDiskSize', ros.validateNumber)(properties.diskVolumeDiskSize));
     errors.collect(ros.propertyValidator('configFileVolumeConfigFileToPaths', ros.listValidator(RosEciScalingConfiguration_ConfigFileVolumeConfigFileToPathsPropertyValidator))(properties.configFileVolumeConfigFileToPaths));
+    errors.collect(ros.propertyValidator('hostPathVolumePath', ros.validateString)(properties.hostPathVolumePath));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     errors.collect(ros.propertyValidator('nfsVolumeReadOnly', ros.validateBoolean)(properties.nfsVolumeReadOnly));
-    errors.collect(ros.propertyValidator('hostPathVolumePath', ros.validateString)(properties.hostPathVolumePath));
     errors.collect(ros.propertyValidator('nfsVolumePath', ros.validateString)(properties.nfsVolumePath));
     errors.collect(ros.propertyValidator('type', ros.requiredValidator)(properties.type));
     if(properties.type && (typeof properties.type) !== 'object') {
@@ -2481,8 +2481,8 @@ function RosEciScalingConfiguration_VolumesPropertyValidator(properties: any): r
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
     errors.collect(ros.propertyValidator('flexVolumeDriver', ros.validateString)(properties.flexVolumeDriver));
     errors.collect(ros.propertyValidator('diskVolumeDiskId', ros.validateString)(properties.diskVolumeDiskId));
-    errors.collect(ros.propertyValidator('configFileVolumeDefaultMode', ros.validateNumber)(properties.configFileVolumeDefaultMode));
     errors.collect(ros.propertyValidator('flexVolumeOptions', ros.validateString)(properties.flexVolumeOptions));
+    errors.collect(ros.propertyValidator('configFileVolumeDefaultMode', ros.validateNumber)(properties.configFileVolumeDefaultMode));
     errors.collect(ros.propertyValidator('emptyDirVolumeMedium', ros.validateString)(properties.emptyDirVolumeMedium));
     return errors.wrap('supplied properties not correct for "VolumesProperty"');
 }
@@ -2500,20 +2500,20 @@ function rosEciScalingConfigurationVolumesPropertyToRosTemplate(properties: any)
     RosEciScalingConfiguration_VolumesPropertyValidator(properties).assertSuccess();
     return {
       'HostPathVolumeType': ros.stringToRosTemplate(properties.hostPathVolumeType),
-      'EmptyDirVolumeSizeLimit': ros.stringToRosTemplate(properties.emptyDirVolumeSizeLimit),
       'FlexVolumeFsType': ros.stringToRosTemplate(properties.flexVolumeFsType),
+      'EmptyDirVolumeSizeLimit': ros.stringToRosTemplate(properties.emptyDirVolumeSizeLimit),
       'NFSVolumeServer': ros.stringToRosTemplate(properties.nfsVolumeServer),
       'DiskVolumeDiskSize': ros.numberToRosTemplate(properties.diskVolumeDiskSize),
       'ConfigFileVolumeConfigFileToPaths': ros.listMapper(rosEciScalingConfigurationConfigFileVolumeConfigFileToPathsPropertyToRosTemplate)(properties.configFileVolumeConfigFileToPaths),
+      'HostPathVolumePath': ros.stringToRosTemplate(properties.hostPathVolumePath),
       'Name': ros.stringToRosTemplate(properties.name),
       'NFSVolumeReadOnly': ros.booleanToRosTemplate(properties.nfsVolumeReadOnly),
-      'HostPathVolumePath': ros.stringToRosTemplate(properties.hostPathVolumePath),
       'NFSVolumePath': ros.stringToRosTemplate(properties.nfsVolumePath),
       'Type': ros.stringToRosTemplate(properties.type),
       'FlexVolumeDriver': ros.stringToRosTemplate(properties.flexVolumeDriver),
       'DiskVolumeDiskId': ros.stringToRosTemplate(properties.diskVolumeDiskId),
-      'ConfigFileVolumeDefaultMode': ros.numberToRosTemplate(properties.configFileVolumeDefaultMode),
       'FlexVolumeOptions': ros.stringToRosTemplate(properties.flexVolumeOptions),
+      'ConfigFileVolumeDefaultMode': ros.numberToRosTemplate(properties.configFileVolumeDefaultMode),
       'EmptyDirVolumeMedium': ros.stringToRosTemplate(properties.emptyDirVolumeMedium),
     };
 }
@@ -2665,7 +2665,7 @@ function rosLifecycleHookPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::LifecycleHook`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::LifecycleHook`, which is used to create a lifecycle hook for a scaling group.
  * @Note This class does not contain additional functions, so it is recommended to use the `LifecycleHook` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-lifecyclehook
  */
@@ -2863,7 +2863,7 @@ function rosLoadBalancerAttachmentPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::LoadBalancerAttachment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::LoadBalancerAttachment`, which is used to add one or more Server Load Balancer (SLB) instances.
  * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancerAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-loadbalancerattachment
  */
@@ -3067,7 +3067,7 @@ export interface RosScalingConfigurationProps {
     readonly instanceDescription?: string | ros.IResolvable;
 
     /**
-     * @Property instanceId: Source ECS instance to copy configuration, if the properties is setting, Which will copy the InstanceType, ImageId, InternetChargeType, IoOptimized,UserData, KeyPairName, RamRoleName, InternetMaxBandwidthIn,InternetMaxBandwidthOut, and first security group id from source instance, you can also specify the relative properties to overwrite the properties copy from source instance id.
+     * @Property instanceId: Source ECS instance to copy configuration, if the properties is setting, Which will copy the InstanceType, ImageId, InternetChargeType, IoOptimized, UserData, KeyPairName, RamRoleName, InternetMaxBandwidthIn,InternetMaxBandwidthOut, and first security group id from source instance, you can also specify the relative properties to overwrite the properties copy from source instance id.
      */
     readonly instanceId?: string | ros.IResolvable;
 
@@ -3350,18 +3350,18 @@ export interface RosScalingConfigurationProps {
 function RosScalingConfigurationPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('dedicatedHostId', ros.validateString)(properties.dedicatedHostId));
     errors.collect(ros.propertyValidator('scalingConfigurationName', ros.validateString)(properties.scalingConfigurationName));
+    errors.collect(ros.propertyValidator('dedicatedHostId', ros.validateString)(properties.dedicatedHostId));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
-    errors.collect(ros.propertyValidator('imageOptionsLoginAsNonRoot', ros.validateBoolean)(properties.imageOptionsLoginAsNonRoot));
     errors.collect(ros.propertyValidator('systemDiskDescription', ros.validateString)(properties.systemDiskDescription));
+    errors.collect(ros.propertyValidator('imageOptionsLoginAsNonRoot', ros.validateBoolean)(properties.imageOptionsLoginAsNonRoot));
     errors.collect(ros.propertyValidator('memory', ros.validateNumber)(properties.memory));
     errors.collect(ros.propertyValidator('systemDiskProvisionedIops', ros.validateNumber)(properties.systemDiskProvisionedIops));
     errors.collect(ros.propertyValidator('cpu', ros.validateNumber)(properties.cpu));
     errors.collect(ros.propertyValidator('systemDiskEncryptAlgorithm', ros.validateString)(properties.systemDiskEncryptAlgorithm));
     errors.collect(ros.propertyValidator('ramRoleName', ros.validateString)(properties.ramRoleName));
-    errors.collect(ros.propertyValidator('privatePoolOptions', RosScalingConfiguration_PrivatePoolOptionsPropertyValidator)(properties.privatePoolOptions));
     errors.collect(ros.propertyValidator('systemDiskPerformanceLevel', ros.validateString)(properties.systemDiskPerformanceLevel));
+    errors.collect(ros.propertyValidator('privatePoolOptions', RosScalingConfiguration_PrivatePoolOptionsPropertyValidator)(properties.privatePoolOptions));
     errors.collect(ros.propertyValidator('imageId', ros.validateString)(properties.imageId));
     errors.collect(ros.propertyValidator('systemDiskDiskName', ros.validateString)(properties.systemDiskDiskName));
     errors.collect(ros.propertyValidator('hostName', ros.validateString)(properties.hostName));
@@ -3374,9 +3374,9 @@ function RosScalingConfigurationPropsValidator(properties: any): ros.ValidationR
     }
     errors.collect(ros.propertyValidator('loadBalancerWeight', ros.validateNumber)(properties.loadBalancerWeight));
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
-    errors.collect(ros.propertyValidator('systemDiskKmsKeyId', ros.validateString)(properties.systemDiskKmsKeyId));
     errors.collect(ros.propertyValidator('scalingGroupId', ros.requiredValidator)(properties.scalingGroupId));
     errors.collect(ros.propertyValidator('scalingGroupId', ros.validateString)(properties.scalingGroupId));
+    errors.collect(ros.propertyValidator('systemDiskKmsKeyId', ros.validateString)(properties.systemDiskKmsKeyId));
     errors.collect(ros.propertyValidator('imageFamily', ros.validateString)(properties.imageFamily));
     if(properties.securityGroupIds && (Array.isArray(properties.securityGroupIds) || (typeof properties.securityGroupIds) === 'string')) {
         errors.collect(ros.propertyValidator('securityGroupIds', ros.validateLength)({
@@ -3393,9 +3393,9 @@ function RosScalingConfigurationPropsValidator(properties: any): ros.ValidationR
         }));
     }
     errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
-    errors.collect(ros.propertyValidator('spotInterruptionBehavior', ros.validateString)(properties.spotInterruptionBehavior));
-    errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
     errors.collect(ros.propertyValidator('deploymentSetId', ros.validateString)(properties.deploymentSetId));
+    errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    errors.collect(ros.propertyValidator('spotInterruptionBehavior', ros.validateString)(properties.spotInterruptionBehavior));
     if(properties.internetMaxBandwidthOut && (typeof properties.internetMaxBandwidthOut) !== 'object') {
         errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateRange)({
             data: properties.internetMaxBandwidthOut,
@@ -3404,7 +3404,6 @@ function RosScalingConfigurationPropsValidator(properties: any): ros.ValidationR
           }));
     }
     errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateNumber)(properties.internetMaxBandwidthOut));
-    errors.collect(ros.propertyValidator('instancePatternInfos', ros.listValidator(RosScalingConfiguration_InstancePatternInfosPropertyValidator))(properties.instancePatternInfos));
     if(properties.instanceTypeOverrides && (Array.isArray(properties.instanceTypeOverrides) || (typeof properties.instanceTypeOverrides) === 'string')) {
         errors.collect(ros.propertyValidator('instanceTypeOverrides', ros.validateLength)({
             data: properties.instanceTypeOverrides.length,
@@ -3413,6 +3412,7 @@ function RosScalingConfigurationPropsValidator(properties: any): ros.ValidationR
           }));
     }
     errors.collect(ros.propertyValidator('instanceTypeOverrides', ros.listValidator(RosScalingConfiguration_InstanceTypeOverridesPropertyValidator))(properties.instanceTypeOverrides));
+    errors.collect(ros.propertyValidator('instancePatternInfos', ros.listValidator(RosScalingConfiguration_InstancePatternInfosPropertyValidator))(properties.instancePatternInfos));
     errors.collect(ros.propertyValidator('affinity', ros.validateString)(properties.affinity));
     errors.collect(ros.propertyValidator('securityEnhancementStrategy', ros.validateString)(properties.securityEnhancementStrategy));
     errors.collect(ros.propertyValidator('tenancy', ros.validateString)(properties.tenancy));
@@ -3601,7 +3601,7 @@ function rosScalingConfigurationPropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingConfiguration`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingConfiguration`, which is used to create a scaling configuration for a scaling group.
  * @Note This class does not contain additional functions, so it is recommended to use the `ScalingConfiguration` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalingconfiguration
  */
@@ -3709,7 +3709,7 @@ export class RosScalingConfiguration extends ros.RosResource {
     public instanceDescription: string | ros.IResolvable | undefined;
 
     /**
-     * @Property instanceId: Source ECS instance to copy configuration, if the properties is setting, Which will copy the InstanceType, ImageId, InternetChargeType, IoOptimized,UserData, KeyPairName, RamRoleName, InternetMaxBandwidthIn,InternetMaxBandwidthOut, and first security group id from source instance, you can also specify the relative properties to overwrite the properties copy from source instance id.
+     * @Property instanceId: Source ECS instance to copy configuration, if the properties is setting, Which will copy the InstanceType, ImageId, InternetChargeType, IoOptimized, UserData, KeyPairName, RamRoleName, InternetMaxBandwidthIn,InternetMaxBandwidthOut, and first security group id from source instance, you can also specify the relative properties to overwrite the properties copy from source instance id.
      */
     public instanceId: string | ros.IResolvable | undefined;
 
@@ -4162,25 +4162,6 @@ export namespace RosScalingConfiguration {
          */
         readonly categories?: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
-         * @Property encrypted: Whether the data disk is encrypted or not. Valid values:
-     * - **true**: Encrypted.
-     * - **false**: Not encrypted.
-     * Default value: false.
-         */
-        readonly encrypted?: string | ros.IResolvable;
-        /**
-         * @Property device: A device name where the volume will be attached in the system at \/dev\/xvd[id]. Range from '\/dev\/xvdb' to '\/dev\/xvdz'.
-         */
-        readonly device?: string | ros.IResolvable;
-        /**
-         * @Property performanceLevel: The PL of the data disk that is an ESSD. Valid values:
-     * - **PL0**: An ESSD can provide up to 10,000 random read\/write IOPS.
-     * - **PL1**: An ESSD can provide up to 50,000 random read\/write IOPS.
-     * - **PL2**: An ESSD can provide up to 100,000 random read\/write IOPS.
-     * - **PL3**: An ESSD can provide up to 1,000,000 random read\/write IOPS.
-         */
-        readonly performanceLevel?: string | ros.IResolvable;
-        /**
          * @Property size: The size of the data disk. Unit: GiB. Valid values:
      * - If you set Categories to cloud: 5 to 2000.
      * - If you set Categories to cloud_efficiency: 20 to 32768.
@@ -4190,10 +4171,29 @@ export namespace RosScalingConfiguration {
          */
         readonly size?: string | ros.IResolvable;
         /**
+         * @Property device: A device name where the volume will be attached in the system at \/dev\/xvd[id]. Range from '\/dev\/xvdb' to '\/dev\/xvdz'.
+         */
+        readonly device?: string | ros.IResolvable;
+        /**
+         * @Property encrypted: Whether the data disk is encrypted or not. Valid values:
+     * - **true**: Encrypted.
+     * - **false**: Not encrypted.
+     * Default value: false.
+         */
+        readonly encrypted?: string | ros.IResolvable;
+        /**
+         * @Property performanceLevel: The PL of the data disk that is an ESSD. Valid values:
+     * - **PL0**: An ESSD can provide up to 10,000 random read\/write IOPS.
+     * - **PL1**: An ESSD can provide up to 50,000 random read\/write IOPS.
+     * - **PL2**: An ESSD can provide up to 100,000 random read\/write IOPS.
+     * - **PL3**: An ESSD can provide up to 1,000,000 random read\/write IOPS.
+         */
+        readonly performanceLevel?: string | ros.IResolvable;
+        /**
          * @Property deleteWithInstance: Specifies whether to release the data disk when the instance to which the data disk is attached is released. Valid values:
      * - **true**
      * - **false**
-     * This parameter is available only for independent disks whose value of **Category** is set to **cloud**, **cloud_efficiency**, **cloud_ssd**, or **cloud_essd**. If you specify this parameter for other disks, an error is reported.
+     * This parameter is available only for independent disks whose value of **Category** is set to **cloud**, **cloud_efficiency**, **cloud_ssd** or **cloud_essd**. If you specify this parameter for other disks, an error is reported.
      * Default value: **true**
          */
         readonly deleteWithInstance?: boolean | ros.IResolvable;
@@ -4202,14 +4202,14 @@ export namespace RosScalingConfiguration {
          */
         readonly autoSnapshotPolicyId?: string | ros.IResolvable;
         /**
+         * @Property diskName: Display name of the disk, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
+         */
+        readonly diskName?: string | ros.IResolvable;
+        /**
          * @Property provisionedIops: The IOPS metric that is preconfigured for the data disk.
      * **Note**: IOPS measures the number of read and write operations that an EBS device can process per second.
          */
         readonly provisionedIops?: number | ros.IResolvable;
-        /**
-         * @Property diskName: Display name of the disk, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
-         */
-        readonly diskName?: string | ros.IResolvable;
         /**
          * @Property snapshotId: ID of the snapshot to create the volume.
          */
@@ -4238,6 +4238,8 @@ function RosScalingConfiguration_DiskMappingsPropertyValidator(properties: any):
           }));
     }
     errors.collect(ros.propertyValidator('categories', ros.listValidator(ros.validateString))(properties.categories));
+    errors.collect(ros.propertyValidator('size', ros.validateString)(properties.size));
+    errors.collect(ros.propertyValidator('device', ros.validateString)(properties.device));
     if(properties.encrypted && (typeof properties.encrypted) !== 'object') {
         errors.collect(ros.propertyValidator('encrypted', ros.validateAllowedValues)({
           data: properties.encrypted,
@@ -4245,13 +4247,11 @@ function RosScalingConfiguration_DiskMappingsPropertyValidator(properties: any):
         }));
     }
     errors.collect(ros.propertyValidator('encrypted', ros.validateString)(properties.encrypted));
-    errors.collect(ros.propertyValidator('device', ros.validateString)(properties.device));
     errors.collect(ros.propertyValidator('performanceLevel', ros.validateString)(properties.performanceLevel));
-    errors.collect(ros.propertyValidator('size', ros.validateString)(properties.size));
     errors.collect(ros.propertyValidator('deleteWithInstance', ros.validateBoolean)(properties.deleteWithInstance));
     errors.collect(ros.propertyValidator('autoSnapshotPolicyId', ros.validateString)(properties.autoSnapshotPolicyId));
-    errors.collect(ros.propertyValidator('provisionedIops', ros.validateNumber)(properties.provisionedIops));
     errors.collect(ros.propertyValidator('diskName', ros.validateString)(properties.diskName));
+    errors.collect(ros.propertyValidator('provisionedIops', ros.validateNumber)(properties.provisionedIops));
     errors.collect(ros.propertyValidator('snapshotId', ros.validateString)(properties.snapshotId));
     return errors.wrap('supplied properties not correct for "DiskMappingsProperty"');
 }
@@ -4273,14 +4273,14 @@ function rosScalingConfigurationDiskMappingsPropertyToRosTemplate(properties: an
       'Description': ros.stringToRosTemplate(properties.description),
       'KMSKeyId': ros.stringToRosTemplate(properties.kmsKeyId),
       'Categories': ros.listMapper(ros.stringToRosTemplate)(properties.categories),
-      'Encrypted': ros.stringToRosTemplate(properties.encrypted),
-      'Device': ros.stringToRosTemplate(properties.device),
-      'PerformanceLevel': ros.stringToRosTemplate(properties.performanceLevel),
       'Size': ros.stringToRosTemplate(properties.size),
+      'Device': ros.stringToRosTemplate(properties.device),
+      'Encrypted': ros.stringToRosTemplate(properties.encrypted),
+      'PerformanceLevel': ros.stringToRosTemplate(properties.performanceLevel),
       'DeleteWithInstance': ros.booleanToRosTemplate(properties.deleteWithInstance),
       'AutoSnapshotPolicyId': ros.stringToRosTemplate(properties.autoSnapshotPolicyId),
-      'ProvisionedIops': ros.numberToRosTemplate(properties.provisionedIops),
       'DiskName': ros.stringToRosTemplate(properties.diskName),
+      'ProvisionedIops': ros.numberToRosTemplate(properties.provisionedIops),
       'SnapshotId': ros.stringToRosTemplate(properties.snapshotId),
     };
 }
@@ -4315,6 +4315,12 @@ export namespace RosScalingConfiguration {
          */
         readonly maxPrice?: number | ros.IResolvable;
         /**
+         * @Property excludedInstanceTypes: The instance types that you want to exclude. You can use wildcard characters, such as asterisks (*), to exclude an instance type or an instance family. Examples:
+     * - ecs.c6.large: excludes the ecs.c6.large instance type.
+     * - ecs.c6.*: excludes the c6 instance family.
+         */
+        readonly excludedInstanceTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
          * @Property burstablePerformance: Specifies whether to include burstable instance types. Valid values:
      * - **Exclude**: does not include burstable instance types.
      * - **Include**: includes burstable instance types.
@@ -4322,12 +4328,6 @@ export namespace RosScalingConfiguration {
      * Default value: **Include**
          */
         readonly burstablePerformance?: string | ros.IResolvable;
-        /**
-         * @Property excludedInstanceTypes: The instance types that you want to exclude. You can use wildcard characters, such as asterisks (*), to exclude an instance type or an instance family. Examples:
-     * - ecs.c6.large: excludes the ecs.c6.large instance type.
-     * - ecs.c6.*: excludes the c6 instance family.
-         */
-        readonly excludedInstanceTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property architectures: The architectures of the instance types. Valid values:
      * - **X86**: x86 architecture.
@@ -4354,7 +4354,6 @@ function RosScalingConfiguration_InstancePatternInfosPropertyValidator(propertie
     errors.collect(ros.propertyValidator('memory', ros.validateNumber)(properties.memory));
     errors.collect(ros.propertyValidator('instanceFamilyLevel', ros.validateString)(properties.instanceFamilyLevel));
     errors.collect(ros.propertyValidator('maxPrice', ros.validateNumber)(properties.maxPrice));
-    errors.collect(ros.propertyValidator('burstablePerformance', ros.validateString)(properties.burstablePerformance));
     if(properties.excludedInstanceTypes && (Array.isArray(properties.excludedInstanceTypes) || (typeof properties.excludedInstanceTypes) === 'string')) {
         errors.collect(ros.propertyValidator('excludedInstanceTypes', ros.validateLength)({
             data: properties.excludedInstanceTypes.length,
@@ -4363,6 +4362,7 @@ function RosScalingConfiguration_InstancePatternInfosPropertyValidator(propertie
           }));
     }
     errors.collect(ros.propertyValidator('excludedInstanceTypes', ros.listValidator(ros.validateString))(properties.excludedInstanceTypes));
+    errors.collect(ros.propertyValidator('burstablePerformance', ros.validateString)(properties.burstablePerformance));
     if(properties.architectures && (Array.isArray(properties.architectures) || (typeof properties.architectures) === 'string')) {
         errors.collect(ros.propertyValidator('architectures', ros.validateLength)({
             data: properties.architectures.length,
@@ -4390,8 +4390,8 @@ function rosScalingConfigurationInstancePatternInfosPropertyToRosTemplate(proper
       'Memory': ros.numberToRosTemplate(properties.memory),
       'InstanceFamilyLevel': ros.stringToRosTemplate(properties.instanceFamilyLevel),
       'MaxPrice': ros.numberToRosTemplate(properties.maxPrice),
-      'BurstablePerformance': ros.stringToRosTemplate(properties.burstablePerformance),
       'ExcludedInstanceTypes': ros.listMapper(ros.stringToRosTemplate)(properties.excludedInstanceTypes),
+      'BurstablePerformance': ros.stringToRosTemplate(properties.burstablePerformance),
       'Architectures': ros.listMapper(ros.stringToRosTemplate)(properties.architectures),
     };
 }
@@ -4924,6 +4924,7 @@ function RosScalingGroupPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('loadBalancerIds', ros.listValidator(ros.validateString))(properties.loadBalancerIds));
+    errors.collect(ros.propertyValidator('groupDeletionProtection', ros.validateBoolean)(properties.groupDeletionProtection));
     if(properties.spotInstancePools && (typeof properties.spotInstancePools) !== 'object') {
         errors.collect(ros.propertyValidator('spotInstancePools', ros.validateRange)({
             data: properties.spotInstancePools,
@@ -4932,7 +4933,6 @@ function RosScalingGroupPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('spotInstancePools', ros.validateNumber)(properties.spotInstancePools));
-    errors.collect(ros.propertyValidator('groupDeletionProtection', ros.validateBoolean)(properties.groupDeletionProtection));
     errors.collect(ros.propertyValidator('launchTemplateId', ros.validateString)(properties.launchTemplateId));
     errors.collect(ros.propertyValidator('customPolicyArn', ros.validateString)(properties.customPolicyArn));
     errors.collect(ros.propertyValidator('maxSize', ros.requiredValidator)(properties.maxSize));
@@ -5074,7 +5074,7 @@ function rosScalingGroupPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingGroup`You can use the , which resource to create a scaling group. A scaling group is a collection of ECS instances that are used for the same application scenario. A scaling group does not take effect immediately after it is created. You must use ALIYUN::ESS::ScalingGroupEnable to enable the scaling group. After the scaling group is enabled, it can trigger scaling activities and execute scaling rules.
  * @Note This class does not contain additional functions, so it is recommended to use the `ScalingGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroup
  */
@@ -5777,14 +5777,6 @@ function RosScalingGroupEnablePropsValidator(properties: any): ros.ValidationRes
     errors.collect(ros.propertyValidator('scalingRuleArisExecuteVersion', ros.validateNumber)(properties.scalingRuleArisExecuteVersion));
     errors.collect(ros.propertyValidator('scalingGroupId', ros.requiredValidator)(properties.scalingGroupId));
     errors.collect(ros.propertyValidator('scalingGroupId', ros.validateString)(properties.scalingGroupId));
-    if(properties.scalingRuleAris && (Array.isArray(properties.scalingRuleAris) || (typeof properties.scalingRuleAris) === 'string')) {
-        errors.collect(ros.propertyValidator('scalingRuleAris', ros.validateLength)({
-            data: properties.scalingRuleAris.length,
-            min: undefined,
-            max: 10,
-          }));
-    }
-    errors.collect(ros.propertyValidator('scalingRuleAris', ros.listValidator(ros.validateString))(properties.scalingRuleAris));
     if(properties.removeInstanceIds && (Array.isArray(properties.removeInstanceIds) || (typeof properties.removeInstanceIds) === 'string')) {
         errors.collect(ros.propertyValidator('removeInstanceIds', ros.validateLength)({
             data: properties.removeInstanceIds.length,
@@ -5793,6 +5785,14 @@ function RosScalingGroupEnablePropsValidator(properties: any): ros.ValidationRes
           }));
     }
     errors.collect(ros.propertyValidator('removeInstanceIds', ros.listValidator(ros.validateString))(properties.removeInstanceIds));
+    if(properties.scalingRuleAris && (Array.isArray(properties.scalingRuleAris) || (typeof properties.scalingRuleAris) === 'string')) {
+        errors.collect(ros.propertyValidator('scalingRuleAris', ros.validateLength)({
+            data: properties.scalingRuleAris.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('scalingRuleAris', ros.listValidator(ros.validateString))(properties.scalingRuleAris));
     errors.collect(ros.propertyValidator('scalingConfigurationId', ros.validateString)(properties.scalingConfigurationId));
     if(properties.instanceIds && (Array.isArray(properties.instanceIds) || (typeof properties.instanceIds) === 'string')) {
         errors.collect(ros.propertyValidator('instanceIds', ros.validateLength)({
@@ -5831,7 +5831,7 @@ function rosScalingGroupEnablePropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingGroupEnable`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingGroupEnable`, which is used to enable a scaling group.
  * @Note This class does not contain additional functions, so it is recommended to use the `ScalingGroupEnable` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroupenable
  */
@@ -6236,6 +6236,8 @@ function RosScalingRulePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('targetValue', ros.validateNumber)(properties.targetValue));
+    errors.collect(ros.propertyValidator('scalingGroupId', ros.requiredValidator)(properties.scalingGroupId));
+    errors.collect(ros.propertyValidator('scalingGroupId', ros.validateString)(properties.scalingGroupId));
     if(properties.cooldown && (typeof properties.cooldown) !== 'object') {
         errors.collect(ros.propertyValidator('cooldown', ros.validateRange)({
             data: properties.cooldown,
@@ -6244,8 +6246,6 @@ function RosScalingRulePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('cooldown', ros.validateNumber)(properties.cooldown));
-    errors.collect(ros.propertyValidator('scalingGroupId', ros.requiredValidator)(properties.scalingGroupId));
-    errors.collect(ros.propertyValidator('scalingGroupId', ros.validateString)(properties.scalingGroupId));
     if(properties.predictiveValueBehavior && (typeof properties.predictiveValueBehavior) !== 'object') {
         errors.collect(ros.propertyValidator('predictiveValueBehavior', ros.validateAllowedValues)({
           data: properties.predictiveValueBehavior,
@@ -6317,14 +6317,6 @@ function RosScalingRulePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('predictiveScalingMode', ros.validateString)(properties.predictiveScalingMode));
-    if(properties.predictiveTaskBufferTime && (typeof properties.predictiveTaskBufferTime) !== 'object') {
-        errors.collect(ros.propertyValidator('predictiveTaskBufferTime', ros.validateRange)({
-            data: properties.predictiveTaskBufferTime,
-            min: 0,
-            max: 60,
-          }));
-    }
-    errors.collect(ros.propertyValidator('predictiveTaskBufferTime', ros.validateNumber)(properties.predictiveTaskBufferTime));
     if(properties.predictiveValueBuffer && (typeof properties.predictiveValueBuffer) !== 'object') {
         errors.collect(ros.propertyValidator('predictiveValueBuffer', ros.validateRange)({
             data: properties.predictiveValueBuffer,
@@ -6333,6 +6325,14 @@ function RosScalingRulePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('predictiveValueBuffer', ros.validateNumber)(properties.predictiveValueBuffer));
+    if(properties.predictiveTaskBufferTime && (typeof properties.predictiveTaskBufferTime) !== 'object') {
+        errors.collect(ros.propertyValidator('predictiveTaskBufferTime', ros.validateRange)({
+            data: properties.predictiveTaskBufferTime,
+            min: 0,
+            max: 60,
+          }));
+    }
+    errors.collect(ros.propertyValidator('predictiveTaskBufferTime', ros.validateNumber)(properties.predictiveTaskBufferTime));
     errors.collect(ros.propertyValidator('scaleInEvaluationCount', ros.validateNumber)(properties.scaleInEvaluationCount));
     return errors.wrap('supplied properties not correct for "RosScalingRuleProps"');
 }
@@ -6374,7 +6374,7 @@ function rosScalingRulePropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingRule`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingRule`, which is used to create a scaling rule.
  * @Note This class does not contain additional functions, so it is recommended to use the `ScalingRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalingrule
  */
@@ -6799,7 +6799,6 @@ function RosScheduledTaskPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('recurrenceType', ros.validateString)(properties.recurrenceType));
-    errors.collect(ros.propertyValidator('desiredCapacity', ros.validateNumber)(properties.desiredCapacity));
     if(properties.scheduledTaskName && (typeof properties.scheduledTaskName) !== 'object') {
         errors.collect(ros.propertyValidator('scheduledTaskName', ros.validateAllowedPattern)({
           data: properties.scheduledTaskName,
@@ -6807,6 +6806,7 @@ function RosScheduledTaskPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('scheduledTaskName', ros.validateString)(properties.scheduledTaskName));
+    errors.collect(ros.propertyValidator('desiredCapacity', ros.validateNumber)(properties.desiredCapacity));
     errors.collect(ros.propertyValidator('maxValue', ros.validateNumber)(properties.maxValue));
     if(properties.launchExpirationTime && (typeof properties.launchExpirationTime) !== 'object') {
         errors.collect(ros.propertyValidator('launchExpirationTime', ros.validateRange)({
@@ -6825,13 +6825,6 @@ function RosScheduledTaskPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('scheduledAction', ros.validateString)(properties.scheduledAction));
-    if(properties.recurrenceEndTime && (typeof properties.recurrenceEndTime) !== 'object') {
-        errors.collect(ros.propertyValidator('recurrenceEndTime', ros.validateAllowedPattern)({
-          data: properties.recurrenceEndTime,
-          reg: /^\d{4}-\d{2}-\d{2}T\d{2}[:]\d{2}Z$/
-        }));
-    }
-    errors.collect(ros.propertyValidator('recurrenceEndTime', ros.validateString)(properties.recurrenceEndTime));
     if(properties.recurrenceValue && (Array.isArray(properties.recurrenceValue) || (typeof properties.recurrenceValue) === 'string')) {
         errors.collect(ros.propertyValidator('recurrenceValue', ros.validateLength)({
             data: properties.recurrenceValue.length,
@@ -6840,6 +6833,13 @@ function RosScheduledTaskPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('recurrenceValue', ros.validateString)(properties.recurrenceValue));
+    if(properties.recurrenceEndTime && (typeof properties.recurrenceEndTime) !== 'object') {
+        errors.collect(ros.propertyValidator('recurrenceEndTime', ros.validateAllowedPattern)({
+          data: properties.recurrenceEndTime,
+          reg: /^\d{4}-\d{2}-\d{2}T\d{2}[:]\d{2}Z$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('recurrenceEndTime', ros.validateString)(properties.recurrenceEndTime));
     errors.collect(ros.propertyValidator('taskEnabled', ros.validateBoolean)(properties.taskEnabled));
     return errors.wrap('supplied properties not correct for "RosScheduledTaskProps"');
 }
@@ -6875,7 +6875,7 @@ function rosScheduledTaskPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScheduledTask`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScheduledTask`, which is used to create a scheduled task by specifying properties.
  * @Note This class does not contain additional functions, so it is recommended to use the `ScheduledTask` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scheduledtask
  */
@@ -7103,7 +7103,7 @@ function rosServerGroupAttachmentPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ServerGroupAttachment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ServerGroupAttachment`, which is used to add one or more Server Load Balancer (SLB) server groups to a scaling group. Supported SLB server groups include Application Load Balancer (ALB) server groups and Network Load Balancer (NLB) server groups.
  * @Note This class does not contain additional functions, so it is recommended to use the `ServerGroupAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-servergroupattachment
  */
@@ -7328,7 +7328,7 @@ function rosVServerGroupAttachmentPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::VServerGroupAttachment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::VServerGroupAttachment`, which is used to associate vServer groups of a Sever Load Balancer (SLB) instance with a scaling group.
  * @Note This class does not contain additional functions, so it is recommended to use the `VServerGroupAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-vservergroupattachment
  */

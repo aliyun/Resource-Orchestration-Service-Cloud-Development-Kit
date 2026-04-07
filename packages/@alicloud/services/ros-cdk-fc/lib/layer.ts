@@ -52,7 +52,7 @@ export interface ILayer extends ros.IResource {
     readonly attrVersion: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::FC::Layer`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::FC::Layer`, which is used to release a layer version.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLayer`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-layer
  */
@@ -90,8 +90,8 @@ export class Layer extends ros.Resource implements ILayer {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosLayer = new RosLayer(this, id,  {
-            compatibleRuntime: props.compatibleRuntime,
             description: props.description,
+            compatibleRuntime: props.compatibleRuntime,
             layerName: props.layerName,
             code: props.code,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

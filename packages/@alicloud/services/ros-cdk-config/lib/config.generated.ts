@@ -108,10 +108,10 @@ function RosAggregateCompliancePackPropsValidator(properties: any): ros.Validati
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('tagKeyScope', ros.validateString)(properties.tagKeyScope));
     errors.collect(ros.propertyValidator('tagValueScope', ros.validateString)(properties.tagValueScope));
-    errors.collect(ros.propertyValidator('excludeResourceGroupIdsScope', ros.validateString)(properties.excludeResourceGroupIdsScope));
     errors.collect(ros.propertyValidator('description', ros.requiredValidator)(properties.description));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('excludeResourceIdsScope', ros.listValidator(ros.validateString))(properties.excludeResourceIdsScope));
+    errors.collect(ros.propertyValidator('excludeResourceGroupIdsScope', ros.validateString)(properties.excludeResourceGroupIdsScope));
     errors.collect(ros.propertyValidator('resourceIdsScope', ros.validateString)(properties.resourceIdsScope));
     errors.collect(ros.propertyValidator('templateContent', ros.validateString)(properties.templateContent));
     if(properties.configRules && (Array.isArray(properties.configRules) || (typeof properties.configRules) === 'string')) {
@@ -176,7 +176,7 @@ function rosAggregateCompliancePackPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Config::AggregateCompliancePack`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Config::AggregateCompliancePack`, which is used to create a compliance package for an account group.
  * @Note This class does not contain additional functions, so it is recommended to use the `AggregateCompliancePack` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-aggregatecompliancepack
  */
@@ -549,7 +549,7 @@ function rosAggregatorPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Config::Aggregator`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Config::Aggregator`, which is used to create an account group.
  * @Note This class does not contain additional functions, so it is recommended to use the `Aggregator` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-aggregator
  */
@@ -777,7 +777,7 @@ function rosCompliancePackPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Config::CompliancePack`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Config::CompliancePack`, which is used to create a compliance package.
  * @Note This class does not contain additional functions, so it is recommended to use the `CompliancePack` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-compliancepack
  */
@@ -1042,7 +1042,7 @@ function rosDeliveryChannelPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Config::DeliveryChannel`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Config::DeliveryChannel`, which is used to create or update a delivery channel.
  * @Note This class does not contain additional functions, so it is recommended to use the `DeliveryChannel` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-deliverychannel
  */
@@ -1296,7 +1296,7 @@ function rosRulePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Config::Rule`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Config::Rule`, which is used to create or modify a rule.
  * @Note This class does not contain additional functions, so it is recommended to use the `Rule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-rule
  */

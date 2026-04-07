@@ -22,13 +22,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             get;
         }
 
-        /// <summary>Property escalations: You must select at least one of the Critical, Warn, and Info alert levels.</summary>
-        [JsiiProperty(name: "escalations", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosResourceMetricRule.EscalationsProperty\"}]}}")]
-        object Escalations
-        {
-            get;
-        }
-
         /// <summary>Property metricName: The name of the metric.</summary>
         /// <remarks>
         /// For information about how to query the name of a metric, see Appendix 1: Metrics.
@@ -105,6 +98,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         [JsiiProperty(name: "emailSubject", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? EmailSubject
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property escalations: You must select at least one of the Critical, Warn, and Info alert levels.</summary>
+        [JsiiProperty(name: "escalations", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosResourceMetricRule.EscalationsProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Escalations
         {
             get
             {
@@ -278,13 +282,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property escalations: You must select at least one of the Critical, Warn, and Info alert levels.</summary>
-            [JsiiProperty(name: "escalations", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosResourceMetricRule.EscalationsProperty\"}]}}")]
-            public object Escalations
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
             /// <summary>Property metricName: The name of the metric.</summary>
             /// <remarks>
             /// For information about how to query the name of a metric, see Appendix 1: Metrics.
@@ -352,6 +349,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             [JsiiOptional]
             [JsiiProperty(name: "emailSubject", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? EmailSubject
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property escalations: You must select at least one of the Critical, Warn, and Info alert levels.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "escalations", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosResourceMetricRule.EscalationsProperty\"}]}}", isOptional: true)]
+            public object? Escalations
             {
                 get => GetInstanceProperty<object?>();
             }

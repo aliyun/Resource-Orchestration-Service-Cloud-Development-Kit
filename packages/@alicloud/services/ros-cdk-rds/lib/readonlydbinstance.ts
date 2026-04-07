@@ -157,7 +157,7 @@ export interface IReadOnlyDBInstance extends ros.IResource {
     readonly attrPort: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::ReadOnlyDBInstance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::ReadOnlyDBInstance`, which is used to create a read-only ApsaraDB RDS instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosReadOnlyDBInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-readonlydbinstance
  */
@@ -197,16 +197,16 @@ export class ReadOnlyDBInstance extends ros.Resource implements IReadOnlyDBInsta
         const rosReadOnlyDBInstance = new RosReadOnlyDBInstance(this, id,  {
             periodType: props.periodType === undefined || props.periodType === null ? 'Month' : props.periodType,
             targetDedicatedHostIdForMaster: props.targetDedicatedHostIdForMaster,
-            category: props.category,
             engineVersion: props.engineVersion,
             privateIpAddress: props.privateIpAddress,
-            resourceGroupId: props.resourceGroupId,
+            category: props.category,
             zoneId: props.zoneId,
-            vpcId: props.vpcId,
+            resourceGroupId: props.resourceGroupId,
             dbInstanceClass: props.dbInstanceClass,
+            vpcId: props.vpcId,
             dedicatedHostGroupId: props.dedicatedHostGroupId,
-            autoRenew: props.autoRenew,
             vSwitchId: props.vSwitchId,
+            autoRenew: props.autoRenew,
             period: props.period === undefined || props.period === null ? 1 : props.period,
             payType: props.payType === undefined || props.payType === null ? 'Postpaid' : props.payType,
             deletionProtection: props.deletionProtection,

@@ -1,4 +1,5 @@
 export * from './dedicatedhost';
+export * from './dedicatedhostaccount';
 export * from './dedicatedhostgroup';
 export * from './mybase';
 

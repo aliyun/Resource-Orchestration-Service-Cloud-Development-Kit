@@ -66,9 +66,24 @@ export interface SupabaseProjectProps {
     readonly diskPerformanceLevel?: string | ros.IResolvable;
 
     /**
+     * Property payType: The payment type.
+     */
+    readonly payType?: string | ros.IResolvable;
+
+    /**
+     * Property period: The billing period.
+     */
+    readonly period?: string | ros.IResolvable;
+
+    /**
      * Property storageSize: Storage space size, unit GB, default 1GB.
      */
     readonly storageSize?: number | ros.IResolvable;
+
+    /**
+     * Property usedTime: The subscription period of the instance. Unit: month or year. Note When period is set to year, the supported values of this parameter are 1, 2 and 3.
+     */
+    readonly usedTime?: number | ros.IResolvable;
 }
 
 /**
@@ -78,12 +93,27 @@ export interface ISupabaseProject extends ros.IResource {
     readonly props: SupabaseProjectProps;
 
     /**
+     * Attribute ApiKeys: API keys
+     */
+    readonly attrApiKeys: ros.IResolvable | string;
+
+    /**
+     * Attribute PrivateConnectUrl: Private connection URL
+     */
+    readonly attrPrivateConnectUrl: ros.IResolvable | string;
+
+    /**
      * Attribute ProjectId: Supabase instance ID
      */
     readonly attrProjectId: ros.IResolvable | string;
+
+    /**
+     * Attribute PublicConnectUrl: Public connection URL
+     */
+    readonly attrPublicConnectUrl: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::SupabaseProject`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::SupabaseProject`The , which resource creates a Supabase project.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSupabaseProject`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-supabaseproject
  */
@@ -94,9 +124,24 @@ export class SupabaseProject extends ros.Resource implements ISupabaseProject {
     protected enableResourcePropertyConstraint: boolean;
 
     /**
+     * Attribute ApiKeys: API keys
+     */
+    public readonly attrApiKeys: ros.IResolvable | string;
+
+    /**
+     * Attribute PrivateConnectUrl: Private connection URL
+     */
+    public readonly attrPrivateConnectUrl: ros.IResolvable | string;
+
+    /**
      * Attribute ProjectId: Supabase instance ID
      */
     public readonly attrProjectId: ros.IResolvable | string;
+
+    /**
+     * Attribute PublicConnectUrl: Public connection URL
+     */
+    public readonly attrPublicConnectUrl: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -118,10 +163,16 @@ export class SupabaseProject extends ros.Resource implements ISupabaseProject {
             securityIpList: props.securityIpList,
             vSwitchId: props.vSwitchId,
             diskPerformanceLevel: props.diskPerformanceLevel,
+            usedTime: props.usedTime,
             storageSize: props.storageSize,
+            period: props.period,
+            payType: props.payType,
             accountPassword: props.accountPassword,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosSupabaseProject;
+        this.attrApiKeys = rosSupabaseProject.attrApiKeys;
+        this.attrPrivateConnectUrl = rosSupabaseProject.attrPrivateConnectUrl;
         this.attrProjectId = rosSupabaseProject.attrProjectId;
+        this.attrPublicConnectUrl = rosSupabaseProject.attrPublicConnectUrl;
     }
 }

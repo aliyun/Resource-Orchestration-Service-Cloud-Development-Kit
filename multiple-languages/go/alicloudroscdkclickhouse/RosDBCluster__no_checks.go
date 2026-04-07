@@ -144,11 +144,27 @@ func (j *jsiiProxy_RosDBCluster) validateSetVpcIdParameters(val interface{}) err
 	return nil
 }
 
+func (j *jsiiProxy_RosDBCluster) validateSetVSwitchBakParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosDBCluster) validateSetVSwitchBak2Parameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosDBCluster) validateSetVSwitchIdParameters(val interface{}) error {
 	return nil
 }
 
+func (j *jsiiProxy_RosDBCluster) validateSetZondIdBak2Parameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosDBCluster) validateSetZoneIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosDBCluster) validateSetZoneIdBakParameters(val interface{}) error {
 	return nil
 }
 

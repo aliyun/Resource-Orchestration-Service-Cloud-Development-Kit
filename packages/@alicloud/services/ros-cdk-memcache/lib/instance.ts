@@ -173,7 +173,7 @@ export interface IInstance extends ros.IResource {
     readonly attrQps: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::Memcache::Instance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::Memcache::Instance`ALIYUN::MEMCACHE::Instance is used to create an ApsaraDB for Memcache (OCS) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-memcache-instance
  */
@@ -224,11 +224,11 @@ export class Instance extends ros.Resource implements IInstance {
             autoRenewPeriod: props.autoRenewPeriod,
             couponNo: props.couponNo,
             privateIpAddress: props.privateIpAddress,
-            resourceGroupId: props.resourceGroupId,
             zoneId: props.zoneId,
+            resourceGroupId: props.resourceGroupId,
             config: props.config,
-            autoRenew: props.autoRenew,
             vSwitchId: props.vSwitchId,
+            autoRenew: props.autoRenew,
             period: props.period,
             instanceClass: props.instanceClass,
             vpcPasswordFree: props.vpcPasswordFree,
@@ -236,10 +236,10 @@ export class Instance extends ros.Resource implements IInstance {
             vpcId: props.vpcId,
             capacity: props.capacity,
             autoUseCoupon: props.autoUseCoupon,
-            chargeType: props.chargeType,
             networkType: props.networkType,
-            backupPolicy: props.backupPolicy,
+            chargeType: props.chargeType,
             password: props.password,
+            backupPolicy: props.backupPolicy,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstance;
         this.attrConnectionDomain = rosInstance.attrConnectionDomain;

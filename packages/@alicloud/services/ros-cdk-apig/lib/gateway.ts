@@ -172,7 +172,7 @@ export interface IGateway extends ros.IResource {
     readonly attrZones: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::APIG::Gateway`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::APIG::Gateway`, which is used to create a Cloud-native API Gateway.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGateway`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-gateway
  */
@@ -283,16 +283,16 @@ export class Gateway extends ros.Resource implements IGateway {
             networkAccessConfig: props.networkAccessConfig,
             resourceGroupId: props.resourceGroupId,
             vpc: props.vpc,
-            period: props.period,
             gatewayType: props.gatewayType,
+            period: props.period,
             vSwitch: props.vSwitch,
             zoneConfig: props.zoneConfig,
             paymentType: props.paymentType,
             gatewayName: props.gatewayName,
             spec: props.spec,
             tags: props.tags,
-            periodUnit: props.periodUnit,
             logConfig: props.logConfig,
+            periodUnit: props.periodUnit,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosGateway;
         this.attrCreateTime = rosGateway.attrCreateTime;

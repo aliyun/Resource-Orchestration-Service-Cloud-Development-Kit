@@ -9,5 +9,6 @@ type RosAccountProps struct {
 	AccountPassword interface{} `field:"required" json:"accountPassword" yaml:"accountPassword"`
 	DbInstanceId interface{} `field:"required" json:"dbInstanceId" yaml:"dbInstanceId"`
 	AccountDescription interface{} `field:"optional" json:"accountDescription" yaml:"accountDescription"`
+	AccountType interface{} `field:"optional" json:"accountType" yaml:"accountType"`
 }
 

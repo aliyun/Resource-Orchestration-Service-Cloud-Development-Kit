@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cloudfw;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-addressbook
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.355Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:22.692Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.AddressBookProps")
 @software.amazon.jsii.Jsii.Proxy(AddressBookProps.Jsii$Proxy.class)
 public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable {
@@ -21,9 +21,40 @@ public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable 
     @org.jetbrains.annotations.NotNull java.lang.Object getGroupName();
 
     /**
-     * Property groupType: Type the address book, the optional values ​​are: ip: IP Address Book domain: domain name address book port: Port Address Book tag: ECS label address book.
+     * Property groupType: Type of the address book.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getGroupType();
+
+    /**
+     * Property ackClusterConnectorId: ACK cluster connector ID.
+     * <p>
+     * Batch query ACK cluster connector list.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAckClusterConnectorId() {
+        return null;
+    }
+
+    /**
+     * Property ackLabels: ACK cluster container group label list.
+     * <p>
+     * <blockquote>
+     * <p>
+     * Up to 10.
+     * <p>
+     * </blockquote>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAckLabels() {
+        return null;
+    }
+
+    /**
+     * Property ackNamespaces: ACK cluster container group namespace list.
+     * <p>
+     * Up to 10.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAckNamespaces() {
+        return null;
+    }
 
     /**
      * Property addressList: Address list of the address book, between multiple addresses separated by commas.
@@ -66,7 +97,7 @@ public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable 
      * Property tagRelation: The relationship between the labels to be matched more ECS.
      * <p>
      * and: the relationship between multiple labels "and" that matches both ECS IP public network more tags will be added to the address book.
-     * or: a plurality of inter-labeled "or" relationship, i.e., as long as a matching tag ECS ​​public IP address book will be added.
+     * or: a plurality of inter-labeled "or" relationship, i.e., as long as a matching tag ECS public IP address book will be added.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTagRelation() {
         return null;
@@ -85,6 +116,9 @@ public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object description;
         java.lang.Object groupName;
         java.lang.Object groupType;
+        java.lang.Object ackClusterConnectorId;
+        java.lang.Object ackLabels;
+        java.lang.Object ackNamespaces;
         java.lang.Object addressList;
         java.lang.Object autoAddTagEcs;
         java.lang.Object regionId;
@@ -133,7 +167,7 @@ public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link AddressBookProps#getGroupType}
-         * @param groupType Property groupType: Type the address book, the optional values ​​are: ip: IP Address Book domain: domain name address book port: Port Address Book tag: ECS label address book. This parameter is required.
+         * @param groupType Property groupType: Type of the address book. This parameter is required.
          * @return {@code this}
          */
         public Builder groupType(java.lang.String groupType) {
@@ -143,11 +177,85 @@ public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link AddressBookProps#getGroupType}
-         * @param groupType Property groupType: Type the address book, the optional values ​​are: ip: IP Address Book domain: domain name address book port: Port Address Book tag: ECS label address book. This parameter is required.
+         * @param groupType Property groupType: Type of the address book. This parameter is required.
          * @return {@code this}
          */
         public Builder groupType(com.aliyun.ros.cdk.core.IResolvable groupType) {
             this.groupType = groupType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AddressBookProps#getAckClusterConnectorId}
+         * @param ackClusterConnectorId Property ackClusterConnectorId: ACK cluster connector ID.
+         *                              Batch query ACK cluster connector list.
+         * @return {@code this}
+         */
+        public Builder ackClusterConnectorId(java.lang.String ackClusterConnectorId) {
+            this.ackClusterConnectorId = ackClusterConnectorId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AddressBookProps#getAckClusterConnectorId}
+         * @param ackClusterConnectorId Property ackClusterConnectorId: ACK cluster connector ID.
+         *                              Batch query ACK cluster connector list.
+         * @return {@code this}
+         */
+        public Builder ackClusterConnectorId(com.aliyun.ros.cdk.core.IResolvable ackClusterConnectorId) {
+            this.ackClusterConnectorId = ackClusterConnectorId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AddressBookProps#getAckLabels}
+         * @param ackLabels Property ackLabels: ACK cluster container group label list.
+         *                  <blockquote>
+         *                  <p>
+         *                  Up to 10.
+         *                  <p>
+         *                  </blockquote>
+         * @return {@code this}
+         */
+        public Builder ackLabels(com.aliyun.ros.cdk.core.IResolvable ackLabels) {
+            this.ackLabels = ackLabels;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AddressBookProps#getAckLabels}
+         * @param ackLabels Property ackLabels: ACK cluster container group label list.
+         *                  <blockquote>
+         *                  <p>
+         *                  Up to 10.
+         *                  <p>
+         *                  </blockquote>
+         * @return {@code this}
+         */
+        public Builder ackLabels(java.util.List<? extends java.lang.Object> ackLabels) {
+            this.ackLabels = ackLabels;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AddressBookProps#getAckNamespaces}
+         * @param ackNamespaces Property ackNamespaces: ACK cluster container group namespace list.
+         *                      Up to 10.
+         * @return {@code this}
+         */
+        public Builder ackNamespaces(com.aliyun.ros.cdk.core.IResolvable ackNamespaces) {
+            this.ackNamespaces = ackNamespaces;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AddressBookProps#getAckNamespaces}
+         * @param ackNamespaces Property ackNamespaces: ACK cluster container group namespace list.
+         *                      Up to 10.
+         * @return {@code this}
+         */
+        public Builder ackNamespaces(java.util.List<? extends java.lang.Object> ackNamespaces) {
+            this.ackNamespaces = ackNamespaces;
             return this;
         }
 
@@ -247,7 +355,7 @@ public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable 
          * Sets the value of {@link AddressBookProps#getTagRelation}
          * @param tagRelation Property tagRelation: The relationship between the labels to be matched more ECS.
          *                    and: the relationship between multiple labels "and" that matches both ECS IP public network more tags will be added to the address book.
-         *                    or: a plurality of inter-labeled "or" relationship, i.e., as long as a matching tag ECS ​​public IP address book will be added.
+         *                    or: a plurality of inter-labeled "or" relationship, i.e., as long as a matching tag ECS public IP address book will be added.
          * @return {@code this}
          */
         public Builder tagRelation(java.lang.String tagRelation) {
@@ -259,7 +367,7 @@ public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable 
          * Sets the value of {@link AddressBookProps#getTagRelation}
          * @param tagRelation Property tagRelation: The relationship between the labels to be matched more ECS.
          *                    and: the relationship between multiple labels "and" that matches both ECS IP public network more tags will be added to the address book.
-         *                    or: a plurality of inter-labeled "or" relationship, i.e., as long as a matching tag ECS ​​public IP address book will be added.
+         *                    or: a plurality of inter-labeled "or" relationship, i.e., as long as a matching tag ECS public IP address book will be added.
          * @return {@code this}
          */
         public Builder tagRelation(com.aliyun.ros.cdk.core.IResolvable tagRelation) {
@@ -286,6 +394,9 @@ public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object description;
         private final java.lang.Object groupName;
         private final java.lang.Object groupType;
+        private final java.lang.Object ackClusterConnectorId;
+        private final java.lang.Object ackLabels;
+        private final java.lang.Object ackNamespaces;
         private final java.lang.Object addressList;
         private final java.lang.Object autoAddTagEcs;
         private final java.lang.Object regionId;
@@ -301,6 +412,9 @@ public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable 
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.groupName = software.amazon.jsii.Kernel.get(this, "groupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.groupType = software.amazon.jsii.Kernel.get(this, "groupType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ackClusterConnectorId = software.amazon.jsii.Kernel.get(this, "ackClusterConnectorId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ackLabels = software.amazon.jsii.Kernel.get(this, "ackLabels", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ackNamespaces = software.amazon.jsii.Kernel.get(this, "ackNamespaces", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.addressList = software.amazon.jsii.Kernel.get(this, "addressList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoAddTagEcs = software.amazon.jsii.Kernel.get(this, "autoAddTagEcs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.regionId = software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -316,6 +430,9 @@ public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable 
             this.description = java.util.Objects.requireNonNull(builder.description, "description is required");
             this.groupName = java.util.Objects.requireNonNull(builder.groupName, "groupName is required");
             this.groupType = java.util.Objects.requireNonNull(builder.groupType, "groupType is required");
+            this.ackClusterConnectorId = builder.ackClusterConnectorId;
+            this.ackLabels = builder.ackLabels;
+            this.ackNamespaces = builder.ackNamespaces;
             this.addressList = builder.addressList;
             this.autoAddTagEcs = builder.autoAddTagEcs;
             this.regionId = builder.regionId;
@@ -336,6 +453,21 @@ public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable 
         @Override
         public final java.lang.Object getGroupType() {
             return this.groupType;
+        }
+
+        @Override
+        public final java.lang.Object getAckClusterConnectorId() {
+            return this.ackClusterConnectorId;
+        }
+
+        @Override
+        public final java.lang.Object getAckLabels() {
+            return this.ackLabels;
+        }
+
+        @Override
+        public final java.lang.Object getAckNamespaces() {
+            return this.ackNamespaces;
         }
 
         @Override
@@ -372,6 +504,15 @@ public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable 
             data.set("description", om.valueToTree(this.getDescription()));
             data.set("groupName", om.valueToTree(this.getGroupName()));
             data.set("groupType", om.valueToTree(this.getGroupType()));
+            if (this.getAckClusterConnectorId() != null) {
+                data.set("ackClusterConnectorId", om.valueToTree(this.getAckClusterConnectorId()));
+            }
+            if (this.getAckLabels() != null) {
+                data.set("ackLabels", om.valueToTree(this.getAckLabels()));
+            }
+            if (this.getAckNamespaces() != null) {
+                data.set("ackNamespaces", om.valueToTree(this.getAckNamespaces()));
+            }
             if (this.getAddressList() != null) {
                 data.set("addressList", om.valueToTree(this.getAddressList()));
             }
@@ -408,6 +549,9 @@ public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable 
             if (!description.equals(that.description)) return false;
             if (!groupName.equals(that.groupName)) return false;
             if (!groupType.equals(that.groupType)) return false;
+            if (this.ackClusterConnectorId != null ? !this.ackClusterConnectorId.equals(that.ackClusterConnectorId) : that.ackClusterConnectorId != null) return false;
+            if (this.ackLabels != null ? !this.ackLabels.equals(that.ackLabels) : that.ackLabels != null) return false;
+            if (this.ackNamespaces != null ? !this.ackNamespaces.equals(that.ackNamespaces) : that.ackNamespaces != null) return false;
             if (this.addressList != null ? !this.addressList.equals(that.addressList) : that.addressList != null) return false;
             if (this.autoAddTagEcs != null ? !this.autoAddTagEcs.equals(that.autoAddTagEcs) : that.autoAddTagEcs != null) return false;
             if (this.regionId != null ? !this.regionId.equals(that.regionId) : that.regionId != null) return false;
@@ -420,6 +564,9 @@ public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable 
             int result = this.description.hashCode();
             result = 31 * result + (this.groupName.hashCode());
             result = 31 * result + (this.groupType.hashCode());
+            result = 31 * result + (this.ackClusterConnectorId != null ? this.ackClusterConnectorId.hashCode() : 0);
+            result = 31 * result + (this.ackLabels != null ? this.ackLabels.hashCode() : 0);
+            result = 31 * result + (this.ackNamespaces != null ? this.ackNamespaces.hashCode() : 0);
             result = 31 * result + (this.addressList != null ? this.addressList.hashCode() : 0);
             result = 31 * result + (this.autoAddTagEcs != null ? this.autoAddTagEcs.hashCode() : 0);
             result = 31 * result + (this.regionId != null ? this.regionId.hashCode() : 0);

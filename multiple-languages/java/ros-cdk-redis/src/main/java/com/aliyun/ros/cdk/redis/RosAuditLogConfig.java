@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.redis;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::REDIS::AuditLogConfig</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::REDIS::AuditLogConfig</code>, which is used to modify the audit log settings of a Tair (Redis OSS-compatible) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:59.731Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:29.369Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.RosAuditLogConfig")
 public class RosAuditLogConfig extends com.aliyun.ros.cdk.core.RosResource {
 

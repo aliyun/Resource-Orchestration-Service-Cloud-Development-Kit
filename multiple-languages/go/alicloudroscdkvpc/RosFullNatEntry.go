@@ -12,6 +12,8 @@ import (
 // This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::FullNatEntry`.
 type RosFullNatEntry interface {
 	alicloudroscdkcore.RosResource
+	AccessDomain() interface{}
+	SetAccessDomain(val interface{})
 	AccessIp() interface{}
 	SetAccessIp(val interface{})
 	AccessPort() interface{}
@@ -185,6 +187,16 @@ type RosFullNatEntry interface {
 // The jsii proxy struct for RosFullNatEntry
 type jsiiProxy_RosFullNatEntry struct {
 	internal.Type__alicloudroscdkcoreRosResource
+}
+
+func (j *jsiiProxy_RosFullNatEntry) AccessDomain() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"accessDomain",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_RosFullNatEntry) AccessIp() interface{} {
@@ -412,6 +424,17 @@ func NewRosFullNatEntry_Override(r RosFullNatEntry, scope alicloudroscdkcore.Con
 		"@alicloud/ros-cdk-vpc.RosFullNatEntry",
 		[]interface{}{scope, id, props, enableResourcePropertyConstraint},
 		r,
+	)
+}
+
+func (j *jsiiProxy_RosFullNatEntry)SetAccessDomain(val interface{}) {
+	if err := j.validateSetAccessDomainParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"accessDomain",
+		val,
 	)
 }
 

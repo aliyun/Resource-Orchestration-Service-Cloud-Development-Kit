@@ -47,6 +47,11 @@ export interface FullNatEntryProps {
     readonly networkInterfaceId: string | ros.IResolvable;
 
     /**
+     * Property accessDomain: The domain name of the backend for FULLNAT address translation.
+     */
+    readonly accessDomain?: string | ros.IResolvable;
+
+    /**
      * Property fullNatEntryDescription: The description of the FULLNAT entry.
      * This parameter is optional. If you enter a description, the description must be 2 to 256 characters in length, and cannot start with http:\/\/ or https:\/\/.
      */
@@ -103,8 +108,9 @@ export class FullNatEntry extends ros.Resource implements IFullNatEntry {
             accessIp: props.accessIp,
             fullNatTableId: props.fullNatTableId,
             fullNatEntryName: props.fullNatEntryName,
-            natIpPort: props.natIpPort,
+            accessDomain: props.accessDomain,
             ipProtocol: props.ipProtocol,
+            natIpPort: props.natIpPort,
             accessPort: props.accessPort,
             networkInterfaceId: props.networkInterfaceId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

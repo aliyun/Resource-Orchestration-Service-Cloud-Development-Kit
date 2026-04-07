@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CR::InstanceEndpointAclPolicy`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CR::InstanceEndpointAclPolicy`, which is used to create a whitelist policy for the public endpoint of an instance.
 type RosInstanceEndpointAclPolicy interface {
 	alicloudroscdkcore.RosResource
 	AttrEntry() alicloudroscdkcore.IResolvable

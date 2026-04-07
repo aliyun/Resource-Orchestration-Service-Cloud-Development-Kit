@@ -161,6 +161,56 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
+        private object? _isp;
+
+        /// <remarks>
+        /// <strong>Property</strong>: isp: The line type. Valid values:
+        /// - **BGP** (default): BGP (multi-line). All regions support BGP (multi-line) EIPs.
+        /// - **BGP_PRO**: BGP (multi-line)_Premium. Currently supported only in China (Hong Kong),
+        /// Singapore, Japan (Tokyo), Malaysia (Kuala Lumpur), Philippines (Manila),
+        /// India (Jakarta), and Thailand (Bangkok).
+        ///
+        /// For more information about BGP (multi-line) and BGP (multi-line)_Premium,
+        /// see [EIP Line Type](~~32321~~).
+        ///
+        /// If you are a single-bandwidth whitelist user, you can also choose:
+        /// - **ChinaTelecom**: China Telecom
+        /// - **ChinaUnicom**: China Unicom
+        /// - **ChinaMobile**: China Mobile
+        /// - **ChinaTelecom_L2**: China Telecom L2
+        /// - **ChinaUnicom_L2**: China Unicom L2
+        /// - **ChinaMobile_L2**: China Mobile L2
+        ///
+        /// If you are a Hangzhou Finance Cloud user, this field is required with value: **BGP_FinanceCloud**.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "isp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? Isp
+        {
+            get => _isp;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _isp = value;
+            }
+        }
+
         private object? _netmode;
 
         /// <remarks>
@@ -230,6 +280,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                     }
                 }
                 _resourceGroupId = value;
+            }
+        }
+
+        private object? _zone;
+
+        /// <remarks>
+        /// <strong>Property</strong>: zone: The zone of the contiguous EIP group.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "zone", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? Zone
+        {
+            get => _zone;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _zone = value;
             }
         }
     }

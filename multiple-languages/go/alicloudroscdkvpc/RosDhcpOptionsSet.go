@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::DhcpOptionsSet`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::DhcpOptionsSet`, which is used to create Dynamic Host Configuration Protocol (DHCP) options sets.
 type RosDhcpOptionsSet interface {
 	alicloudroscdkcore.RosResource
 	AttrDhcpOptionsSetId() alicloudroscdkcore.IResolvable
@@ -27,6 +27,10 @@ type RosDhcpOptionsSet interface {
 	SetDomainNameServers(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	Ipv6LeaseTime() interface{}
+	SetIpv6LeaseTime(val interface{})
+	LeaseTime() interface{}
+	SetLeaseTime(val interface{})
 	// The logical ID for this stack element.
 	//
 	// The logical ID of the element
@@ -44,6 +48,8 @@ type RosDhcpOptionsSet interface {
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
 	// coerce it to an IResolvable through `Lazy.any({ produce: resource.ref })`.
 	Ref() *string
+	ResourceGroupId() interface{}
+	SetResourceGroupId(val interface{})
 	// Options for this resource, such as condition, update policy etc.
 	RosOptions() alicloudroscdkcore.IRosResourceOptions
 	RosProperties() *map[string]interface{}
@@ -247,6 +253,26 @@ func (j *jsiiProxy_RosDhcpOptionsSet) EnableResourcePropertyConstraint() *bool {
 	return returns
 }
 
+func (j *jsiiProxy_RosDhcpOptionsSet) Ipv6LeaseTime() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"ipv6LeaseTime",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDhcpOptionsSet) LeaseTime() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"leaseTime",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosDhcpOptionsSet) LogicalId() *string {
 	var returns *string
 	_jsii_.Get(
@@ -272,6 +298,16 @@ func (j *jsiiProxy_RosDhcpOptionsSet) Ref() *string {
 	_jsii_.Get(
 		j,
 		"ref",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDhcpOptionsSet) ResourceGroupId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"resourceGroupId",
 		&returns,
 	)
 	return returns
@@ -406,6 +442,39 @@ func (j *jsiiProxy_RosDhcpOptionsSet)SetEnableResourcePropertyConstraint(val *bo
 	_jsii_.Set(
 		j,
 		"enableResourcePropertyConstraint",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDhcpOptionsSet)SetIpv6LeaseTime(val interface{}) {
+	if err := j.validateSetIpv6LeaseTimeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"ipv6LeaseTime",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDhcpOptionsSet)SetLeaseTime(val interface{}) {
+	if err := j.validateSetLeaseTimeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"leaseTime",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDhcpOptionsSet)SetResourceGroupId(val interface{}) {
+	if err := j.validateSetResourceGroupIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"resourceGroupId",
 		val,
 	)
 }

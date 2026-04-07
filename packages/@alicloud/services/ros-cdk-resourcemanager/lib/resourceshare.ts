@@ -54,7 +54,7 @@ export interface IResourceShare extends ros.IResource {
     readonly attrResourceShareId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::ResourceShare`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::ResourceShare`, which is used to create a resource share.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosResourceShare`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourceshare
  */
@@ -83,8 +83,8 @@ export class ResourceShare extends ros.Resource implements IResourceShare {
 
         const rosResourceShare = new RosResourceShare(this, id,  {
             resourceShareName: props.resourceShareName,
-            allowExternalTargets: props.allowExternalTargets === undefined || props.allowExternalTargets === null ? false : props.allowExternalTargets,
             targets: props.targets,
+            allowExternalTargets: props.allowExternalTargets === undefined || props.allowExternalTargets === null ? false : props.allowExternalTargets,
             resources: props.resources,
             permissionNames: props.permissionNames,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

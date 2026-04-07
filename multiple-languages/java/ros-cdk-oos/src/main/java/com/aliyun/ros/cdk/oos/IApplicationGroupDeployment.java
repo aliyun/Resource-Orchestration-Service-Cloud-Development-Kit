@@ -3,10 +3,25 @@ package com.aliyun.ros.cdk.oos;
 /**
  * Represents a <code>ApplicationGroupDeployment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.502Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:28.156Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.IApplicationGroupDeployment")
 @software.amazon.jsii.Jsii.Proxy(IApplicationGroupDeployment.Jsii$Proxy.class)
 public interface IApplicationGroupDeployment extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
+
+    /**
+     * Attribute ApplicationName: The name of the application.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrApplicationName();
+
+    /**
+     * Attribute ExecutionId: The execution ID of the application group deployment.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrExecutionId();
+
+    /**
+     * Attribute Name: The name of the application group.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrName();
 
     @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.oos.ApplicationGroupDeploymentProps getProps();
 
@@ -50,6 +65,30 @@ public interface IApplicationGroupDeployment extends software.amazon.jsii.JsiiSe
             return software.amazon.jsii.Kernel.get(this, "stack", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.Stack.class));
         }
 
+        /**
+         * Attribute ApplicationName: The name of the application.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrApplicationName() {
+            return software.amazon.jsii.Kernel.get(this, "attrApplicationName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute ExecutionId: The execution ID of the application group deployment.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrExecutionId() {
+            return software.amazon.jsii.Kernel.get(this, "attrExecutionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute Name: The name of the application group.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrName() {
+            return software.amazon.jsii.Kernel.get(this, "attrName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
         @Override
         public final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.oos.ApplicationGroupDeploymentProps getProps() {
             return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.oos.ApplicationGroupDeploymentProps.class));
@@ -91,6 +130,30 @@ public interface IApplicationGroupDeployment extends software.amazon.jsii.JsiiSe
         @Override
         default @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Stack getStack() {
             return software.amazon.jsii.Kernel.get(this, "stack", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.Stack.class));
+        }
+
+        /**
+         * Attribute ApplicationName: The name of the application.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrApplicationName() {
+            return software.amazon.jsii.Kernel.get(this, "attrApplicationName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute ExecutionId: The execution ID of the application group deployment.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrExecutionId() {
+            return software.amazon.jsii.Kernel.get(this, "attrExecutionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute Name: The name of the application group.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrName() {
+            return software.amazon.jsii.Kernel.get(this, "attrName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         @Override

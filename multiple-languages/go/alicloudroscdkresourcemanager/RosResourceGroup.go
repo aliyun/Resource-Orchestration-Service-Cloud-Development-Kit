@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::ResourceGroup`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::ResourceGroup`The , which resource type creates a resource group.
 type RosResourceGroup interface {
 	alicloudroscdkcore.RosResource
 	AttrAccountId() alicloudroscdkcore.IResolvable
@@ -17,6 +17,7 @@ type RosResourceGroup interface {
 	AttrId() alicloudroscdkcore.IResolvable
 	AttrName() alicloudroscdkcore.IResolvable
 	AttrRegionStatuses() alicloudroscdkcore.IResolvable
+	AttrResourceGroupId() alicloudroscdkcore.IResolvable
 	// Returns: the stack trace of the point where this Resource was created from, sourced
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
@@ -53,6 +54,8 @@ type RosResourceGroup interface {
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
 	Stack() alicloudroscdkcore.Stack
+	Tags() *[]*RosResourceGroup_TagsProperty
+	SetTags(val *[]*RosResourceGroup_TagsProperty)
 	// Return properties modified after initiation.
 	//
 	// Resources that expose mutable properties should override this function to
@@ -227,6 +230,16 @@ func (j *jsiiProxy_RosResourceGroup) AttrRegionStatuses() alicloudroscdkcore.IRe
 	return returns
 }
 
+func (j *jsiiProxy_RosResourceGroup) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrResourceGroupId",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosResourceGroup) CreationStack() *[]*string {
 	var returns *[]*string
 	_jsii_.Get(
@@ -337,6 +350,16 @@ func (j *jsiiProxy_RosResourceGroup) Stack() alicloudroscdkcore.Stack {
 	return returns
 }
 
+func (j *jsiiProxy_RosResourceGroup) Tags() *[]*RosResourceGroup_TagsProperty {
+	var returns *[]*RosResourceGroup_TagsProperty
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosResourceGroup) UpdatedProperites() *map[string]interface{} {
 	var returns *map[string]interface{}
 	_jsii_.Get(
@@ -404,6 +427,17 @@ func (j *jsiiProxy_RosResourceGroup)SetName(val interface{}) {
 	_jsii_.Set(
 		j,
 		"name",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosResourceGroup)SetTags(val *[]*RosResourceGroup_TagsProperty) {
+	if err := j.validateSetTagsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"tags",
 		val,
 	)
 }

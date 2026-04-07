@@ -39,8 +39,8 @@ export interface RosCatalogProps {
 function RosCatalogPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('owner', ros.validateString)(properties.owner));
     errors.collect(ros.propertyValidator('locationUri', ros.validateString)(properties.locationUri));
+    errors.collect(ros.propertyValidator('owner', ros.validateString)(properties.owner));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('catalogId', ros.requiredValidator)(properties.catalogId));
     if(properties.catalogId && (typeof properties.catalogId) !== 'object') {
@@ -75,7 +75,7 @@ function rosCatalogPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DLF::Catalog`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DLF::Catalog`, which is used to create a catalog in Data Lake Formation (DLF).
  * @Note This class does not contain additional functions, so it is recommended to use the `Catalog` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dlf-catalog
  */

@@ -107,7 +107,7 @@ export interface IClientCaCertificate extends ros.IResource {
     readonly attrUpdateTime: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ESA::ClientCaCertificate`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESA::ClientCaCertificate`The , which type uploads a client CA certificate.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClientCaCertificate`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-clientcacertificate
  */

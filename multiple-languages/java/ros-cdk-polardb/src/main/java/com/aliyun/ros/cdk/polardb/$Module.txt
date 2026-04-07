@@ -4,6 +4,10 @@
 @alicloud/ros-cdk-polardb.AccountPrivilege=com.aliyun.ros.cdk.polardb.AccountPrivilege
 @alicloud/ros-cdk-polardb.AccountPrivilegeProps=com.aliyun.ros.cdk.polardb.AccountPrivilegeProps
 @alicloud/ros-cdk-polardb.AccountProps=com.aliyun.ros.cdk.polardb.AccountProps
+@alicloud/ros-cdk-polardb.Application=com.aliyun.ros.cdk.polardb.Application
+@alicloud/ros-cdk-polardb.ApplicationEndpointAddress=com.aliyun.ros.cdk.polardb.ApplicationEndpointAddress
+@alicloud/ros-cdk-polardb.ApplicationEndpointAddressProps=com.aliyun.ros.cdk.polardb.ApplicationEndpointAddressProps
+@alicloud/ros-cdk-polardb.ApplicationProps=com.aliyun.ros.cdk.polardb.ApplicationProps
 @alicloud/ros-cdk-polardb.Backup=com.aliyun.ros.cdk.polardb.Backup
 @alicloud/ros-cdk-polardb.BackupProps=com.aliyun.ros.cdk.polardb.BackupProps
 @alicloud/ros-cdk-polardb.DBCluster=com.aliyun.ros.cdk.polardb.DBCluster
@@ -25,6 +29,8 @@
 @alicloud/ros-cdk-polardb.IAITask=com.aliyun.ros.cdk.polardb.IAITask
 @alicloud/ros-cdk-polardb.IAccount=com.aliyun.ros.cdk.polardb.IAccount
 @alicloud/ros-cdk-polardb.IAccountPrivilege=com.aliyun.ros.cdk.polardb.IAccountPrivilege
+@alicloud/ros-cdk-polardb.IApplication=com.aliyun.ros.cdk.polardb.IApplication
+@alicloud/ros-cdk-polardb.IApplicationEndpointAddress=com.aliyun.ros.cdk.polardb.IApplicationEndpointAddress
 @alicloud/ros-cdk-polardb.IBackup=com.aliyun.ros.cdk.polardb.IBackup
 @alicloud/ros-cdk-polardb.IDBCluster=com.aliyun.ros.cdk.polardb.IDBCluster
 @alicloud/ros-cdk-polardb.IDBClusterAccessWhiteList=com.aliyun.ros.cdk.polardb.IDBClusterAccessWhiteList
@@ -43,6 +49,11 @@
 @alicloud/ros-cdk-polardb.RosAccountPrivilege=com.aliyun.ros.cdk.polardb.RosAccountPrivilege
 @alicloud/ros-cdk-polardb.RosAccountPrivilegeProps=com.aliyun.ros.cdk.polardb.RosAccountPrivilegeProps
 @alicloud/ros-cdk-polardb.RosAccountProps=com.aliyun.ros.cdk.polardb.RosAccountProps
+@alicloud/ros-cdk-polardb.RosApplication=com.aliyun.ros.cdk.polardb.RosApplication
+@alicloud/ros-cdk-polardb.RosApplication.ComponentsProperty=com.aliyun.ros.cdk.polardb.RosApplication$ComponentsProperty
+@alicloud/ros-cdk-polardb.RosApplicationEndpointAddress=com.aliyun.ros.cdk.polardb.RosApplicationEndpointAddress
+@alicloud/ros-cdk-polardb.RosApplicationEndpointAddressProps=com.aliyun.ros.cdk.polardb.RosApplicationEndpointAddressProps
+@alicloud/ros-cdk-polardb.RosApplicationProps=com.aliyun.ros.cdk.polardb.RosApplicationProps
 @alicloud/ros-cdk-polardb.RosBackup=com.aliyun.ros.cdk.polardb.RosBackup
 @alicloud/ros-cdk-polardb.RosBackupProps=com.aliyun.ros.cdk.polardb.RosBackupProps
 @alicloud/ros-cdk-polardb.RosDBCluster=com.aliyun.ros.cdk.polardb.RosDBCluster

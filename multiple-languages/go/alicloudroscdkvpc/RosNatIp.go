@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::NatIp`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::NatIp`, which is used to create a NAT IP address.
 type RosNatIp interface {
 	alicloudroscdkcore.RosResource
 	AttrNatIp() alicloudroscdkcore.IResolvable
@@ -20,6 +20,10 @@ type RosNatIp interface {
 	CreationStack() *[]*string
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	Ipv4Prefix() interface{}
+	SetIpv4Prefix(val interface{})
+	Ipv4PrefixCount() interface{}
+	SetIpv4PrefixCount(val interface{})
 	// The logical ID for this stack element.
 	//
 	// The logical ID of the element
@@ -222,6 +226,26 @@ func (j *jsiiProxy_RosNatIp) EnableResourcePropertyConstraint() *bool {
 	return returns
 }
 
+func (j *jsiiProxy_RosNatIp) Ipv4Prefix() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"ipv4Prefix",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosNatIp) Ipv4PrefixCount() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"ipv4PrefixCount",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosNatIp) LogicalId() *string {
 	var returns *string
 	_jsii_.Get(
@@ -397,6 +421,28 @@ func (j *jsiiProxy_RosNatIp)SetEnableResourcePropertyConstraint(val *bool) {
 	_jsii_.Set(
 		j,
 		"enableResourcePropertyConstraint",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosNatIp)SetIpv4Prefix(val interface{}) {
+	if err := j.validateSetIpv4PrefixParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"ipv4Prefix",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosNatIp)SetIpv4PrefixCount(val interface{}) {
+	if err := j.validateSetIpv4PrefixCountParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"ipv4PrefixCount",
 		val,
 	)
 }

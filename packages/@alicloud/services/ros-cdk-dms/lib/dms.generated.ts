@@ -157,16 +157,16 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('instanceSource', ros.requiredValidator)(properties.instanceSource));
     errors.collect(ros.propertyValidator('instanceSource', ros.validateString)(properties.instanceSource));
-    errors.collect(ros.propertyValidator('databasePassword', ros.requiredValidator)(properties.databasePassword));
-    errors.collect(ros.propertyValidator('databasePassword', ros.validateString)(properties.databasePassword));
     errors.collect(ros.propertyValidator('port', ros.requiredValidator)(properties.port));
     errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
+    errors.collect(ros.propertyValidator('databasePassword', ros.requiredValidator)(properties.databasePassword));
+    errors.collect(ros.propertyValidator('databasePassword', ros.validateString)(properties.databasePassword));
     errors.collect(ros.propertyValidator('host', ros.requiredValidator)(properties.host));
     errors.collect(ros.propertyValidator('host', ros.validateString)(properties.host));
-    errors.collect(ros.propertyValidator('exportTimeout', ros.requiredValidator)(properties.exportTimeout));
-    errors.collect(ros.propertyValidator('exportTimeout', ros.validateNumber)(properties.exportTimeout));
     errors.collect(ros.propertyValidator('safeRule', ros.requiredValidator)(properties.safeRule));
     errors.collect(ros.propertyValidator('safeRule', ros.validateString)(properties.safeRule));
+    errors.collect(ros.propertyValidator('exportTimeout', ros.requiredValidator)(properties.exportTimeout));
+    errors.collect(ros.propertyValidator('exportTimeout', ros.validateNumber)(properties.exportTimeout));
     errors.collect(ros.propertyValidator('ddlOnline', ros.validateNumber)(properties.ddlOnline));
     errors.collect(ros.propertyValidator('envType', ros.requiredValidator)(properties.envType));
     errors.collect(ros.propertyValidator('envType', ros.validateString)(properties.envType));
@@ -181,11 +181,8 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('sid', ros.validateString)(properties.sid));
     errors.collect(ros.propertyValidator('ecsInstanceId', ros.validateString)(properties.ecsInstanceId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
-    errors.collect(ros.propertyValidator('instanceAlias', ros.requiredValidator)(properties.instanceAlias));
-    errors.collect(ros.propertyValidator('instanceAlias', ros.validateString)(properties.instanceAlias));
     errors.collect(ros.propertyValidator('dbaUid', ros.requiredValidator)(properties.dbaUid));
     errors.collect(ros.propertyValidator('dbaUid', ros.validateNumber)(properties.dbaUid));
-    errors.collect(ros.propertyValidator('ecsRegion', ros.validateString)(properties.ecsRegion));
     errors.collect(ros.propertyValidator('networkType', ros.requiredValidator)(properties.networkType));
     if(properties.networkType && (typeof properties.networkType) !== 'object') {
         errors.collect(ros.propertyValidator('networkType', ros.validateAllowedValues)({
@@ -194,13 +191,16 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('networkType', ros.validateString)(properties.networkType));
+    errors.collect(ros.propertyValidator('instanceAlias', ros.requiredValidator)(properties.instanceAlias));
+    errors.collect(ros.propertyValidator('instanceAlias', ros.validateString)(properties.instanceAlias));
+    errors.collect(ros.propertyValidator('ecsRegion', ros.validateString)(properties.ecsRegion));
     errors.collect(ros.propertyValidator('databaseUser', ros.requiredValidator)(properties.databaseUser));
     errors.collect(ros.propertyValidator('databaseUser', ros.validateString)(properties.databaseUser));
     errors.collect(ros.propertyValidator('instanceType', ros.requiredValidator)(properties.instanceType));
     errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
-    errors.collect(ros.propertyValidator('dataLinkName', ros.validateString)(properties.dataLinkName));
     errors.collect(ros.propertyValidator('queryTimeout', ros.requiredValidator)(properties.queryTimeout));
     errors.collect(ros.propertyValidator('queryTimeout', ros.validateNumber)(properties.queryTimeout));
+    errors.collect(ros.propertyValidator('dataLinkName', ros.validateString)(properties.dataLinkName));
     return errors.wrap('supplied properties not correct for "RosInstanceProps"');
 }
 
@@ -243,7 +243,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DMS::Instance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DMS::Instance`, which is used to register a database instance for your enterprise.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dms-instance
  */
@@ -678,10 +678,10 @@ export interface RosInstance2Props {
 function RosInstance2PropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('databasePassword', ros.requiredValidator)(properties.databasePassword));
-    errors.collect(ros.propertyValidator('databasePassword', ros.validateString)(properties.databasePassword));
     errors.collect(ros.propertyValidator('port', ros.requiredValidator)(properties.port));
     errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
+    errors.collect(ros.propertyValidator('databasePassword', ros.requiredValidator)(properties.databasePassword));
+    errors.collect(ros.propertyValidator('databasePassword', ros.validateString)(properties.databasePassword));
     errors.collect(ros.propertyValidator('safeRule', ros.requiredValidator)(properties.safeRule));
     errors.collect(ros.propertyValidator('safeRule', ros.validateString)(properties.safeRule));
     errors.collect(ros.propertyValidator('exportTimeout', ros.requiredValidator)(properties.exportTimeout));
@@ -690,9 +690,6 @@ function RosInstance2PropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('envType', ros.validateString)(properties.envType));
     errors.collect(ros.propertyValidator('dbaId', ros.requiredValidator)(properties.dbaId));
     errors.collect(ros.propertyValidator('dbaId', ros.validateNumber)(properties.dbaId));
-    errors.collect(ros.propertyValidator('ecsRegion', ros.validateString)(properties.ecsRegion));
-    errors.collect(ros.propertyValidator('instanceAlias', ros.requiredValidator)(properties.instanceAlias));
-    errors.collect(ros.propertyValidator('instanceAlias', ros.validateString)(properties.instanceAlias));
     errors.collect(ros.propertyValidator('networkType', ros.requiredValidator)(properties.networkType));
     if(properties.networkType && (typeof properties.networkType) !== 'object') {
         errors.collect(ros.propertyValidator('networkType', ros.validateAllowedValues)({
@@ -701,22 +698,21 @@ function RosInstance2PropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('networkType', ros.validateString)(properties.networkType));
+    errors.collect(ros.propertyValidator('instanceAlias', ros.requiredValidator)(properties.instanceAlias));
+    errors.collect(ros.propertyValidator('instanceAlias', ros.validateString)(properties.instanceAlias));
+    errors.collect(ros.propertyValidator('ecsRegion', ros.validateString)(properties.ecsRegion));
     errors.collect(ros.propertyValidator('enableSellTrust', ros.requiredValidator)(properties.enableSellTrust));
     errors.collect(ros.propertyValidator('enableSellTrust', ros.validateString)(properties.enableSellTrust));
     errors.collect(ros.propertyValidator('instanceType', ros.requiredValidator)(properties.instanceType));
     errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
     errors.collect(ros.propertyValidator('enableSellSitd', ros.validateString)(properties.enableSellSitd));
-    errors.collect(ros.propertyValidator('dataLinkName', ros.validateString)(properties.dataLinkName));
     errors.collect(ros.propertyValidator('queryTimeout', ros.requiredValidator)(properties.queryTimeout));
     errors.collect(ros.propertyValidator('queryTimeout', ros.validateNumber)(properties.queryTimeout));
+    errors.collect(ros.propertyValidator('dataLinkName', ros.validateString)(properties.dataLinkName));
     errors.collect(ros.propertyValidator('templateId', ros.validateNumber)(properties.templateId));
     errors.collect(ros.propertyValidator('instanceSource', ros.requiredValidator)(properties.instanceSource));
     errors.collect(ros.propertyValidator('instanceSource', ros.validateString)(properties.instanceSource));
     errors.collect(ros.propertyValidator('enableSellStable', ros.validateString)(properties.enableSellStable));
-    errors.collect(ros.propertyValidator('skipTest', ros.validateBoolean)(properties.skipTest));
-    errors.collect(ros.propertyValidator('host', ros.requiredValidator)(properties.host));
-    errors.collect(ros.propertyValidator('host', ros.validateString)(properties.host));
-    errors.collect(ros.propertyValidator('enableSellCommon', ros.validateString)(properties.enableSellCommon));
     if(properties.useSsl && (typeof properties.useSsl) !== 'object') {
         errors.collect(ros.propertyValidator('useSsl', ros.validateAllowedValues)({
           data: properties.useSsl,
@@ -724,10 +720,13 @@ function RosInstance2PropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('useSsl', ros.validateNumber)(properties.useSsl));
+    errors.collect(ros.propertyValidator('enableSellCommon', ros.validateString)(properties.enableSellCommon));
+    errors.collect(ros.propertyValidator('host', ros.requiredValidator)(properties.host));
+    errors.collect(ros.propertyValidator('host', ros.validateString)(properties.host));
+    errors.collect(ros.propertyValidator('skipTest', ros.validateBoolean)(properties.skipTest));
     errors.collect(ros.propertyValidator('templateType', ros.validateString)(properties.templateType));
     errors.collect(ros.propertyValidator('ddlOnline', ros.validateNumber)(properties.ddlOnline));
     errors.collect(ros.propertyValidator('tid', ros.validateNumber)(properties.tid));
-    errors.collect(ros.propertyValidator('sid', ros.validateString)(properties.sid));
     if(properties.useDsql && (typeof properties.useDsql) !== 'object') {
         errors.collect(ros.propertyValidator('useDsql', ros.validateAllowedValues)({
           data: properties.useDsql,
@@ -735,6 +734,7 @@ function RosInstance2PropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('useDsql', ros.validateNumber)(properties.useDsql));
+    errors.collect(ros.propertyValidator('sid', ros.validateString)(properties.sid));
     errors.collect(ros.propertyValidator('ecsInstanceId', ros.validateString)(properties.ecsInstanceId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('databaseUser', ros.requiredValidator)(properties.databaseUser));
@@ -789,7 +789,7 @@ function rosInstance2PropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DMS::Instance2`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DMS::Instance2`, which is used to register a database instance in new Data Management (DMS).
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance2` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dms-instance2
  */
@@ -1158,7 +1158,7 @@ function rosScriptExecutionPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DMS::ScriptExecution`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DMS::ScriptExecution`The , which type executes SQL scripts.
  * @Note This class does not contain additional functions, so it is recommended to use the `ScriptExecution` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dms-scriptexecution
  */
@@ -1303,7 +1303,7 @@ function rosUserPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DMS::User`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DMS::User`, which is used to add a user to Data Management (DMS).
  * @Note This class does not contain additional functions, so it is recommended to use the `User` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dms-user
  */

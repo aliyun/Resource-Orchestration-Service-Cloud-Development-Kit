@@ -20,6 +20,8 @@ type IResourceGroup interface {
 	AttrName() interface{}
 	// Attribute RegionStatuses: The status of the resource group in all regions.
 	AttrRegionStatuses() interface{}
+	// Attribute ResourceGroupId: The ID of the resource group.
+	AttrResourceGroupId() interface{}
 	Props() *ResourceGroupProps
 }
 
@@ -73,6 +75,16 @@ func (j *jsiiProxy_IResourceGroup) AttrRegionStatuses() interface{} {
 	_jsii_.Get(
 		j,
 		"attrRegionStatuses",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IResourceGroup) AttrResourceGroupId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrResourceGroupId",
 		&returns,
 	)
 	return returns

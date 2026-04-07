@@ -96,9 +96,9 @@ export interface RosDownloadProps {
 function RosDownloadPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('bakSetId', ros.validateString)(properties.bakSetId));
     errors.collect(ros.propertyValidator('instanceName', ros.requiredValidator)(properties.instanceName));
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    errors.collect(ros.propertyValidator('bakSetId', ros.validateString)(properties.bakSetId));
     errors.collect(ros.propertyValidator('downloadPointInTime', ros.validateString)(properties.downloadPointInTime));
     errors.collect(ros.propertyValidator('bakSetType', ros.validateString)(properties.bakSetType));
     errors.collect(ros.propertyValidator('bakSetSize', ros.validateString)(properties.bakSetSize));
@@ -150,7 +150,7 @@ function rosDownloadPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DBS::Download`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DBS::Download`, which is used to create an advanced download task.
  * @Note This class does not contain additional functions, so it is recommended to use the `Download` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dbs-download
  */
@@ -445,8 +445,8 @@ export interface RosRestoreTaskProps {
 function RosRestoreTaskPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('startTask', ros.validateBoolean)(properties.startTask));
     errors.collect(ros.propertyValidator('restoreDir', ros.validateString)(properties.restoreDir));
+    errors.collect(ros.propertyValidator('startTask', ros.validateBoolean)(properties.startTask));
     if(properties.duplicateConflict && (typeof properties.duplicateConflict) !== 'object') {
         errors.collect(ros.propertyValidator('duplicateConflict', ros.validateAllowedValues)({
           data: properties.duplicateConflict,
@@ -513,7 +513,7 @@ function rosRestoreTaskPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DBS::RestoreTask`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DBS::RestoreTask`, which is used to create a restoration task of Data Disaster Recovery.
  * @Note This class does not contain additional functions, so it is recommended to use the `RestoreTask` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dbs-restoretask
  */

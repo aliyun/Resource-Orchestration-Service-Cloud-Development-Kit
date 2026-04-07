@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Slb
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::SLB::AccessLogsAddition`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::SLB::AccessLogsAddition`, which is used to configure an access log forwarding rule for a Classic Load Balancer (CLB) instance.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccessLogsAddition`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-accesslogsaddition

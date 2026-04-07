@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Redis
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::PrepayInstance`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::PrepayInstance`, which is used to create a subscription Tair (Redis OSS-compatible) instance.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `PrepayInstance` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-prepayinstance
@@ -1541,10 +1541,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             /// and can contain lowercase letters and digits.
             /// It must start with a lowercase letter.
             /// </remarks>
-            [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            object ConnectionString
+            [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ConnectionString
             {
-                get;
+                get
+                {
+                    return null;
+                }
             }
 
             [JsiiTypeProxy(nativeType: typeof(IClassicInnerConnectionProperty), fullyQualifiedName: "@alicloud/ros-cdk-redis.RosPrepayInstance.ClassicInnerConnectionProperty")]
@@ -1569,10 +1573,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
                 /// and can contain lowercase letters and digits.
                 /// It must start with a lowercase letter.
                 /// </remarks>
-                [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-                public object ConnectionString
+                [JsiiOptional]
+                [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ConnectionString
                 {
-                    get => GetInstanceProperty<object>()!;
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -1633,7 +1638,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
                 }
             }
 
-            private object _connectionString;
+            private object? _connectionString;
 
             /// <remarks>
             /// <strong>Property</strong>: connectionString: The prefix of the public endpoint.
@@ -1641,8 +1646,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             /// and can contain lowercase letters and digits.
             /// It must start with a lowercase letter.
             /// </remarks>
-            [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object ConnectionString
+            [JsiiOptional]
+            [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ConnectionString
             {
                 get => _connectionString;
                 set
@@ -1659,7 +1665,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
                                 // Not enough information to type-check...
                                 break;
                             case null:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                                break;
                             default:
                                 throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
                         }
@@ -1927,10 +1933,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             /// and can contain lowercase letters and digits.
             /// It must start with a lowercase letter.
             /// </remarks>
-            [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            object ConnectionString
+            [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ConnectionString
             {
-                get;
+                get
+                {
+                    return null;
+                }
             }
 
             [JsiiTypeProxy(nativeType: typeof(IDirectConnectionProperty), fullyQualifiedName: "@alicloud/ros-cdk-redis.RosPrepayInstance.DirectConnectionProperty")]
@@ -1955,10 +1965,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
                 /// and can contain lowercase letters and digits.
                 /// It must start with a lowercase letter.
                 /// </remarks>
-                [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-                public object ConnectionString
+                [JsiiOptional]
+                [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ConnectionString
                 {
-                    get => GetInstanceProperty<object>()!;
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -2019,7 +2030,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
                 }
             }
 
-            private object _connectionString;
+            private object? _connectionString;
 
             /// <remarks>
             /// <strong>Property</strong>: connectionString: The prefix of the public endpoint.
@@ -2027,8 +2038,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             /// and can contain lowercase letters and digits.
             /// It must start with a lowercase letter.
             /// </remarks>
-            [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object ConnectionString
+            [JsiiOptional]
+            [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ConnectionString
             {
                 get => _connectionString;
                 set
@@ -2045,7 +2057,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
                                 // Not enough information to type-check...
                                 break;
                             case null:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                                break;
                             default:
                                 throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
                         }
@@ -2216,10 +2228,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             /// and can contain lowercase letters and digits.
             /// It must start with a lowercase letter.
             /// </remarks>
-            [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            object ConnectionString
+            [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ConnectionString
             {
-                get;
+                get
+                {
+                    return null;
+                }
             }
 
             [JsiiTypeProxy(nativeType: typeof(IPublicConnectionProperty), fullyQualifiedName: "@alicloud/ros-cdk-redis.RosPrepayInstance.PublicConnectionProperty")]
@@ -2244,10 +2260,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
                 /// and can contain lowercase letters and digits.
                 /// It must start with a lowercase letter.
                 /// </remarks>
-                [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-                public object ConnectionString
+                [JsiiOptional]
+                [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ConnectionString
                 {
-                    get => GetInstanceProperty<object>()!;
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -2308,7 +2325,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
                 }
             }
 
-            private object _connectionString;
+            private object? _connectionString;
 
             /// <remarks>
             /// <strong>Property</strong>: connectionString: The prefix of the public endpoint.
@@ -2316,8 +2333,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             /// and can contain lowercase letters and digits.
             /// It must start with a lowercase letter.
             /// </remarks>
-            [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object ConnectionString
+            [JsiiOptional]
+            [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ConnectionString
             {
                 get => _connectionString;
                 set
@@ -2334,7 +2352,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
                                 // Not enough information to type-check...
                                 break;
                             case null:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                                break;
                             default:
                                 throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
                         }
@@ -2738,10 +2756,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             /// and can contain lowercase letters and digits.
             /// It must start with a lowercase letter.
             /// </remarks>
-            [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            object ConnectionString
+            [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ConnectionString
             {
-                get;
+                get
+                {
+                    return null;
+                }
             }
 
             [JsiiTypeProxy(nativeType: typeof(IVpcPrivateConnectionProperty), fullyQualifiedName: "@alicloud/ros-cdk-redis.RosPrepayInstance.VpcPrivateConnectionProperty")]
@@ -2766,10 +2788,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
                 /// and can contain lowercase letters and digits.
                 /// It must start with a lowercase letter.
                 /// </remarks>
-                [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-                public object ConnectionString
+                [JsiiOptional]
+                [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ConnectionString
                 {
-                    get => GetInstanceProperty<object>()!;
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -2830,7 +2853,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
                 }
             }
 
-            private object _connectionString;
+            private object? _connectionString;
 
             /// <remarks>
             /// <strong>Property</strong>: connectionString: The prefix of the public endpoint.
@@ -2838,8 +2861,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             /// and can contain lowercase letters and digits.
             /// It must start with a lowercase letter.
             /// </remarks>
-            [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object ConnectionString
+            [JsiiOptional]
+            [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ConnectionString
             {
                 get => _connectionString;
                 set
@@ -2856,7 +2880,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
                                 // Not enough information to type-check...
                                 break;
                             case null:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                                break;
                             default:
                                 throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
                         }

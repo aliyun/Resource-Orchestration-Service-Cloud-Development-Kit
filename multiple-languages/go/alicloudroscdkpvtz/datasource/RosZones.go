@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::PVTZ::Zones`.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::PVTZ::Zones`, which is used to query built-in authoritative zones.
 type RosZones interface {
 	alicloudroscdkcore.RosResource
 	AttrZoneIds() alicloudroscdkcore.IResolvable
@@ -55,6 +55,8 @@ type RosZones interface {
 	// Resources that expose mutable properties should override this function to
 	// collect and return the properties object for this resource.
 	UpdatedProperites() *map[string]interface{}
+	VpcId() interface{}
+	SetVpcId(val interface{})
 	AddCondition(con alicloudroscdkcore.RosCondition)
 	AddCount(count interface{})
 	// Syntactic sugar for `addOverride(path, undefined)`.
@@ -314,6 +316,16 @@ func (j *jsiiProxy_RosZones) UpdatedProperites() *map[string]interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosZones) VpcId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"vpcId",
+		&returns,
+	)
+	return returns
+}
+
 
 func NewRosZones(scope alicloudroscdkcore.Construct, id *string, props *RosZonesProps, enableResourcePropertyConstraint *bool) RosZones {
 	_init_.Initialize()
@@ -371,6 +383,17 @@ func (j *jsiiProxy_RosZones)SetResourceGroupId(val interface{}) {
 	_jsii_.Set(
 		j,
 		"resourceGroupId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosZones)SetVpcId(val interface{}) {
+	if err := j.validateSetVpcIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"vpcId",
 		val,
 	)
 }

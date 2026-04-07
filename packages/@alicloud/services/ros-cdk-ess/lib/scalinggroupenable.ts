@@ -99,7 +99,7 @@ export interface IScalingGroupEnable extends ros.IResource {
     readonly attrScalingRuleArisExecuteResultNumberOfAddedInstances: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScalingGroupEnable`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScalingGroupEnable`, which is used to enable a scaling group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosScalingGroupEnable`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroupenable
  */
@@ -166,8 +166,8 @@ export class ScalingGroupEnable extends ros.Resource implements IScalingGroupEna
             detachOptions: props.detachOptions,
             scalingRuleArisExecuteVersion: props.scalingRuleArisExecuteVersion,
             scalingGroupId: props.scalingGroupId,
-            scalingRuleAris: props.scalingRuleAris,
             removeInstanceIds: props.removeInstanceIds,
+            scalingRuleAris: props.scalingRuleAris,
             scalingConfigurationId: props.scalingConfigurationId,
             instanceIds: props.instanceIds,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

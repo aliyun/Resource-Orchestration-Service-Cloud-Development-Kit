@@ -17,6 +17,8 @@ type RosRouterInterface interface {
 	AttrRouterInterfaceId() alicloudroscdkcore.IResolvable
 	AutoPay() interface{}
 	SetAutoPay(val interface{})
+	AutoRenew() interface{}
+	SetAutoRenew(val interface{})
 	// Returns: the stack trace of the point where this Resource was created from, sourced
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
@@ -25,6 +27,8 @@ type RosRouterInterface interface {
 	SetDescription(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	FastLinkMode() interface{}
+	SetFastLinkMode(val interface{})
 	HealthCheckSourceIp() interface{}
 	SetHealthCheckSourceIp(val interface{})
 	HealthCheckTargetIp() interface{}
@@ -66,6 +70,8 @@ type RosRouterInterface interface {
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
 	// coerce it to an IResolvable through `Lazy.any({ produce: resource.ref })`.
 	Ref() *string
+	ResourceGroupId() interface{}
+	SetResourceGroupId(val interface{})
 	Role() interface{}
 	SetRole(val interface{})
 	// Options for this resource, such as condition, update policy etc.
@@ -237,6 +243,16 @@ func (j *jsiiProxy_RosRouterInterface) AutoPay() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosRouterInterface) AutoRenew() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"autoRenew",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosRouterInterface) CreationStack() *[]*string {
 	var returns *[]*string
 	_jsii_.Get(
@@ -262,6 +278,16 @@ func (j *jsiiProxy_RosRouterInterface) EnableResourcePropertyConstraint() *bool 
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosRouterInterface) FastLinkMode() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"fastLinkMode",
 		&returns,
 	)
 	return returns
@@ -417,6 +443,16 @@ func (j *jsiiProxy_RosRouterInterface) Ref() *string {
 	return returns
 }
 
+func (j *jsiiProxy_RosRouterInterface) ResourceGroupId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"resourceGroupId",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosRouterInterface) Role() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -557,6 +593,17 @@ func (j *jsiiProxy_RosRouterInterface)SetAutoPay(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosRouterInterface)SetAutoRenew(val interface{}) {
+	if err := j.validateSetAutoRenewParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"autoRenew",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosRouterInterface)SetDescription(val interface{}) {
 	if err := j.validateSetDescriptionParameters(val); err != nil {
 		panic(err)
@@ -575,6 +622,17 @@ func (j *jsiiProxy_RosRouterInterface)SetEnableResourcePropertyConstraint(val *b
 	_jsii_.Set(
 		j,
 		"enableResourcePropertyConstraint",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosRouterInterface)SetFastLinkMode(val interface{}) {
+	if err := j.validateSetFastLinkModeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"fastLinkMode",
 		val,
 	)
 }
@@ -707,6 +765,17 @@ func (j *jsiiProxy_RosRouterInterface)SetPricingCycle(val interface{}) {
 	_jsii_.Set(
 		j,
 		"pricingCycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosRouterInterface)SetResourceGroupId(val interface{}) {
+	if err := j.validateSetResourceGroupIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"resourceGroupId",
 		val,
 	)
 }

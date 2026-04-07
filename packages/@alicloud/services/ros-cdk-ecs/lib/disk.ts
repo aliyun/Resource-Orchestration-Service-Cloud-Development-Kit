@@ -130,7 +130,7 @@ export interface IDisk extends ros.IResource {
     readonly attrStatus: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Disk`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Disk`, which is used to create a cloud disk in Elastic Compute Service (ECS).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDisk`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-disk
  */
@@ -166,18 +166,18 @@ export class Disk extends ros.Resource implements IDisk {
             burstingEnabled: props.burstingEnabled,
             description: props.description,
             kmsKeyId: props.kmsKeyId,
-            resourceGroupId: props.resourceGroupId,
             zoneId: props.zoneId,
+            resourceGroupId: props.resourceGroupId,
             instanceId: props.instanceId,
+            size: props.size,
             performanceLevel: props.performanceLevel,
             encrypted: props.encrypted === undefined || props.encrypted === null ? false : props.encrypted,
-            size: props.size,
             deleteAutoSnapshot: props.deleteAutoSnapshot === undefined || props.deleteAutoSnapshot === null ? false : props.deleteAutoSnapshot,
             diskCategory: props.diskCategory,
             autoSnapshotPolicyId: props.autoSnapshotPolicyId,
             storageSetPartitionNumber: props.storageSetPartitionNumber,
-            provisionedIops: props.provisionedIops,
             diskName: props.diskName,
+            provisionedIops: props.provisionedIops,
             multiAttach: props.multiAttach,
             snapshotId: props.snapshotId,
             storageSetId: props.storageSetId,

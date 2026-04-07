@@ -70,7 +70,7 @@ export interface ICapacityReservation extends ros.IResource {
     readonly attrPrivatePoolOptionsId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::CapacityReservation`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::CapacityReservation`, which is used to create a capacity reservation.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCapacityReservation`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-capacityreservation
  */
@@ -98,12 +98,12 @@ export class CapacityReservation extends ros.Resource implements ICapacityReserv
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCapacityReservation = new RosCapacityReservation(this, id,  {
-            instanceAmount: props.instanceAmount,
             description: props.description,
+            instanceAmount: props.instanceAmount,
+            endTime: props.endTime,
+            resourceGroupId: props.resourceGroupId,
             privatePoolOptions: props.privatePoolOptions,
             zoneId: props.zoneId,
-            resourceGroupId: props.resourceGroupId,
-            endTime: props.endTime,
             endTimeType: props.endTimeType,
             instanceType: props.instanceType,
             tags: props.tags,

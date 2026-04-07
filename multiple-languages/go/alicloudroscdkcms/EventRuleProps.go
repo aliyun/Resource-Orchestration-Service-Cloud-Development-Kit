@@ -19,6 +19,8 @@ type EventRuleProps struct {
 	EventType interface{} `field:"optional" json:"eventType" yaml:"eventType"`
 	// Property groupId: The ID of the application group.
 	GroupId interface{} `field:"optional" json:"groupId" yaml:"groupId"`
+	// Property silenceTime: Channel silence time in seconds.
+	SilenceTime interface{} `field:"optional" json:"silenceTime" yaml:"silenceTime"`
 	// Property state: The status of the alert rule.
 	//
 	// Valid values:

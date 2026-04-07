@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::GWLB::ServerGroup`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::GWLB::ServerGroup`The , which type is used to create a server group.
 type ServerGroup interface {
 	alicloudroscdkcore.Resource
 	IServerGroup

@@ -10,8 +10,10 @@ type RosVirtualBorderRouterProps struct {
 	PeeringSubnetMask interface{} `field:"required" json:"peeringSubnetMask" yaml:"peeringSubnetMask"`
 	PhysicalConnectionId interface{} `field:"required" json:"physicalConnectionId" yaml:"physicalConnectionId"`
 	VlanId interface{} `field:"required" json:"vlanId" yaml:"vlanId"`
+	Bandwidth interface{} `field:"optional" json:"bandwidth" yaml:"bandwidth"`
 	CircuitCode interface{} `field:"optional" json:"circuitCode" yaml:"circuitCode"`
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
 	Name interface{} `field:"optional" json:"name" yaml:"name"`
+	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 }
 

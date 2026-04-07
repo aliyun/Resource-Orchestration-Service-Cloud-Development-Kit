@@ -10,5 +10,6 @@ type RosVcoRouteEntryProps struct {
 	VpnConnectionId interface{} `field:"required" json:"vpnConnectionId" yaml:"vpnConnectionId"`
 	Weight interface{} `field:"required" json:"weight" yaml:"weight"`
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
+	OverlayMode interface{} `field:"optional" json:"overlayMode" yaml:"overlayMode"`
 }
 

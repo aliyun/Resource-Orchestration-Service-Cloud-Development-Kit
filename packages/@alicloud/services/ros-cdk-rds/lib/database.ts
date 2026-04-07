@@ -64,7 +64,7 @@ export interface IDatabase extends ros.IResource {
     readonly attrDbName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::Database`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::Database`The , which resource type creates a database in an RDS instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDatabase`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-database
  */

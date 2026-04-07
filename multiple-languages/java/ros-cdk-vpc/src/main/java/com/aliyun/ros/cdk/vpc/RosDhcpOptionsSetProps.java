@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-dhcpoptionsset
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.039Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.977Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosDhcpOptionsSetProps")
 @software.amazon.jsii.Jsii.Proxy(RosDhcpOptionsSetProps.Jsii$Proxy.class)
 public interface RosDhcpOptionsSetProps extends software.amazon.jsii.JsiiSerializable {
@@ -35,6 +35,24 @@ public interface RosDhcpOptionsSetProps extends software.amazon.jsii.JsiiSeriali
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIpv6LeaseTime() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLeaseTime() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosDhcpOptionsSetProps}
      */
     static Builder builder() {
@@ -48,6 +66,9 @@ public interface RosDhcpOptionsSetProps extends software.amazon.jsii.JsiiSeriali
         java.lang.Object dhcpOptionsSetName;
         java.lang.Object domainName;
         java.lang.Object domainNameServers;
+        java.lang.Object ipv6LeaseTime;
+        java.lang.Object leaseTime;
+        java.lang.Object resourceGroupId;
 
         /**
          * Sets the value of {@link RosDhcpOptionsSetProps#getDhcpOptionsSetDescription}
@@ -130,6 +151,66 @@ public interface RosDhcpOptionsSetProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosDhcpOptionsSetProps#getIpv6LeaseTime}
+         * @param ipv6LeaseTime the value to be set.
+         * @return {@code this}
+         */
+        public Builder ipv6LeaseTime(java.lang.String ipv6LeaseTime) {
+            this.ipv6LeaseTime = ipv6LeaseTime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDhcpOptionsSetProps#getIpv6LeaseTime}
+         * @param ipv6LeaseTime the value to be set.
+         * @return {@code this}
+         */
+        public Builder ipv6LeaseTime(com.aliyun.ros.cdk.core.IResolvable ipv6LeaseTime) {
+            this.ipv6LeaseTime = ipv6LeaseTime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDhcpOptionsSetProps#getLeaseTime}
+         * @param leaseTime the value to be set.
+         * @return {@code this}
+         */
+        public Builder leaseTime(java.lang.String leaseTime) {
+            this.leaseTime = leaseTime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDhcpOptionsSetProps#getLeaseTime}
+         * @param leaseTime the value to be set.
+         * @return {@code this}
+         */
+        public Builder leaseTime(com.aliyun.ros.cdk.core.IResolvable leaseTime) {
+            this.leaseTime = leaseTime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDhcpOptionsSetProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDhcpOptionsSetProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosDhcpOptionsSetProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -149,6 +230,9 @@ public interface RosDhcpOptionsSetProps extends software.amazon.jsii.JsiiSeriali
         private final java.lang.Object dhcpOptionsSetName;
         private final java.lang.Object domainName;
         private final java.lang.Object domainNameServers;
+        private final java.lang.Object ipv6LeaseTime;
+        private final java.lang.Object leaseTime;
+        private final java.lang.Object resourceGroupId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -160,6 +244,9 @@ public interface RosDhcpOptionsSetProps extends software.amazon.jsii.JsiiSeriali
             this.dhcpOptionsSetName = software.amazon.jsii.Kernel.get(this, "dhcpOptionsSetName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.domainName = software.amazon.jsii.Kernel.get(this, "domainName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.domainNameServers = software.amazon.jsii.Kernel.get(this, "domainNameServers", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ipv6LeaseTime = software.amazon.jsii.Kernel.get(this, "ipv6LeaseTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.leaseTime = software.amazon.jsii.Kernel.get(this, "leaseTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -171,6 +258,9 @@ public interface RosDhcpOptionsSetProps extends software.amazon.jsii.JsiiSeriali
             this.dhcpOptionsSetName = builder.dhcpOptionsSetName;
             this.domainName = builder.domainName;
             this.domainNameServers = builder.domainNameServers;
+            this.ipv6LeaseTime = builder.ipv6LeaseTime;
+            this.leaseTime = builder.leaseTime;
+            this.resourceGroupId = builder.resourceGroupId;
         }
 
         @Override
@@ -194,6 +284,21 @@ public interface RosDhcpOptionsSetProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
+        public final java.lang.Object getIpv6LeaseTime() {
+            return this.ipv6LeaseTime;
+        }
+
+        @Override
+        public final java.lang.Object getLeaseTime() {
+            return this.leaseTime;
+        }
+
+        @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -210,6 +315,15 @@ public interface RosDhcpOptionsSetProps extends software.amazon.jsii.JsiiSeriali
             }
             if (this.getDomainNameServers() != null) {
                 data.set("domainNameServers", om.valueToTree(this.getDomainNameServers()));
+            }
+            if (this.getIpv6LeaseTime() != null) {
+                data.set("ipv6LeaseTime", om.valueToTree(this.getIpv6LeaseTime()));
+            }
+            if (this.getLeaseTime() != null) {
+                data.set("leaseTime", om.valueToTree(this.getLeaseTime()));
+            }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -232,7 +346,10 @@ public interface RosDhcpOptionsSetProps extends software.amazon.jsii.JsiiSeriali
             if (this.dhcpOptionsSetDescription != null ? !this.dhcpOptionsSetDescription.equals(that.dhcpOptionsSetDescription) : that.dhcpOptionsSetDescription != null) return false;
             if (this.dhcpOptionsSetName != null ? !this.dhcpOptionsSetName.equals(that.dhcpOptionsSetName) : that.dhcpOptionsSetName != null) return false;
             if (this.domainName != null ? !this.domainName.equals(that.domainName) : that.domainName != null) return false;
-            return this.domainNameServers != null ? this.domainNameServers.equals(that.domainNameServers) : that.domainNameServers == null;
+            if (this.domainNameServers != null ? !this.domainNameServers.equals(that.domainNameServers) : that.domainNameServers != null) return false;
+            if (this.ipv6LeaseTime != null ? !this.ipv6LeaseTime.equals(that.ipv6LeaseTime) : that.ipv6LeaseTime != null) return false;
+            if (this.leaseTime != null ? !this.leaseTime.equals(that.leaseTime) : that.leaseTime != null) return false;
+            return this.resourceGroupId != null ? this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId == null;
         }
 
         @Override
@@ -241,6 +358,9 @@ public interface RosDhcpOptionsSetProps extends software.amazon.jsii.JsiiSeriali
             result = 31 * result + (this.dhcpOptionsSetName != null ? this.dhcpOptionsSetName.hashCode() : 0);
             result = 31 * result + (this.domainName != null ? this.domainName.hashCode() : 0);
             result = 31 * result + (this.domainNameServers != null ? this.domainNameServers.hashCode() : 0);
+            result = 31 * result + (this.ipv6LeaseTime != null ? this.ipv6LeaseTime.hashCode() : 0);
+            result = 31 * result + (this.leaseTime != null ? this.leaseTime.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             return result;
         }
     }

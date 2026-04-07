@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ram;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::RAM::OIDCProvider</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::RAM::OIDCProvider</code>, which is used to create an OpenID Connect (OIDC) identity provider (IdP).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:59.317Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:28.975Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.OIDCProvider")
 public class OIDCProvider extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ram.IOIDCProvider {
 

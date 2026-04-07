@@ -78,7 +78,7 @@ export interface IQuota extends ros.IResource {
     readonly attrNickname: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::MaxCompute::Quota`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MaxCompute::Quota`The , which type is used to create a MaxCompute (previously known as ODPS) quota.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosQuota`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-maxcompute-quota
  */
@@ -112,8 +112,8 @@ export class Quota extends ros.Resource implements IQuota {
 
         const rosQuota = new RosQuota(this, id,  {
             cu: props.cu,
-            quotaNickname: props.quotaNickname,
             tunnel: props.tunnel,
+            quotaNickname: props.quotaNickname,
             autoRenew: props.autoRenew,
             period: props.period,
             specification: props.specification,

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipsecserver
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:00.988Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.920Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.IpsecServerProps")
 @software.amazon.jsii.Jsii.Proxy(IpsecServerProps.Jsii$Proxy.class)
 public interface IpsecServerProps extends software.amazon.jsii.JsiiSerializable {
@@ -53,7 +53,7 @@ public interface IpsecServerProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
-     * Property ipsecServerName: The value must be 2 to 128 characters in length and start with a letter or Chinese character.
+     * Property ipsecServerName: The value must be 1 to 100 characters in length and start with a letter or Chinese character.
      * <p>
      * It can contain digits, underscores (_), and hyphens (-).
      */
@@ -227,7 +227,7 @@ public interface IpsecServerProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link IpsecServerProps#getIpsecServerName}
-         * @param ipsecServerName Property ipsecServerName: The value must be 2 to 128 characters in length and start with a letter or Chinese character.
+         * @param ipsecServerName Property ipsecServerName: The value must be 1 to 100 characters in length and start with a letter or Chinese character.
          *                        It can contain digits, underscores (_), and hyphens (-).
          * @return {@code this}
          */
@@ -238,7 +238,7 @@ public interface IpsecServerProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link IpsecServerProps#getIpsecServerName}
-         * @param ipsecServerName Property ipsecServerName: The value must be 2 to 128 characters in length and start with a letter or Chinese character.
+         * @param ipsecServerName Property ipsecServerName: The value must be 1 to 100 characters in length and start with a letter or Chinese character.
          *                        It can contain digits, underscores (_), and hyphens (-).
          * @return {@code this}
          */

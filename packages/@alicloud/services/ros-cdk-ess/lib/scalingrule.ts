@@ -160,7 +160,7 @@ export interface IScalingRule extends ros.IResource {
     readonly attrScalingRuleId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScalingRule`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScalingRule`, which is used to create a scaling rule.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosScalingRule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalingrule
  */
@@ -194,8 +194,8 @@ export class ScalingRule extends ros.Resource implements IScalingRule {
 
         const rosScalingRule = new RosScalingRule(this, id,  {
             targetValue: props.targetValue,
-            cooldown: props.cooldown,
             scalingGroupId: props.scalingGroupId,
+            cooldown: props.cooldown,
             predictiveValueBehavior: props.predictiveValueBehavior,
             minAdjustmentMagnitude: props.minAdjustmentMagnitude,
             disableScaleIn: props.disableScaleIn,
@@ -209,8 +209,8 @@ export class ScalingRule extends ros.Resource implements IScalingRule {
             scalingRuleType: props.scalingRuleType,
             estimatedInstanceWarmup: props.estimatedInstanceWarmup,
             predictiveScalingMode: props.predictiveScalingMode,
-            predictiveTaskBufferTime: props.predictiveTaskBufferTime,
             predictiveValueBuffer: props.predictiveValueBuffer,
+            predictiveTaskBufferTime: props.predictiveTaskBufferTime,
             scaleInEvaluationCount: props.scaleInEvaluationCount,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosScalingRule;

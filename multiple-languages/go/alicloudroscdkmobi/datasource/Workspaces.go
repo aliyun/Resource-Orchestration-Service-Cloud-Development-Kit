@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::MOBI::Workspaces`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::MOBI::Workspaces`, which is used to query workspaces.
 type Workspaces interface {
 	alicloudroscdkcore.Resource
 	IWorkspaces

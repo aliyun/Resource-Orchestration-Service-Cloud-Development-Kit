@@ -529,17 +529,12 @@ export interface IInstanceGroup extends ros.IResource {
     readonly attrPublicIps: ros.IResolvable | string;
 
     /**
-     * Attribute RelatedOrderIds: The related order id list of created ecs instances
-     */
-    readonly attrRelatedOrderIds: ros.IResolvable | string;
-
-    /**
      * Attribute ZoneIds: Zone id of created instances.
      */
     readonly attrZoneIds: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::InstanceGroup`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::InstanceGroup`The , which resource creates a group of ECS instances that share identical configurations.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstanceGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroup
  */
@@ -590,11 +585,6 @@ export class InstanceGroup extends ros.Resource implements IInstanceGroup {
     public readonly attrPublicIps: ros.IResolvable | string;
 
     /**
-     * Attribute RelatedOrderIds: The related order id list of created ecs instances
-     */
-    public readonly attrRelatedOrderIds: ros.IResolvable | string;
-
-    /**
      * Attribute ZoneIds: Zone id of created instances.
      */
     public readonly attrZoneIds: ros.IResolvable | string;
@@ -619,11 +609,11 @@ export class InstanceGroup extends ros.Resource implements IInstanceGroup {
             systemDiskProvisionedIops: props.systemDiskProvisionedIops,
             systemDiskEncryptAlgorithm: props.systemDiskEncryptAlgorithm,
             ramRoleName: props.ramRoleName,
-            privatePoolOptions: props.privatePoolOptions,
             systemDiskPerformanceLevel: props.systemDiskPerformanceLevel,
+            privatePoolOptions: props.privatePoolOptions,
             imageId: props.imageId,
-            imageOptions: props.imageOptions,
             systemDiskDiskName: props.systemDiskDiskName,
+            imageOptions: props.imageOptions,
             storageSetId: props.storageSetId,
             useAdditionalService: props.useAdditionalService,
             tags: props.tags,
@@ -632,17 +622,17 @@ export class InstanceGroup extends ros.Resource implements IInstanceGroup {
             launchTemplateName: props.launchTemplateName,
             updatePolicy: props.updatePolicy === undefined || props.updatePolicy === null ? 'ForNewInstances' : props.updatePolicy,
             systemDiskKmsKeyId: props.systemDiskKmsKeyId,
-            cpuOptions: props.cpuOptions,
             vSwitchId: props.vSwitchId,
+            cpuOptions: props.cpuOptions,
             period: props.period === undefined || props.period === null ? 1 : props.period,
             imageFamily: props.imageFamily,
             launchTemplateId: props.launchTemplateId,
             deletionProtection: props.deletionProtection,
-            httpEndpoint: props.httpEndpoint,
             securityGroupIds: props.securityGroupIds,
+            httpEndpoint: props.httpEndpoint,
             internetChargeType: props.internetChargeType === undefined || props.internetChargeType === null ? 'PayByTraffic' : props.internetChargeType,
-            deploymentSetId: props.deploymentSetId,
             spotInterruptionBehavior: props.spotInterruptionBehavior === undefined || props.spotInterruptionBehavior === null ? 'Terminate' : props.spotInterruptionBehavior,
+            deploymentSetId: props.deploymentSetId,
             instanceName: props.instanceName,
             internetMaxBandwidthOut: props.internetMaxBandwidthOut === undefined || props.internetMaxBandwidthOut === null ? 1 : props.internetMaxBandwidthOut,
             vpcId: props.vpcId,
@@ -651,8 +641,8 @@ export class InstanceGroup extends ros.Resource implements IInstanceGroup {
             securityOptions: props.securityOptions,
             affinity: props.affinity,
             securityEnhancementStrategy: props.securityEnhancementStrategy,
-            autoReleaseTime: props.autoReleaseTime,
             periodUnit: props.periodUnit === undefined || props.periodUnit === null ? 'Month' : props.periodUnit,
+            autoReleaseTime: props.autoReleaseTime,
             tenancy: props.tenancy,
             privateIpAddress: props.privateIpAddress,
             description: props.description,
@@ -667,8 +657,8 @@ export class InstanceGroup extends ros.Resource implements IInstanceGroup {
             maxAmount: props.maxAmount,
             systemDiskAutoSnapshotPolicyId: props.systemDiskAutoSnapshotPolicyId,
             deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
-            networkType: props.networkType,
             ipv6AddressCount: props.ipv6AddressCount,
+            networkType: props.networkType,
             schedulerOptions: props.schedulerOptions,
             spotPriceLimit: props.spotPriceLimit,
             hostNames: props.hostNames,
@@ -676,14 +666,14 @@ export class InstanceGroup extends ros.Resource implements IInstanceGroup {
             instanceType: props.instanceType,
             allocatePublicIp: props.allocatePublicIp === undefined || props.allocatePublicIp === null ? true : props.allocatePublicIp,
             spotStrategy: props.spotStrategy,
-            passwordInherit: props.passwordInherit,
             password: props.password,
+            passwordInherit: props.passwordInherit,
             autoRenewPeriod: props.autoRenewPeriod === undefined || props.autoRenewPeriod === null ? 1 : props.autoRenewPeriod,
             keyPairName: props.keyPairName,
             ioOptimized: props.ioOptimized === undefined || props.ioOptimized === null ? 'optimized' : props.ioOptimized,
             zoneId: props.zoneId,
-            subscriptionDeletionForce: props.subscriptionDeletionForce === undefined || props.subscriptionDeletionForce === null ? false : props.subscriptionDeletionForce,
             hpcClusterId: props.hpcClusterId,
+            subscriptionDeletionForce: props.subscriptionDeletionForce === undefined || props.subscriptionDeletionForce === null ? false : props.subscriptionDeletionForce,
             securityGroupId: props.securityGroupId,
             deploymentSetGroupNo: props.deploymentSetGroupNo,
             systemDiskCategory: props.systemDiskCategory === undefined || props.systemDiskCategory === null ? 'cloud_efficiency' : props.systemDiskCategory,
@@ -703,7 +693,6 @@ export class InstanceGroup extends ros.Resource implements IInstanceGroup {
         this.attrOrderId = rosInstanceGroup.attrOrderId;
         this.attrPrivateIps = rosInstanceGroup.attrPrivateIps;
         this.attrPublicIps = rosInstanceGroup.attrPublicIps;
-        this.attrRelatedOrderIds = rosInstanceGroup.attrRelatedOrderIds;
         this.attrZoneIds = rosInstanceGroup.attrZoneIds;
     }
 }

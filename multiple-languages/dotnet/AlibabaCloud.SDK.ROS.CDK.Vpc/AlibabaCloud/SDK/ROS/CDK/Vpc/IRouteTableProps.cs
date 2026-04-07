@@ -18,6 +18,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             get;
         }
 
+        /// <summary>Property associateType: The type of the route table.</summary>
+        [JsiiProperty(name: "associateType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AssociateType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property description: The description of the route table.</summary>
         /// <remarks>
         /// The description must be 2 to 256 characters in length. The description must start with a letter, but cannot start with http:// or https://.
@@ -76,6 +87,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             public object VpcId
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property associateType: The type of the route table.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "associateType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AssociateType
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property description: The description of the route table.</summary>

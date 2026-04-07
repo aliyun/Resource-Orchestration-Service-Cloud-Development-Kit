@@ -96,6 +96,10 @@ func (j *jsiiProxy_RosVpcCidrBlockAssociation) validateSetIPv6CidrBlockParameter
 	return nil
 }
 
+func (j *jsiiProxy_RosVpcCidrBlockAssociation) validateSetIpv6CidrMaskParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosVpcCidrBlockAssociation) validateSetIpv6IspParameters(val interface{}) error {
 	return nil
 }

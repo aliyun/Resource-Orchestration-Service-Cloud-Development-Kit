@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.mongodb;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::MONGODB::Instance</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::MONGODB::Instance</code>The , which type creates or clones a MongoDB replica set instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.605Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.606Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.mongodb.IInstance {
 
@@ -255,6 +255,27 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
+         * Property auditPolicyOptions: Audit policy options.
+         * <p>
+         * @return {@code this}
+         * @param auditPolicyOptions Property auditPolicyOptions: Audit policy options. This parameter is required.
+         */
+        public Builder auditPolicyOptions(final com.aliyun.ros.cdk.core.IResolvable auditPolicyOptions) {
+            this.props.auditPolicyOptions(auditPolicyOptions);
+            return this;
+        }
+        /**
+         * Property auditPolicyOptions: Audit policy options.
+         * <p>
+         * @return {@code this}
+         * @param auditPolicyOptions Property auditPolicyOptions: Audit policy options. This parameter is required.
+         */
+        public Builder auditPolicyOptions(final com.aliyun.ros.cdk.mongodb.RosInstance.AuditPolicyOptionsProperty auditPolicyOptions) {
+            this.props.auditPolicyOptions(auditPolicyOptions);
+            return this;
+        }
+
+        /**
          * Property autoRenew: Indicates whether automatic renewal is enabled for the instance.
          * <p>
          * Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
@@ -301,6 +322,27 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
+         * Property backupPolicyOptions: Backup policy options.
+         * <p>
+         * @return {@code this}
+         * @param backupPolicyOptions Property backupPolicyOptions: Backup policy options. This parameter is required.
+         */
+        public Builder backupPolicyOptions(final com.aliyun.ros.cdk.core.IResolvable backupPolicyOptions) {
+            this.props.backupPolicyOptions(backupPolicyOptions);
+            return this;
+        }
+        /**
+         * Property backupPolicyOptions: Backup policy options.
+         * <p>
+         * @return {@code this}
+         * @param backupPolicyOptions Property backupPolicyOptions: Backup policy options. This parameter is required.
+         */
+        public Builder backupPolicyOptions(final com.aliyun.ros.cdk.mongodb.RosInstance.BackupPolicyOptionsProperty backupPolicyOptions) {
+            this.props.backupPolicyOptions(backupPolicyOptions);
+            return this;
+        }
+
+        /**
          * Property businessInfo: The business information.
          * <p>
          * It is an additional parameter.
@@ -343,6 +385,27 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
          */
         public Builder chargeType(final com.aliyun.ros.cdk.core.IResolvable chargeType) {
             this.props.chargeType(chargeType);
+            return this;
+        }
+
+        /**
+         * Property clusterId: The dedicated cluster ID.
+         * <p>
+         * @return {@code this}
+         * @param clusterId Property clusterId: The dedicated cluster ID. This parameter is required.
+         */
+        public Builder clusterId(final java.lang.String clusterId) {
+            this.props.clusterId(clusterId);
+            return this;
+        }
+        /**
+         * Property clusterId: The dedicated cluster ID.
+         * <p>
+         * @return {@code this}
+         * @param clusterId Property clusterId: The dedicated cluster ID. This parameter is required.
+         */
+        public Builder clusterId(final com.aliyun.ros.cdk.core.IResolvable clusterId) {
+            this.props.clusterId(clusterId);
             return this;
         }
 
@@ -410,6 +473,83 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
          */
         public Builder dbInstanceDescription(final com.aliyun.ros.cdk.core.IResolvable dbInstanceDescription) {
             this.props.dbInstanceDescription(dbInstanceDescription);
+            return this;
+        }
+
+        /**
+         * Property dbInstanceReleaseProtection: Enables instance release protection.
+         * <p>
+         * Values:
+         * <p>
+         * <ul>
+         * <li>true: Enabled.</li>
+         * <li>false: Not enabled.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param dbInstanceReleaseProtection Property dbInstanceReleaseProtection: Enables instance release protection. This parameter is required.
+         */
+        public Builder dbInstanceReleaseProtection(final java.lang.Boolean dbInstanceReleaseProtection) {
+            this.props.dbInstanceReleaseProtection(dbInstanceReleaseProtection);
+            return this;
+        }
+        /**
+         * Property dbInstanceReleaseProtection: Enables instance release protection.
+         * <p>
+         * Values:
+         * <p>
+         * <ul>
+         * <li>true: Enabled.</li>
+         * <li>false: Not enabled.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param dbInstanceReleaseProtection Property dbInstanceReleaseProtection: Enables instance release protection. This parameter is required.
+         */
+        public Builder dbInstanceReleaseProtection(final com.aliyun.ros.cdk.core.IResolvable dbInstanceReleaseProtection) {
+            this.props.dbInstanceReleaseProtection(dbInstanceReleaseProtection);
+            return this;
+        }
+
+        /**
+         * Property encrypted: Whether to enable cloud disk encryption.
+         * <p>
+         * @return {@code this}
+         * @param encrypted Property encrypted: Whether to enable cloud disk encryption. This parameter is required.
+         */
+        public Builder encrypted(final java.lang.Boolean encrypted) {
+            this.props.encrypted(encrypted);
+            return this;
+        }
+        /**
+         * Property encrypted: Whether to enable cloud disk encryption.
+         * <p>
+         * @return {@code this}
+         * @param encrypted Property encrypted: Whether to enable cloud disk encryption. This parameter is required.
+         */
+        public Builder encrypted(final com.aliyun.ros.cdk.core.IResolvable encrypted) {
+            this.props.encrypted(encrypted);
+            return this;
+        }
+
+        /**
+         * Property encryptionKey: Custom key ID.
+         * <p>
+         * @return {@code this}
+         * @param encryptionKey Property encryptionKey: Custom key ID. This parameter is required.
+         */
+        public Builder encryptionKey(final java.lang.String encryptionKey) {
+            this.props.encryptionKey(encryptionKey);
+            return this;
+        }
+        /**
+         * Property encryptionKey: Custom key ID.
+         * <p>
+         * @return {@code this}
+         * @param encryptionKey Property encryptionKey: Custom key ID. This parameter is required.
+         */
+        public Builder encryptionKey(final com.aliyun.ros.cdk.core.IResolvable encryptionKey) {
+            this.props.encryptionKey(encryptionKey);
             return this;
         }
 
@@ -504,6 +644,31 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
+         * Property provisionedIops: Provisioned IOPS.
+         * <p>
+         * The value range is 0 to 50000.
+         * <p>
+         * @return {@code this}
+         * @param provisionedIops Property provisionedIops: Provisioned IOPS. This parameter is required.
+         */
+        public Builder provisionedIops(final java.lang.Number provisionedIops) {
+            this.props.provisionedIops(provisionedIops);
+            return this;
+        }
+        /**
+         * Property provisionedIops: Provisioned IOPS.
+         * <p>
+         * The value range is 0 to 50000.
+         * <p>
+         * @return {@code this}
+         * @param provisionedIops Property provisionedIops: Provisioned IOPS. This parameter is required.
+         */
+        public Builder provisionedIops(final com.aliyun.ros.cdk.core.IResolvable provisionedIops) {
+            this.props.provisionedIops(provisionedIops);
+            return this;
+        }
+
+        /**
          * Property readonlyReplicas: Number of read-only nodes, in the range of 1-5.
          * <p>
          * @return {@code this}
@@ -592,6 +757,41 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
          */
         public Builder restoreTime(final com.aliyun.ros.cdk.core.IResolvable restoreTime) {
             this.props.restoreTime(restoreTime);
+            return this;
+        }
+
+        /**
+         * Property restoreType: Backup recovery instance.
+         * <p>
+         * <ul>
+         * <li>0: Restore instance to specified backup set</li>
+         * <li>1: Restore instance to specified point in time</li>
+         * <li>2: Restore released instance to specified backup set</li>
+         * <li>3: Restore instance to specified backup set</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param restoreType Property restoreType: Backup recovery instance. This parameter is required.
+         */
+        public Builder restoreType(final java.lang.Number restoreType) {
+            this.props.restoreType(restoreType);
+            return this;
+        }
+        /**
+         * Property restoreType: Backup recovery instance.
+         * <p>
+         * <ul>
+         * <li>0: Restore instance to specified backup set</li>
+         * <li>1: Restore instance to specified point in time</li>
+         * <li>2: Restore released instance to specified backup set</li>
+         * <li>3: Restore instance to specified backup set</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param restoreType Property restoreType: Backup recovery instance. This parameter is required.
+         */
+        public Builder restoreType(final com.aliyun.ros.cdk.core.IResolvable restoreType) {
+            this.props.restoreType(restoreType);
             return this;
         }
 
@@ -690,6 +890,64 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
          */
         public Builder srcDbInstanceId(final com.aliyun.ros.cdk.core.IResolvable srcDbInstanceId) {
             this.props.srcDbInstanceId(srcDbInstanceId);
+            return this;
+        }
+
+        /**
+         * Property srcRegion: The source instance region.
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>When the backup recovery type is 2 or 3, this parameter is required.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
+         * <p>
+         * @return {@code this}
+         * @param srcRegion Property srcRegion: The source instance region. This parameter is required.
+         */
+        public Builder srcRegion(final java.lang.String srcRegion) {
+            this.props.srcRegion(srcRegion);
+            return this;
+        }
+        /**
+         * Property srcRegion: The source instance region.
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>When the backup recovery type is 2 or 3, this parameter is required.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
+         * <p>
+         * @return {@code this}
+         * @param srcRegion Property srcRegion: The source instance region. This parameter is required.
+         */
+        public Builder srcRegion(final com.aliyun.ros.cdk.core.IResolvable srcRegion) {
+            this.props.srcRegion(srcRegion);
+            return this;
+        }
+
+        /**
+         * Property sslOptions: SSL options.
+         * <p>
+         * @return {@code this}
+         * @param sslOptions Property sslOptions: SSL options. This parameter is required.
+         */
+        public Builder sslOptions(final com.aliyun.ros.cdk.core.IResolvable sslOptions) {
+            this.props.sslOptions(sslOptions);
+            return this;
+        }
+        /**
+         * Property sslOptions: SSL options.
+         * <p>
+         * @return {@code this}
+         * @param sslOptions Property sslOptions: SSL options. This parameter is required.
+         */
+        public Builder sslOptions(final com.aliyun.ros.cdk.mongodb.RosInstance.SSLOptionsProperty sslOptions) {
+            this.props.sslOptions(sslOptions);
             return this;
         }
 

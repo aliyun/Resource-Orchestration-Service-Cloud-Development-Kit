@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::LoadBalancerTCPListeners`.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::LoadBalancerTCPListeners`, which is used to query Classic Load Balancer (CLB) listeners.
 type RosLoadBalancerTCPListeners interface {
 	alicloudroscdkcore.RosResource
 	AttrListenerPorts() alicloudroscdkcore.IResolvable

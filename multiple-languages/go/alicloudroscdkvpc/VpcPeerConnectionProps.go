@@ -27,6 +27,10 @@ type VpcPeerConnectionProps struct {
 	// from that of the requester VPC.
 	// Default current region.
 	AcceptingRegionId interface{} `field:"optional" json:"acceptingRegionId" yaml:"acceptingRegionId"`
+	// Property bandwidth: The bandwidth of the VPC peering connection.
+	//
+	// If you specify this parameter, make sure that you are creating an inter-region VPC peering connection.
+	Bandwidth interface{} `field:"optional" json:"bandwidth" yaml:"bandwidth"`
 	// Property deletionForce: Specifies whether to forcefully delete the VPC peering connection.
 	//
 	// Valid values:false (default): notrue: yes If you forcefully delete the VPC peering connection, the system deletes the routes that point to the VPC peering connection from the VPC route table.
@@ -36,10 +40,19 @@ type VpcPeerConnectionProps struct {
 	// The description must be 2 to 256 characters in length. It must start with a letter
 	// but cannot start with http:\/\/ or https:\/\/.
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
+	// Property linkType: The link type.
+	//
+	// Valid values: Platinum, Gold.
+	// If you specify this parameter, make sure that you are creating an inter-region VPC peering connection.
+	LinkType interface{} `field:"optional" json:"linkType" yaml:"linkType"`
 	// Property name: The name of the VPC peering connection.
 	//
 	// The name must be 2 to 128 characters in length and can contain digits, underscores
 	// (_), and hyphens (-). It must start with a letter.
 	Name interface{} `field:"optional" json:"name" yaml:"name"`
+	// Property resourceGroupId: The ID of the resource group.
+	//
+	// For more information about resource groups, see [What is Resource Group](~~94475~~).
+	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 }
 

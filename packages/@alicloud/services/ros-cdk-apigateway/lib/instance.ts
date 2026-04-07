@@ -116,7 +116,7 @@ export interface IInstance extends ros.IResource {
     readonly attrVpcSlbIntranetEnable: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Instance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Instance`, which is used to create a dedicated instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-instance
  */
@@ -185,12 +185,12 @@ export class Instance extends ros.Resource implements IInstance {
 
         const rosInstance = new RosInstance(this, id,  {
             instanceName: props.instanceName,
-            deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
             instanceSpec: props.instanceSpec,
             httpsPolicy: props.httpsPolicy,
+            deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
             zoneId: props.zoneId,
-            pricingCycle: props.pricingCycle,
             chargeType: props.chargeType === undefined || props.chargeType === null ? 'PostPaid' : props.chargeType,
+            pricingCycle: props.pricingCycle,
             duration: props.duration,
             autoPay: props.autoPay === undefined || props.autoPay === null ? true : props.autoPay,
             tags: props.tags,

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cms;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CMS::ContactGroup</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CMS::ContactGroup</code>, which is used to create an alert contact group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.733Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:23.088Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosContactGroup")
 public class RosContactGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -130,6 +130,24 @@ public class RosContactGroup extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEnableSubscribed() {
+        return software.amazon.jsii.Kernel.get(this, "enableSubscribed", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setEnableSubscribed(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "enableSubscribed", value);
+    }
+
+    /**
+     */
+    public void setEnableSubscribed(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "enableSubscribed", value);
+    }
+
+    /**
      * A fluent builder for {@link com.aliyun.ros.cdk.cms.RosContactGroup}.
      */
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.cms.RosContactGroup> {
@@ -203,6 +221,23 @@ public class RosContactGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder describe(final com.aliyun.ros.cdk.core.IResolvable describe) {
             this.props.describe(describe);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param enableSubscribed This parameter is required.
+         */
+        public Builder enableSubscribed(final java.lang.Boolean enableSubscribed) {
+            this.props.enableSubscribed(enableSubscribed);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param enableSubscribed This parameter is required.
+         */
+        public Builder enableSubscribed(final com.aliyun.ros.cdk.core.IResolvable enableSubscribed) {
+            this.props.enableSubscribed(enableSubscribed);
             return this;
         }
 

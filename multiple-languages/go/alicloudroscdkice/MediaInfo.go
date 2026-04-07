@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ICE::MediaInfo`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ICE::MediaInfo`, which is used to register a media asset in Intelligent Media Services (IMS).
 type MediaInfo interface {
 	alicloudroscdkcore.Resource
 	IMediaInfo

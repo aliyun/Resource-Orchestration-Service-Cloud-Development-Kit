@@ -9,12 +9,14 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::GroupMetricRule`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::GroupMetricRule`The , which resource creates an alert rule for an application group.
 type RosGroupMetricRule interface {
 	alicloudroscdkcore.RosResource
 	AttrRuleId() alicloudroscdkcore.IResolvable
 	Category() interface{}
 	SetCategory(val interface{})
+	ContactGroups() interface{}
+	SetContactGroups(val interface{})
 	// Returns: the stack trace of the point where this Resource was created from, sourced
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
@@ -29,6 +31,8 @@ type RosGroupMetricRule interface {
 	SetEnableResourcePropertyConstraint(val *bool)
 	Escalations() interface{}
 	SetEscalations(val interface{})
+	ExtraDimensionJson() interface{}
+	SetExtraDimensionJson(val interface{})
 	GroupId() interface{}
 	SetGroupId(val interface{})
 	Interval() interface{}
@@ -47,10 +51,14 @@ type RosGroupMetricRule interface {
 	SetMetricName(val interface{})
 	Namespace() interface{}
 	SetNamespace(val interface{})
+	NoDataPolicy() interface{}
+	SetNoDataPolicy(val interface{})
 	// The construct tree node associated with this construct.
 	Node() alicloudroscdkcore.ConstructNode
 	NoEffectiveInterval() interface{}
 	SetNoEffectiveInterval(val interface{})
+	Options() interface{}
+	SetOptions(val interface{})
 	Period() interface{}
 	SetPeriod(val interface{})
 	// Return a string that will be resolved to a RosTemplate `{ Ref }` for this element.
@@ -219,6 +227,16 @@ func (j *jsiiProxy_RosGroupMetricRule) Category() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosGroupMetricRule) ContactGroups() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"contactGroups",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosGroupMetricRule) CreationStack() *[]*string {
 	var returns *[]*string
 	_jsii_.Get(
@@ -279,6 +297,16 @@ func (j *jsiiProxy_RosGroupMetricRule) Escalations() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosGroupMetricRule) ExtraDimensionJson() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"extraDimensionJson",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosGroupMetricRule) GroupId() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -329,6 +357,16 @@ func (j *jsiiProxy_RosGroupMetricRule) Namespace() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosGroupMetricRule) NoDataPolicy() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"noDataPolicy",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosGroupMetricRule) Node() alicloudroscdkcore.ConstructNode {
 	var returns alicloudroscdkcore.ConstructNode
 	_jsii_.Get(
@@ -344,6 +382,16 @@ func (j *jsiiProxy_RosGroupMetricRule) NoEffectiveInterval() interface{} {
 	_jsii_.Get(
 		j,
 		"noEffectiveInterval",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosGroupMetricRule) Options() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"options",
 		&returns,
 	)
 	return returns
@@ -498,6 +546,17 @@ func (j *jsiiProxy_RosGroupMetricRule)SetCategory(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosGroupMetricRule)SetContactGroups(val interface{}) {
+	if err := j.validateSetContactGroupsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"contactGroups",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosGroupMetricRule)SetDimensions(val interface{}) {
 	if err := j.validateSetDimensionsParameters(val); err != nil {
 		panic(err)
@@ -553,6 +612,17 @@ func (j *jsiiProxy_RosGroupMetricRule)SetEscalations(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosGroupMetricRule)SetExtraDimensionJson(val interface{}) {
+	if err := j.validateSetExtraDimensionJsonParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"extraDimensionJson",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosGroupMetricRule)SetGroupId(val interface{}) {
 	if err := j.validateSetGroupIdParameters(val); err != nil {
 		panic(err)
@@ -597,6 +667,17 @@ func (j *jsiiProxy_RosGroupMetricRule)SetNamespace(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosGroupMetricRule)SetNoDataPolicy(val interface{}) {
+	if err := j.validateSetNoDataPolicyParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"noDataPolicy",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosGroupMetricRule)SetNoEffectiveInterval(val interface{}) {
 	if err := j.validateSetNoEffectiveIntervalParameters(val); err != nil {
 		panic(err)
@@ -604,6 +685,17 @@ func (j *jsiiProxy_RosGroupMetricRule)SetNoEffectiveInterval(val interface{}) {
 	_jsii_.Set(
 		j,
 		"noEffectiveInterval",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosGroupMetricRule)SetOptions(val interface{}) {
+	if err := j.validateSetOptionsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"options",
 		val,
 	)
 }

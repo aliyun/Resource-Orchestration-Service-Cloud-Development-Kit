@@ -8,6 +8,7 @@ type RosVpcCidrBlockAssociationProps struct {
 	VpcId interface{} `field:"required" json:"vpcId" yaml:"vpcId"`
 	IpamPoolId interface{} `field:"optional" json:"ipamPoolId" yaml:"ipamPoolId"`
 	IPv6CidrBlock interface{} `field:"optional" json:"iPv6CidrBlock" yaml:"iPv6CidrBlock"`
+	Ipv6CidrMask interface{} `field:"optional" json:"ipv6CidrMask" yaml:"ipv6CidrMask"`
 	Ipv6Isp interface{} `field:"optional" json:"ipv6Isp" yaml:"ipv6Isp"`
 	IpVersion interface{} `field:"optional" json:"ipVersion" yaml:"ipVersion"`
 	SecondaryCidrBlock interface{} `field:"optional" json:"secondaryCidrBlock" yaml:"secondaryCidrBlock"`

@@ -1,3 +1,5 @@
+export * from './environment';
+export * from './environments';
 export * from './grafanaworkspace';
 export * from './grafanaworkspaces';
 export * from './prometheis';

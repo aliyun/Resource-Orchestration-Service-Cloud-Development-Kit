@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.alb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-healthchecktemplate
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:52.055Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:21.221Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosHealthCheckTemplateProps")
 @software.amazon.jsii.Jsii.Proxy(RosHealthCheckTemplateProps.Jsii$Proxy.class)
 public interface RosHealthCheckTemplateProps extends software.amazon.jsii.JsiiSerializable {
@@ -29,6 +29,12 @@ public interface RosHealthCheckTemplateProps extends software.amazon.jsii.JsiiSe
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckHost() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckHttpVersion() {
         return null;
     }
 
@@ -70,6 +76,12 @@ public interface RosHealthCheckTemplateProps extends software.amazon.jsii.JsiiSe
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getUnhealthyThreshold() {
         return null;
     }
@@ -88,12 +100,14 @@ public interface RosHealthCheckTemplateProps extends software.amazon.jsii.JsiiSe
         java.lang.Object healthCheckCodes;
         java.lang.Object healthCheckConnectPort;
         java.lang.Object healthCheckHost;
+        java.lang.Object healthCheckHttpVersion;
         java.lang.Object healthCheckInterval;
         java.lang.Object healthCheckMethod;
         java.lang.Object healthCheckPath;
         java.lang.Object healthCheckProtocol;
         java.lang.Object healthCheckTimeout;
         java.lang.Object healthyThreshold;
+        java.lang.Object resourceGroupId;
         java.lang.Object unhealthyThreshold;
 
         /**
@@ -173,6 +187,26 @@ public interface RosHealthCheckTemplateProps extends software.amazon.jsii.JsiiSe
          */
         public Builder healthCheckHost(com.aliyun.ros.cdk.core.IResolvable healthCheckHost) {
             this.healthCheckHost = healthCheckHost;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosHealthCheckTemplateProps#getHealthCheckHttpVersion}
+         * @param healthCheckHttpVersion the value to be set.
+         * @return {@code this}
+         */
+        public Builder healthCheckHttpVersion(java.lang.String healthCheckHttpVersion) {
+            this.healthCheckHttpVersion = healthCheckHttpVersion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosHealthCheckTemplateProps#getHealthCheckHttpVersion}
+         * @param healthCheckHttpVersion the value to be set.
+         * @return {@code this}
+         */
+        public Builder healthCheckHttpVersion(com.aliyun.ros.cdk.core.IResolvable healthCheckHttpVersion) {
+            this.healthCheckHttpVersion = healthCheckHttpVersion;
             return this;
         }
 
@@ -297,6 +331,26 @@ public interface RosHealthCheckTemplateProps extends software.amazon.jsii.JsiiSe
         }
 
         /**
+         * Sets the value of {@link RosHealthCheckTemplateProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosHealthCheckTemplateProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosHealthCheckTemplateProps#getUnhealthyThreshold}
          * @param unhealthyThreshold the value to be set.
          * @return {@code this}
@@ -336,12 +390,14 @@ public interface RosHealthCheckTemplateProps extends software.amazon.jsii.JsiiSe
         private final java.lang.Object healthCheckCodes;
         private final java.lang.Object healthCheckConnectPort;
         private final java.lang.Object healthCheckHost;
+        private final java.lang.Object healthCheckHttpVersion;
         private final java.lang.Object healthCheckInterval;
         private final java.lang.Object healthCheckMethod;
         private final java.lang.Object healthCheckPath;
         private final java.lang.Object healthCheckProtocol;
         private final java.lang.Object healthCheckTimeout;
         private final java.lang.Object healthyThreshold;
+        private final java.lang.Object resourceGroupId;
         private final java.lang.Object unhealthyThreshold;
 
         /**
@@ -354,12 +410,14 @@ public interface RosHealthCheckTemplateProps extends software.amazon.jsii.JsiiSe
             this.healthCheckCodes = software.amazon.jsii.Kernel.get(this, "healthCheckCodes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.healthCheckConnectPort = software.amazon.jsii.Kernel.get(this, "healthCheckConnectPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.healthCheckHost = software.amazon.jsii.Kernel.get(this, "healthCheckHost", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.healthCheckHttpVersion = software.amazon.jsii.Kernel.get(this, "healthCheckHttpVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.healthCheckInterval = software.amazon.jsii.Kernel.get(this, "healthCheckInterval", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.healthCheckMethod = software.amazon.jsii.Kernel.get(this, "healthCheckMethod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.healthCheckPath = software.amazon.jsii.Kernel.get(this, "healthCheckPath", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.healthCheckProtocol = software.amazon.jsii.Kernel.get(this, "healthCheckProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.healthCheckTimeout = software.amazon.jsii.Kernel.get(this, "healthCheckTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.healthyThreshold = software.amazon.jsii.Kernel.get(this, "healthyThreshold", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.unhealthyThreshold = software.amazon.jsii.Kernel.get(this, "unhealthyThreshold", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -372,12 +430,14 @@ public interface RosHealthCheckTemplateProps extends software.amazon.jsii.JsiiSe
             this.healthCheckCodes = builder.healthCheckCodes;
             this.healthCheckConnectPort = builder.healthCheckConnectPort;
             this.healthCheckHost = builder.healthCheckHost;
+            this.healthCheckHttpVersion = builder.healthCheckHttpVersion;
             this.healthCheckInterval = builder.healthCheckInterval;
             this.healthCheckMethod = builder.healthCheckMethod;
             this.healthCheckPath = builder.healthCheckPath;
             this.healthCheckProtocol = builder.healthCheckProtocol;
             this.healthCheckTimeout = builder.healthCheckTimeout;
             this.healthyThreshold = builder.healthyThreshold;
+            this.resourceGroupId = builder.resourceGroupId;
             this.unhealthyThreshold = builder.unhealthyThreshold;
         }
 
@@ -399,6 +459,11 @@ public interface RosHealthCheckTemplateProps extends software.amazon.jsii.JsiiSe
         @Override
         public final java.lang.Object getHealthCheckHost() {
             return this.healthCheckHost;
+        }
+
+        @Override
+        public final java.lang.Object getHealthCheckHttpVersion() {
+            return this.healthCheckHttpVersion;
         }
 
         @Override
@@ -432,6 +497,11 @@ public interface RosHealthCheckTemplateProps extends software.amazon.jsii.JsiiSe
         }
 
         @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
+        }
+
+        @Override
         public final java.lang.Object getUnhealthyThreshold() {
             return this.unhealthyThreshold;
         }
@@ -452,6 +522,9 @@ public interface RosHealthCheckTemplateProps extends software.amazon.jsii.JsiiSe
             if (this.getHealthCheckHost() != null) {
                 data.set("healthCheckHost", om.valueToTree(this.getHealthCheckHost()));
             }
+            if (this.getHealthCheckHttpVersion() != null) {
+                data.set("healthCheckHttpVersion", om.valueToTree(this.getHealthCheckHttpVersion()));
+            }
             if (this.getHealthCheckInterval() != null) {
                 data.set("healthCheckInterval", om.valueToTree(this.getHealthCheckInterval()));
             }
@@ -469,6 +542,9 @@ public interface RosHealthCheckTemplateProps extends software.amazon.jsii.JsiiSe
             }
             if (this.getHealthyThreshold() != null) {
                 data.set("healthyThreshold", om.valueToTree(this.getHealthyThreshold()));
+            }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
             if (this.getUnhealthyThreshold() != null) {
                 data.set("unhealthyThreshold", om.valueToTree(this.getUnhealthyThreshold()));
@@ -495,12 +571,14 @@ public interface RosHealthCheckTemplateProps extends software.amazon.jsii.JsiiSe
             if (this.healthCheckCodes != null ? !this.healthCheckCodes.equals(that.healthCheckCodes) : that.healthCheckCodes != null) return false;
             if (this.healthCheckConnectPort != null ? !this.healthCheckConnectPort.equals(that.healthCheckConnectPort) : that.healthCheckConnectPort != null) return false;
             if (this.healthCheckHost != null ? !this.healthCheckHost.equals(that.healthCheckHost) : that.healthCheckHost != null) return false;
+            if (this.healthCheckHttpVersion != null ? !this.healthCheckHttpVersion.equals(that.healthCheckHttpVersion) : that.healthCheckHttpVersion != null) return false;
             if (this.healthCheckInterval != null ? !this.healthCheckInterval.equals(that.healthCheckInterval) : that.healthCheckInterval != null) return false;
             if (this.healthCheckMethod != null ? !this.healthCheckMethod.equals(that.healthCheckMethod) : that.healthCheckMethod != null) return false;
             if (this.healthCheckPath != null ? !this.healthCheckPath.equals(that.healthCheckPath) : that.healthCheckPath != null) return false;
             if (this.healthCheckProtocol != null ? !this.healthCheckProtocol.equals(that.healthCheckProtocol) : that.healthCheckProtocol != null) return false;
             if (this.healthCheckTimeout != null ? !this.healthCheckTimeout.equals(that.healthCheckTimeout) : that.healthCheckTimeout != null) return false;
             if (this.healthyThreshold != null ? !this.healthyThreshold.equals(that.healthyThreshold) : that.healthyThreshold != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             return this.unhealthyThreshold != null ? this.unhealthyThreshold.equals(that.unhealthyThreshold) : that.unhealthyThreshold == null;
         }
 
@@ -510,12 +588,14 @@ public interface RosHealthCheckTemplateProps extends software.amazon.jsii.JsiiSe
             result = 31 * result + (this.healthCheckCodes != null ? this.healthCheckCodes.hashCode() : 0);
             result = 31 * result + (this.healthCheckConnectPort != null ? this.healthCheckConnectPort.hashCode() : 0);
             result = 31 * result + (this.healthCheckHost != null ? this.healthCheckHost.hashCode() : 0);
+            result = 31 * result + (this.healthCheckHttpVersion != null ? this.healthCheckHttpVersion.hashCode() : 0);
             result = 31 * result + (this.healthCheckInterval != null ? this.healthCheckInterval.hashCode() : 0);
             result = 31 * result + (this.healthCheckMethod != null ? this.healthCheckMethod.hashCode() : 0);
             result = 31 * result + (this.healthCheckPath != null ? this.healthCheckPath.hashCode() : 0);
             result = 31 * result + (this.healthCheckProtocol != null ? this.healthCheckProtocol.hashCode() : 0);
             result = 31 * result + (this.healthCheckTimeout != null ? this.healthCheckTimeout.hashCode() : 0);
             result = 31 * result + (this.healthyThreshold != null ? this.healthyThreshold.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.unhealthyThreshold != null ? this.unhealthyThreshold.hashCode() : 0);
             return result;
         }

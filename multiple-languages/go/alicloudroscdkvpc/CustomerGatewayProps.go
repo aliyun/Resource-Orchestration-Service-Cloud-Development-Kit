@@ -17,5 +17,10 @@ type CustomerGatewayProps struct {
 	//
 	// The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:\/\/ or https:\/\/.
 	Name interface{} `field:"optional" json:"name" yaml:"name"`
+	// Property resourceGroupId: The ID of the resource group to which the user gateway belongs.
+	//
+	// - You can call the ListResourceGroups interface to query the resource group ID.
+	// - If you do not specify a resource group, the user gateway will belong to the default resource group after creation.
+	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 }
 

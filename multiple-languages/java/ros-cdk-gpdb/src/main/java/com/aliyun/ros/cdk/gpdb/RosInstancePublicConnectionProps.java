@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.gpdb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-instancepublicconnection
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.441Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:27.060Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.RosInstancePublicConnectionProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstancePublicConnectionProps.Jsii$Proxy.class)
 public interface RosInstancePublicConnectionProps extends software.amazon.jsii.JsiiSerializable {
@@ -23,6 +23,12 @@ public interface RosInstancePublicConnectionProps extends software.amazon.jsii.J
     @org.jetbrains.annotations.NotNull java.lang.Object getPort();
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAddressType() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosInstancePublicConnectionProps}
      */
     static Builder builder() {
@@ -35,6 +41,7 @@ public interface RosInstancePublicConnectionProps extends software.amazon.jsii.J
         java.lang.Object connectionStringPrefix;
         java.lang.Object dbInstanceId;
         java.lang.Object port;
+        java.lang.Object addressType;
 
         /**
          * Sets the value of {@link RosInstancePublicConnectionProps#getConnectionStringPrefix}
@@ -97,6 +104,26 @@ public interface RosInstancePublicConnectionProps extends software.amazon.jsii.J
         }
 
         /**
+         * Sets the value of {@link RosInstancePublicConnectionProps#getAddressType}
+         * @param addressType the value to be set.
+         * @return {@code this}
+         */
+        public Builder addressType(java.lang.String addressType) {
+            this.addressType = addressType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstancePublicConnectionProps#getAddressType}
+         * @param addressType the value to be set.
+         * @return {@code this}
+         */
+        public Builder addressType(com.aliyun.ros.cdk.core.IResolvable addressType) {
+            this.addressType = addressType;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosInstancePublicConnectionProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -115,6 +142,7 @@ public interface RosInstancePublicConnectionProps extends software.amazon.jsii.J
         private final java.lang.Object connectionStringPrefix;
         private final java.lang.Object dbInstanceId;
         private final java.lang.Object port;
+        private final java.lang.Object addressType;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -125,6 +153,7 @@ public interface RosInstancePublicConnectionProps extends software.amazon.jsii.J
             this.connectionStringPrefix = software.amazon.jsii.Kernel.get(this, "connectionStringPrefix", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbInstanceId = software.amazon.jsii.Kernel.get(this, "dbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.port = software.amazon.jsii.Kernel.get(this, "port", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.addressType = software.amazon.jsii.Kernel.get(this, "addressType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -135,6 +164,7 @@ public interface RosInstancePublicConnectionProps extends software.amazon.jsii.J
             this.connectionStringPrefix = java.util.Objects.requireNonNull(builder.connectionStringPrefix, "connectionStringPrefix is required");
             this.dbInstanceId = java.util.Objects.requireNonNull(builder.dbInstanceId, "dbInstanceId is required");
             this.port = java.util.Objects.requireNonNull(builder.port, "port is required");
+            this.addressType = builder.addressType;
         }
 
         @Override
@@ -153,6 +183,11 @@ public interface RosInstancePublicConnectionProps extends software.amazon.jsii.J
         }
 
         @Override
+        public final java.lang.Object getAddressType() {
+            return this.addressType;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -161,6 +196,9 @@ public interface RosInstancePublicConnectionProps extends software.amazon.jsii.J
             data.set("connectionStringPrefix", om.valueToTree(this.getConnectionStringPrefix()));
             data.set("dbInstanceId", om.valueToTree(this.getDbInstanceId()));
             data.set("port", om.valueToTree(this.getPort()));
+            if (this.getAddressType() != null) {
+                data.set("addressType", om.valueToTree(this.getAddressType()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-gpdb.RosInstancePublicConnectionProps"));
@@ -181,7 +219,8 @@ public interface RosInstancePublicConnectionProps extends software.amazon.jsii.J
 
             if (!connectionStringPrefix.equals(that.connectionStringPrefix)) return false;
             if (!dbInstanceId.equals(that.dbInstanceId)) return false;
-            return this.port.equals(that.port);
+            if (!port.equals(that.port)) return false;
+            return this.addressType != null ? this.addressType.equals(that.addressType) : that.addressType == null;
         }
 
         @Override
@@ -189,6 +228,7 @@ public interface RosInstancePublicConnectionProps extends software.amazon.jsii.J
             int result = this.connectionStringPrefix.hashCode();
             result = 31 * result + (this.dbInstanceId.hashCode());
             result = 31 * result + (this.port.hashCode());
+            result = 31 * result + (this.addressType != null ? this.addressType.hashCode() : 0);
             return result;
         }
     }

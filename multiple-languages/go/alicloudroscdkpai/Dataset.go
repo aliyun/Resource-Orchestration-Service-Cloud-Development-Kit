@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::PAI::Dataset`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::PAI::Dataset`, which is used to create a dataset.
 type Dataset interface {
 	alicloudroscdkcore.Resource
 	IDataset

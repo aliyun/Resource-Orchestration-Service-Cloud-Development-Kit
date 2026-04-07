@@ -100,6 +100,10 @@ func (j *jsiiProxy_RosEventRuleTargets) validateSetMnsParametersParameters(val i
 	return nil
 }
 
+func (j *jsiiProxy_RosEventRuleTargets) validateSetOpenApiParametersParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosEventRuleTargets) validateSetRuleNameParameters(val interface{}) error {
 	return nil
 }

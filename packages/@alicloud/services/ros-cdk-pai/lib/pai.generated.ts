@@ -123,7 +123,7 @@ function rosCodeSourcePropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::CodeSource`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::CodeSource`, which is used to create a code build in Platform for AI (PAI).
  * @Note This class does not contain additional functions, so it is recommended to use the `CodeSource` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-codesource
  */
@@ -424,14 +424,6 @@ function RosDatasetPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('accessibility', ros.validateString)(properties.accessibility));
     errors.collect(ros.propertyValidator('datasetName', ros.requiredValidator)(properties.datasetName));
     errors.collect(ros.propertyValidator('datasetName', ros.validateString)(properties.datasetName));
-    if(properties.sourceType && (typeof properties.sourceType) !== 'object') {
-        errors.collect(ros.propertyValidator('sourceType', ros.validateAllowedValues)({
-          data: properties.sourceType,
-          allowedValues: ["USER","ITAG","PAI-PUBLIC-DATASET"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('sourceType', ros.validateString)(properties.sourceType));
-    errors.collect(ros.propertyValidator('sourceId', ros.validateString)(properties.sourceId));
     errors.collect(ros.propertyValidator('dataSourceType', ros.requiredValidator)(properties.dataSourceType));
     if(properties.dataSourceType && (typeof properties.dataSourceType) !== 'object') {
         errors.collect(ros.propertyValidator('dataSourceType', ros.validateAllowedValues)({
@@ -440,6 +432,14 @@ function RosDatasetPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('dataSourceType', ros.validateString)(properties.dataSourceType));
+    errors.collect(ros.propertyValidator('sourceId', ros.validateString)(properties.sourceId));
+    if(properties.sourceType && (typeof properties.sourceType) !== 'object') {
+        errors.collect(ros.propertyValidator('sourceType', ros.validateAllowedValues)({
+          data: properties.sourceType,
+          allowedValues: ["USER","ITAG","PAI-PUBLIC-DATASET"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('sourceType', ros.validateString)(properties.sourceType));
     errors.collect(ros.propertyValidator('workspaceId', ros.requiredValidator)(properties.workspaceId));
     errors.collect(ros.propertyValidator('workspaceId', ros.validateString)(properties.workspaceId));
     if(properties.dataType && (typeof properties.dataType) !== 'object') {
@@ -491,7 +491,7 @@ function rosDatasetPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::Dataset`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::Dataset`, which is used to create a dataset.
  * @Note This class does not contain additional functions, so it is recommended to use the `Dataset` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-dataset
  */
@@ -818,14 +818,6 @@ function RosDatasetVersionPropsValidator(properties: any): ros.ValidationResult 
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('options', ros.validateString)(properties.options));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    if(properties.sourceType && (typeof properties.sourceType) !== 'object') {
-        errors.collect(ros.propertyValidator('sourceType', ros.validateAllowedValues)({
-          data: properties.sourceType,
-          allowedValues: ["USER","ITAG","PAI-PUBLIC-DATASET"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('sourceType', ros.validateString)(properties.sourceType));
-    errors.collect(ros.propertyValidator('sourceId', ros.validateString)(properties.sourceId));
     errors.collect(ros.propertyValidator('dataSourceType', ros.requiredValidator)(properties.dataSourceType));
     if(properties.dataSourceType && (typeof properties.dataSourceType) !== 'object') {
         errors.collect(ros.propertyValidator('dataSourceType', ros.validateAllowedValues)({
@@ -834,6 +826,14 @@ function RosDatasetVersionPropsValidator(properties: any): ros.ValidationResult 
         }));
     }
     errors.collect(ros.propertyValidator('dataSourceType', ros.validateString)(properties.dataSourceType));
+    if(properties.sourceType && (typeof properties.sourceType) !== 'object') {
+        errors.collect(ros.propertyValidator('sourceType', ros.validateAllowedValues)({
+          data: properties.sourceType,
+          allowedValues: ["USER","ITAG","PAI-PUBLIC-DATASET"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('sourceType', ros.validateString)(properties.sourceType));
+    errors.collect(ros.propertyValidator('sourceId', ros.validateString)(properties.sourceId));
     errors.collect(ros.propertyValidator('dataSize', ros.validateNumber)(properties.dataSize));
     errors.collect(ros.propertyValidator('dataCount', ros.validateNumber)(properties.dataCount));
     if(properties.labels && (Array.isArray(properties.labels) || (typeof properties.labels) === 'string')) {
@@ -894,7 +894,7 @@ function rosDatasetVersionPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::DatasetVersion`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::DatasetVersion`, which is used to create a dataset version.
  * @Note This class does not contain additional functions, so it is recommended to use the `DatasetVersion` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-datasetversion
  */
@@ -1152,7 +1152,7 @@ function rosExperimentPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::Experiment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::Experiment`, which is used to create an experiment.
  * @Note This class does not contain additional functions, so it is recommended to use the `Experiment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-experiment
  */
@@ -1281,6 +1281,947 @@ export class RosExperiment extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosImage`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-image
+ */
+export interface RosImageProps {
+
+    /**
+     * @Property imageName: The image name.
+     */
+    readonly imageName: string | ros.IResolvable;
+
+    /**
+     * @Property imageUri: The Image address, which contains the version number.
+     */
+    readonly imageUri: string | ros.IResolvable;
+
+    /**
+     * @Property accessibility: Visibility of the mirror, possible values:
+     * - PUBLIC: all members of the current workspace can operate.
+     * - PRIVATE: Only the creator can operate.
+     */
+    readonly accessibility?: string | ros.IResolvable;
+
+    /**
+     * @Property labels: Labels.
+     */
+    readonly labels?: Array<RosImage.LabelsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property workspaceId: The ID of the workspace to which the image belongs.
+     */
+    readonly workspaceId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosImageProps`
+ *
+ * @param properties - the TypeScript properties of a `RosImageProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosImagePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('imageName', ros.requiredValidator)(properties.imageName));
+    errors.collect(ros.propertyValidator('imageName', ros.validateString)(properties.imageName));
+    if(properties.accessibility && (typeof properties.accessibility) !== 'object') {
+        errors.collect(ros.propertyValidator('accessibility', ros.validateAllowedValues)({
+          data: properties.accessibility,
+          allowedValues: ["PUBLIC","PRIVATE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('accessibility', ros.validateString)(properties.accessibility));
+    errors.collect(ros.propertyValidator('workspaceId', ros.validateString)(properties.workspaceId));
+    if(properties.labels && (Array.isArray(properties.labels) || (typeof properties.labels) === 'string')) {
+        errors.collect(ros.propertyValidator('labels', ros.validateLength)({
+            data: properties.labels.length,
+            min: 0,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('labels', ros.listValidator(RosImage_LabelsPropertyValidator))(properties.labels));
+    errors.collect(ros.propertyValidator('imageUri', ros.requiredValidator)(properties.imageUri));
+    errors.collect(ros.propertyValidator('imageUri', ros.validateString)(properties.imageUri));
+    return errors.wrap('supplied properties not correct for "RosImageProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PAI::Image` resource
+ *
+ * @param properties - the TypeScript properties of a `RosImageProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PAI::Image` resource.
+ */
+// @ts-ignore TS6133
+function rosImagePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosImagePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ImageName': ros.stringToRosTemplate(properties.imageName),
+      'ImageUri': ros.stringToRosTemplate(properties.imageUri),
+      'Accessibility': ros.stringToRosTemplate(properties.accessibility),
+      'Labels': ros.listMapper(rosImageLabelsPropertyToRosTemplate)(properties.labels),
+      'WorkspaceId': ros.stringToRosTemplate(properties.workspaceId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::Image`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Image` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-image
+ */
+export class RosImage extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PAI::Image";
+
+    /**
+     * @Attribute Accessibility: Visibility of the mirror.
+     */
+    public readonly attrAccessibility: ros.IResolvable;
+
+    /**
+     * @Attribute ImageName: The image name.
+     */
+    public readonly attrImageName: ros.IResolvable;
+
+    /**
+     * @Attribute ImageUri: The Image address, which contains the version number.
+     */
+    public readonly attrImageUri: ros.IResolvable;
+
+    /**
+     * @Attribute Labels: Labels.
+     */
+    public readonly attrLabels: ros.IResolvable;
+
+    /**
+     * @Attribute WorkspaceId: The ID of the workspace to which the image belongs.
+     */
+    public readonly attrWorkspaceId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property imageName: The image name.
+     */
+    public imageName: string | ros.IResolvable;
+
+    /**
+     * @Property imageUri: The Image address, which contains the version number.
+     */
+    public imageUri: string | ros.IResolvable;
+
+    /**
+     * @Property accessibility: Visibility of the mirror, possible values:
+     * - PUBLIC: all members of the current workspace can operate.
+     * - PRIVATE: Only the creator can operate.
+     */
+    public accessibility: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property labels: Labels.
+     */
+    public labels: Array<RosImage.LabelsProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property workspaceId: The ID of the workspace to which the image belongs.
+     */
+    public workspaceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosImageProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosImage.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAccessibility = this.getAtt('Accessibility');
+        this.attrImageName = this.getAtt('ImageName');
+        this.attrImageUri = this.getAtt('ImageUri');
+        this.attrLabels = this.getAtt('Labels');
+        this.attrWorkspaceId = this.getAtt('WorkspaceId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.imageName = props.imageName;
+        this.imageUri = props.imageUri;
+        this.accessibility = props.accessibility;
+        this.labels = props.labels;
+        this.workspaceId = props.workspaceId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            imageName: this.imageName,
+            imageUri: this.imageUri,
+            accessibility: this.accessibility,
+            labels: this.labels,
+            workspaceId: this.workspaceId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosImagePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosImage {
+    /**
+     * @stability external
+     */
+    export interface LabelsProperty {
+        /**
+         * @Property value: value.
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: Key.
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `LabelsProperty`
+ *
+ * @param properties - the TypeScript properties of a `LabelsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosImage_LabelsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "LabelsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PAI::Image.Labels` resource
+ *
+ * @param properties - the TypeScript properties of a `LabelsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PAI::Image.Labels` resource.
+ */
+// @ts-ignore TS6133
+function rosImageLabelsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosImage_LabelsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
+ * Properties for defining a `RosMember`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-member
+ */
+export interface RosMemberProps {
+
+    /**
+     * @Property roles: The list of roles.
+     */
+    readonly roles: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property userId: User ID.
+     */
+    readonly userId: string | ros.IResolvable;
+
+    /**
+     * @Property workspaceId: Workspace ID.
+     */
+    readonly workspaceId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosMemberProps`
+ *
+ * @param properties - the TypeScript properties of a `RosMemberProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosMemberPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('userId', ros.requiredValidator)(properties.userId));
+    errors.collect(ros.propertyValidator('userId', ros.validateString)(properties.userId));
+    errors.collect(ros.propertyValidator('workspaceId', ros.requiredValidator)(properties.workspaceId));
+    errors.collect(ros.propertyValidator('workspaceId', ros.validateString)(properties.workspaceId));
+    errors.collect(ros.propertyValidator('roles', ros.requiredValidator)(properties.roles));
+    if(properties.roles && (Array.isArray(properties.roles) || (typeof properties.roles) === 'string')) {
+        errors.collect(ros.propertyValidator('roles', ros.validateLength)({
+            data: properties.roles.length,
+            min: 0,
+            max: 7,
+          }));
+    }
+    errors.collect(ros.propertyValidator('roles', ros.listValidator(ros.validateString))(properties.roles));
+    return errors.wrap('supplied properties not correct for "RosMemberProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PAI::Member` resource
+ *
+ * @param properties - the TypeScript properties of a `RosMemberProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PAI::Member` resource.
+ */
+// @ts-ignore TS6133
+function rosMemberPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosMemberPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'Roles': ros.listMapper(ros.stringToRosTemplate)(properties.roles),
+      'UserId': ros.stringToRosTemplate(properties.userId),
+      'WorkspaceId': ros.stringToRosTemplate(properties.workspaceId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::Member`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Member` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-member
+ */
+export class RosMember extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PAI::Member";
+
+    /**
+     * @Attribute CreateTime: Create UTC time in ISO8601 format.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute DisplayName: Member display name.
+     */
+    public readonly attrDisplayName: ros.IResolvable;
+
+    /**
+     * @Attribute MemberId: The member ID.
+     */
+    public readonly attrMemberId: ros.IResolvable;
+
+    /**
+     * @Attribute MemberName: The name of user.
+     */
+    public readonly attrMemberName: ros.IResolvable;
+
+    /**
+     * @Attribute Roles: The list of roles.
+     */
+    public readonly attrRoles: ros.IResolvable;
+
+    /**
+     * @Attribute UserId: The first ID of the resource.
+     */
+    public readonly attrUserId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property roles: The list of roles.
+     */
+    public roles: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property userId: User ID.
+     */
+    public userId: string | ros.IResolvable;
+
+    /**
+     * @Property workspaceId: Workspace ID.
+     */
+    public workspaceId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosMemberProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosMember.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDisplayName = this.getAtt('DisplayName');
+        this.attrMemberId = this.getAtt('MemberId');
+        this.attrMemberName = this.getAtt('MemberName');
+        this.attrRoles = this.getAtt('Roles');
+        this.attrUserId = this.getAtt('UserId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.roles = props.roles;
+        this.userId = props.userId;
+        this.workspaceId = props.workspaceId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            roles: this.roles,
+            userId: this.userId,
+            workspaceId: this.workspaceId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosMemberPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosModelVersion`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-modelversion
+ */
+export interface RosModelVersionProps {
+
+    /**
+     * @Property modelId: Model ID. For details about how to obtain the model ID.
+     */
+    readonly modelId: string | ros.IResolvable;
+
+    /**
+     * @Property uri: Model version URI, that is, the location where the model is stored. Possible values are:
+     * - The HTTP(S) address of the model, for example: 'https:\/\/myweb.com\/mymodel.tar.gz '.
+     * - If the model is stored in OSS, the format is 'oss:\/\/<bucket>.<endpoint>\/object '. For the endpoint configuration, see [Access domain name and data center](~~ 31837 ~~). For example, see OSS:\/\/ mybucket\/'.
+     */
+    readonly uri: string | ros.IResolvable;
+
+    /**
+     * @Property approvalStatus: Admission status, with values as follows:
+     * - Pending: to be determined.
+     * - Approved: Allow to go online.
+     * - Rejected: Online is not allowed.
+     */
+    readonly approvalStatus?: string | ros.IResolvable;
+
+    /**
+     * @Property extraInfo: The additional information.
+     */
+    readonly extraInfo?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property formatType: Model format, possible values:
+     * - OfflineModel
+     * - SavedModel
+     * - Keras H5
+     * - Frozen Pb
+     * - Caffe Prototxt
+     * - TorchScript
+     * - XGBoost
+     * - PMML
+     * - AlinkModel
+     * - ONNX.
+     */
+    readonly formatType?: string | ros.IResolvable;
+
+    /**
+     * @Property frameworkType: Model framework, possible values:
+     * - Pytorch
+     * - XGBoost
+     * - Keras
+     * - Caffe
+     * - Alink
+     * - Xflow
+     * - TensorFlow.
+     */
+    readonly frameworkType?: string | ros.IResolvable;
+
+    /**
+     * @Property inferenceSpec: Describes how to apply to downstream inference services. For example, describe the processor and container of EAS. Example: { "processor": "tensorflow_gpu_1.12" }
+     */
+    readonly inferenceSpec?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property labels: List of model version labels.
+     */
+    readonly labels?: Array<RosModelVersion.LabelsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property metrics: The metrics for the model. The length after serialization is limited to 8,192. Example:
+     * { "Results": [{ "Dataset": { "DatasetId": "d-sdkjanksaklerhfd" }, "Metrics": { "cer": 0.175 } }, { "Dataset": { "Uri": "oss:\/\/xxxx\/" }, "Metrics": { "cer": 0.172 } }] }
+     */
+    readonly metrics?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property options: The extended field. This is a JSON string.
+     */
+    readonly options?: string | ros.IResolvable;
+
+    /**
+     * @Property sourceId: Source ID.
+     * * When the source type is Custom, this field is not restricted.
+     * * When the source is PAIFlow or TrainingService, the format is
+     * '''
+     * region=<region_id>,workspaceId=<workspace_id>,kind=<kind>,id=<id>
+     * '''
+     * Among them:
+     * - region is the Alibaba Cloud region ID.
+     * - workspaceId indicates the workspace ID.
+     * - kind: is a type. Value: PipelineRun(PAIFlow workflow);ServiceJob (training service).
+     * - id: is a unique identifier.
+     */
+    readonly sourceId?: string | ros.IResolvable;
+
+    /**
+     * @Property sourceType: Model source type, possible values:
+     * - Custom: Custom.
+     * - PAIFlow:PAI workflow.
+     * - TrainingService:PAI training service.
+     */
+    readonly sourceType?: string | ros.IResolvable;
+
+    /**
+     * @Property trainingSpec: Training configuration. Configuration for fine-tuning, incremental training.
+     */
+    readonly trainingSpec?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property versionDescription: Model version description.
+     */
+    readonly versionDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property versionName: The model version, which is unique for each model. If you leave this parameter empty, the first version is 0.1.0 by default. After that, the minor version number is increased by 1 in sequence. For example, the second version number is 0.2.0. A version number consists of a major version number, a minor version number, and a stage version number, separated by periods (.). The major version number and minor version number are numeric. The stage version number begins with a digit and can include numbers, underscores, and letters. For example, the version number is 1.1.0 or 2.3.4_beta.
+     */
+    readonly versionName?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosModelVersionProps`
+ *
+ * @param properties - the TypeScript properties of a `RosModelVersionProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosModelVersionPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('options', ros.validateString)(properties.options));
+    errors.collect(ros.propertyValidator('versionDescription', ros.validateString)(properties.versionDescription));
+    if(properties.sourceType && (typeof properties.sourceType) !== 'object') {
+        errors.collect(ros.propertyValidator('sourceType', ros.validateAllowedValues)({
+          data: properties.sourceType,
+          allowedValues: ["Custom","PAIFlow","TrainingService"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('sourceType', ros.validateString)(properties.sourceType));
+    errors.collect(ros.propertyValidator('sourceId', ros.validateString)(properties.sourceId));
+    errors.collect(ros.propertyValidator('extraInfo', ros.hashValidator(ros.validateAny))(properties.extraInfo));
+    if(properties.labels && (Array.isArray(properties.labels) || (typeof properties.labels) === 'string')) {
+        errors.collect(ros.propertyValidator('labels', ros.validateLength)({
+            data: properties.labels.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('labels', ros.listValidator(RosModelVersion_LabelsPropertyValidator))(properties.labels));
+    errors.collect(ros.propertyValidator('trainingSpec', ros.hashValidator(ros.validateAny))(properties.trainingSpec));
+    errors.collect(ros.propertyValidator('uri', ros.requiredValidator)(properties.uri));
+    errors.collect(ros.propertyValidator('uri', ros.validateString)(properties.uri));
+    if(properties.formatType && (typeof properties.formatType) !== 'object') {
+        errors.collect(ros.propertyValidator('formatType', ros.validateAllowedValues)({
+          data: properties.formatType,
+          allowedValues: ["OfflineModel","SavedModel","Keras H5","Frozen Pb","Caffe Prototxt","TorchScript","XGBoost","PMML","AlinkModel","ONNX"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('formatType', ros.validateString)(properties.formatType));
+    if(properties.approvalStatus && (typeof properties.approvalStatus) !== 'object') {
+        errors.collect(ros.propertyValidator('approvalStatus', ros.validateAllowedValues)({
+          data: properties.approvalStatus,
+          allowedValues: ["Pending","Approved","Rejected"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('approvalStatus', ros.validateString)(properties.approvalStatus));
+    errors.collect(ros.propertyValidator('metrics', ros.hashValidator(ros.validateAny))(properties.metrics));
+    if(properties.frameworkType && (typeof properties.frameworkType) !== 'object') {
+        errors.collect(ros.propertyValidator('frameworkType', ros.validateAllowedValues)({
+          data: properties.frameworkType,
+          allowedValues: ["Pytorch","XGBoost","Keras","Caffe","Alink","Xflow","TensorFlow"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('frameworkType', ros.validateString)(properties.frameworkType));
+    errors.collect(ros.propertyValidator('inferenceSpec', ros.hashValidator(ros.validateAny))(properties.inferenceSpec));
+    errors.collect(ros.propertyValidator('versionName', ros.validateString)(properties.versionName));
+    errors.collect(ros.propertyValidator('modelId', ros.requiredValidator)(properties.modelId));
+    errors.collect(ros.propertyValidator('modelId', ros.validateString)(properties.modelId));
+    return errors.wrap('supplied properties not correct for "RosModelVersionProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PAI::ModelVersion` resource
+ *
+ * @param properties - the TypeScript properties of a `RosModelVersionProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PAI::ModelVersion` resource.
+ */
+// @ts-ignore TS6133
+function rosModelVersionPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosModelVersionPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ModelId': ros.stringToRosTemplate(properties.modelId),
+      'Uri': ros.stringToRosTemplate(properties.uri),
+      'ApprovalStatus': ros.stringToRosTemplate(properties.approvalStatus),
+      'ExtraInfo': ros.hashMapper(ros.objectToRosTemplate)(properties.extraInfo),
+      'FormatType': ros.stringToRosTemplate(properties.formatType),
+      'FrameworkType': ros.stringToRosTemplate(properties.frameworkType),
+      'InferenceSpec': ros.hashMapper(ros.objectToRosTemplate)(properties.inferenceSpec),
+      'Labels': ros.listMapper(rosModelVersionLabelsPropertyToRosTemplate)(properties.labels),
+      'Metrics': ros.hashMapper(ros.objectToRosTemplate)(properties.metrics),
+      'Options': ros.stringToRosTemplate(properties.options),
+      'SourceId': ros.stringToRosTemplate(properties.sourceId),
+      'SourceType': ros.stringToRosTemplate(properties.sourceType),
+      'TrainingSpec': ros.hashMapper(ros.objectToRosTemplate)(properties.trainingSpec),
+      'VersionDescription': ros.stringToRosTemplate(properties.versionDescription),
+      'VersionName': ros.stringToRosTemplate(properties.versionName),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::ModelVersion`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ModelVersion` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-modelversion
+ */
+export class RosModelVersion extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PAI::ModelVersion";
+
+    /**
+     * @Attribute ApprovalStatus: Admission status, with values as follows:.
+     */
+    public readonly attrApprovalStatus: ros.IResolvable;
+
+    /**
+     * @Attribute ExtraInfo: Other information.
+     */
+    public readonly attrExtraInfo: ros.IResolvable;
+
+    /**
+     * @Attribute FormatType: Model format, possible values:.
+     */
+    public readonly attrFormatType: ros.IResolvable;
+
+    /**
+     * @Attribute FrameworkType: Model framework, possible values:.
+     */
+    public readonly attrFrameworkType: ros.IResolvable;
+
+    /**
+     * @Attribute GmtCreateTime: Create a model UTC time in the format ISO8601.
+     */
+    public readonly attrGmtCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute GmtModifiedTime: Finally, update the model UTC time in the format iso8601.
+     */
+    public readonly attrGmtModifiedTime: ros.IResolvable;
+
+    /**
+     * @Attribute InferenceSpec: Describes how to apply to downstream inference services, such as processors and containers of EAS.
+     */
+    public readonly attrInferenceSpec: ros.IResolvable;
+
+    /**
+     * @Attribute Labels: List of model version labels.
+     */
+    public readonly attrLabels: ros.IResolvable;
+
+    /**
+     * @Attribute Metrics: Model indicators.
+     */
+    public readonly attrMetrics: ros.IResolvable;
+
+    /**
+     * @Attribute Options: Extension field. The JsonString type.
+     */
+    public readonly attrOptions: ros.IResolvable;
+
+    /**
+     * @Attribute OwnerId: The Alibaba Cloud account ID.
+     */
+    public readonly attrOwnerId: ros.IResolvable;
+
+    /**
+     * @Attribute SourceId: Source ID.
+     */
+    public readonly attrSourceId: ros.IResolvable;
+
+    /**
+     * @Attribute SourceType: Model source type, possible values:.
+     */
+    public readonly attrSourceType: ros.IResolvable;
+
+    /**
+     * @Attribute TrainingSpec: Training configuration. Configuration for fine-tuning, incremental training.
+     */
+    public readonly attrTrainingSpec: ros.IResolvable;
+
+    /**
+     * @Attribute Uri: Model version URI, that is, the location where the model is stored.
+     */
+    public readonly attrUri: ros.IResolvable;
+
+    /**
+     * @Attribute UserId: The user ID.
+     */
+    public readonly attrUserId: ros.IResolvable;
+
+    /**
+     * @Attribute VersionDescription: Model version description.
+     */
+    public readonly attrVersionDescription: ros.IResolvable;
+
+    /**
+     * @Attribute VersionName: Model version.
+     */
+    public readonly attrVersionName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property modelId: Model ID. For details about how to obtain the model ID.
+     */
+    public modelId: string | ros.IResolvable;
+
+    /**
+     * @Property uri: Model version URI, that is, the location where the model is stored. Possible values are:
+     * - The HTTP(S) address of the model, for example: 'https:\/\/myweb.com\/mymodel.tar.gz '.
+     * - If the model is stored in OSS, the format is 'oss:\/\/<bucket>.<endpoint>\/object '. For the endpoint configuration, see [Access domain name and data center](~~ 31837 ~~). For example, see OSS:\/\/ mybucket\/'.
+     */
+    public uri: string | ros.IResolvable;
+
+    /**
+     * @Property approvalStatus: Admission status, with values as follows:
+     * - Pending: to be determined.
+     * - Approved: Allow to go online.
+     * - Rejected: Online is not allowed.
+     */
+    public approvalStatus: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property extraInfo: The additional information.
+     */
+    public extraInfo: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @Property formatType: Model format, possible values:
+     * - OfflineModel
+     * - SavedModel
+     * - Keras H5
+     * - Frozen Pb
+     * - Caffe Prototxt
+     * - TorchScript
+     * - XGBoost
+     * - PMML
+     * - AlinkModel
+     * - ONNX.
+     */
+    public formatType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property frameworkType: Model framework, possible values:
+     * - Pytorch
+     * - XGBoost
+     * - Keras
+     * - Caffe
+     * - Alink
+     * - Xflow
+     * - TensorFlow.
+     */
+    public frameworkType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property inferenceSpec: Describes how to apply to downstream inference services. For example, describe the processor and container of EAS. Example: { "processor": "tensorflow_gpu_1.12" }
+     */
+    public inferenceSpec: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @Property labels: List of model version labels.
+     */
+    public labels: Array<RosModelVersion.LabelsProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property metrics: The metrics for the model. The length after serialization is limited to 8,192. Example:
+     * { "Results": [{ "Dataset": { "DatasetId": "d-sdkjanksaklerhfd" }, "Metrics": { "cer": 0.175 } }, { "Dataset": { "Uri": "oss:\/\/xxxx\/" }, "Metrics": { "cer": 0.172 } }] }
+     */
+    public metrics: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @Property options: The extended field. This is a JSON string.
+     */
+    public options: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property sourceId: Source ID.
+     * * When the source type is Custom, this field is not restricted.
+     * * When the source is PAIFlow or TrainingService, the format is
+     * '''
+     * region=<region_id>,workspaceId=<workspace_id>,kind=<kind>,id=<id>
+     * '''
+     * Among them:
+     * - region is the Alibaba Cloud region ID.
+     * - workspaceId indicates the workspace ID.
+     * - kind: is a type. Value: PipelineRun(PAIFlow workflow);ServiceJob (training service).
+     * - id: is a unique identifier.
+     */
+    public sourceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property sourceType: Model source type, possible values:
+     * - Custom: Custom.
+     * - PAIFlow:PAI workflow.
+     * - TrainingService:PAI training service.
+     */
+    public sourceType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property trainingSpec: Training configuration. Configuration for fine-tuning, incremental training.
+     */
+    public trainingSpec: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @Property versionDescription: Model version description.
+     */
+    public versionDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property versionName: The model version, which is unique for each model. If you leave this parameter empty, the first version is 0.1.0 by default. After that, the minor version number is increased by 1 in sequence. For example, the second version number is 0.2.0. A version number consists of a major version number, a minor version number, and a stage version number, separated by periods (.). The major version number and minor version number are numeric. The stage version number begins with a digit and can include numbers, underscores, and letters. For example, the version number is 1.1.0 or 2.3.4_beta.
+     */
+    public versionName: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosModelVersionProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosModelVersion.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrApprovalStatus = this.getAtt('ApprovalStatus');
+        this.attrExtraInfo = this.getAtt('ExtraInfo');
+        this.attrFormatType = this.getAtt('FormatType');
+        this.attrFrameworkType = this.getAtt('FrameworkType');
+        this.attrGmtCreateTime = this.getAtt('GmtCreateTime');
+        this.attrGmtModifiedTime = this.getAtt('GmtModifiedTime');
+        this.attrInferenceSpec = this.getAtt('InferenceSpec');
+        this.attrLabels = this.getAtt('Labels');
+        this.attrMetrics = this.getAtt('Metrics');
+        this.attrOptions = this.getAtt('Options');
+        this.attrOwnerId = this.getAtt('OwnerId');
+        this.attrSourceId = this.getAtt('SourceId');
+        this.attrSourceType = this.getAtt('SourceType');
+        this.attrTrainingSpec = this.getAtt('TrainingSpec');
+        this.attrUri = this.getAtt('Uri');
+        this.attrUserId = this.getAtt('UserId');
+        this.attrVersionDescription = this.getAtt('VersionDescription');
+        this.attrVersionName = this.getAtt('VersionName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.modelId = props.modelId;
+        this.uri = props.uri;
+        this.approvalStatus = props.approvalStatus;
+        this.extraInfo = props.extraInfo;
+        this.formatType = props.formatType;
+        this.frameworkType = props.frameworkType;
+        this.inferenceSpec = props.inferenceSpec;
+        this.labels = props.labels;
+        this.metrics = props.metrics;
+        this.options = props.options;
+        this.sourceId = props.sourceId;
+        this.sourceType = props.sourceType;
+        this.trainingSpec = props.trainingSpec;
+        this.versionDescription = props.versionDescription;
+        this.versionName = props.versionName;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            modelId: this.modelId,
+            uri: this.uri,
+            approvalStatus: this.approvalStatus,
+            extraInfo: this.extraInfo,
+            formatType: this.formatType,
+            frameworkType: this.frameworkType,
+            inferenceSpec: this.inferenceSpec,
+            labels: this.labels,
+            metrics: this.metrics,
+            options: this.options,
+            sourceId: this.sourceId,
+            sourceType: this.sourceType,
+            trainingSpec: this.trainingSpec,
+            versionDescription: this.versionDescription,
+            versionName: this.versionName,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosModelVersionPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosModelVersion {
+    /**
+     * @stability external
+     */
+    export interface LabelsProperty {
+        /**
+         * @Property value: label value.
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: label key.
+         */
+        readonly key?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `LabelsProperty`
+ *
+ * @param properties - the TypeScript properties of a `LabelsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosModelVersion_LabelsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "LabelsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PAI::ModelVersion.Labels` resource
+ *
+ * @param properties - the TypeScript properties of a `LabelsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PAI::ModelVersion.Labels` resource.
+ */
+// @ts-ignore TS6133
+function rosModelVersionLabelsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosModelVersion_LabelsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
  * Properties for defining a `RosRun`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-run
  */
@@ -1347,7 +2288,7 @@ function rosRunPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::Run`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::Run`, which is used to create a run. A run belongs to an experiment and can be associated with a workload. A run can also represent a single code execution.
  * @Note This class does not contain additional functions, so it is recommended to use the `Run` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-run
  */
@@ -1553,7 +2494,7 @@ function rosServicePropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::Service`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::Service`, which is used to create an Elastic Algorithm Service (EAS) service in Machine Learning Platform for AI (PAI).
  * @Note This class does not contain additional functions, so it is recommended to use the `Service` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-service
  */
@@ -1795,6 +2736,188 @@ export class RosService extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosUserConfig`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-userconfig
+ */
+export interface RosUserConfigProps {
+
+    /**
+     * @Property categoryName: Represents a resource attribute for a configuration category.
+     */
+    readonly categoryName: string | ros.IResolvable;
+
+    /**
+     * @Property configKey: Represents the resource attribute of the configuration Key.
+     */
+    readonly configKey: string | ros.IResolvable;
+
+    /**
+     * @Property configs: Represents a resource property for the configuration list.
+     */
+    readonly configs?: Array<RosUserConfig.ConfigsProperty | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosUserConfigProps`
+ *
+ * @param properties - the TypeScript properties of a `RosUserConfigProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosUserConfigPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('configKey', ros.requiredValidator)(properties.configKey));
+    errors.collect(ros.propertyValidator('configKey', ros.validateString)(properties.configKey));
+    if(properties.configs && (Array.isArray(properties.configs) || (typeof properties.configs) === 'string')) {
+        errors.collect(ros.propertyValidator('configs', ros.validateLength)({
+            data: properties.configs.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('configs', ros.listValidator(RosUserConfig_ConfigsPropertyValidator))(properties.configs));
+    errors.collect(ros.propertyValidator('categoryName', ros.requiredValidator)(properties.categoryName));
+    errors.collect(ros.propertyValidator('categoryName', ros.validateString)(properties.categoryName));
+    return errors.wrap('supplied properties not correct for "RosUserConfigProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PAI::UserConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `RosUserConfigProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PAI::UserConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosUserConfigPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosUserConfigPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'CategoryName': ros.stringToRosTemplate(properties.categoryName),
+      'ConfigKey': ros.stringToRosTemplate(properties.configKey),
+      'Configs': ros.listMapper(rosUserConfigConfigsPropertyToRosTemplate)(properties.configs),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::UserConfig`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `UserConfig` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-userconfig
+ */
+export class RosUserConfig extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PAI::UserConfig";
+
+    /**
+     * @Attribute CategoryName: Represents a resource attribute for a configuration category.
+     */
+    public readonly attrCategoryName: ros.IResolvable;
+
+    /**
+     * @Attribute ConfigKey: Represents the resource attribute of the configuration Key.
+     */
+    public readonly attrConfigKey: ros.IResolvable;
+
+    /**
+     * @Attribute Configs: Represents a resource property for the configuration list.
+     */
+    public readonly attrConfigs: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property categoryName: Represents a resource attribute for a configuration category.
+     */
+    public categoryName: string | ros.IResolvable;
+
+    /**
+     * @Property configKey: Represents the resource attribute of the configuration Key.
+     */
+    public configKey: string | ros.IResolvable;
+
+    /**
+     * @Property configs: Represents a resource property for the configuration list.
+     */
+    public configs: Array<RosUserConfig.ConfigsProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosUserConfigProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosUserConfig.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCategoryName = this.getAtt('CategoryName');
+        this.attrConfigKey = this.getAtt('ConfigKey');
+        this.attrConfigs = this.getAtt('Configs');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.categoryName = props.categoryName;
+        this.configKey = props.configKey;
+        this.configs = props.configs;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            categoryName: this.categoryName,
+            configKey: this.configKey,
+            configs: this.configs,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosUserConfigPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosUserConfig {
+    /**
+     * @stability external
+     */
+    export interface ConfigsProperty {
+        /**
+         * @Property configValue: Resource attributes that represent configuration values.
+         */
+        readonly configValue?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ConfigsProperty`
+ *
+ * @param properties - the TypeScript properties of a `ConfigsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosUserConfig_ConfigsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('configValue', ros.validateString)(properties.configValue));
+    return errors.wrap('supplied properties not correct for "ConfigsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PAI::UserConfig.Configs` resource
+ *
+ * @param properties - the TypeScript properties of a `ConfigsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PAI::UserConfig.Configs` resource.
+ */
+// @ts-ignore TS6133
+function rosUserConfigConfigsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosUserConfig_ConfigsPropertyValidator(properties).assertSuccess();
+    return {
+      'ConfigValue': ros.stringToRosTemplate(properties.configValue),
+    };
+}
+
+/**
  * Properties for defining a `RosWorkspace`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspace
  */
@@ -1883,7 +3006,7 @@ function rosWorkspacePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::Workspace`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::Workspace`, which is used to create a workspace.
  * @Note This class does not contain additional functions, so it is recommended to use the `Workspace` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspace
  */
@@ -2014,6 +3137,264 @@ export class RosWorkspace extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosWorkspaceResource`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspaceresource
+ */
+export interface RosWorkspaceResourceProps {
+
+    /**
+     * @Property envType: Environment type, possible values:
+     * - dev: Development environment.
+     * - prod: Production environment.
+     */
+    readonly envType: string | ros.IResolvable;
+
+    /**
+     * @Property resourceType: The resource types. Valid values:
+     * MaxCompute
+     * ECS
+     * Lingjun
+     * ACS
+     * FLINK
+     */
+    readonly resourceType: string | ros.IResolvable;
+
+    /**
+     * @Property workspaceId: The ID of the workspace to which the workspace belongs.
+     */
+    readonly workspaceId: string | ros.IResolvable;
+
+    /**
+     * @Property workspaceResourceName: The resource name.
+     */
+    readonly workspaceResourceName: string | ros.IResolvable;
+
+    /**
+     * @Property groupName: Resource group name. If you want to obtain a resource group name, see [ListResources](~~ 449143 ~~).
+     */
+    readonly groupName?: string | ros.IResolvable;
+
+    /**
+     * @Property isDefault: Whether it is the default resource, each resource type has a default resource. Possible values:
+     * - true: is the default resource.
+     * - false: Not the default resource.
+     */
+    readonly isDefault?: boolean | ros.IResolvable;
+
+    /**
+     * @Property spec: Resource configuration, required for public resource groups of DLC, enter the content: {"clusterType": "share"}.
+     */
+    readonly spec?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosWorkspaceResourceProps`
+ *
+ * @param properties - the TypeScript properties of a `RosWorkspaceResourceProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosWorkspaceResourcePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('groupName', ros.validateString)(properties.groupName));
+    errors.collect(ros.propertyValidator('isDefault', ros.validateBoolean)(properties.isDefault));
+    errors.collect(ros.propertyValidator('workspaceResourceName', ros.requiredValidator)(properties.workspaceResourceName));
+    errors.collect(ros.propertyValidator('workspaceResourceName', ros.validateString)(properties.workspaceResourceName));
+    errors.collect(ros.propertyValidator('workspaceId', ros.requiredValidator)(properties.workspaceId));
+    errors.collect(ros.propertyValidator('workspaceId', ros.validateString)(properties.workspaceId));
+    errors.collect(ros.propertyValidator('resourceType', ros.requiredValidator)(properties.resourceType));
+    if(properties.resourceType && (typeof properties.resourceType) !== 'object') {
+        errors.collect(ros.propertyValidator('resourceType', ros.validateAllowedValues)({
+          data: properties.resourceType,
+          allowedValues: ["MaxCompute","ECS","Lingjun","ACS","FLINK"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
+    errors.collect(ros.propertyValidator('spec', ros.hashValidator(ros.validateAny))(properties.spec));
+    errors.collect(ros.propertyValidator('envType', ros.requiredValidator)(properties.envType));
+    if(properties.envType && (typeof properties.envType) !== 'object') {
+        errors.collect(ros.propertyValidator('envType', ros.validateAllowedValues)({
+          data: properties.envType,
+          allowedValues: ["dev","prod"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('envType', ros.validateString)(properties.envType));
+    return errors.wrap('supplied properties not correct for "RosWorkspaceResourceProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PAI::WorkspaceResource` resource
+ *
+ * @param properties - the TypeScript properties of a `RosWorkspaceResourceProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PAI::WorkspaceResource` resource.
+ */
+// @ts-ignore TS6133
+function rosWorkspaceResourcePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosWorkspaceResourcePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'EnvType': ros.stringToRosTemplate(properties.envType),
+      'ResourceType': ros.stringToRosTemplate(properties.resourceType),
+      'WorkspaceId': ros.stringToRosTemplate(properties.workspaceId),
+      'WorkspaceResourceName': ros.stringToRosTemplate(properties.workspaceResourceName),
+      'GroupName': ros.stringToRosTemplate(properties.groupName),
+      'IsDefault': ros.booleanToRosTemplate(properties.isDefault),
+      'Spec': ros.hashMapper(ros.objectToRosTemplate)(properties.spec),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::WorkspaceResource`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `WorkspaceResource` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspaceresource
+ */
+export class RosWorkspaceResource extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PAI::WorkspaceResource";
+
+    /**
+     * @Attribute CreateTime: Create UTC time in ISO8601 format.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute EnvType: Environment type, possible values:.
+     */
+    public readonly attrEnvType: ros.IResolvable;
+
+    /**
+     * @Attribute GroupName: Resource group name. If you want to obtain a resource group name, see [ListResources](~~ 449143 ~~).
+     */
+    public readonly attrGroupName: ros.IResolvable;
+
+    /**
+     * @Attribute IsDefault: Whether it is the default resource, each resource type has a default resource.
+     */
+    public readonly attrIsDefault: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceId: The resource ID.
+     */
+    public readonly attrResourceId: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceType: Resource type, possible values:.
+     */
+    public readonly attrResourceType: ros.IResolvable;
+
+    /**
+     * @Attribute Spec: Resource configuration, required for public resource groups of DLC, enter the content.
+     */
+    public readonly attrSpec: ros.IResolvable;
+
+    /**
+     * @Attribute WorkspaceId: The ID of the workspace to which the workspace belongs.
+     */
+    public readonly attrWorkspaceId: ros.IResolvable;
+
+    /**
+     * @Attribute WorkspaceResourceName: The resource name.
+     */
+    public readonly attrWorkspaceResourceName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property envType: Environment type, possible values:
+     * - dev: Development environment.
+     * - prod: Production environment.
+     */
+    public envType: string | ros.IResolvable;
+
+    /**
+     * @Property resourceType: The resource types. Valid values:
+     * MaxCompute
+     * ECS
+     * Lingjun
+     * ACS
+     * FLINK
+     */
+    public resourceType: string | ros.IResolvable;
+
+    /**
+     * @Property workspaceId: The ID of the workspace to which the workspace belongs.
+     */
+    public workspaceId: string | ros.IResolvable;
+
+    /**
+     * @Property workspaceResourceName: The resource name.
+     */
+    public workspaceResourceName: string | ros.IResolvable;
+
+    /**
+     * @Property groupName: Resource group name. If you want to obtain a resource group name, see [ListResources](~~ 449143 ~~).
+     */
+    public groupName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property isDefault: Whether it is the default resource, each resource type has a default resource. Possible values:
+     * - true: is the default resource.
+     * - false: Not the default resource.
+     */
+    public isDefault: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property spec: Resource configuration, required for public resource groups of DLC, enter the content: {"clusterType": "share"}.
+     */
+    public spec: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosWorkspaceResourceProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosWorkspaceResource.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrEnvType = this.getAtt('EnvType');
+        this.attrGroupName = this.getAtt('GroupName');
+        this.attrIsDefault = this.getAtt('IsDefault');
+        this.attrResourceId = this.getAtt('ResourceId');
+        this.attrResourceType = this.getAtt('ResourceType');
+        this.attrSpec = this.getAtt('Spec');
+        this.attrWorkspaceId = this.getAtt('WorkspaceId');
+        this.attrWorkspaceResourceName = this.getAtt('WorkspaceResourceName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.envType = props.envType;
+        this.resourceType = props.resourceType;
+        this.workspaceId = props.workspaceId;
+        this.workspaceResourceName = props.workspaceResourceName;
+        this.groupName = props.groupName;
+        this.isDefault = props.isDefault;
+        this.spec = props.spec;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            envType: this.envType,
+            resourceType: this.resourceType,
+            workspaceId: this.workspaceId,
+            workspaceResourceName: this.workspaceResourceName,
+            groupName: this.groupName,
+            isDefault: this.isDefault,
+            spec: this.spec,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosWorkspaceResourcePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosWorkspaceResourceDlc`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspaceresourcedlc
  */
@@ -2057,9 +3438,9 @@ export interface RosWorkspaceResourceDlcProps {
 function RosWorkspaceResourceDlcPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('isDefault', ros.validateBoolean)(properties.isDefault));
     errors.collect(ros.propertyValidator('groupName', ros.requiredValidator)(properties.groupName));
     errors.collect(ros.propertyValidator('groupName', ros.validateString)(properties.groupName));
+    errors.collect(ros.propertyValidator('isDefault', ros.validateBoolean)(properties.isDefault));
     errors.collect(ros.propertyValidator('workspaceId', ros.requiredValidator)(properties.workspaceId));
     errors.collect(ros.propertyValidator('workspaceId', ros.validateString)(properties.workspaceId));
     if(properties.option && (typeof properties.option) !== 'object') {
@@ -2104,7 +3485,7 @@ function rosWorkspaceResourceDlcPropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::WorkspaceResourceDlc`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::WorkspaceResourceDlc`, which is used to associate Deep Learning Containers (DLC) resources with a workspace.
  * @Note This class does not contain additional functions, so it is recommended to use the `WorkspaceResourceDlc` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspaceresourcedlc
  */
@@ -2313,9 +3694,9 @@ export interface RosWorkspaceResourceFlinkProps {
 function RosWorkspaceResourceFlinkPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('isDefault', ros.validateBoolean)(properties.isDefault));
     errors.collect(ros.propertyValidator('groupName', ros.requiredValidator)(properties.groupName));
     errors.collect(ros.propertyValidator('groupName', ros.validateString)(properties.groupName));
+    errors.collect(ros.propertyValidator('isDefault', ros.validateBoolean)(properties.isDefault));
     errors.collect(ros.propertyValidator('workspaceId', ros.requiredValidator)(properties.workspaceId));
     errors.collect(ros.propertyValidator('workspaceId', ros.validateString)(properties.workspaceId));
     if(properties.option && (typeof properties.option) !== 'object') {
@@ -2360,7 +3741,7 @@ function rosWorkspaceResourceFlinkPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::WorkspaceResourceFlink`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::WorkspaceResourceFlink`, which is used to associate Realtime Compute for Apache Flink resources with a workspace.
  * @Note This class does not contain additional functions, so it is recommended to use the `WorkspaceResourceFlink` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspaceresourceflink
  */
@@ -2569,9 +3950,9 @@ export interface RosWorkspaceResourceMaxComputeProps {
 function RosWorkspaceResourceMaxComputePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('isDefault', ros.validateBoolean)(properties.isDefault));
     errors.collect(ros.propertyValidator('groupName', ros.requiredValidator)(properties.groupName));
     errors.collect(ros.propertyValidator('groupName', ros.validateString)(properties.groupName));
+    errors.collect(ros.propertyValidator('isDefault', ros.validateBoolean)(properties.isDefault));
     errors.collect(ros.propertyValidator('workspaceId', ros.requiredValidator)(properties.workspaceId));
     if(properties.workspaceId && (Array.isArray(properties.workspaceId) || (typeof properties.workspaceId) === 'string')) {
         errors.collect(ros.propertyValidator('workspaceId', ros.validateLength)({
@@ -2623,7 +4004,7 @@ function rosWorkspaceResourceMaxComputePropsToRosTemplate(properties: any, enabl
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::WorkspaceResourceMaxCompute`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::WorkspaceResourceMaxCompute`, which is used to associate MaxCompute resources with a workspace.
  * @Note This class does not contain additional functions, so it is recommended to use the `WorkspaceResourceMaxCompute` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspaceresourcemaxcompute
  */

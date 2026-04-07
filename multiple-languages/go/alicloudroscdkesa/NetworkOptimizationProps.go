@@ -47,7 +47,7 @@ type NetworkOptimizationProps struct {
 	// - `on`: Enabled
 	// - `off`: Disabled.
 	SmartRouting interface{} `field:"optional" json:"smartRouting" yaml:"smartRouting"`
-	// Property uploadMaxFilesize: Maximum upload file size, in MB, value range: 100～500.
+	// Property uploadMaxFilesize: Maximum upload file size, in MB, value range: 100ï½500.
 	UploadMaxFilesize interface{} `field:"optional" json:"uploadMaxFilesize" yaml:"uploadMaxFilesize"`
 	// Property websocket: Whether to enable Websocket, default is enabled.
 	//

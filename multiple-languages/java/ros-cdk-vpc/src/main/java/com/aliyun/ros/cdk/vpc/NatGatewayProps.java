@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-natgateway
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:00.997Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.931Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.NatGatewayProps")
 @software.amazon.jsii.Jsii.Proxy(NatGatewayProps.Jsii$Proxy.class)
 public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
@@ -19,6 +19,22 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
      * Property vSwitchId: The VSwitch id to create NAT gateway.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchId();
+
+    /**
+     * Property accessMode: Reverse access mode to the VPC NAT gateway.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAccessMode() {
+        return null;
+    }
+
+    /**
+     * Property availabilityMode: The availability mode of the NAT gateway.
+     * <p>
+     * Valid values: CrossAZ, SingleAZ
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAvailabilityMode() {
+        return null;
+    }
 
     /**
      * Property deletionForce: Whether force delete the relative snat and dnat entries in the net gateway and unbind eips.
@@ -91,9 +107,23 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property ipv4Prefix: The IPv4 prefix.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIpv4Prefix() {
+        return null;
+    }
+
+    /**
      * Property natGatewayName: Display name of the NAT gateway, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNatGatewayName() {
+        return null;
+    }
+
+    /**
+     * Property natIp: The NAT IP address.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNatIp() {
         return null;
     }
 
@@ -117,6 +147,13 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
      * Intranet: VPC NAT gateway.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNetworkType() {
+        return null;
+    }
+
+    /**
+     * Property privateLinkEnabled: Whether to support private network connection.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPrivateLinkEnabled() {
         return null;
     }
 
@@ -150,6 +187,8 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
     public static final class Builder implements software.amazon.jsii.Builder<NatGatewayProps> {
         java.lang.Object vpcId;
         java.lang.Object vSwitchId;
+        java.lang.Object accessMode;
+        java.lang.Object availabilityMode;
         java.lang.Object deletionForce;
         java.lang.Object deletionProtection;
         java.lang.Object description;
@@ -157,9 +196,12 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object icmpReplyEnabled;
         java.lang.Object instanceChargeType;
         java.lang.Object internetChargeType;
+        java.lang.Object ipv4Prefix;
         java.lang.Object natGatewayName;
+        java.lang.Object natIp;
         java.lang.Object natType;
         java.lang.Object networkType;
+        java.lang.Object privateLinkEnabled;
         java.lang.Object securityProtectionEnabled;
         java.util.List<com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty> tags;
 
@@ -200,6 +242,48 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.vSwitchId = vSwitchId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link NatGatewayProps#getAccessMode}
+         * @param accessMode Property accessMode: Reverse access mode to the VPC NAT gateway.
+         * @return {@code this}
+         */
+        public Builder accessMode(com.aliyun.ros.cdk.core.IResolvable accessMode) {
+            this.accessMode = accessMode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link NatGatewayProps#getAccessMode}
+         * @param accessMode Property accessMode: Reverse access mode to the VPC NAT gateway.
+         * @return {@code this}
+         */
+        public Builder accessMode(com.aliyun.ros.cdk.vpc.RosNatGateway.AccessModeProperty accessMode) {
+            this.accessMode = accessMode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link NatGatewayProps#getAvailabilityMode}
+         * @param availabilityMode Property availabilityMode: The availability mode of the NAT gateway.
+         *                         Valid values: CrossAZ, SingleAZ
+         * @return {@code this}
+         */
+        public Builder availabilityMode(java.lang.String availabilityMode) {
+            this.availabilityMode = availabilityMode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link NatGatewayProps#getAvailabilityMode}
+         * @param availabilityMode Property availabilityMode: The availability mode of the NAT gateway.
+         *                         Valid values: CrossAZ, SingleAZ
+         * @return {@code this}
+         */
+        public Builder availabilityMode(com.aliyun.ros.cdk.core.IResolvable availabilityMode) {
+            this.availabilityMode = availabilityMode;
             return this;
         }
 
@@ -372,6 +456,26 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link NatGatewayProps#getIpv4Prefix}
+         * @param ipv4Prefix Property ipv4Prefix: The IPv4 prefix.
+         * @return {@code this}
+         */
+        public Builder ipv4Prefix(java.lang.String ipv4Prefix) {
+            this.ipv4Prefix = ipv4Prefix;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link NatGatewayProps#getIpv4Prefix}
+         * @param ipv4Prefix Property ipv4Prefix: The IPv4 prefix.
+         * @return {@code this}
+         */
+        public Builder ipv4Prefix(com.aliyun.ros.cdk.core.IResolvable ipv4Prefix) {
+            this.ipv4Prefix = ipv4Prefix;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link NatGatewayProps#getNatGatewayName}
          * @param natGatewayName Property natGatewayName: Display name of the NAT gateway, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
          * @return {@code this}
@@ -388,6 +492,26 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder natGatewayName(com.aliyun.ros.cdk.core.IResolvable natGatewayName) {
             this.natGatewayName = natGatewayName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link NatGatewayProps#getNatIp}
+         * @param natIp Property natIp: The NAT IP address.
+         * @return {@code this}
+         */
+        public Builder natIp(java.lang.String natIp) {
+            this.natIp = natIp;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link NatGatewayProps#getNatIp}
+         * @param natIp Property natIp: The NAT IP address.
+         * @return {@code this}
+         */
+        public Builder natIp(com.aliyun.ros.cdk.core.IResolvable natIp) {
+            this.natIp = natIp;
             return this;
         }
 
@@ -446,6 +570,26 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link NatGatewayProps#getPrivateLinkEnabled}
+         * @param privateLinkEnabled Property privateLinkEnabled: Whether to support private network connection.
+         * @return {@code this}
+         */
+        public Builder privateLinkEnabled(java.lang.Boolean privateLinkEnabled) {
+            this.privateLinkEnabled = privateLinkEnabled;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link NatGatewayProps#getPrivateLinkEnabled}
+         * @param privateLinkEnabled Property privateLinkEnabled: Whether to support private network connection.
+         * @return {@code this}
+         */
+        public Builder privateLinkEnabled(com.aliyun.ros.cdk.core.IResolvable privateLinkEnabled) {
+            this.privateLinkEnabled = privateLinkEnabled;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link NatGatewayProps#getSecurityProtectionEnabled}
          * @param securityProtectionEnabled Property securityProtectionEnabled: Specifies whether to enable the firewall feature.
          *                                  Default: False
@@ -497,6 +641,8 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements NatGatewayProps {
         private final java.lang.Object vpcId;
         private final java.lang.Object vSwitchId;
+        private final java.lang.Object accessMode;
+        private final java.lang.Object availabilityMode;
         private final java.lang.Object deletionForce;
         private final java.lang.Object deletionProtection;
         private final java.lang.Object description;
@@ -504,9 +650,12 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object icmpReplyEnabled;
         private final java.lang.Object instanceChargeType;
         private final java.lang.Object internetChargeType;
+        private final java.lang.Object ipv4Prefix;
         private final java.lang.Object natGatewayName;
+        private final java.lang.Object natIp;
         private final java.lang.Object natType;
         private final java.lang.Object networkType;
+        private final java.lang.Object privateLinkEnabled;
         private final java.lang.Object securityProtectionEnabled;
         private final java.util.List<com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty> tags;
 
@@ -518,6 +667,8 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
             super(objRef);
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.accessMode = software.amazon.jsii.Kernel.get(this, "accessMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.availabilityMode = software.amazon.jsii.Kernel.get(this, "availabilityMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionForce = software.amazon.jsii.Kernel.get(this, "deletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -525,9 +676,12 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
             this.icmpReplyEnabled = software.amazon.jsii.Kernel.get(this, "icmpReplyEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ipv4Prefix = software.amazon.jsii.Kernel.get(this, "ipv4Prefix", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.natGatewayName = software.amazon.jsii.Kernel.get(this, "natGatewayName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.natIp = software.amazon.jsii.Kernel.get(this, "natIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.natType = software.amazon.jsii.Kernel.get(this, "natType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.privateLinkEnabled = software.amazon.jsii.Kernel.get(this, "privateLinkEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityProtectionEnabled = software.amazon.jsii.Kernel.get(this, "securityProtectionEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty.class)));
         }
@@ -540,6 +694,8 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
             this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
+            this.accessMode = builder.accessMode;
+            this.availabilityMode = builder.availabilityMode;
             this.deletionForce = builder.deletionForce;
             this.deletionProtection = builder.deletionProtection;
             this.description = builder.description;
@@ -547,9 +703,12 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
             this.icmpReplyEnabled = builder.icmpReplyEnabled;
             this.instanceChargeType = builder.instanceChargeType;
             this.internetChargeType = builder.internetChargeType;
+            this.ipv4Prefix = builder.ipv4Prefix;
             this.natGatewayName = builder.natGatewayName;
+            this.natIp = builder.natIp;
             this.natType = builder.natType;
             this.networkType = builder.networkType;
+            this.privateLinkEnabled = builder.privateLinkEnabled;
             this.securityProtectionEnabled = builder.securityProtectionEnabled;
             this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty>)builder.tags;
         }
@@ -562,6 +721,16 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getVSwitchId() {
             return this.vSwitchId;
+        }
+
+        @Override
+        public final java.lang.Object getAccessMode() {
+            return this.accessMode;
+        }
+
+        @Override
+        public final java.lang.Object getAvailabilityMode() {
+            return this.availabilityMode;
         }
 
         @Override
@@ -600,8 +769,18 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getIpv4Prefix() {
+            return this.ipv4Prefix;
+        }
+
+        @Override
         public final java.lang.Object getNatGatewayName() {
             return this.natGatewayName;
+        }
+
+        @Override
+        public final java.lang.Object getNatIp() {
+            return this.natIp;
         }
 
         @Override
@@ -612,6 +791,11 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getNetworkType() {
             return this.networkType;
+        }
+
+        @Override
+        public final java.lang.Object getPrivateLinkEnabled() {
+            return this.privateLinkEnabled;
         }
 
         @Override
@@ -632,6 +816,12 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
 
             data.set("vpcId", om.valueToTree(this.getVpcId()));
             data.set("vSwitchId", om.valueToTree(this.getVSwitchId()));
+            if (this.getAccessMode() != null) {
+                data.set("accessMode", om.valueToTree(this.getAccessMode()));
+            }
+            if (this.getAvailabilityMode() != null) {
+                data.set("availabilityMode", om.valueToTree(this.getAvailabilityMode()));
+            }
             if (this.getDeletionForce() != null) {
                 data.set("deletionForce", om.valueToTree(this.getDeletionForce()));
             }
@@ -653,14 +843,23 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getInternetChargeType() != null) {
                 data.set("internetChargeType", om.valueToTree(this.getInternetChargeType()));
             }
+            if (this.getIpv4Prefix() != null) {
+                data.set("ipv4Prefix", om.valueToTree(this.getIpv4Prefix()));
+            }
             if (this.getNatGatewayName() != null) {
                 data.set("natGatewayName", om.valueToTree(this.getNatGatewayName()));
+            }
+            if (this.getNatIp() != null) {
+                data.set("natIp", om.valueToTree(this.getNatIp()));
             }
             if (this.getNatType() != null) {
                 data.set("natType", om.valueToTree(this.getNatType()));
             }
             if (this.getNetworkType() != null) {
                 data.set("networkType", om.valueToTree(this.getNetworkType()));
+            }
+            if (this.getPrivateLinkEnabled() != null) {
+                data.set("privateLinkEnabled", om.valueToTree(this.getPrivateLinkEnabled()));
             }
             if (this.getSecurityProtectionEnabled() != null) {
                 data.set("securityProtectionEnabled", om.valueToTree(this.getSecurityProtectionEnabled()));
@@ -688,6 +887,8 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
 
             if (!vpcId.equals(that.vpcId)) return false;
             if (!vSwitchId.equals(that.vSwitchId)) return false;
+            if (this.accessMode != null ? !this.accessMode.equals(that.accessMode) : that.accessMode != null) return false;
+            if (this.availabilityMode != null ? !this.availabilityMode.equals(that.availabilityMode) : that.availabilityMode != null) return false;
             if (this.deletionForce != null ? !this.deletionForce.equals(that.deletionForce) : that.deletionForce != null) return false;
             if (this.deletionProtection != null ? !this.deletionProtection.equals(that.deletionProtection) : that.deletionProtection != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
@@ -695,9 +896,12 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
             if (this.icmpReplyEnabled != null ? !this.icmpReplyEnabled.equals(that.icmpReplyEnabled) : that.icmpReplyEnabled != null) return false;
             if (this.instanceChargeType != null ? !this.instanceChargeType.equals(that.instanceChargeType) : that.instanceChargeType != null) return false;
             if (this.internetChargeType != null ? !this.internetChargeType.equals(that.internetChargeType) : that.internetChargeType != null) return false;
+            if (this.ipv4Prefix != null ? !this.ipv4Prefix.equals(that.ipv4Prefix) : that.ipv4Prefix != null) return false;
             if (this.natGatewayName != null ? !this.natGatewayName.equals(that.natGatewayName) : that.natGatewayName != null) return false;
+            if (this.natIp != null ? !this.natIp.equals(that.natIp) : that.natIp != null) return false;
             if (this.natType != null ? !this.natType.equals(that.natType) : that.natType != null) return false;
             if (this.networkType != null ? !this.networkType.equals(that.networkType) : that.networkType != null) return false;
+            if (this.privateLinkEnabled != null ? !this.privateLinkEnabled.equals(that.privateLinkEnabled) : that.privateLinkEnabled != null) return false;
             if (this.securityProtectionEnabled != null ? !this.securityProtectionEnabled.equals(that.securityProtectionEnabled) : that.securityProtectionEnabled != null) return false;
             return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
@@ -706,6 +910,8 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
         public final int hashCode() {
             int result = this.vpcId.hashCode();
             result = 31 * result + (this.vSwitchId.hashCode());
+            result = 31 * result + (this.accessMode != null ? this.accessMode.hashCode() : 0);
+            result = 31 * result + (this.availabilityMode != null ? this.availabilityMode.hashCode() : 0);
             result = 31 * result + (this.deletionForce != null ? this.deletionForce.hashCode() : 0);
             result = 31 * result + (this.deletionProtection != null ? this.deletionProtection.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
@@ -713,9 +919,12 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.icmpReplyEnabled != null ? this.icmpReplyEnabled.hashCode() : 0);
             result = 31 * result + (this.instanceChargeType != null ? this.instanceChargeType.hashCode() : 0);
             result = 31 * result + (this.internetChargeType != null ? this.internetChargeType.hashCode() : 0);
+            result = 31 * result + (this.ipv4Prefix != null ? this.ipv4Prefix.hashCode() : 0);
             result = 31 * result + (this.natGatewayName != null ? this.natGatewayName.hashCode() : 0);
+            result = 31 * result + (this.natIp != null ? this.natIp.hashCode() : 0);
             result = 31 * result + (this.natType != null ? this.natType.hashCode() : 0);
             result = 31 * result + (this.networkType != null ? this.networkType.hashCode() : 0);
+            result = 31 * result + (this.privateLinkEnabled != null ? this.privateLinkEnabled.hashCode() : 0);
             result = 31 * result + (this.securityProtectionEnabled != null ? this.securityProtectionEnabled.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;

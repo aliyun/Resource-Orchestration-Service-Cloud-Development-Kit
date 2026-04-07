@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::PaiDswApi::Instance`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::PaiDswApi::Instance`, which is used to create a Data Science Workshop (DSW) instance.
 type RosInstance interface {
 	alicloudroscdkcore.RosResource
 	Accessibility() interface{}

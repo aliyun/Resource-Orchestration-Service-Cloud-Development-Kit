@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpccidrblockassociation
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.152Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.120Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosVpcCidrBlockAssociationProps")
 @software.amazon.jsii.Jsii.Proxy(RosVpcCidrBlockAssociationProps.Jsii$Proxy.class)
 public interface RosVpcCidrBlockAssociationProps extends software.amazon.jsii.JsiiSerializable {
@@ -23,6 +23,12 @@ public interface RosVpcCidrBlockAssociationProps extends software.amazon.jsii.Js
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getIPv6CidrBlock() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIpv6CidrMask() {
         return null;
     }
 
@@ -63,6 +69,7 @@ public interface RosVpcCidrBlockAssociationProps extends software.amazon.jsii.Js
         java.lang.Object vpcId;
         java.lang.Object ipamPoolId;
         java.lang.Object iPv6CidrBlock;
+        java.lang.Object ipv6CidrMask;
         java.lang.Object ipv6Isp;
         java.lang.Object ipVersion;
         java.lang.Object secondaryCidrBlock;
@@ -125,6 +132,26 @@ public interface RosVpcCidrBlockAssociationProps extends software.amazon.jsii.Js
          */
         public Builder iPv6CidrBlock(com.aliyun.ros.cdk.core.IResolvable iPv6CidrBlock) {
             this.iPv6CidrBlock = iPv6CidrBlock;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpcCidrBlockAssociationProps#getIpv6CidrMask}
+         * @param ipv6CidrMask the value to be set.
+         * @return {@code this}
+         */
+        public Builder ipv6CidrMask(java.lang.Number ipv6CidrMask) {
+            this.ipv6CidrMask = ipv6CidrMask;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpcCidrBlockAssociationProps#getIpv6CidrMask}
+         * @param ipv6CidrMask the value to be set.
+         * @return {@code this}
+         */
+        public Builder ipv6CidrMask(com.aliyun.ros.cdk.core.IResolvable ipv6CidrMask) {
+            this.ipv6CidrMask = ipv6CidrMask;
             return this;
         }
 
@@ -227,6 +254,7 @@ public interface RosVpcCidrBlockAssociationProps extends software.amazon.jsii.Js
         private final java.lang.Object vpcId;
         private final java.lang.Object ipamPoolId;
         private final java.lang.Object iPv6CidrBlock;
+        private final java.lang.Object ipv6CidrMask;
         private final java.lang.Object ipv6Isp;
         private final java.lang.Object ipVersion;
         private final java.lang.Object secondaryCidrBlock;
@@ -241,6 +269,7 @@ public interface RosVpcCidrBlockAssociationProps extends software.amazon.jsii.Js
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ipamPoolId = software.amazon.jsii.Kernel.get(this, "ipamPoolId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.iPv6CidrBlock = software.amazon.jsii.Kernel.get(this, "iPv6CidrBlock", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ipv6CidrMask = software.amazon.jsii.Kernel.get(this, "ipv6CidrMask", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ipv6Isp = software.amazon.jsii.Kernel.get(this, "ipv6Isp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ipVersion = software.amazon.jsii.Kernel.get(this, "ipVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.secondaryCidrBlock = software.amazon.jsii.Kernel.get(this, "secondaryCidrBlock", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -255,6 +284,7 @@ public interface RosVpcCidrBlockAssociationProps extends software.amazon.jsii.Js
             this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
             this.ipamPoolId = builder.ipamPoolId;
             this.iPv6CidrBlock = builder.iPv6CidrBlock;
+            this.ipv6CidrMask = builder.ipv6CidrMask;
             this.ipv6Isp = builder.ipv6Isp;
             this.ipVersion = builder.ipVersion;
             this.secondaryCidrBlock = builder.secondaryCidrBlock;
@@ -274,6 +304,11 @@ public interface RosVpcCidrBlockAssociationProps extends software.amazon.jsii.Js
         @Override
         public final java.lang.Object getIPv6CidrBlock() {
             return this.iPv6CidrBlock;
+        }
+
+        @Override
+        public final java.lang.Object getIpv6CidrMask() {
+            return this.ipv6CidrMask;
         }
 
         @Override
@@ -309,6 +344,9 @@ public interface RosVpcCidrBlockAssociationProps extends software.amazon.jsii.Js
             if (this.getIPv6CidrBlock() != null) {
                 data.set("iPv6CidrBlock", om.valueToTree(this.getIPv6CidrBlock()));
             }
+            if (this.getIpv6CidrMask() != null) {
+                data.set("ipv6CidrMask", om.valueToTree(this.getIpv6CidrMask()));
+            }
             if (this.getIpv6Isp() != null) {
                 data.set("ipv6Isp", om.valueToTree(this.getIpv6Isp()));
             }
@@ -342,6 +380,7 @@ public interface RosVpcCidrBlockAssociationProps extends software.amazon.jsii.Js
             if (!vpcId.equals(that.vpcId)) return false;
             if (this.ipamPoolId != null ? !this.ipamPoolId.equals(that.ipamPoolId) : that.ipamPoolId != null) return false;
             if (this.iPv6CidrBlock != null ? !this.iPv6CidrBlock.equals(that.iPv6CidrBlock) : that.iPv6CidrBlock != null) return false;
+            if (this.ipv6CidrMask != null ? !this.ipv6CidrMask.equals(that.ipv6CidrMask) : that.ipv6CidrMask != null) return false;
             if (this.ipv6Isp != null ? !this.ipv6Isp.equals(that.ipv6Isp) : that.ipv6Isp != null) return false;
             if (this.ipVersion != null ? !this.ipVersion.equals(that.ipVersion) : that.ipVersion != null) return false;
             if (this.secondaryCidrBlock != null ? !this.secondaryCidrBlock.equals(that.secondaryCidrBlock) : that.secondaryCidrBlock != null) return false;
@@ -353,6 +392,7 @@ public interface RosVpcCidrBlockAssociationProps extends software.amazon.jsii.Js
             int result = this.vpcId.hashCode();
             result = 31 * result + (this.ipamPoolId != null ? this.ipamPoolId.hashCode() : 0);
             result = 31 * result + (this.iPv6CidrBlock != null ? this.iPv6CidrBlock.hashCode() : 0);
+            result = 31 * result + (this.ipv6CidrMask != null ? this.ipv6CidrMask.hashCode() : 0);
             result = 31 * result + (this.ipv6Isp != null ? this.ipv6Isp.hashCode() : 0);
             result = 31 * result + (this.ipVersion != null ? this.ipVersion.hashCode() : 0);
             result = 31 * result + (this.secondaryCidrBlock != null ? this.secondaryCidrBlock.hashCode() : 0);

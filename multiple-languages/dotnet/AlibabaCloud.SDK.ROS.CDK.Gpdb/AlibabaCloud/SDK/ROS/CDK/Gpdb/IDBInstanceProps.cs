@@ -50,6 +50,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
         }
 
+        /// <summary>Property backupId: Backup set ID.</summary>
+        /// <remarks>
+        /// You can call DescribeDataBackups to view the backup set IDs of all backup sets under the target instance.
+        /// </remarks>
+        [JsiiProperty(name: "backupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? BackupId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property cacheStorageSize: Cache storage size.</summary>
+        [JsiiProperty(name: "cacheStorageSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? CacheStorageSize
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property createSampleData: Whether to load the sample data set after the instance is created.</summary>
         /// <remarks>
         /// The value can be:
@@ -144,6 +169,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
         }
 
+        /// <summary>Property enableSsl: Whether to enable SSL encryption.</summary>
+        /// <remarks>
+        /// Valid values: true: Enable SSL encryption. false (default): Do not enable SSL encryption.
+        /// </remarks>
+        [JsiiProperty(name: "enableSsl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? EnableSsl
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property encryptionKey: If the EncryptionType parameter is set to CloudDisk, you must specify this parameter to the encryption key that is in the same region with the disks that is specified by the EncryptionType parameter.</summary>
         /// <remarks>
         /// Otherwise, leave this parameter empty.
@@ -201,6 +240,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         [JsiiProperty(name: "instanceSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? InstanceSpec
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property masterAiSpec: If you need to change the Master node to MasterAI node, specify this parameter.</summary>
+        /// <remarks>
+        /// This parameter cannot be specified at the same time as MasterCU. Only some regions and availability zones support changing the Master node to MasterAI node. Only Basic edition instances of AnalyticDB PostgreSQL 7.0 support MasterAI nodes. You can query all possible values of this parameter on the Master node reconfiguration sales page.
+        /// </remarks>
+        [JsiiProperty(name: "masterAiSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? MasterAiSpec
         {
             get
             {
@@ -413,6 +466,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
         }
 
+        /// <summary>Property srcDbInstanceName: Clone source instance ID.</summary>
+        /// <remarks>
+        /// You can call the DescribeDBInstances interface to view the details of all AnalyticDB PostgreSQL instances in the target region, including the instance ID.
+        /// </remarks>
+        [JsiiProperty(name: "srcDbInstanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SrcDbInstanceName
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property standbyVSwitchId: The standby VSwitch ID of the instance.</summary>
         [JsiiProperty(name: "standbyVSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -540,6 +607,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property backupId: Backup set ID.</summary>
+            /// <remarks>
+            /// You can call DescribeDataBackups to view the backup set IDs of all backup sets under the target instance.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "backupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? BackupId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property cacheStorageSize: Cache storage size.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "cacheStorageSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CacheStorageSize
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property createSampleData: Whether to load the sample data set after the instance is created.</summary>
             /// <remarks>
             /// The value can be:
@@ -613,6 +699,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property enableSsl: Whether to enable SSL encryption.</summary>
+            /// <remarks>
+            /// Valid values: true: Enable SSL encryption. false (default): Do not enable SSL encryption.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "enableSsl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EnableSsl
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property encryptionKey: If the EncryptionType parameter is set to CloudDisk, you must specify this parameter to the encryption key that is in the same region with the disks that is specified by the EncryptionType parameter.</summary>
             /// <remarks>
             /// Otherwise, leave this parameter empty.
@@ -661,6 +758,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             [JsiiOptional]
             [JsiiProperty(name: "instanceSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? InstanceSpec
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property masterAiSpec: If you need to change the Master node to MasterAI node, specify this parameter.</summary>
+            /// <remarks>
+            /// This parameter cannot be specified at the same time as MasterCU. Only some regions and availability zones support changing the Master node to MasterAI node. Only Basic edition instances of AnalyticDB PostgreSQL 7.0 support MasterAI nodes. You can query all possible values of this parameter on the Master node reconfiguration sales page.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "masterAiSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MasterAiSpec
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -824,6 +932,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             [JsiiOptional]
             [JsiiProperty(name: "serverlessResource", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ServerlessResource
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property srcDbInstanceName: Clone source instance ID.</summary>
+            /// <remarks>
+            /// You can call the DescribeDBInstances interface to view the details of all AnalyticDB PostgreSQL instances in the target region, including the instance ID.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "srcDbInstanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SrcDbInstanceName
             {
                 get => GetInstanceProperty<object?>();
             }

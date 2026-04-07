@@ -59,13 +59,6 @@ function RosOrderPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('preference', ros.hashValidator(ros.validateAny))(properties.preference));
     errors.collect(ros.propertyValidator('skuCode', ros.requiredValidator)(properties.skuCode));
     errors.collect(ros.propertyValidator('skuCode', ros.validateString)(properties.skuCode));
-    if(properties.pricingCycle && (typeof properties.pricingCycle) !== 'object') {
-        errors.collect(ros.propertyValidator('pricingCycle', ros.validateAllowedValues)({
-          data: properties.pricingCycle,
-          allowedValues: ["Month","Year"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('pricingCycle', ros.validateString)(properties.pricingCycle));
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
@@ -73,6 +66,13 @@ function RosOrderPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
+    if(properties.pricingCycle && (typeof properties.pricingCycle) !== 'object') {
+        errors.collect(ros.propertyValidator('pricingCycle', ros.validateAllowedValues)({
+          data: properties.pricingCycle,
+          allowedValues: ["Month","Year"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('pricingCycle', ros.validateString)(properties.pricingCycle));
     errors.collect(ros.propertyValidator('quantity', ros.validateNumber)(properties.quantity));
     if(properties.duration && (typeof properties.duration) !== 'object') {
         errors.collect(ros.propertyValidator('duration', ros.validateRange)({
@@ -110,7 +110,7 @@ function rosOrderPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MarketPlace::Order`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MarketPlace::Order`, which is used to purchase resources from Alibaba Cloud Marketplace.
  * @Note This class does not contain additional functions, so it is recommended to use the `Order` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-marketplace-order
  */

@@ -3,6 +3,212 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosAccessControl`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-accesscontrol
+ */
+export interface RosAccessControlProps {
+
+    /**
+     * @Property accessControlListName: The name of the ACL. The name must be 1 to 30 characters in length, and can contain letters, digits, periods (.), hyphens (-), forward slashes (\/), and underscores (_). The name must be unique within the region.
+     */
+    readonly accessControlListName: string | ros.IResolvable;
+
+    /**
+     * @Property aclEntrys: Information list of access control policies. You can add at most 50 IP addresses or CIDR blocks to an ACL in each call. If the IP address or CIDR block that you want to add to an ACL already exists, the IP address or CIDR block is not added. The entries that you add must be CIDR blocks.
+     */
+    readonly aclEntrys?: Array<RosAccessControl.AclEntrysProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property addressIpVersion: The IP version. Valid values: ipv4 and ipv6.
+     */
+    readonly addressIpVersion?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAccessControlProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAccessControlProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAccessControlPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.addressIpVersion && (typeof properties.addressIpVersion) !== 'object') {
+        errors.collect(ros.propertyValidator('addressIpVersion', ros.validateAllowedValues)({
+          data: properties.addressIpVersion,
+          allowedValues: ["ipv4","ipv6"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('addressIpVersion', ros.validateString)(properties.addressIpVersion));
+    errors.collect(ros.propertyValidator('accessControlListName', ros.requiredValidator)(properties.accessControlListName));
+    if(properties.accessControlListName && (Array.isArray(properties.accessControlListName) || (typeof properties.accessControlListName) === 'string')) {
+        errors.collect(ros.propertyValidator('accessControlListName', ros.validateLength)({
+            data: properties.accessControlListName.length,
+            min: 1,
+            max: 30,
+          }));
+    }
+    errors.collect(ros.propertyValidator('accessControlListName', ros.validateString)(properties.accessControlListName));
+    if(properties.aclEntrys && (Array.isArray(properties.aclEntrys) || (typeof properties.aclEntrys) === 'string')) {
+        errors.collect(ros.propertyValidator('aclEntrys', ros.validateLength)({
+            data: properties.aclEntrys.length,
+            min: 1,
+            max: 50,
+          }));
+    }
+    errors.collect(ros.propertyValidator('aclEntrys', ros.listValidator(RosAccessControl_AclEntrysPropertyValidator))(properties.aclEntrys));
+    return errors.wrap('supplied properties not correct for "RosAccessControlProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ApiGateway::AccessControl` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAccessControlProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ApiGateway::AccessControl` resource.
+ */
+// @ts-ignore TS6133
+function rosAccessControlPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAccessControlPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'AccessControlListName': ros.stringToRosTemplate(properties.accessControlListName),
+      'AclEntrys': ros.listMapper(rosAccessControlAclEntrysPropertyToRosTemplate)(properties.aclEntrys),
+      'AddressIpVersion': ros.stringToRosTemplate(properties.addressIpVersion),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::AccessControl`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AccessControl` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-accesscontrol
+ */
+export class RosAccessControl extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ApiGateway::AccessControl";
+
+    /**
+     * @Attribute AccessControlListName: The name of the ACL.
+     */
+    public readonly attrAccessControlListName: ros.IResolvable;
+
+    /**
+     * @Attribute AclEntrys: Information list of access control policies.
+     */
+    public readonly attrAclEntrys: ros.IResolvable;
+
+    /**
+     * @Attribute AclId: The ID of the access control list (ACL).
+     */
+    public readonly attrAclId: ros.IResolvable;
+
+    /**
+     * @Attribute AddressIpVersion: The IP version. Valid values: ipv4 and ipv6.
+     */
+    public readonly attrAddressIpVersion: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property accessControlListName: The name of the ACL. The name must be 1 to 30 characters in length, and can contain letters, digits, periods (.), hyphens (-), forward slashes (\/), and underscores (_). The name must be unique within the region.
+     */
+    public accessControlListName: string | ros.IResolvable;
+
+    /**
+     * @Property aclEntrys: Information list of access control policies. You can add at most 50 IP addresses or CIDR blocks to an ACL in each call. If the IP address or CIDR block that you want to add to an ACL already exists, the IP address or CIDR block is not added. The entries that you add must be CIDR blocks.
+     */
+    public aclEntrys: Array<RosAccessControl.AclEntrysProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property addressIpVersion: The IP version. Valid values: ipv4 and ipv6.
+     */
+    public addressIpVersion: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAccessControlProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAccessControl.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAccessControlListName = this.getAtt('AccessControlListName');
+        this.attrAclEntrys = this.getAtt('AclEntrys');
+        this.attrAclId = this.getAtt('AclId');
+        this.attrAddressIpVersion = this.getAtt('AddressIpVersion');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.accessControlListName = props.accessControlListName;
+        this.aclEntrys = props.aclEntrys;
+        this.addressIpVersion = props.addressIpVersion;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            accessControlListName: this.accessControlListName,
+            aclEntrys: this.aclEntrys,
+            addressIpVersion: this.addressIpVersion,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAccessControlPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosAccessControl {
+    /**
+     * @stability external
+     */
+    export interface AclEntrysProperty {
+        /**
+         * @Property aclEntryComment: The description of the ACL.
+         */
+        readonly aclEntryComment?: string | ros.IResolvable;
+        /**
+         * @Property aclEntryIp: The entries that you want to add to the ACL. You can add CIDR blocks. Separate multiple CIDR blocks with commas (,).
+         */
+        readonly aclEntryIp?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AclEntrysProperty`
+ *
+ * @param properties - the TypeScript properties of a `AclEntrysProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosAccessControl_AclEntrysPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('aclEntryComment', ros.validateString)(properties.aclEntryComment));
+    errors.collect(ros.propertyValidator('aclEntryIp', ros.validateString)(properties.aclEntryIp));
+    return errors.wrap('supplied properties not correct for "AclEntrysProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ApiGateway::AccessControl.AclEntrys` resource
+ *
+ * @param properties - the TypeScript properties of a `AclEntrysProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ApiGateway::AccessControl.AclEntrys` resource.
+ */
+// @ts-ignore TS6133
+function rosAccessControlAclEntrysPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosAccessControl_AclEntrysPropertyValidator(properties).assertSuccess();
+    return {
+      'AclEntryComment': ros.stringToRosTemplate(properties.aclEntryComment),
+      'AclEntryIp': ros.stringToRosTemplate(properties.aclEntryIp),
+    };
+}
+
+/**
  * Properties for defining a `RosApi`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-api
  */
@@ -279,7 +485,7 @@ function rosApiPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Api`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Api`, which is used to create an API.
  * @Note This class does not contain additional functions, so it is recommended to use the `Api` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-api
  */
@@ -658,13 +864,13 @@ export namespace RosApi {
          */
         readonly contentTypeValue?: string | ros.IResolvable;
         /**
-         * @Property method: The HTTP method of the function. Default is GET.
-         */
-        readonly method?: string | ros.IResolvable;
-        /**
          * @Property onlyBusinessPath: If set true. The path in the trigger path (for example, \/2016-08-15\/proxy\/xxx\/xxx) will not be passed to the backend, and the backend will only receive the customized backend request path.
          */
         readonly onlyBusinessPath?: boolean | ros.IResolvable;
+        /**
+         * @Property method: The HTTP method of the function. Default is GET.
+         */
+        readonly method?: string | ros.IResolvable;
         /**
          * @Property fcRegionId: The region id of function compute.
          */
@@ -719,6 +925,7 @@ function RosApi_FunctionComputeConfigPropertyValidator(properties: any): ros.Val
     }
     errors.collect(ros.propertyValidator('fcVersion', ros.validateString)(properties.fcVersion));
     errors.collect(ros.propertyValidator('contentTypeValue', ros.validateString)(properties.contentTypeValue));
+    errors.collect(ros.propertyValidator('onlyBusinessPath', ros.validateBoolean)(properties.onlyBusinessPath));
     if(properties.method && (typeof properties.method) !== 'object') {
         errors.collect(ros.propertyValidator('method', ros.validateAllowedValues)({
           data: properties.method,
@@ -726,7 +933,6 @@ function RosApi_FunctionComputeConfigPropertyValidator(properties: any): ros.Val
         }));
     }
     errors.collect(ros.propertyValidator('method', ros.validateString)(properties.method));
-    errors.collect(ros.propertyValidator('onlyBusinessPath', ros.validateBoolean)(properties.onlyBusinessPath));
     errors.collect(ros.propertyValidator('fcRegionId', ros.validateString)(properties.fcRegionId));
     errors.collect(ros.propertyValidator('roleArn', ros.validateString)(properties.roleArn));
     errors.collect(ros.propertyValidator('fcBaseUrl', ros.validateString)(properties.fcBaseUrl));
@@ -765,8 +971,8 @@ function rosApiFunctionComputeConfigPropertyToRosTemplate(properties: any): any 
       'Path': ros.stringToRosTemplate(properties.path),
       'FcVersion': ros.stringToRosTemplate(properties.fcVersion),
       'ContentTypeValue': ros.stringToRosTemplate(properties.contentTypeValue),
-      'Method': ros.stringToRosTemplate(properties.method),
       'OnlyBusinessPath': ros.booleanToRosTemplate(properties.onlyBusinessPath),
+      'Method': ros.stringToRosTemplate(properties.method),
       'FcRegionId': ros.stringToRosTemplate(properties.fcRegionId),
       'RoleArn': ros.stringToRosTemplate(properties.roleArn),
       'FcBaseUrl': ros.stringToRosTemplate(properties.fcBaseUrl),
@@ -1006,13 +1212,13 @@ export namespace RosApi {
          */
         readonly parameterType: string | ros.IResolvable;
         /**
-         * @Property description: Description of the API, less than 180 characters.
-         */
-        readonly description?: string | ros.IResolvable;
-        /**
          * @Property jsonScheme: The json scheme of the parameter when it is String.
          */
         readonly jsonScheme?: string | ros.IResolvable;
+        /**
+         * @Property description: Description of the API, less than 180 characters.
+         */
+        readonly description?: string | ros.IResolvable;
         /**
          * @Property apiParameterName: The name of the request parameter.
          */
@@ -1082,8 +1288,8 @@ function RosApi_RequestParametersPropertyValidator(properties: any): ros.Validat
         }));
     }
     errors.collect(ros.propertyValidator('parameterType', ros.validateString)(properties.parameterType));
-    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('jsonScheme', ros.validateString)(properties.jsonScheme));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('apiParameterName', ros.requiredValidator)(properties.apiParameterName));
     errors.collect(ros.propertyValidator('apiParameterName', ros.validateString)(properties.apiParameterName));
     errors.collect(ros.propertyValidator('enumValue', ros.validateString)(properties.enumValue));
@@ -1134,8 +1340,8 @@ function rosApiRequestParametersPropertyToRosTemplate(properties: any): any {
     return {
       'RegularExpression': ros.stringToRosTemplate(properties.regularExpression),
       'ParameterType': ros.stringToRosTemplate(properties.parameterType),
-      'Description': ros.stringToRosTemplate(properties.description),
       'JsonScheme': ros.stringToRosTemplate(properties.jsonScheme),
+      'Description': ros.stringToRosTemplate(properties.description),
       'ApiParameterName': ros.stringToRosTemplate(properties.apiParameterName),
       'EnumValue': ros.stringToRosTemplate(properties.enumValue),
       'MinLength': ros.numberToRosTemplate(properties.minLength),
@@ -1161,17 +1367,17 @@ export namespace RosApi {
          */
         readonly serviceAddress?: string | ros.IResolvable;
         /**
-         * @Property functionComputeConfig: The configuration of the function compute. FunctionComputeConfig is required if ServiceFunctionComputeEnable is TRUE.
+         * @Property contentTypeValue: ContentTypeValue is required if ContentTypeCatagory is DEFAULT or CUSTOM.
          */
-        readonly functionComputeConfig?: RosApi.FunctionComputeConfigProperty | ros.IResolvable;
+        readonly contentTypeValue?: string | ros.IResolvable;
         /**
          * @Property mockResult: The returned value when using Mock model.
          */
         readonly mockResult?: string | ros.IResolvable;
         /**
-         * @Property contentTypeValue: ContentTypeValue is required if ContentTypeCatagory is DEFAULT or CUSTOM.
+         * @Property functionComputeConfig: The configuration of the function compute. FunctionComputeConfig is required if ServiceFunctionComputeEnable is TRUE.
          */
-        readonly contentTypeValue?: string | ros.IResolvable;
+        readonly functionComputeConfig?: RosApi.FunctionComputeConfigProperty | ros.IResolvable;
         /**
          * @Property vpcConfig: The configuration of the VPC. VpcConfig is required if ServiceVpcEnable is TRUE.
          */
@@ -1189,13 +1395,13 @@ export namespace RosApi {
          */
         readonly mockHeaders?: Array<RosApi.MockHeadersProperty | ros.IResolvable> | ros.IResolvable;
         /**
-         * @Property serviceHttpMethod: The HTTP method to the service. Default is GET.
-         */
-        readonly serviceHttpMethod?: string | ros.IResolvable;
-        /**
          * @Property servicePath: Backend service call path. If the complete backend service address is http:\/\/api.a.com:8080\/object\/add?key1=value1&key2=value2, ServicePath corresponds to \/object\/add.
          */
         readonly servicePath?: string | ros.IResolvable;
+        /**
+         * @Property serviceHttpMethod: The HTTP method to the service. Default is GET.
+         */
+        readonly serviceHttpMethod?: string | ros.IResolvable;
         /**
          * @Property mock: Whether to use Mock model. "TRUE" or "FALSE". Default is FALSE.
          */
@@ -1225,9 +1431,9 @@ function RosApi_ServiceConfigPropertyValidator(properties: any): ros.ValidationR
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('serviceAddress', ros.validateString)(properties.serviceAddress));
-    errors.collect(ros.propertyValidator('functionComputeConfig', RosApi_FunctionComputeConfigPropertyValidator)(properties.functionComputeConfig));
-    errors.collect(ros.propertyValidator('mockResult', ros.validateString)(properties.mockResult));
     errors.collect(ros.propertyValidator('contentTypeValue', ros.validateString)(properties.contentTypeValue));
+    errors.collect(ros.propertyValidator('mockResult', ros.validateString)(properties.mockResult));
+    errors.collect(ros.propertyValidator('functionComputeConfig', RosApi_FunctionComputeConfigPropertyValidator)(properties.functionComputeConfig));
     errors.collect(ros.propertyValidator('vpcConfig', RosApi_VpcConfigPropertyValidator)(properties.vpcConfig));
     if(properties.serviceVpcEnable && (typeof properties.serviceVpcEnable) !== 'object') {
         errors.collect(ros.propertyValidator('serviceVpcEnable', ros.validateAllowedValues)({
@@ -1238,6 +1444,7 @@ function RosApi_ServiceConfigPropertyValidator(properties: any): ros.ValidationR
     errors.collect(ros.propertyValidator('serviceVpcEnable', ros.validateString)(properties.serviceVpcEnable));
     errors.collect(ros.propertyValidator('mockStatusCode', ros.validateNumber)(properties.mockStatusCode));
     errors.collect(ros.propertyValidator('mockHeaders', ros.listValidator(RosApi_MockHeadersPropertyValidator))(properties.mockHeaders));
+    errors.collect(ros.propertyValidator('servicePath', ros.validateString)(properties.servicePath));
     if(properties.serviceHttpMethod && (typeof properties.serviceHttpMethod) !== 'object') {
         errors.collect(ros.propertyValidator('serviceHttpMethod', ros.validateAllowedValues)({
           data: properties.serviceHttpMethod,
@@ -1245,7 +1452,6 @@ function RosApi_ServiceConfigPropertyValidator(properties: any): ros.ValidationR
         }));
     }
     errors.collect(ros.propertyValidator('serviceHttpMethod', ros.validateString)(properties.serviceHttpMethod));
-    errors.collect(ros.propertyValidator('servicePath', ros.validateString)(properties.servicePath));
     if(properties.mock && (typeof properties.mock) !== 'object') {
         errors.collect(ros.propertyValidator('mock', ros.validateAllowedValues)({
           data: properties.mock,
@@ -1284,15 +1490,15 @@ function rosApiServiceConfigPropertyToRosTemplate(properties: any): any {
     RosApi_ServiceConfigPropertyValidator(properties).assertSuccess();
     return {
       'ServiceAddress': ros.stringToRosTemplate(properties.serviceAddress),
-      'FunctionComputeConfig': rosApiFunctionComputeConfigPropertyToRosTemplate(properties.functionComputeConfig),
-      'MockResult': ros.stringToRosTemplate(properties.mockResult),
       'ContentTypeValue': ros.stringToRosTemplate(properties.contentTypeValue),
+      'MockResult': ros.stringToRosTemplate(properties.mockResult),
+      'FunctionComputeConfig': rosApiFunctionComputeConfigPropertyToRosTemplate(properties.functionComputeConfig),
       'VpcConfig': rosApiVpcConfigPropertyToRosTemplate(properties.vpcConfig),
       'ServiceVpcEnable': ros.stringToRosTemplate(properties.serviceVpcEnable),
       'MockStatusCode': ros.numberToRosTemplate(properties.mockStatusCode),
       'MockHeaders': ros.listMapper(rosApiMockHeadersPropertyToRosTemplate)(properties.mockHeaders),
-      'ServiceHttpMethod': ros.stringToRosTemplate(properties.serviceHttpMethod),
       'ServicePath': ros.stringToRosTemplate(properties.servicePath),
+      'ServiceHttpMethod': ros.stringToRosTemplate(properties.serviceHttpMethod),
       'Mock': ros.stringToRosTemplate(properties.mock),
       'ServiceTimeOut': ros.numberToRosTemplate(properties.serviceTimeOut),
       'ServiceProtocol': ros.stringToRosTemplate(properties.serviceProtocol),
@@ -1711,7 +1917,7 @@ function rosAppPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::App`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::App`, which is used to create an application. Before you call a third-party API, you must create an application and use the application as an identity to call the API.
  * @Note This class does not contain additional functions, so it is recommended to use the `App` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-app
  */
@@ -1980,7 +2186,7 @@ function rosAuthorizationPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Authorization`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Authorization`, which is used to authorize applications to call APIs.
  * @Note This class does not contain additional functions, so it is recommended to use the `Authorization` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-authorization
  */
@@ -2138,7 +2344,7 @@ function rosBackendPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Backend`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Backend`, which is used to create a backend service.
  * @Note This class does not contain additional functions, so it is recommended to use the `Backend` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-backend
  */
@@ -2330,7 +2536,7 @@ function rosCustomDomainPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::CustomDomain`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::CustomDomain`, which is used to bind a custom domain name and upload a Secure Sockets Layer (SSL) certificate to a specific API group.
  * @Note This class does not contain additional functions, so it is recommended to use the `CustomDomain` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-customdomain
  */
@@ -2487,7 +2693,7 @@ function rosDeploymentPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Deployment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Deployment`, which is used to publish an API to a specific runtime environment, or switch a published API to a specific version.
  * @Note This class does not contain additional functions, so it is recommended to use the `Deployment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-deployment
  */
@@ -2614,9 +2820,9 @@ export interface RosGroupProps {
 function RosGroupPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('internetEnable', ros.validateBoolean)(properties.internetEnable));
     errors.collect(ros.propertyValidator('groupName', ros.requiredValidator)(properties.groupName));
     errors.collect(ros.propertyValidator('groupName', ros.validateString)(properties.groupName));
+    errors.collect(ros.propertyValidator('internetEnable', ros.validateBoolean)(properties.internetEnable));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
     errors.collect(ros.propertyValidator('vpcIntranetEnable', ros.validateBoolean)(properties.vpcIntranetEnable));
@@ -2659,7 +2865,7 @@ function rosGroupPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Group`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Group`, which is used to create an API group.
  * @Note This class does not contain additional functions, so it is recommended to use the `Group` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-group
  */
@@ -2889,20 +3095,13 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('instanceName', ros.requiredValidator)(properties.instanceName));
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
-    errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
     errors.collect(ros.propertyValidator('instanceSpec', ros.requiredValidator)(properties.instanceSpec));
     errors.collect(ros.propertyValidator('instanceSpec', ros.validateString)(properties.instanceSpec));
     errors.collect(ros.propertyValidator('httpsPolicy', ros.requiredValidator)(properties.httpsPolicy));
     errors.collect(ros.propertyValidator('httpsPolicy', ros.validateString)(properties.httpsPolicy));
+    errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
     errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
-    if(properties.pricingCycle && (typeof properties.pricingCycle) !== 'object') {
-        errors.collect(ros.propertyValidator('pricingCycle', ros.validateAllowedValues)({
-          data: properties.pricingCycle,
-          allowedValues: ["Month","Year"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('pricingCycle', ros.validateString)(properties.pricingCycle));
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
@@ -2910,6 +3109,13 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
+    if(properties.pricingCycle && (typeof properties.pricingCycle) !== 'object') {
+        errors.collect(ros.propertyValidator('pricingCycle', ros.validateAllowedValues)({
+          data: properties.pricingCycle,
+          allowedValues: ["Month","Year"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('pricingCycle', ros.validateString)(properties.pricingCycle));
     if(properties.duration && (typeof properties.duration) !== 'object') {
         errors.collect(ros.propertyValidator('duration', ros.validateAllowedValues)({
           data: properties.duration,
@@ -2957,7 +3163,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Instance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Instance`, which is used to create a dedicated instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-instance
  */
@@ -3235,7 +3441,7 @@ function rosLogConfigPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::LogConfig`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::LogConfig`, which is used to create a log configuration.
  * @Note This class does not contain additional functions, so it is recommended to use the `LogConfig` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-logconfig
  */
@@ -3378,7 +3584,7 @@ function rosPluginPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Plugin`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Plugin`, which is used to create an API Gateway plug-in.
  * @Note This class does not contain additional functions, so it is recommended to use the `Plugin` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-plugin
  */
@@ -3596,7 +3802,7 @@ function rosPluginAttachmentPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::PluginAttachment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::PluginAttachment`, which is used to bind a plug-in to an API.
  * @Note This class does not contain additional functions, so it is recommended to use the `PluginAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-pluginattachment
  */
@@ -3728,7 +3934,7 @@ function rosSignaturePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Signature`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Signature`, which is used to create a backend signature.
  * @Note This class does not contain additional functions, so it is recommended to use the `Signature` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-signature
  */
@@ -3872,7 +4078,7 @@ function rosSignatureBindingPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::SignatureBinding`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::SignatureBinding`, which is used to bind a backend signature to APIs.
  * @Note This class does not contain additional functions, so it is recommended to use the `SignatureBinding` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-signaturebinding
  */
@@ -4002,7 +4208,7 @@ function rosStageConfigPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::StageConfig`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::StageConfig`, which is used to configure the test, staging, or production environment variables for an API group.
  * @Note This class does not contain additional functions, so it is recommended to use the `StageConfig` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-stageconfig
  */
@@ -4122,9 +4328,9 @@ function RosTrafficControlPropsValidator(properties: any): ros.ValidationResult 
     errors.collect(ros.propertyValidator('trafficControlName', ros.validateString)(properties.trafficControlName));
     errors.collect(ros.propertyValidator('appDefault', ros.validateString)(properties.appDefault));
     errors.collect(ros.propertyValidator('special', ros.listValidator(RosTrafficControl_SpecialPropertyValidator))(properties.special));
-    errors.collect(ros.propertyValidator('userDefault', ros.validateString)(properties.userDefault));
     errors.collect(ros.propertyValidator('apiDefault', ros.requiredValidator)(properties.apiDefault));
     errors.collect(ros.propertyValidator('apiDefault', ros.validateNumber)(properties.apiDefault));
+    errors.collect(ros.propertyValidator('userDefault', ros.validateString)(properties.userDefault));
     return errors.wrap('supplied properties not correct for "RosTrafficControlProps"');
 }
 
@@ -4153,7 +4359,7 @@ function rosTrafficControlPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::TrafficControl`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::TrafficControl`, which is used to create a custom throttling policy.
  * @Note This class does not contain additional functions, so it is recommended to use the `TrafficControl` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-trafficcontrol
  */
@@ -4387,7 +4593,7 @@ function rosTrafficControlBindingPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::TrafficControlBinding`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::TrafficControlBinding`, which is used to bind a custom throttling policy to APIs.
  * @Note This class does not contain additional functions, so it is recommended to use the `TrafficControlBinding` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-trafficcontrolbinding
  */
@@ -4526,7 +4732,7 @@ function rosVpcAccessConfigPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::VpcAccessConfig`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::VpcAccessConfig`, which is used to configure virtual private cloud (VPC) access authorization for an instance. This helps APIs provide services based on private networks.
  * @Note This class does not contain additional functions, so it is recommended to use the `VpcAccessConfig` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-vpcaccessconfig
  */

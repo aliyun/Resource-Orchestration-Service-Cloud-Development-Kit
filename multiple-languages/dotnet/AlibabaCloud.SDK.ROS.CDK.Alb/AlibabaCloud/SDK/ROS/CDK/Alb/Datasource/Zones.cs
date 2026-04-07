@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Alb.Datasource
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::ALB::Zones`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::ALB::Zones`This data source provides information about the zones that are available for Application Load Balancer (ALB) in a region.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosZones`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-alb-zones

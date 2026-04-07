@@ -225,7 +225,7 @@ export interface IDisk extends ros.IResource {
     readonly attrZoneId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Disk`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Disk`, which is used to query the information about a cloud disk.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDisk`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-disk
  */
@@ -443,8 +443,8 @@ export class Disk extends ros.Resource implements IDisk {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDisk = new RosDisk(this, id,  {
-            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
             diskId: props.diskId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDisk;
         this.attrAttachedTime = rosDisk.attrAttachedTime;

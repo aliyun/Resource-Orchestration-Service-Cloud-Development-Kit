@@ -45,7 +45,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
 
         private object _name;
 
-        /// <summary>Property name: The unique identifier of the resource group.</summary>
+        /// <summary>Property name: The name of the resource group.</summary>
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Name
         {
@@ -71,6 +71,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
                 }
                 _name = value;
             }
+        }
+
+        /// <summary>Property tags: Tags to attach to resource group.</summary>
+        /// <remarks>
+        /// Max support 20 tags to add during create resource group. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-resourcemanager.RosResourceGroup.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        public AlibabaCloud.SDK.ROS.CDK.Resourcemanager.RosResourceGroup.ITagsProperty[]? Tags
+        {
+            get;
+            set;
         }
     }
 }

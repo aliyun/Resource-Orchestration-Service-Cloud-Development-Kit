@@ -78,6 +78,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: instanceBillingCycle: The billing cycle of the instance.
+        /// </remarks>
+        [JsiiProperty(name: "instanceBillingCycle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? InstanceBillingCycle
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: kmsKeyId: The ID of the Key Management Service (KMS) key that is used by the cloud disk.
         /// Note If you set the Encrypted parameter to true, the default service key is used when the KMSKeyId parameter is empty.
         /// </remarks>
@@ -174,6 +187,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
             [JsiiOptional]
             [JsiiProperty(name: "encrypted", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Encrypted
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: instanceBillingCycle: The billing cycle of the instance.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "instanceBillingCycle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? InstanceBillingCycle
             {
                 get => GetInstanceProperty<object?>();
             }

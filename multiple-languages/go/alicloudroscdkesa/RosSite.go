@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::Site`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::Site`You can use the , which resource type to create a site.
 type RosSite interface {
 	alicloudroscdkcore.RosResource
 	AccessType() interface{}

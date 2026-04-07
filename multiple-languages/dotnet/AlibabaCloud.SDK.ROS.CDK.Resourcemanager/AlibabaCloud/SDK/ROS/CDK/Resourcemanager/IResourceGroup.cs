@@ -43,6 +43,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
             get;
         }
 
+        /// <summary>Attribute ResourceGroupId: The ID of the resource group.</summary>
+        [JsiiProperty(name: "attrResourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrResourceGroupId
+        {
+            get;
+        }
+
         [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-resourcemanager.ResourceGroupProps\"}")]
         AlibabaCloud.SDK.ROS.CDK.Resourcemanager.IResourceGroupProps Props
         {
@@ -88,6 +95,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
             /// <summary>Attribute RegionStatuses: The status of the resource group in all regions.</summary>
             [JsiiProperty(name: "attrRegionStatuses", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AttrRegionStatuses
+            {
+                get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Attribute ResourceGroupId: The ID of the resource group.</summary>
+            [JsiiProperty(name: "attrResourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrResourceGroupId
             {
                 get => GetInstanceProperty<object>()!;
             }

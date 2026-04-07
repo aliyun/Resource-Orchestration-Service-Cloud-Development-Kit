@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::DataWorks::Project`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::DataWorks::Project`, which is used to create a DataWorks workspace.
 type RosProject interface {
 	alicloudroscdkcore.RosResource
 	AttrEnvTypes() alicloudroscdkcore.IResolvable

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::OriginRule`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::OriginRule`The , which type is used to add origin rules to a website.
 type RosOriginRule interface {
 	alicloudroscdkcore.RosResource
 	AttrConfigId() alicloudroscdkcore.IResolvable

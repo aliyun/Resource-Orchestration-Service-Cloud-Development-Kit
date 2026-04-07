@@ -3,6 +3,221 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosAdvancedQueryTemplate`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-actiontrail-advancedquerytemplate
+ */
+export interface RosAdvancedQueryTemplateProps {
+
+    /**
+     * @Property simpleQuery: Indicates whether the template is a simple query.
+     */
+    readonly simpleQuery: boolean | ros.IResolvable;
+
+    /**
+     * @Property templateSql: The SQL statement of the advanced query template.
+     */
+    readonly templateSql: string | ros.IResolvable;
+
+    /**
+     * @Property templateName: The name of the advanced query template.
+     */
+    readonly templateName?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAdvancedQueryTemplateProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAdvancedQueryTemplateProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAdvancedQueryTemplatePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('templateSql', ros.requiredValidator)(properties.templateSql));
+    errors.collect(ros.propertyValidator('templateSql', ros.validateString)(properties.templateSql));
+    errors.collect(ros.propertyValidator('simpleQuery', ros.requiredValidator)(properties.simpleQuery));
+    errors.collect(ros.propertyValidator('simpleQuery', ros.validateBoolean)(properties.simpleQuery));
+    errors.collect(ros.propertyValidator('templateName', ros.validateString)(properties.templateName));
+    return errors.wrap('supplied properties not correct for "RosAdvancedQueryTemplateProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ACTIONTRAIL::AdvancedQueryTemplate` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAdvancedQueryTemplateProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ACTIONTRAIL::AdvancedQueryTemplate` resource.
+ */
+// @ts-ignore TS6133
+function rosAdvancedQueryTemplatePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAdvancedQueryTemplatePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'SimpleQuery': ros.booleanToRosTemplate(properties.simpleQuery),
+      'TemplateSql': ros.stringToRosTemplate(properties.templateSql),
+      'TemplateName': ros.stringToRosTemplate(properties.templateName),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ACTIONTRAIL::AdvancedQueryTemplate`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AdvancedQueryTemplate` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-actiontrail-advancedquerytemplate
+ */
+export class RosAdvancedQueryTemplate extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ACTIONTRAIL::AdvancedQueryTemplate";
+
+    /**
+     * @Attribute TemplateId: The ID of the advanced query template.
+     */
+    public readonly attrTemplateId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property simpleQuery: Indicates whether the template is a simple query.
+     */
+    public simpleQuery: boolean | ros.IResolvable;
+
+    /**
+     * @Property templateSql: The SQL statement of the advanced query template.
+     */
+    public templateSql: string | ros.IResolvable;
+
+    /**
+     * @Property templateName: The name of the advanced query template.
+     */
+    public templateName: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAdvancedQueryTemplateProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAdvancedQueryTemplate.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrTemplateId = this.getAtt('TemplateId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.simpleQuery = props.simpleQuery;
+        this.templateSql = props.templateSql;
+        this.templateName = props.templateName;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            simpleQuery: this.simpleQuery,
+            templateSql: this.templateSql,
+            templateName: this.templateName,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAdvancedQueryTemplatePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosHistoryDeliveryJob`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-actiontrail-historydeliveryjob
+ */
+export interface RosHistoryDeliveryJobProps {
+
+    /**
+     * @Property trailName: The name of the trail.
+     */
+    readonly trailName: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosHistoryDeliveryJobProps`
+ *
+ * @param properties - the TypeScript properties of a `RosHistoryDeliveryJobProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosHistoryDeliveryJobPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('trailName', ros.requiredValidator)(properties.trailName));
+    errors.collect(ros.propertyValidator('trailName', ros.validateString)(properties.trailName));
+    return errors.wrap('supplied properties not correct for "RosHistoryDeliveryJobProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ACTIONTRAIL::HistoryDeliveryJob` resource
+ *
+ * @param properties - the TypeScript properties of a `RosHistoryDeliveryJobProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ACTIONTRAIL::HistoryDeliveryJob` resource.
+ */
+// @ts-ignore TS6133
+function rosHistoryDeliveryJobPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosHistoryDeliveryJobPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'TrailName': ros.stringToRosTemplate(properties.trailName),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ACTIONTRAIL::HistoryDeliveryJob`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `HistoryDeliveryJob` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-actiontrail-historydeliveryjob
+ */
+export class RosHistoryDeliveryJob extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ACTIONTRAIL::HistoryDeliveryJob";
+
+    /**
+     * @Attribute JobId: The ID of the delivery history job.
+     */
+    public readonly attrJobId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property trailName: The name of the trail.
+     */
+    public trailName: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosHistoryDeliveryJobProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosHistoryDeliveryJob.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrJobId = this.getAtt('JobId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.trailName = props.trailName;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            trailName: this.trailName,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosHistoryDeliveryJobPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosTrail`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-actiontrail-trail
  */
@@ -96,7 +311,7 @@ function rosTrailPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ACTIONTRAIL::Trail`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ACTIONTRAIL::Trail`, which is used to create a trail to deliver events to Simple Log Service or Object Storage Service (OSS).
  * @Note This class does not contain additional functions, so it is recommended to use the `Trail` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-actiontrail-trail
  */
@@ -239,7 +454,7 @@ function rosTrailLoggingPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ACTIONTRAIL::TrailLogging`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ACTIONTRAIL::TrailLogging`, which is used to enable or disable trail logging.
  * @Note This class does not contain additional functions, so it is recommended to use the `TrailLogging` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-actiontrail-traillogging
  */

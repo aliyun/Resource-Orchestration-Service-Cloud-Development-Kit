@@ -4,8 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Pai
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::PAI::Run`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::PAI::Run`, which is used to create a run.</summary>
     /// <remarks>
+    /// A run belongs to an experiment and can be associated with a workload. A run can also represent a single code execution.
+    ///
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRun`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-run
     /// </remarks>

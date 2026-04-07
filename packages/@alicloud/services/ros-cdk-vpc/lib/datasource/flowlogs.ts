@@ -81,7 +81,7 @@ export interface IFlowLogs extends ros.IResource {
     readonly attrFlowLogs: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::FlowLogs`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::FlowLogs`, which is used to query flow logs.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFlowLogs`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-flowlogs
  */
@@ -117,8 +117,8 @@ export class FlowLogs extends ros.Resource implements IFlowLogs {
             flowLogName: props.flowLogName,
             description: props.description,
             logStoreName: props.logStoreName,
-            resourceId: props.resourceId,
             projectName: props.projectName,
+            resourceId: props.resourceId,
             resourceType: props.resourceType,
             flowLogId: props.flowLogId,
             trafficType: props.trafficType,

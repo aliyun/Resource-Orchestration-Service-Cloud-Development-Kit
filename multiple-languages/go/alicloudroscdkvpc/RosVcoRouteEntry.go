@@ -35,6 +35,8 @@ type RosVcoRouteEntry interface {
 	SetNextHop(val interface{})
 	// The construct tree node associated with this construct.
 	Node() alicloudroscdkcore.ConstructNode
+	OverlayMode() interface{}
+	SetOverlayMode(val interface{})
 	// Return a string that will be resolved to a RosTemplate `{ Ref }` for this element.
 	//
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
@@ -249,6 +251,16 @@ func (j *jsiiProxy_RosVcoRouteEntry) Node() alicloudroscdkcore.ConstructNode {
 	return returns
 }
 
+func (j *jsiiProxy_RosVcoRouteEntry) OverlayMode() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"overlayMode",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosVcoRouteEntry) Ref() *string {
 	var returns *string
 	_jsii_.Get(
@@ -396,6 +408,17 @@ func (j *jsiiProxy_RosVcoRouteEntry)SetNextHop(val interface{}) {
 	_jsii_.Set(
 		j,
 		"nextHop",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosVcoRouteEntry)SetOverlayMode(val interface{}) {
+	if err := j.validateSetOverlayModeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"overlayMode",
 		val,
 	)
 }

@@ -59,6 +59,43 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
+        /// <summary>Property isp: The line type.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description><strong>BGP</strong> (default): BGP (multi-line). All regions support BGP (multi-line) EIPs.</description>
+        /// <description><strong>BGP_PRO</strong>: BGP (multi-line)_Premium. Currently supported only in China (Hong Kong),
+        /// Singapore, Japan (Tokyo), Malaysia (Kuala Lumpur), Philippines (Manila),
+        /// India (Jakarta), and Thailand (Bangkok).</description>
+        /// </list>
+        ///
+        /// For more information about BGP (multi-line) and BGP (multi-line)_Premium,
+        /// see <a href="~~32321~~">EIP Line Type</a>.
+        ///
+        /// If you are a single-bandwidth whitelist user, you can also choose:
+        ///
+        /// <list type="bullet">
+        /// <description><strong>ChinaTelecom</strong>: China Telecom</description>
+        /// <description><strong>ChinaUnicom</strong>: China Unicom</description>
+        /// <description><strong>ChinaMobile</strong>: China Mobile</description>
+        /// <description><strong>ChinaTelecom_L2</strong>: China Telecom L2</description>
+        /// <description><strong>ChinaUnicom_L2</strong>: China Unicom L2</description>
+        /// <description><strong>ChinaMobile_L2</strong>: China Mobile L2</description>
+        /// </list>
+        ///
+        /// If you are a Hangzhou Finance Cloud user, this field is required with value: <strong>BGP_FinanceCloud</strong>.
+        /// </remarks>
+        [JsiiProperty(name: "isp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Isp
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property netmode: The network type.</summary>
         /// <remarks>
         /// Valid values:
@@ -83,6 +120,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ResourceGroupId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property zone: The zone of the contiguous EIP group.</summary>
+        [JsiiProperty(name: "zone", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Zone
         {
             get
             {
@@ -143,6 +191,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property isp: The line type.</summary>
+            /// <remarks>
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description><strong>BGP</strong> (default): BGP (multi-line). All regions support BGP (multi-line) EIPs.</description>
+            /// <description><strong>BGP_PRO</strong>: BGP (multi-line)_Premium. Currently supported only in China (Hong Kong),
+            /// Singapore, Japan (Tokyo), Malaysia (Kuala Lumpur), Philippines (Manila),
+            /// India (Jakarta), and Thailand (Bangkok).</description>
+            /// </list>
+            ///
+            /// For more information about BGP (multi-line) and BGP (multi-line)_Premium,
+            /// see <a href="~~32321~~">EIP Line Type</a>.
+            ///
+            /// If you are a single-bandwidth whitelist user, you can also choose:
+            ///
+            /// <list type="bullet">
+            /// <description><strong>ChinaTelecom</strong>: China Telecom</description>
+            /// <description><strong>ChinaUnicom</strong>: China Unicom</description>
+            /// <description><strong>ChinaMobile</strong>: China Mobile</description>
+            /// <description><strong>ChinaTelecom_L2</strong>: China Telecom L2</description>
+            /// <description><strong>ChinaUnicom_L2</strong>: China Unicom L2</description>
+            /// <description><strong>ChinaMobile_L2</strong>: China Mobile L2</description>
+            /// </list>
+            ///
+            /// If you are a Hangzhou Finance Cloud user, this field is required with value: <strong>BGP_FinanceCloud</strong>.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "isp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Isp
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property netmode: The network type.</summary>
             /// <remarks>
             /// Valid values:
@@ -164,6 +246,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             [JsiiOptional]
             [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ResourceGroupId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property zone: The zone of the contiguous EIP group.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "zone", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Zone
             {
                 get => GetInstanceProperty<object?>();
             }

@@ -64,36 +64,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             }
         }
 
-        private object _escalations;
-
-        /// <summary>Property escalations: You must select at least one of the Critical, Warn, and Info alert levels.</summary>
-        [JsiiProperty(name: "escalations", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosResourceMetricRule.EscalationsProperty\"}]}}")]
-        public object Escalations
-        {
-            get => _escalations;
-            set
-            {
-                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                {
-                    switch (value)
-                    {
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                            break;
-                        case AlibabaCloud.SDK.ROS.CDK.Cms.RosResourceMetricRule.IEscalationsProperty cast_cd4240:
-                            break;
-                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                            // Not enough information to type-check...
-                            break;
-                        case null:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Cms.RosResourceMetricRule.IEscalationsProperty).FullName}; received null", nameof(value));
-                        default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Cms.RosResourceMetricRule.IEscalationsProperty).FullName}; received {value.GetType().FullName}", nameof(value));
-                    }
-                }
-                _escalations = value;
-            }
-        }
-
         private object _metricName;
 
         /// <summary>Property metricName: The name of the metric.</summary>
@@ -323,6 +293,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                     }
                 }
                 _emailSubject = value;
+            }
+        }
+
+        private object? _escalations;
+
+        /// <summary>Property escalations: You must select at least one of the Critical, Warn, and Info alert levels.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "escalations", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosResourceMetricRule.EscalationsProperty\"}]}}", isOptional: true)]
+        public object? Escalations
+        {
+            get => _escalations;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Cms.RosResourceMetricRule.IEscalationsProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Cms.RosResourceMetricRule.IEscalationsProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _escalations = value;
             }
         }
 

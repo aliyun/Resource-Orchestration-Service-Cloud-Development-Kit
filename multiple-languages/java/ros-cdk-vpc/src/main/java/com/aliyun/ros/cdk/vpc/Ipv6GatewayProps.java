@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipv6gateway
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:00.992Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.926Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.Ipv6GatewayProps")
 @software.amazon.jsii.Jsii.Proxy(Ipv6GatewayProps.Jsii$Proxy.class)
 public interface Ipv6GatewayProps extends software.amazon.jsii.JsiiSerializable {
@@ -30,6 +30,13 @@ public interface Ipv6GatewayProps extends software.amazon.jsii.JsiiSerializable 
      * Length of 2 to 128 characters, beginning with a letter or Chinese, can contain numbers, dot, underscore (_) and dash (-), but not at http (.): // or with https: // .
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
+        return null;
+    }
+
+    /**
+     * Property resourceGroupId: The ID of the resource group to which the IPv6 gateway belongs.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
 
@@ -66,6 +73,7 @@ public interface Ipv6GatewayProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object vpcId;
         java.lang.Object description;
         java.lang.Object name;
+        java.lang.Object resourceGroupId;
         java.lang.Object spec;
         java.util.List<com.aliyun.ros.cdk.vpc.RosIpv6Gateway.TagsProperty> tags;
 
@@ -134,6 +142,26 @@ public interface Ipv6GatewayProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link Ipv6GatewayProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group to which the IPv6 gateway belongs.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link Ipv6GatewayProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group to which the IPv6 gateway belongs.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link Ipv6GatewayProps#getSpec}
          * @param spec Property spec: Specifications IPv6 gateway, the value: Small (default): Free.
          *             Medium: Enterprise Edition.
@@ -190,6 +218,7 @@ public interface Ipv6GatewayProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object vpcId;
         private final java.lang.Object description;
         private final java.lang.Object name;
+        private final java.lang.Object resourceGroupId;
         private final java.lang.Object spec;
         private final java.util.List<com.aliyun.ros.cdk.vpc.RosIpv6Gateway.TagsProperty> tags;
 
@@ -202,6 +231,7 @@ public interface Ipv6GatewayProps extends software.amazon.jsii.JsiiSerializable 
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.spec = software.amazon.jsii.Kernel.get(this, "spec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.vpc.RosIpv6Gateway.TagsProperty.class)));
         }
@@ -215,6 +245,7 @@ public interface Ipv6GatewayProps extends software.amazon.jsii.JsiiSerializable 
             this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
             this.description = builder.description;
             this.name = builder.name;
+            this.resourceGroupId = builder.resourceGroupId;
             this.spec = builder.spec;
             this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosIpv6Gateway.TagsProperty>)builder.tags;
         }
@@ -232,6 +263,11 @@ public interface Ipv6GatewayProps extends software.amazon.jsii.JsiiSerializable 
         @Override
         public final java.lang.Object getName() {
             return this.name;
+        }
+
+        @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
         }
 
         @Override
@@ -256,6 +292,9 @@ public interface Ipv6GatewayProps extends software.amazon.jsii.JsiiSerializable 
             }
             if (this.getName() != null) {
                 data.set("name", om.valueToTree(this.getName()));
+            }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
             if (this.getSpec() != null) {
                 data.set("spec", om.valueToTree(this.getSpec()));
@@ -284,6 +323,7 @@ public interface Ipv6GatewayProps extends software.amazon.jsii.JsiiSerializable 
             if (!vpcId.equals(that.vpcId)) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.spec != null ? !this.spec.equals(that.spec) : that.spec != null) return false;
             return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
@@ -293,6 +333,7 @@ public interface Ipv6GatewayProps extends software.amazon.jsii.JsiiSerializable 
             int result = this.vpcId.hashCode();
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.spec != null ? this.spec.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;

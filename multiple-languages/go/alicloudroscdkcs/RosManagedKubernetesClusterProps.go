@@ -9,6 +9,7 @@ type RosManagedKubernetesClusterProps struct {
 	VpcId interface{} `field:"required" json:"vpcId" yaml:"vpcId"`
 	VSwitchIds interface{} `field:"required" json:"vSwitchIds" yaml:"vSwitchIds"`
 	Addons interface{} `field:"optional" json:"addons" yaml:"addons"`
+	AutoMode interface{} `field:"optional" json:"autoMode" yaml:"autoMode"`
 	CloudMonitorFlags interface{} `field:"optional" json:"cloudMonitorFlags" yaml:"cloudMonitorFlags"`
 	ClusterSpec interface{} `field:"optional" json:"clusterSpec" yaml:"clusterSpec"`
 	ContainerCidr interface{} `field:"optional" json:"containerCidr" yaml:"containerCidr"`

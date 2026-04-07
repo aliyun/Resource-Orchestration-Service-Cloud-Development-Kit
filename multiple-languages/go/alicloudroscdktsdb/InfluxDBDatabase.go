@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::TSDB::InfluxDBDatabase`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::TSDB::InfluxDBDatabase`, which is used to create a Time Series Database (TSDB) database.
 type InfluxDBDatabase interface {
 	alicloudroscdkcore.Resource
 	IInfluxDBDatabase

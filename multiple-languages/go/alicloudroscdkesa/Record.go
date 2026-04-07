@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ESA::Record`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ESA::Record`The , which type is used to create a DNS record.
 type Record interface {
 	alicloudroscdkcore.Resource
 	IRecord

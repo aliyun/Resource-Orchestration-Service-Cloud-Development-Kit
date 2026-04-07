@@ -193,7 +193,7 @@ export interface IRunCommand extends ros.IResource {
     readonly attrInvokeResults: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::RunCommand`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::RunCommand`The , which resource type executes a Shell, PowerShell, or Batch script on one or more ECS instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRunCommand`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-runcommand
  */
@@ -236,24 +236,24 @@ export class RunCommand extends ros.Resource implements IRunCommand {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosRunCommand = new RosRunCommand(this, id,  {
-            parameters: props.parameters,
             description: props.description,
+            parameters: props.parameters,
             resourceGroupId: props.resourceGroupId,
             timeout: props.timeout,
             windowsPasswordName: props.windowsPasswordName,
             contentEncoding: props.contentEncoding,
             name: props.name,
-            workingDir: props.workingDir,
             commandContent: props.commandContent,
+            workingDir: props.workingDir,
             type: props.type,
             repeatMode: props.repeatMode,
-            containerName: props.containerName,
             username: props.username,
             containerId: props.containerId,
-            launcher: props.launcher,
+            containerName: props.containerName,
             frequency: props.frequency,
-            runAgainOn: props.runAgainOn,
+            launcher: props.launcher,
             enableParameter: props.enableParameter,
+            runAgainOn: props.runAgainOn,
             instanceIds: props.instanceIds,
             sync: props.sync === undefined || props.sync === null ? false : props.sync,
             keepCommand: props.keepCommand,

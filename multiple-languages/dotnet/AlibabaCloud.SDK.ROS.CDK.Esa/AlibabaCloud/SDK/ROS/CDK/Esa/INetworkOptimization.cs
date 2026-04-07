@@ -90,7 +90,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Esa
             get;
         }
 
-        /// <summary>Attribute UploadMaxFilesize: Maximum upload file size, in MB, value range: 100～500.</summary>
+        /// <summary>Attribute UploadMaxFilesize: Maximum upload file size, in MB, value range: 100ï½500.</summary>
         [JsiiProperty(name: "attrUploadMaxFilesize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AttrUploadMaxFilesize
         {
@@ -200,7 +200,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Esa
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Attribute UploadMaxFilesize: Maximum upload file size, in MB, value range: 100～500.</summary>
+            /// <summary>Attribute UploadMaxFilesize: Maximum upload file size, in MB, value range: 100ï½500.</summary>
             [JsiiProperty(name: "attrUploadMaxFilesize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AttrUploadMaxFilesize
             {

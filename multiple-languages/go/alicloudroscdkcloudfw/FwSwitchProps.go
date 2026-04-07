@@ -9,6 +9,10 @@ type FwSwitchProps struct {
 	//
 	// **Note**: The IpaddrList, RegionList, and ResourceTypeList arguments are not allowed to be empty at the same time. A value must be set for one of the three arguments.
 	IpaddrList interface{} `field:"optional" json:"ipaddrList" yaml:"ipaddrList"`
+	// Property ipVersion: The IP version number.
+	IpVersion interface{} `field:"optional" json:"ipVersion" yaml:"ipVersion"`
+	// Property memberUid: The member unique identifier.
+	MemberUid interface{} `field:"optional" json:"memberUid" yaml:"memberUid"`
 	// Property regionList: The region list.
 	//
 	// **Note**: The IpaddrList, RegionList, and ResourceTypeList arguments are not allowed to be empty at the same time. A value must be set for one of the three arguments.

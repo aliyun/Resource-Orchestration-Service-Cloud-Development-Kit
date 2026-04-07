@@ -113,7 +113,7 @@ export interface ICustomImage extends ros.IResource {
     readonly attrSourceRegionId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::CustomImage`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::CustomImage`, which is used to create a custom image.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCustomImage`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-customimage
  */
@@ -149,15 +149,15 @@ export class CustomImage extends ros.Resource implements ICustomImage {
             detectionStrategy: props.detectionStrategy,
             description: props.description,
             platform: props.platform,
-            architecture: props.architecture,
             resourceGroupId: props.resourceGroupId,
+            architecture: props.architecture,
             instanceId: props.instanceId,
             bootMode: props.bootMode,
             imageFamily: props.imageFamily,
             diskDeviceMapping: props.diskDeviceMapping,
             imageName: props.imageName,
-            sourceRegionId: props.sourceRegionId,
             snapshotId: props.snapshotId,
+            sourceRegionId: props.sourceRegionId,
             imageVersion: props.imageVersion,
             features: props.features,
             tag: props.tag,

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::CLOUDFW::AddressBooks`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::CLOUDFW::AddressBooks`, which is used to query the information about address books for access control in Cloud Firewall.
 type AddressBooks interface {
 	alicloudroscdkcore.Resource
 	IAddressBooks

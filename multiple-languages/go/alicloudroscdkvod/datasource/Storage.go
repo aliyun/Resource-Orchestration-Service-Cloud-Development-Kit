@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::VOD::Storage`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::VOD::Storage`, which is used to query a storage configuration.
 type Storage interface {
 	alicloudroscdkcore.Resource
 	IStorage

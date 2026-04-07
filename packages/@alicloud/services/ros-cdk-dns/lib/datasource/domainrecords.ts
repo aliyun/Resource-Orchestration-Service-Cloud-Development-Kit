@@ -100,7 +100,7 @@ export interface IDomainRecords extends ros.IResource {
     readonly attrDomainRecords: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::DNS::DomainRecords`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::DNS::DomainRecords`, which is used to query Domain Name System (DNS) records.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomainRecords`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dns-domainrecords
  */
@@ -133,15 +133,15 @@ export class DomainRecords extends ros.Resource implements IDomainRecords {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDomainRecords = new RosDomainRecords(this, id,  {
-            status: props.status,
             orderBy: props.orderBy,
+            status: props.status,
             rrKeyWord: props.rrKeyWord,
             domainName: props.domainName,
             typeKeyWord: props.typeKeyWord,
             lang: props.lang,
             direction: props.direction,
-            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
             groupId: props.groupId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
             line: props.line,
             type: props.type,
             valueKeyWord: props.valueKeyWord,

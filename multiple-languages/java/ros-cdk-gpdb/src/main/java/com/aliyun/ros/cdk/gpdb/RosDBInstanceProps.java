@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.gpdb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-dbinstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.434Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:27.037Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.RosDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosDBInstanceProps.Jsii$Proxy.class)
 public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -25,6 +25,18 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAiNodeSpecInfos() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBackupId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCacheStorageSize() {
         return null;
     }
 
@@ -72,6 +84,12 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEnableSsl() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEncryptionKey() {
         return null;
     }
@@ -91,6 +109,12 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceSpec() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMasterAiSpec() {
         return null;
     }
 
@@ -180,6 +204,12 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSrcDbInstanceName() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getStandbyVSwitchId() {
         return null;
     }
@@ -228,6 +258,8 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object vSwitchId;
         java.lang.Object zoneId;
         java.lang.Object aiNodeSpecInfos;
+        java.lang.Object backupId;
+        java.lang.Object cacheStorageSize;
         java.lang.Object createSampleData;
         java.lang.Object dbInstanceCategory;
         java.lang.Object dbInstanceClass;
@@ -235,10 +267,12 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object dbInstanceGroupCount;
         java.lang.Object dbInstanceMode;
         java.lang.Object deployMode;
+        java.lang.Object enableSsl;
         java.lang.Object encryptionKey;
         java.lang.Object encryptionType;
         java.lang.Object idleTime;
         java.lang.Object instanceSpec;
+        java.lang.Object masterAiSpec;
         java.lang.Object masterCu;
         java.lang.Object masterNodeNum;
         java.lang.Object payType;
@@ -253,6 +287,7 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object segStorageType;
         java.lang.Object serverlessMode;
         java.lang.Object serverlessResource;
+        java.lang.Object srcDbInstanceName;
         java.lang.Object standbyVSwitchId;
         java.lang.Object standbyZoneId;
         java.lang.Object storageSize;
@@ -337,6 +372,46 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
          */
         public Builder aiNodeSpecInfos(java.util.List<? extends java.lang.Object> aiNodeSpecInfos) {
             this.aiNodeSpecInfos = aiNodeSpecInfos;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceProps#getBackupId}
+         * @param backupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder backupId(java.lang.String backupId) {
+            this.backupId = backupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceProps#getBackupId}
+         * @param backupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder backupId(com.aliyun.ros.cdk.core.IResolvable backupId) {
+            this.backupId = backupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceProps#getCacheStorageSize}
+         * @param cacheStorageSize the value to be set.
+         * @return {@code this}
+         */
+        public Builder cacheStorageSize(java.lang.String cacheStorageSize) {
+            this.cacheStorageSize = cacheStorageSize;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceProps#getCacheStorageSize}
+         * @param cacheStorageSize the value to be set.
+         * @return {@code this}
+         */
+        public Builder cacheStorageSize(com.aliyun.ros.cdk.core.IResolvable cacheStorageSize) {
+            this.cacheStorageSize = cacheStorageSize;
             return this;
         }
 
@@ -481,6 +556,26 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosDBInstanceProps#getEnableSsl}
+         * @param enableSsl the value to be set.
+         * @return {@code this}
+         */
+        public Builder enableSsl(java.lang.Boolean enableSsl) {
+            this.enableSsl = enableSsl;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceProps#getEnableSsl}
+         * @param enableSsl the value to be set.
+         * @return {@code this}
+         */
+        public Builder enableSsl(com.aliyun.ros.cdk.core.IResolvable enableSsl) {
+            this.enableSsl = enableSsl;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBInstanceProps#getEncryptionKey}
          * @param encryptionKey the value to be set.
          * @return {@code this}
@@ -557,6 +652,26 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
          */
         public Builder instanceSpec(com.aliyun.ros.cdk.core.IResolvable instanceSpec) {
             this.instanceSpec = instanceSpec;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceProps#getMasterAiSpec}
+         * @param masterAiSpec the value to be set.
+         * @return {@code this}
+         */
+        public Builder masterAiSpec(java.lang.String masterAiSpec) {
+            this.masterAiSpec = masterAiSpec;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceProps#getMasterAiSpec}
+         * @param masterAiSpec the value to be set.
+         * @return {@code this}
+         */
+        public Builder masterAiSpec(com.aliyun.ros.cdk.core.IResolvable masterAiSpec) {
+            this.masterAiSpec = masterAiSpec;
             return this;
         }
 
@@ -841,6 +956,26 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosDBInstanceProps#getSrcDbInstanceName}
+         * @param srcDbInstanceName the value to be set.
+         * @return {@code this}
+         */
+        public Builder srcDbInstanceName(java.lang.String srcDbInstanceName) {
+            this.srcDbInstanceName = srcDbInstanceName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceProps#getSrcDbInstanceName}
+         * @param srcDbInstanceName the value to be set.
+         * @return {@code this}
+         */
+        public Builder srcDbInstanceName(com.aliyun.ros.cdk.core.IResolvable srcDbInstanceName) {
+            this.srcDbInstanceName = srcDbInstanceName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBInstanceProps#getStandbyVSwitchId}
          * @param standbyVSwitchId the value to be set.
          * @return {@code this}
@@ -971,6 +1106,8 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object vSwitchId;
         private final java.lang.Object zoneId;
         private final java.lang.Object aiNodeSpecInfos;
+        private final java.lang.Object backupId;
+        private final java.lang.Object cacheStorageSize;
         private final java.lang.Object createSampleData;
         private final java.lang.Object dbInstanceCategory;
         private final java.lang.Object dbInstanceClass;
@@ -978,10 +1115,12 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object dbInstanceGroupCount;
         private final java.lang.Object dbInstanceMode;
         private final java.lang.Object deployMode;
+        private final java.lang.Object enableSsl;
         private final java.lang.Object encryptionKey;
         private final java.lang.Object encryptionType;
         private final java.lang.Object idleTime;
         private final java.lang.Object instanceSpec;
+        private final java.lang.Object masterAiSpec;
         private final java.lang.Object masterCu;
         private final java.lang.Object masterNodeNum;
         private final java.lang.Object payType;
@@ -996,6 +1135,7 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object segStorageType;
         private final java.lang.Object serverlessMode;
         private final java.lang.Object serverlessResource;
+        private final java.lang.Object srcDbInstanceName;
         private final java.lang.Object standbyVSwitchId;
         private final java.lang.Object standbyZoneId;
         private final java.lang.Object storageSize;
@@ -1013,6 +1153,8 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.aiNodeSpecInfos = software.amazon.jsii.Kernel.get(this, "aiNodeSpecInfos", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.backupId = software.amazon.jsii.Kernel.get(this, "backupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.cacheStorageSize = software.amazon.jsii.Kernel.get(this, "cacheStorageSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.createSampleData = software.amazon.jsii.Kernel.get(this, "createSampleData", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbInstanceCategory = software.amazon.jsii.Kernel.get(this, "dbInstanceCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbInstanceClass = software.amazon.jsii.Kernel.get(this, "dbInstanceClass", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1020,10 +1162,12 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             this.dbInstanceGroupCount = software.amazon.jsii.Kernel.get(this, "dbInstanceGroupCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbInstanceMode = software.amazon.jsii.Kernel.get(this, "dbInstanceMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deployMode = software.amazon.jsii.Kernel.get(this, "deployMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.enableSsl = software.amazon.jsii.Kernel.get(this, "enableSsl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.encryptionKey = software.amazon.jsii.Kernel.get(this, "encryptionKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.encryptionType = software.amazon.jsii.Kernel.get(this, "encryptionType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.idleTime = software.amazon.jsii.Kernel.get(this, "idleTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceSpec = software.amazon.jsii.Kernel.get(this, "instanceSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.masterAiSpec = software.amazon.jsii.Kernel.get(this, "masterAiSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.masterCu = software.amazon.jsii.Kernel.get(this, "masterCu", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.masterNodeNum = software.amazon.jsii.Kernel.get(this, "masterNodeNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.payType = software.amazon.jsii.Kernel.get(this, "payType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1038,6 +1182,7 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             this.segStorageType = software.amazon.jsii.Kernel.get(this, "segStorageType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serverlessMode = software.amazon.jsii.Kernel.get(this, "serverlessMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serverlessResource = software.amazon.jsii.Kernel.get(this, "serverlessResource", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.srcDbInstanceName = software.amazon.jsii.Kernel.get(this, "srcDbInstanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.standbyVSwitchId = software.amazon.jsii.Kernel.get(this, "standbyVSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.standbyZoneId = software.amazon.jsii.Kernel.get(this, "standbyZoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.storageSize = software.amazon.jsii.Kernel.get(this, "storageSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1056,6 +1201,8 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
             this.zoneId = java.util.Objects.requireNonNull(builder.zoneId, "zoneId is required");
             this.aiNodeSpecInfos = builder.aiNodeSpecInfos;
+            this.backupId = builder.backupId;
+            this.cacheStorageSize = builder.cacheStorageSize;
             this.createSampleData = builder.createSampleData;
             this.dbInstanceCategory = builder.dbInstanceCategory;
             this.dbInstanceClass = builder.dbInstanceClass;
@@ -1063,10 +1210,12 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             this.dbInstanceGroupCount = builder.dbInstanceGroupCount;
             this.dbInstanceMode = builder.dbInstanceMode;
             this.deployMode = builder.deployMode;
+            this.enableSsl = builder.enableSsl;
             this.encryptionKey = builder.encryptionKey;
             this.encryptionType = builder.encryptionType;
             this.idleTime = builder.idleTime;
             this.instanceSpec = builder.instanceSpec;
+            this.masterAiSpec = builder.masterAiSpec;
             this.masterCu = builder.masterCu;
             this.masterNodeNum = builder.masterNodeNum;
             this.payType = builder.payType;
@@ -1081,6 +1230,7 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             this.segStorageType = builder.segStorageType;
             this.serverlessMode = builder.serverlessMode;
             this.serverlessResource = builder.serverlessResource;
+            this.srcDbInstanceName = builder.srcDbInstanceName;
             this.standbyVSwitchId = builder.standbyVSwitchId;
             this.standbyZoneId = builder.standbyZoneId;
             this.storageSize = builder.storageSize;
@@ -1107,6 +1257,16 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         @Override
         public final java.lang.Object getAiNodeSpecInfos() {
             return this.aiNodeSpecInfos;
+        }
+
+        @Override
+        public final java.lang.Object getBackupId() {
+            return this.backupId;
+        }
+
+        @Override
+        public final java.lang.Object getCacheStorageSize() {
+            return this.cacheStorageSize;
         }
 
         @Override
@@ -1145,6 +1305,11 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.lang.Object getEnableSsl() {
+            return this.enableSsl;
+        }
+
+        @Override
         public final java.lang.Object getEncryptionKey() {
             return this.encryptionKey;
         }
@@ -1162,6 +1327,11 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         @Override
         public final java.lang.Object getInstanceSpec() {
             return this.instanceSpec;
+        }
+
+        @Override
+        public final java.lang.Object getMasterAiSpec() {
+            return this.masterAiSpec;
         }
 
         @Override
@@ -1235,6 +1405,11 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.lang.Object getSrcDbInstanceName() {
+            return this.srcDbInstanceName;
+        }
+
+        @Override
         public final java.lang.Object getStandbyVSwitchId() {
             return this.standbyVSwitchId;
         }
@@ -1276,6 +1451,12 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getAiNodeSpecInfos() != null) {
                 data.set("aiNodeSpecInfos", om.valueToTree(this.getAiNodeSpecInfos()));
             }
+            if (this.getBackupId() != null) {
+                data.set("backupId", om.valueToTree(this.getBackupId()));
+            }
+            if (this.getCacheStorageSize() != null) {
+                data.set("cacheStorageSize", om.valueToTree(this.getCacheStorageSize()));
+            }
             if (this.getCreateSampleData() != null) {
                 data.set("createSampleData", om.valueToTree(this.getCreateSampleData()));
             }
@@ -1297,6 +1478,9 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getDeployMode() != null) {
                 data.set("deployMode", om.valueToTree(this.getDeployMode()));
             }
+            if (this.getEnableSsl() != null) {
+                data.set("enableSsl", om.valueToTree(this.getEnableSsl()));
+            }
             if (this.getEncryptionKey() != null) {
                 data.set("encryptionKey", om.valueToTree(this.getEncryptionKey()));
             }
@@ -1308,6 +1492,9 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             }
             if (this.getInstanceSpec() != null) {
                 data.set("instanceSpec", om.valueToTree(this.getInstanceSpec()));
+            }
+            if (this.getMasterAiSpec() != null) {
+                data.set("masterAiSpec", om.valueToTree(this.getMasterAiSpec()));
             }
             if (this.getMasterCu() != null) {
                 data.set("masterCu", om.valueToTree(this.getMasterCu()));
@@ -1351,6 +1538,9 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getServerlessResource() != null) {
                 data.set("serverlessResource", om.valueToTree(this.getServerlessResource()));
             }
+            if (this.getSrcDbInstanceName() != null) {
+                data.set("srcDbInstanceName", om.valueToTree(this.getSrcDbInstanceName()));
+            }
             if (this.getStandbyVSwitchId() != null) {
                 data.set("standbyVSwitchId", om.valueToTree(this.getStandbyVSwitchId()));
             }
@@ -1391,6 +1581,8 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             if (!vSwitchId.equals(that.vSwitchId)) return false;
             if (!zoneId.equals(that.zoneId)) return false;
             if (this.aiNodeSpecInfos != null ? !this.aiNodeSpecInfos.equals(that.aiNodeSpecInfos) : that.aiNodeSpecInfos != null) return false;
+            if (this.backupId != null ? !this.backupId.equals(that.backupId) : that.backupId != null) return false;
+            if (this.cacheStorageSize != null ? !this.cacheStorageSize.equals(that.cacheStorageSize) : that.cacheStorageSize != null) return false;
             if (this.createSampleData != null ? !this.createSampleData.equals(that.createSampleData) : that.createSampleData != null) return false;
             if (this.dbInstanceCategory != null ? !this.dbInstanceCategory.equals(that.dbInstanceCategory) : that.dbInstanceCategory != null) return false;
             if (this.dbInstanceClass != null ? !this.dbInstanceClass.equals(that.dbInstanceClass) : that.dbInstanceClass != null) return false;
@@ -1398,10 +1590,12 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             if (this.dbInstanceGroupCount != null ? !this.dbInstanceGroupCount.equals(that.dbInstanceGroupCount) : that.dbInstanceGroupCount != null) return false;
             if (this.dbInstanceMode != null ? !this.dbInstanceMode.equals(that.dbInstanceMode) : that.dbInstanceMode != null) return false;
             if (this.deployMode != null ? !this.deployMode.equals(that.deployMode) : that.deployMode != null) return false;
+            if (this.enableSsl != null ? !this.enableSsl.equals(that.enableSsl) : that.enableSsl != null) return false;
             if (this.encryptionKey != null ? !this.encryptionKey.equals(that.encryptionKey) : that.encryptionKey != null) return false;
             if (this.encryptionType != null ? !this.encryptionType.equals(that.encryptionType) : that.encryptionType != null) return false;
             if (this.idleTime != null ? !this.idleTime.equals(that.idleTime) : that.idleTime != null) return false;
             if (this.instanceSpec != null ? !this.instanceSpec.equals(that.instanceSpec) : that.instanceSpec != null) return false;
+            if (this.masterAiSpec != null ? !this.masterAiSpec.equals(that.masterAiSpec) : that.masterAiSpec != null) return false;
             if (this.masterCu != null ? !this.masterCu.equals(that.masterCu) : that.masterCu != null) return false;
             if (this.masterNodeNum != null ? !this.masterNodeNum.equals(that.masterNodeNum) : that.masterNodeNum != null) return false;
             if (this.payType != null ? !this.payType.equals(that.payType) : that.payType != null) return false;
@@ -1416,6 +1610,7 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             if (this.segStorageType != null ? !this.segStorageType.equals(that.segStorageType) : that.segStorageType != null) return false;
             if (this.serverlessMode != null ? !this.serverlessMode.equals(that.serverlessMode) : that.serverlessMode != null) return false;
             if (this.serverlessResource != null ? !this.serverlessResource.equals(that.serverlessResource) : that.serverlessResource != null) return false;
+            if (this.srcDbInstanceName != null ? !this.srcDbInstanceName.equals(that.srcDbInstanceName) : that.srcDbInstanceName != null) return false;
             if (this.standbyVSwitchId != null ? !this.standbyVSwitchId.equals(that.standbyVSwitchId) : that.standbyVSwitchId != null) return false;
             if (this.standbyZoneId != null ? !this.standbyZoneId.equals(that.standbyZoneId) : that.standbyZoneId != null) return false;
             if (this.storageSize != null ? !this.storageSize.equals(that.storageSize) : that.storageSize != null) return false;
@@ -1430,6 +1625,8 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.vSwitchId.hashCode());
             result = 31 * result + (this.zoneId.hashCode());
             result = 31 * result + (this.aiNodeSpecInfos != null ? this.aiNodeSpecInfos.hashCode() : 0);
+            result = 31 * result + (this.backupId != null ? this.backupId.hashCode() : 0);
+            result = 31 * result + (this.cacheStorageSize != null ? this.cacheStorageSize.hashCode() : 0);
             result = 31 * result + (this.createSampleData != null ? this.createSampleData.hashCode() : 0);
             result = 31 * result + (this.dbInstanceCategory != null ? this.dbInstanceCategory.hashCode() : 0);
             result = 31 * result + (this.dbInstanceClass != null ? this.dbInstanceClass.hashCode() : 0);
@@ -1437,10 +1634,12 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.dbInstanceGroupCount != null ? this.dbInstanceGroupCount.hashCode() : 0);
             result = 31 * result + (this.dbInstanceMode != null ? this.dbInstanceMode.hashCode() : 0);
             result = 31 * result + (this.deployMode != null ? this.deployMode.hashCode() : 0);
+            result = 31 * result + (this.enableSsl != null ? this.enableSsl.hashCode() : 0);
             result = 31 * result + (this.encryptionKey != null ? this.encryptionKey.hashCode() : 0);
             result = 31 * result + (this.encryptionType != null ? this.encryptionType.hashCode() : 0);
             result = 31 * result + (this.idleTime != null ? this.idleTime.hashCode() : 0);
             result = 31 * result + (this.instanceSpec != null ? this.instanceSpec.hashCode() : 0);
+            result = 31 * result + (this.masterAiSpec != null ? this.masterAiSpec.hashCode() : 0);
             result = 31 * result + (this.masterCu != null ? this.masterCu.hashCode() : 0);
             result = 31 * result + (this.masterNodeNum != null ? this.masterNodeNum.hashCode() : 0);
             result = 31 * result + (this.payType != null ? this.payType.hashCode() : 0);
@@ -1455,6 +1654,7 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.segStorageType != null ? this.segStorageType.hashCode() : 0);
             result = 31 * result + (this.serverlessMode != null ? this.serverlessMode.hashCode() : 0);
             result = 31 * result + (this.serverlessResource != null ? this.serverlessResource.hashCode() : 0);
+            result = 31 * result + (this.srcDbInstanceName != null ? this.srcDbInstanceName.hashCode() : 0);
             result = 31 * result + (this.standbyVSwitchId != null ? this.standbyVSwitchId.hashCode() : 0);
             result = 31 * result + (this.standbyZoneId != null ? this.standbyZoneId.hashCode() : 0);
             result = 31 * result + (this.storageSize != null ? this.storageSize.hashCode() : 0);

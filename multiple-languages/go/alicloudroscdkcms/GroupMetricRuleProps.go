@@ -64,16 +64,35 @@ type GroupMetricRuleProps struct {
 	RuleId interface{} `field:"required" json:"ruleId" yaml:"ruleId"`
 	// Property ruleName: The name of the alert rule.
 	RuleName interface{} `field:"required" json:"ruleName" yaml:"ruleName"`
+	// Property contactGroups: The alert contact groups.
+	ContactGroups interface{} `field:"optional" json:"contactGroups" yaml:"contactGroups"`
 	// Property dimensions: The expended resource dimensions.
 	Dimensions interface{} `field:"optional" json:"dimensions" yaml:"dimensions"`
 	// Property effectiveInterval: The period when the alert rule is effective.
 	EffectiveInterval interface{} `field:"optional" json:"effectiveInterval" yaml:"effectiveInterval"`
 	// Property emailSubject: The subject of the alert notification email.
 	EmailSubject interface{} `field:"optional" json:"emailSubject" yaml:"emailSubject"`
+	// Property extraDimensionJson: The secondary or tertiary dimensions of the alert rule in the application group.
+	//
+	// Format: a collection of key:value pairs, for example, `port:80` or `\/dev\/xvda:d-m5e6yphgzn3aprwu****`.
+	//
+	// When the first-level dimension of the alert rule is `{"instanceId":"i-m5e1qg6uo38rztr4****"}`, its secondary dimension is the disk `{"\/dev\/xvda":"d-m5e6yphgzn3aprwu****"}`.
+	ExtraDimensionJson interface{} `field:"optional" json:"extraDimensionJson" yaml:"extraDimensionJson"`
 	// Property interval: The detection period of alerts.
 	Interval interface{} `field:"optional" json:"interval" yaml:"interval"`
+	// Property noDataPolicy: The handling method when there is no monitoring data.
+	//
+	// Valid values:
+	// - KEEP_LAST_STATE (default): No action is taken.
+	// - INSUFFICIENT_DATA: Alert content is "No Data".
+	// - OK: Normal.
+	NoDataPolicy interface{} `field:"optional" json:"noDataPolicy" yaml:"noDataPolicy"`
 	// Property noEffectiveInterval: The period when the alert rule is ineffective.
 	NoEffectiveInterval interface{} `field:"optional" json:"noEffectiveInterval" yaml:"noEffectiveInterval"`
+	// Property options: The advanced settings.
+	//
+	// Format: `{"key1":"value1","key2":"value2"}`, for example, `{"NotSendOK":true}`, indicating whether to send alert recovery notifications. The key is `NotSendOK`, and the value is `true` (do not send) or `false` (send by default).
+	Options interface{} `field:"optional" json:"options" yaml:"options"`
 	// Property period: The aggregation period.
 	//
 	// Unite: second.

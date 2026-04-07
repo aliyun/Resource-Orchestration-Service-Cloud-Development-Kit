@@ -43,6 +43,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: auditPolicyOptions: Audit policy options.
+        /// </remarks>
+        [JsiiProperty(name: "auditPolicyOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-mongodb.RosInstance.AuditPolicyOptionsProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AuditPolicyOptions
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: autoRenew: Indicates whether automatic renewal is enabled for the instance. Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
         /// </remarks>
         [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -69,6 +82,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: backupPolicyOptions: Backup policy options.
+        /// </remarks>
+        [JsiiProperty(name: "backupPolicyOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-mongodb.RosInstance.BackupPolicyOptionsProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? BackupPolicyOptions
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: businessInfo: The business information. It is an additional parameter.
         /// </remarks>
         [JsiiProperty(name: "businessInfo", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -87,6 +113,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
         [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ChargeType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: clusterId: The dedicated cluster ID.
+        /// </remarks>
+        [JsiiProperty(name: "clusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ClusterId
         {
             get
             {
@@ -126,6 +165,47 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
         [JsiiProperty(name: "dbInstanceDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? DbInstanceDescription
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: dbInstanceReleaseProtection: Enables instance release protection. Values:
+        /// - true: Enabled.
+        /// - false: Not enabled.
+        /// </remarks>
+        [JsiiProperty(name: "dbInstanceReleaseProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DbInstanceReleaseProtection
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: encrypted: Whether to enable cloud disk encryption.
+        /// </remarks>
+        [JsiiProperty(name: "encrypted", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Encrypted
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: encryptionKey: Custom key ID.
+        /// </remarks>
+        [JsiiProperty(name: "encryptionKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? EncryptionKey
         {
             get
             {
@@ -188,6 +268,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: provisionedIops: Provisioned IOPS. The value range is 0 to 50000.
+        /// </remarks>
+        [JsiiProperty(name: "provisionedIops", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ProvisionedIops
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: readonlyReplicas: Number of read-only nodes, in the range of 1-5.
         /// </remarks>
         [JsiiProperty(name: "readonlyReplicas", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -232,6 +325,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
         [JsiiProperty(name: "restoreTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? RestoreTime
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: restoreType: Backup recovery instance.
+        /// - 0: Restore instance to specified backup set
+        /// - 1: Restore instance to specified point in time
+        /// - 2: Restore released instance to specified backup set
+        /// - 3: Restore instance to specified backup set
+        /// </remarks>
+        [JsiiProperty(name: "restoreType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? RestoreType
         {
             get
             {
@@ -287,6 +397,34 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
         [JsiiProperty(name: "srcDbInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? SrcDbInstanceId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: srcRegion: The source instance region.
+        ///
+        /// >- When the backup recovery type is 2 or 3, this parameter is required.
+        /// </remarks>
+        [JsiiProperty(name: "srcRegion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SrcRegion
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: sslOptions: SSL options.
+        /// </remarks>
+        [JsiiProperty(name: "sslOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-mongodb.RosInstance.SSLOptionsProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SslOptions
         {
             get
             {
@@ -445,6 +583,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: auditPolicyOptions: Audit policy options.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "auditPolicyOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-mongodb.RosInstance.AuditPolicyOptionsProperty\"}]}}", isOptional: true)]
+            public object? AuditPolicyOptions
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: autoRenew: Indicates whether automatic renewal is enabled for the instance. Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
             /// </remarks>
             [JsiiOptional]
@@ -465,6 +613,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: backupPolicyOptions: Backup policy options.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "backupPolicyOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-mongodb.RosInstance.BackupPolicyOptionsProperty\"}]}}", isOptional: true)]
+            public object? BackupPolicyOptions
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: businessInfo: The business information. It is an additional parameter.
             /// </remarks>
             [JsiiOptional]
@@ -480,6 +638,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
             [JsiiOptional]
             [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ChargeType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: clusterId: The dedicated cluster ID.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "clusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ClusterId
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -510,6 +678,38 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
             [JsiiOptional]
             [JsiiProperty(name: "dbInstanceDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DbInstanceDescription
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: dbInstanceReleaseProtection: Enables instance release protection. Values:
+            /// - true: Enabled.
+            /// - false: Not enabled.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "dbInstanceReleaseProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DbInstanceReleaseProtection
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: encrypted: Whether to enable cloud disk encryption.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "encrypted", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Encrypted
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: encryptionKey: Custom key ID.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "encryptionKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EncryptionKey
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -557,6 +757,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: provisionedIops: Provisioned IOPS. The value range is 0 to 50000.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "provisionedIops", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ProvisionedIops
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: readonlyReplicas: Number of read-only nodes, in the range of 1-5.
             /// </remarks>
             [JsiiOptional]
@@ -592,6 +802,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
             [JsiiOptional]
             [JsiiProperty(name: "restoreTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RestoreTime
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: restoreType: Backup recovery instance.
+            /// - 0: Restore instance to specified backup set
+            /// - 1: Restore instance to specified point in time
+            /// - 2: Restore released instance to specified backup set
+            /// - 3: Restore instance to specified backup set
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "restoreType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RestoreType
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -635,6 +859,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
             [JsiiOptional]
             [JsiiProperty(name: "srcDbInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SrcDbInstanceId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: srcRegion: The source instance region.
+            ///
+            /// >- When the backup recovery type is 2 or 3, this parameter is required.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "srcRegion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SrcRegion
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: sslOptions: SSL options.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "sslOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-mongodb.RosInstance.SSLOptionsProperty\"}]}}", isOptional: true)]
+            public object? SslOptions
             {
                 get => GetInstanceProperty<object?>();
             }

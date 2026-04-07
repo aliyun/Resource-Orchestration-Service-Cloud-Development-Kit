@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::Application`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::Application`, which is used to create an application.
 type RosApplication interface {
 	alicloudroscdkcore.RosResource
 	AccessTokenValidity() interface{}

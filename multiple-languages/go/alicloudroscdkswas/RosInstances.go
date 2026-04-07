@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::SWAS::Instances`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::SWAS::Instances`, which is used to create subscription simple application servers.
 type RosInstances interface {
 	alicloudroscdkcore.RosResource
 	Amount() interface{}
@@ -61,6 +61,8 @@ type RosInstances interface {
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
 	Stack() alicloudroscdkcore.Stack
+	Tags() *[]*RosInstances_TagsProperty
+	SetTags(val *[]*RosInstances_TagsProperty)
 	// Return properties modified after initiation.
 	//
 	// Resources that expose mutable properties should override this function to
@@ -375,6 +377,16 @@ func (j *jsiiProxy_RosInstances) Stack() alicloudroscdkcore.Stack {
 	return returns
 }
 
+func (j *jsiiProxy_RosInstances) Tags() *[]*RosInstances_TagsProperty {
+	var returns *[]*RosInstances_TagsProperty
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosInstances) UpdatedProperites() *map[string]interface{} {
 	var returns *map[string]interface{}
 	_jsii_.Get(
@@ -497,6 +509,17 @@ func (j *jsiiProxy_RosInstances)SetPlanId(val interface{}) {
 	_jsii_.Set(
 		j,
 		"planId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosInstances)SetTags(val *[]*RosInstances_TagsProperty) {
+	if err := j.validateSetTagsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"tags",
 		val,
 	)
 }

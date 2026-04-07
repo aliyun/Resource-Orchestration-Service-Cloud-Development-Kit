@@ -92,11 +92,19 @@ func (j *jsiiProxy_RosRouterInterface) validateSetAutoPayParameters(val interfac
 	return nil
 }
 
+func (j *jsiiProxy_RosRouterInterface) validateSetAutoRenewParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosRouterInterface) validateSetDescriptionParameters(val interface{}) error {
 	return nil
 }
 
 func (j *jsiiProxy_RosRouterInterface) validateSetEnableResourcePropertyConstraintParameters(val *bool) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosRouterInterface) validateSetFastLinkModeParameters(val interface{}) error {
 	return nil
 }
 
@@ -145,6 +153,10 @@ func (j *jsiiProxy_RosRouterInterface) validateSetPeriodParameters(val interface
 }
 
 func (j *jsiiProxy_RosRouterInterface) validateSetPricingCycleParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosRouterInterface) validateSetResourceGroupIdParameters(val interface{}) error {
 	return nil
 }
 

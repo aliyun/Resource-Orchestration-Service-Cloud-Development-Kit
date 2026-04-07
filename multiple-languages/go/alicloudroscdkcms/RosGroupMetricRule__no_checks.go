@@ -88,6 +88,10 @@ func (j *jsiiProxy_RosGroupMetricRule) validateSetCategoryParameters(val interfa
 	return nil
 }
 
+func (j *jsiiProxy_RosGroupMetricRule) validateSetContactGroupsParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosGroupMetricRule) validateSetDimensionsParameters(val interface{}) error {
 	return nil
 }
@@ -108,6 +112,10 @@ func (j *jsiiProxy_RosGroupMetricRule) validateSetEscalationsParameters(val inte
 	return nil
 }
 
+func (j *jsiiProxy_RosGroupMetricRule) validateSetExtraDimensionJsonParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosGroupMetricRule) validateSetGroupIdParameters(val interface{}) error {
 	return nil
 }
@@ -124,7 +132,15 @@ func (j *jsiiProxy_RosGroupMetricRule) validateSetNamespaceParameters(val interf
 	return nil
 }
 
+func (j *jsiiProxy_RosGroupMetricRule) validateSetNoDataPolicyParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosGroupMetricRule) validateSetNoEffectiveIntervalParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosGroupMetricRule) validateSetOptionsParameters(val interface{}) error {
 	return nil
 }
 

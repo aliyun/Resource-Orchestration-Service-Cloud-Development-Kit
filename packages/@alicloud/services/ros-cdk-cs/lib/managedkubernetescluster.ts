@@ -33,6 +33,11 @@ export interface ManagedKubernetesClusterProps {
     readonly addons?: Array<RosManagedKubernetesCluster.AddonsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * Property autoMode: Whether to enable auto scaling.
+     */
+    readonly autoMode?: RosManagedKubernetesCluster.AutoModeProperty | ros.IResolvable;
+
+    /**
      * Property cloudMonitorFlags: Whether to install the cloud monitoring plugin:
      * true: indicates installation
      * false: Do not install
@@ -54,7 +59,7 @@ export interface ManagedKubernetesClusterProps {
     readonly containerCidr?: string | ros.IResolvable;
 
     /**
-     * Property controlPlaneLogComponents: List of target components for which logs need to be collected. Supports apiserver, kcm, scheduler, ccm and controlplane-events.
+     * Property controlPlaneLogComponents: List of target components for which logs need to be collected. Supports apiserver, kcm, scheduler, ccm, controlplane-events, ack-goatscaler, coredns, cluster-autoscaler, kuberay-operator, gatekepper, vk, istio, cluster-operator, application-controller.
      */
     readonly controlPlaneLogComponents?: Array<string | ros.IResolvable> | ros.IResolvable;
 
@@ -358,7 +363,7 @@ export interface IManagedKubernetesCluster extends ros.IResource {
     readonly attrWorkerRamRoleName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ManagedKubernetesCluster`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ManagedKubernetesCluster`The , which type creates ACK managed clusters.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosManagedKubernetesCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managedkubernetescluster
  */
@@ -439,37 +444,38 @@ export class ManagedKubernetesCluster extends ros.Resource implements IManagedKu
             endpointPublicAccess: props.endpointPublicAccess === undefined || props.endpointPublicAccess === null ? false : props.endpointPublicAccess,
             socEnabled: props.socEnabled,
             formatDisk: props.formatDisk,
-            platform: props.platform,
             resourceGroupId: props.resourceGroupId,
+            platform: props.platform,
             userData: props.userData,
             addons: props.addons,
+            autoMode: props.autoMode,
             ipStack: props.ipStack,
-            loadBalancerSpec: props.loadBalancerSpec,
             name: props.name,
             taint: props.taint,
-            isEnterpriseSecurityGroup: props.isEnterpriseSecurityGroup,
+            loadBalancerSpec: props.loadBalancerSpec,
             runtime: props.runtime,
+            isEnterpriseSecurityGroup: props.isEnterpriseSecurityGroup,
             controlPlaneLogComponents: props.controlPlaneLogComponents,
             cloudMonitorFlags: props.cloudMonitorFlags === undefined || props.cloudMonitorFlags === null ? false : props.cloudMonitorFlags,
             osType: props.osType,
             nodeNameMode: props.nodeNameMode,
-            rrsaConfig: props.rrsaConfig,
             securityHardeningOs: props.securityHardeningOs,
+            rrsaConfig: props.rrsaConfig,
             serviceCidr: props.serviceCidr === undefined || props.serviceCidr === null ? '172.19.0.0/20' : props.serviceCidr,
             podVswitchIds: props.podVswitchIds,
             zoneIds: props.zoneIds,
             proxyMode: props.proxyMode === undefined || props.proxyMode === null ? 'iptables' : props.proxyMode,
             tags: props.tags,
-            controlPlaneLogProject: props.controlPlaneLogProject,
             loginPassword: props.loginPassword,
+            controlPlaneLogProject: props.controlPlaneLogProject,
             kubernetesVersion: props.kubernetesVersion,
             containerCidr: props.containerCidr === undefined || props.containerCidr === null ? '172.16.0.0/16' : props.containerCidr,
-            deleteOptions: props.deleteOptions,
             keyPair: props.keyPair,
+            deleteOptions: props.deleteOptions,
             nodeCidrMask: props.nodeCidrMask,
             vSwitchIds: props.vSwitchIds,
-            timeoutMins: props.timeoutMins === undefined || props.timeoutMins === null ? 60 : props.timeoutMins,
             securityGroupId: props.securityGroupId,
+            timeoutMins: props.timeoutMins === undefined || props.timeoutMins === null ? 60 : props.timeoutMins,
             clusterSpec: props.clusterSpec,
             deletionProtection: props.deletionProtection,
             controlPlaneLogTtl: props.controlPlaneLogTtl,

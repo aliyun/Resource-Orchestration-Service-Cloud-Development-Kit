@@ -90,12 +90,12 @@ export class ApplicationScalingRule extends ros.Resource implements IApplication
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosApplicationScalingRule = new RosApplicationScalingRule(this, id,  {
-            scalingRuleMetric: props.scalingRuleMetric,
             scalingRuleTimer: props.scalingRuleTimer,
+            scalingRuleMetric: props.scalingRuleMetric,
             scalingRuleName: props.scalingRuleName,
-            scalingRuleEnable: props.scalingRuleEnable,
             appId: props.appId,
             minReadyInstances: props.minReadyInstances,
+            scalingRuleEnable: props.scalingRuleEnable,
             minReadyInstanceRatio: props.minReadyInstanceRatio,
             scalingRuleType: props.scalingRuleType,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

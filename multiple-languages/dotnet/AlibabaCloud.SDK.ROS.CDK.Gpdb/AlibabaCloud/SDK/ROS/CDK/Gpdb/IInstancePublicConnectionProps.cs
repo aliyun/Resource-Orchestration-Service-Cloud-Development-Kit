@@ -32,6 +32,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             get;
         }
 
+        /// <summary>Property addressType: Network type. Valid values:.</summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <description><strong>primary</strong>: Primary address.</description>
+        /// <description><strong>cluster</strong>: Cluster address, only multi-coordination node instances support creating cluster addresses.</description>
+        /// </list>
+        ///
+        ///     Default is primary address.
+        /// </remarks>
+        [JsiiProperty(name: "addressType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AddressType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `InstancePublicConnection`.</summary>
         /// <remarks>
         /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-instancepublicconnection
@@ -62,6 +81,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             public object Port
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property addressType: Network type. Valid values:.</summary>
+            /// <remarks>
+            /// <list type="bullet">
+            /// <description><strong>primary</strong>: Primary address.</description>
+            /// <description><strong>cluster</strong>: Cluster address, only multi-coordination node instances support creating cluster addresses.</description>
+            /// </list>
+            ///
+            ///     Default is primary address.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "addressType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AddressType
+            {
+                get => GetInstanceProperty<object?>();
             }
         }
     }

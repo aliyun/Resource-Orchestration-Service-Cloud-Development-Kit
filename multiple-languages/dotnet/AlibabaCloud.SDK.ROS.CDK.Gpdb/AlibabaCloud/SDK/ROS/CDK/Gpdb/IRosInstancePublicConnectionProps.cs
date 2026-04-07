@@ -38,6 +38,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             get;
         }
 
+        /// <remarks>
+        /// <strong>Property</strong>: addressType: Network type. Valid values:
+        ///
+        /// - **primary**: Primary address.
+        /// - **cluster**: Cluster address, only multi-coordination node instances support creating cluster addresses.
+        ///
+        /// > Default is primary address.
+        /// </remarks>
+        [JsiiProperty(name: "addressType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AddressType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `RosInstancePublicConnection`.</summary>
         /// <remarks>
         /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-instancepublicconnection
@@ -74,6 +92,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             public object Port
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: addressType: Network type. Valid values:
+            ///
+            /// - **primary**: Primary address.
+            /// - **cluster**: Cluster address, only multi-coordination node instances support creating cluster addresses.
+            ///
+            /// > Default is primary address.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "addressType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AddressType
+            {
+                get => GetInstanceProperty<object?>();
             }
         }
     }

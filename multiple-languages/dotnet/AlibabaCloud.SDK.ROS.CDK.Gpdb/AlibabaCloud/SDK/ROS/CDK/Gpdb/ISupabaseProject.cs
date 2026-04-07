@@ -8,9 +8,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
     [JsiiInterface(nativeType: typeof(ISupabaseProject), fullyQualifiedName: "@alicloud/ros-cdk-gpdb.ISupabaseProject")]
     public interface ISupabaseProject : AlibabaCloud.SDK.ROS.CDK.Core.IResource
     {
+        /// <summary>Attribute ApiKeys: API keys.</summary>
+        [JsiiProperty(name: "attrApiKeys", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrApiKeys
+        {
+            get;
+        }
+
+        /// <summary>Attribute PrivateConnectUrl: Private connection URL.</summary>
+        [JsiiProperty(name: "attrPrivateConnectUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrPrivateConnectUrl
+        {
+            get;
+        }
+
         /// <summary>Attribute ProjectId: Supabase instance ID.</summary>
         [JsiiProperty(name: "attrProjectId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AttrProjectId
+        {
+            get;
+        }
+
+        /// <summary>Attribute PublicConnectUrl: Public connection URL.</summary>
+        [JsiiProperty(name: "attrPublicConnectUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrPublicConnectUrl
         {
             get;
         }
@@ -29,9 +50,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             {
             }
 
+            /// <summary>Attribute ApiKeys: API keys.</summary>
+            [JsiiProperty(name: "attrApiKeys", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrApiKeys
+            {
+                get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Attribute PrivateConnectUrl: Private connection URL.</summary>
+            [JsiiProperty(name: "attrPrivateConnectUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrPrivateConnectUrl
+            {
+                get => GetInstanceProperty<object>()!;
+            }
+
             /// <summary>Attribute ProjectId: Supabase instance ID.</summary>
             [JsiiProperty(name: "attrProjectId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AttrProjectId
+            {
+                get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Attribute PublicConnectUrl: Public connection URL.</summary>
+            [JsiiProperty(name: "attrPublicConnectUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrPublicConnectUrl
             {
                 get => GetInstanceProperty<object>()!;
             }

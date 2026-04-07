@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.ess;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ESS::ServerGroupAttachment</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ESS::ServerGroupAttachment</code>, which is used to add one or more Server Load Balancer (SLB) server groups to a scaling group.
+ * <p>
+ * Supported SLB server groups include Application Load Balancer (ALB) server groups and Network Load Balancer (NLB) server groups.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:56.842Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:26.479Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosServerGroupAttachment")
 public class RosServerGroupAttachment extends com.aliyun.ros.cdk.core.RosResource {
 

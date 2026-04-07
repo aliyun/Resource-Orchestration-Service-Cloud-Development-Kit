@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.rocketmq.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::ROCKETMQ::Topics</code>.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::ROCKETMQ::Topics</code>, which is used to query topics on an ApsaraMQ for RocketMQ instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:59.928Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:29.606Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq.datasource.Topics")
 public class Topics extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.rocketmq.datasource.ITopics {
 

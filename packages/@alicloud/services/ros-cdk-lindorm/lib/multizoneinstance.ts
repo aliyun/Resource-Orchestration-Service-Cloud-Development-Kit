@@ -268,7 +268,7 @@ export interface IMultiZoneInstance extends ros.IResource {
     readonly attrJdbcUrlList: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::Lindorm::MultiZoneInstance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::Lindorm::MultiZoneInstance`, which is used to create a multi-zone Lindorm instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMultiZoneInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-lindorm-multizoneinstance
  */
@@ -314,8 +314,8 @@ export class MultiZoneInstance extends ros.Resource implements IMultiZoneInstanc
             solrNum: props.solrNum,
             solrSpec: props.solrSpec,
             coreSpec: props.coreSpec,
-            filestoreSpec: props.filestoreSpec,
             tsdbNum: props.tsdbNum,
+            filestoreSpec: props.filestoreSpec,
             arbiterZoneId: props.arbiterZoneId,
             streamSpec: props.streamSpec,
             primaryZoneId: props.primaryZoneId,
@@ -324,8 +324,8 @@ export class MultiZoneInstance extends ros.Resource implements IMultiZoneInstanc
             streamNum: props.streamNum,
             coldStorage: props.coldStorage,
             logSpec: props.logSpec,
-            diskCategory: props.diskCategory,
             period: props.period,
+            diskCategory: props.diskCategory,
             deletionProtection: props.deletionProtection,
             primaryVSwitchId: props.primaryVSwitchId,
             arbiterVSwitchId: props.arbiterVSwitchId,

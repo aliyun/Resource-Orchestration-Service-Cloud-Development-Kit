@@ -9,7 +9,9 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::Certificate`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::Certificate`, which is used to upload a certificate to a Server Load Balancer (SLB) instance.
+//
+// Server certificates and certificate authority (CA) certificates are supported.
 type RosCertificate interface {
 	alicloudroscdkcore.RosResource
 	AliCloudCertificateId() interface{}

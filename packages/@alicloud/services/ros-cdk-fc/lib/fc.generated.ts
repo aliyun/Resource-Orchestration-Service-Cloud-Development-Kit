@@ -98,7 +98,7 @@ function rosAliasPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Alias`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Alias`The , which type creates an alias for a service version in Function Compute.
  * @Note This class does not contain additional functions, so it is recommended to use the `Alias` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-alias
  */
@@ -267,7 +267,7 @@ function rosCustomDomainPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::CustomDomain`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::CustomDomain`, which is used to create a custom domain name.
  * @Note This class does not contain additional functions, so it is recommended to use the `CustomDomain` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-customdomain
  */
@@ -670,14 +670,13 @@ function RosFunctionPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('customContainerConfig', RosFunction_CustomContainerConfigPropertyValidator)(properties.customContainerConfig));
     errors.collect(ros.propertyValidator('code', RosFunction_CodePropertyValidator)(properties.code));
     errors.collect(ros.propertyValidator('asyncConfiguration', RosFunction_AsyncConfigurationPropertyValidator)(properties.asyncConfiguration));
-    errors.collect(ros.propertyValidator('caPort', ros.validateNumber)(properties.caPort));
     errors.collect(ros.propertyValidator('functionName', ros.requiredValidator)(properties.functionName));
     errors.collect(ros.propertyValidator('functionName', ros.validateString)(properties.functionName));
+    errors.collect(ros.propertyValidator('caPort', ros.validateNumber)(properties.caPort));
     errors.collect(ros.propertyValidator('runtime', ros.requiredValidator)(properties.runtime));
     errors.collect(ros.propertyValidator('runtime', ros.validateString)(properties.runtime));
     errors.collect(ros.propertyValidator('environmentVariables', ros.hashValidator(ros.validateAny))(properties.environmentVariables));
     errors.collect(ros.propertyValidator('customRuntimeConfig', RosFunction_CustomRuntimeConfigPropertyValidator)(properties.customRuntimeConfig));
-    errors.collect(ros.propertyValidator('initializationTimeout', ros.validateNumber)(properties.initializationTimeout));
     errors.collect(ros.propertyValidator('serviceName', ros.requiredValidator)(properties.serviceName));
     if(properties.serviceName && (Array.isArray(properties.serviceName) || (typeof properties.serviceName) === 'string')) {
         errors.collect(ros.propertyValidator('serviceName', ros.validateLength)({
@@ -688,7 +687,9 @@ function RosFunctionPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('serviceName', ros.validateString)(properties.serviceName));
     errors.collect(ros.propertyValidator('initializer', ros.validateString)(properties.initializer));
+    errors.collect(ros.propertyValidator('initializationTimeout', ros.validateNumber)(properties.initializationTimeout));
     errors.collect(ros.propertyValidator('gpuMemorySize', ros.validateNumber)(properties.gpuMemorySize));
+    errors.collect(ros.propertyValidator('customDns', RosFunction_CustomDNSPropertyValidator)(properties.customDns));
     if(properties.diskSize && (typeof properties.diskSize) !== 'object') {
         errors.collect(ros.propertyValidator('diskSize', ros.validateAllowedValues)({
           data: properties.diskSize,
@@ -696,7 +697,6 @@ function RosFunctionPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('diskSize', ros.validateNumber)(properties.diskSize));
-    errors.collect(ros.propertyValidator('customDns', RosFunction_CustomDNSPropertyValidator)(properties.customDns));
     if(properties.instanceConcurrency && (typeof properties.instanceConcurrency) !== 'object') {
         errors.collect(ros.propertyValidator('instanceConcurrency', ros.validateRange)({
             data: properties.instanceConcurrency,
@@ -765,7 +765,7 @@ function rosFunctionPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Function`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Function`, which is used to create a function. A function must belong to a service. All functions of a service share the same attributes as the service, such as the service authorization and log configurations.
  * @Note This class does not contain additional functions, so it is recommended to use the `Function` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-function
  */
@@ -1151,10 +1151,6 @@ export namespace RosFunction {
          */
         readonly args?: string | ros.IResolvable;
         /**
-         * @Property instanceId: The ID of the Container Registry Enterprise Edition instance. If you use an Enterprise Edition instance for the container image, you must add the instance ID. The default resolution IP address of the instance must be the IP address of the virtual private cloud (VPC) that the instance belongs. Alibaba Cloud DNS PrivateZone cannot be used for domain name resolution.
-         */
-        readonly instanceId?: string | ros.IResolvable;
-        /**
          * @Property command: Container start command. For example: ["\/code\/myserver"]
          */
         readonly command?: string | ros.IResolvable;
@@ -1164,6 +1160,10 @@ export namespace RosFunction {
      * None: Indicates that image acceleration is disabled.
          */
         readonly accelerationType?: string | ros.IResolvable;
+        /**
+         * @Property instanceId: The ID of the Container Registry Enterprise Edition instance. If you use an Enterprise Edition instance for the container image, you must add the instance ID. The default resolution IP address of the instance must be the IP address of the virtual private cloud (VPC) that the instance belongs. Alibaba Cloud DNS PrivateZone cannot be used for domain name resolution.
+         */
+        readonly instanceId?: string | ros.IResolvable;
         /**
          * @Property webServerMode: Specifies whether the web server mode is used for image running.
      * A value of true indicates that a web server is implemented in your container image to listen on ports and process requests.
@@ -1188,9 +1188,9 @@ function RosFunction_CustomContainerConfigPropertyValidator(properties: any): ro
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('args', ros.validateString)(properties.args));
-    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
     errors.collect(ros.propertyValidator('command', ros.validateString)(properties.command));
     errors.collect(ros.propertyValidator('accelerationType', ros.validateString)(properties.accelerationType));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
     errors.collect(ros.propertyValidator('webServerMode', ros.validateBoolean)(properties.webServerMode));
     errors.collect(ros.propertyValidator('image', ros.requiredValidator)(properties.image));
     errors.collect(ros.propertyValidator('image', ros.validateString)(properties.image));
@@ -1210,9 +1210,9 @@ function rosFunctionCustomContainerConfigPropertyToRosTemplate(properties: any):
     RosFunction_CustomContainerConfigPropertyValidator(properties).assertSuccess();
     return {
       'Args': ros.stringToRosTemplate(properties.args),
-      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
       'Command': ros.stringToRosTemplate(properties.command),
       'AccelerationType': ros.stringToRosTemplate(properties.accelerationType),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
       'WebServerMode': ros.booleanToRosTemplate(properties.webServerMode),
       'Image': ros.stringToRosTemplate(properties.image),
     };
@@ -1277,13 +1277,13 @@ export namespace RosFunction {
      */
     export interface CustomHealthCheckConfigProperty {
         /**
-         * @Property timeoutSeconds: The timeout period of health checks. Valid values: 1 to 3. Default value: 1.
-         */
-        readonly timeoutSeconds?: number | ros.IResolvable;
-        /**
          * @Property initialDelaySeconds: The delay between the container startup and the health check. Valid values: 0 to 120. Default value: 0.
          */
         readonly initialDelaySeconds?: number | ros.IResolvable;
+        /**
+         * @Property timeoutSeconds: The timeout period of health checks. Valid values: 1 to 3. Default value: 1.
+         */
+        readonly timeoutSeconds?: number | ros.IResolvable;
         /**
          * @Property httpGetUrl: The health check URL of the custom container. The content can be up to 2,048 characters in length.
          */
@@ -1312,14 +1312,6 @@ export namespace RosFunction {
 function RosFunction_CustomHealthCheckConfigPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    if(properties.timeoutSeconds && (typeof properties.timeoutSeconds) !== 'object') {
-        errors.collect(ros.propertyValidator('timeoutSeconds', ros.validateRange)({
-            data: properties.timeoutSeconds,
-            min: 1,
-            max: 3,
-          }));
-    }
-    errors.collect(ros.propertyValidator('timeoutSeconds', ros.validateNumber)(properties.timeoutSeconds));
     if(properties.initialDelaySeconds && (typeof properties.initialDelaySeconds) !== 'object') {
         errors.collect(ros.propertyValidator('initialDelaySeconds', ros.validateRange)({
             data: properties.initialDelaySeconds,
@@ -1328,6 +1320,14 @@ function RosFunction_CustomHealthCheckConfigPropertyValidator(properties: any): 
           }));
     }
     errors.collect(ros.propertyValidator('initialDelaySeconds', ros.validateNumber)(properties.initialDelaySeconds));
+    if(properties.timeoutSeconds && (typeof properties.timeoutSeconds) !== 'object') {
+        errors.collect(ros.propertyValidator('timeoutSeconds', ros.validateRange)({
+            data: properties.timeoutSeconds,
+            min: 1,
+            max: 3,
+          }));
+    }
+    errors.collect(ros.propertyValidator('timeoutSeconds', ros.validateNumber)(properties.timeoutSeconds));
     if(properties.httpGetUrl && (Array.isArray(properties.httpGetUrl) || (typeof properties.httpGetUrl) === 'string')) {
         errors.collect(ros.propertyValidator('httpGetUrl', ros.validateLength)({
             data: properties.httpGetUrl.length,
@@ -1375,8 +1375,8 @@ function rosFunctionCustomHealthCheckConfigPropertyToRosTemplate(properties: any
     if (!ros.canInspect(properties)) { return properties; }
     RosFunction_CustomHealthCheckConfigPropertyValidator(properties).assertSuccess();
     return {
-      'TimeoutSeconds': ros.numberToRosTemplate(properties.timeoutSeconds),
       'InitialDelaySeconds': ros.numberToRosTemplate(properties.initialDelaySeconds),
+      'TimeoutSeconds': ros.numberToRosTemplate(properties.timeoutSeconds),
       'HttpGetUrl': ros.stringToRosTemplate(properties.httpGetUrl),
       'PeriodSeconds': ros.numberToRosTemplate(properties.periodSeconds),
       'FailureThreshold': ros.numberToRosTemplate(properties.failureThreshold),
@@ -1780,7 +1780,7 @@ function rosFunctionInvokerPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::FunctionInvoker`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::FunctionInvoker`, which is used to invoke a function.
  * @Note This class does not contain additional functions, so it is recommended to use the `FunctionInvoker` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-functioninvoker
  */
@@ -2009,6 +2009,7 @@ export interface RosLayerProps {
 function RosLayerPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('compatibleRuntime', ros.requiredValidator)(properties.compatibleRuntime));
     if(properties.compatibleRuntime && (Array.isArray(properties.compatibleRuntime) || (typeof properties.compatibleRuntime) === 'string')) {
         errors.collect(ros.propertyValidator('compatibleRuntime', ros.validateLength)({
@@ -2018,7 +2019,6 @@ function RosLayerPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('compatibleRuntime', ros.listValidator(ros.validateString))(properties.compatibleRuntime));
-    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('layerName', ros.requiredValidator)(properties.layerName));
     if(properties.layerName && (Array.isArray(properties.layerName) || (typeof properties.layerName) === 'string')) {
         errors.collect(ros.propertyValidator('layerName', ros.validateLength)({
@@ -2061,7 +2061,7 @@ function rosLayerPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Layer`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Layer`, which is used to release a layer version.
  * @Note This class does not contain additional functions, so it is recommended to use the `Layer` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-layer
  */
@@ -2276,7 +2276,7 @@ function rosProvisionConfigPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::ProvisionConfig`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::ProvisionConfig`, which is used to create provisioned instances in Function Compute.
  * @Note This class does not contain additional functions, so it is recommended to use the `ProvisionConfig` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-provisionconfig
  */
@@ -2451,8 +2451,6 @@ function RosServicePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('internetAccess', ros.validateBoolean)(properties.internetAccess));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
-    errors.collect(ros.propertyValidator('tracingConfig', RosService_TracingConfigPropertyValidator)(properties.tracingConfig));
-    errors.collect(ros.propertyValidator('vpcConfig', RosService_VpcConfigPropertyValidator)(properties.vpcConfig));
     errors.collect(ros.propertyValidator('serviceName', ros.requiredValidator)(properties.serviceName));
     if(properties.serviceName && (Array.isArray(properties.serviceName) || (typeof properties.serviceName) === 'string')) {
         errors.collect(ros.propertyValidator('serviceName', ros.validateLength)({
@@ -2462,6 +2460,8 @@ function RosServicePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('serviceName', ros.validateString)(properties.serviceName));
+    errors.collect(ros.propertyValidator('vpcConfig', RosService_VpcConfigPropertyValidator)(properties.vpcConfig));
+    errors.collect(ros.propertyValidator('tracingConfig', RosService_TracingConfigPropertyValidator)(properties.tracingConfig));
     errors.collect(ros.propertyValidator('ossMountConfig', RosService_OssMountConfigPropertyValidator)(properties.ossMountConfig));
     if(properties.vpcBindings && (Array.isArray(properties.vpcBindings) || (typeof properties.vpcBindings) === 'string')) {
         errors.collect(ros.propertyValidator('vpcBindings', ros.validateLength)({
@@ -2471,6 +2471,7 @@ function RosServicePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('vpcBindings', ros.listValidator(ros.validateString))(properties.vpcBindings));
+    errors.collect(ros.propertyValidator('nasConfig', RosService_NasConfigPropertyValidator)(properties.nasConfig));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -2479,7 +2480,6 @@ function RosServicePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosService_TagsPropertyValidator))(properties.tags));
-    errors.collect(ros.propertyValidator('nasConfig', RosService_NasConfigPropertyValidator)(properties.nasConfig));
     errors.collect(ros.propertyValidator('logConfig', RosService_LogConfigPropertyValidator)(properties.logConfig));
     return errors.wrap('supplied properties not correct for "RosServiceProps"');
 }
@@ -2514,7 +2514,7 @@ function rosServicePropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Service`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Service`, which is used to create a service in Function Compute.
  * @Note This class does not contain additional functions, so it is recommended to use the `Service` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-service
  */
@@ -3224,9 +3224,9 @@ function RosTriggerPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('serviceName', ros.validateString)(properties.serviceName));
+    errors.collect(ros.propertyValidator('invocationRole', ros.validateString)(properties.invocationRole));
     errors.collect(ros.propertyValidator('triggerConfig', ros.requiredValidator)(properties.triggerConfig));
     errors.collect(ros.propertyValidator('triggerConfig', ros.hashValidator(ros.validateAny))(properties.triggerConfig));
-    errors.collect(ros.propertyValidator('invocationRole', ros.validateString)(properties.invocationRole));
     errors.collect(ros.propertyValidator('qualifier', ros.validateString)(properties.qualifier));
     return errors.wrap('supplied properties not correct for "RosTriggerProps"');
 }
@@ -3257,7 +3257,7 @@ function rosTriggerPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Trigger`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Trigger`, which is used to trigger the invocation of a function.
  * @Note This class does not contain additional functions, so it is recommended to use the `Trigger` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-trigger
  */
@@ -3448,7 +3448,7 @@ function rosVersionPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Version`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Version`, which is used to release a Version.
  * @Note This class does not contain additional functions, so it is recommended to use the `Version` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-version
  */

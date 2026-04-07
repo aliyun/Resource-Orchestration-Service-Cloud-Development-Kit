@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cms;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::ResourceMetricRule</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::ResourceMetricRule</code>, which is used to create a threshold-triggered alert rule for a metric of a resource.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.726Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:23.078Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.ResourceMetricRule")
 public class ResourceMetricRule extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cms.IResourceMetricRule {
 
@@ -143,27 +143,6 @@ public class ResourceMetricRule extends com.aliyun.ros.cdk.core.Resource impleme
          */
         public Builder contactGroups(final java.util.List<? extends java.lang.Object> contactGroups) {
             this.props.contactGroups(contactGroups);
-            return this;
-        }
-
-        /**
-         * Property escalations: You must select at least one of the Critical, Warn, and Info alert levels.
-         * <p>
-         * @return {@code this}
-         * @param escalations Property escalations: You must select at least one of the Critical, Warn, and Info alert levels. This parameter is required.
-         */
-        public Builder escalations(final com.aliyun.ros.cdk.core.IResolvable escalations) {
-            this.props.escalations(escalations);
-            return this;
-        }
-        /**
-         * Property escalations: You must select at least one of the Critical, Warn, and Info alert levels.
-         * <p>
-         * @return {@code this}
-         * @param escalations Property escalations: You must select at least one of the Critical, Warn, and Info alert levels. This parameter is required.
-         */
-        public Builder escalations(final com.aliyun.ros.cdk.cms.RosResourceMetricRule.EscalationsProperty escalations) {
-            this.props.escalations(escalations);
             return this;
         }
 
@@ -337,6 +316,27 @@ public class ResourceMetricRule extends com.aliyun.ros.cdk.core.Resource impleme
          */
         public Builder emailSubject(final com.aliyun.ros.cdk.core.IResolvable emailSubject) {
             this.props.emailSubject(emailSubject);
+            return this;
+        }
+
+        /**
+         * Property escalations: You must select at least one of the Critical, Warn, and Info alert levels.
+         * <p>
+         * @return {@code this}
+         * @param escalations Property escalations: You must select at least one of the Critical, Warn, and Info alert levels. This parameter is required.
+         */
+        public Builder escalations(final com.aliyun.ros.cdk.core.IResolvable escalations) {
+            this.props.escalations(escalations);
+            return this;
+        }
+        /**
+         * Property escalations: You must select at least one of the Critical, Warn, and Info alert levels.
+         * <p>
+         * @return {@code this}
+         * @param escalations Property escalations: You must select at least one of the Critical, Warn, and Info alert levels. This parameter is required.
+         */
+        public Builder escalations(final com.aliyun.ros.cdk.cms.RosResourceMetricRule.EscalationsProperty escalations) {
+            this.props.escalations(escalations);
             return this;
         }
 

@@ -77,6 +77,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: accessDomain: The domain name of the backend for FULLNAT address translation.
+        /// </remarks>
+        [JsiiProperty(name: "accessDomain", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AccessDomain
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: fullNatEntryDescription: The description of the FULLNAT entry.
         /// This parameter is optional. If you enter a description, the description must be 2 to 256 characters in length, and cannot start with http:\/\/ or https:\/\/.
         /// </remarks>
@@ -177,6 +190,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             public object NetworkInterfaceId
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: accessDomain: The domain name of the backend for FULLNAT address translation.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "accessDomain", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AccessDomain
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>

@@ -77,7 +77,7 @@ function rosCenBandwidthPackagesPropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CEN::CenBandwidthPackages`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CEN::CenBandwidthPackages`, which is used to query the information about Cloud Enterprise Network (CEN) bandwidth plans within the logon account.
  * @Note This class does not contain additional functions, so it is recommended to use the `CenBandwidthPackages` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-cenbandwidthpackages
  */
@@ -263,7 +263,7 @@ function rosCenInstancesPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CEN::CenInstances`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CEN::CenInstances`, which is used to query the information about Cloud Enterprise Network (CEN) instances within the current Alibaba Cloud account.
  * @Note This class does not contain additional functions, so it is recommended to use the `CenInstances` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-ceninstances
  */
@@ -470,7 +470,7 @@ function rosCenRouteMapsPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CEN::CenRouteMaps`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CEN::CenRouteMaps`, which is used to query the information about routing policies.
  * @Note This class does not contain additional functions, so it is recommended to use the `CenRouteMaps` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-cenroutemaps
  */
@@ -559,6 +559,436 @@ export class RosCenRouteMaps extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosCenRouteMapsPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+/**
+ * Properties for defining a `RosTransitRouterAttachments`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-transitrouterattachments
+ */
+export interface RosTransitRouterAttachmentsProps {
+
+    /**
+     * @Property cenId: The ID of the CEN instance.
+     */
+    readonly cenId?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
+     * @Property regionId: The ID of the region where the transit router is deployed.
+     */
+    readonly regionId?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceTypes: Specify the type of the network instance associated with the connection to be queried. Valid values:
+     * ** VPC: Virtual Private Cloud instance.
+     * ** CCN: Cloud Connect Network instance.
+     * ** VBR: Virtual Border Router instance.
+     * ** TR: Transit Router instance, indicating that cross-region connection information will be queried.
+     */
+    readonly resourceTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property transitRouterAttachmentId: The ID of the peer connection.
+     */
+    readonly transitRouterAttachmentId?: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterId: The ID of the enterprise edition transit router.
+     */
+    readonly transitRouterId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosTransitRouterAttachmentsProps`
+ *
+ * @param properties - the TypeScript properties of a `RosTransitRouterAttachmentsProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosTransitRouterAttachmentsPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('transitRouterAttachmentId', ros.validateString)(properties.transitRouterAttachmentId));
+    if(properties.resourceTypes && (Array.isArray(properties.resourceTypes) || (typeof properties.resourceTypes) === 'string')) {
+        errors.collect(ros.propertyValidator('resourceTypes', ros.validateLength)({
+            data: properties.resourceTypes.length,
+            min: undefined,
+            max: 16,
+          }));
+    }
+    errors.collect(ros.propertyValidator('resourceTypes', ros.listValidator(ros.validateString))(properties.resourceTypes));
+    errors.collect(ros.propertyValidator('cenId', ros.validateString)(properties.cenId));
+    errors.collect(ros.propertyValidator('regionId', ros.validateString)(properties.regionId));
+    errors.collect(ros.propertyValidator('transitRouterId', ros.validateString)(properties.transitRouterId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
+    return errors.wrap('supplied properties not correct for "RosTransitRouterAttachmentsProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::CEN::TransitRouterAttachments` resource
+ *
+ * @param properties - the TypeScript properties of a `RosTransitRouterAttachmentsProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::CEN::TransitRouterAttachments` resource.
+ */
+// @ts-ignore TS6133
+function rosTransitRouterAttachmentsPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosTransitRouterAttachmentsPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'CenId': ros.stringToRosTemplate(properties.cenId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'RegionId': ros.stringToRosTemplate(properties.regionId),
+      'ResourceTypes': ros.listMapper(ros.stringToRosTemplate)(properties.resourceTypes),
+      'TransitRouterAttachmentId': ros.stringToRosTemplate(properties.transitRouterAttachmentId),
+      'TransitRouterId': ros.stringToRosTemplate(properties.transitRouterId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CEN::TransitRouterAttachments`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterAttachments` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-transitrouterattachments
+ */
+export class RosTransitRouterAttachments extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::CEN::TransitRouterAttachments";
+
+    /**
+     * @Attribute TransitRouterAttachmentIds: The list of The TransitRouterAttachment IDs.
+     */
+    public readonly attrTransitRouterAttachmentIds: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterAttachments: The information about TransitRouterAttachments.
+     */
+    public readonly attrTransitRouterAttachments: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property cenId: The ID of the CEN instance.
+     */
+    public cenId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property regionId: The ID of the region where the transit router is deployed.
+     */
+    public regionId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceTypes: Specify the type of the network instance associated with the connection to be queried. Valid values:
+     * ** VPC: Virtual Private Cloud instance.
+     * ** CCN: Cloud Connect Network instance.
+     * ** VBR: Virtual Border Router instance.
+     * ** TR: Transit Router instance, indicating that cross-region connection information will be queried.
+     */
+    public resourceTypes: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property transitRouterAttachmentId: The ID of the peer connection.
+     */
+    public transitRouterAttachmentId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property transitRouterId: The ID of the enterprise edition transit router.
+     */
+    public transitRouterId: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosTransitRouterAttachmentsProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosTransitRouterAttachments.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrTransitRouterAttachmentIds = this.getAtt('TransitRouterAttachmentIds');
+        this.attrTransitRouterAttachments = this.getAtt('TransitRouterAttachments');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.cenId = props.cenId;
+        this.refreshOptions = props.refreshOptions;
+        this.regionId = props.regionId;
+        this.resourceTypes = props.resourceTypes;
+        this.transitRouterAttachmentId = props.transitRouterAttachmentId;
+        this.transitRouterId = props.transitRouterId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            cenId: this.cenId,
+            refreshOptions: this.refreshOptions,
+            regionId: this.regionId,
+            resourceTypes: this.resourceTypes,
+            transitRouterAttachmentId: this.transitRouterAttachmentId,
+            transitRouterId: this.transitRouterId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosTransitRouterAttachmentsPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosTransitRouterPeerAttachments`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-transitrouterpeerattachments
+ */
+export interface RosTransitRouterPeerAttachmentsProps {
+
+    /**
+     * @Property cenId: The ID of the CEN instance.
+     */
+    readonly cenId?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
+     * @Property regionId: The ID of the region where the transit router is deployed.
+     */
+    readonly regionId?: string | ros.IResolvable;
+
+    /**
+     * @Property tag: Tags of cen transit router peer attachments..
+     */
+    readonly tag?: Array<ros.RosTag | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property transitRouterAttachmentId: The ID of the peer connection.
+     */
+    readonly transitRouterAttachmentId?: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterId: The ID of the enterprise edition transit router.
+     */
+    readonly transitRouterId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosTransitRouterPeerAttachmentsProps`
+ *
+ * @param properties - the TypeScript properties of a `RosTransitRouterPeerAttachmentsProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosTransitRouterPeerAttachmentsPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('transitRouterAttachmentId', ros.validateString)(properties.transitRouterAttachmentId));
+    errors.collect(ros.propertyValidator('cenId', ros.validateString)(properties.cenId));
+    errors.collect(ros.propertyValidator('regionId', ros.validateString)(properties.regionId));
+    if(properties.tag && (Array.isArray(properties.tag) || (typeof properties.tag) === 'string')) {
+        errors.collect(ros.propertyValidator('tag', ros.validateLength)({
+            data: properties.tag.length,
+            min: undefined,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tag', ros.listValidator(ros.validateRosTag))(properties.tag));
+    errors.collect(ros.propertyValidator('transitRouterId', ros.validateString)(properties.transitRouterId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
+    return errors.wrap('supplied properties not correct for "RosTransitRouterPeerAttachmentsProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::CEN::TransitRouterPeerAttachments` resource
+ *
+ * @param properties - the TypeScript properties of a `RosTransitRouterPeerAttachmentsProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::CEN::TransitRouterPeerAttachments` resource.
+ */
+// @ts-ignore TS6133
+function rosTransitRouterPeerAttachmentsPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosTransitRouterPeerAttachmentsPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'CenId': ros.stringToRosTemplate(properties.cenId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'RegionId': ros.stringToRosTemplate(properties.regionId),
+      'Tag': ros.listMapper(ros.rosTagToRosTemplate)(properties.tag),
+      'TransitRouterAttachmentId': ros.stringToRosTemplate(properties.transitRouterAttachmentId),
+      'TransitRouterId': ros.stringToRosTemplate(properties.transitRouterId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CEN::TransitRouterPeerAttachments`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterPeerAttachments` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-transitrouterpeerattachments
+ */
+export class RosTransitRouterPeerAttachments extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::CEN::TransitRouterPeerAttachments";
+
+    /**
+     * @Attribute TransitRouterPeerAttachmentIds: The list of The TransitRouterPeerAttachment IDs.
+     */
+    public readonly attrTransitRouterPeerAttachmentIds: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterPeerAttachments: The information about TransitRouterPeerAttachments.
+     */
+    public readonly attrTransitRouterPeerAttachments: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property cenId: The ID of the CEN instance.
+     */
+    public cenId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property regionId: The ID of the region where the transit router is deployed.
+     */
+    public regionId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tag: Tags of cen transit router peer attachments..
+     */
+    public tag: Array<ros.RosTag | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property transitRouterAttachmentId: The ID of the peer connection.
+     */
+    public transitRouterAttachmentId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property transitRouterId: The ID of the enterprise edition transit router.
+     */
+    public transitRouterId: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosTransitRouterPeerAttachmentsProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosTransitRouterPeerAttachments.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrTransitRouterPeerAttachmentIds = this.getAtt('TransitRouterPeerAttachmentIds');
+        this.attrTransitRouterPeerAttachments = this.getAtt('TransitRouterPeerAttachments');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.cenId = props.cenId;
+        this.refreshOptions = props.refreshOptions;
+        this.regionId = props.regionId;
+        this.tag = props.tag;
+        this.transitRouterAttachmentId = props.transitRouterAttachmentId;
+        this.transitRouterId = props.transitRouterId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            cenId: this.cenId,
+            refreshOptions: this.refreshOptions,
+            regionId: this.regionId,
+            tag: this.tag,
+            transitRouterAttachmentId: this.transitRouterAttachmentId,
+            transitRouterId: this.transitRouterId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosTransitRouterPeerAttachmentsPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosTransitRouterPeerAttachments {
+    /**
+     * @stability external
+     */
+    export interface TagProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosTransitRouterPeerAttachments_TagPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::CEN::TransitRouterPeerAttachments.Tag` resource
+ *
+ * @param properties - the TypeScript properties of a `TagProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::CEN::TransitRouterPeerAttachments.Tag` resource.
+ */
+// @ts-ignore TS6133
+function rosTransitRouterPeerAttachmentsTagPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosTransitRouterPeerAttachments_TagPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -673,7 +1103,7 @@ function rosTransitRouterRouteTablesPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CEN::TransitRouterRouteTables`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CEN::TransitRouterRouteTables`, which is used to query the information about route tables of an Enterprise Edition transit router.
  * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterRouteTables` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-transitrouterroutetables
  */
@@ -849,7 +1279,7 @@ function rosTransitRoutersPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CEN::TransitRouters`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CEN::TransitRouters`, which is used to query the information about transit routers of a Cloud Enterprise Network (CEN) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouters` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-transitrouters
  */

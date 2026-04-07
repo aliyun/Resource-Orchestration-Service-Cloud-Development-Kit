@@ -3,6 +3,181 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosConsumerChannel`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-consumerchannel
+ */
+export interface RosConsumerChannelProps {
+
+    /**
+     * @Property consumerGroupName: Consumer group name, up to 128 characters.
+     */
+    readonly consumerGroupName: string | ros.IResolvable;
+
+    /**
+     * @Property consumerGroupPassword: Consumer group password, composed of uppercase letters, lowercase letters, numbers, and special characters (at least two types), 8-32 characters long.
+     */
+    readonly consumerGroupPassword: string | ros.IResolvable;
+
+    /**
+     * @Property consumerGroupUserName: Username, composed of uppercase letters, lowercase letters, numbers, and underscores, up to 16 characters.
+     */
+    readonly consumerGroupUserName: string | ros.IResolvable;
+
+    /**
+     * @Property dtsInstanceId: DTS subscription instance ID. Either DtsInstanceId or DtsJobId must be provided.
+     */
+    readonly dtsInstanceId?: string | ros.IResolvable;
+
+    /**
+     * @Property dtsJobId: DTS subscription job ID. Either DtsInstanceId or DtsJobId must be provided.
+     */
+    readonly dtsJobId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosConsumerChannelProps`
+ *
+ * @param properties - the TypeScript properties of a `RosConsumerChannelProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosConsumerChannelPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('consumerGroupPassword', ros.requiredValidator)(properties.consumerGroupPassword));
+    errors.collect(ros.propertyValidator('consumerGroupPassword', ros.validateString)(properties.consumerGroupPassword));
+    errors.collect(ros.propertyValidator('dtsJobId', ros.validateString)(properties.dtsJobId));
+    errors.collect(ros.propertyValidator('consumerGroupUserName', ros.requiredValidator)(properties.consumerGroupUserName));
+    errors.collect(ros.propertyValidator('consumerGroupUserName', ros.validateString)(properties.consumerGroupUserName));
+    errors.collect(ros.propertyValidator('consumerGroupName', ros.requiredValidator)(properties.consumerGroupName));
+    errors.collect(ros.propertyValidator('consumerGroupName', ros.validateString)(properties.consumerGroupName));
+    errors.collect(ros.propertyValidator('dtsInstanceId', ros.validateString)(properties.dtsInstanceId));
+    return errors.wrap('supplied properties not correct for "RosConsumerChannelProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::ConsumerChannel` resource
+ *
+ * @param properties - the TypeScript properties of a `RosConsumerChannelProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::ConsumerChannel` resource.
+ */
+// @ts-ignore TS6133
+function rosConsumerChannelPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosConsumerChannelPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ConsumerGroupName': ros.stringToRosTemplate(properties.consumerGroupName),
+      'ConsumerGroupPassword': ros.stringToRosTemplate(properties.consumerGroupPassword),
+      'ConsumerGroupUserName': ros.stringToRosTemplate(properties.consumerGroupUserName),
+      'DtsInstanceId': ros.stringToRosTemplate(properties.dtsInstanceId),
+      'DtsJobId': ros.stringToRosTemplate(properties.dtsJobId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::ConsumerChannel`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ConsumerChannel` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-consumerchannel
+ */
+export class RosConsumerChannel extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DTS::ConsumerChannel";
+
+    /**
+     * @Attribute ConsumerGroupId: Consumer group ID
+     */
+    public readonly attrConsumerGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute ConsumerGroupName: Consumer group name
+     */
+    public readonly attrConsumerGroupName: ros.IResolvable;
+
+    /**
+     * @Attribute ConsumerGroupUserName: Consumer group username
+     */
+    public readonly attrConsumerGroupUserName: ros.IResolvable;
+
+    /**
+     * @Attribute DtsInstanceId: DTS instance ID
+     */
+    public readonly attrDtsInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute DtsJobId: DTS job ID
+     */
+    public readonly attrDtsJobId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property consumerGroupName: Consumer group name, up to 128 characters.
+     */
+    public consumerGroupName: string | ros.IResolvable;
+
+    /**
+     * @Property consumerGroupPassword: Consumer group password, composed of uppercase letters, lowercase letters, numbers, and special characters (at least two types), 8-32 characters long.
+     */
+    public consumerGroupPassword: string | ros.IResolvable;
+
+    /**
+     * @Property consumerGroupUserName: Username, composed of uppercase letters, lowercase letters, numbers, and underscores, up to 16 characters.
+     */
+    public consumerGroupUserName: string | ros.IResolvable;
+
+    /**
+     * @Property dtsInstanceId: DTS subscription instance ID. Either DtsInstanceId or DtsJobId must be provided.
+     */
+    public dtsInstanceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property dtsJobId: DTS subscription job ID. Either DtsInstanceId or DtsJobId must be provided.
+     */
+    public dtsJobId: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosConsumerChannelProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosConsumerChannel.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrConsumerGroupId = this.getAtt('ConsumerGroupId');
+        this.attrConsumerGroupName = this.getAtt('ConsumerGroupName');
+        this.attrConsumerGroupUserName = this.getAtt('ConsumerGroupUserName');
+        this.attrDtsInstanceId = this.getAtt('DtsInstanceId');
+        this.attrDtsJobId = this.getAtt('DtsJobId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.consumerGroupName = props.consumerGroupName;
+        this.consumerGroupPassword = props.consumerGroupPassword;
+        this.consumerGroupUserName = props.consumerGroupUserName;
+        this.dtsInstanceId = props.dtsInstanceId;
+        this.dtsJobId = props.dtsJobId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            consumerGroupName: this.consumerGroupName,
+            consumerGroupPassword: this.consumerGroupPassword,
+            consumerGroupUserName: this.consumerGroupUserName,
+            dtsInstanceId: this.dtsInstanceId,
+            dtsJobId: this.dtsJobId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosConsumerChannelPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosConsumerGroup`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-consumergroup
  */
@@ -72,7 +247,7 @@ function rosConsumerGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::ConsumerGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::ConsumerGroup`, which is used to create a consumer group for a change tracking instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `ConsumerGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-consumergroup
  */
@@ -252,6 +427,11 @@ export interface RosInstanceProps {
     readonly feeType?: string | ros.IResolvable;
 
     /**
+     * @Property insightModule: Whether to enable the insight module.
+     */
+    readonly insightModule?: boolean | ros.IResolvable;
+
+    /**
      * @Property jobId: The ID of the task.
      * **Note**: If this parameter is specified, you do not need to specify the SourceRegion, DestinationRegion, SourceEndpointEngineName, or DestinationEndpointEngineName parameter. Even if these parameters are specified, the value of the JobId parameter takes precedence.
      */
@@ -338,8 +518,8 @@ export interface RosInstanceProps {
 function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('feeType', ros.validateString)(properties.feeType));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('computeUnit', ros.validateNumber)(properties.computeUnit));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
@@ -367,8 +547,8 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
     errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
-    errors.collect(ros.propertyValidator('destinationEndpointEngineName', ros.validateString)(properties.destinationEndpointEngineName));
     errors.collect(ros.propertyValidator('sourceRegion', ros.validateString)(properties.sourceRegion));
+    errors.collect(ros.propertyValidator('destinationEndpointEngineName', ros.validateString)(properties.destinationEndpointEngineName));
     if(properties.minDu && (typeof properties.minDu) !== 'object') {
         errors.collect(ros.propertyValidator('minDu', ros.validateAllowedValues)({
           data: properties.minDu,
@@ -393,6 +573,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
     errors.collect(ros.propertyValidator('databaseCount', ros.validateNumber)(properties.databaseCount));
+    errors.collect(ros.propertyValidator('insightModule', ros.validateBoolean)(properties.insightModule));
     if(properties.usedTime && (typeof properties.usedTime) !== 'object') {
         errors.collect(ros.propertyValidator('usedTime', ros.validateAllowedValues)({
           data: properties.usedTime,
@@ -444,6 +625,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       'DestinationRegion': ros.stringToRosTemplate(properties.destinationRegion),
       'Du': ros.numberToRosTemplate(properties.du),
       'FeeType': ros.stringToRosTemplate(properties.feeType),
+      'InsightModule': ros.booleanToRosTemplate(properties.insightModule),
       'JobId': ros.stringToRosTemplate(properties.jobId),
       'MaxDu': ros.numberToRosTemplate(properties.maxDu),
       'MinDu': ros.numberToRosTemplate(properties.minDu),
@@ -457,7 +639,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::Instance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::Instance`Use the , which resource to create a new DTS instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-instance
  */
@@ -574,6 +756,11 @@ export class RosInstance extends ros.RosResource {
     public feeType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property insightModule: Whether to enable the insight module.
+     */
+    public insightModule: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property jobId: The ID of the task.
      * **Note**: If this parameter is specified, you do not need to specify the SourceRegion, DestinationRegion, SourceEndpointEngineName, or DestinationEndpointEngineName parameter. Even if these parameters are specified, the value of the JobId parameter takes precedence.
      */
@@ -671,6 +858,7 @@ export class RosInstance extends ros.RosResource {
         this.destinationRegion = props.destinationRegion;
         this.du = props.du;
         this.feeType = props.feeType;
+        this.insightModule = props.insightModule;
         this.jobId = props.jobId;
         this.maxDu = props.maxDu;
         this.minDu = props.minDu;
@@ -696,6 +884,7 @@ export class RosInstance extends ros.RosResource {
             destinationRegion: this.destinationRegion,
             du: this.du,
             feeType: this.feeType,
+            insightModule: this.insightModule,
             jobId: this.jobId,
             maxDu: this.maxDu,
             minDu: this.minDu,
@@ -899,9 +1088,9 @@ function RosMigrationJob2PropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('dbList', ros.requiredValidator)(properties.dbList));
     errors.collect(ros.propertyValidator('dbList', ros.hashValidator(ros.validateAny))(properties.dbList));
     errors.collect(ros.propertyValidator('fileOssUrl', ros.validateString)(properties.fileOssUrl));
-    errors.collect(ros.propertyValidator('dtsJobId', ros.validateString)(properties.dtsJobId));
     errors.collect(ros.propertyValidator('dataInitialization', ros.requiredValidator)(properties.dataInitialization));
     errors.collect(ros.propertyValidator('dataInitialization', ros.validateBoolean)(properties.dataInitialization));
+    errors.collect(ros.propertyValidator('dtsJobId', ros.validateString)(properties.dtsJobId));
     errors.collect(ros.propertyValidator('errorPhone', ros.validateString)(properties.errorPhone));
     errors.collect(ros.propertyValidator('destSecondaryVswId', ros.validateString)(properties.destSecondaryVswId));
     if(properties.maxDu && (typeof properties.maxDu) !== 'object') {
@@ -925,8 +1114,8 @@ function RosMigrationJob2PropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('dataCheckConfigure', RosMigrationJob2_DataCheckConfigurePropertyValidator)(properties.dataCheckConfigure));
     errors.collect(ros.propertyValidator('dtsBisLabel', ros.validateString)(properties.dtsBisLabel));
     errors.collect(ros.propertyValidator('checkpoint', ros.validateString)(properties.checkpoint));
-    errors.collect(ros.propertyValidator('disasterRecoveryJob', ros.validateBoolean)(properties.disasterRecoveryJob));
     errors.collect(ros.propertyValidator('delayNotice', ros.validateBoolean)(properties.delayNotice));
+    errors.collect(ros.propertyValidator('disasterRecoveryJob', ros.validateBoolean)(properties.disasterRecoveryJob));
     errors.collect(ros.propertyValidator('destinationEndpoint', ros.requiredValidator)(properties.destinationEndpoint));
     errors.collect(ros.propertyValidator('destinationEndpoint', RosMigrationJob2_DestinationEndpointPropertyValidator)(properties.destinationEndpoint));
     errors.collect(ros.propertyValidator('sourceEndpoint', ros.requiredValidator)(properties.sourceEndpoint));
@@ -983,7 +1172,7 @@ function rosMigrationJob2PropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::MigrationJob2`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::MigrationJob2`, which is used to purchase a data migration instance and configure a data migration task of the new version.
  * @Note This class does not contain additional functions, so it is recommended to use the `MigrationJob2` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-migrationjob2
  */
@@ -1262,11 +1451,6 @@ export namespace RosMigrationJob2 {
          */
         readonly incrementalCheckDelayNotice?: boolean | ros.IResolvable;
         /**
-         * @Property incrementalCheckDelayNoticeValue: The alert threshold for the data latency of the incremental data verification task. Unit: seconds.
-     * **Note**: This parameter is required if the **incrementalCheckDelayNotice** parameter is set to **true**.
-         */
-        readonly incrementalCheckDelayNoticeValue?: number | ros.IResolvable;
-        /**
          * @Property incrementalCheckDelayNoticePeriod: The statistical period of an alert on the data latency of the incremental data verification task. Valid values:
      * - **1**: 1 minute
      * - **2**: 5 minutes
@@ -1275,6 +1459,11 @@ export namespace RosMigrationJob2 {
      * **Note**: This parameter is required if the **incrementalCheckDelayNotice** parameter is set to **true**.
          */
         readonly incrementalCheckDelayNoticePeriod?: number | ros.IResolvable;
+        /**
+         * @Property incrementalCheckDelayNoticeValue: The alert threshold for the data latency of the incremental data verification task. Unit: seconds.
+     * **Note**: This parameter is required if the **incrementalCheckDelayNotice** parameter is set to **true**.
+         */
+        readonly incrementalCheckDelayNoticeValue?: number | ros.IResolvable;
         /**
          * @Property dataCheckDbList: The objects whose data is to be verified. The value must be a JSON string.
          */
@@ -1292,14 +1481,14 @@ export namespace RosMigrationJob2 {
          */
         readonly fullCheckRatio?: number | ros.IResolvable;
         /**
-         * @Property checkMaximumHour: The timeout period of the full data verification task. Valid values: integers from 1 to 72. Countdown begins the moment the full data verification task is started. If the task is not complete within the specified timeout period, the task is forcibly stopped.
-         */
-        readonly checkMaximumHour?: number | ros.IResolvable;
-        /**
          * @Property fullCheckFixData: Specifies whether to replace the inconsistent data. Valid values: **true** and **false**. Default value: false.
      * **Note**: For example, you set this parameter to true. If the destination database has data that is inconsistent with the data in the source database, the data values of the destination database are replaced with those of the source database.
          */
         readonly fullCheckFixData?: boolean | ros.IResolvable;
+        /**
+         * @Property checkMaximumHour: The timeout period of the full data verification task. Valid values: integers from 1 to 72. Countdown begins the moment the full data verification task is started. If the task is not complete within the specified timeout period, the task is forcibly stopped.
+         */
+        readonly checkMaximumHour?: number | ros.IResolvable;
         /**
          * @Property fullCheckModel: The mode of the full data verification task. Valid values:
      * - **1**: verifies the data by sampling ratio.
@@ -1360,15 +1549,15 @@ export namespace RosMigrationJob2 {
          */
         readonly fullDataCheck?: boolean | ros.IResolvable;
         /**
-         * @Property incrementalCheckValidFailNotice: Specifies whether to trigger an alert if inconsistent data is detected by the incremental data verification task. Valid values: **true** and **false**.
-     * **Note**: For example, you set this parameter to **true**. If the cumulative number of inconsistent data entries detected by the incremental data verification task in several statistical periods is greater than or equal to the threshold that you specified, an alert is triggered.
-         */
-        readonly incrementalCheckValidFailNotice?: boolean | ros.IResolvable;
-        /**
          * @Property fullCheckNoticeValue: The alert threshold for inconsistent data entries detected by the full data verification task.
      * **Note**: This parameter is required if the **fullCheckValidFailNotice** parameter is set to **true**.
          */
         readonly fullCheckNoticeValue?: number | ros.IResolvable;
+        /**
+         * @Property incrementalCheckValidFailNotice: Specifies whether to trigger an alert if inconsistent data is detected by the incremental data verification task. Valid values: **true** and **false**.
+     * **Note**: For example, you set this parameter to **true**. If the cumulative number of inconsistent data entries detected by the incremental data verification task in several statistical periods is greater than or equal to the threshold that you specified, an alert is triggered.
+         */
+        readonly incrementalCheckValidFailNotice?: boolean | ros.IResolvable;
         /**
          * @Property incrementalCheckErrorNotice: Specifies whether to trigger an alert if the incremental data verification task fails. Valid values: **true** and **false**.
      * Note: For example, you set this parameter to **true**. If the incremental data verification task fails, an alert is triggered.
@@ -1396,7 +1585,6 @@ function RosMigrationJob2_DataCheckConfigurePropertyValidator(properties: any): 
     errors.collect(ros.propertyValidator('fullCheckMaxReadRps', ros.validateNumber)(properties.fullCheckMaxReadRps));
     errors.collect(ros.propertyValidator('dataCheckNoticePhone', ros.validateString)(properties.dataCheckNoticePhone));
     errors.collect(ros.propertyValidator('incrementalCheckDelayNotice', ros.validateBoolean)(properties.incrementalCheckDelayNotice));
-    errors.collect(ros.propertyValidator('incrementalCheckDelayNoticeValue', ros.validateNumber)(properties.incrementalCheckDelayNoticeValue));
     if(properties.incrementalCheckDelayNoticePeriod && (typeof properties.incrementalCheckDelayNoticePeriod) !== 'object') {
         errors.collect(ros.propertyValidator('incrementalCheckDelayNoticePeriod', ros.validateAllowedValues)({
           data: properties.incrementalCheckDelayNoticePeriod,
@@ -1404,6 +1592,7 @@ function RosMigrationJob2_DataCheckConfigurePropertyValidator(properties: any): 
         }));
     }
     errors.collect(ros.propertyValidator('incrementalCheckDelayNoticePeriod', ros.validateNumber)(properties.incrementalCheckDelayNoticePeriod));
+    errors.collect(ros.propertyValidator('incrementalCheckDelayNoticeValue', ros.validateNumber)(properties.incrementalCheckDelayNoticeValue));
     errors.collect(ros.propertyValidator('dataCheckDbList', ros.validateString)(properties.dataCheckDbList));
     if(properties.checkMaximumHourEnable && (typeof properties.checkMaximumHourEnable) !== 'object') {
         errors.collect(ros.propertyValidator('checkMaximumHourEnable', ros.validateAllowedValues)({
@@ -1420,6 +1609,7 @@ function RosMigrationJob2_DataCheckConfigurePropertyValidator(properties: any): 
           }));
     }
     errors.collect(ros.propertyValidator('fullCheckRatio', ros.validateNumber)(properties.fullCheckRatio));
+    errors.collect(ros.propertyValidator('fullCheckFixData', ros.validateBoolean)(properties.fullCheckFixData));
     if(properties.checkMaximumHour && (typeof properties.checkMaximumHour) !== 'object') {
         errors.collect(ros.propertyValidator('checkMaximumHour', ros.validateRange)({
             data: properties.checkMaximumHour,
@@ -1428,7 +1618,6 @@ function RosMigrationJob2_DataCheckConfigurePropertyValidator(properties: any): 
           }));
     }
     errors.collect(ros.propertyValidator('checkMaximumHour', ros.validateNumber)(properties.checkMaximumHour));
-    errors.collect(ros.propertyValidator('fullCheckFixData', ros.validateBoolean)(properties.fullCheckFixData));
     if(properties.fullCheckModel && (typeof properties.fullCheckModel) !== 'object') {
         errors.collect(ros.propertyValidator('fullCheckModel', ros.validateAllowedValues)({
           data: properties.fullCheckModel,
@@ -1459,8 +1648,8 @@ function RosMigrationJob2_DataCheckConfigurePropertyValidator(properties: any): 
     errors.collect(ros.propertyValidator('incrementalCheckDelayNoticeTimes', ros.validateNumber)(properties.incrementalCheckDelayNoticeTimes));
     errors.collect(ros.propertyValidator('fullCheckReferEndpoint', ros.validateString)(properties.fullCheckReferEndpoint));
     errors.collect(ros.propertyValidator('fullDataCheck', ros.validateBoolean)(properties.fullDataCheck));
-    errors.collect(ros.propertyValidator('incrementalCheckValidFailNotice', ros.validateBoolean)(properties.incrementalCheckValidFailNotice));
     errors.collect(ros.propertyValidator('fullCheckNoticeValue', ros.validateNumber)(properties.fullCheckNoticeValue));
+    errors.collect(ros.propertyValidator('incrementalCheckValidFailNotice', ros.validateBoolean)(properties.incrementalCheckValidFailNotice));
     errors.collect(ros.propertyValidator('incrementalCheckErrorNotice', ros.validateBoolean)(properties.incrementalCheckErrorNotice));
     return errors.wrap('supplied properties not correct for "DataCheckConfigureProperty"');
 }
@@ -1480,13 +1669,13 @@ function rosMigrationJob2DataCheckConfigurePropertyToRosTemplate(properties: any
       'fullCheckMaxReadRps': ros.numberToRosTemplate(properties.fullCheckMaxReadRps),
       'dataCheckNoticePhone': ros.stringToRosTemplate(properties.dataCheckNoticePhone),
       'incrementalCheckDelayNotice': ros.booleanToRosTemplate(properties.incrementalCheckDelayNotice),
-      'incrementalCheckDelayNoticeValue': ros.numberToRosTemplate(properties.incrementalCheckDelayNoticeValue),
       'incrementalCheckDelayNoticePeriod': ros.numberToRosTemplate(properties.incrementalCheckDelayNoticePeriod),
+      'incrementalCheckDelayNoticeValue': ros.numberToRosTemplate(properties.incrementalCheckDelayNoticeValue),
       'dataCheckDbList': ros.stringToRosTemplate(properties.dataCheckDbList),
       'checkMaximumHourEnable': ros.numberToRosTemplate(properties.checkMaximumHourEnable),
       'fullCheckRatio': ros.numberToRosTemplate(properties.fullCheckRatio),
-      'checkMaximumHour': ros.numberToRosTemplate(properties.checkMaximumHour),
       'fullCheckFixData': ros.booleanToRosTemplate(properties.fullCheckFixData),
+      'checkMaximumHour': ros.numberToRosTemplate(properties.checkMaximumHour),
       'fullCheckModel': ros.numberToRosTemplate(properties.fullCheckModel),
       'incrementalCheckValidFailNoticeValue': ros.numberToRosTemplate(properties.incrementalCheckValidFailNoticeValue),
       'incrementalDataCheck': ros.booleanToRosTemplate(properties.incrementalDataCheck),
@@ -1498,8 +1687,8 @@ function rosMigrationJob2DataCheckConfigurePropertyToRosTemplate(properties: any
       'incrementalCheckDelayNoticeTimes': ros.numberToRosTemplate(properties.incrementalCheckDelayNoticeTimes),
       'fullCheckReferEndpoint': ros.stringToRosTemplate(properties.fullCheckReferEndpoint),
       'fullDataCheck': ros.booleanToRosTemplate(properties.fullDataCheck),
-      'incrementalCheckValidFailNotice': ros.booleanToRosTemplate(properties.incrementalCheckValidFailNotice),
       'fullCheckNoticeValue': ros.numberToRosTemplate(properties.fullCheckNoticeValue),
+      'incrementalCheckValidFailNotice': ros.booleanToRosTemplate(properties.incrementalCheckValidFailNotice),
       'incrementalCheckErrorNotice': ros.booleanToRosTemplate(properties.incrementalCheckErrorNotice),
     };
 }
@@ -1973,6 +2162,7 @@ export interface RosSubscriptionJob2Props {
 function RosSubscriptionJob2PropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('reserve', ros.hashValidator(ros.validateAny))(properties.reserve));
     if(properties.status && (typeof properties.status) !== 'object') {
         errors.collect(ros.propertyValidator('status', ros.validateAllowedValues)({
           data: properties.status,
@@ -1980,12 +2170,11 @@ function RosSubscriptionJob2PropsValidator(properties: any): ros.ValidationResul
         }));
     }
     errors.collect(ros.propertyValidator('status', ros.validateString)(properties.status));
-    errors.collect(ros.propertyValidator('reserve', ros.hashValidator(ros.validateAny))(properties.reserve));
     errors.collect(ros.propertyValidator('srcPrimaryVswId', ros.validateString)(properties.srcPrimaryVswId));
     errors.collect(ros.propertyValidator('srcSecondaryVswId', ros.validateString)(properties.srcSecondaryVswId));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
-    errors.collect(ros.propertyValidator('dedicatedClusterId', ros.validateString)(properties.dedicatedClusterId));
     errors.collect(ros.propertyValidator('delayPhone', ros.validateString)(properties.delayPhone));
+    errors.collect(ros.propertyValidator('dedicatedClusterId', ros.validateString)(properties.dedicatedClusterId));
     errors.collect(ros.propertyValidator('destPrimaryVswId', ros.validateString)(properties.destPrimaryVswId));
     errors.collect(ros.propertyValidator('errorNotice', ros.validateBoolean)(properties.errorNotice));
     errors.collect(ros.propertyValidator('dtsJobName', ros.requiredValidator)(properties.dtsJobName));
@@ -2001,8 +2190,8 @@ function RosSubscriptionJob2PropsValidator(properties: any): ros.ValidationResul
     errors.collect(ros.propertyValidator('dtsInstanceId', ros.validateString)(properties.dtsInstanceId));
     errors.collect(ros.propertyValidator('dbList', ros.requiredValidator)(properties.dbList));
     errors.collect(ros.propertyValidator('dbList', ros.hashValidator(ros.validateAny))(properties.dbList));
-    errors.collect(ros.propertyValidator('subscriptionDataType', RosSubscriptionJob2_SubscriptionDataTypePropertyValidator)(properties.subscriptionDataType));
     errors.collect(ros.propertyValidator('dtsBisLabel', ros.validateString)(properties.dtsBisLabel));
+    errors.collect(ros.propertyValidator('subscriptionDataType', RosSubscriptionJob2_SubscriptionDataTypePropertyValidator)(properties.subscriptionDataType));
     errors.collect(ros.propertyValidator('checkpoint', ros.validateString)(properties.checkpoint));
     errors.collect(ros.propertyValidator('dtsJobId', ros.validateString)(properties.dtsJobId));
     errors.collect(ros.propertyValidator('delayNotice', ros.validateBoolean)(properties.delayNotice));
@@ -2064,7 +2253,7 @@ function rosSubscriptionJob2PropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::SubscriptionJob2`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::SubscriptionJob2`, which is used to configure a change tracking task.
  * @Note This class does not contain additional functions, so it is recommended to use the `SubscriptionJob2` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-subscriptionjob2
  */
@@ -2730,9 +2919,9 @@ function RosSynchronizationJob2PropsValidator(properties: any): ros.ValidationRe
     errors.collect(ros.propertyValidator('dbList', ros.requiredValidator)(properties.dbList));
     errors.collect(ros.propertyValidator('dbList', ros.hashValidator(ros.validateAny))(properties.dbList));
     errors.collect(ros.propertyValidator('fileOssUrl', ros.validateString)(properties.fileOssUrl));
-    errors.collect(ros.propertyValidator('dtsJobId', ros.validateString)(properties.dtsJobId));
     errors.collect(ros.propertyValidator('dataInitialization', ros.requiredValidator)(properties.dataInitialization));
     errors.collect(ros.propertyValidator('dataInitialization', ros.validateBoolean)(properties.dataInitialization));
+    errors.collect(ros.propertyValidator('dtsJobId', ros.validateString)(properties.dtsJobId));
     errors.collect(ros.propertyValidator('errorPhone', ros.validateString)(properties.errorPhone));
     errors.collect(ros.propertyValidator('destSecondaryVswId', ros.validateString)(properties.destSecondaryVswId));
     if(properties.maxDu && (typeof properties.maxDu) !== 'object') {
@@ -2756,8 +2945,8 @@ function RosSynchronizationJob2PropsValidator(properties: any): ros.ValidationRe
     errors.collect(ros.propertyValidator('dataCheckConfigure', RosSynchronizationJob2_DataCheckConfigurePropertyValidator)(properties.dataCheckConfigure));
     errors.collect(ros.propertyValidator('dtsBisLabel', ros.validateString)(properties.dtsBisLabel));
     errors.collect(ros.propertyValidator('checkpoint', ros.validateString)(properties.checkpoint));
-    errors.collect(ros.propertyValidator('disasterRecoveryJob', ros.validateBoolean)(properties.disasterRecoveryJob));
     errors.collect(ros.propertyValidator('delayNotice', ros.validateBoolean)(properties.delayNotice));
+    errors.collect(ros.propertyValidator('disasterRecoveryJob', ros.validateBoolean)(properties.disasterRecoveryJob));
     errors.collect(ros.propertyValidator('destinationEndpoint', ros.requiredValidator)(properties.destinationEndpoint));
     errors.collect(ros.propertyValidator('destinationEndpoint', RosSynchronizationJob2_DestinationEndpointPropertyValidator)(properties.destinationEndpoint));
     errors.collect(ros.propertyValidator('sourceEndpoint', ros.requiredValidator)(properties.sourceEndpoint));
@@ -2816,7 +3005,7 @@ function rosSynchronizationJob2PropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::SynchronizationJob2`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::SynchronizationJob2`, which is used to configure a data synchronization task.
  * @Note This class does not contain additional functions, so it is recommended to use the `SynchronizationJob2` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-synchronizationjob2
  */
@@ -3106,11 +3295,6 @@ export namespace RosSynchronizationJob2 {
          */
         readonly incrementalCheckDelayNotice?: boolean | ros.IResolvable;
         /**
-         * @Property incrementalCheckDelayNoticeValue: The alert threshold for the data latency of the incremental data verification task. Unit: seconds.
-     * **Note**: This parameter is required if the **incrementalCheckDelayNotice** parameter is set to **true**.
-         */
-        readonly incrementalCheckDelayNoticeValue?: number | ros.IResolvable;
-        /**
          * @Property incrementalCheckDelayNoticePeriod: The statistical period of an alert on the data latency of the incremental data verification task. Valid values:
      * - **1**: 1 minute
      * - **2**: 5 minutes
@@ -3119,6 +3303,11 @@ export namespace RosSynchronizationJob2 {
      * **Note**: This parameter is required if the **incrementalCheckDelayNotice** parameter is set to **true**.
          */
         readonly incrementalCheckDelayNoticePeriod?: number | ros.IResolvable;
+        /**
+         * @Property incrementalCheckDelayNoticeValue: The alert threshold for the data latency of the incremental data verification task. Unit: seconds.
+     * **Note**: This parameter is required if the **incrementalCheckDelayNotice** parameter is set to **true**.
+         */
+        readonly incrementalCheckDelayNoticeValue?: number | ros.IResolvable;
         /**
          * @Property dataCheckDbList: The objects whose data is to be verified. The value must be a JSON string.
          */
@@ -3136,14 +3325,14 @@ export namespace RosSynchronizationJob2 {
          */
         readonly fullCheckRatio?: number | ros.IResolvable;
         /**
-         * @Property checkMaximumHour: The timeout period of the full data verification task. Valid values: integers from 1 to 72. Countdown begins the moment the full data verification task is started. If the task is not complete within the specified timeout period, the task is forcibly stopped.
-         */
-        readonly checkMaximumHour?: number | ros.IResolvable;
-        /**
          * @Property fullCheckFixData: Specifies whether to replace the inconsistent data. Valid values: **true** and **false**. Default value: false.
      * **Note**: For example, you set this parameter to true. If the destination database has data that is inconsistent with the data in the source database, the data values of the destination database are replaced with those of the source database.
          */
         readonly fullCheckFixData?: boolean | ros.IResolvable;
+        /**
+         * @Property checkMaximumHour: The timeout period of the full data verification task. Valid values: integers from 1 to 72. Countdown begins the moment the full data verification task is started. If the task is not complete within the specified timeout period, the task is forcibly stopped.
+         */
+        readonly checkMaximumHour?: number | ros.IResolvable;
         /**
          * @Property fullCheckModel: The mode of the full data verification task. Valid values:
      * - **1**: verifies the data by sampling ratio.
@@ -3204,15 +3393,15 @@ export namespace RosSynchronizationJob2 {
          */
         readonly fullDataCheck?: boolean | ros.IResolvable;
         /**
-         * @Property incrementalCheckValidFailNotice: Specifies whether to trigger an alert if inconsistent data is detected by the incremental data verification task. Valid values: **true** and **false**.
-     * **Note**: For example, you set this parameter to **true**. If the cumulative number of inconsistent data entries detected by the incremental data verification task in several statistical periods is greater than or equal to the threshold that you specified, an alert is triggered.
-         */
-        readonly incrementalCheckValidFailNotice?: boolean | ros.IResolvable;
-        /**
          * @Property fullCheckNoticeValue: The alert threshold for inconsistent data entries detected by the full data verification task.
      * **Note**: This parameter is required if the **fullCheckValidFailNotice** parameter is set to **true**.
          */
         readonly fullCheckNoticeValue?: number | ros.IResolvable;
+        /**
+         * @Property incrementalCheckValidFailNotice: Specifies whether to trigger an alert if inconsistent data is detected by the incremental data verification task. Valid values: **true** and **false**.
+     * **Note**: For example, you set this parameter to **true**. If the cumulative number of inconsistent data entries detected by the incremental data verification task in several statistical periods is greater than or equal to the threshold that you specified, an alert is triggered.
+         */
+        readonly incrementalCheckValidFailNotice?: boolean | ros.IResolvable;
         /**
          * @Property incrementalCheckErrorNotice: Specifies whether to trigger an alert if the incremental data verification task fails. Valid values: **true** and **false**.
      * Note: For example, you set this parameter to **true**. If the incremental data verification task fails, an alert is triggered.
@@ -3240,7 +3429,6 @@ function RosSynchronizationJob2_DataCheckConfigurePropertyValidator(properties: 
     errors.collect(ros.propertyValidator('fullCheckMaxReadRps', ros.validateNumber)(properties.fullCheckMaxReadRps));
     errors.collect(ros.propertyValidator('dataCheckNoticePhone', ros.validateString)(properties.dataCheckNoticePhone));
     errors.collect(ros.propertyValidator('incrementalCheckDelayNotice', ros.validateBoolean)(properties.incrementalCheckDelayNotice));
-    errors.collect(ros.propertyValidator('incrementalCheckDelayNoticeValue', ros.validateNumber)(properties.incrementalCheckDelayNoticeValue));
     if(properties.incrementalCheckDelayNoticePeriod && (typeof properties.incrementalCheckDelayNoticePeriod) !== 'object') {
         errors.collect(ros.propertyValidator('incrementalCheckDelayNoticePeriod', ros.validateAllowedValues)({
           data: properties.incrementalCheckDelayNoticePeriod,
@@ -3248,6 +3436,7 @@ function RosSynchronizationJob2_DataCheckConfigurePropertyValidator(properties: 
         }));
     }
     errors.collect(ros.propertyValidator('incrementalCheckDelayNoticePeriod', ros.validateNumber)(properties.incrementalCheckDelayNoticePeriod));
+    errors.collect(ros.propertyValidator('incrementalCheckDelayNoticeValue', ros.validateNumber)(properties.incrementalCheckDelayNoticeValue));
     errors.collect(ros.propertyValidator('dataCheckDbList', ros.validateString)(properties.dataCheckDbList));
     if(properties.checkMaximumHourEnable && (typeof properties.checkMaximumHourEnable) !== 'object') {
         errors.collect(ros.propertyValidator('checkMaximumHourEnable', ros.validateAllowedValues)({
@@ -3264,6 +3453,7 @@ function RosSynchronizationJob2_DataCheckConfigurePropertyValidator(properties: 
           }));
     }
     errors.collect(ros.propertyValidator('fullCheckRatio', ros.validateNumber)(properties.fullCheckRatio));
+    errors.collect(ros.propertyValidator('fullCheckFixData', ros.validateBoolean)(properties.fullCheckFixData));
     if(properties.checkMaximumHour && (typeof properties.checkMaximumHour) !== 'object') {
         errors.collect(ros.propertyValidator('checkMaximumHour', ros.validateRange)({
             data: properties.checkMaximumHour,
@@ -3272,7 +3462,6 @@ function RosSynchronizationJob2_DataCheckConfigurePropertyValidator(properties: 
           }));
     }
     errors.collect(ros.propertyValidator('checkMaximumHour', ros.validateNumber)(properties.checkMaximumHour));
-    errors.collect(ros.propertyValidator('fullCheckFixData', ros.validateBoolean)(properties.fullCheckFixData));
     if(properties.fullCheckModel && (typeof properties.fullCheckModel) !== 'object') {
         errors.collect(ros.propertyValidator('fullCheckModel', ros.validateAllowedValues)({
           data: properties.fullCheckModel,
@@ -3303,8 +3492,8 @@ function RosSynchronizationJob2_DataCheckConfigurePropertyValidator(properties: 
     errors.collect(ros.propertyValidator('incrementalCheckDelayNoticeTimes', ros.validateNumber)(properties.incrementalCheckDelayNoticeTimes));
     errors.collect(ros.propertyValidator('fullCheckReferEndpoint', ros.validateString)(properties.fullCheckReferEndpoint));
     errors.collect(ros.propertyValidator('fullDataCheck', ros.validateBoolean)(properties.fullDataCheck));
-    errors.collect(ros.propertyValidator('incrementalCheckValidFailNotice', ros.validateBoolean)(properties.incrementalCheckValidFailNotice));
     errors.collect(ros.propertyValidator('fullCheckNoticeValue', ros.validateNumber)(properties.fullCheckNoticeValue));
+    errors.collect(ros.propertyValidator('incrementalCheckValidFailNotice', ros.validateBoolean)(properties.incrementalCheckValidFailNotice));
     errors.collect(ros.propertyValidator('incrementalCheckErrorNotice', ros.validateBoolean)(properties.incrementalCheckErrorNotice));
     return errors.wrap('supplied properties not correct for "DataCheckConfigureProperty"');
 }
@@ -3324,13 +3513,13 @@ function rosSynchronizationJob2DataCheckConfigurePropertyToRosTemplate(propertie
       'fullCheckMaxReadRps': ros.numberToRosTemplate(properties.fullCheckMaxReadRps),
       'dataCheckNoticePhone': ros.stringToRosTemplate(properties.dataCheckNoticePhone),
       'incrementalCheckDelayNotice': ros.booleanToRosTemplate(properties.incrementalCheckDelayNotice),
-      'incrementalCheckDelayNoticeValue': ros.numberToRosTemplate(properties.incrementalCheckDelayNoticeValue),
       'incrementalCheckDelayNoticePeriod': ros.numberToRosTemplate(properties.incrementalCheckDelayNoticePeriod),
+      'incrementalCheckDelayNoticeValue': ros.numberToRosTemplate(properties.incrementalCheckDelayNoticeValue),
       'dataCheckDbList': ros.stringToRosTemplate(properties.dataCheckDbList),
       'checkMaximumHourEnable': ros.numberToRosTemplate(properties.checkMaximumHourEnable),
       'fullCheckRatio': ros.numberToRosTemplate(properties.fullCheckRatio),
-      'checkMaximumHour': ros.numberToRosTemplate(properties.checkMaximumHour),
       'fullCheckFixData': ros.booleanToRosTemplate(properties.fullCheckFixData),
+      'checkMaximumHour': ros.numberToRosTemplate(properties.checkMaximumHour),
       'fullCheckModel': ros.numberToRosTemplate(properties.fullCheckModel),
       'incrementalCheckValidFailNoticeValue': ros.numberToRosTemplate(properties.incrementalCheckValidFailNoticeValue),
       'incrementalDataCheck': ros.booleanToRosTemplate(properties.incrementalDataCheck),
@@ -3342,8 +3531,8 @@ function rosSynchronizationJob2DataCheckConfigurePropertyToRosTemplate(propertie
       'incrementalCheckDelayNoticeTimes': ros.numberToRosTemplate(properties.incrementalCheckDelayNoticeTimes),
       'fullCheckReferEndpoint': ros.stringToRosTemplate(properties.fullCheckReferEndpoint),
       'fullDataCheck': ros.booleanToRosTemplate(properties.fullDataCheck),
-      'incrementalCheckValidFailNotice': ros.booleanToRosTemplate(properties.incrementalCheckValidFailNotice),
       'fullCheckNoticeValue': ros.numberToRosTemplate(properties.fullCheckNoticeValue),
+      'incrementalCheckValidFailNotice': ros.booleanToRosTemplate(properties.incrementalCheckValidFailNotice),
       'incrementalCheckErrorNotice': ros.booleanToRosTemplate(properties.incrementalCheckErrorNotice),
     };
 }

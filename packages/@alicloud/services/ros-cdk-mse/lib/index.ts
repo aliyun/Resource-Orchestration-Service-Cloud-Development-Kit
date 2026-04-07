@@ -9,6 +9,7 @@ export * from './nacosconfig';
 export * from './nacosservice';
 export * from './pluginconfig';
 export * from './servicesource';
+export * from './znode';
 
 // ALIYUN::MSE Resources:
 export * from './mse.generated';

@@ -62,7 +62,7 @@ export interface IAccessRule extends ros.IResource {
     readonly attrAccessRuleId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::NAS::AccessRule`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::NAS::AccessRule`, which is used to create a rule for a permission group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccessRule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-accessrule
  */
@@ -92,9 +92,9 @@ export class AccessRule extends ros.Resource implements IAccessRule {
         const rosAccessRule = new RosAccessRule(this, id,  {
             userAccessType: props.userAccessType === undefined || props.userAccessType === null ? 'no_squash' : props.userAccessType,
             priority: props.priority === undefined || props.priority === null ? 1 : props.priority,
-            fileSystemType: props.fileSystemType === undefined || props.fileSystemType === null ? 'standard' : props.fileSystemType,
-            sourceCidrIp: props.sourceCidrIp,
             accessGroupName: props.accessGroupName,
+            sourceCidrIp: props.sourceCidrIp,
+            fileSystemType: props.fileSystemType === undefined || props.fileSystemType === null ? 'standard' : props.fileSystemType,
             ipv6SourceCidrIp: props.ipv6SourceCidrIp,
             rwAccessType: props.rwAccessType === undefined || props.rwAccessType === null ? 'RDWR' : props.rwAccessType,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

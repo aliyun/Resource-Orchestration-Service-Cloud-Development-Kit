@@ -77,6 +77,72 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
+        private object? _accessMode;
+
+        /// <remarks>
+        /// <strong>Property</strong>: accessMode: Reverse access mode to the VPC NAT gateway.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "accessMode", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-vpc.RosNatGateway.AccessModeProperty\"}]}}", isOptional: true)]
+        public object? AccessMode
+        {
+            get => _accessMode;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Vpc.RosNatGateway.IAccessModeProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Vpc.RosNatGateway.IAccessModeProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _accessMode = value;
+            }
+        }
+
+        private object? _availabilityMode;
+
+        /// <remarks>
+        /// <strong>Property</strong>: availabilityMode: The availability mode of the NAT gateway. Valid values: CrossAZ, SingleAZ
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "availabilityMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? AvailabilityMode
+        {
+            get => _availabilityMode;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _availabilityMode = value;
+            }
+        }
+
         private object? _deletionForce;
 
         /// <remarks>
@@ -316,6 +382,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
+        private object? _ipv4Prefix;
+
+        /// <remarks>
+        /// <strong>Property</strong>: ipv4Prefix: The IPv4 prefix.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "ipv4Prefix", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? Ipv4Prefix
+        {
+            get => _ipv4Prefix;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _ipv4Prefix = value;
+            }
+        }
+
         private object? _natGatewayName;
 
         /// <remarks>
@@ -346,6 +445,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                     }
                 }
                 _natGatewayName = value;
+            }
+        }
+
+        private object? _natIp;
+
+        /// <remarks>
+        /// <strong>Property</strong>: natIp: The NAT IP address.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "natIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? NatIp
+        {
+            get => _natIp;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _natIp = value;
             }
         }
 
@@ -415,6 +547,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                     }
                 }
                 _networkType = value;
+            }
+        }
+
+        private object? _privateLinkEnabled;
+
+        /// <remarks>
+        /// <strong>Property</strong>: privateLinkEnabled: Whether to support private network connection.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "privateLinkEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? PrivateLinkEnabled
+        {
+            get => _privateLinkEnabled;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _privateLinkEnabled = value;
             }
         }
 

@@ -200,7 +200,7 @@ export interface ICluster extends ros.IResource {
     readonly attrZkConnAddrs: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::HBase::Cluster`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::HBase::Cluster`, which is used to create an ApsaraDB for HBase cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbase-cluster
  */
@@ -253,17 +253,17 @@ export class Cluster extends ros.Resource implements ICluster {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCluster = new RosCluster(this, id,  {
-            autoRenewPeriod: props.autoRenewPeriod,
             coldStorageSize: props.coldStorageSize,
+            autoRenewPeriod: props.autoRenewPeriod,
             engineVersion: props.engineVersion,
-            resourceGroupId: props.resourceGroupId,
             nodeCount: props.nodeCount,
             zoneId: props.zoneId,
+            resourceGroupId: props.resourceGroupId,
             vSwitchId: props.vSwitchId,
             period: props.period,
             encryptionKey: props.encryptionKey,
-            deletionProtection: props.deletionProtection,
             payType: props.payType,
+            deletionProtection: props.deletionProtection,
             masterInstanceType: props.masterInstanceType,
             diskType: props.diskType,
             vpcId: props.vpcId,

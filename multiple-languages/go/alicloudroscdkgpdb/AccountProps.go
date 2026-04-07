@@ -26,5 +26,9 @@ type AccountProps struct {
 	DbInstanceId interface{} `field:"required" json:"dbInstanceId" yaml:"dbInstanceId"`
 	// Property accountDescription: The description of the privileged account.
 	AccountDescription interface{} `field:"optional" json:"accountDescription" yaml:"accountDescription"`
+	// Property accountType: Default value is Super, which creates a privileged account.
+	//
+	// When the parameter is Normal, it creates a normal account.
+	AccountType interface{} `field:"optional" json:"accountType" yaml:"accountType"`
 }
 

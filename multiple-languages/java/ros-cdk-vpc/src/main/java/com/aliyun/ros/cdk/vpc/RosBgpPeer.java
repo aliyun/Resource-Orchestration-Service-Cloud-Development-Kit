@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::BgpPeer</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.032Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.969Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosBgpPeer")
 public class RosBgpPeer extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -79,6 +79,24 @@ public class RosBgpPeer extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getBfdMultiHop() {
+        return software.amazon.jsii.Kernel.get(this, "bfdMultiHop", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setBfdMultiHop(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "bfdMultiHop", value);
+    }
+
+    /**
+     */
+    public void setBfdMultiHop(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "bfdMultiHop", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getEnableBfd() {
         return software.amazon.jsii.Kernel.get(this, "enableBfd", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -93,6 +111,24 @@ public class RosBgpPeer extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setEnableBfd(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "enableBfd", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIpVersion() {
+        return software.amazon.jsii.Kernel.get(this, "ipVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIpVersion(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "ipVersion", value);
+    }
+
+    /**
+     */
+    public void setIpVersion(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ipVersion", value);
     }
 
     /**
@@ -158,6 +194,23 @@ public class RosBgpPeer extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param bfdMultiHop This parameter is required.
+         */
+        public Builder bfdMultiHop(final java.lang.Number bfdMultiHop) {
+            this.props.bfdMultiHop(bfdMultiHop);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param bfdMultiHop This parameter is required.
+         */
+        public Builder bfdMultiHop(final com.aliyun.ros.cdk.core.IResolvable bfdMultiHop) {
+            this.props.bfdMultiHop(bfdMultiHop);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param enableBfd This parameter is required.
          */
         public Builder enableBfd(final java.lang.Boolean enableBfd) {
@@ -170,6 +223,23 @@ public class RosBgpPeer extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder enableBfd(final com.aliyun.ros.cdk.core.IResolvable enableBfd) {
             this.props.enableBfd(enableBfd);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param ipVersion This parameter is required.
+         */
+        public Builder ipVersion(final java.lang.String ipVersion) {
+            this.props.ipVersion(ipVersion);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ipVersion This parameter is required.
+         */
+        public Builder ipVersion(final com.aliyun.ros.cdk.core.IResolvable ipVersion) {
+            this.props.ipVersion(ipVersion);
             return this;
         }
 

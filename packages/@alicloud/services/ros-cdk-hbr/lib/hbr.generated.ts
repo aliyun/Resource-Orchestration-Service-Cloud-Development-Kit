@@ -69,7 +69,7 @@ function rosBackupClientsPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::BackupClients`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::BackupClients`, which is used to install backup clients on Elastic Compute Service (ECS) instances.
  * @Note This class does not contain additional functions, so it is recommended to use the `BackupClients` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-backupclients
  */
@@ -184,6 +184,140 @@ function rosBackupClientsTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
+ * Properties for defining a `RosCrossAccount`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-crossaccount
+ */
+export interface RosCrossAccountProps {
+
+    /**
+     * @Property alias: The alias of the cross-account authorization.
+     */
+    readonly alias?: string | ros.IResolvable;
+
+    /**
+     * @Property crossAccountRoleName: The name of the RAM role that is used to grant permissions to the authorized account.
+     */
+    readonly crossAccountRoleName?: string | ros.IResolvable;
+
+    /**
+     * @Property crossAccountType: The type of the cross-account authorization. Valid values: CROSS_ACCOUNT, CROSS_ACCOUNT_BY_RD.
+     */
+    readonly crossAccountType?: string | ros.IResolvable;
+
+    /**
+     * @Property crossAccountUserId: The user ID of the account that you want to authorize to back up data in your account.
+     */
+    readonly crossAccountUserId?: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosCrossAccountProps`
+ *
+ * @param properties - the TypeScript properties of a `RosCrossAccountProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosCrossAccountPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('crossAccountUserId', ros.validateNumber)(properties.crossAccountUserId));
+    errors.collect(ros.propertyValidator('crossAccountRoleName', ros.validateString)(properties.crossAccountRoleName));
+    errors.collect(ros.propertyValidator('alias', ros.validateString)(properties.alias));
+    if(properties.crossAccountType && (typeof properties.crossAccountType) !== 'object') {
+        errors.collect(ros.propertyValidator('crossAccountType', ros.validateAllowedValues)({
+          data: properties.crossAccountType,
+          allowedValues: ["CROSS_ACCOUNT","CROSS_ACCOUNT_BY_RD"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('crossAccountType', ros.validateString)(properties.crossAccountType));
+    return errors.wrap('supplied properties not correct for "RosCrossAccountProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::HBR::CrossAccount` resource
+ *
+ * @param properties - the TypeScript properties of a `RosCrossAccountProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::HBR::CrossAccount` resource.
+ */
+// @ts-ignore TS6133
+function rosCrossAccountPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosCrossAccountPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'Alias': ros.stringToRosTemplate(properties.alias),
+      'CrossAccountRoleName': ros.stringToRosTemplate(properties.crossAccountRoleName),
+      'CrossAccountType': ros.stringToRosTemplate(properties.crossAccountType),
+      'CrossAccountUserId': ros.numberToRosTemplate(properties.crossAccountUserId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::CrossAccount`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `CrossAccount` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-crossaccount
+ */
+export class RosCrossAccount extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::HBR::CrossAccount";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property alias: The alias of the cross-account authorization.
+     */
+    public alias: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property crossAccountRoleName: The name of the RAM role that is used to grant permissions to the authorized account.
+     */
+    public crossAccountRoleName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property crossAccountType: The type of the cross-account authorization. Valid values: CROSS_ACCOUNT, CROSS_ACCOUNT_BY_RD.
+     */
+    public crossAccountType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property crossAccountUserId: The user ID of the account that you want to authorize to back up data in your account.
+     */
+    public crossAccountUserId: number | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosCrossAccountProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosCrossAccount.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.alias = props.alias;
+        this.crossAccountRoleName = props.crossAccountRoleName;
+        this.crossAccountType = props.crossAccountType;
+        this.crossAccountUserId = props.crossAccountUserId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            alias: this.alias,
+            crossAccountRoleName: this.crossAccountRoleName,
+            crossAccountType: this.crossAccountType,
+            crossAccountUserId: this.crossAccountUserId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosCrossAccountPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosDbAgent`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbagent
  */
@@ -270,7 +404,7 @@ function rosDbAgentPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::DbAgent`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::DbAgent`, which is used to install a Data Disaster Recovery client.
  * @Note This class does not contain additional functions, so it is recommended to use the `DbAgent` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbagent
  */
@@ -374,13 +508,13 @@ export namespace RosDbAgent {
          */
         readonly sourceType: string | ros.IResolvable;
         /**
-         * @Property password: Database backup account password
-         */
-        readonly password?: string | ros.IResolvable;
-        /**
          * @Property authenticationType: verification method, valid value: INSTANCE, ACCESS_KEY
          */
         readonly authenticationType?: string | ros.IResolvable;
+        /**
+         * @Property password: Database backup account password
+         */
+        readonly password?: string | ros.IResolvable;
     }
 }
 /**
@@ -404,7 +538,6 @@ function RosDbAgent_InstanceInfoPropertyValidator(properties: any): ros.Validati
         }));
     }
     errors.collect(ros.propertyValidator('sourceType', ros.validateString)(properties.sourceType));
-    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
     if(properties.authenticationType && (typeof properties.authenticationType) !== 'object') {
         errors.collect(ros.propertyValidator('authenticationType', ros.validateAllowedValues)({
           data: properties.authenticationType,
@@ -412,6 +545,7 @@ function RosDbAgent_InstanceInfoPropertyValidator(properties: any): ros.Validati
         }));
     }
     errors.collect(ros.propertyValidator('authenticationType', ros.validateString)(properties.authenticationType));
+    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
     return errors.wrap('supplied properties not correct for "InstanceInfoProperty"');
 }
 
@@ -430,8 +564,8 @@ function rosDbAgentInstanceInfoPropertyToRosTemplate(properties: any): any {
       'UserName': ros.stringToRosTemplate(properties.userName),
       'InstanceId': ros.stringToRosTemplate(properties.instanceId),
       'SourceType': ros.stringToRosTemplate(properties.sourceType),
-      'Password': ros.stringToRosTemplate(properties.password),
       'AuthenticationType': ros.stringToRosTemplate(properties.authenticationType),
+      'Password': ros.stringToRosTemplate(properties.password),
     };
 }
 
@@ -575,7 +709,7 @@ function rosDbPlanPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::DbPlan`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::DbPlan`, which is used to create a backup plan.
  * @Note This class does not contain additional functions, so it is recommended to use the `DbPlan` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbplan
  */
@@ -951,7 +1085,7 @@ function rosDbVaultPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::DbVault`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::DbVault`, which is used to create a mirror vault.
  * @Note This class does not contain additional functions, so it is recommended to use the `DbVault` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbvault
  */
@@ -1099,6 +1233,2089 @@ function rosDbVaultTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
+ * Properties for defining a `RosEcsBackupPlan`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-ecsbackupplan
+ */
+export interface RosEcsBackupPlanProps {
+
+    /**
+     * @Property backupType: Backup type. Valid values: COMPLETE.
+     */
+    readonly backupType: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The ID of ECS instance. The ecs backup client must have been installed on the host.
+     */
+    readonly instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property planName: The name of the backup plan. 1~64 characters, the backup plan name of each data source type in a single warehouse required to be unique.
+     */
+    readonly planName: string | ros.IResolvable;
+
+    /**
+     * @Property retention: Backup retention days, the minimum is 1.
+     */
+    readonly retention: number | ros.IResolvable;
+
+    /**
+     * @Property schedule: Backup strategy. Optional format: I|{startTime}|{interval}. It means to execute a backup task every {interval} starting from {startTime}. The backup task for the elapsed time will not be compensated. If the last backup task has not completed yet, the next backup task will not be triggered.
+     */
+    readonly schedule: string | ros.IResolvable;
+
+    /**
+     * @Property vaultId: The ID of backup vault.
+     */
+    readonly vaultId: string | ros.IResolvable;
+
+    /**
+     * @Property crossAccountRoleName: The role name created in the original account RAM backup by the cross account managed by the current account.
+     */
+    readonly crossAccountRoleName?: string | ros.IResolvable;
+
+    /**
+     * @Property crossAccountType: The type of the cross account backup. Valid values: SELF_ACCOUNT, CROSS_ACCOUNT.
+     */
+    readonly crossAccountType?: string | ros.IResolvable;
+
+    /**
+     * @Property crossAccountUserId: The original account ID of the cross account backup managed by the current account.
+     */
+    readonly crossAccountUserId?: string | ros.IResolvable;
+
+    /**
+     * @Property detail: The detail of the backup plan.
+     */
+    readonly detail?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property disabled: Whether to disable the backup task. Valid values: true, false.
+     */
+    readonly disabled?: boolean | ros.IResolvable;
+
+    /**
+     * @Property exclude: The exclude paths of the backup plan.
+     */
+    readonly exclude?: string | ros.IResolvable;
+
+    /**
+     * @Property include: The include paths of the backup plan.
+     */
+    readonly include?: string | ros.IResolvable;
+
+    /**
+     * @Property options: Windows operating system with application consistency using VSS, e.g: {"UseVSS":false}.
+     */
+    readonly options?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property paths: The paths of the backup plan.
+     */
+    readonly paths?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property speedLimit: The speed limit of the backup plan.
+     */
+    readonly speedLimit?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosEcsBackupPlanProps`
+ *
+ * @param properties - the TypeScript properties of a `RosEcsBackupPlanProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosEcsBackupPlanPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('options', ros.hashValidator(ros.validateAny))(properties.options));
+    errors.collect(ros.propertyValidator('crossAccountUserId', ros.validateString)(properties.crossAccountUserId));
+    if(properties.exclude && (Array.isArray(properties.exclude) || (typeof properties.exclude) === 'string')) {
+        errors.collect(ros.propertyValidator('exclude', ros.validateLength)({
+            data: properties.exclude.length,
+            min: undefined,
+            max: 255,
+          }));
+    }
+    errors.collect(ros.propertyValidator('exclude', ros.validateString)(properties.exclude));
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('speedLimit', ros.validateString)(properties.speedLimit));
+    errors.collect(ros.propertyValidator('crossAccountRoleName', ros.validateString)(properties.crossAccountRoleName));
+    if(properties.crossAccountType && (typeof properties.crossAccountType) !== 'object') {
+        errors.collect(ros.propertyValidator('crossAccountType', ros.validateAllowedValues)({
+          data: properties.crossAccountType,
+          allowedValues: ["SELF_ACCOUNT","CROSS_ACCOUNT"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('crossAccountType', ros.validateString)(properties.crossAccountType));
+    if(properties.include && (Array.isArray(properties.include) || (typeof properties.include) === 'string')) {
+        errors.collect(ros.propertyValidator('include', ros.validateLength)({
+            data: properties.include.length,
+            min: undefined,
+            max: 255,
+          }));
+    }
+    errors.collect(ros.propertyValidator('include', ros.validateString)(properties.include));
+    errors.collect(ros.propertyValidator('planName', ros.requiredValidator)(properties.planName));
+    if(properties.planName && (Array.isArray(properties.planName) || (typeof properties.planName) === 'string')) {
+        errors.collect(ros.propertyValidator('planName', ros.validateLength)({
+            data: properties.planName.length,
+            min: 1,
+            max: 64,
+          }));
+    }
+    errors.collect(ros.propertyValidator('planName', ros.validateString)(properties.planName));
+    errors.collect(ros.propertyValidator('vaultId', ros.requiredValidator)(properties.vaultId));
+    errors.collect(ros.propertyValidator('vaultId', ros.validateString)(properties.vaultId));
+    errors.collect(ros.propertyValidator('retention', ros.requiredValidator)(properties.retention));
+    if(properties.retention && (typeof properties.retention) !== 'object') {
+        errors.collect(ros.propertyValidator('retention', ros.validateRange)({
+            data: properties.retention,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('retention', ros.validateNumber)(properties.retention));
+    errors.collect(ros.propertyValidator('schedule', ros.requiredValidator)(properties.schedule));
+    errors.collect(ros.propertyValidator('schedule', ros.validateString)(properties.schedule));
+    errors.collect(ros.propertyValidator('backupType', ros.requiredValidator)(properties.backupType));
+    if(properties.backupType && (typeof properties.backupType) !== 'object') {
+        errors.collect(ros.propertyValidator('backupType', ros.validateAllowedValues)({
+          data: properties.backupType,
+          allowedValues: ["COMPLETE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('backupType', ros.validateString)(properties.backupType));
+    if(properties.paths && (Array.isArray(properties.paths) || (typeof properties.paths) === 'string')) {
+        errors.collect(ros.propertyValidator('paths', ros.validateLength)({
+            data: properties.paths.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('paths', ros.listValidator(ros.validateString))(properties.paths));
+    errors.collect(ros.propertyValidator('disabled', ros.validateBoolean)(properties.disabled));
+    errors.collect(ros.propertyValidator('detail', ros.hashValidator(ros.validateAny))(properties.detail));
+    return errors.wrap('supplied properties not correct for "RosEcsBackupPlanProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::HBR::EcsBackupPlan` resource
+ *
+ * @param properties - the TypeScript properties of a `RosEcsBackupPlanProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::HBR::EcsBackupPlan` resource.
+ */
+// @ts-ignore TS6133
+function rosEcsBackupPlanPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosEcsBackupPlanPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'BackupType': ros.stringToRosTemplate(properties.backupType),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'PlanName': ros.stringToRosTemplate(properties.planName),
+      'Retention': ros.numberToRosTemplate(properties.retention),
+      'Schedule': ros.stringToRosTemplate(properties.schedule),
+      'VaultId': ros.stringToRosTemplate(properties.vaultId),
+      'CrossAccountRoleName': ros.stringToRosTemplate(properties.crossAccountRoleName),
+      'CrossAccountType': ros.stringToRosTemplate(properties.crossAccountType),
+      'CrossAccountUserId': ros.stringToRosTemplate(properties.crossAccountUserId),
+      'Detail': ros.hashMapper(ros.objectToRosTemplate)(properties.detail),
+      'Disabled': ros.booleanToRosTemplate(properties.disabled),
+      'Exclude': ros.stringToRosTemplate(properties.exclude),
+      'Include': ros.stringToRosTemplate(properties.include),
+      'Options': ros.hashMapper(ros.objectToRosTemplate)(properties.options),
+      'Paths': ros.listMapper(ros.stringToRosTemplate)(properties.paths),
+      'SpeedLimit': ros.stringToRosTemplate(properties.speedLimit),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::EcsBackupPlan`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `EcsBackupPlan` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-ecsbackupplan
+ */
+export class RosEcsBackupPlan extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::HBR::EcsBackupPlan";
+
+    /**
+     * @Attribute PlanId: The ID of the backup plan.
+     */
+    public readonly attrPlanId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property backupType: Backup type. Valid values: COMPLETE.
+     */
+    public backupType: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The ID of ECS instance. The ecs backup client must have been installed on the host.
+     */
+    public instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property planName: The name of the backup plan. 1~64 characters, the backup plan name of each data source type in a single warehouse required to be unique.
+     */
+    public planName: string | ros.IResolvable;
+
+    /**
+     * @Property retention: Backup retention days, the minimum is 1.
+     */
+    public retention: number | ros.IResolvable;
+
+    /**
+     * @Property schedule: Backup strategy. Optional format: I|{startTime}|{interval}. It means to execute a backup task every {interval} starting from {startTime}. The backup task for the elapsed time will not be compensated. If the last backup task has not completed yet, the next backup task will not be triggered.
+     */
+    public schedule: string | ros.IResolvable;
+
+    /**
+     * @Property vaultId: The ID of backup vault.
+     */
+    public vaultId: string | ros.IResolvable;
+
+    /**
+     * @Property crossAccountRoleName: The role name created in the original account RAM backup by the cross account managed by the current account.
+     */
+    public crossAccountRoleName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property crossAccountType: The type of the cross account backup. Valid values: SELF_ACCOUNT, CROSS_ACCOUNT.
+     */
+    public crossAccountType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property crossAccountUserId: The original account ID of the cross account backup managed by the current account.
+     */
+    public crossAccountUserId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property detail: The detail of the backup plan.
+     */
+    public detail: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @Property disabled: Whether to disable the backup task. Valid values: true, false.
+     */
+    public disabled: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property exclude: The exclude paths of the backup plan.
+     */
+    public exclude: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property include: The include paths of the backup plan.
+     */
+    public include: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property options: Windows operating system with application consistency using VSS, e.g: {"UseVSS":false}.
+     */
+    public options: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @Property paths: The paths of the backup plan.
+     */
+    public paths: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property speedLimit: The speed limit of the backup plan.
+     */
+    public speedLimit: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosEcsBackupPlanProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosEcsBackupPlan.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrPlanId = this.getAtt('PlanId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.backupType = props.backupType;
+        this.instanceId = props.instanceId;
+        this.planName = props.planName;
+        this.retention = props.retention;
+        this.schedule = props.schedule;
+        this.vaultId = props.vaultId;
+        this.crossAccountRoleName = props.crossAccountRoleName;
+        this.crossAccountType = props.crossAccountType;
+        this.crossAccountUserId = props.crossAccountUserId;
+        this.detail = props.detail;
+        this.disabled = props.disabled;
+        this.exclude = props.exclude;
+        this.include = props.include;
+        this.options = props.options;
+        this.paths = props.paths;
+        this.speedLimit = props.speedLimit;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            backupType: this.backupType,
+            instanceId: this.instanceId,
+            planName: this.planName,
+            retention: this.retention,
+            schedule: this.schedule,
+            vaultId: this.vaultId,
+            crossAccountRoleName: this.crossAccountRoleName,
+            crossAccountType: this.crossAccountType,
+            crossAccountUserId: this.crossAccountUserId,
+            detail: this.detail,
+            disabled: this.disabled,
+            exclude: this.exclude,
+            include: this.include,
+            options: this.options,
+            paths: this.paths,
+            speedLimit: this.speedLimit,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosEcsBackupPlanPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosNasBackupPlan`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-nasbackupplan
+ */
+export interface RosNasBackupPlanProps {
+
+    /**
+     * @Property backupType: Backup type. Valid values: COMPLETE.
+     */
+    readonly backupType: string | ros.IResolvable;
+
+    /**
+     * @Property fileSystemId: The ID of the file system.
+     */
+    readonly fileSystemId: string | ros.IResolvable;
+
+    /**
+     * @Property paths: The paths of the backup plan.
+     */
+    readonly paths: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property planName: The name of the backup plan. 1~64 characters, the backup plan name of each data source type in a single warehouse required to be unique.
+     */
+    readonly planName: string | ros.IResolvable;
+
+    /**
+     * @Property retention: Backup retention days, the minimum is 1.
+     */
+    readonly retention: number | ros.IResolvable;
+
+    /**
+     * @Property schedule: Backup strategy. Optional format: I|{startTime}|{interval}. It means to execute a backup task every {interval} starting from {startTime}. The backup task for the elapsed time will not be compensated. If the last backup task has not completed yet, the next backup task will not be triggered.
+     */
+    readonly schedule: string | ros.IResolvable;
+
+    /**
+     * @Property vaultId: The ID of backup vault.
+     */
+    readonly vaultId: string | ros.IResolvable;
+
+    /**
+     * @Property crossAccountRoleName: The role name created in the original account RAM backup by the cross account managed by the current account.
+     */
+    readonly crossAccountRoleName?: string | ros.IResolvable;
+
+    /**
+     * @Property crossAccountType: The type of the cross account backup. Valid values: SELF_ACCOUNT, CROSS_ACCOUNT.
+     */
+    readonly crossAccountType?: string | ros.IResolvable;
+
+    /**
+     * @Property crossAccountUserId: The original account ID of the cross account backup managed by the current account.
+     */
+    readonly crossAccountUserId?: string | ros.IResolvable;
+
+    /**
+     * @Property disabled: Whether to disable the backup task. Valid values: true, false.
+     */
+    readonly disabled?: boolean | ros.IResolvable;
+
+    /**
+     * @Property options: This parameter specifies whether to use Windows VSS to define a backup path.
+     */
+    readonly options?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosNasBackupPlanProps`
+ *
+ * @param properties - the TypeScript properties of a `RosNasBackupPlanProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosNasBackupPlanPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('options', ros.hashValidator(ros.validateAny))(properties.options));
+    errors.collect(ros.propertyValidator('crossAccountUserId', ros.validateString)(properties.crossAccountUserId));
+    errors.collect(ros.propertyValidator('crossAccountRoleName', ros.validateString)(properties.crossAccountRoleName));
+    errors.collect(ros.propertyValidator('schedule', ros.requiredValidator)(properties.schedule));
+    errors.collect(ros.propertyValidator('schedule', ros.validateString)(properties.schedule));
+    if(properties.crossAccountType && (typeof properties.crossAccountType) !== 'object') {
+        errors.collect(ros.propertyValidator('crossAccountType', ros.validateAllowedValues)({
+          data: properties.crossAccountType,
+          allowedValues: ["SELF_ACCOUNT","CROSS_ACCOUNT"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('crossAccountType', ros.validateString)(properties.crossAccountType));
+    errors.collect(ros.propertyValidator('backupType', ros.requiredValidator)(properties.backupType));
+    if(properties.backupType && (typeof properties.backupType) !== 'object') {
+        errors.collect(ros.propertyValidator('backupType', ros.validateAllowedValues)({
+          data: properties.backupType,
+          allowedValues: ["COMPLETE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('backupType', ros.validateString)(properties.backupType));
+    errors.collect(ros.propertyValidator('fileSystemId', ros.requiredValidator)(properties.fileSystemId));
+    errors.collect(ros.propertyValidator('fileSystemId', ros.validateString)(properties.fileSystemId));
+    errors.collect(ros.propertyValidator('paths', ros.requiredValidator)(properties.paths));
+    if(properties.paths && (Array.isArray(properties.paths) || (typeof properties.paths) === 'string')) {
+        errors.collect(ros.propertyValidator('paths', ros.validateLength)({
+            data: properties.paths.length,
+            min: 1,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('paths', ros.listValidator(ros.validateString))(properties.paths));
+    errors.collect(ros.propertyValidator('planName', ros.requiredValidator)(properties.planName));
+    if(properties.planName && (Array.isArray(properties.planName) || (typeof properties.planName) === 'string')) {
+        errors.collect(ros.propertyValidator('planName', ros.validateLength)({
+            data: properties.planName.length,
+            min: 1,
+            max: 64,
+          }));
+    }
+    errors.collect(ros.propertyValidator('planName', ros.validateString)(properties.planName));
+    errors.collect(ros.propertyValidator('vaultId', ros.requiredValidator)(properties.vaultId));
+    errors.collect(ros.propertyValidator('vaultId', ros.validateString)(properties.vaultId));
+    errors.collect(ros.propertyValidator('retention', ros.requiredValidator)(properties.retention));
+    if(properties.retention && (typeof properties.retention) !== 'object') {
+        errors.collect(ros.propertyValidator('retention', ros.validateRange)({
+            data: properties.retention,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('retention', ros.validateNumber)(properties.retention));
+    errors.collect(ros.propertyValidator('disabled', ros.validateBoolean)(properties.disabled));
+    return errors.wrap('supplied properties not correct for "RosNasBackupPlanProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::HBR::NasBackupPlan` resource
+ *
+ * @param properties - the TypeScript properties of a `RosNasBackupPlanProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::HBR::NasBackupPlan` resource.
+ */
+// @ts-ignore TS6133
+function rosNasBackupPlanPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosNasBackupPlanPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'BackupType': ros.stringToRosTemplate(properties.backupType),
+      'FileSystemId': ros.stringToRosTemplate(properties.fileSystemId),
+      'Paths': ros.listMapper(ros.stringToRosTemplate)(properties.paths),
+      'PlanName': ros.stringToRosTemplate(properties.planName),
+      'Retention': ros.numberToRosTemplate(properties.retention),
+      'Schedule': ros.stringToRosTemplate(properties.schedule),
+      'VaultId': ros.stringToRosTemplate(properties.vaultId),
+      'CrossAccountRoleName': ros.stringToRosTemplate(properties.crossAccountRoleName),
+      'CrossAccountType': ros.stringToRosTemplate(properties.crossAccountType),
+      'CrossAccountUserId': ros.stringToRosTemplate(properties.crossAccountUserId),
+      'Disabled': ros.booleanToRosTemplate(properties.disabled),
+      'Options': ros.hashMapper(ros.objectToRosTemplate)(properties.options),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::NasBackupPlan`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `NasBackupPlan` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-nasbackupplan
+ */
+export class RosNasBackupPlan extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::HBR::NasBackupPlan";
+
+    /**
+     * @Attribute PlanId: The ID of the backup plan.
+     */
+    public readonly attrPlanId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property backupType: Backup type. Valid values: COMPLETE.
+     */
+    public backupType: string | ros.IResolvable;
+
+    /**
+     * @Property fileSystemId: The ID of the file system.
+     */
+    public fileSystemId: string | ros.IResolvable;
+
+    /**
+     * @Property paths: The paths of the backup plan.
+     */
+    public paths: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property planName: The name of the backup plan. 1~64 characters, the backup plan name of each data source type in a single warehouse required to be unique.
+     */
+    public planName: string | ros.IResolvable;
+
+    /**
+     * @Property retention: Backup retention days, the minimum is 1.
+     */
+    public retention: number | ros.IResolvable;
+
+    /**
+     * @Property schedule: Backup strategy. Optional format: I|{startTime}|{interval}. It means to execute a backup task every {interval} starting from {startTime}. The backup task for the elapsed time will not be compensated. If the last backup task has not completed yet, the next backup task will not be triggered.
+     */
+    public schedule: string | ros.IResolvable;
+
+    /**
+     * @Property vaultId: The ID of backup vault.
+     */
+    public vaultId: string | ros.IResolvable;
+
+    /**
+     * @Property crossAccountRoleName: The role name created in the original account RAM backup by the cross account managed by the current account.
+     */
+    public crossAccountRoleName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property crossAccountType: The type of the cross account backup. Valid values: SELF_ACCOUNT, CROSS_ACCOUNT.
+     */
+    public crossAccountType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property crossAccountUserId: The original account ID of the cross account backup managed by the current account.
+     */
+    public crossAccountUserId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property disabled: Whether to disable the backup task. Valid values: true, false.
+     */
+    public disabled: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property options: This parameter specifies whether to use Windows VSS to define a backup path.
+     */
+    public options: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosNasBackupPlanProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosNasBackupPlan.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrPlanId = this.getAtt('PlanId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.backupType = props.backupType;
+        this.fileSystemId = props.fileSystemId;
+        this.paths = props.paths;
+        this.planName = props.planName;
+        this.retention = props.retention;
+        this.schedule = props.schedule;
+        this.vaultId = props.vaultId;
+        this.crossAccountRoleName = props.crossAccountRoleName;
+        this.crossAccountType = props.crossAccountType;
+        this.crossAccountUserId = props.crossAccountUserId;
+        this.disabled = props.disabled;
+        this.options = props.options;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            backupType: this.backupType,
+            fileSystemId: this.fileSystemId,
+            paths: this.paths,
+            planName: this.planName,
+            retention: this.retention,
+            schedule: this.schedule,
+            vaultId: this.vaultId,
+            crossAccountRoleName: this.crossAccountRoleName,
+            crossAccountType: this.crossAccountType,
+            crossAccountUserId: this.crossAccountUserId,
+            disabled: this.disabled,
+            options: this.options,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosNasBackupPlanPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosOssBackupPlan`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-ossbackupplan
+ */
+export interface RosOssBackupPlanProps {
+
+    /**
+     * @Property backupType: Backup type. Valid values: COMPLETE.
+     */
+    readonly backupType: string | ros.IResolvable;
+
+    /**
+     * @Property bucket: The name of OSS bucket.
+     */
+    readonly bucket: string | ros.IResolvable;
+
+    /**
+     * @Property planName: The name of the backup plan. 1~64 characters, the backup plan name of each data source type in a single warehouse required to be unique.
+     */
+    readonly planName: string | ros.IResolvable;
+
+    /**
+     * @Property retention: Backup retention days, the minimum is 1.
+     */
+    readonly retention: number | ros.IResolvable;
+
+    /**
+     * @Property schedule: Backup strategy. Optional format: I|{startTime}|{interval}. It means to execute a backup task every {interval} starting from {startTime}. The backup task for the elapsed time will not be compensated. If the last backup task has not completed yet, the next backup task will not be triggered.
+     */
+    readonly schedule: string | ros.IResolvable;
+
+    /**
+     * @Property vaultId: The ID of backup vault.
+     */
+    readonly vaultId: string | ros.IResolvable;
+
+    /**
+     * @Property crossAccountRoleName: The role name created in the original account RAM backup by the cross account managed by the current account.
+     */
+    readonly crossAccountRoleName?: string | ros.IResolvable;
+
+    /**
+     * @Property crossAccountType: The type of the cross account backup. Valid values: SELF_ACCOUNT, CROSS_ACCOUNT.
+     */
+    readonly crossAccountType?: string | ros.IResolvable;
+
+    /**
+     * @Property crossAccountUserId: The original account ID of the cross account backup managed by the current account.
+     */
+    readonly crossAccountUserId?: string | ros.IResolvable;
+
+    /**
+     * @Property disabled: Whether to disable the backup task. Valid values: true, false.
+     */
+    readonly disabled?: boolean | ros.IResolvable;
+
+    /**
+     * @Property prefix: Backup prefix. Once specified, only objects with matching prefixes will be backed up.
+     */
+    readonly prefix?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosOssBackupPlanProps`
+ *
+ * @param properties - the TypeScript properties of a `RosOssBackupPlanProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosOssBackupPlanPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('crossAccountUserId', ros.validateString)(properties.crossAccountUserId));
+    errors.collect(ros.propertyValidator('bucket', ros.requiredValidator)(properties.bucket));
+    errors.collect(ros.propertyValidator('bucket', ros.validateString)(properties.bucket));
+    errors.collect(ros.propertyValidator('crossAccountRoleName', ros.validateString)(properties.crossAccountRoleName));
+    errors.collect(ros.propertyValidator('schedule', ros.requiredValidator)(properties.schedule));
+    errors.collect(ros.propertyValidator('schedule', ros.validateString)(properties.schedule));
+    if(properties.crossAccountType && (typeof properties.crossAccountType) !== 'object') {
+        errors.collect(ros.propertyValidator('crossAccountType', ros.validateAllowedValues)({
+          data: properties.crossAccountType,
+          allowedValues: ["SELF_ACCOUNT","CROSS_ACCOUNT"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('crossAccountType', ros.validateString)(properties.crossAccountType));
+    errors.collect(ros.propertyValidator('backupType', ros.requiredValidator)(properties.backupType));
+    if(properties.backupType && (typeof properties.backupType) !== 'object') {
+        errors.collect(ros.propertyValidator('backupType', ros.validateAllowedValues)({
+          data: properties.backupType,
+          allowedValues: ["COMPLETE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('backupType', ros.validateString)(properties.backupType));
+    errors.collect(ros.propertyValidator('prefix', ros.validateString)(properties.prefix));
+    errors.collect(ros.propertyValidator('planName', ros.requiredValidator)(properties.planName));
+    if(properties.planName && (Array.isArray(properties.planName) || (typeof properties.planName) === 'string')) {
+        errors.collect(ros.propertyValidator('planName', ros.validateLength)({
+            data: properties.planName.length,
+            min: 1,
+            max: 64,
+          }));
+    }
+    errors.collect(ros.propertyValidator('planName', ros.validateString)(properties.planName));
+    errors.collect(ros.propertyValidator('vaultId', ros.requiredValidator)(properties.vaultId));
+    errors.collect(ros.propertyValidator('vaultId', ros.validateString)(properties.vaultId));
+    errors.collect(ros.propertyValidator('retention', ros.requiredValidator)(properties.retention));
+    if(properties.retention && (typeof properties.retention) !== 'object') {
+        errors.collect(ros.propertyValidator('retention', ros.validateRange)({
+            data: properties.retention,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('retention', ros.validateNumber)(properties.retention));
+    errors.collect(ros.propertyValidator('disabled', ros.validateBoolean)(properties.disabled));
+    return errors.wrap('supplied properties not correct for "RosOssBackupPlanProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::HBR::OssBackupPlan` resource
+ *
+ * @param properties - the TypeScript properties of a `RosOssBackupPlanProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::HBR::OssBackupPlan` resource.
+ */
+// @ts-ignore TS6133
+function rosOssBackupPlanPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosOssBackupPlanPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'BackupType': ros.stringToRosTemplate(properties.backupType),
+      'Bucket': ros.stringToRosTemplate(properties.bucket),
+      'PlanName': ros.stringToRosTemplate(properties.planName),
+      'Retention': ros.numberToRosTemplate(properties.retention),
+      'Schedule': ros.stringToRosTemplate(properties.schedule),
+      'VaultId': ros.stringToRosTemplate(properties.vaultId),
+      'CrossAccountRoleName': ros.stringToRosTemplate(properties.crossAccountRoleName),
+      'CrossAccountType': ros.stringToRosTemplate(properties.crossAccountType),
+      'CrossAccountUserId': ros.stringToRosTemplate(properties.crossAccountUserId),
+      'Disabled': ros.booleanToRosTemplate(properties.disabled),
+      'Prefix': ros.stringToRosTemplate(properties.prefix),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::OssBackupPlan`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `OssBackupPlan` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-ossbackupplan
+ */
+export class RosOssBackupPlan extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::HBR::OssBackupPlan";
+
+    /**
+     * @Attribute PlanId: The ID of the backup plan.
+     */
+    public readonly attrPlanId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property backupType: Backup type. Valid values: COMPLETE.
+     */
+    public backupType: string | ros.IResolvable;
+
+    /**
+     * @Property bucket: The name of OSS bucket.
+     */
+    public bucket: string | ros.IResolvable;
+
+    /**
+     * @Property planName: The name of the backup plan. 1~64 characters, the backup plan name of each data source type in a single warehouse required to be unique.
+     */
+    public planName: string | ros.IResolvable;
+
+    /**
+     * @Property retention: Backup retention days, the minimum is 1.
+     */
+    public retention: number | ros.IResolvable;
+
+    /**
+     * @Property schedule: Backup strategy. Optional format: I|{startTime}|{interval}. It means to execute a backup task every {interval} starting from {startTime}. The backup task for the elapsed time will not be compensated. If the last backup task has not completed yet, the next backup task will not be triggered.
+     */
+    public schedule: string | ros.IResolvable;
+
+    /**
+     * @Property vaultId: The ID of backup vault.
+     */
+    public vaultId: string | ros.IResolvable;
+
+    /**
+     * @Property crossAccountRoleName: The role name created in the original account RAM backup by the cross account managed by the current account.
+     */
+    public crossAccountRoleName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property crossAccountType: The type of the cross account backup. Valid values: SELF_ACCOUNT, CROSS_ACCOUNT.
+     */
+    public crossAccountType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property crossAccountUserId: The original account ID of the cross account backup managed by the current account.
+     */
+    public crossAccountUserId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property disabled: Whether to disable the backup task. Valid values: true, false.
+     */
+    public disabled: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property prefix: Backup prefix. Once specified, only objects with matching prefixes will be backed up.
+     */
+    public prefix: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosOssBackupPlanProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosOssBackupPlan.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrPlanId = this.getAtt('PlanId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.backupType = props.backupType;
+        this.bucket = props.bucket;
+        this.planName = props.planName;
+        this.retention = props.retention;
+        this.schedule = props.schedule;
+        this.vaultId = props.vaultId;
+        this.crossAccountRoleName = props.crossAccountRoleName;
+        this.crossAccountType = props.crossAccountType;
+        this.crossAccountUserId = props.crossAccountUserId;
+        this.disabled = props.disabled;
+        this.prefix = props.prefix;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            backupType: this.backupType,
+            bucket: this.bucket,
+            planName: this.planName,
+            retention: this.retention,
+            schedule: this.schedule,
+            vaultId: this.vaultId,
+            crossAccountRoleName: this.crossAccountRoleName,
+            crossAccountType: this.crossAccountType,
+            crossAccountUserId: this.crossAccountUserId,
+            disabled: this.disabled,
+            prefix: this.prefix,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosOssBackupPlanPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosOtsBackupPlan`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-otsbackupplan
+ */
+export interface RosOtsBackupPlanProps {
+
+    /**
+     * @Property backupType: Backup type. Valid values: COMPLETE.
+     */
+    readonly backupType: string | ros.IResolvable;
+
+    /**
+     * @Property planName: The name of the backup plan. 1~64 characters, the backup plan name of each data source type in a single warehouse required to be unique.
+     */
+    readonly planName: string | ros.IResolvable;
+
+    /**
+     * @Property retention: Backup retention days, the minimum is 1.
+     */
+    readonly retention: number | ros.IResolvable;
+
+    /**
+     * @Property schedule: Backup strategy. Optional format: I|{startTime}|{interval}. It means to execute a backup task every {interval} starting from {startTime}. The backup task for the elapsed time will not be compensated. If the last backup task has not completed yet, the next backup task will not be triggered.
+     */
+    readonly schedule: string | ros.IResolvable;
+
+    /**
+     * @Property vaultId: The ID of backup vault.
+     */
+    readonly vaultId: string | ros.IResolvable;
+
+    /**
+     * @Property crossAccountRoleName: The role name created in the original account RAM backup by the cross account managed by the current account.
+     */
+    readonly crossAccountRoleName?: string | ros.IResolvable;
+
+    /**
+     * @Property crossAccountType: The type of the cross account backup. Valid values: SELF_ACCOUNT, CROSS_ACCOUNT.
+     */
+    readonly crossAccountType?: string | ros.IResolvable;
+
+    /**
+     * @Property crossAccountUserId: The original account ID of the cross account backup managed by the current account.
+     */
+    readonly crossAccountUserId?: string | ros.IResolvable;
+
+    /**
+     * @Property disabled: Whether to disable the backup task. Valid values: true, false.
+     */
+    readonly disabled?: boolean | ros.IResolvable;
+
+    /**
+     * @Property instanceName: The name of the Table store instance.
+     */
+    readonly instanceName?: string | ros.IResolvable;
+
+    /**
+     * @Property otsDetail: The details about the Table store instance.
+     */
+    readonly otsDetail?: RosOtsBackupPlan.OtsDetailProperty | ros.IResolvable;
+
+    /**
+     * @Property rules: The backup plan rule.
+     */
+    readonly rules?: Array<RosOtsBackupPlan.RulesProperty | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosOtsBackupPlanProps`
+ *
+ * @param properties - the TypeScript properties of a `RosOtsBackupPlanProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosOtsBackupPlanPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    errors.collect(ros.propertyValidator('crossAccountUserId', ros.validateString)(properties.crossAccountUserId));
+    errors.collect(ros.propertyValidator('crossAccountRoleName', ros.validateString)(properties.crossAccountRoleName));
+    errors.collect(ros.propertyValidator('schedule', ros.requiredValidator)(properties.schedule));
+    errors.collect(ros.propertyValidator('schedule', ros.validateString)(properties.schedule));
+    if(properties.crossAccountType && (typeof properties.crossAccountType) !== 'object') {
+        errors.collect(ros.propertyValidator('crossAccountType', ros.validateAllowedValues)({
+          data: properties.crossAccountType,
+          allowedValues: ["SELF_ACCOUNT","CROSS_ACCOUNT"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('crossAccountType', ros.validateString)(properties.crossAccountType));
+    errors.collect(ros.propertyValidator('backupType', ros.requiredValidator)(properties.backupType));
+    if(properties.backupType && (typeof properties.backupType) !== 'object') {
+        errors.collect(ros.propertyValidator('backupType', ros.validateAllowedValues)({
+          data: properties.backupType,
+          allowedValues: ["COMPLETE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('backupType', ros.validateString)(properties.backupType));
+    errors.collect(ros.propertyValidator('planName', ros.requiredValidator)(properties.planName));
+    if(properties.planName && (Array.isArray(properties.planName) || (typeof properties.planName) === 'string')) {
+        errors.collect(ros.propertyValidator('planName', ros.validateLength)({
+            data: properties.planName.length,
+            min: 1,
+            max: 64,
+          }));
+    }
+    errors.collect(ros.propertyValidator('planName', ros.validateString)(properties.planName));
+    errors.collect(ros.propertyValidator('vaultId', ros.requiredValidator)(properties.vaultId));
+    errors.collect(ros.propertyValidator('vaultId', ros.validateString)(properties.vaultId));
+    errors.collect(ros.propertyValidator('retention', ros.requiredValidator)(properties.retention));
+    if(properties.retention && (typeof properties.retention) !== 'object') {
+        errors.collect(ros.propertyValidator('retention', ros.validateRange)({
+            data: properties.retention,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('retention', ros.validateNumber)(properties.retention));
+    errors.collect(ros.propertyValidator('disabled', ros.validateBoolean)(properties.disabled));
+    errors.collect(ros.propertyValidator('otsDetail', RosOtsBackupPlan_OtsDetailPropertyValidator)(properties.otsDetail));
+    if(properties.rules && (Array.isArray(properties.rules) || (typeof properties.rules) === 'string')) {
+        errors.collect(ros.propertyValidator('rules', ros.validateLength)({
+            data: properties.rules.length,
+            min: undefined,
+            max: 64,
+          }));
+    }
+    errors.collect(ros.propertyValidator('rules', ros.listValidator(RosOtsBackupPlan_RulesPropertyValidator))(properties.rules));
+    return errors.wrap('supplied properties not correct for "RosOtsBackupPlanProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::HBR::OtsBackupPlan` resource
+ *
+ * @param properties - the TypeScript properties of a `RosOtsBackupPlanProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::HBR::OtsBackupPlan` resource.
+ */
+// @ts-ignore TS6133
+function rosOtsBackupPlanPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosOtsBackupPlanPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'BackupType': ros.stringToRosTemplate(properties.backupType),
+      'PlanName': ros.stringToRosTemplate(properties.planName),
+      'Retention': ros.numberToRosTemplate(properties.retention),
+      'Schedule': ros.stringToRosTemplate(properties.schedule),
+      'VaultId': ros.stringToRosTemplate(properties.vaultId),
+      'CrossAccountRoleName': ros.stringToRosTemplate(properties.crossAccountRoleName),
+      'CrossAccountType': ros.stringToRosTemplate(properties.crossAccountType),
+      'CrossAccountUserId': ros.stringToRosTemplate(properties.crossAccountUserId),
+      'Disabled': ros.booleanToRosTemplate(properties.disabled),
+      'InstanceName': ros.stringToRosTemplate(properties.instanceName),
+      'OtsDetail': rosOtsBackupPlanOtsDetailPropertyToRosTemplate(properties.otsDetail),
+      'Rules': ros.listMapper(rosOtsBackupPlanRulesPropertyToRosTemplate)(properties.rules),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::OtsBackupPlan`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `OtsBackupPlan` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-otsbackupplan
+ */
+export class RosOtsBackupPlan extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::HBR::OtsBackupPlan";
+
+    /**
+     * @Attribute PlanId: The ID of the backup plan.
+     */
+    public readonly attrPlanId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property backupType: Backup type. Valid values: COMPLETE.
+     */
+    public backupType: string | ros.IResolvable;
+
+    /**
+     * @Property planName: The name of the backup plan. 1~64 characters, the backup plan name of each data source type in a single warehouse required to be unique.
+     */
+    public planName: string | ros.IResolvable;
+
+    /**
+     * @Property retention: Backup retention days, the minimum is 1.
+     */
+    public retention: number | ros.IResolvable;
+
+    /**
+     * @Property schedule: Backup strategy. Optional format: I|{startTime}|{interval}. It means to execute a backup task every {interval} starting from {startTime}. The backup task for the elapsed time will not be compensated. If the last backup task has not completed yet, the next backup task will not be triggered.
+     */
+    public schedule: string | ros.IResolvable;
+
+    /**
+     * @Property vaultId: The ID of backup vault.
+     */
+    public vaultId: string | ros.IResolvable;
+
+    /**
+     * @Property crossAccountRoleName: The role name created in the original account RAM backup by the cross account managed by the current account.
+     */
+    public crossAccountRoleName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property crossAccountType: The type of the cross account backup. Valid values: SELF_ACCOUNT, CROSS_ACCOUNT.
+     */
+    public crossAccountType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property crossAccountUserId: The original account ID of the cross account backup managed by the current account.
+     */
+    public crossAccountUserId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property disabled: Whether to disable the backup task. Valid values: true, false.
+     */
+    public disabled: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceName: The name of the Table store instance.
+     */
+    public instanceName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property otsDetail: The details about the Table store instance.
+     */
+    public otsDetail: RosOtsBackupPlan.OtsDetailProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property rules: The backup plan rule.
+     */
+    public rules: Array<RosOtsBackupPlan.RulesProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosOtsBackupPlanProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosOtsBackupPlan.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrPlanId = this.getAtt('PlanId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.backupType = props.backupType;
+        this.planName = props.planName;
+        this.retention = props.retention;
+        this.schedule = props.schedule;
+        this.vaultId = props.vaultId;
+        this.crossAccountRoleName = props.crossAccountRoleName;
+        this.crossAccountType = props.crossAccountType;
+        this.crossAccountUserId = props.crossAccountUserId;
+        this.disabled = props.disabled;
+        this.instanceName = props.instanceName;
+        this.otsDetail = props.otsDetail;
+        this.rules = props.rules;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            backupType: this.backupType,
+            planName: this.planName,
+            retention: this.retention,
+            schedule: this.schedule,
+            vaultId: this.vaultId,
+            crossAccountRoleName: this.crossAccountRoleName,
+            crossAccountType: this.crossAccountType,
+            crossAccountUserId: this.crossAccountUserId,
+            disabled: this.disabled,
+            instanceName: this.instanceName,
+            otsDetail: this.otsDetail,
+            rules: this.rules,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosOtsBackupPlanPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosOtsBackupPlan {
+    /**
+     * @stability external
+     */
+    export interface OtsDetailProperty {
+        /**
+         * @Property tableNames: The names of the destination tables in the Tablestore instance.
+         */
+        readonly tableNames?: Array<string | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `OtsDetailProperty`
+ *
+ * @param properties - the TypeScript properties of a `OtsDetailProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosOtsBackupPlan_OtsDetailPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('tableNames', ros.listValidator(ros.validateString))(properties.tableNames));
+    return errors.wrap('supplied properties not correct for "OtsDetailProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::HBR::OtsBackupPlan.OtsDetail` resource
+ *
+ * @param properties - the TypeScript properties of a `OtsDetailProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::HBR::OtsBackupPlan.OtsDetail` resource.
+ */
+// @ts-ignore TS6133
+function rosOtsBackupPlanOtsDetailPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosOtsBackupPlan_OtsDetailPropertyValidator(properties).assertSuccess();
+    return {
+      'TableNames': ros.listMapper(ros.stringToRosTemplate)(properties.tableNames),
+    };
+}
+
+export namespace RosOtsBackupPlan {
+    /**
+     * @stability external
+     */
+    export interface RulesProperty {
+        /**
+         * @Property schedule: Backup strategy. Optional format: I|{startTime}|{interval}. It means to execute a backup task every {interval} starting from {startTime}. The backup task for the elapsed time will not be compensated. If the last backup task has not completed yet, the next backup task will not be triggered.
+         */
+        readonly schedule?: string | ros.IResolvable;
+        /**
+         * @Property backupType: The name of the tableStore instance. Valid values: COMPLETE, INCREMENTAL.
+         */
+        readonly backupType?: string | ros.IResolvable;
+        /**
+         * @Property retention: Backup retention days, the minimum is 1.
+         */
+        readonly retention?: number | ros.IResolvable;
+        /**
+         * @Property disabled: Whether the rule is disabled.
+         */
+        readonly disabled?: boolean | ros.IResolvable;
+        /**
+         * @Property ruleName: The name of the rule.
+         */
+        readonly ruleName?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `RulesProperty`
+ *
+ * @param properties - the TypeScript properties of a `RulesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosOtsBackupPlan_RulesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('schedule', ros.validateString)(properties.schedule));
+    if(properties.backupType && (typeof properties.backupType) !== 'object') {
+        errors.collect(ros.propertyValidator('backupType', ros.validateAllowedValues)({
+          data: properties.backupType,
+          allowedValues: ["COMPLETE","INCREMENTAL"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('backupType', ros.validateString)(properties.backupType));
+    if(properties.retention && (typeof properties.retention) !== 'object') {
+        errors.collect(ros.propertyValidator('retention', ros.validateRange)({
+            data: properties.retention,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('retention', ros.validateNumber)(properties.retention));
+    errors.collect(ros.propertyValidator('disabled', ros.validateBoolean)(properties.disabled));
+    errors.collect(ros.propertyValidator('ruleName', ros.validateString)(properties.ruleName));
+    return errors.wrap('supplied properties not correct for "RulesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::HBR::OtsBackupPlan.Rules` resource
+ *
+ * @param properties - the TypeScript properties of a `RulesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::HBR::OtsBackupPlan.Rules` resource.
+ */
+// @ts-ignore TS6133
+function rosOtsBackupPlanRulesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosOtsBackupPlan_RulesPropertyValidator(properties).assertSuccess();
+    return {
+      'Schedule': ros.stringToRosTemplate(properties.schedule),
+      'BackupType': ros.stringToRosTemplate(properties.backupType),
+      'Retention': ros.numberToRosTemplate(properties.retention),
+      'Disabled': ros.booleanToRosTemplate(properties.disabled),
+      'RuleName': ros.stringToRosTemplate(properties.ruleName),
+    };
+}
+
+/**
+ * Properties for defining a `RosPolicy`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-policy
+ */
+export interface RosPolicyProps {
+
+    /**
+     * @Property policyName: The name of the policy.
+     */
+    readonly policyName: string | ros.IResolvable;
+
+    /**
+     * @Property policyType: The type of the policy.
+     */
+    readonly policyType: string | ros.IResolvable;
+
+    /**
+     * @Property rules: The rules of the policy.
+     */
+    readonly rules: Array<RosPolicy.RulesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property policyDescription: The description of the policy.
+     */
+    readonly policyDescription?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosPolicyProps`
+ *
+ * @param properties - the TypeScript properties of a `RosPolicyProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosPolicyPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('policyType', ros.requiredValidator)(properties.policyType));
+    if(properties.policyType && (typeof properties.policyType) !== 'object') {
+        errors.collect(ros.propertyValidator('policyType', ros.validateAllowedValues)({
+          data: properties.policyType,
+          allowedValues: ["STANDARD","UDM_ECS_ONLY"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('policyType', ros.validateString)(properties.policyType));
+    errors.collect(ros.propertyValidator('policyDescription', ros.validateString)(properties.policyDescription));
+    errors.collect(ros.propertyValidator('policyName', ros.requiredValidator)(properties.policyName));
+    errors.collect(ros.propertyValidator('policyName', ros.validateString)(properties.policyName));
+    errors.collect(ros.propertyValidator('rules', ros.requiredValidator)(properties.rules));
+    if(properties.rules && (Array.isArray(properties.rules) || (typeof properties.rules) === 'string')) {
+        errors.collect(ros.propertyValidator('rules', ros.validateLength)({
+            data: properties.rules.length,
+            min: 1,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('rules', ros.listValidator(RosPolicy_RulesPropertyValidator))(properties.rules));
+    return errors.wrap('supplied properties not correct for "RosPolicyProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::HBR::Policy` resource
+ *
+ * @param properties - the TypeScript properties of a `RosPolicyProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::HBR::Policy` resource.
+ */
+// @ts-ignore TS6133
+function rosPolicyPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosPolicyPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'PolicyName': ros.stringToRosTemplate(properties.policyName),
+      'PolicyType': ros.stringToRosTemplate(properties.policyType),
+      'Rules': ros.listMapper(rosPolicyRulesPropertyToRosTemplate)(properties.rules),
+      'PolicyDescription': ros.stringToRosTemplate(properties.policyDescription),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::Policy`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Policy` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-policy
+ */
+export class RosPolicy extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::HBR::Policy";
+
+    /**
+     * @Attribute PolicyId: The ID of the policy.
+     */
+    public readonly attrPolicyId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property policyName: The name of the policy.
+     */
+    public policyName: string | ros.IResolvable;
+
+    /**
+     * @Property policyType: The type of the policy.
+     */
+    public policyType: string | ros.IResolvable;
+
+    /**
+     * @Property rules: The rules of the policy.
+     */
+    public rules: Array<RosPolicy.RulesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property policyDescription: The description of the policy.
+     */
+    public policyDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosPolicyProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosPolicy.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrPolicyId = this.getAtt('PolicyId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.policyName = props.policyName;
+        this.policyType = props.policyType;
+        this.rules = props.rules;
+        this.policyDescription = props.policyDescription;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            policyName: this.policyName,
+            policyType: this.policyType,
+            rules: this.rules,
+            policyDescription: this.policyDescription,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosPolicyPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosPolicy {
+    /**
+     * @stability external
+     */
+    export interface DataSourceFiltersProperty {
+        /**
+         * @Property crossAccountUserId: The cross account user ID of the data source filter.
+         */
+        readonly crossAccountUserId?: string | ros.IResolvable;
+        /**
+         * @Property crossAccountRoleName: The cross account role name of the data source filter.
+         */
+        readonly crossAccountRoleName?: string | ros.IResolvable;
+        /**
+         * @Property sourceType: The source type of the data source filter.
+         */
+        readonly sourceType?: string | ros.IResolvable;
+        /**
+         * @Property crossAccountType: The cross account type of the data source filter.
+         */
+        readonly crossAccountType?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DataSourceFiltersProperty`
+ *
+ * @param properties - the TypeScript properties of a `DataSourceFiltersProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosPolicy_DataSourceFiltersPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('crossAccountUserId', ros.validateString)(properties.crossAccountUserId));
+    errors.collect(ros.propertyValidator('crossAccountRoleName', ros.validateString)(properties.crossAccountRoleName));
+    errors.collect(ros.propertyValidator('sourceType', ros.validateString)(properties.sourceType));
+    errors.collect(ros.propertyValidator('crossAccountType', ros.validateString)(properties.crossAccountType));
+    return errors.wrap('supplied properties not correct for "DataSourceFiltersProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::HBR::Policy.DataSourceFilters` resource
+ *
+ * @param properties - the TypeScript properties of a `DataSourceFiltersProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::HBR::Policy.DataSourceFilters` resource.
+ */
+// @ts-ignore TS6133
+function rosPolicyDataSourceFiltersPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosPolicy_DataSourceFiltersPropertyValidator(properties).assertSuccess();
+    return {
+      'CrossAccountUserId': ros.stringToRosTemplate(properties.crossAccountUserId),
+      'CrossAccountRoleName': ros.stringToRosTemplate(properties.crossAccountRoleName),
+      'SourceType': ros.stringToRosTemplate(properties.sourceType),
+      'CrossAccountType': ros.stringToRosTemplate(properties.crossAccountType),
+    };
+}
+
+export namespace RosPolicy {
+    /**
+     * @stability external
+     */
+    export interface RetentionRulesProperty {
+        /**
+         * @Property advancedRetentionType: The advanced retention type of the retention rule.
+         */
+        readonly advancedRetentionType?: string | ros.IResolvable;
+        /**
+         * @Property whichSnapshot: The which snapshot of the retention rule.
+         */
+        readonly whichSnapshot?: number | ros.IResolvable;
+        /**
+         * @Property retention: The retention of the retention rule.
+         */
+        readonly retention?: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `RetentionRulesProperty`
+ *
+ * @param properties - the TypeScript properties of a `RetentionRulesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosPolicy_RetentionRulesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.advancedRetentionType && (typeof properties.advancedRetentionType) !== 'object') {
+        errors.collect(ros.propertyValidator('advancedRetentionType', ros.validateAllowedValues)({
+          data: properties.advancedRetentionType,
+          allowedValues: ["DAILY","WEEKLY","MONTHLY","YEARLY"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('advancedRetentionType', ros.validateString)(properties.advancedRetentionType));
+    if(properties.whichSnapshot && (typeof properties.whichSnapshot) !== 'object') {
+        errors.collect(ros.propertyValidator('whichSnapshot', ros.validateAllowedValues)({
+          data: properties.whichSnapshot,
+          allowedValues: [1],
+        }));
+    }
+    errors.collect(ros.propertyValidator('whichSnapshot', ros.validateNumber)(properties.whichSnapshot));
+    errors.collect(ros.propertyValidator('retention', ros.validateNumber)(properties.retention));
+    return errors.wrap('supplied properties not correct for "RetentionRulesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::HBR::Policy.RetentionRules` resource
+ *
+ * @param properties - the TypeScript properties of a `RetentionRulesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::HBR::Policy.RetentionRules` resource.
+ */
+// @ts-ignore TS6133
+function rosPolicyRetentionRulesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosPolicy_RetentionRulesPropertyValidator(properties).assertSuccess();
+    return {
+      'AdvancedRetentionType': ros.stringToRosTemplate(properties.advancedRetentionType),
+      'WhichSnapshot': ros.numberToRosTemplate(properties.whichSnapshot),
+      'Retention': ros.numberToRosTemplate(properties.retention),
+    };
+}
+
+export namespace RosPolicy {
+    /**
+     * @stability external
+     */
+    export interface RulesProperty {
+        /**
+         * @Property immutable: Whether immutable of the rule.
+         */
+        readonly immutable?: boolean | ros.IResolvable;
+        /**
+         * @Property replicationVaultId: The replication vault ID of the rule.
+         */
+        readonly replicationVaultId?: string | ros.IResolvable;
+        /**
+         * @Property continuous: Whether continuous of the rule.
+         */
+        readonly continuous?: boolean | ros.IResolvable;
+        /**
+         * @Property keepLatestSnapshots: The keep latest snapshots of the rule.
+         */
+        readonly keepLatestSnapshots?: number | ros.IResolvable;
+        /**
+         * @Property coldArchiveDays: The cold archive days of the rule.
+         */
+        readonly coldArchiveDays?: number | ros.IResolvable;
+        /**
+         * @Property tagFilters: The tag filters of the rule.
+         */
+        readonly tagFilters?: Array<RosPolicy.TagFiltersProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property archiveDays: The archive days of the rule.
+         */
+        readonly archiveDays?: number | ros.IResolvable;
+        /**
+         * @Property ruleType: The type of the rule.
+         */
+        readonly ruleType: string | ros.IResolvable;
+        /**
+         * @Property retention: The retention of the rule.
+         */
+        readonly retention?: number | ros.IResolvable;
+        /**
+         * @Property archiveVaultId: The archive vault ID of the rule.
+         */
+        readonly archiveVaultId?: string | ros.IResolvable;
+        /**
+         * @Property vaultId: The vault ID of the rule.
+         */
+        readonly vaultId?: string | ros.IResolvable;
+        /**
+         * @Property schedule: The schedule of the rule.
+         */
+        readonly schedule?: string | ros.IResolvable;
+        /**
+         * @Property backupType: The backup type of the rule.
+         */
+        readonly backupType?: string | ros.IResolvable;
+        /**
+         * @Property dataSourceFilters: The data source filters of the rule.
+         */
+        readonly dataSourceFilters?: Array<RosPolicy.DataSourceFiltersProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property retentionRules: The retention rules of the rule.
+         */
+        readonly retentionRules?: Array<RosPolicy.RetentionRulesProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property doDetect: Whether do detect of the rule.
+         */
+        readonly doDetect?: boolean | ros.IResolvable;
+        /**
+         * @Property replicationRegionId: The replication region ID of the rule.
+         */
+        readonly replicationRegionId?: string | ros.IResolvable;
+        /**
+         * @Property selector: The selector of the rule.
+         */
+        readonly selector?: RosPolicy.SelectorProperty | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `RulesProperty`
+ *
+ * @param properties - the TypeScript properties of a `RulesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosPolicy_RulesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('immutable', ros.validateBoolean)(properties.immutable));
+    errors.collect(ros.propertyValidator('replicationVaultId', ros.validateString)(properties.replicationVaultId));
+    errors.collect(ros.propertyValidator('continuous', ros.validateBoolean)(properties.continuous));
+    errors.collect(ros.propertyValidator('keepLatestSnapshots', ros.validateNumber)(properties.keepLatestSnapshots));
+    errors.collect(ros.propertyValidator('coldArchiveDays', ros.validateNumber)(properties.coldArchiveDays));
+    errors.collect(ros.propertyValidator('tagFilters', ros.listValidator(RosPolicy_TagFiltersPropertyValidator))(properties.tagFilters));
+    errors.collect(ros.propertyValidator('archiveDays', ros.validateNumber)(properties.archiveDays));
+    errors.collect(ros.propertyValidator('ruleType', ros.requiredValidator)(properties.ruleType));
+    if(properties.ruleType && (typeof properties.ruleType) !== 'object') {
+        errors.collect(ros.propertyValidator('ruleType', ros.validateAllowedValues)({
+          data: properties.ruleType,
+          allowedValues: ["BACKUP","TRANSITION","REPLICATION","SECURITY","TAG"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ruleType', ros.validateString)(properties.ruleType));
+    if(properties.retention && (typeof properties.retention) !== 'object') {
+        errors.collect(ros.propertyValidator('retention', ros.validateRange)({
+            data: properties.retention,
+            min: 1,
+            max: 364635,
+          }));
+    }
+    errors.collect(ros.propertyValidator('retention', ros.validateNumber)(properties.retention));
+    errors.collect(ros.propertyValidator('archiveVaultId', ros.validateString)(properties.archiveVaultId));
+    errors.collect(ros.propertyValidator('vaultId', ros.validateString)(properties.vaultId));
+    errors.collect(ros.propertyValidator('schedule', ros.validateString)(properties.schedule));
+    if(properties.backupType && (typeof properties.backupType) !== 'object') {
+        errors.collect(ros.propertyValidator('backupType', ros.validateAllowedValues)({
+          data: properties.backupType,
+          allowedValues: ["COMPLETE","INCREMENTAL","DIFFERENTIAL","LOG","INDEX","ARCHIVE","ARCHIVE_BY_SEARCH"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('backupType', ros.validateString)(properties.backupType));
+    errors.collect(ros.propertyValidator('dataSourceFilters', ros.listValidator(RosPolicy_DataSourceFiltersPropertyValidator))(properties.dataSourceFilters));
+    if(properties.retentionRules && (Array.isArray(properties.retentionRules) || (typeof properties.retentionRules) === 'string')) {
+        errors.collect(ros.propertyValidator('retentionRules', ros.validateLength)({
+            data: properties.retentionRules.length,
+            min: undefined,
+            max: 99,
+          }));
+    }
+    errors.collect(ros.propertyValidator('retentionRules', ros.listValidator(RosPolicy_RetentionRulesPropertyValidator))(properties.retentionRules));
+    errors.collect(ros.propertyValidator('doDetect', ros.validateBoolean)(properties.doDetect));
+    errors.collect(ros.propertyValidator('replicationRegionId', ros.validateString)(properties.replicationRegionId));
+    errors.collect(ros.propertyValidator('selector', RosPolicy_SelectorPropertyValidator)(properties.selector));
+    return errors.wrap('supplied properties not correct for "RulesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::HBR::Policy.Rules` resource
+ *
+ * @param properties - the TypeScript properties of a `RulesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::HBR::Policy.Rules` resource.
+ */
+// @ts-ignore TS6133
+function rosPolicyRulesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosPolicy_RulesPropertyValidator(properties).assertSuccess();
+    return {
+      'Immutable': ros.booleanToRosTemplate(properties.immutable),
+      'ReplicationVaultId': ros.stringToRosTemplate(properties.replicationVaultId),
+      'Continuous': ros.booleanToRosTemplate(properties.continuous),
+      'KeepLatestSnapshots': ros.numberToRosTemplate(properties.keepLatestSnapshots),
+      'ColdArchiveDays': ros.numberToRosTemplate(properties.coldArchiveDays),
+      'TagFilters': ros.listMapper(rosPolicyTagFiltersPropertyToRosTemplate)(properties.tagFilters),
+      'ArchiveDays': ros.numberToRosTemplate(properties.archiveDays),
+      'RuleType': ros.stringToRosTemplate(properties.ruleType),
+      'Retention': ros.numberToRosTemplate(properties.retention),
+      'ArchiveVaultId': ros.stringToRosTemplate(properties.archiveVaultId),
+      'VaultId': ros.stringToRosTemplate(properties.vaultId),
+      'Schedule': ros.stringToRosTemplate(properties.schedule),
+      'BackupType': ros.stringToRosTemplate(properties.backupType),
+      'DataSourceFilters': ros.listMapper(rosPolicyDataSourceFiltersPropertyToRosTemplate)(properties.dataSourceFilters),
+      'RetentionRules': ros.listMapper(rosPolicyRetentionRulesPropertyToRosTemplate)(properties.retentionRules),
+      'DoDetect': ros.booleanToRosTemplate(properties.doDetect),
+      'ReplicationRegionId': ros.stringToRosTemplate(properties.replicationRegionId),
+      'Selector': rosPolicySelectorPropertyToRosTemplate(properties.selector),
+    };
+}
+
+export namespace RosPolicy {
+    /**
+     * @stability external
+     */
+    export interface SelectorProperty {
+        /**
+         * @Property value: The value of the selector.
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: The key of the selector.
+         */
+        readonly key?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `SelectorProperty`
+ *
+ * @param properties - the TypeScript properties of a `SelectorProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosPolicy_SelectorPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "SelectorProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::HBR::Policy.Selector` resource
+ *
+ * @param properties - the TypeScript properties of a `SelectorProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::HBR::Policy.Selector` resource.
+ */
+// @ts-ignore TS6133
+function rosPolicySelectorPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosPolicy_SelectorPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
+}
+
+export namespace RosPolicy {
+    /**
+     * @stability external
+     */
+    export interface TagFiltersProperty {
+        /**
+         * @Property operator: The operator of the tag filter.
+         */
+        readonly operator?: string | ros.IResolvable;
+        /**
+         * @Property value: The value of the tag filter.
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: The key of the tag filter.
+         */
+        readonly key?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagFiltersProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagFiltersProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosPolicy_TagFiltersPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.operator && (typeof properties.operator) !== 'object') {
+        errors.collect(ros.propertyValidator('operator', ros.validateAllowedValues)({
+          data: properties.operator,
+          allowedValues: ["EQUAL","NOT"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('operator', ros.validateString)(properties.operator));
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagFiltersProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::HBR::Policy.TagFilters` resource
+ *
+ * @param properties - the TypeScript properties of a `TagFiltersProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::HBR::Policy.TagFilters` resource.
+ */
+// @ts-ignore TS6133
+function rosPolicyTagFiltersPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosPolicy_TagFiltersPropertyValidator(properties).assertSuccess();
+    return {
+      'Operator': ros.stringToRosTemplate(properties.operator),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
+ * Properties for defining a `RosReplicationVault`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-replicationvault
+ */
+export interface RosReplicationVaultProps {
+
+    /**
+     * @Property replicationSourceRegionId: The region ID of the source vault for replication.
+     */
+    readonly replicationSourceRegionId: string | ros.IResolvable;
+
+    /**
+     * @Property replicationSourceVaultId: The ID of the source vault for replication.
+     */
+    readonly replicationSourceVaultId: string | ros.IResolvable;
+
+    /**
+     * @Property vaultName: The name of the vault.
+     */
+    readonly vaultName: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the vault.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property encryptType: The encryption type of the vault.
+     */
+    readonly encryptType?: string | ros.IResolvable;
+
+    /**
+     * @Property kmsKeyId: The KMS key ID used for encryption.
+     */
+    readonly kmsKeyId?: string | ros.IResolvable;
+
+    /**
+     * @Property redundancyType: The redundancy type of the vault.
+     */
+    readonly redundancyType?: string | ros.IResolvable;
+
+    /**
+     * @Property vaultStorageClass: The storage class of the vault.
+     */
+    readonly vaultStorageClass?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosReplicationVaultProps`
+ *
+ * @param properties - the TypeScript properties of a `RosReplicationVaultProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosReplicationVaultPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
+        errors.collect(ros.propertyValidator('description', ros.validateLength)({
+            data: properties.description.length,
+            min: 0,
+            max: 255,
+          }));
+    }
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    if(properties.encryptType && (typeof properties.encryptType) !== 'object') {
+        errors.collect(ros.propertyValidator('encryptType', ros.validateAllowedValues)({
+          data: properties.encryptType,
+          allowedValues: ["HBR_PRIVATE","KMS"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('encryptType', ros.validateString)(properties.encryptType));
+    errors.collect(ros.propertyValidator('kmsKeyId', ros.validateString)(properties.kmsKeyId));
+    errors.collect(ros.propertyValidator('vaultName', ros.requiredValidator)(properties.vaultName));
+    if(properties.vaultName && (Array.isArray(properties.vaultName) || (typeof properties.vaultName) === 'string')) {
+        errors.collect(ros.propertyValidator('vaultName', ros.validateLength)({
+            data: properties.vaultName.length,
+            min: 1,
+            max: 64,
+          }));
+    }
+    errors.collect(ros.propertyValidator('vaultName', ros.validateString)(properties.vaultName));
+    if(properties.vaultStorageClass && (typeof properties.vaultStorageClass) !== 'object') {
+        errors.collect(ros.propertyValidator('vaultStorageClass', ros.validateAllowedValues)({
+          data: properties.vaultStorageClass,
+          allowedValues: ["STANDARD","IA","ARCHIVE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('vaultStorageClass', ros.validateString)(properties.vaultStorageClass));
+    if(properties.redundancyType && (typeof properties.redundancyType) !== 'object') {
+        errors.collect(ros.propertyValidator('redundancyType', ros.validateAllowedValues)({
+          data: properties.redundancyType,
+          allowedValues: ["LRS","ZRS"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('redundancyType', ros.validateString)(properties.redundancyType));
+    errors.collect(ros.propertyValidator('replicationSourceRegionId', ros.requiredValidator)(properties.replicationSourceRegionId));
+    errors.collect(ros.propertyValidator('replicationSourceRegionId', ros.validateString)(properties.replicationSourceRegionId));
+    errors.collect(ros.propertyValidator('replicationSourceVaultId', ros.requiredValidator)(properties.replicationSourceVaultId));
+    errors.collect(ros.propertyValidator('replicationSourceVaultId', ros.validateString)(properties.replicationSourceVaultId));
+    return errors.wrap('supplied properties not correct for "RosReplicationVaultProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::HBR::ReplicationVault` resource
+ *
+ * @param properties - the TypeScript properties of a `RosReplicationVaultProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::HBR::ReplicationVault` resource.
+ */
+// @ts-ignore TS6133
+function rosReplicationVaultPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosReplicationVaultPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ReplicationSourceRegionId': ros.stringToRosTemplate(properties.replicationSourceRegionId),
+      'ReplicationSourceVaultId': ros.stringToRosTemplate(properties.replicationSourceVaultId),
+      'VaultName': ros.stringToRosTemplate(properties.vaultName),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'EncryptType': ros.stringToRosTemplate(properties.encryptType),
+      'KmsKeyId': ros.stringToRosTemplate(properties.kmsKeyId),
+      'RedundancyType': ros.stringToRosTemplate(properties.redundancyType),
+      'VaultStorageClass': ros.stringToRosTemplate(properties.vaultStorageClass),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::ReplicationVault`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ReplicationVault` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-replicationvault
+ */
+export class RosReplicationVault extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::HBR::ReplicationVault";
+
+    /**
+     * @Attribute VaultId: The ID of the vault.
+     */
+    public readonly attrVaultId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property replicationSourceRegionId: The region ID of the source vault for replication.
+     */
+    public replicationSourceRegionId: string | ros.IResolvable;
+
+    /**
+     * @Property replicationSourceVaultId: The ID of the source vault for replication.
+     */
+    public replicationSourceVaultId: string | ros.IResolvable;
+
+    /**
+     * @Property vaultName: The name of the vault.
+     */
+    public vaultName: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the vault.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property encryptType: The encryption type of the vault.
+     */
+    public encryptType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property kmsKeyId: The KMS key ID used for encryption.
+     */
+    public kmsKeyId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property redundancyType: The redundancy type of the vault.
+     */
+    public redundancyType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property vaultStorageClass: The storage class of the vault.
+     */
+    public vaultStorageClass: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosReplicationVaultProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosReplicationVault.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrVaultId = this.getAtt('VaultId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.replicationSourceRegionId = props.replicationSourceRegionId;
+        this.replicationSourceVaultId = props.replicationSourceVaultId;
+        this.vaultName = props.vaultName;
+        this.description = props.description;
+        this.encryptType = props.encryptType;
+        this.kmsKeyId = props.kmsKeyId;
+        this.redundancyType = props.redundancyType;
+        this.vaultStorageClass = props.vaultStorageClass;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            replicationSourceRegionId: this.replicationSourceRegionId,
+            replicationSourceVaultId: this.replicationSourceVaultId,
+            vaultName: this.vaultName,
+            description: this.description,
+            encryptType: this.encryptType,
+            kmsKeyId: this.kmsKeyId,
+            redundancyType: this.redundancyType,
+            vaultStorageClass: this.vaultStorageClass,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosReplicationVaultPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosRestoreJob`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-restorejob
  */
@@ -1180,8 +3397,6 @@ function RosRestoreJobPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('targetInstanceId', ros.validateString)(properties.targetInstanceId));
     errors.collect(ros.propertyValidator('vaultId', ros.requiredValidator)(properties.vaultId));
     errors.collect(ros.propertyValidator('vaultId', ros.validateString)(properties.vaultId));
-    errors.collect(ros.propertyValidator('sourceInstanceId', ros.requiredValidator)(properties.sourceInstanceId));
-    errors.collect(ros.propertyValidator('sourceInstanceId', ros.validateString)(properties.sourceInstanceId));
     errors.collect(ros.propertyValidator('restoreType', ros.requiredValidator)(properties.restoreType));
     if(properties.restoreType && (typeof properties.restoreType) !== 'object') {
         errors.collect(ros.propertyValidator('restoreType', ros.validateAllowedValues)({
@@ -1190,6 +3405,8 @@ function RosRestoreJobPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('restoreType', ros.validateString)(properties.restoreType));
+    errors.collect(ros.propertyValidator('sourceInstanceId', ros.requiredValidator)(properties.sourceInstanceId));
+    errors.collect(ros.propertyValidator('sourceInstanceId', ros.validateString)(properties.sourceInstanceId));
     return errors.wrap('supplied properties not correct for "RosRestoreJobProps"');
 }
 
@@ -1220,7 +3437,7 @@ function rosRestoreJobPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::RestoreJob`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::RestoreJob`, which is used to create a restore job.
  * @Note This class does not contain additional functions, so it is recommended to use the `RestoreJob` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-restorejob
  */
@@ -1495,7 +3712,7 @@ function rosVaultPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::Vault`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::Vault`, which is used to create a backup vault.
  * @Note This class does not contain additional functions, so it is recommended to use the `Vault` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-vault
  */

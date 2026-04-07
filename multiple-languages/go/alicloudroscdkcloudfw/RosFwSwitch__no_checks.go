@@ -92,6 +92,14 @@ func (j *jsiiProxy_RosFwSwitch) validateSetIpaddrListParameters(val interface{})
 	return nil
 }
 
+func (j *jsiiProxy_RosFwSwitch) validateSetIpVersionParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosFwSwitch) validateSetMemberUidParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosFwSwitch) validateSetRegionListParameters(val interface{}) error {
 	return nil
 }

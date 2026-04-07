@@ -190,7 +190,7 @@ export interface INatFirewallControlPolicy extends ros.IResource {
     readonly attrNatGatewayId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::NatFirewallControlPolicy`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::NatFirewallControlPolicy`, which is used to add an access control policy for a NAT firewall.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNatFirewallControlPolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-natfirewallcontrolpolicy
  */
@@ -233,8 +233,8 @@ export class NatFirewallControlPolicy extends ros.Resource implements INatFirewa
             endTime: props.endTime,
             ipVersion: props.ipVersion === undefined || props.ipVersion === null ? 4 : props.ipVersion,
             sourceType: props.sourceType,
-            destPort: props.destPort,
             applicationNameList: props.applicationNameList,
+            destPort: props.destPort,
             startTime: props.startTime,
             aclAction: props.aclAction,
             destinationType: props.destinationType,
@@ -244,12 +244,12 @@ export class NatFirewallControlPolicy extends ros.Resource implements INatFirewa
             proto: props.proto,
             repeatEndTime: props.repeatEndTime,
             domainResolveType: props.domainResolveType,
-            repeatDays: props.repeatDays,
             repeatType: props.repeatType,
+            repeatDays: props.repeatDays,
             repeatStartTime: props.repeatStartTime,
             natGatewayId: props.natGatewayId,
-            release: props.release,
             newOrder: props.newOrder,
+            release: props.release,
             destPortGroup: props.destPortGroup,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosNatFirewallControlPolicy;

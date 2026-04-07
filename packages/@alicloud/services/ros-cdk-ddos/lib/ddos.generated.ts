@@ -121,14 +121,6 @@ function RosOriginInstancePropsValidator(properties: any): ros.ValidationResult 
           }));
     }
     errors.collect(ros.propertyValidator('cleanBandwidth', ros.validateNumber)(properties.cleanBandwidth));
-    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
-        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
-            data: properties.tags.length,
-            min: undefined,
-            max: 20,
-          }));
-    }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosOriginInstance_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('edition', ros.requiredValidator)(properties.edition));
     if(properties.edition && (typeof properties.edition) !== 'object') {
         errors.collect(ros.propertyValidator('edition', ros.validateAllowedValues)({
@@ -137,6 +129,16 @@ function RosOriginInstancePropsValidator(properties: any): ros.ValidationResult 
         }));
     }
     errors.collect(ros.propertyValidator('edition', ros.validateString)(properties.edition));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosOriginInstance_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('protectionMode', ros.requiredValidator)(properties.protectionMode));
+    errors.collect(ros.propertyValidator('protectionMode', ros.validateString)(properties.protectionMode));
     if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
         errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
           data: properties.periodUnit,
@@ -144,8 +146,6 @@ function RosOriginInstancePropsValidator(properties: any): ros.ValidationResult 
         }));
     }
     errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
-    errors.collect(ros.propertyValidator('protectionMode', ros.requiredValidator)(properties.protectionMode));
-    errors.collect(ros.propertyValidator('protectionMode', ros.validateString)(properties.protectionMode));
     return errors.wrap('supplied properties not correct for "RosOriginInstanceProps"');
 }
 
@@ -177,7 +177,7 @@ function rosOriginInstancePropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoS::OriginInstance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoS::OriginInstance`, which is used to create an Anti-DDoS Origin instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `OriginInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddos-origininstance
  */
@@ -481,7 +481,7 @@ function rosPolicyPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoS::Policy`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoS::Policy`, which is used to create a mitigation policy.
  * @Note This class does not contain additional functions, so it is recommended to use the `Policy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddos-policy
  */

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::CustomerGateway</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:00.882Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.786Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.CustomerGateway")
 public class CustomerGateway extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.ICustomerGateway {
 
@@ -200,6 +200,37 @@ public class CustomerGateway extends com.aliyun.ros.cdk.core.Resource implements
          */
         public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props.name(name);
+            return this;
+        }
+
+        /**
+         * Property resourceGroupId: The ID of the resource group to which the user gateway belongs.
+         * <p>
+         * <ul>
+         * <li>You can call the ListResourceGroups interface to query the resource group ID.</li>
+         * <li>If you do not specify a resource group, the user gateway will belong to the default resource group after creation.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group to which the user gateway belongs. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: The ID of the resource group to which the user gateway belongs.
+         * <p>
+         * <ul>
+         * <li>You can call the ListResourceGroups interface to query the resource group ID.</li>
+         * <li>If you do not specify a resource group, the user gateway will belong to the default resource group after creation.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group to which the user gateway belongs. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
             return this;
         }
 

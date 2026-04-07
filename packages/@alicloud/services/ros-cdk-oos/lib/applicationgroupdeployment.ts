@@ -35,9 +35,24 @@ export interface ApplicationGroupDeploymentProps {
  */
 export interface IApplicationGroupDeployment extends ros.IResource {
     readonly props: ApplicationGroupDeploymentProps;
+
+    /**
+     * Attribute ApplicationName: The name of the application.
+     */
+    readonly attrApplicationName: ros.IResolvable | string;
+
+    /**
+     * Attribute ExecutionId: The execution ID of the application group deployment.
+     */
+    readonly attrExecutionId: ros.IResolvable | string;
+
+    /**
+     * Attribute Name: The name of the application group.
+     */
+    readonly attrName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::ApplicationGroupDeployment`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::ApplicationGroupDeployment`The , which resource deploys an application group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApplicationGroupDeployment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-applicationgroupdeployment
  */
@@ -46,6 +61,21 @@ export class ApplicationGroupDeployment extends ros.Resource implements IApplica
     protected id: string;
     public readonly props: ApplicationGroupDeploymentProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute ApplicationName: The name of the application.
+     */
+    public readonly attrApplicationName: ros.IResolvable | string;
+
+    /**
+     * Attribute ExecutionId: The execution ID of the application group deployment.
+     */
+    public readonly attrExecutionId: ros.IResolvable | string;
+
+    /**
+     * Attribute Name: The name of the application group.
+     */
+    public readonly attrName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -66,5 +96,8 @@ export class ApplicationGroupDeployment extends ros.Resource implements IApplica
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosApplicationGroupDeployment;
+        this.attrApplicationName = rosApplicationGroupDeployment.attrApplicationName;
+        this.attrExecutionId = rosApplicationGroupDeployment.attrExecutionId;
+        this.attrName = rosApplicationGroupDeployment.attrName;
     }
 }

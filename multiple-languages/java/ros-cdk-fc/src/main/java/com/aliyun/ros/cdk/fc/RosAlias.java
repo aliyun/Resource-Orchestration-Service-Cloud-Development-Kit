@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.fc;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::FC::Alias</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::FC::Alias</code>The , which type creates an alias for a service version in Function Compute.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.800Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.837Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosAlias")
 public class RosAlias extends com.aliyun.ros.cdk.core.RosResource {
 

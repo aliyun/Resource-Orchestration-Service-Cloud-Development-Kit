@@ -79,8 +79,8 @@ function RosGroupPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('app', ros.validateString)(properties.app));
     errors.collect(ros.propertyValidator('inProtocol', ros.requiredValidator)(properties.inProtocol));
     errors.collect(ros.propertyValidator('inProtocol', ros.validateString)(properties.inProtocol));
-    errors.collect(ros.propertyValidator('callback', ros.validateString)(properties.callback));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('callback', ros.validateString)(properties.callback));
     errors.collect(ros.propertyValidator('playDomain', ros.requiredValidator)(properties.playDomain));
     errors.collect(ros.propertyValidator('playDomain', ros.validateString)(properties.playDomain));
     errors.collect(ros.propertyValidator('enabled', ros.validateBoolean)(properties.enabled));

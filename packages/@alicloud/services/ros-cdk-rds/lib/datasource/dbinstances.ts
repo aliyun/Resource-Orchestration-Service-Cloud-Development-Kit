@@ -135,7 +135,7 @@ export interface IDBInstances extends ros.IResource {
     readonly attrDbInstances: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::RDS::DBInstances`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::RDS::DBInstances`, which is used to query ApsaraDB RDS instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBInstances`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-dbinstances
  */
@@ -170,15 +170,15 @@ export class DBInstances extends ros.Resource implements IDBInstances {
         const rosDBInstances = new RosDBInstances(this, id,  {
             dedicatedHostId: props.dedicatedHostId,
             engineVersion: props.engineVersion,
-            dbInstanceStatus: props.dbInstanceStatus,
-            resourceGroupId: props.resourceGroupId,
             zoneId: props.zoneId,
+            resourceGroupId: props.resourceGroupId,
+            dbInstanceStatus: props.dbInstanceStatus,
             dbInstanceClass: props.dbInstanceClass,
             dedicatedHostGroupId: props.dedicatedHostGroupId,
             vSwitchId: props.vSwitchId,
             dbInstanceType: props.dbInstanceType,
-            instanceLevel: props.instanceLevel,
             expired: props.expired,
+            instanceLevel: props.instanceLevel,
             payType: props.payType,
             instanceNetworkType: props.instanceNetworkType,
             refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,

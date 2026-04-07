@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cen;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CEN::TransitRouterVpnAttachment</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CEN::TransitRouterVpnAttachment</code>, which is used to create a VPN connection.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.219Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:22.465Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosTransitRouterVpnAttachment")
 public class RosTransitRouterVpnAttachment extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -75,24 +75,6 @@ public class RosTransitRouterVpnAttachment extends com.aliyun.ros.cdk.core.RosRe
      */
     public void setVpnId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "vpnId", java.util.Objects.requireNonNull(value, "vpnId is required"));
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getZoneId() {
-        return software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setZoneId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "zoneId", java.util.Objects.requireNonNull(value, "zoneId is required"));
-    }
-
-    /**
-     */
-    public void setZoneId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "zoneId", java.util.Objects.requireNonNull(value, "zoneId is required"));
     }
 
     /**
@@ -267,6 +249,24 @@ public class RosTransitRouterVpnAttachment extends com.aliyun.ros.cdk.core.RosRe
      */
     public void setVpnOwnerId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "vpnOwnerId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
+        return software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setZoneId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "zoneId", value);
+    }
+
+    /**
+     */
+    public void setZoneId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "zoneId", value);
     }
     /**
      */
@@ -482,23 +482,6 @@ public class RosTransitRouterVpnAttachment extends com.aliyun.ros.cdk.core.RosRe
 
         /**
          * @return {@code this}
-         * @param zoneId This parameter is required.
-         */
-        public Builder zoneId(final java.lang.String zoneId) {
-            this.props.zoneId(zoneId);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param zoneId This parameter is required.
-         */
-        public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
-            this.props.zoneId(zoneId);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param autoPublishRouteEnabled This parameter is required.
          */
         public Builder autoPublishRouteEnabled(final java.lang.Boolean autoPublishRouteEnabled) {
@@ -656,6 +639,23 @@ public class RosTransitRouterVpnAttachment extends com.aliyun.ros.cdk.core.RosRe
          */
         public Builder vpnOwnerId(final com.aliyun.ros.cdk.core.IResolvable vpnOwnerId) {
             this.props.vpnOwnerId(vpnOwnerId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param zoneId This parameter is required.
+         */
+        public Builder zoneId(final java.lang.String zoneId) {
+            this.props.zoneId(zoneId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param zoneId This parameter is required.
+         */
+        public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
+            this.props.zoneId(zoneId);
             return this;
         }
 

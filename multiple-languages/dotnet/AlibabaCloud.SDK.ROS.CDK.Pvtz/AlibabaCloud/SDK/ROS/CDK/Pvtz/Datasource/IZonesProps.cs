@@ -42,6 +42,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz.Datasource
             }
         }
 
+        /// <summary>Property vpcId: The ID of the VPC that is associated with the zone.</summary>
+        [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? VpcId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `Zones`.</summary>
         /// <remarks>
         /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pvtz-zones
@@ -74,6 +85,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz.Datasource
             [JsiiOptional]
             [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ResourceGroupId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property vpcId: The ID of the VPC that is associated with the zone.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? VpcId
             {
                 get => GetInstanceProperty<object?>();
             }

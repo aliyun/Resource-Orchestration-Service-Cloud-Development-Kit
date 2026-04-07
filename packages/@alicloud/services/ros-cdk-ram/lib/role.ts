@@ -56,6 +56,11 @@ export interface RoleProps {
      * Property policyAttachments: System and custom policy names to attach.
      */
     readonly policyAttachments?: RosRole.PolicyAttachmentsProperty | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to role. Max support 20 tags to add during create role. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosRole.TagsProperty[];
 }
 
 /**
@@ -80,7 +85,7 @@ export interface IRole extends ros.IResource {
     readonly attrRoleName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::Role`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::Role`The , which resource creates a RAM role.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRole`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-role
  */
@@ -136,9 +141,10 @@ export class Role extends ros.Resource implements IRole, IPrincipal {
             roleName: props.roleName,
             description: props.description,
             policies: props.policies,
-            deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
             policyAttachments: props.policyAttachments,
+            deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
             assumeRolePolicyDocument: props.assumeRolePolicyDocument,
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosRole;
         this.attrArn = rosRole.attrArn;

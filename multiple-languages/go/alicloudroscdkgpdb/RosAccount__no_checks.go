@@ -96,6 +96,10 @@ func (j *jsiiProxy_RosAccount) validateSetAccountPasswordParameters(val interfac
 	return nil
 }
 
+func (j *jsiiProxy_RosAccount) validateSetAccountTypeParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosAccount) validateSetDbInstanceIdParameters(val interface{}) error {
 	return nil
 }

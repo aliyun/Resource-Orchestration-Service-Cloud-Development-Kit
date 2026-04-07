@@ -132,7 +132,7 @@ export interface IServerGroup extends ros.IResource {
     readonly attrServerGroupId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::ServerGroup`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::ServerGroup`Use , which to create a server group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosServerGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-servergroup
  */
@@ -168,8 +168,8 @@ export class ServerGroup extends ros.Resource implements IServerGroup {
             connectionDrainConfig: props.connectionDrainConfig,
             resourceGroupId: props.resourceGroupId,
             uchConfig: props.uchConfig,
-            upstreamKeepaliveEnabled: props.upstreamKeepaliveEnabled === undefined || props.upstreamKeepaliveEnabled === null ? false : props.upstreamKeepaliveEnabled,
             scheduler: props.scheduler,
+            upstreamKeepaliveEnabled: props.upstreamKeepaliveEnabled === undefined || props.upstreamKeepaliveEnabled === null ? false : props.upstreamKeepaliveEnabled,
             stickySessionConfig: props.stickySessionConfig,
             serverGroupType: props.serverGroupType,
             crossZoneEnabled: props.crossZoneEnabled,

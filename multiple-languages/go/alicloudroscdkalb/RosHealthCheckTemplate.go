@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::HealthCheckTemplate`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::HealthCheckTemplate`The , which resource type creates a health check template.
 type RosHealthCheckTemplate interface {
 	alicloudroscdkcore.RosResource
 	AttrHealthCheckTemplateId() alicloudroscdkcore.IResolvable
@@ -25,6 +25,8 @@ type RosHealthCheckTemplate interface {
 	SetHealthCheckConnectPort(val interface{})
 	HealthCheckHost() interface{}
 	SetHealthCheckHost(val interface{})
+	HealthCheckHttpVersion() interface{}
+	SetHealthCheckHttpVersion(val interface{})
 	HealthCheckInterval() interface{}
 	SetHealthCheckInterval(val interface{})
 	HealthCheckMethod() interface{}
@@ -56,6 +58,8 @@ type RosHealthCheckTemplate interface {
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
 	// coerce it to an IResolvable through `Lazy.any({ produce: resource.ref })`.
 	Ref() *string
+	ResourceGroupId() interface{}
+	SetResourceGroupId(val interface{})
 	// Options for this resource, such as condition, update policy etc.
 	RosOptions() alicloudroscdkcore.IRosResourceOptions
 	RosProperties() *map[string]interface{}
@@ -251,6 +255,16 @@ func (j *jsiiProxy_RosHealthCheckTemplate) HealthCheckHost() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosHealthCheckTemplate) HealthCheckHttpVersion() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"healthCheckHttpVersion",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosHealthCheckTemplate) HealthCheckInterval() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -346,6 +360,16 @@ func (j *jsiiProxy_RosHealthCheckTemplate) Ref() *string {
 	_jsii_.Get(
 		j,
 		"ref",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosHealthCheckTemplate) ResourceGroupId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"resourceGroupId",
 		&returns,
 	)
 	return returns
@@ -483,6 +507,17 @@ func (j *jsiiProxy_RosHealthCheckTemplate)SetHealthCheckHost(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosHealthCheckTemplate)SetHealthCheckHttpVersion(val interface{}) {
+	if err := j.validateSetHealthCheckHttpVersionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"healthCheckHttpVersion",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosHealthCheckTemplate)SetHealthCheckInterval(val interface{}) {
 	if err := j.validateSetHealthCheckIntervalParameters(val); err != nil {
 		panic(err)
@@ -556,6 +591,17 @@ func (j *jsiiProxy_RosHealthCheckTemplate)SetHealthyThreshold(val interface{}) {
 	_jsii_.Set(
 		j,
 		"healthyThreshold",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosHealthCheckTemplate)SetResourceGroupId(val interface{}) {
+	if err := j.validateSetResourceGroupIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"resourceGroupId",
 		val,
 	)
 }

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.gpdb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-supabaseproject
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.445Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:27.069Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.SupabaseProjectProps")
 @software.amazon.jsii.Jsii.Proxy(SupabaseProjectProps.Jsii$Proxy.class)
 public interface SupabaseProjectProps extends software.amazon.jsii.JsiiSerializable {
@@ -73,9 +73,32 @@ public interface SupabaseProjectProps extends software.amazon.jsii.JsiiSerializa
     }
 
     /**
+     * Property payType: The payment type.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPayType() {
+        return null;
+    }
+
+    /**
+     * Property period: The billing period.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
+        return null;
+    }
+
+    /**
      * Property storageSize: Storage space size, unit GB, default 1GB.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getStorageSize() {
+        return null;
+    }
+
+    /**
+     * Property usedTime: The subscription period of the instance.
+     * <p>
+     * Unit: month or year. Note When period is set to year, the supported values of this parameter are 1, 2 and 3.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getUsedTime() {
         return null;
     }
 
@@ -97,7 +120,10 @@ public interface SupabaseProjectProps extends software.amazon.jsii.JsiiSerializa
         java.lang.Object vSwitchId;
         java.lang.Object zoneId;
         java.lang.Object diskPerformanceLevel;
+        java.lang.Object payType;
+        java.lang.Object period;
         java.lang.Object storageSize;
+        java.lang.Object usedTime;
 
         /**
          * Sets the value of {@link SupabaseProjectProps#getAccountPassword}
@@ -288,6 +314,46 @@ public interface SupabaseProjectProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link SupabaseProjectProps#getPayType}
+         * @param payType Property payType: The payment type.
+         * @return {@code this}
+         */
+        public Builder payType(java.lang.String payType) {
+            this.payType = payType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SupabaseProjectProps#getPayType}
+         * @param payType Property payType: The payment type.
+         * @return {@code this}
+         */
+        public Builder payType(com.aliyun.ros.cdk.core.IResolvable payType) {
+            this.payType = payType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SupabaseProjectProps#getPeriod}
+         * @param period Property period: The billing period.
+         * @return {@code this}
+         */
+        public Builder period(java.lang.String period) {
+            this.period = period;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SupabaseProjectProps#getPeriod}
+         * @param period Property period: The billing period.
+         * @return {@code this}
+         */
+        public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
+            this.period = period;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SupabaseProjectProps#getStorageSize}
          * @param storageSize Property storageSize: Storage space size, unit GB, default 1GB.
          * @return {@code this}
@@ -304,6 +370,28 @@ public interface SupabaseProjectProps extends software.amazon.jsii.JsiiSerializa
          */
         public Builder storageSize(com.aliyun.ros.cdk.core.IResolvable storageSize) {
             this.storageSize = storageSize;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SupabaseProjectProps#getUsedTime}
+         * @param usedTime Property usedTime: The subscription period of the instance.
+         *                 Unit: month or year. Note When period is set to year, the supported values of this parameter are 1, 2 and 3.
+         * @return {@code this}
+         */
+        public Builder usedTime(java.lang.Number usedTime) {
+            this.usedTime = usedTime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SupabaseProjectProps#getUsedTime}
+         * @param usedTime Property usedTime: The subscription period of the instance.
+         *                 Unit: month or year. Note When period is set to year, the supported values of this parameter are 1, 2 and 3.
+         * @return {@code this}
+         */
+        public Builder usedTime(com.aliyun.ros.cdk.core.IResolvable usedTime) {
+            this.usedTime = usedTime;
             return this;
         }
 
@@ -331,7 +419,10 @@ public interface SupabaseProjectProps extends software.amazon.jsii.JsiiSerializa
         private final java.lang.Object vSwitchId;
         private final java.lang.Object zoneId;
         private final java.lang.Object diskPerformanceLevel;
+        private final java.lang.Object payType;
+        private final java.lang.Object period;
         private final java.lang.Object storageSize;
+        private final java.lang.Object usedTime;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -347,7 +438,10 @@ public interface SupabaseProjectProps extends software.amazon.jsii.JsiiSerializa
             this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.diskPerformanceLevel = software.amazon.jsii.Kernel.get(this, "diskPerformanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.payType = software.amazon.jsii.Kernel.get(this, "payType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.storageSize = software.amazon.jsii.Kernel.get(this, "storageSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.usedTime = software.amazon.jsii.Kernel.get(this, "usedTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -363,7 +457,10 @@ public interface SupabaseProjectProps extends software.amazon.jsii.JsiiSerializa
             this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
             this.zoneId = java.util.Objects.requireNonNull(builder.zoneId, "zoneId is required");
             this.diskPerformanceLevel = builder.diskPerformanceLevel;
+            this.payType = builder.payType;
+            this.period = builder.period;
             this.storageSize = builder.storageSize;
+            this.usedTime = builder.usedTime;
         }
 
         @Override
@@ -407,8 +504,23 @@ public interface SupabaseProjectProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
+        public final java.lang.Object getPayType() {
+            return this.payType;
+        }
+
+        @Override
+        public final java.lang.Object getPeriod() {
+            return this.period;
+        }
+
+        @Override
         public final java.lang.Object getStorageSize() {
             return this.storageSize;
+        }
+
+        @Override
+        public final java.lang.Object getUsedTime() {
+            return this.usedTime;
         }
 
         @Override
@@ -427,8 +539,17 @@ public interface SupabaseProjectProps extends software.amazon.jsii.JsiiSerializa
             if (this.getDiskPerformanceLevel() != null) {
                 data.set("diskPerformanceLevel", om.valueToTree(this.getDiskPerformanceLevel()));
             }
+            if (this.getPayType() != null) {
+                data.set("payType", om.valueToTree(this.getPayType()));
+            }
+            if (this.getPeriod() != null) {
+                data.set("period", om.valueToTree(this.getPeriod()));
+            }
             if (this.getStorageSize() != null) {
                 data.set("storageSize", om.valueToTree(this.getStorageSize()));
+            }
+            if (this.getUsedTime() != null) {
+                data.set("usedTime", om.valueToTree(this.getUsedTime()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -456,7 +577,10 @@ public interface SupabaseProjectProps extends software.amazon.jsii.JsiiSerializa
             if (!vSwitchId.equals(that.vSwitchId)) return false;
             if (!zoneId.equals(that.zoneId)) return false;
             if (this.diskPerformanceLevel != null ? !this.diskPerformanceLevel.equals(that.diskPerformanceLevel) : that.diskPerformanceLevel != null) return false;
-            return this.storageSize != null ? this.storageSize.equals(that.storageSize) : that.storageSize == null;
+            if (this.payType != null ? !this.payType.equals(that.payType) : that.payType != null) return false;
+            if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
+            if (this.storageSize != null ? !this.storageSize.equals(that.storageSize) : that.storageSize != null) return false;
+            return this.usedTime != null ? this.usedTime.equals(that.usedTime) : that.usedTime == null;
         }
 
         @Override
@@ -469,7 +593,10 @@ public interface SupabaseProjectProps extends software.amazon.jsii.JsiiSerializa
             result = 31 * result + (this.vSwitchId.hashCode());
             result = 31 * result + (this.zoneId.hashCode());
             result = 31 * result + (this.diskPerformanceLevel != null ? this.diskPerformanceLevel.hashCode() : 0);
+            result = 31 * result + (this.payType != null ? this.payType.hashCode() : 0);
+            result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.storageSize != null ? this.storageSize.hashCode() : 0);
+            result = 31 * result + (this.usedTime != null ? this.usedTime.hashCode() : 0);
             return result;
         }
     }

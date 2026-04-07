@@ -60,7 +60,7 @@ export interface IAccount extends ros.IResource {
     readonly attrPolarDbxAccountName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::PolarDBX::Account`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::PolarDBX::Account`, which is used to query the information about a PolarDB for Xscale (PolarDB-X) account.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccount`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardbx-account
  */

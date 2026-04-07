@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.actiontrail;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ACTIONTRAIL::Trail</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ACTIONTRAIL::Trail</code>, which is used to create a trail to deliver events to Simple Log Service or Object Storage Service (OSS).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:51.892Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:21.042Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.actiontrail.$Module.class, fqn = "@alicloud/ros-cdk-actiontrail.RosTrail")
 public class RosTrail extends com.aliyun.ros.cdk.core.RosResource {
 

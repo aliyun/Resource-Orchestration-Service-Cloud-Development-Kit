@@ -403,5 +403,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
                 _rotationInterval = value;
             }
         }
+
+        /// <summary>Property tags: Tags to attach to key.</summary>
+        /// <remarks>
+        /// Max support 20 tags to add during create key. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-kms.RosKey.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        public AlibabaCloud.SDK.ROS.CDK.Kms.RosKey.ITagsProperty[]? Tags
+        {
+            get;
+            set;
+        }
     }
 }

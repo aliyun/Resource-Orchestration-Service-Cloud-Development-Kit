@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.adb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adb-dbcluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:51.912Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:21.077Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.adb.$Module.class, fqn = "@alicloud/ros-cdk-adb.DBClusterProps")
 @software.amazon.jsii.Jsii.Proxy(DBClusterProps.Jsii$Proxy.class)
 public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -109,6 +109,18 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property diskEncryption: Whether to enable cloud disk encryption. Value:.
+     * <p>
+     * <ul>
+     * <li>true: yes.</li>
+     * <li>false: no.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDiskEncryption() {
+        return null;
+    }
+
+    /**
      * Property elasticIoResource: Elastic IO Unit Note the flexible mode cluster will use this parameter.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getElasticIoResource() {
@@ -116,9 +128,28 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property enableSsl: Whether to enable SSL link encryption function, value:.
+     * <p>
+     * <ul>
+     * <li><strong>true</strong>: open.</li>
+     * <li><strong>false</strong>: close.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEnableSsl() {
+        return null;
+    }
+
+    /**
      * Property executorCount: ExecutorCount.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getExecutorCount() {
+        return null;
+    }
+
+    /**
+     * Property kmsId: The kmsId used for cloud disk encryption, effective only when DiskEncryption is true.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getKmsId() {
         return null;
     }
 
@@ -188,8 +219,11 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object dbClusterDescription;
         java.lang.Object dbNodeGroupCount;
         java.lang.Object dbNodeStorage;
+        java.lang.Object diskEncryption;
         java.lang.Object elasticIoResource;
+        java.lang.Object enableSsl;
         java.lang.Object executorCount;
+        java.lang.Object kmsId;
         java.lang.Object period;
         java.lang.Object periodType;
         java.lang.Object resourceGroupId;
@@ -467,6 +501,34 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link DBClusterProps#getDiskEncryption}
+         * @param diskEncryption Property diskEncryption: Whether to enable cloud disk encryption. Value:.
+         *                       <ul>
+         *                       <li>true: yes.</li>
+         *                       <li>false: no.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder diskEncryption(java.lang.Boolean diskEncryption) {
+            this.diskEncryption = diskEncryption;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBClusterProps#getDiskEncryption}
+         * @param diskEncryption Property diskEncryption: Whether to enable cloud disk encryption. Value:.
+         *                       <ul>
+         *                       <li>true: yes.</li>
+         *                       <li>false: no.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder diskEncryption(com.aliyun.ros.cdk.core.IResolvable diskEncryption) {
+            this.diskEncryption = diskEncryption;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DBClusterProps#getElasticIoResource}
          * @param elasticIoResource Property elasticIoResource: Elastic IO Unit Note the flexible mode cluster will use this parameter.
          * @return {@code this}
@@ -487,6 +549,34 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link DBClusterProps#getEnableSsl}
+         * @param enableSsl Property enableSsl: Whether to enable SSL link encryption function, value:.
+         *                  <ul>
+         *                  <li><strong>true</strong>: open.</li>
+         *                  <li><strong>false</strong>: close.</li>
+         *                  </ul>
+         * @return {@code this}
+         */
+        public Builder enableSsl(java.lang.Boolean enableSsl) {
+            this.enableSsl = enableSsl;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBClusterProps#getEnableSsl}
+         * @param enableSsl Property enableSsl: Whether to enable SSL link encryption function, value:.
+         *                  <ul>
+         *                  <li><strong>true</strong>: open.</li>
+         *                  <li><strong>false</strong>: close.</li>
+         *                  </ul>
+         * @return {@code this}
+         */
+        public Builder enableSsl(com.aliyun.ros.cdk.core.IResolvable enableSsl) {
+            this.enableSsl = enableSsl;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DBClusterProps#getExecutorCount}
          * @param executorCount Property executorCount: ExecutorCount.
          * @return {@code this}
@@ -503,6 +593,26 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder executorCount(com.aliyun.ros.cdk.core.IResolvable executorCount) {
             this.executorCount = executorCount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBClusterProps#getKmsId}
+         * @param kmsId Property kmsId: The kmsId used for cloud disk encryption, effective only when DiskEncryption is true.
+         * @return {@code this}
+         */
+        public Builder kmsId(java.lang.String kmsId) {
+            this.kmsId = kmsId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBClusterProps#getKmsId}
+         * @param kmsId Property kmsId: The kmsId used for cloud disk encryption, effective only when DiskEncryption is true.
+         * @return {@code this}
+         */
+        public Builder kmsId(com.aliyun.ros.cdk.core.IResolvable kmsId) {
+            this.kmsId = kmsId;
             return this;
         }
 
@@ -635,8 +745,11 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object dbClusterDescription;
         private final java.lang.Object dbNodeGroupCount;
         private final java.lang.Object dbNodeStorage;
+        private final java.lang.Object diskEncryption;
         private final java.lang.Object elasticIoResource;
+        private final java.lang.Object enableSsl;
         private final java.lang.Object executorCount;
+        private final java.lang.Object kmsId;
         private final java.lang.Object period;
         private final java.lang.Object periodType;
         private final java.lang.Object resourceGroupId;
@@ -660,8 +773,11 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.dbClusterDescription = software.amazon.jsii.Kernel.get(this, "dbClusterDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbNodeGroupCount = software.amazon.jsii.Kernel.get(this, "dbNodeGroupCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbNodeStorage = software.amazon.jsii.Kernel.get(this, "dbNodeStorage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.diskEncryption = software.amazon.jsii.Kernel.get(this, "diskEncryption", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.elasticIoResource = software.amazon.jsii.Kernel.get(this, "elasticIoResource", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.enableSsl = software.amazon.jsii.Kernel.get(this, "enableSsl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.executorCount = software.amazon.jsii.Kernel.get(this, "executorCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.kmsId = software.amazon.jsii.Kernel.get(this, "kmsId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.periodType = software.amazon.jsii.Kernel.get(this, "periodType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -686,8 +802,11 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.dbClusterDescription = builder.dbClusterDescription;
             this.dbNodeGroupCount = builder.dbNodeGroupCount;
             this.dbNodeStorage = builder.dbNodeStorage;
+            this.diskEncryption = builder.diskEncryption;
             this.elasticIoResource = builder.elasticIoResource;
+            this.enableSsl = builder.enableSsl;
             this.executorCount = builder.executorCount;
+            this.kmsId = builder.kmsId;
             this.period = builder.period;
             this.periodType = builder.periodType;
             this.resourceGroupId = builder.resourceGroupId;
@@ -751,13 +870,28 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getDiskEncryption() {
+            return this.diskEncryption;
+        }
+
+        @Override
         public final java.lang.Object getElasticIoResource() {
             return this.elasticIoResource;
         }
 
         @Override
+        public final java.lang.Object getEnableSsl() {
+            return this.enableSsl;
+        }
+
+        @Override
         public final java.lang.Object getExecutorCount() {
             return this.executorCount;
+        }
+
+        @Override
+        public final java.lang.Object getKmsId() {
+            return this.kmsId;
         }
 
         @Override
@@ -812,11 +946,20 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getDbNodeStorage() != null) {
                 data.set("dbNodeStorage", om.valueToTree(this.getDbNodeStorage()));
             }
+            if (this.getDiskEncryption() != null) {
+                data.set("diskEncryption", om.valueToTree(this.getDiskEncryption()));
+            }
             if (this.getElasticIoResource() != null) {
                 data.set("elasticIoResource", om.valueToTree(this.getElasticIoResource()));
             }
+            if (this.getEnableSsl() != null) {
+                data.set("enableSsl", om.valueToTree(this.getEnableSsl()));
+            }
             if (this.getExecutorCount() != null) {
                 data.set("executorCount", om.valueToTree(this.getExecutorCount()));
+            }
+            if (this.getKmsId() != null) {
+                data.set("kmsId", om.valueToTree(this.getKmsId()));
             }
             if (this.getPeriod() != null) {
                 data.set("period", om.valueToTree(this.getPeriod()));
@@ -862,8 +1005,11 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.dbClusterDescription != null ? !this.dbClusterDescription.equals(that.dbClusterDescription) : that.dbClusterDescription != null) return false;
             if (this.dbNodeGroupCount != null ? !this.dbNodeGroupCount.equals(that.dbNodeGroupCount) : that.dbNodeGroupCount != null) return false;
             if (this.dbNodeStorage != null ? !this.dbNodeStorage.equals(that.dbNodeStorage) : that.dbNodeStorage != null) return false;
+            if (this.diskEncryption != null ? !this.diskEncryption.equals(that.diskEncryption) : that.diskEncryption != null) return false;
             if (this.elasticIoResource != null ? !this.elasticIoResource.equals(that.elasticIoResource) : that.elasticIoResource != null) return false;
+            if (this.enableSsl != null ? !this.enableSsl.equals(that.enableSsl) : that.enableSsl != null) return false;
             if (this.executorCount != null ? !this.executorCount.equals(that.executorCount) : that.executorCount != null) return false;
+            if (this.kmsId != null ? !this.kmsId.equals(that.kmsId) : that.kmsId != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
             if (this.periodType != null ? !this.periodType.equals(that.periodType) : that.periodType != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
@@ -884,8 +1030,11 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.dbClusterDescription != null ? this.dbClusterDescription.hashCode() : 0);
             result = 31 * result + (this.dbNodeGroupCount != null ? this.dbNodeGroupCount.hashCode() : 0);
             result = 31 * result + (this.dbNodeStorage != null ? this.dbNodeStorage.hashCode() : 0);
+            result = 31 * result + (this.diskEncryption != null ? this.diskEncryption.hashCode() : 0);
             result = 31 * result + (this.elasticIoResource != null ? this.elasticIoResource.hashCode() : 0);
+            result = 31 * result + (this.enableSsl != null ? this.enableSsl.hashCode() : 0);
             result = 31 * result + (this.executorCount != null ? this.executorCount.hashCode() : 0);
+            result = 31 * result + (this.kmsId != null ? this.kmsId.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.periodType != null ? this.periodType.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);

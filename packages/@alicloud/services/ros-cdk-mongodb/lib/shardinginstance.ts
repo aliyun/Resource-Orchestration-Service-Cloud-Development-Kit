@@ -160,7 +160,7 @@ export interface IShardingInstance extends ros.IResource {
     readonly attrOrderId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::MONGODB::ShardingInstance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MONGODB::ShardingInstance`, which is used to create or clone an ApsaraDB for MongoDB sharded cluster instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosShardingInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mongodb-shardinginstance
  */
@@ -206,26 +206,26 @@ export class ShardingInstance extends ros.Resource implements IShardingInstance 
             tdeStatus: props.tdeStatus,
             engineVersion: props.engineVersion === undefined || props.engineVersion === null ? '7.0' : props.engineVersion,
             storageType: props.storageType,
-            resourceGroupId: props.resourceGroupId,
             zoneId: props.zoneId,
+            resourceGroupId: props.resourceGroupId,
             hiddenZoneId: props.hiddenZoneId,
-            autoRenew: props.autoRenew,
             vSwitchId: props.vSwitchId,
-            period: props.period === undefined || props.period === null ? 1 : props.period,
+            autoRenew: props.autoRenew,
             securityIpArray: props.securityIpArray,
+            period: props.period === undefined || props.period === null ? 1 : props.period,
             mongos: props.mongos,
             storageEngine: props.storageEngine === undefined || props.storageEngine === null ? 'WiredTiger' : props.storageEngine,
             secondaryZoneId: props.secondaryZoneId,
             accountPassword: props.accountPassword,
             restoreTime: props.restoreTime,
             vpcId: props.vpcId,
-            protocolType: props.protocolType,
             chargeType: props.chargeType === undefined || props.chargeType === null ? 'PostPaid' : props.chargeType,
+            protocolType: props.protocolType,
             configServer: props.configServer,
             srcDbInstanceId: props.srcDbInstanceId,
             replicaSet: props.replicaSet,
-            tags: props.tags,
             dbInstanceDescription: props.dbInstanceDescription,
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosShardingInstance;
         this.attrArn = rosShardingInstance.attrArn;

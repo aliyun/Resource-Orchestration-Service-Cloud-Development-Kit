@@ -42,10 +42,10 @@ function RosAccountPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('accountDescription', ros.validateString)(properties.accountDescription));
     errors.collect(ros.propertyValidator('dbInstanceId', ros.requiredValidator)(properties.dbInstanceId));
     errors.collect(ros.propertyValidator('dbInstanceId', ros.validateString)(properties.dbInstanceId));
-    errors.collect(ros.propertyValidator('accountPassword', ros.requiredValidator)(properties.accountPassword));
-    errors.collect(ros.propertyValidator('accountPassword', ros.validateString)(properties.accountPassword));
     errors.collect(ros.propertyValidator('accountName', ros.requiredValidator)(properties.accountName));
     errors.collect(ros.propertyValidator('accountName', ros.validateString)(properties.accountName));
+    errors.collect(ros.propertyValidator('accountPassword', ros.requiredValidator)(properties.accountPassword));
+    errors.collect(ros.propertyValidator('accountPassword', ros.validateString)(properties.accountPassword));
     return errors.wrap('supplied properties not correct for "RosAccountProps"');
 }
 
@@ -71,7 +71,7 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PolarDBX::Account`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PolarDBX::Account`, which is used to create an account.
  * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardbx-account
  */
@@ -292,9 +292,9 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('dbNodeCount', ros.validateNumber)(properties.dbNodeCount));
-    errors.collect(ros.propertyValidator('usedTime', ros.validateNumber)(properties.usedTime));
     errors.collect(ros.propertyValidator('primaryZone', ros.requiredValidator)(properties.primaryZone));
     errors.collect(ros.propertyValidator('primaryZone', ros.validateString)(properties.primaryZone));
+    errors.collect(ros.propertyValidator('usedTime', ros.validateNumber)(properties.usedTime));
     if(properties.dbInstanceDescription && (Array.isArray(properties.dbInstanceDescription) || (typeof properties.dbInstanceDescription) === 'string')) {
         errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateLength)({
             data: properties.dbInstanceDescription.length,
@@ -340,7 +340,7 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PolarDBX::DBInstance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PolarDBX::DBInstance`, which is used to create a PolarDB for Xscale (PolarDB-X) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardbx-dbinstance
  */
@@ -660,7 +660,7 @@ function rosDatabasePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PolarDBX::Database`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PolarDBX::Database`, which is used to create a database.
  * @Note This class does not contain additional functions, so it is recommended to use the `Database` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardbx-database
  */

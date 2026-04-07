@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::PolarDBX::Account`.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::PolarDBX::Account`, which is used to query the information about a PolarDB for Xscale (PolarDB-X) account.
 type RosAccount interface {
 	alicloudroscdkcore.RosResource
 	AttrAccountDescription() alicloudroscdkcore.IResolvable

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::OSS::Buckets`.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::OSS::Buckets`, which is used to query an Object Storage Service (OSS) bucket.
 type RosBuckets interface {
 	alicloudroscdkcore.RosResource
 	AttrBucketNames() alicloudroscdkcore.IResolvable

@@ -7,5 +7,6 @@ package alicloudroscdkresourcemanager
 type RosResourceGroupProps struct {
 	DisplayName interface{} `field:"required" json:"displayName" yaml:"displayName"`
 	Name interface{} `field:"required" json:"name" yaml:"name"`
+	Tags *[]*RosResourceGroup_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 }
 

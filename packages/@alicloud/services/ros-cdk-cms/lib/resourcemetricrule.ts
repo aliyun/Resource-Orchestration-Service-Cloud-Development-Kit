@@ -17,11 +17,6 @@ export interface ResourceMetricRuleProps {
     readonly contactGroups: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property escalations: You must select at least one of the Critical, Warn, and Info alert levels.
-     */
-    readonly escalations: RosResourceMetricRule.EscalationsProperty | ros.IResolvable;
-
-    /**
      * Property metricName: The name of the metric.
      * For information about how to query the name of a metric, see Appendix 1: Metrics.
      * Note: If you create a Prometheus alert rule for Hybrid Cloud Monitoring, you must set this parameter to the name of the namespace. For information about how to obtain the name of a namespace, see DescribeHybridMonitorNamespaceList.
@@ -62,6 +57,11 @@ export interface ResourceMetricRuleProps {
      * Property emailSubject: The subject of the alert notification email.
      */
     readonly emailSubject?: string | ros.IResolvable;
+
+    /**
+     * Property escalations: You must select at least one of the Critical, Warn, and Info alert levels.
+     */
+    readonly escalations?: RosResourceMetricRule.EscalationsProperty | ros.IResolvable;
 
     /**
      * Property interval: The interval at which the alert is triggered. Unit: seconds.
@@ -142,7 +142,7 @@ export interface IResourceMetricRule extends ros.IResource {
     readonly attrRuleName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::ResourceMetricRule`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::ResourceMetricRule`, which is used to create a threshold-triggered alert rule for a metric of a resource.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosResourceMetricRule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-resourcemetricrule
  */
@@ -175,8 +175,8 @@ export class ResourceMetricRule extends ros.Resource implements IResourceMetricR
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosResourceMetricRule = new RosResourceMetricRule(this, id,  {
-            noEffectiveInterval: props.noEffectiveInterval,
             contactGroups: props.contactGroups,
+            noEffectiveInterval: props.noEffectiveInterval,
             silenceTime: props.silenceTime,
             ruleId: props.ruleId,
             period: props.period,
@@ -187,8 +187,8 @@ export class ResourceMetricRule extends ros.Resource implements IResourceMetricR
             namespace: props.namespace,
             metricName: props.metricName,
             deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
-            escalations: props.escalations,
             emailSubject: props.emailSubject,
+            escalations: props.escalations,
             compositeExpression: props.compositeExpression,
             webhook: props.webhook,
             resources: props.resources,

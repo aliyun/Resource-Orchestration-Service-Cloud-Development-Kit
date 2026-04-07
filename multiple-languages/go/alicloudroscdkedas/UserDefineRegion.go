@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::UserDefineRegion`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::UserDefineRegion`, which is used to create or edit a custom namespace.
 type UserDefineRegion interface {
 	alicloudroscdkcore.Resource
 	IUserDefineRegion

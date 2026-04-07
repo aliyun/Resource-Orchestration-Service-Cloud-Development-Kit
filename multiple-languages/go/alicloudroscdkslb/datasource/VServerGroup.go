@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::VServerGroup`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::VServerGroup`, which is used to query the information about a vServer group.
 type VServerGroup interface {
 	alicloudroscdkcore.Resource
 	IVServerGroup

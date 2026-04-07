@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cms;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::EventRuleTargets</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::EventRuleTargets</code>, which is used to add or change the recipients to which alert notifications are sent based on an event-triggered alert rule.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.679Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:23.031Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.EventRuleTargets")
 public class EventRuleTargets extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cms.IEventRuleTargets {
 
@@ -184,6 +184,27 @@ public class EventRuleTargets extends com.aliyun.ros.cdk.core.Resource implement
          */
         public Builder mnsParameters(final java.util.List<? extends java.lang.Object> mnsParameters) {
             this.props.mnsParameters(mnsParameters);
+            return this;
+        }
+
+        /**
+         * Property openApiParameters: API callback notification parameter list.
+         * <p>
+         * @return {@code this}
+         * @param openApiParameters Property openApiParameters: API callback notification parameter list. This parameter is required.
+         */
+        public Builder openApiParameters(final com.aliyun.ros.cdk.core.IResolvable openApiParameters) {
+            this.props.openApiParameters(openApiParameters);
+            return this;
+        }
+        /**
+         * Property openApiParameters: API callback notification parameter list.
+         * <p>
+         * @return {@code this}
+         * @param openApiParameters Property openApiParameters: API callback notification parameter list. This parameter is required.
+         */
+        public Builder openApiParameters(final java.util.List<? extends java.lang.Object> openApiParameters) {
+            this.props.openApiParameters(openApiParameters);
             return this;
         }
 

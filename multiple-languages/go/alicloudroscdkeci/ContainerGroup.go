@@ -9,7 +9,9 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ECI::ContainerGroup`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ECI::ContainerGroup`, which is used to create a container group.
+//
+// A container group is an elastic container instance.
 type ContainerGroup interface {
 	alicloudroscdkcore.Resource
 	IContainerGroup

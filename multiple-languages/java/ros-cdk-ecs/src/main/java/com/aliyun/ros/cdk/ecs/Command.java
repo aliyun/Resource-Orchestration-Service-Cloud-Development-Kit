@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::Command</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::Command</code>, which is used to create a Cloud Assistant command.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:55.139Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:24.495Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.Command")
 public class Command extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.ICommand {
 

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.rds;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-prepaydbinstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:59.512Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:29.182Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.PrepayDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(PrepayDBInstanceProps.Jsii$Proxy.class)
 public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -398,7 +398,7 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
     /**
      * Property logBackupLocalRetentionNumber: The number of log backup files that can be retained on the instance.
      * <p>
-     * Default value: 60. Valid values: 6 to 100.
+     * Default value: 60. Valid values: 6 to 100. If the instance type is MySQL, you can pass in -1, which means there is no limit on the number of reserved local Binlogs.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getLogBackupLocalRetentionNumber() {
         return null;
@@ -1763,7 +1763,7 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
         /**
          * Sets the value of {@link PrepayDBInstanceProps#getLogBackupLocalRetentionNumber}
          * @param logBackupLocalRetentionNumber Property logBackupLocalRetentionNumber: The number of log backup files that can be retained on the instance.
-         *                                      Default value: 60. Valid values: 6 to 100.
+         *                                      Default value: 60. Valid values: 6 to 100. If the instance type is MySQL, you can pass in -1, which means there is no limit on the number of reserved local Binlogs.
          * @return {@code this}
          */
         public Builder logBackupLocalRetentionNumber(java.lang.Number logBackupLocalRetentionNumber) {
@@ -1774,7 +1774,7 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
         /**
          * Sets the value of {@link PrepayDBInstanceProps#getLogBackupLocalRetentionNumber}
          * @param logBackupLocalRetentionNumber Property logBackupLocalRetentionNumber: The number of log backup files that can be retained on the instance.
-         *                                      Default value: 60. Valid values: 6 to 100.
+         *                                      Default value: 60. Valid values: 6 to 100. If the instance type is MySQL, you can pass in -1, which means there is no limit on the number of reserved local Binlogs.
          * @return {@code this}
          */
         public Builder logBackupLocalRetentionNumber(com.aliyun.ros.cdk.core.IResolvable logBackupLocalRetentionNumber) {

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ASM::ServiceMesh`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ASM::ServiceMesh`, which is used to create a Service Mesh (ASM) instance.
 type RosServiceMesh interface {
 	alicloudroscdkcore.RosResource
 	AccessLogEnabled() interface{}

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cloudfw;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CLOUDFW::AddressBook</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CLOUDFW::AddressBook</code>The , which resource type is used to create address books for security access control, such as IP address books, ECS tag-based address books, port address books, and domain name address books.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.353Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:22.690Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.AddressBook")
 public class AddressBook extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cloudfw.IAddressBook {
 
@@ -154,23 +154,106 @@ public class AddressBook extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property groupType: Type the address book, the optional values ​​are: ip: IP Address Book domain: domain name address book port: Port Address Book tag: ECS label address book.
+         * Property groupType: Type of the address book.
          * <p>
          * @return {@code this}
-         * @param groupType Property groupType: Type the address book, the optional values ​​are: ip: IP Address Book domain: domain name address book port: Port Address Book tag: ECS label address book. This parameter is required.
+         * @param groupType Property groupType: Type of the address book. This parameter is required.
          */
         public Builder groupType(final java.lang.String groupType) {
             this.props.groupType(groupType);
             return this;
         }
         /**
-         * Property groupType: Type the address book, the optional values ​​are: ip: IP Address Book domain: domain name address book port: Port Address Book tag: ECS label address book.
+         * Property groupType: Type of the address book.
          * <p>
          * @return {@code this}
-         * @param groupType Property groupType: Type the address book, the optional values ​​are: ip: IP Address Book domain: domain name address book port: Port Address Book tag: ECS label address book. This parameter is required.
+         * @param groupType Property groupType: Type of the address book. This parameter is required.
          */
         public Builder groupType(final com.aliyun.ros.cdk.core.IResolvable groupType) {
             this.props.groupType(groupType);
+            return this;
+        }
+
+        /**
+         * Property ackClusterConnectorId: ACK cluster connector ID.
+         * <p>
+         * Batch query ACK cluster connector list.
+         * <p>
+         * @return {@code this}
+         * @param ackClusterConnectorId Property ackClusterConnectorId: ACK cluster connector ID. This parameter is required.
+         */
+        public Builder ackClusterConnectorId(final java.lang.String ackClusterConnectorId) {
+            this.props.ackClusterConnectorId(ackClusterConnectorId);
+            return this;
+        }
+        /**
+         * Property ackClusterConnectorId: ACK cluster connector ID.
+         * <p>
+         * Batch query ACK cluster connector list.
+         * <p>
+         * @return {@code this}
+         * @param ackClusterConnectorId Property ackClusterConnectorId: ACK cluster connector ID. This parameter is required.
+         */
+        public Builder ackClusterConnectorId(final com.aliyun.ros.cdk.core.IResolvable ackClusterConnectorId) {
+            this.props.ackClusterConnectorId(ackClusterConnectorId);
+            return this;
+        }
+
+        /**
+         * Property ackLabels: ACK cluster container group label list.
+         * <p>
+         * <blockquote>
+         * <p>
+         * Up to 10.
+         * <p>
+         * </blockquote>
+         * <p>
+         * @return {@code this}
+         * @param ackLabels Property ackLabels: ACK cluster container group label list. This parameter is required.
+         */
+        public Builder ackLabels(final com.aliyun.ros.cdk.core.IResolvable ackLabels) {
+            this.props.ackLabels(ackLabels);
+            return this;
+        }
+        /**
+         * Property ackLabels: ACK cluster container group label list.
+         * <p>
+         * <blockquote>
+         * <p>
+         * Up to 10.
+         * <p>
+         * </blockquote>
+         * <p>
+         * @return {@code this}
+         * @param ackLabels Property ackLabels: ACK cluster container group label list. This parameter is required.
+         */
+        public Builder ackLabels(final java.util.List<? extends java.lang.Object> ackLabels) {
+            this.props.ackLabels(ackLabels);
+            return this;
+        }
+
+        /**
+         * Property ackNamespaces: ACK cluster container group namespace list.
+         * <p>
+         * Up to 10.
+         * <p>
+         * @return {@code this}
+         * @param ackNamespaces Property ackNamespaces: ACK cluster container group namespace list. This parameter is required.
+         */
+        public Builder ackNamespaces(final com.aliyun.ros.cdk.core.IResolvable ackNamespaces) {
+            this.props.ackNamespaces(ackNamespaces);
+            return this;
+        }
+        /**
+         * Property ackNamespaces: ACK cluster container group namespace list.
+         * <p>
+         * Up to 10.
+         * <p>
+         * @return {@code this}
+         * @param ackNamespaces Property ackNamespaces: ACK cluster container group namespace list. This parameter is required.
+         */
+        public Builder ackNamespaces(final java.util.List<? extends java.lang.Object> ackNamespaces) {
+            this.props.ackNamespaces(ackNamespaces);
             return this;
         }
 
@@ -280,7 +363,7 @@ public class AddressBook extends com.aliyun.ros.cdk.core.Resource implements com
          * Property tagRelation: The relationship between the labels to be matched more ECS.
          * <p>
          * and: the relationship between multiple labels "and" that matches both ECS IP public network more tags will be added to the address book.
-         * or: a plurality of inter-labeled "or" relationship, i.e., as long as a matching tag ECS ​​public IP address book will be added.
+         * or: a plurality of inter-labeled "or" relationship, i.e., as long as a matching tag ECS public IP address book will be added.
          * <p>
          * @return {@code this}
          * @param tagRelation Property tagRelation: The relationship between the labels to be matched more ECS. This parameter is required.
@@ -293,7 +376,7 @@ public class AddressBook extends com.aliyun.ros.cdk.core.Resource implements com
          * Property tagRelation: The relationship between the labels to be matched more ECS.
          * <p>
          * and: the relationship between multiple labels "and" that matches both ECS IP public network more tags will be added to the address book.
-         * or: a plurality of inter-labeled "or" relationship, i.e., as long as a matching tag ECS ​​public IP address book will be added.
+         * or: a plurality of inter-labeled "or" relationship, i.e., as long as a matching tag ECS public IP address book will be added.
          * <p>
          * @return {@code this}
          * @param tagRelation Property tagRelation: The relationship between the labels to be matched more ECS. This parameter is required.

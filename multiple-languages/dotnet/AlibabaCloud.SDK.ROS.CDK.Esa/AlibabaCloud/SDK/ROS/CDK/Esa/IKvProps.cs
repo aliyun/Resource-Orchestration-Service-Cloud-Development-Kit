@@ -38,7 +38,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Esa
             get;
         }
 
-        /// <summary>Property expiration: The content of the key, which can be up to 2 MB (2 × 1000 × 1000).</summary>
+        /// <summary>Property expiration: The content of the key, which can be up to 2 MB (2 Ã 1000 Ã 1000).</summary>
         /// <remarks>
         /// If the content is larger than 2 MB, call [PutKvWithHighCapacity] https://www.alibabacloud.com/help/en/doc-detail/2850486.html.
         /// </remarks>
@@ -104,7 +104,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Esa
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property expiration: The content of the key, which can be up to 2 MB (2 × 1000 × 1000).</summary>
+            /// <summary>Property expiration: The content of the key, which can be up to 2 MB (2 Ã 1000 Ã 1000).</summary>
             /// <remarks>
             /// If the content is larger than 2 MB, call [PutKvWithHighCapacity] https://www.alibabacloud.com/help/en/doc-detail/2850486.html.
             /// </remarks>

@@ -19,6 +19,7 @@ type RosVpcFirewallControlPolicyProps struct {
 	DestPort interface{} `field:"optional" json:"destPort" yaml:"destPort"`
 	DestPortGroup interface{} `field:"optional" json:"destPortGroup" yaml:"destPortGroup"`
 	DestPortType interface{} `field:"optional" json:"destPortType" yaml:"destPortType"`
+	DomainResolveType interface{} `field:"optional" json:"domainResolveType" yaml:"domainResolveType"`
 	EndTime interface{} `field:"optional" json:"endTime" yaml:"endTime"`
 	Lang interface{} `field:"optional" json:"lang" yaml:"lang"`
 	MemberUid interface{} `field:"optional" json:"memberUid" yaml:"memberUid"`

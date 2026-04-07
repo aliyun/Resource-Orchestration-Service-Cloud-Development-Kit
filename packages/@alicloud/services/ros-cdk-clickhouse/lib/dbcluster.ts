@@ -103,14 +103,34 @@ export interface DBClusterProps {
     readonly vpcId?: string | ros.IResolvable;
 
     /**
+     * Property vSwitchBak: The ID of the secondary VSwitch.
+     */
+    readonly vSwitchBak?: string | ros.IResolvable;
+
+    /**
+     * Property vSwitchBak2: The ID of the third VSwitch.
+     */
+    readonly vSwitchBak2?: string | ros.IResolvable;
+
+    /**
      * Property vSwitchId: VSwitchId
      */
     readonly vSwitchId?: string | ros.IResolvable;
 
     /**
+     * Property zondIdBak2: The ID of the third zone.
+     */
+    readonly zondIdBak2?: string | ros.IResolvable;
+
+    /**
      * Property zoneId: ZoneId
      */
     readonly zoneId?: string | ros.IResolvable;
+
+    /**
+     * Property zoneIdBak: The ID of the secondary zone.
+     */
+    readonly zoneIdBak?: string | ros.IResolvable;
 }
 
 /**
@@ -275,7 +295,7 @@ export interface IDBCluster extends ros.IResource {
     readonly attrZoneId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ClickHouse::DBCluster`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ClickHouse::DBCluster`, which is used to create an ApsaraDB for ClickHouse cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-clickhouse-dbcluster
  */
@@ -453,22 +473,26 @@ export class DBCluster extends ros.Resource implements IDBCluster {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDBCluster = new RosDBCluster(this, id,  {
-            dbNodeStorageType: props.dbNodeStorageType,
             dbNodeStorage: props.dbNodeStorage,
+            dbNodeStorageType: props.dbNodeStorageType,
             encryptionType: props.encryptionType,
             category: props.category,
             zoneId: props.zoneId,
             vSwitchId: props.vSwitchId,
             dbClusterDescription: props.dbClusterDescription,
             period: props.period,
+            vSwitchBak: props.vSwitchBak,
             encryptionKey: props.encryptionKey,
             dbClusterNetworkType: props.dbClusterNetworkType,
+            zondIdBak2: props.zondIdBak2,
+            zoneIdBak: props.zoneIdBak,
             dbClusterType: props.dbClusterType,
             vpcId: props.vpcId,
             dbClusterVersion: props.dbClusterVersion,
             dbNodeCount: props.dbNodeCount,
             usedTime: props.usedTime,
             paymentType: props.paymentType === undefined || props.paymentType === null ? 'Postpaid' : props.paymentType,
+            vSwitchBak2: props.vSwitchBak2,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDBCluster;
         this.attrAliUid = rosDBCluster.attrAliUid;

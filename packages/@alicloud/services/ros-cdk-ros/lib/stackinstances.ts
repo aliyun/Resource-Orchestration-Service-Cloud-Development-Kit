@@ -112,8 +112,8 @@ export class StackInstances extends ros.Resource implements IStackInstances {
         const rosStackInstances = new RosStackInstances(this, id,  {
             operationPreferences: props.operationPreferences,
             retainStacks: props.retainStacks === undefined || props.retainStacks === null ? false : props.retainStacks,
-            regionIds: props.regionIds,
             accountIds: props.accountIds,
+            regionIds: props.regionIds,
             parameterOverrides: props.parameterOverrides,
             stackGroupName: props.stackGroupName,
             deploymentTargets: props.deploymentTargets,

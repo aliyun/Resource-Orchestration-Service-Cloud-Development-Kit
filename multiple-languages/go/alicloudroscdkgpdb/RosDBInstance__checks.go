@@ -295,6 +295,40 @@ func (j *jsiiProxy_RosDBInstance) validateSetAiNodeSpecInfosParameters(val inter
 	return nil
 }
 
+func (j *jsiiProxy_RosDBInstance) validateSetBackupIdParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosDBInstance) validateSetCacheStorageSizeParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosDBInstance) validateSetCreateSampleDataParameters(val interface{}) error {
 	switch val.(type) {
 	case *bool:
@@ -462,6 +496,23 @@ func (j *jsiiProxy_RosDBInstance) validateSetEnableResourcePropertyConstraintPar
 	return nil
 }
 
+func (j *jsiiProxy_RosDBInstance) validateSetEnableSslParameters(val interface{}) error {
+	switch val.(type) {
+	case *bool:
+		// ok
+	case bool:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *bool, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosDBInstance) validateSetEncryptionKeyParameters(val interface{}) error {
 	switch val.(type) {
 	case *string:
@@ -574,6 +625,23 @@ func (j *jsiiProxy_RosDBInstance) validateSetIdleTimeParameters(val interface{})
 }
 
 func (j *jsiiProxy_RosDBInstance) validateSetInstanceSpecParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosDBInstance) validateSetMasterAiSpecParameters(val interface{}) error {
 	switch val.(type) {
 	case *string:
 		// ok
@@ -1022,6 +1090,23 @@ func (j *jsiiProxy_RosDBInstance) validateSetServerlessResourceParameters(val in
 	default:
 		if !_jsii_.IsAnonymousProxy(val) {
 			return fmt.Errorf("parameter val must be one of the allowed types: *float64, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosDBInstance) validateSetSrcDbInstanceNameParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
 		}
 	}
 

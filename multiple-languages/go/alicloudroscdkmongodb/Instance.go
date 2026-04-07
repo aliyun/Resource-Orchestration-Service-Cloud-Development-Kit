@@ -10,7 +10,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::MONGODB::Instance`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::MONGODB::Instance`The , which type creates or clones a MongoDB replica set instance.
 type Instance interface {
 	alicloudroscdkcore.Resource
 	IInstance

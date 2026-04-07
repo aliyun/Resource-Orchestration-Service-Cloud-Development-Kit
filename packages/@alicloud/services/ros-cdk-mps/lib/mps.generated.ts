@@ -40,6 +40,8 @@ export interface RosMediaWorkflowProps {
 function RosMediaWorkflowPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('topology', ros.requiredValidator)(properties.topology));
+    errors.collect(ros.propertyValidator('topology', ros.hashValidator(ros.validateAny))(properties.topology));
     if(properties.triggerMode && (typeof properties.triggerMode) !== 'object') {
         errors.collect(ros.propertyValidator('triggerMode', ros.validateAllowedValues)({
           data: properties.triggerMode,
@@ -47,8 +49,6 @@ function RosMediaWorkflowPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('triggerMode', ros.validateString)(properties.triggerMode));
-    errors.collect(ros.propertyValidator('topology', ros.requiredValidator)(properties.topology));
-    errors.collect(ros.propertyValidator('topology', ros.hashValidator(ros.validateAny))(properties.topology));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     return errors.wrap('supplied properties not correct for "RosMediaWorkflowProps"');
@@ -75,7 +75,7 @@ function rosMediaWorkflowPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MPS::MediaWorkflow`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MPS::MediaWorkflow`, which is used to add a media workflow.
  * @Note This class does not contain additional functions, so it is recommended to use the `MediaWorkflow` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mps-mediaworkflow
  */
@@ -270,7 +270,7 @@ function rosPipelinePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MPS::Pipeline`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MPS::Pipeline`, which is used to create an ApsaraVideo Media Processing (MPS) queue.
  * @Note This class does not contain additional functions, so it is recommended to use the `Pipeline` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mps-pipeline
  */
@@ -408,4 +408,156 @@ function rosPipelineNotifyConfigPropertyToRosTemplate(properties: any): any {
       'Topic': ros.stringToRosTemplate(properties.topic),
       'QueueName': ros.stringToRosTemplate(properties.queueName),
     };
+}
+
+/**
+ * Properties for defining a `RosTranscodeJob`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mps-transcodejob
+ */
+export interface RosTranscodeJobProps {
+
+    /**
+     * @Property input: The input configuration of the job. For more information, see Input details.
+     */
+    readonly input: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property outputBucket: The name of the OSS bucket where the output files are stored.
+     */
+    readonly outputBucket: string | ros.IResolvable;
+
+    /**
+     * @Property outputs: The output configuration of the job. Consists of a list of Output objects, JSON array, with a maximum size of 30.
+     */
+    readonly outputs: Array<{ [key: string]: any }> | ros.IResolvable;
+
+    /**
+     * @Property pipelineId: The ID of the pipeline.
+     */
+    readonly pipelineId: string | ros.IResolvable;
+
+    /**
+     * @Property outputLocation: The region of the OSS bucket where the output files are stored.
+     */
+    readonly outputLocation?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosTranscodeJobProps`
+ *
+ * @param properties - the TypeScript properties of a `RosTranscodeJobProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosTranscodeJobPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('outputBucket', ros.requiredValidator)(properties.outputBucket));
+    errors.collect(ros.propertyValidator('outputBucket', ros.validateString)(properties.outputBucket));
+    errors.collect(ros.propertyValidator('input', ros.requiredValidator)(properties.input));
+    errors.collect(ros.propertyValidator('input', ros.hashValidator(ros.validateAny))(properties.input));
+    errors.collect(ros.propertyValidator('outputs', ros.requiredValidator)(properties.outputs));
+    errors.collect(ros.propertyValidator('outputs', ros.listValidator(ros.validateAnyDict))(properties.outputs));
+    errors.collect(ros.propertyValidator('pipelineId', ros.requiredValidator)(properties.pipelineId));
+    errors.collect(ros.propertyValidator('pipelineId', ros.validateString)(properties.pipelineId));
+    errors.collect(ros.propertyValidator('outputLocation', ros.validateString)(properties.outputLocation));
+    return errors.wrap('supplied properties not correct for "RosTranscodeJobProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MPS::TranscodeJob` resource
+ *
+ * @param properties - the TypeScript properties of a `RosTranscodeJobProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MPS::TranscodeJob` resource.
+ */
+// @ts-ignore TS6133
+function rosTranscodeJobPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosTranscodeJobPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'Input': ros.hashMapper(ros.objectToRosTemplate)(properties.input),
+      'OutputBucket': ros.stringToRosTemplate(properties.outputBucket),
+      'Outputs': ros.listMapper(ros.anyDictToRosTemplate)(properties.outputs),
+      'PipelineId': ros.stringToRosTemplate(properties.pipelineId),
+      'OutputLocation': ros.stringToRosTemplate(properties.outputLocation),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MPS::TranscodeJob`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `TranscodeJob` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mps-transcodejob
+ */
+export class RosTranscodeJob extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::MPS::TranscodeJob";
+
+    /**
+     * @Attribute JobIds: The IDs of the jobs.
+     */
+    public readonly attrJobIds: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property input: The input configuration of the job. For more information, see Input details.
+     */
+    public input: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property outputBucket: The name of the OSS bucket where the output files are stored.
+     */
+    public outputBucket: string | ros.IResolvable;
+
+    /**
+     * @Property outputs: The output configuration of the job. Consists of a list of Output objects, JSON array, with a maximum size of 30.
+     */
+    public outputs: Array<{ [key: string]: any }> | ros.IResolvable;
+
+    /**
+     * @Property pipelineId: The ID of the pipeline.
+     */
+    public pipelineId: string | ros.IResolvable;
+
+    /**
+     * @Property outputLocation: The region of the OSS bucket where the output files are stored.
+     */
+    public outputLocation: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosTranscodeJobProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosTranscodeJob.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrJobIds = this.getAtt('JobIds');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.input = props.input;
+        this.outputBucket = props.outputBucket;
+        this.outputs = props.outputs;
+        this.pipelineId = props.pipelineId;
+        this.outputLocation = props.outputLocation;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            input: this.input,
+            outputBucket: this.outputBucket,
+            outputs: this.outputs,
+            pipelineId: this.pipelineId,
+            outputLocation: this.outputLocation,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosTranscodeJobPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
 }

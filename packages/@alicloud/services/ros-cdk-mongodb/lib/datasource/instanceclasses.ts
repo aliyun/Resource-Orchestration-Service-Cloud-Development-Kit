@@ -59,7 +59,7 @@ export interface IInstanceClasses extends ros.IResource {
     readonly attrInstanceClasses: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::MONGODB::InstanceClasses`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::MONGODB::InstanceClasses`, which is used to query the ApsaraDB for MongoDB instance types that you can create in a zone.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstanceClasses`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mongodb-instanceclasses
  */
@@ -92,8 +92,8 @@ export class InstanceClasses extends ros.Resource implements IInstanceClasses {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosInstanceClasses = new RosInstanceClasses(this, id,  {
-            resourceGroupId: props.resourceGroupId,
             zoneId: props.zoneId,
+            resourceGroupId: props.resourceGroupId,
             instanceChargeType: props.instanceChargeType === undefined || props.instanceChargeType === null ? 'PostPaid' : props.instanceChargeType,
             dbType: props.dbType,
             refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,

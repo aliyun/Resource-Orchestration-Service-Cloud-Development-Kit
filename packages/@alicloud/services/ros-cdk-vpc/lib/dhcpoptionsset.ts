@@ -31,6 +31,33 @@ export interface DhcpOptionsSetProps {
      * Property domainNameServers: The DNS server IP addresses. Note Before you specify any DNS server IP address, all ECS instances in the associated VPC network use the IP addresses of the Alibaba Cloud DNS servers, which are 100.100.2.136 and 100.100.2.138.
      */
     readonly domainNameServers?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property ipv6LeaseTime: The lease time of the IPv6 DHCP options set.
+     * 
+     * - When setting lease time in hours: unit: h. Valid values: **24h~1176h**, **87600h~175200h**. Default value: **24h**.
+     * 
+     * - When setting lease time in days: unit: d. Valid values: **1d~49d**, **3650d~7300d**. Default value: **1d**.
+     * 
+     * When specifying parameter values, you must include the unit.
+     */
+    readonly ipv6LeaseTime?: string | ros.IResolvable;
+
+    /**
+     * Property leaseTime: The lease time of the IPv4 DHCP options set.
+     * 
+     * - When setting lease time in hours: unit: h. Valid values: **24h~1176h**, **87600h~175200h**. Default value: **87600h**.
+     * 
+     * - When setting lease time in days: unit: d. Valid values: **1d~49d**, **3650d~7300d**. Default value: **3650d**.
+     * 
+     * When specifying parameter values, you must include the unit.
+     */
+    readonly leaseTime?: string | ros.IResolvable;
+
+    /**
+     * Property resourceGroupId: The ID of the resource group to which the DHCP options set belongs.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
 }
 
 /**
@@ -45,7 +72,7 @@ export interface IDhcpOptionsSet extends ros.IResource {
     readonly attrDhcpOptionsSetId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::DhcpOptionsSet`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::DhcpOptionsSet`, which is used to create Dynamic Host Configuration Protocol (DHCP) options sets.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDhcpOptionsSet`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-dhcpoptionsset
  */
@@ -73,10 +100,13 @@ export class DhcpOptionsSet extends ros.Resource implements IDhcpOptionsSet {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDhcpOptionsSet = new RosDhcpOptionsSet(this, id,  {
+            resourceGroupId: props.resourceGroupId,
             domainName: props.domainName,
+            ipv6LeaseTime: props.ipv6LeaseTime,
             dhcpOptionsSetName: props.dhcpOptionsSetName,
             dhcpOptionsSetDescription: props.dhcpOptionsSetDescription,
             domainNameServers: props.domainNameServers,
+            leaseTime: props.leaseTime,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDhcpOptionsSet;
         this.attrDhcpOptionsSetId = rosDhcpOptionsSet.attrDhcpOptionsSetId;

@@ -91,7 +91,7 @@ function rosDevicePropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::Device`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::Device`, which is used to register a Device.
  * @Note This class does not contain additional functions, so it is recommended to use the `Device` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-device
  */
@@ -298,7 +298,7 @@ function rosDeviceGroupPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::DeviceGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::DeviceGroup`, which is used to create a group.
  * @Note This class does not contain additional functions, so it is recommended to use the `DeviceGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-devicegroup
  */
@@ -514,11 +514,11 @@ function RosProductPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('publishAuto', ros.validateBoolean)(properties.publishAuto));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    errors.collect(ros.propertyValidator('iotInstanceId', ros.validateString)(properties.iotInstanceId));
     errors.collect(ros.propertyValidator('productName', ros.requiredValidator)(properties.productName));
     errors.collect(ros.propertyValidator('productName', ros.validateString)(properties.productName));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('aliyunCommodityCode', ros.validateString)(properties.aliyunCommodityCode));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('iotInstanceId', ros.validateString)(properties.iotInstanceId));
     errors.collect(ros.propertyValidator('categoryKey', ros.validateString)(properties.categoryKey));
     if(properties.protocolType && (typeof properties.protocolType) !== 'object') {
         errors.collect(ros.propertyValidator('protocolType', ros.validateAllowedValues)({
@@ -587,7 +587,7 @@ function rosProductPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::Product`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::Product`, which is used to create a product.
  * @Note This class does not contain additional functions, so it is recommended to use the `Product` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-product
  */
@@ -876,7 +876,7 @@ function rosProductTopicPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::ProductTopic`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::ProductTopic`, which is used to create a topic category for a specified product.
  * @Note This class does not contain additional functions, so it is recommended to use the `ProductTopic` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-producttopic
  */
@@ -1135,7 +1135,7 @@ function rosRulePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::Rule`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::Rule`, which is used to create a rule for a specific topic.
  * @Note This class does not contain additional functions, so it is recommended to use the `Rule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-rule
  */
@@ -1473,9 +1473,9 @@ function RosRuleActionPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
-    errors.collect(ros.propertyValidator('iotInstanceId', ros.validateString)(properties.iotInstanceId));
     errors.collect(ros.propertyValidator('configuration', ros.requiredValidator)(properties.configuration));
     errors.collect(ros.propertyValidator('configuration', ros.validateString)(properties.configuration));
+    errors.collect(ros.propertyValidator('iotInstanceId', ros.validateString)(properties.iotInstanceId));
     errors.collect(ros.propertyValidator('ruleId', ros.requiredValidator)(properties.ruleId));
     errors.collect(ros.propertyValidator('ruleId', ros.validateNumber)(properties.ruleId));
     return errors.wrap('supplied properties not correct for "RosRuleActionProps"');
@@ -1504,7 +1504,7 @@ function rosRuleActionPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::RuleAction`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::RuleAction`, which is used to create a rule action for a specified rule.
  * @Note This class does not contain additional functions, so it is recommended to use the `RuleAction` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-ruleaction
  */

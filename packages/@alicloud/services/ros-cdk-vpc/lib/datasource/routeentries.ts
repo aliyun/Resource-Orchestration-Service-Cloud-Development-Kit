@@ -89,7 +89,7 @@ export interface IRouteEntries extends ros.IResource {
     readonly attrRouteEntryIds: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::RouteEntries`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::RouteEntries`, which is used to query routes.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRouteEntries`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-routeentries
  */
@@ -122,8 +122,8 @@ export class RouteEntries extends ros.Resource implements IRouteEntries {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosRouteEntries = new RosRouteEntries(this, id,  {
-            nextHopType: props.nextHopType,
             routeEntryId: props.routeEntryId,
+            nextHopType: props.nextHopType,
             routeTableId: props.routeTableId,
             ipVersion: props.ipVersion,
             routeEntryName: props.routeEntryName,

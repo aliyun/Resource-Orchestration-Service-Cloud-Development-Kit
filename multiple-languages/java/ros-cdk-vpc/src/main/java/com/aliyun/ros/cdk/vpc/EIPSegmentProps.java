@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eipsegment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:00.896Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.814Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.EIPSegmentProps")
 @software.amazon.jsii.Jsii.Proxy(EIPSegmentProps.Jsii$Proxy.class)
 public interface EIPSegmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -46,6 +46,38 @@ public interface EIPSegmentProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property isp: The line type.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li><strong>BGP</strong> (default): BGP (multi-line). All regions support BGP (multi-line) EIPs.</li>
+     * <li><strong>BGP_PRO</strong>: BGP (multi-line)_Premium. Currently supported only in China (Hong Kong),
+     * Singapore, Japan (Tokyo), Malaysia (Kuala Lumpur), Philippines (Manila),
+     * India (Jakarta), and Thailand (Bangkok).</li>
+     * </ul>
+     * <p>
+     * For more information about BGP (multi-line) and BGP (multi-line)_Premium,
+     * see <a href="~~32321~~">EIP Line Type</a>.
+     * <p>
+     * If you are a single-bandwidth whitelist user, you can also choose:
+     * <p>
+     * <ul>
+     * <li><strong>ChinaTelecom</strong>: China Telecom</li>
+     * <li><strong>ChinaUnicom</strong>: China Unicom</li>
+     * <li><strong>ChinaMobile</strong>: China Mobile</li>
+     * <li><strong>ChinaTelecom_L2</strong>: China Telecom L2</li>
+     * <li><strong>ChinaUnicom_L2</strong>: China Unicom L2</li>
+     * <li><strong>ChinaMobile_L2</strong>: China Mobile L2</li>
+     * </ul>
+     * <p>
+     * If you are a Hangzhou Finance Cloud user, this field is required with value: <strong>BGP_FinanceCloud</strong>.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIsp() {
+        return null;
+    }
+
+    /**
      * Property netmode: The network type.
      * <p>
      * Valid values:
@@ -68,6 +100,13 @@ public interface EIPSegmentProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property zone: The zone of the contiguous EIP group.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getZone() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link EIPSegmentProps}
      */
     static Builder builder() {
@@ -80,8 +119,10 @@ public interface EIPSegmentProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object eipMask;
         java.lang.Object bandwidth;
         java.lang.Object internetChargeType;
+        java.lang.Object isp;
         java.lang.Object netmode;
         java.lang.Object resourceGroupId;
+        java.lang.Object zone;
 
         /**
          * Sets the value of {@link EIPSegmentProps#getEipMask}
@@ -170,6 +211,74 @@ public interface EIPSegmentProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link EIPSegmentProps#getIsp}
+         * @param isp Property isp: The line type.
+         *            Valid values:
+         *            <p>
+         *            <ul>
+         *            <li><strong>BGP</strong> (default): BGP (multi-line). All regions support BGP (multi-line) EIPs.</li>
+         *            <li><strong>BGP_PRO</strong>: BGP (multi-line)_Premium. Currently supported only in China (Hong Kong),
+         *            Singapore, Japan (Tokyo), Malaysia (Kuala Lumpur), Philippines (Manila),
+         *            India (Jakarta), and Thailand (Bangkok).</li>
+         *            </ul>
+         *            <p>
+         *            For more information about BGP (multi-line) and BGP (multi-line)_Premium,
+         *            see <a href="~~32321~~">EIP Line Type</a>.
+         *            <p>
+         *            If you are a single-bandwidth whitelist user, you can also choose:
+         *            <p>
+         *            <ul>
+         *            <li><strong>ChinaTelecom</strong>: China Telecom</li>
+         *            <li><strong>ChinaUnicom</strong>: China Unicom</li>
+         *            <li><strong>ChinaMobile</strong>: China Mobile</li>
+         *            <li><strong>ChinaTelecom_L2</strong>: China Telecom L2</li>
+         *            <li><strong>ChinaUnicom_L2</strong>: China Unicom L2</li>
+         *            <li><strong>ChinaMobile_L2</strong>: China Mobile L2</li>
+         *            </ul>
+         *            <p>
+         *            If you are a Hangzhou Finance Cloud user, this field is required with value: <strong>BGP_FinanceCloud</strong>.
+         * @return {@code this}
+         */
+        public Builder isp(java.lang.String isp) {
+            this.isp = isp;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link EIPSegmentProps#getIsp}
+         * @param isp Property isp: The line type.
+         *            Valid values:
+         *            <p>
+         *            <ul>
+         *            <li><strong>BGP</strong> (default): BGP (multi-line). All regions support BGP (multi-line) EIPs.</li>
+         *            <li><strong>BGP_PRO</strong>: BGP (multi-line)_Premium. Currently supported only in China (Hong Kong),
+         *            Singapore, Japan (Tokyo), Malaysia (Kuala Lumpur), Philippines (Manila),
+         *            India (Jakarta), and Thailand (Bangkok).</li>
+         *            </ul>
+         *            <p>
+         *            For more information about BGP (multi-line) and BGP (multi-line)_Premium,
+         *            see <a href="~~32321~~">EIP Line Type</a>.
+         *            <p>
+         *            If you are a single-bandwidth whitelist user, you can also choose:
+         *            <p>
+         *            <ul>
+         *            <li><strong>ChinaTelecom</strong>: China Telecom</li>
+         *            <li><strong>ChinaUnicom</strong>: China Unicom</li>
+         *            <li><strong>ChinaMobile</strong>: China Mobile</li>
+         *            <li><strong>ChinaTelecom_L2</strong>: China Telecom L2</li>
+         *            <li><strong>ChinaUnicom_L2</strong>: China Unicom L2</li>
+         *            <li><strong>ChinaMobile_L2</strong>: China Mobile L2</li>
+         *            </ul>
+         *            <p>
+         *            If you are a Hangzhou Finance Cloud user, this field is required with value: <strong>BGP_FinanceCloud</strong>.
+         * @return {@code this}
+         */
+        public Builder isp(com.aliyun.ros.cdk.core.IResolvable isp) {
+            this.isp = isp;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link EIPSegmentProps#getNetmode}
          * @param netmode Property netmode: The network type.
          *                Valid values:
@@ -224,6 +333,26 @@ public interface EIPSegmentProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link EIPSegmentProps#getZone}
+         * @param zone Property zone: The zone of the contiguous EIP group.
+         * @return {@code this}
+         */
+        public Builder zone(java.lang.String zone) {
+            this.zone = zone;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link EIPSegmentProps#getZone}
+         * @param zone Property zone: The zone of the contiguous EIP group.
+         * @return {@code this}
+         */
+        public Builder zone(com.aliyun.ros.cdk.core.IResolvable zone) {
+            this.zone = zone;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link EIPSegmentProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -242,8 +371,10 @@ public interface EIPSegmentProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object eipMask;
         private final java.lang.Object bandwidth;
         private final java.lang.Object internetChargeType;
+        private final java.lang.Object isp;
         private final java.lang.Object netmode;
         private final java.lang.Object resourceGroupId;
+        private final java.lang.Object zone;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -254,8 +385,10 @@ public interface EIPSegmentProps extends software.amazon.jsii.JsiiSerializable {
             this.eipMask = software.amazon.jsii.Kernel.get(this, "eipMask", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.isp = software.amazon.jsii.Kernel.get(this, "isp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.netmode = software.amazon.jsii.Kernel.get(this, "netmode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.zone = software.amazon.jsii.Kernel.get(this, "zone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -266,8 +399,10 @@ public interface EIPSegmentProps extends software.amazon.jsii.JsiiSerializable {
             this.eipMask = java.util.Objects.requireNonNull(builder.eipMask, "eipMask is required");
             this.bandwidth = builder.bandwidth;
             this.internetChargeType = builder.internetChargeType;
+            this.isp = builder.isp;
             this.netmode = builder.netmode;
             this.resourceGroupId = builder.resourceGroupId;
+            this.zone = builder.zone;
         }
 
         @Override
@@ -286,6 +421,11 @@ public interface EIPSegmentProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getIsp() {
+            return this.isp;
+        }
+
+        @Override
         public final java.lang.Object getNetmode() {
             return this.netmode;
         }
@@ -293,6 +433,11 @@ public interface EIPSegmentProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
+        }
+
+        @Override
+        public final java.lang.Object getZone() {
+            return this.zone;
         }
 
         @Override
@@ -308,11 +453,17 @@ public interface EIPSegmentProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getInternetChargeType() != null) {
                 data.set("internetChargeType", om.valueToTree(this.getInternetChargeType()));
             }
+            if (this.getIsp() != null) {
+                data.set("isp", om.valueToTree(this.getIsp()));
+            }
             if (this.getNetmode() != null) {
                 data.set("netmode", om.valueToTree(this.getNetmode()));
             }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
+            if (this.getZone() != null) {
+                data.set("zone", om.valueToTree(this.getZone()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -335,8 +486,10 @@ public interface EIPSegmentProps extends software.amazon.jsii.JsiiSerializable {
             if (!eipMask.equals(that.eipMask)) return false;
             if (this.bandwidth != null ? !this.bandwidth.equals(that.bandwidth) : that.bandwidth != null) return false;
             if (this.internetChargeType != null ? !this.internetChargeType.equals(that.internetChargeType) : that.internetChargeType != null) return false;
+            if (this.isp != null ? !this.isp.equals(that.isp) : that.isp != null) return false;
             if (this.netmode != null ? !this.netmode.equals(that.netmode) : that.netmode != null) return false;
-            return this.resourceGroupId != null ? this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId == null;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
+            return this.zone != null ? this.zone.equals(that.zone) : that.zone == null;
         }
 
         @Override
@@ -344,8 +497,10 @@ public interface EIPSegmentProps extends software.amazon.jsii.JsiiSerializable {
             int result = this.eipMask.hashCode();
             result = 31 * result + (this.bandwidth != null ? this.bandwidth.hashCode() : 0);
             result = 31 * result + (this.internetChargeType != null ? this.internetChargeType.hashCode() : 0);
+            result = 31 * result + (this.isp != null ? this.isp.hashCode() : 0);
             result = 31 * result + (this.netmode != null ? this.netmode.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
+            result = 31 * result + (this.zone != null ? this.zone.hashCode() : 0);
             return result;
         }
     }

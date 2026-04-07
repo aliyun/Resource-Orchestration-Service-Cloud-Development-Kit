@@ -9,7 +9,9 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpnAttachment`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpnAttachment`, which is used to create an IPsec-VPN connection.
+//
+// After you create the IPsec-VPN connection, you can associate the IPsec-VPN connection with a transit router.
 type RosVpnAttachment interface {
 	alicloudroscdkcore.RosResource
 	AttrInternetIp() alicloudroscdkcore.IResolvable
@@ -33,6 +35,8 @@ type RosVpnAttachment interface {
 	SetEnableNatTraversal(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	EnableTunnelsBgp() interface{}
+	SetEnableTunnelsBgp(val interface{})
 	HealthCheckConfig() interface{}
 	SetHealthCheckConfig(val interface{})
 	IkeConfig() interface{}
@@ -66,6 +70,8 @@ type RosVpnAttachment interface {
 	SetRemoteCaCert(val interface{})
 	RemoteSubnet() interface{}
 	SetRemoteSubnet(val interface{})
+	ResourceGroupId() interface{}
+	SetResourceGroupId(val interface{})
 	// Options for this resource, such as condition, update policy etc.
 	RosOptions() alicloudroscdkcore.IRosResourceOptions
 	RosProperties() *map[string]interface{}
@@ -75,6 +81,10 @@ type RosVpnAttachment interface {
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
 	Stack() alicloudroscdkcore.Stack
+	TunnelBandwidth() interface{}
+	SetTunnelBandwidth(val interface{})
+	TunnelOptionsSpecification() interface{}
+	SetTunnelOptionsSpecification(val interface{})
 	// Return properties modified after initiation.
 	//
 	// Resources that expose mutable properties should override this function to
@@ -309,6 +319,16 @@ func (j *jsiiProxy_RosVpnAttachment) EnableResourcePropertyConstraint() *bool {
 	return returns
 }
 
+func (j *jsiiProxy_RosVpnAttachment) EnableTunnelsBgp() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enableTunnelsBgp",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosVpnAttachment) HealthCheckConfig() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -419,6 +439,16 @@ func (j *jsiiProxy_RosVpnAttachment) RemoteSubnet() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosVpnAttachment) ResourceGroupId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"resourceGroupId",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosVpnAttachment) RosOptions() alicloudroscdkcore.IRosResourceOptions {
 	var returns alicloudroscdkcore.IRosResourceOptions
 	_jsii_.Get(
@@ -454,6 +484,26 @@ func (j *jsiiProxy_RosVpnAttachment) Stack() alicloudroscdkcore.Stack {
 	_jsii_.Get(
 		j,
 		"stack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosVpnAttachment) TunnelBandwidth() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tunnelBandwidth",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosVpnAttachment) TunnelOptionsSpecification() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tunnelOptionsSpecification",
 		&returns,
 	)
 	return returns
@@ -574,6 +624,17 @@ func (j *jsiiProxy_RosVpnAttachment)SetEnableResourcePropertyConstraint(val *boo
 	)
 }
 
+func (j *jsiiProxy_RosVpnAttachment)SetEnableTunnelsBgp(val interface{}) {
+	if err := j.validateSetEnableTunnelsBgpParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"enableTunnelsBgp",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosVpnAttachment)SetHealthCheckConfig(val interface{}) {
 	if err := j.validateSetHealthCheckConfigParameters(val); err != nil {
 		panic(err)
@@ -658,6 +719,39 @@ func (j *jsiiProxy_RosVpnAttachment)SetRemoteSubnet(val interface{}) {
 	_jsii_.Set(
 		j,
 		"remoteSubnet",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosVpnAttachment)SetResourceGroupId(val interface{}) {
+	if err := j.validateSetResourceGroupIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"resourceGroupId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosVpnAttachment)SetTunnelBandwidth(val interface{}) {
+	if err := j.validateSetTunnelBandwidthParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"tunnelBandwidth",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosVpnAttachment)SetTunnelOptionsSpecification(val interface{}) {
+	if err := j.validateSetTunnelOptionsSpecificationParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"tunnelOptionsSpecification",
 		val,
 	)
 }

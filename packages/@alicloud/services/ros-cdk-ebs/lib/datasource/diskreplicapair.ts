@@ -100,7 +100,7 @@ export interface IDiskReplicaPair extends ros.IResource {
     readonly attrTags: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::EBS::DiskReplicaPair`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::EBS::DiskReplicaPair`, which is used to query a replication pair.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDiskReplicaPair`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ebs-diskreplicapair
  */

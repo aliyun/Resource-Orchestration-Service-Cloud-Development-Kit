@@ -3,6 +3,258 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosArtifactLifecycleRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-artifactlifecyclerule
+ */
+export interface RosArtifactLifecycleRuleProps {
+
+    /**
+     * @Property auto: Specify whether to automatically execute the lifecycle management rule.
+     */
+    readonly auto: boolean | ros.IResolvable;
+
+    /**
+     * @Property instanceId: ACR Instance ID.
+     */
+    readonly instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property namespaceName: The name of the namespace.
+     */
+    readonly namespaceName?: string | ros.IResolvable;
+
+    /**
+     * @Property repoName: The name of the image repository.
+     */
+    readonly repoName?: string | ros.IResolvable;
+
+    /**
+     * @Property retentionTagCount: The number of images that you want to retain.
+     */
+    readonly retentionTagCount?: number | ros.IResolvable;
+
+    /**
+     * @Property scheduleTime: The execution cycle of the lifecycle management rule.
+     */
+    readonly scheduleTime?: string | ros.IResolvable;
+
+    /**
+     * @Property scope: The deletion scope.
+     */
+    readonly scope?: string | ros.IResolvable;
+
+    /**
+     * @Property tagRegexp: The regular expression that is used to indicate which image tags are retained.
+     */
+    readonly tagRegexp?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosArtifactLifecycleRuleProps`
+ *
+ * @param properties - the TypeScript properties of a `RosArtifactLifecycleRuleProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosArtifactLifecycleRulePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('auto', ros.requiredValidator)(properties.auto));
+    errors.collect(ros.propertyValidator('auto', ros.validateBoolean)(properties.auto));
+    errors.collect(ros.propertyValidator('namespaceName', ros.validateString)(properties.namespaceName));
+    errors.collect(ros.propertyValidator('retentionTagCount', ros.validateNumber)(properties.retentionTagCount));
+    errors.collect(ros.propertyValidator('scheduleTime', ros.validateString)(properties.scheduleTime));
+    errors.collect(ros.propertyValidator('scope', ros.validateString)(properties.scope));
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('tagRegexp', ros.validateString)(properties.tagRegexp));
+    errors.collect(ros.propertyValidator('repoName', ros.validateString)(properties.repoName));
+    return errors.wrap('supplied properties not correct for "RosArtifactLifecycleRuleProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CR::ArtifactLifecycleRule` resource
+ *
+ * @param properties - the TypeScript properties of a `RosArtifactLifecycleRuleProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CR::ArtifactLifecycleRule` resource.
+ */
+// @ts-ignore TS6133
+function rosArtifactLifecycleRulePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosArtifactLifecycleRulePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'Auto': ros.booleanToRosTemplate(properties.auto),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'NamespaceName': ros.stringToRosTemplate(properties.namespaceName),
+      'RepoName': ros.stringToRosTemplate(properties.repoName),
+      'RetentionTagCount': ros.numberToRosTemplate(properties.retentionTagCount),
+      'ScheduleTime': ros.stringToRosTemplate(properties.scheduleTime),
+      'Scope': ros.stringToRosTemplate(properties.scope),
+      'TagRegexp': ros.stringToRosTemplate(properties.tagRegexp),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::ArtifactLifecycleRule`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ArtifactLifecycleRule` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-artifactlifecyclerule
+ */
+export class RosArtifactLifecycleRule extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CR::ArtifactLifecycleRule";
+
+    /**
+     * @Attribute ArtifactLifecycleRuleId: The ID of the lifecycle management rule.
+     */
+    public readonly attrArtifactLifecycleRuleId: ros.IResolvable;
+
+    /**
+     * @Attribute Auto: Specify whether to automatically execute the lifecycle management rule.
+     */
+    public readonly attrAuto: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: Creation time of the lifecycle management rule.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceId: ACR Instance ID.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute ModifiedTime: Change time of the lifecycle management rule.
+     */
+    public readonly attrModifiedTime: ros.IResolvable;
+
+    /**
+     * @Attribute NamespaceName: The name of the namespace.
+     */
+    public readonly attrNamespaceName: ros.IResolvable;
+
+    /**
+     * @Attribute RepoName: The name of the image repository.
+     */
+    public readonly attrRepoName: ros.IResolvable;
+
+    /**
+     * @Attribute RetentionTagCount: The number of images that you want to retain.
+     */
+    public readonly attrRetentionTagCount: ros.IResolvable;
+
+    /**
+     * @Attribute ScheduleTime: The execution cycle of the lifecycle management rule.
+     */
+    public readonly attrScheduleTime: ros.IResolvable;
+
+    /**
+     * @Attribute Scope: The deletion scope.
+     */
+    public readonly attrScope: ros.IResolvable;
+
+    /**
+     * @Attribute TagRegexp: The regular expression that is used to indicate which image tags are retained.
+     */
+    public readonly attrTagRegexp: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property auto: Specify whether to automatically execute the lifecycle management rule.
+     */
+    public auto: boolean | ros.IResolvable;
+
+    /**
+     * @Property instanceId: ACR Instance ID.
+     */
+    public instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property namespaceName: The name of the namespace.
+     */
+    public namespaceName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property repoName: The name of the image repository.
+     */
+    public repoName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property retentionTagCount: The number of images that you want to retain.
+     */
+    public retentionTagCount: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property scheduleTime: The execution cycle of the lifecycle management rule.
+     */
+    public scheduleTime: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property scope: The deletion scope.
+     */
+    public scope: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tagRegexp: The regular expression that is used to indicate which image tags are retained.
+     */
+    public tagRegexp: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosArtifactLifecycleRuleProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosArtifactLifecycleRule.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArtifactLifecycleRuleId = this.getAtt('ArtifactLifecycleRuleId');
+        this.attrAuto = this.getAtt('Auto');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrInstanceId = this.getAtt('InstanceId');
+        this.attrModifiedTime = this.getAtt('ModifiedTime');
+        this.attrNamespaceName = this.getAtt('NamespaceName');
+        this.attrRepoName = this.getAtt('RepoName');
+        this.attrRetentionTagCount = this.getAtt('RetentionTagCount');
+        this.attrScheduleTime = this.getAtt('ScheduleTime');
+        this.attrScope = this.getAtt('Scope');
+        this.attrTagRegexp = this.getAtt('TagRegexp');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.auto = props.auto;
+        this.instanceId = props.instanceId;
+        this.namespaceName = props.namespaceName;
+        this.repoName = props.repoName;
+        this.retentionTagCount = props.retentionTagCount;
+        this.scheduleTime = props.scheduleTime;
+        this.scope = props.scope;
+        this.tagRegexp = props.tagRegexp;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            auto: this.auto,
+            instanceId: this.instanceId,
+            namespaceName: this.namespaceName,
+            repoName: this.repoName,
+            retentionTagCount: this.retentionTagCount,
+            scheduleTime: this.scheduleTime,
+            scope: this.scope,
+            tagRegexp: this.tagRegexp,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosArtifactLifecycleRulePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosInstance`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instance
  */
@@ -135,7 +387,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::Instance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::Instance`, which is used to create a Container Registry Enterprise Edition instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instance
  */
@@ -161,7 +413,7 @@ export class RosInstance extends ros.RosResource {
     public readonly attrInstanceName: ros.IResolvable;
 
     /**
-     * @Attribute InstanceSpecification: InstanceSpecification.
+     * @Attribute InstanceSpecification: The instance specification.
      */
     public readonly attrInstanceSpecification: ros.IResolvable;
 
@@ -364,7 +616,7 @@ function rosInstanceEndpointAclPolicyPropsToRosTemplate(properties: any, enableR
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::InstanceEndpointAclPolicy`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::InstanceEndpointAclPolicy`, which is used to create a whitelist policy for the public endpoint of an instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `InstanceEndpointAclPolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instanceendpointaclpolicy
  */
@@ -508,9 +760,9 @@ export interface RosInstanceVpcEndpointLinkedVpcProps {
 function RosInstanceVpcEndpointLinkedVpcPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('enableCreateDnsRecordInPvzt', ros.validateBoolean)(properties.enableCreateDnsRecordInPvzt));
     errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('enableCreateDnsRecordInPvzt', ros.validateBoolean)(properties.enableCreateDnsRecordInPvzt));
     errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
     errors.collect(ros.propertyValidator('moduleName', ros.validateString)(properties.moduleName));
@@ -542,7 +794,7 @@ function rosInstanceVpcEndpointLinkedVpcPropsToRosTemplate(properties: any, enab
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::InstanceVpcEndpointLinkedVpc`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::InstanceVpcEndpointLinkedVpc`, which is used to associate a virtual private cloud (VPC) with a Container Registry instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `InstanceVpcEndpointLinkedVpc` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instancevpcendpointlinkedvpc
  */
@@ -715,7 +967,7 @@ function rosNamespacePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::Namespace`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::Namespace`, which is used to create a namespace.
  * @Note This class does not contain additional functions, so it is recommended to use the `Namespace` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-namespace
  */
@@ -792,6 +1044,286 @@ export class RosNamespace extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosNamespacePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosRepoSyncRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-reposyncrule
+ */
+export interface RosRepoSyncRuleProps {
+
+    /**
+     * @Property instanceId: The ID of the CR instance.
+     */
+    readonly instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property namespaceName: The name of the CR namespace.
+     */
+    readonly namespaceName: string | ros.IResolvable;
+
+    /**
+     * @Property syncRuleName: The name of the image sync rule.
+     */
+    readonly syncRuleName: string | ros.IResolvable;
+
+    /**
+     * @Property syncScope: The synchronization scope. Valid values: REPO, NAMESPACE
+     */
+    readonly syncScope: string | ros.IResolvable;
+
+    /**
+     * @Property syncTrigger: The mode of triggering the synchronization rule. Valid values: INITIATIVE, PASSIVE
+     */
+    readonly syncTrigger: string | ros.IResolvable;
+
+    /**
+     * @Property targetInstanceId: The ID of the destination instance.
+     */
+    readonly targetInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property targetNamespaceName: The name of the destination namespace.
+     */
+    readonly targetNamespaceName: string | ros.IResolvable;
+
+    /**
+     * @Property targetRegionId: The ID of the destination region.
+     */
+    readonly targetRegionId: string | ros.IResolvable;
+
+    /**
+     * @Property repoName: The name of the repository. This parameter is required when SyncScope is REPO.
+     */
+    readonly repoName?: string | ros.IResolvable;
+
+    /**
+     * @Property repoNameFilter: The regular expression that is used to filter repositories.
+     */
+    readonly repoNameFilter?: string | ros.IResolvable;
+
+    /**
+     * @Property tagFilter: The tag filter. Default value: .*
+     */
+    readonly tagFilter?: string | ros.IResolvable;
+
+    /**
+     * @Property targetRepoName: The name of the destination image repository. This parameter is optional.
+     */
+    readonly targetRepoName?: string | ros.IResolvable;
+
+    /**
+     * @Property targetUserId: The user ID (UID) of the account to which the destination instance belongs.
+     */
+    readonly targetUserId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosRepoSyncRuleProps`
+ *
+ * @param properties - the TypeScript properties of a `RosRepoSyncRuleProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosRepoSyncRulePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('syncScope', ros.requiredValidator)(properties.syncScope));
+    if(properties.syncScope && (typeof properties.syncScope) !== 'object') {
+        errors.collect(ros.propertyValidator('syncScope', ros.validateAllowedValues)({
+          data: properties.syncScope,
+          allowedValues: ["REPO","NAMESPACE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('syncScope', ros.validateString)(properties.syncScope));
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('tagFilter', ros.validateString)(properties.tagFilter));
+    errors.collect(ros.propertyValidator('repoName', ros.validateString)(properties.repoName));
+    errors.collect(ros.propertyValidator('targetInstanceId', ros.requiredValidator)(properties.targetInstanceId));
+    errors.collect(ros.propertyValidator('targetInstanceId', ros.validateString)(properties.targetInstanceId));
+    errors.collect(ros.propertyValidator('syncRuleName', ros.requiredValidator)(properties.syncRuleName));
+    errors.collect(ros.propertyValidator('syncRuleName', ros.validateString)(properties.syncRuleName));
+    errors.collect(ros.propertyValidator('namespaceName', ros.requiredValidator)(properties.namespaceName));
+    errors.collect(ros.propertyValidator('namespaceName', ros.validateString)(properties.namespaceName));
+    errors.collect(ros.propertyValidator('targetRepoName', ros.validateString)(properties.targetRepoName));
+    errors.collect(ros.propertyValidator('syncTrigger', ros.requiredValidator)(properties.syncTrigger));
+    if(properties.syncTrigger && (typeof properties.syncTrigger) !== 'object') {
+        errors.collect(ros.propertyValidator('syncTrigger', ros.validateAllowedValues)({
+          data: properties.syncTrigger,
+          allowedValues: ["INITIATIVE","PASSIVE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('syncTrigger', ros.validateString)(properties.syncTrigger));
+    errors.collect(ros.propertyValidator('repoNameFilter', ros.validateString)(properties.repoNameFilter));
+    errors.collect(ros.propertyValidator('targetRegionId', ros.requiredValidator)(properties.targetRegionId));
+    errors.collect(ros.propertyValidator('targetRegionId', ros.validateString)(properties.targetRegionId));
+    errors.collect(ros.propertyValidator('targetNamespaceName', ros.requiredValidator)(properties.targetNamespaceName));
+    errors.collect(ros.propertyValidator('targetNamespaceName', ros.validateString)(properties.targetNamespaceName));
+    errors.collect(ros.propertyValidator('targetUserId', ros.validateString)(properties.targetUserId));
+    return errors.wrap('supplied properties not correct for "RosRepoSyncRuleProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CR::RepoSyncRule` resource
+ *
+ * @param properties - the TypeScript properties of a `RosRepoSyncRuleProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CR::RepoSyncRule` resource.
+ */
+// @ts-ignore TS6133
+function rosRepoSyncRulePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosRepoSyncRulePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'NamespaceName': ros.stringToRosTemplate(properties.namespaceName),
+      'SyncRuleName': ros.stringToRosTemplate(properties.syncRuleName),
+      'SyncScope': ros.stringToRosTemplate(properties.syncScope),
+      'SyncTrigger': ros.stringToRosTemplate(properties.syncTrigger),
+      'TargetInstanceId': ros.stringToRosTemplate(properties.targetInstanceId),
+      'TargetNamespaceName': ros.stringToRosTemplate(properties.targetNamespaceName),
+      'TargetRegionId': ros.stringToRosTemplate(properties.targetRegionId),
+      'RepoName': ros.stringToRosTemplate(properties.repoName),
+      'RepoNameFilter': ros.stringToRosTemplate(properties.repoNameFilter),
+      'TagFilter': ros.stringToRosTemplate(properties.tagFilter),
+      'TargetRepoName': ros.stringToRosTemplate(properties.targetRepoName),
+      'TargetUserId': ros.stringToRosTemplate(properties.targetUserId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::RepoSyncRule`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `RepoSyncRule` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-reposyncrule
+ */
+export class RosRepoSyncRule extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CR::RepoSyncRule";
+
+    /**
+     * @Attribute SyncRuleId: The ID of the synchronization rule.
+     */
+    public readonly attrSyncRuleId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property instanceId: The ID of the CR instance.
+     */
+    public instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property namespaceName: The name of the CR namespace.
+     */
+    public namespaceName: string | ros.IResolvable;
+
+    /**
+     * @Property syncRuleName: The name of the image sync rule.
+     */
+    public syncRuleName: string | ros.IResolvable;
+
+    /**
+     * @Property syncScope: The synchronization scope. Valid values: REPO, NAMESPACE
+     */
+    public syncScope: string | ros.IResolvable;
+
+    /**
+     * @Property syncTrigger: The mode of triggering the synchronization rule. Valid values: INITIATIVE, PASSIVE
+     */
+    public syncTrigger: string | ros.IResolvable;
+
+    /**
+     * @Property targetInstanceId: The ID of the destination instance.
+     */
+    public targetInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property targetNamespaceName: The name of the destination namespace.
+     */
+    public targetNamespaceName: string | ros.IResolvable;
+
+    /**
+     * @Property targetRegionId: The ID of the destination region.
+     */
+    public targetRegionId: string | ros.IResolvable;
+
+    /**
+     * @Property repoName: The name of the repository. This parameter is required when SyncScope is REPO.
+     */
+    public repoName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property repoNameFilter: The regular expression that is used to filter repositories.
+     */
+    public repoNameFilter: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tagFilter: The tag filter. Default value: .*
+     */
+    public tagFilter: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property targetRepoName: The name of the destination image repository. This parameter is optional.
+     */
+    public targetRepoName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property targetUserId: The user ID (UID) of the account to which the destination instance belongs.
+     */
+    public targetUserId: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosRepoSyncRuleProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosRepoSyncRule.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrSyncRuleId = this.getAtt('SyncRuleId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.instanceId = props.instanceId;
+        this.namespaceName = props.namespaceName;
+        this.syncRuleName = props.syncRuleName;
+        this.syncScope = props.syncScope;
+        this.syncTrigger = props.syncTrigger;
+        this.targetInstanceId = props.targetInstanceId;
+        this.targetNamespaceName = props.targetNamespaceName;
+        this.targetRegionId = props.targetRegionId;
+        this.repoName = props.repoName;
+        this.repoNameFilter = props.repoNameFilter;
+        this.tagFilter = props.tagFilter;
+        this.targetRepoName = props.targetRepoName;
+        this.targetUserId = props.targetUserId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            instanceId: this.instanceId,
+            namespaceName: this.namespaceName,
+            syncRuleName: this.syncRuleName,
+            syncScope: this.syncScope,
+            syncTrigger: this.syncTrigger,
+            targetInstanceId: this.targetInstanceId,
+            targetNamespaceName: this.targetNamespaceName,
+            targetRegionId: this.targetRegionId,
+            repoName: this.repoName,
+            repoNameFilter: this.repoNameFilter,
+            tagFilter: this.tagFilter,
+            targetRepoName: this.targetRepoName,
+            targetUserId: this.targetUserId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosRepoSyncRulePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 
@@ -927,7 +1459,7 @@ function rosRepositoryPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::Repository`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::Repository`, which is used to create an image repository.
  * @Note This class does not contain additional functions, so it is recommended to use the `Repository` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-repository
  */
@@ -1057,13 +1589,13 @@ export namespace RosRepository {
          */
         readonly isAutoBuild: boolean | ros.IResolvable;
         /**
-         * @Property sourceRepoName: Source code warehouse name
-         */
-        readonly sourceRepoName: string | ros.IResolvable;
-        /**
          * @Property sourceRepoNamespace: Source code repository namespace
          */
         readonly sourceRepoNamespace: string | ros.IResolvable;
+        /**
+         * @Property sourceRepoName: Source code warehouse name
+         */
+        readonly sourceRepoName: string | ros.IResolvable;
         /**
          * @Property isOversea: Whether to enable overseas construction
          */
@@ -1091,10 +1623,10 @@ function RosRepository_RepoSourcePropertyValidator(properties: any): ros.Validat
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('isAutoBuild', ros.requiredValidator)(properties.isAutoBuild));
     errors.collect(ros.propertyValidator('isAutoBuild', ros.validateBoolean)(properties.isAutoBuild));
-    errors.collect(ros.propertyValidator('sourceRepoName', ros.requiredValidator)(properties.sourceRepoName));
-    errors.collect(ros.propertyValidator('sourceRepoName', ros.validateString)(properties.sourceRepoName));
     errors.collect(ros.propertyValidator('sourceRepoNamespace', ros.requiredValidator)(properties.sourceRepoNamespace));
     errors.collect(ros.propertyValidator('sourceRepoNamespace', ros.validateString)(properties.sourceRepoNamespace));
+    errors.collect(ros.propertyValidator('sourceRepoName', ros.requiredValidator)(properties.sourceRepoName));
+    errors.collect(ros.propertyValidator('sourceRepoName', ros.validateString)(properties.sourceRepoName));
     errors.collect(ros.propertyValidator('isOversea', ros.requiredValidator)(properties.isOversea));
     errors.collect(ros.propertyValidator('isOversea', ros.validateBoolean)(properties.isOversea));
     errors.collect(ros.propertyValidator('sourceRepoType', ros.requiredValidator)(properties.sourceRepoType));
@@ -1123,11 +1655,481 @@ function rosRepositoryRepoSourcePropertyToRosTemplate(properties: any): any {
     RosRepository_RepoSourcePropertyValidator(properties).assertSuccess();
     return {
       'IsAutoBuild': ros.booleanToRosTemplate(properties.isAutoBuild),
-      'SourceRepoName': ros.stringToRosTemplate(properties.sourceRepoName),
       'SourceRepoNamespace': ros.stringToRosTemplate(properties.sourceRepoNamespace),
+      'SourceRepoName': ros.stringToRosTemplate(properties.sourceRepoName),
       'IsOversea': ros.booleanToRosTemplate(properties.isOversea),
       'SourceRepoType': ros.stringToRosTemplate(properties.sourceRepoType),
       'IsDisableCache': ros.booleanToRosTemplate(properties.isDisableCache),
+    };
+}
+
+/**
+ * Properties for defining a `RosScanRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-scanrule
+ */
+export interface RosScanRuleProps {
+
+    /**
+     * @Property instanceId: ACR Instance ID.
+     */
+    readonly instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property repoTagFilterPattern: The tag that triggers the scan matches the regular expression.
+     */
+    readonly repoTagFilterPattern: string | ros.IResolvable;
+
+    /**
+     * @Property ruleName: The scan rule name.
+     */
+    readonly ruleName: string | ros.IResolvable;
+
+    /**
+     * @Property scanScope: The scan scope. Valid values:
+     * NAMESPACE: namespace.
+     * REPO: repository.
+     * INSTANCE: CR instance.
+     */
+    readonly scanScope: string | ros.IResolvable;
+
+    /**
+     * @Property scanType: The scan type. Valid values: 
+     * * VUL: Products Cloud Security Scanner.
+     * * SBOM: Product Content Analysis.
+     */
+    readonly scanType: string | ros.IResolvable;
+
+    /**
+     * @Property triggerType: Trigger type. Valid values:
+     * * AUTO: automatically trigger.
+     * * MANUAL: manually trigger.
+     */
+    readonly triggerType: string | ros.IResolvable;
+
+    /**
+     * @Property namespaces: The list of namespaces.
+     * * When the scan scope is NAMESPACE, this parameter cannot be empty.
+     * * If the scan scope is REPO, you must specify a unique Namespace for this parameter.
+     */
+    readonly namespaces?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property repoNames: The list of repositories.* When the scan scope is NAMESPACE, this parameter must be empty.
+     * * When the scan scope is REPO, this parameter cannot be empty.
+     */
+    readonly repoNames?: Array<string | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosScanRuleProps`
+ *
+ * @param properties - the TypeScript properties of a `RosScanRuleProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosScanRulePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('repoTagFilterPattern', ros.requiredValidator)(properties.repoTagFilterPattern));
+    errors.collect(ros.propertyValidator('repoTagFilterPattern', ros.validateString)(properties.repoTagFilterPattern));
+    errors.collect(ros.propertyValidator('scanType', ros.requiredValidator)(properties.scanType));
+    errors.collect(ros.propertyValidator('scanType', ros.validateString)(properties.scanType));
+    errors.collect(ros.propertyValidator('triggerType', ros.requiredValidator)(properties.triggerType));
+    if(properties.triggerType && (typeof properties.triggerType) !== 'object') {
+        errors.collect(ros.propertyValidator('triggerType', ros.validateAllowedValues)({
+          data: properties.triggerType,
+          allowedValues: ["MANUAL","AUTO"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('triggerType', ros.validateString)(properties.triggerType));
+    errors.collect(ros.propertyValidator('scanScope', ros.requiredValidator)(properties.scanScope));
+    if(properties.scanScope && (typeof properties.scanScope) !== 'object') {
+        errors.collect(ros.propertyValidator('scanScope', ros.validateAllowedValues)({
+          data: properties.scanScope,
+          allowedValues: ["NAMESPACE","REPO","INSTANCE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('scanScope', ros.validateString)(properties.scanScope));
+    errors.collect(ros.propertyValidator('namespaces', ros.listValidator(ros.validateString))(properties.namespaces));
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('repoNames', ros.listValidator(ros.validateString))(properties.repoNames));
+    errors.collect(ros.propertyValidator('ruleName', ros.requiredValidator)(properties.ruleName));
+    errors.collect(ros.propertyValidator('ruleName', ros.validateString)(properties.ruleName));
+    return errors.wrap('supplied properties not correct for "RosScanRuleProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CR::ScanRule` resource
+ *
+ * @param properties - the TypeScript properties of a `RosScanRuleProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CR::ScanRule` resource.
+ */
+// @ts-ignore TS6133
+function rosScanRulePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosScanRulePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'RepoTagFilterPattern': ros.stringToRosTemplate(properties.repoTagFilterPattern),
+      'RuleName': ros.stringToRosTemplate(properties.ruleName),
+      'ScanScope': ros.stringToRosTemplate(properties.scanScope),
+      'ScanType': ros.stringToRosTemplate(properties.scanType),
+      'TriggerType': ros.stringToRosTemplate(properties.triggerType),
+      'Namespaces': ros.listMapper(ros.stringToRosTemplate)(properties.namespaces),
+      'RepoNames': ros.listMapper(ros.stringToRosTemplate)(properties.repoNames),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::ScanRule`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ScanRule` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-scanrule
+ */
+export class RosScanRule extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CR::ScanRule";
+
+    /**
+     * @Attribute CreateTime: Creation time of the scan rule.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceId: ACR Instance ID.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute Namespaces: The list of namespaces.
+     */
+    public readonly attrNamespaces: ros.IResolvable;
+
+    /**
+     * @Attribute RepoNames: The list of repositories.
+     */
+    public readonly attrRepoNames: ros.IResolvable;
+
+    /**
+     * @Attribute RepoTagFilterPattern: The tag that triggers the scan matches the regular expression.
+     */
+    public readonly attrRepoTagFilterPattern: ros.IResolvable;
+
+    /**
+     * @Attribute RuleName: The scan rule name.
+     */
+    public readonly attrRuleName: ros.IResolvable;
+
+    /**
+     * @Attribute ScanRuleId: The ID of the scan rule.
+     */
+    public readonly attrScanRuleId: ros.IResolvable;
+
+    /**
+     * @Attribute ScanScope: The scan scope.
+     */
+    public readonly attrScanScope: ros.IResolvable;
+
+    /**
+     * @Attribute ScanType: The scan type.
+     */
+    public readonly attrScanType: ros.IResolvable;
+
+    /**
+     * @Attribute TriggerType: Trigger type.
+     */
+    public readonly attrTriggerType: ros.IResolvable;
+
+    /**
+     * @Attribute UpdateTime: Change time of the scan rule.
+     */
+    public readonly attrUpdateTime: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property instanceId: ACR Instance ID.
+     */
+    public instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property repoTagFilterPattern: The tag that triggers the scan matches the regular expression.
+     */
+    public repoTagFilterPattern: string | ros.IResolvable;
+
+    /**
+     * @Property ruleName: The scan rule name.
+     */
+    public ruleName: string | ros.IResolvable;
+
+    /**
+     * @Property scanScope: The scan scope. Valid values:
+     * NAMESPACE: namespace.
+     * REPO: repository.
+     * INSTANCE: CR instance.
+     */
+    public scanScope: string | ros.IResolvable;
+
+    /**
+     * @Property scanType: The scan type. Valid values: 
+     * * VUL: Products Cloud Security Scanner.
+     * * SBOM: Product Content Analysis.
+     */
+    public scanType: string | ros.IResolvable;
+
+    /**
+     * @Property triggerType: Trigger type. Valid values:
+     * * AUTO: automatically trigger.
+     * * MANUAL: manually trigger.
+     */
+    public triggerType: string | ros.IResolvable;
+
+    /**
+     * @Property namespaces: The list of namespaces.
+     * * When the scan scope is NAMESPACE, this parameter cannot be empty.
+     * * If the scan scope is REPO, you must specify a unique Namespace for this parameter.
+     */
+    public namespaces: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property repoNames: The list of repositories.* When the scan scope is NAMESPACE, this parameter must be empty.
+     * * When the scan scope is REPO, this parameter cannot be empty.
+     */
+    public repoNames: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosScanRuleProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosScanRule.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrInstanceId = this.getAtt('InstanceId');
+        this.attrNamespaces = this.getAtt('Namespaces');
+        this.attrRepoNames = this.getAtt('RepoNames');
+        this.attrRepoTagFilterPattern = this.getAtt('RepoTagFilterPattern');
+        this.attrRuleName = this.getAtt('RuleName');
+        this.attrScanRuleId = this.getAtt('ScanRuleId');
+        this.attrScanScope = this.getAtt('ScanScope');
+        this.attrScanType = this.getAtt('ScanType');
+        this.attrTriggerType = this.getAtt('TriggerType');
+        this.attrUpdateTime = this.getAtt('UpdateTime');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.instanceId = props.instanceId;
+        this.repoTagFilterPattern = props.repoTagFilterPattern;
+        this.ruleName = props.ruleName;
+        this.scanScope = props.scanScope;
+        this.scanType = props.scanType;
+        this.triggerType = props.triggerType;
+        this.namespaces = props.namespaces;
+        this.repoNames = props.repoNames;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            instanceId: this.instanceId,
+            repoTagFilterPattern: this.repoTagFilterPattern,
+            ruleName: this.ruleName,
+            scanScope: this.scanScope,
+            scanType: this.scanType,
+            triggerType: this.triggerType,
+            namespaces: this.namespaces,
+            repoNames: this.repoNames,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosScanRulePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosStorageDomainRoutingRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-storagedomainroutingrule
+ */
+export interface RosStorageDomainRoutingRuleProps {
+
+    /**
+     * @Property instanceId: ACR Instance ID.
+     */
+    readonly instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property routes: Domain name routing entry.
+     */
+    readonly routes: Array<RosStorageDomainRoutingRule.RoutesProperty | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosStorageDomainRoutingRuleProps`
+ *
+ * @param properties - the TypeScript properties of a `RosStorageDomainRoutingRuleProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosStorageDomainRoutingRulePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('routes', ros.requiredValidator)(properties.routes));
+    errors.collect(ros.propertyValidator('routes', ros.listValidator(RosStorageDomainRoutingRule_RoutesPropertyValidator))(properties.routes));
+    return errors.wrap('supplied properties not correct for "RosStorageDomainRoutingRuleProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CR::StorageDomainRoutingRule` resource
+ *
+ * @param properties - the TypeScript properties of a `RosStorageDomainRoutingRuleProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CR::StorageDomainRoutingRule` resource.
+ */
+// @ts-ignore TS6133
+function rosStorageDomainRoutingRulePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosStorageDomainRoutingRulePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'Routes': ros.listMapper(rosStorageDomainRoutingRuleRoutesPropertyToRosTemplate)(properties.routes),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::StorageDomainRoutingRule`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `StorageDomainRoutingRule` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-storagedomainroutingrule
+ */
+export class RosStorageDomainRoutingRule extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CR::StorageDomainRoutingRule";
+
+    /**
+     * @Attribute CreateTime: The creation time of the Rule.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute ModifyTime: The Modify Time of the Rule.
+     */
+    public readonly attrModifyTime: ros.IResolvable;
+
+    /**
+     * @Attribute Routes: Domain name routing entry.
+     */
+    public readonly attrRoutes: ros.IResolvable;
+
+    /**
+     * @Attribute RuleId: Rule ID.
+     */
+    public readonly attrRuleId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property instanceId: ACR Instance ID.
+     */
+    public instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property routes: Domain name routing entry.
+     */
+    public routes: Array<RosStorageDomainRoutingRule.RoutesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosStorageDomainRoutingRuleProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosStorageDomainRoutingRule.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrModifyTime = this.getAtt('ModifyTime');
+        this.attrRoutes = this.getAtt('Routes');
+        this.attrRuleId = this.getAtt('RuleId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.instanceId = props.instanceId;
+        this.routes = props.routes;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            instanceId: this.instanceId,
+            routes: this.routes,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosStorageDomainRoutingRulePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosStorageDomainRoutingRule {
+    /**
+     * @stability external
+     */
+    export interface RoutesProperty {
+        /**
+         * @Property storageDomain: Storage domain name.
+         */
+        readonly storageDomain: string | ros.IResolvable;
+        /**
+         * @Property endpointType: Endpoint Type.
+         */
+        readonly endpointType: string | ros.IResolvable;
+        /**
+         * @Property instanceDomain: Instance domain name.
+         */
+        readonly instanceDomain: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `RoutesProperty`
+ *
+ * @param properties - the TypeScript properties of a `RoutesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosStorageDomainRoutingRule_RoutesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('storageDomain', ros.requiredValidator)(properties.storageDomain));
+    errors.collect(ros.propertyValidator('storageDomain', ros.validateString)(properties.storageDomain));
+    errors.collect(ros.propertyValidator('endpointType', ros.requiredValidator)(properties.endpointType));
+    errors.collect(ros.propertyValidator('endpointType', ros.validateString)(properties.endpointType));
+    errors.collect(ros.propertyValidator('instanceDomain', ros.requiredValidator)(properties.instanceDomain));
+    errors.collect(ros.propertyValidator('instanceDomain', ros.validateString)(properties.instanceDomain));
+    return errors.wrap('supplied properties not correct for "RoutesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CR::StorageDomainRoutingRule.Routes` resource
+ *
+ * @param properties - the TypeScript properties of a `RoutesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CR::StorageDomainRoutingRule.Routes` resource.
+ */
+// @ts-ignore TS6133
+function rosStorageDomainRoutingRuleRoutesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosStorageDomainRoutingRule_RoutesPropertyValidator(properties).assertSuccess();
+    return {
+      'StorageDomain': ros.stringToRosTemplate(properties.storageDomain),
+      'EndpointType': ros.stringToRosTemplate(properties.endpointType),
+      'InstanceDomain': ros.stringToRosTemplate(properties.instanceDomain),
     };
 }
 
@@ -1184,7 +2186,7 @@ function rosUserInfoPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::UserInfo`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::UserInfo`, which is used to create the information about a user.
  * @Note This class does not contain additional functions, so it is recommended to use the `UserInfo` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-userinfo
  */

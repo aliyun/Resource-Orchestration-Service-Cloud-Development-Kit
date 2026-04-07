@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.datalakeformation;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-datalakeformation-vpcconfig
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.253Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:23.604Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.datalakeformation.$Module.class, fqn = "@alicloud/ros-cdk-datalakeformation.RosVpcConfigProps")
 @software.amazon.jsii.Jsii.Proxy(RosVpcConfigProps.Jsii$Proxy.class)
 public interface RosVpcConfigProps extends software.amazon.jsii.JsiiSerializable {

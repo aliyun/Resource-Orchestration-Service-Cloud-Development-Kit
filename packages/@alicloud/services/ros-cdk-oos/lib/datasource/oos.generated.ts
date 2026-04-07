@@ -52,10 +52,10 @@ export interface RosGitCodeRepoProps {
 function RosGitCodeRepoPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('repository', ros.requiredValidator)(properties.repository));
-    errors.collect(ros.propertyValidator('repository', ros.validateString)(properties.repository));
     errors.collect(ros.propertyValidator('owner', ros.requiredValidator)(properties.owner));
     errors.collect(ros.propertyValidator('owner', ros.validateString)(properties.owner));
+    errors.collect(ros.propertyValidator('repository', ros.requiredValidator)(properties.repository));
+    errors.collect(ros.propertyValidator('repository', ros.validateString)(properties.repository));
     errors.collect(ros.propertyValidator('organization', ros.validateString)(properties.organization));
     errors.collect(ros.propertyValidator('platform', ros.requiredValidator)(properties.platform));
     if(properties.platform && (typeof properties.platform) !== 'object') {
@@ -100,7 +100,7 @@ function rosGitCodeRepoPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::GitCodeRepo`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::GitCodeRepo`, which is used to generate the URL of a user-specified GitHub or Gitee code repository.
  * @Note This class does not contain additional functions, so it is recommended to use the `GitCodeRepo` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-gitcoderepo
  */
@@ -247,7 +247,7 @@ function rosPatchBaselinePropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::PatchBaseline`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::PatchBaseline`, which is used to query a patch baseline.
  * @Note This class does not contain additional functions, so it is recommended to use the `PatchBaseline` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-patchbaseline
  */
@@ -487,7 +487,7 @@ function rosPatchBaselinesPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::PatchBaselines`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::PatchBaselines`, which is used to query patch baselines.
  * @Note This class does not contain additional functions, so it is recommended to use the `PatchBaselines` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-patchbaselines
  */
@@ -626,7 +626,7 @@ function rosSecretParameterPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::SecretParameter`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::SecretParameter`, which is used to query the information about an encryption parameter.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecretParameter` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-secretparameter
  */
@@ -835,7 +835,7 @@ function rosSecretParametersPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::SecretParameters`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::SecretParameters`, which is used to query encryption parameters.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecretParameters` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-secretparameters
  */
@@ -940,9 +940,9 @@ export interface RosTemplateProps {
 function RosTemplatePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('templateVersion', ros.validateString)(properties.templateVersion));
     errors.collect(ros.propertyValidator('templateName', ros.requiredValidator)(properties.templateName));
     errors.collect(ros.propertyValidator('templateName', ros.validateString)(properties.templateName));
+    errors.collect(ros.propertyValidator('templateVersion', ros.validateString)(properties.templateVersion));
     if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
         errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
           data: properties.refreshOptions,
@@ -974,7 +974,7 @@ function rosTemplatePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::Template`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::Template`The , which type is used to query the details of a single template.
  * @Note This class does not contain additional functions, so it is recommended to use the `Template` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-template
  */
@@ -1237,6 +1237,7 @@ export interface RosTemplatesProps {
 function RosTemplatesPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('createdBy', ros.validateString)(properties.createdBy));
     if(properties.category && (typeof properties.category) !== 'object') {
         errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
           data: properties.category,
@@ -1244,9 +1245,8 @@ function RosTemplatesPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
-    errors.collect(ros.propertyValidator('createdBy', ros.validateString)(properties.createdBy));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('templateFormat', ros.validateString)(properties.templateFormat));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('createdDateAfter', ros.validateString)(properties.createdDateAfter));
     errors.collect(ros.propertyValidator('isExample', ros.validateBoolean)(properties.isExample));
     errors.collect(ros.propertyValidator('createdDateBefore', ros.validateString)(properties.createdDateBefore));
@@ -1326,7 +1326,7 @@ function rosTemplatesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::Templates`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::Templates`The , which type is used to query template lists.
  * @Note This class does not contain additional functions, so it is recommended to use the `Templates` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-templates
  */

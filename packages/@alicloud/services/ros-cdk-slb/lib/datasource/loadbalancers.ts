@@ -105,7 +105,7 @@ export interface ILoadBalancers extends ros.IResource {
     readonly attrLoadBalancers: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::LoadBalancers`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::LoadBalancers`, which is used to query created Classic Load Balancer (CLB) instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLoadBalancers`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-loadbalancers
  */
@@ -140,8 +140,8 @@ export class LoadBalancers extends ros.Resource implements ILoadBalancers {
         const rosLoadBalancers = new RosLoadBalancers(this, id,  {
             status: props.status,
             addressIpVersion: props.addressIpVersion,
-            resourceGroupId: props.resourceGroupId,
             address: props.address,
+            resourceGroupId: props.resourceGroupId,
             vSwitchId: props.vSwitchId,
             loadBalancerId: props.loadBalancerId,
             slaveZoneId: props.slaveZoneId,

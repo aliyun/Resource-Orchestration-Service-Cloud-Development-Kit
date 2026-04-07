@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::ScheduledPreloadJob`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::ScheduledPreloadJob`The , which type is used to create a scheduled preload job.
 type RosScheduledPreloadJob interface {
 	alicloudroscdkcore.RosResource
 	AttrCreateTime() alicloudroscdkcore.IResolvable

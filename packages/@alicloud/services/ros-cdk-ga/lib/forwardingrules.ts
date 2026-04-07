@@ -37,7 +37,7 @@ export interface IForwardingRules extends ros.IResource {
     readonly attrForwardingRuleIds: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::GA::ForwardingRules`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::GA::ForwardingRules`, which is used to create forwarding rules.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosForwardingRules`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-forwardingrules
  */

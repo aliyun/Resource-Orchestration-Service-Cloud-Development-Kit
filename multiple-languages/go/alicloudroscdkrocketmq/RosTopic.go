@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ::Topic`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ::Topic`, which is used to create a topic.
 type RosTopic interface {
 	alicloudroscdkcore.RosResource
 	AttrInstanceId() alicloudroscdkcore.IResolvable

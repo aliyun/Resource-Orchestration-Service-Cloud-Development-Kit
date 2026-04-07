@@ -8,5 +8,6 @@ type RosInstancePublicConnectionProps struct {
 	ConnectionStringPrefix interface{} `field:"required" json:"connectionStringPrefix" yaml:"connectionStringPrefix"`
 	DbInstanceId interface{} `field:"required" json:"dbInstanceId" yaml:"dbInstanceId"`
 	Port interface{} `field:"required" json:"port" yaml:"port"`
+	AddressType interface{} `field:"optional" json:"addressType" yaml:"addressType"`
 }
 

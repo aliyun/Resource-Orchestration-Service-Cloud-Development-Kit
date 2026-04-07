@@ -84,7 +84,7 @@ export interface IClusterApplication extends ros.IResource {
     readonly attrWaitUntilData: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ClusterApplication`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ClusterApplication`The , which resource type deploys containerized applications.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClusterApplication`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterapplication
  */
@@ -119,8 +119,8 @@ export class ClusterApplication extends ros.Resource implements IClusterApplicat
         const rosClusterApplication = new RosClusterApplication(this, id,  {
             rolePolicy: props.rolePolicy === undefined || props.rolePolicy === null ? 'EnsureAdminRoleAndBinding' : props.rolePolicy,
             creationMode: props.creationMode === undefined || props.creationMode === null ? 'Normal' : props.creationMode,
-            yamlContent: props.yamlContent,
             clusterId: props.clusterId,
+            yamlContent: props.yamlContent,
             defaultNamespace: props.defaultNamespace === undefined || props.defaultNamespace === null ? 'default' : props.defaultNamespace,
             stage: props.stage === undefined || props.stage === null ? 'All' : props.stage,
             validationMode: props.validationMode === undefined || props.validationMode === null ? 'Strict' : props.validationMode,

@@ -31,6 +31,16 @@ export interface DBInstanceProps {
     readonly aiNodeSpecInfos?: Array<RosDBInstance.AINodeSpecInfosProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * Property backupId: Backup set ID. You can call DescribeDataBackups to view the backup set IDs of all backup sets under the target instance.
+     */
+    readonly backupId?: string | ros.IResolvable;
+
+    /**
+     * Property cacheStorageSize: Cache storage size.
+     */
+    readonly cacheStorageSize?: string | ros.IResolvable;
+
+    /**
      * Property createSampleData: Whether to load the sample data set after the instance is created. The value can be:
      * true: load the sample dataset.
      * false: not to load the sample dataset
@@ -70,6 +80,11 @@ export interface DBInstanceProps {
     readonly deployMode?: string | ros.IResolvable;
 
     /**
+     * Property enableSsl: Whether to enable SSL encryption. Valid values: true: Enable SSL encryption. false (default): Do not enable SSL encryption.
+     */
+    readonly enableSsl?: boolean | ros.IResolvable;
+
+    /**
      * Property encryptionKey: If the EncryptionType parameter is set to CloudDisk, you must specify this parameter to the encryption key that is in the same region with the disks that is specified by the EncryptionType parameter. Otherwise, leave this parameter empty.
      */
     readonly encryptionKey?: string | ros.IResolvable;
@@ -95,6 +110,11 @@ export interface DBInstanceProps {
      * This parameter must be passed to create a storage elastic mode instance and a serverless version instance.
      */
     readonly instanceSpec?: string | ros.IResolvable;
+
+    /**
+     * Property masterAiSpec: If you need to change the Master node to MasterAI node, specify this parameter. This parameter cannot be specified at the same time as MasterCU. Only some regions and availability zones support changing the Master node to MasterAI node. Only Basic edition instances of AnalyticDB PostgreSQL 7.0 support MasterAI nodes. You can query all possible values of this parameter on the Master node reconfiguration sales page.
+     */
+    readonly masterAiSpec?: string | ros.IResolvable;
 
     /**
      * Property masterCu: Master resources. Default is 8.
@@ -179,6 +199,11 @@ export interface DBInstanceProps {
     readonly serverlessResource?: number | ros.IResolvable;
 
     /**
+     * Property srcDbInstanceName: Clone source instance ID. You can call the DescribeDBInstances interface to view the details of all AnalyticDB PostgreSQL instances in the target region, including the instance ID.
+     */
+    readonly srcDbInstanceName?: string | ros.IResolvable;
+
+    /**
      * Property standbyVSwitchId: The standby VSwitch ID of the instance.
      */
     readonly standbyVSwitchId?: string | ros.IResolvable;
@@ -244,7 +269,7 @@ export interface IDBInstance extends ros.IResource {
     readonly attrPort: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::DBInstance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::DBInstance`Use the , which resource to create an AnalyticDB for PostgreSQL instance in reserved storage mode.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-dbinstance
  */
@@ -294,28 +319,33 @@ export class DBInstance extends ros.Resource implements IDBInstance {
         const rosDBInstance = new RosDBInstance(this, id,  {
             masterNodeNum: props.masterNodeNum,
             standbyZoneId: props.standbyZoneId,
-            instanceSpec: props.instanceSpec,
             privateIpAddress: props.privateIpAddress,
+            instanceSpec: props.instanceSpec,
             resourceGroupId: props.resourceGroupId,
             idleTime: props.idleTime,
-            aiNodeSpecInfos: props.aiNodeSpecInfos,
+            srcDbInstanceName: props.srcDbInstanceName,
             segNodeNum: props.segNodeNum,
+            aiNodeSpecInfos: props.aiNodeSpecInfos,
             segStorageType: props.segStorageType,
+            backupId: props.backupId,
             encryptionKey: props.encryptionKey,
             dbInstanceGroupCount: props.dbInstanceGroupCount,
             standbyVSwitchId: props.standbyVSwitchId,
+            masterAiSpec: props.masterAiSpec,
             dbInstanceCategory: props.dbInstanceCategory,
             vectorConfigurationStatus: props.vectorConfigurationStatus,
             deployMode: props.deployMode,
             securityIpList: props.securityIpList,
             serverlessResource: props.serverlessResource,
-            tags: props.tags,
             dbInstanceDescription: props.dbInstanceDescription,
+            tags: props.tags,
             encryptionType: props.encryptionType,
+            cacheStorageSize: props.cacheStorageSize,
             serverlessMode: props.serverlessMode,
+            enableSsl: props.enableSsl,
             engineVersion: props.engineVersion,
-            createSampleData: props.createSampleData,
             zoneId: props.zoneId,
+            createSampleData: props.createSampleData,
             vpcId: props.vpcId,
             dbInstanceClass: props.dbInstanceClass,
             prodType: props.prodType === undefined || props.prodType === null ? 'standard' : props.prodType,

@@ -1,3 +1,5 @@
+export * from './applicationconnection';
+export * from './applicationconnectionbind';
 export * from './applicationgroupdeployment';
 export * from './defaultpatchbaseline';
 export * from './deployrevision';

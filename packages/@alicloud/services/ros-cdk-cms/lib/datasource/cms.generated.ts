@@ -64,7 +64,7 @@ function rosAlarmContactPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::AlarmContact`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::AlarmContact`, which is used to query the information about an alert contact.
  * @Note This class does not contain additional functions, so it is recommended to use the `AlarmContact` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-alarmcontact
  */
@@ -260,7 +260,7 @@ function rosAlarmContactsPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::AlarmContacts`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::AlarmContacts`, which is used to query the information about alert contacts.
  * @Note This class does not contain additional functions, so it is recommended to use the `AlarmContacts` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-alarmcontacts
  */
@@ -353,6 +353,8 @@ export interface RosMonitorGroupProps {
 function RosMonitorGroupPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('groupId', ros.requiredValidator)(properties.groupId));
+    errors.collect(ros.propertyValidator('groupId', ros.validateNumber)(properties.groupId));
     if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
         errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
           data: properties.refreshOptions,
@@ -360,8 +362,6 @@ function RosMonitorGroupPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
-    errors.collect(ros.propertyValidator('groupId', ros.requiredValidator)(properties.groupId));
-    errors.collect(ros.propertyValidator('groupId', ros.validateNumber)(properties.groupId));
     return errors.wrap('supplied properties not correct for "RosMonitorGroupProps"');
 }
 
@@ -385,7 +385,7 @@ function rosMonitorGroupPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::MonitorGroup`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::MonitorGroup`, which is used to query the information about an application group.
  * @Note This class does not contain additional functions, so it is recommended to use the `MonitorGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-monitorgroup
  */
@@ -553,6 +553,7 @@ function RosMonitorGroupsPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
     errors.collect(ros.propertyValidator('dynamicTagRuleId', ros.validateString)(properties.dynamicTagRuleId));
     errors.collect(ros.propertyValidator('monitorGroupName', ros.validateString)(properties.monitorGroupName));
+    errors.collect(ros.propertyValidator('groupId', ros.validateNumber)(properties.groupId));
     if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
         errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
           data: properties.refreshOptions,
@@ -560,7 +561,6 @@ function RosMonitorGroupsPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
-    errors.collect(ros.propertyValidator('groupId', ros.validateNumber)(properties.groupId));
     return errors.wrap('supplied properties not correct for "RosMonitorGroupsProps"');
 }
 
@@ -587,7 +587,7 @@ function rosMonitorGroupsPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::MonitorGroups`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::MonitorGroups`, which is used to query the information about application groups.
  * @Note This class does not contain additional functions, so it is recommended to use the `MonitorGroups` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-monitorgroups
  */
@@ -736,7 +736,7 @@ function rosNamespacePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::Namespace`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::Namespace`, which is used to query the information about a namespace and the metric data of the namespace.
  * @Note This class does not contain additional functions, so it is recommended to use the `Namespace` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-namespace
  */
@@ -878,7 +878,7 @@ function rosNamespacesPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::Namespaces`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::Namespaces`, which is used to query the information about namespaces.
  * @Note This class does not contain additional functions, so it is recommended to use the `Namespaces` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-namespaces
  */
@@ -996,7 +996,7 @@ function rosSlsGroupsPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::SlsGroups`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::SlsGroups`, which is used to query the information about Logstore groups.
  * @Note This class does not contain additional functions, so it is recommended to use the `SlsGroups` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-slsgroups
  */

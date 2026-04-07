@@ -58,7 +58,7 @@ export interface IGroup extends ros.IResource {
     readonly attrGroupName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::Group`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::Group`, which is used to create a Resource Access Management (RAM) user group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-group
  */
@@ -99,10 +99,10 @@ export class Group extends ros.Resource implements IGroup, IPrincipal {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosGroup = new RosGroup(this, id,  {
-            groupName: props.groupName,
             ignoreExisting: props.ignoreExisting === undefined || props.ignoreExisting === null ? false : props.ignoreExisting,
-            policyAttachments: props.policyAttachments,
+            groupName: props.groupName,
             policies: props.policies,
+            policyAttachments: props.policyAttachments,
             deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
             comments: props.comments,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

@@ -17,6 +17,7 @@
 @alicloud/ros-cdk-flink.RosInstance.ResourceSpecProperty=com.aliyun.ros.cdk.flink.RosInstance$ResourceSpecProperty
 @alicloud/ros-cdk-flink.RosInstanceProps=com.aliyun.ros.cdk.flink.RosInstanceProps
 @alicloud/ros-cdk-flink.RosInstanceV2=com.aliyun.ros.cdk.flink.RosInstanceV2
+@alicloud/ros-cdk-flink.RosInstanceV2.HaResourceSpecProperty=com.aliyun.ros.cdk.flink.RosInstanceV2$HaResourceSpecProperty
 @alicloud/ros-cdk-flink.RosInstanceV2.OssProperty=com.aliyun.ros.cdk.flink.RosInstanceV2$OssProperty
 @alicloud/ros-cdk-flink.RosInstanceV2.ResourceSpecProperty=com.aliyun.ros.cdk.flink.RosInstanceV2$ResourceSpecProperty
 @alicloud/ros-cdk-flink.RosInstanceV2.StorageProperty=com.aliyun.ros.cdk.flink.RosInstanceV2$StorageProperty

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::Listener`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::Listener`Use the , which resource type to create a listener.
 type RosListener interface {
 	alicloudroscdkcore.RosResource
 	AlpnEnabled() interface{}
@@ -80,6 +80,8 @@ type RosListener interface {
 	SetSecurityPolicyId(val interface{})
 	ServerGroupId() interface{}
 	SetServerGroupId(val interface{})
+	ServerGroupTuples() interface{}
+	SetServerGroupTuples(val interface{})
 	// The stack in which this element is defined.
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
@@ -502,6 +504,16 @@ func (j *jsiiProxy_RosListener) ServerGroupId() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosListener) ServerGroupTuples() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"serverGroupTuples",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosListener) Stack() alicloudroscdkcore.Stack {
 	var returns alicloudroscdkcore.Stack
 	_jsii_.Get(
@@ -786,6 +798,17 @@ func (j *jsiiProxy_RosListener)SetServerGroupId(val interface{}) {
 	_jsii_.Set(
 		j,
 		"serverGroupId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosListener)SetServerGroupTuples(val interface{}) {
+	if err := j.validateSetServerGroupTuplesParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"serverGroupTuples",
 		val,
 	)
 }

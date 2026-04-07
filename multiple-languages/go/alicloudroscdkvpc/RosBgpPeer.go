@@ -13,6 +13,8 @@ import (
 type RosBgpPeer interface {
 	alicloudroscdkcore.RosResource
 	AttrBgpPeerId() alicloudroscdkcore.IResolvable
+	BfdMultiHop() interface{}
+	SetBfdMultiHop(val interface{})
 	BgpGroupId() interface{}
 	SetBgpGroupId(val interface{})
 	// Returns: the stack trace of the point where this Resource was created from, sourced
@@ -23,6 +25,8 @@ type RosBgpPeer interface {
 	SetEnableBfd(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	IpVersion() interface{}
+	SetIpVersion(val interface{})
 	// The logical ID for this stack element.
 	//
 	// The logical ID of the element
@@ -185,6 +189,16 @@ func (j *jsiiProxy_RosBgpPeer) AttrBgpPeerId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
+func (j *jsiiProxy_RosBgpPeer) BfdMultiHop() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"bfdMultiHop",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosBgpPeer) BgpGroupId() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -220,6 +234,16 @@ func (j *jsiiProxy_RosBgpPeer) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosBgpPeer) IpVersion() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"ipVersion",
 		&returns,
 	)
 	return returns
@@ -343,6 +367,17 @@ func NewRosBgpPeer_Override(r RosBgpPeer, scope alicloudroscdkcore.Construct, id
 	)
 }
 
+func (j *jsiiProxy_RosBgpPeer)SetBfdMultiHop(val interface{}) {
+	if err := j.validateSetBfdMultiHopParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"bfdMultiHop",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosBgpPeer)SetBgpGroupId(val interface{}) {
 	if err := j.validateSetBgpGroupIdParameters(val); err != nil {
 		panic(err)
@@ -372,6 +407,17 @@ func (j *jsiiProxy_RosBgpPeer)SetEnableResourcePropertyConstraint(val *bool) {
 	_jsii_.Set(
 		j,
 		"enableResourcePropertyConstraint",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosBgpPeer)SetIpVersion(val interface{}) {
+	if err := j.validateSetIpVersionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"ipVersion",
 		val,
 	)
 }

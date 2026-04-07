@@ -65,7 +65,7 @@ export interface IDomains extends ros.IResource {
     readonly attrDomains: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::DNS::Domains`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::DNS::Domains`, which is used to query domain names.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomains`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dns-domains
  */
@@ -103,8 +103,8 @@ export class Domains extends ros.Resource implements IDomains {
             lang: props.lang,
             starmark: props.starmark,
             searchMode: props.searchMode,
-            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
             groupId: props.groupId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDomains;
         this.attrDomainIds = rosDomains.attrDomainIds;

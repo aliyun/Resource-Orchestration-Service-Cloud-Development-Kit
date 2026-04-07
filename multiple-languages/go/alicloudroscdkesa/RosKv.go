@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::Kv`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::Kv`Use the , which resource type to set a single key-value pair in a KV bucket.
 type RosKv interface {
 	alicloudroscdkcore.RosResource
 	AttrValue() alicloudroscdkcore.IResolvable

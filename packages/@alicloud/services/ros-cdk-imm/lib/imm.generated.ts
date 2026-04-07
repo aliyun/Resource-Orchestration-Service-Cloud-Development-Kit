@@ -55,7 +55,7 @@ function rosProjectPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::IMM::Project`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::IMM::Project`, which is used to create an Intelligent Media Management (IMM) project.
  * @Note This class does not contain additional functions, so it is recommended to use the `Project` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-imm-project
  */
@@ -176,6 +176,7 @@ export interface RosProject2Props {
 function RosProject2PropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('serviceRole', ros.validateString)(properties.serviceRole));
     if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
         errors.collect(ros.propertyValidator('description', ros.validateLength)({
             data: properties.description.length,
@@ -184,7 +185,6 @@ function RosProject2PropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    errors.collect(ros.propertyValidator('serviceRole', ros.validateString)(properties.serviceRole));
     errors.collect(ros.propertyValidator('projectName', ros.requiredValidator)(properties.projectName));
     errors.collect(ros.propertyValidator('projectName', ros.validateString)(properties.projectName));
     if(properties.datasetMaxBindCount && (typeof properties.datasetMaxBindCount) !== 'object') {
@@ -267,7 +267,7 @@ function rosProject2PropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::IMM::Project2`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::IMM::Project2`, which is used to create a project of the new Intelligent Media Management (IMM) version.
  * @Note This class does not contain additional functions, so it is recommended to use the `Project2` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-imm-project2
  */

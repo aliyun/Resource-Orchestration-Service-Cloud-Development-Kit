@@ -84,6 +84,10 @@ func validateRosBgpPeer_IsRosResourceParameters(construct alicloudroscdkcore.ICo
 	return nil
 }
 
+func (j *jsiiProxy_RosBgpPeer) validateSetBfdMultiHopParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosBgpPeer) validateSetBgpGroupIdParameters(val interface{}) error {
 	return nil
 }
@@ -93,6 +97,10 @@ func (j *jsiiProxy_RosBgpPeer) validateSetEnableBfdParameters(val interface{}) e
 }
 
 func (j *jsiiProxy_RosBgpPeer) validateSetEnableResourcePropertyConstraintParameters(val *bool) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosBgpPeer) validateSetIpVersionParameters(val interface{}) error {
 	return nil
 }
 

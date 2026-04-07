@@ -88,6 +88,10 @@ func (j *jsiiProxy_RosDeployRevision) validateSetApplicationNameParameters(val i
 	return nil
 }
 
+func (j *jsiiProxy_RosDeployRevision) validateSetDeployResourceTypeParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosDeployRevision) validateSetDescriptionParameters(val interface{}) error {
 	return nil
 }

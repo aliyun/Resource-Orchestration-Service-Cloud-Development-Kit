@@ -151,7 +151,7 @@ export interface IFlowlog extends ros.IResource {
     readonly attrTransitRouterId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::Flowlog`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::Flowlog`The , which type creates a flow log.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFlowlog`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-flowlog
  */
@@ -243,8 +243,8 @@ export class Flowlog extends ros.Resource implements IFlowlog {
             flowLogName: props.flowLogName,
             description: props.description,
             logStoreName: props.logStoreName,
-            logFormatString: props.logFormatString,
             projectName: props.projectName,
+            logFormatString: props.logFormatString,
             cenId: props.cenId,
             tags: props.tags,
             transitRouterId: props.transitRouterId,

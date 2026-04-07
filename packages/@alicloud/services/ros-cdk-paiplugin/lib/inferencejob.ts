@@ -72,7 +72,7 @@ export interface IInferenceJob extends ros.IResource {
     readonly attrInferenceJobId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::PAIPlugin::InferenceJob`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PAIPlugin::InferenceJob`, which is used to create a prediction job.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInferenceJob`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paiplugin-inferencejob
  */
@@ -106,14 +106,14 @@ export class InferenceJob extends ros.Resource implements IInferenceJob {
 
         const rosInferenceJob = new RosInferenceJob(this, id,  {
             dataPath: props.dataPath,
-            trainingJobId: props.trainingJobId,
             campaignId: props.campaignId,
+            trainingJobId: props.trainingJobId,
             targetPath: props.targetPath,
             userConfig: props.userConfig,
             algorithm: props.algorithm,
             waitForInferenceFinish: props.waitForInferenceFinish === undefined || props.waitForInferenceFinish === null ? true : props.waitForInferenceFinish,
-            remark: props.remark,
             name: props.name,
+            remark: props.remark,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInferenceJob;
         this.attrGroupId = rosInferenceJob.attrGroupId;

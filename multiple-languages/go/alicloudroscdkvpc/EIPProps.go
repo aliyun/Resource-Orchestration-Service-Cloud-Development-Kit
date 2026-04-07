@@ -25,10 +25,18 @@ type EIPProps struct {
 	//
 	// Default value is Postpaid.
 	InstanceChargeType interface{} `field:"optional" json:"instanceChargeType" yaml:"instanceChargeType"`
+	// Property instanceId: The instance ID of the requested EIP.
+	//
+	// You must specify either IpAddress or InstanceId. If neither is specified, the system randomly allocates an EIP.
+	InstanceId interface{} `field:"optional" json:"instanceId" yaml:"instanceId"`
 	// Property internetChargeType: The network charge type.
 	//
 	// Support 'PayByBandwidth' and 'PayByTraffic' only. Default is PayByBandwidth. PayByTraffic will charge by hour, PayByBandwidth will charge by day.
 	InternetChargeType interface{} `field:"optional" json:"internetChargeType" yaml:"internetChargeType"`
+	// Property ipAddress: The IP address of the requested EIP.
+	//
+	// You must specify either IpAddress or InstanceId. If neither is specified, the system randomly allocates an EIP.
+	IpAddress interface{} `field:"optional" json:"ipAddress" yaml:"ipAddress"`
 	// Property isp: The line type.
 	//
 	// You can set this parameter only when you create a pay-as-you-go EIP. Valid values:

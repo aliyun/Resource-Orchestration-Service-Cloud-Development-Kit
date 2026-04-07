@@ -68,9 +68,17 @@ type DBClusterProps struct {
 	UsedTime interface{} `field:"optional" json:"usedTime" yaml:"usedTime"`
 	// Property vpcId: VpcId.
 	VpcId interface{} `field:"optional" json:"vpcId" yaml:"vpcId"`
+	// Property vSwitchBak: The ID of the secondary VSwitch.
+	VSwitchBak interface{} `field:"optional" json:"vSwitchBak" yaml:"vSwitchBak"`
+	// Property vSwitchBak2: The ID of the third VSwitch.
+	VSwitchBak2 interface{} `field:"optional" json:"vSwitchBak2" yaml:"vSwitchBak2"`
 	// Property vSwitchId: VSwitchId.
 	VSwitchId interface{} `field:"optional" json:"vSwitchId" yaml:"vSwitchId"`
+	// Property zondIdBak2: The ID of the third zone.
+	ZondIdBak2 interface{} `field:"optional" json:"zondIdBak2" yaml:"zondIdBak2"`
 	// Property zoneId: ZoneId.
 	ZoneId interface{} `field:"optional" json:"zoneId" yaml:"zoneId"`
+	// Property zoneIdBak: The ID of the secondary zone.
+	ZoneIdBak interface{} `field:"optional" json:"zoneIdBak" yaml:"zoneIdBak"`
 }
 

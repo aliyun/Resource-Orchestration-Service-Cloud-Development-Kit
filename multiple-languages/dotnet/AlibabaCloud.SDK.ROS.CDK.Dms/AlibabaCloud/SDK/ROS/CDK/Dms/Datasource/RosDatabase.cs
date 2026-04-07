@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Dms.Datasource
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `DATASOURCE::DMS::Database`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `DATASOURCE::DMS::Database`The , which data source queries the details of a specific database.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Database` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dms-database

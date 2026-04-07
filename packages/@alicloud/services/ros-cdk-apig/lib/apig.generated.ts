@@ -113,7 +113,7 @@ function rosApiAttachmentPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::ApiAttachment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::ApiAttachment`, which is used to attach an API.
  * @Note This class does not contain additional functions, so it is recommended to use the `ApiAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-apiattachment
  */
@@ -548,7 +548,7 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Domain`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Domain`, which is used to create a domain name.
  * @Note This class does not contain additional functions, so it is recommended to use the `Domain` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-domain
  */
@@ -899,13 +899,6 @@ function RosGatewayPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('networkAccessConfig', RosGateway_NetworkAccessConfigPropertyValidator)(properties.networkAccessConfig));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('vpc', RosGateway_VpcPropertyValidator)(properties.vpc));
-    if(properties.period && (typeof properties.period) !== 'object') {
-        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
-          data: properties.period,
-          allowedValues: [1,2,3,4,5,6,7,8,9],
-        }));
-    }
-    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     if(properties.gatewayType && (typeof properties.gatewayType) !== 'object') {
         errors.collect(ros.propertyValidator('gatewayType', ros.validateAllowedValues)({
           data: properties.gatewayType,
@@ -913,6 +906,13 @@ function RosGatewayPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('gatewayType', ros.validateString)(properties.gatewayType));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
+          allowedValues: [1,2,3,4,5,6,7,8,9],
+        }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     errors.collect(ros.propertyValidator('vSwitch', RosGateway_VSwitchPropertyValidator)(properties.vSwitch));
     errors.collect(ros.propertyValidator('zoneConfig', ros.requiredValidator)(properties.zoneConfig));
     errors.collect(ros.propertyValidator('zoneConfig', RosGateway_ZoneConfigPropertyValidator)(properties.zoneConfig));
@@ -936,6 +936,7 @@ function RosGatewayPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosGateway_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('logConfig', RosGateway_LogConfigPropertyValidator)(properties.logConfig));
     if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
         errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
           data: properties.periodUnit,
@@ -943,7 +944,6 @@ function RosGatewayPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
-    errors.collect(ros.propertyValidator('logConfig', RosGateway_LogConfigPropertyValidator)(properties.logConfig));
     return errors.wrap('supplied properties not correct for "RosGatewayProps"');
 }
 
@@ -978,7 +978,7 @@ function rosGatewayPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Gateway`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Gateway`, which is used to create a Cloud-native API Gateway.
  * @Note This class does not contain additional functions, so it is recommended to use the `Gateway` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-gateway
  */
@@ -1643,7 +1643,7 @@ function rosHttpApiPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::HttpApi`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::HttpApi`, which is used to create an HTTP API.
  * @Note This class does not contain additional functions, so it is recommended to use the `HttpApi` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-httpapi
  */
@@ -1848,7 +1848,7 @@ function rosOperationPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Operation`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Operation`, which is used to create an operation for an HTTP API.
  * @Note This class does not contain additional functions, so it is recommended to use the `Operation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-operation
  */
@@ -2074,7 +2074,7 @@ function rosPluginPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Plugin`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Plugin`, which is used to create a plug-in.
  * @Note This class does not contain additional functions, so it is recommended to use the `Plugin` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-plugin
  */
@@ -2234,7 +2234,7 @@ function rosPluginAttachmentPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::PluginAttachment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::PluginAttachment`, which is used to bind a plug-in.
  * @Note This class does not contain additional functions, so it is recommended to use the `PluginAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-pluginattachment
  */
@@ -2560,7 +2560,7 @@ function rosPluginClassPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::PluginClass`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::PluginClass`, which is used to create a plug-in class.
  * @Note This class does not contain additional functions, so it is recommended to use the `PluginClass` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-pluginclass
  */
@@ -2819,7 +2819,7 @@ function rosPolicyPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Policy`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Policy`, which is used to create a policy.
  * @Note This class does not contain additional functions, so it is recommended to use the `Policy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-policy
  */
@@ -3038,7 +3038,7 @@ function rosRoutePropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Route`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Route`, which is used to create a route for an HTTP API.
  * @Note This class does not contain additional functions, so it is recommended to use the `Route` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-route
  */
@@ -3879,7 +3879,6 @@ export interface RosServiceProps {
 function RosServicePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('groupName', ros.validateString)(properties.groupName));
     if(properties.addresses && (Array.isArray(properties.addresses) || (typeof properties.addresses) === 'string')) {
         errors.collect(ros.propertyValidator('addresses', ros.validateLength)({
             data: properties.addresses.length,
@@ -3888,6 +3887,7 @@ function RosServicePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('addresses', ros.listValidator(ros.validateString))(properties.addresses));
+    errors.collect(ros.propertyValidator('groupName', ros.validateString)(properties.groupName));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('serviceName', ros.validateString)(properties.serviceName));
     if(properties.sourceType && (typeof properties.sourceType) !== 'object') {
@@ -3932,7 +3932,7 @@ function rosServicePropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Service`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Service`, which is used to create a service.
  * @Note This class does not contain additional functions, so it is recommended to use the `Service` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-service
  */
@@ -4169,5 +4169,320 @@ function rosServiceAiServiceConfigPropertyToRosTemplate(properties: any): any {
       'Address': ros.stringToRosTemplate(properties.address),
       'EnableHealthCheck': ros.booleanToRosTemplate(properties.enableHealthCheck),
       'Provider': ros.stringToRosTemplate(properties.provider),
+    };
+}
+
+/**
+ * Properties for defining a `RosSource`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-source
+ */
+export interface RosSourceProps {
+
+    /**
+     * @Property gatewayId: The gateway ID.
+     */
+    readonly gatewayId?: string | ros.IResolvable;
+
+    /**
+     * @Property k8SSourceConfig: The K8s source configuration.
+     */
+    readonly k8SSourceConfig?: RosSource.K8sSourceConfigProperty | ros.IResolvable;
+
+    /**
+     * @Property nacosSourceConfig: The Nacos source configuration.
+     */
+    readonly nacosSourceConfig?: RosSource.NacosSourceConfigProperty | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The resource group ID.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property type: The source type:
+     * - MSE_NACOS: MSE Nacos.
+     * - K8S: Container service.
+     */
+    readonly type?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSourceProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSourceProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSourcePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('nacosSourceConfig', RosSource_NacosSourceConfigPropertyValidator)(properties.nacosSourceConfig));
+    errors.collect(ros.propertyValidator('k8SSourceConfig', RosSource_K8sSourceConfigPropertyValidator)(properties.k8SSourceConfig));
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["MSE_NACOS","K8S"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('gatewayId', ros.validateString)(properties.gatewayId));
+    return errors.wrap('supplied properties not correct for "RosSourceProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::APIG::Source` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSourceProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::APIG::Source` resource.
+ */
+// @ts-ignore TS6133
+function rosSourcePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSourcePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'GatewayId': ros.stringToRosTemplate(properties.gatewayId),
+      'K8sSourceConfig': rosSourceK8sSourceConfigPropertyToRosTemplate(properties.k8SSourceConfig),
+      'NacosSourceConfig': rosSourceNacosSourceConfigPropertyToRosTemplate(properties.nacosSourceConfig),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Type': ros.stringToRosTemplate(properties.type),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Source`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Source` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-source
+ */
+export class RosSource extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::APIG::Source";
+
+    /**
+     * @Attribute SourceId: The ID of the source.
+     */
+    public readonly attrSourceId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property gatewayId: The gateway ID.
+     */
+    public gatewayId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property k8SSourceConfig: The K8s source configuration.
+     */
+    public k8SSourceConfig: RosSource.K8sSourceConfigProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property nacosSourceConfig: The Nacos source configuration.
+     */
+    public nacosSourceConfig: RosSource.NacosSourceConfigProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The resource group ID.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property type: The source type:
+     * - MSE_NACOS: MSE Nacos.
+     * - K8S: Container service.
+     */
+    public type: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSourceProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSource.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrSourceId = this.getAtt('SourceId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.gatewayId = props.gatewayId;
+        this.k8SSourceConfig = props.k8SSourceConfig;
+        this.nacosSourceConfig = props.nacosSourceConfig;
+        this.resourceGroupId = props.resourceGroupId;
+        this.type = props.type;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            gatewayId: this.gatewayId,
+            k8SSourceConfig: this.k8SSourceConfig,
+            nacosSourceConfig: this.nacosSourceConfig,
+            resourceGroupId: this.resourceGroupId,
+            type: this.type,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSourcePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosSource {
+    /**
+     * @stability external
+     */
+    export interface AuthorizeSecurityGroupRulesProperty {
+        /**
+         * @Property description: The description of the security group rule.
+         */
+        readonly description?: string | ros.IResolvable;
+        /**
+         * @Property securityGroupId: The ID of the security group.
+         */
+        readonly securityGroupId?: string | ros.IResolvable;
+        /**
+         * @Property portRanges: The port ranges for the security group rule.
+         */
+        readonly portRanges?: Array<string | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AuthorizeSecurityGroupRulesProperty`
+ *
+ * @param properties - the TypeScript properties of a `AuthorizeSecurityGroupRulesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSource_AuthorizeSecurityGroupRulesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    if(properties.portRanges && (Array.isArray(properties.portRanges) || (typeof properties.portRanges) === 'string')) {
+        errors.collect(ros.propertyValidator('portRanges', ros.validateLength)({
+            data: properties.portRanges.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('portRanges', ros.listValidator(ros.validateString))(properties.portRanges));
+    return errors.wrap('supplied properties not correct for "AuthorizeSecurityGroupRulesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::APIG::Source.AuthorizeSecurityGroupRules` resource
+ *
+ * @param properties - the TypeScript properties of a `AuthorizeSecurityGroupRulesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::APIG::Source.AuthorizeSecurityGroupRules` resource.
+ */
+// @ts-ignore TS6133
+function rosSourceAuthorizeSecurityGroupRulesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSource_AuthorizeSecurityGroupRulesPropertyValidator(properties).assertSuccess();
+    return {
+      'Description': ros.stringToRosTemplate(properties.description),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
+      'PortRanges': ros.listMapper(ros.stringToRosTemplate)(properties.portRanges),
+    };
+}
+
+export namespace RosSource {
+    /**
+     * @stability external
+     */
+    export interface K8sSourceConfigProperty {
+        /**
+         * @Property clusterId: The cluster ID of the container service source.
+         */
+        readonly clusterId: string | ros.IResolvable;
+        /**
+         * @Property authorizeSecurityGroupRules: The security group rules for authorization.
+         */
+        readonly authorizeSecurityGroupRules?: Array<RosSource.AuthorizeSecurityGroupRulesProperty | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `K8sSourceConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `K8sSourceConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSource_K8sSourceConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('clusterId', ros.requiredValidator)(properties.clusterId));
+    errors.collect(ros.propertyValidator('clusterId', ros.validateString)(properties.clusterId));
+    if(properties.authorizeSecurityGroupRules && (Array.isArray(properties.authorizeSecurityGroupRules) || (typeof properties.authorizeSecurityGroupRules) === 'string')) {
+        errors.collect(ros.propertyValidator('authorizeSecurityGroupRules', ros.validateLength)({
+            data: properties.authorizeSecurityGroupRules.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('authorizeSecurityGroupRules', ros.listValidator(RosSource_AuthorizeSecurityGroupRulesPropertyValidator))(properties.authorizeSecurityGroupRules));
+    return errors.wrap('supplied properties not correct for "K8sSourceConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::APIG::Source.K8sSourceConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `K8sSourceConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::APIG::Source.K8sSourceConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosSourceK8sSourceConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSource_K8sSourceConfigPropertyValidator(properties).assertSuccess();
+    return {
+      'ClusterId': ros.stringToRosTemplate(properties.clusterId),
+      'AuthorizeSecurityGroupRules': ros.listMapper(rosSourceAuthorizeSecurityGroupRulesPropertyToRosTemplate)(properties.authorizeSecurityGroupRules),
+    };
+}
+
+export namespace RosSource {
+    /**
+     * @stability external
+     */
+    export interface NacosSourceConfigProperty {
+        /**
+         * @Property instanceId: The instance ID of the Nacos source.
+         */
+        readonly instanceId: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `NacosSourceConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `NacosSourceConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSource_NacosSourceConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    return errors.wrap('supplied properties not correct for "NacosSourceConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::APIG::Source.NacosSourceConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `NacosSourceConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::APIG::Source.NacosSourceConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosSourceNacosSourceConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSource_NacosSourceConfigPropertyValidator(properties).assertSuccess();
+    return {
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
     };
 }

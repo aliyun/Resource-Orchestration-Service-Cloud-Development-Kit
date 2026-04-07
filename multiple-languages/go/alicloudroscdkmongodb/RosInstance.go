@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::MONGODB::Instance`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::MONGODB::Instance`The , which type creates or clones a MongoDB replica set instance.
 type RosInstance interface {
 	alicloudroscdkcore.RosResource
 	AccountPassword() interface{}
@@ -20,14 +20,20 @@ type RosInstance interface {
 	AttrDbInstanceStatus() alicloudroscdkcore.IResolvable
 	AttrOrderId() alicloudroscdkcore.IResolvable
 	AttrReplicaSetName() alicloudroscdkcore.IResolvable
+	AuditPolicyOptions() interface{}
+	SetAuditPolicyOptions(val interface{})
 	AutoRenew() interface{}
 	SetAutoRenew(val interface{})
 	BackupId() interface{}
 	SetBackupId(val interface{})
+	BackupPolicyOptions() interface{}
+	SetBackupPolicyOptions(val interface{})
 	BusinessInfo() interface{}
 	SetBusinessInfo(val interface{})
 	ChargeType() interface{}
 	SetChargeType(val interface{})
+	ClusterId() interface{}
+	SetClusterId(val interface{})
 	CouponNo() interface{}
 	SetCouponNo(val interface{})
 	// Returns: the stack trace of the point where this Resource was created from, sourced
@@ -40,10 +46,16 @@ type RosInstance interface {
 	SetDbInstanceClass(val interface{})
 	DbInstanceDescription() interface{}
 	SetDbInstanceDescription(val interface{})
+	DbInstanceReleaseProtection() interface{}
+	SetDbInstanceReleaseProtection(val interface{})
 	DbInstanceStorage() interface{}
 	SetDbInstanceStorage(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	Encrypted() interface{}
+	SetEncrypted(val interface{})
+	EncryptionKey() interface{}
+	SetEncryptionKey(val interface{})
 	EngineVersion() interface{}
 	SetEngineVersion(val interface{})
 	HiddenZoneId() interface{}
@@ -64,6 +76,8 @@ type RosInstance interface {
 	SetPeriod(val interface{})
 	PrivateConnections() interface{}
 	SetPrivateConnections(val interface{})
+	ProvisionedIops() interface{}
+	SetProvisionedIops(val interface{})
 	ReadonlyReplicas() interface{}
 	SetReadonlyReplicas(val interface{})
 	// Return a string that will be resolved to a RosTemplate `{ Ref }` for this element.
@@ -77,6 +91,8 @@ type RosInstance interface {
 	SetResourceGroupId(val interface{})
 	RestoreTime() interface{}
 	SetRestoreTime(val interface{})
+	RestoreType() interface{}
+	SetRestoreType(val interface{})
 	// Options for this resource, such as condition, update policy etc.
 	RosOptions() alicloudroscdkcore.IRosResourceOptions
 	RosProperties() *map[string]interface{}
@@ -90,6 +106,10 @@ type RosInstance interface {
 	SetSecurityIpArray(val interface{})
 	SrcDbInstanceId() interface{}
 	SetSrcDbInstanceId(val interface{})
+	SrcRegion() interface{}
+	SetSrcRegion(val interface{})
+	SslOptions() interface{}
+	SetSslOptions(val interface{})
 	// The stack in which this element is defined.
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
@@ -304,6 +324,16 @@ func (j *jsiiProxy_RosInstance) AttrReplicaSetName() alicloudroscdkcore.IResolva
 	return returns
 }
 
+func (j *jsiiProxy_RosInstance) AuditPolicyOptions() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"auditPolicyOptions",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosInstance) AutoRenew() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -324,6 +354,16 @@ func (j *jsiiProxy_RosInstance) BackupId() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosInstance) BackupPolicyOptions() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"backupPolicyOptions",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosInstance) BusinessInfo() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -339,6 +379,16 @@ func (j *jsiiProxy_RosInstance) ChargeType() interface{} {
 	_jsii_.Get(
 		j,
 		"chargeType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosInstance) ClusterId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"clusterId",
 		&returns,
 	)
 	return returns
@@ -394,6 +444,16 @@ func (j *jsiiProxy_RosInstance) DbInstanceDescription() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosInstance) DbInstanceReleaseProtection() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"dbInstanceReleaseProtection",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosInstance) DbInstanceStorage() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -409,6 +469,26 @@ func (j *jsiiProxy_RosInstance) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosInstance) Encrypted() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"encrypted",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosInstance) EncryptionKey() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"encryptionKey",
 		&returns,
 	)
 	return returns
@@ -474,6 +554,16 @@ func (j *jsiiProxy_RosInstance) PrivateConnections() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosInstance) ProvisionedIops() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"provisionedIops",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosInstance) ReadonlyReplicas() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -519,6 +609,16 @@ func (j *jsiiProxy_RosInstance) RestoreTime() interface{} {
 	_jsii_.Get(
 		j,
 		"restoreTime",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosInstance) RestoreType() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"restoreType",
 		&returns,
 	)
 	return returns
@@ -589,6 +689,26 @@ func (j *jsiiProxy_RosInstance) SrcDbInstanceId() interface{} {
 	_jsii_.Get(
 		j,
 		"srcDbInstanceId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosInstance) SrcRegion() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"srcRegion",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosInstance) SslOptions() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"sslOptions",
 		&returns,
 	)
 	return returns
@@ -733,6 +853,17 @@ func (j *jsiiProxy_RosInstance)SetAccountPassword(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosInstance)SetAuditPolicyOptions(val interface{}) {
+	if err := j.validateSetAuditPolicyOptionsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"auditPolicyOptions",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosInstance)SetAutoRenew(val interface{}) {
 	if err := j.validateSetAutoRenewParameters(val); err != nil {
 		panic(err)
@@ -755,6 +886,17 @@ func (j *jsiiProxy_RosInstance)SetBackupId(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosInstance)SetBackupPolicyOptions(val interface{}) {
+	if err := j.validateSetBackupPolicyOptionsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"backupPolicyOptions",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosInstance)SetBusinessInfo(val interface{}) {
 	if err := j.validateSetBusinessInfoParameters(val); err != nil {
 		panic(err)
@@ -773,6 +915,17 @@ func (j *jsiiProxy_RosInstance)SetChargeType(val interface{}) {
 	_jsii_.Set(
 		j,
 		"chargeType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosInstance)SetClusterId(val interface{}) {
+	if err := j.validateSetClusterIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"clusterId",
 		val,
 	)
 }
@@ -821,6 +974,17 @@ func (j *jsiiProxy_RosInstance)SetDbInstanceDescription(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosInstance)SetDbInstanceReleaseProtection(val interface{}) {
+	if err := j.validateSetDbInstanceReleaseProtectionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"dbInstanceReleaseProtection",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosInstance)SetDbInstanceStorage(val interface{}) {
 	if err := j.validateSetDbInstanceStorageParameters(val); err != nil {
 		panic(err)
@@ -839,6 +1003,28 @@ func (j *jsiiProxy_RosInstance)SetEnableResourcePropertyConstraint(val *bool) {
 	_jsii_.Set(
 		j,
 		"enableResourcePropertyConstraint",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosInstance)SetEncrypted(val interface{}) {
+	if err := j.validateSetEncryptedParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"encrypted",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosInstance)SetEncryptionKey(val interface{}) {
+	if err := j.validateSetEncryptionKeyParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"encryptionKey",
 		val,
 	)
 }
@@ -887,6 +1073,17 @@ func (j *jsiiProxy_RosInstance)SetPrivateConnections(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosInstance)SetProvisionedIops(val interface{}) {
+	if err := j.validateSetProvisionedIopsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"provisionedIops",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosInstance)SetReadonlyReplicas(val interface{}) {
 	if err := j.validateSetReadonlyReplicasParameters(val); err != nil {
 		panic(err)
@@ -931,6 +1128,17 @@ func (j *jsiiProxy_RosInstance)SetRestoreTime(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosInstance)SetRestoreType(val interface{}) {
+	if err := j.validateSetRestoreTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"restoreType",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosInstance)SetSecondaryZoneId(val interface{}) {
 	if err := j.validateSetSecondaryZoneIdParameters(val); err != nil {
 		panic(err)
@@ -971,6 +1179,28 @@ func (j *jsiiProxy_RosInstance)SetSrcDbInstanceId(val interface{}) {
 	_jsii_.Set(
 		j,
 		"srcDbInstanceId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosInstance)SetSrcRegion(val interface{}) {
+	if err := j.validateSetSrcRegionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"srcRegion",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosInstance)SetSslOptions(val interface{}) {
+	if err := j.validateSetSslOptionsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"sslOptions",
 		val,
 	)
 }

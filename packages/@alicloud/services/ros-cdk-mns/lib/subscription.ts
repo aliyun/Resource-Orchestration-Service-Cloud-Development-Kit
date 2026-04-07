@@ -80,7 +80,7 @@ export interface ISubscription extends ros.IResource {
     readonly attrTopicName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::MNS::Subscription`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MNS::Subscription`, which is used to describe a subscription relationship, including the subscribed topic and the endpoint that the subscriber uses to receive messages.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSubscription`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-subscription
  */
@@ -123,8 +123,8 @@ export class Subscription extends ros.Resource implements ISubscription {
             dlqPolicy: props.dlqPolicy,
             notifyStrategy: props.notifyStrategy === undefined || props.notifyStrategy === null ? 'BACKOFF_RETRY' : props.notifyStrategy,
             notifyContentFormat: props.notifyContentFormat === undefined || props.notifyContentFormat === null ? 'XML' : props.notifyContentFormat,
-            filterTag: props.filterTag,
             subscriptionName: props.subscriptionName,
+            filterTag: props.filterTag,
             topicName: props.topicName,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosSubscription;

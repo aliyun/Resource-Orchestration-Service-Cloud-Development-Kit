@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.esa;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-kv
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:56.586Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:26.099Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.esa.$Module.class, fqn = "@alicloud/ros-cdk-esa.KvProps")
 @software.amazon.jsii.Jsii.Proxy(KvProps.Jsii$Proxy.class)
 public interface KvProps extends software.amazon.jsii.JsiiSerializable {
@@ -30,7 +30,7 @@ public interface KvProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getValue();
 
     /**
-     * Property expiration: The content of the key, which can be up to 2 MB (2 × 1000 × 1000).
+     * Property expiration: The content of the key, which can be up to 2 MB (2 Ã 1000 Ã 1000).
      * <p>
      * If the content is larger than 2 MB, call [PutKvWithHighCapacity] https://www.alibabacloud.com/help/en/doc-detail/2850486.html.
      */
@@ -129,7 +129,7 @@ public interface KvProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link KvProps#getExpiration}
-         * @param expiration Property expiration: The content of the key, which can be up to 2 MB (2 × 1000 × 1000).
+         * @param expiration Property expiration: The content of the key, which can be up to 2 MB (2 Ã 1000 Ã 1000).
          *                   If the content is larger than 2 MB, call [PutKvWithHighCapacity] https://www.alibabacloud.com/help/en/doc-detail/2850486.html.
          * @return {@code this}
          */
@@ -140,7 +140,7 @@ public interface KvProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link KvProps#getExpiration}
-         * @param expiration Property expiration: The content of the key, which can be up to 2 MB (2 × 1000 × 1000).
+         * @param expiration Property expiration: The content of the key, which can be up to 2 MB (2 Ã 1000 Ã 1000).
          *                   If the content is larger than 2 MB, call [PutKvWithHighCapacity] https://www.alibabacloud.com/help/en/doc-detail/2850486.html.
          * @return {@code this}
          */

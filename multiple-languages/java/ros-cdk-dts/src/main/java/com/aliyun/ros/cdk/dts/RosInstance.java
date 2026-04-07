@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.dts;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DTS::Instance</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DTS::Instance</code>Use the , which resource to create a new DTS instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.762Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:24.125Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -261,6 +261,24 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setFeeType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "feeType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInsightModule() {
+        return software.amazon.jsii.Kernel.get(this, "insightModule", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setInsightModule(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "insightModule", value);
+    }
+
+    /**
+     */
+    public void setInsightModule(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "insightModule", value);
     }
 
     /**
@@ -635,6 +653,23 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder feeType(final com.aliyun.ros.cdk.core.IResolvable feeType) {
             this.props.feeType(feeType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param insightModule This parameter is required.
+         */
+        public Builder insightModule(final java.lang.Boolean insightModule) {
+            this.props.insightModule(insightModule);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param insightModule This parameter is required.
+         */
+        public Builder insightModule(final com.aliyun.ros.cdk.core.IResolvable insightModule) {
+            this.props.insightModule(insightModule);
             return this;
         }
 

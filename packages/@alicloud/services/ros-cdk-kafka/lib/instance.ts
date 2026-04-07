@@ -162,7 +162,7 @@ export interface IInstance extends ros.IResource {
     readonly attrSslEndpoint: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::KAFKA::Instance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::KAFKA::Instance`, which is used to create an ApsaraMQ for Kafka instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-instance
  */
@@ -240,8 +240,8 @@ export class Instance extends ros.Resource implements IInstance {
             deployOption: props.deployOption,
             deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
             ioMaxSpec: props.ioMaxSpec,
-            serverlessConfig: props.serverlessConfig,
             diskSize: props.diskSize,
+            serverlessConfig: props.serverlessConfig,
             topicQuota: props.topicQuota,
             tags: props.tags,
             openConnector: props.openConnector === undefined || props.openConnector === null ? false : props.openConnector,

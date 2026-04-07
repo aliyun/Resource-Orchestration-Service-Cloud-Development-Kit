@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::MSE::EngineNamespace`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::MSE::EngineNamespace`, which is used to create a namespace for an engine.
 type EngineNamespace interface {
 	alicloudroscdkcore.Resource
 	IEngineNamespace

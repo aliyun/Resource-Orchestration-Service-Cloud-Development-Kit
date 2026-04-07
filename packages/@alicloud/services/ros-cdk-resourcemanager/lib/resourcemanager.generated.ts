@@ -236,7 +236,7 @@ function rosControlPolicyPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::ControlPolicy`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::ControlPolicy`, which is used to create a custom control policy.
  * @Note This class does not contain additional functions, so it is recommended to use the `ControlPolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-controlpolicy
  */
@@ -394,7 +394,7 @@ function rosControlPolicyAttachmentPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::ControlPolicyAttachment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::ControlPolicyAttachment`, which is used to attach a custom control policy.
  * @Note This class does not contain additional functions, so it is recommended to use the `ControlPolicyAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-controlpolicyattachment
  */
@@ -479,6 +479,585 @@ export class RosControlPolicyAttachment extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosDelegatedAdministrator`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-delegatedadministrator
+ */
+export interface RosDelegatedAdministratorProps {
+
+    /**
+     * @Property accountId: The Alibaba Cloud account ID of the member in the resource directory.
+     */
+    readonly accountId: string | ros.IResolvable;
+
+    /**
+     * @Property servicePrincipal: The identifier of the trusted service.
+     */
+    readonly servicePrincipal: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosDelegatedAdministratorProps`
+ *
+ * @param properties - the TypeScript properties of a `RosDelegatedAdministratorProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosDelegatedAdministratorPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('accountId', ros.requiredValidator)(properties.accountId));
+    errors.collect(ros.propertyValidator('accountId', ros.validateString)(properties.accountId));
+    errors.collect(ros.propertyValidator('servicePrincipal', ros.requiredValidator)(properties.servicePrincipal));
+    errors.collect(ros.propertyValidator('servicePrincipal', ros.validateString)(properties.servicePrincipal));
+    return errors.wrap('supplied properties not correct for "RosDelegatedAdministratorProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::DelegatedAdministrator` resource
+ *
+ * @param properties - the TypeScript properties of a `RosDelegatedAdministratorProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::DelegatedAdministrator` resource.
+ */
+// @ts-ignore TS6133
+function rosDelegatedAdministratorPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosDelegatedAdministratorPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'AccountId': ros.stringToRosTemplate(properties.accountId),
+      'ServicePrincipal': ros.stringToRosTemplate(properties.servicePrincipal),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::DelegatedAdministrator`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DelegatedAdministrator` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-delegatedadministrator
+ */
+export class RosDelegatedAdministrator extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ResourceManager::DelegatedAdministrator";
+
+    /**
+     * @Attribute AccountId: The Alibaba Cloud account ID of the member in the resource directory.
+     */
+    public readonly attrAccountId: ros.IResolvable;
+
+    /**
+     * @Attribute DelegationEnabledTime: Set as the timestamp of the delegated administrator account.
+     */
+    public readonly attrDelegationEnabledTime: ros.IResolvable;
+
+    /**
+     * @Attribute ServicePrincipal: The identifier of the trusted service.
+     */
+    public readonly attrServicePrincipal: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property accountId: The Alibaba Cloud account ID of the member in the resource directory.
+     */
+    public accountId: string | ros.IResolvable;
+
+    /**
+     * @Property servicePrincipal: The identifier of the trusted service.
+     */
+    public servicePrincipal: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosDelegatedAdministratorProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosDelegatedAdministrator.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAccountId = this.getAtt('AccountId');
+        this.attrDelegationEnabledTime = this.getAtt('DelegationEnabledTime');
+        this.attrServicePrincipal = this.getAtt('ServicePrincipal');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.accountId = props.accountId;
+        this.servicePrincipal = props.servicePrincipal;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            accountId: this.accountId,
+            servicePrincipal: this.servicePrincipal,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosDelegatedAdministratorPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosDeliveryChannel`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-deliverychannel
+ */
+export interface RosDeliveryChannelProps {
+
+    /**
+     * @Property deliveryChannelFilter: The effective scope of the delivery channel.
+     */
+    readonly deliveryChannelFilter: RosDeliveryChannel.DeliveryChannelFilterProperty | ros.IResolvable;
+
+    /**
+     * @Property deliveryChannelName: The name of the delivery channel.
+     */
+    readonly deliveryChannelName: string | ros.IResolvable;
+
+    /**
+     * @Property deliveryChannelDescription: The description of the delivery channel.
+     */
+    readonly deliveryChannelDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property deliveryChannelId: The ID of the delivery channel.
+     */
+    readonly deliveryChannelId?: string | ros.IResolvable;
+
+    /**
+     * @Property enabledResourceChangeDelivery: Enable resource change delivery.
+     */
+    readonly enabledResourceChangeDelivery?: string | ros.IResolvable;
+
+    /**
+     * @Property enabledResourceSnapshotDelivery: Enable resource snapshot delivery.
+     */
+    readonly enabledResourceSnapshotDelivery?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceChangeDelivery: The delivery of resource configuration changes.
+     */
+    readonly resourceChangeDelivery?: RosDeliveryChannel.ResourceChangeDeliveryProperty | ros.IResolvable;
+
+    /**
+     * @Property resourceSnapshotDelivery: The scheduled delivery of resource snapshots.
+     */
+    readonly resourceSnapshotDelivery?: RosDeliveryChannel.ResourceSnapshotDeliveryProperty | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosDeliveryChannelProps`
+ *
+ * @param properties - the TypeScript properties of a `RosDeliveryChannelProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosDeliveryChannelPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('resourceChangeDelivery', RosDeliveryChannel_ResourceChangeDeliveryPropertyValidator)(properties.resourceChangeDelivery));
+    errors.collect(ros.propertyValidator('enabledResourceSnapshotDelivery', ros.validateString)(properties.enabledResourceSnapshotDelivery));
+    errors.collect(ros.propertyValidator('deliveryChannelName', ros.requiredValidator)(properties.deliveryChannelName));
+    errors.collect(ros.propertyValidator('deliveryChannelName', ros.validateString)(properties.deliveryChannelName));
+    errors.collect(ros.propertyValidator('deliveryChannelId', ros.validateString)(properties.deliveryChannelId));
+    errors.collect(ros.propertyValidator('deliveryChannelDescription', ros.validateString)(properties.deliveryChannelDescription));
+    errors.collect(ros.propertyValidator('enabledResourceChangeDelivery', ros.validateString)(properties.enabledResourceChangeDelivery));
+    errors.collect(ros.propertyValidator('deliveryChannelFilter', ros.requiredValidator)(properties.deliveryChannelFilter));
+    errors.collect(ros.propertyValidator('deliveryChannelFilter', RosDeliveryChannel_DeliveryChannelFilterPropertyValidator)(properties.deliveryChannelFilter));
+    errors.collect(ros.propertyValidator('resourceSnapshotDelivery', RosDeliveryChannel_ResourceSnapshotDeliveryPropertyValidator)(properties.resourceSnapshotDelivery));
+    return errors.wrap('supplied properties not correct for "RosDeliveryChannelProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::DeliveryChannel` resource
+ *
+ * @param properties - the TypeScript properties of a `RosDeliveryChannelProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::DeliveryChannel` resource.
+ */
+// @ts-ignore TS6133
+function rosDeliveryChannelPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosDeliveryChannelPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'DeliveryChannelFilter': rosDeliveryChannelDeliveryChannelFilterPropertyToRosTemplate(properties.deliveryChannelFilter),
+      'DeliveryChannelName': ros.stringToRosTemplate(properties.deliveryChannelName),
+      'DeliveryChannelDescription': ros.stringToRosTemplate(properties.deliveryChannelDescription),
+      'DeliveryChannelId': ros.stringToRosTemplate(properties.deliveryChannelId),
+      'EnabledResourceChangeDelivery': ros.stringToRosTemplate(properties.enabledResourceChangeDelivery),
+      'EnabledResourceSnapshotDelivery': ros.stringToRosTemplate(properties.enabledResourceSnapshotDelivery),
+      'ResourceChangeDelivery': rosDeliveryChannelResourceChangeDeliveryPropertyToRosTemplate(properties.resourceChangeDelivery),
+      'ResourceSnapshotDelivery': rosDeliveryChannelResourceSnapshotDeliveryPropertyToRosTemplate(properties.resourceSnapshotDelivery),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::DeliveryChannel`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DeliveryChannel` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-deliverychannel
+ */
+export class RosDeliveryChannel extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ResourceManager::DeliveryChannel";
+
+    /**
+     * @Attribute DeliveryChannelDescription: The description of the delivery channel.
+     */
+    public readonly attrDeliveryChannelDescription: ros.IResolvable;
+
+    /**
+     * @Attribute DeliveryChannelFilter: The effective scope of the delivery channel.
+     */
+    public readonly attrDeliveryChannelFilter: ros.IResolvable;
+
+    /**
+     * @Attribute DeliveryChannelId: The ID of the delivery channel.
+     */
+    public readonly attrDeliveryChannelId: ros.IResolvable;
+
+    /**
+     * @Attribute DeliveryChannelName: The name of the delivery channel.
+     */
+    public readonly attrDeliveryChannelName: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceChangeDelivery: The delivery of resource configuration changes.
+     */
+    public readonly attrResourceChangeDelivery: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceSnapshotDelivery: The scheduled delivery of resource snapshots.
+     */
+    public readonly attrResourceSnapshotDelivery: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property deliveryChannelFilter: The effective scope of the delivery channel.
+     */
+    public deliveryChannelFilter: RosDeliveryChannel.DeliveryChannelFilterProperty | ros.IResolvable;
+
+    /**
+     * @Property deliveryChannelName: The name of the delivery channel.
+     */
+    public deliveryChannelName: string | ros.IResolvable;
+
+    /**
+     * @Property deliveryChannelDescription: The description of the delivery channel.
+     */
+    public deliveryChannelDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property deliveryChannelId: The ID of the delivery channel.
+     */
+    public deliveryChannelId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property enabledResourceChangeDelivery: Enable resource change delivery.
+     */
+    public enabledResourceChangeDelivery: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property enabledResourceSnapshotDelivery: Enable resource snapshot delivery.
+     */
+    public enabledResourceSnapshotDelivery: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceChangeDelivery: The delivery of resource configuration changes.
+     */
+    public resourceChangeDelivery: RosDeliveryChannel.ResourceChangeDeliveryProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceSnapshotDelivery: The scheduled delivery of resource snapshots.
+     */
+    public resourceSnapshotDelivery: RosDeliveryChannel.ResourceSnapshotDeliveryProperty | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosDeliveryChannelProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosDeliveryChannel.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDeliveryChannelDescription = this.getAtt('DeliveryChannelDescription');
+        this.attrDeliveryChannelFilter = this.getAtt('DeliveryChannelFilter');
+        this.attrDeliveryChannelId = this.getAtt('DeliveryChannelId');
+        this.attrDeliveryChannelName = this.getAtt('DeliveryChannelName');
+        this.attrResourceChangeDelivery = this.getAtt('ResourceChangeDelivery');
+        this.attrResourceSnapshotDelivery = this.getAtt('ResourceSnapshotDelivery');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.deliveryChannelFilter = props.deliveryChannelFilter;
+        this.deliveryChannelName = props.deliveryChannelName;
+        this.deliveryChannelDescription = props.deliveryChannelDescription;
+        this.deliveryChannelId = props.deliveryChannelId;
+        this.enabledResourceChangeDelivery = props.enabledResourceChangeDelivery;
+        this.enabledResourceSnapshotDelivery = props.enabledResourceSnapshotDelivery;
+        this.resourceChangeDelivery = props.resourceChangeDelivery;
+        this.resourceSnapshotDelivery = props.resourceSnapshotDelivery;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            deliveryChannelFilter: this.deliveryChannelFilter,
+            deliveryChannelName: this.deliveryChannelName,
+            deliveryChannelDescription: this.deliveryChannelDescription,
+            deliveryChannelId: this.deliveryChannelId,
+            enabledResourceChangeDelivery: this.enabledResourceChangeDelivery,
+            enabledResourceSnapshotDelivery: this.enabledResourceSnapshotDelivery,
+            resourceChangeDelivery: this.resourceChangeDelivery,
+            resourceSnapshotDelivery: this.resourceSnapshotDelivery,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosDeliveryChannelPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosDeliveryChannel {
+    /**
+     * @stability external
+     */
+    export interface DeliveryChannelFilterProperty {
+        /**
+         * @Property resourceTypes: The list of resource types to be delivered.
+         */
+        readonly resourceTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property accountScopes: The accounts within the delivery scope.
+         */
+        readonly accountScopes?: Array<string | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DeliveryChannelFilterProperty`
+ *
+ * @param properties - the TypeScript properties of a `DeliveryChannelFilterProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosDeliveryChannel_DeliveryChannelFilterPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('resourceTypes', ros.listValidator(ros.validateString))(properties.resourceTypes));
+    errors.collect(ros.propertyValidator('accountScopes', ros.listValidator(ros.validateString))(properties.accountScopes));
+    return errors.wrap('supplied properties not correct for "DeliveryChannelFilterProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::DeliveryChannel.DeliveryChannelFilter` resource
+ *
+ * @param properties - the TypeScript properties of a `DeliveryChannelFilterProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::DeliveryChannel.DeliveryChannelFilter` resource.
+ */
+// @ts-ignore TS6133
+function rosDeliveryChannelDeliveryChannelFilterPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosDeliveryChannel_DeliveryChannelFilterPropertyValidator(properties).assertSuccess();
+    return {
+      'ResourceTypes': ros.listMapper(ros.stringToRosTemplate)(properties.resourceTypes),
+      'AccountScopes': ros.listMapper(ros.stringToRosTemplate)(properties.accountScopes),
+    };
+}
+
+export namespace RosDeliveryChannel {
+    /**
+     * @stability external
+     */
+    export interface ResourceChangeDeliveryProperty {
+        /**
+         * @Property slsProperties: The SLS configurations.
+         */
+        readonly slsProperties?: RosDeliveryChannel.SlsPropertiesProperty | ros.IResolvable;
+        /**
+         * @Property targetArn: The ARN of the destination. Valid values: 
+     * * If you set TargetType to OSS, set TargetArn to the ARN of an OSS bucket that has the resourcecenter- prefix.
+     * * If you set TargetType to SLS, set TargetArn to the ARN of an SLS Logstore that has the resourcecenter- prefix.
+         */
+        readonly targetArn?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ResourceChangeDeliveryProperty`
+ *
+ * @param properties - the TypeScript properties of a `ResourceChangeDeliveryProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosDeliveryChannel_ResourceChangeDeliveryPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('slsProperties', RosDeliveryChannel_SlsPropertiesPropertyValidator)(properties.slsProperties));
+    errors.collect(ros.propertyValidator('targetArn', ros.validateString)(properties.targetArn));
+    return errors.wrap('supplied properties not correct for "ResourceChangeDeliveryProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::DeliveryChannel.ResourceChangeDelivery` resource
+ *
+ * @param properties - the TypeScript properties of a `ResourceChangeDeliveryProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::DeliveryChannel.ResourceChangeDelivery` resource.
+ */
+// @ts-ignore TS6133
+function rosDeliveryChannelResourceChangeDeliveryPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosDeliveryChannel_ResourceChangeDeliveryPropertyValidator(properties).assertSuccess();
+    return {
+      'SlsProperties': rosDeliveryChannelSlsPropertiesPropertyToRosTemplate(properties.slsProperties),
+      'TargetArn': ros.stringToRosTemplate(properties.targetArn),
+    };
+}
+
+export namespace RosDeliveryChannel {
+    /**
+     * @stability external
+     */
+    export interface ResourceSnapshotDeliveryProperty {
+        /**
+         * @Property customExpression: The custom expression.
+         */
+        readonly customExpression?: string | ros.IResolvable;
+        /**
+         * @Property deliveryTime: The delivery time.
+         */
+        readonly deliveryTime?: string | ros.IResolvable;
+        /**
+         * @Property slsProperties: The SLS configurations.
+         */
+        readonly slsProperties?: RosDeliveryChannel.ResourceSnapshotDeliverySlsPropertiesProperty | ros.IResolvable;
+        /**
+         * @Property targetArn: The ARN of the destination.
+         */
+        readonly targetArn?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ResourceSnapshotDeliveryProperty`
+ *
+ * @param properties - the TypeScript properties of a `ResourceSnapshotDeliveryProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosDeliveryChannel_ResourceSnapshotDeliveryPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('customExpression', ros.validateString)(properties.customExpression));
+    errors.collect(ros.propertyValidator('deliveryTime', ros.validateString)(properties.deliveryTime));
+    errors.collect(ros.propertyValidator('slsProperties', RosDeliveryChannel_ResourceSnapshotDeliverySlsPropertiesPropertyValidator)(properties.slsProperties));
+    errors.collect(ros.propertyValidator('targetArn', ros.validateString)(properties.targetArn));
+    return errors.wrap('supplied properties not correct for "ResourceSnapshotDeliveryProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::DeliveryChannel.ResourceSnapshotDelivery` resource
+ *
+ * @param properties - the TypeScript properties of a `ResourceSnapshotDeliveryProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::DeliveryChannel.ResourceSnapshotDelivery` resource.
+ */
+// @ts-ignore TS6133
+function rosDeliveryChannelResourceSnapshotDeliveryPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosDeliveryChannel_ResourceSnapshotDeliveryPropertyValidator(properties).assertSuccess();
+    return {
+      'CustomExpression': ros.stringToRosTemplate(properties.customExpression),
+      'DeliveryTime': ros.stringToRosTemplate(properties.deliveryTime),
+      'SlsProperties': rosDeliveryChannelResourceSnapshotDeliverySlsPropertiesPropertyToRosTemplate(properties.slsProperties),
+      'TargetArn': ros.stringToRosTemplate(properties.targetArn),
+    };
+}
+
+export namespace RosDeliveryChannel {
+    /**
+     * @stability external
+     */
+    export interface ResourceSnapshotDeliverySlsPropertiesProperty {
+        /**
+         * @Property oversizedDataOssTargetArn: The ARN of the destination OSS bucket for oversized files. If the size of a resource configuration change event exceeds 1 MB, the event is delivered as an OSS object. Set this parameter to the ARN of an OSS bucket that has the resourcecenter- prefix.
+         */
+        readonly oversizedDataOssTargetArn?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ResourceSnapshotDeliverySlsPropertiesProperty`
+ *
+ * @param properties - the TypeScript properties of a `ResourceSnapshotDeliverySlsPropertiesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosDeliveryChannel_ResourceSnapshotDeliverySlsPropertiesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('oversizedDataOssTargetArn', ros.validateString)(properties.oversizedDataOssTargetArn));
+    return errors.wrap('supplied properties not correct for "ResourceSnapshotDeliverySlsPropertiesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::DeliveryChannel.ResourceSnapshotDeliverySlsProperties` resource
+ *
+ * @param properties - the TypeScript properties of a `ResourceSnapshotDeliverySlsPropertiesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::DeliveryChannel.ResourceSnapshotDeliverySlsProperties` resource.
+ */
+// @ts-ignore TS6133
+function rosDeliveryChannelResourceSnapshotDeliverySlsPropertiesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosDeliveryChannel_ResourceSnapshotDeliverySlsPropertiesPropertyValidator(properties).assertSuccess();
+    return {
+      'OversizedDataOssTargetArn': ros.stringToRosTemplate(properties.oversizedDataOssTargetArn),
+    };
+}
+
+export namespace RosDeliveryChannel {
+    /**
+     * @stability external
+     */
+    export interface SlsPropertiesProperty {
+        /**
+         * @Property oversizedDataOssTargetArn: The ARN of the destination OSS bucket for oversized files. If the size of a resource configuration change event exceeds 1 MB, the event is delivered as an OSS object. Set this parameter to the ARN of an OSS bucket that has the resourcecenter- prefix.
+         */
+        readonly oversizedDataOssTargetArn?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `SlsPropertiesProperty`
+ *
+ * @param properties - the TypeScript properties of a `SlsPropertiesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosDeliveryChannel_SlsPropertiesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('oversizedDataOssTargetArn', ros.validateString)(properties.oversizedDataOssTargetArn));
+    return errors.wrap('supplied properties not correct for "SlsPropertiesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::DeliveryChannel.SlsProperties` resource
+ *
+ * @param properties - the TypeScript properties of a `SlsPropertiesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::DeliveryChannel.SlsProperties` resource.
+ */
+// @ts-ignore TS6133
+function rosDeliveryChannelSlsPropertiesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosDeliveryChannel_SlsPropertiesPropertyValidator(properties).assertSuccess();
+    return {
+      'OversizedDataOssTargetArn': ros.stringToRosTemplate(properties.oversizedDataOssTargetArn),
+    };
+}
+
+/**
  * Properties for defining a `RosFolder`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-folder
  */
@@ -531,7 +1110,7 @@ function rosFolderPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::Folder`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::Folder`, which is used to create a folder.
  * @Note This class does not contain additional functions, so it is recommended to use the `Folder` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-folder
  */
@@ -658,7 +1237,7 @@ function rosHandshakePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::Handshake`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::Handshake`, which is used to create an invitation.
  * @Note This class does not contain additional functions, so it is recommended to use the `Handshake` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-handshake
  */
@@ -756,6 +1335,597 @@ export class RosHandshake extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosMessageContact`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-messagecontact
+ */
+export interface RosMessageContactProps {
+
+    /**
+     * @Property emailAddress: The email address of the contact.
+     */
+    readonly emailAddress: string | ros.IResolvable;
+
+    /**
+     * @Property messageContactName: The name of the contact. The name must be unique in your resource directory. The name must be 2 to 12 characters in length and can contain only letters.
+     */
+    readonly messageContactName: string | ros.IResolvable;
+
+    /**
+     * @Property messageTypes: The types of messages received by the contact.
+     */
+    readonly messageTypes: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property title: The job title of the contact. Valid values:
+     * * FinanceDirector.
+     * * TechnicalDirector.
+     * * MaintenanceDirector.
+     * * CEO.
+     * * ProjectDirector.
+     * * Other.
+     */
+    readonly title: string | ros.IResolvable;
+
+    /**
+     * @Property phoneNumber: The mobile phone number of the contact.
+     */
+    readonly phoneNumber?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosMessageContactProps`
+ *
+ * @param properties - the TypeScript properties of a `RosMessageContactProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosMessageContactPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('messageTypes', ros.requiredValidator)(properties.messageTypes));
+    errors.collect(ros.propertyValidator('messageTypes', ros.listValidator(ros.validateString))(properties.messageTypes));
+    errors.collect(ros.propertyValidator('phoneNumber', ros.validateString)(properties.phoneNumber));
+    errors.collect(ros.propertyValidator('title', ros.requiredValidator)(properties.title));
+    if(properties.title && (typeof properties.title) !== 'object') {
+        errors.collect(ros.propertyValidator('title', ros.validateAllowedValues)({
+          data: properties.title,
+          allowedValues: ["TechnicalDirector","MaintenanceDirector","ProjectDirector","ProjectDirector","CEO","Other"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('title', ros.validateString)(properties.title));
+    errors.collect(ros.propertyValidator('messageContactName', ros.requiredValidator)(properties.messageContactName));
+    if(properties.messageContactName && (Array.isArray(properties.messageContactName) || (typeof properties.messageContactName) === 'string')) {
+        errors.collect(ros.propertyValidator('messageContactName', ros.validateLength)({
+            data: properties.messageContactName.length,
+            min: 2,
+            max: 12,
+          }));
+    }
+    errors.collect(ros.propertyValidator('messageContactName', ros.validateString)(properties.messageContactName));
+    errors.collect(ros.propertyValidator('emailAddress', ros.requiredValidator)(properties.emailAddress));
+    errors.collect(ros.propertyValidator('emailAddress', ros.validateString)(properties.emailAddress));
+    return errors.wrap('supplied properties not correct for "RosMessageContactProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::MessageContact` resource
+ *
+ * @param properties - the TypeScript properties of a `RosMessageContactProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::MessageContact` resource.
+ */
+// @ts-ignore TS6133
+function rosMessageContactPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosMessageContactPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'EmailAddress': ros.stringToRosTemplate(properties.emailAddress),
+      'MessageContactName': ros.stringToRosTemplate(properties.messageContactName),
+      'MessageTypes': ros.listMapper(ros.stringToRosTemplate)(properties.messageTypes),
+      'Title': ros.stringToRosTemplate(properties.title),
+      'PhoneNumber': ros.stringToRosTemplate(properties.phoneNumber),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::MessageContact`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `MessageContact` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-messagecontact
+ */
+export class RosMessageContact extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ResourceManager::MessageContact";
+
+    /**
+     * @Attribute CreateTime: Creation time of Message Contact.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute EmailAddress: The email address of the contact.
+     */
+    public readonly attrEmailAddress: ros.IResolvable;
+
+    /**
+     * @Attribute MessageContactId: The ID of Message Contact.
+     */
+    public readonly attrMessageContactId: ros.IResolvable;
+
+    /**
+     * @Attribute MessageContactName: The name of the contact.
+     */
+    public readonly attrMessageContactName: ros.IResolvable;
+
+    /**
+     * @Attribute MessageTypes: The types of messages received by the contact.
+     */
+    public readonly attrMessageTypes: ros.IResolvable;
+
+    /**
+     * @Attribute PhoneNumber: The mobile phone number of the contact.
+     */
+    public readonly attrPhoneNumber: ros.IResolvable;
+
+    /**
+     * @Attribute Title: The job title of the contact.
+     */
+    public readonly attrTitle: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property emailAddress: The email address of the contact.
+     */
+    public emailAddress: string | ros.IResolvable;
+
+    /**
+     * @Property messageContactName: The name of the contact. The name must be unique in your resource directory. The name must be 2 to 12 characters in length and can contain only letters.
+     */
+    public messageContactName: string | ros.IResolvable;
+
+    /**
+     * @Property messageTypes: The types of messages received by the contact.
+     */
+    public messageTypes: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property title: The job title of the contact. Valid values:
+     * * FinanceDirector.
+     * * TechnicalDirector.
+     * * MaintenanceDirector.
+     * * CEO.
+     * * ProjectDirector.
+     * * Other.
+     */
+    public title: string | ros.IResolvable;
+
+    /**
+     * @Property phoneNumber: The mobile phone number of the contact.
+     */
+    public phoneNumber: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosMessageContactProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosMessageContact.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrEmailAddress = this.getAtt('EmailAddress');
+        this.attrMessageContactId = this.getAtt('MessageContactId');
+        this.attrMessageContactName = this.getAtt('MessageContactName');
+        this.attrMessageTypes = this.getAtt('MessageTypes');
+        this.attrPhoneNumber = this.getAtt('PhoneNumber');
+        this.attrTitle = this.getAtt('Title');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.emailAddress = props.emailAddress;
+        this.messageContactName = props.messageContactName;
+        this.messageTypes = props.messageTypes;
+        this.title = props.title;
+        this.phoneNumber = props.phoneNumber;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            emailAddress: this.emailAddress,
+            messageContactName: this.messageContactName,
+            messageTypes: this.messageTypes,
+            title: this.title,
+            phoneNumber: this.phoneNumber,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosMessageContactPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosMultiAccountDeliveryChannel`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-multiaccountdeliverychannel
+ */
+export interface RosMultiAccountDeliveryChannelProps {
+
+    /**
+     * @Property deliveryChannelDescription: The description of the delivery channel.
+     */
+    readonly deliveryChannelDescription: string | ros.IResolvable;
+
+    /**
+     * @Property deliveryChannelFilter: The effective scope of the delivery channel.
+     */
+    readonly deliveryChannelFilter: RosMultiAccountDeliveryChannel.DeliveryChannelFilterProperty | ros.IResolvable;
+
+    /**
+     * @Property multiAccountDeliveryChannelName: The name of the delivery channel.
+     */
+    readonly multiAccountDeliveryChannelName: string | ros.IResolvable;
+
+    /**
+     * @Property multiAccountDeliveryChannelId: Delivery Channel id.
+     */
+    readonly multiAccountDeliveryChannelId?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceChangeDelivery: The configurations for delivery of resource configuration change events.
+     */
+    readonly resourceChangeDelivery?: RosMultiAccountDeliveryChannel.ResourceChangeDeliveryProperty | ros.IResolvable;
+
+    /**
+     * @Property resourceSnapshotDelivery: The configurations for scheduled delivery of resource snapshots.
+     */
+    readonly resourceSnapshotDelivery?: RosMultiAccountDeliveryChannel.ResourceSnapshotDeliveryProperty | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosMultiAccountDeliveryChannelProps`
+ *
+ * @param properties - the TypeScript properties of a `RosMultiAccountDeliveryChannelProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosMultiAccountDeliveryChannelPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('resourceChangeDelivery', RosMultiAccountDeliveryChannel_ResourceChangeDeliveryPropertyValidator)(properties.resourceChangeDelivery));
+    errors.collect(ros.propertyValidator('deliveryChannelDescription', ros.requiredValidator)(properties.deliveryChannelDescription));
+    errors.collect(ros.propertyValidator('deliveryChannelDescription', ros.validateString)(properties.deliveryChannelDescription));
+    errors.collect(ros.propertyValidator('multiAccountDeliveryChannelId', ros.validateString)(properties.multiAccountDeliveryChannelId));
+    errors.collect(ros.propertyValidator('multiAccountDeliveryChannelName', ros.requiredValidator)(properties.multiAccountDeliveryChannelName));
+    errors.collect(ros.propertyValidator('multiAccountDeliveryChannelName', ros.validateString)(properties.multiAccountDeliveryChannelName));
+    errors.collect(ros.propertyValidator('deliveryChannelFilter', ros.requiredValidator)(properties.deliveryChannelFilter));
+    errors.collect(ros.propertyValidator('deliveryChannelFilter', RosMultiAccountDeliveryChannel_DeliveryChannelFilterPropertyValidator)(properties.deliveryChannelFilter));
+    errors.collect(ros.propertyValidator('resourceSnapshotDelivery', RosMultiAccountDeliveryChannel_ResourceSnapshotDeliveryPropertyValidator)(properties.resourceSnapshotDelivery));
+    return errors.wrap('supplied properties not correct for "RosMultiAccountDeliveryChannelProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::MultiAccountDeliveryChannel` resource
+ *
+ * @param properties - the TypeScript properties of a `RosMultiAccountDeliveryChannelProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::MultiAccountDeliveryChannel` resource.
+ */
+// @ts-ignore TS6133
+function rosMultiAccountDeliveryChannelPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosMultiAccountDeliveryChannelPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'DeliveryChannelDescription': ros.stringToRosTemplate(properties.deliveryChannelDescription),
+      'DeliveryChannelFilter': rosMultiAccountDeliveryChannelDeliveryChannelFilterPropertyToRosTemplate(properties.deliveryChannelFilter),
+      'MultiAccountDeliveryChannelName': ros.stringToRosTemplate(properties.multiAccountDeliveryChannelName),
+      'MultiAccountDeliveryChannelId': ros.stringToRosTemplate(properties.multiAccountDeliveryChannelId),
+      'ResourceChangeDelivery': rosMultiAccountDeliveryChannelResourceChangeDeliveryPropertyToRosTemplate(properties.resourceChangeDelivery),
+      'ResourceSnapshotDelivery': rosMultiAccountDeliveryChannelResourceSnapshotDeliveryPropertyToRosTemplate(properties.resourceSnapshotDelivery),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::MultiAccountDeliveryChannel`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `MultiAccountDeliveryChannel` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-multiaccountdeliverychannel
+ */
+export class RosMultiAccountDeliveryChannel extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ResourceManager::MultiAccountDeliveryChannel";
+
+    /**
+     * @Attribute DeliveryChannelDescription: The description of the delivery channel.
+     */
+    public readonly attrDeliveryChannelDescription: ros.IResolvable;
+
+    /**
+     * @Attribute DeliveryChannelFilter: The effective scope of the delivery channel.
+     */
+    public readonly attrDeliveryChannelFilter: ros.IResolvable;
+
+    /**
+     * @Attribute MultiAccountDeliveryChannelId: The delivery channel ID.
+     */
+    public readonly attrMultiAccountDeliveryChannelId: ros.IResolvable;
+
+    /**
+     * @Attribute MultiAccountDeliveryChannelName: The name of the delivery channel.
+     */
+    public readonly attrMultiAccountDeliveryChannelName: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceChangeDelivery: The configurations for delivery of resource configuration change events.
+     */
+    public readonly attrResourceChangeDelivery: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceSnapshotDelivery: The configurations for scheduled delivery of resource snapshots.
+     */
+    public readonly attrResourceSnapshotDelivery: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property deliveryChannelDescription: The description of the delivery channel.
+     */
+    public deliveryChannelDescription: string | ros.IResolvable;
+
+    /**
+     * @Property deliveryChannelFilter: The effective scope of the delivery channel.
+     */
+    public deliveryChannelFilter: RosMultiAccountDeliveryChannel.DeliveryChannelFilterProperty | ros.IResolvable;
+
+    /**
+     * @Property multiAccountDeliveryChannelName: The name of the delivery channel.
+     */
+    public multiAccountDeliveryChannelName: string | ros.IResolvable;
+
+    /**
+     * @Property multiAccountDeliveryChannelId: Delivery Channel id.
+     */
+    public multiAccountDeliveryChannelId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceChangeDelivery: The configurations for delivery of resource configuration change events.
+     */
+    public resourceChangeDelivery: RosMultiAccountDeliveryChannel.ResourceChangeDeliveryProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceSnapshotDelivery: The configurations for scheduled delivery of resource snapshots.
+     */
+    public resourceSnapshotDelivery: RosMultiAccountDeliveryChannel.ResourceSnapshotDeliveryProperty | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosMultiAccountDeliveryChannelProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosMultiAccountDeliveryChannel.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDeliveryChannelDescription = this.getAtt('DeliveryChannelDescription');
+        this.attrDeliveryChannelFilter = this.getAtt('DeliveryChannelFilter');
+        this.attrMultiAccountDeliveryChannelId = this.getAtt('MultiAccountDeliveryChannelId');
+        this.attrMultiAccountDeliveryChannelName = this.getAtt('MultiAccountDeliveryChannelName');
+        this.attrResourceChangeDelivery = this.getAtt('ResourceChangeDelivery');
+        this.attrResourceSnapshotDelivery = this.getAtt('ResourceSnapshotDelivery');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.deliveryChannelDescription = props.deliveryChannelDescription;
+        this.deliveryChannelFilter = props.deliveryChannelFilter;
+        this.multiAccountDeliveryChannelName = props.multiAccountDeliveryChannelName;
+        this.multiAccountDeliveryChannelId = props.multiAccountDeliveryChannelId;
+        this.resourceChangeDelivery = props.resourceChangeDelivery;
+        this.resourceSnapshotDelivery = props.resourceSnapshotDelivery;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            deliveryChannelDescription: this.deliveryChannelDescription,
+            deliveryChannelFilter: this.deliveryChannelFilter,
+            multiAccountDeliveryChannelName: this.multiAccountDeliveryChannelName,
+            multiAccountDeliveryChannelId: this.multiAccountDeliveryChannelId,
+            resourceChangeDelivery: this.resourceChangeDelivery,
+            resourceSnapshotDelivery: this.resourceSnapshotDelivery,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosMultiAccountDeliveryChannelPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosMultiAccountDeliveryChannel {
+    /**
+     * @stability external
+     */
+    export interface DeliveryChannelFilterProperty {
+        /**
+         * @Property resourceTypes: The effective resource type of the delivery channel.
+         */
+        readonly resourceTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property accountScopes: The account scopes of the delivery channel.
+         */
+        readonly accountScopes: Array<string | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DeliveryChannelFilterProperty`
+ *
+ * @param properties - the TypeScript properties of a `DeliveryChannelFilterProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosMultiAccountDeliveryChannel_DeliveryChannelFilterPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('resourceTypes', ros.listValidator(ros.validateString))(properties.resourceTypes));
+    errors.collect(ros.propertyValidator('accountScopes', ros.requiredValidator)(properties.accountScopes));
+    errors.collect(ros.propertyValidator('accountScopes', ros.listValidator(ros.validateString))(properties.accountScopes));
+    return errors.wrap('supplied properties not correct for "DeliveryChannelFilterProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::MultiAccountDeliveryChannel.DeliveryChannelFilter` resource
+ *
+ * @param properties - the TypeScript properties of a `DeliveryChannelFilterProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::MultiAccountDeliveryChannel.DeliveryChannelFilter` resource.
+ */
+// @ts-ignore TS6133
+function rosMultiAccountDeliveryChannelDeliveryChannelFilterPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosMultiAccountDeliveryChannel_DeliveryChannelFilterPropertyValidator(properties).assertSuccess();
+    return {
+      'ResourceTypes': ros.listMapper(ros.stringToRosTemplate)(properties.resourceTypes),
+      'AccountScopes': ros.listMapper(ros.stringToRosTemplate)(properties.accountScopes),
+    };
+}
+
+export namespace RosMultiAccountDeliveryChannel {
+    /**
+     * @stability external
+     */
+    export interface ResourceChangeDeliveryProperty {
+        /**
+         * @Property slsProperties: The SLS configurations.
+         */
+        readonly slsProperties?: RosMultiAccountDeliveryChannel.SlsPropertiesProperty | ros.IResolvable;
+        /**
+         * @Property targetArn: Target Arn.
+         */
+        readonly targetArn?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ResourceChangeDeliveryProperty`
+ *
+ * @param properties - the TypeScript properties of a `ResourceChangeDeliveryProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosMultiAccountDeliveryChannel_ResourceChangeDeliveryPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('slsProperties', RosMultiAccountDeliveryChannel_SlsPropertiesPropertyValidator)(properties.slsProperties));
+    errors.collect(ros.propertyValidator('targetArn', ros.validateString)(properties.targetArn));
+    return errors.wrap('supplied properties not correct for "ResourceChangeDeliveryProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::MultiAccountDeliveryChannel.ResourceChangeDelivery` resource
+ *
+ * @param properties - the TypeScript properties of a `ResourceChangeDeliveryProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::MultiAccountDeliveryChannel.ResourceChangeDelivery` resource.
+ */
+// @ts-ignore TS6133
+function rosMultiAccountDeliveryChannelResourceChangeDeliveryPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosMultiAccountDeliveryChannel_ResourceChangeDeliveryPropertyValidator(properties).assertSuccess();
+    return {
+      'SlsProperties': rosMultiAccountDeliveryChannelSlsPropertiesPropertyToRosTemplate(properties.slsProperties),
+      'TargetArn': ros.stringToRosTemplate(properties.targetArn),
+    };
+}
+
+export namespace RosMultiAccountDeliveryChannel {
+    /**
+     * @stability external
+     */
+    export interface ResourceSnapshotDeliveryProperty {
+        /**
+         * @Property deliveryTime: The delivery time.
+         */
+        readonly deliveryTime?: string | ros.IResolvable;
+        /**
+         * @Property targetArn: The ARN of the delivery destination.
+         */
+        readonly targetArn?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ResourceSnapshotDeliveryProperty`
+ *
+ * @param properties - the TypeScript properties of a `ResourceSnapshotDeliveryProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosMultiAccountDeliveryChannel_ResourceSnapshotDeliveryPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('deliveryTime', ros.validateString)(properties.deliveryTime));
+    errors.collect(ros.propertyValidator('targetArn', ros.validateString)(properties.targetArn));
+    return errors.wrap('supplied properties not correct for "ResourceSnapshotDeliveryProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::MultiAccountDeliveryChannel.ResourceSnapshotDelivery` resource
+ *
+ * @param properties - the TypeScript properties of a `ResourceSnapshotDeliveryProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::MultiAccountDeliveryChannel.ResourceSnapshotDelivery` resource.
+ */
+// @ts-ignore TS6133
+function rosMultiAccountDeliveryChannelResourceSnapshotDeliveryPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosMultiAccountDeliveryChannel_ResourceSnapshotDeliveryPropertyValidator(properties).assertSuccess();
+    return {
+      'DeliveryTime': ros.stringToRosTemplate(properties.deliveryTime),
+      'TargetArn': ros.stringToRosTemplate(properties.targetArn),
+    };
+}
+
+export namespace RosMultiAccountDeliveryChannel {
+    /**
+     * @stability external
+     */
+    export interface SlsPropertiesProperty {
+        /**
+         * @Property oversizedDataOssTargetArn: The ARN of the delivery destination for oversized data. If the size of a resource configuration change event exceeds 1 MB, the event is delivered as an OSS object. You must enter the ARN of an OSS bucket that has a prefix of resourcecenter-.
+         */
+        readonly oversizedDataOssTargetArn?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `SlsPropertiesProperty`
+ *
+ * @param properties - the TypeScript properties of a `SlsPropertiesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosMultiAccountDeliveryChannel_SlsPropertiesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('oversizedDataOssTargetArn', ros.validateString)(properties.oversizedDataOssTargetArn));
+    return errors.wrap('supplied properties not correct for "SlsPropertiesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::MultiAccountDeliveryChannel.SlsProperties` resource
+ *
+ * @param properties - the TypeScript properties of a `SlsPropertiesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::MultiAccountDeliveryChannel.SlsProperties` resource.
+ */
+// @ts-ignore TS6133
+function rosMultiAccountDeliveryChannelSlsPropertiesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosMultiAccountDeliveryChannel_SlsPropertiesPropertyValidator(properties).assertSuccess();
+    return {
+      'OversizedDataOssTargetArn': ros.stringToRosTemplate(properties.oversizedDataOssTargetArn),
+    };
+}
+
+/**
  * Properties for defining a `RosPolicyAttachment`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-policyattachment
  */
@@ -832,7 +2002,7 @@ function rosPolicyAttachmentPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::PolicyAttachment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::PolicyAttachment`, which is used to attach a policy to an object. After you attach a policy to an object, the object has the permissions to manage the resources in the current resource group or within the current Alibaba Cloud account.
  * @Note This class does not contain additional functions, so it is recommended to use the `PolicyAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-policyattachment
  */
@@ -1046,14 +2216,19 @@ export class RosResourceDirectory extends ros.RosResource {
 export interface RosResourceGroupProps {
 
     /**
-     * @Property displayName: The display name of the resource group
+     * @Property displayName: The display name of the resource group.
      */
     readonly displayName: string | ros.IResolvable;
 
     /**
-     * @Property name: The unique identifier of the resource group
+     * @Property name: The name of the resource group.
      */
     readonly name: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to resource group. Max support 20 tags to add during create resource group. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosResourceGroup.TagsProperty[];
 }
 
 /**
@@ -1068,6 +2243,14 @@ function RosResourceGroupPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('displayName', ros.requiredValidator)(properties.displayName));
     errors.collect(ros.propertyValidator('displayName', ros.validateString)(properties.displayName));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosResourceGroup_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     return errors.wrap('supplied properties not correct for "RosResourceGroupProps"');
@@ -1089,11 +2272,12 @@ function rosResourceGroupPropsToRosTemplate(properties: any, enableResourcePrope
     return {
       'DisplayName': ros.stringToRosTemplate(properties.displayName),
       'Name': ros.stringToRosTemplate(properties.name),
+      'Tags': ros.listMapper(rosResourceGroupTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::ResourceGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::ResourceGroup`The , which resource type creates a resource group.
  * @Note This class does not contain additional functions, so it is recommended to use the `ResourceGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourcegroup
  */
@@ -1104,42 +2288,52 @@ export class RosResourceGroup extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ResourceManager::ResourceGroup";
 
     /**
-     * @Attribute AccountId: The ID of the Alibaba Cloud account to which the resource group belongs
+     * @Attribute AccountId: The ID of the Alibaba Cloud account to which the resource group belongs.
      */
     public readonly attrAccountId: ros.IResolvable;
 
     /**
-     * @Attribute DisplayName: The display name of the resource group
+     * @Attribute DisplayName: The display name of the resource group.
      */
     public readonly attrDisplayName: ros.IResolvable;
 
     /**
-     * @Attribute Id: The ID of the resource group
+     * @Attribute Id: The ID of the resource group.
      */
     public readonly attrId: ros.IResolvable;
 
     /**
-     * @Attribute Name: The unique identifier of the resource group
+     * @Attribute Name: The unique identifier of the resource group.
      */
     public readonly attrName: ros.IResolvable;
 
     /**
-     * @Attribute RegionStatuses: The status of the resource group in all regions
+     * @Attribute RegionStatuses: The status of the resource group in all regions.
      */
     public readonly attrRegionStatuses: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of the resource group.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
 
     /**
-     * @Property displayName: The display name of the resource group
+     * @Property displayName: The display name of the resource group.
      */
     public displayName: string | ros.IResolvable;
 
     /**
-     * @Property name: The unique identifier of the resource group
+     * @Property name: The name of the resource group.
      */
     public name: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to resource group. Max support 20 tags to add during create resource group. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosResourceGroup.TagsProperty[] | undefined;
 
     /**
      * @param scope - scope in which this resource is defined
@@ -1153,10 +2347,12 @@ export class RosResourceGroup extends ros.RosResource {
         this.attrId = this.getAtt('Id');
         this.attrName = this.getAtt('Name');
         this.attrRegionStatuses = this.getAtt('RegionStatuses');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.displayName = props.displayName;
         this.name = props.name;
+        this.tags = props.tags;
     }
 
 
@@ -1164,11 +2360,60 @@ export class RosResourceGroup extends ros.RosResource {
         return {
             displayName: this.displayName,
             name: this.name,
+            tags: this.tags,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosResourceGroupPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosResourceGroup {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosResourceGroup_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::ResourceGroup.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::ResourceGroup.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosResourceGroupTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosResourceGroup_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -1228,7 +2473,6 @@ function RosResourceSharePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('resourceShareName', ros.validateString)(properties.resourceShareName));
-    errors.collect(ros.propertyValidator('allowExternalTargets', ros.validateBoolean)(properties.allowExternalTargets));
     if(properties.targets && (Array.isArray(properties.targets) || (typeof properties.targets) === 'string')) {
         errors.collect(ros.propertyValidator('targets', ros.validateLength)({
             data: properties.targets.length,
@@ -1237,6 +2481,7 @@ function RosResourceSharePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('targets', ros.listValidator(ros.validateString))(properties.targets));
+    errors.collect(ros.propertyValidator('allowExternalTargets', ros.validateBoolean)(properties.allowExternalTargets));
     if(properties.resources && (Array.isArray(properties.resources) || (typeof properties.resources) === 'string')) {
         errors.collect(ros.propertyValidator('resources', ros.validateLength)({
             data: properties.resources.length,
@@ -1279,7 +2524,7 @@ function rosResourceSharePropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::ResourceShare`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::ResourceShare`, which is used to create a resource share.
  * @Note This class does not contain additional functions, so it is recommended to use the `ResourceShare` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourceshare
  */
@@ -1507,7 +2752,7 @@ function rosResourceShareAssociationPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::ResourceShareAssociation`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::ResourceShareAssociation`, which is used to associate a shared resource or a resource user.
  * @Note This class does not contain additional functions, so it is recommended to use the `ResourceShareAssociation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourceshareassociation
  */
@@ -1631,4 +2876,492 @@ function rosResourceShareAssociationResourcesPropertyToRosTemplate(properties: a
       'ResourceId': ros.stringToRosTemplate(properties.resourceId),
       'ResourceType': ros.stringToRosTemplate(properties.resourceType),
     };
+}
+
+/**
+ * Properties for defining a `RosRole`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-role
+ */
+export interface RosRoleProps {
+
+    /**
+     * @Property assumeRolePolicyDocument: The content of the permissions strategy that plays a role.
+     */
+    readonly assumeRolePolicyDocument: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property roleName: Role Name.
+     */
+    readonly roleName: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the Resource Manager role.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property maxSessionDuration: Role maximum session time. Valid values: [3600-43200]. Default to 3600.
+     */
+    readonly maxSessionDuration?: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosRoleProps`
+ *
+ * @param properties - the TypeScript properties of a `RosRoleProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosRolePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.maxSessionDuration && (typeof properties.maxSessionDuration) !== 'object') {
+        errors.collect(ros.propertyValidator('maxSessionDuration', ros.validateRange)({
+            data: properties.maxSessionDuration,
+            min: 3600,
+            max: 43200,
+          }));
+    }
+    errors.collect(ros.propertyValidator('maxSessionDuration', ros.validateNumber)(properties.maxSessionDuration));
+    errors.collect(ros.propertyValidator('roleName', ros.requiredValidator)(properties.roleName));
+    errors.collect(ros.propertyValidator('roleName', ros.validateString)(properties.roleName));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('assumeRolePolicyDocument', ros.requiredValidator)(properties.assumeRolePolicyDocument));
+    errors.collect(ros.propertyValidator('assumeRolePolicyDocument', ros.hashValidator(ros.validateAny))(properties.assumeRolePolicyDocument));
+    return errors.wrap('supplied properties not correct for "RosRoleProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::Role` resource
+ *
+ * @param properties - the TypeScript properties of a `RosRoleProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::Role` resource.
+ */
+// @ts-ignore TS6133
+function rosRolePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosRolePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'AssumeRolePolicyDocument': ros.hashMapper(ros.objectToRosTemplate)(properties.assumeRolePolicyDocument),
+      'RoleName': ros.stringToRosTemplate(properties.roleName),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'MaxSessionDuration': ros.numberToRosTemplate(properties.maxSessionDuration),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::Role`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Role` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-role
+ */
+export class RosRole extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ResourceManager::Role";
+
+    /**
+     * @Attribute Arn: The resource descriptor of the role.
+     */
+    public readonly attrArn: ros.IResolvable;
+
+    /**
+     * @Attribute AssumeRolePolicyDocument: The content of the permissions strategy that plays a role.
+     */
+    public readonly attrAssumeRolePolicyDocument: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: Role creation time.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The description of the Resource Manager role.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute MaxSessionDuration: Role maximum session time. Valid values: [3600-43200].
+     */
+    public readonly attrMaxSessionDuration: ros.IResolvable;
+
+    /**
+     * @Attribute RoleId: This ID of Resource Manager role.
+     */
+    public readonly attrRoleId: ros.IResolvable;
+
+    /**
+     * @Attribute RoleName: Role Name.
+     */
+    public readonly attrRoleName: ros.IResolvable;
+
+    /**
+     * @Attribute UpdateDate: Role update time.
+     */
+    public readonly attrUpdateDate: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property assumeRolePolicyDocument: The content of the permissions strategy that plays a role.
+     */
+    public assumeRolePolicyDocument: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property roleName: Role Name.
+     */
+    public roleName: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the Resource Manager role.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property maxSessionDuration: Role maximum session time. Valid values: [3600-43200]. Default to 3600.
+     */
+    public maxSessionDuration: number | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosRoleProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosRole.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
+        this.attrAssumeRolePolicyDocument = this.getAtt('AssumeRolePolicyDocument');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDescription = this.getAtt('Description');
+        this.attrMaxSessionDuration = this.getAtt('MaxSessionDuration');
+        this.attrRoleId = this.getAtt('RoleId');
+        this.attrRoleName = this.getAtt('RoleName');
+        this.attrUpdateDate = this.getAtt('UpdateDate');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.assumeRolePolicyDocument = props.assumeRolePolicyDocument;
+        this.roleName = props.roleName;
+        this.description = props.description;
+        this.maxSessionDuration = props.maxSessionDuration;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            assumeRolePolicyDocument: this.assumeRolePolicyDocument,
+            roleName: this.roleName,
+            description: this.description,
+            maxSessionDuration: this.maxSessionDuration,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosRolePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosSavedQuery`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-savedquery
+ */
+export interface RosSavedQueryProps {
+
+    /**
+     * @Property expression: The expression of the template.
+     */
+    readonly expression: string | ros.IResolvable;
+
+    /**
+     * @Property savedQueryName: The name of the template.
+     * * The name must be 1 to 64 characters in length.
+     * * The name can contain letters, digits, underscores (_), and hyphens (-).
+     * * The template name must be unique.
+     */
+    readonly savedQueryName: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the template. The description must be 1 to 256 characters in length.
+     */
+    readonly description?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSavedQueryProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSavedQueryProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSavedQueryPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
+        errors.collect(ros.propertyValidator('description', ros.validateLength)({
+            data: properties.description.length,
+            min: 1,
+            max: 256,
+          }));
+    }
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('expression', ros.requiredValidator)(properties.expression));
+    errors.collect(ros.propertyValidator('expression', ros.validateString)(properties.expression));
+    errors.collect(ros.propertyValidator('savedQueryName', ros.requiredValidator)(properties.savedQueryName));
+    if(properties.savedQueryName && (Array.isArray(properties.savedQueryName) || (typeof properties.savedQueryName) === 'string')) {
+        errors.collect(ros.propertyValidator('savedQueryName', ros.validateLength)({
+            data: properties.savedQueryName.length,
+            min: 1,
+            max: 64,
+          }));
+    }
+    errors.collect(ros.propertyValidator('savedQueryName', ros.validateString)(properties.savedQueryName));
+    return errors.wrap('supplied properties not correct for "RosSavedQueryProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::SavedQuery` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSavedQueryProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::SavedQuery` resource.
+ */
+// @ts-ignore TS6133
+function rosSavedQueryPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSavedQueryPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'Expression': ros.stringToRosTemplate(properties.expression),
+      'SavedQueryName': ros.stringToRosTemplate(properties.savedQueryName),
+      'Description': ros.stringToRosTemplate(properties.description),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::SavedQuery`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SavedQuery` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-savedquery
+ */
+export class RosSavedQuery extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ResourceManager::SavedQuery";
+
+    /**
+     * @Attribute CreateTime: The creation time of the template.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The description of the template.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute Expression: Query Expression of the template.
+     */
+    public readonly attrExpression: ros.IResolvable;
+
+    /**
+     * @Attribute SavedQueryId: The id of the template.
+     */
+    public readonly attrSavedQueryId: ros.IResolvable;
+
+    /**
+     * @Attribute SavedQueryName: The name of the template.
+     */
+    public readonly attrSavedQueryName: ros.IResolvable;
+
+    /**
+     * @Attribute UpdateTime: Update time of the template.
+     */
+    public readonly attrUpdateTime: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property expression: The expression of the template.
+     */
+    public expression: string | ros.IResolvable;
+
+    /**
+     * @Property savedQueryName: The name of the template.
+     * * The name must be 1 to 64 characters in length.
+     * * The name can contain letters, digits, underscores (_), and hyphens (-).
+     * * The template name must be unique.
+     */
+    public savedQueryName: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the template. The description must be 1 to 256 characters in length.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSavedQueryProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSavedQuery.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDescription = this.getAtt('Description');
+        this.attrExpression = this.getAtt('Expression');
+        this.attrSavedQueryId = this.getAtt('SavedQueryId');
+        this.attrSavedQueryName = this.getAtt('SavedQueryName');
+        this.attrUpdateTime = this.getAtt('UpdateTime');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.expression = props.expression;
+        this.savedQueryName = props.savedQueryName;
+        this.description = props.description;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            expression: this.expression,
+            savedQueryName: this.savedQueryName,
+            description: this.description,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSavedQueryPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosSharedTarget`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-sharedtarget
+ */
+export interface RosSharedTargetProps {
+
+    /**
+     * @Property resourceShareId: The ID of the resource share.
+     */
+    readonly resourceShareId: string | ros.IResolvable;
+
+    /**
+     * @Property targetId: The ID of the principal.
+     */
+    readonly targetId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSharedTargetProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSharedTargetProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSharedTargetPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('resourceShareId', ros.requiredValidator)(properties.resourceShareId));
+    errors.collect(ros.propertyValidator('resourceShareId', ros.validateString)(properties.resourceShareId));
+    errors.collect(ros.propertyValidator('targetId', ros.validateString)(properties.targetId));
+    return errors.wrap('supplied properties not correct for "RosSharedTargetProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::SharedTarget` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSharedTargetProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::SharedTarget` resource.
+ */
+// @ts-ignore TS6133
+function rosSharedTargetPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSharedTargetPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ResourceShareId': ros.stringToRosTemplate(properties.resourceShareId),
+      'TargetId': ros.stringToRosTemplate(properties.targetId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::SharedTarget`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SharedTarget` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-sharedtarget
+ */
+export class RosSharedTarget extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ResourceManager::SharedTarget";
+
+    /**
+     * @Attribute CreateTime: Create time of the resource share.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceShareId: The ID of the resource share.
+     */
+    public readonly attrResourceShareId: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceShareName: The name of the resource share.
+     */
+    public readonly attrResourceShareName: ros.IResolvable;
+
+    /**
+     * @Attribute TargetId: The ID of the principal.
+     */
+    public readonly attrTargetId: ros.IResolvable;
+
+    /**
+     * @Attribute UpdateTime: Update time of the resource share.
+     */
+    public readonly attrUpdateTime: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property resourceShareId: The ID of the resource share.
+     */
+    public resourceShareId: string | ros.IResolvable;
+
+    /**
+     * @Property targetId: The ID of the principal.
+     */
+    public targetId: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSharedTargetProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSharedTarget.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrResourceShareId = this.getAtt('ResourceShareId');
+        this.attrResourceShareName = this.getAtt('ResourceShareName');
+        this.attrTargetId = this.getAtt('TargetId');
+        this.attrUpdateTime = this.getAtt('UpdateTime');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.resourceShareId = props.resourceShareId;
+        this.targetId = props.targetId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            resourceShareId: this.resourceShareId,
+            targetId: this.targetId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSharedTargetPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
 }

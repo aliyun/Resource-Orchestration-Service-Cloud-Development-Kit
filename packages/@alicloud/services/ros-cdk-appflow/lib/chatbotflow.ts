@@ -42,7 +42,7 @@ export interface IChatbotFlow extends ros.IResource {
     readonly attrChatbotFlowId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::AppFlow::ChatbotFlow`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::AppFlow::ChatbotFlow`The , which type is used to create a chatbot flow.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosChatbotFlow`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-appflow-chatbotflow
  */

@@ -60,10 +60,22 @@ type DBClusterProps struct {
 	// C32: 100 to 8000
 	// Note The storage space less than 1,000 GB increases in increments of 100 GB. The storage space greater than 1,000 GB increases in increments of 1,000 GB.
 	DbNodeStorage interface{} `field:"optional" json:"dbNodeStorage" yaml:"dbNodeStorage"`
+	// Property diskEncryption: Whether to enable cloud disk encryption. Value:.
+	//
+	// - true: yes.
+	// - false: no.
+	DiskEncryption interface{} `field:"optional" json:"diskEncryption" yaml:"diskEncryption"`
 	// Property elasticIoResource: Elastic IO Unit Note the flexible mode cluster will use this parameter.
 	ElasticIoResource interface{} `field:"optional" json:"elasticIoResource" yaml:"elasticIoResource"`
+	// Property enableSsl: Whether to enable SSL link encryption function, value:.
+	//
+	// - **true**: open.
+	// - **false**: close.
+	EnableSsl interface{} `field:"optional" json:"enableSsl" yaml:"enableSsl"`
 	// Property executorCount: ExecutorCount.
 	ExecutorCount interface{} `field:"optional" json:"executorCount" yaml:"executorCount"`
+	// Property kmsId: The kmsId used for cloud disk encryption, effective only when DiskEncryption is true.
+	KmsId interface{} `field:"optional" json:"kmsId" yaml:"kmsId"`
 	// Property period: Valid values when the Period parameter is set to Month: 1, 2, 3, 4, 5, 6, 7, 8, and 9.
 	//
 	// Valid values when the Period parameter is set to Year: 1, 2, and 3.

@@ -1,3 +1,5 @@
+@alicloud/ros-cdk-apigateway.AccessControl=com.aliyun.ros.cdk.apigateway.AccessControl
+@alicloud/ros-cdk-apigateway.AccessControlProps=com.aliyun.ros.cdk.apigateway.AccessControlProps
 @alicloud/ros-cdk-apigateway.Api=com.aliyun.ros.cdk.apigateway.Api
 @alicloud/ros-cdk-apigateway.ApiProps=com.aliyun.ros.cdk.apigateway.ApiProps
 @alicloud/ros-cdk-apigateway.App=com.aliyun.ros.cdk.apigateway.App
@@ -12,6 +14,7 @@
 @alicloud/ros-cdk-apigateway.DeploymentProps=com.aliyun.ros.cdk.apigateway.DeploymentProps
 @alicloud/ros-cdk-apigateway.Group=com.aliyun.ros.cdk.apigateway.Group
 @alicloud/ros-cdk-apigateway.GroupProps=com.aliyun.ros.cdk.apigateway.GroupProps
+@alicloud/ros-cdk-apigateway.IAccessControl=com.aliyun.ros.cdk.apigateway.IAccessControl
 @alicloud/ros-cdk-apigateway.IApi=com.aliyun.ros.cdk.apigateway.IApi
 @alicloud/ros-cdk-apigateway.IApp=com.aliyun.ros.cdk.apigateway.IApp
 @alicloud/ros-cdk-apigateway.IAuthorization=com.aliyun.ros.cdk.apigateway.IAuthorization
@@ -37,6 +40,9 @@
 @alicloud/ros-cdk-apigateway.PluginAttachment=com.aliyun.ros.cdk.apigateway.PluginAttachment
 @alicloud/ros-cdk-apigateway.PluginAttachmentProps=com.aliyun.ros.cdk.apigateway.PluginAttachmentProps
 @alicloud/ros-cdk-apigateway.PluginProps=com.aliyun.ros.cdk.apigateway.PluginProps
+@alicloud/ros-cdk-apigateway.RosAccessControl=com.aliyun.ros.cdk.apigateway.RosAccessControl
+@alicloud/ros-cdk-apigateway.RosAccessControl.AclEntrysProperty=com.aliyun.ros.cdk.apigateway.RosAccessControl$AclEntrysProperty
+@alicloud/ros-cdk-apigateway.RosAccessControlProps=com.aliyun.ros.cdk.apigateway.RosAccessControlProps
 @alicloud/ros-cdk-apigateway.RosApi=com.aliyun.ros.cdk.apigateway.RosApi
 @alicloud/ros-cdk-apigateway.RosApi.ConstParametersProperty=com.aliyun.ros.cdk.apigateway.RosApi$ConstParametersProperty
 @alicloud/ros-cdk-apigateway.RosApi.ErrorCodeSamplesProperty=com.aliyun.ros.cdk.apigateway.RosApi$ErrorCodeSamplesProperty

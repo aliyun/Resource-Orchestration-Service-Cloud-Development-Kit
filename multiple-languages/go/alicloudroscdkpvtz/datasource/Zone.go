@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::PVTZ::Zone`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::PVTZ::Zone`, which is used to query the information about a built-in authoritative zone.
 type Zone interface {
 	alicloudroscdkcore.Resource
 	IZone

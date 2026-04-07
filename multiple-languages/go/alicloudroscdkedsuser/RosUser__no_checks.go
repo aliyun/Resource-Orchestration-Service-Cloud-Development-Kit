@@ -84,6 +84,14 @@ func validateRosUser_IsRosResourceParameters(construct alicloudroscdkcore.IConst
 	return nil
 }
 
+func (j *jsiiProxy_RosUser) validateSetAutoLockTimeParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosUser) validateSetBusinessChannelParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosUser) validateSetEmailParameters(val interface{}) error {
 	return nil
 }
@@ -93,6 +101,10 @@ func (j *jsiiProxy_RosUser) validateSetEnableResourcePropertyConstraintParameter
 }
 
 func (j *jsiiProxy_RosUser) validateSetEndUserIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosUser) validateSetIsLocalAdminParameters(val interface{}) error {
 	return nil
 }
 
@@ -108,7 +120,15 @@ func (j *jsiiProxy_RosUser) validateSetPasswordParameters(val interface{}) error
 	return nil
 }
 
+func (j *jsiiProxy_RosUser) validateSetPasswordExpireDaysParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosUser) validateSetPhoneParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosUser) validateSetRealNickNameParameters(val interface{}) error {
 	return nil
 }
 

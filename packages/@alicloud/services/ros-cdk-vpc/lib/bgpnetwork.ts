@@ -19,6 +19,11 @@ export interface BgpNetworkProps {
      * Property routerId: The ID of the vRouter associated with the router interface.
      */
     readonly routerId: string | ros.IResolvable;
+
+    /**
+     * Property vpcId: The ID of the VPC.
+     */
+    readonly vpcId?: string | ros.IResolvable;
 }
 
 /**
@@ -74,6 +79,7 @@ to a data center.
 
         const rosBgpNetwork = new RosBgpNetwork(this, id,  {
             dstCidrBlock: props.dstCidrBlock,
+            vpcId: props.vpcId,
             routerId: props.routerId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosBgpNetwork;

@@ -18,6 +18,12 @@ type DBInstanceProps struct {
 	ZoneId interface{} `field:"required" json:"zoneId" yaml:"zoneId"`
 	// Property aiNodeSpecInfos: AI node spec infos.
 	AiNodeSpecInfos interface{} `field:"optional" json:"aiNodeSpecInfos" yaml:"aiNodeSpecInfos"`
+	// Property backupId: Backup set ID.
+	//
+	// You can call DescribeDataBackups to view the backup set IDs of all backup sets under the target instance.
+	BackupId interface{} `field:"optional" json:"backupId" yaml:"backupId"`
+	// Property cacheStorageSize: Cache storage size.
+	CacheStorageSize interface{} `field:"optional" json:"cacheStorageSize" yaml:"cacheStorageSize"`
 	// Property createSampleData: Whether to load the sample data set after the instance is created.
 	//
 	// The value can be:
@@ -44,6 +50,10 @@ type DBInstanceProps struct {
 	DbInstanceMode interface{} `field:"optional" json:"dbInstanceMode" yaml:"dbInstanceMode"`
 	// Property deployMode: The deployment mode of the instance.
 	DeployMode interface{} `field:"optional" json:"deployMode" yaml:"deployMode"`
+	// Property enableSsl: Whether to enable SSL encryption.
+	//
+	// Valid values: true: Enable SSL encryption. false (default): Do not enable SSL encryption.
+	EnableSsl interface{} `field:"optional" json:"enableSsl" yaml:"enableSsl"`
 	// Property encryptionKey: If the EncryptionType parameter is set to CloudDisk, you must specify this parameter to the encryption key that is in the same region with the disks that is specified by the EncryptionType parameter.
 	//
 	// Otherwise, leave this parameter empty.
@@ -66,6 +76,10 @@ type DBInstanceProps struct {
 	// - When DBInstanceCategory is Serverless, Valid values: 4C16G, 8C32G.
 	// This parameter must be passed to create a storage elastic mode instance and a serverless version instance.
 	InstanceSpec interface{} `field:"optional" json:"instanceSpec" yaml:"instanceSpec"`
+	// Property masterAiSpec: If you need to change the Master node to MasterAI node, specify this parameter.
+	//
+	// This parameter cannot be specified at the same time as MasterCU. Only some regions and availability zones support changing the Master node to MasterAI node. Only Basic edition instances of AnalyticDB PostgreSQL 7.0 support MasterAI nodes. You can query all possible values of this parameter on the Master node reconfiguration sales page.
+	MasterAiSpec interface{} `field:"optional" json:"masterAiSpec" yaml:"masterAiSpec"`
 	// Property masterCu: Master resources.
 	//
 	// Default is 8.
@@ -130,6 +144,10 @@ type DBInstanceProps struct {
 	// The value ranges from 8 to 32. The step length is 8.
 	// The unit is ACU. The default value is 32.
 	ServerlessResource interface{} `field:"optional" json:"serverlessResource" yaml:"serverlessResource"`
+	// Property srcDbInstanceName: Clone source instance ID.
+	//
+	// You can call the DescribeDBInstances interface to view the details of all AnalyticDB PostgreSQL instances in the target region, including the instance ID.
+	SrcDbInstanceName interface{} `field:"optional" json:"srcDbInstanceName" yaml:"srcDbInstanceName"`
 	// Property standbyVSwitchId: The standby VSwitch ID of the instance.
 	StandbyVSwitchId interface{} `field:"optional" json:"standbyVSwitchId" yaml:"standbyVSwitchId"`
 	// Property standbyZoneId: The standby zone ID of the instance.

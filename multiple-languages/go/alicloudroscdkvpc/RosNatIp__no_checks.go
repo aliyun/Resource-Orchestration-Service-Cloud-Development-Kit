@@ -88,6 +88,14 @@ func (j *jsiiProxy_RosNatIp) validateSetEnableResourcePropertyConstraintParamete
 	return nil
 }
 
+func (j *jsiiProxy_RosNatIp) validateSetIpv4PrefixParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosNatIp) validateSetIpv4PrefixCountParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosNatIp) validateSetNatGatewayIdParameters(val interface{}) error {
 	return nil
 }

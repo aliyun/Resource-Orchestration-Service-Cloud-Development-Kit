@@ -12,7 +12,10 @@ type RosTransitRouterPeerAttachmentProps struct {
 	CenBandwidthPackageId interface{} `field:"optional" json:"cenBandwidthPackageId" yaml:"cenBandwidthPackageId"`
 	CenId interface{} `field:"optional" json:"cenId" yaml:"cenId"`
 	DefaultLinkType interface{} `field:"optional" json:"defaultLinkType" yaml:"defaultLinkType"`
+	DeletionForce interface{} `field:"optional" json:"deletionForce" yaml:"deletionForce"`
 	PeerTransitRouterRegionId interface{} `field:"optional" json:"peerTransitRouterRegionId" yaml:"peerTransitRouterRegionId"`
+	RouteTableAssociationEnabled interface{} `field:"optional" json:"routeTableAssociationEnabled" yaml:"routeTableAssociationEnabled"`
+	RouteTablePropagationEnabled interface{} `field:"optional" json:"routeTablePropagationEnabled" yaml:"routeTablePropagationEnabled"`
 	Tags *[]*RosTransitRouterPeerAttachment_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 	TransitRouterAttachmentDescription interface{} `field:"optional" json:"transitRouterAttachmentDescription" yaml:"transitRouterAttachmentDescription"`
 	TransitRouterAttachmentName interface{} `field:"optional" json:"transitRouterAttachmentName" yaml:"transitRouterAttachmentName"`

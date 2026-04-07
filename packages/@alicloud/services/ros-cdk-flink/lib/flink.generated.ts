@@ -105,13 +105,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('bucket', ros.validateString)(properties.bucket));
     errors.collect(ros.propertyValidator('vSwitchIds', ros.requiredValidator)(properties.vSwitchIds));
     errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateAny))(properties.vSwitchIds));
-    if(properties.pricingCycle && (typeof properties.pricingCycle) !== 'object') {
-        errors.collect(ros.propertyValidator('pricingCycle', ros.validateAllowedValues)({
-          data: properties.pricingCycle,
-          allowedValues: ["Month","Year","month","year"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('pricingCycle', ros.validateString)(properties.pricingCycle));
     errors.collect(ros.propertyValidator('chargeType', ros.requiredValidator)(properties.chargeType));
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
@@ -120,6 +113,13 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
+    if(properties.pricingCycle && (typeof properties.pricingCycle) !== 'object') {
+        errors.collect(ros.propertyValidator('pricingCycle', ros.validateAllowedValues)({
+          data: properties.pricingCycle,
+          allowedValues: ["Month","Year","month","year"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('pricingCycle', ros.validateString)(properties.pricingCycle));
     errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     errors.collect(ros.propertyValidator('promotionCode', ros.validateString)(properties.promotionCode));
     errors.collect(ros.propertyValidator('resourceSpec', RosInstance_ResourceSpecPropertyValidator)(properties.resourceSpec));
@@ -164,7 +164,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::Instance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::Instance`, which is used to create a subscription or pay-as-you-go Realtime Compute for Apache Flink instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-instance
  */
@@ -393,6 +393,11 @@ export interface RosInstanceV2Props {
     readonly vSwitchIds: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * @Property architectureType: The architecture type, the value of the value is as follows: X86, ARM
+     */
+    readonly architectureType?: string | ros.IResolvable;
+
+    /**
      * @Property autoRenew: When the payment type is the monthly package, the value of the value is as follows:
      * true: Automatic renewal.
      * false: Manual renewal.
@@ -406,6 +411,22 @@ export interface RosInstanceV2Props {
      * If PricingCycle is year, the valid range is 1 to 3
      */
     readonly duration?: number | ros.IResolvable;
+
+    /**
+     * @Property haResourceSpec: HA resource specifications.
+     * When ChargeType is configured as PRE, the resource specification parameters must be filled.
+     */
+    readonly haResourceSpec?: RosInstanceV2.HaResourceSpecProperty | ros.IResolvable;
+
+    /**
+     * @Property haVSwitchIds: HA VSwitch IDs.
+     */
+    readonly haVSwitchIds?: Array<any | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property monitorType: The monitor type, the value of the value is as follows: TAIHAO, ARMS
+     */
+    readonly monitorType?: string | ros.IResolvable;
 
     /**
      * @Property pricingCycle: The ordering cycle only supports ordering in the year and month.
@@ -441,18 +462,21 @@ export interface RosInstanceV2Props {
 function RosInstanceV2PropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('instanceName', ros.requiredValidator)(properties.instanceName));
-    if(properties.instanceName && (typeof properties.instanceName) !== 'object') {
-        errors.collect(ros.propertyValidator('instanceName', ros.validateAllowedPattern)({
-          data: properties.instanceName,
-          reg: /^[a-z][a-z0-9-]{1,60}/
+    if(properties.architectureType && (typeof properties.architectureType) !== 'object') {
+        errors.collect(ros.propertyValidator('architectureType', ros.validateAllowedValues)({
+          data: properties.architectureType,
+          allowedValues: ["X86","ARM"],
         }));
     }
-    errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
-    errors.collect(ros.propertyValidator('storage', ros.requiredValidator)(properties.storage));
-    errors.collect(ros.propertyValidator('storage', RosInstanceV2_StoragePropertyValidator)(properties.storage));
-    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
-    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('architectureType', ros.validateString)(properties.architectureType));
+    if(properties.monitorType && (typeof properties.monitorType) !== 'object') {
+        errors.collect(ros.propertyValidator('monitorType', ros.validateAllowedValues)({
+          data: properties.monitorType,
+          allowedValues: ["TAIHAO","ARMS"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('monitorType', ros.validateString)(properties.monitorType));
+    errors.collect(ros.propertyValidator('haResourceSpec', RosInstanceV2_HaResourceSpecPropertyValidator)(properties.haResourceSpec));
     errors.collect(ros.propertyValidator('vSwitchIds', ros.requiredValidator)(properties.vSwitchIds));
     if(properties.vSwitchIds && (Array.isArray(properties.vSwitchIds) || (typeof properties.vSwitchIds) === 'string')) {
         errors.collect(ros.propertyValidator('vSwitchIds', ros.validateLength)({
@@ -469,14 +493,6 @@ function RosInstanceV2PropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('pricingCycle', ros.validateString)(properties.pricingCycle));
-    errors.collect(ros.propertyValidator('chargeType', ros.requiredValidator)(properties.chargeType));
-    if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
-        errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
-          data: properties.chargeType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
     errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     errors.collect(ros.propertyValidator('promotionCode', ros.validateString)(properties.promotionCode));
     errors.collect(ros.propertyValidator('resourceSpec', RosInstanceV2_ResourceSpecPropertyValidator)(properties.resourceSpec));
@@ -487,6 +503,27 @@ function RosInstanceV2PropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('duration', ros.validateNumber)(properties.duration));
+    errors.collect(ros.propertyValidator('haVSwitchIds', ros.listValidator(ros.validateAny))(properties.haVSwitchIds));
+    errors.collect(ros.propertyValidator('instanceName', ros.requiredValidator)(properties.instanceName));
+    if(properties.instanceName && (typeof properties.instanceName) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceName', ros.validateAllowedPattern)({
+          data: properties.instanceName,
+          reg: /^[a-z][a-z0-9-]{1,60}/
+        }));
+    }
+    errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    errors.collect(ros.propertyValidator('storage', ros.requiredValidator)(properties.storage));
+    errors.collect(ros.propertyValidator('storage', RosInstanceV2_StoragePropertyValidator)(properties.storage));
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('chargeType', ros.requiredValidator)(properties.chargeType));
+    if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
+          data: properties.chargeType,
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
     errors.collect(ros.propertyValidator('usePromotionCode', ros.validateBoolean)(properties.usePromotionCode));
     return errors.wrap('supplied properties not correct for "RosInstanceV2Props"');
 }
@@ -510,8 +547,12 @@ function rosInstanceV2PropsToRosTemplate(properties: any, enableResourceProperty
       'Storage': rosInstanceV2StoragePropertyToRosTemplate(properties.storage),
       'VpcId': ros.stringToRosTemplate(properties.vpcId),
       'VSwitchIds': ros.listMapper(ros.objectToRosTemplate)(properties.vSwitchIds),
+      'ArchitectureType': ros.stringToRosTemplate(properties.architectureType),
       'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
       'Duration': ros.numberToRosTemplate(properties.duration),
+      'HaResourceSpec': rosInstanceV2HaResourceSpecPropertyToRosTemplate(properties.haResourceSpec),
+      'HaVSwitchIds': ros.listMapper(ros.objectToRosTemplate)(properties.haVSwitchIds),
+      'MonitorType': ros.stringToRosTemplate(properties.monitorType),
       'PricingCycle': ros.stringToRosTemplate(properties.pricingCycle),
       'PromotionCode': ros.stringToRosTemplate(properties.promotionCode),
       'ResourceSpec': rosInstanceV2ResourceSpecPropertyToRosTemplate(properties.resourceSpec),
@@ -520,7 +561,7 @@ function rosInstanceV2PropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::InstanceV2`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::InstanceV2`The , which resource creates a fully managed Flink workspace.
  * @Note This class does not contain additional functions, so it is recommended to use the `InstanceV2` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-instancev2
  */
@@ -577,6 +618,11 @@ export class RosInstanceV2 extends ros.RosResource {
     public vSwitchIds: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * @Property architectureType: The architecture type, the value of the value is as follows: X86, ARM
+     */
+    public architectureType: string | ros.IResolvable | undefined;
+
+    /**
      * @Property autoRenew: When the payment type is the monthly package, the value of the value is as follows:
      * true: Automatic renewal.
      * false: Manual renewal.
@@ -590,6 +636,22 @@ export class RosInstanceV2 extends ros.RosResource {
      * If PricingCycle is year, the valid range is 1 to 3
      */
     public duration: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property haResourceSpec: HA resource specifications.
+     * When ChargeType is configured as PRE, the resource specification parameters must be filled.
+     */
+    public haResourceSpec: RosInstanceV2.HaResourceSpecProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property haVSwitchIds: HA VSwitch IDs.
+     */
+    public haVSwitchIds: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property monitorType: The monitor type, the value of the value is as follows: TAIHAO, ARMS
+     */
+    public monitorType: string | ros.IResolvable | undefined;
 
     /**
      * @Property pricingCycle: The ordering cycle only supports ordering in the year and month.
@@ -631,8 +693,12 @@ export class RosInstanceV2 extends ros.RosResource {
         this.storage = props.storage;
         this.vpcId = props.vpcId;
         this.vSwitchIds = props.vSwitchIds;
+        this.architectureType = props.architectureType;
         this.autoRenew = props.autoRenew;
         this.duration = props.duration;
+        this.haResourceSpec = props.haResourceSpec;
+        this.haVSwitchIds = props.haVSwitchIds;
+        this.monitorType = props.monitorType;
         this.pricingCycle = props.pricingCycle;
         this.promotionCode = props.promotionCode;
         this.resourceSpec = props.resourceSpec;
@@ -647,8 +713,12 @@ export class RosInstanceV2 extends ros.RosResource {
             storage: this.storage,
             vpcId: this.vpcId,
             vSwitchIds: this.vSwitchIds,
+            architectureType: this.architectureType,
             autoRenew: this.autoRenew,
             duration: this.duration,
+            haResourceSpec: this.haResourceSpec,
+            haVSwitchIds: this.haVSwitchIds,
+            monitorType: this.monitorType,
             pricingCycle: this.pricingCycle,
             promotionCode: this.promotionCode,
             resourceSpec: this.resourceSpec,
@@ -658,6 +728,54 @@ export class RosInstanceV2 extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosInstanceV2PropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosInstanceV2 {
+    /**
+     * @stability external
+     */
+    export interface HaResourceSpecProperty {
+        /**
+         * @Property cpu: CPU number.
+         */
+        readonly cpu?: number | ros.IResolvable;
+        /**
+         * @Property memoryGb: memory size.The unit is GB.
+     * It shows that the amount of memory must be 4 times the number of CPUs.
+         */
+        readonly memoryGb?: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `HaResourceSpecProperty`
+ *
+ * @param properties - the TypeScript properties of a `HaResourceSpecProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstanceV2_HaResourceSpecPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('cpu', ros.validateNumber)(properties.cpu));
+    errors.collect(ros.propertyValidator('memoryGb', ros.validateNumber)(properties.memoryGb));
+    return errors.wrap('supplied properties not correct for "HaResourceSpecProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::Flink::InstanceV2.HaResourceSpec` resource
+ *
+ * @param properties - the TypeScript properties of a `HaResourceSpecProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::Flink::InstanceV2.HaResourceSpec` resource.
+ */
+// @ts-ignore TS6133
+function rosInstanceV2HaResourceSpecPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosInstanceV2_HaResourceSpecPropertyValidator(properties).assertSuccess();
+    return {
+      'Cpu': ros.numberToRosTemplate(properties.cpu),
+      'MemoryGB': ros.numberToRosTemplate(properties.memoryGb),
+    };
 }
 
 export namespace RosInstanceV2 {
@@ -887,7 +1005,7 @@ function rosMemberPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::Member`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::Member`, which is used to grants authorization to a member.
  * @Note This class does not contain additional functions, so it is recommended to use the `Member` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-member
  */
@@ -1022,7 +1140,7 @@ function rosNamespacePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::Namespace`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::Namespace`, which is used to create a project.
  * @Note This class does not contain additional functions, so it is recommended to use the `Namespace` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-namespace
  */
@@ -1207,7 +1325,7 @@ function rosNamespaceV2PropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::NamespaceV2`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::NamespaceV2`The , which resource creates a project.
  * @Note This class does not contain additional functions, so it is recommended to use the `NamespaceV2` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-namespacev2
  */

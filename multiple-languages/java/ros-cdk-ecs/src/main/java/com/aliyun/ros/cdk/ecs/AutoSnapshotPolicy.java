@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::AutoSnapshotPolicy</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::AutoSnapshotPolicy</code>, which is used to create an automatic snapshot policy.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:55.120Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:24.485Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.AutoSnapshotPolicy")
 public class AutoSnapshotPolicy extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.IAutoSnapshotPolicy {
 

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cms;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::GroupMetricRule</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::GroupMetricRule</code>The , which resource creates an alert rule for an application group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.681Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:23.033Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.GroupMetricRule")
 public class GroupMetricRule extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cms.IGroupMetricRule {
 
@@ -349,6 +349,27 @@ public class GroupMetricRule extends com.aliyun.ros.cdk.core.Resource implements
         }
 
         /**
+         * Property contactGroups: The alert contact groups.
+         * <p>
+         * @return {@code this}
+         * @param contactGroups Property contactGroups: The alert contact groups. This parameter is required.
+         */
+        public Builder contactGroups(final com.aliyun.ros.cdk.core.IResolvable contactGroups) {
+            this.props.contactGroups(contactGroups);
+            return this;
+        }
+        /**
+         * Property contactGroups: The alert contact groups.
+         * <p>
+         * @return {@code this}
+         * @param contactGroups Property contactGroups: The alert contact groups. This parameter is required.
+         */
+        public Builder contactGroups(final java.util.List<? extends java.lang.Object> contactGroups) {
+            this.props.contactGroups(contactGroups);
+            return this;
+        }
+
+        /**
          * Property dimensions: The expended resource dimensions.
          * <p>
          * @return {@code this}
@@ -412,6 +433,35 @@ public class GroupMetricRule extends com.aliyun.ros.cdk.core.Resource implements
         }
 
         /**
+         * Property extraDimensionJson: The secondary or tertiary dimensions of the alert rule in the application group.
+         * <p>
+         * Format: a collection of key:value pairs, for example, <code>port:80</code> or <code>\/dev\/xvda:d-m5e6yphgzn3aprwu****</code>.
+         * <p>
+         * When the first-level dimension of the alert rule is <code>{"instanceId":"i-m5e1qg6uo38rztr4****"}</code>, its secondary dimension is the disk <code>{"\/dev\/xvda":"d-m5e6yphgzn3aprwu****"}</code>.
+         * <p>
+         * @return {@code this}
+         * @param extraDimensionJson Property extraDimensionJson: The secondary or tertiary dimensions of the alert rule in the application group. This parameter is required.
+         */
+        public Builder extraDimensionJson(final com.aliyun.ros.cdk.core.IResolvable extraDimensionJson) {
+            this.props.extraDimensionJson(extraDimensionJson);
+            return this;
+        }
+        /**
+         * Property extraDimensionJson: The secondary or tertiary dimensions of the alert rule in the application group.
+         * <p>
+         * Format: a collection of key:value pairs, for example, <code>port:80</code> or <code>\/dev\/xvda:d-m5e6yphgzn3aprwu****</code>.
+         * <p>
+         * When the first-level dimension of the alert rule is <code>{"instanceId":"i-m5e1qg6uo38rztr4****"}</code>, its secondary dimension is the disk <code>{"\/dev\/xvda":"d-m5e6yphgzn3aprwu****"}</code>.
+         * <p>
+         * @return {@code this}
+         * @param extraDimensionJson Property extraDimensionJson: The secondary or tertiary dimensions of the alert rule in the application group. This parameter is required.
+         */
+        public Builder extraDimensionJson(final java.util.Map<java.lang.String, ? extends java.lang.Object> extraDimensionJson) {
+            this.props.extraDimensionJson(extraDimensionJson);
+            return this;
+        }
+
+        /**
          * Property interval: The detection period of alerts.
          * <p>
          * @return {@code this}
@@ -433,6 +483,43 @@ public class GroupMetricRule extends com.aliyun.ros.cdk.core.Resource implements
         }
 
         /**
+         * Property noDataPolicy: The handling method when there is no monitoring data.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>KEEP_LAST_STATE (default): No action is taken.</li>
+         * <li>INSUFFICIENT_DATA: Alert content is "No Data".</li>
+         * <li>OK: Normal.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param noDataPolicy Property noDataPolicy: The handling method when there is no monitoring data. This parameter is required.
+         */
+        public Builder noDataPolicy(final java.lang.String noDataPolicy) {
+            this.props.noDataPolicy(noDataPolicy);
+            return this;
+        }
+        /**
+         * Property noDataPolicy: The handling method when there is no monitoring data.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>KEEP_LAST_STATE (default): No action is taken.</li>
+         * <li>INSUFFICIENT_DATA: Alert content is "No Data".</li>
+         * <li>OK: Normal.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param noDataPolicy Property noDataPolicy: The handling method when there is no monitoring data. This parameter is required.
+         */
+        public Builder noDataPolicy(final com.aliyun.ros.cdk.core.IResolvable noDataPolicy) {
+            this.props.noDataPolicy(noDataPolicy);
+            return this;
+        }
+
+        /**
          * Property noEffectiveInterval: The period when the alert rule is ineffective.
          * <p>
          * @return {@code this}
@@ -450,6 +537,31 @@ public class GroupMetricRule extends com.aliyun.ros.cdk.core.Resource implements
          */
         public Builder noEffectiveInterval(final com.aliyun.ros.cdk.core.IResolvable noEffectiveInterval) {
             this.props.noEffectiveInterval(noEffectiveInterval);
+            return this;
+        }
+
+        /**
+         * Property options: The advanced settings.
+         * <p>
+         * Format: <code>{"key1":"value1","key2":"value2"}</code>, for example, <code>{"NotSendOK":true}</code>, indicating whether to send alert recovery notifications. The key is <code>NotSendOK</code>, and the value is <code>true</code> (do not send) or <code>false</code> (send by default).
+         * <p>
+         * @return {@code this}
+         * @param options Property options: The advanced settings. This parameter is required.
+         */
+        public Builder options(final java.lang.String options) {
+            this.props.options(options);
+            return this;
+        }
+        /**
+         * Property options: The advanced settings.
+         * <p>
+         * Format: <code>{"key1":"value1","key2":"value2"}</code>, for example, <code>{"NotSendOK":true}</code>, indicating whether to send alert recovery notifications. The key is <code>NotSendOK</code>, and the value is <code>true</code> (do not send) or <code>false</code> (send by default).
+         * <p>
+         * @return {@code this}
+         * @param options Property options: The advanced settings. This parameter is required.
+         */
+        public Builder options(final com.aliyun.ros.cdk.core.IResolvable options) {
+            this.props.options(options);
             return this;
         }
 

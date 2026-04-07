@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Paidatasetacc
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::PAIDatasetAcc::Endpoint`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::PAIDatasetAcc::Endpoint`, which is used to create and register a mount target for a slot in Dataset Accelerator of Platform for AI (PAI).</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEndpoint`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidatasetacc-endpoint

@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cen
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterVpcAttachment`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterVpcAttachment`, which is used to create a virtual private cloud (VPC) connection on an Enterprise Edition transit router.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTransitRouterVpcAttachment`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervpcattachment
@@ -37,63 +37,56 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         {
         }
 
-        /// <summary>Attribute CenId: CenId.</summary>
+        /// <summary>Attribute CenId: CEN ID.</summary>
         [JsiiProperty(name: "attrCenId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrCenId
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute ClientToken: ClientToken.</summary>
-        [JsiiProperty(name: "attrClientToken", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        public virtual object AttrClientToken
-        {
-            get => GetInstanceProperty<object>()!;
-        }
-
-        /// <summary>Attribute ResourceType: ResourceType.</summary>
+        /// <summary>Attribute ResourceType: Resource Type.</summary>
         [JsiiProperty(name: "attrResourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrResourceType
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute TransitRouterAttachmentDescription: TransitRouterAttachmentDescription.</summary>
+        /// <summary>Attribute TransitRouterAttachmentDescription: Attachment Description.</summary>
         [JsiiProperty(name: "attrTransitRouterAttachmentDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrTransitRouterAttachmentDescription
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute TransitRouterAttachmentId: The first ID of the resource.</summary>
+        /// <summary>Attribute TransitRouterAttachmentId: The ID of the transit router VPC attachment.</summary>
         [JsiiProperty(name: "attrTransitRouterAttachmentId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrTransitRouterAttachmentId
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute TransitRouterAttachmentName: TransitRouterAttachmentName.</summary>
+        /// <summary>Attribute TransitRouterAttachmentName: Attachment Name.</summary>
         [JsiiProperty(name: "attrTransitRouterAttachmentName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrTransitRouterAttachmentName
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute TransitRouterId: TransitRouterId.</summary>
+        /// <summary>Attribute TransitRouterId: Transit Router ID.</summary>
         [JsiiProperty(name: "attrTransitRouterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrTransitRouterId
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute VpcId: VpcId.</summary>
+        /// <summary>Attribute VpcId: VPC ID.</summary>
         [JsiiProperty(name: "attrVpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrVpcId
         {
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute VpcOwnerId: VpcOwnerId.</summary>
+        /// <summary>Attribute VpcOwnerId: VPC Owner ID.</summary>
         [JsiiProperty(name: "attrVpcOwnerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrVpcOwnerId
         {

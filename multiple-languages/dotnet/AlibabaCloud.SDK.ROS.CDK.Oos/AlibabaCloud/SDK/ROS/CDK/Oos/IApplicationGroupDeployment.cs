@@ -8,6 +8,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
     [JsiiInterface(nativeType: typeof(IApplicationGroupDeployment), fullyQualifiedName: "@alicloud/ros-cdk-oos.IApplicationGroupDeployment")]
     public interface IApplicationGroupDeployment : AlibabaCloud.SDK.ROS.CDK.Core.IResource
     {
+        /// <summary>Attribute ApplicationName: The name of the application.</summary>
+        [JsiiProperty(name: "attrApplicationName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrApplicationName
+        {
+            get;
+        }
+
+        /// <summary>Attribute ExecutionId: The execution ID of the application group deployment.</summary>
+        [JsiiProperty(name: "attrExecutionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrExecutionId
+        {
+            get;
+        }
+
+        /// <summary>Attribute Name: The name of the application group.</summary>
+        [JsiiProperty(name: "attrName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrName
+        {
+            get;
+        }
+
         [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-oos.ApplicationGroupDeploymentProps\"}")]
         AlibabaCloud.SDK.ROS.CDK.Oos.IApplicationGroupDeploymentProps Props
         {
@@ -20,6 +41,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         {
             private _Proxy(ByRefValue reference): base(reference)
             {
+            }
+
+            /// <summary>Attribute ApplicationName: The name of the application.</summary>
+            [JsiiProperty(name: "attrApplicationName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrApplicationName
+            {
+                get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Attribute ExecutionId: The execution ID of the application group deployment.</summary>
+            [JsiiProperty(name: "attrExecutionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrExecutionId
+            {
+                get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Attribute Name: The name of the application group.</summary>
+            [JsiiProperty(name: "attrName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrName
+            {
+                get => GetInstanceProperty<object>()!;
             }
 
             [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-oos.ApplicationGroupDeploymentProps\"}")]

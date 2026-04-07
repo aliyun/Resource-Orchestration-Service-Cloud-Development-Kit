@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::Database`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::Database`, which is used to create a database in a PolarDB cluster.
 type Database interface {
 	alicloudroscdkcore.Resource
 	IDatabase

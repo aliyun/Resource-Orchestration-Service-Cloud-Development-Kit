@@ -70,7 +70,7 @@ export interface ITable extends ros.IResource {
     readonly attrProject: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::MaxCompute::Table`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MaxCompute::Table`, which is used to create a table.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTable`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-maxcompute-table
  */
@@ -103,11 +103,11 @@ export class Table extends ros.Resource implements ITable {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosTable = new RosTable(this, id,  {
-            comment: props.comment,
             project: props.project,
+            comment: props.comment,
             ifNotExists: props.ifNotExists,
-            lifecycle: props.lifecycle,
             schema: props.schema,
+            lifecycle: props.lifecycle,
             stringSchema: props.stringSchema,
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

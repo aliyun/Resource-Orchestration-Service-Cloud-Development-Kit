@@ -128,7 +128,7 @@ export interface IEIPPro extends ros.IResource {
     readonly attrOrderId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::EIPPro`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::EIPPro`, which is used to create an elastic IP address (EIP).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEIPPro`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eippro
  */
@@ -174,13 +174,13 @@ export class EIPPro extends ros.Resource implements IEIPPro {
             description: props.description,
             resourceGroupId: props.resourceGroupId,
             instanceId: props.instanceId,
-            instanceChargeType: props.instanceChargeType === undefined || props.instanceChargeType === null ? 'Postpaid' : props.instanceChargeType,
             pricingCycle: props.pricingCycle === undefined || props.pricingCycle === null ? 'Month' : props.pricingCycle,
+            instanceChargeType: props.instanceChargeType === undefined || props.instanceChargeType === null ? 'Postpaid' : props.instanceChargeType,
             isp: props.isp,
             period: props.period === undefined || props.period === null ? 1 : props.period,
             publicIpAddressPoolId: props.publicIpAddressPoolId,
-            deletionProtection: props.deletionProtection === undefined || props.deletionProtection === null ? false : props.deletionProtection,
             autoPay: props.autoPay === undefined || props.autoPay === null ? true : props.autoPay,
+            deletionProtection: props.deletionProtection === undefined || props.deletionProtection === null ? false : props.deletionProtection,
             name: props.name,
             internetChargeType: props.internetChargeType === undefined || props.internetChargeType === null ? 'PayByBandwidth' : props.internetChargeType,
             netmode: props.netmode,

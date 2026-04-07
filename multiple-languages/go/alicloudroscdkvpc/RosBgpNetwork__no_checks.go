@@ -96,6 +96,10 @@ func (j *jsiiProxy_RosBgpNetwork) validateSetRouterIdParameters(val interface{})
 	return nil
 }
 
+func (j *jsiiProxy_RosBgpNetwork) validateSetVpcIdParameters(val interface{}) error {
+	return nil
+}
+
 func validateNewRosBgpNetworkParameters(scope alicloudroscdkcore.Construct, id *string, props *RosBgpNetworkProps, enableResourcePropertyConstraint *bool) error {
 	return nil
 }

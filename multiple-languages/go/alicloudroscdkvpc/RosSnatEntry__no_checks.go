@@ -92,6 +92,10 @@ func (j *jsiiProxy_RosSnatEntry) validateSetEnableResourcePropertyConstraintPara
 	return nil
 }
 
+func (j *jsiiProxy_RosSnatEntry) validateSetNetworkInterfaceIdParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosSnatEntry) validateSetSnatEntryNameParameters(val interface{}) error {
 	return nil
 }

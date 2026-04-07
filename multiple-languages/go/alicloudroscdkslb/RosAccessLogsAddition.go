@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::AccessLogsAddition`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::AccessLogsAddition`, which is used to configure an access log forwarding rule for a Classic Load Balancer (CLB) instance.
 type RosAccessLogsAddition interface {
 	alicloudroscdkcore.RosResource
 	// Returns: the stack trace of the point where this Resource was created from, sourced

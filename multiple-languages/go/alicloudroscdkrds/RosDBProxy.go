@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBProxy`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBProxy`, which is used to enable the database proxy feature for an ApsaraDB RDS instance.
 type RosDBProxy interface {
 	alicloudroscdkcore.RosResource
 	// Returns: the stack trace of the point where this Resource was created from, sourced

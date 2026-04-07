@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::NLB::SecurityGroupAttachment`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::NLB::SecurityGroupAttachment`, which is used to bind a security group to a Network Load Balancer (NLB) instance.
 type SecurityGroupAttachment interface {
 	alicloudroscdkcore.Resource
 	ISecurityGroupAttachment

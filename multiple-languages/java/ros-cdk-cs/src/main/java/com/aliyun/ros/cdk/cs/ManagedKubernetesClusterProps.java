@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managedkubernetescluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.096Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:23.438Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ManagedKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(ManagedKubernetesClusterProps.Jsii$Proxy.class)
 public interface ManagedKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -35,6 +35,13 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
      * Ingress: The installation of the Ingress component is enabled by default.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAddons() {
+        return null;
+    }
+
+    /**
+     * Property autoMode: Whether to enable auto scaling.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoMode() {
         return null;
     }
 
@@ -69,7 +76,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
     /**
      * Property controlPlaneLogComponents: List of target components for which logs need to be collected.
      * <p>
-     * Supports apiserver, kcm, scheduler, ccm and controlplane-events.
+     * Supports apiserver, kcm, scheduler, ccm, controlplane-events, ack-goatscaler, coredns, cluster-autoscaler, kuberay-operator, gatekepper, vk, istio, cluster-operator, application-controller.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getControlPlaneLogComponents() {
         return null;
@@ -443,6 +450,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         java.lang.Object vpcId;
         java.lang.Object vSwitchIds;
         java.lang.Object addons;
+        java.lang.Object autoMode;
         java.lang.Object cloudMonitorFlags;
         java.lang.Object clusterSpec;
         java.lang.Object containerCidr;
@@ -573,6 +581,26 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         }
 
         /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getAutoMode}
+         * @param autoMode Property autoMode: Whether to enable auto scaling.
+         * @return {@code this}
+         */
+        public Builder autoMode(com.aliyun.ros.cdk.core.IResolvable autoMode) {
+            this.autoMode = autoMode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getAutoMode}
+         * @param autoMode Property autoMode: Whether to enable auto scaling.
+         * @return {@code this}
+         */
+        public Builder autoMode(com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.AutoModeProperty autoMode) {
+            this.autoMode = autoMode;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ManagedKubernetesClusterProps#getCloudMonitorFlags}
          * @param cloudMonitorFlags Property cloudMonitorFlags: Whether to install the cloud monitoring plugin: true: indicates installation false: Do not install Default to false.
          * @return {@code this}
@@ -645,7 +673,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         /**
          * Sets the value of {@link ManagedKubernetesClusterProps#getControlPlaneLogComponents}
          * @param controlPlaneLogComponents Property controlPlaneLogComponents: List of target components for which logs need to be collected.
-         *                                  Supports apiserver, kcm, scheduler, ccm and controlplane-events.
+         *                                  Supports apiserver, kcm, scheduler, ccm, controlplane-events, ack-goatscaler, coredns, cluster-autoscaler, kuberay-operator, gatekepper, vk, istio, cluster-operator, application-controller.
          * @return {@code this}
          */
         public Builder controlPlaneLogComponents(com.aliyun.ros.cdk.core.IResolvable controlPlaneLogComponents) {
@@ -656,7 +684,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         /**
          * Sets the value of {@link ManagedKubernetesClusterProps#getControlPlaneLogComponents}
          * @param controlPlaneLogComponents Property controlPlaneLogComponents: List of target components for which logs need to be collected.
-         *                                  Supports apiserver, kcm, scheduler, ccm and controlplane-events.
+         *                                  Supports apiserver, kcm, scheduler, ccm, controlplane-events, ack-goatscaler, coredns, cluster-autoscaler, kuberay-operator, gatekepper, vk, istio, cluster-operator, application-controller.
          * @return {@code this}
          */
         public Builder controlPlaneLogComponents(java.util.List<? extends java.lang.Object> controlPlaneLogComponents) {
@@ -1547,6 +1575,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         private final java.lang.Object vpcId;
         private final java.lang.Object vSwitchIds;
         private final java.lang.Object addons;
+        private final java.lang.Object autoMode;
         private final java.lang.Object cloudMonitorFlags;
         private final java.lang.Object clusterSpec;
         private final java.lang.Object containerCidr;
@@ -1598,6 +1627,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchIds = software.amazon.jsii.Kernel.get(this, "vSwitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.addons = software.amazon.jsii.Kernel.get(this, "addons", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoMode = software.amazon.jsii.Kernel.get(this, "autoMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.cloudMonitorFlags = software.amazon.jsii.Kernel.get(this, "cloudMonitorFlags", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.clusterSpec = software.amazon.jsii.Kernel.get(this, "clusterSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.containerCidr = software.amazon.jsii.Kernel.get(this, "containerCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1650,6 +1680,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
             this.vSwitchIds = java.util.Objects.requireNonNull(builder.vSwitchIds, "vSwitchIds is required");
             this.addons = builder.addons;
+            this.autoMode = builder.autoMode;
             this.cloudMonitorFlags = builder.cloudMonitorFlags;
             this.clusterSpec = builder.clusterSpec;
             this.containerCidr = builder.containerCidr;
@@ -1710,6 +1741,11 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         @Override
         public final java.lang.Object getAddons() {
             return this.addons;
+        }
+
+        @Override
+        public final java.lang.Object getAutoMode() {
+            return this.autoMode;
         }
 
         @Override
@@ -1924,6 +1960,9 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             if (this.getAddons() != null) {
                 data.set("addons", om.valueToTree(this.getAddons()));
             }
+            if (this.getAutoMode() != null) {
+                data.set("autoMode", om.valueToTree(this.getAutoMode()));
+            }
             if (this.getCloudMonitorFlags() != null) {
                 data.set("cloudMonitorFlags", om.valueToTree(this.getCloudMonitorFlags()));
             }
@@ -2066,6 +2105,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             if (!vpcId.equals(that.vpcId)) return false;
             if (!vSwitchIds.equals(that.vSwitchIds)) return false;
             if (this.addons != null ? !this.addons.equals(that.addons) : that.addons != null) return false;
+            if (this.autoMode != null ? !this.autoMode.equals(that.autoMode) : that.autoMode != null) return false;
             if (this.cloudMonitorFlags != null ? !this.cloudMonitorFlags.equals(that.cloudMonitorFlags) : that.cloudMonitorFlags != null) return false;
             if (this.clusterSpec != null ? !this.clusterSpec.equals(that.clusterSpec) : that.clusterSpec != null) return false;
             if (this.containerCidr != null ? !this.containerCidr.equals(that.containerCidr) : that.containerCidr != null) return false;
@@ -2114,6 +2154,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             result = 31 * result + (this.vpcId.hashCode());
             result = 31 * result + (this.vSwitchIds.hashCode());
             result = 31 * result + (this.addons != null ? this.addons.hashCode() : 0);
+            result = 31 * result + (this.autoMode != null ? this.autoMode.hashCode() : 0);
             result = 31 * result + (this.cloudMonitorFlags != null ? this.cloudMonitorFlags.hashCode() : 0);
             result = 31 * result + (this.clusterSpec != null ? this.clusterSpec.hashCode() : 0);
             result = 31 * result + (this.containerCidr != null ? this.containerCidr.hashCode() : 0);

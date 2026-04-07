@@ -16,7 +16,7 @@ type IInstance interface {
 	AttrInstanceId() interface{}
 	// Attribute InstanceName: InstanceName.
 	AttrInstanceName() interface{}
-	// Attribute InstanceSpecification: InstanceSpecification.
+	// Attribute InstanceSpecification: The instance specification.
 	AttrInstanceSpecification() interface{}
 	// Attribute ModifiedTime: Last modification time.
 	AttrModifiedTime() interface{}

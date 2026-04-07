@@ -46,9 +46,9 @@ export interface RosPortProps {
 function RosPortPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('backendPort', ros.validateString)(properties.backendPort));
     errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('backendPort', ros.validateString)(properties.backendPort));
     errors.collect(ros.propertyValidator('realServers', ros.requiredValidator)(properties.realServers));
     if(properties.realServers && (Array.isArray(properties.realServers) || (typeof properties.realServers) === 'string')) {
         errors.collect(ros.propertyValidator('realServers', ros.validateLength)({
@@ -93,7 +93,7 @@ function rosPortPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::Port`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::Port`, which is used to create a port forwarding rule for an Anti-DDoS Proxy instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Port` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-port
  */
@@ -286,13 +286,6 @@ function RosPremiumInstancePropsValidator(properties: any): ros.ValidationResult
           }));
     }
     errors.collect(ros.propertyValidator('normalBandwidth', ros.validateNumber)(properties.normalBandwidth));
-    if(properties.functionVersion && (typeof properties.functionVersion) !== 'object') {
-        errors.collect(ros.propertyValidator('functionVersion', ros.validateAllowedValues)({
-          data: properties.functionVersion,
-          allowedValues: ["0","1"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('functionVersion', ros.validateString)(properties.functionVersion));
     if(properties.productPlan && (typeof properties.productPlan) !== 'object') {
         errors.collect(ros.propertyValidator('productPlan', ros.validateAllowedValues)({
           data: properties.productPlan,
@@ -300,6 +293,13 @@ function RosPremiumInstancePropsValidator(properties: any): ros.ValidationResult
         }));
     }
     errors.collect(ros.propertyValidator('productPlan', ros.validateString)(properties.productPlan));
+    if(properties.functionVersion && (typeof properties.functionVersion) !== 'object') {
+        errors.collect(ros.propertyValidator('functionVersion', ros.validateAllowedValues)({
+          data: properties.functionVersion,
+          allowedValues: ["0","1"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('functionVersion', ros.validateString)(properties.functionVersion));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
           data: properties.period,
@@ -315,6 +315,13 @@ function RosPremiumInstancePropsValidator(properties: any): ros.ValidationResult
           }));
     }
     errors.collect(ros.propertyValidator('portCount', ros.validateNumber)(properties.portCount));
+    if(properties.burstBandwidthMode && (typeof properties.burstBandwidthMode) !== 'object') {
+        errors.collect(ros.propertyValidator('burstBandwidthMode', ros.validateAllowedValues)({
+          data: properties.burstBandwidthMode,
+          allowedValues: ["0","1","2"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('burstBandwidthMode', ros.validateString)(properties.burstBandwidthMode));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -323,20 +330,6 @@ function RosPremiumInstancePropsValidator(properties: any): ros.ValidationResult
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosPremiumInstance_TagsPropertyValidator))(properties.tags));
-    if(properties.burstBandwidthMode && (typeof properties.burstBandwidthMode) !== 'object') {
-        errors.collect(ros.propertyValidator('burstBandwidthMode', ros.validateAllowedValues)({
-          data: properties.burstBandwidthMode,
-          allowedValues: ["0","1","2"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('burstBandwidthMode', ros.validateString)(properties.burstBandwidthMode));
-    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
-        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
-          data: properties.periodUnit,
-          allowedValues: ["Month","Year","month","year"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
     if(properties.domainCount && (typeof properties.domainCount) !== 'object') {
         errors.collect(ros.propertyValidator('domainCount', ros.validateRange)({
             data: properties.domainCount,
@@ -345,6 +338,13 @@ function RosPremiumInstancePropsValidator(properties: any): ros.ValidationResult
           }));
     }
     errors.collect(ros.propertyValidator('domainCount', ros.validateNumber)(properties.domainCount));
+    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
+        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
+          data: properties.periodUnit,
+          allowedValues: ["Month","Year","month","year"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
     return errors.wrap('supplied properties not correct for "RosPremiumInstanceProps"');
 }
 
@@ -376,7 +376,7 @@ function rosPremiumInstancePropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::PremiumInstance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::PremiumInstance`, which is used to create an Anti-DDoS Proxy (Outside Chinese Mainland) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `PremiumInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-premiuminstance
  */
@@ -745,13 +745,6 @@ function RosProInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosProInstance_TagsPropertyValidator))(properties.tags));
-    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
-        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
-          data: properties.periodUnit,
-          allowedValues: ["Month","Year","month","year"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
     if(properties.domainCount && (typeof properties.domainCount) !== 'object') {
         errors.collect(ros.propertyValidator('domainCount', ros.validateRange)({
             data: properties.domainCount,
@@ -760,6 +753,13 @@ function RosProInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('domainCount', ros.validateNumber)(properties.domainCount));
+    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
+        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
+          data: properties.periodUnit,
+          allowedValues: ["Month","Year","month","year"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
     return errors.wrap('supplied properties not correct for "RosProInstanceProps"');
 }
 
@@ -795,7 +795,7 @@ function rosProInstancePropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::ProInstance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::ProInstance`, which is used to create an Anti-DDoS Proxy (Chinese Mainland) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `ProInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-proinstance
  */
@@ -1080,7 +1080,7 @@ function rosSceneDefensePolicyPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::SceneDefensePolicy`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::SceneDefensePolicy`, which is used to create a scenario-specific custom policy.
  * @Note This class does not contain additional functions, so it is recommended to use the `SceneDefensePolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-scenedefensepolicy
  */
@@ -1244,7 +1244,7 @@ function rosSchedulerRulePropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::SchedulerRule`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::SchedulerRule`, which is used to create a scheduling rule for Sec-Traffic Manager.
  * @Note This class does not contain additional functions, so it is recommended to use the `SchedulerRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-schedulerrule
  */
@@ -1441,7 +1441,7 @@ function rosWebRulePropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::WebRule`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::WebRule`, which is used to create a forwarding rule for a website.
  * @Note This class does not contain additional functions, so it is recommended to use the `WebRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-webrule
  */

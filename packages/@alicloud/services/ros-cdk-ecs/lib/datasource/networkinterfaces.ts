@@ -119,7 +119,7 @@ export interface INetworkInterfaces extends ros.IResource {
     readonly attrNetworkInterfaces: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::NetworkInterfaces`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::NetworkInterfaces`, which is used to query the information about elastic network interfaces (ENIs).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNetworkInterfaces`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-networkinterfaces
  */
@@ -153,15 +153,15 @@ export class NetworkInterfaces extends ros.Resource implements INetworkInterface
 
         const rosNetworkInterfaces = new RosNetworkInterfaces(this, id,  {
             status: props.status,
-            privateIpAddresses: props.privateIpAddresses,
-            serviceManaged: props.serviceManaged,
             resourceGroupId: props.resourceGroupId,
+            serviceManaged: props.serviceManaged,
+            privateIpAddresses: props.privateIpAddresses,
             instanceId: props.instanceId,
-            securityGroupId: props.securityGroupId,
             vSwitchId: props.vSwitchId,
+            securityGroupId: props.securityGroupId,
             networkInterfaceName: props.networkInterfaceName,
-            networkInterfaceIds: props.networkInterfaceIds,
             primaryIpAddress: props.primaryIpAddress,
+            networkInterfaceIds: props.networkInterfaceIds,
             ipv6Addresses: props.ipv6Addresses,
             refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
             type: props.type,

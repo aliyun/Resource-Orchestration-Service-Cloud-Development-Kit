@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cr
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::CR::Instance`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::CR::Instance`, which is used to create a Container Registry Enterprise Edition instance.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instance
@@ -58,7 +58,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute InstanceSpecification: InstanceSpecification.</summary>
+        /// <summary>Attribute InstanceSpecification: The instance specification.</summary>
         [JsiiProperty(name: "attrInstanceSpecification", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrInstanceSpecification
         {

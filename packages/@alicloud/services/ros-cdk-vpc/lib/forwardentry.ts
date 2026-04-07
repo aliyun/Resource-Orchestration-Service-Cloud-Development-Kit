@@ -62,7 +62,7 @@ export interface IForwardEntry extends ros.IResource {
     readonly attrForwardEntryId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::ForwardEntry`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::ForwardEntry`, which is used to add a DNAT entry to a DNAT table.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosForwardEntry`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-forwardentry
  */
@@ -93,8 +93,8 @@ export class ForwardEntry extends ros.Resource implements IForwardEntry {
             externalPort: props.externalPort,
             externalIp: props.externalIp,
             ipProtocol: props.ipProtocol,
-            portBreak: props.portBreak,
             internalPort: props.internalPort,
+            portBreak: props.portBreak,
             forwardEntryName: props.forwardEntryName,
             internalIp: props.internalIp,
             forwardTableId: props.forwardTableId,

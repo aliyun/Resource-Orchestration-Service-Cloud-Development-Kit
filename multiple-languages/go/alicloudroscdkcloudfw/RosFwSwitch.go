@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::FwSwitch`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::FwSwitch`, which is used to enable a firewall.
 type RosFwSwitch interface {
 	alicloudroscdkcore.RosResource
 	// Returns: the stack trace of the point where this Resource was created from, sourced
@@ -20,6 +20,8 @@ type RosFwSwitch interface {
 	SetEnableResourcePropertyConstraint(val *bool)
 	IpaddrList() interface{}
 	SetIpaddrList(val interface{})
+	IpVersion() interface{}
+	SetIpVersion(val interface{})
 	// The logical ID for this stack element.
 	//
 	// The logical ID of the element
@@ -30,6 +32,8 @@ type RosFwSwitch interface {
 	// Returns: the logical ID as a stringified token. This value will only get
 	// resolved during synthesis.
 	LogicalId() *string
+	MemberUid() interface{}
+	SetMemberUid(val interface{})
 	// The construct tree node associated with this construct.
 	Node() alicloudroscdkcore.ConstructNode
 	// Return a string that will be resolved to a RosTemplate `{ Ref }` for this element.
@@ -204,11 +208,31 @@ func (j *jsiiProxy_RosFwSwitch) IpaddrList() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosFwSwitch) IpVersion() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"ipVersion",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosFwSwitch) LogicalId() *string {
 	var returns *string
 	_jsii_.Get(
 		j,
 		"logicalId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosFwSwitch) MemberUid() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"memberUid",
 		&returns,
 	)
 	return returns
@@ -350,6 +374,28 @@ func (j *jsiiProxy_RosFwSwitch)SetIpaddrList(val interface{}) {
 	_jsii_.Set(
 		j,
 		"ipaddrList",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosFwSwitch)SetIpVersion(val interface{}) {
+	if err := j.validateSetIpVersionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"ipVersion",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosFwSwitch)SetMemberUid(val interface{}) {
+	if err := j.validateSetMemberUidParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"memberUid",
 		val,
 	)
 }

@@ -77,6 +77,7 @@
 @alicloud/ros-cdk-ram.RosRole.PolicyDocumentStatementProperty=com.aliyun.ros.cdk.ram.RosRole$PolicyDocumentStatementProperty
 @alicloud/ros-cdk-ram.RosRole.PrincipalProperty=com.aliyun.ros.cdk.ram.RosRole$PrincipalProperty
 @alicloud/ros-cdk-ram.RosRole.StatementProperty=com.aliyun.ros.cdk.ram.RosRole$StatementProperty
+@alicloud/ros-cdk-ram.RosRole.TagsProperty=com.aliyun.ros.cdk.ram.RosRole$TagsProperty
 @alicloud/ros-cdk-ram.RosRoleProps=com.aliyun.ros.cdk.ram.RosRoleProps
 @alicloud/ros-cdk-ram.RosSAMLProvider=com.aliyun.ros.cdk.ram.RosSAMLProvider
 @alicloud/ros-cdk-ram.RosSAMLProviderProps=com.aliyun.ros.cdk.ram.RosSAMLProviderProps

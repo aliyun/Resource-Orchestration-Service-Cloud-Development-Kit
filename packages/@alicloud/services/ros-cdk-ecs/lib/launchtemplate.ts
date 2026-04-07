@@ -267,7 +267,7 @@ export interface ILaunchTemplate extends ros.IResource {
     readonly attrLaunchTemplateName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::LaunchTemplate`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::LaunchTemplate`, which is used to create a launch template. You can use a launch template to create an Elastic Compute Service (ECS) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLaunchTemplate`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-launchtemplate
  */
@@ -311,34 +311,34 @@ export class LaunchTemplate extends ros.Resource implements ILaunchTemplate {
 
         const rosLaunchTemplate = new RosLaunchTemplate(this, id,  {
             imageOwnerAlias: props.imageOwnerAlias,
-            privateIpAddress: props.privateIpAddress,
             description: props.description,
-            resourceGroupId: props.resourceGroupId,
+            privateIpAddress: props.privateIpAddress,
             diskMappings: props.diskMappings,
+            resourceGroupId: props.resourceGroupId,
             systemDiskSize: props.systemDiskSize,
-            userData: props.userData,
             systemDiskDescription: props.systemDiskDescription,
+            userData: props.userData,
             instanceChargeType: props.instanceChargeType,
             spotDuration: props.spotDuration,
             templateTags: props.templateTags,
             ramRoleName: props.ramRoleName,
             systemDiskPerformanceLevel: props.systemDiskPerformanceLevel,
-            ipv6AddressCount: props.ipv6AddressCount,
             networkType: props.networkType,
+            ipv6AddressCount: props.ipv6AddressCount,
             networkInterfaces: props.networkInterfaces,
             imageId: props.imageId,
             systemDiskDiskName: props.systemDiskDiskName,
             spotPriceLimit: props.spotPriceLimit,
             instanceType: props.instanceType,
-            tags: props.tags,
             hostName: props.hostName,
             spotStrategy: props.spotStrategy,
+            tags: props.tags,
             passwordInherit: props.passwordInherit,
             templateResourceGroupId: props.templateResourceGroupId,
             keyPairName: props.keyPairName,
             launchTemplateName: props.launchTemplateName,
-            ioOptimized: props.ioOptimized,
             versionDescription: props.versionDescription,
+            ioOptimized: props.ioOptimized,
             zoneId: props.zoneId,
             securityGroupId: props.securityGroupId,
             vSwitchId: props.vSwitchId,

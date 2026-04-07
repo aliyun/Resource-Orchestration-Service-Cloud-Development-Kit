@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::PAIDatasetAcc::Endpoint`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::PAIDatasetAcc::Endpoint`, which is used to create and register a mount target for a slot in Dataset Accelerator of Platform for AI (PAI).
 type RosEndpoint interface {
 	alicloudroscdkcore.RosResource
 	AttrEndpointId() alicloudroscdkcore.IResolvable

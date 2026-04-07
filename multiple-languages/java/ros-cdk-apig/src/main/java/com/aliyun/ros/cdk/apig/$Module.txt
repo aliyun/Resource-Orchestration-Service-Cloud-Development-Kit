@@ -17,6 +17,7 @@
 @alicloud/ros-cdk-apig.IPolicy=com.aliyun.ros.cdk.apig.IPolicy
 @alicloud/ros-cdk-apig.IRoute=com.aliyun.ros.cdk.apig.IRoute
 @alicloud/ros-cdk-apig.IService=com.aliyun.ros.cdk.apig.IService
+@alicloud/ros-cdk-apig.ISource=com.aliyun.ros.cdk.apig.ISource
 @alicloud/ros-cdk-apig.Operation=com.aliyun.ros.cdk.apig.Operation
 @alicloud/ros-cdk-apig.OperationProps=com.aliyun.ros.cdk.apig.OperationProps
 @alicloud/ros-cdk-apig.Plugin=com.aliyun.ros.cdk.apig.Plugin
@@ -74,10 +75,17 @@
 @alicloud/ros-cdk-apig.RosService=com.aliyun.ros.cdk.apig.RosService
 @alicloud/ros-cdk-apig.RosService.AiServiceConfigProperty=com.aliyun.ros.cdk.apig.RosService$AiServiceConfigProperty
 @alicloud/ros-cdk-apig.RosServiceProps=com.aliyun.ros.cdk.apig.RosServiceProps
+@alicloud/ros-cdk-apig.RosSource=com.aliyun.ros.cdk.apig.RosSource
+@alicloud/ros-cdk-apig.RosSource.AuthorizeSecurityGroupRulesProperty=com.aliyun.ros.cdk.apig.RosSource$AuthorizeSecurityGroupRulesProperty
+@alicloud/ros-cdk-apig.RosSource.K8sSourceConfigProperty=com.aliyun.ros.cdk.apig.RosSource$K8sSourceConfigProperty
+@alicloud/ros-cdk-apig.RosSource.NacosSourceConfigProperty=com.aliyun.ros.cdk.apig.RosSource$NacosSourceConfigProperty
+@alicloud/ros-cdk-apig.RosSourceProps=com.aliyun.ros.cdk.apig.RosSourceProps
 @alicloud/ros-cdk-apig.Route=com.aliyun.ros.cdk.apig.Route
 @alicloud/ros-cdk-apig.RouteProps=com.aliyun.ros.cdk.apig.RouteProps
 @alicloud/ros-cdk-apig.Service=com.aliyun.ros.cdk.apig.Service
 @alicloud/ros-cdk-apig.ServiceProps=com.aliyun.ros.cdk.apig.ServiceProps
+@alicloud/ros-cdk-apig.Source=com.aliyun.ros.cdk.apig.Source
+@alicloud/ros-cdk-apig.SourceProps=com.aliyun.ros.cdk.apig.SourceProps
 @alicloud/ros-cdk-apig.datasource.Domain=com.aliyun.ros.cdk.apig.datasource.Domain
 @alicloud/ros-cdk-apig.datasource.DomainProps=com.aliyun.ros.cdk.apig.datasource.DomainProps
 @alicloud/ros-cdk-apig.datasource.Domains=com.aliyun.ros.cdk.apig.datasource.Domains

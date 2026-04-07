@@ -6,7 +6,6 @@ package alicloudroscdkcms
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-resourcemetricrule
 type RosResourceMetricRuleProps struct {
 	ContactGroups interface{} `field:"required" json:"contactGroups" yaml:"contactGroups"`
-	Escalations interface{} `field:"required" json:"escalations" yaml:"escalations"`
 	MetricName interface{} `field:"required" json:"metricName" yaml:"metricName"`
 	Namespace interface{} `field:"required" json:"namespace" yaml:"namespace"`
 	Resources interface{} `field:"required" json:"resources" yaml:"resources"`
@@ -14,6 +13,7 @@ type RosResourceMetricRuleProps struct {
 	DeletionForce interface{} `field:"optional" json:"deletionForce" yaml:"deletionForce"`
 	EffectiveInterval interface{} `field:"optional" json:"effectiveInterval" yaml:"effectiveInterval"`
 	EmailSubject interface{} `field:"optional" json:"emailSubject" yaml:"emailSubject"`
+	Escalations interface{} `field:"optional" json:"escalations" yaml:"escalations"`
 	Interval interface{} `field:"optional" json:"interval" yaml:"interval"`
 	Labels interface{} `field:"optional" json:"labels" yaml:"labels"`
 	NoDataPolicy interface{} `field:"optional" json:"noDataPolicy" yaml:"noDataPolicy"`

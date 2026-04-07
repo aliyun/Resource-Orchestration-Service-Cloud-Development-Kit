@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::EIP</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::EIP</code>The , which resource type requests an Elastic IP Address (EIP).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:00.897Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.816Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.Eip")
 public class Eip extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.IEip {
 
@@ -273,6 +273,31 @@ public class Eip extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
+         * Property instanceId: The instance ID of the requested EIP.
+         * <p>
+         * You must specify either IpAddress or InstanceId. If neither is specified, the system randomly allocates an EIP.
+         * <p>
+         * @return {@code this}
+         * @param instanceId Property instanceId: The instance ID of the requested EIP. This parameter is required.
+         */
+        public Builder instanceId(final java.lang.String instanceId) {
+            this.props().instanceId(instanceId);
+            return this;
+        }
+        /**
+         * Property instanceId: The instance ID of the requested EIP.
+         * <p>
+         * You must specify either IpAddress or InstanceId. If neither is specified, the system randomly allocates an EIP.
+         * <p>
+         * @return {@code this}
+         * @param instanceId Property instanceId: The instance ID of the requested EIP. This parameter is required.
+         */
+        public Builder instanceId(final com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.props().instanceId(instanceId);
+            return this;
+        }
+
+        /**
          * Property internetChargeType: The network charge type.
          * <p>
          * Support 'PayByBandwidth' and 'PayByTraffic' only. Default is PayByBandwidth. PayByTraffic will charge by hour, PayByBandwidth will charge by day.
@@ -294,6 +319,31 @@ public class Eip extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
          */
         public Builder internetChargeType(final com.aliyun.ros.cdk.core.IResolvable internetChargeType) {
             this.props().internetChargeType(internetChargeType);
+            return this;
+        }
+
+        /**
+         * Property ipAddress: The IP address of the requested EIP.
+         * <p>
+         * You must specify either IpAddress or InstanceId. If neither is specified, the system randomly allocates an EIP.
+         * <p>
+         * @return {@code this}
+         * @param ipAddress Property ipAddress: The IP address of the requested EIP. This parameter is required.
+         */
+        public Builder ipAddress(final java.lang.String ipAddress) {
+            this.props().ipAddress(ipAddress);
+            return this;
+        }
+        /**
+         * Property ipAddress: The IP address of the requested EIP.
+         * <p>
+         * You must specify either IpAddress or InstanceId. If neither is specified, the system randomly allocates an EIP.
+         * <p>
+         * @return {@code this}
+         * @param ipAddress Property ipAddress: The IP address of the requested EIP. This parameter is required.
+         */
+        public Builder ipAddress(final com.aliyun.ros.cdk.core.IResolvable ipAddress) {
+            this.props().ipAddress(ipAddress);
             return this;
         }
 

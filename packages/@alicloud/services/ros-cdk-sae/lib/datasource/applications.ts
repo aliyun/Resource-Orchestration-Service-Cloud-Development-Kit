@@ -94,9 +94,9 @@ export class Applications extends ros.Resource implements IApplications {
         const rosApplications = new RosApplications(this, id,  {
             namespaceId: props.namespaceId,
             fieldValue: props.fieldValue,
-            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
-            fieldType: props.fieldType,
             appName: props.appName,
+            fieldType: props.fieldType,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosApplications;
         this.attrApplicationIds = rosApplications.attrApplicationIds;

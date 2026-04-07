@@ -298,7 +298,7 @@ export interface IK8sApplication extends ros.IResource {
     readonly attrCsClusterId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::K8sApplication`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::K8sApplication`, which is used to create an application in a Kubernetes cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosK8sApplication`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8sapplication
  */
@@ -354,14 +354,14 @@ export class K8sApplication extends ros.Resource implements IK8sApplication {
             limitCpu: props.limitCpu,
             slsConfigs: props.slsConfigs,
             intranetSlbProtocol: props.intranetSlbProtocol,
-            webContainerConfig: props.webContainerConfig,
             packageVersion: props.packageVersion,
+            webContainerConfig: props.webContainerConfig,
             appName: props.appName,
             jdk: props.jdk,
             internetSlbId: props.internetSlbId,
             preStop: props.preStop,
-            internetSlbPort: props.internetSlbPort,
             readiness: props.readiness,
+            internetSlbPort: props.internetSlbPort,
             deployAcrossNodes: props.deployAcrossNodes,
             requestsMem: props.requestsMem,
             packageType: props.packageType,
@@ -374,9 +374,9 @@ export class K8sApplication extends ros.Resource implements IK8sApplication {
             clusterId: props.clusterId,
             timeout: props.timeout,
             envs: props.envs,
-            imageUrl: props.imageUrl,
             deployAcrossZones: props.deployAcrossZones,
             postStart: props.postStart,
+            imageUrl: props.imageUrl,
             internetTargetPort: props.internetTargetPort,
             replicas: props.replicas === undefined || props.replicas === null ? 1 : props.replicas,
             namespace: props.namespace,
@@ -385,10 +385,10 @@ export class K8sApplication extends ros.Resource implements IK8sApplication {
             intranetTargetPort: props.intranetTargetPort,
             mountDescs: props.mountDescs,
             localVolume: props.localVolume,
+            internetSlbProtocol: props.internetSlbProtocol,
             edasContainerVersion: props.edasContainerVersion,
             runtimeClassName: props.runtimeClassName,
             command: props.command,
-            internetSlbProtocol: props.internetSlbProtocol,
             packageUrl: props.packageUrl,
             intranetSlbPort: props.intranetSlbPort,
             repoId: props.repoId,

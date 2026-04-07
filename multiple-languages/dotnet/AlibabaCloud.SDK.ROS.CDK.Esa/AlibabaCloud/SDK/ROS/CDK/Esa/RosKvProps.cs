@@ -112,7 +112,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Esa
         private object? _expiration;
 
         /// <remarks>
-        /// <strong>Property</strong>: expiration: The content of the key, which can be up to 2 MB (2 × 1000 × 1000). If the content is larger than 2 MB, call [PutKvWithHighCapacity] https:\/\/www.alibabacloud.com\/help\/en\/doc-detail\/2850486.html.
+        /// <strong>Property</strong>: expiration: The content of the key, which can be up to 2 MB (2 Ã 1000 Ã 1000). If the content is larger than 2 MB, call [PutKvWithHighCapacity] https:\/\/www.alibabacloud.com\/help\/en\/doc-detail\/2850486.html.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "expiration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

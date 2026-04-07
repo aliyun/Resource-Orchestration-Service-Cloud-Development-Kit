@@ -110,7 +110,7 @@ export interface IZone extends ros.IResource {
     readonly attrZoneType: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::PVTZ::Zone`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::PVTZ::Zone`, which is used to query the information about a built-in authoritative zone.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosZone`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pvtz-zone
  */

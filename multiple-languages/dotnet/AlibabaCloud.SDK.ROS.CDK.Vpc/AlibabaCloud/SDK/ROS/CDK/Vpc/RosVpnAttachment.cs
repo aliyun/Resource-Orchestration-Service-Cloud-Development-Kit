@@ -4,8 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpnAttachment`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpnAttachment`, which is used to create an IPsec-VPN connection.</summary>
     /// <remarks>
+    /// After you create the IPsec-VPN connection, you can associate the IPsec-VPN connection with a transit router.
+    ///
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `VpnAttachment` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnattachment
     /// </remarks>
@@ -84,36 +86,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         protected override System.Collections.Generic.IDictionary<string, object> RosProperties
         {
             get => GetInstanceProperty<System.Collections.Generic.IDictionary<string, object>>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Property</strong>: customerGatewayId: The ID of the user gateway.
-        /// </remarks>
-        [JsiiProperty(name: "customerGatewayId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        public virtual object CustomerGatewayId
-        {
-            get => GetInstanceProperty<object>()!;
-            set
-            {
-                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                {
-                    switch (value)
-                    {
-                        case string cast_cd4240:
-                            break;
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                            break;
-                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                            // Not enough information to type-check...
-                            break;
-                        case null:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
-                        default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                    }
-                }
-                SetInstanceProperty(value);
-            }
         }
 
         [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
@@ -254,6 +226,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: customerGatewayId: The ID of the user gateway.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "customerGatewayId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? CustomerGatewayId
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: effectImmediately: Whether to delete the currently negotiated IPsec tunnel and re-initiate the negotiation. Value:
         /// True: Negotiate immediately after the configuration is complete.
         /// False (default): Negotiate when traffic enters.
@@ -327,6 +330,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         [JsiiOptional]
         [JsiiProperty(name: "enableNatTraversal", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public virtual object? EnableNatTraversal
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: enableTunnelsBgp: Support configuring this parameter when creating dual-tunnel mode IPsec-VPN connections.
+        /// Whether to enable BGP function for the tunnel. Values: **true** or **false** (default value).
+        /// > Before adding BGP configuration, it is recommended that you first understand the working mechanism and usage limitations of the BGP dynamic routing function. For more information, please see Configuring BGP Dynamic Routing.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "enableTunnelsBgp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? EnableTunnelsBgp
         {
             get => GetInstanceProperty<object?>();
             set
@@ -535,6 +571,122 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                             break;
                         default:
                             throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: resourceGroupId: The resource group ID to which the IPsec connection belongs.
+        /// - You can call the ListResourceGroups interface to query the resource group ID.
+        /// - If you do not specify a resource group ID, the IPsec connection will belong to the default resource group after creation.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? ResourceGroupId
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: tunnelBandwidth: Used to indicate the bandwidth specification of a single VPN tunnel, values:
+        /// Standard (default value): Standard type, default bandwidth 1Gbps
+        /// Large: Large type, default bandwidth 3Gbps
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tunnelBandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? TunnelBandwidth
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: tunnelOptionsSpecification: Configuration of tunnels.
+        /// - When creating dual-tunnel mode IPsec-VPN connections, you can configure parameters under **TunnelOptionsSpecification** array.
+        /// - When creating dual-tunnel mode IPsec-VPN connections, you must add two tunnels for the IPsec-VPN connection simultaneously to ensure the IPsec-VPN connection has link redundancy capability. Only two tunnels are supported under an IPsec-VPN connection.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tunnelOptionsSpecification", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-vpc.RosVpnAttachment.TunnelOptionsSpecificationProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public virtual object? TunnelOptionsSpecification
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case object[] cast_cd4240:
+                            for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                            {
+                                switch (cast_cd4240[__idx_f64a5c])
+                                {
+                                    case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                        break;
+                                    case AlibabaCloud.SDK.ROS.CDK.Vpc.RosVpnAttachment.ITunnelOptionsSpecificationProperty cast_201718:
+                                        break;
+                                    case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                        // Not enough information to type-check...
+                                        break;
+                                    case null:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Vpc.RosVpnAttachment.ITunnelOptionsSpecificationProperty).FullName}; received null", nameof(value));
+                                    default:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Vpc.RosVpnAttachment.ITunnelOptionsSpecificationProperty).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                }
+                            }
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
                     }
                 }
                 SetInstanceProperty(value);
@@ -2011,6 +2163,1490 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                         }
                     }
                     _ipsecPfs = value;
+                }
+            }
+        }
+        [JsiiInterface(nativeType: typeof(ITunnelBgpConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosVpnAttachment.TunnelBgpConfigProperty")]
+        public interface ITunnelBgpConfigProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: localAsn: The local autonomous system number of the tunnel (Alibaba Cloud side). Autonomous system number range: **1**~**4294967295**. Default value: **45104**.
+            /// > It is recommended that you use the private ASN code of the autonomous system to establish a BGP connection with Alibaba Cloud. Please refer to the documentation for the range of private ASN codes of autonomous systems.
+            /// </remarks>
+            [JsiiProperty(name: "localAsn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? LocalAsn
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: localBgpIp: The BGP address of the local end of the tunnel (Alibaba Cloud side). This address is an IP address within the BGP subnet.
+            /// </remarks>
+            [JsiiProperty(name: "localBgpIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? LocalBgpIp
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: tunnelCidr: The BGP subnet of the tunnel. This subnet must be a subnet with a mask length of 30 in 169.254.0.0\/16, and cannot be 169.254.0.0\/30, 169.254.1.0\/30, 169.254.2.0\/30, 169.254.3.0\/30, 169.254.4.0\/30, 169.254.5.0\/30, 169.254.6.0\/30 and 169.254.169.252\/30.
+            /// > The tunnel subnets of the two tunnels under an IPsec connection cannot be the same.
+            /// </remarks>
+            [JsiiProperty(name: "tunnelCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? TunnelCidr
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(ITunnelBgpConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosVpnAttachment.TunnelBgpConfigProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.RosVpnAttachment.ITunnelBgpConfigProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: localAsn: The local autonomous system number of the tunnel (Alibaba Cloud side). Autonomous system number range: **1**~**4294967295**. Default value: **45104**.
+                /// > It is recommended that you use the private ASN code of the autonomous system to establish a BGP connection with Alibaba Cloud. Please refer to the documentation for the range of private ASN codes of autonomous systems.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "localAsn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? LocalAsn
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: localBgpIp: The BGP address of the local end of the tunnel (Alibaba Cloud side). This address is an IP address within the BGP subnet.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "localBgpIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? LocalBgpIp
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: tunnelCidr: The BGP subnet of the tunnel. This subnet must be a subnet with a mask length of 30 in 169.254.0.0\/16, and cannot be 169.254.0.0\/30, 169.254.1.0\/30, 169.254.2.0\/30, 169.254.3.0\/30, 169.254.4.0\/30, 169.254.5.0\/30, 169.254.6.0\/30 and 169.254.169.252\/30.
+                /// > The tunnel subnets of the two tunnels under an IPsec connection cannot be the same.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "tunnelCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? TunnelCidr
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.RosVpnAttachment.TunnelBgpConfigProperty")]
+        public class TunnelBgpConfigProperty : AlibabaCloud.SDK.ROS.CDK.Vpc.RosVpnAttachment.ITunnelBgpConfigProperty
+        {
+            private object? _localAsn;
+
+            /// <remarks>
+            /// <strong>Property</strong>: localAsn: The local autonomous system number of the tunnel (Alibaba Cloud side). Autonomous system number range: **1**~**4294967295**. Default value: **45104**.
+            /// > It is recommended that you use the private ASN code of the autonomous system to establish a BGP connection with Alibaba Cloud. Please refer to the documentation for the range of private ASN codes of autonomous systems.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "localAsn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? LocalAsn
+            {
+                get => _localAsn;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _localAsn = value;
+                }
+            }
+
+            private object? _localBgpIp;
+
+            /// <remarks>
+            /// <strong>Property</strong>: localBgpIp: The BGP address of the local end of the tunnel (Alibaba Cloud side). This address is an IP address within the BGP subnet.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "localBgpIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? LocalBgpIp
+            {
+                get => _localBgpIp;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _localBgpIp = value;
+                }
+            }
+
+            private object? _tunnelCidr;
+
+            /// <remarks>
+            /// <strong>Property</strong>: tunnelCidr: The BGP subnet of the tunnel. This subnet must be a subnet with a mask length of 30 in 169.254.0.0\/16, and cannot be 169.254.0.0\/30, 169.254.1.0\/30, 169.254.2.0\/30, 169.254.3.0\/30, 169.254.4.0\/30, 169.254.5.0\/30, 169.254.6.0\/30 and 169.254.169.252\/30.
+            /// > The tunnel subnets of the two tunnels under an IPsec connection cannot be the same.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tunnelCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? TunnelCidr
+            {
+                get => _tunnelCidr;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _tunnelCidr = value;
+                }
+            }
+        }
+        [JsiiInterface(nativeType: typeof(ITunnelIkeConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosVpnAttachment.TunnelIkeConfigProperty")]
+        public interface ITunnelIkeConfigProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: ikeAuthAlg: The authentication algorithm used in the first stage of negotiations. Values:
+            /// - **md5** (default value): MD5
+            /// - **sha1**: SHA-1
+            /// - **sha256**: SHA-256
+            /// - **sha384**: SHA-384
+            /// - **sha512**: SHA-512
+            /// </remarks>
+            [JsiiProperty(name: "ikeAuthAlg", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? IkeAuthAlg
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ikeEncAlg: The encryption algorithm used in the first stage of negotiations. Values: aes, aes192, aes256, des, 3des
+            /// </remarks>
+            [JsiiProperty(name: "ikeEncAlg", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? IkeEncAlg
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ikeLifetime: The validity period of the first stage of negotiations. Unit: seconds. Default value: **86400**.
+            /// </remarks>
+            [JsiiProperty(name: "ikeLifetime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? IkeLifetime
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ikeMode: The mode used in the first stage of negotiations. Values: main (default value) or aggressive
+            /// </remarks>
+            [JsiiProperty(name: "ikeMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? IkeMode
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ikePfs: The Diffie-Hellman key exchange algorithm was used in the first stage of negotiation. The default value is: group2.Values: group1, group2, group5, group14.
+            /// </remarks>
+            [JsiiProperty(name: "ikePfs", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? IkePfs
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ikeVersion: The version of the IKE protocol. Values: **ikev1** (default value) or **ikev2**.
+            /// </remarks>
+            [JsiiProperty(name: "ikeVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? IkeVersion
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: localId: The identity of the VPN gateway.
+            /// </remarks>
+            [JsiiProperty(name: "localId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? LocalId
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: psk: The pre-shared key (PSK) used for authentication between the VPN gateway and the customer gateway.
+            /// </remarks>
+            [JsiiProperty(name: "psk", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Psk
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: remoteId: The identity of the customer gateway.
+            /// </remarks>
+            [JsiiProperty(name: "remoteId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? RemoteId
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(ITunnelIkeConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosVpnAttachment.TunnelIkeConfigProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.RosVpnAttachment.ITunnelIkeConfigProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: ikeAuthAlg: The authentication algorithm used in the first stage of negotiations. Values:
+                /// - **md5** (default value): MD5
+                /// - **sha1**: SHA-1
+                /// - **sha256**: SHA-256
+                /// - **sha384**: SHA-384
+                /// - **sha512**: SHA-512
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "ikeAuthAlg", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? IkeAuthAlg
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: ikeEncAlg: The encryption algorithm used in the first stage of negotiations. Values: aes, aes192, aes256, des, 3des
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "ikeEncAlg", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? IkeEncAlg
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: ikeLifetime: The validity period of the first stage of negotiations. Unit: seconds. Default value: **86400**.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "ikeLifetime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? IkeLifetime
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: ikeMode: The mode used in the first stage of negotiations. Values: main (default value) or aggressive
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "ikeMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? IkeMode
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: ikePfs: The Diffie-Hellman key exchange algorithm was used in the first stage of negotiation. The default value is: group2.Values: group1, group2, group5, group14.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "ikePfs", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? IkePfs
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: ikeVersion: The version of the IKE protocol. Values: **ikev1** (default value) or **ikev2**.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "ikeVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? IkeVersion
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: localId: The identity of the VPN gateway.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "localId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? LocalId
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: psk: The pre-shared key (PSK) used for authentication between the VPN gateway and the customer gateway.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "psk", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Psk
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: remoteId: The identity of the customer gateway.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "remoteId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? RemoteId
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.RosVpnAttachment.TunnelIkeConfigProperty")]
+        public class TunnelIkeConfigProperty : AlibabaCloud.SDK.ROS.CDK.Vpc.RosVpnAttachment.ITunnelIkeConfigProperty
+        {
+            private object? _ikeAuthAlg;
+
+            /// <remarks>
+            /// <strong>Property</strong>: ikeAuthAlg: The authentication algorithm used in the first stage of negotiations. Values:
+            /// - **md5** (default value): MD5
+            /// - **sha1**: SHA-1
+            /// - **sha256**: SHA-256
+            /// - **sha384**: SHA-384
+            /// - **sha512**: SHA-512
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ikeAuthAlg", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IkeAuthAlg
+            {
+                get => _ikeAuthAlg;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _ikeAuthAlg = value;
+                }
+            }
+
+            private object? _ikeEncAlg;
+
+            /// <remarks>
+            /// <strong>Property</strong>: ikeEncAlg: The encryption algorithm used in the first stage of negotiations. Values: aes, aes192, aes256, des, 3des
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ikeEncAlg", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IkeEncAlg
+            {
+                get => _ikeEncAlg;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _ikeEncAlg = value;
+                }
+            }
+
+            private object? _ikeLifetime;
+
+            /// <remarks>
+            /// <strong>Property</strong>: ikeLifetime: The validity period of the first stage of negotiations. Unit: seconds. Default value: **86400**.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ikeLifetime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IkeLifetime
+            {
+                get => _ikeLifetime;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _ikeLifetime = value;
+                }
+            }
+
+            private object? _ikeMode;
+
+            /// <remarks>
+            /// <strong>Property</strong>: ikeMode: The mode used in the first stage of negotiations. Values: main (default value) or aggressive
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ikeMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IkeMode
+            {
+                get => _ikeMode;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _ikeMode = value;
+                }
+            }
+
+            private object? _ikePfs;
+
+            /// <remarks>
+            /// <strong>Property</strong>: ikePfs: The Diffie-Hellman key exchange algorithm was used in the first stage of negotiation. The default value is: group2.Values: group1, group2, group5, group14.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ikePfs", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IkePfs
+            {
+                get => _ikePfs;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _ikePfs = value;
+                }
+            }
+
+            private object? _ikeVersion;
+
+            /// <remarks>
+            /// <strong>Property</strong>: ikeVersion: The version of the IKE protocol. Values: **ikev1** (default value) or **ikev2**.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ikeVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IkeVersion
+            {
+                get => _ikeVersion;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _ikeVersion = value;
+                }
+            }
+
+            private object? _localId;
+
+            /// <remarks>
+            /// <strong>Property</strong>: localId: The identity of the VPN gateway.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "localId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? LocalId
+            {
+                get => _localId;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _localId = value;
+                }
+            }
+
+            private object? _psk;
+
+            /// <remarks>
+            /// <strong>Property</strong>: psk: The pre-shared key (PSK) used for authentication between the VPN gateway and the customer gateway.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "psk", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Psk
+            {
+                get => _psk;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _psk = value;
+                }
+            }
+
+            private object? _remoteId;
+
+            /// <remarks>
+            /// <strong>Property</strong>: remoteId: The identity of the customer gateway.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "remoteId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RemoteId
+            {
+                get => _remoteId;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _remoteId = value;
+                }
+            }
+        }
+        [JsiiInterface(nativeType: typeof(ITunnelIpsecConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosVpnAttachment.TunnelIpsecConfigProperty")]
+        public interface ITunnelIpsecConfigProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: ipsecAuthAlg: The authentication algorithm used in the first stage of negotiations. Values:
+            /// - **md5** (default value): MD5
+            /// - **sha1**: SHA-1
+            /// - **sha256**: SHA-256
+            /// - **sha384**: SHA-384
+            /// - **sha512**: SHA-512
+            /// </remarks>
+            [JsiiProperty(name: "ipsecAuthAlg", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? IpsecAuthAlg
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ipsecEncAlg: The encryption algorithm used in the second stage of negotiations. Values: aes, aes192, aes256, des, 3des
+            /// </remarks>
+            [JsiiProperty(name: "ipsecEncAlg", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? IpsecEncAlg
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ipsecLifetime: The validity period of the IPsec connection.
+            /// </remarks>
+            [JsiiProperty(name: "ipsecLifetime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? IpsecLifetime
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ipsecPfs: The Diffie-Hellman key exchange algorithm used in the second stage of negotiations. Values: disabled, group1, group2, group5, group14.
+            /// </remarks>
+            [JsiiProperty(name: "ipsecPfs", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? IpsecPfs
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(ITunnelIpsecConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosVpnAttachment.TunnelIpsecConfigProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.RosVpnAttachment.ITunnelIpsecConfigProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: ipsecAuthAlg: The authentication algorithm used in the first stage of negotiations. Values:
+                /// - **md5** (default value): MD5
+                /// - **sha1**: SHA-1
+                /// - **sha256**: SHA-256
+                /// - **sha384**: SHA-384
+                /// - **sha512**: SHA-512
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "ipsecAuthAlg", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? IpsecAuthAlg
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: ipsecEncAlg: The encryption algorithm used in the second stage of negotiations. Values: aes, aes192, aes256, des, 3des
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "ipsecEncAlg", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? IpsecEncAlg
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: ipsecLifetime: The validity period of the IPsec connection.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "ipsecLifetime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? IpsecLifetime
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: ipsecPfs: The Diffie-Hellman key exchange algorithm used in the second stage of negotiations. Values: disabled, group1, group2, group5, group14.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "ipsecPfs", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? IpsecPfs
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.RosVpnAttachment.TunnelIpsecConfigProperty")]
+        public class TunnelIpsecConfigProperty : AlibabaCloud.SDK.ROS.CDK.Vpc.RosVpnAttachment.ITunnelIpsecConfigProperty
+        {
+            private object? _ipsecAuthAlg;
+
+            /// <remarks>
+            /// <strong>Property</strong>: ipsecAuthAlg: The authentication algorithm used in the first stage of negotiations. Values:
+            /// - **md5** (default value): MD5
+            /// - **sha1**: SHA-1
+            /// - **sha256**: SHA-256
+            /// - **sha384**: SHA-384
+            /// - **sha512**: SHA-512
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ipsecAuthAlg", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IpsecAuthAlg
+            {
+                get => _ipsecAuthAlg;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _ipsecAuthAlg = value;
+                }
+            }
+
+            private object? _ipsecEncAlg;
+
+            /// <remarks>
+            /// <strong>Property</strong>: ipsecEncAlg: The encryption algorithm used in the second stage of negotiations. Values: aes, aes192, aes256, des, 3des
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ipsecEncAlg", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IpsecEncAlg
+            {
+                get => _ipsecEncAlg;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _ipsecEncAlg = value;
+                }
+            }
+
+            private object? _ipsecLifetime;
+
+            /// <remarks>
+            /// <strong>Property</strong>: ipsecLifetime: The validity period of the IPsec connection.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ipsecLifetime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IpsecLifetime
+            {
+                get => _ipsecLifetime;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _ipsecLifetime = value;
+                }
+            }
+
+            private object? _ipsecPfs;
+
+            /// <remarks>
+            /// <strong>Property</strong>: ipsecPfs: The Diffie-Hellman key exchange algorithm used in the second stage of negotiations. Values: disabled, group1, group2, group5, group14.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ipsecPfs", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IpsecPfs
+            {
+                get => _ipsecPfs;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _ipsecPfs = value;
+                }
+            }
+        }
+        [JsiiInterface(nativeType: typeof(ITunnelOptionsSpecificationProperty), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosVpnAttachment.TunnelOptionsSpecificationProperty")]
+        public interface ITunnelOptionsSpecificationProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: customerGatewayId: The customer gateway ID associated with the tunnel.
+            /// > This parameter is required when creating dual-tunnel mode IPsec-VPN connection.
+            /// </remarks>
+            [JsiiProperty(name: "customerGatewayId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? CustomerGatewayId
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: enableDpd: Whether to enable DPD (Dead Peer Detection) function for the tunnel. Values:
+            /// - **true** (default value): Enable DPD function. The IPsec initiator sends DPD packets to detect whether the peer device is alive. If no correct response is received within the set time, it is considered that the peer has disconnected, IPsec will delete the ISAKMP SA and corresponding IPsec SA, and the security tunnel will also be deleted.
+            /// - **false**: Do not enable DPD function, IPsec initiator will not send DPD detection packets.
+            /// </remarks>
+            [JsiiProperty(name: "enableDpd", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? EnableDpd
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: enableNatTraversal: Whether to enable NAT traversal function for the tunnel. Values:
+            /// - **true** (default value): Enable NAT traversal function. After enabling, the IKE negotiation process will remove the verification process for UDP port numbers, while realizing the discovery function of NAT gateway devices in the tunnel.
+            /// - **false**: Do not enable NAT traversal function.
+            /// </remarks>
+            [JsiiProperty(name: "enableNatTraversal", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? EnableNatTraversal
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: tunnelBgpConfig: Add BGP configuration for the tunnel.
+            /// > You need to configure this parameter when you enable BGP function for IPsec connection (i.e., specify the value of **EnableTunnelsBgp** parameter as **true**).
+            /// </remarks>
+            [JsiiProperty(name: "tunnelBgpConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-vpc.RosVpnAttachment.TunnelBgpConfigProperty\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? TunnelBgpConfig
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: tunnelIkeConfig: Configuration information for the first stage of negotiations.
+            /// </remarks>
+            [JsiiProperty(name: "tunnelIkeConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-vpc.RosVpnAttachment.TunnelIkeConfigProperty\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? TunnelIkeConfig
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: tunnelIndex: The creation sequence of the tunnel.
+            /// - **1**: First tunnel.
+            /// - **2**: Second tunnel.
+            /// </remarks>
+            [JsiiProperty(name: "tunnelIndex", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? TunnelIndex
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: tunnelIpsecConfig: Configuration information for the second stage of negotiations.
+            /// </remarks>
+            [JsiiProperty(name: "tunnelIpsecConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-vpc.RosVpnAttachment.TunnelIpsecConfigProperty\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? TunnelIpsecConfig
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(ITunnelOptionsSpecificationProperty), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosVpnAttachment.TunnelOptionsSpecificationProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.RosVpnAttachment.ITunnelOptionsSpecificationProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: customerGatewayId: The customer gateway ID associated with the tunnel.
+                /// > This parameter is required when creating dual-tunnel mode IPsec-VPN connection.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "customerGatewayId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? CustomerGatewayId
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: enableDpd: Whether to enable DPD (Dead Peer Detection) function for the tunnel. Values:
+                /// - **true** (default value): Enable DPD function. The IPsec initiator sends DPD packets to detect whether the peer device is alive. If no correct response is received within the set time, it is considered that the peer has disconnected, IPsec will delete the ISAKMP SA and corresponding IPsec SA, and the security tunnel will also be deleted.
+                /// - **false**: Do not enable DPD function, IPsec initiator will not send DPD detection packets.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "enableDpd", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? EnableDpd
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: enableNatTraversal: Whether to enable NAT traversal function for the tunnel. Values:
+                /// - **true** (default value): Enable NAT traversal function. After enabling, the IKE negotiation process will remove the verification process for UDP port numbers, while realizing the discovery function of NAT gateway devices in the tunnel.
+                /// - **false**: Do not enable NAT traversal function.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "enableNatTraversal", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? EnableNatTraversal
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: tunnelBgpConfig: Add BGP configuration for the tunnel.
+                /// > You need to configure this parameter when you enable BGP function for IPsec connection (i.e., specify the value of **EnableTunnelsBgp** parameter as **true**).
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "tunnelBgpConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-vpc.RosVpnAttachment.TunnelBgpConfigProperty\"}]}}", isOptional: true)]
+                public object? TunnelBgpConfig
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: tunnelIkeConfig: Configuration information for the first stage of negotiations.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "tunnelIkeConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-vpc.RosVpnAttachment.TunnelIkeConfigProperty\"}]}}", isOptional: true)]
+                public object? TunnelIkeConfig
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: tunnelIndex: The creation sequence of the tunnel.
+                /// - **1**: First tunnel.
+                /// - **2**: Second tunnel.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "tunnelIndex", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? TunnelIndex
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: tunnelIpsecConfig: Configuration information for the second stage of negotiations.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "tunnelIpsecConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-vpc.RosVpnAttachment.TunnelIpsecConfigProperty\"}]}}", isOptional: true)]
+                public object? TunnelIpsecConfig
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.RosVpnAttachment.TunnelOptionsSpecificationProperty")]
+        public class TunnelOptionsSpecificationProperty : AlibabaCloud.SDK.ROS.CDK.Vpc.RosVpnAttachment.ITunnelOptionsSpecificationProperty
+        {
+            private object? _customerGatewayId;
+
+            /// <remarks>
+            /// <strong>Property</strong>: customerGatewayId: The customer gateway ID associated with the tunnel.
+            /// > This parameter is required when creating dual-tunnel mode IPsec-VPN connection.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "customerGatewayId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CustomerGatewayId
+            {
+                get => _customerGatewayId;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _customerGatewayId = value;
+                }
+            }
+
+            private object? _enableDpd;
+
+            /// <remarks>
+            /// <strong>Property</strong>: enableDpd: Whether to enable DPD (Dead Peer Detection) function for the tunnel. Values:
+            /// - **true** (default value): Enable DPD function. The IPsec initiator sends DPD packets to detect whether the peer device is alive. If no correct response is received within the set time, it is considered that the peer has disconnected, IPsec will delete the ISAKMP SA and corresponding IPsec SA, and the security tunnel will also be deleted.
+            /// - **false**: Do not enable DPD function, IPsec initiator will not send DPD detection packets.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "enableDpd", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EnableDpd
+            {
+                get => _enableDpd;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _enableDpd = value;
+                }
+            }
+
+            private object? _enableNatTraversal;
+
+            /// <remarks>
+            /// <strong>Property</strong>: enableNatTraversal: Whether to enable NAT traversal function for the tunnel. Values:
+            /// - **true** (default value): Enable NAT traversal function. After enabling, the IKE negotiation process will remove the verification process for UDP port numbers, while realizing the discovery function of NAT gateway devices in the tunnel.
+            /// - **false**: Do not enable NAT traversal function.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "enableNatTraversal", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EnableNatTraversal
+            {
+                get => _enableNatTraversal;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _enableNatTraversal = value;
+                }
+            }
+
+            private object? _tunnelBgpConfig;
+
+            /// <remarks>
+            /// <strong>Property</strong>: tunnelBgpConfig: Add BGP configuration for the tunnel.
+            /// > You need to configure this parameter when you enable BGP function for IPsec connection (i.e., specify the value of **EnableTunnelsBgp** parameter as **true**).
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tunnelBgpConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-vpc.RosVpnAttachment.TunnelBgpConfigProperty\"}]}}", isOptional: true)]
+            public object? TunnelBgpConfig
+            {
+                get => _tunnelBgpConfig;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Vpc.RosVpnAttachment.ITunnelBgpConfigProperty cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Vpc.RosVpnAttachment.ITunnelBgpConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _tunnelBgpConfig = value;
+                }
+            }
+
+            private object? _tunnelIkeConfig;
+
+            /// <remarks>
+            /// <strong>Property</strong>: tunnelIkeConfig: Configuration information for the first stage of negotiations.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tunnelIkeConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-vpc.RosVpnAttachment.TunnelIkeConfigProperty\"}]}}", isOptional: true)]
+            public object? TunnelIkeConfig
+            {
+                get => _tunnelIkeConfig;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Vpc.RosVpnAttachment.ITunnelIkeConfigProperty cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Vpc.RosVpnAttachment.ITunnelIkeConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _tunnelIkeConfig = value;
+                }
+            }
+
+            private object? _tunnelIndex;
+
+            /// <remarks>
+            /// <strong>Property</strong>: tunnelIndex: The creation sequence of the tunnel.
+            /// - **1**: First tunnel.
+            /// - **2**: Second tunnel.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tunnelIndex", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? TunnelIndex
+            {
+                get => _tunnelIndex;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _tunnelIndex = value;
+                }
+            }
+
+            private object? _tunnelIpsecConfig;
+
+            /// <remarks>
+            /// <strong>Property</strong>: tunnelIpsecConfig: Configuration information for the second stage of negotiations.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tunnelIpsecConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-vpc.RosVpnAttachment.TunnelIpsecConfigProperty\"}]}}", isOptional: true)]
+            public object? TunnelIpsecConfig
+            {
+                get => _tunnelIpsecConfig;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Vpc.RosVpnAttachment.ITunnelIpsecConfigProperty cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Vpc.RosVpnAttachment.ITunnelIpsecConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _tunnelIpsecConfig = value;
                 }
             }
         }

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::PVTZ::Rule`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::PVTZ::Rule`, which is used to query the information about a forwarding rule.
 type Rule interface {
 	alicloudroscdkcore.Resource
 	IRule

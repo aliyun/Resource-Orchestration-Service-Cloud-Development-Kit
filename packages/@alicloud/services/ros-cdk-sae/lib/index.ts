@@ -3,6 +3,7 @@ export * from './applicationscalingrule';
 export * from './configmap';
 export * from './ingress';
 export * from './namespace';
+export * from './nlbbinding';
 export * from './secret';
 export * from './slbbinding';
 

@@ -9,12 +9,16 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::NatGateway`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::NatGateway`The , which resource type creates a NAT Gateway.
 type RosNatGateway interface {
 	alicloudroscdkcore.RosResource
+	AccessMode() interface{}
+	SetAccessMode(val interface{})
 	AttrForwardTableId() alicloudroscdkcore.IResolvable
 	AttrNatGatewayId() alicloudroscdkcore.IResolvable
 	AttrSNatTableId() alicloudroscdkcore.IResolvable
+	AvailabilityMode() interface{}
+	SetAvailabilityMode(val interface{})
 	// Returns: the stack trace of the point where this Resource was created from, sourced
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
@@ -35,6 +39,8 @@ type RosNatGateway interface {
 	SetInstanceChargeType(val interface{})
 	InternetChargeType() interface{}
 	SetInternetChargeType(val interface{})
+	Ipv4Prefix() interface{}
+	SetIpv4Prefix(val interface{})
 	// The logical ID for this stack element.
 	//
 	// The logical ID of the element
@@ -47,12 +53,16 @@ type RosNatGateway interface {
 	LogicalId() *string
 	NatGatewayName() interface{}
 	SetNatGatewayName(val interface{})
+	NatIp() interface{}
+	SetNatIp(val interface{})
 	NatType() interface{}
 	SetNatType(val interface{})
 	NetworkType() interface{}
 	SetNetworkType(val interface{})
 	// The construct tree node associated with this construct.
 	Node() alicloudroscdkcore.ConstructNode
+	PrivateLinkEnabled() interface{}
+	SetPrivateLinkEnabled(val interface{})
 	// Return a string that will be resolved to a RosTemplate `{ Ref }` for this element.
 	//
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
@@ -199,6 +209,16 @@ type jsiiProxy_RosNatGateway struct {
 	internal.Type__alicloudroscdkcoreRosResource
 }
 
+func (j *jsiiProxy_RosNatGateway) AccessMode() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"accessMode",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosNatGateway) AttrForwardTableId() alicloudroscdkcore.IResolvable {
 	var returns alicloudroscdkcore.IResolvable
 	_jsii_.Get(
@@ -224,6 +244,16 @@ func (j *jsiiProxy_RosNatGateway) AttrSNatTableId() alicloudroscdkcore.IResolvab
 	_jsii_.Get(
 		j,
 		"attrSNatTableId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosNatGateway) AvailabilityMode() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"availabilityMode",
 		&returns,
 	)
 	return returns
@@ -319,6 +349,16 @@ func (j *jsiiProxy_RosNatGateway) InternetChargeType() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosNatGateway) Ipv4Prefix() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"ipv4Prefix",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosNatGateway) LogicalId() *string {
 	var returns *string
 	_jsii_.Get(
@@ -334,6 +374,16 @@ func (j *jsiiProxy_RosNatGateway) NatGatewayName() interface{} {
 	_jsii_.Get(
 		j,
 		"natGatewayName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosNatGateway) NatIp() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"natIp",
 		&returns,
 	)
 	return returns
@@ -364,6 +414,16 @@ func (j *jsiiProxy_RosNatGateway) Node() alicloudroscdkcore.ConstructNode {
 	_jsii_.Get(
 		j,
 		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosNatGateway) PrivateLinkEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"privateLinkEnabled",
 		&returns,
 	)
 	return returns
@@ -497,6 +557,28 @@ func NewRosNatGateway_Override(r RosNatGateway, scope alicloudroscdkcore.Constru
 	)
 }
 
+func (j *jsiiProxy_RosNatGateway)SetAccessMode(val interface{}) {
+	if err := j.validateSetAccessModeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"accessMode",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosNatGateway)SetAvailabilityMode(val interface{}) {
+	if err := j.validateSetAvailabilityModeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"availabilityMode",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosNatGateway)SetDeletionForce(val interface{}) {
 	if err := j.validateSetDeletionForceParameters(val); err != nil {
 		panic(err)
@@ -585,6 +667,17 @@ func (j *jsiiProxy_RosNatGateway)SetInternetChargeType(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosNatGateway)SetIpv4Prefix(val interface{}) {
+	if err := j.validateSetIpv4PrefixParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"ipv4Prefix",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosNatGateway)SetNatGatewayName(val interface{}) {
 	if err := j.validateSetNatGatewayNameParameters(val); err != nil {
 		panic(err)
@@ -592,6 +685,17 @@ func (j *jsiiProxy_RosNatGateway)SetNatGatewayName(val interface{}) {
 	_jsii_.Set(
 		j,
 		"natGatewayName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosNatGateway)SetNatIp(val interface{}) {
+	if err := j.validateSetNatIpParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"natIp",
 		val,
 	)
 }
@@ -614,6 +718,17 @@ func (j *jsiiProxy_RosNatGateway)SetNetworkType(val interface{}) {
 	_jsii_.Set(
 		j,
 		"networkType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosNatGateway)SetPrivateLinkEnabled(val interface{}) {
+	if err := j.validateSetPrivateLinkEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"privateLinkEnabled",
 		val,
 	)
 }

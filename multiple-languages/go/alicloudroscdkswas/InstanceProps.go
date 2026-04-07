@@ -35,5 +35,9 @@ type InstanceProps struct {
 	// If the disk included in the specified plan is a standard SSD, the data disk must be 20 GB or larger in size.
 	// Default value: 0.
 	DataDiskSize interface{} `field:"optional" json:"dataDiskSize" yaml:"dataDiskSize"`
+	// Property tags: Tags to attach to swas.
+	//
+	// Max support 20 tags to add during create swas. Each tag with two properties Key and Value, and Key is required.
+	Tags *[]*RosInstance_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 }
 

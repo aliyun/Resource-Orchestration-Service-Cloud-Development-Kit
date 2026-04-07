@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cen;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CEN::TransitRouterVpnAttachment</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CEN::TransitRouterVpnAttachment</code>, which is used to create a VPN connection.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.251Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:22.517Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.TransitRouterVpnAttachment")
 public class TransitRouterVpnAttachment extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cen.ITransitRouterVpnAttachment {
 
@@ -129,27 +129,6 @@ public class TransitRouterVpnAttachment extends com.aliyun.ros.cdk.core.Resource
          */
         public Builder vpnId(final com.aliyun.ros.cdk.core.IResolvable vpnId) {
             this.props.vpnId(vpnId);
-            return this;
-        }
-
-        /**
-         * Property zoneId: Availability zone ID in the current region.
-         * <p>
-         * @return {@code this}
-         * @param zoneId Property zoneId: Availability zone ID in the current region. This parameter is required.
-         */
-        public Builder zoneId(final java.lang.String zoneId) {
-            this.props.zoneId(zoneId);
-            return this;
-        }
-        /**
-         * Property zoneId: Availability zone ID in the current region.
-         * <p>
-         * @return {@code this}
-         * @param zoneId Property zoneId: Availability zone ID in the current region. This parameter is required.
-         */
-        public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
-            this.props.zoneId(zoneId);
             return this;
         }
 
@@ -356,6 +335,27 @@ public class TransitRouterVpnAttachment extends com.aliyun.ros.cdk.core.Resource
          */
         public Builder vpnOwnerId(final com.aliyun.ros.cdk.core.IResolvable vpnOwnerId) {
             this.props.vpnOwnerId(vpnOwnerId);
+            return this;
+        }
+
+        /**
+         * Property zoneId: Availability zone ID in the current region.
+         * <p>
+         * @return {@code this}
+         * @param zoneId Property zoneId: Availability zone ID in the current region. This parameter is required.
+         */
+        public Builder zoneId(final java.lang.String zoneId) {
+            this.props.zoneId(zoneId);
+            return this;
+        }
+        /**
+         * Property zoneId: Availability zone ID in the current region.
+         * <p>
+         * @return {@code this}
+         * @param zoneId Property zoneId: Availability zone ID in the current region. This parameter is required.
+         */
+        public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
+            this.props.zoneId(zoneId);
             return this;
         }
 

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.gpdb;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::GPDB::SupabaseProject</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::GPDB::SupabaseProject</code>The , which resource creates a Supabase project.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.444Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:27.067Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.SupabaseProject")
 public class SupabaseProject extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.gpdb.ISupabaseProject {
 
@@ -41,11 +41,35 @@ public class SupabaseProject extends com.aliyun.ros.cdk.core.Resource implements
     }
 
     /**
+     * Attribute ApiKeys: API keys.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrApiKeys() {
+        return software.amazon.jsii.Kernel.get(this, "attrApiKeys", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     * Attribute PrivateConnectUrl: Private connection URL.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPrivateConnectUrl() {
+        return software.amazon.jsii.Kernel.get(this, "attrPrivateConnectUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
      * Attribute ProjectId: Supabase instance ID.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrProjectId() {
         return software.amazon.jsii.Kernel.get(this, "attrProjectId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     * Attribute PublicConnectUrl: Public connection URL.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPublicConnectUrl() {
+        return software.amazon.jsii.Kernel.get(this, "attrPublicConnectUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     @Override
@@ -320,6 +344,48 @@ public class SupabaseProject extends com.aliyun.ros.cdk.core.Resource implements
         }
 
         /**
+         * Property payType: The payment type.
+         * <p>
+         * @return {@code this}
+         * @param payType Property payType: The payment type. This parameter is required.
+         */
+        public Builder payType(final java.lang.String payType) {
+            this.props.payType(payType);
+            return this;
+        }
+        /**
+         * Property payType: The payment type.
+         * <p>
+         * @return {@code this}
+         * @param payType Property payType: The payment type. This parameter is required.
+         */
+        public Builder payType(final com.aliyun.ros.cdk.core.IResolvable payType) {
+            this.props.payType(payType);
+            return this;
+        }
+
+        /**
+         * Property period: The billing period.
+         * <p>
+         * @return {@code this}
+         * @param period Property period: The billing period. This parameter is required.
+         */
+        public Builder period(final java.lang.String period) {
+            this.props.period(period);
+            return this;
+        }
+        /**
+         * Property period: The billing period.
+         * <p>
+         * @return {@code this}
+         * @param period Property period: The billing period. This parameter is required.
+         */
+        public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
+            this.props.period(period);
+            return this;
+        }
+
+        /**
          * Property storageSize: Storage space size, unit GB, default 1GB.
          * <p>
          * @return {@code this}
@@ -337,6 +403,31 @@ public class SupabaseProject extends com.aliyun.ros.cdk.core.Resource implements
          */
         public Builder storageSize(final com.aliyun.ros.cdk.core.IResolvable storageSize) {
             this.props.storageSize(storageSize);
+            return this;
+        }
+
+        /**
+         * Property usedTime: The subscription period of the instance.
+         * <p>
+         * Unit: month or year. Note When period is set to year, the supported values of this parameter are 1, 2 and 3.
+         * <p>
+         * @return {@code this}
+         * @param usedTime Property usedTime: The subscription period of the instance. This parameter is required.
+         */
+        public Builder usedTime(final java.lang.Number usedTime) {
+            this.props.usedTime(usedTime);
+            return this;
+        }
+        /**
+         * Property usedTime: The subscription period of the instance.
+         * <p>
+         * Unit: month or year. Note When period is set to year, the supported values of this parameter are 1, 2 and 3.
+         * <p>
+         * @return {@code this}
+         * @param usedTime Property usedTime: The subscription period of the instance. This parameter is required.
+         */
+        public Builder usedTime(final com.aliyun.ros.cdk.core.IResolvable usedTime) {
+            this.props.usedTime(usedTime);
             return this;
         }
 

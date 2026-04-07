@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Paiplugin
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::PAIPlugin::Group`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::PAIPlugin::Group`, which is used to create a user group.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGroup`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paiplugin-group

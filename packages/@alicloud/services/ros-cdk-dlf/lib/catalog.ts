@@ -42,7 +42,7 @@ export interface ICatalog extends ros.IResource {
     readonly attrCatalogId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DLF::Catalog`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DLF::Catalog`, which is used to create a catalog in Data Lake Formation (DLF).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCatalog`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dlf-catalog
  */
@@ -70,8 +70,8 @@ export class Catalog extends ros.Resource implements ICatalog {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCatalog = new RosCatalog(this, id,  {
-            owner: props.owner,
             locationUri: props.locationUri,
+            owner: props.owner,
             description: props.description,
             catalogId: props.catalogId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

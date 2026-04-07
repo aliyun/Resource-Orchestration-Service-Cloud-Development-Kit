@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::ForwardEntry</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::ForwardEntry</code>, which is used to add a DNAT entry to a DNAT table.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.052Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.003Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosForwardEntry")
 public class RosForwardEntry extends com.aliyun.ros.cdk.core.RosResource {
 

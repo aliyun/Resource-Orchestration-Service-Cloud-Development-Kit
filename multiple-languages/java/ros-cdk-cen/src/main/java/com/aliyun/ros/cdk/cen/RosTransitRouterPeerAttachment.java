@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cen;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CEN::TransitRouterPeerAttachment</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CEN::TransitRouterPeerAttachment</code>The , which type creates an inter-region connection for an Enterprise Edition transit router.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.173Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:22.449Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosTransitRouterPeerAttachment")
 public class RosTransitRouterPeerAttachment extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -187,6 +187,24 @@ public class RosTransitRouterPeerAttachment extends com.aliyun.ros.cdk.core.RosR
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDeletionForce() {
+        return software.amazon.jsii.Kernel.get(this, "deletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDeletionForce(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "deletionForce", value);
+    }
+
+    /**
+     */
+    public void setDeletionForce(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "deletionForce", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getPeerTransitRouterRegionId() {
         return software.amazon.jsii.Kernel.get(this, "peerTransitRouterRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -201,6 +219,42 @@ public class RosTransitRouterPeerAttachment extends com.aliyun.ros.cdk.core.RosR
      */
     public void setPeerTransitRouterRegionId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "peerTransitRouterRegionId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRouteTableAssociationEnabled() {
+        return software.amazon.jsii.Kernel.get(this, "routeTableAssociationEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setRouteTableAssociationEnabled(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "routeTableAssociationEnabled", value);
+    }
+
+    /**
+     */
+    public void setRouteTableAssociationEnabled(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "routeTableAssociationEnabled", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRouteTablePropagationEnabled() {
+        return software.amazon.jsii.Kernel.get(this, "routeTablePropagationEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setRouteTablePropagationEnabled(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "routeTablePropagationEnabled", value);
+    }
+
+    /**
+     */
+    public void setRouteTablePropagationEnabled(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "routeTablePropagationEnabled", value);
     }
 
     /**
@@ -584,6 +638,23 @@ public class RosTransitRouterPeerAttachment extends com.aliyun.ros.cdk.core.RosR
 
         /**
          * @return {@code this}
+         * @param deletionForce This parameter is required.
+         */
+        public Builder deletionForce(final java.lang.Boolean deletionForce) {
+            this.props.deletionForce(deletionForce);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param deletionForce This parameter is required.
+         */
+        public Builder deletionForce(final com.aliyun.ros.cdk.core.IResolvable deletionForce) {
+            this.props.deletionForce(deletionForce);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param peerTransitRouterRegionId This parameter is required.
          */
         public Builder peerTransitRouterRegionId(final java.lang.String peerTransitRouterRegionId) {
@@ -596,6 +667,40 @@ public class RosTransitRouterPeerAttachment extends com.aliyun.ros.cdk.core.RosR
          */
         public Builder peerTransitRouterRegionId(final com.aliyun.ros.cdk.core.IResolvable peerTransitRouterRegionId) {
             this.props.peerTransitRouterRegionId(peerTransitRouterRegionId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param routeTableAssociationEnabled This parameter is required.
+         */
+        public Builder routeTableAssociationEnabled(final java.lang.Boolean routeTableAssociationEnabled) {
+            this.props.routeTableAssociationEnabled(routeTableAssociationEnabled);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param routeTableAssociationEnabled This parameter is required.
+         */
+        public Builder routeTableAssociationEnabled(final com.aliyun.ros.cdk.core.IResolvable routeTableAssociationEnabled) {
+            this.props.routeTableAssociationEnabled(routeTableAssociationEnabled);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param routeTablePropagationEnabled This parameter is required.
+         */
+        public Builder routeTablePropagationEnabled(final java.lang.Boolean routeTablePropagationEnabled) {
+            this.props.routeTablePropagationEnabled(routeTablePropagationEnabled);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param routeTablePropagationEnabled This parameter is required.
+         */
+        public Builder routeTablePropagationEnabled(final com.aliyun.ros.cdk.core.IResolvable routeTablePropagationEnabled) {
+            this.props.routeTablePropagationEnabled(routeTablePropagationEnabled);
             return this;
         }
 

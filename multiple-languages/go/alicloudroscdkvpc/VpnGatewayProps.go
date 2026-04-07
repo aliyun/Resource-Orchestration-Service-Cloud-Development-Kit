@@ -54,6 +54,13 @@ type VpnGatewayProps struct {
 	//
 	// When the value of the InstanceChargeType parameter is PREPAY, this parameter is mandatory.
 	Period interface{} `field:"optional" json:"period" yaml:"period"`
+	// Property resourceGroupId: The ID of the resource group to which the VPN gateway belongs.
+	//
+	// - If you do not specify a resource group ID, the VPN gateway will belong to the default resource group after creation.
+	// - After the VPN gateway is created, if you create SSL server, SSL client certificate, IPsec server, or IPsec connection (in the scenario where the IPsec connection is bound to the VPN gateway), these resources will directly belong to the resource group of the VPN gateway and cannot be modified.
+	//
+	// If you change the resource group of the VPN gateway, the resource group of the above resources will also be changed.
+	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 	// Property sslConnections: The maximum number of clients allowed to connect at the same time.
 	SslConnections interface{} `field:"optional" json:"sslConnections" yaml:"sslConnections"`
 	// Property tags: Tags to attach to instance.

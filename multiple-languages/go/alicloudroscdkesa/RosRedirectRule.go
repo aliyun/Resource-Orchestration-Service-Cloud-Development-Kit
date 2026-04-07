@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::RedirectRule`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::RedirectRule`The , which type is used to create a redirection configuration.
 type RosRedirectRule interface {
 	alicloudroscdkcore.RosResource
 	AttrConfigId() alicloudroscdkcore.IResolvable

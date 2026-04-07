@@ -288,7 +288,7 @@ export interface IDbInstance extends ros.IResource {
     readonly attrZoneId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::GraphDatabase::DbInstance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::GraphDatabase::DbInstance`, which is used to create a Graph Database (GDB) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDbInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-graphdatabase-dbinstance
  */
@@ -476,9 +476,9 @@ export class DbInstance extends ros.Resource implements IDbInstance {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDbInstance = new RosDbInstance(this, id,  {
-            zoneId: props.zoneId,
             resourceGroupId: props.resourceGroupId,
             dbInstanceNetworkType: props.dbInstanceNetworkType,
+            zoneId: props.zoneId,
             vSwitchId: props.vSwitchId,
             ecsSecurityGroupRelations: props.ecsSecurityGroupRelations,
             dbInstanceStorageType: props.dbInstanceStorageType,
@@ -487,8 +487,8 @@ export class DbInstance extends ros.Resource implements IDbInstance {
             dbInstanceCategory: props.dbInstanceCategory,
             sourceDbInstanceId: props.sourceDbInstanceId,
             vpcId: props.vpcId,
-            dbInstanceIpArray: props.dbInstanceIpArray,
             dbVersion: props.dbVersion,
+            dbInstanceIpArray: props.dbInstanceIpArray,
             createType: props.createType,
             paymentType: props.paymentType === undefined || props.paymentType === null ? 'PayAsYouGo' : props.paymentType,
             dbInstanceDescription: props.dbInstanceDescription,

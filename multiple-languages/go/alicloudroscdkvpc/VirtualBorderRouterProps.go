@@ -25,6 +25,11 @@ type VirtualBorderRouterProps struct {
 	// Note Only the owner of the physical connection can set this parameter. The VLAN IDs of
 	// two VBRs of the same physical connection must be different.
 	VlanId interface{} `field:"required" json:"vlanId" yaml:"vlanId"`
+	// Property bandwidth: The bandwidth of the VBR instance, in Mbps.
+	//
+	// - When creating a VBR instance for a dedicated leased line, the values are 50, 100, 200, 300, 400, 500, 1000, 2048, 5120, 8192, 10240, 20480, 40960, 50120, 61440 and 102400.
+	// - When creating a VBR instance for a shared leased line, no configuration is required, and the bandwidth of the VBR is the shared leased line bandwidth set when creating the shared physical connection.
+	Bandwidth interface{} `field:"optional" json:"bandwidth" yaml:"bandwidth"`
 	// Property circuitCode: The circuit code provided by the Internet service provider (ISP) for the physical connection.
 	//
 	// Note Only the owner of the physical connection can set this parameter.
@@ -39,5 +44,7 @@ type VirtualBorderRouterProps struct {
 	// The name must be 2 to 128 characters in length, and can contain, digits, periods (.),
 	// underscores (_), and hyphens (-). The name cannot start with http:\/\/ or https:\/\/.
 	Name interface{} `field:"optional" json:"name" yaml:"name"`
+	// Property resourceGroupId: The ID of the resource group.
+	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 }
 

@@ -252,6 +252,23 @@ func (j *jsiiProxy_RosTransitRouterVpcAttachment) validateSetAutoCreateVpcRouteP
 	return nil
 }
 
+func (j *jsiiProxy_RosTransitRouterVpcAttachment) validateSetAutoPublishRouteEnabledParameters(val interface{}) error {
+	switch val.(type) {
+	case *bool:
+		// ok
+	case bool:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *bool, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosTransitRouterVpcAttachment) validateSetCenIdParameters(val interface{}) error {
 	switch val.(type) {
 	case *string:
@@ -390,6 +407,23 @@ func (j *jsiiProxy_RosTransitRouterVpcAttachment) validateSetTransitRouterIdPara
 	default:
 		if !_jsii_.IsAnonymousProxy(val) {
 			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosTransitRouterVpcAttachment) validateSetTransitRouterVpcAttachmentOptionsParameters(val interface{}) error {
+	switch val.(type) {
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	case *map[string]interface{}:
+		// ok
+	case map[string]interface{}:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *map[string]interface{}; received %#v (a %T)", val, val)
 		}
 	}
 

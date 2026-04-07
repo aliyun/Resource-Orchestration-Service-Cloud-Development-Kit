@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.edas;
 /**
  * Represents a <code>UserDefineRegion</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:56.004Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:25.431Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.IUserDefineRegion")
 @software.amazon.jsii.Jsii.Proxy(IUserDefineRegion.Jsii$Proxy.class)
 public interface IUserDefineRegion extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

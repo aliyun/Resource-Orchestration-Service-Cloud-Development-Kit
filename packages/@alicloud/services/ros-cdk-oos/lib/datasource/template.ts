@@ -112,7 +112,7 @@ Package: the template for software packages.
     readonly attrUpdatedDate: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::OOS::Template`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::OOS::Template`The , which type is used to query the details of a single template.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTemplate`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-template
  */
@@ -212,8 +212,8 @@ Package: the template for software packages.
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosTemplate = new RosTemplate(this, id,  {
-            templateVersion: props.templateVersion,
             templateName: props.templateName,
+            templateVersion: props.templateVersion,
             refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosTemplate;

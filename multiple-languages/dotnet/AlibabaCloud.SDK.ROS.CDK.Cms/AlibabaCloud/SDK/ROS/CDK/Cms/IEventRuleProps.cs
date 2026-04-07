@@ -63,6 +63,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             }
         }
 
+        /// <summary>Property silenceTime: Channel silence time in seconds.</summary>
+        [JsiiProperty(name: "silenceTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SilenceTime
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property state: The status of the alert rule.</summary>
         /// <remarks>
         /// Valid values:
@@ -129,6 +140,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             [JsiiOptional]
             [JsiiProperty(name: "groupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? GroupId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property silenceTime: Channel silence time in seconds.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "silenceTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SilenceTime
             {
                 get => GetInstanceProperty<object?>();
             }

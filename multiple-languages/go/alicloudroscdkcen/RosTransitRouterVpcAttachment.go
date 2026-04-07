@@ -9,11 +9,10 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterVpcAttachment`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterVpcAttachment`, which is used to create a virtual private cloud (VPC) connection on an Enterprise Edition transit router.
 type RosTransitRouterVpcAttachment interface {
 	alicloudroscdkcore.RosResource
 	AttrCenId() alicloudroscdkcore.IResolvable
-	AttrClientToken() alicloudroscdkcore.IResolvable
 	AttrResourceType() alicloudroscdkcore.IResolvable
 	AttrTransitRouterAttachmentDescription() alicloudroscdkcore.IResolvable
 	AttrTransitRouterAttachmentId() alicloudroscdkcore.IResolvable
@@ -23,6 +22,8 @@ type RosTransitRouterVpcAttachment interface {
 	AttrVpcOwnerId() alicloudroscdkcore.IResolvable
 	AutoCreateVpcRoute() interface{}
 	SetAutoCreateVpcRoute(val interface{})
+	AutoPublishRouteEnabled() interface{}
+	SetAutoPublishRouteEnabled(val interface{})
 	CenId() interface{}
 	SetCenId(val interface{})
 	ChargeType() interface{}
@@ -71,6 +72,8 @@ type RosTransitRouterVpcAttachment interface {
 	SetTransitRouterAttachmentName(val interface{})
 	TransitRouterId() interface{}
 	SetTransitRouterId(val interface{})
+	TransitRouterVpcAttachmentOptions() interface{}
+	SetTransitRouterVpcAttachmentOptions(val interface{})
 	// Return properties modified after initiation.
 	//
 	// Resources that expose mutable properties should override this function to
@@ -211,16 +214,6 @@ func (j *jsiiProxy_RosTransitRouterVpcAttachment) AttrCenId() alicloudroscdkcore
 	return returns
 }
 
-func (j *jsiiProxy_RosTransitRouterVpcAttachment) AttrClientToken() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
-	_jsii_.Get(
-		j,
-		"attrClientToken",
-		&returns,
-	)
-	return returns
-}
-
 func (j *jsiiProxy_RosTransitRouterVpcAttachment) AttrResourceType() alicloudroscdkcore.IResolvable {
 	var returns alicloudroscdkcore.IResolvable
 	_jsii_.Get(
@@ -296,6 +289,16 @@ func (j *jsiiProxy_RosTransitRouterVpcAttachment) AutoCreateVpcRoute() interface
 	_jsii_.Get(
 		j,
 		"autoCreateVpcRoute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosTransitRouterVpcAttachment) AutoPublishRouteEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"autoPublishRouteEnabled",
 		&returns,
 	)
 	return returns
@@ -471,6 +474,16 @@ func (j *jsiiProxy_RosTransitRouterVpcAttachment) TransitRouterId() interface{} 
 	return returns
 }
 
+func (j *jsiiProxy_RosTransitRouterVpcAttachment) TransitRouterVpcAttachmentOptions() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"transitRouterVpcAttachmentOptions",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosTransitRouterVpcAttachment) UpdatedProperites() *map[string]interface{} {
 	var returns *map[string]interface{}
 	_jsii_.Get(
@@ -546,6 +559,17 @@ func (j *jsiiProxy_RosTransitRouterVpcAttachment)SetAutoCreateVpcRoute(val inter
 	_jsii_.Set(
 		j,
 		"autoCreateVpcRoute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosTransitRouterVpcAttachment)SetAutoPublishRouteEnabled(val interface{}) {
+	if err := j.validateSetAutoPublishRouteEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"autoPublishRouteEnabled",
 		val,
 	)
 }
@@ -645,6 +669,17 @@ func (j *jsiiProxy_RosTransitRouterVpcAttachment)SetTransitRouterId(val interfac
 	_jsii_.Set(
 		j,
 		"transitRouterId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosTransitRouterVpcAttachment)SetTransitRouterVpcAttachmentOptions(val interface{}) {
+	if err := j.validateSetTransitRouterVpcAttachmentOptionsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"transitRouterVpcAttachmentOptions",
 		val,
 	)
 }

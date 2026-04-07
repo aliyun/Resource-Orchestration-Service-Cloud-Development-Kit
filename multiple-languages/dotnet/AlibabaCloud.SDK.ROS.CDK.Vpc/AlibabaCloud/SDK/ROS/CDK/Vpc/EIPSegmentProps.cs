@@ -164,6 +164,63 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
+        private object? _isp;
+
+        /// <summary>Property isp: The line type.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description><strong>BGP</strong> (default): BGP (multi-line). All regions support BGP (multi-line) EIPs.</description>
+        /// <description><strong>BGP_PRO</strong>: BGP (multi-line)_Premium. Currently supported only in China (Hong Kong),
+        /// Singapore, Japan (Tokyo), Malaysia (Kuala Lumpur), Philippines (Manila),
+        /// India (Jakarta), and Thailand (Bangkok).</description>
+        /// </list>
+        ///
+        /// For more information about BGP (multi-line) and BGP (multi-line)_Premium,
+        /// see <a href="~~32321~~">EIP Line Type</a>.
+        ///
+        /// If you are a single-bandwidth whitelist user, you can also choose:
+        ///
+        /// <list type="bullet">
+        /// <description><strong>ChinaTelecom</strong>: China Telecom</description>
+        /// <description><strong>ChinaUnicom</strong>: China Unicom</description>
+        /// <description><strong>ChinaMobile</strong>: China Mobile</description>
+        /// <description><strong>ChinaTelecom_L2</strong>: China Telecom L2</description>
+        /// <description><strong>ChinaUnicom_L2</strong>: China Unicom L2</description>
+        /// <description><strong>ChinaMobile_L2</strong>: China Mobile L2</description>
+        /// </list>
+        ///
+        /// If you are a Hangzhou Finance Cloud user, this field is required with value: <strong>BGP_FinanceCloud</strong>.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "isp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? Isp
+        {
+            get => _isp;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _isp = value;
+            }
+        }
+
         private object? _netmode;
 
         /// <summary>Property netmode: The network type.</summary>
@@ -232,6 +289,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                     }
                 }
                 _resourceGroupId = value;
+            }
+        }
+
+        private object? _zone;
+
+        /// <summary>Property zone: The zone of the contiguous EIP group.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "zone", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? Zone
+        {
+            get => _zone;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _zone = value;
             }
         }
     }

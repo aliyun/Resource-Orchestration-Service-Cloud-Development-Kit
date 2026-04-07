@@ -3,6 +3,336 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosApplicationConnection`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-applicationconnection
+ */
+export interface RosApplicationConnectionProps {
+
+    /**
+     * @Property connectionCategory: The category of the application connection.
+     */
+    readonly connectionCategory: string | ros.IResolvable;
+
+    /**
+     * @Property connectionType: The type of the application connection.
+     */
+    readonly connectionType: string | ros.IResolvable;
+
+    /**
+     * @Property envVars: The environment variables of the application connection.
+     */
+    readonly envVars: Array<RosApplicationConnection.EnvVarsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the application connection.
+     */
+    readonly name: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosApplicationConnectionProps`
+ *
+ * @param properties - the TypeScript properties of a `RosApplicationConnectionProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosApplicationConnectionPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('connectionCategory', ros.requiredValidator)(properties.connectionCategory));
+    if(properties.connectionCategory && (typeof properties.connectionCategory) !== 'object') {
+        errors.collect(ros.propertyValidator('connectionCategory', ros.validateAllowedValues)({
+          data: properties.connectionCategory,
+          allowedValues: ["Sandbox","Memory","RAG","Gateway","MCP"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('connectionCategory', ros.validateString)(properties.connectionCategory));
+    errors.collect(ros.propertyValidator('envVars', ros.requiredValidator)(properties.envVars));
+    if(properties.envVars && (Array.isArray(properties.envVars) || (typeof properties.envVars) === 'string')) {
+        errors.collect(ros.propertyValidator('envVars', ros.validateLength)({
+            data: properties.envVars.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('envVars', ros.listValidator(RosApplicationConnection_EnvVarsPropertyValidator))(properties.envVars));
+    errors.collect(ros.propertyValidator('connectionType', ros.requiredValidator)(properties.connectionType));
+    if(properties.connectionType && (typeof properties.connectionType) !== 'object') {
+        errors.collect(ros.propertyValidator('connectionType', ros.validateAllowedValues)({
+          data: properties.connectionType,
+          allowedValues: ["AgentRun","AgentScopeRuntime"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('connectionType', ros.validateString)(properties.connectionType));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "RosApplicationConnectionProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OOS::ApplicationConnection` resource
+ *
+ * @param properties - the TypeScript properties of a `RosApplicationConnectionProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OOS::ApplicationConnection` resource.
+ */
+// @ts-ignore TS6133
+function rosApplicationConnectionPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosApplicationConnectionPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ConnectionCategory': ros.stringToRosTemplate(properties.connectionCategory),
+      'ConnectionType': ros.stringToRosTemplate(properties.connectionType),
+      'EnvVars': ros.listMapper(rosApplicationConnectionEnvVarsPropertyToRosTemplate)(properties.envVars),
+      'Name': ros.stringToRosTemplate(properties.name),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::ApplicationConnection`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ApplicationConnection` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-applicationconnection
+ */
+export class RosApplicationConnection extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OOS::ApplicationConnection";
+
+    /**
+     * @Attribute ConnectionId: The ID of the application connection.
+     */
+    public readonly attrConnectionId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property connectionCategory: The category of the application connection.
+     */
+    public connectionCategory: string | ros.IResolvable;
+
+    /**
+     * @Property connectionType: The type of the application connection.
+     */
+    public connectionType: string | ros.IResolvable;
+
+    /**
+     * @Property envVars: The environment variables of the application connection.
+     */
+    public envVars: Array<RosApplicationConnection.EnvVarsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the application connection.
+     */
+    public name: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosApplicationConnectionProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosApplicationConnection.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrConnectionId = this.getAtt('ConnectionId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.connectionCategory = props.connectionCategory;
+        this.connectionType = props.connectionType;
+        this.envVars = props.envVars;
+        this.name = props.name;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            connectionCategory: this.connectionCategory,
+            connectionType: this.connectionType,
+            envVars: this.envVars,
+            name: this.name,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosApplicationConnectionPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosApplicationConnection {
+    /**
+     * @stability external
+     */
+    export interface EnvVarsProperty {
+        /**
+         * @Property value: The value of the environment variable.
+         */
+        readonly value: string | ros.IResolvable;
+        /**
+         * @Property key: The key of the environment variable.
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `EnvVarsProperty`
+ *
+ * @param properties - the TypeScript properties of a `EnvVarsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosApplicationConnection_EnvVarsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.requiredValidator)(properties.value));
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "EnvVarsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OOS::ApplicationConnection.EnvVars` resource
+ *
+ * @param properties - the TypeScript properties of a `EnvVarsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OOS::ApplicationConnection.EnvVars` resource.
+ */
+// @ts-ignore TS6133
+function rosApplicationConnectionEnvVarsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosApplicationConnection_EnvVarsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
+ * Properties for defining a `RosApplicationConnectionBind`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-applicationconnectionbind
+ */
+export interface RosApplicationConnectionBindProps {
+
+    /**
+     * @Property connectionIds: The list of connection IDs to bind.
+     * The maximum number of connections is 100.
+     */
+    readonly connectionIds: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property applicationGroupName: The name of the application group.
+     */
+    readonly applicationGroupName?: string | ros.IResolvable;
+
+    /**
+     * @Property applicationName: The name of the application.
+     */
+    readonly applicationName?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosApplicationConnectionBindProps`
+ *
+ * @param properties - the TypeScript properties of a `RosApplicationConnectionBindProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosApplicationConnectionBindPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('applicationName', ros.validateString)(properties.applicationName));
+    errors.collect(ros.propertyValidator('connectionIds', ros.requiredValidator)(properties.connectionIds));
+    if(properties.connectionIds && (Array.isArray(properties.connectionIds) || (typeof properties.connectionIds) === 'string')) {
+        errors.collect(ros.propertyValidator('connectionIds', ros.validateLength)({
+            data: properties.connectionIds.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('connectionIds', ros.listValidator(ros.validateString))(properties.connectionIds));
+    errors.collect(ros.propertyValidator('applicationGroupName', ros.validateString)(properties.applicationGroupName));
+    return errors.wrap('supplied properties not correct for "RosApplicationConnectionBindProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OOS::ApplicationConnectionBind` resource
+ *
+ * @param properties - the TypeScript properties of a `RosApplicationConnectionBindProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OOS::ApplicationConnectionBind` resource.
+ */
+// @ts-ignore TS6133
+function rosApplicationConnectionBindPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosApplicationConnectionBindPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ConnectionIds': ros.listMapper(ros.stringToRosTemplate)(properties.connectionIds),
+      'ApplicationGroupName': ros.stringToRosTemplate(properties.applicationGroupName),
+      'ApplicationName': ros.stringToRosTemplate(properties.applicationName),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::ApplicationConnectionBind`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ApplicationConnectionBind` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-applicationconnectionbind
+ */
+export class RosApplicationConnectionBind extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OOS::ApplicationConnectionBind";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property connectionIds: The list of connection IDs to bind.
+     * The maximum number of connections is 100.
+     */
+    public connectionIds: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property applicationGroupName: The name of the application group.
+     */
+    public applicationGroupName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property applicationName: The name of the application.
+     */
+    public applicationName: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosApplicationConnectionBindProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosApplicationConnectionBind.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.connectionIds = props.connectionIds;
+        this.applicationGroupName = props.applicationGroupName;
+        this.applicationName = props.applicationName;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            connectionIds: this.connectionIds,
+            applicationGroupName: this.applicationGroupName,
+            applicationName: this.applicationName,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosApplicationConnectionBindPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosApplicationGroupDeployment`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-applicationgroupdeployment
  */
@@ -84,7 +414,7 @@ function rosApplicationGroupDeploymentPropsToRosTemplate(properties: any, enable
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::ApplicationGroupDeployment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::ApplicationGroupDeployment`The , which resource deploys an application group.
  * @Note This class does not contain additional functions, so it is recommended to use the `ApplicationGroupDeployment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-applicationgroupdeployment
  */
@@ -93,6 +423,21 @@ export class RosApplicationGroupDeployment extends ros.RosResource {
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OOS::ApplicationGroupDeployment";
+
+    /**
+     * @Attribute ApplicationName: The name of the application.
+     */
+    public readonly attrApplicationName: ros.IResolvable;
+
+    /**
+     * @Attribute ExecutionId: The execution ID of the application group deployment.
+     */
+    public readonly attrExecutionId: ros.IResolvable;
+
+    /**
+     * @Attribute Name: The name of the application group.
+     */
+    public readonly attrName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -124,6 +469,9 @@ export class RosApplicationGroupDeployment extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosApplicationGroupDeploymentProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosApplicationGroupDeployment.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrApplicationName = this.getAtt('ApplicationName');
+        this.attrExecutionId = this.getAtt('ExecutionId');
+        this.attrName = this.getAtt('Name');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.applicationName = props.applicationName;
@@ -192,7 +540,7 @@ function rosDefaultPatchBaselinePropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::DefaultPatchBaseline`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::DefaultPatchBaseline`, which is used to register a default patch baseline.
  * @Note This class does not contain additional functions, so it is recommended to use the `DefaultPatchBaseline` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-defaultpatchbaseline
  */
@@ -305,6 +653,11 @@ export interface RosDeployRevisionProps {
     readonly applicationName: string | ros.IResolvable;
 
     /**
+     * @Property deployResourceType: The type of the deploy resource.
+     */
+    readonly deployResourceType?: string | ros.IResolvable;
+
+    /**
      * @Property description: The description of the revision.
      */
     readonly description?: string | ros.IResolvable;
@@ -353,6 +706,13 @@ function RosDeployRevisionPropsValidator(properties: any): ros.ValidationResult 
     }
     errors.collect(ros.propertyValidator('revisionType', ros.validateString)(properties.revisionType));
     errors.collect(ros.propertyValidator('hooks', ros.hashValidator(ros.validateAny))(properties.hooks));
+    if(properties.deployResourceType && (typeof properties.deployResourceType) !== 'object') {
+        errors.collect(ros.propertyValidator('deployResourceType', ros.validateAllowedValues)({
+          data: properties.deployResourceType,
+          allowedValues: ["Ecs","Kubernetes","FC","SWAS"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('deployResourceType', ros.validateString)(properties.deployResourceType));
     errors.collect(ros.propertyValidator('location', ros.hashValidator(ros.validateAny))(properties.location));
     return errors.wrap('supplied properties not correct for "RosDeployRevisionProps"');
 }
@@ -372,6 +732,7 @@ function rosDeployRevisionPropsToRosTemplate(properties: any, enableResourceProp
     }
     return {
       'ApplicationName': ros.stringToRosTemplate(properties.applicationName),
+      'DeployResourceType': ros.stringToRosTemplate(properties.deployResourceType),
       'Description': ros.stringToRosTemplate(properties.description),
       'Hooks': ros.hashMapper(ros.objectToRosTemplate)(properties.hooks),
       'Location': ros.hashMapper(ros.objectToRosTemplate)(properties.location),
@@ -380,7 +741,7 @@ function rosDeployRevisionPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::DeployRevision`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::DeployRevision`The , which type is used to create a deployment.
  * @Note This class does not contain additional functions, so it is recommended to use the `DeployRevision` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-deployrevision
  */
@@ -402,6 +763,11 @@ export class RosDeployRevision extends ros.RosResource {
      * @Property applicationName: The name of the application.
      */
     public applicationName: string | ros.IResolvable;
+
+    /**
+     * @Property deployResourceType: The type of the deploy resource.
+     */
+    public deployResourceType: string | ros.IResolvable | undefined;
 
     /**
      * @Property description: The description of the revision.
@@ -434,6 +800,7 @@ export class RosDeployRevision extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.applicationName = props.applicationName;
+        this.deployResourceType = props.deployResourceType;
         this.description = props.description;
         this.hooks = props.hooks;
         this.location = props.location;
@@ -444,6 +811,7 @@ export class RosDeployRevision extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             applicationName: this.applicationName,
+            deployResourceType: this.deployResourceType,
             description: this.description,
             hooks: this.hooks,
             location: this.location,
@@ -551,8 +919,8 @@ function RosExecutionPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('loopMode', ros.validateString)(properties.loopMode));
-    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('parameters', ros.hashValidator(ros.validateAny))(properties.parameters));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.templateContent && (Array.isArray(properties.templateContent) || (typeof properties.templateContent) === 'string')) {
         errors.collect(ros.propertyValidator('templateContent', ros.validateLength)({
@@ -621,7 +989,7 @@ function rosExecutionPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Execution`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Execution`, which is used to start an execution.
  * @Note This class does not contain additional functions, so it is recommended to use the `Execution` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-execution
  */
@@ -978,7 +1346,7 @@ function rosParameterPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Parameter`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Parameter`, which is used to create a common parameter.
  * @Note This class does not contain additional functions, so it is recommended to use the `Parameter` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-parameter
  */
@@ -1201,7 +1569,7 @@ function rosPatchBaselinePropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::PatchBaseline`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::PatchBaseline`, which is used to create a patch baseline.
  * @Note This class does not contain additional functions, so it is recommended to use the `PatchBaseline` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-patchbaseline
  */
@@ -1564,7 +1932,7 @@ function rosSecretParameterPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::SecretParameter`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::SecretParameter`, which is used to create an encryption parameter.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecretParameter` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-secretparameter
  */
@@ -1828,8 +2196,8 @@ function RosServiceSettingsPropsValidator(properties: any): ros.ValidationResult
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('deliverySlsEnabled', ros.validateBoolean)(properties.deliverySlsEnabled));
     errors.collect(ros.propertyValidator('deliveryOssKeyPrefix', ros.validateString)(properties.deliveryOssKeyPrefix));
-    errors.collect(ros.propertyValidator('deliveryOssBucketName', ros.validateString)(properties.deliveryOssBucketName));
     errors.collect(ros.propertyValidator('deliveryOssEnabled', ros.validateBoolean)(properties.deliveryOssEnabled));
+    errors.collect(ros.propertyValidator('deliveryOssBucketName', ros.validateString)(properties.deliveryOssBucketName));
     errors.collect(ros.propertyValidator('rdcEnterpriseId', ros.validateString)(properties.rdcEnterpriseId));
     errors.collect(ros.propertyValidator('deliverySlsProjectName', ros.validateString)(properties.deliverySlsProjectName));
     return errors.wrap('supplied properties not correct for "RosServiceSettingsProps"');
@@ -1859,7 +2227,7 @@ function rosServiceSettingsPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::ServiceSettings`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::ServiceSettings`, which is used to configure service settings.
  * @Note This class does not contain additional functions, so it is recommended to use the `ServiceSettings` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-servicesettings
  */
@@ -2047,7 +2415,7 @@ function rosStateConfigurationPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::StateConfiguration`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::StateConfiguration`, which is used to create a desired-state configuration.
  * @Note This class does not contain additional functions, so it is recommended to use the `StateConfiguration` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-stateconfiguration
  */
@@ -2249,7 +2617,7 @@ function rosTemplatePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Template`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Template`The , which resource type creates a template.
  * @Note This class does not contain additional functions, so it is recommended to use the `Template` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-template
  */

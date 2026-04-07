@@ -18,6 +18,10 @@ type SnatEntryProps struct {
 	// 1: yes
 	// If EIP affinity is enabled and the SNAT entry is associated with multiple EIPs, a client uses the same EIP to access the Internet. Otherwise, the client uses an EIP selected from the associated EIPs to access the Internet.
 	EipAffinity interface{} `field:"optional" json:"eipAffinity" yaml:"eipAffinity"`
+	// Property networkInterfaceId: The ID of the elastic network interface.
+	//
+	// The IPv4 addresses of the elastic network interface will be used as the SNAT IP addresses.
+	NetworkInterfaceId interface{} `field:"optional" json:"networkInterfaceId" yaml:"networkInterfaceId"`
 	// Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:\/\/ or https:\/\/.
 	SnatEntryName interface{} `field:"optional" json:"snatEntryName" yaml:"snatEntryName"`
 	// Property sourceCidr: Specifies the network segment of the switch.

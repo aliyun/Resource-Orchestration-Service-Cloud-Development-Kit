@@ -86,7 +86,7 @@ Failure: Sync invoke fails.
     readonly attrTaskId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::FC3::FunctionInvoker`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::FC3::FunctionInvoker`The , which resource type invokes a function in Function Compute (FC) 3.0.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFunctionInvoker`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-functioninvoker
  */

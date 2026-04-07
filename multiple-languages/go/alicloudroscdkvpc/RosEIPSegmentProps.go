@@ -8,7 +8,9 @@ type RosEIPSegmentProps struct {
 	EipMask interface{} `field:"required" json:"eipMask" yaml:"eipMask"`
 	Bandwidth interface{} `field:"optional" json:"bandwidth" yaml:"bandwidth"`
 	InternetChargeType interface{} `field:"optional" json:"internetChargeType" yaml:"internetChargeType"`
+	Isp interface{} `field:"optional" json:"isp" yaml:"isp"`
 	Netmode interface{} `field:"optional" json:"netmode" yaml:"netmode"`
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
+	Zone interface{} `field:"optional" json:"zone" yaml:"zone"`
 }
 

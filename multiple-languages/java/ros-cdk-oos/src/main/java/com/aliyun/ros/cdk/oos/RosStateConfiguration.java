@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.oos;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::OOS::StateConfiguration</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::OOS::StateConfiguration</code>, which is used to create a desired-state configuration.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.549Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:28.204Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.RosStateConfiguration")
 public class RosStateConfiguration extends com.aliyun.ros.cdk.core.RosResource {
 

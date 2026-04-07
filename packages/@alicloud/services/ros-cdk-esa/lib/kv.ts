@@ -25,7 +25,7 @@ export interface KvProps {
     readonly value: string | ros.IResolvable;
 
     /**
-     * Property expiration: The content of the key, which can be up to 2 MB (2 × 1000 × 1000). If the content is larger than 2 MB, call [PutKvWithHighCapacity] https:\/\/www.alibabacloud.com\/help\/en\/doc-detail\/2850486.html.
+     * Property expiration: The content of the key, which can be up to 2 MB (2 Ã 1000 Ã 1000). If the content is larger than 2 MB, call [PutKvWithHighCapacity] https:\/\/www.alibabacloud.com\/help\/en\/doc-detail\/2850486.html.
      */
     readonly expiration?: number | ros.IResolvable;
 
@@ -47,7 +47,7 @@ export interface IKv extends ros.IResource {
     readonly attrValue: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ESA::Kv`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESA::Kv`Use the , which resource type to set a single key-value pair in a KV bucket.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosKv`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-kv
  */
@@ -76,8 +76,8 @@ export class Kv extends ros.Resource implements IKv {
 
         const rosKv = new RosKv(this, id,  {
             expirationTtl: props.expirationTtl,
-            expiration: props.expiration,
             value: props.value,
+            expiration: props.expiration,
             namespace: props.namespace,
             key: props.key,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

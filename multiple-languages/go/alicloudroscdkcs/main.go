@@ -1455,6 +1455,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "attrScalingRuleId", GoGetter: "AttrScalingRuleId"},
 			_jsii_.MemberProperty{JsiiProperty: "attrTaskId", GoGetter: "AttrTaskId"},
 			_jsii_.MemberProperty{JsiiProperty: "attrWorkerRamRoleName", GoGetter: "AttrWorkerRamRoleName"},
+			_jsii_.MemberProperty{JsiiProperty: "autoMode", GoGetter: "AutoMode"},
 			_jsii_.MemberProperty{JsiiProperty: "cloudMonitorFlags", GoGetter: "CloudMonitorFlags"},
 			_jsii_.MemberProperty{JsiiProperty: "clusterSpec", GoGetter: "ClusterSpec"},
 			_jsii_.MemberProperty{JsiiProperty: "containerCidr", GoGetter: "ContainerCidr"},
@@ -1532,6 +1533,10 @@ func init() {
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.AddonsProperty",
 		reflect.TypeOf((*RosManagedKubernetesCluster_AddonsProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.AutoModeProperty",
+		reflect.TypeOf((*RosManagedKubernetesCluster_AutoModeProperty)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.DataDisksProperty",

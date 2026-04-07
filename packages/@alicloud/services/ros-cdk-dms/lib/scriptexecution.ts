@@ -39,7 +39,7 @@ export interface IScriptExecution extends ros.IResource {
     readonly props: ScriptExecutionProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DMS::ScriptExecution`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DMS::ScriptExecution`The , which type executes SQL scripts.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosScriptExecution`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dms-scriptexecution
  */

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.flink;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-instancev2
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.113Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:26.714Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.flink.$Module.class, fqn = "@alicloud/ros-cdk-flink.InstanceV2Props")
 @software.amazon.jsii.Jsii.Proxy(InstanceV2Props.Jsii$Proxy.class)
 public interface InstanceV2Props extends software.amazon.jsii.JsiiSerializable {
@@ -40,6 +40,13 @@ public interface InstanceV2Props extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchIds();
 
     /**
+     * Property architectureType: The architecture type, the value of the value is as follows: X86, ARM.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getArchitectureType() {
+        return null;
+    }
+
+    /**
      * Property autoRenew: When the payment type is the monthly package, the value of the value is as follows: true: Automatic renewal.
      * <p>
      * false: Manual renewal.
@@ -56,6 +63,29 @@ public interface InstanceV2Props extends software.amazon.jsii.JsiiSerializable {
      * If PricingCycle is year, the valid range is 1 to 3
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDuration() {
+        return null;
+    }
+
+    /**
+     * Property haResourceSpec: HA resource specifications.
+     * <p>
+     * When ChargeType is configured as PRE, the resource specification parameters must be filled.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHaResourceSpec() {
+        return null;
+    }
+
+    /**
+     * Property haVSwitchIds: HA VSwitch IDs.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHaVSwitchIds() {
+        return null;
+    }
+
+    /**
+     * Property monitorType: The monitor type, the value of the value is as follows: TAIHAO, ARMS.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMonitorType() {
         return null;
     }
 
@@ -104,8 +134,12 @@ public interface InstanceV2Props extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object storage;
         java.lang.Object vpcId;
         java.lang.Object vSwitchIds;
+        java.lang.Object architectureType;
         java.lang.Object autoRenew;
         java.lang.Object duration;
+        java.lang.Object haResourceSpec;
+        java.lang.Object haVSwitchIds;
+        java.lang.Object monitorType;
         java.lang.Object pricingCycle;
         java.lang.Object promotionCode;
         java.lang.Object resourceSpec;
@@ -216,6 +250,26 @@ public interface InstanceV2Props extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstanceV2Props#getArchitectureType}
+         * @param architectureType Property architectureType: The architecture type, the value of the value is as follows: X86, ARM.
+         * @return {@code this}
+         */
+        public Builder architectureType(java.lang.String architectureType) {
+            this.architectureType = architectureType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceV2Props#getArchitectureType}
+         * @param architectureType Property architectureType: The architecture type, the value of the value is as follows: X86, ARM.
+         * @return {@code this}
+         */
+        public Builder architectureType(com.aliyun.ros.cdk.core.IResolvable architectureType) {
+            this.architectureType = architectureType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceV2Props#getAutoRenew}
          * @param autoRenew Property autoRenew: When the payment type is the monthly package, the value of the value is as follows: true: Automatic renewal.
          *                  false: Manual renewal.
@@ -260,6 +314,68 @@ public interface InstanceV2Props extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder duration(com.aliyun.ros.cdk.core.IResolvable duration) {
             this.duration = duration;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceV2Props#getHaResourceSpec}
+         * @param haResourceSpec Property haResourceSpec: HA resource specifications.
+         *                       When ChargeType is configured as PRE, the resource specification parameters must be filled.
+         * @return {@code this}
+         */
+        public Builder haResourceSpec(com.aliyun.ros.cdk.core.IResolvable haResourceSpec) {
+            this.haResourceSpec = haResourceSpec;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceV2Props#getHaResourceSpec}
+         * @param haResourceSpec Property haResourceSpec: HA resource specifications.
+         *                       When ChargeType is configured as PRE, the resource specification parameters must be filled.
+         * @return {@code this}
+         */
+        public Builder haResourceSpec(com.aliyun.ros.cdk.flink.RosInstanceV2.HaResourceSpecProperty haResourceSpec) {
+            this.haResourceSpec = haResourceSpec;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceV2Props#getHaVSwitchIds}
+         * @param haVSwitchIds Property haVSwitchIds: HA VSwitch IDs.
+         * @return {@code this}
+         */
+        public Builder haVSwitchIds(java.util.List<? extends java.lang.Object> haVSwitchIds) {
+            this.haVSwitchIds = haVSwitchIds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceV2Props#getHaVSwitchIds}
+         * @param haVSwitchIds Property haVSwitchIds: HA VSwitch IDs.
+         * @return {@code this}
+         */
+        public Builder haVSwitchIds(com.aliyun.ros.cdk.core.IResolvable haVSwitchIds) {
+            this.haVSwitchIds = haVSwitchIds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceV2Props#getMonitorType}
+         * @param monitorType Property monitorType: The monitor type, the value of the value is as follows: TAIHAO, ARMS.
+         * @return {@code this}
+         */
+        public Builder monitorType(java.lang.String monitorType) {
+            this.monitorType = monitorType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceV2Props#getMonitorType}
+         * @param monitorType Property monitorType: The monitor type, the value of the value is as follows: TAIHAO, ARMS.
+         * @return {@code this}
+         */
+        public Builder monitorType(com.aliyun.ros.cdk.core.IResolvable monitorType) {
+            this.monitorType = monitorType;
             return this;
         }
 
@@ -366,8 +482,12 @@ public interface InstanceV2Props extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object storage;
         private final java.lang.Object vpcId;
         private final java.lang.Object vSwitchIds;
+        private final java.lang.Object architectureType;
         private final java.lang.Object autoRenew;
         private final java.lang.Object duration;
+        private final java.lang.Object haResourceSpec;
+        private final java.lang.Object haVSwitchIds;
+        private final java.lang.Object monitorType;
         private final java.lang.Object pricingCycle;
         private final java.lang.Object promotionCode;
         private final java.lang.Object resourceSpec;
@@ -384,8 +504,12 @@ public interface InstanceV2Props extends software.amazon.jsii.JsiiSerializable {
             this.storage = software.amazon.jsii.Kernel.get(this, "storage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchIds = software.amazon.jsii.Kernel.get(this, "vSwitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.architectureType = software.amazon.jsii.Kernel.get(this, "architectureType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.duration = software.amazon.jsii.Kernel.get(this, "duration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.haResourceSpec = software.amazon.jsii.Kernel.get(this, "haResourceSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.haVSwitchIds = software.amazon.jsii.Kernel.get(this, "haVSwitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.monitorType = software.amazon.jsii.Kernel.get(this, "monitorType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.promotionCode = software.amazon.jsii.Kernel.get(this, "promotionCode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceSpec = software.amazon.jsii.Kernel.get(this, "resourceSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -402,8 +526,12 @@ public interface InstanceV2Props extends software.amazon.jsii.JsiiSerializable {
             this.storage = java.util.Objects.requireNonNull(builder.storage, "storage is required");
             this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
             this.vSwitchIds = java.util.Objects.requireNonNull(builder.vSwitchIds, "vSwitchIds is required");
+            this.architectureType = builder.architectureType;
             this.autoRenew = builder.autoRenew;
             this.duration = builder.duration;
+            this.haResourceSpec = builder.haResourceSpec;
+            this.haVSwitchIds = builder.haVSwitchIds;
+            this.monitorType = builder.monitorType;
             this.pricingCycle = builder.pricingCycle;
             this.promotionCode = builder.promotionCode;
             this.resourceSpec = builder.resourceSpec;
@@ -436,6 +564,11 @@ public interface InstanceV2Props extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getArchitectureType() {
+            return this.architectureType;
+        }
+
+        @Override
         public final java.lang.Object getAutoRenew() {
             return this.autoRenew;
         }
@@ -443,6 +576,21 @@ public interface InstanceV2Props extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getDuration() {
             return this.duration;
+        }
+
+        @Override
+        public final java.lang.Object getHaResourceSpec() {
+            return this.haResourceSpec;
+        }
+
+        @Override
+        public final java.lang.Object getHaVSwitchIds() {
+            return this.haVSwitchIds;
+        }
+
+        @Override
+        public final java.lang.Object getMonitorType() {
+            return this.monitorType;
         }
 
         @Override
@@ -476,11 +624,23 @@ public interface InstanceV2Props extends software.amazon.jsii.JsiiSerializable {
             data.set("storage", om.valueToTree(this.getStorage()));
             data.set("vpcId", om.valueToTree(this.getVpcId()));
             data.set("vSwitchIds", om.valueToTree(this.getVSwitchIds()));
+            if (this.getArchitectureType() != null) {
+                data.set("architectureType", om.valueToTree(this.getArchitectureType()));
+            }
             if (this.getAutoRenew() != null) {
                 data.set("autoRenew", om.valueToTree(this.getAutoRenew()));
             }
             if (this.getDuration() != null) {
                 data.set("duration", om.valueToTree(this.getDuration()));
+            }
+            if (this.getHaResourceSpec() != null) {
+                data.set("haResourceSpec", om.valueToTree(this.getHaResourceSpec()));
+            }
+            if (this.getHaVSwitchIds() != null) {
+                data.set("haVSwitchIds", om.valueToTree(this.getHaVSwitchIds()));
+            }
+            if (this.getMonitorType() != null) {
+                data.set("monitorType", om.valueToTree(this.getMonitorType()));
             }
             if (this.getPricingCycle() != null) {
                 data.set("pricingCycle", om.valueToTree(this.getPricingCycle()));
@@ -517,8 +677,12 @@ public interface InstanceV2Props extends software.amazon.jsii.JsiiSerializable {
             if (!storage.equals(that.storage)) return false;
             if (!vpcId.equals(that.vpcId)) return false;
             if (!vSwitchIds.equals(that.vSwitchIds)) return false;
+            if (this.architectureType != null ? !this.architectureType.equals(that.architectureType) : that.architectureType != null) return false;
             if (this.autoRenew != null ? !this.autoRenew.equals(that.autoRenew) : that.autoRenew != null) return false;
             if (this.duration != null ? !this.duration.equals(that.duration) : that.duration != null) return false;
+            if (this.haResourceSpec != null ? !this.haResourceSpec.equals(that.haResourceSpec) : that.haResourceSpec != null) return false;
+            if (this.haVSwitchIds != null ? !this.haVSwitchIds.equals(that.haVSwitchIds) : that.haVSwitchIds != null) return false;
+            if (this.monitorType != null ? !this.monitorType.equals(that.monitorType) : that.monitorType != null) return false;
             if (this.pricingCycle != null ? !this.pricingCycle.equals(that.pricingCycle) : that.pricingCycle != null) return false;
             if (this.promotionCode != null ? !this.promotionCode.equals(that.promotionCode) : that.promotionCode != null) return false;
             if (this.resourceSpec != null ? !this.resourceSpec.equals(that.resourceSpec) : that.resourceSpec != null) return false;
@@ -532,8 +696,12 @@ public interface InstanceV2Props extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.storage.hashCode());
             result = 31 * result + (this.vpcId.hashCode());
             result = 31 * result + (this.vSwitchIds.hashCode());
+            result = 31 * result + (this.architectureType != null ? this.architectureType.hashCode() : 0);
             result = 31 * result + (this.autoRenew != null ? this.autoRenew.hashCode() : 0);
             result = 31 * result + (this.duration != null ? this.duration.hashCode() : 0);
+            result = 31 * result + (this.haResourceSpec != null ? this.haResourceSpec.hashCode() : 0);
+            result = 31 * result + (this.haVSwitchIds != null ? this.haVSwitchIds.hashCode() : 0);
+            result = 31 * result + (this.monitorType != null ? this.monitorType.hashCode() : 0);
             result = 31 * result + (this.pricingCycle != null ? this.pricingCycle.hashCode() : 0);
             result = 31 * result + (this.promotionCode != null ? this.promotionCode.hashCode() : 0);
             result = 31 * result + (this.resourceSpec != null ? this.resourceSpec.hashCode() : 0);

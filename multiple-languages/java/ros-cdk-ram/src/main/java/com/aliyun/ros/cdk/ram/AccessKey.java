@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ram;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::RAM::AccessKey</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::RAM::AccessKey</code>The , which resource type retrieves a specified RAM user’s AccessKey ID, AccessKey secret, and AccessKey status.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:59.271Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:28.926Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.AccessKey")
 public class AccessKey extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ram.IAccessKey {
 

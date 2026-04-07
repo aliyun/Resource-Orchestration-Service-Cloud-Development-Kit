@@ -88,6 +88,14 @@ func (j *jsiiProxy_RosDBInstance) validateSetAiNodeSpecInfosParameters(val inter
 	return nil
 }
 
+func (j *jsiiProxy_RosDBInstance) validateSetBackupIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosDBInstance) validateSetCacheStorageSizeParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosDBInstance) validateSetCreateSampleDataParameters(val interface{}) error {
 	return nil
 }
@@ -120,6 +128,10 @@ func (j *jsiiProxy_RosDBInstance) validateSetEnableResourcePropertyConstraintPar
 	return nil
 }
 
+func (j *jsiiProxy_RosDBInstance) validateSetEnableSslParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosDBInstance) validateSetEncryptionKeyParameters(val interface{}) error {
 	return nil
 }
@@ -137,6 +149,10 @@ func (j *jsiiProxy_RosDBInstance) validateSetIdleTimeParameters(val interface{})
 }
 
 func (j *jsiiProxy_RosDBInstance) validateSetInstanceSpecParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosDBInstance) validateSetMasterAiSpecParameters(val interface{}) error {
 	return nil
 }
 
@@ -193,6 +209,10 @@ func (j *jsiiProxy_RosDBInstance) validateSetServerlessModeParameters(val interf
 }
 
 func (j *jsiiProxy_RosDBInstance) validateSetServerlessResourceParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosDBInstance) validateSetSrcDbInstanceNameParameters(val interface{}) error {
 	return nil
 }
 

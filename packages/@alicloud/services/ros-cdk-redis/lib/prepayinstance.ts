@@ -339,7 +339,7 @@ export interface IPrepayInstance extends ros.IResource {
     readonly attrZoneId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::PrepayInstance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::PrepayInstance`, which is used to create a subscription Tair (Redis OSS-compatible) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPrepayInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-prepayinstance
  */
@@ -524,22 +524,22 @@ export class PrepayInstance extends ros.Resource implements IPrepayInstance {
             sslEnabled: props.sslEnabled,
             tairConfig: props.tairConfig,
             tags: props.tags,
-            backupPolicy: props.backupPolicy,
             password: props.password,
+            backupPolicy: props.backupPolicy,
             engineVersion: props.engineVersion,
             zoneId: props.zoneId,
             evictionPolicy: props.evictionPolicy,
             subscriptionDeletionForce: props.subscriptionDeletionForce === undefined || props.subscriptionDeletionForce === null ? false : props.subscriptionDeletionForce,
             vSwitchId: props.vSwitchId,
             securityGroupId: props.securityGroupId,
+            instanceMaintainTime: props.instanceMaintainTime,
             productType: props.productType,
             readOnlyCount: props.readOnlyCount,
-            instanceMaintainTime: props.instanceMaintainTime,
             period: props.period === undefined || props.period === null ? 1 : props.period,
             instanceClass: props.instanceClass,
             vpcPasswordFree: props.vpcPasswordFree,
-            autoPay: props.autoPay === undefined || props.autoPay === null ? true : props.autoPay,
             deletionProtection: props.deletionProtection,
+            autoPay: props.autoPay === undefined || props.autoPay === null ? true : props.autoPay,
             secondaryZoneId: props.secondaryZoneId,
             autoRenewDuration: props.autoRenewDuration,
             instanceName: props.instanceName,

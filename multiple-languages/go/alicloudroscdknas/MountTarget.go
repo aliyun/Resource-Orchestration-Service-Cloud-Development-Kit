@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::NAS::MountTarget`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::NAS::MountTarget`You can use the , which resource to create a mount target.
 type MountTarget interface {
 	alicloudroscdkcore.Resource
 	IMountTarget

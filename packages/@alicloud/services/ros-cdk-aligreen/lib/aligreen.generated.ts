@@ -63,8 +63,6 @@ function RosAuditCallbackPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('callbackTypes', ros.listValidator(ros.validateString))(properties.callbackTypes));
     errors.collect(ros.propertyValidator('auditCallbackName', ros.requiredValidator)(properties.auditCallbackName));
     errors.collect(ros.propertyValidator('auditCallbackName', ros.validateString)(properties.auditCallbackName));
-    errors.collect(ros.propertyValidator('url', ros.requiredValidator)(properties.url));
-    errors.collect(ros.propertyValidator('url', ros.validateString)(properties.url));
     errors.collect(ros.propertyValidator('callbackSuggestions', ros.requiredValidator)(properties.callbackSuggestions));
     if(properties.callbackSuggestions && (Array.isArray(properties.callbackSuggestions) || (typeof properties.callbackSuggestions) === 'string')) {
         errors.collect(ros.propertyValidator('callbackSuggestions', ros.validateLength)({
@@ -74,6 +72,8 @@ function RosAuditCallbackPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('callbackSuggestions', ros.listValidator(ros.validateString))(properties.callbackSuggestions));
+    errors.collect(ros.propertyValidator('url', ros.requiredValidator)(properties.url));
+    errors.collect(ros.propertyValidator('url', ros.validateString)(properties.url));
     return errors.wrap('supplied properties not correct for "RosAuditCallbackProps"');
 }
 
@@ -100,7 +100,7 @@ function rosAuditCallbackPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::AuditCallback`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::AuditCallback`, which is used to create an audit callback.
  * @Note This class does not contain additional functions, so it is recommended to use the `AuditCallback` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-aligreen-auditcallback
  */
@@ -276,7 +276,7 @@ function rosBizTypePropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::BizType`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::BizType`, which is used to create a business scenario.
  * @Note This class does not contain additional functions, so it is recommended to use the `BizType` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-aligreen-biztype
  */
@@ -468,7 +468,7 @@ function rosCallbackPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::Callback`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::Callback`, which is used to create a callback.
  * @Note This class does not contain additional functions, so it is recommended to use the `Callback` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-aligreen-callback
  */
@@ -669,7 +669,7 @@ function rosImageLibPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::ImageLib`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::ImageLib`, which is used to create a custom image library.
  * @Note This class does not contain additional functions, so it is recommended to use the `ImageLib` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-aligreen-imagelib
  */
@@ -787,7 +787,7 @@ export interface RosKeywordLibProps {
     readonly keywordLibName: string | ros.IResolvable;
 
     /**
-     * @Property resourceType: The moderation scenario to which the text library applies. Valid values:TEXT: text anti-spam、IMAGE: ad violation detection、VOICE: audio anti-spam.
+     * @Property resourceType: The moderation scenario to which the text library applies. Valid values:TEXT: text anti-spamãIMAGE: ad violation detectionãVOICE: audio anti-spam.
      */
     readonly resourceType: string | ros.IResolvable;
 
@@ -903,7 +903,7 @@ function rosKeywordLibPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::KeywordLib`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::KeywordLib`, which is used to create a custom text library.
  * @Note This class does not contain additional functions, so it is recommended to use the `KeywordLib` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-aligreen-keywordlib
  */
@@ -967,7 +967,7 @@ export class RosKeywordLib extends ros.RosResource {
     public keywordLibName: string | ros.IResolvable;
 
     /**
-     * @Property resourceType: The moderation scenario to which the text library applies. Valid values:TEXT: text anti-spam、IMAGE: ad violation detection、VOICE: audio anti-spam.
+     * @Property resourceType: The moderation scenario to which the text library applies. Valid values:TEXT: text anti-spamãIMAGE: ad violation detectionãVOICE: audio anti-spam.
      */
     public resourceType: string | ros.IResolvable;
 
@@ -1323,8 +1323,8 @@ function RosOssStockTaskPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('videoFrameInterval', ros.validateNumber)(properties.videoFrameInterval));
     errors.collect(ros.propertyValidator('endDate', ros.validateString)(properties.endDate));
-    errors.collect(ros.propertyValidator('imagePornFreezeConfig', ros.hashValidator(ros.validateAny))(properties.imagePornFreezeConfig));
     errors.collect(ros.propertyValidator('videoLiveFreezeConfig', ros.hashValidator(ros.validateAny))(properties.videoLiveFreezeConfig));
+    errors.collect(ros.propertyValidator('imagePornFreezeConfig', ros.hashValidator(ros.validateAny))(properties.imagePornFreezeConfig));
     errors.collect(ros.propertyValidator('audioAutoFreezeOpened', ros.validateBoolean)(properties.audioAutoFreezeOpened));
     if(properties.videoScanLimit && (typeof properties.videoScanLimit) !== 'object') {
         errors.collect(ros.propertyValidator('videoScanLimit', ros.validateRange)({
@@ -1418,7 +1418,7 @@ function rosOssStockTaskPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::OssStockTask`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::OssStockTask`, which is used to create a full scan task for Object Storage Service (OSS) buckets.
  * @Note This class does not contain additional functions, so it is recommended to use the `OssStockTask` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-aligreen-ossstocktask
  */

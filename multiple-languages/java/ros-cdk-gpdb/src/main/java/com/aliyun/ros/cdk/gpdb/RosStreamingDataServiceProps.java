@@ -1,0 +1,235 @@
+package com.aliyun.ros.cdk.gpdb;
+
+/**
+ * Properties for defining a <code>RosStreamingDataService</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-streamingdataservice
+ */
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:27.063Z")
+@software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.RosStreamingDataServiceProps")
+@software.amazon.jsii.Jsii.Proxy(RosStreamingDataServiceProps.Jsii$Proxy.class)
+public interface RosStreamingDataServiceProps extends software.amazon.jsii.JsiiSerializable {
+
+    /**
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getDbInstanceId();
+
+    /**
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getServiceName();
+
+    /**
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getServiceSpec();
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getServiceDescription() {
+        return null;
+    }
+
+    /**
+     * @return a {@link Builder} of {@link RosStreamingDataServiceProps}
+     */
+    static Builder builder() {
+        return new Builder();
+    }
+    /**
+     * A builder for {@link RosStreamingDataServiceProps}
+     */
+    public static final class Builder implements software.amazon.jsii.Builder<RosStreamingDataServiceProps> {
+        java.lang.Object dbInstanceId;
+        java.lang.Object serviceName;
+        java.lang.Object serviceSpec;
+        java.lang.Object serviceDescription;
+
+        /**
+         * Sets the value of {@link RosStreamingDataServiceProps#getDbInstanceId}
+         * @param dbInstanceId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder dbInstanceId(java.lang.String dbInstanceId) {
+            this.dbInstanceId = dbInstanceId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosStreamingDataServiceProps#getDbInstanceId}
+         * @param dbInstanceId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder dbInstanceId(com.aliyun.ros.cdk.core.IResolvable dbInstanceId) {
+            this.dbInstanceId = dbInstanceId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosStreamingDataServiceProps#getServiceName}
+         * @param serviceName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder serviceName(java.lang.String serviceName) {
+            this.serviceName = serviceName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosStreamingDataServiceProps#getServiceName}
+         * @param serviceName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder serviceName(com.aliyun.ros.cdk.core.IResolvable serviceName) {
+            this.serviceName = serviceName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosStreamingDataServiceProps#getServiceSpec}
+         * @param serviceSpec the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder serviceSpec(java.lang.Number serviceSpec) {
+            this.serviceSpec = serviceSpec;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosStreamingDataServiceProps#getServiceSpec}
+         * @param serviceSpec the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder serviceSpec(com.aliyun.ros.cdk.core.IResolvable serviceSpec) {
+            this.serviceSpec = serviceSpec;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosStreamingDataServiceProps#getServiceDescription}
+         * @param serviceDescription the value to be set.
+         * @return {@code this}
+         */
+        public Builder serviceDescription(java.lang.String serviceDescription) {
+            this.serviceDescription = serviceDescription;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosStreamingDataServiceProps#getServiceDescription}
+         * @param serviceDescription the value to be set.
+         * @return {@code this}
+         */
+        public Builder serviceDescription(com.aliyun.ros.cdk.core.IResolvable serviceDescription) {
+            this.serviceDescription = serviceDescription;
+            return this;
+        }
+
+        /**
+         * Builds the configured instance.
+         * @return a new instance of {@link RosStreamingDataServiceProps}
+         * @throws NullPointerException if any required attribute was not provided
+         */
+        @Override
+        public RosStreamingDataServiceProps build() {
+            return new Jsii$Proxy(this);
+        }
+    }
+
+    /**
+     * An implementation for {@link RosStreamingDataServiceProps}
+     */
+    @software.amazon.jsii.Internal
+    final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosStreamingDataServiceProps {
+        private final java.lang.Object dbInstanceId;
+        private final java.lang.Object serviceName;
+        private final java.lang.Object serviceSpec;
+        private final java.lang.Object serviceDescription;
+
+        /**
+         * Constructor that initializes the object based on values retrieved from the JsiiObject.
+         * @param objRef Reference to the JSII managed object.
+         */
+        protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+            super(objRef);
+            this.dbInstanceId = software.amazon.jsii.Kernel.get(this, "dbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.serviceName = software.amazon.jsii.Kernel.get(this, "serviceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.serviceSpec = software.amazon.jsii.Kernel.get(this, "serviceSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.serviceDescription = software.amazon.jsii.Kernel.get(this, "serviceDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+         */
+        protected Jsii$Proxy(final Builder builder) {
+            super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+            this.dbInstanceId = java.util.Objects.requireNonNull(builder.dbInstanceId, "dbInstanceId is required");
+            this.serviceName = java.util.Objects.requireNonNull(builder.serviceName, "serviceName is required");
+            this.serviceSpec = java.util.Objects.requireNonNull(builder.serviceSpec, "serviceSpec is required");
+            this.serviceDescription = builder.serviceDescription;
+        }
+
+        @Override
+        public final java.lang.Object getDbInstanceId() {
+            return this.dbInstanceId;
+        }
+
+        @Override
+        public final java.lang.Object getServiceName() {
+            return this.serviceName;
+        }
+
+        @Override
+        public final java.lang.Object getServiceSpec() {
+            return this.serviceSpec;
+        }
+
+        @Override
+        public final java.lang.Object getServiceDescription() {
+            return this.serviceDescription;
+        }
+
+        @Override
+        @software.amazon.jsii.Internal
+        public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+            final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+            final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+            data.set("dbInstanceId", om.valueToTree(this.getDbInstanceId()));
+            data.set("serviceName", om.valueToTree(this.getServiceName()));
+            data.set("serviceSpec", om.valueToTree(this.getServiceSpec()));
+            if (this.getServiceDescription() != null) {
+                data.set("serviceDescription", om.valueToTree(this.getServiceDescription()));
+            }
+
+            final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+            struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-gpdb.RosStreamingDataServiceProps"));
+            struct.set("data", data);
+
+            final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+            obj.set("$jsii.struct", struct);
+
+            return obj;
+        }
+
+        @Override
+        public final boolean equals(final Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+
+            RosStreamingDataServiceProps.Jsii$Proxy that = (RosStreamingDataServiceProps.Jsii$Proxy) o;
+
+            if (!dbInstanceId.equals(that.dbInstanceId)) return false;
+            if (!serviceName.equals(that.serviceName)) return false;
+            if (!serviceSpec.equals(that.serviceSpec)) return false;
+            return this.serviceDescription != null ? this.serviceDescription.equals(that.serviceDescription) : that.serviceDescription == null;
+        }
+
+        @Override
+        public final int hashCode() {
+            int result = this.dbInstanceId.hashCode();
+            result = 31 * result + (this.serviceName.hashCode());
+            result = 31 * result + (this.serviceSpec.hashCode());
+            result = 31 * result + (this.serviceDescription != null ? this.serviceDescription.hashCode() : 0);
+            return result;
+        }
+    }
+}

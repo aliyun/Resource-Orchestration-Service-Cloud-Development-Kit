@@ -470,6 +470,16 @@ func (j *jsiiProxy_RosKey) validateSetRotationIntervalParameters(val interface{}
 	return nil
 }
 
+func (j *jsiiProxy_RosKey) validateSetTagsParameters(val *[]*RosKey_TagsProperty) error {
+	for idx_97dfc6, v := range *val {
+		if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
+			return err
+		}
+	}
+
+	return nil
+}
+
 func validateNewRosKeyParameters(scope alicloudroscdkcore.Construct, id *string, props *RosKeyProps, enableResourcePropertyConstraint *bool) error {
 	if scope == nil {
 		return fmt.Errorf("parameter scope is required, but nil was provided")

@@ -1,4 +1,5 @@
 export * from './ascript';
+export * from './accesslogenable';
 export * from './acl';
 export * from './aclassociation';
 export * from './additionalcertificateassociation';
@@ -10,6 +11,8 @@ export * from './rule';
 export * from './securitygroupattachment';
 export * from './securitypolicy';
 export * from './servergroup';
+export * from './startzone';
+export * from './zoneshift';
 
 // ALIYUN::ALB Resources:
 export * from './alb.generated';

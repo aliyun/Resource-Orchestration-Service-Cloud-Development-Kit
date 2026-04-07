@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::MPS::Pipeline`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::MPS::Pipeline`, which is used to create an ApsaraVideo Media Processing (MPS) queue.
 type Pipeline interface {
 	alicloudroscdkcore.Resource
 	IPipeline

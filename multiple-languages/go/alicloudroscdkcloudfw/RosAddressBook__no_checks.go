@@ -84,6 +84,18 @@ func validateRosAddressBook_IsRosResourceParameters(construct alicloudroscdkcore
 	return nil
 }
 
+func (j *jsiiProxy_RosAddressBook) validateSetAckClusterConnectorIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosAddressBook) validateSetAckLabelsParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosAddressBook) validateSetAckNamespacesParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosAddressBook) validateSetAddressListParameters(val interface{}) error {
 	return nil
 }

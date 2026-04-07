@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cms;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CMS::GroupMetricRule</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CMS::GroupMetricRule</code>The , which resource creates an alert rule for an application group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.745Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:23.102Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosGroupMetricRule")
 public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -187,6 +187,40 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getContactGroups() {
+        return software.amazon.jsii.Kernel.get(this, "contactGroups", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setContactGroups(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "contactGroups", value);
+    }
+
+    /**
+     */
+    public void setContactGroups(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "contactGroups", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getDimensions() {
         return software.amazon.jsii.Kernel.get(this, "dimensions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -241,6 +275,36 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getExtraDimensionJson() {
+        return software.amazon.jsii.Kernel.get(this, "extraDimensionJson", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setExtraDimensionJson(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "extraDimensionJson", value);
+    }
+
+    /**
+     */
+    public void setExtraDimensionJson(final @org.jetbrains.annotations.Nullable java.util.Map<java.lang.String, java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            if (!(value.keySet().toArray()[0] instanceof String)) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("value").append(".keySet()")
+                        .append(" to contain class String; received ")
+                        .append(value.keySet().toArray()[0].getClass()).toString());
+            }
+            for (final java.util.Map.Entry<String, java.lang.Object> __item_ac66f0: value.entrySet()) {
+                final java.lang.Object __val_ac66f0 = __item_ac66f0.getValue();
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "extraDimensionJson", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getInterval() {
         return software.amazon.jsii.Kernel.get(this, "interval", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -259,6 +323,24 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getNoDataPolicy() {
+        return software.amazon.jsii.Kernel.get(this, "noDataPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setNoDataPolicy(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "noDataPolicy", value);
+    }
+
+    /**
+     */
+    public void setNoDataPolicy(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "noDataPolicy", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getNoEffectiveInterval() {
         return software.amazon.jsii.Kernel.get(this, "noEffectiveInterval", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -273,6 +355,24 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setNoEffectiveInterval(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "noEffectiveInterval", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getOptions() {
+        return software.amazon.jsii.Kernel.get(this, "options", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setOptions(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "options", value);
+    }
+
+    /**
+     */
+    public void setOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "options", value);
     }
 
     /**
@@ -1417,6 +1517,23 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param contactGroups This parameter is required.
+         */
+        public Builder contactGroups(final com.aliyun.ros.cdk.core.IResolvable contactGroups) {
+            this.props.contactGroups(contactGroups);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param contactGroups This parameter is required.
+         */
+        public Builder contactGroups(final java.util.List<? extends java.lang.Object> contactGroups) {
+            this.props.contactGroups(contactGroups);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param dimensions This parameter is required.
          */
         public Builder dimensions(final java.lang.String dimensions) {
@@ -1468,6 +1585,23 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param extraDimensionJson This parameter is required.
+         */
+        public Builder extraDimensionJson(final com.aliyun.ros.cdk.core.IResolvable extraDimensionJson) {
+            this.props.extraDimensionJson(extraDimensionJson);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param extraDimensionJson This parameter is required.
+         */
+        public Builder extraDimensionJson(final java.util.Map<java.lang.String, ? extends java.lang.Object> extraDimensionJson) {
+            this.props.extraDimensionJson(extraDimensionJson);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param interval This parameter is required.
          */
         public Builder interval(final java.lang.Number interval) {
@@ -1485,6 +1619,23 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param noDataPolicy This parameter is required.
+         */
+        public Builder noDataPolicy(final java.lang.String noDataPolicy) {
+            this.props.noDataPolicy(noDataPolicy);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param noDataPolicy This parameter is required.
+         */
+        public Builder noDataPolicy(final com.aliyun.ros.cdk.core.IResolvable noDataPolicy) {
+            this.props.noDataPolicy(noDataPolicy);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param noEffectiveInterval This parameter is required.
          */
         public Builder noEffectiveInterval(final java.lang.String noEffectiveInterval) {
@@ -1497,6 +1648,23 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder noEffectiveInterval(final com.aliyun.ros.cdk.core.IResolvable noEffectiveInterval) {
             this.props.noEffectiveInterval(noEffectiveInterval);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param options This parameter is required.
+         */
+        public Builder options(final java.lang.String options) {
+            this.props.options(options);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param options This parameter is required.
+         */
+        public Builder options(final com.aliyun.ros.cdk.core.IResolvable options) {
+            this.props.options(options);
             return this;
         }
 

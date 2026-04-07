@@ -88,6 +88,10 @@ func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetAddonsParameters(val 
 	return nil
 }
 
+func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetAutoModeParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetCloudMonitorFlagsParameters(val interface{}) error {
 	return nil
 }

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::CustomList`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::CustomList`Use , which to create a custom list.
 type RosCustomList interface {
 	alicloudroscdkcore.RosResource
 	AttrDescription() alicloudroscdkcore.IResolvable

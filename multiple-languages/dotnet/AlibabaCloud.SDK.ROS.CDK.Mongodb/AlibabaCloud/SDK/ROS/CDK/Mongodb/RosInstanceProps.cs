@@ -130,6 +130,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
             }
         }
 
+        private object? _auditPolicyOptions;
+
+        /// <remarks>
+        /// <strong>Property</strong>: auditPolicyOptions: Audit policy options.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "auditPolicyOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-mongodb.RosInstance.AuditPolicyOptionsProperty\"}]}}", isOptional: true)]
+        public object? AuditPolicyOptions
+        {
+            get => _auditPolicyOptions;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Mongodb.RosInstance.IAuditPolicyOptionsProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Mongodb.RosInstance.IAuditPolicyOptionsProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _auditPolicyOptions = value;
+            }
+        }
+
         private object? _autoRenew;
 
         /// <remarks>
@@ -196,6 +229,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
             }
         }
 
+        private object? _backupPolicyOptions;
+
+        /// <remarks>
+        /// <strong>Property</strong>: backupPolicyOptions: Backup policy options.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "backupPolicyOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-mongodb.RosInstance.BackupPolicyOptionsProperty\"}]}}", isOptional: true)]
+        public object? BackupPolicyOptions
+        {
+            get => _backupPolicyOptions;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Mongodb.RosInstance.IBackupPolicyOptionsProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Mongodb.RosInstance.IBackupPolicyOptionsProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _backupPolicyOptions = value;
+            }
+        }
+
         private object? _businessInfo;
 
         /// <remarks>
@@ -259,6 +325,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
                     }
                 }
                 _chargeType = value;
+            }
+        }
+
+        private object? _clusterId;
+
+        /// <remarks>
+        /// <strong>Property</strong>: clusterId: The dedicated cluster ID.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "clusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ClusterId
+        {
+            get => _clusterId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _clusterId = value;
             }
         }
 
@@ -358,6 +457,107 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
                     }
                 }
                 _dbInstanceDescription = value;
+            }
+        }
+
+        private object? _dbInstanceReleaseProtection;
+
+        /// <remarks>
+        /// <strong>Property</strong>: dbInstanceReleaseProtection: Enables instance release protection. Values:
+        /// - true: Enabled.
+        /// - false: Not enabled.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "dbInstanceReleaseProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? DbInstanceReleaseProtection
+        {
+            get => _dbInstanceReleaseProtection;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _dbInstanceReleaseProtection = value;
+            }
+        }
+
+        private object? _encrypted;
+
+        /// <remarks>
+        /// <strong>Property</strong>: encrypted: Whether to enable cloud disk encryption.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "encrypted", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? Encrypted
+        {
+            get => _encrypted;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _encrypted = value;
+            }
+        }
+
+        private object? _encryptionKey;
+
+        /// <remarks>
+        /// <strong>Property</strong>: encryptionKey: Custom key ID.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "encryptionKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? EncryptionKey
+        {
+            get => _encryptionKey;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _encryptionKey = value;
             }
         }
 
@@ -512,6 +712,59 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
                     }
                 }
                 _privateConnections = value;
+            }
+        }
+
+        private object? _provisionedIops;
+
+        /// <remarks>
+        /// <strong>Property</strong>: provisionedIops: Provisioned IOPS. The value range is 0 to 50000.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "provisionedIops", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ProvisionedIops
+        {
+            get => _provisionedIops;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case double cast_cd4240:
+                            break;
+                        case byte cast_cd4240:
+                            break;
+                        case decimal cast_cd4240:
+                            break;
+                        case float cast_cd4240:
+                            break;
+                        case int cast_cd4240:
+                            break;
+                        case long cast_cd4240:
+                            break;
+                        case sbyte cast_cd4240:
+                            break;
+                        case short cast_cd4240:
+                            break;
+                        case uint cast_cd4240:
+                            break;
+                        case ulong cast_cd4240:
+                            break;
+                        case ushort cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _provisionedIops = value;
             }
         }
 
@@ -687,6 +940,63 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
             }
         }
 
+        private object? _restoreType;
+
+        /// <remarks>
+        /// <strong>Property</strong>: restoreType: Backup recovery instance.
+        /// - 0: Restore instance to specified backup set
+        /// - 1: Restore instance to specified point in time
+        /// - 2: Restore released instance to specified backup set
+        /// - 3: Restore instance to specified backup set
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "restoreType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? RestoreType
+        {
+            get => _restoreType;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case double cast_cd4240:
+                            break;
+                        case byte cast_cd4240:
+                            break;
+                        case decimal cast_cd4240:
+                            break;
+                        case float cast_cd4240:
+                            break;
+                        case int cast_cd4240:
+                            break;
+                        case long cast_cd4240:
+                            break;
+                        case sbyte cast_cd4240:
+                            break;
+                        case short cast_cd4240:
+                            break;
+                        case uint cast_cd4240:
+                            break;
+                        case ulong cast_cd4240:
+                            break;
+                        case ushort cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _restoreType = value;
+            }
+        }
+
         private object? _secondaryZoneId;
 
         /// <remarks>
@@ -819,6 +1129,74 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
                     }
                 }
                 _srcDbInstanceId = value;
+            }
+        }
+
+        private object? _srcRegion;
+
+        /// <remarks>
+        /// <strong>Property</strong>: srcRegion: The source instance region.
+        ///
+        /// >- When the backup recovery type is 2 or 3, this parameter is required.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "srcRegion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? SrcRegion
+        {
+            get => _srcRegion;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _srcRegion = value;
+            }
+        }
+
+        private object? _sslOptions;
+
+        /// <remarks>
+        /// <strong>Property</strong>: sslOptions: SSL options.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "sslOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-mongodb.RosInstance.SSLOptionsProperty\"}]}}", isOptional: true)]
+        public object? SslOptions
+        {
+            get => _sslOptions;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Mongodb.RosInstance.ISSLOptionsProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Mongodb.RosInstance.ISSLOptionsProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _sslOptions = value;
             }
         }
 

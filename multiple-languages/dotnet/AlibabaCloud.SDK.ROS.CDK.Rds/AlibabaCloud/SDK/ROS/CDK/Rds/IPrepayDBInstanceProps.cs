@@ -578,7 +578,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 
         /// <summary>Property logBackupLocalRetentionNumber: The number of log backup files that can be retained on the instance.</summary>
         /// <remarks>
-        /// Default value: 60. Valid values: 6 to 100.
+        /// Default value: 60. Valid values: 6 to 100. If the instance type is MySQL, you can pass in -1, which means there is no limit on the number of reserved local Binlogs.
         /// </remarks>
         [JsiiProperty(name: "logBackupLocalRetentionNumber", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1476,7 +1476,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 
             /// <summary>Property logBackupLocalRetentionNumber: The number of log backup files that can be retained on the instance.</summary>
             /// <remarks>
-            /// Default value: 60. Valid values: 6 to 100.
+            /// Default value: 60. Valid values: 6 to 100. If the instance type is MySQL, you can pass in -1, which means there is no limit on the number of reserved local Binlogs.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "logBackupLocalRetentionNumber", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

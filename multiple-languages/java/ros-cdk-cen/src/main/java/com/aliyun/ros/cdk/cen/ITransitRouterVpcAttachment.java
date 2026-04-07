@@ -3,53 +3,48 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Represents a <code>TransitRouterVpcAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.143Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:22.398Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.ITransitRouterVpcAttachment")
 @software.amazon.jsii.Jsii.Proxy(ITransitRouterVpcAttachment.Jsii$Proxy.class)
 public interface ITransitRouterVpcAttachment extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
 
     /**
-     * Attribute CenId: CenId.
+     * Attribute CenId: CEN ID.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrCenId();
 
     /**
-     * Attribute ClientToken: ClientToken.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getAttrClientToken();
-
-    /**
-     * Attribute ResourceType: ResourceType.
+     * Attribute ResourceType: Resource Type.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceType();
 
     /**
-     * Attribute TransitRouterAttachmentDescription: TransitRouterAttachmentDescription.
+     * Attribute TransitRouterAttachmentDescription: Attachment Description.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterAttachmentDescription();
 
     /**
-     * Attribute TransitRouterAttachmentId: The first ID of the resource.
+     * Attribute TransitRouterAttachmentId: The ID of the transit router VPC attachment.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterAttachmentId();
 
     /**
-     * Attribute TransitRouterAttachmentName: TransitRouterAttachmentName.
+     * Attribute TransitRouterAttachmentName: Attachment Name.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterAttachmentName();
 
     /**
-     * Attribute TransitRouterId: TransitRouterId.
+     * Attribute TransitRouterId: Transit Router ID.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterId();
 
     /**
-     * Attribute VpcId: VpcId.
+     * Attribute VpcId: VPC ID.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrVpcId();
 
     /**
-     * Attribute VpcOwnerId: VpcOwnerId.
+     * Attribute VpcOwnerId: VPC Owner ID.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrVpcOwnerId();
 
@@ -96,7 +91,7 @@ public interface ITransitRouterVpcAttachment extends software.amazon.jsii.JsiiSe
         }
 
         /**
-         * Attribute CenId: CenId.
+         * Attribute CenId: CEN ID.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrCenId() {
@@ -104,15 +99,7 @@ public interface ITransitRouterVpcAttachment extends software.amazon.jsii.JsiiSe
         }
 
         /**
-         * Attribute ClientToken: ClientToken.
-         */
-        @Override
-        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrClientToken() {
-            return software.amazon.jsii.Kernel.get(this, "attrClientToken", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute ResourceType: ResourceType.
+         * Attribute ResourceType: Resource Type.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceType() {
@@ -120,7 +107,7 @@ public interface ITransitRouterVpcAttachment extends software.amazon.jsii.JsiiSe
         }
 
         /**
-         * Attribute TransitRouterAttachmentDescription: TransitRouterAttachmentDescription.
+         * Attribute TransitRouterAttachmentDescription: Attachment Description.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterAttachmentDescription() {
@@ -128,7 +115,7 @@ public interface ITransitRouterVpcAttachment extends software.amazon.jsii.JsiiSe
         }
 
         /**
-         * Attribute TransitRouterAttachmentId: The first ID of the resource.
+         * Attribute TransitRouterAttachmentId: The ID of the transit router VPC attachment.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterAttachmentId() {
@@ -136,7 +123,7 @@ public interface ITransitRouterVpcAttachment extends software.amazon.jsii.JsiiSe
         }
 
         /**
-         * Attribute TransitRouterAttachmentName: TransitRouterAttachmentName.
+         * Attribute TransitRouterAttachmentName: Attachment Name.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterAttachmentName() {
@@ -144,7 +131,7 @@ public interface ITransitRouterVpcAttachment extends software.amazon.jsii.JsiiSe
         }
 
         /**
-         * Attribute TransitRouterId: TransitRouterId.
+         * Attribute TransitRouterId: Transit Router ID.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterId() {
@@ -152,7 +139,7 @@ public interface ITransitRouterVpcAttachment extends software.amazon.jsii.JsiiSe
         }
 
         /**
-         * Attribute VpcId: VpcId.
+         * Attribute VpcId: VPC ID.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrVpcId() {
@@ -160,7 +147,7 @@ public interface ITransitRouterVpcAttachment extends software.amazon.jsii.JsiiSe
         }
 
         /**
-         * Attribute VpcOwnerId: VpcOwnerId.
+         * Attribute VpcOwnerId: VPC Owner ID.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrVpcOwnerId() {
@@ -211,7 +198,7 @@ public interface ITransitRouterVpcAttachment extends software.amazon.jsii.JsiiSe
         }
 
         /**
-         * Attribute CenId: CenId.
+         * Attribute CenId: CEN ID.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrCenId() {
@@ -219,15 +206,7 @@ public interface ITransitRouterVpcAttachment extends software.amazon.jsii.JsiiSe
         }
 
         /**
-         * Attribute ClientToken: ClientToken.
-         */
-        @Override
-        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrClientToken() {
-            return software.amazon.jsii.Kernel.get(this, "attrClientToken", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute ResourceType: ResourceType.
+         * Attribute ResourceType: Resource Type.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceType() {
@@ -235,7 +214,7 @@ public interface ITransitRouterVpcAttachment extends software.amazon.jsii.JsiiSe
         }
 
         /**
-         * Attribute TransitRouterAttachmentDescription: TransitRouterAttachmentDescription.
+         * Attribute TransitRouterAttachmentDescription: Attachment Description.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterAttachmentDescription() {
@@ -243,7 +222,7 @@ public interface ITransitRouterVpcAttachment extends software.amazon.jsii.JsiiSe
         }
 
         /**
-         * Attribute TransitRouterAttachmentId: The first ID of the resource.
+         * Attribute TransitRouterAttachmentId: The ID of the transit router VPC attachment.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterAttachmentId() {
@@ -251,7 +230,7 @@ public interface ITransitRouterVpcAttachment extends software.amazon.jsii.JsiiSe
         }
 
         /**
-         * Attribute TransitRouterAttachmentName: TransitRouterAttachmentName.
+         * Attribute TransitRouterAttachmentName: Attachment Name.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterAttachmentName() {
@@ -259,7 +238,7 @@ public interface ITransitRouterVpcAttachment extends software.amazon.jsii.JsiiSe
         }
 
         /**
-         * Attribute TransitRouterId: TransitRouterId.
+         * Attribute TransitRouterId: Transit Router ID.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterId() {
@@ -267,7 +246,7 @@ public interface ITransitRouterVpcAttachment extends software.amazon.jsii.JsiiSe
         }
 
         /**
-         * Attribute VpcId: VpcId.
+         * Attribute VpcId: VPC ID.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrVpcId() {
@@ -275,7 +254,7 @@ public interface ITransitRouterVpcAttachment extends software.amazon.jsii.JsiiSe
         }
 
         /**
-         * Attribute VpcOwnerId: VpcOwnerId.
+         * Attribute VpcOwnerId: VPC Owner ID.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrVpcOwnerId() {

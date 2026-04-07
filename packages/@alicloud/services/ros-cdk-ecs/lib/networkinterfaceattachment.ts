@@ -52,7 +52,7 @@ export interface INetworkInterfaceAttachment extends ros.IResource {
     readonly attrTrunkNetworkInstanceId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::NetworkInterfaceAttachment`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::NetworkInterfaceAttachment`, which is used to bind an elastic network interface (ENI) to an Elastic Compute Service (ECS) instance in a virtual private cloud (VPC).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNetworkInterfaceAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-networkinterfaceattachment
  */
@@ -90,8 +90,8 @@ export class NetworkInterfaceAttachment extends ros.Resource implements INetwork
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosNetworkInterfaceAttachment = new RosNetworkInterfaceAttachment(this, id,  {
-            trunkNetworkInstanceId: props.trunkNetworkInstanceId,
             instanceId: props.instanceId,
+            trunkNetworkInstanceId: props.trunkNetworkInstanceId,
             ecsRestartOption: props.ecsRestartOption,
             networkInterfaceId: props.networkInterfaceId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

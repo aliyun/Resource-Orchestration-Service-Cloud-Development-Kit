@@ -15,11 +15,6 @@ export interface TransitRouterVpnAttachmentProps {
     readonly vpnId: string | ros.IResolvable;
 
     /**
-     * Property zoneId: Availability zone ID in the current region.
-     */
-    readonly zoneId: string | ros.IResolvable;
-
-    /**
      * Property autoPublishRouteEnabled: Whether to allow forwarding router instances to automatically publish route entries to IPsec connections. Default is true.
      */
     readonly autoPublishRouteEnabled?: boolean | ros.IResolvable;
@@ -68,6 +63,11 @@ export interface TransitRouterVpnAttachmentProps {
      * Property vpnOwnerId: Alibaba Cloud account (main account) ID to which the IPsec connection belongs.
      */
     readonly vpnOwnerId?: string | ros.IResolvable;
+
+    /**
+     * Property zoneId: Availability zone ID in the current region.
+     */
+    readonly zoneId?: string | ros.IResolvable;
 }
 
 /**
@@ -82,7 +82,7 @@ export interface ITransitRouterVpnAttachment extends ros.IResource {
     readonly attrTransitRouterAttachmentId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterVpnAttachment`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterVpnAttachment`, which is used to create a VPN connection.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTransitRouterVpnAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervpnattachment
  */
@@ -111,15 +111,15 @@ export class TransitRouterVpnAttachment extends ros.Resource implements ITransit
 
         const rosTransitRouterVpnAttachment = new RosTransitRouterVpnAttachment(this, id,  {
             autoPublishRouteEnabled: props.autoPublishRouteEnabled,
-            routeTableAssociationEnabled: props.routeTableAssociationEnabled,
             vpnOwnerId: props.vpnOwnerId,
+            routeTableAssociationEnabled: props.routeTableAssociationEnabled,
             deletionForce: props.deletionForce,
             zoneId: props.zoneId,
             routeTablePropagationEnabled: props.routeTablePropagationEnabled,
             cenId: props.cenId,
             transitRouterAttachmentName: props.transitRouterAttachmentName,
-            tags: props.tags,
             transitRouterAttachmentDescription: props.transitRouterAttachmentDescription,
+            tags: props.tags,
             transitRouterId: props.transitRouterId,
             vpnId: props.vpnId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

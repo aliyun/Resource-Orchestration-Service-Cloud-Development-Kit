@@ -138,7 +138,7 @@ export interface IInstanceGroup extends ros.IResource {
     readonly attrTradePrice: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CloudPhone::InstanceGroup`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CloudPhone::InstanceGroup`, which is used to create and start cloud phones.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstanceGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-instancegroup
  */
@@ -196,8 +196,8 @@ export class InstanceGroup extends ros.Resource implements IInstanceGroup {
             vncPassword: props.vncPassword,
             tag: props.tag,
             instanceType: props.instanceType,
-            periodUnit: props.periodUnit === undefined || props.periodUnit === null ? 'Month' : props.periodUnit,
             resolution: props.resolution,
+            periodUnit: props.periodUnit === undefined || props.periodUnit === null ? 'Month' : props.periodUnit,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstanceGroup;
         this.attrInstanceIds = rosInstanceGroup.attrInstanceIds;

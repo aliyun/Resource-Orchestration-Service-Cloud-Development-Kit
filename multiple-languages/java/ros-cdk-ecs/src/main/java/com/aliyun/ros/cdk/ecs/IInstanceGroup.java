@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Represents a <code>InstanceGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:55.206Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:24.569Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.IInstanceGroup")
 @software.amazon.jsii.Jsii.Proxy(IInstanceGroup.Jsii$Proxy.class)
 public interface IInstanceGroup extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
@@ -55,11 +55,6 @@ public interface IInstanceGroup extends software.amazon.jsii.JsiiSerializable, c
      * Attribute PublicIps: Public IP address list of created ecs instances.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrPublicIps();
-
-    /**
-     * Attribute RelatedOrderIds: The related order id list of created ecs instances.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getAttrRelatedOrderIds();
 
     /**
      * Attribute ZoneIds: Zone id of created instances.
@@ -178,14 +173,6 @@ public interface IInstanceGroup extends software.amazon.jsii.JsiiSerializable, c
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrPublicIps() {
             return software.amazon.jsii.Kernel.get(this, "attrPublicIps", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute RelatedOrderIds: The related order id list of created ecs instances.
-         */
-        @Override
-        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrRelatedOrderIds() {
-            return software.amazon.jsii.Kernel.get(this, "attrRelatedOrderIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -309,14 +296,6 @@ public interface IInstanceGroup extends software.amazon.jsii.JsiiSerializable, c
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrPublicIps() {
             return software.amazon.jsii.Kernel.get(this, "attrPublicIps", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute RelatedOrderIds: The related order id list of created ecs instances.
-         */
-        @Override
-        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrRelatedOrderIds() {
-            return software.amazon.jsii.Kernel.get(this, "attrRelatedOrderIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**

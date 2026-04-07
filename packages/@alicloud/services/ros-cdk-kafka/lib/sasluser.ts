@@ -60,7 +60,7 @@ export interface ISaslUser extends ros.IResource {
     readonly attrUsername: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::KAFKA::SaslUser`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::KAFKA::SaslUser`, which is used to create a Simple Authentication and Security Layer (SASL) user.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSaslUser`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-sasluser
  */
@@ -94,8 +94,8 @@ export class SaslUser extends ros.Resource implements ISaslUser {
 
         const rosSaslUser = new RosSaslUser(this, id,  {
             type: props.type,
-            username: props.username,
             instanceId: props.instanceId,
+            username: props.username,
             mechanism: props.mechanism,
             password: props.password,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

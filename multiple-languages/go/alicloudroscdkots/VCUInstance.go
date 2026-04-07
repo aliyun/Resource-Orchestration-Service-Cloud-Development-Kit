@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::OTS::VCUInstance`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::OTS::VCUInstance`The , which resource creates a Virtual Compute Unit (VCU) instance.
 type VCUInstance interface {
 	alicloudroscdkcore.Resource
 	IVCUInstance

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterPeerAttachment`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterPeerAttachment`The , which type creates an inter-region connection for an Enterprise Edition transit router.
 type TransitRouterPeerAttachment interface {
 	alicloudroscdkcore.Resource
 	ITransitRouterPeerAttachment

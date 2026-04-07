@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.pvtz.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::PVTZ::Zones</code>.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::PVTZ::Zones</code>, which is used to query built-in authoritative zones.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:59.267Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:28.923Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.datasource.Zones")
 public class Zones extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.pvtz.datasource.IZones {
 
@@ -184,6 +184,27 @@ public class Zones extends com.aliyun.ros.cdk.core.Resource implements com.aliyu
          */
         public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.props().resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * Property vpcId: The ID of the VPC that is associated with the zone.
+         * <p>
+         * @return {@code this}
+         * @param vpcId Property vpcId: The ID of the VPC that is associated with the zone. This parameter is required.
+         */
+        public Builder vpcId(final java.lang.String vpcId) {
+            this.props().vpcId(vpcId);
+            return this;
+        }
+        /**
+         * Property vpcId: The ID of the VPC that is associated with the zone.
+         * <p>
+         * @return {@code this}
+         * @param vpcId Property vpcId: The ID of the VPC that is associated with the zone. This parameter is required.
+         */
+        public Builder vpcId(final com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.props().vpcId(vpcId);
             return this;
         }
 

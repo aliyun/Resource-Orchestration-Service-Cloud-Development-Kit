@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ens;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-disk
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:56.325Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:25.790Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ens.$Module.class, fqn = "@alicloud/ros-cdk-ens.DiskProps")
 @software.amazon.jsii.Jsii.Proxy(DiskProps.Jsii$Proxy.class)
 public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
@@ -57,6 +57,13 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property instanceBillingCycle: The billing cycle of the instance.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceBillingCycle() {
+        return null;
+    }
+
+    /**
      * Property kmsKeyId: The ID of the Key Management Service (KMS) key that is used by the cloud disk.
      * <p>
      * Note If you set the Encrypted parameter to true, the default service key is used when the KMSKeyId parameter is empty.
@@ -92,6 +99,7 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object size;
         java.lang.Object diskName;
         java.lang.Object encrypted;
+        java.lang.Object instanceBillingCycle;
         java.lang.Object kmsKeyId;
         java.lang.Object snapshotId;
 
@@ -232,6 +240,26 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link DiskProps#getInstanceBillingCycle}
+         * @param instanceBillingCycle Property instanceBillingCycle: The billing cycle of the instance.
+         * @return {@code this}
+         */
+        public Builder instanceBillingCycle(java.lang.String instanceBillingCycle) {
+            this.instanceBillingCycle = instanceBillingCycle;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DiskProps#getInstanceBillingCycle}
+         * @param instanceBillingCycle Property instanceBillingCycle: The billing cycle of the instance.
+         * @return {@code this}
+         */
+        public Builder instanceBillingCycle(com.aliyun.ros.cdk.core.IResolvable instanceBillingCycle) {
+            this.instanceBillingCycle = instanceBillingCycle;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DiskProps#getKmsKeyId}
          * @param kmsKeyId Property kmsKeyId: The ID of the Key Management Service (KMS) key that is used by the cloud disk.
          *                 Note If you set the Encrypted parameter to true, the default service key is used when the KMSKeyId parameter is empty.
@@ -301,6 +329,7 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object size;
         private final java.lang.Object diskName;
         private final java.lang.Object encrypted;
+        private final java.lang.Object instanceBillingCycle;
         private final java.lang.Object kmsKeyId;
         private final java.lang.Object snapshotId;
 
@@ -316,6 +345,7 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
             this.size = software.amazon.jsii.Kernel.get(this, "size", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.diskName = software.amazon.jsii.Kernel.get(this, "diskName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.encrypted = software.amazon.jsii.Kernel.get(this, "encrypted", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceBillingCycle = software.amazon.jsii.Kernel.get(this, "instanceBillingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.kmsKeyId = software.amazon.jsii.Kernel.get(this, "kmsKeyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.snapshotId = software.amazon.jsii.Kernel.get(this, "snapshotId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -331,6 +361,7 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
             this.size = java.util.Objects.requireNonNull(builder.size, "size is required");
             this.diskName = builder.diskName;
             this.encrypted = builder.encrypted;
+            this.instanceBillingCycle = builder.instanceBillingCycle;
             this.kmsKeyId = builder.kmsKeyId;
             this.snapshotId = builder.snapshotId;
         }
@@ -366,6 +397,11 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getInstanceBillingCycle() {
+            return this.instanceBillingCycle;
+        }
+
+        @Override
         public final java.lang.Object getKmsKeyId() {
             return this.kmsKeyId;
         }
@@ -390,6 +426,9 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getEncrypted() != null) {
                 data.set("encrypted", om.valueToTree(this.getEncrypted()));
+            }
+            if (this.getInstanceBillingCycle() != null) {
+                data.set("instanceBillingCycle", om.valueToTree(this.getInstanceBillingCycle()));
             }
             if (this.getKmsKeyId() != null) {
                 data.set("kmsKeyId", om.valueToTree(this.getKmsKeyId()));
@@ -421,6 +460,7 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
             if (!size.equals(that.size)) return false;
             if (this.diskName != null ? !this.diskName.equals(that.diskName) : that.diskName != null) return false;
             if (this.encrypted != null ? !this.encrypted.equals(that.encrypted) : that.encrypted != null) return false;
+            if (this.instanceBillingCycle != null ? !this.instanceBillingCycle.equals(that.instanceBillingCycle) : that.instanceBillingCycle != null) return false;
             if (this.kmsKeyId != null ? !this.kmsKeyId.equals(that.kmsKeyId) : that.kmsKeyId != null) return false;
             return this.snapshotId != null ? this.snapshotId.equals(that.snapshotId) : that.snapshotId == null;
         }
@@ -433,6 +473,7 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.size.hashCode());
             result = 31 * result + (this.diskName != null ? this.diskName.hashCode() : 0);
             result = 31 * result + (this.encrypted != null ? this.encrypted.hashCode() : 0);
+            result = 31 * result + (this.instanceBillingCycle != null ? this.instanceBillingCycle.hashCode() : 0);
             result = 31 * result + (this.kmsKeyId != null ? this.kmsKeyId.hashCode() : 0);
             result = 31 * result + (this.snapshotId != null ? this.snapshotId.hashCode() : 0);
             return result;

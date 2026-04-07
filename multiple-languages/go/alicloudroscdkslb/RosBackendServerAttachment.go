@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::BackendServerAttachment`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::BackendServerAttachment`The , which resource type adds backend servers to a Server Load Balancer (SLB) instance.
 type RosBackendServerAttachment interface {
 	alicloudroscdkcore.RosResource
 	AttrBackendServers() alicloudroscdkcore.IResolvable

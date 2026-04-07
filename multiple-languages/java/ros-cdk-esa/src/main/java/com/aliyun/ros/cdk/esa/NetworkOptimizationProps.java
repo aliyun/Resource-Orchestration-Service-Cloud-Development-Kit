@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.esa;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-networkoptimization
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:56.590Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:26.102Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.esa.$Module.class, fqn = "@alicloud/ros-cdk-esa.NetworkOptimizationProps")
 @software.amazon.jsii.Jsii.Proxy(NetworkOptimizationProps.Jsii$Proxy.class)
 public interface NetworkOptimizationProps extends software.amazon.jsii.JsiiSerializable {
@@ -111,7 +111,7 @@ public interface NetworkOptimizationProps extends software.amazon.jsii.JsiiSeria
     }
 
     /**
-     * Property uploadMaxFilesize: Maximum upload file size, in MB, value range: 100～500.
+     * Property uploadMaxFilesize: Maximum upload file size, in MB, value range: 100ï½500.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getUploadMaxFilesize() {
         return null;
@@ -399,7 +399,7 @@ public interface NetworkOptimizationProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link NetworkOptimizationProps#getUploadMaxFilesize}
-         * @param uploadMaxFilesize Property uploadMaxFilesize: Maximum upload file size, in MB, value range: 100～500.
+         * @param uploadMaxFilesize Property uploadMaxFilesize: Maximum upload file size, in MB, value range: 100ï½500.
          * @return {@code this}
          */
         public Builder uploadMaxFilesize(java.lang.Number uploadMaxFilesize) {
@@ -409,7 +409,7 @@ public interface NetworkOptimizationProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link NetworkOptimizationProps#getUploadMaxFilesize}
-         * @param uploadMaxFilesize Property uploadMaxFilesize: Maximum upload file size, in MB, value range: 100～500.
+         * @param uploadMaxFilesize Property uploadMaxFilesize: Maximum upload file size, in MB, value range: 100ï½500.
          * @return {@code this}
          */
         public Builder uploadMaxFilesize(com.aliyun.ros.cdk.core.IResolvable uploadMaxFilesize) {

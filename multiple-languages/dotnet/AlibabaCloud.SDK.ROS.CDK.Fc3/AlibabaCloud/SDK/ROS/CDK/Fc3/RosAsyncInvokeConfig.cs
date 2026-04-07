@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Fc3
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::FC3::AsyncInvokeConfig`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::FC3::AsyncInvokeConfig`, which type is used to specify the asynchronous invocation configuration for a function.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `AsyncInvokeConfig` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-asyncinvokeconfig

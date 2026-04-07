@@ -120,6 +120,10 @@ func (j *jsiiProxy_RosRole) validateSetRoleNameParameters(val interface{}) error
 	return nil
 }
 
+func (j *jsiiProxy_RosRole) validateSetTagsParameters(val *[]*RosRole_TagsProperty) error {
+	return nil
+}
+
 func validateNewRosRoleParameters(scope alicloudroscdkcore.Construct, id *string, props *RosRoleProps, enableResourcePropertyConstraint *bool) error {
 	return nil
 }

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.arms.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::ARMS::Prometheis</code>.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::ARMS::Prometheis</code>, which is used to query Prometheus instances.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:52.838Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:22.026Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.datasource.Prometheis")
 public class Prometheis extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.arms.datasource.IPrometheis {
 

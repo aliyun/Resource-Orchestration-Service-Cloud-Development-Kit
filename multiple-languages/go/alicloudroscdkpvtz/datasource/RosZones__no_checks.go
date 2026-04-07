@@ -96,6 +96,10 @@ func (j *jsiiProxy_RosZones) validateSetResourceGroupIdParameters(val interface{
 	return nil
 }
 
+func (j *jsiiProxy_RosZones) validateSetVpcIdParameters(val interface{}) error {
+	return nil
+}
+
 func validateNewRosZonesParameters(scope alicloudroscdkcore.Construct, id *string, props *RosZonesProps, enableResourcePropertyConstraint *bool) error {
 	return nil
 }

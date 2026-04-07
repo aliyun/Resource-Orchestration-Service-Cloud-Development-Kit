@@ -64,7 +64,7 @@ function rosFlowPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::FNF::Flow`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::FNF::Flow`, which is used to query the information about a flow.
  * @Note This class does not contain additional functions, so it is recommended to use the `Flow` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fnf-flow
  */
@@ -217,7 +217,7 @@ function rosFlowsPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::FNF::Flows`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::FNF::Flows`, which is used to query multiple flows at a time.
  * @Note This class does not contain additional functions, so it is recommended to use the `Flows` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fnf-flows
  */
@@ -318,6 +318,8 @@ function RosSchedulePropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('flowName', ros.requiredValidator)(properties.flowName));
     errors.collect(ros.propertyValidator('flowName', ros.validateString)(properties.flowName));
+    errors.collect(ros.propertyValidator('scheduleName', ros.requiredValidator)(properties.scheduleName));
+    errors.collect(ros.propertyValidator('scheduleName', ros.validateString)(properties.scheduleName));
     if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
         errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
           data: properties.refreshOptions,
@@ -325,8 +327,6 @@ function RosSchedulePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
-    errors.collect(ros.propertyValidator('scheduleName', ros.requiredValidator)(properties.scheduleName));
-    errors.collect(ros.propertyValidator('scheduleName', ros.validateString)(properties.scheduleName));
     return errors.wrap('supplied properties not correct for "RosScheduleProps"');
 }
 
@@ -351,7 +351,7 @@ function rosSchedulePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::FNF::Schedule`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::FNF::Schedule`, which is used to query the information about a time-based schedule.
  * @Note This class does not contain additional functions, so it is recommended to use the `Schedule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fnf-schedule
  */
@@ -526,7 +526,7 @@ function rosSchedulesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::FNF::Schedules`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::FNF::Schedules`, which is used to query time-based schedules.
  * @Note This class does not contain additional functions, so it is recommended to use the `Schedules` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fnf-schedules
  */

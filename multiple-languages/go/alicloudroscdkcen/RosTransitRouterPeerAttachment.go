@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterPeerAttachment`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterPeerAttachment`The , which type creates an inter-region connection for an Enterprise Edition transit router.
 type RosTransitRouterPeerAttachment interface {
 	alicloudroscdkcore.RosResource
 	AttrTransitRouterAttachmentId() alicloudroscdkcore.IResolvable
@@ -29,6 +29,8 @@ type RosTransitRouterPeerAttachment interface {
 	CreationStack() *[]*string
 	DefaultLinkType() interface{}
 	SetDefaultLinkType(val interface{})
+	DeletionForce() interface{}
+	SetDeletionForce(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
 	// The logical ID for this stack element.
@@ -57,6 +59,10 @@ type RosTransitRouterPeerAttachment interface {
 	RosProperties() *map[string]interface{}
 	// ROS resource type.
 	RosResourceType() *string
+	RouteTableAssociationEnabled() interface{}
+	SetRouteTableAssociationEnabled(val interface{})
+	RouteTablePropagationEnabled() interface{}
+	SetRouteTablePropagationEnabled(val interface{})
 	// The stack in which this element is defined.
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
@@ -273,6 +279,16 @@ func (j *jsiiProxy_RosTransitRouterPeerAttachment) DefaultLinkType() interface{}
 	return returns
 }
 
+func (j *jsiiProxy_RosTransitRouterPeerAttachment) DeletionForce() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"deletionForce",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosTransitRouterPeerAttachment) EnableResourcePropertyConstraint() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -358,6 +374,26 @@ func (j *jsiiProxy_RosTransitRouterPeerAttachment) RosResourceType() *string {
 	_jsii_.Get(
 		j,
 		"rosResourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosTransitRouterPeerAttachment) RouteTableAssociationEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"routeTableAssociationEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosTransitRouterPeerAttachment) RouteTablePropagationEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"routeTablePropagationEnabled",
 		&returns,
 	)
 	return returns
@@ -517,6 +553,17 @@ func (j *jsiiProxy_RosTransitRouterPeerAttachment)SetDefaultLinkType(val interfa
 	)
 }
 
+func (j *jsiiProxy_RosTransitRouterPeerAttachment)SetDeletionForce(val interface{}) {
+	if err := j.validateSetDeletionForceParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"deletionForce",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosTransitRouterPeerAttachment)SetEnableResourcePropertyConstraint(val *bool) {
 	if err := j.validateSetEnableResourcePropertyConstraintParameters(val); err != nil {
 		panic(err)
@@ -546,6 +593,28 @@ func (j *jsiiProxy_RosTransitRouterPeerAttachment)SetPeerTransitRouterRegionId(v
 	_jsii_.Set(
 		j,
 		"peerTransitRouterRegionId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosTransitRouterPeerAttachment)SetRouteTableAssociationEnabled(val interface{}) {
+	if err := j.validateSetRouteTableAssociationEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"routeTableAssociationEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosTransitRouterPeerAttachment)SetRouteTablePropagationEnabled(val interface{}) {
+	if err := j.validateSetRouteTablePropagationEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"routeTablePropagationEnabled",
 		val,
 	)
 }

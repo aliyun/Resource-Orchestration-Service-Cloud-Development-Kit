@@ -158,7 +158,7 @@ function rosVpcEndpointPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PrivateLink::VpcEndpoint`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PrivateLink::VpcEndpoint`, which is used to create an endpoint.
  * @Note This class does not contain additional functions, so it is recommended to use the `VpcEndpoint` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpoint
  */
@@ -386,13 +386,13 @@ export namespace RosVpcEndpoint {
          */
         readonly zoneId?: string | ros.IResolvable;
         /**
-         * @Property ip: The IP address of the zone in which the endpoint is deployed.
-         */
-        readonly ip?: string | ros.IResolvable;
-        /**
          * @Property vSwitchId: The switch of the endpoint network interface in the given zone.
          */
         readonly vSwitchId?: string | ros.IResolvable;
+        /**
+         * @Property ip: The IP address of the zone in which the endpoint is deployed.
+         */
+        readonly ip?: string | ros.IResolvable;
     }
 }
 /**
@@ -406,8 +406,8 @@ function RosVpcEndpoint_ZonePropertyValidator(properties: any): ros.ValidationRe
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
-    errors.collect(ros.propertyValidator('ip', ros.validateString)(properties.ip));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('ip', ros.validateString)(properties.ip));
     return errors.wrap('supplied properties not correct for "ZoneProperty"');
 }
 
@@ -424,8 +424,8 @@ function rosVpcEndpointZonePropertyToRosTemplate(properties: any): any {
     RosVpcEndpoint_ZonePropertyValidator(properties).assertSuccess();
     return {
       'ZoneId': ros.stringToRosTemplate(properties.zoneId),
-      'Ip': ros.stringToRosTemplate(properties.ip),
       'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'Ip': ros.stringToRosTemplate(properties.ip),
     };
 }
 
@@ -593,7 +593,7 @@ function rosVpcEndpointServicePropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PrivateLink::VpcEndpointService`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PrivateLink::VpcEndpointService`, which is used to create an endpoint service.
  * @Note This class does not contain additional functions, so it is recommended to use the `VpcEndpointService` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpointservice
  */
@@ -930,7 +930,7 @@ function rosVpcEndpointServiceAttachmentPropsToRosTemplate(properties: any, enab
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PrivateLink::VpcEndpointServiceAttachment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PrivateLink::VpcEndpointServiceAttachment`, which is used to add a service resource to an endpoint service.
  * @Note This class does not contain additional functions, so it is recommended to use the `VpcEndpointServiceAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpointserviceattachment
  */

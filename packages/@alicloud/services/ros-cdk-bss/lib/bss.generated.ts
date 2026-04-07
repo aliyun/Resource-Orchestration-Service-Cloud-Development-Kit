@@ -83,9 +83,9 @@ function RosResourcePackagePropsValidator(properties: any): ros.ValidationResult
         }));
     }
     errors.collect(ros.propertyValidator('pricingCycle', ros.validateString)(properties.pricingCycle));
-    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     errors.collect(ros.propertyValidator('packageType', ros.requiredValidator)(properties.packageType));
     errors.collect(ros.propertyValidator('packageType', ros.validateString)(properties.packageType));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     errors.collect(ros.propertyValidator('specification', ros.requiredValidator)(properties.specification));
     errors.collect(ros.propertyValidator('specification', ros.validateString)(properties.specification));
     errors.collect(ros.propertyValidator('duration', ros.requiredValidator)(properties.duration));
@@ -128,7 +128,7 @@ function rosResourcePackagePropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::BSS::ResourcePackage`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::BSS::ResourcePackage`, which is used to create a resource plan.
  * @Note This class does not contain additional functions, so it is recommended to use the `ResourcePackage` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bss-resourcepackage
  */
@@ -308,7 +308,7 @@ function rosWaitOrderPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::BSS::WaitOrder`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::BSS::WaitOrder`, which is used to wait for orders to be completed.
  * @Note This class does not contain additional functions, so it is recommended to use the `WaitOrder` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bss-waitorder
  */

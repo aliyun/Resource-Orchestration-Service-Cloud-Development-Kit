@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::EBS::DiskReplicaGroup`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::EBS::DiskReplicaGroup`, which is used to create a replication pair-consistent group.
 type RosDiskReplicaGroup interface {
 	alicloudroscdkcore.RosResource
 	AttrDescription() alicloudroscdkcore.IResolvable

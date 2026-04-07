@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ESA::CompressionRule`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ESA::CompressionRule`The , which resource type creates a compression rule.
 type CompressionRule interface {
 	alicloudroscdkcore.Resource
 	ICompressionRule

@@ -54,7 +54,7 @@ export interface IAccessConfiguration extends ros.IResource {
     readonly attrAccessConfigurationId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::AccessConfiguration`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::AccessConfiguration`, which is used to create an access configuration.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccessConfiguration`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-accessconfiguration
  */
@@ -82,11 +82,11 @@ export class AccessConfiguration extends ros.Resource implements IAccessConfigur
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAccessConfiguration = new RosAccessConfiguration(this, id,  {
-            sessionDuration: props.sessionDuration,
             accessConfigurationName: props.accessConfigurationName,
+            sessionDuration: props.sessionDuration,
             directoryId: props.directoryId,
-            relayState: props.relayState,
             description: props.description,
+            relayState: props.relayState,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAccessConfiguration;
         this.attrAccessConfigurationId = rosAccessConfiguration.attrAccessConfigurationId;

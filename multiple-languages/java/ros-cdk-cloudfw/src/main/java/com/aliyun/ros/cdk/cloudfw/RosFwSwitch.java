@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cloudfw;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CLOUDFW::FwSwitch</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CLOUDFW::FwSwitch</code>, which is used to enable a firewall.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.420Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:22.760Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.RosFwSwitch")
 public class RosFwSwitch extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -74,6 +74,42 @@ public class RosFwSwitch extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setIpaddrList(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "ipaddrList", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIpVersion() {
+        return software.amazon.jsii.Kernel.get(this, "ipVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIpVersion(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "ipVersion", value);
+    }
+
+    /**
+     */
+    public void setIpVersion(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ipVersion", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMemberUid() {
+        return software.amazon.jsii.Kernel.get(this, "memberUid", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setMemberUid(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "memberUid", value);
+    }
+
+    /**
+     */
+    public void setMemberUid(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "memberUid", value);
     }
 
     /**
@@ -162,6 +198,40 @@ public class RosFwSwitch extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder ipaddrList(final com.aliyun.ros.cdk.core.IResolvable ipaddrList) {
             this.props.ipaddrList(ipaddrList);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param ipVersion This parameter is required.
+         */
+        public Builder ipVersion(final java.lang.String ipVersion) {
+            this.props.ipVersion(ipVersion);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ipVersion This parameter is required.
+         */
+        public Builder ipVersion(final com.aliyun.ros.cdk.core.IResolvable ipVersion) {
+            this.props.ipVersion(ipVersion);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param memberUid This parameter is required.
+         */
+        public Builder memberUid(final java.lang.String memberUid) {
+            this.props.memberUid(memberUid);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param memberUid This parameter is required.
+         */
+        public Builder memberUid(final com.aliyun.ros.cdk.core.IResolvable memberUid) {
+            this.props.memberUid(memberUid);
             return this;
         }
 

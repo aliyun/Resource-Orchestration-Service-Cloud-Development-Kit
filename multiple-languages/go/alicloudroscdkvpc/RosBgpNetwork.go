@@ -55,6 +55,8 @@ type RosBgpNetwork interface {
 	// Resources that expose mutable properties should override this function to
 	// collect and return the properties object for this resource.
 	UpdatedProperites() *map[string]interface{}
+	VpcId() interface{}
+	SetVpcId(val interface{})
 	AddCondition(con alicloudroscdkcore.RosCondition)
 	AddCount(count interface{})
 	// Syntactic sugar for `addOverride(path, undefined)`.
@@ -314,6 +316,16 @@ func (j *jsiiProxy_RosBgpNetwork) UpdatedProperites() *map[string]interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosBgpNetwork) VpcId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"vpcId",
+		&returns,
+	)
+	return returns
+}
+
 
 func NewRosBgpNetwork(scope alicloudroscdkcore.Construct, id *string, props *RosBgpNetworkProps, enableResourcePropertyConstraint *bool) RosBgpNetwork {
 	_init_.Initialize()
@@ -371,6 +383,17 @@ func (j *jsiiProxy_RosBgpNetwork)SetRouterId(val interface{}) {
 	_jsii_.Set(
 		j,
 		"routerId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosBgpNetwork)SetVpcId(val interface{}) {
+	if err := j.validateSetVpcIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"vpcId",
 		val,
 	)
 }

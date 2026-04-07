@@ -64,7 +64,7 @@ export interface IWorkspaceResourceFlink extends ros.IResource {
     readonly attrResources: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::PAI::WorkspaceResourceFlink`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PAI::WorkspaceResourceFlink`, which is used to associate Realtime Compute for Apache Flink resources with a workspace.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosWorkspaceResourceFlink`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspaceresourceflink
  */
@@ -107,8 +107,8 @@ export class WorkspaceResourceFlink extends ros.Resource implements IWorkspaceRe
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosWorkspaceResourceFlink = new RosWorkspaceResourceFlink(this, id,  {
-            isDefault: props.isDefault,
             groupName: props.groupName,
+            isDefault: props.isDefault,
             workspaceId: props.workspaceId,
             option: props.option,
             resources: props.resources,

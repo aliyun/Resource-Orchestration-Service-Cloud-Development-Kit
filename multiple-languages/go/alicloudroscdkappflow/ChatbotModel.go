@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::AppFlow::ChatbotModel`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::AppFlow::ChatbotModel`The , which is used to create a chatbot model.
 type ChatbotModel interface {
 	alicloudroscdkcore.Resource
 	IChatbotModel

@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::VpnAttachment</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::VpnAttachment</code>, which is used to create an IPsec-VPN connection.
+ * <p>
+ * After you create the IPsec-VPN connection, you can associate the IPsec-VPN connection with a transit router.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.262Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.256Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.VpnAttachment")
 public class VpnAttachment extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.IVpnAttachment {
 
@@ -128,27 +130,6 @@ public class VpnAttachment extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property customerGatewayId: The ID of the user gateway.
-         * <p>
-         * @return {@code this}
-         * @param customerGatewayId Property customerGatewayId: The ID of the user gateway. This parameter is required.
-         */
-        public Builder customerGatewayId(final java.lang.String customerGatewayId) {
-            this.props.customerGatewayId(customerGatewayId);
-            return this;
-        }
-        /**
-         * Property customerGatewayId: The ID of the user gateway.
-         * <p>
-         * @return {@code this}
-         * @param customerGatewayId Property customerGatewayId: The ID of the user gateway. This parameter is required.
-         */
-        public Builder customerGatewayId(final com.aliyun.ros.cdk.core.IResolvable customerGatewayId) {
-            this.props.customerGatewayId(customerGatewayId);
-            return this;
-        }
-
-        /**
          * Property localSubnet: A network segment on the VPC side that needs to be interconnected with the local IDC for the second phase negotiation.
          * <p>
          * Multiple network segments are separated by commas, for example: 192.168.1.0/24, 192.168.2.0/24.
@@ -259,6 +240,27 @@ public class VpnAttachment extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
+         * Property customerGatewayId: The ID of the user gateway.
+         * <p>
+         * @return {@code this}
+         * @param customerGatewayId Property customerGatewayId: The ID of the user gateway. This parameter is required.
+         */
+        public Builder customerGatewayId(final java.lang.String customerGatewayId) {
+            this.props.customerGatewayId(customerGatewayId);
+            return this;
+        }
+        /**
+         * Property customerGatewayId: The ID of the user gateway.
+         * <p>
+         * @return {@code this}
+         * @param customerGatewayId Property customerGatewayId: The ID of the user gateway. This parameter is required.
+         */
+        public Builder customerGatewayId(final com.aliyun.ros.cdk.core.IResolvable customerGatewayId) {
+            this.props.customerGatewayId(customerGatewayId);
+            return this;
+        }
+
+        /**
          * Property effectImmediately: Whether to delete the currently negotiated IPsec tunnel and re-initiate the negotiation.
          * <p>
          * Value:
@@ -342,6 +344,43 @@ public class VpnAttachment extends com.aliyun.ros.cdk.core.Resource implements c
          */
         public Builder enableNatTraversal(final com.aliyun.ros.cdk.core.IResolvable enableNatTraversal) {
             this.props.enableNatTraversal(enableNatTraversal);
+            return this;
+        }
+
+        /**
+         * Property enableTunnelsBgp: Support configuring this parameter when creating dual-tunnel mode IPsec-VPN connections.
+         * <p>
+         * Whether to enable BGP function for the tunnel. Values: <strong>true</strong> or <strong>false</strong> (default value).
+         * <p>
+         * <blockquote>
+         * <p>
+         * Before adding BGP configuration, it is recommended that you first understand the working mechanism and usage limitations of the BGP dynamic routing function. For more information, please see Configuring BGP Dynamic Routing.
+         * <p>
+         * </blockquote>
+         * <p>
+         * @return {@code this}
+         * @param enableTunnelsBgp Property enableTunnelsBgp: Support configuring this parameter when creating dual-tunnel mode IPsec-VPN connections. This parameter is required.
+         */
+        public Builder enableTunnelsBgp(final java.lang.Boolean enableTunnelsBgp) {
+            this.props.enableTunnelsBgp(enableTunnelsBgp);
+            return this;
+        }
+        /**
+         * Property enableTunnelsBgp: Support configuring this parameter when creating dual-tunnel mode IPsec-VPN connections.
+         * <p>
+         * Whether to enable BGP function for the tunnel. Values: <strong>true</strong> or <strong>false</strong> (default value).
+         * <p>
+         * <blockquote>
+         * <p>
+         * Before adding BGP configuration, it is recommended that you first understand the working mechanism and usage limitations of the BGP dynamic routing function. For more information, please see Configuring BGP Dynamic Routing.
+         * <p>
+         * </blockquote>
+         * <p>
+         * @return {@code this}
+         * @param enableTunnelsBgp Property enableTunnelsBgp: Support configuring this parameter when creating dual-tunnel mode IPsec-VPN connections. This parameter is required.
+         */
+        public Builder enableTunnelsBgp(final com.aliyun.ros.cdk.core.IResolvable enableTunnelsBgp) {
+            this.props.enableTunnelsBgp(enableTunnelsBgp);
             return this;
         }
 
@@ -482,6 +521,89 @@ public class VpnAttachment extends com.aliyun.ros.cdk.core.Resource implements c
          */
         public Builder remoteCaCert(final com.aliyun.ros.cdk.core.IResolvable remoteCaCert) {
             this.props.remoteCaCert(remoteCaCert);
+            return this;
+        }
+
+        /**
+         * Property resourceGroupId: The resource group ID to which the IPsec connection belongs.
+         * <p>
+         * <ul>
+         * <li>You can call the ListResourceGroups interface to query the resource group ID.</li>
+         * <li>If you do not specify a resource group ID, the IPsec connection will belong to the default resource group after creation.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The resource group ID to which the IPsec connection belongs. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: The resource group ID to which the IPsec connection belongs.
+         * <p>
+         * <ul>
+         * <li>You can call the ListResourceGroups interface to query the resource group ID.</li>
+         * <li>If you do not specify a resource group ID, the IPsec connection will belong to the default resource group after creation.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The resource group ID to which the IPsec connection belongs. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * Property tunnelBandwidth: Used to indicate the bandwidth specification of a single VPN tunnel, values: Standard (default value): Standard type, default bandwidth 1Gbps Large: Large type, default bandwidth 3Gbps.
+         * <p>
+         * @return {@code this}
+         * @param tunnelBandwidth Property tunnelBandwidth: Used to indicate the bandwidth specification of a single VPN tunnel, values: Standard (default value): Standard type, default bandwidth 1Gbps Large: Large type, default bandwidth 3Gbps. This parameter is required.
+         */
+        public Builder tunnelBandwidth(final java.lang.String tunnelBandwidth) {
+            this.props.tunnelBandwidth(tunnelBandwidth);
+            return this;
+        }
+        /**
+         * Property tunnelBandwidth: Used to indicate the bandwidth specification of a single VPN tunnel, values: Standard (default value): Standard type, default bandwidth 1Gbps Large: Large type, default bandwidth 3Gbps.
+         * <p>
+         * @return {@code this}
+         * @param tunnelBandwidth Property tunnelBandwidth: Used to indicate the bandwidth specification of a single VPN tunnel, values: Standard (default value): Standard type, default bandwidth 1Gbps Large: Large type, default bandwidth 3Gbps. This parameter is required.
+         */
+        public Builder tunnelBandwidth(final com.aliyun.ros.cdk.core.IResolvable tunnelBandwidth) {
+            this.props.tunnelBandwidth(tunnelBandwidth);
+            return this;
+        }
+
+        /**
+         * Property tunnelOptionsSpecification: Configuration of tunnels.
+         * <p>
+         * <ul>
+         * <li>When creating dual-tunnel mode IPsec-VPN connections, you can configure parameters under <strong>TunnelOptionsSpecification</strong> array.</li>
+         * <li>When creating dual-tunnel mode IPsec-VPN connections, you must add two tunnels for the IPsec-VPN connection simultaneously to ensure the IPsec-VPN connection has link redundancy capability. Only two tunnels are supported under an IPsec-VPN connection.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param tunnelOptionsSpecification Property tunnelOptionsSpecification: Configuration of tunnels. This parameter is required.
+         */
+        public Builder tunnelOptionsSpecification(final com.aliyun.ros.cdk.core.IResolvable tunnelOptionsSpecification) {
+            this.props.tunnelOptionsSpecification(tunnelOptionsSpecification);
+            return this;
+        }
+        /**
+         * Property tunnelOptionsSpecification: Configuration of tunnels.
+         * <p>
+         * <ul>
+         * <li>When creating dual-tunnel mode IPsec-VPN connections, you can configure parameters under <strong>TunnelOptionsSpecification</strong> array.</li>
+         * <li>When creating dual-tunnel mode IPsec-VPN connections, you must add two tunnels for the IPsec-VPN connection simultaneously to ensure the IPsec-VPN connection has link redundancy capability. Only two tunnels are supported under an IPsec-VPN connection.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param tunnelOptionsSpecification Property tunnelOptionsSpecification: Configuration of tunnels. This parameter is required.
+         */
+        public Builder tunnelOptionsSpecification(final java.util.List<? extends java.lang.Object> tunnelOptionsSpecification) {
+            this.props.tunnelOptionsSpecification(tunnelOptionsSpecification);
             return this;
         }
 

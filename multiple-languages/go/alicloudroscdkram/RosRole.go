@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::Role`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::Role`The , which resource creates a RAM role.
 type RosRole interface {
 	alicloudroscdkcore.RosResource
 	AssumeRolePolicyDocument() interface{}
@@ -63,6 +63,8 @@ type RosRole interface {
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
 	Stack() alicloudroscdkcore.Stack
+	Tags() *[]*RosRole_TagsProperty
+	SetTags(val *[]*RosRole_TagsProperty)
 	// Return properties modified after initiation.
 	//
 	// Resources that expose mutable properties should override this function to
@@ -387,6 +389,16 @@ func (j *jsiiProxy_RosRole) Stack() alicloudroscdkcore.Stack {
 	return returns
 }
 
+func (j *jsiiProxy_RosRole) Tags() *[]*RosRole_TagsProperty {
+	var returns *[]*RosRole_TagsProperty
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosRole) UpdatedProperites() *map[string]interface{} {
 	var returns *map[string]interface{}
 	_jsii_.Get(
@@ -520,6 +532,17 @@ func (j *jsiiProxy_RosRole)SetRoleName(val interface{}) {
 	_jsii_.Set(
 		j,
 		"roleName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosRole)SetTags(val *[]*RosRole_TagsProperty) {
+	if err := j.validateSetTagsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"tags",
 		val,
 	)
 }

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.sls;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logstore
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:00.570Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.323Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.LogstoreProps")
 @software.amazon.jsii.Jsii.Proxy(LogstoreProps.Jsii$Proxy.class)
 public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
@@ -105,7 +105,7 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property ttl: The lifecycle of log in the logstore in days.
      * <p>
-     * Allowed Values: 1-3600, default to 30.
+     * Allowed Values: 1-3650, default to 30.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTtl() {
         return null;
@@ -370,7 +370,7 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link LogstoreProps#getTtl}
          * @param ttl Property ttl: The lifecycle of log in the logstore in days.
-         *            Allowed Values: 1-3600, default to 30.
+         *            Allowed Values: 1-3650, default to 30.
          * @return {@code this}
          */
         public Builder ttl(java.lang.Number ttl) {
@@ -381,7 +381,7 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link LogstoreProps#getTtl}
          * @param ttl Property ttl: The lifecycle of log in the logstore in days.
-         *            Allowed Values: 1-3600, default to 30.
+         *            Allowed Values: 1-3650, default to 30.
          * @return {@code this}
          */
         public Builder ttl(com.aliyun.ros.cdk.core.IResolvable ttl) {

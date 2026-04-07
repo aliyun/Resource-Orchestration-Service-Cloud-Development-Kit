@@ -32,7 +32,7 @@ export interface IPermissions extends ros.IResource {
     readonly props: PermissionsProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DataLakeFormation::Permissions`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DataLakeFormation::Permissions`The , which resource type is used to grant permissions in a batch.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPermissions`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-datalakeformation-permissions
  */

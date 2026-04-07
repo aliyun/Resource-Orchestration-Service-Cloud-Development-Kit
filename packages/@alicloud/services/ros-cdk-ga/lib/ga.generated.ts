@@ -78,6 +78,7 @@ function RosAcceleratorPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('acceleratorName', ros.validateString)(properties.acceleratorName));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('autoUseCoupon', ros.validateString)(properties.autoUseCoupon));
+    errors.collect(ros.propertyValidator('pricingCycle', ros.validateString)(properties.pricingCycle));
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,
@@ -85,7 +86,6 @@ function RosAcceleratorPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
-    errors.collect(ros.propertyValidator('pricingCycle', ros.validateString)(properties.pricingCycle));
     errors.collect(ros.propertyValidator('enableCrossBorder', ros.validateBoolean)(properties.enableCrossBorder));
     errors.collect(ros.propertyValidator('duration', ros.validateString)(properties.duration));
     errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
@@ -123,7 +123,7 @@ function rosAcceleratorPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Accelerator`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Accelerator`, which is used to create a Global Accelerator (GA) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Accelerator` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-accelerator
  */
@@ -423,7 +423,7 @@ function rosAclPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Acl`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Acl`, which is used to create an access control list (ACL).
  * @Note This class does not contain additional functions, so it is recommended to use the `Acl` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-acl
  */
@@ -699,7 +699,7 @@ function rosAclsListenerAssociationPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::AclsListenerAssociation`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::AclsListenerAssociation`, which is used to associate an access control list (ACL) with a listener.
  * @Note This class does not contain additional functions, so it is recommended to use the `AclsListenerAssociation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-aclslistenerassociation
  */
@@ -845,10 +845,9 @@ function RosApplicationMonitorPropsValidator(properties: any): ros.ValidationRes
           }));
     }
     errors.collect(ros.propertyValidator('detectThreshold', ros.validateNumber)(properties.detectThreshold));
-    errors.collect(ros.propertyValidator('detectEnable', ros.validateBoolean)(properties.detectEnable));
     errors.collect(ros.propertyValidator('address', ros.requiredValidator)(properties.address));
     errors.collect(ros.propertyValidator('address', ros.validateString)(properties.address));
-    errors.collect(ros.propertyValidator('optionsJson', ros.hashValidator(ros.validateAny))(properties.optionsJson));
+    errors.collect(ros.propertyValidator('detectEnable', ros.validateBoolean)(properties.detectEnable));
     errors.collect(ros.propertyValidator('taskName', ros.requiredValidator)(properties.taskName));
     if(properties.taskName && (Array.isArray(properties.taskName) || (typeof properties.taskName) === 'string')) {
         errors.collect(ros.propertyValidator('taskName', ros.validateLength)({
@@ -858,6 +857,7 @@ function RosApplicationMonitorPropsValidator(properties: any): ros.ValidationRes
           }));
     }
     errors.collect(ros.propertyValidator('taskName', ros.validateString)(properties.taskName));
+    errors.collect(ros.propertyValidator('optionsJson', ros.hashValidator(ros.validateAny))(properties.optionsJson));
     errors.collect(ros.propertyValidator('acceleratorId', ros.requiredValidator)(properties.acceleratorId));
     errors.collect(ros.propertyValidator('acceleratorId', ros.validateString)(properties.acceleratorId));
     if(properties.detectTimes && (typeof properties.detectTimes) !== 'object') {
@@ -900,7 +900,7 @@ function rosApplicationMonitorPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::ApplicationMonitor`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::ApplicationMonitor`, which is used to create an origin probing task.
  * @Note This class does not contain additional functions, so it is recommended to use the `ApplicationMonitor` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-applicationmonitor
  */
@@ -1127,7 +1127,7 @@ function rosBandwidthPackagePropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BandwidthPackage`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BandwidthPackage`, which is used to create a bandwidth plan.
  * @Note This class does not contain additional functions, so it is recommended to use the `BandwidthPackage` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-bandwidthpackage
  */
@@ -1378,7 +1378,7 @@ function rosBandwidthPackageAcceleratorAdditionPropsToRosTemplate(properties: an
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BandwidthPackageAcceleratorAddition`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BandwidthPackageAcceleratorAddition`, which is used to bind a bandwidth plan to a global acceleration instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `BandwidthPackageAcceleratorAddition` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-bandwidthpackageacceleratoraddition
  */
@@ -1493,7 +1493,7 @@ function rosBasicAccelerateIpPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicAccelerateIp`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicAccelerateIp`, which is used to create an accelerated IP address for a basic Global Accelerator (GA) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `BasicAccelerateIp` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicaccelerateip
  */
@@ -1715,7 +1715,7 @@ function rosBasicAcceleratorPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicAccelerator`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicAccelerator`, which is used to create a basic Global Accelerator (GA) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `BasicAccelerator` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicaccelerator
  */
@@ -1955,7 +1955,7 @@ function rosBasicAcceleratorIpEndpointRelationPropsToRosTemplate(properties: any
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicAcceleratorIpEndpointRelation`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicAcceleratorIpEndpointRelation`, which is used to create a mapping between an accelerated IP address and an endpoint for a basic Global Accelerator (GA) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `BasicAcceleratorIpEndpointRelation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicacceleratoripendpointrelation
  */
@@ -2147,7 +2147,7 @@ function rosBasicEndpointPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicEndpoint`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicEndpoint`, which is used to create an endpoint for a basic Global Accelerator (GA) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `BasicEndpoint` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicendpoint
  */
@@ -2330,7 +2330,6 @@ function RosBasicEndpointGroupPropsValidator(properties: any): ros.ValidationRes
     errors.collect(ros.propertyValidator('endpointSubAddress', ros.validateString)(properties.endpointSubAddress));
     errors.collect(ros.propertyValidator('acceleratorId', ros.requiredValidator)(properties.acceleratorId));
     errors.collect(ros.propertyValidator('acceleratorId', ros.validateString)(properties.acceleratorId));
-    errors.collect(ros.propertyValidator('endpointAddress', ros.validateString)(properties.endpointAddress));
     if(properties.name && (Array.isArray(properties.name) || (typeof properties.name) === 'string')) {
         errors.collect(ros.propertyValidator('name', ros.validateLength)({
             data: properties.name.length,
@@ -2339,6 +2338,7 @@ function RosBasicEndpointGroupPropsValidator(properties: any): ros.ValidationRes
           }));
     }
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    errors.collect(ros.propertyValidator('endpointAddress', ros.validateString)(properties.endpointAddress));
     return errors.wrap('supplied properties not correct for "RosBasicEndpointGroupProps"');
 }
 
@@ -2367,7 +2367,7 @@ function rosBasicEndpointGroupPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicEndpointGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicEndpointGroup`, which is used to create an endpoint group for a basic Global Accelerator (GA) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `BasicEndpointGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicendpointgroup
  */
@@ -2550,7 +2550,7 @@ function rosBasicIpSetPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicIpSet`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicIpSet`, which is used to create an acceleration region for a basic Global Accelerator (GA) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `BasicIpSet` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicipset
  */
@@ -2688,7 +2688,7 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Domain`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Domain`, which is used to create a domain name.
  * @Note This class does not contain additional functions, so it is recommended to use the `Domain` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-domain
  */
@@ -2920,7 +2920,7 @@ function rosEndpointGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::EndpointGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::EndpointGroup`, which is used to create an endpoint group.
  * @Note This class does not contain additional functions, so it is recommended to use the `EndpointGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-endpointgroup
  */
@@ -3226,7 +3226,7 @@ function rosEndpointGroupsPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::EndpointGroups`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::EndpointGroups`, which is used to create multiple endpoint groups at a time.
  * @Note This class does not contain additional functions, so it is recommended to use the `EndpointGroups` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-endpointgroups
  */
@@ -3381,13 +3381,13 @@ export namespace RosEndpointGroups {
          */
         readonly healthCheckIntervalSeconds?: number | ros.IResolvable;
         /**
-         * @Property trafficPercentage: The traffic distribution ratio. If a listener is associated with multiple endpoint groups, you can specify this parameter to distribute traffic to the endpoint groups based on ratios. Valid values: 1 to 100. Default value: 100. You can specify traffic distribution ratios for up to 10 endpoint groups.
-         */
-        readonly trafficPercentage?: number | ros.IResolvable;
-        /**
          * @Property endpointGroupName: The name of the endpoint group. The name must be 2 to 128 characters in length, and can contain letters, digits, underscores (_), and hyphens (-). The name must start with a letter. You can specify the names of up to 10 endpoint groups.
          */
         readonly endpointGroupName?: string | ros.IResolvable;
+        /**
+         * @Property trafficPercentage: The traffic distribution ratio. If a listener is associated with multiple endpoint groups, you can specify this parameter to distribute traffic to the endpoint groups based on ratios. Valid values: 1 to 100. Default value: 100. You can specify traffic distribution ratios for up to 10 endpoint groups.
+         */
+        readonly trafficPercentage?: number | ros.IResolvable;
         /**
          * @Property healthCheckPath: The path to which health check requests are sent.
          */
@@ -3440,16 +3440,16 @@ export namespace RosEndpointGroups {
          */
         readonly endpointConfigurations?: Array<RosEndpointGroups.EndpointConfigurationsProperty | ros.IResolvable> | ros.IResolvable;
         /**
-         * @Property tags: The tags.
-         */
-        readonly tags?: RosEndpointGroups.TagsProperty[];
-        /**
          * @Property endpointGroupType: The type of the endpoint group. Valid values:
      * default (default)
      * virtual
      * You can specify the types of up to 10 endpoint groups.
          */
         readonly endpointGroupType?: string | ros.IResolvable;
+        /**
+         * @Property tags: The tags.
+         */
+        readonly tags?: RosEndpointGroups.TagsProperty[];
         /**
          * @Property enableClientIpPreservationProxyProtocol: Specifies whether to use the proxy protocol to preserve client IP addresses.
          */
@@ -3467,14 +3467,6 @@ function RosEndpointGroups_EndpointGroupConfigurationsPropertyValidator(properti
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('healthCheckIntervalSeconds', ros.validateNumber)(properties.healthCheckIntervalSeconds));
-    if(properties.trafficPercentage && (typeof properties.trafficPercentage) !== 'object') {
-        errors.collect(ros.propertyValidator('trafficPercentage', ros.validateRange)({
-            data: properties.trafficPercentage,
-            min: 1,
-            max: 100,
-          }));
-    }
-    errors.collect(ros.propertyValidator('trafficPercentage', ros.validateNumber)(properties.trafficPercentage));
     if(properties.endpointGroupName && (Array.isArray(properties.endpointGroupName) || (typeof properties.endpointGroupName) === 'string')) {
         errors.collect(ros.propertyValidator('endpointGroupName', ros.validateLength)({
             data: properties.endpointGroupName.length,
@@ -3483,6 +3475,14 @@ function RosEndpointGroups_EndpointGroupConfigurationsPropertyValidator(properti
           }));
     }
     errors.collect(ros.propertyValidator('endpointGroupName', ros.validateString)(properties.endpointGroupName));
+    if(properties.trafficPercentage && (typeof properties.trafficPercentage) !== 'object') {
+        errors.collect(ros.propertyValidator('trafficPercentage', ros.validateRange)({
+            data: properties.trafficPercentage,
+            min: 1,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('trafficPercentage', ros.validateNumber)(properties.trafficPercentage));
     errors.collect(ros.propertyValidator('healthCheckPath', ros.validateString)(properties.healthCheckPath));
     if(properties.thresholdCount && (typeof properties.thresholdCount) !== 'object') {
         errors.collect(ros.propertyValidator('thresholdCount', ros.validateRange)({
@@ -3542,6 +3542,13 @@ function RosEndpointGroups_EndpointGroupConfigurationsPropertyValidator(properti
           }));
     }
     errors.collect(ros.propertyValidator('endpointConfigurations', ros.listValidator(RosEndpointGroups_EndpointConfigurationsPropertyValidator))(properties.endpointConfigurations));
+    if(properties.endpointGroupType && (typeof properties.endpointGroupType) !== 'object') {
+        errors.collect(ros.propertyValidator('endpointGroupType', ros.validateAllowedValues)({
+          data: properties.endpointGroupType,
+          allowedValues: ["default","virtual"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('endpointGroupType', ros.validateString)(properties.endpointGroupType));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -3550,13 +3557,6 @@ function RosEndpointGroups_EndpointGroupConfigurationsPropertyValidator(properti
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosEndpointGroups_TagsPropertyValidator))(properties.tags));
-    if(properties.endpointGroupType && (typeof properties.endpointGroupType) !== 'object') {
-        errors.collect(ros.propertyValidator('endpointGroupType', ros.validateAllowedValues)({
-          data: properties.endpointGroupType,
-          allowedValues: ["default","virtual"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('endpointGroupType', ros.validateString)(properties.endpointGroupType));
     errors.collect(ros.propertyValidator('enableClientIpPreservationProxyProtocol', ros.validateBoolean)(properties.enableClientIpPreservationProxyProtocol));
     return errors.wrap('supplied properties not correct for "EndpointGroupConfigurationsProperty"');
 }
@@ -3574,8 +3574,8 @@ function rosEndpointGroupsEndpointGroupConfigurationsPropertyToRosTemplate(prope
     RosEndpointGroups_EndpointGroupConfigurationsPropertyValidator(properties).assertSuccess();
     return {
       'HealthCheckIntervalSeconds': ros.numberToRosTemplate(properties.healthCheckIntervalSeconds),
-      'TrafficPercentage': ros.numberToRosTemplate(properties.trafficPercentage),
       'EndpointGroupName': ros.stringToRosTemplate(properties.endpointGroupName),
+      'TrafficPercentage': ros.numberToRosTemplate(properties.trafficPercentage),
       'HealthCheckPath': ros.stringToRosTemplate(properties.healthCheckPath),
       'ThresholdCount': ros.numberToRosTemplate(properties.thresholdCount),
       'HealthCheckEnabled': ros.booleanToRosTemplate(properties.healthCheckEnabled),
@@ -3587,8 +3587,8 @@ function rosEndpointGroupsEndpointGroupConfigurationsPropertyToRosTemplate(prope
       'HealthCheckProtocol': ros.stringToRosTemplate(properties.healthCheckProtocol),
       'HealthCheckPort': ros.numberToRosTemplate(properties.healthCheckPort),
       'EndpointConfigurations': ros.listMapper(rosEndpointGroupsEndpointConfigurationsPropertyToRosTemplate)(properties.endpointConfigurations),
-      'Tags': ros.listMapper(rosEndpointGroupsTagsPropertyToRosTemplate)(properties.tags),
       'EndpointGroupType': ros.stringToRosTemplate(properties.endpointGroupType),
+      'Tags': ros.listMapper(rosEndpointGroupsTagsPropertyToRosTemplate)(properties.tags),
       'EnableClientIPPreservationProxyProtocol': ros.booleanToRosTemplate(properties.enableClientIpPreservationProxyProtocol),
     };
 }
@@ -3758,7 +3758,7 @@ function rosForwardingRulesPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::ForwardingRules`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::ForwardingRules`, which is used to create forwarding rules.
  * @Note This class does not contain additional functions, so it is recommended to use the `ForwardingRules` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-forwardingrules
  */
@@ -4132,7 +4132,7 @@ function rosIpSetsPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::IpSets`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::IpSets`, which is used to create acceleration regions.
  * @Note This class does not contain additional functions, so it is recommended to use the `IpSets` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-ipsets
  */
@@ -4363,7 +4363,6 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('securityPolicyId', ros.validateString)(properties.securityPolicyId));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    errors.collect(ros.propertyValidator('proxyProtocol', ros.validateBoolean)(properties.proxyProtocol));
     errors.collect(ros.propertyValidator('portRanges', ros.requiredValidator)(properties.portRanges));
     if(properties.portRanges && (Array.isArray(properties.portRanges) || (typeof properties.portRanges) === 'string')) {
         errors.collect(ros.propertyValidator('portRanges', ros.validateLength)({
@@ -4373,6 +4372,7 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('portRanges', ros.listValidator(RosListener_PortRangesPropertyValidator))(properties.portRanges));
+    errors.collect(ros.propertyValidator('proxyProtocol', ros.validateBoolean)(properties.proxyProtocol));
     if(properties.certificates && (Array.isArray(properties.certificates) || (typeof properties.certificates) === 'string')) {
         errors.collect(ros.propertyValidator('certificates', ros.validateLength)({
             data: properties.certificates.length,
@@ -4431,7 +4431,7 @@ function rosListenerPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Listener`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Listener`, which is used to create a listener for a Global Accelerator (GA) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Listener` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-listener
  */
@@ -4672,19 +4672,19 @@ export namespace RosListener {
          */
         readonly xForwardedForProtoEnabled?: boolean | ros.IResolvable;
         /**
-         * @Property xRealIpEnabled: Specifies whether to use the X-Real-IP header to retrieve client IP addresses. Valid values:
-     * true: yes
-     * false (default): no
-     * Note Only HTTP and HTTPS listeners support this parameter.
-         */
-        readonly xRealIpEnabled?: boolean | ros.IResolvable;
-        /**
          * @Property xForwardedForPortEnabled: Specifies whether to use the GA-X-Forward-Port header to retrieve the listener ports of the GA instance. Valid values:
      * true: yes
      * false (default): no
      * Note Only HTTP and HTTPS listeners support this parameter.
          */
         readonly xForwardedForPortEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property xRealIpEnabled: Specifies whether to use the X-Real-IP header to retrieve client IP addresses. Valid values:
+     * true: yes
+     * false (default): no
+     * Note Only HTTP and HTTPS listeners support this parameter.
+         */
+        readonly xRealIpEnabled?: boolean | ros.IResolvable;
         /**
          * @Property xForwardedForGaIdEnabled: Specifies whether to use the GA-ID header to retrieve the ID of the GA instance. Valid values:
      * true: yes
@@ -4706,8 +4706,8 @@ function RosListener_XForwardedForConfigPropertyValidator(properties: any): ros.
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('xForwardedForGaApEnabled', ros.validateBoolean)(properties.xForwardedForGaApEnabled));
     errors.collect(ros.propertyValidator('xForwardedForProtoEnabled', ros.validateBoolean)(properties.xForwardedForProtoEnabled));
-    errors.collect(ros.propertyValidator('xRealIpEnabled', ros.validateBoolean)(properties.xRealIpEnabled));
     errors.collect(ros.propertyValidator('xForwardedForPortEnabled', ros.validateBoolean)(properties.xForwardedForPortEnabled));
+    errors.collect(ros.propertyValidator('xRealIpEnabled', ros.validateBoolean)(properties.xRealIpEnabled));
     errors.collect(ros.propertyValidator('xForwardedForGaIdEnabled', ros.validateBoolean)(properties.xForwardedForGaIdEnabled));
     return errors.wrap('supplied properties not correct for "XForwardedForConfigProperty"');
 }
@@ -4726,8 +4726,8 @@ function rosListenerXForwardedForConfigPropertyToRosTemplate(properties: any): a
     return {
       'XForwardedForGaApEnabled': ros.booleanToRosTemplate(properties.xForwardedForGaApEnabled),
       'XForwardedForProtoEnabled': ros.booleanToRosTemplate(properties.xForwardedForProtoEnabled),
-      'XRealIpEnabled': ros.booleanToRosTemplate(properties.xRealIpEnabled),
       'XForwardedForPortEnabled': ros.booleanToRosTemplate(properties.xForwardedForPortEnabled),
+      'XRealIpEnabled': ros.booleanToRosTemplate(properties.xRealIpEnabled),
       'XForwardedForGaIdEnabled': ros.booleanToRosTemplate(properties.xForwardedForGaIdEnabled),
     };
 }
@@ -4825,7 +4825,7 @@ function rosLogStoreToEndpointGroupAttachmentPropsToRosTemplate(properties: any,
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::LogStoreToEndpointGroupAttachment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::LogStoreToEndpointGroupAttachment`, which is used to associate a Simple Log Service (SLS) Logstore with endpoint groups.
  * @Note This class does not contain additional functions, so it is recommended to use the `LogStoreToEndpointGroupAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-logstoretoendpointgroupattachment
  */

@@ -45,7 +45,7 @@ export interface IHttpApis extends ros.IResource {
     readonly attrHttpApis: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::APIG::HttpApis`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::APIG::HttpApis`, which is used to query HTTP APIs.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosHttpApis`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apig-httpapis
  */

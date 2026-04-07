@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cms;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CMS::EventRuleTargets</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CMS::EventRuleTargets</code>, which is used to add or change the recipients to which alert notifications are sent based on an event-triggered alert rule.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.740Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:23.096Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosEventRuleTargets")
 public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -171,6 +171,40 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             }
         }
         software.amazon.jsii.Kernel.set(this, "mnsParameters", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getOpenApiParameters() {
+        return software.amazon.jsii.Kernel.get(this, "openApiParameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setOpenApiParameters(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "openApiParameters", value);
+    }
+
+    /**
+     */
+    public void setOpenApiParameters(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.cms.RosEventRuleTargets.OpenApiParametersProperty)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.cms.RosEventRuleTargets.OpenApiParametersProperty; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "openApiParameters", value);
     }
 
     /**
@@ -742,6 +776,13 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
         }
 
         /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getTopic() {
+            return null;
+        }
+
+        /**
          * @return a {@link Builder} of {@link MnsParametersProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -756,6 +797,7 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object identity;
             java.lang.Object queue;
             java.lang.Object region;
+            java.lang.Object topic;
 
             /**
              * Sets the value of {@link MnsParametersProperty#getIdentity}
@@ -824,6 +866,28 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link MnsParametersProperty#getTopic}
+             * @param topic the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder topic(java.lang.String topic) {
+                this.topic = topic;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link MnsParametersProperty#getTopic}
+             * @param topic the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder topic(com.aliyun.ros.cdk.core.IResolvable topic) {
+                this.topic = topic;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link MnsParametersProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -844,6 +908,7 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object identity;
             private final java.lang.Object queue;
             private final java.lang.Object region;
+            private final java.lang.Object topic;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -854,6 +919,7 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
                 this.identity = software.amazon.jsii.Kernel.get(this, "identity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.queue = software.amazon.jsii.Kernel.get(this, "queue", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.region = software.amazon.jsii.Kernel.get(this, "region", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.topic = software.amazon.jsii.Kernel.get(this, "topic", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -864,6 +930,7 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
                 this.identity = builder.identity;
                 this.queue = builder.queue;
                 this.region = builder.region;
+                this.topic = builder.topic;
             }
 
             @Override
@@ -882,6 +949,11 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getTopic() {
+                return this.topic;
+            }
+
+            @Override
             @software.amazon.jsii.Internal
             public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -895,6 +967,9 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
                 }
                 if (this.getRegion() != null) {
                     data.set("region", om.valueToTree(this.getRegion()));
+                }
+                if (this.getTopic() != null) {
+                    data.set("topic", om.valueToTree(this.getTopic()));
                 }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -916,7 +991,8 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
 
                 if (this.identity != null ? !this.identity.equals(that.identity) : that.identity != null) return false;
                 if (this.queue != null ? !this.queue.equals(that.queue) : that.queue != null) return false;
-                return this.region != null ? this.region.equals(that.region) : that.region == null;
+                if (this.region != null ? !this.region.equals(that.region) : that.region != null) return false;
+                return this.topic != null ? this.topic.equals(that.topic) : that.topic == null;
             }
 
             @Override
@@ -924,6 +1000,437 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
                 int result = this.identity != null ? this.identity.hashCode() : 0;
                 result = 31 * result + (this.queue != null ? this.queue.hashCode() : 0);
                 result = 31 * result + (this.region != null ? this.region.hashCode() : 0);
+                result = 31 * result + (this.topic != null ? this.topic.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosEventRuleTargets.OpenApiParametersProperty")
+    @software.amazon.jsii.Jsii.Proxy(OpenApiParametersProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface OpenApiParametersProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAction() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getArn() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getIdentity() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getJsonParams() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getProduct() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getRegion() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getRole() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getVersion() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link OpenApiParametersProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link OpenApiParametersProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<OpenApiParametersProperty> {
+            java.lang.Object action;
+            java.lang.Object arn;
+            java.lang.Object identity;
+            java.lang.Object jsonParams;
+            java.lang.Object product;
+            java.lang.Object region;
+            java.lang.Object role;
+            java.lang.Object version;
+
+            /**
+             * Sets the value of {@link OpenApiParametersProperty#getAction}
+             * @param action the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder action(java.lang.String action) {
+                this.action = action;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link OpenApiParametersProperty#getAction}
+             * @param action the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder action(com.aliyun.ros.cdk.core.IResolvable action) {
+                this.action = action;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link OpenApiParametersProperty#getArn}
+             * @param arn the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder arn(java.lang.String arn) {
+                this.arn = arn;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link OpenApiParametersProperty#getArn}
+             * @param arn the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder arn(com.aliyun.ros.cdk.core.IResolvable arn) {
+                this.arn = arn;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link OpenApiParametersProperty#getIdentity}
+             * @param identity the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder identity(java.lang.String identity) {
+                this.identity = identity;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link OpenApiParametersProperty#getIdentity}
+             * @param identity the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder identity(com.aliyun.ros.cdk.core.IResolvable identity) {
+                this.identity = identity;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link OpenApiParametersProperty#getJsonParams}
+             * @param jsonParams the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder jsonParams(com.aliyun.ros.cdk.core.IResolvable jsonParams) {
+                this.jsonParams = jsonParams;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link OpenApiParametersProperty#getJsonParams}
+             * @param jsonParams the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder jsonParams(java.util.Map<java.lang.String, ? extends java.lang.Object> jsonParams) {
+                this.jsonParams = jsonParams;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link OpenApiParametersProperty#getProduct}
+             * @param product the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder product(java.lang.String product) {
+                this.product = product;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link OpenApiParametersProperty#getProduct}
+             * @param product the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder product(com.aliyun.ros.cdk.core.IResolvable product) {
+                this.product = product;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link OpenApiParametersProperty#getRegion}
+             * @param region the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder region(java.lang.String region) {
+                this.region = region;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link OpenApiParametersProperty#getRegion}
+             * @param region the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder region(com.aliyun.ros.cdk.core.IResolvable region) {
+                this.region = region;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link OpenApiParametersProperty#getRole}
+             * @param role the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder role(java.lang.String role) {
+                this.role = role;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link OpenApiParametersProperty#getRole}
+             * @param role the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder role(com.aliyun.ros.cdk.core.IResolvable role) {
+                this.role = role;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link OpenApiParametersProperty#getVersion}
+             * @param version the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder version(java.lang.String version) {
+                this.version = version;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link OpenApiParametersProperty#getVersion}
+             * @param version the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder version(com.aliyun.ros.cdk.core.IResolvable version) {
+                this.version = version;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link OpenApiParametersProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public OpenApiParametersProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link OpenApiParametersProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements OpenApiParametersProperty {
+            private final java.lang.Object action;
+            private final java.lang.Object arn;
+            private final java.lang.Object identity;
+            private final java.lang.Object jsonParams;
+            private final java.lang.Object product;
+            private final java.lang.Object region;
+            private final java.lang.Object role;
+            private final java.lang.Object version;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.action = software.amazon.jsii.Kernel.get(this, "action", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.arn = software.amazon.jsii.Kernel.get(this, "arn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.identity = software.amazon.jsii.Kernel.get(this, "identity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.jsonParams = software.amazon.jsii.Kernel.get(this, "jsonParams", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.product = software.amazon.jsii.Kernel.get(this, "product", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.region = software.amazon.jsii.Kernel.get(this, "region", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.role = software.amazon.jsii.Kernel.get(this, "role", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.version = software.amazon.jsii.Kernel.get(this, "version", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.action = builder.action;
+                this.arn = builder.arn;
+                this.identity = builder.identity;
+                this.jsonParams = builder.jsonParams;
+                this.product = builder.product;
+                this.region = builder.region;
+                this.role = builder.role;
+                this.version = builder.version;
+            }
+
+            @Override
+            public final java.lang.Object getAction() {
+                return this.action;
+            }
+
+            @Override
+            public final java.lang.Object getArn() {
+                return this.arn;
+            }
+
+            @Override
+            public final java.lang.Object getIdentity() {
+                return this.identity;
+            }
+
+            @Override
+            public final java.lang.Object getJsonParams() {
+                return this.jsonParams;
+            }
+
+            @Override
+            public final java.lang.Object getProduct() {
+                return this.product;
+            }
+
+            @Override
+            public final java.lang.Object getRegion() {
+                return this.region;
+            }
+
+            @Override
+            public final java.lang.Object getRole() {
+                return this.role;
+            }
+
+            @Override
+            public final java.lang.Object getVersion() {
+                return this.version;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getAction() != null) {
+                    data.set("action", om.valueToTree(this.getAction()));
+                }
+                if (this.getArn() != null) {
+                    data.set("arn", om.valueToTree(this.getArn()));
+                }
+                if (this.getIdentity() != null) {
+                    data.set("identity", om.valueToTree(this.getIdentity()));
+                }
+                if (this.getJsonParams() != null) {
+                    data.set("jsonParams", om.valueToTree(this.getJsonParams()));
+                }
+                if (this.getProduct() != null) {
+                    data.set("product", om.valueToTree(this.getProduct()));
+                }
+                if (this.getRegion() != null) {
+                    data.set("region", om.valueToTree(this.getRegion()));
+                }
+                if (this.getRole() != null) {
+                    data.set("role", om.valueToTree(this.getRole()));
+                }
+                if (this.getVersion() != null) {
+                    data.set("version", om.valueToTree(this.getVersion()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-cms.RosEventRuleTargets.OpenApiParametersProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                OpenApiParametersProperty.Jsii$Proxy that = (OpenApiParametersProperty.Jsii$Proxy) o;
+
+                if (this.action != null ? !this.action.equals(that.action) : that.action != null) return false;
+                if (this.arn != null ? !this.arn.equals(that.arn) : that.arn != null) return false;
+                if (this.identity != null ? !this.identity.equals(that.identity) : that.identity != null) return false;
+                if (this.jsonParams != null ? !this.jsonParams.equals(that.jsonParams) : that.jsonParams != null) return false;
+                if (this.product != null ? !this.product.equals(that.product) : that.product != null) return false;
+                if (this.region != null ? !this.region.equals(that.region) : that.region != null) return false;
+                if (this.role != null ? !this.role.equals(that.role) : that.role != null) return false;
+                return this.version != null ? this.version.equals(that.version) : that.version == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.action != null ? this.action.hashCode() : 0;
+                result = 31 * result + (this.arn != null ? this.arn.hashCode() : 0);
+                result = 31 * result + (this.identity != null ? this.identity.hashCode() : 0);
+                result = 31 * result + (this.jsonParams != null ? this.jsonParams.hashCode() : 0);
+                result = 31 * result + (this.product != null ? this.product.hashCode() : 0);
+                result = 31 * result + (this.region != null ? this.region.hashCode() : 0);
+                result = 31 * result + (this.role != null ? this.role.hashCode() : 0);
+                result = 31 * result + (this.version != null ? this.version.hashCode() : 0);
                 return result;
             }
         }
@@ -1536,6 +2043,23 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder mnsParameters(final java.util.List<? extends java.lang.Object> mnsParameters) {
             this.props.mnsParameters(mnsParameters);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param openApiParameters This parameter is required.
+         */
+        public Builder openApiParameters(final com.aliyun.ros.cdk.core.IResolvable openApiParameters) {
+            this.props.openApiParameters(openApiParameters);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param openApiParameters This parameter is required.
+         */
+        public Builder openApiParameters(final java.util.List<? extends java.lang.Object> openApiParameters) {
+            this.props.openApiParameters(openApiParameters);
             return this;
         }
 

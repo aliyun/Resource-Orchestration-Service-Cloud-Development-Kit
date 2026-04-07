@@ -102,7 +102,7 @@ export interface IGroup extends ros.IResource {
     readonly attrName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::PAIPlugin::Group`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PAIPlugin::Group`, which is used to create a user group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paiplugin-group
  */
@@ -146,17 +146,17 @@ export class Group extends ros.Resource implements IGroup {
 
         const rosGroup = new RosGroup(this, id,  {
             project: props.project,
-            table: props.table,
             inferenceJobId: props.inferenceJobId,
-            filter: props.filter,
+            table: props.table,
             column: props.column,
+            filter: props.filter,
             phoneNumber: props.phoneNumber,
             text: props.text,
             algorithm: props.algorithm,
             uri: props.uri,
             source: props.source,
-            remark: props.remark,
             name: props.name,
+            remark: props.remark,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosGroup;
         this.attrAmount = rosGroup.attrAmount;

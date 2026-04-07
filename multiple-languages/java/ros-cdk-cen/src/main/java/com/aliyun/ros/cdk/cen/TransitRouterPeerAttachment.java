@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cen;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CEN::TransitRouterPeerAttachment</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CEN::TransitRouterPeerAttachment</code>The , which type creates an inter-region connection for an Enterprise Edition transit router.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.230Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:22.494Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.TransitRouterPeerAttachment")
 public class TransitRouterPeerAttachment extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cen.ITransitRouterPeerAttachment {
 
@@ -275,6 +275,27 @@ public class TransitRouterPeerAttachment extends com.aliyun.ros.cdk.core.Resourc
         }
 
         /**
+         * Property deletionForce: Whether to force delete the peer attachment.
+         * <p>
+         * @return {@code this}
+         * @param deletionForce Property deletionForce: Whether to force delete the peer attachment. This parameter is required.
+         */
+        public Builder deletionForce(final java.lang.Boolean deletionForce) {
+            this.props.deletionForce(deletionForce);
+            return this;
+        }
+        /**
+         * Property deletionForce: Whether to force delete the peer attachment.
+         * <p>
+         * @return {@code this}
+         * @param deletionForce Property deletionForce: Whether to force delete the peer attachment. This parameter is required.
+         */
+        public Builder deletionForce(final com.aliyun.ros.cdk.core.IResolvable deletionForce) {
+            this.props.deletionForce(deletionForce);
+            return this;
+        }
+
+        /**
          * Property peerTransitRouterRegionId: The region ID to which the peer forwarding router instance belongs.
          * <p>
          * @return {@code this}
@@ -292,6 +313,48 @@ public class TransitRouterPeerAttachment extends com.aliyun.ros.cdk.core.Resourc
          */
         public Builder peerTransitRouterRegionId(final com.aliyun.ros.cdk.core.IResolvable peerTransitRouterRegionId) {
             this.props.peerTransitRouterRegionId(peerTransitRouterRegionId);
+            return this;
+        }
+
+        /**
+         * Property routeTableAssociationEnabled: Whether to enable the association of route tables.
+         * <p>
+         * @return {@code this}
+         * @param routeTableAssociationEnabled Property routeTableAssociationEnabled: Whether to enable the association of route tables. This parameter is required.
+         */
+        public Builder routeTableAssociationEnabled(final java.lang.Boolean routeTableAssociationEnabled) {
+            this.props.routeTableAssociationEnabled(routeTableAssociationEnabled);
+            return this;
+        }
+        /**
+         * Property routeTableAssociationEnabled: Whether to enable the association of route tables.
+         * <p>
+         * @return {@code this}
+         * @param routeTableAssociationEnabled Property routeTableAssociationEnabled: Whether to enable the association of route tables. This parameter is required.
+         */
+        public Builder routeTableAssociationEnabled(final com.aliyun.ros.cdk.core.IResolvable routeTableAssociationEnabled) {
+            this.props.routeTableAssociationEnabled(routeTableAssociationEnabled);
+            return this;
+        }
+
+        /**
+         * Property routeTablePropagationEnabled: Whether to enable the propagation of route tables.
+         * <p>
+         * @return {@code this}
+         * @param routeTablePropagationEnabled Property routeTablePropagationEnabled: Whether to enable the propagation of route tables. This parameter is required.
+         */
+        public Builder routeTablePropagationEnabled(final java.lang.Boolean routeTablePropagationEnabled) {
+            this.props.routeTablePropagationEnabled(routeTablePropagationEnabled);
+            return this;
+        }
+        /**
+         * Property routeTablePropagationEnabled: Whether to enable the propagation of route tables.
+         * <p>
+         * @return {@code this}
+         * @param routeTablePropagationEnabled Property routeTablePropagationEnabled: Whether to enable the propagation of route tables. This parameter is required.
+         */
+        public Builder routeTablePropagationEnabled(final com.aliyun.ros.cdk.core.IResolvable routeTablePropagationEnabled) {
+            this.props.routeTablePropagationEnabled(routeTablePropagationEnabled);
             return this;
         }
 

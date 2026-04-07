@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::ApiGateway::Instances`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::ApiGateway::Instances`, which is used to query instances.
 type Instances interface {
 	alicloudroscdkcore.Resource
 	IInstances

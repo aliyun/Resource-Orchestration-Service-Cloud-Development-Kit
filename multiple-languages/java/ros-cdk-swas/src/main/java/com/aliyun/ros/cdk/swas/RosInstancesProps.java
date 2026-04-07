@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.swas;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-swas-instances
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:00.718Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.461Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.swas.$Module.class, fqn = "@alicloud/ros-cdk-swas.RosInstancesProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstancesProps.Jsii$Proxy.class)
 public interface RosInstancesProps extends software.amazon.jsii.JsiiSerializable {
@@ -47,6 +47,12 @@ public interface RosInstancesProps extends software.amazon.jsii.JsiiSerializable
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.swas.RosInstances.TagsProperty> getTags() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosInstancesProps}
      */
     static Builder builder() {
@@ -63,6 +69,7 @@ public interface RosInstancesProps extends software.amazon.jsii.JsiiSerializable
         java.lang.Object autoRenew;
         java.lang.Object autoRenewPeriod;
         java.lang.Object dataDiskSize;
+        java.util.List<com.aliyun.ros.cdk.swas.RosInstances.TagsProperty> tags;
 
         /**
          * Sets the value of {@link RosInstancesProps#getImageId}
@@ -205,6 +212,17 @@ public interface RosInstancesProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link RosInstancesProps#getTags}
+         * @param tags the value to be set.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.swas.RosInstances.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.swas.RosInstances.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosInstancesProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -227,6 +245,7 @@ public interface RosInstancesProps extends software.amazon.jsii.JsiiSerializable
         private final java.lang.Object autoRenew;
         private final java.lang.Object autoRenewPeriod;
         private final java.lang.Object dataDiskSize;
+        private final java.util.List<com.aliyun.ros.cdk.swas.RosInstances.TagsProperty> tags;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -241,11 +260,13 @@ public interface RosInstancesProps extends software.amazon.jsii.JsiiSerializable
             this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoRenewPeriod = software.amazon.jsii.Kernel.get(this, "autoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dataDiskSize = software.amazon.jsii.Kernel.get(this, "dataDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.swas.RosInstances.TagsProperty.class)));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
+        @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.imageId = java.util.Objects.requireNonNull(builder.imageId, "imageId is required");
@@ -255,6 +276,7 @@ public interface RosInstancesProps extends software.amazon.jsii.JsiiSerializable
             this.autoRenew = builder.autoRenew;
             this.autoRenewPeriod = builder.autoRenewPeriod;
             this.dataDiskSize = builder.dataDiskSize;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.swas.RosInstances.TagsProperty>)builder.tags;
         }
 
         @Override
@@ -293,6 +315,11 @@ public interface RosInstancesProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
+        public final java.util.List<com.aliyun.ros.cdk.swas.RosInstances.TagsProperty> getTags() {
+            return this.tags;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -312,6 +339,9 @@ public interface RosInstancesProps extends software.amazon.jsii.JsiiSerializable
             }
             if (this.getDataDiskSize() != null) {
                 data.set("dataDiskSize", om.valueToTree(this.getDataDiskSize()));
+            }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -337,7 +367,8 @@ public interface RosInstancesProps extends software.amazon.jsii.JsiiSerializable
             if (this.amount != null ? !this.amount.equals(that.amount) : that.amount != null) return false;
             if (this.autoRenew != null ? !this.autoRenew.equals(that.autoRenew) : that.autoRenew != null) return false;
             if (this.autoRenewPeriod != null ? !this.autoRenewPeriod.equals(that.autoRenewPeriod) : that.autoRenewPeriod != null) return false;
-            return this.dataDiskSize != null ? this.dataDiskSize.equals(that.dataDiskSize) : that.dataDiskSize == null;
+            if (this.dataDiskSize != null ? !this.dataDiskSize.equals(that.dataDiskSize) : that.dataDiskSize != null) return false;
+            return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
         @Override
@@ -349,6 +380,7 @@ public interface RosInstancesProps extends software.amazon.jsii.JsiiSerializable
             result = 31 * result + (this.autoRenew != null ? this.autoRenew.hashCode() : 0);
             result = 31 * result + (this.autoRenewPeriod != null ? this.autoRenewPeriod.hashCode() : 0);
             result = 31 * result + (this.dataDiskSize != null ? this.dataDiskSize.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }
     }

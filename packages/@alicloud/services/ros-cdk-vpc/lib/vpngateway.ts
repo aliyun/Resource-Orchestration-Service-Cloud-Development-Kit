@@ -81,6 +81,15 @@ export interface VpnGatewayProps {
     readonly period?: number | ros.IResolvable;
 
     /**
+     * Property resourceGroupId: The ID of the resource group to which the VPN gateway belongs.
+     * - If you do not specify a resource group ID, the VPN gateway will belong to the default resource group after creation.
+     * - After the VPN gateway is created, if you create SSL server, SSL client certificate, IPsec server, or IPsec connection (in the scenario where the IPsec connection is bound to the VPN gateway), these resources will directly belong to the resource group of the VPN gateway and cannot be modified.
+     * 
+     * If you change the resource group of the VPN gateway, the resource group of the above resources will also be changed.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * Property sslConnections: The maximum number of clients allowed to connect at the same time.
      */
     readonly sslConnections?: number | ros.IResolvable;
@@ -168,7 +177,7 @@ export interface IVpnGateway extends ros.IResource {
     readonly attrVpnType: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpnGateway`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpnGateway`The , which resource creates a vpn gateway.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpnGateway`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpngateway
  */
@@ -253,10 +262,11 @@ export class VpnGateway extends ros.Resource implements IVpnGateway {
         const rosVpnGateway = new RosVpnGateway(this, id,  {
             enableIpsec: props.enableIpsec === undefined || props.enableIpsec === null ? true : props.enableIpsec,
             enableSsl: props.enableSsl === undefined || props.enableSsl === null ? false : props.enableSsl,
-            vpnType: props.vpnType,
             sslConnections: props.sslConnections,
-            disasterRecoveryVSwitchId: props.disasterRecoveryVSwitchId,
+            vpnType: props.vpnType,
             description: props.description,
+            disasterRecoveryVSwitchId: props.disasterRecoveryVSwitchId,
+            resourceGroupId: props.resourceGroupId,
             instanceChargeType: props.instanceChargeType === undefined || props.instanceChargeType === null ? 'PREPAY' : props.instanceChargeType,
             vSwitchId: props.vSwitchId,
             period: props.period,

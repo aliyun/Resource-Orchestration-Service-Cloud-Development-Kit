@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.gpdb;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::GPDB::InstancePublicConnection</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::GPDB::InstancePublicConnection</code>, which is used to allocate a public connection string to an instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.440Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:27.059Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.RosInstancePublicConnection")
 public class RosInstancePublicConnection extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -120,6 +120,24 @@ public class RosInstancePublicConnection extends com.aliyun.ros.cdk.core.RosReso
     }
 
     /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAddressType() {
+        return software.amazon.jsii.Kernel.get(this, "addressType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAddressType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "addressType", value);
+    }
+
+    /**
+     */
+    public void setAddressType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "addressType", value);
+    }
+
+    /**
      * A fluent builder for {@link com.aliyun.ros.cdk.gpdb.RosInstancePublicConnection}.
      */
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.gpdb.RosInstancePublicConnection> {
@@ -193,6 +211,23 @@ public class RosInstancePublicConnection extends com.aliyun.ros.cdk.core.RosReso
          */
         public Builder port(final com.aliyun.ros.cdk.core.IResolvable port) {
             this.props.port(port);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param addressType This parameter is required.
+         */
+        public Builder addressType(final java.lang.String addressType) {
+            this.props.addressType(addressType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param addressType This parameter is required.
+         */
+        public Builder addressType(final com.aliyun.ros.cdk.core.IResolvable addressType) {
+            this.props.addressType(addressType);
             return this;
         }
 

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ClickHouse::DBCluster`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ClickHouse::DBCluster`, which is used to create an ApsaraDB for ClickHouse cluster.
 type RosDBCluster interface {
 	alicloudroscdkcore.RosResource
 	AttrAliUid() alicloudroscdkcore.IResolvable
@@ -108,10 +108,18 @@ type RosDBCluster interface {
 	SetUsedTime(val interface{})
 	VpcId() interface{}
 	SetVpcId(val interface{})
+	VSwitchBak() interface{}
+	SetVSwitchBak(val interface{})
+	VSwitchBak2() interface{}
+	SetVSwitchBak2(val interface{})
 	VSwitchId() interface{}
 	SetVSwitchId(val interface{})
+	ZondIdBak2() interface{}
+	SetZondIdBak2(val interface{})
 	ZoneId() interface{}
 	SetZoneId(val interface{})
+	ZoneIdBak() interface{}
+	SetZoneIdBak(val interface{})
 	AddCondition(con alicloudroscdkcore.RosCondition)
 	AddCount(count interface{})
 	// Syntactic sugar for `addOverride(path, undefined)`.
@@ -781,6 +789,26 @@ func (j *jsiiProxy_RosDBCluster) VpcId() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosDBCluster) VSwitchBak() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"vSwitchBak",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDBCluster) VSwitchBak2() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"vSwitchBak2",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosDBCluster) VSwitchId() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -791,11 +819,31 @@ func (j *jsiiProxy_RosDBCluster) VSwitchId() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosDBCluster) ZondIdBak2() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"zondIdBak2",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosDBCluster) ZoneId() interface{} {
 	var returns interface{}
 	_jsii_.Get(
 		j,
 		"zoneId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDBCluster) ZoneIdBak() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"zoneIdBak",
 		&returns,
 	)
 	return returns
@@ -994,6 +1042,28 @@ func (j *jsiiProxy_RosDBCluster)SetVpcId(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosDBCluster)SetVSwitchBak(val interface{}) {
+	if err := j.validateSetVSwitchBakParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"vSwitchBak",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDBCluster)SetVSwitchBak2(val interface{}) {
+	if err := j.validateSetVSwitchBak2Parameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"vSwitchBak2",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosDBCluster)SetVSwitchId(val interface{}) {
 	if err := j.validateSetVSwitchIdParameters(val); err != nil {
 		panic(err)
@@ -1005,6 +1075,17 @@ func (j *jsiiProxy_RosDBCluster)SetVSwitchId(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosDBCluster)SetZondIdBak2(val interface{}) {
+	if err := j.validateSetZondIdBak2Parameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"zondIdBak2",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosDBCluster)SetZoneId(val interface{}) {
 	if err := j.validateSetZoneIdParameters(val); err != nil {
 		panic(err)
@@ -1012,6 +1093,17 @@ func (j *jsiiProxy_RosDBCluster)SetZoneId(val interface{}) {
 	_jsii_.Set(
 		j,
 		"zoneId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDBCluster)SetZoneIdBak(val interface{}) {
+	if err := j.validateSetZoneIdBakParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"zoneIdBak",
 		val,
 	)
 }

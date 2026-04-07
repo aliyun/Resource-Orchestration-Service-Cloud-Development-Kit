@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.alb;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ALB::HealthCheckTemplate</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ALB::HealthCheckTemplate</code>The , which resource type creates a health check template.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:52.000Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:21.160Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.HealthCheckTemplate")
 public class HealthCheckTemplate extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.alb.IHealthCheckTemplate {
 
@@ -238,6 +238,35 @@ public class HealthCheckTemplate extends com.aliyun.ros.cdk.core.Resource implem
         }
 
         /**
+         * Property healthCheckHttpVersion: The HTTP version for health check protocol.
+         * <p>
+         * Valid values: HTTP1.0 or HTTP1.1.
+         * Default value: HTTP 1.1.
+         * This parameter is available only when HealthCheckProtocol is set to HTTP or HTTPS.
+         * <p>
+         * @return {@code this}
+         * @param healthCheckHttpVersion Property healthCheckHttpVersion: The HTTP version for health check protocol. This parameter is required.
+         */
+        public Builder healthCheckHttpVersion(final java.lang.String healthCheckHttpVersion) {
+            this.props.healthCheckHttpVersion(healthCheckHttpVersion);
+            return this;
+        }
+        /**
+         * Property healthCheckHttpVersion: The HTTP version for health check protocol.
+         * <p>
+         * Valid values: HTTP1.0 or HTTP1.1.
+         * Default value: HTTP 1.1.
+         * This parameter is available only when HealthCheckProtocol is set to HTTP or HTTPS.
+         * <p>
+         * @return {@code this}
+         * @param healthCheckHttpVersion Property healthCheckHttpVersion: The HTTP version for health check protocol. This parameter is required.
+         */
+        public Builder healthCheckHttpVersion(final com.aliyun.ros.cdk.core.IResolvable healthCheckHttpVersion) {
+            this.props.healthCheckHttpVersion(healthCheckHttpVersion);
+            return this;
+        }
+
+        /**
          * Property healthCheckInterval: The interval between two consecutive health checks.
          * <p>
          * Unit: seconds.
@@ -436,6 +465,27 @@ public class HealthCheckTemplate extends com.aliyun.ros.cdk.core.Resource implem
          */
         public Builder healthyThreshold(final com.aliyun.ros.cdk.core.IResolvable healthyThreshold) {
             this.props.healthyThreshold(healthyThreshold);
+            return this;
+        }
+
+        /**
+         * Property resourceGroupId: The ID of the resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: The ID of the resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
             return this;
         }
 

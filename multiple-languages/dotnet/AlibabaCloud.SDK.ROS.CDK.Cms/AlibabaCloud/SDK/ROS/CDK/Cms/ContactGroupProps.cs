@@ -119,5 +119,36 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                 _describe = value;
             }
         }
+
+        private object? _enableSubscribed;
+
+        /// <summary>Property enableSubscribed: Whether to enable the subscription feature.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "enableSubscribed", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? EnableSubscribed
+        {
+            get => _enableSubscribed;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _enableSubscribed = value;
+            }
+        }
     }
 }

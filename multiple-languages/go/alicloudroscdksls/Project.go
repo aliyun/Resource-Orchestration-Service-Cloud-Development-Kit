@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Project`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Project`, which is used to create a Simple Log Service (SLS) project.
 type Project interface {
 	alicloudroscdkcore.Resource
 	IProject

@@ -16,6 +16,8 @@ type RosVirtualBorderRouter interface {
 	AttrRouteTableId() alicloudroscdkcore.IResolvable
 	AttrVbrId() alicloudroscdkcore.IResolvable
 	AttrVlanInterfaceId() alicloudroscdkcore.IResolvable
+	Bandwidth() interface{}
+	SetBandwidth(val interface{})
 	CircuitCode() interface{}
 	SetCircuitCode(val interface{})
 	// Returns: the stack trace of the point where this Resource was created from, sourced
@@ -53,6 +55,8 @@ type RosVirtualBorderRouter interface {
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
 	// coerce it to an IResolvable through `Lazy.any({ produce: resource.ref })`.
 	Ref() *string
+	ResourceGroupId() interface{}
+	SetResourceGroupId(val interface{})
 	// Options for this resource, such as condition, update policy etc.
 	RosOptions() alicloudroscdkcore.IRosResourceOptions
 	RosProperties() *map[string]interface{}
@@ -228,6 +232,16 @@ func (j *jsiiProxy_RosVirtualBorderRouter) AttrVlanInterfaceId() alicloudroscdkc
 	return returns
 }
 
+func (j *jsiiProxy_RosVirtualBorderRouter) Bandwidth() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"bandwidth",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosVirtualBorderRouter) CircuitCode() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -348,6 +362,16 @@ func (j *jsiiProxy_RosVirtualBorderRouter) Ref() *string {
 	return returns
 }
 
+func (j *jsiiProxy_RosVirtualBorderRouter) ResourceGroupId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"resourceGroupId",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosVirtualBorderRouter) RosOptions() alicloudroscdkcore.IRosResourceOptions {
 	var returns alicloudroscdkcore.IRosResourceOptions
 	_jsii_.Get(
@@ -436,6 +460,17 @@ func NewRosVirtualBorderRouter_Override(r RosVirtualBorderRouter, scope alicloud
 	)
 }
 
+func (j *jsiiProxy_RosVirtualBorderRouter)SetBandwidth(val interface{}) {
+	if err := j.validateSetBandwidthParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"bandwidth",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosVirtualBorderRouter)SetCircuitCode(val interface{}) {
 	if err := j.validateSetCircuitCodeParameters(val); err != nil {
 		panic(err)
@@ -520,6 +555,17 @@ func (j *jsiiProxy_RosVirtualBorderRouter)SetPhysicalConnectionId(val interface{
 	_jsii_.Set(
 		j,
 		"physicalConnectionId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosVirtualBorderRouter)SetResourceGroupId(val interface{}) {
+	if err := j.validateSetResourceGroupIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"resourceGroupId",
 		val,
 	)
 }

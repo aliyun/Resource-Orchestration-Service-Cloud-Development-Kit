@@ -117,7 +117,7 @@ export interface IInstance extends ros.IResource {
     readonly attrPublicEndpoint: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::AMQP::Instance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::AMQP::Instance`, which is used to create an ApsaraMQ for RabbitMQ instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-instance
  */
@@ -163,12 +163,12 @@ export class Instance extends ros.Resource implements IInstance {
             maxTps: props.maxTps,
             maxEipTps: props.maxEipTps,
             supportEip: props.supportEip,
-            period: props.period === undefined || props.period === null ? 1 : props.period,
             storageSize: props.storageSize,
-            payType: props.payType === undefined || props.payType === null ? 'Subscription' : props.payType,
+            period: props.period === undefined || props.period === null ? 1 : props.period,
             queueCapacity: props.queueCapacity,
-            tracingStorageTime: props.tracingStorageTime,
+            payType: props.payType === undefined || props.payType === null ? 'Subscription' : props.payType,
             instanceName: props.instanceName,
+            tracingStorageTime: props.tracingStorageTime,
             orderNum: props.orderNum === undefined || props.orderNum === null ? 1 : props.orderNum,
             supportTracing: props.supportTracing,
             instanceType: props.instanceType,

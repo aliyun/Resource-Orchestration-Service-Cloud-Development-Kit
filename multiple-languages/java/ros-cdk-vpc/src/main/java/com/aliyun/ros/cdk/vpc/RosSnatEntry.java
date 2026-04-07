@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::SnatEntry</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::SnatEntry</code>The , which resource is used to add an SNAT entry to an SNAT table.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.133Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.077Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosSnatEntry")
 public class RosSnatEntry extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -111,6 +111,24 @@ public class RosSnatEntry extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setEipAffinity(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "eipAffinity", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getNetworkInterfaceId() {
+        return software.amazon.jsii.Kernel.get(this, "networkInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setNetworkInterfaceId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "networkInterfaceId", value);
+    }
+
+    /**
+     */
+    public void setNetworkInterfaceId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "networkInterfaceId", value);
     }
 
     /**
@@ -257,6 +275,23 @@ public class RosSnatEntry extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder eipAffinity(final com.aliyun.ros.cdk.core.IResolvable eipAffinity) {
             this.props.eipAffinity(eipAffinity);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param networkInterfaceId This parameter is required.
+         */
+        public Builder networkInterfaceId(final java.lang.String networkInterfaceId) {
+            this.props.networkInterfaceId(networkInterfaceId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param networkInterfaceId This parameter is required.
+         */
+        public Builder networkInterfaceId(final com.aliyun.ros.cdk.core.IResolvable networkInterfaceId) {
+            this.props.networkInterfaceId(networkInterfaceId);
             return this;
         }
 

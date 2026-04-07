@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.gpdb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-elasticdbinstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.439Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:27.056Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.RosElasticDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosElasticDBInstanceProps.Jsii$Proxy.class)
 public interface RosElasticDBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -37,6 +37,12 @@ public interface RosElasticDBInstanceProps extends software.amazon.jsii.JsiiSeri
     /**
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getZoneId();
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBackupId() {
+        return null;
+    }
 
     /**
      */
@@ -106,6 +112,12 @@ public interface RosElasticDBInstanceProps extends software.amazon.jsii.JsiiSeri
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSrcDbInstanceName() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.gpdb.RosElasticDBInstance.TagsProperty> getTags() {
         return null;
     }
@@ -133,6 +145,7 @@ public interface RosElasticDBInstanceProps extends software.amazon.jsii.JsiiSeri
         java.lang.Object storageSize;
         java.lang.Object vSwitchId;
         java.lang.Object zoneId;
+        java.lang.Object backupId;
         java.lang.Object dbInstanceCategory;
         java.lang.Object dbInstanceDescription;
         java.lang.Object dbInstanceMode;
@@ -144,6 +157,7 @@ public interface RosElasticDBInstanceProps extends software.amazon.jsii.JsiiSeri
         java.lang.Object periodUnit;
         java.lang.Object privateIpAddress;
         java.lang.Object securityIpList;
+        java.lang.Object srcDbInstanceName;
         java.util.List<com.aliyun.ros.cdk.gpdb.RosElasticDBInstance.TagsProperty> tags;
         java.lang.Object vpcId;
 
@@ -284,6 +298,26 @@ public interface RosElasticDBInstanceProps extends software.amazon.jsii.JsiiSeri
          */
         public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.zoneId = zoneId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosElasticDBInstanceProps#getBackupId}
+         * @param backupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder backupId(java.lang.String backupId) {
+            this.backupId = backupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosElasticDBInstanceProps#getBackupId}
+         * @param backupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder backupId(com.aliyun.ros.cdk.core.IResolvable backupId) {
+            this.backupId = backupId;
             return this;
         }
 
@@ -508,6 +542,26 @@ public interface RosElasticDBInstanceProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link RosElasticDBInstanceProps#getSrcDbInstanceName}
+         * @param srcDbInstanceName the value to be set.
+         * @return {@code this}
+         */
+        public Builder srcDbInstanceName(java.lang.String srcDbInstanceName) {
+            this.srcDbInstanceName = srcDbInstanceName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosElasticDBInstanceProps#getSrcDbInstanceName}
+         * @param srcDbInstanceName the value to be set.
+         * @return {@code this}
+         */
+        public Builder srcDbInstanceName(com.aliyun.ros.cdk.core.IResolvable srcDbInstanceName) {
+            this.srcDbInstanceName = srcDbInstanceName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosElasticDBInstanceProps#getTags}
          * @param tags the value to be set.
          * @return {@code this}
@@ -561,6 +615,7 @@ public interface RosElasticDBInstanceProps extends software.amazon.jsii.JsiiSeri
         private final java.lang.Object storageSize;
         private final java.lang.Object vSwitchId;
         private final java.lang.Object zoneId;
+        private final java.lang.Object backupId;
         private final java.lang.Object dbInstanceCategory;
         private final java.lang.Object dbInstanceDescription;
         private final java.lang.Object dbInstanceMode;
@@ -572,6 +627,7 @@ public interface RosElasticDBInstanceProps extends software.amazon.jsii.JsiiSeri
         private final java.lang.Object periodUnit;
         private final java.lang.Object privateIpAddress;
         private final java.lang.Object securityIpList;
+        private final java.lang.Object srcDbInstanceName;
         private final java.util.List<com.aliyun.ros.cdk.gpdb.RosElasticDBInstance.TagsProperty> tags;
         private final java.lang.Object vpcId;
 
@@ -588,6 +644,7 @@ public interface RosElasticDBInstanceProps extends software.amazon.jsii.JsiiSeri
             this.storageSize = software.amazon.jsii.Kernel.get(this, "storageSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.backupId = software.amazon.jsii.Kernel.get(this, "backupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbInstanceCategory = software.amazon.jsii.Kernel.get(this, "dbInstanceCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbInstanceDescription = software.amazon.jsii.Kernel.get(this, "dbInstanceDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbInstanceMode = software.amazon.jsii.Kernel.get(this, "dbInstanceMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -599,6 +656,7 @@ public interface RosElasticDBInstanceProps extends software.amazon.jsii.JsiiSeri
             this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.privateIpAddress = software.amazon.jsii.Kernel.get(this, "privateIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityIpList = software.amazon.jsii.Kernel.get(this, "securityIpList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.srcDbInstanceName = software.amazon.jsii.Kernel.get(this, "srcDbInstanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.gpdb.RosElasticDBInstance.TagsProperty.class)));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -616,6 +674,7 @@ public interface RosElasticDBInstanceProps extends software.amazon.jsii.JsiiSeri
             this.storageSize = java.util.Objects.requireNonNull(builder.storageSize, "storageSize is required");
             this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
             this.zoneId = java.util.Objects.requireNonNull(builder.zoneId, "zoneId is required");
+            this.backupId = builder.backupId;
             this.dbInstanceCategory = builder.dbInstanceCategory;
             this.dbInstanceDescription = builder.dbInstanceDescription;
             this.dbInstanceMode = builder.dbInstanceMode;
@@ -627,6 +686,7 @@ public interface RosElasticDBInstanceProps extends software.amazon.jsii.JsiiSeri
             this.periodUnit = builder.periodUnit;
             this.privateIpAddress = builder.privateIpAddress;
             this.securityIpList = builder.securityIpList;
+            this.srcDbInstanceName = builder.srcDbInstanceName;
             this.tags = (java.util.List<com.aliyun.ros.cdk.gpdb.RosElasticDBInstance.TagsProperty>)builder.tags;
             this.vpcId = builder.vpcId;
         }
@@ -664,6 +724,11 @@ public interface RosElasticDBInstanceProps extends software.amazon.jsii.JsiiSeri
         @Override
         public final java.lang.Object getZoneId() {
             return this.zoneId;
+        }
+
+        @Override
+        public final java.lang.Object getBackupId() {
+            return this.backupId;
         }
 
         @Override
@@ -722,6 +787,11 @@ public interface RosElasticDBInstanceProps extends software.amazon.jsii.JsiiSeri
         }
 
         @Override
+        public final java.lang.Object getSrcDbInstanceName() {
+            return this.srcDbInstanceName;
+        }
+
+        @Override
         public final java.util.List<com.aliyun.ros.cdk.gpdb.RosElasticDBInstance.TagsProperty> getTags() {
             return this.tags;
         }
@@ -744,6 +814,9 @@ public interface RosElasticDBInstanceProps extends software.amazon.jsii.JsiiSeri
             data.set("storageSize", om.valueToTree(this.getStorageSize()));
             data.set("vSwitchId", om.valueToTree(this.getVSwitchId()));
             data.set("zoneId", om.valueToTree(this.getZoneId()));
+            if (this.getBackupId() != null) {
+                data.set("backupId", om.valueToTree(this.getBackupId()));
+            }
             if (this.getDbInstanceCategory() != null) {
                 data.set("dbInstanceCategory", om.valueToTree(this.getDbInstanceCategory()));
             }
@@ -777,6 +850,9 @@ public interface RosElasticDBInstanceProps extends software.amazon.jsii.JsiiSeri
             if (this.getSecurityIpList() != null) {
                 data.set("securityIpList", om.valueToTree(this.getSecurityIpList()));
             }
+            if (this.getSrcDbInstanceName() != null) {
+                data.set("srcDbInstanceName", om.valueToTree(this.getSrcDbInstanceName()));
+            }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
             }
@@ -808,6 +884,7 @@ public interface RosElasticDBInstanceProps extends software.amazon.jsii.JsiiSeri
             if (!storageSize.equals(that.storageSize)) return false;
             if (!vSwitchId.equals(that.vSwitchId)) return false;
             if (!zoneId.equals(that.zoneId)) return false;
+            if (this.backupId != null ? !this.backupId.equals(that.backupId) : that.backupId != null) return false;
             if (this.dbInstanceCategory != null ? !this.dbInstanceCategory.equals(that.dbInstanceCategory) : that.dbInstanceCategory != null) return false;
             if (this.dbInstanceDescription != null ? !this.dbInstanceDescription.equals(that.dbInstanceDescription) : that.dbInstanceDescription != null) return false;
             if (this.dbInstanceMode != null ? !this.dbInstanceMode.equals(that.dbInstanceMode) : that.dbInstanceMode != null) return false;
@@ -819,6 +896,7 @@ public interface RosElasticDBInstanceProps extends software.amazon.jsii.JsiiSeri
             if (this.periodUnit != null ? !this.periodUnit.equals(that.periodUnit) : that.periodUnit != null) return false;
             if (this.privateIpAddress != null ? !this.privateIpAddress.equals(that.privateIpAddress) : that.privateIpAddress != null) return false;
             if (this.securityIpList != null ? !this.securityIpList.equals(that.securityIpList) : that.securityIpList != null) return false;
+            if (this.srcDbInstanceName != null ? !this.srcDbInstanceName.equals(that.srcDbInstanceName) : that.srcDbInstanceName != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             return this.vpcId != null ? this.vpcId.equals(that.vpcId) : that.vpcId == null;
         }
@@ -832,6 +910,7 @@ public interface RosElasticDBInstanceProps extends software.amazon.jsii.JsiiSeri
             result = 31 * result + (this.storageSize.hashCode());
             result = 31 * result + (this.vSwitchId.hashCode());
             result = 31 * result + (this.zoneId.hashCode());
+            result = 31 * result + (this.backupId != null ? this.backupId.hashCode() : 0);
             result = 31 * result + (this.dbInstanceCategory != null ? this.dbInstanceCategory.hashCode() : 0);
             result = 31 * result + (this.dbInstanceDescription != null ? this.dbInstanceDescription.hashCode() : 0);
             result = 31 * result + (this.dbInstanceMode != null ? this.dbInstanceMode.hashCode() : 0);
@@ -843,6 +922,7 @@ public interface RosElasticDBInstanceProps extends software.amazon.jsii.JsiiSeri
             result = 31 * result + (this.periodUnit != null ? this.periodUnit.hashCode() : 0);
             result = 31 * result + (this.privateIpAddress != null ? this.privateIpAddress.hashCode() : 0);
             result = 31 * result + (this.securityIpList != null ? this.securityIpList.hashCode() : 0);
+            result = 31 * result + (this.srcDbInstanceName != null ? this.srcDbInstanceName.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
             return result;

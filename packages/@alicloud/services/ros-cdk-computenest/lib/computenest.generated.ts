@@ -58,7 +58,6 @@ export interface RosIntranetConnectorEndpointProps {
 function RosIntranetConnectorEndpointPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('enablePrivateZone', ros.validateBoolean)(properties.enablePrivateZone));
     if(properties.type && (typeof properties.type) !== 'object') {
         errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
           data: properties.type,
@@ -66,6 +65,7 @@ function RosIntranetConnectorEndpointPropsValidator(properties: any): ros.Valida
         }));
     }
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('enablePrivateZone', ros.validateBoolean)(properties.enablePrivateZone));
     errors.collect(ros.propertyValidator('endpointRegionId', ros.requiredValidator)(properties.endpointRegionId));
     errors.collect(ros.propertyValidator('endpointRegionId', ros.validateString)(properties.endpointRegionId));
     if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
@@ -121,7 +121,7 @@ function rosIntranetConnectorEndpointPropsToRosTemplate(properties: any, enableR
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ComputeNest::IntranetConnectorEndpoint`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ComputeNest::IntranetConnectorEndpoint`, which is used to create an endpoint.
  * @Note This class does not contain additional functions, so it is recommended to use the `IntranetConnectorEndpoint` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-computenest-intranetconnectorendpoint
  */
@@ -373,7 +373,7 @@ function rosServiceInstancePropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ComputeNest::ServiceInstance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ComputeNest::ServiceInstance`The , which type is used to create and deploy a service instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `ServiceInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-computenest-serviceinstance
  */
@@ -799,17 +799,21 @@ export namespace RosServiceInstance {
          */
         readonly serviceInfos?: Array<RosServiceInstance.ServiceInfosProperty | ros.IResolvable> | ros.IResolvable;
         /**
-         * @Property publishTime: Release time.
-         */
-        readonly publishTime?: string | ros.IResolvable;
-        /**
          * @Property versionName: Service provider custom version name.
          */
         readonly versionName?: string | ros.IResolvable;
         /**
+         * @Property publishTime: Release time.
+         */
+        readonly publishTime?: string | ros.IResolvable;
+        /**
          * @Property serviceProductUrl: Product page URL.
          */
         readonly serviceProductUrl?: string | ros.IResolvable;
+        /**
+         * @Property supplierUrl: Service provider address.
+         */
+        readonly supplierUrl?: string | ros.IResolvable;
         /**
          * @Property upgradeMetadata: Upgrade metadata.
          */
@@ -818,10 +822,6 @@ export namespace RosServiceInstance {
          * @Property serviceDocUrl: The URL of the product document.
          */
         readonly serviceDocUrl?: string | ros.IResolvable;
-        /**
-         * @Property supplierUrl: Service provider address.
-         */
-        readonly supplierUrl?: string | ros.IResolvable;
     }
 }
 /**
@@ -844,12 +844,12 @@ function RosServiceInstance_ServicePropertyValidator(properties: any): ros.Valid
     errors.collect(ros.propertyValidator('supplierName', ros.validateString)(properties.supplierName));
     errors.collect(ros.propertyValidator('serviceType', ros.validateString)(properties.serviceType));
     errors.collect(ros.propertyValidator('serviceInfos', ros.listValidator(RosServiceInstance_ServiceInfosPropertyValidator))(properties.serviceInfos));
-    errors.collect(ros.propertyValidator('publishTime', ros.validateString)(properties.publishTime));
     errors.collect(ros.propertyValidator('versionName', ros.validateString)(properties.versionName));
+    errors.collect(ros.propertyValidator('publishTime', ros.validateString)(properties.publishTime));
     errors.collect(ros.propertyValidator('serviceProductUrl', ros.validateString)(properties.serviceProductUrl));
+    errors.collect(ros.propertyValidator('supplierUrl', ros.validateString)(properties.supplierUrl));
     errors.collect(ros.propertyValidator('upgradeMetadata', ros.validateString)(properties.upgradeMetadata));
     errors.collect(ros.propertyValidator('serviceDocUrl', ros.validateString)(properties.serviceDocUrl));
-    errors.collect(ros.propertyValidator('supplierUrl', ros.validateString)(properties.supplierUrl));
     return errors.wrap('supplied properties not correct for "ServiceProperty"');
 }
 
@@ -874,12 +874,12 @@ function rosServiceInstanceServicePropertyToRosTemplate(properties: any): any {
       'SupplierName': ros.stringToRosTemplate(properties.supplierName),
       'ServiceType': ros.stringToRosTemplate(properties.serviceType),
       'ServiceInfos': ros.listMapper(rosServiceInstanceServiceInfosPropertyToRosTemplate)(properties.serviceInfos),
-      'PublishTime': ros.stringToRosTemplate(properties.publishTime),
       'VersionName': ros.stringToRosTemplate(properties.versionName),
+      'PublishTime': ros.stringToRosTemplate(properties.publishTime),
       'ServiceProductUrl': ros.stringToRosTemplate(properties.serviceProductUrl),
+      'SupplierUrl': ros.stringToRosTemplate(properties.supplierUrl),
       'UpgradeMetadata': ros.stringToRosTemplate(properties.upgradeMetadata),
       'ServiceDocUrl': ros.stringToRosTemplate(properties.serviceDocUrl),
-      'SupplierUrl': ros.stringToRosTemplate(properties.supplierUrl),
     };
 }
 

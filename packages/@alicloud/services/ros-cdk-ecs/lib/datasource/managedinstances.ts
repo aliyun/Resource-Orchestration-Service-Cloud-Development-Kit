@@ -67,7 +67,7 @@ export interface IManagedInstances extends ros.IResource {
     readonly attrInstances: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::ManagedInstances`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::ManagedInstances`, which is used to query managed instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosManagedInstances`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-managedinstances
  */
@@ -101,8 +101,8 @@ export class ManagedInstances extends ros.Resource implements IManagedInstances 
 
         const rosManagedInstances = new RosManagedInstances(this, id,  {
             instanceName: props.instanceName,
-            instanceId: props.instanceId,
             osType: props.osType,
+            instanceId: props.instanceId,
             activationId: props.activationId,
             instanceIp: props.instanceIp,
             tags: props.tags,

@@ -96,6 +96,10 @@ func (j *jsiiProxy_RosVcoRouteEntry) validateSetNextHopParameters(val interface{
 	return nil
 }
 
+func (j *jsiiProxy_RosVcoRouteEntry) validateSetOverlayModeParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosVcoRouteEntry) validateSetRouteDestParameters(val interface{}) error {
 	return nil
 }

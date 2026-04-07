@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::APIG::ApiAttachment`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::APIG::ApiAttachment`, which is used to attach an API.
 type ApiAttachment interface {
 	alicloudroscdkcore.Resource
 	IApiAttachment

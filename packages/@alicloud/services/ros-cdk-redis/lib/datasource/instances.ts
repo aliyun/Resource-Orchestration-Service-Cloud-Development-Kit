@@ -153,7 +153,7 @@ export interface IInstances extends ros.IResource {
     readonly attrInstances: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::REDIS::Instances`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::REDIS::Instances`, which is used to query the information about Tair (Redis OSS-compatible) instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstances`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-instances
  */
@@ -188,9 +188,9 @@ export class Instances extends ros.Resource implements IInstances {
         const rosInstances = new RosInstances(this, id,  {
             architectureType: props.architectureType,
             engineVersion: props.engineVersion,
-            editionType: props.editionType,
             zoneId: props.zoneId,
             resourceGroupId: props.resourceGroupId,
+            editionType: props.editionType,
             vSwitchId: props.vSwitchId,
             instanceClass: props.instanceClass,
             expired: props.expired,
@@ -202,8 +202,8 @@ export class Instances extends ros.Resource implements IInstances {
             networkType: props.networkType,
             searchKey: props.searchKey,
             globalInstance: props.globalInstance,
-            instanceType: props.instanceType,
             instanceIds: props.instanceIds,
+            instanceType: props.instanceType,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstances;
         this.attrInstanceIds = rosInstances.attrInstanceIds;

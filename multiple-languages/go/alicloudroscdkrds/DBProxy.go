@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::RDS::DBProxy`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::RDS::DBProxy`, which is used to enable the database proxy feature for an ApsaraDB RDS instance.
 type DBProxy interface {
 	alicloudroscdkcore.Resource
 	IDBProxy

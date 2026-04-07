@@ -102,7 +102,7 @@ export interface IInstance extends ros.IResource {
     readonly attrWorkspaceId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::Flink::Instance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::Flink::Instance`, which is used to create a subscription or pay-as-you-go Realtime Compute for Apache Flink instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-instance
  */
@@ -145,8 +145,8 @@ export class Instance extends ros.Resource implements IInstance {
             zoneId: props.zoneId,
             bucket: props.bucket,
             vSwitchIds: props.vSwitchIds,
-            pricingCycle: props.pricingCycle,
             chargeType: props.chargeType,
+            pricingCycle: props.pricingCycle,
             autoRenew: props.autoRenew,
             promotionCode: props.promotionCode,
             resourceSpec: props.resourceSpec,

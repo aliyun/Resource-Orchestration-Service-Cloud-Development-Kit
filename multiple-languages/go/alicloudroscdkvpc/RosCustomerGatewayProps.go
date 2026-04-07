@@ -9,5 +9,6 @@ type RosCustomerGatewayProps struct {
 	Asn interface{} `field:"optional" json:"asn" yaml:"asn"`
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
 	Name interface{} `field:"optional" json:"name" yaml:"name"`
+	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 }
 

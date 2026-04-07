@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cs;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CS::ManagedKubernetesCluster</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CS::ManagedKubernetesCluster</code>The , which type creates ACK managed clusters.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.158Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:23.509Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedKubernetesCluster")
 public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -221,6 +221,24 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
             }
         }
         software.amazon.jsii.Kernel.set(this, "addons", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAutoMode() {
+        return software.amazon.jsii.Kernel.get(this, "autoMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAutoMode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "autoMode", value);
+    }
+
+    /**
+     */
+    public void setAutoMode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.AutoModeProperty value) {
+        software.amazon.jsii.Kernel.set(this, "autoMode", value);
     }
 
     /**
@@ -1281,6 +1299,131 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
                 result = 31 * result + (this.config != null ? this.config.hashCode() : 0);
                 result = 31 * result + (this.disabled != null ? this.disabled.hashCode() : 0);
                 result = 31 * result + (this.version != null ? this.version.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.AutoModeProperty")
+    @software.amazon.jsii.Jsii.Proxy(AutoModeProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface AutoModeProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getEnable();
+
+        /**
+         * @return a {@link Builder} of {@link AutoModeProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link AutoModeProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<AutoModeProperty> {
+            java.lang.Object enable;
+
+            /**
+             * Sets the value of {@link AutoModeProperty#getEnable}
+             * @param enable the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enable(java.lang.Boolean enable) {
+                this.enable = enable;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AutoModeProperty#getEnable}
+             * @param enable the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enable(com.aliyun.ros.cdk.core.IResolvable enable) {
+                this.enable = enable;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link AutoModeProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public AutoModeProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link AutoModeProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements AutoModeProperty {
+            private final java.lang.Object enable;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.enable = software.amazon.jsii.Kernel.get(this, "enable", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.enable = java.util.Objects.requireNonNull(builder.enable, "enable is required");
+            }
+
+            @Override
+            public final java.lang.Object getEnable() {
+                return this.enable;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("enable", om.valueToTree(this.getEnable()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.AutoModeProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                AutoModeProperty.Jsii$Proxy that = (AutoModeProperty.Jsii$Proxy) o;
+
+                return this.enable.equals(that.enable);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.enable.hashCode();
                 return result;
             }
         }
@@ -5569,6 +5712,23 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
          */
         public Builder addons(final java.util.List<? extends java.lang.Object> addons) {
             this.props.addons(addons);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param autoMode This parameter is required.
+         */
+        public Builder autoMode(final com.aliyun.ros.cdk.core.IResolvable autoMode) {
+            this.props.autoMode(autoMode);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param autoMode This parameter is required.
+         */
+        public Builder autoMode(final com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.AutoModeProperty autoMode) {
+            this.props.autoMode(autoMode);
             return this;
         }
 

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.hbase;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::HBase::Cluster</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::HBase::Cluster</code>, which is used to create an ApsaraDB for HBase cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.566Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:27.183Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbase.$Module.class, fqn = "@alicloud/ros-cdk-hbase.RosCluster")
 public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 

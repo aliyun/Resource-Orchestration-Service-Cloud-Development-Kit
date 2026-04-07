@@ -149,7 +149,7 @@ export interface IProduct extends ros.IResource {
     readonly attrProductKey: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::IOT::Product`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::IOT::Product`, which is used to create a product.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosProduct`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-product
  */
@@ -184,10 +184,10 @@ export class Product extends ros.Resource implements IProduct {
         const rosProduct = new RosProduct(this, id,  {
             publishAuto: props.publishAuto,
             description: props.description,
-            iotInstanceId: props.iotInstanceId,
             productName: props.productName,
-            resourceGroupId: props.resourceGroupId,
             aliyunCommodityCode: props.aliyunCommodityCode,
+            resourceGroupId: props.resourceGroupId,
+            iotInstanceId: props.iotInstanceId,
             categoryKey: props.categoryKey,
             protocolType: props.protocolType,
             id2: props.id2,

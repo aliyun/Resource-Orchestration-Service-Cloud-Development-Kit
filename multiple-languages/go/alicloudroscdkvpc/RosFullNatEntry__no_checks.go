@@ -84,6 +84,10 @@ func validateRosFullNatEntry_IsRosResourceParameters(construct alicloudroscdkcor
 	return nil
 }
 
+func (j *jsiiProxy_RosFullNatEntry) validateSetAccessDomainParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosFullNatEntry) validateSetAccessIpParameters(val interface{}) error {
 	return nil
 }

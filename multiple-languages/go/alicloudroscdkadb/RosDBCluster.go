@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ADB::DBCluster`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ADB::DBCluster`Use the , which resource type to create an AnalyticDB for MySQL cluster.
 type RosDBCluster interface {
 	alicloudroscdkcore.RosResource
 	AttrArn() alicloudroscdkcore.IResolvable
@@ -34,12 +34,18 @@ type RosDBCluster interface {
 	SetDbNodeGroupCount(val interface{})
 	DbNodeStorage() interface{}
 	SetDbNodeStorage(val interface{})
+	DiskEncryption() interface{}
+	SetDiskEncryption(val interface{})
 	ElasticIoResource() interface{}
 	SetElasticIoResource(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	EnableSsl() interface{}
+	SetEnableSsl(val interface{})
 	ExecutorCount() interface{}
 	SetExecutorCount(val interface{})
+	KmsId() interface{}
+	SetKmsId(val interface{})
 	// The logical ID for this stack element.
 	//
 	// The logical ID of the element
@@ -328,6 +334,16 @@ func (j *jsiiProxy_RosDBCluster) DbNodeStorage() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosDBCluster) DiskEncryption() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"diskEncryption",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosDBCluster) ElasticIoResource() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -348,11 +364,31 @@ func (j *jsiiProxy_RosDBCluster) EnableResourcePropertyConstraint() *bool {
 	return returns
 }
 
+func (j *jsiiProxy_RosDBCluster) EnableSsl() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enableSsl",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosDBCluster) ExecutorCount() interface{} {
 	var returns interface{}
 	_jsii_.Get(
 		j,
 		"executorCount",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDBCluster) KmsId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"kmsId",
 		&returns,
 	)
 	return returns
@@ -633,6 +669,17 @@ func (j *jsiiProxy_RosDBCluster)SetDbNodeStorage(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosDBCluster)SetDiskEncryption(val interface{}) {
+	if err := j.validateSetDiskEncryptionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"diskEncryption",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosDBCluster)SetElasticIoResource(val interface{}) {
 	if err := j.validateSetElasticIoResourceParameters(val); err != nil {
 		panic(err)
@@ -655,6 +702,17 @@ func (j *jsiiProxy_RosDBCluster)SetEnableResourcePropertyConstraint(val *bool) {
 	)
 }
 
+func (j *jsiiProxy_RosDBCluster)SetEnableSsl(val interface{}) {
+	if err := j.validateSetEnableSslParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"enableSsl",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosDBCluster)SetExecutorCount(val interface{}) {
 	if err := j.validateSetExecutorCountParameters(val); err != nil {
 		panic(err)
@@ -662,6 +720,17 @@ func (j *jsiiProxy_RosDBCluster)SetExecutorCount(val interface{}) {
 	_jsii_.Set(
 		j,
 		"executorCount",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDBCluster)SetKmsId(val interface{}) {
+	if err := j.validateSetKmsIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"kmsId",
 		val,
 	)
 }

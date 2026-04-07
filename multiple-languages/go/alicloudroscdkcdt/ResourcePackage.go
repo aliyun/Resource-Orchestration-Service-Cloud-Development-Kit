@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CDT::ResourcePackage`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CDT::ResourcePackage`The , which type creates a resource plan.
 type ResourcePackage interface {
 	alicloudroscdkcore.Resource
 	IResourcePackage

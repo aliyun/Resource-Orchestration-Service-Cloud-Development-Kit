@@ -55,7 +55,7 @@ export interface IConfigurations extends ros.IResource {
     readonly attrDataIds: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ACM::Configurations`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ACM::Configurations`, which is used to query the information about configurations.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosConfigurations`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-acm-configurations
  */
@@ -91,8 +91,8 @@ export class Configurations extends ros.Resource implements IConfigurations {
             group: props.group,
             dataId: props.dataId,
             namespaceId: props.namespaceId,
-            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
             appName: props.appName,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosConfigurations;
         this.attrConfigurations = rosConfigurations.attrConfigurations;

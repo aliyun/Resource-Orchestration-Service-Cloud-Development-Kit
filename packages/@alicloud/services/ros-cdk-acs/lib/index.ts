@@ -1,3 +1,4 @@
+export * from './applicationpod';
 export * from './cluster';
 export * from './virtualcapacityreservation';
 

@@ -57,7 +57,7 @@ export interface IOrder extends ros.IResource {
     readonly attrOrderId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::MarketPlace::Order`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MarketPlace::Order`, which is used to purchase resources from Alibaba Cloud Marketplace.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosOrder`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-marketplace-order
  */
@@ -88,8 +88,8 @@ export class Order extends ros.Resource implements IOrder {
             productCode: props.productCode,
             preference: props.preference,
             skuCode: props.skuCode,
-            pricingCycle: props.pricingCycle,
             chargeType: props.chargeType === undefined || props.chargeType === null ? 'Prepaid' : props.chargeType,
+            pricingCycle: props.pricingCycle,
             quantity: props.quantity === undefined || props.quantity === null ? 1 : props.quantity,
             duration: props.duration,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

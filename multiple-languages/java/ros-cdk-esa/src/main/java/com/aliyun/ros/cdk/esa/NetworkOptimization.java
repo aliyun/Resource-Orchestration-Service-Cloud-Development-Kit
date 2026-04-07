@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.esa;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ESA::NetworkOptimization</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ESA::NetworkOptimization</code>The , which type is used to add network optimization configurations for a website.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:56.587Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:26.099Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.esa.$Module.class, fqn = "@alicloud/ros-cdk-esa.NetworkOptimization")
 public class NetworkOptimization extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.esa.INetworkOptimization {
 
@@ -129,7 +129,7 @@ public class NetworkOptimization extends com.aliyun.ros.cdk.core.Resource implem
     }
 
     /**
-     * Attribute UploadMaxFilesize: Maximum upload file size, in MB, value range: 100～500.
+     * Attribute UploadMaxFilesize: Maximum upload file size, in MB, value range: 100ï½500.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrUploadMaxFilesize() {
@@ -475,20 +475,20 @@ public class NetworkOptimization extends com.aliyun.ros.cdk.core.Resource implem
         }
 
         /**
-         * Property uploadMaxFilesize: Maximum upload file size, in MB, value range: 100～500.
+         * Property uploadMaxFilesize: Maximum upload file size, in MB, value range: 100ï½500.
          * <p>
          * @return {@code this}
-         * @param uploadMaxFilesize Property uploadMaxFilesize: Maximum upload file size, in MB, value range: 100～500. This parameter is required.
+         * @param uploadMaxFilesize Property uploadMaxFilesize: Maximum upload file size, in MB, value range: 100ï½500. This parameter is required.
          */
         public Builder uploadMaxFilesize(final java.lang.Number uploadMaxFilesize) {
             this.props.uploadMaxFilesize(uploadMaxFilesize);
             return this;
         }
         /**
-         * Property uploadMaxFilesize: Maximum upload file size, in MB, value range: 100～500.
+         * Property uploadMaxFilesize: Maximum upload file size, in MB, value range: 100ï½500.
          * <p>
          * @return {@code this}
-         * @param uploadMaxFilesize Property uploadMaxFilesize: Maximum upload file size, in MB, value range: 100～500. This parameter is required.
+         * @param uploadMaxFilesize Property uploadMaxFilesize: Maximum upload file size, in MB, value range: 100ï½500. This parameter is required.
          */
         public Builder uploadMaxFilesize(final com.aliyun.ros.cdk.core.IResolvable uploadMaxFilesize) {
             this.props.uploadMaxFilesize(uploadMaxFilesize);

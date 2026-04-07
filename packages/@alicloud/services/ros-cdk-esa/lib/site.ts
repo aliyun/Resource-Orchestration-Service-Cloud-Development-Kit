@@ -102,7 +102,7 @@ export interface ISite extends ros.IResource {
     readonly attrTags: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ESA::Site`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESA::Site`You can use the , which resource type to create a site.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSite`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-site
  */
@@ -175,8 +175,8 @@ export class Site extends ros.Resource implements ISite {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosSite = new RosSite(this, id,  {
-            siteName: props.siteName,
             resourceGroupId: props.resourceGroupId,
+            siteName: props.siteName,
             instanceId: props.instanceId,
             paymentType: props.paymentType,
             coverage: props.coverage,

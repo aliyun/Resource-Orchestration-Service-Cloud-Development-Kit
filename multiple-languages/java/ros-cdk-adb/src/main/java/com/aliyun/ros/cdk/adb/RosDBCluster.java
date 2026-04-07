@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.adb;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ADB::DBCluster</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ADB::DBCluster</code>Use the , which resource type to create an AnalyticDB for MySQL cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:51.920Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:21.091Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.adb.$Module.class, fqn = "@alicloud/ros-cdk-adb.RosDBCluster")
 public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -277,6 +277,24 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDiskEncryption() {
+        return software.amazon.jsii.Kernel.get(this, "diskEncryption", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDiskEncryption(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "diskEncryption", value);
+    }
+
+    /**
+     */
+    public void setDiskEncryption(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "diskEncryption", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getElasticIoResource() {
         return software.amazon.jsii.Kernel.get(this, "elasticIoResource", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -295,6 +313,24 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEnableSsl() {
+        return software.amazon.jsii.Kernel.get(this, "enableSsl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setEnableSsl(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "enableSsl", value);
+    }
+
+    /**
+     */
+    public void setEnableSsl(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "enableSsl", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getExecutorCount() {
         return software.amazon.jsii.Kernel.get(this, "executorCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -309,6 +345,24 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setExecutorCount(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "executorCount", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getKmsId() {
+        return software.amazon.jsii.Kernel.get(this, "kmsId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setKmsId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "kmsId", value);
+    }
+
+    /**
+     */
+    public void setKmsId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "kmsId", value);
     }
 
     /**
@@ -778,6 +832,23 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param diskEncryption This parameter is required.
+         */
+        public Builder diskEncryption(final java.lang.Boolean diskEncryption) {
+            this.props.diskEncryption(diskEncryption);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param diskEncryption This parameter is required.
+         */
+        public Builder diskEncryption(final com.aliyun.ros.cdk.core.IResolvable diskEncryption) {
+            this.props.diskEncryption(diskEncryption);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param elasticIoResource This parameter is required.
          */
         public Builder elasticIoResource(final java.lang.Number elasticIoResource) {
@@ -795,6 +866,23 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param enableSsl This parameter is required.
+         */
+        public Builder enableSsl(final java.lang.Boolean enableSsl) {
+            this.props.enableSsl(enableSsl);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param enableSsl This parameter is required.
+         */
+        public Builder enableSsl(final com.aliyun.ros.cdk.core.IResolvable enableSsl) {
+            this.props.enableSsl(enableSsl);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param executorCount This parameter is required.
          */
         public Builder executorCount(final java.lang.Number executorCount) {
@@ -807,6 +895,23 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder executorCount(final com.aliyun.ros.cdk.core.IResolvable executorCount) {
             this.props.executorCount(executorCount);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param kmsId This parameter is required.
+         */
+        public Builder kmsId(final java.lang.String kmsId) {
+            this.props.kmsId(kmsId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param kmsId This parameter is required.
+         */
+        public Builder kmsId(final com.aliyun.ros.cdk.core.IResolvable kmsId) {
+            this.props.kmsId(kmsId);
             return this;
         }
 

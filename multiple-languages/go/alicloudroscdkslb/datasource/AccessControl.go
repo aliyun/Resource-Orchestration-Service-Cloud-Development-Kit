@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::AccessControl`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::AccessControl`, which is used to query the configurations of an access control list (ACL).
 type AccessControl interface {
 	alicloudroscdkcore.Resource
 	IAccessControl

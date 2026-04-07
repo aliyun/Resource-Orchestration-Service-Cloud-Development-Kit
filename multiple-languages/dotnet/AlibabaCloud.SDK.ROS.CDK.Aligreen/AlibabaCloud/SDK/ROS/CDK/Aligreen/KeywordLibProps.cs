@@ -50,7 +50,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Aligreen
 
         /// <summary>Property resourceType: The moderation scenario to which the text library applies.</summary>
         /// <remarks>
-        /// Valid values:TEXT: text anti-spam、IMAGE: ad violation detection、VOICE: audio anti-spam.
+        /// Valid values:TEXT: text anti-spamãIMAGE: ad violation detectionãVOICE: audio anti-spam.
         /// </remarks>
         [JsiiProperty(name: "resourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object ResourceType

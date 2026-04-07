@@ -92,7 +92,7 @@ export interface IInstance extends ros.IResource {
     readonly attrInstanceId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::KMS::Instance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::KMS::Instance`, which is used to create a Key Management Service (KMS) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-instance
  */
@@ -121,14 +121,14 @@ export class Instance extends ros.Resource implements IInstance {
 
         const rosInstance = new RosInstance(this, id,  {
             vpcNum: props.vpcNum,
-            log: props.log,
             keyNum: props.keyNum,
+            log: props.log,
             instanceChargeType: props.instanceChargeType === undefined || props.instanceChargeType === null ? 'PrePaid' : props.instanceChargeType,
             connection: props.connection,
-            renewPeriod: props.renewPeriod,
             period: props.period,
-            secretNum: props.secretNum,
+            renewPeriod: props.renewPeriod,
             productVersion: props.productVersion,
+            secretNum: props.secretNum,
             logStorage: props.logStorage,
             renewStatus: props.renewStatus,
             spec: props.spec,

@@ -60,7 +60,7 @@ export interface IAcl extends ros.IResource {
     readonly attrTags: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::GA::Acl`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::GA::Acl`, which is used to query the information about an access control list (ACL).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAcl`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ga-acl
  */

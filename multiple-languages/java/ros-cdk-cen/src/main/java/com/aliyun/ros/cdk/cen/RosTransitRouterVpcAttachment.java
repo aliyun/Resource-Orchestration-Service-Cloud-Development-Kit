@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cen;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CEN::TransitRouterVpcAttachment</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CEN::TransitRouterVpcAttachment</code>, which is used to create a virtual private cloud (VPC) connection on an Enterprise Edition transit router.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.213Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:22.461Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosTransitRouterVpcAttachment")
 public class RosTransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,12 +44,6 @@ public class RosTransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.RosRe
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrCenId() {
         return software.amazon.jsii.Kernel.get(this, "attrCenId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrClientToken() {
-        return software.amazon.jsii.Kernel.get(this, "attrClientToken", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -175,6 +169,24 @@ public class RosTransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.RosRe
      */
     public void setAutoCreateVpcRoute(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "autoCreateVpcRoute", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAutoPublishRouteEnabled() {
+        return software.amazon.jsii.Kernel.get(this, "autoPublishRouteEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAutoPublishRouteEnabled(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "autoPublishRouteEnabled", value);
+    }
+
+    /**
+     */
+    public void setAutoPublishRouteEnabled(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "autoPublishRouteEnabled", value);
     }
 
     /**
@@ -319,6 +331,36 @@ public class RosTransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.RosRe
      */
     public void setTransitRouterId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "transitRouterId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTransitRouterVpcAttachmentOptions() {
+        return software.amazon.jsii.Kernel.get(this, "transitRouterVpcAttachmentOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setTransitRouterVpcAttachmentOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "transitRouterVpcAttachmentOptions", value);
+    }
+
+    /**
+     */
+    public void setTransitRouterVpcAttachmentOptions(final @org.jetbrains.annotations.Nullable java.util.Map<java.lang.String, java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            if (!(value.keySet().toArray()[0] instanceof String)) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("value").append(".keySet()")
+                        .append(" to contain class String; received ")
+                        .append(value.keySet().toArray()[0].getClass()).toString());
+            }
+            for (final java.util.Map.Entry<String, java.lang.Object> __item_ac66f0: value.entrySet()) {
+                final java.lang.Object __val_ac66f0 = __item_ac66f0.getValue();
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "transitRouterVpcAttachmentOptions", value);
     }
 
     /**
@@ -582,6 +624,23 @@ public class RosTransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.RosRe
 
         /**
          * @return {@code this}
+         * @param autoPublishRouteEnabled This parameter is required.
+         */
+        public Builder autoPublishRouteEnabled(final java.lang.Boolean autoPublishRouteEnabled) {
+            this.props.autoPublishRouteEnabled(autoPublishRouteEnabled);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param autoPublishRouteEnabled This parameter is required.
+         */
+        public Builder autoPublishRouteEnabled(final com.aliyun.ros.cdk.core.IResolvable autoPublishRouteEnabled) {
+            this.props.autoPublishRouteEnabled(autoPublishRouteEnabled);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param cenId This parameter is required.
          */
         public Builder cenId(final java.lang.String cenId) {
@@ -713,6 +772,23 @@ public class RosTransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.RosRe
          */
         public Builder transitRouterId(final com.aliyun.ros.cdk.core.IResolvable transitRouterId) {
             this.props.transitRouterId(transitRouterId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param transitRouterVpcAttachmentOptions This parameter is required.
+         */
+        public Builder transitRouterVpcAttachmentOptions(final com.aliyun.ros.cdk.core.IResolvable transitRouterVpcAttachmentOptions) {
+            this.props.transitRouterVpcAttachmentOptions(transitRouterVpcAttachmentOptions);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param transitRouterVpcAttachmentOptions This parameter is required.
+         */
+        public Builder transitRouterVpcAttachmentOptions(final java.util.Map<java.lang.String, ? extends java.lang.Object> transitRouterVpcAttachmentOptions) {
+            this.props.transitRouterVpcAttachmentOptions(transitRouterVpcAttachmentOptions);
             return this;
         }
 

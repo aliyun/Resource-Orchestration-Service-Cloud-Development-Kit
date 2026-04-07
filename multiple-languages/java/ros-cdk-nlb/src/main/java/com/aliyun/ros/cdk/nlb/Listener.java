@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.nlb;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::NLB::Listener</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::NLB::Listener</code>Use the , which resource type to create a listener.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.403Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:28.058Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.Listener")
 public class Listener extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.nlb.IListener {
 
@@ -120,20 +120,45 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property listenerProtocol: undefined.
+         * Property listenerPort: Port of the listener,[0, 65535] the portRange setting need 0.
          * <p>
          * @return {@code this}
-         * @param listenerProtocol Property listenerProtocol: undefined. This parameter is required.
+         * @param listenerPort Property listenerPort: Port of the listener,[0, 65535] the portRange setting need 0. This parameter is required.
+         */
+        public Builder listenerPort(final java.lang.Number listenerPort) {
+            this.props.listenerPort(listenerPort);
+            return this;
+        }
+        /**
+         * Property listenerPort: Port of the listener,[0, 65535] the portRange setting need 0.
+         * <p>
+         * @return {@code this}
+         * @param listenerPort Property listenerPort: Port of the listener,[0, 65535] the portRange setting need 0. This parameter is required.
+         */
+        public Builder listenerPort(final com.aliyun.ros.cdk.core.IResolvable listenerPort) {
+            this.props.listenerPort(listenerPort);
+            return this;
+        }
+
+        /**
+         * Property listenerProtocol: Listening protocol.
+         * <p>
+         * Values: TCP, UDP, or TCPSSL.
+         * <p>
+         * @return {@code this}
+         * @param listenerProtocol Property listenerProtocol: Listening protocol. This parameter is required.
          */
         public Builder listenerProtocol(final java.lang.String listenerProtocol) {
             this.props.listenerProtocol(listenerProtocol);
             return this;
         }
         /**
-         * Property listenerProtocol: undefined.
+         * Property listenerProtocol: Listening protocol.
+         * <p>
+         * Values: TCP, UDP, or TCPSSL.
          * <p>
          * @return {@code this}
-         * @param listenerProtocol Property listenerProtocol: undefined. This parameter is required.
+         * @param listenerProtocol Property listenerProtocol: Listening protocol. This parameter is required.
          */
         public Builder listenerProtocol(final com.aliyun.ros.cdk.core.IResolvable listenerProtocol) {
             this.props.listenerProtocol(listenerProtocol);
@@ -158,27 +183,6 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource implements com.al
          */
         public Builder loadBalancerId(final com.aliyun.ros.cdk.core.IResolvable loadBalancerId) {
             this.props.loadBalancerId(loadBalancerId);
-            return this;
-        }
-
-        /**
-         * Property serverGroupId: ID of the ServerGroup.
-         * <p>
-         * @return {@code this}
-         * @param serverGroupId Property serverGroupId: ID of the ServerGroup. This parameter is required.
-         */
-        public Builder serverGroupId(final java.lang.String serverGroupId) {
-            this.props.serverGroupId(serverGroupId);
-            return this;
-        }
-        /**
-         * Property serverGroupId: ID of the ServerGroup.
-         * <p>
-         * @return {@code this}
-         * @param serverGroupId Property serverGroupId: ID of the ServerGroup. This parameter is required.
-         */
-        public Builder serverGroupId(final com.aliyun.ros.cdk.core.IResolvable serverGroupId) {
-            this.props.serverGroupId(serverGroupId);
             return this;
         }
 
@@ -397,27 +401,6 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property listenerPort: Port of the listener,[0, 65535] the portRange setting need 0.
-         * <p>
-         * @return {@code this}
-         * @param listenerPort Property listenerPort: Port of the listener,[0, 65535] the portRange setting need 0. This parameter is required.
-         */
-        public Builder listenerPort(final java.lang.Number listenerPort) {
-            this.props.listenerPort(listenerPort);
-            return this;
-        }
-        /**
-         * Property listenerPort: Port of the listener,[0, 65535] the portRange setting need 0.
-         * <p>
-         * @return {@code this}
-         * @param listenerPort Property listenerPort: Port of the listener,[0, 65535] the portRange setting need 0. This parameter is required.
-         */
-        public Builder listenerPort(final com.aliyun.ros.cdk.core.IResolvable listenerPort) {
-            this.props.listenerPort(listenerPort);
-            return this;
-        }
-
-        /**
          * Property mss: Max length of the TCP packet.
          * <p>
          * @return {@code this}
@@ -519,6 +502,54 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource implements com.al
          */
         public Builder securityPolicyId(final com.aliyun.ros.cdk.core.IResolvable securityPolicyId) {
             this.props.securityPolicyId(securityPolicyId);
+            return this;
+        }
+
+        /**
+         * Property serverGroupId: ID of the ServerGroup.
+         * <p>
+         * @return {@code this}
+         * @param serverGroupId Property serverGroupId: ID of the ServerGroup. This parameter is required.
+         */
+        public Builder serverGroupId(final java.lang.String serverGroupId) {
+            this.props.serverGroupId(serverGroupId);
+            return this;
+        }
+        /**
+         * Property serverGroupId: ID of the ServerGroup.
+         * <p>
+         * @return {@code this}
+         * @param serverGroupId Property serverGroupId: ID of the ServerGroup. This parameter is required.
+         */
+        public Builder serverGroupId(final com.aliyun.ros.cdk.core.IResolvable serverGroupId) {
+            this.props.serverGroupId(serverGroupId);
+            return this;
+        }
+
+        /**
+         * Property serverGroupTuples: Multi-server group list.
+         * <p>
+         * When the number of destination server groups is 1, the default value is 100 if no weight is specified.
+         * When the number of destination server groups is greater than 1, the user needs to specify the weight value.
+         * <p>
+         * @return {@code this}
+         * @param serverGroupTuples Property serverGroupTuples: Multi-server group list. This parameter is required.
+         */
+        public Builder serverGroupTuples(final com.aliyun.ros.cdk.core.IResolvable serverGroupTuples) {
+            this.props.serverGroupTuples(serverGroupTuples);
+            return this;
+        }
+        /**
+         * Property serverGroupTuples: Multi-server group list.
+         * <p>
+         * When the number of destination server groups is 1, the default value is 100 if no weight is specified.
+         * When the number of destination server groups is greater than 1, the user needs to specify the weight value.
+         * <p>
+         * @return {@code this}
+         * @param serverGroupTuples Property serverGroupTuples: Multi-server group list. This parameter is required.
+         */
+        public Builder serverGroupTuples(final java.util.List<? extends java.lang.Object> serverGroupTuples) {
+            this.props.serverGroupTuples(serverGroupTuples);
             return this;
         }
 

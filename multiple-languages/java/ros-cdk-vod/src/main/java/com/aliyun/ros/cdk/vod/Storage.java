@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vod;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::VOD::Storage</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::VOD::Storage</code>, which is used to add an Object Storage Service (OSS) bucket in ApsaraVideo VOD (VOD).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:00.813Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.730Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vod.$Module.class, fqn = "@alicloud/ros-cdk-vod.Storage")
 public class Storage extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vod.IStorage {
 
